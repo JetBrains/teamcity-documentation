@@ -65,7 +65,7 @@ __Importing root certificate to organize a chain of trust__
 
 If your certificate is not signed by a trusted authority, you will also need to add the root certificate from your certificate chain to a trusted keystore and supply this trusted keystore to JVM.
 
-2\. You should first extract the root certificate from your certificate. You can do this from a web browser if you have the certificate installed, or you can do this with the [OpenSSL](http://openssl.org/) tool using the command:
+2\. You should first extract the root certificate from your certificate. You can do this from a web browser if you have the certificate installed, or you can do this with the [OpenSSL](http://www.openssl.org/) tool using the command:
 
 
 ```Plain Text

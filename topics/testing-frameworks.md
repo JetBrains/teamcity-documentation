@@ -9,7 +9,7 @@ TeamCity directly supports the following _testing frameworks_:
 * JUnit and TestNG for the following runners:
   * [Gradle](gradle.md)
   * [Ant](ant.md) (when tests are run by the `junit` and `testng` tasks directly within the script, TeamCity reports tests on the fly)
-  * [Maven2](maven.md) (when tests are run by [Maven Surefire plugin](http://maven.apache.org/plugins/maven-surefire-plugin/) or [Maven Failsafe plugin](http://maven.apache.org/surefire/maven-failsafe-plugin/integration-test-mojo.html), tests reporting occurs after each module test run finish)
+  * [Maven2](maven.md) (when tests are run by [Maven Surefire plugin](https://maven.apache.org/plugins/maven-surefire-plugin/) or [Maven Failsafe plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/integration-test-mojo.html), tests reporting occurs after each module test run finish)
   * [IntelliJ IDEA Project](intellij-idea-project.md) project (when run with appropriate IDEA run configurations. Note that such run configurations should be shared in the IDE and related files should be checked in to the version control)
 * [NUnit](nunit-support.md) for the following runners:
   * [.NET](net.md) (the `test` task)
@@ -22,7 +22,7 @@ TeamCity directly supports the following _testing frameworks_:
 * [Pytest](python.md)
 * [Node.js](nodejs.md): ESlint, Jest, and Mocha.
 * Ruby:
-  * The [Rake](rake.md) runner supports [Test::Unit](http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html), [Test-Spec](http://search.cpan.org/~philip/Test-Spec-0.48/lib/Test/Spec.pm), [Shoulda](http://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info).
+  * The [Rake](rake.md) runner supports [Test::Unit](http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html), [Test-Spec](http://search.cpan.org/~philip/Test-Spec-0.48/lib/Test/Spec.pm), [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info).
   * The [minitest](https://rubygems.org/gems/minitest) framework requires the `minitest-reporters` gem to be additionally installed.
 
 There are also testing frameworks that have embedded support for TeamCity on their side: for example, [Gallio](net-testing-frameworks-support.md#Gallio) and [xUnit](net-testing-frameworks-support.md#xUnit).

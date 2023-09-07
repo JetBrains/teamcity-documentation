@@ -30,4 +30,4 @@ The _TeamCity Home Directory_ or the _TeamCity Installation Directory_ is the di
 * __`/logs`__ — contains the [TeamCity server logs](teamcity-server-logs.md)
 * __`/temp`__ — temporary directory
 * __`/webapps`__ — TeamCity web application data
-* __`/work`__ — standard [Tomcat directory](http://tomcat.apache.org/tomcat-7.0-doc/config/host.html#Standard_Implementation) where Tomcat writes cache files for every page it serves
+* __`/work`__ — standard [Tomcat directory](https://tomcat.apache.org/tomcat-7.0-doc/config/host.html#Standard_Implementation) where Tomcat writes cache files for every page it serves

@@ -83,6 +83,6 @@ See the [Shared Resources plugin](https://plugins.jetbrains.com/plugin/9075-shar
 
 <seealso>
         <category ref="videos">
-            <a href="http://tv.jetbrains.net/videocontent/teamcity-shared-resources">JetBrains TV: TeamCity Shared Resources Screencast</a>
+            <a href="https://tv.jetbrains.net/videocontent/teamcity-shared-resources">JetBrains TV: TeamCity Shared Resources Screencast</a>
         </category>
 </seealso>

@@ -24,7 +24,7 @@ Before upgrading TeamCity:
 
 * For a major upgrade, review what you will be getting in [What's New](what-s-new-in-teamcity.md).
 * [Check your license keys](#Licensing) unless you are upgrading within bugfix releases of the same major `YYYY.MM` version.
-* [Download](http://www.jetbrains.com/teamcity/download/) the new TeamCity version (see [links to all released versions](previous-releases-downloads.md)).
+* [Download](https://www.jetbrains.com/teamcity/download/) the new TeamCity version (see [links to all released versions](previous-releases-downloads.md)).
 * Carefully review the __[Upgrade Notes](upgrade-notes.md)__.
 * Consider probing the upgrade on a [test server](how-to.md#Test-drive+Newer+TeamCity+Version+before+Upgrade).
 * If you have non-bundled plugins installed, check plugin pages for compatibility with the new version and upgrade/uninstall the plugins if necessary.
@@ -42,9 +42,9 @@ Before upgrading, make sure the maintenance period of your licenses is not yet e
 Typically all the minor updates (indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version) use the same effective release date (that of the major release).   
 If not all the licenses cover the target version release date, consider [renewing the licenses](https://www.jetbrains.com/teamcity/buy/#license-type=renewal) before the upgrade (you can replace the old license keys with the renewed ones even before the upgrade).
 
-If you are only evaluating a newer version, you can get an evaluation license on the [download page](http://www.jetbrains.com/teamcity/download/). Note that each TeamCity version can be evaluated only once. To extend the evaluation period, [contact](http://www.jetbrains.com/company/contacts/#contactSales) the JetBrains sales department.
+If you are only evaluating a newer version, you can get an evaluation license on the [download page](https://www.jetbrains.com/teamcity/download/). Note that each TeamCity version can be evaluated only once. To extend the evaluation period, [contact](https://www.jetbrains.com/company/contacts/#contactSales) the JetBrains sales department.
 
-When upgrading from TeamCity 4.x or earlier, note that the licensing policy in TeamCity versions 5.0 and later are different from that of the previous TeamCity versions. Review the [Licensing Policy](licensing-policy.md) page and the [Licensing and Upgrade](http://www.jetbrains.com/teamcity/buy#upgradeuser) section on the official site.
+When upgrading from TeamCity 4.x or earlier, note that the licensing policy in TeamCity versions 5.0 and later are different from that of the previous TeamCity versions. Review the [Licensing Policy](licensing-policy.md) page and the [Licensing and Upgrade](https://www.jetbrains.com/teamcity/buy#upgradeuser) section on the official site.
 
 <anchor name="Upgrade-UpgradingTeamCityServer"/>
 

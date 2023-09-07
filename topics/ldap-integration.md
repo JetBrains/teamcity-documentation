@@ -29,7 +29,7 @@ LDAP integration settings are configured in the `<TeamCity Data Directory>/confi
 
 Create the file by copying `<TeamCity Data Directory>/config/ldap-config.properties.dist` file and renaming it to the `<TeamCity Data Directory>/config/ldap-config.properties`; follow the comments in the file to edit the default settings as required.
 
-The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). For example, the following `java.naming.security.principal=DOMAIN\user` parameter should be escaped as `java.naming.security.principal=DOMAIN\\user`.
+The file uses the standard Java properties file syntax, so all the values in the file must be properly [escaped](https://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)). For example, the following `java.naming.security.principal=DOMAIN\user` parameter should be escaped as `java.naming.security.principal=DOMAIN\\user`.
 
 The file is reread on any modification: there is no need to restart the server to apply the changes.
 
@@ -52,7 +52,7 @@ The general login sequence is as follows:
 
 When users log in via LDAP, TeamCity does not store the user passwords. On each user login, authentication is performed by a direct login into LDAP with the credentials based on the values entered in the login form.
 
-Note that in certain configurations (for example, with `java.naming.security.authentication=simple`) the login information will be sent to the LDAP server in the unencrypted form. For securing the connection, refer to [Sun documentation](http://java.sun.com/products/jndi/tutorial/ldap/security/sasl.html). Another option is to configure communications via the LDAPS protocol.
+Note that in certain configurations (for example, with `java.naming.security.authentication=simple`) the login information will be sent to the LDAP server in the unencrypted form. For securing the connection, refer to [Sun documentation](https://java.sun.com/products/jndi/tutorial/ldap/security/sasl.html). Another option is to configure communications via the LDAPS protocol.
 
 [//]: # (Internal note. Do not delete. "LDAP Integrationd195e199.txt")    
 

@@ -1,8 +1,8 @@
 [//]: # (title: Inspections \(ReSharper\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084113;Inspections \(ReSharper\))
 
-The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
-[ReSharper](http://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
+The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](https://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
+[ReSharper](https://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
 * Find probable bugs
 * Eliminate errors and code smells
 * Detect performance issues
@@ -102,7 +102,7 @@ Target Frameworks
 
 <td>
 
-This option allows you to handle the [Visual Studio Multi-Targeting](http://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
+This option allows you to handle the [Visual Studio Multi-Targeting](https://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
 Agent requirement will be created for every checked item.
 
 .NET Framework versions 2.0–4.8.1 are supported.
@@ -186,7 +186,7 @@ The path to the file containing __ReSharper settings__ created with JetBrains Re
 The specified path should be __relative__ to the checkout directory.   
 If specified, this settings layer has the top priority, so it overrides ReSharper build-in settings. __By default__, __build-in__ ReSharper settings layers are applied.
  
-For additional information about the ReSharper settings system, see [ReSharper Web Help](http://www.jetbrains.com/resharper/webhelp/Configuring_ReSharper__Sharing_Configuration_Options.html) and [JetBrains .NET Tools Blog](http://blogs.jetbrains.com/dotnet/)
+For additional information about the ReSharper settings system, see [ReSharper Web Help](https://www.jetbrains.com/resharper/webhelp/Configuring_ReSharper__Sharing_Configuration_Options.html) and [JetBrains .NET Tools Blog](https://blog.jetbrains.com/dotnet/)
 
 
 </td></tr><tr>

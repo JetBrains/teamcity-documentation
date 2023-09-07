@@ -101,7 +101,7 @@ An example of custom IAM policy definition (allows all EC2 operations from a spe
 
 See the [section below](#Configuring+an+Amazon+EC2+cloud+profile) for permissions to set IAM roles on an agent instance.
 
-View information on example policies for [Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) and [Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ExamplePolicies_EC2.html) on the Amazon website.
+View information on example policies for [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) and [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ExamplePolicies_EC2.html) on the Amazon website.
 
 ### Preparing Image with Installed TeamCity Agent
 
@@ -137,7 +137,7 @@ Recommended image (for example, Amazon AMI) preparation steps:
 
 #### Additional configuration for Windows agents
 
-_To ensure proper TeamCity agent communication with EC2 API (including access to additional drives) on Windows_, add a dependency from the TeamCity Build Agent service on the [AmazonSSMAgent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) or [EC2Launch/EC2Config](http://docs.amazonwebservices.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html) service (the service which ensures the machine is fully initialized in regard to AWS infrastructure use). This can be done, for example, via the [Registry](https://support.microsoft.com/en-us/windows/how-to-open-registry-editor-in-windows-10-deab38e6-91d6-e0aa-4b7c-8878d9e07b11) or using [sc config](https://technet.microsoft.com/en-us/library/cc990290(v=ws.11).aspx) (for instance, `sc config TCBuildAgent depend=EC2Config`).   
+_To ensure proper TeamCity agent communication with EC2 API (including access to additional drives) on Windows_, add a dependency from the TeamCity Build Agent service on the [AmazonSSMAgent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) or [EC2Launch/EC2Config](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html) service (the service which ensures the machine is fully initialized in regard to AWS infrastructure use). This can be done, for example, via the [Registry](https://support.microsoft.com/en-us/windows/how-to-open-registry-editor-in-windows-10-deab38e6-91d6-e0aa-4b7c-8878d9e07b11) or using [sc config](https://technet.microsoft.com/en-us/library/cc990290(v=ws.11).aspx) (for instance, `sc config TCBuildAgent depend=EC2Config`).   
 Alternatively, you can use the "Automatic (delayed start)" service starting mode.
 
 __Important note for images based on Windows Server 2016 image__:  
@@ -167,7 +167,7 @@ It is possible to use IAM (Identity and Access Management) profiles with build a
 * `iam:ListInstanceProfiles`
 * `iam:PassRole`
 
-IAM profiles must be [preconfigured](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html) in Amazon EC2. In the TeamCity web UI, the __IAM profile__ drop-down menu enables you to select a role. Every new launched EC2 instance will assume the [selected IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-ec2instance.html).
+IAM profiles must be [preconfigured](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html) in Amazon EC2. In the TeamCity web UI, the __IAM profile__ drop-down menu enables you to select a role. Every new launched EC2 instance will assume the [selected IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-ec2instance.html).
 
 #### Amazon EC2 Spot Instances support
 
@@ -184,7 +184,7 @@ If a spot instance is terminated, TeamCity will fail the build with a correspond
 
 <note>
 
-It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions).
+It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions).
 
 </note>
 
@@ -237,7 +237,7 @@ When the default/latest version of the template is updated on the server, TeamCi
 
 #### Amazon EBS-Optimized Instances
 
-The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that
+The behavior of [EBS optimization](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) in TeamCity is similar to that offered by EC2 console. When configuring an image of the Amazon [cloud profile](agent-cloud-profile.md), the optimization can be set using the corresponding box of the Instance Type. Note that
 * EBS optimization is turned on by default for `c4.*`, `d2.*`, and `m4.*` (non-configurable)
 * EBS optimization is turned off by default for any other instance types and  can be turned on for instances that support it (such as `c3.xlarge`, and so on)
 
@@ -245,13 +245,13 @@ The behavior of [EBS optimization](http://docs.aws.amazon.com/AWSEC2/latest/User
 
 The following requirements must be met for tagging instances launched by TeamCity:
 * you have the `ec2:*Tags` permissions
-* the [maximum number of tags (50)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached
+* the [maximum number of tags (50)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) for your Amazon EC2 resource is not reached
 
 In the absence of tagging permissions, TeamCity will still launch Amazon AMI and EBS images with no tags applied; Amazon EC2 spot instances will not be launched.
 
 TeamCity enables users to get instance launch information by marking the created instances with the `teamcity:TeamcityData` tag containing `<server UUID>:-<cloud profile ID>:-<image reference>`. __This tag is necessary for TeamCity integration with EC2 and must not be deleted.__
 
-Custom tags can be applied to EC2 cloud agent instances: when configuring Cloud profile settings, in the __Add Image/Edit Image__ dialog use the __Instance tags__: field to specify tags in the format of `<key1>=<value1>,<key2>=<value2>`. [Amazon tag restrictions](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) need to be considered.
+Custom tags can be applied to EC2 cloud agent instances: when configuring Cloud profile settings, in the __Add Image/Edit Image__ dialog use the __Instance tags__: field to specify tags in the format of `<key1>=<value1>,<key2>=<value2>`. [Amazon tag restrictions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions) need to be considered.
 
 When using the equal(=) sign in the tag value, no escaping is needed. For instance, the string `extraParam=name=John` will be parsed into `<key=extraParam>` and value `<name=John>.`
 
@@ -276,7 +276,7 @@ For proxy server authentication:
 * `teamcity.http.proxy.user.ec2` — proxy access username 
 * `teamcity.http.proxy.password.ec2` — proxy access user password
 
-For NTML authentication: 
+For NTLM authentication: 
 * `teamcity.http.proxy.domain.ec2` — proxy user domain for NTLM authentication 
 * `teamcity.http.proxy.workstation.ec2` — proxy access workstation for NTLM authentication
 
@@ -319,7 +319,7 @@ To configure this feature:
 ### Custom script
 
 It is possible to run a custom script on the instance start (applicable to instances cloned from AMIs and launch templates).   
-The Amazon website details the script format for [Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) and [Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#user-data-execution).
+The Amazon website details the script format for [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) and [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#user-data-execution).
 
 ### Estimating EC2 Costs
 

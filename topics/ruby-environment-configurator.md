@@ -1,7 +1,7 @@
 [//]: # (title: Ruby Environment Configurator)
 [//]: # (auxiliary-id: Ruby Environment Configurator)
 
-The _Ruby environment configurator_ [build feature](adding-build-features.md) passes the Ruby interpreter to all build steps. It (1) adds the selected Ruby interpreter and gems bin directories to the system `PATH` environment variable and (2) configures other necessary environment variables in case of the [RVM](http://rvm.io/) interpreter.
+The _Ruby environment configurator_ [build feature](adding-build-features.md) passes the Ruby interpreter to all build steps. It (1) adds the selected Ruby interpreter and gems bin directories to the system `PATH` environment variable and (2) configures other necessary environment variables in case of the [RVM](https://rvm.io/) interpreter.
 
 ## Example Use Case
 

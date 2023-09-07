@@ -68,7 +68,7 @@ Depending on your environment, you may need to configure your client to make NTL
 
 ### Google Chrome
 
-On Windows, Chrome normally uses IE's behavior, see more information [here](http://dev.chromium.org/developers/design-documents/http-authentication).
+On Windows, Chrome normally uses IE's behavior, see more information [here](https://www.chromium.org/developers/design-documents/http-authentication).
 
 ### Mozilla Firefox
 

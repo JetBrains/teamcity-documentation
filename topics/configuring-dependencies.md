@@ -11,7 +11,7 @@ For _[artifact dependencies](artifact-dependencies.md)_, before a build is start
 
 <seealso>
         <category ref="external">
-            <a href="http://ant.apache.org/ivy/">Additional information on Ivy</a>
+            <a href="https://ant.apache.org/ivy/">Additional information on Ivy</a>
         </category>
         <category ref="concepts">
             <a href="dependent-build.md">Dependent Build</a>

@@ -299,7 +299,7 @@ The first Maven execution called preparation phase is intended for building the 
 
 The second Maven execution called main phase executes the main goal (for example, `test`), thus performing only those tests affected by the change.
 
-Also, check the related [blog post](http://blogs.jetbrains.com/teamcity/2012/03/14/incremental-building-with-maven-and-teamcity/) on the topic.
+Also, check the related [blog post](https://blog.jetbrains.com/teamcity/2012/03/incremental-building-with-maven-and-teamcity/) on the topic.
 
 ### Docker Settings
 
@@ -327,7 +327,7 @@ If you have several build agents installed on the same machine, by default they 
 
 ## Maven Release with Different VCSs
 
-To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you are using at least 2.0 version of the [Maven Release plugin](http://maven.apache.org/maven-release/maven-release-plugin/).
+To run the `release:prepare` Maven task with different VCSs supported by TeamCity, make sure you are using at least 2.0 version of the [Maven Release plugin](https://maven.apache.org/maven-release/maven-release-plugin/).
 
 ### Using Maven Release with Perforce
 

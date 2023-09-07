@@ -207,7 +207,7 @@ To work around this problem, we suggest using PowerShell Core instead. Alternati
 
 ## Interaction with TeamCity
 
-Attention must be paid when using PowerShell to interact with TeamCity through service messages. PowerShell tends to wrap strings written to the console with commands like `Write-Output`, `Write-Error` and similar (see [TW-15080](http://youtrack.jetbrains.com/issue/TW-15080)). To avoid this behavior, either use the `Write-Host` command, or adjust the buffer length manually:
+Attention must be paid when using PowerShell to interact with TeamCity through service messages. PowerShell tends to wrap strings written to the console with commands like `Write-Output`, `Write-Error` and similar (see [TW-15080](https://youtrack.jetbrains.com/issue/TW-15080)). To avoid this behavior, either use the `Write-Host` command, or adjust the buffer length manually:
 
 ```Shell
 function Set-PSConsole {

@@ -708,4 +708,4 @@ __Notes:__
 \* — Plugin from version 2017.2 could be used
 
 
-[More information](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html) about the IntelliJ Platform versions and IDEs (PhpStorm, RubyMine, and so on) versions.
+[More information](https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html) about the IntelliJ Platform versions and IDEs (PhpStorm, RubyMine, and so on) versions.

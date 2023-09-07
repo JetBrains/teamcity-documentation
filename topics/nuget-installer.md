@@ -95,7 +95,7 @@ Packages Sources
 
 <td>
 
-Specify the NuGet package sources. If left blank, [`http://nuget.org`](http://nuget.org/) is used to search for your packages.
+Specify the NuGet package sources. If left blank, [`https://nuget.org`](https://nuget.org/) is used to search for your packages.
 
 If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> or manually specify the URL from the NuGet Feed section of __Project Settings__.
 {product="tc"}
@@ -149,13 +149,13 @@ Update Options
 
 >To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
-See the [NuGet documentation](http://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
+See the [NuGet documentation](https://docs.nuget.org/docs/reference/command-line-reference) for the complete `NuGet.exe` command line reference.
 
 When you add the NuGet Installer runner to your build configuration, each finished build will have the __NuGet Packages__ tab listing the packages used.
 
  <seealso>
         <category ref="blog">
-            <a href="http://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/">NuGet Package Restore with TeamCity</a>
+            <a href="https://blog.jetbrains.com/teamcity/2013/08/nuget-package-restore-with-teamcity/">NuGet Package Restore with TeamCity</a>
         </category>
         <category ref="admin-guide">
             <a href="nuget-pack.md">NuGet Pack</a>

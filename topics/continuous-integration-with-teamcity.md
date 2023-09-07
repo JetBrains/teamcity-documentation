@@ -15,7 +15,7 @@ refer to [our website](https://www.jetbrains.com/teamcity/ci-cd-guide/continuous
 
 ## What is TeamCity?
 
-JetBrains TeamCity is a user-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](http://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
+JetBrains TeamCity is a user-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](https://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
 {product="tc"}
 
 JetBrains TeamCity is a user-friendly and easy to set up continuous integration (CI) server for developers and build engineers.
@@ -39,7 +39,7 @@ This video gives a general overview of the main TeamCity features:
 * Customize statistics on the build's duration, success rate, code quality, and custom metrics
 * and much more
 
-To learn more about major TeamCity features, refer to the [official JetBrains website](http://www.jetbrains.com/teamcity/features/index.html).
+To learn more about major TeamCity features, refer to the [official JetBrains website](https://www.jetbrains.com/teamcity/features/index.html).
 
 TeamCity works well not only for administrators and build engineers, but also for developers. 
 Watch this video to learn about some of its signature features:

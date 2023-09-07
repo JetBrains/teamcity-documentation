@@ -48,7 +48,7 @@ If the build succeeds from the console but still fails in TeamCity, use a comman
 
 If it still behaves differently in TeamCity, most probably this is an environment or a tool issue. 
 
-If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](http://youtrack.jetbrains.net/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
+If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](https://youtrack.jetbrains.com/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
 
 [//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")
 
@@ -100,7 +100,7 @@ Read more on [clean-up settings](teamcity-data-clean-up.md#Base+Rule+Behavior+fo
 
 If during the TeamCity server start-up you encounter errors like: _"error in script file line: ... out of memory"_, _"java.sql.SQLException: out of memory"_, perform the following:
 
-* try [increasing server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](http://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
+* try [increasing server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server). If this does not help, most probably this means that you have encountered __internal database corruption__. You can try to deal with this corruption using the [notes](https://www.hsqldb.org/doc/1.8/guide/apc.html) based on the HSQLDB documentation.
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
@@ -187,7 +187,7 @@ If the source character set is Unicode or UTF, the destination one must also be 
 To fix a problem, perform the following steps:
 
 1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](set-up-external-database.md#On+PostgreSQL+Server+Side) and [MySQL](set-up-external-database.md#On+MySQL+Server+Side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
-    See also [PostgreSQL](http://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
+    See also [PostgreSQL](https://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
 2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.
 3. Stop the TeamCity server.
@@ -458,7 +458,7 @@ See also this related [external posting](http://www.mikeobrien.net/blog/teamcity
 
 This error can occur when the Oracle JDBC driver is not compatible with the Oracle server. For example, Oracle JDBC driver version 11.1 is not compatible with Oracle server version 10.2.
 
-In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
+In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
 
 ## Common Maven issues
 

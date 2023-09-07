@@ -58,7 +58,7 @@ Note the order of the [ProxyPass rules](https://httpd.apache.org/docs/2.4/mod/mo
 
 By default, Apache allows only a limited number of parallel connections that may be insufficient when using the WebSocket protocol. For instance, it may result in the TeamCity server not responding when a lot of clients open the web UI. To fix it, you may need to fine-tune the Apache configuration.
 
-For example, on Unix, you should switch to [mpm_worker](http://httpd.apache.org/docs/2.4/mod/worker.html) and configure the maximum number of simultaneous connections:
+For example, on Unix, you should switch to [mpm_worker](https://httpd.apache.org/docs/2.4/mod/worker.html) and configure the maximum number of simultaneous connections:
 
 ```Shell
 <IfModule mpm_worker_module>
@@ -74,7 +74,7 @@ For example, on Unix, you should switch to [mpm_worker](http://httpd.apache.org/
 
 ```
 
-On Windows, you may need to increase the [ThreadsPerChild](http://httpd.apache.org/docs/2.4/mod/mpm_common.html#threadsperchild) value as described in the [Apache documentation](http://httpd.apache.org/docs/2.4/platform/windows.html).
+On Windows, you may need to increase the [ThreadsPerChild](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#threadsperchild) value as described in the [Apache documentation](https://httpd.apache.org/docs/2.4/platform/windows.html).
 
 ### NGINX
 
