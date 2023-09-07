@@ -3,7 +3,7 @@
 
 _Agent requirements_ are special conditions that define whether a [build configuration](managing-builds.md) can run on a particular [build agent](build-agent.md). Together with grouping by [agent pools](configuring-agent-pools.md), they give you a flexible control over how builds are distributed to agents.
 
-To create an explicit agent requirement for a given build configuration, go to __Edit configuration | Agent Requirements__ and click __Add new requirement__. Each requirement represents a conditional rule for a certain parameter. While you are entering a parameter name or value, TeamCity will show you related suggestions.
+To create an explicit agent requirement for a given build configuration, go to __Build Configuration Settings | Agent Requirements__ and click __Add new requirement__. Each requirement represents a conditional rule for a certain parameter. While you are entering a parameter name or value, TeamCity will show you related suggestions.
 
 To temporarily disable or delete a requirement, use its context menu.
 
@@ -22,12 +22,12 @@ For example, if the current build configuration must run only on a Windows agent
 After this requirement is created, TeamCity will check the value of the `jvm.os.name` system property on all active agents. If it does not equal `Windows` on a particular agent, this agent will be marked as incompatible with the current build configuration.
 
 You can also use [regular expressions](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) to match parameter values.
-For example, if you require an agent with the Amazon Corretto 17 JVM, add the following rule:
-* Parameter name: `env.JAVA_HOME`
+For example, if you want to select the agent by matching various parts of the agent name, add the following rule:
+* Parameter name: `teamcity.agent.name`
 * Condition: `matches`
-* Value: `.*amazon-corretto-17\.jdk.*`
+* Value: `(macos|linux|win)-(m|l|xl).*`
 
-Both compatible and incompatible agents are listed in __Edit configuration | Agent Requirements__.
+Both compatible and incompatible agents are listed in __Build Configuration Settings | Agent Requirements__.
 
 You can add multiple agent requirements for a single parameter. The agent will be considered compatible only if it satisfies all these requirements.
 
