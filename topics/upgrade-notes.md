@@ -7,8 +7,9 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-11"}
 
-* The version of .NET SDK bundled with the TeamCity Docker images has been updated from version 5.0 to 7.0.
-If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image for .NET runner using the provided TeamCity Docker base image.
+* The version of .NET SDK bundled with the TeamCity Docker images has been updated from 5.0 to 7.0.
+If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image using the provided TeamCity Docker base image (`jetbrains/teamcity-minimal-agent`).
+See the [README](https://github.com/JetBrains/teamcity-docker-images#readme) file in the `teamcity-docker-images` repository for more details.
 
 
 ## Changes from 2023.05.3 to 2023.05.4
