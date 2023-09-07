@@ -56,4 +56,7 @@ title="TeamCity tutorial — Agent Requirements"/>
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
             <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>
         </category>
+        <category ref="reference">
+            <a href="requirement-conditions.md">Requirement Conditions</a>
+        </category>
 </seealso>
