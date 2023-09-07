@@ -130,7 +130,7 @@ frontend http-in
     acl browser req.hdr(User-Agent) -m sub Mozilla
 
     default_backend clients_not_supporting_cookies
-    use_backend client_with_cookie if node_id_cookie_found
+    use_backend clients_with_node_id_cookie if node_id_cookie_found
     use_backend clients_supporting_cookies if browser
 
 backend clients_with_node_id_cookie
