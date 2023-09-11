@@ -2,16 +2,155 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
+Rename to "TeamCity Parameters" and move to "Managing Projects"?
+
 In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be referenced throughout TeamCity to avoid using plain values.
 
 There are two major parameter types in TeamCity:
 
-* **Configuration Parameters** — store settings of the TeamCity server, projects, build configurations, and agents.
+* **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). Parameters of this type are not passed into a build process (that is, not accessible by a build script engine).
+
 * **Environment Variables** — parameters that start with the `env.` prefix that are passed to the process of a build runner similarly to default env variables of a system.
 
 See the following sections to better understand where you can use parameters.
 
 ## Main Use Cases
+
+### Substitute Plain Values
+
+Parameters allow you to avoid using plain values in TeamCity UI. Instead, you can reference a parameter by its name using the `%\NAME%` syntax. You can do this to:
+
+* store frequently used values;
+* store sensitive information that should not be visible to regular TeamCity developers;
+* improve readability of your configurations by using shorter parameter names instead of full values, and so on.
+
+<tabs>
+
+<tab title="Example 1 — Docker">
+
+Create a custom parameter for the **&lt;Root&gt;** project to save the path for your default Docker registry (parameters declared for the **&lt;Root&gt;** project are available inside all child projects):
+
+<img src="dk-params-newParameter.png" alt="Create new parameter in TeamCity" width="706"/>
+
+You can then reference this parameter in all required [Docker runners](docker.md) that pull or push your images.
+
+<img src="dk-params-reuseParameter.png" width="706" alt="Use a custom parameter in TeamCity"/>
+
+</tab>
+
+<tab title="Example 2 — JDK version">
+
+The code below forces the [](gradle.md) runner to use the specific version of agent JDK instead of the default one. The parameter allows you to avoid using the exact path (which may vary for different build agents).
+
+```Kotlin
+steps {
+    gradle {
+        name = "Gradle step"
+        tasks = "build-dist"
+        jdkHome = "%\env.JDK_19_0_ARM64%"
+    }
+}
+```
+
+</tab>
+
+<tab title="Example 3 — .NET Parameter">
+
+In the following sample, the "Command line parameters" field of the [](net.md) runner references the `dotnet.output.type` parameter.
+
+<img src="dk-params-additionalSettings.png" width="706" alt="Additional parameters"/>
+
+<br/>
+
+```Kotlin
+object MyBuildConfig : BuildType({
+    params {
+        param("dotnet.output.type", "WinExe")
+    }
+
+    steps {
+        dotnetBuild {
+            args = "-p:OutputType=%\dotnet.output.type%"
+        }
+    }
+})
+```
+
+You can achieve the same result even faster by adding the "system." prefix to your parameter. Since parameters that start with "system." are automatically passed to a build engine, you can create the `system.dotnet.output.type` parameter with the "OutputType=WinExe" value. In this case, the response (.rsp) file with .NET settings will have this value, which means you can skip setting the "Command line parameters" field in TeamCity.
+
+</tab>
+</tabs>
+
+
+
+
+
+### Customize Template-Based Configurations
+
+Configuration parameters allow you to create a base build configuration with parameters, extract it to the template, and override these parameters in configurations based on this template.
+
+For example, the following build configuration has two steps and the Boolean `skip.optional.step` parameter. Step #2 will or will not be executed depending on this parameter value.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+object SourceConfig : BuildType({
+    name = "SourceConfig"
+
+    params {
+        param("skip.optional.step", "false")
+    }
+    steps {
+        script {
+            name = "Mandatory Step"
+            scriptContent = """echo "Mandatory step #1 is running...""""
+        }
+        script {
+            name = "Optional Step"
+            scriptContent = """echo "Optional step #2 is running...""""
+            conditions {
+                equals("skip.optional.step", "false")
+            }
+        }
+    }})
+```
+
+If now you extract a [template](build-configuration-template.md) from this configuration, you can duplicate this configuration and override the `skip.optional.step` parameter for those instances that do not need this optional step #2.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+
+object ConfigFromTemplate : BuildType({
+    templates(SourceConfigTemplate)
+    name = "Build Config Based on Template"
+
+    params {
+        param("skip.optional.step", "true")
+    }
+})
+
+```
+
+See the following section to learn more about step execution conditions: [](#Specify+Step+Execution+Conditions).
+
+
+### Pass Values to Meta-Runners
+
+A [meta-runner](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner out of them.
+
+See this article for the example of an Ant-based meta-runner that utilizes the custom `system.artifact.paths` parameter to publish artifacts via a corresponding [service message](service-messages.md): [](working-with-meta-runner.md#Preparing+Build+Configuration).
+
+
+### Specify Step Execution Conditions
+
+You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use any parameters for these conditions (configuration parameters and environment variables, both custom and predefined).
+
+To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**.
+
+<img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
+
+See this section for the example: [](#Customize+Template-Based+Configurations).
 
 ### Specify Agent Requirements
 
@@ -72,63 +211,14 @@ exists("container.engine")
 ```
 
 
-### Specify Step Execution Conditions
 
-You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use any parameters for these conditions (configuration parameters and environment variables, both custom and predefined).
-
-For example, create a build configuration with two steps and the Boolean `skip.optional.step` parameter. Step #2 will or will not be executed depending on this parameter value.
-
-```Kotlin
-import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
-
-object SourceConfig : BuildType({
-    name = "SourceConfig"
-
-    params {
-        param("skip.optional.step", "false")
-    }
-    steps {
-        script {
-            name = "Mandatory Step"
-            scriptContent = """echo "Mandatory step #1 is running...""""
-        }
-        script {
-            name = "Optional Step"
-            scriptContent = """echo "Optional step #2 is running...""""
-            conditions {
-                equals("skip.optional.step", "false")
-            }
-        }
-    }})
-```
-
-If now you extract a [template](build-configuration-template.md) from this configuration, you can duplicate this configuration and override the `skip.optional.step` parameter for those instances that do not need this optional step #2.
-
-```Kotlin
-import jetbrains.buildServer.configs.kotlin.*
-
-object ConfigFromTemplate : BuildType({
-    templates(SourceConfigTemplate)
-    name = "Build Config Based on Template"
-
-    params {
-        param("skip.optional.step", "true")
-    }
-})
-
-```
-
-To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**.
-
-<img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
 
 ### Pass Values to Simple Script Runners
 
 You can insert references to parameters as `%\parameter_name%` when writing scripts for [](command-line.md), [](c-script.md), and [](python.md) runners.
 
-> Note that this technique works when you define scripts in runner settings. If you include parameter references in external script files executed by these runners, these references are not replaced with parameter values.
+> Note that this technique works when you write scripts directly on the TeamCity runner settings page. If you include parameter references in external script files executed by these runners, these references will not be replaced with parameter values.
 > 
 {type="note"}
 
@@ -220,6 +310,8 @@ Console.WriteLine($"Version number: {Props["version"]}", Success)
 
 </td></tr></table>
 
+#### Share Values Between Steps
+
 You can use parameters to pass simple data from one step/script to another. To do this, send the `setParameter` [service message](service-messages.md) from a script that calculates new parameter values.
 
 ```Shell
@@ -253,9 +345,13 @@ object MyBuildConf : BuildType({
 })
 ```
 
-### Pass Values to Builders
+### Pass Values to Builders' Configuration Files
 
 [Maven](maven.md), [](gradle.md), [](ant.md), [](nant.md), and [](net.md) runners allow you to reference TeamCity parameters in build configuration files. This allows you to pass required values to the build process.
+
+> Parameters used in this scenario should start with either "env." or "system." prefix, but referenced without these prefixes. For example, the predefined `system.build.number` parameter should be referenced as `${build.number}` in Maven configuration files.
+> 
+{type="warning"}
 
 > ???? Current docs say parameters are passed without "env." prefix, but I can actually find these in our space repo build files:
 >
@@ -278,11 +374,11 @@ object MyBuildConf : BuildType({
 {type="warning"}
 
 
-For Maven, Ant, and NAnt runners, use the `${parameterName}` syntax inside build script files to reference a parameter.
-
 <tabs>
 
 <tab title="Maven">
+
+To reference a parameter value in Maven and Ant, use the `${parameterName}` syntax.
 
 ```XML
 <!--pom.xml file-->
@@ -317,6 +413,8 @@ For Maven, Ant, and NAnt runners, use the `${parameterName}` syntax inside build
 
 <tab title="Ant">
 
+To reference a parameter value in Maven and Ant, use the `${parameterName}` syntax.
+
 ```XML
 <target name="buildmain">
     <ant dir="${teamcity.build.checkoutDir}" antfile="${teamcity.build.checkoutDir}/build-test.xml" target="masterbuild_main"/>
@@ -325,7 +423,7 @@ For Maven, Ant, and NAnt runners, use the `${parameterName}` syntax inside build
 
 </tab>
 
-</tabs>
+<tab title=".NET">
 
 For .NET, use the `$(<parameter_name>)` syntax.
 
@@ -334,13 +432,35 @@ For .NET, use the `$(<parameter_name>)` syntax.
 >
 {type="note"}
 
+<br/>
+
 ```XML
-???????????????
+<!--A .csproj file-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <OutputZipFile>project.zip</OutputZipFile>
+        <OutputUnzipDir>unzipped</OutputUnzipDir>
+    </PropertyGroup>
+
+    <Target Name="Zip">
+        <ItemGroup>
+            <FilesToZip Include="project.proj*" />
+        </ItemGroup>
+        <Exec Command="dir" />
+        <Microsoft.Build.Tasks.Message Text="##teamcity[progressMessage 'Archiving files to $(OutputZipFile) file...']"/>
+        <Exec Command="PowerShell -command Compress-Archive @(FilesToZip, ',') $(OutputZipFile) -Force" />
+    </Target>
+    <Target Name="Unzip">
+        <Microsoft.Build.Tasks.Message Text="##teamcity[progressMessage 'Unzipping files to $(OutputUnzipDir) folder...']"/>
+        <Exec Command="PowerShell -command Expand-Archive $(OutputZipFile) -DestinationPath $(OutputUnzipDir) -Force" />
+    </Target>
+</Project>
 ```
 
-> Gradle -- only SYSTEM properties???
-> 
-{type="warning"}
+</tab>
+
+<tab title="Gradle">
 
 For [Gradle](gradle.md) runner, TeamCity properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file). If the property name is allowed as a Groovy identifier (does not contain dots), use the following syntax:
 
@@ -350,6 +470,12 @@ println "Custom user property value is $\{customUserProperty\}"
 
 Otherwise, if the property has dots in its name (for example, `build.vcs.number.1`), use the `project.ext["build.vcs.number.1"]` syntax instead.
 
+</tab>
+
+</tabs>
+
+
+
 
 
 
@@ -358,51 +484,6 @@ Otherwise, if the property has dots in its name (for example, `build.vcs.number.
 TeamCity parameters allow you to exchange values between configurations of a [build chain](build-chain.md). See this help article for more information: [](use-parameters-in-build-chains.md).
 
 
-
-### Set Runner Arguments and Settings
-
-You can use references to parameters instead of plain values when specifying additional runner settings, such as command-line arguments.
-
-For example, you can reference a parameter that stores the value of the "OutputType" parameter for the [](net.md) runner.
-
-<img src="dk-params-additionalSettings.png" width="706" alt="Additional parameters"/>
-
-```Kotlin
-object MyBuildConfig : BuildType({
-    params {
-        param("dotnet.output.type", "WinExe")
-    }
-
-    steps {
-        dotnetBuild {
-            args = "-p:OutputType=%\dotnet.output.type%"
-        }
-    }
-})
-```
-
-The following [](maven.md) step defines two new variables.
-
-```Kotlin
-steps {
-    maven {
-        goals = "-nsu -e -Pbuildserver -DBUILD_NUMBER=%\build.number% -DskipTests=%\mvn.skip.tests% generate-resources"
-        pomLocation = "build-version/pom.xml"
-    }
-}
-```
-
-The code below forces the [](gradle.md) runner to use the specific version of agent JDK instead of the default one.
-
-```Kotlin
-steps {
-    gradle {
-        name = "Gradle step"
-        tasks = "build-dist"
-        jdkHome = "%\env.JDK_19_0_ARM64%"
-    }
-}
-```
 
 ### Custom Build Numbers and Tags
 
