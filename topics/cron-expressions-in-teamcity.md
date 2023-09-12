@@ -139,7 +139,12 @@ Month
 , \- \* /
 
 
-</td></tr><tr>
+</td>
+
+</tr>
+
+
+<tr>
 
 <td>
 
@@ -188,11 +193,23 @@ For the description of special characters, refer to [Quartz CronTrigger Tutorial
 ## Examples
 
 <table><tr>
+      
+<td>
+
+Schedule
+
+</td>
 
 <td>
 
+Cron Expression
 
 </td>
+
+</tr>
+
+
+<tr>
 
 <td>
 
@@ -203,6 +220,19 @@ Each 2 hours at :30
 
 <td>
 
+<code>
+0 30 0/2 \* \* ? \*
+</code>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
 Every day at 11:45PM
 
 
@@ -210,261 +240,78 @@ Every day at 11:45PM
 
 <td>
 
-Every Sunday at 1:00AM
-
+<code>
+0 45 23 \* \* ? \*
+</code>
 
 </td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Every Sunday at 1:00AM
+
+</td>
+
+<td>
+
+<code>
+0 0 1 ? \* 1 \*
+</code>
+
+</td>
+
+</tr>
+
+<tr>
 
 <td>
 
 Every last day of month at 10:00AM and 10:00PM
 
-
-</td></tr><tr>
+</td>
 
 <td>
 
-Seconds
+<code>
+0 0 10,22 L \* ? \*
+</code>
 
+</td>
+
+
+</tr>
+
+<tr>
+
+<td>
+
+Every 2 hours on weekdays, but not on weekends
 
 </td>
 
 <td>
 
-0
-
-
-</td>
-
-<td>
-
-0
-
+<code>
+0 0 0/2 ? \* 2-6 \*
+</code>
 
 </td>
 
-<td>
 
-0
+</tr>
 
+</table>
 
-</td>
+Where the cron expressions in this table have the following format:
 
-<td>
+```
+Sec Min Hour Day-of-month Month Day-of-week Year
+```
 
-0
 
-
-</td></tr><tr>
-
-<td>
-
-Minutes
-
-
-</td>
-
-<td>
-
-30
-
-
-</td>
-
-<td>
-
-45
-
-
-</td>
-
-<td>
-
-0
-
-
-</td>
-
-<td>
-
-0
-
-
-</td></tr><tr>
-
-<td>
-
-Hours
-
-
-</td>
-
-<td>
-
-0/2
-
-
-</td>
-
-<td>
-
-23
-
-
-</td>
-
-<td>
-
-1
-
-
-</td>
-
-<td>
-
-10,22
-
-
-</td></tr><tr>
-
-<td>
-
-Day\-of\-month
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-?
-
-
-</td>
-
-<td>
-
-L
-
-
-</td></tr><tr>
-
-<td>
-
-Month
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td></tr><tr>
-
-<td>
-
-Day\-of\-week
-
-
-</td>
-
-<td>
-
-?
-
-
-</td>
-
-<td>
-
-?
-
-
-</td>
-
-<td>
-
-1
-
-
-</td>
-
-<td>
-
-?
-
-
-</td></tr><tr>
-
-<td>
-
-Year(Optional)
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td>
-
-<td>
-
-\*
-
-
-</td></tr></table>
 
 See also [other examples](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html).
