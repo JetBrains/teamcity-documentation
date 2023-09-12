@@ -104,12 +104,6 @@ So when the build waits in the queue for the amount of time that equals to the e
 its priority is increased by one. 
 This helps the builds with low priority to start eventually.
 
-If you want the higher priority builds to be always placed closer to the top of the queue, set `a = 0`, 
-but keep in mind that lower priority builds may starve if there are always some higher priority builds to run.
-
-If you want to run more of the faster builds, you can set `b = 0`. 
-In this case, the faster build is, the faster its priority grows, so faster builds are likely to start sooner, while slower builds may starve.
-
 ## Pausing and Resuming Build Queue
 
 The build queue can be paused manually or automatically. In this case, the builds are still going to be added to the queue, but they will not be assigned to agents until the queue is unpaused.
