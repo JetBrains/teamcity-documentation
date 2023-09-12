@@ -49,9 +49,7 @@ For connection, select one of the available authentication types:
 
 ### GitLab
 
-If you use a recent version of GitLab (\<= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
-
-For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
+Commit Status Publisher supports the GitLab URL in the following format: `http[s]://<hostname>[:<port>]/api/v4`.
 
 The GitLab credentials for Commit Status Publisher must belong to a user with a Developer, Maintainer, or Owner role for the project. In addition, to change a commit status for a protected branch, the GitLab user must be included in the **Allowed to push** list.
 
