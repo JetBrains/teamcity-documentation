@@ -21,7 +21,7 @@ For example, if the current build configuration must run only on a Windows agent
 
 After this requirement is created, TeamCity will check the value of the `jvm.os.name` system property on all active agents. If it does not equal `Windows` on a particular agent, this agent will be marked as incompatible with the current build configuration.
 
-You can also use [regular expressions](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) to match parameter values.
+You can also use [regular expressions](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html) to match parameter values.
 For example, if you want to select the agent by matching various parts of the agent name, add the following rule:
 * Parameter name: `teamcity.agent.name`
 * Condition: `matches`
