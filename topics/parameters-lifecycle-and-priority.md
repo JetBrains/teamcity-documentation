@@ -56,7 +56,7 @@ When a build process starts, TeamCity saves all parameters with their values to 
 
 * Configuration parameters are written to a file that can be accessed via the `system.teamcity.configuration.properties.file` parameter.
 
-You can add the [](python.md) step with the following sample script to print the contents of both files to the build log:
+The following sample script for the [](python.md) runner prints the contents of both files to the build log:
 
 ```Python
 print("System properties:\r\r")
@@ -76,7 +76,9 @@ with open('%\system.teamcity.configuration.properties.file%', 'r') as cp:
 
 ## Changing Parameter Values During a Build
 
-TeamCity parameters can change their values as a build progresses through its stages. For example, the `teamcity.agent.work.dir.freeSpaceMb` parameter that reports the available agent disk space.
+TeamCity parameters can change their values as a build progresses through its stages. This can happen automatically, due to the nature of the value reported by a parameter, or in response to operations performed during a build.
+
+For example, the `teamcity.agent.work.dir.freeSpaceMb` parameter that reports the available agent disk space changes its value as builds checkout new source files and generate new artifacts and logs.
 
 If you need to manually change a TeamCity parameter from inside a build step, send the following [service message](service-messages.md):
 
@@ -109,7 +111,9 @@ To check initial and actual parameter values of the specific build via [REST API
 * `/app/rest/builds/{buildLocator}?fields=startProperties(*)` — returns all parameters reported by an agent and their values at the time the build started.
 * `/app/rest/builds/{buildLocator}?fields=resultingProperties(*)` — returns all parameters reported by an agent and their values by the time the build finished.
 
-You can also specify the parameter name to get its exact value. For example, you can run a custom build for the sample project in the [](#Changing+Parameter+Values+During+a+Build) section. If this build runs on Wednesday and you pass "Sunday" as the `day.of.week` parameter value via the **Run custom build** dialog, you can send the following query to check the `day.of.week` parameter values on different stages of the build.
+You can also check initial and final values of the specific parameter. To do this, specify the name of the target parameter.
+
+For example, if you run a custom build for the sample project illustrated in the [](#Changing+Parameter+Values+During+a+Build) section, send the following query to check the `day.of.week` parameter values.
 
 ```Shell
 curl -L \
@@ -119,8 +123,9 @@ curl -L \
     resultingProperties($locator(name:(value:(day.of.week),matchType:matches)),property)
 ```
 
+If this build runs on Wednesday and you pass "Sunday" as the `day.of.week` parameter value via the **Run custom build** dialog, the response payload will contain the following values:
 
 * `originalProperties` returns "Monday" (the default value stored in the build configuration).
-* `startProperties` returns "Sunday" (the value from the "Run custom build" dialog).
+* `startProperties` returns "Sunday" (the value from the "Run custom build" dialog, has a priority over the default value from the build configuration).
 * `resultingProperties` returns "Wednesday" (the value calculated during the build and written via the service message).
 
