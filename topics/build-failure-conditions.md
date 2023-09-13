@@ -101,7 +101,7 @@ By default, TeamCity provides the wide range of _build metrics_:
 
 You can add your own build metric. There are two ways to do it:
 
-- Use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric)
+- Use Kotlin DSL to configure a build failure condition [on a custom statistic value](teamcity-info-xml#Reporting+Custom+Statistics)
 reported by the build.
 
    The sample Kotlin DSL code is as follows:
