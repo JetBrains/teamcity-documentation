@@ -21,6 +21,12 @@ For example, if the current build configuration must run only on a Windows agent
 
 After this requirement is created, TeamCity will check the value of the `jvm.os.name` system property on all active agents. If it does not equal `Windows` on a particular agent, this agent will be marked as incompatible with the current build configuration.
 
+You can also use [regular expressions](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html) to match parameter values.
+For example, if you want to select the agent by matching various parts of the agent name, add the following rule:
+* Parameter name: `teamcity.agent.name`
+* Condition: `matches`
+* Value: `(macos|linux|win)-(m|l|xl).*`
+
 Both compatible and incompatible agents are listed in __Build Configuration Settings | Agent Requirements__.
 
 You can add multiple agent requirements for a single parameter. The agent will be considered compatible only if it satisfies all these requirements.
@@ -55,5 +61,8 @@ title="TeamCity tutorial — Agent Requirements"/>
             <a href="configuring-build-agent-startup-properties.md">Configuring Build Agent Startup Properties</a>
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
             <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>
+        </category>
+        <category ref="reference">
+            <a href="requirement-conditions.md">Requirement Conditions</a>
         </category>
 </seealso>
