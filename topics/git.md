@@ -418,6 +418,7 @@ If a build configuration depends on multiple VCS roots, we suggest that you conf
 <tip product="tc">
 
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
+
 </tip>
 
 ### Git executable on the agent
@@ -662,7 +663,7 @@ Whether TeamCity should run `git gc` during the server clean-up (native git is u
 </td></tr><tr>
 
 <td>
-{id="git-executable-path"}
+<anchor name="git-executable-path"/>
 
 teamcity.server.git.executable.path
 
