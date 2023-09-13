@@ -24,9 +24,8 @@ Parameters allow you to avoid using plain values in TeamCity UI. Instead, you ca
 * store sensitive information that should not be visible to regular TeamCity developers;
 * improve readability of your configurations by using shorter parameter names instead of full values, and so on.
 
-<tabs>
-
-<tab title="Example 1 — Docker">
+#### Example 1: Store a Docker Registry Name
+{initial-collapse-state="collapsed"}
 
 Create a custom parameter for the **&lt;Root&gt;** project to save the path for your default Docker registry (parameters declared for the **&lt;Root&gt;** project are available inside all child projects):
 
@@ -36,9 +35,8 @@ You can then reference this parameter in all required [Docker runners](docker.md
 
 <img src="dk-params-reuseParameter.png" width="706" alt="Use a custom parameter in TeamCity"/>
 
-</tab>
-
-<tab title="Example 2 — JDK version">
+#### Example 2: Specify the JDK Version
+{initial-collapse-state="collapsed"}
 
 The code below forces the [](gradle.md) runner to use the specific version of agent JDK instead of the default one. The parameter allows you to avoid using the exact path (which may vary for different build agents).
 
@@ -52,9 +50,8 @@ steps {
 }
 ```
 
-</tab>
-
-<tab title="Example 3 — .NET Parameter">
+#### Example 3: Set Additional .NET Parameters
+{initial-collapse-state="collapsed"}
 
 In the following sample, the "Command line parameters" field of the [](net.md) runner references the `dotnet.output.type` parameter.
 
@@ -76,11 +73,77 @@ object MyBuildConfig : BuildType({
 })
 ```
 
-You can achieve the same result even faster by adding the "system." prefix to your parameter. Since parameters that start with "system." are automatically passed to a build engine, you can create the `system.dotnet.output.type` parameter with the "OutputType=WinExe" value. In this case, the response (.rsp) file with .NET settings will have this value, which means you can skip setting the "Command line parameters" field in TeamCity.
+You can achieve the same result even faster by adding the "system." prefix to your parameter. Parameters that start with "system." are automatically passed to a build engine, so you can create the `system.dotnet.output.type` parameter with the "OutputType=WinExe" value and it will be written to the response (.rsp) file with .NET settings. As a result, you can skip setting the "Command line parameters" field in TeamCity.
 
-</tab>
-</tabs>
+#### Example 4: Specify Artifact Paths
+{initial-collapse-state="collapsed"}
 
+When setting artifacts paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
+
+```Kotlin
+object GoalInBuildScripts : BuildType({
+    artifactRules = "testfile1.txt => %\master.artifact.name%"
+    params {
+        param("master.artifact.name", "master_artifact.tar.gz")
+    }
+})
+```
+
+
+#### Example 5: Modify the Build Numbering Pattern
+{initial-collapse-state="collapsed"}
+
+The **Build Configuration Settings | General Settings | Build Number Format** field allows you to customize the numbering pattern for builds of this configuration. The default zero-based integer number of a build can be retrieved via the `build.counter` parameter. The sample below adds the name of a TeamCity user who triggered this build to this default index.
+
+```Kotlin
+object MyBuildConf : BuildType({
+    buildNumberPattern = "%\build.counter%-%\teamcity.build.triggeredBy.username%"
+})
+```
+
+#### Example 6: Label Builds
+{initial-collapse-state="collapsed"}
+
+Navigate to **Build Configuration Settings | Build Features** page and click **Add | VCS Labeling** to [tag build sources](vcs-labeling.md) in your VCS. 
+
+
+<img src="dk-params-vcs-labeling.png" width="706" alt="VCS Labeling with Parameters"/>
+
+
+```Kotlin
+object MyBuildConf : BuildType({
+    params {
+        param("release.status", "EAP")
+    }
+    features {
+        vcsLabeling {
+            vcsRootId = "${DslContext.settingsRoot.id}"
+            labelingPattern = "%release.status%"
+        }
+    }
+})
+```
+
+
+#### Example 7: Specify Checkout Rules
+{initial-collapse-state="collapsed"}
+
+[](vcs-checkout-rules.md) can be configured on the **Build Configuration Settings | Version Control Settings** page. If your organization has a certain convention for branch names, you can store these default names as parameters and specify checkout rules as shown below.
+
+Kotlin:
+
+```Kotlin
+object GoalInBuildScripts : BuildType({
+    params {
+        param("branch.ignored", "refs/heads/sandbox")
+        param("branch.default", "refs/heads/master")
+    }
+
+    vcs {
+        root(YourVcsRootName, "+:%\branch.default%", "-:%\branch.ignored%")
+    }
+})
+```
 
 
 
@@ -150,7 +213,42 @@ To set up step execution conditions in TeamCity UI, go to step settings and clic
 
 <img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
-See this section for the example: [](#Customize+Template-Based+Configurations).
+For example, you can run different shell scripts depending on the type of build agent's operating system.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.powerShell
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+object StepExecutionConditions : BuildType({
+    params {
+        param("win.destination.path", "C:/Sources")
+        param("unix.destination.path", "/Users/Admin/Sources")
+    }
+
+    steps {
+        powerShell {
+            name = "Copy File (Windows)"
+            conditions {
+                startsWith("teamcity.agent.jvm.os.name", "Windows")
+            }
+            scriptMode = script {
+                content = """Copy-Item "%\system.teamcity.build.workingDir%/result.xml" -Destination %\win.destination.path%"""
+            }
+        }
+        script {
+            name = "Copy File (Unix)"
+            executionMode = BuildStep.ExecutionMode.RUN_ON_FAILURE
+
+            conditions {
+                doesNotContain("teamcity.agent.jvm.os.name", "Windows")
+            }
+            scriptContent = """cp "%\system.teamcity.build.workingDir%/result.xml" 
+              %\unix.destination.path%""".trimIndent()
+        }
+    }
+})
+```
 
 ### Specify Agent Requirements
 
@@ -318,6 +416,8 @@ You can use parameters to pass simple data from one step/script to another. To d
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
 
+<chunk id="change-parameter-from-build">
+
 In the following configuration a C# script checks the current day of week and sets a corresponding value to the `day.of.week` parameter. The updated parameter value is then used by a subsequent Python runner.
 
 ```Kotlin
@@ -330,6 +430,7 @@ object MyBuildConf : BuildType({
             name = "Check the current day"
             content = """
             if ("%\day.of.week%" != DateTime.Today.DayOfWeek.ToString()) {
+              string today = DateTime.Today.DayOfWeek.ToString();
               string TCServiceMessage = "##teamcity[setParameter name='day.of.week' value='" + today + "']";
               Console.WriteLine(TCServiceMessage);
             }
@@ -344,6 +445,8 @@ object MyBuildConf : BuildType({
     }
 })
 ```
+
+</chunk>
 
 ### Pass Values to Builders' Configuration Files
 
@@ -368,7 +471,7 @@ object MyBuildConf : BuildType({
 > ```
 > <br/>
 > ```XML
-> <condition property="javadocPath" value="${env.JDK_11}/bin/javadoc" >
+> <condition property="javadocPath" value="${env.JDK_11}/bin/javadoc" />
 > ```
 >
 {type="warning"}
@@ -485,104 +588,8 @@ TeamCity parameters allow you to exchange values between configurations of a [bu
 
 
 
-### Custom Build Numbers and Tags
-
-Custom build number: Conf Settings | General Settings | Build Number format
-
-Only predefined server build parameters
-
-UI:
-
-Screenshot here
-
-Kotlin:
-
-??? The if not env. variable, then it's system.teamcity.buildConfName, and we're hiding system — OK to use env here ???
-
-```Kotlin
-object MyBuildConf : BuildType({
-    buildNumberPattern = "%\build.counter%-%\env.TEAMCITY_BUILDCONF_NAME%"
-})
-```
-
-Labeling: Conf settings | Build Features | Add | VCS Labeling
-
-UI:
-
-Screenshot here
-
-Kotlin:
-
-```Kotlin
-object MyBuildConf : BuildType({
-    features {
-        vcsLabeling {
-            vcsRootId = "${UrlRefsHeadMaster.id}"
-            labelingPattern = "TC-build-%\build.number%"
-        }
-    }
-})
-```
 
 
-### VCS Root and Checkout Rule Settings
-
-VCS root settings - tried creating the new "branch.default" parameter that equals "refs/heads/master" and referencing this parameter in the "Default branch". Fires the "Test connection failed in Parameters Test / Gradle
-Cannot find revision of the default branch '%\branch.default%'" error.
-
-Example: Custom Path to git in VCS Root settings
-
-UI: Screenshot
-
-`Path to git = %\CustomMyGitPath%`
-
-Kotlin:
-
-```Kotlin
-object MyBuildConf : BuildType({
-    params {
-        param("env.CustomMyGitPath", "path/to/required/git/version")
-    }
-
-    // ??? No vcs root settings visible
-
-})
-```
-
-Checkout rules:
-
-UI: Build Conf Settings | Version Control Settings | Edit Checkout Rules
-
-Kotlin:
-
-```Kotlin
-object GoalInBuildScripts : BuildType({
-    params {
-        param("branch.ignored", "refs/heads/ignored")
-        param("branch.default", "refs/heads/master")
-    }
-
-    vcs {
-        root(HttpsGithubComValrravnGradleSampleAppRefsHeadsMaster, "+:%\branch.default%", "-:%\branch.ignored%")
-    }
-})
-```
-
-
-### Artifact Rules
-
-UI: Build Conf Settings | General Settings | Artifact paths
-
-Kotlin:
-
-```Kotlin
-object GoalInBuildScripts : BuildType({
-    artifactRules = "testfile1.txt => %\master.artifact.name%"
-    params {
-        param("master.artifact.name", "master_artifact.tar.gz")
-    }
-})
-```
 
 
 
