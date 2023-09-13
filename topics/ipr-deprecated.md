@@ -1,7 +1,7 @@
 [//]: # (title: Ipr \(deprecated\))
 [//]: # (auxiliary-id: Ipr \(deprecated\))
 
-This runner provides ability to build [IntelliJ IDEA](http://www.jetbrains.com/idea/) projects in TeamCity.   
+This runner provides ability to build [IntelliJ IDEA](https://www.jetbrains.com/idea/) projects in TeamCity.   
 It is superseded by [IntelliJ IDEA Project](intellij-idea-project.md) runner. 
 
 This page contains reference information about the __IPR__ build runner fields.
@@ -21,7 +21,7 @@ Namely:
 Here are the recommended steps to perform the migration from Ipr to IntelliJ IDEA project runner:
 	
 1. If your existing Ipr runner has [JUnit Test Runner Settings](#Additional+Pre%2FPost+Processing+%28Ant%29) configured, backup all the settings of the section, for example, into a text file.
-2. If you have [code coverage settings](#JUnit+Test+Runner+Settings) configured, save these settings also. (See also related [issue](http://youtrack.jetbrains.net/issue/TW-14921))
+2. If you have [code coverage settings](#JUnit+Test+Runner+Settings) configured, save these settings also. (See also related [issue](https://youtrack.jetbrains.com/issue/TW-14921))
 3. Change the runner type to IntelliJ IDEA Project. All your settings will be migrated except for JUnit and code coverage options.
 4. To restore JUnit tests you will need to create a shared run configuration in IntelliJ IDEA and commit the corresponding file into the version control. The name of the run configuration can then be specified in the __Run configurations to execute__ area.
 5. For coverage, configure code coverage options anew using your saved settings.
@@ -150,7 +150,7 @@ Each pattern should be placed on a separate line and has the following format:
 where:
 * `[-]`: If a pattern starts with a minus character, the corresponding files will be excluded from the build process.
 * `moduleName`: this name can contain wildcards.
-* `[testFileNamePattern]`: Default value for `testFileNamePattern` is `**/*Test.java`, i.e. all files ending with Test.java in all directories. You can use [Ant syntax](http://ant.apache.org/manual/CoreTypes/patternset.html) for file patterns. The sample below includes all test files from modules ending with "test" and excludes all files from packages containing the "ui" subpackage:
+* `[testFileNamePattern]`: Default value for `testFileNamePattern` is `**/*Test.java`, i.e. all files ending with Test.java in all directories. You can use [Ant syntax](https://ant.apache.org/manual/CoreTypes/patternset.html) for file patterns. The sample below includes all test files from modules ending with "test" and excludes all files from packages containing the "ui" subpackage:
 
 ```Plain Text
 *test:**/*Test.java

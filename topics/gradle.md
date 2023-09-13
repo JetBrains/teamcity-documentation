@@ -1,7 +1,7 @@
 [//]: # (title: Gradle)
 [//]: # (auxiliary-id: Gradle)
 
-The _Gradle_ build runner runs [Gradle](http://www.gradle.org) projects.
+The _Gradle_ build runner runs [Gradle](https://www.gradle.org) projects.
 
 To run builds with Gradle, Gradle 0.9-rc-1 or later must be installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
 
@@ -63,7 +63,7 @@ Incremental building
 
 <td>
 
-TeamCity can make use of the Gradle `:buildDependents` [feature](http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ option is enabled, TeamCity will detect Gradle modules affected by changes in the build and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
+TeamCity can make use of the Gradle `:buildDependents` [feature](https://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ option is enabled, TeamCity will detect Gradle modules affected by changes in the build and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
 
 </td></tr><tr>
 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-TeamCity supports your Continuous Integration (CI) process in many technologies. In this tutorial, we'll configure a Continuous Integration (CI) process for a PHP project. We will be using the open\-source PHP project [PHPExcel](http://www.phpexcel.net) as a sample project we want to provide CI for. This project features a large amount of code, PHPUnit tests and uses Phing to create build artifacts. Using TeamCity, we will automate the build process and make it ready for immediate feedback once the source code on GitHub changes.
+TeamCity supports your Continuous Integration (CI) process in many technologies. In this tutorial, we'll configure a Continuous Integration (CI) process for a PHP project. We will be using the open\-source PHP project [PHPExcel](https://www.phpexcel.net) as a sample project we want to provide CI for. This project features a large amount of code, PHPUnit tests and uses Phing to create build artifacts. Using TeamCity, we will automate the build process and make it ready for immediate feedback once the source code on GitHub changes.
 
 This tutorial assumes you already have a PHP environment with PEAR, PHPUnit and Phing installed. If not, now is the time. You can find more info on configuring your PHP environment [through this blog post](http://kogentadono.com/2012/05/11/part-1-setting-up-teamcity-for-php-ci-installing-tc/).
 
@@ -47,7 +47,7 @@ We can already invoke our build configuration and should be getting unit test re
 
 ### Running Phing
 
-Our next build step will be invoking [Phing](http://www.phing.info), a PHP project build system or build tool based on ​Apache Ant. PHPExcel comes with a Phing build script which we'll invoke after all unit tests have passed. Let's add a new Command Line build step which uses Phing's command\-line tool and pass some parameters to it:
+Our next build step will be invoking [Phing](https://www.phing.info), a PHP project build system or build tool based on ​Apache Ant. PHPExcel comes with a Phing build script which we'll invoke after all unit tests have passed. Let's add a new Command Line build step which uses Phing's command\-line tool and pass some parameters to it:
 
 ```PHP
 
@@ -91,7 +91,7 @@ Run the build again. Once it completes, the _Artifacts_ tab should contain the c
 <img src="coverage-2.png" width="700"/>
 
 
-It's possible to add additional build reporting and display results from PHP mess detector, [PHPLint](http://www.icosaedro.it/phplint/) or even have a tab available which displays [phpDocumentor](http://www.phpdoc.org/) contents by creating custom report tabs based on information from build artifacts.
+It's possible to add additional build reporting and display results from PHP mess detector, [PHPLint](https://www.icosaedro.it/phplint/) or even have a tab available which displays [phpDocumentor](https://www.phpdoc.org/) contents by creating custom report tabs based on information from build artifacts.
 
 
 

@@ -12,8 +12,60 @@ You can quickly select any of the available common options in the build step __A
 
 <img src="execution-conditions.png" alt="Build step execution condition"/>
 
-Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, select the `teamcity.agent.jvm.os.name` parameter and set the condition to "contains `Windows`" to run the current build step only on agents that run on Windows.  
-**See the reference on available conditions [here](requirement-conditions.md).**
+Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, check the `teamcity.agent.jvm.os.name` parameter to run the current build step only on Windows agents.
+
+```Kotlin
+package _Self.buildTypes
+import jetbrains.buildServer.configs.kotlin.*
+
+
+object MyBuildConfig : BuildType({
+    // ...
+    steps {
+        script {
+            name = "Step 1"
+            conditions {
+                contains("teamcity.agent.jvm.os.name", "Windows")
+            }
+            // ...
+        }
+    }
+})
+```
+
+The sample below illustrates how to utilize [parameters that report step exit statuses](configuring-build-steps.md#Step+Status+Parameters) to create a custom condition (step #3 runs only when step #2 fails **and** step #1 is successful.).
+
+
+```Kotlin
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+
+object MyBuildConf : BuildType({
+    steps {
+        python {
+            id = "Step1"
+            // ...
+        }
+        python {
+            id = "Step2"
+            // ...
+        }
+        python {
+            name = "Step3"
+            conditions {
+                equals("teamcity.build.step.status.Step1", "success")
+                equals("teamcity.build.step.status.Step2", "failure")
+            }
+            // ...
+        }
+    }
+})
+```
+
+> Refer to this documentation article for the reference on available conditions: [](requirement-conditions.md).
+> 
+{type="tip"}
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
@@ -27,3 +79,10 @@ In this demo, we explore a use case when you need to run a given step only if th
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 You can also read a recap of this tutorial in [this blog post](https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/).
+
+
+
+
+
+
+

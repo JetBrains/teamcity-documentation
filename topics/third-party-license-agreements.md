@@ -13,11 +13,11 @@
 
 This product includes software developed by Spring Security Project ([http://acegisecurity.org](http://acegisecurity.org/)). (Acegi Security)
 
-This product includes software developed by The Apache Software Foundation ([http://www.apache.org/](http://www.apache.org/)). (Apache Ant, Ivy, Jakarta, Log4j, Maven2, Tomcat, and Xerces2 Java Parser)
+This product includes software developed by The Apache Software Foundation ([https://www.apache.org/](https://www.apache.org/)). (Apache Ant, Ivy, Jakarta, Log4j, Maven2, Tomcat, and Xerces2 Java Parser)
 
 This product includes software developed by the DOM Project ([http://www.jdom.org/](http://www.jdom.org/)). (JDom)
 
-This product includes software developed by the Visigoth Software Society ([http://www.visigoths.org/](http://www.visigoths.org/)). (FreeMarker)
+This product includes software developed by the Visigoth Software Society ([https://www.visigoths.org/](https://www.visigoths.org/)). (FreeMarker)
 
 This product includes software from the Cryptix project [http://www.cryptix.org/](http://www.cryptix.org/)
 
@@ -61,7 +61,7 @@ Rome is Copyright © 2004 Sun Microsystems, Inc.
 
 Shaj is Copyright Cenqua Pty Ltd.
 
-SilverStripe Unobtrusive Javascript Tree Control Copyright © 2006\-7, SilverStripe Limited \- [www.silverstripe.com](http://www.silverstripe.com).
+SilverStripe Unobtrusive Javascript Tree Control Copyright © 2006\-7, SilverStripe Limited \- [www.silverstripe.com](https://www.silverstripe.com).
 
 Portions Copyright © 2002 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov or Copyright © 2000\-2002 Philip A. Craig
 
@@ -79,7 +79,7 @@ Underscore.js © 2011 Jeremy Ashkenas, DocumentCloud Inc.
 
 UserAgentUtils Copyright © 2013, Harald Walker (bitwalker.eu) All Rights Reserved.
 
-XML Pull Parser: Copyright © 2002 Extreme! Lab, Indiana University. All rights reserved. This product includes software developed by the Indiana University Extreme! Lab ([http://www.extreme.indiana.edu/](http://www.extreme.indiana.edu/)).
+XML Pull Parser: Copyright © 2002 Extreme! Lab, Indiana University. All rights reserved. This product includes software developed by the Indiana University Extreme! Lab ([https://www.extreme.indiana.edu/](https://www.extreme.indiana.edu/)).
 
 XML\-RPC.NET Copyright © 2006 Charles Cook.
 

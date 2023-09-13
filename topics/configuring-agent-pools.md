@@ -42,7 +42,7 @@ To see the details of a certain pool or its nested [agent](viewing-build-agent-d
 
 To populate a pool with agents, click __Assign agents__ on the __Agents__ tab and select the required agents from the list. Since an agent can belong to only one pool, assigning it to a pool will remove it from its previous pool. If TeamCity detects that this action might cause compatibility problems, it will show a respective warning. Removing an agent from a custom pool will return it to the _Default_ pool.
 
-To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _[project pool](agent-cloud-profile.md#Adding+Agent+Image)_.  
+To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _project pool_.  
 Only cloud agent images configured in the `<Root>` project can be moved using __Assign agents__.
 {product="tc"}
 
@@ -58,6 +58,22 @@ The "Projects" tab lets you specify which agent pools your projects can utilize.
 <img src="dk-AgentPool-Projects.png" width="708" alt="The Projects tab of the agent pool settings page"/> 
 
 Note that if you unbind a project from all existing agent pools, you can no longer run the build configurations of this project (unless they consist entirely of [agentless build steps](agentless-build-step.md)).
+
+<!--
+
+## Favorite Pools
+
+You can click a star icon next to the pool's name to bookmark it.
+
+<img src="dk-favAgentPool.png" width="706" alt="Favorite pools"/>
+
+Favorite pools are pinned to the top of the side navigation pane. You can also view all agents and cloud images from all favorite pools in the "FAVORITES" section.
+
+<img src="dk-favAgentPool2.png" width="706" alt="Favorite pools details"/>
+
+Favorite pools are user-specific, meaning that each TeamCity user can have their own set of favorite agent pools.
+
+-->
 
 <seealso>
         <category ref="concepts">

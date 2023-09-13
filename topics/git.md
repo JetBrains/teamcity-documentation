@@ -103,7 +103,9 @@ Default branch
 Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
 <note>
+
 You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.git.fetchAllHeads=true`.
+
 </note>
 
 
@@ -238,7 +240,7 @@ Password / personal access token
 <td id="passwordAuth">
 
 Specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
-For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](http://youtrack.jetbrains.com/issue/TW-18711).    
+For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](https://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
 You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
@@ -301,7 +303,7 @@ Available __Private Key__ options:
 
 </td></tr></table>
 
-For all available options to connect to GitHub, see the [comment](http://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
+For all available options to connect to GitHub, see the [comment](https://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
 
 ## Authenticating to Azure DevOps Services
 
@@ -713,7 +715,7 @@ teamcity.git.cleanupCron
 
 <td>
 
-[Cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
+[Cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
 
 </td></tr><tr>
 
@@ -731,7 +733,7 @@ teamcity.git.stream.file.threshold.mb
 
 <td>
 
-Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)
+Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](https://youtrack.jetbrains.com/issue/TW-14947)
 
 </td></tr><tr>
 
@@ -749,7 +751,7 @@ true
 
 <td>
 
-Git-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch, git-plugin has to read repository files into memory. To not run out of memory git-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](http://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
+Git-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch, git-plugin has to read repository files into memory. To not run out of memory git-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](https://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
 
 </td></tr><tr>
 
@@ -1012,7 +1014,7 @@ Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfi
 
 * `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
 * TeamCity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
-* Inflation using streams in JGit prevents `OutOfMemoryError`, but might get time-consuming (see the [TW-14947](http://youtrack.jetbrains.net/issue/TW-14947) issue related to the problem). If you notice a similar behavior, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
+* Inflation using streams in JGit prevents `OutOfMemoryError`, but might get time-consuming (see the [TW-14947](https://youtrack.jetbrains.com/issue/TW-14947) issue related to the problem). If you notice a similar behavior, try to increase `teamcity.git.stream.file.threshold.mb`. Additionally, it is recommended to increase the overall amount of memory dedicated for TeamCity to prevent `OutOfMemoryError`.
 
 <seealso>
         <category ref="admin-guide">

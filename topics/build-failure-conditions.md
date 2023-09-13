@@ -15,7 +15,7 @@ In the __Common Failure Conditions__ block, you can specify how exactly TeamCity
 
 The _if it runs longer than ... minutes_ condition allows defining an execution timeout for a build, in minutes. If the specified amount of time is exceeded, the build is automatically canceled. This option helps deal with hanging builds and maintains agent efficiency.
 
-The default value of 0 means that no limit is set by the build configuration. Otherwise, this build configuration setting overrides the [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) default execution timeout specified in __Administration | Global Settings__.
+If the configuration's timeout is 0 (the default value), the global [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) timeout applies. Otherwise, the timeout specified in this configuration overrides the global value specified in __Administration | Global Settings__.
 
 ### Fail Build if Exit Code is not Zero
 
@@ -135,7 +135,7 @@ If your build publishes the `myMetric` value, you can use it as a criterion for 
 TeamCity can inspect all lines in a build log for some particular text occurrence that indicates a build failure. When matching lines, the time and block name prefixes preceding each log message are ignored.
 
 To configure this build failure condition, specify:
-* a string or a [Java Regular Expression](http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html) whose presence/absence in the build log is an indicator of a build failure,
+* a string or a [Java Regular Expression](https://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html) whose presence/absence in the build log is an indicator of a build failure,
 * a failure message to be displayed on the __Build Results__ page when a build fails due to this condition.
 
 When using Regex, you can refer to the regular expression or its parts from the "_Failure message_" field (for example, refer to specific [capturing groups](https://www.regular-expressions.info/brackets.html) with `$N` where `N` is the group number). This allows including the matching error text into the failure message displayed in the build results.

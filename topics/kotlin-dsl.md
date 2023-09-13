@@ -54,9 +54,9 @@ Usually it takes a minute or two, depending on the _Changes Checking Interval_ d
 
 
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
-* `settings.kts` — the main file containing all the project configuration
-* `pom.xml` — required when opening the project in an IDE to get the auto-completion feature, and ability to compile code and write unit tests for it
-
+* `settings.kts` — The main file containing all the project configuration.
+* `pom.xml` —  Allows TeamCity and external IDEs (that you use to open Kotlin projects) to resolve dependencies required to compile and run DSL code.
+* 
 ## Edit Kotlin Projects in IntelliJ IDEA
 
 You can create, edit, and debug TeamCity Kotlin DSL projects in IntelliJ IDEA (both Ultimate and Community versions are supported).
@@ -696,6 +696,12 @@ _Problem_:
 
 _Solution_: set the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=1500m` and restart the server.
 
+### OutOfMemory Error
+{product="tc"}
+
+_Problem_: Synchronizing Kotlin DSL setting fails with the "Compilation error: java.lang.OutOfMemoryError: Java heap space" error written to the [teamcity-versioned-settings.log](teamcity-server-logs.md) file.
+
+_Solution_: set the `teamcity.versionedSettings.configsGeneratorXmx` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `1g` (one gigabyte) or more and restart the server. The default property value is `512m`. 
 
 <seealso>
         <category ref="blog">

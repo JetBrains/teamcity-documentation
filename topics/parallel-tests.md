@@ -104,9 +104,9 @@ package org.example.tests;
 
 class TestCase1 {
 
-  public void testMethod1() { ... }
+  public void testMethod1() { /* ... */ }
 
-  public void testMethod2() { ... }
+  public void testMethod2() { /* ... */ }
 }
 
 ```
@@ -136,6 +136,25 @@ org.example.tests.TestCase1
 
 The build step with custom tests' execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
+
+<!--
+## Alternative Test Filtering for .NET
+
+<chunk id="alternative-dotnet-parallel-filtering-tc">
+
+If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If you experience performance issues, try adding the `teamcity.internal.dotnet.test.suppressing=true` option (via a [configuration parameter](configuring-build-parameters.md) or an [internal property](server-startup-properties.md#TeamCity+Internal+Properties)) to switch to the alternative testing mode optimized for this scenario. This mode requires .NET 6.0 or newer installed on agent testing machines.
+{product="tc"}
+
+</chunk>
+
+<chunk id="alternative-dotnet-parallel-filtering-tcc">
+
+If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If you experience performance issues, try adding the `teamcity.internal.dotnet.test.suppressing=true` [configuration parameter](configuring-build-parameters.md) to switch to the alternative testing mode optimized for this scenario. This mode requires .NET 6.0 or newer installed on agent testing machines.
+{product="tcc"}
+
+</chunk>
+-->
+
 ## Publish Artifacts Produced By Batch Builds
 
 Since parallel tests run inside independent batch builds, [artifacts](build-artifact.md) are produced by these batch builds that perform actual building routines, not by a parent configuration's builds.
@@ -149,9 +168,8 @@ When batch builds produce identical artifacts, only the latest batch build's art
 To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. Since this parameter references the batch build number, it allows builds to organize their artifacts into subdirectories with unique names. For instance:
 
 ```Plain Text
-bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin
+bin => batch-build-%\teamcity.build.parallelTests.currentBatch%/bin
 ```
-{interpolate-variables="false"}
 
 <img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
 

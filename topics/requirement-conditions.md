@@ -187,7 +187,7 @@ Returns `true` if a value of the specified property starts (ends) with the given
 
 </td><td>
 
-Returns `true` if the specified property matches (does not match) the given [regular expression](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern.
+Returns `true` if the specified property matches (does not match) the given [regular expression](https://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern.
 
 </td>
 

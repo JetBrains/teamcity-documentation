@@ -5,6 +5,12 @@ The _Pull Requests_ [build feature](adding-build-features.md) lets you automatic
 
 \* Or _merge requests_ in case of GitLab and JetBrains Space.
 
+> If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, start new builds manually after you inspect and verify incoming changes. Otherwise, TeamCity can execute malicious code introduced in these changes (for example, handle a [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files).
+>
+> See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
+>
+{type="warning"}
+
 When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
 Other settings depend on the selected VCS hosting type.
 
@@ -336,61 +342,26 @@ The following parameters are available for the [Bitbucket Cloud](https://bitbuck
 
 <table>
 <tr>
-<td width="150">
+<td>Setting</td>
+<td>Description</td>
+</tr>
 
-Parameter
+<tr>
 
-</td>
-<td width="150">
-
-Options
-    
-</td>
+<td>Authentication Type</td>
 <td>
 
-Description
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
+* **Username/password** — Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
+
+* **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
 </td>
 </tr>
+
 <tr>
-<td>
-
-Authentication Type
-
-</td>
-<td>
-
-Use VCS root credentials
-
-</td>
-<td>
-
-TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
-
-This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
-
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-
-Username/password
-
-</td>
-<td>
-
-Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
-
-</td>
-</tr>
-<tr>
-<td>
-
-By target branch
-
-</td>
-<td></td>
+<td>By target branch</td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on branches that match the specified criteria. If left empty, no filters apply.
@@ -425,13 +396,18 @@ Description
 <tr>
 <td>
 
-Access token
+Authentication Type
 
 </td>
 
 <td>
 
-Use a personal access token for connection. The token must have the `api` scope.
+* **Use VCS root credentials** — TeamCity will try to extract login credentials or access token from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root employs anonymous authentication.
+
+* **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
+
+* **GitLab Application Token** — Displays a list of configured [GitLab OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
 
 </td>
 </tr>

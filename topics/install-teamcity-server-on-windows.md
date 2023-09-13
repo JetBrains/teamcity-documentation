@@ -5,7 +5,7 @@
 
 ## Download TeamCity Server
 
-Go to the [JetBrains website](http://www.jetbrains.com/teamcity/download/) and download a convenient TeamCity Server distribution:
+Go to the [JetBrains website](https://www.jetbrains.com/teamcity/download/) and download a convenient TeamCity Server distribution:
 * __.exe__: executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
 * __.tar.gz__: archive with a "portable" version.
 

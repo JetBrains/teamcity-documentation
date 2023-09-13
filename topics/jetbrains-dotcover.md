@@ -1,10 +1,10 @@
 [//]: # (title: JetBrains dotCover)
 [//]: # (auxiliary-id: JetBrains dotCover)
 
-TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 {product="tc"}
 
-TeamCity comes bundled with the console runner of [JetBrains dotCover](http://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools.
+TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools.
 {product="tcc"}
 
 After choosing the appropriate option in the .NET coverage section of a build step, you will be able to collect code coverage for your .NET project and then view the coverage statistics and detailed coverage report inside the [TeamCity web UI](working-with-build-results.md).

@@ -63,7 +63,7 @@ Branch specification
 
 <td>
 
-In this area list all the branches you want to be monitored for changes. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS (with the optional `*` placeholder). Note that only one asterisk is allowed and each rule has to start with a new line.  Bookmarks can also be used in the branch and branch specification fields. If a bookmark has the same name as a regular branch, a regular branch wins. More in the related [TeamCity blogpost](http://blog.jetbrains.com/teamcity/2013/04/mercurial-bookmarks/).
+In this area list all the branches you want to be monitored for changes. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS (with the optional `*` placeholder). Note that only one asterisk is allowed and each rule has to start with a new line.  Bookmarks can also be used in the branch and branch specification fields. If a bookmark has the same name as a regular branch, a regular branch wins. More in the related [TeamCity blogpost](https://blog.jetbrains.com/teamcity/2013/04/mercurial-bookmarks/).
 
 <note>
 
@@ -185,7 +185,7 @@ Specify the Mercurial configuration options to be applied to the repository duri
 
 ```
  
-The configuration format is described [here](http://www.selenic.com/mercurial/hgrc.5.html).
+The configuration format is described [here](https://www.selenic.com/mercurial/hgrc.5.html).
 
 </td></tr><tr>
 

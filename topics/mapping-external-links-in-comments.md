@@ -17,7 +17,7 @@ To configure mapping:
      <transformation-pattern
        search="(>|\(|\s|^)([A-Z]+-\d+)(\b|$)"
        replace="$1&lt;a target=&quot;_blank&quot; title=&quot;Click to open this issue a new window&quot; href=&quot;
-       http://www.jetbrains.net/jira/browse/$2&quot;&gt;$2&lt;/a&gt;$3"
+       https://www.jetbrains.net/jira/browse/$2&quot;&gt;$2&lt;/a&gt;$3"
        description="JetBrains Jira issue link" />
    </comment-transformation>
 ...
@@ -29,5 +29,5 @@ TeamCity can apply several patterns to a single piece of text, if they do not in
 
 <note>
 
-Search &amp; replace patterns have [`java.util.regex.Pattern`](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) syntax.
+Search &amp; replace patterns have [`java.util.regex.Pattern`](https://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) syntax.
 </note>

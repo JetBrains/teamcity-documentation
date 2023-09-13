@@ -52,7 +52,7 @@ In load/acceptance testing, when you store tests in a version control system and
 
 ## Build Chains Visual Representation
 
-Basically, each build chain is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph), that is it cannot have cycles.
+Basically, each build chain is a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph), that is it cannot have cycles.
 
 Build Chains are visible in various places in the TeamCity web UI:
 

@@ -1,9 +1,9 @@
 [//]: # (title: Using AWS Aurora Database Cluster)
 [//]: # (auxiliary-id: Using AWS Aurora Database Cluster)
 
-This page provides details on using an [Amazon Aurora](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.html) cluster as the TeamCity database server.
+This page provides details on using an [Amazon Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.html) cluster as the TeamCity database server.
 
-When using an AWS Aurora cluster with TeamCity pointing to the [cluster end-point](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html#Aurora.Overview.Endpoints) as the database server, it is important to understand what happens when an AWS Aurora cluster fails over.
+When using an AWS Aurora cluster with TeamCity pointing to the [cluster end-point](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html#Aurora.Overview.Endpoints) as the database server, it is important to understand what happens when an AWS Aurora cluster fails over.
 
 Both AWS Aurora DB instances are rebooted (so for a short period of time TeamCity entirely loses connection to the cluster) and
 * the original DB instance is started in read-only mode (the new reader instance);
@@ -15,7 +15,7 @@ It will take some time for the JVM-specific cache in TeamCity to expire and for 
 
 ## General Recommendations 
 
-When working with a failover cluster, it is recommended to decrease the JVM-specific DNS caching on TeamCity [by setting the TTL to 60](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
+When working with a failover cluster, it is recommended to decrease the JVM-specific DNS caching on TeamCity [by setting the TTL to 60](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html):
 1. Add the `-Dsun.net.inetaddr.ttl=60` JVM option to the [environment variable](server-startup-properties.md#JVM+Options).
 2. Restart TeamCity for the changes to take effect.
 

@@ -1,8 +1,8 @@
 [//]: # (title: Inspections \(ReSharper\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084113;Inspections \(ReSharper\))
 
-The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](http://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
-[ReSharper](http://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
+The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](https://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
+[ReSharper](https://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
 * Find probable bugs
 * Eliminate errors and code smells
 * Detect performance issues
@@ -102,7 +102,7 @@ Target Frameworks
 
 <td>
 
-This option allows you to handle the [Visual Studio Multi-Targeting](http://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
+This option allows you to handle the [Visual Studio Multi-Targeting](https://msdn.microsoft.com/en-us/library/bb398197.aspx) feature.   
 Agent requirement will be created for every checked item.
 
 .NET Framework versions 2.0–4.8.1 are supported.
@@ -140,11 +140,48 @@ R# CLT Home Directory
 
 Select the ReSharper Command Line Tools version.
 
-You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
+You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page.
+{product="tc"}
+
+<img src="dk-tools.png" width="706" alt="Check the version of installed Resharper tools"/>
+{product="tc"}
+
+If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
 {product="tc"}
 
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>R# CLT Plugins</td>
+
+<td>
+
+The list of additional [ReSharper plugins](https://plugins.jetbrains.com/resharper) to install.
+
+Depending on the version of installed ReSharper Command Line Tools, this field can accept values in the following formats:
+
+* `Download <pluginId>/<version>` — downloads the required plugin from JetBrains Marketplace using its ID. Plugin IDs are displayed on main plugin pages in Marketplace, under the "Additional Information" section. Example: `Download ReSharperPlugin.CognitiveComplexity/2023.2.0`.
+
+* `File <file_path>` and `Folder <folder_path>` — allow you to load required plugin(s) from the local storage. These options are not available for ReSharper CLT versions 2021.3.0 and newer.
+
+> * Some of ReSharper plugins may not work for R# CLT.
+> * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2021.3.0 and newer. Older versions may incorrectly interpret values from this field.
+>
+{type="note"}
+
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
 
 <td>
 
@@ -186,7 +223,7 @@ The path to the file containing __ReSharper settings__ created with JetBrains Re
 The specified path should be __relative__ to the checkout directory.   
 If specified, this settings layer has the top priority, so it overrides ReSharper build-in settings. __By default__, __build-in__ ReSharper settings layers are applied.
  
-For additional information about the ReSharper settings system, see [ReSharper Web Help](http://www.jetbrains.com/resharper/webhelp/Configuring_ReSharper__Sharing_Configuration_Options.html) and [JetBrains .NET Tools Blog](http://blogs.jetbrains.com/dotnet/)
+For additional information about the ReSharper settings system, see [ReSharper Web Help](https://www.jetbrains.com/resharper/webhelp/Configuring_ReSharper__Sharing_Configuration_Options.html) and [JetBrains .NET Tools Blog](https://blog.jetbrains.com/dotnet/)
 
 
 </td></tr><tr>

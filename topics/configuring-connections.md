@@ -138,9 +138,39 @@ Depending on your needs, you can create connections to GitHub that operate via G
 <dl>
 
 <dt>GitHub App</dt>
-<dd>A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
+<dd>
 
-To create a TeamCity connection that utilizes a GitHub App:
+A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
+
+<!--
+If you do not already have a suitable GitHub App, you can allow TeamCity to register it and create a connection that employs this new app in one go. TeamCity uses <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">manifests</a> to register new GitHub Apps.
+
+<ol>
+
+<li>
+Go to <b>Project Settings | Connections</b> and click <b>Add Connection</b>.
+</li>
+
+<li>
+Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).
+</li>
+
+<li>
+Click the <b>Create GitHub App and connection</b> button to allow TeamCity to <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">register a GitHub App from a manifest</a>.
+
+<img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
+
+You will need to specify the URL of your GitHub server (without "/username") and choose whether you want this app to send <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">post-commit hooks</a> and/or have access to your organization.
+</li>
+
+<li>
+Follow instructions on your screen to log into your GitHub account, authorize TeamCity to register an app, and install it to your personal and/or organization account.
+</li>
+
+</ol>
+-->
+
+To manually create a new GitHub App and configure a TeamCity connection that uses this app:
 
 <ol>
 
@@ -148,7 +178,7 @@ To create a TeamCity connection that utilizes a GitHub App:
 
 <li>Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).</li>
 
-<li>If you do not already have a GitHub App, follow TeamCity instructions to create and install a new App with required permissions. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
+<li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
 <li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret) and paste them to the TeamCity dialog.</li>
 
@@ -348,6 +378,10 @@ To configure an AWS connection in TeamCity:
         6. Instance profile credentials delivered through the Amazon EC2 metadata service. 
    {product="tc"}
 
+<!--
+7. Tick the **Available for sub-projects** option if you want this connection to be available for all subprojects of the current project.
+8. Tick the **Available for build steps** option to allow choosing this connection in the [AWS Credentials build feature](aws-credentials.md) feature settings.
+-->
 7. Test and save the connection.
 
 Now you can use the credentials provided by this connection in your builds. To do that, configure the [AWS Credentials build feature](aws-credentials.md).
@@ -367,6 +401,13 @@ TeamCity allows your project to access required AWS resources using connections 
    * Other configurations: [Web Identity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html), [SAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)
     
 4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
+
+<!--
+5. If you want subprojects to have access to this new connection, check the **Available for sub-projects** option. Otherwise, only the same project that owns this connection will be able to use it.
+        
+    <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
+-->
+
 5. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
 6. Modify the **Trust relationships** of this new Role B to allow Role A to assume it.
     ```JSON
@@ -389,6 +430,10 @@ TeamCity allows your project to access required AWS resources using connections 
    * **AWS Connection** — the connection created in step 4.
    * **Role ARN** — the ARN of "Role B".
 
+<!--
+    Note that if you configure this new connection in a subproject of a project that owns the primary "Default Credentials Provider Chain" connection, this primary connection must have its **Available for sub-projects** setting enabled (see step 5).
+-->
+    
 8. Click **Test connection** to ensure TeamCity can assume **Role B**.
     
     ```Plain Text
@@ -429,12 +474,11 @@ As a result, you now have a following setup:
 
 * The primary **Default credentials provider chain** connection does not require locally stored credentials.
 * This shared primary connection has no permissions to access anything. To access AWS resources, it needs to assume other IAM roles.
-* Because of a condition configured in step 10, roles with actual access permissions can be assumed only by configured "IAM Role" TeamCity connections. TeamCity administrators cannot create more connections that utilize these roles.
+* Because of a condition configured in step 11, roles with actual access permissions can be assumed only by configured "IAM Role" TeamCity connections. TeamCity administrators cannot create more connections that utilize these roles.
     
     <img src="dk-aws-cannotassumeRole.png" width="706" alt="Incorrect External ID"/>
     
     To create more connections that can access Amazon resources, your AWS administrator must add additional conditions to whitelist external IDs of these new connections.
-
 
 
 ## Amazon ECR

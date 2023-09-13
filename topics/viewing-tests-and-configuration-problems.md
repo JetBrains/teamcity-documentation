@@ -37,7 +37,7 @@ Flaky test detection is based on the following heuristics:
 1. High flip rate (Frequent test status changes). A flip in TeamCity is a test status change — either from "OK" to "Failure", or vice versa. The Flip Rate is the ratio of such "flips" to the invocation count of a given test, measured per agent, per build configuration, or over a certain time period (7 days by default). A test which constantly fails, while having a 100% failure rate, will have its flip rate close to zero; a test which "flips" each time it is invoked will have the flip rate close to 100%.If the flip rate is too high, TeamCity will consider the test flaky.
 2. If the status of a test "flipped" in the new build with no changes, i.e. a previously successful test failed in a build without changes or a previously failing test passed in a build without changes, TeamCity will consider the test flaky.
 3. Different test status for multiple invocations in the same build (flaky failure): if the same test is invoked multiple times and the test status flips, TeamCity will consider the test flaky.    
-This heuristic is supported for [TestNG](http://testng.org/) unit tests with `invocationCount` \[[1](http://testng.org/doc/documentation-main.html)\]\[[2](http://testng.org/javadocs/org/testng/annotations/Test.html#invocationCount--)\] greater than `1`.
+This heuristic is supported for [TestNG](https://testng.org/) unit tests with `invocationCount` \[[1](https://testng.org/doc/documentation-main.html)\]\[[2](https://testng.org/javadocs/org/testng/annotations/Test.html#invocationCount--)\] greater than `1`.
 
 A test is not considered flaky if multiple builds of different configurations are run on the same VCS change and the test results differ between these builds. Such results are most likely to be caused by environmental issues.
 
@@ -46,7 +46,7 @@ A test is not considered flaky if multiple builds of different configurations ar
 There is a known issue with parameterized test invocations with TestNG: TeamCity relies on the Surefire and Failsafe Maven plugins for the purposes of test result reporting, and these plugins ignore test parameters in their XML output. As a result, parameterized test invocations within the same build are erroneously treated as multiple identical test invocations, and, if some of the invocations fail, the test is marked as flaky with the _Flaky Failure_ reason. See the [related issue](https://youtrack.jetbrains.com/issue/TW-48097).
 </note>
 
-For [http://junit.org/](http://junit.org/) tests, a 3rd party [tempus-fugit](http://tempusfugitlibrary.org/) library can be used together with _JUnit_. It is sufficient to annotate a test with `@Intermittent` and use the `IntermittentTestRunner` test runner, as in the minimal example below:
+For [JUnit](https://junit.org/) tests, a 3rd party [tempus-fugit](http://tempusfugitlibrary.org/) library can be used together with _JUnit_. It is sufficient to annotate a test with `@Intermittent` and use the `IntermittentTestRunner` test runner, as in the minimal example below:
 
 
 ```JavaScript

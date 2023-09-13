@@ -72,7 +72,7 @@ When a TeamCity agent is started as a Windows service and automated tests for .N
 
 ### Early start of the service before other resources are initialized
 
-To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](http://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
+To handle this, consider using the __Automatic (Delayed Start)__ option of the service settings or configure [service dependencies](https://youtrack.jetbrains.com/issue/TW-32987#comment=27-608269).
 
  For more investigation steps, see the [Common Problems](common-problems.md#Build+works+locally+but+fails+or+misbehaves+in+TeamCity) page.
 
@@ -87,7 +87,7 @@ See also this [external posting](https://www.elastic.co/blog/we-are-out-of-memor
 
 ## Clearing Browser Caches
 
-There is a web UI-related issue which some users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
+There is a web UI-related issue which some users have encountered (and it cannot be reproduced on other computers) which is tied to the cached versions of content. If you have come across such problem, make sure your browser does not use cached versions of content by [clearing browser caches](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
 
 ## Logging with Log4j in Your Tests
 
@@ -103,7 +103,7 @@ If you use Log4j logging in your tests, in some cases you may miss the Log4j out
 
 ## Agent Service Can Exit on User Logout under Windows x64
 
-The used version of [Java Service Wrapper](http://wrapper.tanukisoftware.org/) does not fully support Windows 64 and this causes agent launcher process to be killed on user logout. The agent itself will be function until the next restart (server upgrade or agent properties change).
+The used version of [Java Service Wrapper](https://wrapper.tanukisoftware.com/) does not fully support Windows 64 and this causes agent launcher process to be killed on user logout. The agent itself will be function until the next restart (server upgrade or agent properties change).
 
 
 ## Failed Build Can be Reported as a Successful One With Maven 2.0.7
@@ -131,7 +131,7 @@ set ERROR_CODE=1
 
 Most common indicators of conflicting software are errors like "Access is denied", "Permission denied" or _java.io.FileNotFoundException_ mentioning the file that is present and is writable by the user the agent/build runs under. Also, certain software running in the background (like antivirus) can significantly slow down such build agent operations as sources checkout, artifact publishing or even build running.
 
-Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [this issue](http://jetbrains.net/tracker/issue/TW-7138).
+Certain antivirus software like Kaspersky Internet Security can result in Java process crashes or other misbehavior like inability to access files. For example, see [this issue](https://youtrack.jetbrains.com/issue/TW-7138).
 
 ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on an agent).
 
@@ -144,11 +144,11 @@ If you run antivirus on the TeamCity agent machines and get disk access errors o
 It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
 {product="tc"}
 
-There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](http://youtrack.jetbrains.net/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
+There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](https://youtrack.jetbrains.com/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
 
 Do not install software with background indexing like WinCVS, TortoiseCVS, TortoiseSVN, and other Tortoise\* products. This applies to server and also to agents if you use agent-side checkout.
 
-Skype software is known to corrupt layout of pages displayed in Internet Explorer. ([TW-13052](http://youtrack.jetbrains.net/issue/TW-13052)).
+Skype software is known to corrupt layout of pages displayed in Internet Explorer. ([TW-13052](https://youtrack.jetbrains.com/issue/TW-13052)).
 
 ## Subversion issues
 
@@ -163,13 +163,13 @@ If you use checkout on agent, add this property [on build agent](configuring-bui
 If JVM crashes while executing SVN-related code (e.g. under org.tmatesoft.svn package), you can try to disable it using one of the options:
 * Passing `-Dsvnkit.useJNA=false` JVM option to the crashing process (server or agent)
 * Making NTLM support less prioritative by passing the `-Dsvnkit.http.methods=Basic,Digest,NTLM` JVM option.  
-Anyway, upgrading the JVM used to the [latest available version](http://java.sun.com/javase/downloads) is recommended.
+Anyway, upgrading the JVM used to the [latest available version](https://java.sun.com/javase/downloads) is recommended.
 
 
 ## NUnit 2.4.6 Performance
 {product="tc"}
 
-Due to an issue in NUnit 2.4.6, its performance may be slower than NUnit 2.4.1. For additional information, refer to the corresponding issue in our issue tracker: [TW-4709](http://www.jetbrains.net/tracker/issue/TW-4709)
+Due to an issue in NUnit 2.4.6, its performance may be slower than NUnit 2.4.1. For additional information, refer to the corresponding issue in our issue tracker: [TW-4709](https://youtrack.jetbrains.com/issue/TW-4709)
 
 ## StarTeam Performance
 {product="tc"}
@@ -193,7 +193,7 @@ Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), m
 ## Other Java Applications Running on the Same Server
 {product="tc"}
 
-If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](http://youtrack.jetbrains.net/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
+If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](https://youtrack.jetbrains.com/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
 
 ## The Server Does Not Start Claiming the Database is in Use
 {product="tc"}
@@ -312,7 +312,7 @@ See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/s
 {product="tc"}
 
 This problem may happen when changing JVM from 1.6 to 1.7 and connecting some incorrectly configured HTTPS servers. 
-The problem and workaround for it are described in [this issue](http://youtrack.jetbrains.com/issue/TW-30210).
+The problem and workaround for it are described in [this issue](https://youtrack.jetbrains.com/issue/TW-30210).
 
 [//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")
 

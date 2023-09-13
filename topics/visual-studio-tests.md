@@ -114,7 +114,7 @@ Additional command line parameters
 
 Enter additional command line parameters for the selected test engine.   
 Note that tests run with MSTest are __not__ reported on\-the\-fly.   
-The Microsoft Developer Network lists the available options for [VSTest](https://msdn.microsoft.com/en-us/library/jj155796.aspx) and [MSTest](http://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx).
+The Microsoft Developer Network lists the available options for [VSTest](https://msdn.microsoft.com/en-us/library/jj155796.aspx) and [MSTest](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx).
 
 
 </td></tr></table>

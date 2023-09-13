@@ -90,7 +90,7 @@ If you have a substantial TeamCity installation, check your [memory settings](co
 
 During the slow operation, take several thread dumps of the slow process (see below for thread dump taking approaches) with 5-10 seconds interval. If the slowness continues, take several more thread dumps (for example, 3-5 within several minutes) and then repeat after some time (for example, 10 minutes) while the process is still being slow.
 
-Then [send](feedback.md) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](http://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
+Then [send](feedback.md) us a detailed description of the issue accompanied with the thread dumps and full server (or agent) [logs](#Logging+events) covering the issue. Unless it is undesirable for some reason, the preferred way is to file an issue into our [issue tracker](https://youtrack.jetbrains.com/issues/TW) and let us know via support email. Please include all the relevant details of investigation, including the CPU/IO load information, what specifically is slow and what is not, note affected URLs, visible effects, and so on. For large amounts of data, use [our file upload](#Uploading+Large+Data+Archives) service to share the archives with us.
 
 ### Server Thread Dump
 
@@ -191,7 +191,7 @@ See how to change JVM options for the [server](server-startup-properties.md#JVM+
 
 1. Determine what computer it occurs on
 2. Determine the process which has opened a lot of files and the files list (on Linux use `lsof`, on Windows you can use [handle](http://technet.microsoft.com/en-us/sysinternals/bb896655) or [TCPView](http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx) for listing sockets)
-3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per-session limits (e.g. see the [post](http://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
+3. If the number is under thousands, check the OS and the process limits on the file handles (on Linux use `ulimit -n`) and increase them if necessary. Note that default Linux 1024 handles per process is way too small for a server application like TeamCity. Increase the number to at least 16000. Check the actual process limits after the change as there are different settings in the OS for settings global and per-session limits (e.g. see the [post](https://stackoverflow.com/questions/13988780/too-many-open-files-ulimit-already-changed))
 
 If the number of files is large and looks suspicious and the locking process is a TeamCity one (the TeamCity agent or server with no other web applications running), then, while the issue is still occurring, grab the list of open handles several times with several minutes interval and send the result to us for investigation together with the relevant details.
 
@@ -370,7 +370,7 @@ To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-pl
 
 ```
 
-After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs' directory of the [IDE settings](http://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197) (`<IDE settings/Data Directory>/system/log` directory).
+After changing this file, restart the IDE. The TeamCity plugin debug logs are saved into `idea-teamcity\*` files and will appear in the logs' directory of the [IDE settings](https://www.jetbrains.com/idea/webhelp/project-and-ide-settings.html#d1270417e197) (`<IDE settings/Data Directory>/system/log` directory).
 
 ### Open in IDE Functionality Logging
 
@@ -381,7 +381,7 @@ The logging related to the __open in IDE__ functionality will appear in the IDE 
 
 ### No Suitable Build Configurations Found for Remote Run
 
-First of all, check that your [VCS settings in IDEA](http://www.jetbrains.com/idea/webhelp/configuring-general-vcs-settings.html) correspond to the [VCS settings](configuring-vcs-settings.md) in TeamCity. If they do not, change them and it should fix the problem.
+First of all, check that your [VCS settings in IDEA](https://www.jetbrains.com/idea/webhelp/configuring-general-vcs-settings.html) correspond to the [VCS settings](configuring-vcs-settings.md) in TeamCity. If they do not, change them and it should fix the problem.
 
 Secondly, check that the build configurations you expect to be suitable with your IDEA project has either [server-side VCS checkout mode](vcs-checkout-mode.md#server-checkout) or [agent-side checkout](vcs-checkout-mode.md#agent-checkout) and NOT manual VCS checkout mode (it is not possible to apply a personal patch for a build with the manual checkout mode because TeamCity must apply that patch after the VCS checkout is done, but it does not know or manage the time when it is performed).
 
@@ -410,7 +410,7 @@ To capture logs from the TeamCity [Visual Studio Addin](visual-studio-addin.md):
 
 ### Visual Studio logging
 
-To troubleshoot common Visual Studio, run Microsoft Visual Studio executable `INSTALLATION_DIRECTORY\Common7\IDE\devenv.exe` with the `/`[`Log`](http://msdn.microsoft.com/en-us/library/ms241272.aspx) command Line switch and send us the resulting log file.
+To troubleshoot common Visual Studio, run Microsoft Visual Studio executable `INSTALLATION_DIRECTORY\Common7\IDE\devenv.exe` with the `/`[`Log`](https://msdn.microsoft.com/en-us/library/ms241272.aspx) command Line switch and send us the resulting log file.
 
 ## dotCover Issues
 
@@ -422,11 +422,11 @@ To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.
 
 On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
 If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server home](teamcity-home-directory.md)>/bin` or `<[agent home](agent-home-directory.md)>/bin`.   
-Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
+Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](https://www.oracle.com/technetwork/java/javase/felog-138657.html).
 {product="tc"}
 
 On a rare occasion of the TeamCity agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
-If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually or [`agent home`](agent-home-directory.md)`>/bin`. You can also search the disk for the recent files with `hs_err_pid` in the name. See also the related Fatal Error Log section in this [document](http://www.oracle.com/technetwork/java/javase/felog-138657.html).
+If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually or [`agent home`](agent-home-directory.md)`>/bin`. You can also search the disk for the recent files with `hs_err_pid` in the name. See also the related Fatal Error Log section in this [document](https://www.oracle.com/technetwork/java/javase/felog-138657.html).
 {product="tcc"}
 
 Please send this file to us for investigation and consider updating the JVM for the [server](how-to.md#Install+Non-Bundled+Version+of+Java) (or for [agents](configure-java-for-agent.md)) to the latest version available.
@@ -456,7 +456,7 @@ To help us investigate issues with inspections, do the following:
 
 ## Uploading Large Data Archives
 
-Files under 10 MB in size can be attached right into the [tracker issue](http://youtrack.jetbrains.net/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
+Files under 10 MB in size can be attached right into the [tracker issue](https://youtrack.jetbrains.com/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
 You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
 [//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    

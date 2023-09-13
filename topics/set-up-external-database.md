@@ -109,7 +109,7 @@ Make sure the TeamCity user has quota for accessing the table space.
    * `ojdbc8.jar` (or `ojdbc6.jar`, `ojdbc7.jar` depending on your database version)
    * `orai18n.jar` (can be omitted if missing in the driver version)  
    into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any).  
-  It is strongly recommended locating the driver in your Oracle server installation. Contact your DBA for the files if required. Alternatively, download the Oracle JDBC driver from the [Oracle website](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html).
+  It is strongly recommended locating the driver in your Oracle server installation. Contact your DBA for the files if required. Alternatively, download the Oracle JDBC driver from the [Oracle website](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html).
 2. Proceed with the TeamCity setup.
 
 ### Microsoft SQL Server
@@ -145,11 +145,11 @@ If you use the driver (`jtds` text appears in the `connectionUrl` of `database.p
 
 ## Database Configuration Properties
 
-The database connection settings are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. The file is a Java [properties file](http://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
+The database connection settings are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. The file is a Java [properties file](https://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
 
 For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database-specific properties located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory. The files have the `database.<database_type>.properties.dist` naming format and can be used as a reference on the required settings.
 
-TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](http://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
+TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](https://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
 
 <seealso>
         <category ref="installation">

@@ -20,7 +20,7 @@ Usually, for a new agent installation, you can just copy the directory of an exi
 
 ## Configuring Second Build Agent on Windows
 
-If you use the Windows installer and want to run the agent as a service, you will need to perform extra steps as installing second agent as a service on the same machine is not supported by the installer: the existing service is overwritten (see the [related feature request](http://youtrack.jetbrains.net/issue/TW-4962)).
+If you use the Windows installer and want to run the agent as a service, you will need to perform extra steps as installing second agent as a service on the same machine is not supported by the installer: the existing service is overwritten (see the [related feature request](https://youtrack.jetbrains.com/issue/TW-4962)).
 
 You need to install the second agent [manually](install-teamcity-agent.md#Install+from+ZIP+File) (using the `.zip` agent distribution). You can use the Windows agent installer and do not opt for service installation, but this way you will lose the uninstallation option for the initially installed agent.
 

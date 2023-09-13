@@ -9,7 +9,7 @@ This section details our support services, contact information, and best practic
 <tr><td>
 
 Contact us about:
-* __technical question or idea__ — [community forum](http://jb.gg/teamcity-forum), "New Post" action (public)
+* __technical question or idea__ — [community forum](https://jb.gg/teamcity-forum), "New Post" action (public)
 * __bug or feature request__ — [issue tracker](https://youtrack.jetbrains.com/issues/TW) (public, with an option of private comments/attachments)
 * __license/purchase question__ — [TeamCity sales department](https://www.jetbrains.com/teamcity/get-in-touch/) (private)
 * __private report (only for TeamCity Enterprise server license)__ — [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) (private, faster response times). TeamCity Enterprise users can click **Help | Support** to quickly navigate to the new request form.
@@ -26,7 +26,7 @@ Before requesting support, we suggest that you check if the answer is already av
 * online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md)
   {product="tcc"}
 * [public issue tracker](https://youtrack.jetbrains.com/issues/TW)
-* [community forum](http://jb.gg/teamcity-forum)
+* [community forum](https://jb.gg/teamcity-forum)
 
 When submitting a request, make sure:
 {product="tc"}
@@ -41,7 +41,7 @@ You can contact us via the [online support form](https://teamcity-support.jetbra
 However, we would appreciate if you post your question in the forums as this allows other users to share their experience. If, for some reason, there is a delay in responding to the question in the forum, feel free to ping us via email noting the forum post you have created.
 
 We prefer to keep our support efforts as close to the development team as possible, and you will often get answers from the actual developer of the related TeamCity feature.   
-We are ready to offer technical support services in the English language during the business hours of 10:00 - 18:00 CET/CEST (Germany, GMT+1/GMT+2 [timezone](http://timeanddate.com/worldclock/city.html?n=168)).
+We are ready to offer technical support services in the English language during the business hours of 10:00 - 18:00 CET/CEST (Germany, GMT+1/GMT+2 [timezone](https://timeanddate.com/worldclock/city.html?n=168)).
 
 Our usual response time is 24 hours excluding public holidays in [Germany/Bavaria](https://publicholidays.de/bavaria/). If you experience an urgent issue, please indicate this in the subject of the email message and detail the nature of the urgency.   
 If you own more than 30 agent licenses and have an urgent issue affecting your TeamCity installation (like production server outage without a workaround), you can use the `teamcity-support-urgent` mailbox at the `jetbrains.com` domain — we process these messages before others, if possible. For the same effect, you can also mark an issue as "_Production outage_" when using the online form.   

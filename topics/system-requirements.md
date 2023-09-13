@@ -225,7 +225,7 @@ The network traffic mostly depends on your settings as some of them imply transf
 
 The most important flows of traffic between a TeamCity agent and the TeamCity server are:
 * The agent retrieves commands from the server: these are typically build start tasks, including a dump of the build configuration settings and the full set of build parameters. These parameters can be reviewed on the build's [Parameters](build-results-page.md#Parameters+Tab) tab.
-* The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Agent Parameters](viewing-build-agent-details.md#Agent+Parameters) tab).
+* The agent periodically sends current status data to the server (this includes all the agents’ parameters which can be reviewed on the agent's [Parameters](viewing-build-agent-details.md#Parameters) tab).
 * During the build, the agent sends build log messages and parameters data back to the server. These can be reviewed on the [Build Log](build-results-page.md#Build+Log+Tab) and [Parameters](build-results-page.md#Parameters+Tab) tabs of the build.
 * (when the server-side checkout mode is used) The agent downloads the sources before the build (as a full or incremental patch) from the server.
 * (when an [artifact dependency](artifact-dependencies.md) is configured) The agent downloads build artifacts of other builds from the server before starting a build, unless an external artifact storage is used instead.
@@ -273,7 +273,7 @@ The redo log (or a similar entity) naming for different RDBMS:
 * PostgreSQL: WAL (write-ahead log)
 * MySQL + InnoDB and Percona: Redo Log
 
-PostgreSQL: it is recommended to use version 9.2+, which has a lot of query optimization features. See the information on the write-ahead-log (WAL) in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/wal-internals.html).
+PostgreSQL: it is recommended to use version 9.2+, which has a lot of query optimization features. See the information on the write-ahead-log (WAL) in the [PostgreSQL documentation](https://www.postgresql.org/docs/9.2/static/wal-internals.html).
 
 Oracle: it is recommended to keep statistics on — all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default setup). See the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
 

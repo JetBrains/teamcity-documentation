@@ -505,6 +505,27 @@ If this option is disabled, TeamCity will not create a new user when the provide
 
 <tr>
 
+
+<td>
+
+Skip two-factor authentication
+
+</td>
+
+<td>
+
+To reduce redundant verification, check this option if your organization already requires 2FA for users to log into their Google accounts.
+
+If you want users to pass additional verification anyway, uncheck this setting.
+
+Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
+
+</td>
+
+</tr>
+
+<tr>
+
 <td>
 
 Allow users from all domains to log in, including gmail.com
@@ -552,7 +573,8 @@ Before enabling this module, you need to create a dedicated application in JetBr
 After the connection is configured, go to __Administration | Authentication__ and:
 1. Click __Add module__ and choose the _JetBrains Space_ type.
 2. Choose whether you want to allow creating new users on the first login. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
-3. Save the module.
+3. Uncheck the **Skip two-factor authentication** setting if you want users to pass an additional 2FA verification when they log in (even if they pass it when log into Space). Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
+4. Save the module.
 
 To sign in, click the JetBrains Space icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
 
@@ -563,8 +585,9 @@ Before enabling this module, you need to create a [dedicated connection](configu
 To enable the module, in __Administration | Authentication__:
 1. Click __Add module__ and choose the _Azure DevOps OAuth 2.0_ type.
 2. Choose whether you want to allow creating new users on the first login. If you disable this option, TeamCity will not create a new TeamCity user when their Azure AD account is not recognized. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
-3. Choose whether you want to restrict access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by a comma. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
-4. Save the module.
+3. Uncheck the **Skip two-factor authentication** option if you want an additional 2FA verification for users (even if they pass it when log into Azure DevOps). Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
+4. Choose whether you want to restrict access only to members of specific [Azure DevOps organizations](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops). Specify their IDs separated by a comma. When combined with the _Allow creating new users on the first login_ option, this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
+5. Save the module.
 
 To sign in, click the Azure DevOps icon above the TeamCity login form and, after the redirect, approve the TeamCity application.
 

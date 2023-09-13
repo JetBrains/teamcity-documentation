@@ -49,11 +49,13 @@ For connection, select one of the available authentication types:
 
 ### GitLab
 
-If you use a recent version of GitLab (\<= 9.0), it is recommended to use the GitLab URL of the following format: `http[s]://<hostname>[:<port>]/api/v4` as GitLab [stops supporting](https://about.gitlab.com/2018/01/22/gitlab-10-4-released/#api-v3) the v3 API in GitLab 11. If you have `/api/v3` in your current TeamCity configurations, they may stop working with GitLab 11+, so consider changing the server URL to `api/v4`.
-
-For older versions of GitLab, use the GitLab URL of the format `http[s]://<hostname>[:<port>]/api/v3`.
+Commit Status Publisher supports the GitLab URL in the following format: `http[s]://<hostname>[:<port>]/api/v4`.
 
 The GitLab credentials for Commit Status Publisher must belong to a user with a Developer, Maintainer, or Owner role for the project. In addition, to change a commit status for a protected branch, the GitLab user must be included in the **Allowed to push** list.
+
+If you switch the **Authentication Type** to "GitLab Application Token", TeamCity will display a list of configured [GitHub OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to a required connection to obtain an access token.
+
+<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
 ### Bitbucket Cloud
 
@@ -81,7 +83,8 @@ If you are not signed in to your Bitbucket Server / Data Center account, TeamCit
 After you sign in, you will be able to acquire a token for the required connection. 
 TeamCity will update the token information for the connection.
 
-<img src="dk-CSP-BBServerToken.png" width="708" alt="Acquire access token for Bitbucket Server"/>
+<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
+
 
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
@@ -96,15 +99,30 @@ You can create a [personal access token](https://www.visualstudio.com/en-us/docs
 
 ### JetBrains Space
 
-To establish integration with [JetBrains Space](https://www.jetbrains.com/space/), you need to create a predefined connection to it, as described [here](configuring-connections.md#jetbrains-space-connection).
+Starting with version 2023.09, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
+{product="tcc"}
+
+Starting with version 2023.11, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
+{product="tc"}
+
+Set up a project using Space connections and TeamCity will automatically post build-related comments under the **Automation** section of Space **Commits** and **Branches** tabs.
+
+<img src="dk-csp-space.png" width="706" alt="Publish Space build statuses"/>
+
+It is also possible to manually set up the Commit Status Publisher feature. You may opt a manual setup if:
+
+* you want to set up a custom publisher name and/or Space project key;
+* TeamCity is unable to publish build statuses automatically (for example, this may happen if you utilize an on-premises instance of JetBrains Space with a custom configuration).
+
+To manually set up the Commit Status Publisher, you will need a predefined [Space connection](configuring-connections.md#jetbrains-space-connection). If you do not have a suitable connection and your project was created manually or from the repository URL, go to **Project Settings | Connections** and create a new one.
 
 Then, in the build configuration's settings:
+
 1. Open __Build Features__ and add the _Commit status publisher_ build feature.
 2. Select the _JetBrains Space_ publisher and the created connection.
 3. Specify the name that will be displayed for this service in Space.
 4. Save the settings.
 
-Now, whenever you run a build in this configuration, TeamCity will report the build status to JetBrains Space.
 
 ### Perforce Helix Swarm
 
@@ -130,7 +148,7 @@ __Example: Configuring Pull Requests Status Publishing to GitHub__
 
 The example below demonstrates how to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
 
-1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also a related [blog post](http://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
+1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also a related [blog post](https://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
 2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
    * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
    * Select GitHub as the publisher and specify its connection details and credentials and test the connection: <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>

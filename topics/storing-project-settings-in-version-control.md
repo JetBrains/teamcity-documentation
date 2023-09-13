@@ -7,6 +7,12 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 
 The versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md).
 
+> If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, start new builds manually after you inspect and verify incoming changes. Otherwise, TeamCity can execute malicious code introduced in these changes (for example, handle a [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files).
+> 
+> See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
+> 
+{type="warning"}
+
 <anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
 
 ## Synchronizing Settings with VCS

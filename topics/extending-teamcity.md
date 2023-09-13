@@ -14,7 +14,7 @@ If you cannot find relevant information here, have questions or want to share yo
 ## Plugin Development
 
 * [Teamcity Plugin Development Help](https://plugins.jetbrains.com/docs/teamcity/)
-* [Open API Javadoc](http://javadoc.jetbrains.net/teamcity/openapi/current/)
+* [Open API Javadoc](https://javadoc.jetbrains.net/teamcity/openapi/current/)
 
 ## Publicly Available Plugins
 * [TeamCity Plugins](https://plugins.jetbrains.com/teamcity)
