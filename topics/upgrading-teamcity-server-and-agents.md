@@ -78,6 +78,11 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 ### Automatic Update
 
+> Automatic update is available only for `.tar.gz` and `.exe` installations.
+> In particular, automatic update cannot be used with a Docker installation.
+> See [](#manual-update-of-docker-image).
+{type="note"}
+
 To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/).   
 When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description, and controls to perform the automatic update if you want to use that instead of performing the manual updating procedure.
 
@@ -146,6 +151,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 9. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that, all the configuration data and database scheme are updated by TeamCity converters.
 
 #### From Docker images
+{id="manual-update-of-docker-image" auxilary-id="Manual Update of Docker Image"}
 
 If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
 
