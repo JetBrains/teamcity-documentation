@@ -153,8 +153,20 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 #### From Docker images
 {id="manual-update-of-docker-image" auxilary-id="Manual Update of Docker Image"}
 
-If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
+> Manual update is the only option for Docker containers.
+{type="note"}
 
+If you are just applying a bug fix (micro release of TeamCity server) and you made no customizations to the Docker server image, you can simply (1) stop the running container, (2) pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) via the usual command (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and (3) restart the updated container.
+
+In all other cases, perform the following steps:
+
+1. [Create a backup](teamcity-data-backup.md).
+2. If you customized the image, you will need to replicate the changes to the new TeamCity server image.
+Follow the instructions from the [JetBrains/teamcity-docker-images README](https://github.com/JetBrains/teamcity-docker-images#readme).
+3. Pull the new container image via the usual command.
+4. Make sure the previously configured [TeamCity server startup properties](server-startup-properties.md) (if any) are still actual.
+5. Start up the Docker server container.
+6. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that, all the configuration data and database scheme are updated by TeamCity converters.
 
 ## IDE Plugins
 {product="tc"}
