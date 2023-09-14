@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
-Rename to "TeamCity Parameters" and move to "Managing Projects"?
+Rename to "TeamCity Parameters" and move to "Managing Projects"? 
 
 In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be referenced throughout TeamCity to avoid using plain values.
 
