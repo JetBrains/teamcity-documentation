@@ -68,11 +68,6 @@ with open('%\system.teamcity.configuration.properties.file%', 'r') as cp:
     print(cp.read())
 ```
 
-> Internal notes
-> * `agent.ownPort=9093` — hidden "system.agent.ownPort"? Or this is `teamcity.agent.ownPort`?
-> * `teamcity.build.id` reported to both files
-> 
-{type="warning"}
 
 ## Changing Parameter Values During a Build
 

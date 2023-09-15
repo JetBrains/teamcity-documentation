@@ -2,43 +2,51 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
-Rename to "TeamCity Parameters" and move to "Managing Projects"? 
+In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be used instead of plain values.
 
-In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be referenced throughout TeamCity to avoid using plain values.
-
-There are two major parameter types in TeamCity:
+There are three major parameter types in TeamCity:
 
 * **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). Parameters of this type are not passed into a build process (that is, not accessible by a build script engine).
 
-* **Environment Variables** — parameters that start with the `env.` prefix that are passed to the process of a build runner similarly to default env variables of a system.
+* **Environment Variables** — parameters that start with the `env.` prefix. These parameters are passed to the process of a build runner similarly to default env variables of a system.
 
-See the following sections to better understand where you can use parameters.
+* **System Properties** — parameters that start with the `system.` prefix. These parameters can be passed to configuration files of [certain runners](#Pass+Values+to+Builders%27+Configuration+Files) as variables specific to a build tool.
 
-## Main Use Cases
+<anchor name="Parameter+References"/>
 
-### Substitute Plain Values
+## Common Information
 
-Parameters allow you to avoid using plain values in TeamCity UI. Instead, you can reference a parameter by its name using the `%\NAME%` syntax. You can do this to:
+Parameters allow you to avoid using plain values in TeamCity UI and build scripts. Instead, you can reference a parameter by its name using the `%\<parameter_name>%` syntax. In addition, parameters can reference other parameters in their values (for example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
 
-* store frequently used values;
-* store sensitive information that should not be visible to regular TeamCity developers;
-* improve readability of your configurations by using shorter parameter names instead of full values, and so on.
+Storing values in parameters allows you to:
 
-#### Example 1: Store a Docker Registry Name
+* quickly reuse frequently used values;
+
+* create reusable [templates](build-configuration-template.md) and [meta-runners](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
+
+* add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
+
+* hide sensitive information that should not be visible to regular TeamCity developers;
+
+* improve readability of your configurations by using shorter parameter references instead of full values, and so on.
+
+The following examples illustrate different cases where you might opt for parameters instead of plain values. For other scenarios, see the [](#Main+Use+Cases) section.
+
+### Store a Docker Registry Name
 {initial-collapse-state="collapsed"}
 
-Create a custom parameter for the **&lt;Root&gt;** project to save the path for your default Docker registry (parameters declared for the **&lt;Root&gt;** project are available inside all child projects):
+If you have various configurations that utilize the same image registry, you can create a [custom parameter](custom-parameters.md) for the **&lt;Root&gt;** project to store this registry's name. Then you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
 
-<img src="dk-params-newParameter.png" alt="Create new parameter in TeamCity" width="706"/>
-
-You can then reference this parameter in all required [Docker runners](docker.md) that pull or push your images.
+> Parameters declared inside the **&lt;Root&gt;** project are available in all TeamCity build configurations.
+> 
+{style="tip"}
 
 <img src="dk-params-reuseParameter.png" width="706" alt="Use a custom parameter in TeamCity"/>
 
-#### Example 2: Specify the JDK Version
+### Specify the JDK Version
 {initial-collapse-state="collapsed"}
 
-The code below forces the [](gradle.md) runner to use the specific version of agent JDK instead of the default one. The parameter allows you to avoid using the exact path (which may vary for different build agents).
+The following [](gradle.md) step always uses JDK 19 instead of the default version referenced by the `JDK_HOME` environment variable. The runner retrieves a path for this required JDK from the corrensponding `env.` parameter.
 
 ```Kotlin
 steps {
@@ -50,7 +58,7 @@ steps {
 }
 ```
 
-#### Example 3: Set Additional .NET Parameters
+### Set Additional .NET Parameters
 {initial-collapse-state="collapsed"}
 
 In the following sample, the "Command line parameters" field of the [](net.md) runner references the `dotnet.output.type` parameter.
@@ -73,9 +81,14 @@ object MyBuildConfig : BuildType({
 })
 ```
 
-You can achieve the same result even faster by adding the "system." prefix to your parameter. Parameters that start with "system." are automatically passed to a build engine, so you can create the `system.dotnet.output.type` parameter with the "OutputType=WinExe" value and it will be written to the response (.rsp) file with .NET settings. As a result, you can skip setting the "Command line parameters" field in TeamCity.
 
-#### Example 4: Specify Artifact Paths
+> You can achieve the same result even faster by creating the `system.dotnet.output.type` parameter with the `OutputType=WinExe` value. This value will be automatically written to the response (.rsp) file with .NET settings, so you do not need to set the **Command line parameters** field in TeamCity UI.
+> 
+> This approach is based on th`system.` prefix to your parameter. Parameters that start with "system." are automatically passed to a build engine. This means you can create the `system.dotnet.output.type` parameter with the `OutputType=WinExe` value and it will be written to the response (.rsp) file with .NET settings. As a result, you can skip setting the **Command line parameters** field in TeamCity.
+> 
+{type="tip"}
+
+### Specify Artifact Paths
 {initial-collapse-state="collapsed"}
 
 When setting artifacts paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
@@ -90,10 +103,16 @@ object GoalInBuildScripts : BuildType({
 ```
 
 
-#### Example 5: Modify the Build Numbering Pattern
+### Modify the Build Numbering Pattern
 {initial-collapse-state="collapsed"}
 
-The **Build Configuration Settings | General Settings | Build Number Format** field allows you to customize the numbering pattern for builds of this configuration. The default zero-based integer number of a build can be retrieved via the `build.counter` parameter. The sample below adds the name of a TeamCity user who triggered this build to this default index.
+
+The **Build Configuration Settings | General Settings | Build Number Format** field allows you to customize the numbering pattern for builds of this configuration.
+
+
+
+The default zero-based integer index of a build can be retrieved via the `build.counter` parameter. The sample below adds the name of a TeamCity user who triggered this build to this default index.
+
 
 ```Kotlin
 object MyBuildConf : BuildType({
@@ -101,7 +120,7 @@ object MyBuildConf : BuildType({
 })
 ```
 
-#### Example 6: Label Builds
+### Label Builds
 {initial-collapse-state="collapsed"}
 
 Navigate to **Build Configuration Settings | Build Features** page and click **Add | VCS Labeling** to [tag build sources](vcs-labeling.md) in your VCS. 
@@ -109,6 +128,7 @@ Navigate to **Build Configuration Settings | Build Features** page and click **A
 
 <img src="dk-params-vcs-labeling.png" width="706" alt="VCS Labeling with Parameters"/>
 
+<br/>
 
 ```Kotlin
 object MyBuildConf : BuildType({
@@ -125,7 +145,7 @@ object MyBuildConf : BuildType({
 ```
 
 
-#### Example 7: Specify Checkout Rules
+### Specify Checkout Rules
 {initial-collapse-state="collapsed"}
 
 [](vcs-checkout-rules.md) can be configured on the **Build Configuration Settings | Version Control Settings** page. If your organization has a certain convention for branch names, you can store these default names as parameters and specify checkout rules as shown below.
@@ -146,7 +166,7 @@ object GoalInBuildScripts : BuildType({
 ```
 
 
-
+## Main Use Cases
 
 ### Customize Template-Based Configurations
 
@@ -209,7 +229,7 @@ See this article for the example of an Ant-based meta-runner that utilizes the c
 
 You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use any parameters for these conditions (configuration parameters and environment variables, both custom and predefined).
 
-To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**.
+To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**
 
 <img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
@@ -595,88 +615,7 @@ TeamCity parameters allow you to exchange values between configurations of a [bu
 
 
 
-## OLD
 
-_Build parameters_ are name-value pairs, defined by a user or provided by TeamCity, which can be used in a build. They help flexibly share settings and pass them to build steps.
-
-This article explains how to configure build parameters. See how to [use them inside build settings and build scripts](using-build-parameters.md).
-
-## Types of Build Parameters
-
-There are three types of build parameters in TeamCity:
-* [Environment variables](#Environment+Variables)
-* [System properties](#System+Properties)
-* [Configuration parameters](#Configuration+Parameters)
-
-<anchor name="ConfiguringBuildParameters-BuildParameters"/>
-
-### Environment Variables
-
-Environment variables can be passed into a spawned build process as into an environment.
-
-They are defined by the `env.` prefix.
-
-### System Properties
-
-System properties can be passed into build scripts of [certain runners](using-build-parameters.md#Using+Build+Parameters+in+Build+Scripts) as variables specific to a build tool.
-
-They are defined by the `system.` prefix.
-
-<anchor name="ConfiguringBuildParameters-ConfigurationParameters"/>
-
-### Configuration Parameters
-
-Configuration parameters are not passed into a build process and are only meant to share settings within a build configuration. They are the primary means for customizing a build configuration which is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md).
-
-They come with no prefix.
-
-<anchor name="parameter-reference"/>
-
-## Parameter Name Restrictions
-
-The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` characters and start with an ASCII letter.
-
-## Predefined Build Parameters
-
-TeamCity provides a set of _predefined parameters_ that can be used within a build configuration settings or directly inside build steps. For example, you can access the current build's number by calling the respective parameter generated by TeamCity. See the [list of predefined parameters](predefined-build-parameters.md) for details.
-
-## Custom Build Parameters
-
-In __Build Configuration Settings | Parameters__, project administrators can define build parameters for the current build configuration. As soon as a new build starts in this configuration, TeamCity passes these parameters to its build scripts and environment.
-
->It is possible to redefine the parameters' values in a single build run by launching a [custom build](running-custom-build.md).
-
-Build parameters defined in a build configuration are used only within this configuration. See how to define them on a [project or agent level](levels-and-priority-of-build-parameters.md).
-
-Any user-defined build parameter (<emphasis tooltip="system-property">system property</emphasis> or <emphasis tooltip="environment-variable">environment variable</emphasis>) can reference other parameters as follows: `%\system.parameter_name%` or `%\env.parameter_name%`. For example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`.  
-Read more about parameter references [below](#Parameter+References).
-
-You can also configure a [parameter's type](typed-parameters.md), so the parameter is displayed as a UI field in the _Run Custom Build_ dialog. This way, users will be able to use the UI dialog to quickly change the parameter's value in the next build run.
-
-## Parameter References
-
-Most text-field settings in TeamCity support referencing a build parameter as a variable. If you enter a string in the `%\parameter.name%` format, TeamCity will substitute it with the actual value during the build.
-
-If a build references a parameter which is not defined, TeamCity will consider it an [implicit agent requirement](agent-requirements.md#Implicit+Requirements): the build will only run on the agents where this parameter is defined.  
-The references to parameters which names do not satisfy the [above restrictions](#Parameter+Name+Restrictions) do not create an [implicit requirement](agent-requirements.md#Implicit+Requirements) and are ignored.
-
-See [where you can use parameter references](using-build-parameters.md#Where+References+Can+Be+Used).
-
-
-## Check Parameter Values After a Build
-
-When a build finishes, open the **Parameters** tab on the [](build-results-page.md) to view actual (at the time of this build) values for all parameters.
-
-<chunk id="build-results-parameters-tab">
-
-<img src="dk-buildParametersTab.png" width="706" alt="Build parameters tab"/>
-
-This page has two tabs:
-
-* **Parameters** — lists values for all configuration parameters, system properties, and environment variables. Highlights parameters that were added/modified in [custom builds](running-custom-build.md).
-* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
-
-</chunk>
 
 <seealso>
         <category ref="admin-guide">
