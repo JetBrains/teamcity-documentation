@@ -1,4 +1,4 @@
-[//]: # (title: Parameters' Lifecycle and Priority)
+[//]: # (title: Parameters' Scopes, Lifecycle and Priority)
 
 ## Parameter Initial Values
 
@@ -91,6 +91,8 @@ echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.a
 
 ## Check Parameter Values
 
+### In TeamCity UI
+
 To check current values of agent parameters, navigate to **Agents | Parameters report** and enter the property whose value you need to check.
 
 <img src="dk-params-checkparamsonagents.png" width="706" alt="Check the specific on agents"/>
@@ -100,9 +102,17 @@ You can also click any build agent to open the agent details page, and switch to
 <img src="dk-params-allParamsOnAgent.png" width="706" alt="Check all parameters on an agent"/>
 
 
-To view which values parameters had during a specific build, open this build's [results page](build-results-page.md) and switch to the **Parameters** tab. You can tick a related checkbox to view only those parameters that changed their values during this build.
+To view which values parameters had during a specific build, open this build's [results page](build-results-page.md) and switch to the **Parameters** tab.
 
 <img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
+
+This page has two tabs:
+
+* **Parameters** — lists values for all configuration parameters, system properties, and environment variables. You can tick a related checkbox to view only those parameters that changed their values during this build.
+
+* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
+
+### Via REST API
 
 To check initial and actual parameter values of the specific build via [REST API](teamcity-rest-api.md), send GET requests to the `/app/rest/builds/{buildLocator}` endpoint and specify required payload fields according to the [Build schema](https://www.jetbrains.com/help/teamcity/rest/build.html).
 
