@@ -1,91 +1,163 @@
-[//]: # (title: Levels and Priority of Build Parameters)
-[//]: # (auxiliary-id: Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
+[//]: # (title: Scopes, Priority and Lifecycle of Build Parameters)
+[//]: # (auxiliary-id: Scopes, Priority and Lifecycle of Build Parameters;Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
 
-[Build parameters](configuring-build-parameters.md) can be defined at different levels (sorted from higher to lower priority):
-* Parameters defined in the _[Run Custom Build](running-custom-build.md)_ dialog.
-* Parameters [defined in Build Configuration Settings](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings).
-* Parameters [defined in Project Settings](#Project-Level+Build+Parameters).  
-  The parameters defined for a project will be inherited by all its subprojects and build configurations. If required, you can redefine them in a single build configuration.
-* Parameters defined in a [build configuration template](build-configuration-template.md).
-* Parameters [defined in an agent's configuration file](#Agent-Level+Build+Parameters).
-* Environment variables of the build agent process itself.
-* [Predefined build parameters](predefined-build-parameters.md).
 
-On the start of a build process, the resultant set of parameters is saved into a file which can be accessed by the build script. To learn more about this file, see the `teamcity.build.properties.file` <emphasis tooltip="system-property">system property</emphasis> or `TEAMCITY_BUILD_PROPERTIES_FILE` <emphasis tooltip="environment-variable">environment variable</emphasis> descriptions in [Predefined Build Parameters](predefined-build-parameters.md).
+## Initial Parameter Values
 
-## Project-Level Build Parameters
+TeamCity parameters can obtain their values from one or multiple sources listed below.
 
-TeamCity allows you to define build parameters for a project, __all__ its subprojects, and build configurations in one place: __Project Settings | Parameters__.
+* The **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog.
 
-If a build parameter with the same name is defined both in a build configuration and on the project level, the following rules apply:
+    <img src="dk-params-runcustombuild.png" width="706" alt="Run Custom Build Dialog"/>
 
-<table>
+* Custom values entered by users on the **Build Configuration Settings | Parameters** page.
 
-<tr><td></td><td></td><td></td></tr>
+* Custom values entered by users on the **Project Settings | Parameters** page. Parameters defined within a project are inherited by all its subprojects and build configurations. If required, you can override them in individual build configurations.
 
-<tr><td>
+* Values specified in a [build configuration template](build-configuration-template.md).
 
-__Case 1__
+* Values specified in a build agent's [configuration file](configure-agent-installation.md) (the `<AGENT_HOME>/conf/buildAgent.properties` file). For example, the following sample demonstrates how to implement a custom build agents' ranking system that you can use in [](agent-requirements.md):
 
-</td><td>
+  <img src="dk-params-agentTiers.png" width="706" alt="Custom Agent Ranking system"/>
 
-Project A, Build Configuration from project A
+  <br/>
 
-</td><td>
+  ```Kotlin
+  // _Root project config
+  object Project : Project({
+      description = "Contains all other projects"
+      params {
+        param("agent.tier", "")
+      }
+  })
+  ```
 
-Parameters defined in the build configuration have priority over the parameters with the same names defined on the project level.
+  ```Plain Text
+  # An agent's "buildAgent.properties" files
+  
+  ######################################
+  #   Default Build Properties         #
+  ######################################
+  # ...
+  agent.tier=Platinum
+  # ...
+  ```
 
-</td></tr>
 
-<tr><td>
+* Values reported by an agent when it connects to the TeamCity server. These values are passed to parameters that describe the agent environment. For example, the `DotNetCoreSDK7.0_Path` parameter that stores the path to .NET 7 SDK on this specific agent.
 
-__Case 2__
+* Values of predefined build parameters. These parameters can collect their values on a server side in the scope of a specific build (for example, the `build.number` parameter), or on the agent side right before a build starts (for example, the `teamcity.agent.work.dir.freeSpaceMb` parameter).
 
-</td><td>
 
-Project A, Template T from project A, build configuration from project A inherited from template T
 
-</td><td>
+## Parameters' Priority
 
-Parameters of the build configuration have priority over the parameters with the same name defined in project A. Project-level parameters have priority over parameters with the same name defined in the template.
 
-</td></tr>
+The list above also ranges parameter value sources by priority, from highest to lowest. That is, if the same parameter retrieves different values from different sources, a value from the topmost source in this list is applied. For example, if the `my.parameter` is defined inside an agent configuration file and on a build configuration settings page in TeamCity UI, the value from the configuration settings page wins.
 
-<tr><td>
 
-__Case 3__
+<!--
+## Initial Values Files
 
-</td><td>
+When a build process starts, TeamCity saves all parameters with their values to files that you can access via corresponding parameters. These files use the [Java Properties File format](https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html) (for example, special characters are backslash-escaped).
 
-Project A1, Project A2, Template T from project A1, build configuration from project A2 inherited from template T
 
-</td><td>
+* System parameters are stored to a file whose path is stored in the `system.teamcity.build.properties.file` parameter. Parameters in this file are stored without their "system." prefix.
 
-Parameters of project A2 (the one build configuration belongs to) have priority over the parameters with the same names defined in the template.
+* Configuration parameters are written to a file that can be accessed via the `system.teamcity.configuration.properties.file` parameter.
 
-</td></tr>
+The following sample script for the [](python.md) runner prints the contents of both files to the build log:
 
-</table>
+```Python
+print("System properties:\r\r")
+with open('%\system.teamcity.build.properties.file%', 'r') as sp:
+    print(sp.read())
 
-### Expected Parameter Format
+print("Configuration properties:\r\r")
+with open('%\system.teamcity.configuration.properties.file%', 'r') as cp:
+    print(cp.read())
+```
+-->
 
-When defining <emphasis tooltip="system-property">system properties</emphasis> or <emphasis tooltip="environment-variable">environment variables</emphasis> in the `teamcity.default.properties` file, use the following format: `system.<property_name>=<property_value>` or `env.<property_name>=<property_value>`. For example, `env.CATALINA_HOME=C:\tomcat_6.0.13`.
 
-The names of parameters must contain only the `[a-zA-Z0-9._-*]` characters and start with an ASCII letter.
 
-### Set Parameters for Build Configurations Using Same VCS Root
 
-You can also define parameters for only those build configurations of the project that use the same VCS root. To do that, create a text file named `teamcity.default.properties` and check it in to the VCS root. Ensure that the file appears directly in the [Build Working Directory](build-working-directory.md) by specifying the appropriate [checkout rules](configuring-vcs-settings.md#Configure+Checkout+Rules). The name and path to the file can be customized via the `teamcity.default.properties` parameter of a build configuration.  
-The parameters defined this way are not visible in the TeamCity UI, but are passed directly to the build process.
+## Changing Parameter Values During a Build
 
-<anchor name="agentSpecific"/>
+TeamCity parameters can change their values as a build progresses through its stages. This can happen automatically, due to the nature of the value reported by a parameter, or in response to operations performed during a build.
 
-## Agent-Level Build Parameters
-[//]: # (AltHead: agentSpecific)
+For example, the `teamcity.agent.work.dir.freeSpaceMb` parameter that reports the available agent disk space changes its value as builds checkout new source files and generate new artifacts and logs.
 
-To define parameters specific to a certain [build agent](build-agent.md), you need to edit this agent's `<Agent Home>/conf/buildAgent.properties` [configuration file](configure-agent-installation.md). Refer to [this section](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) for more information on available predefined parameters for agents.
+If you need to manually change a TeamCity parameter from inside a build step, send the following [service message](service-messages.md):
 
-The [expected format](#Expected+Parameter+Format) is the same as at the project level: `[system|env].<property_name>=<property_value>`.
+```Shell
+echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
+```
+
+<include src="configuring-build-parameters.md" include-id="change-parameter-from-build"/>
+
+
+
+
+
+## Checking Parameter Values
+
+
+### In TeamCity UI
+
+To check current values of agent parameters, navigate to **Agents | Parameters report** and enter the property whose value you need to check.
+
+<img src="dk-params-checkparamsonagents.png" width="706" alt="Check the specific on agents"/>
+
+You can also click any build agent to open the agent details page, and switch to the **Agent Parameters** tab to view all parameters reported by this specific agent.
+
+<img src="dk-params-allParamsOnAgent.png" width="706" alt="Check all parameters on an agent"/>
+
+
+To view which values parameters had during a specific build, open this build's [results page](build-results-page.md) and switch to the **Parameters** tab.
+
+<img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
+
+This page has two tabs:
+
+* **Parameters** — lists values for all configuration parameters, system properties, and environment variables. You can tick a related checkbox to view only those parameters that changed their values during this build.
+
+* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
+
+### Via REST API
+
+To check initial and actual parameter values of the specific build via [REST API](teamcity-rest-api.md), send GET requests to the `/app/rest/builds/{buildLocator}` endpoint and specify required payload fields according to the [Build schema](https://www.jetbrains.com/help/teamcity/rest/build.html).
+
+
+* `/app/rest/builds/{buildLocator}?fields=originalProperties(*)` — returns user-defined parameters from the build configuration and their default values.
+* `/app/rest/builds/{buildLocator}?fields=startProperties(*)` — returns all parameters reported by an agent and their values at the time the build started.
+* `/app/rest/builds/{buildLocator}?fields=resultingProperties(*)` — returns all parameters reported by an agent and their values by the time the build finished.
+
+You can also check initial and final values of the specific parameter. To do this, specify the name of the target parameter.
+
+For example, if you run a custom build for the sample project illustrated in the [](#Changing+Parameter+Values+During+a+Build) section, send the following query to check the `day.of.week` parameter values.
+
+```Shell
+curl -L \
+  https:<SERVER_URL>/app/rest/builds/<BUILD_LOCATOR>?fields=\
+    originalProperties($locator(name:(value:(day.of.week),matchType:matches)),property),\
+    startProperties($locator(name:(value:(day.of.week),matchType:matches)),property),\
+    resultingProperties($locator(name:(value:(day.of.week),matchType:matches)),property)
+```
+
+If this build runs on Wednesday and you pass "Sunday" as the `day.of.week` parameter value via the **Run custom build** dialog, the response payload will contain the following values:
+
+* `originalProperties` returns "Monday" (the default value stored in the build configuration).
+* `startProperties` returns "Sunday" (the value from the "Run custom build" dialog, has a priority over the default value from the build configuration).
+* `resultingProperties` returns "Wednesday" (the value calculated during the build and written via the service message).
+
+
+
+
+
+
+
+
 
 <seealso>
         <category ref="admin-guide">

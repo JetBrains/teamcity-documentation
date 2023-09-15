@@ -350,14 +350,14 @@
       <toc-element id="assigning-build-configurations-to-specific-build-agents.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="detaching-build-from-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="configuring-build-parameters.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element id="using-build-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="levels-and-priority-of-build-parameters.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="levels-and-priority-of-parameters"/>
-         <toc-element id="parameters-lifecycle-and-priority.md"/>
+
+         <toc-element id="levels-and-priority-of-build-parameters.md" accepts-web-file-names-ref="levels-and-priority-of-parameters"/>
          <toc-element id="use-parameters-in-build-chains.md"/>
-         <toc-element id="custom-parameters.md"/>
-         <toc-element id="typed-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="typed-parameters.md"/>
          <toc-element id="predefined-build-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="using-build-parameters.md"/>
       </toc-element>
+
    </toc-element>
    <toc-element id="configuring-test-reports-and-code-coverage.md" accepts-web-file-names-ref="configuring-test-reports-and-code-coverage">
       <toc-element id="net-testing-frameworks-support.md" show-structure-for="chapter" show-structure-depth="4"/>

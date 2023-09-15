@@ -1,173 +1,156 @@
 [//]: # (title: Using Build Parameters)
 [//]: # (auxiliary-id: Using Build Parameters)
 
-This article explains how to use [build parameters](configuring-build-parameters.md) to share settings within a build.
+This topic illustrates simple use cases where you might opt for referencing parameters in TeamCity UI instead of specifying plain values. For the general overview refer to the [](configuring-build-parameters.md#Main+Use+Cases) section.
 
-## Using Build Parameters in Build Configuration Settings
 
-In most build configuration settings, you can use a [reference to a build parameter](configuring-build-parameters.md#Parameter+References) instead of using the actual plain-text value. Before starting a build, TeamCity resolves all references with the available parameters. If there are references that cannot be resolved, they are left as is, and a respective warning appears in the build log.
+## Store a Docker Registry Name
 
-To reference a build parameter, use its name enclosed in percentage characters: for example, `%\teamcity.build.number%`.
+If you have various configurations that utilize the same image registry, you can create a [custom parameter](custom-parameters.md) for the **&lt;Root&gt;** project to store this registry's name. Then you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
 
->Any text enclosed in percentage characters will be interpreted by TeamCity as a reference to a parameter. If the parameter cannot be found in the build configuration, this reference becomes an _[implicit agent requirement](agent-requirements.md#Implicit+Requirements)_ and such build configuration can only be run on an agent with this parameter defined. The agent-defined value will be used in the build.  
-If you want to prevent TeamCity from treating the text in the percentage characters as a reference to a parameter, use two percentage characters. Every occurrence of `%\%` in the values where parameter references are supported will be replaced with `%` before passing the value to the build. For example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
+> Parameters declared inside the **&lt;Root&gt;** project are available in all TeamCity build configurations.
+>
+{style="tip"}
 
-Password fields can also contain references to parameters. Note that in this case, you cannot see the reference when entering or editing it, as it is masked by asterisks.
+<img src="dk-params-reuseParameter.png" width="706" alt="Use a custom parameter in TeamCity"/>
 
-For details on reusing or overriding parameters within a build chain, refer to [this section](predefined-build-parameters.md#Dependency+Parameters).
 
-## Using Build Parameters in VCS Labeling Pattern and Build Number
 
-In the <emphasis tooltip="build-number">build number</emphasis> pattern or [VCS labeling](vcs-labeling.md) pattern, you can use the `%<prefix>.parameter_name%` syntax to reference any parameter known by TeamCity:
-* Predefined parameters of a [server](predefined-build-parameters.md#Predefined+Server+Build+Parameters) or [build configuration](predefined-build-parameters.md#Predefined+Configuration+Parameters).
-* Custom build parameters added on the __Build Configuration Settings | Parameters__ page.
 
-For example, a VCS revision number can be specified as `%\build.vcs.number%`.
 
-## Using Build Parameters in Build Scripts
+## Specify the JDK Version
 
-All build parameters starting with the `env.` prefix (<emphasis tooltip="environment-variable">environment variables</emphasis>) are passed into a build's process environment without the `env.` prefix.
+The following [](gradle.md) step always uses JDK 19 instead of the default version referenced by the `JDK_HOME` environment variable. The runner retrieves a path for this required JDK from the corrensponding `env.` parameter.
 
-All build parameters starting with the `system.` prefix (<emphasis tooltip="system-property">system properties</emphasis>) are passed to the build script engines and can be referenced there by the parameter name, without the `system.` prefix. However, you need to use this prefix to access these parameters in the TeamCity UI or, for example, in the [Command Line](command-line.md) runner.
+```Kotlin
+steps {
+    gradle {
+        name = "Gradle step"
+        tasks = "build-dist"
+        jdkHome = "%\env.JDK_19_0_ARM64%"
+    }
+}
+```
 
-The following syntax will work _in a build script_ (_not_ in TeamCity settings):
-* For [Ant](ant.md), [Maven](maven.md), and [NAnt](nant.md), use `${<parameter_name>}`.
-* For [.NET](net.md), use `$(<parameter_name>)`.
-    * MSBuild does not support names with dots (`.`), so you need to replace `.` with `_` when using the parameter inside a build script.
-    * The `nuget push` and `nuget delete` commands do not support parameters.
-* For [Gradle](gradle.md), the TeamCity system properties can be accessed as Gradle properties (similar to the ones defined in the `gradle.properties` file) and are to be referenced as follows:
-    * The name allowed as a Groovy identifier (the property name does not contain dots):
 
-     ```Shell
-        
-        println "Custom user property value is $\{customUserProperty\}"
-     
-     ```
 
-    * The name not allowed as a Groovy identifier (the property name contains dots: for example, `build.vcs.number.1`): `project.ext["build.vcs.number.1"]`
 
-### Where References Can Be Used
 
-This is where [parameter references](configuring-build-parameters.md#Parameter+References) can be used in TeamCity:
+## Set Additional .NET Parameters
 
-<table><tr>
+In the following sample, the value of the [](net.md) runner's **Command line parameters** field is specified using a reference to the `dotnet.output.type` parameter.
 
-<td>
+<img src="dk-params-additionalSettings.png" width="706" alt="Additional parameters"/>
 
-Settings
+```Kotlin
+object MyBuildConfig : BuildType({
+    params {
+        param("dotnet.output.type", "WinExe")
+    }
 
-</td>
+    steps {
+        dotnetBuild {
+            args = "-p:OutputType=%\dotnet.output.type%"
+        }
+    }
+})
+```
 
-<td>
+> You can achieve the same result even faster by creating the `system.dotnet.output.type` parameter with the `OutputType=WinExe` value. This value will be automatically written to the response (.rsp) file with .NET settings, so you do not need to set the **Command line parameters** field in TeamCity UI.
+>
+> This approach is based on the mechanism that passes all parameters with the `system.` prefix to a build engine. See this section for more information: [](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
+>
+{type="tip"}
 
-Description
 
-</td></tr><tr>
 
-<td>
 
-Build runner settings, artifact specification
 
-</td>
 
-<td>
+## Specify Artifact Paths
 
-Any of the parameters that are passed into the build.
+When setting artifacts paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
 
-</td></tr><tr>
+```Kotlin
+object GoalInBuildScripts : BuildType({
+    artifactRules = "testfile1.txt => %\default.artifact.path%"
+    params {
+        param("default.artifact.name", "/bin/artifacts/build_artifact.tar.gz")
+    }
+})
+```
+{interpolate-variables="false"}
 
-<td>
 
-User-defined parameters and environment variables
 
-</td>
 
-<td>
 
-Any of the parameters that are passed into the build.
 
-</td></tr><tr>
 
-<td>
+## Modify the Build Numbering Pattern
 
-Build number format
 
-</td>
+The **Build Configuration Settings | General Settings | Build Number Format** field allows you to customize the numbering pattern for builds of this configuration.
 
-<td>
 
-Only [predefined server build parameters](predefined-build-parameters.md).
 
-</td></tr><tr>
+The default zero-based integer index of a build can be retrieved via the `build.counter` parameter. The sample below adds the name of a repository branch to the build number.
 
-<td>
 
-VCS root and checkout rules settings
+```Kotlin
+object MyBuildConf : BuildType({
+    buildNumberPattern = "%\build.counter%-%\teamcity.build.branch%"
+})
+```
+{interpolate-variables="false"}
 
-</td>
 
-<td>
 
-Any of the parameters that are passed into the build.
 
-</td></tr><tr>
 
-<td>
+## Label Builds
 
-VCS label pattern
+The [](vcs-labeling.md) build feature allows build configurations to tag repository sources.
 
-</td>
+<img src="dk-params-vcs-labeling.png" width="706" alt="VCS Labeling with Parameters"/>
 
-<td>
+The following setup illustrates how to use values of the `release.status` parameter as tags. See also: [Parameters Display Mode](custom-parameters.md#Select).
 
-`system.build.number` and [predefined server build parameters](predefined-build-parameters.md#Predefined+Server+Build+Parameters).
 
-</td></tr><tr>
+```Kotlin
+object MyBuildConf : BuildType({
+    params {
+        param("release.status", "EAP")
+    }
+    features {
+        vcsLabeling {
+            vcsRootId = "${DslContext.settingsRoot.id}"
+            labelingPattern = "%release.status%"
+        }
+    }
+})
+```
 
-<td>
 
-Artifact dependency settings
 
-</td>
 
-<td>
 
-Only [predefined server build parameters](predefined-build-parameters.md#Predefined+Server+Build+Parameters).
+## Specify Checkout Rules
 
-</td></tr></table>
+[](vcs-checkout-rules.md) can be configured on the **Build Configuration Settings | Version Control Settings** page. If your organization has a certain convention for branch names, you can store these default names as parameters and specify checkout rules as shown below.
 
-## Example Workflow
+```Kotlin
+object GoalInBuildScripts : BuildType({
+    params {
+        param("branch.ignored", "refs/heads/sandbox")
+        param("branch.default", "refs/heads/main")
+    }
 
-Let's try to define a build parameter on a build configuration level and use it in a build step.
-
-In this example use case, we will add a configuration parameter containing your server URL. Then, we will use its value as the base part of the URL to download a certain file via a command line. To do this:
-1. Go to __Build Configuration Settings | Parameters__.
-2. Click __Add new parameter__.
-3. Enter the parameter's name and value. Leave _Configuration parameter_ as its _Kind_.  
-   * Name: `serverUrlBase`
-   * Value: `https://<yourServerDomain>.com/`
-     <img src="add-config-parameter.png" width="460" alt="Add configuration parameter"/>
-4. Save the parameter.
-5. Go to __Build Steps__.
-6. Click __Add build step__.
-7. Choose the [Command Line](command-line.md) runner type.
-8. In the _Custom script_ field, enter the following command:
-  ```Shell
-  curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
-
-  ```
-  For a build with the number `1234`, this command will be resolved as follows:
-  ```Shell
-  curl -o libraries_1234.tar.gz https://<yourServerDomain>.com/libraries.tar.gz
-
-  ```
-9. Save the build step and run a new build.
-
-When executing this step in a build, TeamCity will download the `libraries.tar.gz` archive from your server and save it in the [checkout directory](build-checkout-directory.md) as an archive with the new name, depending on the current build's number. TeamCity generates a unique build number for each starting build and saves it as this build's `build.number` parameter, which we referenced in the new archive name. Such predefined parameters can be accessed within build steps in the same way as parameters you add manually. You can find the list of other predefined parameters [here](predefined-build-parameters.md).
-
-You can follow this guide in your own configuration: just substitute the archive name and server URL with real values.
-
-Parametrized build settings and scripts is one of the main advantages of TeamCity, and using them will significantly boost your pipelines' capabilities.
+    vcs {
+        root(YourVcsRootName, "+:%\branch.default%", "-:%\branch.ignored%")
+    }
+})
+```
 
  <seealso>
         <category ref="admin-guide">
