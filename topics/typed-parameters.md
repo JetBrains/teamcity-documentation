@@ -88,7 +88,7 @@ Request body:
 See this article to learn more about managing parameters via REST API: [Manage Typed Parameters](https://www.jetbrains.com/help/teamcity/rest/manage-typed-parameters.html).
 
 
-### In the Properties File
+### In the Default Properties File
 
 This method allows you to declare parameters available only for those build configurations that share the same VCS root. Parameters defined this way are not visible in the TeamCity UI and passed directly to the build process.
 

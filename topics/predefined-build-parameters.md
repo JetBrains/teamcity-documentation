@@ -18,6 +18,7 @@ There is also a special type of server-side build parameters that can be referen
 
 ## Predefined Server Build Parameters
 
+
 Here is the list of server build parameters (<emphasis tooltip="system-property">system properties</emphasis>) predefined in TeamCity and the respective environment variables.
 
 <table><tr>
@@ -967,69 +968,7 @@ To view the complete list of these server parameters, open the [Parameters tab](
 
 ### Dependency Parameters
 
-These configuration parameters are provided by the builds the current build depends on (via a [snapshot](dependent-build.md#Snapshot+Dependency) or [artifact dependency](dependent-build.md#Artifact+Dependency)).
-
-In a [dependent build](dependent-build.md), that is later in the chain, dependency parameters of the previous builds have the following format:
-
-```XML
-dep.<btID>.<parameter_name>
-
-```
-
-* `<btID>` — the [ID](configuring-general-settings.md) of a dependency build configuration to get the parameter from. Indirect dependency configurations are also available (for example, A depends on B and B depends on C — A will be able to access the parameters of C).
-* `<parameter_name>` — the name of the [build parameter](configuring-build-parameters.md).
-
-If there are multiple `dep.<btID>.<parameter_name>` paths to the same build configuration with `btID`, so that different builds are accessible via (direct or indirect) artifact dependencies, the following rules apply:
-* If there is a snapshot dependency between some of the builds, the build from the same chain wins.
-* If there are no snapshot dependencies and multiple builds are accessible only via an artifact dependency, the build with a larger [build ID](build-results-page.md#Internal+Build+ID) wins. If there are several artifact dependencies from a single build configuration, only the first one is considered.
-
->When using build parameters of the _Password_ type, referencing them from a dependency, such as `%dep.<btID>.password_parameter%`, will not retrieve the actual value. This is done for security reasons: to prevent dependencies from accessing the value, thus restricting the possibility of unauthorized access to it.
-
-#### Overriding Dependency Parameters
-
-It is possible to override values of [build parameters](configuring-build-parameters.md) of the [snapshot-dependency](snapshot-dependencies.md) builds in the current build, on its start.
-
-For example, build configuration A depends on B and B depends on C.
-
-On triggering, A can change any parameter used in B or C by setting the following parameter:
-
-```XML
-reverse.dep.<btID>.<parameter_name>
-```
-
-`<parameter_name>` is the name of the parameter to set in the build configuration `<btID>`. To set a <emphasis tooltip="system-property">system property</emphasis>, include the `system.` prefix in `<parameter_name>`.
-
-To change a parameter in all dependency builds at once, use a wildcard:
-
-```XML
-reverse.dep.*.<parameter_name>
-```
-
-If several dependency build configurations have alike IDs, that is their beginning and/or ending match, you can apply a filter and change a build parameter only in these dependencies. Use the following syntax:
-
-```XML
-reverse.dep.[prefix]*[suffix].<parameter_name>
-```
-
-where `prefix` corresponds to the beginning of the target builds' IDs, and `suffix` corresponds to their ending. Both attributes are optional. Only one `*` symbol is allowed.
-
-Each dependent build in a chain can redefine parameters in any of its dependency builds.
-
-If build configurations A and B are trying to set different values for the same parameter in the build configuration C, the following rules apply:
-* If A depends on B by a snapshot dependency either directly or transitively, the value proposed by A will be used in C.
-* If both A and B do not depend on each other, TeamCity will consider it a conflict and will not modify the original value in C. Instead, two other parameters will be created for C:
-  * `conflict.<btA>.<parameter_name>=<valueA>`
-  * `conflict.<btB>.<parameter_name>=<valueB>`
-* The priority of a reverse parameter's value depends on the way it is defined:
-  * Top priority: if a value is redefined in the specific build via `<btID>`.
-  * Medium priority: if a value is redefined in a set of builds via `[prefix]*[suffix]`. Among them, the longer values are considered more specific and thus have higher priority than the shorter ones.
-  * Low priority: if a value is redefined in all preceding builds via `*`.
-
-The `reverse.dep.*` parameters are processed on queuing the build where these parameters are defined. As the parameters' values should be known at that stage, they should be defined only either as [build configuration parameters](configuring-build-parameters.md#Custom+Build+Parameters) or in the [custom build dialog](running-custom-build.md). Setting the parameter during the build steps has no effect.
-
->Pushing a new parameter into a build will override the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
-
-Note that the values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the context of the build where the parameters are pushed to.
+See the following article to learn more about dependency parameters: [](use-parameters-in-build-chains.md).
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e388.txt")
 
