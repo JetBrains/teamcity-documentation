@@ -240,11 +240,18 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 1. Choose the project where you would like to create a new connection, noting that the connection will only be available to subprojects of the chosen project.
 2. Go to *Project Settings | Connections* and click *Add Connection*.
 3. Choose *GitLab.com* or *GitLab CE/EE*.
-4. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create one. GitLab offers you the choice of creating an OAuth Application in three different scopes: (1) [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application), (2) [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application), (3) [Instance-wide applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-an-instance-wide-application).
-5. When filling out the *Add new application* form in GitLab: (1) Choose a Name for the application, (2) Copy the *Redirect URL* from the TeamCity dialog into the GitLab form, (3) Under *Scopes*, check *api*, (4) Click *Save application*.
-> For a GitLab instance-wide application, there is an additional *Trusted* checkbox, which skips the user authorization step when it is enabled.
->
-{type="note"}
+4. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
+   - [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application)
+   - [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application)
+   - [Instance-wide applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-an-instance-wide-application)
+5. When filling out the *Add new application* form in GitLab:
+   1. Choose a Name for the application
+   2. Copy the *Redirect URL* from the TeamCity dialog into the GitLab form
+   3. Under *Scopes*, check *api*
+   4. Click *Save application*
+    > For a GitLab instance-wide application, there is an additional *Trusted* checkbox, which skips the user authorization step when it is enabled.
+    >
+    {type="note"}
 
 6. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
 7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
