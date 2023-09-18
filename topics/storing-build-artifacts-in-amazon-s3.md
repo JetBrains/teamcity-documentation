@@ -23,6 +23,11 @@ To enable an external artifact storage in an AWS S3 bucket:
 7. Specify an existing S3 bucket to store artifacts.
 8. Save your settings.
 
+> If your build agent is deployed behind a proxy, you must also configure the proxy settings on the build agent.
+> See [](configuring-proxy-server.md#use-proxy-for-outgoing-build-agent-connections).
+> 
+{type="note"}
+
 The configured S3 storage will appear on the __Artifacts Storage__ page. To enable it in this project, change its state to _Active_.
 
 Now, new artifacts produced by builds of this project and its subprojects will be stored in the specified AWS S3 bucket.
