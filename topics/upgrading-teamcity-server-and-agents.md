@@ -79,8 +79,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 ### Automatic Update
 
 > Automatic update is available only for `.tar.gz` and `.exe` installations.
-> In particular, automatic update cannot be used with a Docker installation.
-> See [](#manual-update-of-docker-image).
+> In particular, automatic update cannot be used with a Docker installation (see [](#manual-update-of-docker-image)) and the AWS CloudFormation template is no longer supported (see [teamcity-cloudformation-template](https://github.com/JetBrains/teamcity-cloudformation-template#readme)).
 {type="note"}
 
 To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/).
