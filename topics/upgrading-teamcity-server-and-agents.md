@@ -157,16 +157,12 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 > Manual update is the only option for Docker containers.
 {type="note"}
 
-If you are just applying a bugfix update (indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version) and you made no customizations to the Docker server image, you can simply (1) stop the running container, (2) pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and (3) start the new container.
-
-In all other cases, perform the following steps:
-
-1. [Create a backup](teamcity-data-backup.md).
-2. If you customized the image, you need to replicate the changes to the new TeamCity server image.
-Follow the instructions from the [JetBrains/teamcity-docker-images README](https://github.com/JetBrains/teamcity-docker-images#readme).
-3. Pull the new container image.
-4. Start up the Docker server container.
-5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that, all the configuration data and database scheme are updated by TeamCity converters.
+1. [Create a backup](teamcity-data-backup.md) (can be skipped for a bugfix update, indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version).
+2. If you built your own Docker image based on the official TeamCity image, pull the new version of the TeamCity server base image (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme).
+3. Pull the new version of the image on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
+4. Start the new container.
+5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
+6. At this point, if the database schema or the configuration data format has changed in the new release, TeamCity starts to convert the data.
 
 ## IDE Plugins
 {product="tc"}
