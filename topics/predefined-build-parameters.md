@@ -978,7 +978,7 @@ These are the settings of VCS roots attached to a build configuration.
 
 VCS parameters have the following format:
 
-```XML
+```Plain Text
 vcsroot.<VCS_root_ID>.<VCS_root_parameter_name>
 ```
 
@@ -993,20 +993,20 @@ Parameters marked by the VCS as `secure` (for example, passwords) are not availa
 
 When TeamCity starts a build in a build configuration where a [branch specification](working-with-feature-branches.md) is configured, it adds a branch label, or logical name, to each build. This logical name is also available as a configuration parameter:
 
-```XML
+```Plain Text
 teamcity.build.branch
 ```
 
 To distinguish builds started on a default and a non-default branch, there is an additional boolean configuration parameter which allows differentiating these cases:
 
-```XML
+```Plain Text
 teamcity.build.branch.is_default=true|false
 
 ```
 
 For Git and Mercurial, TeamCity provides additional parameters with the names of VCS branches known at the moment of the build start. Note that these may differ from the logical branch name as per branch specification configured. This VCS branch is available from a configuration parameter with the following name:
 
-```XML
+```Plain Text
 teamcity.build.vcs.branch.<VCS_root_ID>
 
 ```

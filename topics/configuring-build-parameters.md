@@ -282,6 +282,7 @@ Console.WriteLine("Custom variable value = " + System.Environment.GetEnvironment
 You can also add parameter references in the `%\parameter_name%` format to the **Script parameters** field of the runner. These parameters will then be available from the global `Args` array.
 
 See this blog post for an example of using parameters in C# scripts and .NET runner: [How to automate CI/CD tasks with C# Scripting in TeamCity](https://blog.jetbrains.com/teamcity/2021/11/how-to-automate-ci-cd-tasks-with-c-scripting-in-teamcity/).
+
 </tab>
 
 </tabs>
