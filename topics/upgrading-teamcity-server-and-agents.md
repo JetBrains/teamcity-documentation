@@ -156,9 +156,9 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 > Manual update is the only option for Docker containers.
 {type="note"}
 
-1. [Create a backup](teamcity-data-backup.md) (can be skipped for a bugfix update, indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version).
-2. If you built your own Docker image based on the official TeamCity image, pull the new version of the TeamCity server base image (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme).
-3. Pull the new version of the image on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
+1. (Not required for a bugfix update) [Create a backup](teamcity-data-backup.md).
+2. If you have built your own Docker image, pull the new version of the TeamCity server base image (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme) based on this image.
+3. Pull the new image on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
 4. Start the new container.
 5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
 6. At this point, if the database schema or the configuration data format has changed in the new release, TeamCity starts to convert the data.
