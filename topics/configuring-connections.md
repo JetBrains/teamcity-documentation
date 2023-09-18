@@ -209,7 +209,7 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 
 </dl>
 
-> If you use a GitHub Enterprise server with HTTPS, you need to also upload its HTTPS certificate as described [in this article](uploading-ssl-certificates.md).
+> If your GitHub Enterprise server provides a HTTPS endpoint (recommended) and the endpoint is configured with a certificate that is *not* signed by a well-known certificate authority (CA), then you need to upload a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
 > 
 {type="note"}
 
@@ -225,7 +225,7 @@ Once a connection is successfully configured, the GitHub icon will become active
 >
 {product="tcc"}
 
-There are two types of GitLab connections: __GitLab CE/EE__ and __GitLab.com__. Choose it depending on your GitHub account type.
+There are two types of GitLab connections: *GitLab.com* for accounts hosted on the [](https://gitlab.com) site, and *GitLab CE/EE* for accounts on a self-hosted GitLab Community Edition (CE) or Enterprise Edition (EE) server.
 
 A connection to GitLab can be used to:
 * Create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
@@ -233,15 +233,26 @@ A connection to GitLab can be used to:
 * Integrate with a [GitLab issue tracker](gitlab.md).
 * Enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).
 
-The GitLab connection form provides multiple parameters. You need to use them to [create a new OAuth application in GitLab](https://docs.gitlab.com/ee/integration/oauth_provider.html).
+OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.
 
-After the app is created:
-1. Copy its client ID and secret.
-2. Go back to the connection form in TeamCity.
-3. Paste the GitLab server URL (only for CE/EE) and the app ID and secret.
-4. Save the connection.
+To create a TeamCity connection that uses a GitLab OAuth Application:
 
-If you use a GitLab CE/EE server with HTTPS, you need to also upload its HTTPS certificate as described [here](uploading-ssl-certificates.md).
+1. Choose the project where you would like to create a new connection, noting that the connection will only be available to subprojects of the chosen project.
+2. Go to *Project Settings | Connections* and click *Add Connection*.
+3. Choose *GitLab.com* or *GitLab CE/EE*.
+4. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create one. GitLab offers you the choice of creating an OAuth Application in three different scopes: (1) [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application), (2) [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application), (3) [Instance-wide applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-an-instance-wide-application).
+5. When filling out the *Add new application* form in GitLab: (1) Choose a Name for the application, (2) Copy the *Redirect URL* from the TeamCity dialog into the GitLab form, (3) Under *Scopes*, check *api*, (4) Click *Save application*.
+> For a GitLab instance-wide application, there is an additional *Trusted* checkbox, which skips the user authorization step when it is enabled.
+>
+{type="note"}
+
+6. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
+7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
+8. Click *Save* to save your new connection.
+
+> If you use a GitLab CE/EE server with HTTPS (recommended) and the endpoint is configured with a certificate that is *not* signed by a well-known certificate authority (CA), then you need to upload a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
+>
+{type="note"}
 
 A GitLab icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitLab profile. TeamCity will be granted access to your repositories. If you configure multiple GitLab connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
