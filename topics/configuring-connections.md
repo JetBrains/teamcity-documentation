@@ -209,7 +209,7 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 
 </dl>
 
-> If your GitHub Enterprise server provides a HTTPS endpoint (recommended) and the endpoint is configured with a certificate that is *not* signed by a well-known certificate authority (CA), then you need to upload a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
+> If your GitHub Enterprise server provides a HTTPS endpoint (recommended) and the endpoint's certificate is signed by a certificate that is *not* a well-known certificate authority (CA) (or if the certificate is self-signed), then you need to upload the signing certificate as a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
 > 
 {type="note"}
 
@@ -237,7 +237,7 @@ OAuth Applications generate user access tokens and allow third-party services li
 
 To create a TeamCity connection that uses a GitLab OAuth Application:
 
-1. Choose the project where you would like to create a new connection, noting that the connection will only be available to subprojects of the chosen project.
+1. Choose the project where you would like to create a new connection, noting that the connection will only be available to the chosen project and its subprojects.
 2. Go to *Project Settings | Connections* and click *Add Connection*.
 3. Choose *GitLab.com* or *GitLab CE/EE*.
 4. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
@@ -257,7 +257,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
 8. Click *Save* to save your new connection.
 
-> If you use a GitLab CE/EE server with HTTPS (recommended) and the endpoint is configured with a certificate that is *not* signed by a well-known certificate authority (CA), then you need to upload a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
+> If your GitLab CE/EE server provides a HTTPS endpoint (recommended) and the endpoint's certificate is signed by a certificate that is *not* a well-known certificate authority (CA) (or if the certificate is self-signed), then you need to upload the signing certificate as a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
 >
 {type="note"}
 
