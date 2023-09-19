@@ -983,7 +983,7 @@ Example (part of the MSBuild build script):
 ```
 
 __Important notes__
-* Be sure to replace `.` with `_` when [using system properties](using-build-parameters.md#Using+Build+Parameters+in+Build+Scripts) in MSBuild scripts. For example, use `teamcity_dotnet_nunitlauncher_msbuild_task` instead of `teamcity.dotnet.nunitlauncher.msbuild.task`.
+* Be sure to replace `.` with `_` when [using system properties](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files) in MSBuild scripts. For example, use `teamcity_dotnet_nunitlauncher_msbuild_task` instead of `teamcity.dotnet.nunitlauncher.msbuild.task`.
 * TeamCity also provides [Visual Studio Solution Runner](visual-studio-sln.md) for solution files of Microsoft Visual Studio 2005 and above. It allows you to use MSBuild-style wildcards for the assemblies to run unit tests on.
 
 __Examples__

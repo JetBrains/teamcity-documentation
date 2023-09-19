@@ -6,7 +6,7 @@ This topic illustrates simple use cases where you might opt for referencing para
 
 ## Store a Docker Registry Name
 
-If you have various configurations that utilize the same image registry, you can create a [custom parameter](custom-parameters.md) for the **&lt;Root&gt;** project to store this registry's name. Then you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
+If you have various configurations that utilize the same image registry, you can create a custom parameter for the **&lt;Root&gt;** project to store this registry's name. Then you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
 
 > Parameters declared inside the **&lt;Root&gt;** project are available in all TeamCity build configurations.
 >
