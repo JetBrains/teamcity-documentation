@@ -139,6 +139,8 @@ Cloud profiles specify global settings, such as authorization credentials and in
 
    Choose an AMI that TeamCity will use to spawn identical instances.
 
+   <anchor name="Amazon+EC2+Launch+Templates+support"/>
+
    3.1.&ensp;Check the **Use launch template** option if you want TeamCity to import and use a specific [launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html). When the default/latest version of the template updates on the server, TeamCity detects these changes and updates the running instances.
 
    3.2.&ensp;Choose a required AMI.
