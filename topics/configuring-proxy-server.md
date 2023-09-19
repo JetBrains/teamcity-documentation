@@ -347,7 +347,7 @@ teamcity.http.proxyLogin=login
 teamcity.http.proxyPassword=password
 ```
 
-If the proxy has a HTTPS endpoint, you can also configure the `teamcity.https.*` properties (see [](#use-proxy-for-outgoing-teamcity-server-connections)).
+If the proxy has a HTTPS endpoint, you can also configure the `teamcity.https.*` properties.
 
 Note that the proxy has to be configured not to cache any TeamCity server responses. For example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 
