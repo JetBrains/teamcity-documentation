@@ -10,7 +10,8 @@
     <vars src="v.list"/>
     <topics dir="topics"/>
     <images dir="images" version="2023.09"
-            web-path="https://resources.jetbrains.com/help/img/teamcity/2023.09/"/>
+            web-path="/teamcity/2023.09/"/>
+            <!--web-path="https://resources.jetbrains.com/help/img/teamcity/2023.09/"/>-->
     <categories src="c.list"/>
     <tags src="g.list"/>
     <product src="tc.tree" web-path="/teamcity/2023.09/"
