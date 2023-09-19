@@ -10,7 +10,7 @@ Currently, the following IntelliJ IDEA run configurations are supported:
 * JUnit run configuration
 * TestNG run configuration
 
-Remote debug for Ant steps requires that the build configuration have the `teamcity.remote-debug.ant.supported=true` [parameter](configuring-build-parameters.md#Custom+Build+Parameters).
+Remote debug for Ant steps requires that the build configuration has the `teamcity.remote-debug.ant.supported=true` [parameter](configuring-build-parameters.md).
 
 ## Prerequisites
 

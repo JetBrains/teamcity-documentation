@@ -198,7 +198,7 @@ Previously, it was possible to redefine a property only in a specific build or i
 
 where `prefix` corresponds to the beginning of the target builds’ IDs, and `suffix` corresponds to their ending.
 
-[Read more about this syntax](predefined-build-parameters.md#Overriding+Dependency+Parameters).
+[Read more about this syntax](use-parameters-in-build-chains.md#Override+Parameters+of+Preceding+Configurations).
 
 ### Autodetecting PowerShell on ARM64
 

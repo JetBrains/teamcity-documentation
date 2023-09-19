@@ -13,7 +13,7 @@ TeamCity always monitors the repositories from the server-side to detect changes
 
 TeamCity performs VCS-related operations per each VCS root separately, thus it is advised to reuse VCS roots with same settings.
 
-When [parameter references](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) are used in a VCS root, TeamCity performs VCS-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
+When [parameter references](using-build-parameters.md) are used in a VCS root, TeamCity performs VCS-related operations per each "VCS root instance", where "instance" is a unique set of VCS root parameters after references resolution. Adding parameters to the VCS roots does not reduce the number of VCS operations performed, it just allows sharing settings more effectively.
 
 ## Attach VCS Root
 

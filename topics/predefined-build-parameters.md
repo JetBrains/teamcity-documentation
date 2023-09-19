@@ -14,7 +14,7 @@ There is also a special type of server-side build parameters that can be referen
 
 >__Tips__:
 >* To see the up-to-date list of available properties when defining a text-value parameter anywhere in TeamCity, you can either click ![paramsPopupHover.gif](paramsPopupHover.gif) next to the text field, or enter `%` in the text field.
->* System properties can be [referenced](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) as `%\system.propertyName%`.
+>* System properties can be [referenced](using-build-parameters.md) as `%\system.propertyName%`.
 
 ## Predefined Server Build Parameters
 
@@ -382,7 +382,7 @@ These agent-specific parameters are defined on each build agent and vary dependi
 
 If additional applications/libraries are available in the environment, the system administrator can manually define the respective parameters manually, in the `<Agent Home>/conf/buildAgent.properties` file.
 
-These parameters can be used for setting build configuration options, defining build configuration requirements (for example, check if a certain parameter exists), and inside build scripts. For more information on how to reference these properties, see [this section](configuring-build-parameters.md#Custom+Build+Parameters).
+These parameters can be used for setting build configuration options, defining build configuration requirements (for example, check if a certain parameter exists), and inside build scripts.
 
 >In the TeamCity UI, the values of parameters of a given agent can be viewed in __Agents | Agent Settings | Agent Parameters__.
 

@@ -99,7 +99,9 @@ This method allows you to declare parameters available only for those build conf
 
 If needed, you can modify the name and the path to the properties file via the `teamcity.default.properties` parameter of a build configuration.
 
+
 ## Parameter Specifications
+{id="Adding+Parameter+Specification"}
 
 Setting up a parameter specification allows you to alter the parameter behavior and appearance.
 
@@ -188,6 +190,8 @@ The initial checkbox state depends on the default parameter value.
 > The default value applies during normal builds, checked and unchecked values used in custom build runs.
 >
 {type="tip"}
+
+<anchor id="Password+Type"/>
 
 #### Password
 

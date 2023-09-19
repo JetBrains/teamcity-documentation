@@ -27,7 +27,7 @@ When Mono is detected automatically on the agent side, the following properties 
 * __MonoX.Z\_x64__ — set to `MONO_ROOT/lib/mono/X.Z` if exists and Mono architecture is x64
 * __MonoX.Z\_x86__ — set to `MONO_ROOT/lib/mono/X.Z` if exists and Mono architecture is x86
 
-If the Mono installation cannot be detected automatically (for example, you have installed Mono framework into a custom directory), you can make these properties available to build runners by setting them manually in the [agent configuration file](levels-and-priority-of-build-parameters.md#Agent-Level+Build+Parameters).
+If the Mono installation cannot be detected automatically (for example, you have installed Mono framework into a custom directory), you can make these properties available to build runners by setting them manually in the [agent configuration file](predefined-build-parameters.md#Predefined+Agent+Build+Parameters).
 
 #### Windows Specifics
 

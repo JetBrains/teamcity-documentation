@@ -246,8 +246,8 @@ object ChainABC : BuildType({
 ### Other Considerations
 
 
-The `reverse.dep.*` parameters are processed on queuing a build where these parameters are defined. Since parameter values should be already known at this stage, these values must be assigned either in the build configuration or in the [custom build dialog](running-custom-build.md). Setting the parameter to a value calculated during a build has no effect.
+* The `reverse.dep.*` parameters are processed on queuing a build where these parameters are defined. Since parameter values should be already known at this stage, these values must be assigned either in the build configuration or in the [custom build dialog](running-custom-build.md). Setting the parameter to a value calculated during a build has no effect.
 
-Pushing a new parameter into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
+* Pushing a new parameter into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 
-Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the context of the build where the parameters are pushed to.
+* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the context of the build where the parameters are pushed to.

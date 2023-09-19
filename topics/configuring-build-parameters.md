@@ -6,9 +6,16 @@ In TeamCity, you can utilize predefined and custom build parameters. Parameters 
 
 There are three major parameter types in TeamCity:
 
+<anchor name="Configuration+Parameters"/>
+
 * **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). Parameters of this type are not passed into a build process (that is, not accessible by a build script engine).
 
+<anchor name="Environment+Variables"/>
+
+
 * **Environment Variables** — parameters that start with the `env.` prefix. These parameters are passed to the process of a build runner similarly to default env variables of a system.
+
+<anchor name="System+Properties"/>
 
 * **System Properties** — parameters that start with the `system.` prefix. These parameters can be passed to configuration files of [certain runners](#Pass+Values+to+Builders%27+Configuration+Files) as variables specific to a build tool.
 
@@ -330,7 +337,7 @@ object MyBuildConf : BuildType({
 </chunk>
 
 
-
+<anchor id="Using+Build+Parameters+in+Build+Scripts"/>
 
 ### Pass Values to Builders' Configuration Files
 

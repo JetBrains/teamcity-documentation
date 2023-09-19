@@ -12,7 +12,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
 
 1. Navigate to **Administration | &lt;Root project&gt; | Parameters**.
 
-2. Click **Add new parameter** to create two [configuration parameters](configuring-build-parameters.md#Configuration+Parameters).
+2. Click **Add new parameter** to create two [configuration parameters](configuring-build-parameters.md).
 
    <img src="dk-webhooks-setup.png" width="706" alt="Setup TeamCity Webhooks"/>
 
@@ -94,7 +94,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
 
 ## Customize Request Payloads
 
-By default, webhooks send requests with full [Agent](https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema) or [Build](https://www.jetbrains.com/help/teamcity/rest/build.html#Schema) payloads. You can manually specify the fields that should be present in request payloads. To do so, add the `teamcity.internal.webhooks.{event_name}.fields` [configuration parameter](configuring-build-parameters.md#Configuration+Parameters) with `fields=field1,field2,object(field3)` as its value.
+By default, webhooks send requests with full [Agent](https://www.jetbrains.com/help/teamcity/rest/agent.html#Schema) or [Build](https://www.jetbrains.com/help/teamcity/rest/build.html#Schema) payloads. You can manually specify the fields that should be present in request payloads. To do so, add the `teamcity.internal.webhooks.{event_name}.fields` [configuration parameter](configuring-build-parameters.md) with `fields=field1,field2,object(field3)` as its value.
 
 For example, the `teamcity.internal.webhooks.BUILD_INTERRUPTED.fields = fields=buildTypeId,number,canceledInfo(user(username))` parameter will display only a number of a canceled build, an ID of the corresponding build configuration, and a username of the person who canceled this build.
 

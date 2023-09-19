@@ -104,7 +104,7 @@ Configures [default branch](working-with-feature-branches.md#Default+Branch). Pa
 
 <note>
 
-You can configure Git-plugin to fetch all heads by [adding a build configuration parameter](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.git.fetchAllHeads=true`.
+You can configure Git-plugin to fetch all heads by adding the `teamcity.git.fetchAllHeads=true` [custom parameter](typed-parameters.md).
 
 </note>
 

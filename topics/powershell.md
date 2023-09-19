@@ -119,7 +119,7 @@ Script
 Select whether you want to enter the script right in TeamCity, or specify a path to the script:
 
 * __File__: Enter the path to a PowerShell file. The path has to be relative to the checkout directory.
-* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](using-build-parameters.md#Using+Build+Parameters+in+Build+Configuration+Settings) will be replaced in the code.
+* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](using-build-parameters.md) will be replaced in the code.
 
 <note>
 
@@ -131,6 +131,7 @@ Alternatively, you can store your script in a separate file and reference it in 
 <note>
 
 There is an issue with PowerShell 2.0 not returning the correct exit code when the script contains explicitly defined parameters. As a [workaround](https://youtrack.jetbrains.com/issue/TW-42996), either upgrade your PowerShell or to use `[Environment]::Exit(code)`.
+
 </note>
 
 </td></tr><tr>

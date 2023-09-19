@@ -999,7 +999,7 @@ Tags are now __mandatory__ for all Amazon instances run by TeamCity, which helps
 
 ### Changed behavior of reversed dependencies properties
 
-Starting with 2019.1, the behavior of [`reverse.dep`](predefined-build-parameters.md#Overriding+Dependency+Parameters) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
+Starting with 2019.1, the behavior of [`reverse.dep`](use-parameters-in-build-chains.md#Override+Parameters+of+Preceding+Configurations) parameters has been changed, and this change can affect your existing builds. In versions prior to 2019.1, when a build chain is triggered, TeamCity only took into account the `reverse.dep` parameters specified in the top-most build of the chain, i.e. in the build which depends on all other builds. If some intermediate builds of the chain had `reverse.dep` parameters, they were ignored.   
 After [this fix](https://youtrack.jetbrains.com/issue/TW-41341) this is no longer the case. Now, when a build chain is triggered, all `reverse.dep` parameters specified in all nodes of the build chain will be processed.
 
 ### Lazy agent tool loading

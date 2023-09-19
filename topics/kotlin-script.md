@@ -137,7 +137,7 @@ Script parameters
 
 <td>
 
-Enter the parameters of the script, as in the command line. [Parameter references](configuring-build-parameters.md#parameter-reference) are supported.
+Enter the parameters of the script, as in the command line. [Parameter references](configuring-build-parameters.md#Pass+Values+to+Simple+Script+Runners) are supported.
 
 For security reasons, we highly recommend that you avoid using parameter references directly inside scripts if these parameters represent secure values. You can pass such values via script parameters instead. For example, to pass a token value, [add a new build parameter](configuring-build-parameters.md) with the "Password" type, refer it in the runner’s _Script parameters_ field:
 

@@ -67,7 +67,8 @@ You can specify a custom path to the test runner here as well. TeamCity paramete
 
 <tip>
 
-You can specify the [agent property](configuring-build-parameters.md#Custom+Build+Parameters) `teamcity.dotnet.vstest.VS_VERSION.install.dir` pointing to a VSTest distribution path and use it here, where `VS_VERSION` can be 11.0, 12.0, 14.0, 15.0, or 16.0. The property will have priority over registry values.
+You can specify the [agent property](levels-and-priority-of-build-parameters.md) `teamcity.dotnet.vstest.VS_VERSION.install.dir` pointing to a VSTest distribution path and use it here, where `VS_VERSION` can be 11.0, 12.0, 14.0, 15.0, or 16.0. The property will have priority over registry values.
+
 </tip>
 
 

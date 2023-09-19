@@ -110,7 +110,7 @@ The _Client_ option allows specifying the client workspace name directly. The wo
 
 Notes on using this mode:
 * When this option is used with the [server-side checkout](vcs-checkout-mode.md#server-checkout), the internal TeamCity source caching on the server side is disabled. This may worsen the performance of [clean checkouts](clean-checkout.md).
-* If a build configuration has a [configuration parameter](configuring-build-parameters.md#Configuration+Parameters) `teamcity.perforce.agent.reuse.client=true` and uses default checkout rules, TeamCity won't create another Perforce workspace on agent and will try to reuse the existing Perforce client, with the name specified in the Perforce VCS root.
+* If a build configuration has a [configuration parameter](configuring-build-parameters.md) `teamcity.perforce.agent.reuse.client=true` and uses default checkout rules, TeamCity won't create another Perforce workspace on agent and will try to reuse the existing Perforce client, with the name specified in the Perforce VCS root.
 
 <anchor name="Perforce-perforceClientMappingOptionDescription"/>
 
