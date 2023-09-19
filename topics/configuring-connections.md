@@ -209,7 +209,7 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 
 </dl>
 
-> If your GitHub Enterprise server provides a HTTPS endpoint (recommended) and the endpoint's certificate is signed by a certificate that is *not* a well-known certificate authority (CA) (or if the certificate is self-signed), then you need to upload the signing certificate as a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
+> When your GitHub Enterprise server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should ask your security administrator to update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 > 
 {type="note"}
 
@@ -257,7 +257,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
 8. Click *Save* to save your new connection.
 
-> If your GitLab CE/EE server provides a HTTPS endpoint (recommended) and the endpoint's certificate is signed by a certificate that is *not* a well-known certificate authority (CA) (or if the certificate is self-signed), then you need to upload the signing certificate as a trusted certificate to the TeamCity server, as described [in this article](uploading-ssl-certificates.md).
+> When your GitLab CE/EE server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should ask your security administrator to update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 >
 {type="note"}
 
