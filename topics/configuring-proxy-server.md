@@ -3,8 +3,8 @@
 
 This article gives general recommendations on configuring the following proxy types: 
 * [Reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy)
-* [Proxy for outgoing connections](#Use+Proxy+for+Outgoing+Connections)
-* [Proxy on the TeamCity agent side for agent-to-server connections](#Use+Proxy+to+Connect+Agents+to+TeamCity+Server)
+* [Proxy for outgoing TeamCity server connections](#use-proxy-for-outgoing-teamcity-server-connections)
+* [Proxy for outgoing build agent connections](#use-proxy-for-outgoing-build-agent-connections)
 
 ## Set Up TeamCity Server Behind Proxy
 
