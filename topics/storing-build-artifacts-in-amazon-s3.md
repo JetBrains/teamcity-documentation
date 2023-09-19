@@ -24,7 +24,7 @@ To enable an external artifact storage in an AWS S3 bucket:
 8. Save your settings.
 
 > If your build agent is deployed behind a proxy, you must also configure the proxy settings on the build agent.
-> See [](configuring-proxy-server.md#Use+Proxy+to+Connect+Agents+to+TeamCity+Server).
+> See [](configuring-proxy-server.md#Use+Proxy+for+Outgoing+Build+Agent+Connections).
 > 
 {type="note"}
 

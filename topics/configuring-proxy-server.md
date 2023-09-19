@@ -3,8 +3,8 @@
 
 This article gives general recommendations on configuring the following proxy types: 
 * [Reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy)
-* [Proxy for outgoing TeamCity server connections](#Use+Proxy+for+Outgoing+Connections)
-* [Proxy for outgoing build agent connections](#Use+Proxy+to+Connect+Agents+to+TeamCity+Server)
+* [Proxy for outgoing TeamCity server connections](#Use+Proxy+for+Outgoing+TeamCity+Server+Connections)
+* [Proxy for outgoing build agent connections](#Use+Proxy+for+Outgoing+Build+Agent+Connections)
 
 ## Set Up TeamCity Server Behind Proxy
 
@@ -273,8 +273,9 @@ If a TeamCity server is configured behind an IIS reverse proxy:
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
 
+<anchor name="Use+Proxy+for+Outgoing+Connections"/>
+
 ## Use Proxy for Outgoing TeamCity Server Connections
-{id="Use+Proxy+for+Outgoing+Connections"}
 
 This section describes configuring TeamCity to use a proxy server for outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
 
@@ -323,8 +324,9 @@ teamcity.https.proxyPassword=password
 > 
 {type="warning"}
 
+<anchor name="Use+Proxy+to+Connect+Agents+to+TeamCity+Server"/>
+
 ## Use Proxy for Outgoing Build Agent Connections
-{id="Use+Proxy+to+Connect+Agents+to+TeamCity+Server"}
 
 There are a few different reasons why you might need to use a proxy for build agents:
 * For connections between a build agent and the TeamCity server
