@@ -2,9 +2,7 @@
 [//]: # (auxiliary-id: Configuring Build Parameters)
 [//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
 
-In TeamCity, you can utilize predefined and custom build parameters. Parameters are `name=value` pairs that can be used instead of plain values.
-
-There are three major parameter types in TeamCity:
+Parameters are `name=value` pairs that can be referenced throughout TeamCity. There are three major parameter types in TeamCity:
 
 <anchor name="Configuration+Parameters"/>
 
@@ -105,7 +103,7 @@ See this article for the example of an Ant-based meta-runner that utilizes the c
 
 ### Specify Step Execution Conditions
 
-You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use any parameters for these conditions (configuration parameters and environment variables, both custom and predefined).
+You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use both [custom](typed-parameters.md) and [predefined](predefined-build-parameters.md) configuration parameters and environment variables to craft these conditions.
 
 To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**
 
@@ -125,6 +123,7 @@ object StepExecutionConditions : BuildType({
     }
 
     steps {
+        // PowerShell script runs only on Windows agents
         powerShell {
             name = "Copy File (Windows)"
             conditions {
@@ -134,6 +133,7 @@ object StepExecutionConditions : BuildType({
                 content = """Copy-Item "%\system.teamcity.build.workingDir%/result.xml" -Destination %\win.destination.path%"""
             }
         }
+        // Command Line runner for non-Windows agents
         script {
             name = "Copy File (Unix)"
             executionMode = BuildStep.ExecutionMode.RUN_ON_FAILURE
@@ -159,7 +159,7 @@ You can define agent requirements using only those parameters whose values can b
 
 * Environment variables reported by agents (for example, `env.DOTNET_SDK_VERSION`).
 
-* Custom configuration parameters that are present in agents' [buildAgent.properties](configure-agent-installation.md) files (for example, create a `custom.agent.parameter` in TeamCity UI and add the `custom.agent.parameter=SomeValue` line to agents' properties files).
+* Custom configuration parameters that are present in agents' [buildAgent.properties](configure-agent-installation.md) files (for example, create a `custom.agent.parameter` in TeamCity UI and add the `custom.agent.parameter=MyValue` line to agents' properties files).
 
 TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on Linux machine.
 
@@ -423,7 +423,7 @@ To reference a parameter value in Maven and Ant, use the `${parameterName}` synt
 For [Gradle](gradle.md) runner, TeamCity system properties can be accessed as native Gradle properties (those defined in the `gradle.properties` file). If the property name is allowed as a Groovy identifier (does not contain dots), use the following syntax:
 
 ```Shell
-println "Custom user property value is $\{customUserProperty\}"
+println "Custom user property value is ${customUserProperty}"
 ```
 
 Otherwise, if the property has dots in its name (for example, `build.vcs.number.1`), use the `project.ext["build.vcs.number.1"]` syntax instead.

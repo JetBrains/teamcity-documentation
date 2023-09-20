@@ -811,6 +811,12 @@ TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuG
 
 When starting, the build agent reports the following parameters:
 
+<dl>
+
+<include src="predefined-build-parameters.md" include-id="dotnet-related-properties"/>
+
+</dl>
+
 <table><tr>
 
 <td>
