@@ -450,10 +450,6 @@ In rare cases, if an early build of Visual Studio 2017 is installed on your buil
 
 To work around this problem, you can upgrade Visual Studio 2017 to the latest build or, alternatively, install any later version of .NET Framework.
 
-### Compatibility with Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300
-
-At the moment, TeamCity 2022.04 does not support the recently released Visual Studio Build Tools 17.2.0 and .NET SDK 6.0.300. To solve the problem, install the plugin from [the related issue](https://youtrack.jetbrains.com/issue/TW-76189/Tests-error-with-The-argument-noconsolelogger-is-invalid-with-NE#focus=Comments-27-6067187.0-0). The fix will be included in TeamCity 2022.04.1.
-
 ### Parsing .rsp files (Error MSB1006: Property is not valid)
 
 Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. To ensure this issue does not occur, enclose values of [system properties](configuring-build-parameters.md#System+Properties) in quotes. If this solution is not applicable to your project, add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter and set its value to _"true"_. With this setting enabled, TeamCity automatically wraps values of user-defined properties in quotes.

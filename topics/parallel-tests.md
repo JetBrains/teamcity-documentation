@@ -137,7 +137,7 @@ org.example.tests.TestCase1
 The build step with custom tests' execution logic should use this file and filter out all the tests that belong to the classes mentioned there. All the other tests should be executed.
 
 
-<!--
+
 ## Alternative Test Filtering for .NET
 
 <chunk id="alternative-dotnet-parallel-filtering-tc">
@@ -153,7 +153,7 @@ If the [](net.md) runner handles a large amount of test classes, parallel testin
 {product="tcc"}
 
 </chunk>
--->
+
 
 ## Publish Artifacts Produced By Batch Builds
 

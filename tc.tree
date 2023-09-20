@@ -85,11 +85,14 @@
       <toc-element id="upgrading-dsl.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="upgrade-dsl"/>
       <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="what-s-new-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4">
-         <toc-element id="teamcity-2023-05-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
-         <toc-element id="teamcity-2023-05-1-release-notes.md"/>
-         <toc-element id="teamcity-2023-05-2-release-notes.md"/>
-         <toc-element id="teamcity-2023-05-3-release-notes.md"/>
-         <toc-element id="teamcity-2023-05-4-release-notes.md"/>
+         <toc-element id="teamcity-2023-11-release-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
+      </toc-element>
+      <toc-element id="what-s-new-in-teamcity-2023-05.md" hidden="true">
+         <toc-element id="teamcity-2023-05-release-notes.md" hidden="true"/>
+         <toc-element id="teamcity-2023-05-1-release-notes.md" hidden="true"/>
+         <toc-element id="teamcity-2023-05-2-release-notes.md" hidden="true"/>
+         <toc-element id="teamcity-2023-05-3-release-notes.md" hidden="true"/>
+         <toc-element id="teamcity-2023-05-4-release-notes.md" hidden="true"/>
       </toc-element>
       <toc-element id="what-s-new-in-teamcity-2022-10.md" hidden="true" show-structure-for="chapter" show-structure-depth="4">
          <toc-element id="teamcity-2022-10-release-notes.md" hidden="true" show-structure-for="chapter" show-structure-depth="4"/>
