@@ -141,7 +141,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 #### Using .tar.gz Distributions
 
 1. [Create a backup](teamcity-data-backup.md).
-2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
 3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to back up the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in `.tar.gz` TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
@@ -156,12 +156,11 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 > Manual update is the only option for Docker containers.
 {type="note"}
 
-1. (Not required for a bugfix update) [Create a backup](teamcity-data-backup.md).
-2. If you have built your own Docker image, pull the new version of the TeamCity server base image (specifying the relevant [image tag](https://hub.docker.com/r/jetbrains/teamcity-server/tags)), and [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme) based on this image.
-3. Pull the new image on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
-4. Start the new container.
+1. [Create a backup](teamcity-data-backup.md).
+2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+3. If you have built your own Docker image, [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme) based on the new version of the TeamCity server base image.
+4. Invoke [`docker run`](https://hub.docker.com/r/jetbrains/teamcity-server) to start the new container on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
 5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
-6. At this point, if the database schema or the configuration data format has changed in the new release, TeamCity starts to convert the data.
 
 ## IDE Plugins
 {product="tc"}
