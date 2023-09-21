@@ -441,7 +441,7 @@ The most common reason for the problem is the different bitness of the `sqljdbc_
 To solve the problem, do the following:
 
 1. Make sure you use the MS SQL native driver (downloadable from the [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=11774)). 
-2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32-bit and 64-bit Java versions [can be used](how-to.md#Install+Non-Bundled+Version+of+Java).
+2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 64-bit Java. However, both 32-bit and 64-bit Java versions [can be used](how-to.md#Install+Non-Bundled+Version+of+Java).
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
@@ -449,10 +449,11 @@ To run TeamCity with the required JRE, do one of the following:
     
 <note>
 
-Note that on upgrade, TeamCity will overwrite the existing JRE with the default 32-bit version, so you'll have to update to the 64-bit JRE again after upgrade.
+Note that on upgrade, TeamCity will overwrite the existing JRE with the default 64-bit version. If you switched to the 32-bit version, you will need to re-apply your custom changes after every upgrade.
+
 </note>
 
-See also this related [external posting](http://www.mikeobrien.net/blog/teamcity-sqlserver-integrated-security).
+See also: [](how-to.md#Update+from+32-bit+to+64-bit+Java).
 
 ### Protocol violation error (Oracle only)
 
