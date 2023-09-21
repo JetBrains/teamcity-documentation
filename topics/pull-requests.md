@@ -214,9 +214,11 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 </tr>
 </table>
 
-### Bitbucket Server Pull Requests
+<anchor name="Bitbucket+Server+Pull+Requests"/>
 
-The following parameters are available for the [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
+### Bitbucket Server/Data Center Pull Requests
+
+The following parameters are available for the [Bitbucket Server/Data Center](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
 
 <table>
 <tr>
@@ -225,39 +227,27 @@ The following parameters are available for the [Bitbucket Server](https://www.at
 Parameter
 
 </td>
-<td width="150">
-
-Options
-    
-</td>
 <td>
 
 Description
 
 </td>
 </tr>
+
 <tr>
+
+<td>Authentication Type</td>
 <td>
 
-Authentication Type
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
-</td>
-<td>
+* **Username/password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
 
-Use VCS root credentials
-
-</td>
-<td>
-
-
-TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
-
-This option will not work if the VCS root employs anonymous authentication.
-
+* **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
 </td>
 </tr>
+
 <tr>
-<td></td>
 <td>
 
 Username/password
@@ -277,7 +267,6 @@ You can submit an access token instead of the password. The token should have _R
 By source branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
@@ -290,7 +279,6 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on so
 By target branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
@@ -303,7 +291,6 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on ta
 Server URL
 
 </td>
-<td></td>
 <td>
 
 Specify a Bitbucket URL for connection.
@@ -318,7 +305,6 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 Use pull request branches
 
 </td>
-<td></td>
 <td>
 
 **This option is intended for backward compatibility only.** Enables detection of [officially unsupported Bitbucket](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578) pull request branches (pull-requests/*) instead of source branches. 
