@@ -357,6 +357,8 @@ The following parameters are available for the [Bitbucket Cloud](https://bitbuck
 
 * **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+
+* **Permanent Access Token** — Enter a Bitbucket [Repository Access Token](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/), [Project Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-project-access-tokens/), or [Workspace Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-workspace-access-tokens/) to configure long-lived access to a repository, workspace, or project. The token must be configured with the _Pull Requests | Read_ scope.
 </td>
 </tr>
 
