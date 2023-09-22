@@ -266,7 +266,7 @@
             <toc-element id="use-parameters-in-build-chains.md"/>
             <toc-element id="typed-parameters.md"/>
             <toc-element id="predefined-build-parameters.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="parameter-examples.md"/>
+            <toc-element id="using-build-parameters.md"/>
         </toc-element>
         <toc-element id="copy-move-delete-build-configuration.md" show-structure-for="chapter" show-structure-depth="4"/>
         <toc-element id="assigning-build-configurations-to-specific-build-agents.md" show-structure-for="chapter" show-structure-depth="4"/>

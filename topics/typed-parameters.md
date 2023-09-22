@@ -85,6 +85,54 @@ Request body:
 </tabs>
 
 
+You can also send requests to the `/app/rest/buildQueue` endpoint to create one-time parameters for a single build run only. The following request starts a new build and adds a [password parameter](typed-parameters.md#Password) to it.
+
+```Shell
+/app/rest/buildQueue
+```
+{prompt="POST"}
+
+<tabs>
+
+<tab title="XML">
+
+```XML
+<build>
+   <buildType id="MyBuildConfID"/>
+   <properties>
+      <property name="env.password" value="mySecret">
+         <type rawValue="password"/>
+      </property>
+   </properties>
+</build>
+```
+
+</tab>
+
+<tab title="JSON">
+
+```JSON
+{
+   "buildType": {
+      "id": "MyBuildConfID"
+   },
+   "properties": {
+      "property": [{
+         "name": "env.password",
+         "value": "mySecret",
+         "type": {
+            "rawValue": "password"
+         }
+      }]
+   }
+}
+```
+
+</tab>
+
+</tabs>
+
+
 See this article to learn more about managing parameters via REST API: [Manage Typed Parameters](https://www.jetbrains.com/help/teamcity/rest/manage-typed-parameters.html).
 
 
