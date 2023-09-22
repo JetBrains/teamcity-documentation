@@ -312,6 +312,19 @@ Starting with this version, you can enable or disable the **Available for sub-pr
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
 
+## Token-Based Authentication
+{product="tcc"}
+
+Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize tokens to access repositories hosted on Bitbucket Cloud and Server/Data Center.
+
+* For Bitbucket Server/Data Center repositories, the Pull Requests feature can now use refreshable OAuth tokens issued via [TeamCity connections](configuring-connections.md#Bitbucket+Server+and+Data+Center).
+
+* For Bitbucket Cloud, you can specify permanent access tokens issued for a specific repository, project, or workspace.
+
+Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
+
+The [Pull Requests](pull-requests.md#Bitbucket+Server+Pull+Requests) feature can now utilize refreshable OAuth tokens to access repositories on Bitbucket Server / Data Center.
+
 
 
 ## Miscellaneous
