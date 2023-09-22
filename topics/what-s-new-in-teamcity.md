@@ -323,8 +323,6 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
 
-The [Pull Requests](pull-requests.md#Bitbucket+Server+Pull+Requests) feature can now utilize refreshable OAuth tokens to access repositories on Bitbucket Server / Data Center.
-
 
 
 ## Miscellaneous
