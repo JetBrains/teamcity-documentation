@@ -34,7 +34,7 @@ Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests).
 
 In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
 
-Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Click the corresponding button in the connection description, and TeamCity will set everything up for you.
+Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Choose the **Automatic** creation mode in the **Add connection** dialog and TeamCity will do the rest.
 
 <img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
 
@@ -296,7 +296,7 @@ Learn more: [](install-teamcity-agent.md).
 
 In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
 
-Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Click the corresponding button in the connection description, and TeamCity will set everything up for you.
+Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Choose the **Automatic** creation mode in the **Add connection** dialog and TeamCity will do the rest.
 
 <img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
 

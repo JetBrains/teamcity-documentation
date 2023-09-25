@@ -142,7 +142,7 @@ Depending on your needs, you can create connections to GitHub that operate via G
 
 A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
 
-<!--
+
 If you do not already have a suitable GitHub App, you can allow TeamCity to register it and create a connection that employs this new app in one go. TeamCity uses <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">manifests</a> to register new GitHub Apps.
 
 <ol>
@@ -156,7 +156,7 @@ Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need
 </li>
 
 <li>
-Click the <b>Create GitHub App and connection</b> button to allow TeamCity to <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">register a GitHub App from a manifest</a>.
+Select the <b>Automatic</b> creation mode to allow TeamCity to <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">register a GitHub App from a manifest</a>.
 
 <img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
 
@@ -168,7 +168,7 @@ Follow instructions on your screen to log into your GitHub account, authorize Te
 </li>
 
 </ol>
--->
+
 
 To manually create a new GitHub App and configure a TeamCity connection that uses this app:
 
