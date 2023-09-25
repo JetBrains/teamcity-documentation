@@ -178,6 +178,8 @@ To manually create a new GitHub App and configure a TeamCity connection that use
 
 <li>Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).</li>
 
+<li>Switch the connection's creation mode to <b>Manual</b>.</li>
+
 <li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
 <li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret) and paste them to the TeamCity dialog.</li>
