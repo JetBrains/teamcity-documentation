@@ -160,8 +160,11 @@ Select the <b>Automatic</b> creation mode to allow TeamCity to <a href="https://
 
 <img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
 
-You will need to specify the URL of your GitHub server (without "/username") and choose whether you want this app to send <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">post-commit hooks</a> and/or have access to your organization.
 </li>
+
+<li>Specify the URL of your GitHub server (without "/username") and choose whether you want this app to send <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">post-commit hooks</a> and/or have access to your organization.</li>
+
+<li>If the new GitHub App should provide access to organization repos, switch the <b>Owner</b> setting to <b>Organization</b> and enter the organization name in the corresponding field.</li>
 
 <li>
 Follow instructions on your screen to log into your GitHub account, authorize TeamCity to register an app, and install it to your personal and/or organization account.
