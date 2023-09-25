@@ -1,5 +1,5 @@
-[//]: # (title: Scopes, Priority and Lifecycle of Build Parameters)
-[//]: # (auxiliary-id: Scopes, Priority and Lifecycle of Build Parameters;Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
+[//]: # (title: Scopes, Priority, and Lifecycle of Build Parameters)
+[//]: # (auxiliary-id: Scopes, Priority, and Lifecycle of Build Parameters;Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
 
 
 ## Initial Parameter Values
@@ -10,9 +10,9 @@ TeamCity parameters can obtain their values from one or multiple sources listed 
 
     <img src="dk-params-runcustombuild.png" width="706" alt="Run Custom Build Dialog"/>
 
-* Custom values entered by users on the **Build Configuration Settings | Parameters** page.
+* Custom values entered on the **Build Configuration Settings | Parameters** page.
 
-* Custom values entered by users on the **Project Settings | Parameters** page. Parameters defined within a project are inherited by all its subprojects and build configurations. If required, you can override them in individual build configurations.
+* Custom values entered on the **Project Settings | Parameters** page. Parameters defined within a project are inherited by all its subprojects and build configurations. If required, you can override them in individual build configurations.
 
 * Values specified in a [build configuration template](build-configuration-template.md).
 
@@ -129,7 +129,7 @@ This page has two tabs:
 </chunk>
 
 
-### Via REST API
+### Using the REST API
 
 To check initial and actual parameter values of the specific build via [REST API](teamcity-rest-api.md), send GET requests to the `/app/rest/builds/{buildLocator}` endpoint and specify required payload fields according to the [Build schema](https://www.jetbrains.com/help/teamcity/rest/build.html).
 
@@ -150,11 +150,11 @@ curl -L \
     resultingProperties($locator(name:(value:(day.of.week),matchType:matches)),property)
 ```
 
-If this build runs on Wednesday and you pass "Sunday" as the `day.of.week` parameter value via the **Run custom build** dialog, the response payload will contain the following values:
+If this build runs on Wednesday and you pass Sunday as the `day.of.week` parameter value via the **Run custom build** dialog, the response payload will contain the following values:
 
-* `originalProperties` returns "Monday" (the default value stored in the build configuration).
-* `startProperties` returns "Sunday" (the value from the "Run custom build" dialog, has a priority over the default value from the build configuration).
-* `resultingProperties` returns "Wednesday" (the value calculated during the build and written via the service message).
+* `originalProperties` returns Monday (the default value stored in the build configuration).
+* `startProperties` returns Sunday (the value from the **Run custom build** dialog, has a priority over the default value from the build configuration).
+* `resultingProperties` returns Wednesday (the value calculated during the build and written via the service message).
 
 
 

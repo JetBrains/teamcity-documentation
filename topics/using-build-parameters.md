@@ -1,12 +1,12 @@
 [//]: # (title: Using Build Parameters)
 [//]: # (auxiliary-id: Using Build Parameters)
 
-This topic illustrates simple use cases where you might opt for referencing parameters in TeamCity UI instead of specifying plain values. For the general overview refer to the [](configuring-build-parameters.md#Main+Use+Cases) section.
+This topic illustrates simple use cases where you might opt for referencing parameters in TeamCity UI instead of specifying plain values. Refer to the [](configuring-build-parameters.md#Main+Use+Cases) section for the general overview of parameters' usage scenarios.
 
 
 ## Store a Docker Registry Name
 
-If you have various configurations that utilize the same image registry, you can create a custom parameter for the **&lt;Root&gt;** project to store this registry's name. Then you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
+If you have various configurations that utilize the same image registry, you can create a custom parameter for the **&lt;Root&gt;** project to store this registry's name. As a result, you can reference this parameter in any [Docker step](docker.md) that pulls or pushes your images.
 
 > Parameters declared inside the **&lt;Root&gt;** project are available in all TeamCity build configurations.
 >
@@ -20,7 +20,7 @@ If you have various configurations that utilize the same image registry, you can
 
 ## Specify the JDK Version
 
-The following [](gradle.md) step always uses JDK 19 instead of the default version referenced by the `JDK_HOME` environment variable. The runner retrieves a path for this required JDK from the corrensponding `env.` parameter.
+The following [](gradle.md) step always uses JDK 19 instead of the default version referenced by the `JDK_HOME` environment variable. The runner retrieves a path for this required JDK from the corresponding `env.` parameter.
 
 ```Kotlin
 steps {
@@ -56,7 +56,7 @@ object MyBuildConfig : BuildType({
 })
 ```
 
-> You can achieve the same result even faster by creating the `system.dotnet.output.type` parameter with the `OutputType=WinExe` value. This value will be automatically written to the response (.rsp) file with .NET settings, so you do not need to set the **Command line parameters** field in TeamCity UI.
+> You can achieve the same result even faster by creating the `system.dotnet.output.type` parameter and setting its value to `OutputType=WinExe`. TeamCity will write this value to the response (.rsp) file with .NET settings, so you do not need to set the **Command line parameters** field in TeamCity UI.
 >
 > This approach is based on the mechanism that passes all parameters with the `system.` prefix to a build engine. See this section for more information: [](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
 >
@@ -69,7 +69,7 @@ object MyBuildConfig : BuildType({
 
 ## Specify Artifact Paths
 
-When setting artifacts paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
+When setting artifact paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
 
 ```Kotlin
 object GoalInBuildScripts : BuildType({
@@ -94,7 +94,7 @@ The **Build Configuration Settings | General Settings | Build Number Format** fi
 
 
 
-The default zero-based integer index of a build can be retrieved via the `build.counter` parameter. The sample below adds the name of a repository branch to the build number.
+A build's default zero-based integer index is stored in the `build.counter` parameter. The sample below adds the name of a repository branch to the build number.
 
 
 ```Kotlin
@@ -114,7 +114,7 @@ The [](vcs-labeling.md) build feature allows build configurations to tag reposit
 
 <img src="dk-params-vcs-labeling.png" width="706" alt="VCS Labeling with Parameters"/>
 
-The following setup illustrates how to use values of the `release.status` parameter as tags. See also: [Parameters Display Mode](typed-parameters.md#Select).
+The following setup illustrates how to use the values of the `release.status` parameter as tags. See also: [Parameters Display Mode](typed-parameters.md#Select).
 
 
 ```Kotlin
