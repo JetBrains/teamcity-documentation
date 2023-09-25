@@ -6,16 +6,16 @@ Parameters are `name=value` pairs that can be referenced throughout TeamCity. Th
 
 <anchor name="Configuration+Parameters"/>
 
-* **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that is based on a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). Parameters of this type are not passed into a build process (that is, not accessible by a build script engine).
+* **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that was created from a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). TeamCity does not pass parameters of this type to a build process (that is, these parameters are not accessible by a build script engine).
 
 <anchor name="Environment+Variables"/>
 
 
-* **Environment Variables** — parameters that start with the `env.` prefix. These parameters are passed to the process of a build runner similarly to default env variables of a system.
+* **Environment Variables** — parameters that start with the `env.` prefix. These parameters are passed to the process of a build runner similarly to the default env variables of a system.
 
 <anchor name="System+Properties"/>
 
-* **System Properties** — parameters that start with the `system.` prefix. These parameters can be passed to configuration files of [certain runners](#Pass+Values+to+Builders%27+Configuration+Files) as variables specific to a build tool.
+* **System Properties** — parameters that start with the `system.` prefix. TeamCity can pass parameters of this type to configuration files of [certain runners](#Pass+Values+to+Builders%27+Configuration+Files) as variables specific to a build tool.
 
 <anchor name="Parameter+References"/>
 
@@ -25,17 +25,17 @@ Parameters allow you to avoid using plain values in TeamCity UI and build script
 
 Storing values in parameters allows you to:
 
-* quickly reuse frequently used values;
+* Quickly reuse frequently used values;
 
-* create reusable [templates](build-configuration-template.md) and [meta-runners](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
+* Create reusable [templates](build-configuration-template.md) and [meta-runners](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
 
-* add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
+* Add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
 
-* hide sensitive information that should not be visible to regular TeamCity developers;
+* [Hide sensitive information](typed-parameters.md#Password) that should not be visible to regular TeamCity developers;
 
-* improve readability of your configurations by using shorter parameter references instead of full values, and so on.
+* Improve the readability of your configurations by using shorter parameter references instead of lengthy plain values, and so on.
 
-See the following article for examples of simple use cases where you can opt for storing values in parameters: [](using-build-parameters.md).
+See the following article for simple use cases where you can store values in parameters: [](using-build-parameters.md).
 
 ## Main Use Cases
 
@@ -70,7 +70,8 @@ object SourceConfig : BuildType({
     }})
 ```
 
-If now you extract a [template](build-configuration-template.md) from this configuration, you can duplicate this configuration and override the `skip.optional.step` parameter for those instances that do not need this optional step #2.
+If you extract a [template](build-configuration-template.md) from this configuration, you can create multiple copies of the same configuration. In those copies that do not need to run the optional step #2, override the `skip.optional.step` parameter and set it to `true`.
+
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -83,7 +84,6 @@ object ConfigFromTemplate : BuildType({
         param("skip.optional.step", "true")
     }
 })
-
 ```
 
 See the following section to learn more about step execution conditions: [](#Specify+Step+Execution+Conditions).
@@ -93,7 +93,7 @@ See the following section to learn more about step execution conditions: [](#Spe
 
 ### Pass Values to Meta-Runners
 
-A [meta-runner](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner out of them.
+A [meta-runner](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner.
 
 See this article for the example of an Ant-based meta-runner that utilizes the custom `system.artifact.paths` parameter to publish artifacts via a corresponding [service message](service-messages.md): [](working-with-meta-runner.md#Preparing+Build+Configuration).
 
@@ -103,13 +103,13 @@ See this article for the example of an Ant-based meta-runner that utilizes the c
 
 ### Specify Step Execution Conditions
 
-You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should be run. You can use both [custom](typed-parameters.md) and [predefined](predefined-build-parameters.md) configuration parameters and environment variables to craft these conditions.
+You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should run. You can craft these conditions using [custom](typed-parameters.md) and [predefined](predefined-build-parameters.md) configuration parameters and environment variables.
 
 To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**
 
 <img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
-For example, you can run different shell scripts depending on the type of build agent's operating system.
+For example, you can run different shell scripts depending on the build agent's operating system.
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -153,7 +153,7 @@ object StepExecutionConditions : BuildType({
 
 [](agent-requirements.md) allow you to specify `parameter-operator-value` conditions. Only those agents that meet these conditions are allowed to build this build configuration.
 
-You can define agent requirements using only those parameters whose values can be reported by agents before the build starts. These parameters are:
+You can define agent requirements using only those parameters whose values agents can report before the build starts. These parameters are:
 
 * Predefined configuration parameters available for all agents (for example, `teamcity.agent.name`).
 
@@ -161,13 +161,13 @@ You can define agent requirements using only those parameters whose values can b
 
 * Custom configuration parameters that are present in agents' [buildAgent.properties](configure-agent-installation.md) files (for example, create a `custom.agent.parameter` in TeamCity UI and add the `custom.agent.parameter=MyValue` line to agents' properties files).
 
-TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on Linux machine.
+TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on a Linux machine.
 
-To define custom agent requirements, navigate to the **Administration | &lt;Build Configuration&gt; | Agent Requirements** tab.
+To define custom agent requirements in TeamCity UI, navigate to the **Administration | &lt;Build Configuration&gt; | Agent Requirements** tab.
 
 <img src="dk-params-AgentRequirements.png" width="706" alt="Set agent requirements in TeamCity UI"/>
 
-In [](kotlin-dsl.md), use the `requirements` block of you build configuration to define a requirement.
+In [](kotlin-dsl.md), use the `requirements` block of your build configuration to define a requirement.
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -218,7 +218,7 @@ exists("container.engine")
 
 You can insert references to parameters as `%\parameter_name%` when writing scripts for [](command-line.md), [](c-script.md), and [](python.md) runners.
 
-> Note that these runners resolve parameter values only if scripts are written directly in runner settings pages in TeamCity UI. If you include parameter references in external script files, these references will not be replaced with parameter values.
+> Note that these runners resolve parameter values only if scripts are written directly in runner settings pages in TeamCity UI. If you include parameter references in external script files, TeamCity will not replace these references with parameter values.
 > 
 {type="note"}
 
@@ -229,7 +229,7 @@ You can insert references to parameters as `%\parameter_name%` when writing scri
 
 <tab title="CLI Runner">
 
-The following script prints the [checkout directory](build-checkout-directory.md) path (configuration parameter) and TeamCity server version (environment variable) to the build log.<br/><br/>
+The script below prints the [checkout directory](build-checkout-directory.md) path (configuration parameter) and TeamCity server version (environment variable) to the build log.<br/><br/>
 
 ```Shell
 echo "Checkout directory: %\teamcity.build.checkoutDir%"
@@ -306,7 +306,7 @@ echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.a
 
 <chunk id="change-parameter-from-build">
 
-In the following configuration a C# script checks the current day of week and sets a corresponding value to the `day.of.week` parameter. The updated parameter value is then used by a subsequent Python runner.
+In the following configuration, a C# script checks the current day of the week and writes it to the `day.of.week` parameter. A subsequent Python runner then uses the updated parameter value.
 
 ```Kotlin
 object MyBuildConf : BuildType({
@@ -341,9 +341,9 @@ object MyBuildConf : BuildType({
 
 ### Pass Values to Builders' Configuration Files
 
-[Maven](maven.md), [](gradle.md), [](ant.md), [](nant.md), and [](net.md) runners allow you to reference TeamCity parameters in build configuration files. This allows you to pass required values to the build process.
+[](net.md), [Maven](maven.md), [](gradle.md), [](ant.md) and [](nant.md) runners allow you to reference TeamCity parameters in build configuration files. This technique allows you to pass the required values to build processes.
 
-> Parameters used in this scenario should start with either "env." or "system." prefix, but referenced without these prefixes. For example, the predefined `system.build.number` parameter should be referenced as `${build.number}` in Maven configuration files.
+> Parameters used in this scenario should start with either `env.` or `system.` prefixes but referenced without these prefixes. For example, use `${build.number}` in Maven configuration files to reference the predefined `system.build.number` parameter.
 > 
 {type="warning"}
 
@@ -352,7 +352,7 @@ object MyBuildConf : BuildType({
 
 <tab title=".NET">
 
-For .NET, use the `$(<parameter_name>)` syntax to pass parameter values.
+In .NET, pass parameter values using the `$(<parameter_name>)` syntax.
 
 > * MSBuild does not support names with dots (.), so you need to replace dots with underscores ("_") when using the parameter inside a build script.
 > * The `nuget push` and `nuget delete` commands do not support parameters.
@@ -438,7 +438,7 @@ Otherwise, if the property has dots in its name (for example, `build.vcs.number.
 
 ### Share Values Between Chain Builds
 
-TeamCity parameters allow you to exchange values between configurations of a [build chain](build-chain.md). See this help article for more information: [](use-parameters-in-build-chains.md).
+TeamCity parameters allow you to exchange values between configurations of a [build chain](build-chain.md). See this documentation article for more information: [](use-parameters-in-build-chains.md).
 
 
 

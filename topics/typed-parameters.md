@@ -1,4 +1,4 @@
-[//]: # (title: Create and Setup Custom Parameters)
+[//]: # (title: Create and Set Up Custom Parameters)
 [//]: # (auxiliary-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
 
 This topic explains how to create custom TeamCity parameters and configure their appearance and behavior.
@@ -11,7 +11,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
 ### In TeamCity UI
 
-1. Go to the **Project Settings** or **Build Configuration Settings** page and switch to the **Parameters** tab. See this article for the information on parameters priority and inheritance rules: [](levels-and-priority-of-build-parameters.md).
+1. Go to the **Project Settings** or **Build Configuration Settings** page and switch to the **Parameters** tab. See this article for information on parameter priority and inheritance rules: [](levels-and-priority-of-build-parameters.md).
 
 2. Click the **Add new parameter** button.
 
@@ -21,7 +21,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
 4. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
 
-5. Optional: Set up the required parameter specification. Using parameter specs you can force users to enter parameter value each time they start a build, hide parameter values from TeamCity UI and REST API requests, and more. Refer to corresponding sections of this document to learn more.
+5. Optional: Set up the required parameter specification. Using parameter [specs](#Adding+Parameter+Specification), you can force users to enter parameter values each time they start a build, hide parameter values from TeamCity UI and REST API requests, and more. Refer to the corresponding sections of this document to learn more.
 
 
 ### In Kotlin DSL
@@ -49,7 +49,7 @@ object MyBuildConf : BuildType({
 ```
 
 
-### Via REST API
+### Using REST API
 
 To create a parameter via [](teamcity-rest-api.md), send the POST request to the required endpoint and pass a [Property](https://www.jetbrains.com/help/teamcity/rest/property.html) as a request body.
 
@@ -85,7 +85,7 @@ Request body:
 </tabs>
 
 
-You can also send requests to the `/app/rest/buildQueue` endpoint to create one-time parameters for a single build run only. The following request starts a new build and adds a [password parameter](typed-parameters.md#Password) to it.
+You can also send requests to the `/app/rest/buildQueue` endpoint to create one-time parameters for a single build run only. The following request starts a new build and adds a [password parameter](typed-parameters.md#Password).
 
 ```Shell
 /app/rest/buildQueue
@@ -138,14 +138,14 @@ See this article to learn more about managing parameters via REST API: [Manage T
 
 ### In the Default Properties File
 
-This method allows you to declare parameters available only for those build configurations that share the same VCS root. Parameters defined this way are not visible in the TeamCity UI and passed directly to the build process.
+This method allows you to declare parameters available only for those build configurations that share the same VCS root. Parameters defined this way are not visible in the TeamCity UI and are passed directly to the build process.
 
 1. Create a text file with the `teamcity.default.properties` name.
 2. Populate it with parameters in the `system.<name>=<value>` or `env.<name>=<value>` format. For example, `env.CATALINA_HOME=C:\tomcat_6.0.13`.
-3. Check in this file to the root directory of the target repository.
-4. Set up required [checkout settings](configuring-vcs-settings.md#Configure+Checkout+Rules) and ensure the file is checked out to the [](build-working-directory.md).
+3. Push this file to the root directory of the target repository.
+4. Set up required [checkout settings](configuring-vcs-settings.md#Configure+Checkout+Rules) and ensure the file checks out to the [](build-working-directory.md).
 
-If needed, you can modify the name and the path to the properties file via the `teamcity.default.properties` parameter of a build configuration.
+You can modify the name and path to the properties file via the `teamcity.default.properties` parameter of a build configuration.
 
 
 ## Parameter Specifications
@@ -173,7 +173,7 @@ If you want to prevent users from editing a parameter value but still leave the 
 
 #### Prompt
 
-If a build configuration has a parameter of the "Prompt" type, every time a user triggers a new build the **Run Custom Build** dialog appears. This ensures a user sets a valid value for all "Prompt" parameters before the build process starts.
+If a build configuration has a parameter of the "Prompt" type, every time a user triggers a new build, the **Run Custom Build** dialog appears. This behavior ensures that a user sets a valid value for all "Prompt" parameters before the build process starts.
 
 For example, the following parameter adds a run confirmation to your build configuration: users cannot start new builds unless they type "deploy" in the corresponding field.
 
@@ -198,7 +198,7 @@ The **Type** setting allows you to choose the editor displayed next to the param
 
 #### Text
 
-This is the default type. Parameters of this type display a regular text box. Choose this type if you want to apply an input mask for user values.
+This is the default editor type. Parameters of this type display a regular text box. Choose this type to apply an input mask for user values.
 
 For example, the following parameter uses a regular expression to accept only e-mail addresses:
 
@@ -220,11 +220,11 @@ Choose this type to display a checkbox next to the parameter label.
 
 <img src="dk-params-CheckboxParam.png" width="706" alt="Checkbox parameter"/>
 
-By default, if the editor is checked the parameter value is `true`; otherwise, the parameter has no value. Use the **Checked value** and **Unchecked value** to provide your own values.
+By default, the checked editor corresponds to the `true` value; otherwise, the parameter has no value. Use the **Checked value** and **Unchecked value** to provide custom values.
 
 The initial checkbox state depends on the default parameter value.
 
-> The editor supports only checked and unchecked states, the indeterminate state is not allowed. However, if you set the default parameter value to neither "Checked value" nor "Unchecked value", the parameter can report three potential values.
+> The editor supports only checked and unchecked states; the indeterminate state is not allowed. However, if the default (initial) parameter value corresponds to neither checked nor unchecked states, the parameter can report three potential values.
 >
 > ```Kotlin
 > object PromptTest : BuildType({
@@ -235,7 +235,7 @@ The initial checkbox state depends on the default parameter value.
 >    }
 > })
 > ```
-> The default value applies during normal builds, checked and unchecked values used in custom build runs.
+> The default value applies during regular builds, checked and unchecked values are used in custom build runs.
 >
 {type="tip"}
 
@@ -301,7 +301,7 @@ Response payload:
 </tabs>
 
 
-If you need to create a password parameter not in TeamCity UI, you can use [secure value tokens](storing-project-settings-in-version-control.md#Managing+Tokens) instead to set up parameter values.
+If you need to create a password parameter not in TeamCity UI, you can use [secure value tokens](storing-project-settings-in-version-control.md#Managing+Tokens) to set up parameter values.
 
 ```Kotlin
 params {
@@ -311,11 +311,11 @@ params {
 
 #### Select
 
-Choose this editor type to display a combobox next to the parameter label and limit the range of possible values by multiple predefined options.
+Choose this editor type to display a combo box next to the parameter label and limit the range of possible values by multiple predefined options.
 
 <img src="dk-params-selectParameter.png" width="706" alt="Select parameter"/>
 
-Each item of the editor drop-down menu has a publicly visible label and an underlying value assigned to the parameter. Use the `label => value` syntax to set different strings, or `value` if you want them to match.
+Each item of the editor drop-down menu has a publicly visible label and an underlying value assigned to the parameter. In TeamCity UI, use the `label => value` syntax to set different strings or `value` if you want them to match. In Kotlin DSL, use the `"label" to "value"` syntax.
 
 The following sample illustrates a parameter that allows users to select a value passed to the [](vcs-labeling.md) build feature.
 

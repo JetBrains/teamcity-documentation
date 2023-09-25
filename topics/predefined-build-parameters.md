@@ -1,9 +1,9 @@
 [//]: # (title: List of Predefined Build Parameters)
 [//]: # (auxiliary-id: List of Predefined Build Parameters;Predefined Build Parameters)
 
-TeamCity provides a number of predefined [build parameters](configuring-build-parameters.md) which are ready to be used in the settings of a build configuration or in build scripts.
+TeamCity provides a dozens of predefined [build parameters](configuring-build-parameters.md) ready to be used in the settings of a build configuration or in build scripts.
 
-All of these parameters (except for [](#Predefined+Configuration+Parameters)) are **passed to a build process**.
+All these parameters (except [](#Predefined+Configuration+Parameters)) are **passed to a build process**.
 
 > To check the list of available parameters, click the ![paramsPopupHover.gif](paramsPopupHover.gif) button next to a text field in TeamCity UI, or enter `%`.
 >
@@ -13,15 +13,15 @@ All of these parameters (except for [](#Predefined+Configuration+Parameters)) ar
 
 ## Predefined Server Build Parameters
 
-These parameters are generated on the server side in the scope of a particular build. For example, a build number.
+These parameters are generated on the server side in the scope of a particular build — for example, a build number.
 
-Server build parameters are typically available as a system property and a corrsponding environment variable.
+Server build parameters are typically available as a system property and a corresponding environment variable.
 
 <dl>
 
 
 <dt>system.teamcity.version &nbsp; | &nbsp; env.TEAMCITY_VERSION</dt>
-<dd>The version of the TeamCity server. This property can be used to determine if the build is run within TeamCity.</dd>
+<dd>The version of the TeamCity server. This property can be used to determine if the build runs within TeamCity.</dd>
 
 
 <dt>system.teamcity.projectName &nbsp; | &nbsp; env.TEAMCITY_PROJECT_NAME</dt>
@@ -36,7 +36,7 @@ Server build parameters are typically available as a system property and a corrs
 
 
 <dt>system.teamcity.configuration.properties.file</dt>
-<dd>The full name (including the path) of the file containing all the build parameters in alphabetical order. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped). See also: <a href="#BuildPropertiesFile">build.properties.file</a></dd>
+<dd>The full name (including the path) of the file that contains all the build parameters in alphabetical order. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped). See also: <a href="#BuildPropertiesFile">build.properties.file</a></dd>
 
 
 
@@ -102,11 +102,11 @@ These <emphasis tooltip="system-property">system properties</emphasis> are uniqu
 
 ## Predefined Agent Environment Parameters
 
-These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and add the corresponding <emphasis tooltip="system-property">system properties</emphasis> and <emphasis tooltip="environment-variable">environment variables</emphasis>.
+These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and adds the corresponding <emphasis tooltip="system-property">system properties</emphasis> and <emphasis tooltip="environment-variable">environment variables</emphasis>.
 
 If an agent machine has additional software installed, system administrators can modify the `<Agent Home>/conf/buildAgent.properties` file to override values of corresponding parameters. 
 
-Agent environment parameters can be used for setting build configuration options, defining [agent requirements](configuring-build-parameters.md#Specify+Agent+Requirements), and [inside build scripts](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
+Agent environment parameters can be used to set build configuration options, define [agent requirements](configuring-build-parameters.md#Specify+Agent+Requirements), and [inside build scripts](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
 
 To check all existing parameters and their current values for a given build agent, open the agent details page and switch to the **Parameters** tab. See this link for more information: [](levels-and-priority-of-build-parameters.md#Checking+Parameter+Values).
 
@@ -117,7 +117,7 @@ To check all existing parameters and their current values for a given build agen
 <dd product="tc">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
 
 <dt product="tcc">teamcity.agent.name</dt>
-<dd product="tcc">The agent name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
+<dd product="tcc">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
 
 
 <dt>teamcity.agent.work.dir</dt>
@@ -190,7 +190,7 @@ To check all existing parameters and their current values for a given build agen
 
 
 <dt>DotNetFramework&lt;version&gt;[_x86|_x64]_Path</dt>
-<dd>This parameter's value is set to the corresponding framework runtime version(s) path(s). <br/><br/>Note that this parameter is defined only for the latest installed version per major release. For example, if you have 3.5, 4.5, and 4.8 versions installed, this parameter will only be defined for 3.5 and 4.8. 4.5 will be omitted as there is a newer available version of .NET Framework 4. To explicitly define such a version, consider using the <code>DotNetFrameworkTargetingPack&lt;version&gt;_Path</code> parameter instead.</dd>
+<dd>This parameter's value is set to the corresponding framework runtime version(s) path(s). <br/><br/>Note that this parameter is defined only for the latest installed version per major release. For example, if you installed versions 3.5, 4.5, and 4.8, this parameter will only be defined for 3.5 and 4.8. Version/Parameter 4.5 will be omitted since a newer version of .NET Framework 4 is present. To explicitly define such a version, consider using the <code>DotNetFrameworkTargetingPack&lt;version&gt;_Path</code> parameter instead.</dd>
 
 <dt>DotNetFrameworkSDK&lt;version&gt;[_x86|_x64]</dt>
 <dd>Defined if the corresponding version(s) of .NET Framework SDK is installed.</dd>
@@ -205,7 +205,7 @@ To check all existing parameters and their current values for a given build agen
 <dd>The .NET SDK version.</dd>
 
 <dt>DotNetWorkloads_&lt;version&gt;</dt>
-<dd>Lists all <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install">.NET workloads</a> installed on the agent machine.<br/><br/>The <code>&lt;version&gt;</code> suffix is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetWorkloads_7.0.300` parameter.<br/><br/>In addition to these full SDK versions, agents also report workload parameters with shortened <code>major.minor</code> suffixes. For example, if an agent machine has 7.0.100, 7.0.200, and 7.0.300 .NET SDKs installed, the <code>DotNetWorkloads_7.0</code> parameter that refers to the highest 7.0.300 version will be reported.<br/><br/>The parameter value is a string of comma-separated workload names, according to folders in the <b>&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads</b> directory. For instance, "android,maui-ios,wasm-tools".</dd>
+<dd>Lists all <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install">.NET workloads</a> installed on the agent machine.<br/><br/>The <code>&lt;version&gt;</code> suffix is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetWorkloads_7.0.300` parameter.<br/><br/>In addition to these full SDK versions, agents report workload parameters with shortened <code>major.minor</code> suffixes. For example, if an agent machine has 7.0.100, 7.0.200, and 7.0.300 .NET SDKs installed, the <code>DotNetWorkloads_7.0</code> parameter that refers to the highest 7.0.300 version will be reported.<br/><br/>The parameter value is a string of comma-separated workload names, according to folders in the <b>&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads</b> directory. For instance, "android,maui-ios,wasm-tools".</dd>
 
 <dt>WindowsSDK&lt;version&gt;</dt>
 <dd>Defined only if the corresponding version of Windows SDK is installed.</dd>

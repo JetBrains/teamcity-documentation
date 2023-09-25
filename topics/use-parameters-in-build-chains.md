@@ -8,7 +8,7 @@ Dependent builds can access predefined and custom parameters of the previous cha
 
 <img src="dk-params-in-chains.png" width="706" alt="Parameters in dependent builds"/>
 
-A configuration that uses this syntax can be indirectly dependent on the source configuration (for example, if configuration A depends on configuration B and B depends on C, A can access C's parameters).
+A configuration that uses this syntax can indirectly dependx on the source configuration (for example, if configuration A depends on configuration B and B depends on C, A can access C's parameters).
 
 For example, the following build configuration builds and pushes a Docker image. The name of this image is written to the `DockerImageName` parameter.
 
@@ -19,7 +19,7 @@ docker push your.registry/MyApp:v1
 echo "##teamcity[setParameter name='DockerImageName' value='MyApp:${TAG}']"
 ```
 
-If the aforementioned configuration's name is "ConfigA", builds executed further down the build chain can access the image name as `dep.ConfigA.DockerImageName`:
+If this configuration's name is "ConfigA", builds executed further down the build chain can access the image name as `dep.ConfigA.DockerImageName`:
 
 ```Shell
 docker run -d your.registry/%\dep.ConfigA.DockerImageName%
@@ -31,9 +31,9 @@ docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 
 ## Override Parameters of Preceding Configurations
 
-Add a parameter with the `reverse.dep.<build_conf_ID>.<parameter_name>` name syntax to override the `<parameter_name>` parameter defined in the target configuration that is built before the current configuration.
+Add a parameter with the `reverse.dep.<build_conf_ID>.<parameter_name>` name syntax to override the `<parameter_name>` parameter defined in the target configuration that precedes the current configuration.
 
-For example, the following [Kotlin](kotlin-dsl.md) code defines a project with three build configurations united in a single build chain (ConfigA &rarr; ConfigB &rarr; ConfigC). Each build configuration has a `chain.ConfigX.param` parameter with its own value. The last configuration has the additional `reverse.dep.ParametersTest_ChainConfigA.chain.ConfigA.param` parameter.
+For example, the following [Kotlin](kotlin-dsl.md) code defines a project with three build configurations united in a single build chain (ConfigA &rarr; ConfigB &rarr; ConfigC). Each build configuration has a `chain.ConfigX.param` parameter with its custom value. The last configuration has the additional `reverse.dep.ChainConfigA.chain.ConfigA.param` parameter.
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -83,7 +83,7 @@ object ChainConfigC : BuildType({
 
     params {
         param("chain.ConfigC.param", "Config C")
-        param("reverse.dep.ParametersTest_ChainConfigA.chain.ConfigA.param", "Value Overridden in ConfigC")
+        param("reverse.dep.ChainConfigA.chain.ConfigA.param", "Value Overridden in ConfigC")
     }
 
     steps {
@@ -100,7 +100,7 @@ object ChainConfigC : BuildType({
 })
 ```
 
-If you run "ConfigA" or "ConfigA &rarr; ConfigB" sub-chain, the first configuration will report its original parameter value.
+If you run the "ConfigA" or the "ConfigA &rarr; ConfigB" sub-chain, the first configuration will report its original parameter value.
 
 ```Plain Text
 # ConfigA build log
@@ -114,7 +114,7 @@ However, if you run a full build chain that ends with "ConfigC", this last confi
 Parameter value is: Value Overridden in ConfigC
 ```
 
-You can use `*` wildcards in parameter names to override parameters in multiple preceding configurations at once. For example, the "ConfigC" in the following sample has the `reverse.dep.ParametersTest_ChainConfig*.MyParam` parameter, which overrides `MyParam` in both "ConfigA" and "ConfigB".
+You can use `*` wildcards in parameter names to the same parameters in multiple preceding configurations. For example, the "ConfigC" in the following sample has the `reverse.dep.ChainConfig*.MyParam` parameter, which overrides `MyParam` in both "ConfigA" and "ConfigB".
 
 ```Kotlin
 object ChainConfigA : BuildType({
@@ -137,7 +137,7 @@ object ChainConfigB : BuildType({
 
 object ChainConfigC : BuildType({
     params {
-        param("reverse.dep.ParametersTest_ChainConfig*.MyParam", "CustomValue_C")
+        param("reverse.dep.ChainConfig*.MyParam", "CustomValue_C")
     }
 
     dependencies {
@@ -162,7 +162,7 @@ object ChainConfigA : BuildType({
 object ChainConfigB : BuildType({
     params {
         // Lower priority
-        param("reverse.dep.ParametersTest_ChainConfigA.MyParam", "CustomValue_B")
+        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_B")
     }
 
     // Depends on config A
@@ -176,7 +176,7 @@ object ChainConfigB : BuildType({
 object ChainConfigC : BuildType({
     params {
         // Higher priority
-        param("reverse.dep.ParametersTest_ChainConfigA.MyParam", "CustomValue_C")
+        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_C")
     }
 
     // Depends on config B
@@ -188,11 +188,11 @@ object ChainConfigC : BuildType({
 })
 ```
 
-However, if "ConfigB" and "ConfigC" do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and giving a higher priority to a parameter with the most specific build configuration ID.
+However, if "ConfigB" and "ConfigC" do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and prioritizing a parameter with the most specific build configuration ID.
 
-* Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.ParametersTest_ChainConfigA.MyParam`).
-* Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Parameters*A.MyParam`). The more specific the target configuration ID is, the higher priority this parameter gets. For instance, the `ParametersTest_*A` ID has a priority over the `Parameters*A` ID since it is considered more specific.
-* Lowest priority: parameters with the `*` wildcard for the configuration IDs (for example, `reverse.dep.*.MyParam`).
+* Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.ChainConfigA.MyParam`).
+* Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Chain*A.MyParam`). The more specific the target configuration ID is, the higher the priority of this parameter. For instance, the `ChainConf*A` ID has a priority over the `Chain*A` ID since it is considered more specific.
+* Lowest priority: parameters with the `*` wildcard instead of configuration IDs (for example, `reverse.dep.*.MyParam`).
 
 If all conflicting configurations have similar parameter names and neither of them is a clear winner, TeamCity reports a conflict and creates additional `conflict.<build_config_ID>.<parameter_name>=<value>` parameters (one for each conflicting configuration).
 
@@ -206,7 +206,7 @@ object ChainConfigA : BuildType({
 object ChainConfigB : BuildType({
     params {
         // Equal priority
-        param("reverse.dep.ParametersTest_ChainConfigA.MyParam", "CustomValue_B")
+        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_B")
     }
 
     // Depends on config A
@@ -220,7 +220,7 @@ object ChainConfigB : BuildType({
 object ChainConfigC : BuildType({
     params {
         // Equal priority
-        param("reverse.dep.ParametersTest_ChainConfigA.MyParam", "CustomValue_C")
+        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_C")
     }
 
     // Depends on config A
@@ -250,4 +250,4 @@ object ChainABC : BuildType({
 
 * Pushing a new parameter into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 
-* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the context of the build where the parameters are pushed to.
+* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the destination (target) build's scope.
