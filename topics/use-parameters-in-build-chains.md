@@ -100,21 +100,21 @@ object ChainConfigC : BuildType({
 })
 ```
 
-If you run the "ConfigA" or the "ConfigA &rarr; ConfigB" sub-chain, the first configuration will report its original parameter value.
+If you run the ConfigA or the ConfigA &rarr; ConfigB sub-chain, the first configuration will report its original parameter value.
 
 ```Plain Text
 # ConfigA build log
 Parameter value is: Config A
 ```
 
-However, if you run a full build chain that ends with "ConfigC", this last configuration will feed "ConfigA" a custom parameter value.
+However, if you run a full build chain that ends with ConfigC, this last configuration will feed ConfigA a custom parameter value.
 
 ```Plain Text
 # ConfigA build log
 Parameter value is: Value Overridden in ConfigC
 ```
 
-You can use `*` wildcards in parameter names to the same parameters in multiple preceding configurations. For example, the "ConfigC" in the following sample has the `reverse.dep.ChainConfig*.MyParam` parameter, which overrides `MyParam` in both "ConfigA" and "ConfigB".
+You can use `*` wildcards in parameter names to the same parameters in multiple preceding configurations. For example, the ConfigC in the following sample has the `reverse.dep.ChainConfig*.MyParam` parameter, which overrides `MyParam` in both ConfigA and ConfigB.
 
 ```Kotlin
 object ChainConfigA : BuildType({
@@ -150,7 +150,7 @@ object ChainConfigC : BuildType({
 
 ### Conflicting Parameter Overrides
 
-If in the "ConfigA &rarr; ... &rarr; ConfigB &rarr; ... &rarr; ConfigC" chain both "ConfigB" and "ConfigC" configurations try to override ConfigA's parameter "ConfigC" has a higher priority since it depends on "ConfigB" (either directly or through intermediate configurations).
+If in the ConfigA &rarr; ... &rarr; ConfigB &rarr; ... &rarr; ConfigC chain both ConfigB and ConfigC configurations try to override ConfigA's parameter ConfigC has a higher priority since it depends on ConfigB (either directly or through intermediate configurations).
 
 ```Kotlin
 object ChainConfigA : BuildType({
@@ -188,7 +188,7 @@ object ChainConfigC : BuildType({
 })
 ```
 
-However, if "ConfigB" and "ConfigC" do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and prioritizing a parameter with the most specific build configuration ID.
+However, if ConfigB and ConfigC do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and prioritizing a parameter with the most specific build configuration ID.
 
 * Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.ChainConfigA.MyParam`).
 * Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Chain*A.MyParam`). The more specific the target configuration ID is, the higher the priority of this parameter. For instance, the `ChainConf*A` ID has a priority over the `Chain*A` ID since it is considered more specific.
