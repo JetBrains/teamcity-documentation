@@ -82,7 +82,12 @@ It is possible to replace the TeamCity built-in artifacts' storage with [Amazon 
 
 11. Tick **Verify file integrity after upload** to allow TeamCity to perform an additional [check-up on uploaded files](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5). If the integrity verification fails, TeamCity writes a corresponding message to the build log.
 
+12. Click **Save** to save your new storage and return to the list of available storages.
 
+To choose which storage should be used by a project, click **Make Active** next to a required storage. The **has N usages** link allows you to view which builds used this storage to upload their artifacts.
+
+
+<img src="dk-s3-makeActive.png" width="706" alt="Make storage active"/>
 
 
 
