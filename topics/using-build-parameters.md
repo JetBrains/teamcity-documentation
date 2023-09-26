@@ -69,7 +69,7 @@ object MyBuildConfig : BuildType({
 
 ## Specify Artifact Paths
 
-When setting artifacts paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
+When setting artifact paths on the **Build Configuration Settings | General Settings | Artifact paths** page, you can utilize custom configuration parameters to substitute plain values.
 
 ```Kotlin
 object GoalInBuildScripts : BuildType({
