@@ -84,7 +84,7 @@ It is possible to replace the TeamCity built-in artifacts' storage with [Amazon 
 
 12. Click **Save** to save your new storage and return to the list of available storages.
 
-To choose which storage should be used by a project, click **Make Active** next to a required storage. The **has N usages** link allows you to view which builds used this storage to upload their artifacts.
+When viewing a list of storages available for a project, click **Make Active** to start using the corresponding storage for all new builds of this project. The **has N usages** link allows you to view which builds used this storage to upload their artifacts.
 
 
 <img src="dk-s3-makeActive.png" width="706" alt="Make storage active"/>
