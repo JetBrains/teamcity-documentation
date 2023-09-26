@@ -247,7 +247,7 @@ Choose this editor type to hide the parameter value.
 
 <img src="dk-params-password.png" width="706" alt="Password parameter"/>
 
-Password parameter values hidden not only from the TeamCity UI, but also from DSL code (visible via the **View as code** button and saved to a remote repository when you enable [versioned settings](storing-project-settings-in-version-control.md)).
+Password parameter values are hidden not only from the TeamCity UI, but also from DSL code (visible via the **View as code** button and saved to a remote repository when you enable [versioned settings](storing-project-settings-in-version-control.md)).
 
 ```Kotlin
 object PromptTest : BuildType({
