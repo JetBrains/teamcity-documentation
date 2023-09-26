@@ -116,6 +116,24 @@ We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed loo
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
 
 
+### S3 Plugin Update
+{product="tc"}
+
+Version 2023.11 ships an updated S3 plugin that allows you to create AWS S3 and S3-compatible storages for your build artifacts.
+
+<img src="dk-s3-storage-overview.png" width="706" alt="Updated S3 Plugin"/>
+
+The updated plugin version features the following enhancements:
+
+* Buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) are supported.
+* All connection settings are automatically retrieved from the selected [AWS Connection](configuring-connections.md#AmazonWebServices).
+* The AWS region is automatically retrieved from the selected bucket.
+* You can now disable integrity verification that TeamCity carries out by default for all custom S3 storages.
+
+
+Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrade-notes.md#2023-11-s3-update)
+
+
 ### AWS Connection Improvements
 {product="tc"}
 
