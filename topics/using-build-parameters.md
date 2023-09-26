@@ -79,7 +79,6 @@ object GoalInBuildScripts : BuildType({
     }
 })
 ```
-{interpolate-variables="false"}
 
 
 
@@ -102,7 +101,6 @@ object MyBuildConf : BuildType({
     buildNumberPattern = "%\build.counter%-%\teamcity.build.branch%"
 })
 ```
-{interpolate-variables="false"}
 
 
 
@@ -130,7 +128,7 @@ object MyBuildConf : BuildType({
     }
 })
 ```
-{interpolate-variables="false"}
+
 
 
 
