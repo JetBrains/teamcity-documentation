@@ -275,6 +275,9 @@ http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/move?ta
 * The [](commit-status-publisher.md) build feature now correctly publishes build statuses for configurations that target `refs/(merge-requests/*)/head` branches of GitLab repositories (the "merge result" branches). Previously, running TeamCity builds for merge result revisions caused the Publisher to encounter HTTP 404 errors.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 * [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
+* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
+  
+  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
 * You can now add the `dateFormat=<value>` parameter to URLs used by your log analysis tools to retrieve build logs. Learn more: [](build-log.md#Modify+the+DateTime+Pattern).
 
@@ -349,6 +352,10 @@ Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-reques
 
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
 * <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
+* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
+
+  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
+
 
 <!-- #ENDREGION -->
 
