@@ -271,16 +271,12 @@ No server restart is required after the property is set.
 
 We will disable this type of credentials by default in the next bugfix update.
 
-#### Kotlins DSL plugin may fail to resolve dependencies
+#### Kotlin DSL plugin may fail to resolve dependencies
 
 The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.jetbrains.com/issue/TW-78351/Kotlin-DSL-fails-to-generateget-DSL-dependencies-since-upgrading-to-202210) after upgrading to 2022.10,
 if a project's Kotlin DSL settings use third-party libraries.
 
-If you face this problem, please use the following workaround:
-
-1. Download [this version of the Kotlin DSL plugin](https://uploads.jetbrains.com/files/2022_11_05_Kbfk6dc751LkfZtzLKwrea_JBS/configs-dsl.zip?secret=3aQYCYDCvptvgh13EYD8Yoo8NhguVrzp).
-2. Install the plugin on your TeamCity Server via the **[Administration | Plugins](installing-additional-plugins.md)** page.
-3. Restart your TeamCity server.
+If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
