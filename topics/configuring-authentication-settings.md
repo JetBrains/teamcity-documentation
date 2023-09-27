@@ -46,7 +46,7 @@ To switch to a different preconfigured scheme, use the __Load preset__ button.
 
 Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file. 
 If using the UI is not possible (for example, you need to change the authentication settings before the server is started), 
-you can configure authentication settings in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file on the server machine as follows:
+you can configure authentication settings in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml` file on the server machine as follows:
 
  1. Add the `<auth-module>` tag inside the `<auth-modules>` tag inside the `<auth-config>` tag.
  2. Specify the type attribute for the newly created `<auth-module>` tag.
