@@ -5,52 +5,51 @@
 
 |Software|Version|
 |---|---|
-|[Git](https://git-scm.com/)|2.41.0|
-|[Git LFS](https://git-lfs.github.com/)|3.3.0|
+|[Git](https://git-scm.com/)|2.42.0|
+|[Git LFS](https://git-lfs.github.com/)|3.4.0|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[.NET Core](https://dotnet.microsoft.com/)|7.0.305|
-|[Chromium](https://www.chromium.org/)|114.0.5735.106|
+|[Chromium](https://www.chromium.org/)|116.0.5845.187|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|114.0.5735.198|
+|[Google Chrome](https://www.google.com/chrome/)|117.0.5938.88|
 |[ChromeDriver](https://chromedriver.chromium.org/)|114.0.5735.90|
-|[Docker](https://www.docker.com/)|24.0.2|
-|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|24.0.2|
+|[Docker](https://www.docker.com/)|24.0.6|
+|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|24.0.6|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.12.4|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|v1.27.3|
-|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.49.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|437.0.0|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.13.19|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)||
+|[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.52.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|447.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)|java-17-amazon-corretto|
 |[JDK 19](https://docs.aws.amazon.com/corretto/latest/corretto-19-ug/downloads-list.html)|java-19-amazon-corretto|
 |[JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)|java-11-amazon-corretto|
 |[Android SDK](https://developer.android.com/studio/command-line)|8512546|
-|[Perforce](https://www.perforce.com/)|2023.1 (2442900)|
+|[Perforce](https://www.perforce.com/)|2023.1 (2468153)|
 |[Mercurial](https://www.mercurial-scm.org/)|5.3.1|
 |[SVN](https://subversion.apache.org/)|1.13.0|
 |[Helm](https://helm.sh/)|v3.10.0+gce66412|
 |[Yarn](https://yarnpkg.com/)||
-|[Bazelisk](https://github.com/bazelbuild/bazelisk)|6.2.1|
-|[Bazel](https://bazel.build/)|6.2.1|
+|[Bazelisk](https://github.com/bazelbuild/bazelisk)|6.3.2|
+|[Bazel](https://bazel.build/)|6.3.2|
 |[Ant](https://ant.apache.org/)|1.10.7|
 |[Gradle](https://gradle.org/)|7.5.1|
 |[CMake](https://cmake.org/)|3.25.2|
 |[Apache Maven](https://maven.apache.org/)|3.6.3|
 |[Python](https://www.python.org/)|3.8.10|
 |[Python 2](https://www.python.org/downloads/)|2.7.18|
-|[Python 3](https://www.python.org/downloads/)|3.9.17|
-|[pip3](https://pip.pypa.io/en/stable/)|23.1.2|
-|[pip](https://pip.pypa.io/en/stable/)|23.1.2|
-|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.2.6|
+|[Python 3](https://www.python.org/downloads/)|3.9.18|
+|[pip3](https://pip.pypa.io/en/stable/)|23.2.1|
+|[pip](https://pip.pypa.io/en/stable/)|23.2.1|
+|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.3.7|
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
-|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.23.1|
-|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.6.26|
-|[Python Poetry](https://python-poetry.org/)|1.5.1)|
+|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.24.5|
+|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.9.8|
+|[Python Poetry](https://python-poetry.org/)|1.6.1)|
 |[rustup](https://rustup.rs/)|1.26.0|
-|[Cargo](https://doc.rust-lang.org/cargo/)|1.70.0|
-|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.70.0|
+|[Cargo](https://doc.rust-lang.org/cargo/)|1.72.1|
+|[rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)|1.72.1|
 |[Go](https://golang.org/)|1.19.1|
 |[NVM](https://github.com/nvm-sh/nvm)|0.39.2|
 |[Node.js](https://nodejs.org/en/)|16.18|
