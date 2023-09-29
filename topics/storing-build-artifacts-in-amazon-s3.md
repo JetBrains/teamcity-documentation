@@ -35,7 +35,7 @@ TeamCity comes bundled with the [Amazon S3 Artifact Storage](https://plugins.jet
    * `DeleteObject`
    * `GetAccelerateConfiguration` (if [Transfer Acceleration](#TransferAcceleration) is enabled)
     
-    > <anchor name="transferToConnection"/>In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentails in the default AWS locations (the **Default provider chain** setting).
+    > <anchor name="transferToConnection"/>In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentials in the default AWS locations (the **Default provider chain** setting).
     > 
     > Starting with version 2023.11, these settings are exclusive to [AWS Connections](configuring-connections.md#AmazonWebServices). If you're migrating from an older version of TeamCity and your existing AWS S3 storages used any of these settings, click the **Convert to AWS Connection** link. This action transfers AWS-related settings to a new AWS Connection, and selects this new connection as the source connection of your storage.
     >
