@@ -20,9 +20,10 @@
 Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the following settings are no longer available:
 
 * The **Use pre-signed URLs** feature is available by default and cannot be disabled.
-* The **Access Key ID**, **Secret Access Key**, **IAM Role** and **Default provider chain** options can be customized only within an [AWS Connection](configuring-connections.md#AmazonWebServices) this custom storage uses. When you view or edit an S3 bucket that employed any of these settings, TeamCity shows the **Convert to AWS Connection** link that allows you to transfer them to a new AWS Connection.
+* The **Access Key ID**, **Secret Access Key**, **IAM Role** and **Default provider chain** options are no longer available for native AWS S3 storages. Instead, use settings of an [AWS Connection](configuring-connections.md#AmazonWebServices) these storages utilize to edit corresponding options. When you view or edit an existing S3 bucket that employed any of these settings, TeamCity shows the **Convert to AWS Connection** link that allows you to transfer them to a new AWS Connection. We recommend that you do so to keep all connection-related options outside storage settings.
 * The **AWS Region** is now automatically retrieved from the selected storage.
 * The **Open IAM Console** link is hidden.
+* Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
 
 ## Changes from 2023.05.3 to 2023.05.4
 

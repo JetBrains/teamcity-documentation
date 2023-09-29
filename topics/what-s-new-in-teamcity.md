@@ -126,7 +126,8 @@ Version 2023.11 ships an updated S3 plugin that allows you to create AWS S3 and 
 The updated plugin version features the following enhancements:
 
 * Buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) are supported.
-* All connection settings are automatically retrieved from the selected [AWS Connection](configuring-connections.md#AmazonWebServices).
+* Support for S3-compatible storages, such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others.
+* For native AWS S3 buckets, connection-related settings are automatically retrieved from the selected [AWS Connection](configuring-connections.md#AmazonWebServices).
 * The AWS region is automatically retrieved from the selected bucket.
 * You can now disable integrity verification that TeamCity carries out by default for all custom S3 storages.
 
