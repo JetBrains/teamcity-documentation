@@ -444,9 +444,9 @@ Ignore Drafts
 <td>
 
 By default, the Pull Requests build feature loads the [GitLab draft merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/drafts.html)
-information and runs builds on draft merge requests. The build page displays the "Draft" status and icon next to the pull request number.
+information and runs builds on draft merge requests. The build page displays the "Draft" status and icon next to the merge request number.
 
-Check the box to ignore GitLab draft merge requests. TeamCity will not load the draft pull request information until its status changes.
+Check the box to ignore GitLab draft merge requests. TeamCity will not load the draft merge request information until its status changes.
 
 </td>
 </tr>
