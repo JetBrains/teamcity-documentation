@@ -52,6 +52,13 @@ ProxyPassReverse    /tc/app/subscriptions ws://teamcity.local:8111/tc/app/subscr
 ProxyPass           /tc http://teamcity.local:8111/tc connectiontimeout=240 timeout=1200
 ProxyPassReverse    /tc http://teamcity.local:8111/tc
 
+## The following entries are required to allow the Agent Terminal feature to function with websockets
+ProxyPass           /tc/plugins/teamcity-agent-terminal/ ws://teamcity.local:8111/tc/plugins/teamcity-agent-terminal/ connectiontimeout=240 timeout=1200
+ProxyPassReverse    /tc/plugins/teamcity-agent-terminal/ ws://teamcity.local:8111/tc/plugins/teamcity-agent-terminal/
+
+ProxyPass           /tc/app/agentTerminal/ ws://teamcity.local:8111/tc/app/agentTerminal/ connectiontimeout=240 timeout=1200
+ProxyPassReverse    /tc/app/agentTerminal/ ws://teamcity.local:8111/tc/app/agentTerminal/
+
 ```
 
 Note the order of the [ProxyPass rules](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass): conflicting ProxyPass rules must be sorted starting with the longest URLs first.
