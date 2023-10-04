@@ -62,11 +62,15 @@ If you switch the **Authentication Type** to "GitLab Application Token", TeamCit
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {product="tc"}
 
-In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+For the **Authentication Type**, you have the following options:
 
-If you switch the **Authentication Type** to "Access Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Cloud) to Bitbucket Cloud. Click the **Acquire** button next to a required connection to obtain an access token.
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
-<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
+* **Username/password** — Specify a username and password for connection to Bitbucket Cloud. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
+
+* **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+
 
 ### Bitbucket Server
 
