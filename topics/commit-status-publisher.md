@@ -6,12 +6,12 @@ to automatically send build statuses of your commits to an external system.
 The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
 
 Supported systems:
-* GitHub (the build statuses for pull requests are supported as well)
-* GitLab
-* Azure DevOps (supported statuses: Pending, Succeeded, Failed, Error)
-* Bitbucket Server and Bitbucket Cloud
-* JetBrains Space
-* JetBrains Upsource
+* [GitHub](https://docs.github.com/en/rest/commits/statuses) (the build statuses for pull requests are supported as well)
+* [GitLab](https://docs.gitlab.com/ee/api/commits.html#commit-status)
+* [Azure DevOps](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses) (supported statuses: Pending, Succeeded, Failed, Error)
+* [Bitbucket Server](https://developer.atlassian.com/server/bitbucket/rest/v803/api-group-build-status/#api-build-status-latest-commits-stats-commitid-get) and [Bitbucket Cloud](https://developer.atlassian.com/cloud/bitbucket/rest/api-group-commit-statuses/#api-group-commit-statuses)
+* [JetBrains Space](https://www.jetbrains.com/help/space/view-commit-status.html)
+* [JetBrains Upsource](https://www.jetbrains.com/help/upsource/ci-server-integration.html)
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
 
