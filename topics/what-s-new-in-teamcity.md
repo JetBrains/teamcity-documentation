@@ -236,6 +236,7 @@ Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
 ## REST API
 {product="tc"}
 
+### Move Configurations
 
 You can now send a `POST` request to the following endpoint to move a build configuration to another project:
 
@@ -250,6 +251,30 @@ For example, the following request finds a build configuration with the "SourceP
 http://localhost:8111/app/rest/buildTypes/id:SourceProject_MyBuildConfig/move?targetProjectId=MyProject2
 ```
 {prompt="POST"}
+
+
+### Wind Down Cloud Instances
+
+Previously, you could send the DELETE request to a running cloud agent to terminate it.
+
+```Shell
+/app/rest/cloud/instances/<cloudInstanceLocator>
+```
+{prompt="DELETE"}
+
+Starting with this version, you can stop cloud instances via POST requests to the following endpoints:
+
+```Shell
+/app/rest/cloud/instances/<cloudInstanceLocator>/actions/stop
+/app/rest/cloud/instances/<cloudInstanceLocator>/actions/forceStop
+```
+{prompt="POST"}
+
+Use the `...actions/stop` endpoint to issue a "soft" stop request: if the target agent is currently busy, it will stop after the build finishes.
+
+The `...actions/forceStop` endpoint allows you to stop a cloud instance even if it is busy.
+
+Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
 ## Sakura UI
@@ -345,6 +370,31 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
 
+
+
+## REST API
+{product="tcc"}
+
+Previously, you could send the DELETE request to a running cloud agent to terminate it.
+
+```Shell
+/app/rest/cloud/instances/<cloudInstanceLocator>
+```
+{prompt="DELETE"}
+
+Starting with this version, you can stop cloud instances via POST requests to the following endpoints:
+
+```Shell
+/app/rest/cloud/instances/<cloudInstanceLocator>/actions/stop
+/app/rest/cloud/instances/<cloudInstanceLocator>/actions/forceStop
+```
+{prompt="POST"}
+
+Use the `...actions/stop` endpoint to issue a "soft" stop request: if the target agent is currently busy, it will stop after the build finishes.
+
+The `...actions/forceStop` endpoint allows you to stop a cloud instance even if it is busy.
+
+Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
 ## Miscellaneous

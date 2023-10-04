@@ -66,8 +66,8 @@ TeamCity comes bundled with the [Amazon S3 Artifact Storage](https://plugins.jet
     >
     > * The [virtual host addressing](#forceVirtualHostAddressing) is always on. Path-style requests are not supported.
     > * Transfer Acceleration must be enabled on your S3 bucket.
-    > * The bucket name must be DNS-compliant (must not contain periods `.`).
-    > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
+    > * Buckets [cannot have dots (.) in their names](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+   > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
     >
     {type="note"}
 
@@ -159,11 +159,11 @@ The CloudFront integration requires configuring:
 
 When you switch the storage type to **AWS CloudFront**, four new settings appear.
 
-* Use the **Download distribution** and **Upload distribution** drop-down menus to choose [manually created](#Manual+CloudFront+Setup distributions).
+* Use the **Download distribution** and **Upload distribution** drop-down menus to choose [manually created](#Manual+CloudFront+Setup) distributions.
 
 * The **Public key** field and **Upload private key...** button allow you to specify [corresponding keys](#Manual+CloudFront+Setup).
 
-Alternatively, you can click the <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> icon to let TeamCity [configure settings automatically](#Automatic+CloudFront+Setup).
+Alternatively, you can click the <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> icon to let TeamCity [configure all four settings automatically](#Automatic+CloudFront+Setup).
 
 For Cloudfront settings to work properly, TeamCity needs the following permissions:
 

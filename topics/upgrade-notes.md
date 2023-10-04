@@ -25,6 +25,8 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 * The **Open IAM Console** link is hidden.
 * Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
 
+
+
 ## Changes from 2023.05.3 to 2023.05.4
 
 No potential breaking changes.
