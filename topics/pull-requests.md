@@ -243,7 +243,7 @@ Description
 
 * **Username/password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
 
-* **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+* **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
   >
   {id="note"}
