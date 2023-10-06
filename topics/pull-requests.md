@@ -25,7 +25,11 @@ This feature extends the original branch specification of [VCS roots](vcs-root.m
 
 You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
 
-<img src="pr-info.png" alt="Pull request details" width="700"/>
+<img src="pr-info.png" alt="Pull request details" width="706" border-effect="line"/>
+
+In the case of a draft pull request, the icon is grayed-out and the **Draft** status appears before the pull request number:
+
+<img src="pr-info2.png" alt="Pull request details" width="706" border-effect="line"/>
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches. For example, to auto-start building pull requests for [GitHub](#GitHub+Pull+Requests) repositories, add a new trigger (or modify the existing one) with the `+:pull/*` branch filter rule.
 
@@ -191,7 +195,7 @@ Ignore Drafts
 <td>
 
 By default, the Pull Requests build feature loads the [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests)
-information and runs builds on draft pull requests. The build page displays the "Draft" status and icon next to the pull request number.
+information and runs builds on draft pull requests. The build page displays a grayed-out icon and the **Draft** status next to the merge request number.
 
 Check the box to ignore GitHub draft pull requests. TeamCity will not load the draft pull request information until its status changes.
 
@@ -432,6 +436,21 @@ By target branch
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor merge requests only on target branches that match the specified criteria. If left empty, no filters apply.
+
+</td>
+</tr>
+<tr>
+<td>
+
+Ignore Drafts
+
+</td>
+<td>
+
+By default, the Pull Requests build feature loads the [GitLab draft merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/drafts.html)
+information and runs builds on draft merge requests. The build page displays a grayed-out icon and the **Draft** status next to the merge request number.
+
+Check the box to ignore GitLab draft merge requests. TeamCity will not load draft merge request information and a merge request is ignored until its status changes to non-draft.
 
 </td>
 </tr>
