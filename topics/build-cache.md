@@ -22,9 +22,7 @@ Caches are published as [hidden artifacts](build-artifact.md#Hidden+Artifacts) u
 
 <img src="dk-publishedCaches.png" width="706" alt="Published artifacts"/>
 
-> Since caches are published as artifacts, they are affected by the **Maximum build artifact file size** setting that you can set on the [Administration | Global Settings](teamcity-configuration-and-maintenance.md#Build+Settings) page.
-> 
-{type="note"}
+Since caches are published as artifacts, they are affected by the **Maximum build artifact file size** setting that you can set on the [Administration | Global Settings](teamcity-configuration-and-maintenance.md#Build+Settings) page.
 
 ### Order of Operations
 
