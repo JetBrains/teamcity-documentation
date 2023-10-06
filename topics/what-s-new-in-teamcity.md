@@ -111,6 +111,7 @@ We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed loo
 * Support for Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
 * You can now specify multiple instance types for a cloud image, which increases your chances to book a spot instance.
 * The **Subnets** field now accepts multiple values, which allows you to specify different sets of incoming and outgoing traffic rules.
+* The new **Image priority** setting allows you to range cloud images. When TeamCity needs to spin up a new cloud agent, it will prioritize an image with the highest priority number (given that this image has not yet reached its active agents limit).
 * TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
 
 Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
@@ -146,6 +147,9 @@ In addition, you can now refer to the new section of our "Configuring Connection
 {product="tc"}
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
+
+
+
 
 
 ## Agents with Bundled JDKs
@@ -417,7 +421,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 {product="tcc"}
 
 
-
+* [EC2 Cloud Images](setting-up-teamcity-for-amazon-ec2.md) now feature the **Image priority** setting that allows you to specify which images should spin up new cloud agents first. Images with higher priority values are prioritized over images with lower priorities.
 * <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
 
 

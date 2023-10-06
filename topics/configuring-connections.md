@@ -401,11 +401,9 @@ To configure an AWS connection in TeamCity:
         6. Instance profile credentials delivered through the Amazon EC2 metadata service. 
    {product="tc"}
 
-<!--
 7. Tick the **Available for sub-projects** option if you want this connection to be available for all subprojects of the current project.
 8. Tick the **Available for build steps** option to allow choosing this connection in the [AWS Credentials build feature](aws-credentials.md) feature settings.
--->
-7. Test and save the connection.
+9. Test and save the connection.
 
 Now you can use the credentials provided by this connection in your builds. To do that, configure the [AWS Credentials build feature](aws-credentials.md).
 
@@ -425,14 +423,14 @@ TeamCity allows your project to access required AWS resources using connections 
     
 4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
 
-<!--
+
 5. If you want subprojects to have access to this new connection, check the **Available for sub-projects** option. Otherwise, only the same project that owns this connection will be able to use it.
         
     <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
--->
 
-5. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
-6. Modify the **Trust relationships** of this new Role B to allow Role A to assume it.
+
+6. Create a second IAM Role ("Role B") with permissions required to access AWS resources (for example, EC2 instances or S3 buckets).
+7. Modify the **Trust relationships** of this new Role B to allow Role A to assume it.
     ```JSON
     {
       "Version": "2012-10-17",
@@ -447,17 +445,15 @@ TeamCity allows your project to access required AWS resources using connections 
       ]
     }
     ```
-7. In a TeamCity project that needs access to AWS resources, create another AWS connection.
+8. In a TeamCity project that needs access to AWS resources, create another AWS connection.
 
    * **Type** — "IAM Role".
    * **AWS Connection** — the connection created in step 4.
    * **Role ARN** — the ARN of "Role B".
 
-<!--
     Note that if you configure this new connection in a subproject of a project that owns the primary "Default Credentials Provider Chain" connection, this primary connection must have its **Available for sub-projects** setting enabled (see step 5).
--->
-    
-8. Click **Test connection** to ensure TeamCity can assume **Role B**.
+
+9. Click **Test connection** to ensure TeamCity can assume **Role B**.
     
     ```Plain Text
     Running STS get-caller-identity...
@@ -467,11 +463,11 @@ TeamCity allows your project to access required AWS resources using connections 
      ARN: <Role B ARN>
     ```
     
-9. Save your new connection and reopen it. You should now see the **External ID** value of the connection.
+10. Save your new connection and reopen it. You should now see the **External ID** value of the connection.
     
     <img src="dk-AWS-externalID.png" width="706" alt="External ID of an AWS Connection"/>
     
-10. Go back to the **Trust relationships** of Role B and add the extra condition:
+11. Go back to the **Trust relationships** of Role B and add the extra condition:
     ```JSON
     {
       "Version": "2012-10-17",

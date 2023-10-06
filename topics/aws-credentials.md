@@ -34,11 +34,10 @@ AWS Connection
 
 Select an AWS connection from the drop-down menu list.
 
-<!--You can choose only those connections whose **Available for builds** setting is enabled. If the target connection is owned not by a project whose build configuration you set up, but rather its parent project, ensure the **Available for sub-projects** checkbox is also ticked.
+You can choose only those connections whose **Available for builds** setting is enabled. If the target connection is owned not by a project whose build configuration you set up, but rather its parent project, ensure the **Available for sub-projects** checkbox is also ticked.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
--->
 
 </td></tr><tr>
 
