@@ -5,13 +5,18 @@ A _build log_ is an enhanced console output of a build. It is represented by a s
 
 ## Viewing Build Log
 
-The log of a specific build is available for browsing on the __[Build Results](build-results-page.md#Build+Log+Tab)__ page. 
+To view the full log details, navigate to the __[Build Results](build-results-page.md#Build+Log+Tab)__ page and switch to the __Build Log__ tab.
+In this tab, you have the following options for viewing the log:
 
-The __Tree view__ is the most capable view provided in the web UI. By default, all messages are displayed. Using the _View_ drop-down menu, you can switch from all messages to viewing __errors__ separately, or you can choose __Important messages__ to see the log filtered by "error" and "warning" statuses. You can also use the "Verbose" view level and download a raw build log using the corresponding link.
+* __Expand All__ — expands all nested log messages.
+* __Collapse All__ — collapses all nested log messages.
+* View filter — defaults to __All Messages__. You can use this button to filter for errors or important messages. You can also select the __Verbose__ mode to see the most fine-grained logging level.
+* __Enable soft-wrap lines__ — wrap the log lines in the build log panel.
+* __Enable relative time__ — show timestamp values relative to the build start time, instead of the absolute time.
 
 >To switch to the dark theme in the build log, select the __Use console view__ option.
 
-You can download a full build log in the textual form or as a `.zip` archive  from the Build Results page by clicking the _Download full build log_ link in the upper right corner.
+You can download a full build log in the textual form or as a `.zip` archive by clicking the _Download log_ dropdown and selecting the required format.
 
 ## Integration with Log Analysis Tools
 
