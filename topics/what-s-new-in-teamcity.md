@@ -277,7 +277,7 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
-## Sakura UI
+## Sakura UI and UX Enhancements
 {product="tc"}
 
 * We have reworked the **Agent Parameters** tab. You can navigate to this tab when viewing any TeamCity agent to instantly check this agent's configuration and environment paramters and system properties.
@@ -288,7 +288,14 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 * The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
 
+* The [Interactive Agent Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 now opens in a panel docked to the bottom of the agent details page. You can move it to a separate browser tab by clicking **Open in a separate tab**.
 
+  <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
+
+* [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
+* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
+
+  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
 
 
@@ -300,11 +307,6 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 * TeamCity distributes agents more effectively and processes large build chains with failing builds faster. Starting with version 2023.11, dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is "Make build failed to start" no longer wait for an available agent when their dependencies fail or are canceled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in the chain.
 * The [](commit-status-publisher.md) build feature now correctly publishes build statuses for configurations that target `refs/(merge-requests/*)/head` branches of GitLab repositories (the "merge result" branches). Previously, running TeamCity builds for merge result revisions caused the Publisher to encounter HTTP 404 errors.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
-* [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
-* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
-  
-  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
-
 * You can now add the `dateFormat=<value>` parameter to URLs used by your log analysis tools to retrieve build logs. Learn more: [](build-log.md#Modify+the+DateTime+Pattern).
 
 
@@ -397,15 +399,27 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
+## Sakura UI and UX Enhancements
+{product="tcc"}
+
+* You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
+
+* The [Interactive Agent Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 now opens in a panel docked to the bottom of the agent details page. You can move it to a separate browser tab by clicking **Open in a separate tab**.
+
+  <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
+
+* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
+
+  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
+
+
 ## Miscellaneous
 {product="tcc"}
 
 
-* You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
-* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
-* You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
 
-  <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
+* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
+
 
 
 <!-- #ENDREGION -->
