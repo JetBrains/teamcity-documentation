@@ -6,12 +6,12 @@ to automatically send build statuses of your commits to an external system.
 The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
 
 Supported systems:
-* GitHub (the build statuses for pull requests are supported as well)
-* GitLab
-* Azure DevOps (supported statuses: Pending, Succeeded, Failed, Error)
-* Bitbucket Server and Bitbucket Cloud
-* JetBrains Space
-* JetBrains Upsource
+* [GitHub](https://docs.github.com/en/rest/commits/statuses) (the build statuses for pull requests are supported as well)
+* [GitLab](https://docs.gitlab.com/ee/api/commits.html#commit-status)
+* [Azure DevOps](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses) (supported statuses: Pending, Succeeded, Failed, Error)
+* [Bitbucket Server](https://developer.atlassian.com/server/bitbucket/rest/v803/api-group-build-status/#api-build-status-latest-commits-stats-commitid-get) and [Bitbucket Cloud](https://developer.atlassian.com/cloud/bitbucket/rest/api-group-commit-statuses/#api-group-commit-statuses)
+* [JetBrains Space](https://www.jetbrains.com/help/space/view-commit-status.html)
+* [JetBrains Upsource](https://www.jetbrains.com/help/upsource/ci-server-integration.html)
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
 
@@ -62,34 +62,75 @@ If you switch the **Authentication Type** to "GitLab Application Token", TeamCit
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {product="tc"}
 
-In the Commit Status Publisher settings, specify a username and [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) for authentication. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password.
+For the **Authentication Type**, you have the following options:
 
-If you switch the **Authentication Type** to "Access Token", TeamCity will display a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Cloud) to Bitbucket Cloud. Click the **Acquire** button next to a required connection to obtain an access token.
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
-<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
+* **Username/password** — Specify a username and password for connection to Bitbucket Cloud. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
+
+* **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+
 
 ### Bitbucket Server
 
-Commit Status Publisher supports the Bitbucket Server URL in the following format: `http[s]://<hostname>:<port>`. 
-Besides the URL, you need to specify a username and password or an access token for authentication.
+The following parameters are available for the [Bitbucket Server/Data Center](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
 
-When you select the **Access Token** authentication type, TeamCity will display
+<table>
+<tr>
+<td width="150">
+
+Parameter
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+Bitbucket Server Base URL
+
+</td>
+<td>
+
+Specifies the Bitbucket server base URL in the following format: `http[s]://<hostname>:<port>`.
+
+If left empty, the URL will be extracted from the VCS root fetch URL.
+
+</td>
+</tr>
+
+<tr>
+
+<td>Authentication Type</td>
+<td>
+
+* **Username / Password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
+
+* **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
+  >
+  {type="note"}
+
+</td>
+</tr>
+
+</table>
+
+When you select the **Refreshable access token** authentication type, TeamCity displays
 a list of [configured OAuth connections](configuring-connections.md#Bitbucket+Server+and+Data+Center)
 to Bitbucket Server / Data Center configured in the project and available to all project users.
-If a token is already configured, TeamCity will display the information about the user that obtained the token and the connection that provided the token.
-
-To obtain the token for the current user, click the **Acquire** button. 
-If you are not signed in to your Bitbucket Server / Data Center account, TeamCity will ask for access to it.
-After you sign in, you will be able to acquire a token for the required connection. 
-TeamCity will update the token information for the connection.
-
-<img src="dk-CSP-BBCloudToken.png" width="708" alt="Acquire access token for Bitbucket Cloud"/>
-
-
+If a token is already configured, TeamCity displays the information about the user that obtained the token and the connection that provided the token.
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
+> 
+{type="note"}
 
 ### Azure DevOps
 
