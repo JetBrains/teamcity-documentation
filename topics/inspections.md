@@ -1,10 +1,10 @@
 [//]: # (title: Inspections)
 [//]: # (auxiliary-id: Inspections)
 
-The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the version that TeamCity automatically downloads and installs on its first startup, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 {product="tc"}
 
-The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine.
+The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the version that TeamCity automatically downloads and installs on its first startup, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine.
 {product="tcc"}
 
 IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScript, HTML, XML and other code and allows you to
@@ -367,5 +367,5 @@ The code inspections reported by IntelliJ IDEA and TeamCity Java Code Inspection
 * environment-specific project dependencies (files not in version control, and so on);
 * IDE-level settings, like defined SDKs, path variables, and so on;
 * generated files: should be present in the TeamCity agent if they are present when working with the project in IntelliJ IDEA;
-* IntelliJ IDEA version. It is recommended to use the same IntelliJ IDEA version that is used in the TeamCity build. TeamCity bundled an installation of IntelliJ IDEA. The version is written in the Inspections build log;
+* IntelliJ IDEA version. It is recommended to use the same IntelliJ IDEA version that is used in the TeamCity build. The version is written in the Inspections build log;
 * the set and versions of the IntelliJ IDEA plugins that the project relies on.
