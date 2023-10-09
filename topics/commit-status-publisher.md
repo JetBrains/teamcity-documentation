@@ -93,9 +93,13 @@ To protect a branch and ensure that only verified pull requests are merged into 
 
 ### Azure DevOps
 
-Personal access tokens can be used for authentication. If a [VSTS connection](configuring-connections.md#Azure+DevOps+PAT+Connection) is configured, the personal access token can be automatically filled from the project connection.
+To set up the Commit Status Publisher for Azure DevOps, specify your Azure server URL and choose a preferred authentication method.
 
-You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ access scope to _Code (status)_ in the repositories you are about to send statuses to from TeamCity.`
+* **Personal access tokens** or PATs are static authentication tokens that you can [issue in your Azure DevOps account settings](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate). Your issued token should have the `Code (status)` and `Code (read)` scopes allow Commit Status Publisher to post status updates. For [VSTS connections](configuring-connections.md#Azure+DevOps+PAT+Connection), a token can be retrieved from connection settings automatically.
+
+* **Refreshable access tokens** are short-lived tokens issued via configured [Azure OAuth 2.0 connections](configuring-connections.md#azure-devops-connection). Click the **Acquire** button next to a required connection to obtain an access token.
+
+    <img src="dk-azureOauth-token.png" width="706" alt="Azure OAuth in CSP"/>
 
 ### JetBrains Space
 
