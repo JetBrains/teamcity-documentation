@@ -96,8 +96,12 @@ TeamCity comes bundled with the [Amazon S3 Artifact Storage](https://plugins.jet
 
 12. <chunk id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</chunk>
 
-
 <chunk id="make_storage_active">
+
+> If your build agent is deployed behind a proxy, you must also configure the proxy settings on the build agent.
+> See [](configuring-proxy-server.md#Use+Proxy+for+Outgoing+Build+Agent+Connections).
+>
+{type="note"}
 
 When viewing a list of storages available for a project, click <b>Make Active</b> to start using the corresponding storage for all new builds of this project. The <b>has N usages</b> link allows you to view which builds used this storage to upload their artifacts.
 

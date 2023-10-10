@@ -3,8 +3,8 @@
 
 This article gives general recommendations on configuring the following proxy types: 
 * [Reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy)
-* [Proxy for outgoing connections](#Use+Proxy+for+Outgoing+Connections)
-* [Proxy on the TeamCity agent side for agent-to-server connections](#Use+Proxy+to+Connect+Agents+to+TeamCity+Server)
+* [Proxy for outgoing TeamCity server connections](#Use+Proxy+for+Outgoing+TeamCity+Server+Connections)
+* [Proxy for outgoing build agent connections](#Use+Proxy+for+Outgoing+Build+Agent+Connections)
 
 ## Set Up TeamCity Server Behind Proxy
 
@@ -273,7 +273,9 @@ If a TeamCity server is configured behind an IIS reverse proxy:
 
 [//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
 
-## Use Proxy for Outgoing Connections
+<anchor name="Use+Proxy+for+Outgoing+Connections"/>
+
+## Use Proxy for Outgoing TeamCity Server Connections
 
 This section describes configuring TeamCity to use a proxy server for outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
 
@@ -322,9 +324,14 @@ teamcity.https.proxyPassword=password
 > 
 {type="warning"}
 
-## Use Proxy to Connect Agents to TeamCity Server
+<anchor name="Use+Proxy+to+Connect+Agents+to+TeamCity+Server"/>
 
-This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
+## Use Proxy for Outgoing Build Agent Connections
+
+There are a few different reasons why you might need to use a proxy for build agents:
+* For connections between a build agent and the TeamCity server
+* For connections between a build agent and S3 artifact storage
+* For checking custom certificates during agent-side checkout
 
 <chunk include-id="agent-proxy-server">
 
@@ -341,6 +348,8 @@ teamcity.http.proxyPort=8080
 teamcity.http.proxyLogin=login
 teamcity.http.proxyPassword=password
 ```
+
+If the proxy has a HTTPS endpoint, you can also configure the `teamcity.https.*` properties.
 
 Note that the proxy has to be configured not to cache any TeamCity server responses. For example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 
