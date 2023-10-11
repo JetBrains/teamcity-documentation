@@ -142,14 +142,14 @@ The build step with custom tests' execution logic should use this file and filte
 
 <chunk id="alternative-dotnet-parallel-filtering-tc">
 
-If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If you experience performance issues, try adding the `teamcity.internal.dotnet.test.suppressing=true` option (via a [configuration parameter](configuring-build-parameters.md) or an [internal property](server-startup-properties.md#TeamCity+Internal+Properties)) to switch to the alternative testing mode optimized for this scenario. This mode requires .NET 6.0 or newer installed on agent testing machines.
+If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If a TeamCity agent has .NET 6.0 installed, the alternative testing mode optimized for this scenario is automatically enabled. You can add the `teamcity.internal.dotnet.test.suppressing=true` option (via a [configuration parameter](configuring-build-parameters.md) or an [internal property](server-startup-properties.md#TeamCity+Internal+Properties)) to switch back to the regular mode.
 {product="tc"}
 
 </chunk>
 
 <chunk id="alternative-dotnet-parallel-filtering-tcc">
 
-If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If you experience performance issues, try adding the `teamcity.internal.dotnet.test.suppressing=true` [configuration parameter](configuring-build-parameters.md) to switch to the alternative testing mode optimized for this scenario. This mode requires .NET 6.0 or newer installed on agent testing machines.
+If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If a TeamCity agent has .NET 6.0 installed, the alternative testing mode optimized for this scenario is automatically enabled. You can add the `teamcity.internal.dotnet.test.suppressing=true` [configuration parameter](configuring-build-parameters.md) to switch back to the regular mode.
 {product="tcc"}
 
 </chunk>

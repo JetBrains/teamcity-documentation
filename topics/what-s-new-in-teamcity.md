@@ -118,8 +118,8 @@ Learn more: [](integrating-with-helix-swarm.md).
 
 We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed look, the updated plugin features the following enhancements:
 
-* Support for Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
-* You can now specify multiple instance types for a cloud image, which increases your chances to book a spot instance.
+* You can now create images that utilize Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
+* You can now specify multiple instance types for a cloud image. This enhancement makes your cloud agent setups more versatile and reliable, and increases your chances to book a spot instance.
 * The **Subnets** field now accepts multiple values, which allows you to specify different sets of incoming and outgoing traffic rules.
 * The new **Image priority** setting allows you to range cloud images. When TeamCity needs to spin up a new cloud agent, it will prioritize an image with the highest priority number (given that this image has not yet reached its active agents limit).
 * TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
@@ -130,17 +130,14 @@ Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
 ### S3 Plugin Update
 {product="tc"}
 
-Version 2023.11 ships an updated S3 plugin that allows you to create AWS S3 and S3-compatible storages for your build artifacts.
+Version 2023.11 ships an updated S3 plugin that features the following enhancements:
 
 <img src="dk-s3-storage-overview.png" width="706" alt="Updated S3 Plugin"/>
 
-The updated plugin version features the following enhancements:
-
-* Buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) are supported.
-* Support for S3-compatible storages, such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others.
-* For native AWS S3 buckets, connection-related settings are automatically retrieved from the selected [AWS Connection](configuring-connections.md#AmazonWebServices).
-* The AWS region is automatically retrieved from the selected bucket.
-* You can now disable integrity verification that TeamCity carries out by default for all custom S3 storages.
+* Intuitive and streamlined UI designed with both Amazon S3 buckets and S3-compatible storages (such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others) in mind.
+* Support for buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/).
+* Hassle-free setup with the reduced number of settings. All connection-related properties are now retrieved from a selected [AWS Connection](configuring-connections.md#AmazonWebServices). The AWS region is automatically obtained from the selected bucket.
+* The ability to disable integrity verification that TeamCity carries out by default for all custom S3 storages.
 
 
 Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrade-notes.md#2023-11-s3-update)
@@ -149,7 +146,7 @@ Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrad
 ### AWS Connection Improvements
 {product="tc"}
 
-Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and their [](aws-credentials.md) build features.
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and their [](aws-credentials.md) build features.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
@@ -191,15 +188,14 @@ Learn more: [](install-teamcity-agent.md).
 * <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tc"/>
 
 
-## Aggregate Batch Build Artifacts
+## Access Parallel Builds' Artifacts from a Primary Build
 {product="tc"}
-
 
 When you run a build configurations that employs the [](parallel-tests.md) build feature, TeamCity splits a build into batches interconnected in an automatically generated [chain](build-chain.md). In previous version, [artifacts](build-artifact.md) produced during such builds were published in these individual batch builds, while a parent build had none.
 
 <img src="dk-artifacts-parallelTestsMain.png" width="706" alt="Artifacts in parallel testing"/>
 
-When viewing completed configuration builds, you could switch to the **Dependencies** tab to access these artifacts.
+As a workaround, you could switch to the **Dependencies** tab when viewing completed configuration builds.
 
 <img src="dk-artifacts-parallelTests.png" width="706" alt="Artifacts in parallel testing 2"/>
 
@@ -294,7 +290,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 ## Schedule Custom Build Runs
 {product="tc"}
 
-When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
+You can now set a specific date and time when a build should run. To do this, invoke the [Run Custom Build](running-custom-build.md) dialog and use settings from the new **Date** section.
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
@@ -312,11 +308,12 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
 * The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
 
-* The [Interactive Agent Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 now opens in a panel docked to the bottom of the agent details page. You can move it to a separate browser tab by clicking **Open in a separate tab**.
+* The [Interactive Agent Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 now opens in a panel docked to the bottom of an agent details or build results page. You can move it to a separate browser tab by clicking **Open in a separate tab**.
 
-  <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
+  <img src="dk-agentTerminal-2023-11-new.png" width="706" alt="Agent Terminal Window"/>
 
 * [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
+
 * You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
