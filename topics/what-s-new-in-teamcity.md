@@ -386,8 +386,6 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 * For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) features can now utilize refreshable tokens obtained via configured OAuth connections.
 
-Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
-
 
 
 ## REST API
