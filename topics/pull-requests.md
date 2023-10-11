@@ -469,73 +469,28 @@ In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/),
 
 Note that the feature ignores Azure DevOps draft pull requests.
 
-The following parameters are available for the Azure DevOps hosting type:
+**Authentication Settings**
 
-<table>
-<tr>
-<td width="150">
+* **Personal Access Token** — a static token that you can [issue in your Azure DevOps account settings](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate). Your issued token should have the `Code (read)` scope to allow Pull Requests to retrieve required information.
 
-Parameter
+* **Refreshable access token** — a short-lived token issued via a configured [Azure OAuth 2.0 connection](configuring-connections.md#azure-devops-connection). Click the **Acquire** button next to a required connection to obtain an access token.
 
-</td>
+    <img src="dk-azure-pullRequestTokens.png" width="706" alt="Refreshable tokens for Azure DevOps"/>
 
-<td>
 
-Description
+**Pull Request Filtering**
 
-</td>
-</tr>
-<tr>
-<td>
+* **By source branch** — the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
-Access token
+* **By target branch** — the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
-</td>
 
-<td>
+**Other Settings**
 
-Use a personal access token for connection. The token must have the `Code (read)` [scope](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops#scopes).
 
-</td>
-</tr>
-<tr>
-<td>
+* **Project URL** — a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
 
-By source branch
 
-</td>
-<td>
-
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
-
-</td>
-</tr>
-<tr>
-<td>
-
-By target branch
-
-</td>
-<td>
-
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
-
-</td>
-</tr>
-<tr>
-<td>
-
-Project URL
-
-</td>
-
-<td>
-
-Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
-
-</td>
-  </tr>
-</table>
 
 ### JetBrains Space Merge Requests
 

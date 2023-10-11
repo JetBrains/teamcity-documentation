@@ -11,11 +11,11 @@
 ### Azure DevOps
 {product="tc"}
 
-The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) build feature can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
+The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
 
 <img src="dk-azureOauth-token.png" width="706" alt="Azure OAuth in CSP"/>
 
-Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps).
+Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) | [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests).
 
 
 ### Bitbucket Cloud
@@ -384,7 +384,7 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 * For Bitbucket Cloud, you can specify permanent access tokens issued for a specific repository, project, or workspace.
 
-* For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) feature can now utilize refreshable tokens obtained via configured OAuth connections.
+* For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) features can now utilize refreshable tokens obtained via configured OAuth connections.
 
 Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests) | [](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
 
