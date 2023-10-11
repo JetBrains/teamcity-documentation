@@ -291,6 +291,16 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
+## Schedule Custom Build Runs
+{product="tc"}
+
+When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
+
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
+
+Learn more: [Run Custom Build](running-custom-build.md#Date).
+
+
 ## Sakura UI and UX Enhancements
 {product="tc"}
 
@@ -412,6 +422,14 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
+## Schedule Custom Build Runs
+{product="tcc"}
+
+When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
+
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
+
+Learn more: [Run Custom Build](running-custom-build.md#Date).
 
 ## Sakura UI and UX Enhancements
 {product="tcc"}

@@ -14,33 +14,67 @@ There are several ways of launching a custom build in TeamCity:
 
 ## General Options
 
-Select an agent you want to run the build on from the drop-down menu. Note that for each agent in the list, TeamCity displays its current state and estimates when the agent will become idle if it is running a build at the moment. Besides the possibility to run a build on a particular agent from the list, you can also use one of the following options:
-* __Fastest idle agent__: _default option_; if selected, TeamCity will automatically choose an agent to run a build on based on calculated estimates.
-* __Fastest agent in a certain pool__: if selected, TeamCity will run a build on an agent from a specified pool
+The **General** tab contains most basic and frequently used settings.
+
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
+
+### Agent
+
+This setting allows you to choose an agent that should run your build. The following options are available:
+
+* __&lt;the fastest idle agent&gt;__ (default option) — if selected, TeamCity will automatically choose an agent to run a build.
+
+* Select a specific TeamCity agent from a list. TeamCity displays a selected agent's current state and estimates when this will become idle if it is already running a build.
+
+* __&lt;the fastest idle agent in the N pool&gt;__ — TeamCity will run a build on an agent from a specified pool.
+
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can select to run a build on an agent from a __certain cloud image__. If no available cloud agents of this type exist, TeamCity will also attempt to start a new one.
-{product="tc"}
-* __Run a build on &lt;a specified&gt; agent__
-* __All enabled compatible agents__: Use this option to run a build simultaneously on all agents that are enabled and compatible with the build configuration. This option may be useful in the following cases:
+  {product="tc"}
+
+* __&lt;All enabled compatible agents&gt;__ — run a build simultaneously on all agents that are enabled and compatible with the build configuration. This option may be useful in the following cases:
   * Run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update).
   * Run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
 
-On the __General__ options you can also specify whether
-* This build will be run as a [personal](personal-build.md) one.
-* This build will be put at the top of the [build queue](working-with-build-queue.md).
-* All files in the [build checkout directory](build-checkout-directory.md) will be cleaned before this build.
-   * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
+
+### Date
+
+Leave the **As soon as possible** option to queue a new build immediately after you click **Run Build**.
+
+To schedule a build to the specific date &amp; time, switch to the **Set trigger date and time** option. Scheduled builds remain in the end of a [build queue](working-with-build-queue.md) until their scheduled date and time.
+
+<img src="dk-scheduledBuild.png" width="706" alt="Scheduled build and time"/>
+
+
+### Build Options
+
+
+* **run as a personal build** — specifies whether this new build should run as a [personal](personal-build.md) one.
+
+* **put the build to the queue top** — places this new build to the top of the current [build queue](working-with-build-queue.md). Since your newly started build can have no immediately ready compatible agents, it can move down the queue as it waits for one. If this happens, click the **Move to top** icon on the build configuration page, or navigate to the [](build-results-page.md) page and click **Actions | Move to top**.
+
+  <img src="dk-moveBuildToTop.png" width="706" alt="Move queued build to top"/>
+
+* **delete all files in the checkout directory before the build** — specifies whether TeamCity should clear the [build checkout directory](build-checkout-directory.md).
+  * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will be forced to use clean checkout.
+
 
 <anchor name="P4-shelved-files-custom-run"/>
+
+### Perforce-Specific Settings
 
 If the current build configuration uses a [Perforce](perforce.md) VCS root, you can also run a custom build on [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). To do this:
 1. Enable _run as a personal build_ option.
 2. Enter the ID of the changelist that contains the shelved files.
 3. Choose the target Perforce root.
-<note>
-If stream support is enabled in a Perforce VCS Root, TeamCity will automatically detect the target stream from the changed files even if the default stream is specified.
-</note>
-4. 
->Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
+
+> If stream support is enabled in a Perforce VCS Root, TeamCity will automatically detect the target stream from the changed files even if the default stream is specified.
+> 
+{type="note"}
+
+
+> Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
+>
+{type="tip"}
 
 ## Dependencies
 
