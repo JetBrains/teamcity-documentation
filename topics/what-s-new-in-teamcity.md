@@ -185,7 +185,7 @@ Learn more: [](install-teamcity-agent.md).
 
     <img src="dk-dotnet-vstestExclide.png" width="706" alt="Excluded assemblies for vstest"/>
 
-* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tc"/>
+* If your builds run a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
 
 
 ## Access Parallel Builds' Artifacts from a Primary Build
@@ -447,7 +447,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
 
 * [EC2 Cloud Images](setting-up-teamcity-for-amazon-ec2.md) now feature the **Image priority** setting that allows you to specify which images should spin up new cloud agents first. Images with higher priority values are prioritized over images with lower priorities.
-* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>
+* If your build runs a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
 
 
 

@@ -140,19 +140,19 @@ The build step with custom tests' execution logic should use this file and filte
 
 ## Alternative Test Filtering for .NET
 
-<chunk id="alternative-dotnet-parallel-filtering-tc">
+<chunk id="alternative-dotnet-parallel-filtering">
 
-If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If a TeamCity agent has .NET 6.0 installed, the alternative testing mode optimized for this scenario is automatically enabled. You can add the `teamcity.internal.dotnet.test.suppressing=true` option (via a [configuration parameter](configuring-build-parameters.md) or an [internal property](server-startup-properties.md#TeamCity+Internal+Properties)) to switch back to the regular mode.
-{product="tc"}
+If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse and consume for test engines like NUnit.
+
+To avoid potential performance issues, TeamCity automatically employs an alternative testing mode optimized for these cases. This mode is enabled on a per-agent basis if the following conditions are met:
+
+* An agent that runs a test batch reports .NET CLI (SDK or runtime) 6.0 or newer.
+* A test batch has 1000 or more test classes. You can change this threshold value via the `teamcity.internal.dotnet.test.suppression.test.classes.threshold` [configuration parameter](configuring-build-parameters.md).
+
+You can prevent TeamCity from switching to this mode and force it to always run parallel .NET tests using the regular filtering mechanism in any individual project or build configuration. To do so, add the `teamcity.internal.dotnet.test.suppression=false` [parameter](configuring-build-parameters.md) to the required configuration or project.
 
 </chunk>
 
-<chunk id="alternative-dotnet-parallel-filtering-tcc">
-
-If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse for test engines like NUnit. If a TeamCity agent has .NET 6.0 installed, the alternative testing mode optimized for this scenario is automatically enabled. You can add the `teamcity.internal.dotnet.test.suppressing=true` [configuration parameter](configuring-build-parameters.md) to switch back to the regular mode.
-{product="tcc"}
-
-</chunk>
 
 
 ## Publish Artifacts Produced By Batch Builds
