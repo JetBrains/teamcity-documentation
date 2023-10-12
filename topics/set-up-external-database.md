@@ -145,6 +145,7 @@ If you use the driver (`jtds` text appears in the `connectionUrl` of `database.p
 
 ## Configure the Database Connection
 
+To configure a database connection, you can either configure properties in the `database.properties` file or set environment variables in the TeamCity server's environment. It is also possible to combine both approaches.
 
 <anchor name="Database+Configuration+Properties"/>
 
