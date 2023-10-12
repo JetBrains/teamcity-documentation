@@ -439,7 +439,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
 * The [Interactive Agent Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) introduced in version 2023.05 now opens in a panel docked to the bottom of the agent details page. You can move it to a separate browser tab by clicking **Open in a separate tab**.
 
-  <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
+  <img src="dk-agentTerminal-2023-11-new.png" width="706" alt="Agent Terminal Window"/>
 
 * You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
 
