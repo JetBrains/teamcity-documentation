@@ -380,7 +380,7 @@ Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 ## AWS Connection Improvements
 {product="tcc"}
 
-Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and [](aws-credentials.md) build features.
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
