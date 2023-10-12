@@ -318,7 +318,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
-* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections: [AWS Credentials features](aws-credentials.md), [A]WS connections that [use other connections](configuring-connections.md#Recommended+Setup), and so on.
+* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections: [AWS Credentials features](aws-credentials.md), [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md), AWS connections that [use other connections](configuring-connections.md#Recommended+Setup), and so on.
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
