@@ -146,7 +146,7 @@ Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrad
 ### AWS Connection Improvements
 {product="tc"}
 
-New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and their [](aws-credentials.md) build features.
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
@@ -318,6 +318,10 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
+* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections: [AWS Credentials features](aws-credentials.md), [A]WS connections that [use other connections](configuring-connections.md#Recommended+Setup), and so on.
+
+  <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+
 
 
 
@@ -376,7 +380,7 @@ Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 ## AWS Connection Improvements
 {product="tcc"}
 
-Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and their [](aws-credentials.md) build features.
+Starting with this version, you can enable or disable the **Available for sub-projects** and **Available for build steps** settings in AWS connection settings. These options allow you to ensure the configured connections are not used by unauthorized TeamCity projects and [](aws-credentials.md) build features.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
@@ -440,6 +444,10 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 * You can now switch [](build-log.md) timestamps from absolute values to relative to quickly analyze how long it took the build to reach a specific stage.
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
+
+* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections (for example, [AWS Credentials features](aws-credentials.md)).
+
+  <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
 
 ## Miscellaneous

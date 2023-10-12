@@ -59,3 +59,28 @@ New temporary credentials will be generated for each build with this build featu
 
 
 </td></tr></table>
+
+## Kotlin DSL
+
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.provideAwsCredentials
+
+
+object MyBuildConfig : BuildType({
+    name = "Build"
+
+    features {
+        provideAwsCredentials {
+            awsConnectionId = "AwsPrimary"
+        }
+    }
+})
+```
+
+> To quickly get an ID of a target [AWS Connection](configuring-connections.md#AmazonWebServices), navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+>
+> <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+>
+{type="tip"}

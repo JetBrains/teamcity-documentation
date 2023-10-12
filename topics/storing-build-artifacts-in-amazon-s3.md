@@ -311,6 +311,45 @@ For accessing a public bucket:
 }
 ```
 
+## Kotlin DSL
+
+The following sample illustrates how to add an S3 bucket as custom storage for project artifacts, and set this storage as primary (default).
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.projectFeatures.activeStorage
+import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
+
+project {
+    // ...
+    features {
+        activeStorage {
+            id = "PROJECT_EXT_37"
+            activeStorageID = "PROJECT_EXT_4"
+        }
+        s3Storage {
+            id = "PROJECT_EXT_4"
+            awsEnvironment = default {
+                awsRegionName = "eu-west-1"
+            }
+            connectionId = "AwsPrimary"
+            storageName = "S3 Transfer Acceleration"
+            bucketName = "dk-s3ta"
+            enableTransferAcceleration = true
+            forceVirtualHostAddressing = true
+            verifyIntegrityAfterUpload = true
+        }
+    }
+    // ...
+}
+```
+
+> To quickly get an ID of an [AWS Connection](configuring-connections.md#AmazonWebServices) that should be used to retrieve a required bucket, navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+> 
+> <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+> 
+{type="tip"}
+
 ## Migrating Artifacts To a Different Storage
 
 <include src="configuring-artifacts-storage.md" include-id="artifactMigrationToS3"/>
