@@ -322,6 +322,10 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
+* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if it is no longer available.
+
+  <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
+
 
 
 
@@ -448,6 +452,10 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 * You can now view and copy connection IDs from the **Connection** pages in TeamCity UI. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections (for example, [AWS Credentials features](aws-credentials.md)).
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+
+* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if it is no longer available.
+
+  <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
 
 
 ## Miscellaneous
