@@ -304,7 +304,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-sakura-agentParameters.png" width="706" alt="New Agent Parameters tab"/>
 
-* You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
+* You can now [bookmark required agent pools](configuring-agent-pools.md#Favorite+Pools) to easily access them from the top of the agents and pools list.
 
 * The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
 
@@ -318,7 +318,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
-* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections: [AWS Credentials features](aws-credentials.md), [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md), AWS connections that [use other connections](configuring-connections.md#Recommended+Setup), and so on.
+* You can now view and copy connection IDs from the **Connection** pages in TeamCity UI. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections: [AWS Credentials features](aws-credentials.md), [](docker-support.md), [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md), AWS connections that [use other connections](configuring-connections.md#Recommended+Setup), and so on.
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
@@ -445,7 +445,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-relativeBuildLogTime.png" width="706" alt="Relative timestamps"/>
 
-* All **Administration | &lt;Your_Project&gt; | Connections** pages now show connection IDs. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections (for example, [AWS Credentials features](aws-credentials.md)).
+* You can now view and copy connection IDs from the **Connection** pages in TeamCity UI. This minor enhancement facilitates writing [](kotlin-dsl.md) code for objects that utilize connections (for example, [AWS Credentials features](aws-credentials.md)).
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
