@@ -326,6 +326,9 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
 
+* The navigation bar now paints the changes indicator bold for favorite projects with changes from the current TeamCity user.
+
+  <img src="dk_boldChangesIndicator.png" width="706" alt="Highlighted projects with current user changes"/>
 
 
 
@@ -457,6 +460,9 @@ Learn more: [Run Custom Build](running-custom-build.md#Date).
 
   <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
 
+* The navigation bar now paints the changes indicator bold for favorite projects with changes from the current TeamCity user.
+
+  <img src="dk_boldChangesIndicator.png" width="706" alt="Highlighted projects with current user changes"/>
 
 ## Miscellaneous
 {product="tcc"}
