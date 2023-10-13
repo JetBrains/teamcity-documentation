@@ -8,6 +8,7 @@
 {id="bundled-tools-updates-2023-11"}
 
 * The version of .NET SDK bundled with the TeamCity Agent Docker images has been updated from 5.0 to 7.0.
+* The bundled Tomcat was updated to version 9.0.80.
 * .NET Core 3.1 is no longer bundled with the TeamCity Agent Docker images.
   > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
   > See the [README](https://github.com/JetBrains/teamcity-docker-images#readme) file in the `teamcity-docker-images` repository for more details.
