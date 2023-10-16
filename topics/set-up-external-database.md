@@ -161,11 +161,7 @@ TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Comm
 
 The main database connection settings can be defined by setting environment variables in the TeamCity server's environment. Environment variables can be used instead of (or in addition to) the properties in the `database.properties` file.
 
-
-Configuring the database connection with environment variables can be useful in the following scenarios:
-
-* Starting the TeamCity server without defining a `database.properties` file.
-* Avoiding exposure of the database password in the `database.properties` file, by setting the `TEAMCITY_DB_PASSWORD` environment variable instead.
+Configuring the database connection with environment variables enables you to avoid exposing the database password in the `database.properties` file.
 
 <table>
 <tr>
