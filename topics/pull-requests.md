@@ -496,7 +496,8 @@ Note that the feature ignores Azure DevOps draft pull requests.
 
 >If you are looking for how to integrate your JetBrains Space instance with TeamCity, check out this **[full integration guide](how-to-configure-cicd-for-jetbrains-space.md)**!
 
-This feature monitors merge requests directly in the source branches of an origin repository.  
+This feature monitors merge requests directly in the source branches of an origin repository.
+Space merge requests are shown in the **Pull Request Details** pane in the **Overview** tab of the [Build Results](build-results-page.md) page, with a live link back to the corresponding merge request in Space.
 If more than one merge request is submitted from the same source branch, TeamCity will display all these requests in the build results. However, only commits from the open requests matching the filtering criteria will be displayed as [Changes](build-results-page.md#Changes+Tab) of the build.
 
 The following parameters are available for the [JetBrains Space](https://www.jetbrains.com/space/) hosting type:
