@@ -9,7 +9,12 @@ In environments with many build agents, you can centralize distribution of confi
 The __Administration | Tools__ page provides a unified interface to set up tools to be used by appropriate plugins. You can install different versions of a tool and/or change the default one. The tools will be automatically distributed to build agents that request them and used in the related runners.
 
 The following types of tools can be managed up via the __Administration | Tools__ page:
-* __IntelliJ Inspections and Duplicates Engine__ with the IntelliJ IDEA version that TeamCity automatically downloads and installs after it first starts set as default.
+* __IntelliJ Inspections and Duplicates Engine__ with the IntelliJ IDEA version that TeamCity automatically downloads and installs after the server first starts. If TeamCity fails to download and install IntelliJ IDEA:
+  1. [Download the required version](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip).
+  2. Go to **Administration | Tools**.
+  3. Scroll to the **IntelliJ Inspections and Duplicates Engine** section and click **Install Version...**.
+  4. Select the **Upload** mode and click **Choose File** to upload your tool.
+
 * __JetBrains dotCover Command Line Tools__ with the bundled version set as default. Used to collect code coverage for your .NET project.
 * __JetBrains ReSharper Command Line Tools__: by default the tools are bundled with TeamCity and are used by Inspections (.NET), Duplicates Finder (.NET) build runners to run code analysis.
 * __Maven__: several bundled versions are displayed, with 3.6.3 set as default.
