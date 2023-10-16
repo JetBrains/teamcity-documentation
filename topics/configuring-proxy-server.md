@@ -328,10 +328,7 @@ teamcity.https.proxyPassword=password
 
 ## Use Proxy for Outgoing Build Agent Connections
 
-There are a few different reasons why you might need to use a proxy for build agents:
-* For connections between a build agent and the TeamCity server
-* For connections between a build agent and S3 artifact storage
-* For checking custom certificates during agent-side checkout
+A build agent typically needs to make a variety of outbound connections: to the TeamCity server, to S3 artifact storage, to VCS hosts, and so on. This section describes how to configure the build agent so that the outbound connections continue to work after the build agent is deployed behind a proxy.
 
 <chunk include-id="agent-proxy-server">
 
