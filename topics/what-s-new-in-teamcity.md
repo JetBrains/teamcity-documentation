@@ -226,7 +226,7 @@ Learn more: [](configuring-build-steps.md#Step+Status+Parameters).
 ## Additional ReSharper Plugins for the Inspections Runner
 {product="tc"}
 
-The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to enter a list of required [ReSharper plugins](https://plugins.jetbrains.com/resharper).
+The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
 
 <img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
 
@@ -438,6 +438,15 @@ When invoking new builds from the [Run Custom Build](running-custom-build.md) di
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
 Learn more: [Run Custom Build](running-custom-build.md#Date).
+
+## Additional ReSharper Plugins for the Inspections Runner
+{product="tcc"}
+
+The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
+
+<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
+
+Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
 
 ## Sakura UI and UX Enhancements
 {product="tcc"}

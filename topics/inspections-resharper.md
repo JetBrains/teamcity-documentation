@@ -159,13 +159,14 @@ If you want to run ReSharper duplicates using a specific ReSharper version (for 
 
 <td>
 
-The list of additional [ReSharper plugins](https://plugins.jetbrains.com/resharper) to install.
+The list of additional [ReSharper plugins](https://plugins.jetbrains.com/resharper) to install. This field accepts values in the `pluginID/version` format, for example: `StyleCop.StyleCop/2023.2.0`.
 
-Depending on the version of installed ReSharper Command Line Tools, this field can accept values in the following formats:
+* `pluginID`s can be found on main plugin pages in [JetBrains Marketplace](https://plugins.jetbrains.com/resharper) (the "Additional Information" section of the "Overview" tab).
+* `version` should be in the same format as on the "Versions" tab of the plugin Marketplace page. You can skip specifying the version to let TeamCity download the latest one.
 
-* `Download <pluginId>/<version>` — downloads the required plugin from JetBrains Marketplace using its ID. Plugin IDs are displayed on main plugin pages in Marketplace, under the "Additional Information" section. Example: `Download ReSharperPlugin.CognitiveComplexity/2023.2.0`.
+If you want to install a plugin from local storage rather than download it from a JetBrains Marketplace, set the **Additional InspectCode parameters** field to the `--source=<Directory_Path>` value.
 
-* `File <file_path>` and `Folder <folder_path>` — allow you to load required plugin(s) from the local storage. These options are not available for ReSharper CLT versions 2021.3.0 and newer.
+<img src="dk-resharperPlugins-source.png" width="706" alt="Install plugins from local storage"/>
 
 > * Some of ReSharper plugins may not work for R# CLT.
 > * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2021.3.0 and newer. Older versions may incorrectly interpret values from this field.
