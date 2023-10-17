@@ -67,7 +67,7 @@ You can use these values to perform custom actions depending on the statuses of 
 
 Learn more: [](configuring-build-steps.md#Step+Status+Parameters).
 
-
+<!--
 ## Additional ReSharper Plugins for the Inspections Runner
 
 The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to enter a list of required [ReSharper plugins](https://plugins.jetbrains.com/resharper).
@@ -75,6 +75,8 @@ The [](inspections-resharper.md) runner now features the **R# CLT Plugins** fiel
 <img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
 
 Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
+
+-->
 
 ## Service Messages
 

@@ -152,6 +152,7 @@ If you want to run ReSharper duplicates using a specific ReSharper version (for 
 
 </td></tr>
 
+<!--
 
 <tr>
 
@@ -175,11 +176,9 @@ Depending on the version of installed ReSharper Command Line Tools, this field c
 
 </td>
 
-
-
 </tr>
 
-
+-->
 
 <tr>
 
