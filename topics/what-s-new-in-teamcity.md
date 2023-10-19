@@ -97,7 +97,17 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 
 You can now issue refreshable access tokens for [JetBrains Space connections](configuring-connections.md#jetbrains-space-connection).
 
-### Perforce Helix Swarm
+### Perforce
+{product="tc"}
+
+#### Reusing Sources on Cloud Agents
+{product="tc"}
+
+You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
+
+Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
+
+#### Perforce Helix Swarm Enhancements
 {product="tc"}
 
 In version 2023.11, we have overhauled the "Perforce Helix Swarm" publisher of the [](commit-status-publisher.md) build feature. TeamCity can now utilize workflows and tests that already exist in your Swarm setup (instead of creating its own tests). In addition, the Publisher no longer requires credentials of a user with administrator access.
@@ -393,6 +403,36 @@ New **Available for sub-projects** and **Available for build steps** settings in
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
 
+
+
+## Schedule Custom Build Runs
+{product="tcc"}
+
+When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
+
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
+
+Learn more: [Run Custom Build](running-custom-build.md#Date).
+
+## Reusing Perforce Sources on Cloud Agents
+{product="tcc"}
+
+You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
+
+Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
+
+
+
+## Additional ReSharper Plugins for the Inspections Runner
+{product="tcc"}
+
+The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
+
+<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
+
+Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
+
+
 ## Token-Based Authentication
 {product="tcc"}
 
@@ -429,24 +469,6 @@ Use the `...actions/stop` endpoint to issue a "soft" stop request: if the target
 The `...actions/forceStop` endpoint allows you to stop a cloud instance even if it is busy.
 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
-
-## Schedule Custom Build Runs
-{product="tcc"}
-
-When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
-
-<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
-
-Learn more: [Run Custom Build](running-custom-build.md#Date).
-
-## Additional ReSharper Plugins for the Inspections Runner
-{product="tcc"}
-
-The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
-
-<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
-
-Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
 
 ## Sakura UI and UX Enhancements
 {product="tcc"}
