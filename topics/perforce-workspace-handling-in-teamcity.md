@@ -104,7 +104,7 @@ To prevent this from happening and reuse sources from a persistent storage, do t
 
 1. Add the `teamcity.agent.failBuildOnCleanCheckout=ignoreAndContinue` parameter to your build configuration to explicitly [disable clean checkouts](perforce-workspace-handling-in-teamcity.md#Forced+Protection+Against+Clean+Checkout).
 
-2. Since you will need to make adjustments to a workspace before the checkout starts, enable [Bootstrap steps](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
+2. To make adjustments to a workspace before the checkout starts, enable [Bootstrap steps](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
 
 3. Add one or multiple command-line or script steps to your configuration and check their **Run during bootstrap** option. These bootstap steps should do the following:
     
@@ -116,7 +116,7 @@ To prevent this from happening and reuse sources from a persistent storage, do t
        echo "##teamcity[setParameter name='vcsroot.P4_ExternalVCSRootID.p4client' value='customP4ClientName']"
        ```
        
-       > Since TeamCity updates a workspace according to settings of a corresponding VCS Root, make sure the root settings have [Client Mapping](perforce.md#Map+Perforce+Depot+to+Client) to the same `customP4ClientName` as in your Service Message.
+       > Since TeamCity updates a workspace according to settings of a corresponding VCS Root, make sure the VCS Root settings have the same [Client Mapping](perforce.md#Map+Perforce+Depot+to+Client) as `customP4ClientName` workspace in your Service Message.
        > 
        {type="warning"}
 
