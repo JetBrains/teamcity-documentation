@@ -209,6 +209,8 @@ When detecting these previously ignored settings, TeamCity dynamically creates r
 
 To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
 
+Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
+
 
 ## Access Parallel Builds' Artifacts from a Primary Build
 {product="tc"}
