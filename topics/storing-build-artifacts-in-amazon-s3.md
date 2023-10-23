@@ -1,7 +1,7 @@
 [//]: # (title: Amazon S3 and S3-compatible Storages)
 [//]: # (auxiliary-id: Storing Build Artifacts in Amazon S3)
 
-TeamCity comes bundled with the [Amazon S3 Artifact Storage](https://plugins.jetbrains.com/plugin/9623-aws-s3-artifact-storage) plugin which allows storing build artifacts in Amazon S3 buckets, as well as S3-compatible buckets such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others. S3-compatible storages can be hosted in both AWS and non-AWS environments.
+TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows storing build artifacts in Amazon S3 buckets, as well as S3-compatible buckets such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others. S3-compatible storages can be hosted in both AWS and non-AWS environments.
 
 
 ## Create and Set Up a New AWS S3 Storage
