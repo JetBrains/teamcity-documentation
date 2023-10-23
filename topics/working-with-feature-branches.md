@@ -73,6 +73,12 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 
 >To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
 
+
+## Branch-Specific Build Configuration Settings
+
+With the help of [versioned settings](storing-project-settings-in-version-control.md), you can create build configurations with variable settings for every repository branch. See the following article for an example: [Branch-Specific Settings](storing-project-settings-in-version-control.md#Example%3A+Branch-Specific+Settings).
+
+
 ## Default Branch
 
 When configuring a VCS root for DVCS, you need to specify the branch name to be used as the default one. The default branch has special meaning:
@@ -306,6 +312,9 @@ Open the [build results page](working-with-build-results.md), click the __Action
  The dialog that appears enables you to select the destination branch and add a commit message (required).
 
 It is also possible to merge branches [automatically](automatic-merge.md).
+
+
+
 
 <seealso>
         <category ref="admin-guide">
