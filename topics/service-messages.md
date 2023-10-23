@@ -291,7 +291,7 @@ where:
 
 To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page.
 
-### Message Creation Timestamp
+#### Message Creation Timestamp
 
 Test report messages support the optional attribute `timestamp`. In the following examples, `<messageName>` is the name of the specific service message.
 
