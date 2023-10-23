@@ -198,6 +198,18 @@ Learn more: [](install-teamcity-agent.md).
 * If your builds run a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
 
 
+## Versioned Settings: Load Additional Settings From a VCS
+{product="tc"}
+
+Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
+
+When detecting these previously ignored settings, TeamCity dynamically creates required entities (sub-projects, build configurations, roots) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
+
+<img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
+
+To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
+
+
 ## Access Parallel Builds' Artifacts from a Primary Build
 {product="tc"}
 
@@ -421,6 +433,19 @@ You can now reuse sources that are present on (or copied from) persistent storag
 
 Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
 
+
+## Versioned Settings: Load Additional Settings From a VCS
+{product="tcc"}
+
+Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
+
+When detecting these previously ignored settings, TeamCity dynamically creates required entities (sub-projects, build configurations, roots) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
+
+<img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
+
+To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
+
+Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
 
 
 ## Additional ReSharper Plugins for the Inspections Runner
