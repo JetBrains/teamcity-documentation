@@ -119,7 +119,7 @@ It is recommended that you take an agent thread dump from the Web UI: go to the 
 If the UI is not accessible, you can take the dump thread manually using the approaches described [below](#Taking+Thread+Dump).
 
 > * TeamCity agent consists of two `java` processes: the launcher and agent itself. The agent is triggered by the launcher. You will usually be interested in the agent (nested) process and not the launcher one.
-> * Taking thread dumps using the `jstack` commands might require disabling the [DisableAttachMechanism](https://docs.oracle.com/cd/E15289_01/JRCLR/optionxx.htm#BABJAJBA) option by [configuring agent startup properties](configuring-build-agent-startup-properties.md). This Java option is enabled for security reasons and prevents external processing from attaching themselves to a JVM.
+> * Capturing thread dumps via the `jstack` commands might require [configuring additional agent startup properties](configuring-build-agent-startup-properties.md) to deactivate the [DisableAttachMechanism](https://docs.oracle.com/cd/E15289_01/JRCLR/optionxx.htm#BABJAJBA) option. This Java option is initially enabled for security reasons and prevents external processing from attaching themselves to a JVM. It is recommended that you re-enable it after collecting required dumps.
 > 
 {type="note"}
 
