@@ -5,7 +5,7 @@
 
 |Software|Version|
 |---|---|
-|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.3.7|
+|[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.3.8|
 |[msys2](https://www.msys2.org/)|20230718.0.0|
 |[Ruby](https://www.ruby-lang.org/en/)|3.2.2|
 |[AWS CLI](https://aws.amazon.com/cli/)|2.8.3|
@@ -22,7 +22,7 @@
 |[Mercurial](https://www.mercurial-scm.org/)|1.0.0.1|
 |[SVN](https://subversion.apache.org/)|1.14.2.64502|
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
-|[Node.js](https://nodejs.org/en/)|v18.18.0|
+|[Node.js](https://nodejs.org/en/)|v18.18.2|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
 |[vcpkg](https://vcpkg.io/en/)|2023-09-15-ac02a9f660977426b8ec6392919fbb1d51b10998|
 |[Docker](https://www.docker.com/)|20.10.9|
