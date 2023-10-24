@@ -318,7 +318,7 @@ You can now set a specific date and time when a build should run. To do this, in
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
-Learn more: [Run Custom Build](running-custom-build.md#Date).
+Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
 ## Sakura UI and UX Enhancements
@@ -426,7 +426,7 @@ When invoking new builds from the [Run Custom Build](running-custom-build.md) di
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
-Learn more: [Run Custom Build](running-custom-build.md#Date).
+Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 ## Reusing Perforce Sources on Cloud Agents
 {product="tcc"}
