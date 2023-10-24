@@ -36,14 +36,13 @@ This setting allows you to choose an agent that should run your build. The follo
   * Run a build on different platforms (for example, you can set up a configuration, and specify for it a number of compatible build agents with different environments installed).
 
 
-### Date
+### Date &amp; Time
 
-Leave the **As soon as possible** option to queue a new build immediately after you click **Run Build**.
+Leave the **As soon as possible** option to place a new build to a normal queue immediately after you click **Run Build**.
 
-To schedule a build to the specific date &amp; time, switch to the **Set trigger date and time** option. Scheduled builds remain in the end of a [build queue](working-with-build-queue.md) until their scheduled date and time.
+To schedule a build to the specific date &amp; time, switch to the **At specific date and time** option. Scheduled builds remain at the end of a [build queue](working-with-build-queue.md) until their scheduled date and time.
 
 <img src="dk-scheduledBuild.png" width="706" alt="Scheduled build and time"/>
-
 
 ### Build Options
 

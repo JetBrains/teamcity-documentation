@@ -311,7 +311,7 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
-## Schedule Custom Build Runs
+## Schedule Custom Builds
 {product="tc"}
 
 You can now set a specific date and time when a build should run. To do this, invoke the [Run Custom Build](running-custom-build.md) dialog and use settings from the new **Date** section.
@@ -419,7 +419,7 @@ Learn more: [](configuring-connections.md#AmazonWebServices).
 
 
 
-## Schedule Custom Build Runs
+## Schedule Custom Builds
 {product="tcc"}
 
 When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
