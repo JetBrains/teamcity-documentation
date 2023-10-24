@@ -49,16 +49,26 @@ For connection, select one of the available authentication types:
 
 ### GitLab
 
-Commit Status Publisher supports the GitLab URL in the following format: `http[s]://<hostname>[:<port>]/api/v4`.
+The **Authentication Type** option allows you to choose which authentication method the build feature should use to access GitLab repositories.
 
-The GitLab credentials and the GitLab project must be set up as follows:
-* The credentials must belong to a user with a Developer, Maintainer, or Owner role for the project.
-* The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
-* In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
+* **Personal access tokens** or PATs are static authentication tokens that you can [issue in your GitLab profile page](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
 
-If you switch the **Authentication Type** to "GitLab Application Token", TeamCity will display a list of configured [GitHub OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to a required connection to obtain an access token.
+* **Refreshable access tokens** are short-lived tokens issued via configured [GitLab OAuth 2.0 connections](configuring-connections.md#GitLab). Click the **Acquire** button next to a required connection to obtain an access token.
 
-<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
+    <img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
+
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
+
+> The GitLab credentials and the GitLab project must be set up as follows:
+>
+> * The credentials must belong to a user with a Developer, Maintainer, or Owner role for the project.
+> * The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
+> * In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
+> 
+{type="note"}
+
+The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/api/v4` format. This field is optional: if left blank, TeamCity uses a value that corresponds to the fetch URL specified in VCS root settings.
+
 
 ### Bitbucket Cloud
 
