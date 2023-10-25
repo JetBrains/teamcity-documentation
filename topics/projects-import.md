@@ -23,6 +23,7 @@ On the target TeamCity server:
 <warning>
 
 To complete the import, you need to copy the artifacts from the old server to the new one by running the [provided scripts](#Moving+artifacts+and+logs): check details in the import log.
+
 </warning>
 
 >The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](feedback.md) for details.
@@ -113,6 +114,7 @@ There is a number of limitations regarding the import:
 <note>
 
 Importing projects may take significant time. There can be only one import process per server.
+
 </note>
     
 ## Moving artifacts and logs
@@ -121,6 +123,14 @@ Importing projects may take significant time. There can be only one import proce
 Although artifacts and logs are not imported right from the backup file, you can copy/move them from the source to the target server using the `.bat` and `.sh` scripts from the `projectsImport-<date>` directory under TeamCity logs. These scripts accept the source and target data directories via the command line; the scripts accept the source and target [artifact directories](build-artifact.md). The rest is done automatically. The scripts can be executed while the server is running.
 
 It may take some time for TeamCity to display the imported build artifacts.
+
+
+## Moving artifacts and logs
+{product="tcc"}
+
+<anchor name="ProjectsImport-Movingartifactsandlogs"/>
+
+Restoring artifacts and logs of imported projects is available only on TeamCity On-Premises instances. See this article for more information: [Migrate from TeamCity On-Premises to TeamCity Cloud](migrate-from-teamcity-on-premises-to-teamcity-cloud.md#Migration+Process).
 
 ## Viewing Import Results
 

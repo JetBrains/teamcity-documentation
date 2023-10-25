@@ -32,15 +32,15 @@ There are several ways to create a project in TeamCity: automatically from a rep
    ```Shell
    https://github.com/mkjetbrains/SimpleMavenSample
    ```
-   If access to your repository is restricted, enter the credentials as well.   
-   <img src="CreateProject1.png" alt="Create a project from a repository URL, Step 1" width="1069"/>
+   If access to your repository is restricted, enter the credentials as well.
+   <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line"/>
 2. Click __Proceed__ and follow the wizard.   
-   TeamCity will identify the type of your repository, test the connection, and autoconfigure the repository settings, as well as suggest the project and build configuration names.   
-   <img src="CreateProject2.png" alt="Create a project from a repository URL, Step 2" width="750"/>
+   TeamCity will identify the type of your repository, test the connection, and autoconfigure the repository settings, as well as suggest the project and build configuration names.
+   <img src="CreateProject2.png" alt="" width="706" border-effect="line"/>
 3. Click __Proceed__.   
    TeamCity will scan your VCS repository and autodetect the [build steps](configuring-build-steps.md).
 4. Check the boxes of the suitable steps, and they will be added to the first build configuration of this project.   
-   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="925"/>
+   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line"/>
 
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
 
@@ -50,16 +50,13 @@ To run builds in TeamCity, you need [build agents](build-agent.md). A fresh Team
 
 On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:
 
-<img src="RunBuild.png" alt="Run a build" width="750"/>
+<img src="RunBuild.png" alt="Run a build" width="706" border-effect="line"/>
 
 TeamCity will always assign a build to the first available and [suitable](agent-requirements.md) build agent.
 
 You will be automatically redirected to the __Build Results__ page, where you can watch the build progress and review its results upon the build finish. You can also access your build configuration settings from this page and edit them as necessary:
 
-<img src="BuildResults.PNG" alt="Build results" width="750"/>
-
->Switch to the [Sakura UI](teamcity-sakura-ui.md) for a more modern interface of __Build Results__. This mode also provides better visualization and an improved build log preview.
-{product="tc"}
+<img src="BuildResults.PNG" alt="Build results" width="706" border-effect="line"/>
 
 ## Tweak your build configuration settings
 
@@ -74,21 +71,21 @@ For other settings, see this [chapter](creating-and-editing-build-configurations
 
 If your build produces installers, WAR files, reports, log files, and so on, you might want to publish them on the TeamCity server after finishing the build. You can specify the paths to such artifacts in __Build Configuration Settings | General Settings__. As you already have a finished build, the build agent has checked out the sources already. Next to the _Artifact paths_ field, click the tree icon to open the checkout directory browser. You can select artifacts from this tree:
 
-<img src="artifactPaths.png" alt="Artifact paths" width="750"/>
+<img src="artifactPaths.png" alt="Artifact paths" width="706" border-effect="line"/>
 
 TeamCity will place their paths into the text field, so you can modify them if necessary:
 
-<img src="artifactPathsArchive.png" alt="Modify the artifact paths" width="750"/>
+<img src="artifactPathsArchive.png" alt="Modify the artifact paths" width="706" border-effect="line"/>
 
 Save the build configuration settings. Now, when you run a build, TeamCity will put all the specified reports into an archive and publish them.
 
 The __Build Configuration Home__ page lists all run builds and allows viewing their artifacts:
 
-<img src="artifactsPublished.png" alt="Published artifacts" width="750"/>
+<img src="artifactsPublished.png" alt="Published artifacts" width="706" border-effect="line"/>
 
 You can also view and download artifacts from the __Build Results__ page:
 
-<img src="artifactsPublishedResults.png" alt="Artifacts in build results" width="750"/>
+<img src="artifactsPublishedResults.png" alt="Artifacts in build results" width="706" border-effect="line"/>
 
 Read more details [here](configuring-general-settings.md#Artifact+Paths).
 
@@ -96,7 +93,7 @@ Read more details [here](configuring-general-settings.md#Artifact+Paths).
 
 Automatic build triggering on a change in the repository is essential to any CI. TeamCity will add a [VCS trigger](configuring-vcs-triggers.md) automatically when creating a project / build configuration from a repository URL. You can also add it manually on __Build Configurations Settings | Triggers__ page:
 
-<img src="addTrigger.png" alt="Add a trigger" width="750"/>
+<img src="addTrigger.png" alt="Add a trigger" width="706" border-effect="line"/>
 
 >TeamCity provides multiple [types of triggers](configuring-build-triggers.md) — learn about them all to optimize your pipeline.
 

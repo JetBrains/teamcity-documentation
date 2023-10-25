@@ -34,11 +34,10 @@ AWS Connection
 
 Select an AWS connection from the drop-down menu list.
 
-<!--You can choose only those connections whose **Available for builds** setting is enabled. If the target connection is owned not by a project whose build configuration you set up, but rather its parent project, ensure the **Available for sub-projects** checkbox is also ticked.
+You can choose only those connections whose **Available for builds** setting is enabled. If the target connection is owned not by a project whose build configuration you set up, but rather its parent project, ensure the **Available for sub-projects** checkbox is also ticked.
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
--->
 
 </td></tr><tr>
 
@@ -60,3 +59,28 @@ New temporary credentials will be generated for each build with this build featu
 
 
 </td></tr></table>
+
+## Kotlin DSL
+
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.provideAwsCredentials
+
+
+object MyBuildConfig : BuildType({
+    name = "Build"
+
+    features {
+        provideAwsCredentials {
+            awsConnectionId = "AwsPrimary"
+        }
+    }
+})
+```
+
+> To quickly get an ID of a target [AWS Connection](configuring-connections.md#AmazonWebServices), navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+>
+> <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+>
+{type="tip"}

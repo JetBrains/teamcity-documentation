@@ -91,7 +91,7 @@ When you launch TeamCity in a browser for the first time, it will prompt you to 
 1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores the build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
    For now, keep the default internal database. Click __Proceed__.   
-   <img src="default-DB.png" alt="Select the database type" width="450"/>
+   <img src="default-DB.png" dark-src="default-DB_dark.png" alt="Select the database type" width="460" border-effect="line"/>
    It will take some time for TeamCity to configure the necessary components.
 3. On the next screen, accept the License Agreement to proceed with the launch. Click __Continue__.
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  

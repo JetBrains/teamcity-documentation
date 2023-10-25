@@ -114,9 +114,11 @@ TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Aut
 
 If you create a project from a repository automatically, like we just did, TeamCity automatically adds a [VCS trigger](vcs-root.md). This trigger will be watching your Space repository and run builds on each new commit. You can edit its settings or [add other types of triggers](configuring-build-triggers.md).
 
-TeamCity will show the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
+TeamCity shows the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
 
-<img src="space-commit-details.png" width="706" alt="Create a connection to Space"/>
+<img src="space-commit-details.png" width="706" alt="Create a connection to Space" border-effect="line"/>
+
+If the commit mentions a Space code review tag (for example, `JETBRAINS-DEMO-CR-3`) or a Space merge request tag, you can click the tag to jump directly to the corresponding code review or merge request in Space. In particular, a merge commit from Space is always accompanied by a link back to the corresponding merge request.
 
 After this basic setup, you can advance the Space integration by following the instructions below, or learn how to [create more sophisticated build configurations](configuring-general-settings.md) and utilize the power of TeamCity to the fullest.
 

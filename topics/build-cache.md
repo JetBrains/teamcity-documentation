@@ -1,50 +1,70 @@
 [//]: # (title: Build Cache)
 
-The "Build Cache" feature allows build configurations to keep specific files produced during a build run (for example, downloaded [npm](nodejs.md) packages) and reuse them during subsequent builds. This technique optimizes and accelerates building routines.
+The "Build Cache" feature allows build configurations to publish specific files produced during a build run (for example, downloaded [npm](nodejs.md) packages or [Maven local repository artifacts](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)). Published caches can be reused during subsequent builds by the same configuration that published them, or other configurations. This technique optimizes and accelerates building routines.
 
-## Prerequisites
+> Build Cache is currently available as an experimental feature and may be changed in future releases.
+> 
+{type="warning"}
 
-Build Cache is currently available as an experimental feature and may be changed in future releases.
+## Common Information
 
-To enable this build feature, navigate to the **Administration | Experimental Features** page and tick the corresponding checkbox.
+### Cache Publishers and Consumers
 
-## Common Concepts
+You can set up a Build Cache feature to operate in either of two modes.
 
-Build Cache feature can work in one- or two-way mode. In two-way mode it downloads caches published by the same feature during a previous build. When you add a new Build Cache feature, it is configured to operate in this mode.
+* Initial Build Cache settings allow the feature to download caches published by the same feature during a previous build.
 
-In one-way mode one build configuration with the "Build Cache" feature publishes cache, and another build configuration downloads it. This mode allows you to set up "publisher" and "consumer" features to exchange caches between different build configurations **of the same project**.
+* Alternatively, you can set one Build Cache feature to publish a cache, and another Build Cache (from a different build configuration) to download it. This mode allows you to set up "publisher" and "consumer" features to exchange caches between different build configurations. The number of cache consumer features is unlimited, however, they should belong to the **same project** as the cache publisher.
+
+### Size Limits
+
+Caches are published as [hidden artifacts](build-artifact.md#Hidden+Artifacts) under the `.teamcity.build_cache` folder. To view a published cache, click the **Show hidden artifacts** link on the [](build-results-page.md#Artifacts+Tab).
+
+<img src="dk-publishedCaches.png" width="706" alt="Published artifacts"/>
+
+Since caches are published as artifacts, they are affected by the **Maximum build artifact file size** setting that you can set on the [Administration | Global Settings](teamcity-configuration-and-maintenance.md#Build+Settings) page.
+
+### Order of Operations
+
+If a build configuration is configured to upload caches, it arranges its build stages in the following order:
+
+1. Resolve artifact dependencies
+2. Download caches
+3. Checkout the sources
+4. Start the build
 
 
 ## Publish and Use Cache Within the Same Build Configuration
 
 This section illustrates how to set up the Build Cache feature that allows a build configuration to reuse caches from its own previous builds.
 
-1. [Add the build feature](adding-build-features.md) to a build configuration and specify a unique **Cache Name**.
+1. <chunk id="settings-add-feature"><a href="adding-build-features.md">Add the build feature</a> to a build configuration and specify a unique <b>Cache Name</b>.</chunk>
 2. Since we want the feature to both publish and use cache, leave both **Publish** and **Use Cache** settings enabled.
-3. Specify paths to files and folders that should be cached (currently, only paths relative to the checkout directory are supported). Each path should start from a new line. Wildcards are not supported.
-   
-   The figure below illustrates the Build Cache feature configured to publish NodeJS packages downloaded by the `npm install` or `yarn install` build step.
+3. <chunk id="settings-specify-paths">Specify paths to files and folders that should be cached. Each path should start from a new line. Wildcards are not supported. Relative paths are resolved against checkout directories.
 
-   <img src="dk-buildcaches-paths.png" width="706" alt="Publishing NodeJS packages"/>
+   For example:
+
+   * to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.
+   * to upload local Maven artifacts (if the <a href="maven.md">Maven</a> runner's <b>Artifact repository</b> setting equals its default <b>Per agent</b> value), type <code>%\teamcity.agent.home.dir%/system/jetbrains.maven.runner/maven.repo.local</code>.
+   </chunk>
+
+4. <chunk id="settings-publish-if-changed">By default, new builds do not publish caches if they are identical to those published by previous builds. If you wish each build to upload a cache, uncheck the <b>Publish only if changed</b> setting.</chunk>
    
-4. Save the settings and ensure that the build feature description confirms that your feature both publishes and uses its cache.
+5. Save the settings. The feature's description on the **Build Features** page should state that it publishes and uses the same cache.
 
    <img src="dk-buildCaches-singleConfDescription.png" width="706" alt="Build Cache feature description"/>
 
-5. Run the build. If you correctly set up the feature, you should be able to see required files published as a ".teamcity.build_cache" [hidden artifact](build-artifact.md#Hidden+Artifacts) when the build finishes.
+6. <chunk id="settings-check-if-published">Run the build and ensure all cached files are available on the build results page as the ".teamcity.build_cache" <a href="build-artifact.md#Hidden+Artifacts">hidden artifact</a>.</chunk>
 
-    <img src="dk-buildCaches-publishedArtifact.png" width="706" alt="Publish build cache"/>
 
-6. To confirm that cache published during the previous run is used, run the build again and check the build log.
-   
-   <img src="dk-buildCaches-download.png" width="706" alt="Download build cache"/>
+7. To confirm that cache published during the previous run is used, run the build again and check the build log for corresponding messages.
+
 
 
 ## Exchange Caches Between Separate Build Configurations
 
 In this setup, the "publisher" Build Cache feature added to one build configuration publishes its cache, while the "consumer" Build Cache feature added to another configuration downloads this cache to this configuration's checkout directory.
 
-<img src="dk-buildCache-split.png" width="706" alt="Reuse caches published by other configurations"/> 
 
 You can set up as many publisher and consumer features as required as long as you add features for configurations that belong to the same project.
 
@@ -54,30 +74,27 @@ You can set up as many publisher and consumer features as required as long as yo
 
 ### Set Up a Publisher
 
-1. [Add the build feature](adding-build-features.md) to a build configuration and specify a unique **Cache Name**.
-2. Specify paths to files and folders that should be cached (currently, only paths relative to the checkout directory are supported). Each path should start from a new line. Wildcards are not supported.
-3. Uncheck the **Use Cache** checkbox and save feature settings.
+1. <include src="build-cache.md" include-id="settings-add-feature"/>
+2. <include src="build-cache.md" include-id="settings-specify-paths"/>
+3. <include src="build-cache.md" include-id="settings-publish-if-changed"/>
+4. Uncheck the **Use Cache** checkbox.
+5. Save the settings. The feature's description on the **Build Features** page should state that it only publishes the cache.
+
+   <img src="dk-buildCaches-onlyPublish.png" width="706" alt="Only publish"/>
+   
+6. <include src="build-cache.md" include-id="settings-check-if-published"/>
 
 ### Set Up a Consumer
 
 1. [Add the build feature](adding-build-features.md) to a build configuration and specify the same **Cache Name** the publisher feature uses.
-2. Uncheck the **Publish** checkbox and save feature settings.
-3. Repeat the steps above for every build configuration that needs this published cache.
+2. Uncheck the **Publish** checkbox.
+3. Save the settings. The feature's description on the **Build Features** page should state that it only uses the cache.
+   
+   <img src="dk-buildCaches-onlyUse.png" width="706" alt="Use only"/>
 
-## Additional Information
+4. Run a new build and check the build log to ensure the required cache file is downloaded.
+5. Repeat the steps above for every build configuration that needs this published cache.
 
-### Build Sequence
-
-If a build configuration is configured to upload caches, it arranges its build stages in the following order:
-
-1. Resolve artifact dependencies
-2. Download caches
-3. Checkout the sources
-4. Start the build
-
-### Transferring Caches
-
-Caches are automatically compressed into archives when published, and unpacked into the configuration's checkout directory when downloaded. You do not need to manually specify expressions (as you do with [regular artifacts](build-artifact.md)).
 
 ## Tell Us What You Think
 

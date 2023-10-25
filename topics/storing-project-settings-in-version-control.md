@@ -51,41 +51,351 @@ On the __Configuration__ tab, you can also choose which VCS root is used to stor
 
 <anchor name="StoringProjectSettingsinVersionControl-DefiningSettingstoApplytoBuilds"/>
 
-### Defining Settings to Apply to Builds
+## Defining Settings to Apply to Builds
 
-There are two possible sources of build settings: (1) the current settings on the TeamCity server, that is the latest settings' changes applied to the server (either made via the UI, or via a commit to the `.teamcity` directory in the VCS root), and (2) the settings in the VCS on the revision selected for a build.  
-It is possible to start builds with settings different from those currently defined in the build configuration. For projects with enabled versioned settings, you can instruct TeamCity which settings to take __when a build starts__.
+When TeamCity needs to start a build, it can apply either of the two possible settings:
 
-This gives multiple options:
-* If you are using TeamCity [feature branches](working-with-feature-branches.md), you can define a branch specification [when creating a project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL) (Git only) or in the [VCS root](vcs-root.md) used for versioned settings. TeamCity will run a build in a branch using the settings from this branch.
-* You can start a [personal build](personal-build.md) with changes made in the `.teamcity` directory, and these changes will affect the build behavior.
-* When running a [history build](history-build.md), TeamCity will attempt to use the settings corresponding to the moment of the selected change. Otherwise, the current project settings will be used.
+* Current settings on the TeamCity server. These are settings that include all latest changes applied to the server either via TeamCity UI or via a commit to the `.teamcity` directory in the VCS.
 
->Before starting a build, TeamCity stores a configuration for this build in its internal artifacts under the `.teamcity/settings` directory. These configuration files can be examined later to understand what settings were actually used by the build.
+* Custom settings stored in the VCS. These are settings from the `.teamcity` directory stored in a non-default branch or in the specific revision selected for a build.
 
-To define which settings to take __when a build starts__, open the __Project Settings | Versioned Settings__ page, click __Show advanced options__, and select one of the following options:
-* __always use current settings__: all builds use current project settings from the TeamCity server. Settings' changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
-* __use current settings by default__: a build uses the latest project settings from the TeamCity server. Users can run a build with older project settings via the [custom build dialog](build-results-page.md#Changes+Tab).
-* __use settings from VCS__: builds in branches and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or can run a build with project settings current on the TeamCity server via the [custom build dialog](build-results-page.md#Changes+Tab).  
-  TeamCity will try to use settings from the current build's branch whenever possible. However, some of the build features and settings might require using the default configuration (the one stored in TeamCity Data Directory). In general,
+An ability to choose which of these two settings to apply grants you the following options:
+
+* Have [multiple branches](working-with-feature-branches.md) with different settings in the `.teamcity` directory. This means your branch A can have parameters, steps, build features, artifact publishing rules and chain settings that differ from those in branch B.
+
+* Start [personal builds](personal-build.md) with changes made in the `.teamcity` directory, and these changes will affect the build behavior.
+
+* Add more flexibility to your [history builds](history-build.md). TeamCity initially attempts to use the settings corresponding to the moment of the selected change. Otherwise, the current project settings will be used.
+
+To specify which settings TeamCity should apply when a build starts, choose a required option on the **Administration | &lt;Project&gt; Versioned Settings** page.
+
+<img src="dk-chooseSettingsOnStart.png" width="706" alt="Choosing start-up settings"/>
+
+* **always use current settings** — all builds use current project settings from the TeamCity server. Settings' changes in branches, history, and personal builds are ignored. Users cannot run a build with custom project settings.
+
+* **use current settings by default** — regular builds use the latest project settings from the TeamCity server. Users can run [custom builds](build-results-page.md#Changes+Tab) with settings imported from a VCS.
+  
+  <img src="dk-customRunWithVcsSettings.png" width="706" alt="Custom run with VCS settings"/>
+
+* **use settings from VCS** — all branch builds and history builds, which use settings from VCS, load settings from the versioned settings' revision calculated for the build. Users can change configuration settings in [personal builds from IDE](remote-run.md) or run a build with current project settings on the TeamCity server via the [custom build dialog](build-results-page.md#Changes+Tab).
+
 <anchor name="general-rules"/>
-* changes in the following settings coming from the build's branch will be ignored and __will not affect__ the build:
-    * VCS roots and checkout rules
-    * snapshot dependencies 
-    * artifact dependency rules
-    * build triggers
-    * build configuration level options, like hanging builds detection, enabling/disabling of triggering of personal builds, or build configuration type
-    * clean-up rules
-* changes in the following settings __will affect__ the build in most cases:
-    * build number pattern
-    * order of build steps
-    * build configuration parameters used inside steps and some build features
-    * system properties and environment variables
-    * agent requirements (except [custom runs](running-custom-build.md))
-    * some build features (for example, [Commit Status Publisher](commit-status-publisher.md) will use settings from the build's branch, while [Pull Requests](pull-requests.md) will always use the default settings)
-    * failure conditions
-    * artifact publishing rules
-    * artifact dependencies (add/remove only, editing existing rules is ignored)
+
+> Certain settings cannot be loaded from a VCS. When TeamCity detects edits in these settings, it ignores them and applies current settings stored on the server instead. These settings are:
+>
+> * build triggers
+> * build configuration-level options, such as hanging builds detection, personal builds' availability, build configuration type, and so on
+> * clean-up rules
+> * agent requirements in [custom runs](running-custom-build.md)
+> * settings of certain build features (for example, [Commit Status Publisher](commit-status-publisher.md) uses VCS settings, while [Pull Requests](pull-requests.md) always use the current server settings)
+> * edits to existing artifact rules (you can still add new and remove existing rules)
+> * snapshot dependencies, checkout rules, and VCS roots if the [corresponding setting](#Load+Advanced+Settings+From+VCS) is disabled.
+> 
+{type="warning"}
+
+> Before starting a build, TeamCity stores a configuration for this build as a [hidden artifact](build-artifact.md#Hidden+Artifacts) under the `.teamcity/settings` directory. You can inspect these configuration files to determine what settings were actually used by the build.
+> 
+{type="tip"}
+
+### Example: Branch-Specific Settings
+
+1. Create and init an empty repository in your VCS of choice. In this example, a repository on GitHub.com is used.
+2. Create a new TeamCity project from this repository.
+3. Add a [](python.md) runner to your build configuration.
+
+    ```Kotlin
+    import jetbrains.buildServer.configs.kotlin.*
+    import jetbrains.buildServer.configs.kotlin.buildSteps.python
+    
+    object Build : BuildType({
+        name = "Build"
+        // ...
+        steps {
+            python {
+                id = "python_runner"
+                command = script {
+                    content = """print ("Running a Python script...")"""
+                }
+            }
+        }
+        // ...
+    })
+    ```
+4. Go to **Administration | &lt;Project&gt; | Versioned Settings** and choose the following options:
+
+   * **Synchronization enabled**: On
+   * **Project settings VCS root**: Choose your project's VCS root
+   * **Settings format**: Kotlin
+   * **When build starts**: Select "use settings from VCS"
+   
+5. Click **Apply** to save your new settings. TeamCity will verify the validity of your build configuration and push the `.teamcity` folder with your settings to the related VCS repository.
+6. Clone TeamCity settings from a remote repository to local storage.
+    
+    ```Shell
+    git clone <Clone_URL> .
+    ```
+
+7. Create a new repository branch.
+
+    ```Shell
+    git checkout -b custom-branch
+    ```
+8. Edit the local copy of your `.teamcity/settings.kts` file as follows:
+
+    ```Kotlin
+    import jetbrains.buildServer.configs.kotlin.*
+    import jetbrains.buildServer.configs.kotlin.buildSteps.csharpScript
+    
+    object Build : BuildType({
+        name = "Build"
+        // ...
+        steps {
+            csharpScript {
+                id = "csharpScript"
+                content = """Console.WriteLine("Running a CSharp script...");"""
+                tool = "%\teamcity.tool.TeamCity.csi.DEFAULT%"
+            }
+        }
+        // ...
+    })
+    
+    ```
+
+9. Push your new branch to the remote repository.
+
+    ```Shell
+    git add *
+    git commit -a -m "Modify custom-branch settings"
+    git push --set-upstream origin custom-branch
+    ```
+   
+10. TeamCity should collect your new changes shortly. You can manually trigger this process by clicking **Load project settings from VCS...** on the **Versioned Settings** tab of your project settings page.
+
+11. If you have a default [trigger](configuring-build-triggers.md) set up to launch new builds whenever a remote repository changes, a new build for your new custom-branch will start automatically. Otherwise, choose the required branch on the build configuration page and run a new build manually.
+    
+    <img src="dk-versionedSettingsBranch.png" width="706" alt="Trigger custom branch build"/>
+
+As a result, your build configuration now performs different actions depending on which branch build runs: a [Python Script](python.md) for the main branch and a [](c-script.md) for a custom branch. You can experiment by adding more differences between branch settings and running branch builds to see how TeamCity handles different versions of your `settings.kts` file.
+
+### Load Advanced Settings From VCS
+
+Assume your TeamCity project is set up similarly to the [sample above](#Example%3A+Branch-Specific+Settings), and the remote repository stores the following settings:
+
+<tabs>
+
+<tab title="Main branch settings">
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+project {
+    buildType(BC0)
+    buildType(BC3)
+    buildType(BC5)
+}
+
+// 1st build configuration
+object BC0 : BuildType({
+    name = "BC0"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "Prepare File"
+            id = "Prepare_File"
+            scriptContent = """
+                rm output.txt
+                touch output.txt
+            """.trimIndent()
+        }
+        script {
+            name = "WriteLine"
+            id = "WriteLine0"
+            scriptContent = """echo "Running BC0 config" > output.txt"""
+        }
+    }
+    // ...
+})
+
+// 2nd build configuration
+object BC3 : BuildType({
+    name = "BC3"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine3"
+            scriptContent = """echo "Running BC3 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC0) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+
+// 3rd build configuration
+object BC5 : BuildType({
+    name = "BC5"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine5"
+            scriptContent = """echo "Running BC5 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC3) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+```
+
+</tab><tab title="Custom branch settings">
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+project {
+    buildType(BC0)
+    buildType(BC2)
+    buildType(BC3)
+    buildType(BC4)
+    buildType(BC5)
+}
+
+// 1st build config
+object BC0 : BuildType({
+    name = "BC0"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "Prepare File"
+            id = "Prepare_File"
+            scriptContent = """
+                rm output.txt
+                touch output.txt
+            """.trimIndent()
+        }
+        script {
+            name = "WriteLine"
+            id = "WriteLine0"
+            scriptContent = """echo "Running BC5 config" > output.txt"""
+        }
+    }
+    // ...
+})
+
+// 2nd build config
+object BC2 : BuildType({
+    name = "BC2"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine2"
+            scriptContent = """echo "Running virtual BC2 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC0) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+
+// 3rd build config
+object BC3 : BuildType({
+    name = "BC3"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine3"
+            scriptContent = """echo "Running BC3 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC2) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+
+// 4th build config
+object BC4 : BuildType({
+    name = "BC4"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine4"
+            scriptContent = """echo "Running virtual BC4 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC3) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+
+// 5th build config
+object BC5 : BuildType({
+    name = "BC5"
+    artifactRules = "output.txt"
+    steps {
+        script {
+            name = "WriteLine"
+            id = "WriteLine5"
+            scriptContent = """echo "Running BC5 config" >> output.txt"""
+        }
+    }
+    dependencies {
+        dependency(BC4) {
+            snapshot { reuseBuilds = ReuseBuilds.NO }
+            artifacts { artifactRules = "output.txt" }
+        }
+    }
+    // ...
+})
+```
+
+</tab></tabs>
+
+TeamCity project is set up according to main branch settings: the three build configurations are linked in a single BC0 &rarr; BC3 &rarr; BC5 [build chain](build-chain.md) with each configuration adding a line to the "output.txt" file and passing it to the next configuration. Builds launched for this main branch finish successfully.
+
+<img src="dk-vcsSettings-3step.png" width="706" alt="3-Step Setup"/>
+
+If you try to run this chain for the custom branch, it will fail with the "Failed to resolve artifact dependency" error. This happens because the build chain loaded from the custom branch VCS settings includes two new build configurations (BC0 &rarr; BC2 &rarr; BC3 &rarr; BC4 &rarr; BC5). Both snapshot and artifact dependencies of all configurations are modified to reflect this change. From TeamCity's point of view, this configuration is invalid since BC3 and BC5 configurations depend on non-existent BC2 and BC4 respectively.
+
+<img src="dk-vcsSettings-failing.png" width="706" alt="Failing chain from custom branch"/>
+
+To fix this issue, go to **Administration | &lt;Project&gt; | Versioned Settings** and enable the **Apply changes in snapshot dependencies and version control settings** option. With this setting in place, TeamCity will dynamically create temporary build configurations and successfully resolve all artifact and snapshot dependencies. These virtual configurations are hosted in a hidden "... (auto-generated)" subproject.
+
+<img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
+
+Leaving this option disabled adds the following settings to the [list of settings](#general-rules) TeamCity cannot load from a VCS:
+
+* snapshot dependencies
+* checkout rules
+* VCS roots
+
+
 
 ## Storing Secure Settings 
 
@@ -96,6 +406,7 @@ If this option is enabled, TeamCity stores randomly generated IDs in XML configu
 <warning>
 
 If this option is disabled, the [security implications](#Implications+of+Storing+Security+Data+in+VCS) listed below should be taken into account before committing security data to the VCS.
+
 </warning>
 
 <anchor name="tokensGen"/>

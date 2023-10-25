@@ -219,7 +219,6 @@ If you store build artifacts in Amazon S3, you can now control how they are uplo
 
 <img src="multipart-upload.png" width="706" alt="Multipart upload of large artifacts"/>
 
-[Read this section](storing-build-artifacts-in-amazon-s3.md#Multipart+Upload) for more details.
 
 ## Add multiple VCS triggers per build configuration
 

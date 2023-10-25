@@ -1,5 +1,5 @@
 [//]: # (title: Container Wrapper)
-[//]: # (auxiliary-id: Container Wrapper)
+[//]: # (auxiliary-id: Container Wrapper;Docker Wrapper)
 
 The _Container Wrapper_ extension allows running a build step inside the specified Docker/LXC image. Images are pulled via `docker pull` or `podman pull` commands, depending on which container manager is installed on the agent that runs the build.
 

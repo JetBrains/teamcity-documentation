@@ -185,6 +185,36 @@ Enter an ID of your registry or AWS account.
 </table>
 
 
+## Kotlin DSL
+
+The following [](kotlin-dsl.md) snippet illustrates how to add a Docker Support build feature to your build configuration.
+
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerSupport
+
+object MyBuildConfig : BuildType({
+    name = "Deploy Web (Windows)"
+    
+    features {
+        dockerSupport {
+            cleanupPushedImages = true
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_5"
+            }
+        }
+    }
+})
+```
+
+> To quickly get an ID of a target [Docker Registry](configuring-connections.md#Docker+Registry), navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+>
+> <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+>
+{type="tip"}
+
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>

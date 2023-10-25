@@ -25,7 +25,11 @@ This feature extends the original branch specification of [VCS roots](vcs-root.m
 
 You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
 
-<img src="pr-info.png" alt="Pull request details" width="700"/>
+<img src="pr-info.png" alt="Pull request details" width="706" border-effect="line"/>
+
+In the case of a draft pull request, the icon is grayed-out and the **Draft** status appears before the pull request number:
+
+<img src="pr-info2.png" alt="Pull request details" width="706" border-effect="line"/>
 
 If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches. For example, to auto-start building pull requests for [GitHub](#GitHub+Pull+Requests) repositories, add a new trigger (or modify the existing one) with the `+:pull/*` branch filter rule.
 
@@ -191,7 +195,7 @@ Ignore Drafts
 <td>
 
 By default, the Pull Requests build feature loads the [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests)
-information and runs builds on draft pull requests. The build page displays the "Draft" status and icon next to the pull request number.
+information and runs builds on draft pull requests. The build page displays a grayed-out icon and the **Draft** status next to the merge request number.
 
 Check the box to ignore GitHub draft pull requests. TeamCity will not load the draft pull request information until its status changes.
 
@@ -214,9 +218,11 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 </tr>
 </table>
 
-### Bitbucket Server Pull Requests
+<anchor name="Bitbucket+Server+Pull+Requests"/>
 
-The following parameters are available for the [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
+### Bitbucket Server/Data Center Pull Requests
+
+The following parameters are available for the [Bitbucket Server/Data Center](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
 
 <table>
 <tr>
@@ -225,39 +231,31 @@ The following parameters are available for the [Bitbucket Server](https://www.at
 Parameter
 
 </td>
-<td width="150">
-
-Options
-    
-</td>
 <td>
 
 Description
 
 </td>
 </tr>
+
 <tr>
+
+<td>Authentication Type</td>
 <td>
 
-Authentication Type
+* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
 
-</td>
-<td>
+* **Username/password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
 
-Use VCS root credentials
-
-</td>
-<td>
-
-
-TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL.
-
-This option will not work if the VCS root employs anonymous authentication.
+* **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
+  > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
+  >
+  {type="note"}
 
 </td>
 </tr>
+
 <tr>
-<td></td>
 <td>
 
 Username/password
@@ -277,7 +275,6 @@ You can submit an access token instead of the password. The token should have _R
 By source branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
@@ -290,7 +287,6 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on so
 By target branch
 
 </td>
-<td></td>
 <td>
 
 Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
@@ -303,7 +299,6 @@ Define the [branch filter](branch-filter.md) to monitor pull requests only on ta
 Server URL
 
 </td>
-<td></td>
 <td>
 
 Specify a Bitbucket URL for connection.
@@ -318,7 +313,6 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 Use pull request branches
 
 </td>
-<td></td>
 <td>
 
 **This option is intended for backward compatibility only.** Enables detection of [officially unsupported Bitbucket](https://community.atlassian.com/t5/Bitbucket-questions/Current-Atlassian-position-regarding-refs-pull-requests-from/qaq-p/1376356#M54578) pull request branches (pull-requests/*) instead of source branches. 
@@ -438,6 +432,21 @@ Define the [branch filter](branch-filter.md) to monitor merge requests only on t
 <tr>
 <td>
 
+Ignore Drafts
+
+</td>
+<td>
+
+By default, the Pull Requests build feature loads the [GitLab draft merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/drafts.html)
+information and runs builds on draft merge requests. The build page displays a grayed-out icon and the **Draft** status next to the merge request number.
+
+Check the box to ignore GitLab draft merge requests. TeamCity will not load draft merge request information and a merge request is ignored until its status changes to non-draft.
+
+</td>
+</tr>
+<tr>
+<td>
+
 Server URL
 
 </td>
@@ -460,73 +469,28 @@ In case with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/),
 
 Note that the feature ignores Azure DevOps draft pull requests.
 
-The following parameters are available for the Azure DevOps hosting type:
+**Authentication Settings**
 
-<table>
-<tr>
-<td width="150">
+* **Personal Access Token** — a static token that you can [issue in your Azure DevOps account settings](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate). Your issued token should have the `Code (read)` scope to allow Pull Requests to retrieve required information.
 
-Parameter
+* **Refreshable access token** — a short-lived token issued via a configured [Azure OAuth 2.0 connection](configuring-connections.md#azure-devops-connection). Click the **Acquire** button next to a required connection to obtain an access token.
 
-</td>
+    <img src="dk-azure-pullRequestTokens.png" width="706" alt="Refreshable tokens for Azure DevOps"/>
 
-<td>
 
-Description
+**Pull Request Filtering**
 
-</td>
-</tr>
-<tr>
-<td>
+* **By source branch** — the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
 
-Access token
+* **By target branch** — the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
 
-</td>
 
-<td>
+**Other Settings**
 
-Use a personal access token for connection. The token must have the `Code (read)` [scope](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops#scopes).
 
-</td>
-</tr>
-<tr>
-<td>
+* **Project URL** — a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
 
-By source branch
 
-</td>
-<td>
-
-Define the [branch filter](branch-filter.md) to monitor pull requests only on source branches that match the specified criteria. If left empty, no filters apply.
-
-</td>
-</tr>
-<tr>
-<td>
-
-By target branch
-
-</td>
-<td>
-
-Define the [branch filter](branch-filter.md) to monitor pull requests only on target branches that match the specified criteria. If left empty, no filters apply.
-
-</td>
-</tr>
-<tr>
-<td>
-
-Project URL
-
-</td>
-
-<td>
-
-Specify a project URL for synchronization with the remote Azure DevOps server. This field is recommended for on-premises Azure DevOps installations. If left empty, the URL will be composed based on the VCS root fetch URL.
-
-</td>
-  </tr>
-</table>
 
 ### JetBrains Space Merge Requests
 

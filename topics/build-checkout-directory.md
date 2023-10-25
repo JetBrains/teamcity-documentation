@@ -40,7 +40,12 @@ If for some reason you need to specify a custom checkout directory (for example,
 
 <warning>
 
-It is recommended that a custom checkout directory __does not contain__ the [agent's working directory](build-working-directory.md) because of the potential undesirable side effects.
+Note that setting checkout directories as absolute paths that include agent home/working directories can lead to certain issues.
+
+* If a custom checkout directory matches the agent work directory (its path is stored in the `teamcity.agent.work.dir` parameter), TeamCity will constantly wipe checkout directories of other configurations that use the same folder (for example, `<AGENT_WORK_DIR>/ProjectA`, `<AGENT_WORK_DIR>/ProjectB`, and so on). To avoid this, specify a custom checkout directory as a sub-folder of the agent working directory, not the agent working directory itself.
+
+* When specifying sub-folders of an agent home/working directory, use either relative paths (`MyCustomFolder`) or absolute paths that substitute agent directories with [parameters](predefined-build-parameters.md) (`%\teamcity.agent.work.dir%/MyCustomFolder`). Otherwise, if the absolute path is a plain value (`/Users/John.Doe/TeamCityAgents/A1/work/MyCustomFolder`), TeamCity will continue using it even if you move the agent to another location.
+
 </warning>
 
 Note that the content of the checkout directory can be deleted by TeamCity under [certain circumstances](clean-checkout.md#Automatic+Clean+Checkout).

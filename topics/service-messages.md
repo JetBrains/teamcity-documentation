@@ -291,7 +291,7 @@ where:
 
 To use the TeamCity on-the-fly test reporting, a testing framework needs dedicated support for this feature to work (alternatively, [XML Report Processing](xml-report-processing.md) can be used). If TeamCity doesn't support your testing framework natively, it is possible to modify your build script to report test runs to the TeamCity server using service messages. This makes it possible to display test results in real-time, make test information available on the __[Tests](build-results-page.md#Tests+Tab)__ tab of the __Build Results__ page.
 
-### Message Creation Timestamp
+#### Message Creation Timestamp
 
 Test report messages support the optional attribute `timestamp`. In the following examples, `<messageName>` is the name of the specific service message.
 
@@ -1058,7 +1058,14 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
      <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages"/>
    * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance, "C052UHDRZU7"), or user ID (starts with "U", for instance, "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
    * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that TeamCity should use to send this message. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
+   
+      > To quickly get an ID of a target [Slack connection](configuring-connections.md#Slack), navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+       >
+       > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+       >
+       {type="tip"}
 
+<!--
       > Currently, you cannot retrieve Slack connection IDs from the TeamCity 
         UI.
       > 
@@ -1084,6 +1091,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
       > The connection ID is the value of the "id" field, typically in the "PROJECT_EXT_INT" format.
       > 
       {type="tip"}
+-->
 
 4. Run the build to ensure all Slack messages are delivered.
 

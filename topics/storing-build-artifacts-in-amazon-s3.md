@@ -1,81 +1,145 @@
-[//]: # (title: Storing Build Artifacts in Amazon S3)
+[//]: # (title: Amazon S3 and S3-compatible Storages)
 [//]: # (auxiliary-id: Storing Build Artifacts in Amazon S3)
 
-TeamCity comes bundled with the [Amazon S3 Artifact Storage](https://plugins.jetbrains.com/plugin/9623-aws-s3-artifact-storage) plugin which allows storing build artifacts in an Amazon S3 bucket.
+TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows storing build artifacts in Amazon S3 buckets, as well as S3-compatible buckets such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others. S3-compatible storages can be hosted in both AWS and non-AWS environments.
 
-It is possible to replace the TeamCity built-in artifacts' storage with [Amazon S3](https://aws.amazon.com/s3/) at a project level. When an S3 artifacts storage is configured, it:
-* allows uploading to, downloading, and removing artifacts from S3;
-* handles resolution of artifact dependencies as well as clean-up of artifacts;
-* displays artifacts located externally in the TeamCity UI.
 
-<include src="configuring-artifacts-storage.md" include-id="artifactMigrationToS3"/>
+## Create and Set Up a New AWS S3 Storage
 
-## Configuring Amazon S3 Artifacts Storage
-{id="configuring-amazon-s3-artifacts-storage"}
 
-To enable an external artifact storage in an AWS S3 bucket:
-1. Open __Project Settings | Artifacts Storage__. The built-in TeamCity artifacts storage is displayed by default and marked as active.
-2. Click __Add new storage__. Select _S3 Storage_ as the storage type. 
-3. [__Storage ID__](identifier.md) is filled out automatically. You can modify it with your own unique ID.
-4. Enter an optional name for your storage.
-5. Select the AWS environment and provide the required settings.
-6. Provide your AWS security credentials.
-7. Specify an existing S3 bucket to store artifacts.
-8. Save your settings.
 
-The configured S3 storage will appear on the __Artifacts Storage__ page. To enable it in this project, change its state to _Active_.
+1. <chunk id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.
 
-Now, new artifacts produced by builds of this project and its subprojects will be stored in the specified AWS S3 bucket.
+   * Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.
+   * Edit one specific project if your new storage should be available only for this project and its sub-projects.
+
+    </chunk>
+   
+2. <chunk id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</chunk>
+
+3. <chunk id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</chunk>
+
+4. Set the **Type** field to "AWS S3".
+
+5. Choose an existing [AWS Connection](configuring-connections.md#AmazonWebServices) that TeamCity should use to access your Amazon resources. If no suitable AWS connection exists, click the "+" icon to add one.
+
+    <anchor name="permissions"/>
+
+    A user whose credentials the selected AWS Connection uses (or an IAM Role it assumes) to access the S3 buckets should have the following permissions:
+
+   * `ListAllMyBuckets`
+   * `GetBucketLocation`
+   * `GetObject`
+   * `ListBucket`
+   * `PutObject`
+   * `DeleteObject`
+   * `GetAccelerateConfiguration` (if [Transfer Acceleration](#TransferAcceleration) is enabled)
+    
+    > <anchor name="transferToConnection"/>In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentials in the default AWS locations (the **Default provider chain** setting).
+    > 
+    > Starting with version 2023.11, these settings are exclusive to [AWS Connections](configuring-connections.md#AmazonWebServices). If you're migrating from an older version of TeamCity and your existing AWS S3 storages used any of these settings, click the **Convert to AWS Connection** link. This action transfers AWS-related settings to a new AWS Connection, and selects this new connection as the source connection of your storage.
+    >
+    {type="tip"}
+    
+6. TeamCity uses the selected AWS Connection to retrieve the list of available S3 buckets. Open the **Bucket** drop-down menu to choose a specific item from the list.
 
 <anchor name="pathPrefix"/>
 
-## Path Prefix
+7. <chunk id="settings_path_prefix">(Optional) Specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html">path prefix</a> if you want to use the same S3 bucket for all TeamCity projects and configure prefix-based permissions.</chunk>
 
-You can set an S3 [path prefix](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html). This allows using the same S3 bucket for all TeamCity projects and configure prefix-based permissions.
+
+
+8. Amazon S3 buckets support two options to speed up file uploads and downloads:
+
+   * [AWS CloudFront](https://aws.amazon.com/cloudfront/) — a content delivery network (CDN) that allows TeamCity to transfer arifacts using low-latency CloudFront servers nearby.
+   * <anchor name="TransferAcceleration"/>[Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) — a bucket-level feature designed to optimize transfer speeds from across the world into centralized S3 buckets. It enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket.
+    
+    If your bucket is configured to use Transfer Acceleration or CloudFront, choose the corresponding option under the **Transfer speed-up** section. Otherwise, if you wish TeamCity to transfer files in the regular mode, choose the **None** type.
+
+    <img src="dk-s3-speedUpMode.png" width="706" alt="S3 Transfer SpeedUp Mode"/>
+    
+    > Choosing the **AWS CloudFront** option requires setting up additional fields. See this section for more information: [](#CloudFrontSettings).
+    > 
+    {type="note"}
+
+    > Using Transfer Acceleration applies the following restrictions:
+    >
+    > * The [virtual host addressing](#forceVirtualHostAddressing) is always on. Path-style requests are not supported.
+    > * Transfer Acceleration must be enabled on your S3 bucket.
+    > * Buckets [cannot have dots (.) in their names](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+   > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
+    >
+    {type="note"}
+
+<anchor name="multipartUpload"/>
+
+9. <chunk id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).
+
+    <img src="dk-s3-multipart.png" width="706" alt="Multipart upload"/>
+
+    Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is <code>5MB</code>. If left empty, TeamCity will use <code>8MB</code> as the default value.
+    </chunk>
+    
+    > We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
+    >
+    {type="tip"}
 
 <anchor name="forceVirtualHostAddressing"/>
 
-## Virtual Host Addressing
+10. <chunk id="settings_virtual_host">Uncheck the <b>Force virtual host addressing</b> option to turn off the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html">corresponding feature</a> (enabled by default). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access">Amazon stopped supporting path-style access</a> for new buckets since September 2020.</chunk>
 
-You can enable the virtual host addressing for S3 buckets. Currently, both hosted-style and path-style requests are supported by TeamCity. Note that Amazon [stopped supporting path-style access](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) for new buckets since September 2020.
+    > This setting cannot be disabled if your storage uses [Transfer Acceleration](#TransferAcceleration).
+    >
+    {type="note"}
 
-<!-- 
-## Transfer Acceleration
+11. <chunk id="settings_verify_integrity">Tick <b>Verify file integrity after upload</b> to allow TeamCity to perform an additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5">check-up on uploaded files</a>. If the integrity verification fails, TeamCity writes a corresponding message to the build log.</chunk>
 
-<anchor name="transferAcceleration"/>
+12. <chunk id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</chunk>
 
-You can enable transfer acceleration for uploads and downloads if the following requirements are met:
+<chunk id="make_storage_active">
 
-* Transfer acceleration can only be enabled together with **virtual host addressing**. It does not work with path-style requests.
-* You need to enable transfer acceleration on your S3 bucket.
-* You bucket name must be DNS-compliant and must not contain periods `.`
+> If your build agent is deployed behind a proxy, you must also configure the proxy settings on the build agent.
+> See [](configuring-proxy-server.md#Use+Proxy+for+Outgoing+Build+Agent+Connections).
+>
+{type="note"}
 
-When the "_Transfer Acceleration_" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have the `GetAccelerateConfiguration` permission. 
-
-For more information see [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)
--->
-
-## Permissions
-
-When the "_Use Pre-Signed URLs for upload_" option is enabled, the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject, ListBucket, PutObject`.
-
-When the "Use Pre-Signed URLs for upload" option is disabled:
-* the provided AWS credentials or IAM role on the TeamCity server should have permissions: `DeleteObject, ListAllMyBuckets, GetBucketLocation, GetObject`
-* either AWS credentials should be specified and have `ListBucket, PutObject` permissions, or IAM role on all the TeamCity agents should have permissions: `ListBucket, PutObject`
+When viewing a list of storages available for a project, click <b>Make Active</b> to start using the corresponding storage for all new builds of this project. The <b>has N usages</b> link allows you to view which builds used this storage to upload their artifacts.
 
 
-<chunk id="S3multipartUpload">
-
-## Multipart Upload
-<anchor name="multipartUpload"/>
-
-To optimize the [upload of large files](https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/) to [Amazon S3](storing-build-artifacts-in-amazon-s3.md), you can initiate [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) instead of regular upload. To do this, set the multipart upload threshold in the _Connection Settings_ block. The minimum allowed value is `5MB`. Supported suffixes: `KB`, `MB`, `GB`, `TB`. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (`8MB` is the default value).
-
-Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is `5MB`. If left empty, TeamCity will use `8MB` as the default value.
-
->We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
+<img src="dk-s3-makeActive.png" width="706" alt="Make storage active"/>
 
 </chunk>
+
+
+
+## Create and Set Up a New S3-Compatible Storage
+
+
+1. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_art_storage_page"/>
+
+2. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_add_new_storage"/>
+
+3. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_name_id"/>
+
+4. Set the **Type** field to "Custom S3".
+
+5. Specify the **Access key ID** and **Secret access key** values. See documentation for your S3-compatible storage vendor for the information on how to issue access keys.
+
+6. Specify the storage endpoint TeamCity should use to access your bucket.
+
+7. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_path_prefix"/>
+
+8. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_mulipart_upload"/>
+
+9. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_virtual_host"/>
+
+10. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_verify_integrity"/>
+
+11. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_save_and_exit"/>
+
+
+<include src="storing-build-artifacts-in-amazon-s3.md" include-id="make_storage_active"/>
+
 
 
 ## Transferring Artifacts via CloudFront
@@ -97,13 +161,15 @@ The CloudFront integration requires configuring:
 
 ### CloudFront Settings
 
-To enable the CloudFront support for the current S3 bucket, activate the _Use CloudFront to transport artifacts_ option in the storage settings.
+When you switch the storage type to **AWS CloudFront**, four new settings appear.
 
-In each of the dropdowns, _Distribution for uploads_ and _Distribution for downloads_, choose an available distribution 
-if it was [manually created](#Manual+CloudFront+Setup) in your Amazon profile, 
-or click <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> to _[configure settings automatically](#Automatic+CloudFront+Setup)_.
+* Use the **Download distribution** and **Upload distribution** drop-down menus to choose [manually created](#Manual+CloudFront+Setup) distributions.
 
-For Cloudfront settings to work properly TeamCity needs new permissions:
+* The **Public key** field and **Upload private key...** button allow you to specify [corresponding keys](#Manual+CloudFront+Setup).
+
+Alternatively, you can click the <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> icon to let TeamCity [configure all four settings automatically](#Automatic+CloudFront+Setup).
+
+For Cloudfront settings to work properly, TeamCity needs the following permissions:
 
 * cloudfront:ListDistributions
 * cloudfront:ListKeyGroups
@@ -204,10 +270,10 @@ For security reasons, we recommend configuring two separate distributions for up
    * For public buckets, disable the __Block public access__ option.
 7. [Add a new policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html) to your S3 bucket. See the [policy example](#S3+Policy+Example).
 
-When configured, the distributions should automatically appear in the _Distribution for uploads_  and _Distribution for downloads_ drop-down menus.
+When configured, the distributions should automatically appear in the _Download distribution_  and _Upload distribution_ drop-down menus.
 1. Select the target CloudFront distribution.
-2. In _CloudFront public key_, select the public key associated with this distribution.
-3. In _Private SSH key_, upload the private key from the pair.
+2. In _Public key_, select the public key associated with this distribution.
+3. Click the _Upload private key..._ button upload the private key from the pair.
 4. Save the storage settings.
 
 #### S3 Policy Example
@@ -245,4 +311,45 @@ For accessing a public bucket:
 }
 ```
 
+## Kotlin DSL
 
+The following sample illustrates how to add an S3 bucket as custom storage for project artifacts, and set this storage as primary (default).
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.projectFeatures.activeStorage
+import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
+
+project {
+    // ...
+    features {
+        activeStorage {
+            id = "PROJECT_EXT_37"
+            activeStorageID = "PROJECT_EXT_4"
+        }
+        s3Storage {
+            id = "PROJECT_EXT_4"
+            awsEnvironment = default {
+                awsRegionName = "eu-west-1"
+            }
+            connectionId = "AwsPrimary"
+            storageName = "S3 Transfer Acceleration"
+            bucketName = "dk-s3ta"
+            enableTransferAcceleration = true
+            forceVirtualHostAddressing = true
+            verifyIntegrityAfterUpload = true
+        }
+    }
+    // ...
+}
+```
+
+> To quickly get an ID of an [AWS Connection](configuring-connections.md#AmazonWebServices) that should be used to retrieve a required bucket, navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+> 
+> <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
+> 
+{type="tip"}
+
+## Migrating Artifacts To a Different Storage
+
+<include src="configuring-artifacts-storage.md" include-id="artifactMigrationToS3"/>
