@@ -41,7 +41,7 @@ See the following article for simple use cases where you can store values in par
 
 ### Customize Template-Based Configurations
 
-**Configuration parameters** allow you to create a base build configuration with parameters, extract it to the template, and override these parameters in configurations based on this template.
+**Configuration parameters** allow you to create a base build configuration with parameters, extract it to the template, and override these parameters in configurations based on this template. Using this technique you can quickly duplicate your build configurations that have slight variations depending on your current task.
 
 For example, the following build configuration has two steps and the Boolean `skip.optional.step` parameter. Step #2 will or will not be executed depending on this parameter value.
 

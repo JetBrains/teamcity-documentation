@@ -129,7 +129,7 @@ This page has two tabs:
 </chunk>
 
 
-### Using the REST API
+### Using REST API
 
 To check initial and actual parameter values of the specific build via [REST API](teamcity-rest-api.md), send GET requests to the `/app/rest/builds/{buildLocator}` endpoint and specify required payload fields according to the [Build schema](https://www.jetbrains.com/help/teamcity/rest/build.html).
 
