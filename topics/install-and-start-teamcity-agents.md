@@ -62,17 +62,17 @@ Please generate own token or configuration file per each self-hosted agent.
 
 After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
-To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**.
+To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**. When a terminal opens, you can click the **Open in a separate tab** link to get a bigger client area.
 
-<img src="dk-openInteractiveTerminal.gif" width="706" alt="Agent Terminal Window"/>
+<img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
 
 The **Open terminal** button is available for all types of agent machines (Linux, Windows, and macOS) and invokes terminals under the same user identity who starts TeamCity agents.
 
-To ensure your build agent is idle while you perform maintenance, disable it but do not stop it since the terminal session requires a [running](start-teamcity-agent.md) build agent. [Stopping a build agent](start-teamcity-agent.md#Stop+Build+Agent) closes the terminal browser tab.
+To ensure your build agent is idle while you perform maintenance, disable it but do not stop it since the terminal session requires a [running](start-teamcity-agent.md) build agent. [Stopping a build agent](start-teamcity-agent.md#Stop+Build+Agent) also closes the related terminal browser tab.
 
 For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
 
-> The "Open interactive terminal" link opens in the `<SERVER-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a new browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
+> The "Open interactive terminal" link opens in the `<SERVER-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a separate panel or a browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 
 {type="note" product="tc"}
 

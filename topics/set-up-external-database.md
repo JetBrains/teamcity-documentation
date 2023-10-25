@@ -143,13 +143,80 @@ If you use the driver (`jtds` text appears in the `connectionUrl` of `database.p
 3. Restore the database from the backup into the new MS SQL database.
 4. Run the server.
 
-## Database Configuration Properties
+## Configure the Database Connection
+
+
+<anchor name="Database+Configuration+Properties"/>
+
+### Properties File
 
 The database connection settings are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file. The file is a Java [properties file](https://en.wikipedia.org/wiki/.properties). You can modify it to specify required properties for your database connections.
 
 For all supported databases there are [template files](teamcity-data-directory.md#.dist+Template+Configuration+Files) with database-specific properties located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory. The files have the `database.<database_type>.properties.dist` naming format and can be used as a reference on the required settings.
 
 TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](https://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
+
+### Environment Variables
+
+The main database connection settings can be defined by setting environment variables in the TeamCity server's environment. Environment variables can be used instead of (or in addition to) the properties in the `database.properties` file.
+
+
+Configuring the database connection with environment variables can be useful in the following scenarios:
+
+* Starting the TeamCity server without defining a `database.properties` file.
+* Avoiding exposure of the database password in the `database.properties` file, by setting the `TEAMCITY_DB_PASSWORD` environment variable instead.
+
+<table>
+<tr>
+<th>
+Variable
+</th>
+<th>
+Description</th>
+</tr>
+
+<tr>
+<td>
+<code>TEAMCITY_DB_URL</code>
+</td>
+<td>
+JDBC connection string for the database, for example:
+<ul>
+<li>
+<code>jdbc:postgresql://localhost:5432/teamcityDB</code> 
+</li>
+<li>
+<code>jdbc:mysql://localhost:3306/teamcityDB</code>
+</li>
+</ul>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<code>TEAMCITY_DB_USER</code>
+</td>
+<td>
+Username for connecting to the database
+</td>
+</tr>
+
+<tr>
+<td>
+<code>TEAMCITY_DB_PASSWORD</code>
+</td>
+<td>
+Password for connecting to the database
+</td>
+</tr>
+</table>
+
+Note that environment variables take precedence over the corresponding properties in the `database.properties` file:
+
+* `TEAMCITY_DB_URL` overrides `connectionUrl`
+* `TEAMCITY_DB_USER` overrides `connectionProperties.user`
+* `TEAMCITY_DB_PASSWORD` overrides `connectionProperties.password`
 
 <seealso>
         <category ref="installation">

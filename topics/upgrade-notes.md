@@ -7,12 +7,28 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-11"}
 
-* The version of .NET SDK bundled with the TeamCity Docker images has been updated from 5.0 to 7.0.
-* .NET Core 3.1 is no longer bundled with the TeamCity Docker images.
-  > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image using the provided TeamCity Docker base image (`jetbrains/teamcity-minimal-agent`).
+* The version of .NET SDK bundled with the TeamCity Agent Docker images has been updated from 5.0 to 7.0.
+* The bundled Tomcat was updated to version 9.0.80.
+* .NET Core 3.1 is no longer bundled with the TeamCity Agent Docker images.
+  > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
   > See the [README](https://github.com/JetBrains/teamcity-docker-images#readme) file in the `teamcity-docker-images` repository for more details.
   > 
   {type="note"}
+
+* To reduce the size of TeamCity distributions, the largest TeamCity build tool, IntelliJ IDEA, no longer ships with TeamCity installers. Instead, TeamCity will download and install this tool on the first server startup. To check the download/install progress (or to manually install [the required version of IntelliJ IDEA](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip) on server instances that failed to do so automatically), navigate to the **Administration | Tools** page and scroll to the **IntelliJ Inspections and Duplicates Engine** section.
+
+### S3 Plugin Updates
+{id="2023-11-s3-update"}
+
+Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the following settings are no longer available:
+
+* The **Use pre-signed URLs** feature is available by default and cannot be disabled.
+* The **Access Key ID**, **Secret Access Key**, **IAM Role** and **Default provider chain** options are no longer available for native AWS S3 storages. Instead, use settings of an [AWS Connection](configuring-connections.md#AmazonWebServices) these storages utilize to edit corresponding options. When you view or edit an existing S3 bucket that employed any of these settings, TeamCity shows the **Convert to AWS Connection** link that allows you to transfer them to a new AWS Connection. We recommend that you do so to keep all connection-related options outside storage settings.
+* The **AWS Region** is now automatically retrieved from the selected storage.
+* The **Open IAM Console** link is hidden.
+* Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
+
+
 
 ## Changes from 2023.05.3 to 2023.05.4
 
@@ -261,16 +277,12 @@ No server restart is required after the property is set.
 
 We will disable this type of credentials by default in the next bugfix update.
 
-#### Kotlins DSL plugin may fail to resolve dependencies
+#### Kotlin DSL plugin may fail to resolve dependencies
 
 The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.jetbrains.com/issue/TW-78351/Kotlin-DSL-fails-to-generateget-DSL-dependencies-since-upgrading-to-202210) after upgrading to 2022.10,
 if a project's Kotlin DSL settings use third-party libraries.
 
-If you face this problem, please use the following workaround:
-
-1. Download [this version of the Kotlin DSL plugin](https://uploads.jetbrains.com/files/2022_11_05_Kbfk6dc751LkfZtzLKwrea_JBS/configs-dsl.zip?secret=3aQYCYDCvptvgh13EYD8Yoo8NhguVrzp).
-2. Install the plugin on your TeamCity Server via the **[Administration | Plugins](installing-additional-plugins.md)** page.
-3. Restart your TeamCity server.
+If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
 
 ## Changes from 2022.04.3 to 2022.04.4
 

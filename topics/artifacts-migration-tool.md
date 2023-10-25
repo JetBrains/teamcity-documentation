@@ -48,7 +48,7 @@ If a project has multiple S3-compatible storages that need to be migrated and re
 teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
 ```
 
-* `<FEATURE_ID>` is the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#configuring-amazon-s3-artifacts-storage) page.
+* `<FEATURE_ID>` is the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#Create+and+Set+Up+a+New+AWS+S3+Storage) page.
 * `<PROFILE_NAME>` is the profile name from the AWS credentials file.
 
 

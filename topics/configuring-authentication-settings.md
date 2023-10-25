@@ -54,13 +54,13 @@ you can configure authentication settings in the &lt;TeamCity data directory&gt;
 The following values are supported for the type attribute (the values are case-insensitive):
 
 * For credentials authentication modules:
-  ** Default for Default Authentication
-  ** NT-Domain for Windows Domain Authentication
-  ** LDAP for LDAP Authentication
+  * **Default** for Default Authentication
+  * **NT-Domain** for Windows Domain Authentication
+  * **LDAP** for LDAP Authentication
 
 * For HTTP authentication modules:
-  ** HTTP-Basic for Basic HTTP Authentication
-  ** HTTP-NTLM for NTLM HTTP Authentication
+  * **HTTP-Basic** for Basic HTTP Authentication
+  * **HTTP-NTLM** for NTLM HTTP Authentication
   
 You can also provide some properties for each authentication module depending on the module type. Each property is specified as the &lt;property&gt; tag inside the corresponding &lt;auth-module&gt; tag. Each &lt;property&gt; tag must contain the key attribute with a property key. The property value is specified as the text inside the &lt;property&gt; tag.
 

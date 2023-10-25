@@ -441,7 +441,7 @@ The most common reason for the problem is the different bitness of the `sqljdbc_
 To solve the problem, do the following:
 
 1. Make sure you use the MS SQL native driver (downloadable from the [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=11774)). 
-2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 32\-bit Java. However, both 32-bit and 64-bit Java versions [can be used](how-to.md#Install+Non-Bundled+Version+of+Java).
+2. Use the right JRE bitness: ensure that you are running TeamCity using Java with the same bitness as your `sqljdbc_auth.dll` MS SQL shared library. By default, TeamCity uses the 64-bit Java. However, both 32-bit and 64-bit Java versions [can be used](how-to.md#Install+Non-Bundled+Version+of+Java).
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
@@ -449,10 +449,11 @@ To run TeamCity with the required JRE, do one of the following:
     
 <note>
 
-Note that on upgrade, TeamCity will overwrite the existing JRE with the default 32-bit version, so you'll have to update to the 64-bit JRE again after upgrade.
+Note that on upgrade, TeamCity will overwrite the existing JRE with the default 64-bit version. If you switched to the 32-bit version, you will need to re-apply your custom changes after every upgrade.
+
 </note>
 
-See also this related [external posting](http://www.mikeobrien.net/blog/teamcity-sqlserver-integrated-security).
+See also: [](how-to.md#Update+from+32-bit+to+64-bit+Java).
 
 ### Protocol violation error (Oracle only)
 
@@ -528,5 +529,16 @@ There is no simple solution for Extended Validation (EV) code signing as the fea
 
 ## Tomcat error: Request Header too large
 
-By default, Tomcat sets a 4096 bytes (4KB) limit to the request and response HTTP headers. If too many cookies get included into a header (for example, by the proxy servers between the end user and TeamCity), users might get the `400: Request Header too large` error when browsing TeamCity.  
-To identify the cause of this problem, we recommend that you inspect the affected header with the browser developer console. As a temporary workaround, you can also increase the Tomcat header limit. To do this, change the `$TOMCAT_HOME/conf/server.xml` file and increase the value of the `maxHttpHeaderSize` parameter for all relevant connectors (for example, set `65536` to increase the limit to 64KB).
+By default, Tomcat sets a 4096 bytes (4KB) limit to the request and response HTTP headers. If a header includes too many cookies (for example, from the proxy servers between an end user and TeamCity) or their size is too large, users might stumble on the `400: Request Header too large` or `502: Bad Gateway` errors when browsing TeamCity. To identify the cause of this problem, we recommend that you inspect the affected header with the browser developer console.
+
+To resolve this issue, increase the Tomcat header limit by editing the `maxHttpHeaderSize` parameter value for all relevant connectors in the `$TOMCAT_HOME/conf/server.xml` file. For example, the following sample sets the parameter value to `65536` to increase the limit to 64KB.
+
+```XML
+<Connector port="8111" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           connectionTimeout="60000"
+           redirectPort="8543"
+           useBodyEncodingForURI="true"
+           tcpNoDelay="1"
+           maxHttpHeaderSize="65536"
+/>
+```

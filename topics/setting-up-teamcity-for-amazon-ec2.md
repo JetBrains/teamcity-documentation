@@ -220,9 +220,19 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    </tabs>
    
-4. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
-5. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
-6. Click **Save** to exit the image settings page.
+4. Enter a positive integer number in the **Image priority** field. When TeamCity needs to spin up a new cloud agent, it chooses an image that has the highest priority value.
+   
+   TeamCity uses priority values to range images from all existing profiles. For example, newly queued builds can run on cloud agents spawned from profiles A and B. The Profile A has three images with priorities 20, 40, and 60. The Profile B has 10, 30, and 50 priority images. TeamCity will spin up new agents in the following order:
+   
+   * Profile A, image priority 60.
+   * Profile B, image priority 50.
+   * Profile A, image priority 40, and so on.
+   
+   An image with a lower priority is used only when an available image with a higher priority reaches its active agents limit.
+
+5. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
+6. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
+7. Click **Save** to exit the image settings page.
 
 After you have configured an image, TeamCity winds up one test agent for this image to test whether it can start and connect to the server. When an agent is connected and authorized, TeamCity saves its parameters to correctly assign builds to compatible agents.
    

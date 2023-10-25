@@ -78,7 +78,12 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 ### Automatic Update
 
-To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/).   
+> Automatic update is available only for `.tar.gz` and `.exe` installations.
+> In particular, automatic update cannot be used with a Docker installation (see [](#manual-update-of-docker-image)) and the [AWS CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template#readme) is no longer supported.
+{type="note"}
+
+To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/).
+
 When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description, and controls to perform the automatic update if you want to use that instead of performing the manual updating procedure.
 
 The automatic update procedure is as follows:
@@ -136,7 +141,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 #### Using .tar.gz Distributions
 
 1. [Create a backup](teamcity-data-backup.md).
-2. Backup files customized since previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
 3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to back up the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in `.tar.gz` TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
@@ -145,10 +150,17 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 8. Start up the TeamCity server.
 9. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that, all the configuration data and database scheme are updated by TeamCity converters.
 
-#### From Docker images
+#### Using Docker images
+{id="manual-update-of-docker-image" auxilary-id="Manual Update of Docker Image"}
 
-If you made no changes to the container, you can just stop the running container, pull the new version of the [official TeamCity image](https://hub.docker.com/r/jetbrains/teamcity-server/) and the server in it via the usual command. If you changed the image, you will need to replicate the changes to the new TeamCity server image.
+> Manual update is the only option for Docker containers.
+{type="note"}
 
+1. [Create a backup](teamcity-data-backup.md).
+2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+3. If you have built your own Docker image, [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme) based on the new version of the TeamCity server base image.
+4. Invoke [`docker run`](https://hub.docker.com/r/jetbrains/teamcity-server) to start the new container on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
+5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
 
 ## IDE Plugins
 {product="tc"}

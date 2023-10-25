@@ -5,6 +5,9 @@ _Feature branches_ in distributed version control systems (DVCS) allow you to wo
 
 TeamCity support for feature branches is continuously extending and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
+<video href="aTE_1A0Fuh0"
+title="TeamCity tutorial — How to work with feature branches"/>
+
 ## Supported Version Control Systems
 
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
@@ -69,6 +72,12 @@ There is also a special escaping syntax defined via `#! escape: CHARACTER` synta
 ```
 
 >To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
+
+
+## Branch-Specific Build Configuration Settings
+
+With the help of [versioned settings](storing-project-settings-in-version-control.md), you can create build configurations with variable settings for every repository branch. See the following article for an example: [Branch-Specific Settings](storing-project-settings-in-version-control.md#Example%3A+Branch-Specific+Settings).
+
 
 ## Default Branch
 
@@ -304,10 +313,8 @@ Open the [build results page](working-with-build-results.md), click the __Action
 
 It is also possible to merge branches [automatically](automatic-merge.md).
 
-## Feature Branches Video Tutorial
 
-<video href="aTE_1A0Fuh0"
-title="TeamCity tutorial — How to work with feature branches"/>
+
 
 <seealso>
         <category ref="admin-guide">

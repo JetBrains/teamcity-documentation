@@ -10,8 +10,17 @@ The cases when a workspace is created are:
 
 ## Perforce Workspace Name
 
-The names of the created workspaces start with the `TC_p4_` prefix. If the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, you can set an additional prefix for the workspace name using the `teamcity.perforce.workspace.prefix` [configuration parameter](configuring-build-parameters.md).  
-To support [feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams), workspaces created on the Perforce server side have the `TC_p4_server_` prefix.
+The names of the created workspaces start with the `TC_p4_` prefix. To support [feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams), workspaces created on the Perforce server side have the `TC_p4_server_` prefix.
+
+If your build configurations use the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), you can modify a workspace name as follows:
+
+* Add a workspace name prefix via the `teamcity.perforce.workspace.prefix` [configuration parameter](configuring-build-parameters.md).
+* Set a custom workspace name in case your workflow requires a specific workspace name pattern. To do this, set the `vcsroot.<VCSRootExternalID>.p4client` parameter. If a custom workspace name is specified, TeamCity updates the workspace according to corresponding VCS root settings (for example, applies related stream parameters if the VCS root has the stream support enabled) before the checkout. See also: [](#Reuse+Checked+Out+Sources+on+Cloud+Agents).
+
+> You can set properties' values during a build by sending the [setParameter Service Message](service-messages.md#set-parameter). To send these messages before the checkout, send them from a [Bootstrap step](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
+> 
+{type="tip"}
+
 
 The workspace name also includes the build agent name and a hash value built from the checkout directory and (optionally) checkout rules.
 
@@ -86,3 +95,29 @@ When using a custom checkout path, TeamCity will not clean the checkout director
 The same applies to the broken personal builds. When the sources are corrupted and this option is set, TeamCity will fail the build instead of running a clean checkout. You can clean the working copy via `p4 clean` and try to continue with the `ignoreAndContinue` value after this (to run a custom build with the specified [configuration parameter](configuring-build-parameters.md)).
 
 [//]: # (Internal note. Do not delete. https://youtrack.jetbrains.com/issue/TW-33168)
+
+## Reuse Checked Out Sources on Cloud Agents
+
+To avoid clean checkouts on each new TeamCity [cloud agent](teamcity-integration-with-cloud-solutions.md), you can copy or mount a persistent storage with code sources to the agent checkout directory. However, since Perforce keeps track of workspaces, agent IP addresses and names, revisions stored on agents, and other data, running a build on a new cloud agent causes the `p4 sync` operation to ignore existing source files and result in a clean checkout.
+
+To prevent this from happening and reuse sources from a persistent storage, do the following:
+
+1. Add the `teamcity.agent.failBuildOnCleanCheckout=ignoreAndContinue` parameter to your build configuration to explicitly [disable clean checkouts](perforce-workspace-handling-in-teamcity.md#Forced+Protection+Against+Clean+Checkout).
+
+2. To make adjustments to a workspace before the checkout starts, enable [Bootstrap steps](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
+
+3. Add one or multiple command-line or script steps to your configuration and check their **Run during bootstrap** option. These bootstap steps should do the following:
+    
+   * ensure that the build checkout directory points to your persistent storage and this storage has all required sources checked out at the correct revision;
+   * run the `p4 -c <p4_workspace_name> flush <changelist_revision>` command to tell the Perforce server a workspace already has all required sources;
+   * set the custom workspace name to the required value. To do that, send the [setParameter Service Message](service-messages.md#set-parameter) that assigns a new value to the [`vcsroot.<VCSRootExternalID>.p4client`](#Perforce+Workspace+Name) property.
+        
+       ```Shell
+       echo "##teamcity[setParameter name='vcsroot.P4_ExternalVCSRootID.p4client' value='customP4ClientName']"
+       ```
+       
+       > Since TeamCity updates a workspace according to settings of a corresponding VCS Root, make sure the VCS Root settings have the same [Client Mapping](perforce.md#Map+Perforce+Depot+to+Client) as `customP4ClientName` workspace in your Service Message.
+       > 
+       {type="warning"}
+
+With these bootstrap steps in place, TeamCity updates your P4 client specification, runs the `p4 sync` command and performs a checkout that should fetch only changes between the flushed `<changelist_revision>` and the revision associated with the current build.

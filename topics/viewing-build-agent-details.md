@@ -54,6 +54,10 @@ teamcity.agent.reboot.command=shutdown -r -t 60 -c "TeamCity Agent reboot comman
 
 Shows the builds that were run on the agent.
 
+To view all builds run on any agent spawned from a specific [cloud image](teamcity-integration-with-cloud-solutions.md), go to the **Agents** page, select a required image, and switch to the **Build History** tab. You can also browse builds of a specific cloud agent, even if it is no longer available. To do so, enter its name in the search box.
+
+<img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
+
 ## Compatible Configurations
 
 Displays compatible and incompatible build configurations with the reason of incompatibility.
