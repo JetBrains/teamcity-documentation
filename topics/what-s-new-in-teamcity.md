@@ -364,6 +364,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 * The [](commit-status-publisher.md) build feature now correctly publishes build statuses for configurations that target `refs/(merge-requests/*)/head` branches of GitLab repositories (the "merge result" branches). Previously, running TeamCity builds for merge result revisions caused the Publisher to encounter HTTP 404 errors.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 * You can now add the `dateFormat=<value>` parameter to URLs used by your log analysis tools to retrieve build logs. Learn more: [](build-log.md#Modify+the+DateTime+Pattern).
+* In addition to `builds_queued`, `builds_started`, `builds_running` and `builds_queued` [metrics](teamcity-monitoring-and-diagnostics.md#Metrics), TeamCity now reports an experimental `builds_detached` metric that allows you to view a number of [builds detached from their agents](agentless-build-step.md).
 
 
 
@@ -528,6 +529,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 * [EC2 Cloud Images](setting-up-teamcity-for-amazon-ec2.md) now feature the **Image priority** setting that allows you to specify which images should spin up new cloud agents first. Images with higher priority values are prioritized over images with lower priorities.
 * If your build runs a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
+* In addition to `builds_queued`, `builds_started`, `builds_running` and `builds_queued` [metrics](teamcity-monitoring-and-diagnostics.md#Metrics), TeamCity now reports an experimental `builds_detached` metric that allows you to view a number of [builds detached from their agents](agentless-build-step.md).
 
 
 
