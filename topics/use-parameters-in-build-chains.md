@@ -8,9 +8,9 @@ Dependent builds can access predefined and custom parameters of the previous cha
 
 <img src="dk-params-in-chains.png" width="706" alt="Parameters in dependent builds"/>
 
-A configuration that uses this syntax can indirectly dependx on the source configuration (for example, if configuration A depends on configuration B and B depends on C, A can access C's parameters).
+You can use `dep...` parameters to access parameters from a configuration even if the current configration has only indirect dependencies. For example, in the A &rarr; B &rarr; C chain where C depends on B and B depends on A, configuration C can access A's parameters.
 
-For example, the following build configuration builds and pushes a Docker image. The name of this image is written to the `DockerImageName` parameter.
+The following build configuration builds and pushes a Docker image. The name of this image is written to the `DockerImageName` parameter.
 
 ```Shell
 TAG=v1
