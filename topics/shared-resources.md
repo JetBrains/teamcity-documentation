@@ -77,10 +77,6 @@ If at least one resource lock is defined in a build configuration, you can view 
 
 Clicking the resource name takes you back to the [shared resources configuration](#Adding+and+Editing+Shared+Resources) page on the project level.
 
-## Development Links
-
-See the [Shared Resources plugin](https://plugins.jetbrains.com/plugin/9075-shared-resources) page.
-
 <seealso>
         <category ref="videos">
             <a href="https://tv.jetbrains.net/videocontent/teamcity-shared-resources">JetBrains TV: TeamCity Shared Resources Screencast</a>
