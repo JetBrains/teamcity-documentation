@@ -1,7 +1,7 @@
 [//]: # (title: Install and Start TeamCity Agents)
 [//]: # (auxiliary-id: Install and Start TeamCity Agents;Setting up and Running Additional Build Agents)
 
->This section is about [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) are maintained by the TeamCity Cloud team and require no actions from users.
+>This section is about [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) are maintained by the TeamCity Cloud team and require no actions from users.
 >
 {type="note" product="tcc"}
 

@@ -118,157 +118,159 @@ You can combine agents of both types in your installation. Read more information
 
 These agents are automatically maintained by JetBrains and don't require to be installed or configured by a customer. There are multiple types of these agents:
 
+<dl>
+<dt>x86 Agents</dt>
+
+<dd>
+<tabs>
+
+
+<tab title="Linux agents">
+
+
 <table>
-
 <tr>
-
-<td>
-
-Instance Type
-
-</td>
-
-<td>
-
-Hardware
-
-</td>
-
+<td>Agent Name</td>
+<td>vCPU<sup>*</sup></td>
+<td>RAM</td>
+<td>Storage</td>
 </tr>
 
 <tr>
-
-<td>
-
-Linux (Small)
-
-</td>
-
-<td>
-
-* CPU: 2 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 4 GB
-* SSD storage (for running builds): 50 GB
-* Root EBS volume: 100 GB
-
-</td>
-
+<td>Ubuntu-20.04-Small<br/>Ubuntu-22.04-Small</td>
+<td>2</td>
+<td>4 GB</td>
+<td>50 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-
-<td>
-
-Linux (Medium)
-
-</td>
-
-<td>
-
-* CPU: 4 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 8 GB
-* SSD storage (for running builds): 100 GB
-* Root EBS volume: 100 GB
-
-</td>
-
+<td>Ubuntu-20.04-Medium<br/>Medium-22.04-Small</td>
+<td>4</td>
+<td>8 GB</td>
+<td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-
-<td>
-
-Linux (Large)
-
-</td>
-
-<td>
-
-* CPU: 8 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 16 GB
-* SSD storage (for running builds): 200 GB
-* Root EBS volume: 100 GB
-
-</td>
-
+<td>Ubuntu-20.04-Large<br/>Ubuntu-22.04-Large</td>
+<td>8</td>
+<td>16 GB</td>
+<td>200 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-
-<td>
-
-Linux (XLarge)
-
-</td>
-
-<td>
-
-* CPU: 16 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 32 GB
-* SSD storage (for running builds): 400 GB
-* Root EBS volume: 100 GB
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-Windows (Small)
-
-</td>
-
-<td>
-
-* CPU: 2 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 8 GB
-* SSD storage (for running builds): 100 GB
-* Root EBS volume: 100 GB
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-Windows (Medium)
-
-</td>
-
-<td>
-
-* CPU: 4 vCPU (Intel Xeon - Cascade Lake)
-* RAM: 8 GB
-* SSD storage (for running builds): 100 GB
-* Root EBS volume: 100 GB
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-macOS (Medium)
-
-</td>
-
-<td>
-
-* CPU: 6 vCPU (Intel i7)
-* RAM: 15 GB
-* Storage (for preinstalled software and running builds): 150 GB
-
-</td>
-
+<td>Ubuntu-20.04-XLarge<br/>Ubuntu-22.04-XLarge</td>
+<td>16</td>
+<td>32 GB</td>
+<td>400 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 </table>
+
+</tab>
+
+
+
+<tab title="Windows agents">
+
+<table>
+<tr>
+<td>Agent Name</td>
+<td>vCPU<sup>*</sup></td>
+<td>RAM</td>
+<td>Storage</td>
+</tr>
+
+<tr>
+<td>Windows-Server-2019-Small<br/>Windows-Server-2022-Small</td>
+<td>2</td>
+<td>8 GB</td>
+<td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+<tr>
+<td>Windows-Server-2019-Medium<br/>Windows-Server-2022-Medium</td>
+<td>4</td>
+<td>8 GB</td>
+<td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+</table>
+
+</tab>
+
+<tab title="macOS agents">
+
+<table>
+<tr>
+<td>Agent Name</td>
+<td>vCPU<sup>**</sup></td>
+<td>RAM</td>
+<td>Storage</td>
+</tr>
+
+<tr>
+<td>macOS (Medium)</td>
+<td>6</td>
+<td>15 GB</td>
+<td>150 GB storage for preinstalled software and running builds</td>
+</tr>
+
+</table>
+
+</tab>
+
+</tabs>
+
+<sup>*</sup> — Intel Xeon Cascade Lake vCPUs<br/>
+<sup>**</sup> — Intel i7 vCPUs
+</dd>
+
+<dt>ARM Agents</dt>
+<dd>
+
+<table>
+
+<tr>
+<td>Agent Name</td>
+<td>vCPU<sup>*</sup></td>
+<td>RAM</td>
+<td>Storage</td>
+</tr>
+
+<tr>
+<td>Ubuntu-20.04-Small-Arm64<br/>Ubuntu-22.04-Small-Arm64</td>
+<td>2</td>
+<td>4 GB</td>
+<td>118 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+<tr>
+<td>Ubuntu-20.04-Medium-Arm64<br/>Ubuntu-22.04-Medium-Arm64</td>
+<td>4</td>
+<td>8 GB</td>
+<td>237 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+<tr>
+<td>Ubuntu-20.04-Large-Arm64<br/>Ubuntu-22.04-Large-Arm64</td>
+<td>8</td>
+<td>16 GB</td>
+<td>474 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+<tr>
+<td>Ubuntu-20.04-XLarge-Arm64<br/>Ubuntu-22.04-XLarge-Arm64</td>
+<td>16</td>
+<td>32 GB</td>
+<td>950 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+</table>
+
+<sup>*</sup> — AWS Gravitron3 vCPUs
+
+</dd>
+</dl>
+
 
 Each JetBrains-hosted agent comes with a set of preinstalled software.
 
