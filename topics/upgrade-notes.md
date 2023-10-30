@@ -7,14 +7,15 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-11"}
 
-* The version of .NET SDK bundled with the TeamCity Agent Docker images has been updated from 5.0 to 7.0.
-* The bundled Tomcat was updated to version 9.0.80.
 * .NET Core 3.1 is no longer bundled with the TeamCity Agent Docker images.
-  > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
-  > See the [README](https://github.com/JetBrains/teamcity-docker-images#readme) file in the `teamcity-docker-images` repository for more details.
+* The version of .NET SDK bundled with the TeamCity Agent Docker images has been updated from 5.0 to 6.0 (the current [Microsoft LTS](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) version).
+* Starting with this release, the .NET SDK version bundled with the TeamCity Agent Docker images is aligned with the Microsoft LTS version current at the time of the TeamCity release.
+  > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0) or a later version (for example, .NET SDK 7.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
+  > See the [README](https://github.com/JetBrains/teamcity-docker-images/tree/master/custom#readme) for custom agent images in the [`teamcity-docker-images`](https://github.com/JetBrains/teamcity-docker-images) repository for more details.
   > 
   {type="note"}
 
+* The bundled Tomcat was updated to version 9.0.80.
 * To reduce the size of TeamCity distributions, the largest TeamCity build tool, IntelliJ IDEA, no longer ships with TeamCity installers. Instead, TeamCity will download and install this tool on the first server startup. To check the download/install progress (or to manually install [the required version of IntelliJ IDEA](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip) on server instances that failed to do so automatically), navigate to the **Administration | Tools** page and scroll to the **IntelliJ Inspections and Duplicates Engine** section.
 
 ### S3 Plugin Updates
