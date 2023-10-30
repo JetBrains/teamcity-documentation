@@ -110,6 +110,28 @@ The upgrade of self-hosted agents is also automated and involves downloading new
 
 Typically, an agent upgrade happens when the server is upgraded.
 
+## Agent Priority
+{product="tcc"}
+
+If you have a mix of [JetBrains-hosted](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) and [self-hosted](supported-platforms-and-environments.md#Self-Hosted+Agents) agents, TeamCity uses the following set of rules to pick an optimal agent that is the most balanced in terms of both performance and price:
+
+* Self-hosted agents have priority over JetBrains-hosted agents
+* [Per-month agents](managing-subscription-and-resources.md#Prepay+JetBrains-Hosted+Build+Agents+Monthly) have priority over per-minute agents
+* If agents on any platform can run a build, TeamCity prioritizes Linux agents first, then Windows, and lastly, macOS.
+* Priorities of AWS-hosted agents depend on their instance types. Smaller agents have priority over larger ones.
+* Agents with the latest OS versions have priority over agents with older versions.
+* Agents installed on x86_64 machines have priority over ARM agents.
+
+You can manually lower or raise the priority of a self-hosted agent by modifying its integer `teamcity.agent.priority` property (the default value is 0). For [EC2 build agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
+
+<img src="dk-agentpriority.png" width="706" alt="Set the image priority for a EC2 Cloud Image"/>
+
+For other cloud images and bare-metal agents, add the following line to the [&lt;TeamCity_Agent_Home&gt;/conf/buildAgent.properties](configure-agent-installation.md) file:
+
+```XML
+teamcity.agent.priority=54
+```
+
 <seealso>
         <category ref="installation">
             <a href="install-and-start-teamcity-agents.md">Setting up Additional Build Agents</a>

@@ -119,7 +119,7 @@ You can combine agents of both types in your installation. Read more information
 These agents are automatically maintained by JetBrains and don't require to be installed or configured by a customer. There are multiple types of these agents:
 
 <dl>
-<dt>x86 Agents</dt>
+<dt>x86_64 Agents</dt>
 
 <dd>
 <tabs>
@@ -266,7 +266,7 @@ These agents are automatically maintained by JetBrains and don't require to be i
 </tr>
 </table>
 
-<sup>*</sup> — AWS Gravitron3 vCPUs
+<sup>*</sup> — AWS Graviton3 vCPUs
 
 </dd>
 </dl>
