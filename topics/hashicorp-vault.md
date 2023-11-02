@@ -17,7 +17,7 @@ When a build that utilizes this parameter starts, a TeamCity server uses the Vau
 3. Specify the common connection settings: the connection name, Vault and parameter namespaces, and Vault URL.
 
    * [Vault namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) allow you to create "vaults within a vault" — isolated tenants inside a single Vault Enterprise instance. If Vault secrets you need to access are stored in this isolated environment, specify its namespace in the **Vault namespace** connection field (for example, `TeamABC/secrets/`). Otherwise, leave this setting empty.
-   * **Parameter namespace** — ???
+   * **Parameter namespace** — a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and intend to create [remote parameters](#Remote+Parameters). Otherwise, leave this field blank.
    * **Vault URL** is the address of your Vault instance. Local Vault installations (the default URL is `http://localhost:8200`) are also supported.
 
 4. Choose the desired authentication method. TeamCity can authenticate to HCP Vault using a Vault's AppRole, via an AWS IAM role, or using a directory access protocol (LDAP).
@@ -26,6 +26,9 @@ When a build that utilizes this parameter starts, a TeamCity server uses the Vau
     
     <tab title="AWS IAM Auth">
     
+    If both your build agents and Vault are hosted on AWS EC2 instances, you can let build agents to automatically communicate with Vault. Agents send signed [GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html) queries to the Vault server, which forwards them to the AWS STS service and authenticates the agent based on the service response. See this Vault documentation article to learn more: [IAM auth method](https://developer.hashicorp.com/vault/docs/auth/aws#iam-auth-method).
+    
+    Note that this auth method requires only build agents and Vault server being hosted on EC2 instances. The TeamCity server can reside in any custom location. However, the **Test connection** 
     </tab>
     
     <tab title="Vault AppRole">
@@ -53,3 +56,6 @@ When a build that utilizes this parameter starts, a TeamCity server uses the Vau
     </tabs>
 
 5. Tick **Fail in case of error** if you want builds to fail with the "Error while fetching data from HashiCorp Vault" message if the agent is unable to obtain Vault secrets. Otherwise, ??? (builds will continue with empty strings as secret parameter values?).
+
+
+## Remote Parameters
