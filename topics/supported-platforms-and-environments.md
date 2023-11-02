@@ -194,6 +194,20 @@ These agents are automatically maintained by JetBrains and don't require to be i
 <td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
+<tr>
+<td>Windows-Server-2019-Large<br/>Windows-Server-2022-Large</td>
+<td>8</td>
+<td>16 GB</td>
+<td>200 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
+<tr>
+<td>Windows-Server-2019-XLarge<br/>Windows-Server-2022-XLarge</td>
+<td>16</td>
+<td>32 GB</td>
+<td>400 GB SSD for running builds<br/>100 GB root EBS volume</td>
+</tr>
+
 </table>
 
 </tab>
