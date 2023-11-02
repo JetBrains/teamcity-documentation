@@ -81,6 +81,7 @@
             <toc-element id="csrf-protection.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="using-https-to-access-teamcity-server.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="uploading-ssl-certificates.md" show-structure-for="chapter" show-structure-depth="4"/>
+            <toc-element id="hashicorp-vault.md"/>
             <toc-element id="content-security-policy-in-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="security-actions.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
