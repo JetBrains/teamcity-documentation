@@ -29,6 +29,12 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 * The **Open IAM Console** link is hidden.
 * Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
 
+### HTTP / SSO Authentication Modules Updates
+
+The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cloud, GitHub App, GitHub Enterprise, GitHub.com, GitLab CE/EE, and GitLab.com [authentication modules](https://www.jetbrains.com/help/teamcity/configuring-authentication-settings.html#HTTP+%2F+SSO+Authentication+Modules):
+
+* The **Add Module** dialog has a new **Allow any &lt;IdentityProvider> user to log in** checkbox. If you want to configure a module that does not restrict users to a particular domain, organization, workspace, or group, you must check this box instead of leaving the **Restrict authentication** field empty.
+* If an existing authentication module in version 2023.05.04 is configured with an empty **Restrict authentication** field, after migrating to version 2023.11, TeamCity displays the warning notification `All users should be allowed to login, or at least one <IdentityProvider> organization must be specified.` on the **Administration | Authentication** page.
 
 
 ## Changes from 2023.05.3 to 2023.05.4
