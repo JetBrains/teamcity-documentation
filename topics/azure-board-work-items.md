@@ -16,7 +16,7 @@ To get the maximum benefit from the integration with Azure Board Work Items, fol
 * When committing changes to your version control, __always mention the work item ID__ related to the fix in the comment to the commit.
 * Mark fixed work items as _Resolved_ in the issue tracker to display them with the _Fixed_ status in TeamCity logs (the time of resolve does not really matter).
 
->If a project has a [TFVC](azure-devops.md) root configured, TeamCity will suggest configuring integration with Azure Board Work Items as well.
+>If a project has a [TFVC](team-foundation-version-control.md) root configured, TeamCity will suggest configuring integration with Azure Board Work Items as well.
 
 ### Configuring Connection to Azure Board Work Items
 
@@ -122,6 +122,6 @@ TeamCity supports custom states for work items. For example, to customize the _r
 
 <seealso>
         <category ref="admin-guide">
-            <a href="azure-devops.md">Azure DevOps Integration</a>
+            <a href="team-foundation-version-control.md">Azure DevOps Integration</a>
         </category>
 </seealso>

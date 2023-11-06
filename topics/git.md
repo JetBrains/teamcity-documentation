@@ -307,7 +307,7 @@ For all available options to connect to GitHub, see the [comment](https://youtra
 
 ## Authenticating to Azure DevOps Services
 
-If you use Git source control with Azure DevOps Services, see the available options [here](azure-devops.md#Authentication+in+Azure+DevOps).
+If you use Git source control with Azure DevOps Services, you can use both [Azure DevOps OAuth](configuring-connections.md#azure-devops-connection) and [Azure DevOps PAT](configuring-connections.md#Azure+DevOps+PAT+Connection) connections.
 
 ## Server Settings
 
