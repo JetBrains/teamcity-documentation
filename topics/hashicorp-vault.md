@@ -2,6 +2,8 @@
 
 [HashiCorp Vault](https://www.vaultproject.io) is a secure storage for your tokens, passwords, certificates and encryption keys. Instead of storing sensitive information inside TeamCity parameters and tokens, you can store it in Vault and set up TeamCity so that it can securely access this data from Vault.
 
+You can set up a TeamCity-Vault integration with various engine types: key-value (both KV and KV2), AWS, Google Cloud, and others.
+
 ## Common Information
 
 To set up an integration with HashiCorp Vault, you need to set up the [corresponding connection](configuring-connections.md) in the required project (or &lt;Root project&gt;, if you want any TeamCity project to use this connection).
@@ -178,3 +180,11 @@ project {
     }
 }
 ```
+
+> Vault engines that issue dynamic secrets (for example, the AWS engine) generate new credentials each time a client (TeamCity) sends a new request. For that reason, avoid mixing regular and remote parameters that access the same dynamic secrets engine within the same build.
+> 
+> For example, if you have a remote parameter that obtains the Access Key ID from the Vault AWS engine, and a regular parameter that retrieves the corresponding Secret Access Key, TeamCity will send separate requests for each parameter. The engine will issue two sets of values and as a result, your ID/Secret pair will mismatch.
+> 
+> Static engines (for example, KV2) do not imply such limitations, and you can safely mix regular and remote parameters within the same build.
+> 
+{type="note"}
