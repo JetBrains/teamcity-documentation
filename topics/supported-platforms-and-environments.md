@@ -582,7 +582,7 @@ A Perforce Helix Core client installed on the server (2017.1+ versions are suppo
 
 <tr><td>
 
-[Azure DevOps](azure-devops.md)
+[Azure DevOps](team-foundation-version-control.md)
 
 </td><td>2005, 2008, 2010, 2012, 2013, 2015, 2017</td><td></td></tr>
 
@@ -634,7 +634,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 
 <tr><td>
 
-[Azure DevOps](azure-devops.md)
+[Azure DevOps](team-foundation-version-control.md)
 
 </td><td>2005-2015, 2017</td><td></td></tr>
 
