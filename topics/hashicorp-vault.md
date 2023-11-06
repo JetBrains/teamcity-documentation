@@ -119,7 +119,7 @@ In addition to legacy [regular](#Regular+Parameters) parameters, TeamCity 2023.1
 
 2. Choose the **Environment variable** type and enter the parameter name. For example, `env.AWS_ACCESS_KEY_ID`.
 
-3. In the **Value** field, enter the `%\vault:PATH!/KEY%` string. For example, `%\vault:secret/data/teamcity!/access_key%`.
+3. In the **Value** field, enter the `%\vault:PATH!/KEY%` string. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in KV2 engine: `%\vault:secret/data/awscreds!/access_key%`.
 
 4. Click **Save** to close the dialog.
 
@@ -128,7 +128,7 @@ In addition to legacy [regular](#Regular+Parameters) parameters, TeamCity 2023.1
 ```Kotlin
 project {
     params {
-        param("env.AWS_ACCESS_KEY_ID", "%\vault:secret/data/teamcity!/access_key%")
+        param("env.AWS_ACCESS_KEY_ID", "%\vault:secret/data/awscreds!/access_key%")
     }
 }
 ```
@@ -161,7 +161,7 @@ To create this parameter, do the following:
     
         Select **Default Namespace (empty)** to choose a connection with an empty **Parameter Namespace** field.
     
-    * **Vault Query**: the path to the secret (for example, `secret/data/teamcity!/access_key`).
+    * **Vault Query**: the path to the secret in the `path!/key` format. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in KV2 engine: `secret/data/awscreds!/access_key`.
 
 4. Click **Save** to close the dialog.
 
@@ -172,7 +172,7 @@ project {
     params {
         hashiCorpVaultParameter {
             name = "env.AWS_ACCESS_KEY_ID"
-            query = "secret/data/teamcity!/access_key"
+            query = "secret/data/awscreds!/access_key"
             namespace = "DataLore"
         }
     }
