@@ -216,7 +216,7 @@
             <toc-element id="perforce.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="starteam.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="subversion.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="azure-devops.md" show-structure-for="chapter" show-structure-depth="4" accepts-web-file-names-ref="azure-devops-server"/>
+            <toc-element id="team-foundation-version-control.md" accepts-web-file-names="azure-devops.html"/>
             <toc-element id="configuring-vcs-post-commit-hooks-for-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
          </toc-element>
          <toc-element id="working-with-feature-branches.md" show-structure-for="chapter" show-structure-depth="4">
