@@ -152,7 +152,7 @@ Azure DevOps [stopped supporting](https://devblogs.microsoft.com/devops/azure-de
 
 Personal access tokens can be issued in the [corresponding section](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) of your Azure DevOps account. Set the _Code_ access scope to _All scopes_ in the repositories you are about to access from TeamCity.
 
-After the token is issued, copy and paste it to the related field of an [Azure DevOps PAT connection](configuring-connections.md#Azure+DevOps+PAT+Connection).
+After the token is issued, copy and paste it to the **Password** field of your VCS root settings. Leave the **Username** field empty — you should specify the username only if you are using older versions of Azure DevOps that still support authentication to TFVC repositories via regular username/password credentials.
 
 
 ### NTLM/Kerberos on Linux and macOS
