@@ -40,7 +40,7 @@ For connection, select one of the available authentication types:
   
 * **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can use tokens issued through this connection. The **Acquire new** button allows you to instantly re-issue the access token. This option is available only if the **VCS Root** setting points to the specific VCS root configured via a GitHub App connection.
 
-* **Use VCS root(s) credentials** — choose this option to parent VCS root(s) share access tokens with the Commit Status Publisher. Note that credentials sharing is not available if a VCS root uses anonymous authentication, fetches data via an SSH URL, or authenticates using a regular user password.
+* **Use VCS root(s) credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
 
 * **Password** — Provide the GitHub username and password. Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
@@ -57,7 +57,7 @@ The **Authentication Type** option allows you to choose which authentication met
 
     <img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
-* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
+* **Use VCS root credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
 
 > The GitLab credentials and the GitLab project must be set up as follows:
 >
@@ -77,7 +77,7 @@ To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](co
 
 For the **Authentication Type**, you have the following options:
 
-* **Use VCS root credentials** — TeamCity will try to extract username/password credentials from the VCS root settings if the VCS root uses HTTP(S) fetch URL. This option will not work if the VCS root uses an SSH fetch URL or employs anonymous authentication.
+* **Use VCS root credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
 
 * **Username/password** — Specify a username and password for connection to Bitbucket Cloud. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
 
@@ -123,6 +123,8 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 <td>
 
 * **Username / Password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
+
+* **Use VCS root(s) credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
 
 * **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.

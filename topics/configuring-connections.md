@@ -185,7 +185,7 @@ To manually create a new GitHub App and configure a TeamCity connection that use
 
 <li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
-<li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, cient secret) and paste them to the TeamCity dialog.</li>
+<li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, client secret) and paste them to the TeamCity dialog.</li>
 
 <li>If you have a <a href="https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28">GitHub App webhook</a> configured, set its secret and copy the same value to the <b>Webhook secret</b> field. GitHub can use this webhook to notify the TeamCity server it should scan a repository for changes when they occur, instead of letting the server to constantly poll GitHub for changes. See also: <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">Configuring VCS Post-Commit Hooks</a>.</li>
 
