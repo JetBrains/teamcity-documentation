@@ -36,6 +36,13 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 * The **Add Module** dialog has a new **Allow any &lt;IdentityProvider> user to log in** checkbox. If you want to configure a module that does not restrict users to a particular domain, organization, workspace, or group, you must check this box instead of leaving the **Restrict authentication** field empty.
 * If an existing authentication module in version 2023.05.04 is configured with an empty **Restrict authentication** field, after migrating to version 2023.11, TeamCity displays the warning notification `All users should be allowed to login, or at least one <IdentityProvider> organization must be specified.` on the **Administration | Authentication** page.
 
+### Known Issues
+{id="known-issues-2023-11"}
+
+* At TeamCity, we are fully dedicated to bolstering the comprehensive security of our platform, and we consistently enhance our product to realize this commitment. Due to one of these security-related updates, TeamCity no longer serves build artifacts from its main domain if you set up the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
+    
+    As a side effect, if TeamCity is hosted behind a [proxy server](configuring-proxy-server.md) that does not provide the `X-Forwarded-Host` header, attempts to access build artifacts may cause infinite redirect loops. If you experience issues with the `ERR_TOO_MANY_REDIRECTS` error, make sure your proxy server provides valid `X-Forwarded-Host` headers. You can also manually rollback this change by setting the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
+
 
 ## Changes from 2023.05.3 to 2023.05.4
 
@@ -64,6 +71,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-05-2-re
 Starting with the next TeamCity version, the [](duplicates-finder-resharper.md) runner will be unable to operate since it relies on a tool that is no longer shipped with ReSharper Command Line Tools. See the corresponding [server health report](server-health.md#Duplicates+Finder+Runner) for more information.
 
 ### Known Issues
+{id="known-issues-2023-5-2"}
 
 * Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". See this YouTrack issue for more information: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
 
