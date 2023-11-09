@@ -102,7 +102,7 @@ project {
 ```
 
 
-## How to Obtain Vault Secrets in TeamCity
+## Obtain Vault Secrets in TeamCity
 
 To start using a secret value from HCP Vault in your builds, create a [parameter](configuring-build-parameters.md) that serve two goals:
 
