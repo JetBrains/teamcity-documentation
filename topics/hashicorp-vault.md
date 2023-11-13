@@ -83,7 +83,7 @@ When a build that utilizes this parameter starts, TeamCity server uses the Vault
    
     </tabs>
 
-5. Tick **Fail in case of error** if you want builds to fail with the "Error while fetching data from HashiCorp Vault" message if the agent is unable to obtain Vault secrets and write them to [TeamCity parameters](#How+to+Obtain+Vault+Secrets+in+TeamCity). Note that builds will fail even if these parameters are never used. If this setting is disabled, builds will continue running with empty strings as secret parameter values.
+5. Tick **Fail in case of error** if you want builds to fail with the "Error while fetching data from HashiCorp Vault" message if the agent is unable to obtain Vault secrets and write them to [TeamCity parameters](#Create+and+Set+Up+a+Parameter). Note that builds will fail even if these parameters are never used. If this setting is disabled, builds will continue running with empty strings as secret parameter values.
 
 **Kotlin DSL:**
 
@@ -107,6 +107,7 @@ project {
 ```
 
 
+
 ## Create and Set Up a Parameter
 
 To start using a secret value from HCP Vault in your builds, create a [parameter](configuring-build-parameters.md) that serves two purposes:
@@ -125,16 +126,16 @@ To create such parameter, do the following:
 2. Choose the **Environment variable** type and enter the parameter name. For example, `env.AWS_ACCESS_KEY_ID`.
 
 3. Click **Edit...** next to the "Spec" label and set up the following values:
-    
-    * **Type**: Remote
-    * **Remote Connection Type**: HashiCorp Vault Parameter
-    * **Parameter Namespace**: choose the same value as a [Vault connection](#Set+Up+a+Vault+Connection) you want to retrieve this secret has in its own **Parameter Namespace** setting.
-    
-        <img src="dk-param-namespace.png" width="706" alt="Parameter Namespace"/>
-    
-        Select **Default Namespace (empty)** to choose a connection with an empty **Parameter Namespace** field.
-    
-    * **Vault Query**: the path to the secret in the `path!/key` format. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in KV2 engine: `secret/data/awscreds!/access_key`.
+
+   * **Type**: Remote
+   * **Remote Connection Type**: HashiCorp Vault Parameter
+   * **Parameter Namespace**: choose the same value as a [Vault connection](#Set+Up+a+Vault+Connection) you want to retrieve this secret has in its own **Parameter Namespace** setting.
+
+       <img src="dk-param-namespace.png" width="706" alt="Parameter Namespace"/>
+
+     Select **Default Namespace (empty)** to choose a connection with an empty **Parameter Namespace** field.
+
+   * **Vault Query**: the path to the secret in the `path!/key` format. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in KV2 engine: `secret/data/awscreds!/access_key`.
 
 4. Click **Save** to close the dialog.
 
