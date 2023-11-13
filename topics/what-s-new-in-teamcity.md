@@ -321,6 +321,19 @@ You can now set a specific date and time when a build should run. To do this, in
 Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
+## HashiCorp Vault Integration
+{product="tc"}
+
+You can now create TeamCity parameters of the unique "Remote" type. This parameter type is designed to retrieve secrets from [HashiCorp Vault](https://www.vaultproject.io) instances. When compared to the legacy approach that implies you create regular parameters and store Vault paths as parameter values, the new type features greater flexibility and offers a more straightforward user interface.
+
+In addition, Vault Enterprise customers that utilize [namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces#) can specify them in TeamCity Vault connections.
+
+Learn more: [](hashicorp-vault.md).
+
+> The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
+> 
+{type="note"}
+
 ## Sakura UI and UX Enhancements
 {product="tc"}
 

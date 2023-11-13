@@ -1,16 +1,20 @@
-[//]: # (title: HashiCorp Vault Intergration)
+[//]: # (title: HashiCorp Vault Integration)
 
-[HashiCorp Vault](https://www.vaultproject.io) is a secure storage for your tokens, passwords, certificates and encryption keys. Instead of storing sensitive information inside TeamCity parameters and tokens, you can store it in Vault and set up TeamCity so that it can securely access this data from Vault.
+[HashiCorp Vault](https://www.vaultproject.io) is a secure storage for your tokens, passwords, certificates and encryption keys. Instead of storing sensitive information inside TeamCity parameters and tokens, you can store it in Vault and set up TeamCity so that it can securely access this data from key-value (both KV and KV2), AWS, Google Cloud, and other Vault engines.
 
-You can set up a TeamCity-Vault integration with various engine types: key-value (both KV and KV2), AWS, Google Cloud, and others.
+To set up a TeamCity-Vault integration, download our [Vault plugin](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) and install it as described in the [](installing-additional-plugins.md) article.
 
 ## Common Information
 
-To set up an integration with HashiCorp Vault, you need to set up the [corresponding connection](configuring-connections.md) in the required project (or &lt;Root project&gt;, if you want any TeamCity project to use this connection).
+To set up an integration with HashiCorp Vault, you need the following:
 
-To obtain and use a sensitive data stored in Vault, create a [parameter](configuring-build-parameters.md) whose value is a path to the Vault secret. Then you can reference this parameter in your build steps (for example, in a [](command-line.md) runner that executes the `terraform apply -var password=%\myVaultParam%` line in its script).
+* The [HashiCorp Vault connection](configuring-connections.md) in the required project (or &lt;Root project&gt;, if you want any TeamCity project to use this connection).
 
-When a build that utilizes this parameter starts, a TeamCity server uses the Vault connection set up earlier to request a one-time [response wrapping token](https://developer.hashicorp.com/vault/docs/concepts/response-wrapping), which it then passes to a TeamCity agent that runs this build. The build agent uses this token to request Vault secrets, and never shares obtained credentials back to the TeamCity server. When the build finishes, the agent's token is revoked.
+* The [parameter](configuring-build-parameters.md) that will store a Vault path to a required secret.
+
+* References to this parameter (`%\parameter_name%`) in your build steps (for example, in a [](command-line.md) runner that executes the `terraform apply -var password=%\myVaultParam%` line).
+
+When a build that utilizes this parameter starts, TeamCity server uses the Vault connection to request a one-time [response wrapping token](https://developer.hashicorp.com/vault/docs/concepts/response-wrapping), which it then passes to a TeamCity agent that runs this build. The build agent uses this token to request Vault secrets, and never shares obtained credentials back to the TeamCity server. When the build finishes, the agent's token is revoked.
 
 ## Set Up a Vault Connection
 
@@ -19,7 +23,7 @@ When a build that utilizes this parameter starts, a TeamCity server uses the Vau
 3. Specify the common connection settings: the connection name, Vault and parameter namespaces, and Vault URL.
 
    * [Vault namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) allow you to create "vaults within a vault" — isolated tenants inside a single Vault Enterprise instance. If Vault secrets you need to access are stored in this isolated environment, specify its namespace in the **Vault namespace** connection field (for example, `TeamABC/secrets/`). Otherwise, leave this setting empty.
-   * **Parameter namespace** — a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and intend to create [remote parameters](#Remote+Parameters). Otherwise, leave this field blank.
+   * **Parameter namespace** — a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and specify which of these connections a specific parameter should use. Otherwise, leave this field blank.
    * **Vault URL** is the address of your Vault instance. Local Vault installations (the default URL is `http://localhost:8200`) are also supported.
 
 4. Choose the desired authentication method. TeamCity can authenticate to HCP Vault using a Vault's AppRole, via an AWS IAM role, or using a directory access protocol (LDAP).
@@ -87,10 +91,11 @@ When a build that utilizes this parameter starts, a TeamCity server uses the Vau
 project {
 
     features {
-        hashiCorpVaultParameter {
+        hashiCorpVaultConnection {
             id = "PROJECT_EXT_34"
             name = "HashiCorp Vault"
             url = "http://127.0.0.1:8200/"
+            vaultNamespace = "enterprise/vault/namespace"
             authMethod = appRole {
                 roleId = "..."
                 secretId = "..."
@@ -102,48 +107,14 @@ project {
 ```
 
 
-## Obtain Vault Secrets in TeamCity
+## Create and Set Up a Parameter
 
-To start using a secret value from HCP Vault in your builds, create a [parameter](configuring-build-parameters.md) that serve two goals:
+To start using a secret value from HCP Vault in your builds, create a [parameter](configuring-build-parameters.md) that serves two purposes:
 
-* Store a path to the Vault secret whose value needs to be obtained
-* Store the secret value after it was obtained by a build agent
+* Stores a path to the Vault secret whose value needs to be obtained
+* Stores the secret value after it was obtained by a build agent
 
-In addition to legacy [regular](#Regular+Parameters) parameters, TeamCity 2023.11 and newer supports [remote parameters](#Remote+Parameters).
-
-### Regular Parameters
-
-1. Go to **Administration | &lt;Project or Build Configuration&gt; | Parameters** and click **Add new parameter**.
-    
-    > Note that you can set up parameters only for projects that own a valid [Vault connection](#Set+Up+a+Vault+Connection) (or inherit it from a parent project).
-    > 
-    {type="note"}
-
-2. Choose the **Environment variable** type and enter the parameter name. For example, `env.AWS_ACCESS_KEY_ID`.
-
-3. In the **Value** field, enter the `%\vault:PATH!/KEY%` string. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in KV2 engine: `%\vault:secret/data/awscreds!/access_key%`.
-
-4. Click **Save** to close the dialog.
-
-**Kotlin DSL:**
-
-```Kotlin
-project {
-    params {
-        param("env.AWS_ACCESS_KEY_ID", "%\vault:secret/data/awscreds!/access_key%")
-    }
-}
-```
-
-### Remote Parameters
-
-Compared to regular parameters, remote parameters showcase the following advantages:
-
-* Vault paths are stored in the [parameter spec](typed-parameters.md#Adding+Parameter+Specification), which leaves the **Value** field free for the default/initial parameter value.
-* Secret paths use more straightforward format without the `vault:` prefix.
-* You can specify which [Vault connection](#Set+Up+a+Vault+Connection) should be used to retrieve this secret.
-
-To create this parameter, do the following:
+To create such parameter, do the following:
 
 1. Go to **Administration | &lt;Project or Build Configuration&gt; | Parameters** and click **Add new parameter**.
 
@@ -181,10 +152,59 @@ project {
 }
 ```
 
-> Vault engines that issue dynamic secrets (for example, the AWS engine) generate new credentials each time a client (TeamCity) sends a new request. For that reason, avoid mixing regular and remote parameters that access the same dynamic secrets engine within the same build.
-> 
-> For example, if you have a remote parameter that obtains the Access Key ID from the Vault AWS engine, and a regular parameter that retrieves the corresponding Secret Access Key, TeamCity will send separate requests for each parameter. The engine will issue two sets of values and as a result, your ID/Secret pair will mismatch.
-> 
-> Static engines (for example, KV2) do not imply such limitations, and you can safely mix regular and remote parameters within the same build.
-> 
-{type="note"}
+### Update Legacy Parameters
+
+If you already used the TeamCity Vault plugin before the 2023.11 version, you might have legacy parameters that have no specs and store paths to Vault secrets directly in their parameter values (in the `%\vault:PATH!/KEY%` format).
+
+Compared to these legacy parameters, new "remote parameters" showcase the following advantages:
+
+* Vault paths are stored in the [parameter spec](typed-parameters.md#Adding+Parameter+Specification), which leaves the **Value** field free for the default/initial parameter value.
+* Secret paths (queries) use more straightforward format without the `vault:` prefix.
+
+
+In addition, Vault engines that issue dynamic secrets (for example, the AWS engine) generate new credentials each time a client (TeamCity) sends a new request. For that reason you should avoid mixing legacy and remote parameters that access the same dynamic secrets engine within the same build.
+
+For example, if you have a remote parameter that obtains the Access Key ID from the Vault AWS engine, and a legacy parameter that retrieves the corresponding Secret Access Key, TeamCity will send separate requests for each parameter. The engine will issue two sets of values and as a result, your ID/Secret pair will mismatch.
+
+For these reason, we recommend that you update your existing legacy parameters to their remote counterparts.
+
+#### Kotlin DSL
+
+You can update your existing Vault parameters to a newer type directly in Kotlin DSL. The legacy Vault parameters are declared like the following:
+
+```Kotlin
+project {
+    params {
+        param("env.AWS_ACCESS_KEY_ID", "%\vault:secret/data/awscreds!/access_key%")
+    }
+}
+```
+
+To update these parameters, replace them with the following blocks:
+
+```Kotlin
+project {
+    params {
+        hashiCorpVaultParameter {
+            name = "env.AWS_ACCESS_KEY_ID"
+            query = "secret/data/awscreds!/access_key"
+        }
+    }
+}
+```
+
+Note that unlike the original parameter value, the `query` field of a new parameter has neither the `vault:` prefix nor the percent characters.
+
+If your legacy parameter had the `%\vault:foobar:/path!/key%` format, the "foobar" part identifies which Vault connection this parameter should use to retrieve the secret. Move this value to the `namespace` field of a remote parameter:
+
+```Kotlin
+project {
+   params {
+      hashiCorpVaultParameter {
+         name = "parameter name"
+         query = "path!/key"
+         namespace = "foobar"
+      }
+   }
+}
+```
