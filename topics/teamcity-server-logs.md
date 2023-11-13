@@ -241,7 +241,7 @@ Contains [](commit-status-publisher.md)-related log. Apply the `debug-commit-sta
 
 <td>
 
-(off by default) [TFS integration](azure-devops.md) log
+(off by default) [TFS integration](team-foundation-version-control.md) log
 
 </td></tr><tr>
 

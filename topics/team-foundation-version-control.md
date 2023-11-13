@@ -1,11 +1,13 @@
-[//]: # (title: Azure DevOps)
-[//]: # (auxiliary-id: Azure DevOps;Team Foundation Server)
+[//]: # (title: Team Foundation Version Control (Azure DevOps))
+[//]: # (auxiliary-id: Team Foundation Version Control (Azure DevOps);Team Foundation Server;Azure DevOps;Team Foundation Server)
 
-TeamCity can connect to repositories in a version control system of Microsoft Azure DevOps Server (formerly, Team Foundation Server), or Azure DevOps Services.
+Project hosted on Azure DevOps can use either of the following version control systems:
 
-This article contains descriptions of the fields and options available when setting up a _Team Foundation Server_ [VCS root](vcs-root.md) type that is responsible for connecting Azure DevOps projects. Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+* **Git** — an open-source distributed version control system originally authored by Linus Torvalds. To connect TeamCity to Git repositories on Azure DevOps, set up [Azure DevOps OAuth connections](configuring-connections.md#azure-devops-connection). See this article for more information about features common to all [VCS roots](vcs-root.md) that target Git repositories: [Git](git.md).
 
-__This type of root allows connecting to TFVC repositories only. When connecting to an Azure DevOps Git repository, select the [Git](git.md) type__.
+* **Team Foundation Version Control (TFVC)** — a version control system exclusive to Azure DevOps, formerly known as Team Foundation Server (TFS) and Visual Studio Team System. TeamCity communications with TFVC repositories are carried out by [Azure DevOps PAT connections](configuring-connections.md#Azure+DevOps+PAT+Connection).
+
+This article focuses on TFVC repositories only.
 
 ## Cross-Platform Azure DevOps Integration
 
@@ -146,23 +148,12 @@ To differentiate local mappings, it is recommended to use checkout rules in the 
 
 ## Authentication in Azure DevOps
 
-The following authentication options are available in Azure DevOps.
+Azure DevOps [stopped supporting](https://devblogs.microsoft.com/devops/azure-devops-will-no-longer-support-alternate-credentials-authentication/) alternate credentials since March 2, 2020. Currently, only authentication via personal access tokens is available.
 
-### Personal Access Tokens
+Personal access tokens can be issued in the [corresponding section](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) of your Azure DevOps account. Set the _Code_ access scope to _All scopes_ in the repositories you are about to access from TeamCity.
 
-When connecting to a TFVC repository, leave the _Username_ field in the VCS root settings empty and specify your access token as _Password_.
+After the token is issued, copy and paste it to the **Password** field of your VCS root settings. Leave the **Username** field empty — you should specify the username only if you are using older versions of Azure DevOps that still support authentication to TFVC repositories via regular username/password credentials.
 
-You can create a [personal access token (PAT)](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account.
-
-Set the _Code_ access scope to _All scopes_ in the repositories you are about to access from TeamCity.
-
-### Refreshable Access Tokens
-
-This option is available if the VCS root was configured using an [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps). In this case TeamCity uses an OAuth application to issue short-lived tokens instead of passwords or PATs. See this help article for more information: [](git.md#Authentication+Settings).
-
-### Alternate Authentication Credentials
-
-Azure DevOps [stops supporting](https://devblogs.microsoft.com/devops/azure-devops-will-no-longer-support-alternate-credentials-authentication/) alternate credentials since March 2, 2020. To be able to authenticate in Azure DevOps, please use other methods instead (such as personal access tokens).
 
 ### NTLM/Kerberos on Linux and macOS
 
