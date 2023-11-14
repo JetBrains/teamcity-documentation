@@ -71,7 +71,7 @@ If no trigger rules are specified, a build is triggered upon any change detected
 
 >Watch our **video guide** on the [difference between the checkout and trigger rules](https://www.youtube.com/watch?v=nhYOo7Rk4DM).
 
-To limit the changes that trigger the build, use the VCS trigger rules. You can add these rules manually in the text area (one per line), or use the __Add new rule__ option to generate them.
+To limit the changes that trigger the build, use the VCS trigger rules. You can add these rules manually in the text area (one per line), or use the __Add new rule__ button to generate them (if necessary, scroll down to reveal the button).
 
 <img src="addRule.png" width="450" alt="Adding trigger rule"/>
 
