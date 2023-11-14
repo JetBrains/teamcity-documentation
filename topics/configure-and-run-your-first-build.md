@@ -18,8 +18,6 @@ You can watch a quick video guide or read the full tutorial below.
 
 ## Create your first project
 
-Every TeamCity installation has the default __Root__ project that will contain all the other projects you create. To add your first project, click __Administration__ in the upper right corner of the TeamCity UI and then click __Create project__.
-
 There are several ways to create a project in TeamCity: automatically from a repository URL, from a connection to a specific VCS, or manually. In this tutorial, we will focus on the default and easiest way – _from a repository URL_. You will only need to provide a path to your repository — TeamCity will scan it and suggest some settings and potential build steps.
 
 >__Sample Repository__  
@@ -28,18 +26,21 @@ There are several ways to create a project in TeamCity: automatically from a rep
 >
 {type="note"}
 
-1. On the __Create Project__ page, click __From a repository URL__ and paste the URL of your project's source repo as _Repository URL_. It can be a Git, Subversion, Perforce, Azure, or Mercurial repository. All supported URL formats are listed [here](guess-settings-from-repository-url.md#VCS+URL+Formats). To use our sample repo, enter:
+Every TeamCity installation has the default __Root__ project that will contain all the other projects you create. The first project you create will be added as a child of the __Root__ project. To add your first project:
+
+1. Click __Administration__ in the upper right corner of the TeamCity UI and then click __Create project__.
+2. On the __Create Project__ page, click __From a repository URL__ and paste the URL of your project's source repo as _Repository URL_. It can be a Git, Subversion, Perforce, Azure, or Mercurial repository. All supported URL formats are listed [here](guess-settings-from-repository-url.md#VCS+URL+Formats). To use our sample repo, enter:
    ```Shell
    https://github.com/mkjetbrains/SimpleMavenSample
    ```
    If access to your repository is restricted, enter the credentials as well.
    <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line"/>
-2. Click __Proceed__ and follow the wizard.   
+3. Click __Proceed__ and follow the wizard.   
    TeamCity will identify the type of your repository, test the connection, and autoconfigure the repository settings, as well as suggest the project and build configuration names.
    <img src="CreateProject2.png" alt="" width="706" border-effect="line"/>
-3. Click __Proceed__.   
+4. Click __Proceed__.   
    TeamCity will scan your VCS repository and autodetect the [build steps](configuring-build-steps.md).
-4. Check the boxes of the suitable steps, and they will be added to the first build configuration of this project.   
+5. Check the boxes of the suitable steps, and they will be added to the first build configuration of this project.   
    <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line"/>
 
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
