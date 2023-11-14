@@ -40,13 +40,16 @@ This section illustrates how to set up the Build Cache feature that allows a bui
 
 1. <chunk id="settings-add-feature"><a href="adding-build-features.md">Add the build feature</a> to a build configuration and specify a unique <b>Cache Name</b>.</chunk>
 2. Since we want the feature to both publish and use cache, leave both **Publish** and **Use Cache** settings enabled.
-3. <chunk id="settings-specify-paths">Specify paths to files and folders that should be cached. Each path should start from a new line. Wildcards are not supported. Relative paths are resolved against checkout directories.
+3. <chunk id="settings-specify-paths">Specify paths to files and folders that should be cached. Each path should start from a new line. Wildcards are not supported. Relative paths are resolved against checkout directories.<br/>
 
-   For example:
+   For example, to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.
+   
+   <tip>
+   To cache local Maven artifacts, set the <b>Artifact repository</b> setting of your <a href="maven.md">Maven</a> runner to <b>Maven default</b>. If you choose the <b>Per agent</b> mode, add the <code>-Dmaven.repo.local</code> parameter to additional runner commands to specify the directory for these artifacts.
 
-   * to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.
-   * to upload local Maven artifacts (if the <a href="maven.md">Maven</a> runner's <b>Artifact repository</b> setting equals its default <b>Per agent</b> value), type <code>%\teamcity.agent.home.dir%/system/jetbrains.maven.runner/maven.repo.local</code>.
-   </chunk>
+   <!--teamcity.agent.home.dir/system/jetbrains.maven.runner/maven.repo.local-->
+   
+   </tip></chunk>
 
 4. <chunk id="settings-publish-if-changed">By default, new builds do not publish caches if they are identical to those published by previous builds. If you wish each build to upload a cache, uncheck the <b>Publish only if changed</b> setting.</chunk>
    
@@ -94,11 +97,6 @@ You can set up as many publisher and consumer features as required as long as yo
 
 4. Run a new build and check the build log to ensure the required cache file is downloaded.
 5. Repeat the steps above for every build configuration that needs this published cache.
-
-
-## Tell Us What You Think
-
-The **Build Cache** feature is still under development, and we'd love to hear your early thoughts and suggestions. See this document for the information on how to send feedback to the TeamCity team: [Feedback](feedback.md).
 
 
 ## See Also

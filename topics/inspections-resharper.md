@@ -451,7 +451,7 @@ ReSharper Version
 
 <td>
 
-2023.2.1
+2023.1.1
 
 </td></tr>
 
