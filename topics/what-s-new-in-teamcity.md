@@ -3,24 +3,23 @@
 
 <!-- #REGION TC -->
 
-<!--
+
 
 ## Matrix Build
 {product="tc"}
 
-In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to assign a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
+In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to specify a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
 
-!!!IMAGE!!!
+<img src="dk-matrixbuilds-wn.png" width="706" alt="Matrix Build setup"/>
 
-Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the Overview page, that allows you to easily identify which parameter/value combinations fail.
+Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the **Overview** page that allows you to identify at a glance which parameter/value combinations are failing.
 
-!!!IMAGE!!!
 
-The Matrix Build feature offers multiple pre-configured options that allow you to run a build configuration in environments that differ by the installed operating systems, default Java versions, and architectures.
+The Matrix Build feature offers multiple pre-configured options that allow you to quickly set up your build configuration so that it runs in environments that differ by the installed operating systems, default Java versions, and architectures.
 
-Learn more: !!!LINK!!!
 
--->
+
+
 
 ## VCS Integrations
 {product="tc"}
@@ -410,24 +409,20 @@ Learn more: [](hashicorp-vault.md).
 
 <!-- #REGION TCC -->
 
-<!--
+
 
 ## Matrix Build
-{product="tc"}
+{product="tcc"}
 
-In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to assign a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
+In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to specify a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
 
-!!!IMAGE!!!
+<img src="dk-matrixbuilds-wn.png" width="706" alt="Matrix Build setup"/>
 
-Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the Overview page, that allows you to easily identify which parameter/value combinations fail.
+Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the **Overview** page that allows you to identify at a glance which parameter/value combinations are failing.
 
-!!!IMAGE!!!
 
-The Matrix Build feature offers multiple pre-configured options that allow you to run a build configuration in environments that differ by the installed operating systems, default Java versions, and architectures.
+The Matrix Build feature offers multiple pre-configured options that allow you to quickly set up your build configuration so that it runs in environments that differ by the installed operating systems, default Java versions, and architectures.
 
-Learn more: !!!LINK!!!
-
--->
 
 ## Agents with Bundled JDKs
 {product="tcc"}

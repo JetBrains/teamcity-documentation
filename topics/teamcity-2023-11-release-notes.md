@@ -1,12 +1,16 @@
 [//]: # (title: TeamCity 2023.11 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2023.11 Release Notes)
 
-__Build: ????__
+Version 2023.11 is currently available as Early Access Preview (EAP). The actual release notes will be published along with the official 2023.11 release.
+
+<!--
+
+**Build: ????**
 
 __??? November 2023__
 
 
-<!--project: TeamCity Fix versions: {2023.05.4 (129421)} #Fixed visible to: {All Users} -{Trunk issue}-->
+project: TeamCity Fix versions: {2023.05.4 (129421)} #Fixed visible to: {All Users} -{Trunk issue}
 
 
 ### Feature
@@ -25,7 +29,7 @@ __??? November 2023__
 
 
 
-<!--project: TeamCity Fix versions: {2023.05.3 (129390)} #Fixed #{Security Problem}  -{Trunk issue}-->
+project: TeamCity Fix versions: {2023.05.3 (129390)} #Fixed #{Security Problem}  -{Trunk issue}
 
 ### Security
 
@@ -35,3 +39,4 @@ X security problems have been fixed.
 >
 {type="note"}
 
+-->
