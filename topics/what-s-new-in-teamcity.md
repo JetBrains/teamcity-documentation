@@ -345,7 +345,7 @@ You can now create TeamCity parameters of the unique "Remote" type. This paramet
 
 In addition, Vault Enterprise customers that utilize [namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces#) can specify them in TeamCity Vault connections.
 
-Learn more: [](hashicorp-vault.md).
+<!--Learn more: [](hashicorp-vault.md).-->
 
 > The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
 > 
