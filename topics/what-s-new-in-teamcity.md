@@ -19,6 +19,51 @@ The Matrix Build feature offers multiple pre-configured options that allow you t
 
 
 
+## Amazon Web Services Integrations
+{product="tc"}
+
+### EC2 Plugin Update
+{product="tc"}
+
+We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed look, the updated plugin features the following enhancements:
+
+* You can now create images that utilize Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
+* You can now specify multiple instance types for a cloud image. This enhancement makes your cloud agent setups more versatile and reliable, and increases your chances to book a spot instance.
+* The **Subnets** field now accepts multiple values, which allows you to specify different sets of incoming and outgoing traffic rules.
+* The new **Image priority** setting allows you to range cloud images. When TeamCity needs to spin up a new cloud agent, it will prioritize an image with the highest priority number (given that this image has not yet reached its active agents limit).
+* TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+
+Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
+
+
+### S3 Plugin Update
+{product="tc"}
+
+Version 2023.11 ships an updated S3 plugin that features the following enhancements:
+
+<img src="dk-s3-storage-overview.png" width="706" alt="Updated S3 Plugin"/>
+
+* Intuitive and streamlined UI designed with both Amazon S3 buckets and S3-compatible storages (such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others) in mind.
+* Support for buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/).
+* Hassle-free setup with the reduced number of settings. All connection-related properties are now retrieved from a selected [AWS Connection](configuring-connections.md#AmazonWebServices). The AWS region is automatically obtained from the selected bucket.
+* The ability to disable integrity verification that TeamCity carries out by default for all custom S3 storages.
+
+
+Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrade-notes.md#2023-11-s3-update)
+
+
+### AWS Connection Improvements
+{product="tc"}
+
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
+
+<img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
+
+In addition, you can now refer to the new section of our "Configuring Connections" documentation article to learn how to configure secure AWS connections that follow Amazon guidelines and do not require permanent user credentials: [](configuring-connections.md#Recommended+Setup).
+{product="tc"}
+
+Learn more: [](configuring-connections.md#AmazonWebServices).
+
 
 
 ## VCS Integrations
@@ -135,54 +180,28 @@ Learn more: [](integrating-with-helix-swarm.md).
 
 
 
-
-
-## Amazon Web Services Integrations
+## .NET
 {product="tc"}
 
-### EC2 Plugin Update
+
+* Build agents now report the `DotNetWorkloads_<version>` parameter that returns all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine. Learn more: [](net.md#Parameters+Reported+by+Agent).
+
+* The [](net.md) runner now provides the **Excluded test assemblies** setting for the `vstest` command. This field allows you to specify paths to files the command should ignore.
+
+    <img src="dk-dotnet-vstestExclide.png" width="706" alt="Excluded assemblies for vstest"/>
+
+* If your builds run a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
+
+
+
+## Schedule Custom Builds
 {product="tc"}
 
-We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed look, the updated plugin features the following enhancements:
+You can now set a specific date and time when a build should run. To do this, invoke the [Run Custom Build](running-custom-build.md) dialog and use settings from the new **Date** section.
 
-* You can now create images that utilize Mac AMIs. Mac VMs can be run only on dedicated Mac Mini hosts that should be booked for at least one day. Using the updated TeamCity EC2 plugin UI, you can now specify tags to locate a suitable host.
-* You can now specify multiple instance types for a cloud image. This enhancement makes your cloud agent setups more versatile and reliable, and increases your chances to book a spot instance.
-* The **Subnets** field now accepts multiple values, which allows you to specify different sets of incoming and outgoing traffic rules.
-* The new **Image priority** setting allows you to range cloud images. When TeamCity needs to spin up a new cloud agent, it will prioritize an image with the highest priority number (given that this image has not yet reached its active agents limit).
-* TeamCity can now automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](setting-up-teamcity-for-amazon-ec2.md#Required+IAM+permissions).
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
-Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
-
-
-### S3 Plugin Update
-{product="tc"}
-
-Version 2023.11 ships an updated S3 plugin that features the following enhancements:
-
-<img src="dk-s3-storage-overview.png" width="706" alt="Updated S3 Plugin"/>
-
-* Intuitive and streamlined UI designed with both Amazon S3 buckets and S3-compatible storages (such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others) in mind.
-* Support for buckets with enabled [Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/).
-* Hassle-free setup with the reduced number of settings. All connection-related properties are now retrieved from a selected [AWS Connection](configuring-connections.md#AmazonWebServices). The AWS region is automatically obtained from the selected bucket.
-* The ability to disable integrity verification that TeamCity carries out by default for all custom S3 storages.
-
-
-Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrade-notes.md#2023-11-s3-update)
-
-
-### AWS Connection Improvements
-{product="tc"}
-
-New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
-
-<img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
-
-In addition, you can now refer to the new section of our "Configuring Connections" documentation article to learn how to configure secure AWS connections that follow Amazon guidelines and do not require permanent user credentials: [](configuring-connections.md#Recommended+Setup).
-{product="tc"}
-
-Learn more: [](configuring-connections.md#AmazonWebServices).
-
-
+Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
 
@@ -202,17 +221,14 @@ When a new option is added, TeamCity will start building your custom agent distr
 Learn more: [](install-teamcity-agent.md).
 
 
-## .NET
+
+## Build Cache
 {product="tc"}
 
+The **Build Cache** feature [released for TeamCity Cloud 2023.03](https://blog.jetbrains.com/teamcity/2023/03/teamcity-cloud-2023-03/#optimize-your-ci-cd-runtime-with-build-cache) is now available in TeamCity On-Premises. This feature allows you to cache files required by builds (for instance, downloaded npm packages) and reuse them in consecutive builds to speed up your building routines.
 
-* Build agents now report the `DotNetWorkloads_<version>` parameter that returns all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine. Learn more: [](net.md#Parameters+Reported+by+Agent).
+Learn more: [](build-cache.md).
 
-* The [](net.md) runner now provides the **Excluded test assemblies** setting for the `vstest` command. This field allows you to specify paths to files the command should ignore.
-
-    <img src="dk-dotnet-vstestExclide.png" width="706" alt="Excluded assemblies for vstest"/>
-
-* If your builds run a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
 
 
 ## Versioned Settings: Load Additional Settings From a VCS
@@ -227,6 +243,24 @@ When detecting these previously ignored settings, TeamCity dynamically creates r
 To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
 
 Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
+
+
+
+## Remote Parameters
+{product="tc"}
+
+You can now select the **Remote** parameter type when setting up a [parameter specification](typed-parameters.md#Adding+Parameter+Specification). Unlike regular parameters whose values are stored in TeamCity, remote parameters retrieve their values from an external source.
+
+Currently, remote parameters support only [HashiCorp Vault](https://www.vaultproject.io) as an external value storage. Using this type of parameters, build agents can obtain secrets managed by KV, KV2, AWS, Google Cloud, and other Vault engines.
+
+We are committed to expanding storage options in upcoming TeamCity releases and highly value your input. Your feedback matters; please share your suggestions on which remote sources you'd like us to prioritize for future support.
+
+<!--Learn more: [](hashicorp-vault.md).-->
+
+> The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
+>
+{type="note"}
+
 
 
 ## Access Parallel Builds' Artifacts from a Primary Build
@@ -248,6 +282,7 @@ Starting with this version, artifacts produced by batch builds are aggregated in
 Learn more: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
 
 
+
 ## Step Statuses and IDs
 {product="tc"}
 
@@ -264,6 +299,7 @@ You can use these values to perform custom actions depending on the statuses of 
 Learn more: [](configuring-build-steps.md#Step+Status+Parameters).
 
 
+
 ## Additional ReSharper Plugins for the Inspections Runner
 {product="tc"}
 
@@ -274,6 +310,7 @@ The [](inspections-resharper.md) runner now features the **R# CLT Plugins** fiel
 Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
 
 
+
 ## Service Messages
 {product="tc"}
 
@@ -282,6 +319,7 @@ Added the [new service message](service-messages.md#Writing+the+File+into+the+Bu
 <img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
 
 Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
+
 
 
 ## REST API
@@ -328,28 +366,6 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 
-## Schedule Custom Builds
-{product="tc"}
-
-You can now set a specific date and time when a build should run. To do this, invoke the [Run Custom Build](running-custom-build.md) dialog and use settings from the new **Date** section.
-
-<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
-
-Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
-
-
-## HashiCorp Vault Integration
-{product="tc"}
-
-You can now create TeamCity parameters of the unique "Remote" type. This parameter type is designed to retrieve secrets from [HashiCorp Vault](https://www.vaultproject.io) instances. When compared to the legacy approach that implies you create regular parameters and store Vault paths as parameter values, the new type features greater flexibility and offers a more straightforward user interface.
-
-In addition, Vault Enterprise customers that utilize [namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces#) can specify them in TeamCity Vault connections.
-
-<!--Learn more: [](hashicorp-vault.md).-->
-
-> The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
-> 
-{type="note"}
 
 ## Sakura UI and UX Enhancements
 {product="tc"}
@@ -424,6 +440,52 @@ Adding multiple parameters, each with its own set of values, forms a matrix. Tea
 The Matrix Build feature offers multiple pre-configured options that allow you to quickly set up your build configuration so that it runs in environments that differ by the installed operating systems, default Java versions, and architectures.
 
 
+
+## AWS Connection Improvements
+{product="tcc"}
+
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
+
+<img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
+
+Learn more: [](configuring-connections.md#AmazonWebServices).
+
+
+## VCS Integrations
+{product="tcc"}
+
+### Seamless GitHub App Registration
+{product="tcc"}
+
+
+In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
+
+Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Choose the **Automatic** creation mode in the **Add connection** dialog and TeamCity will do the rest.
+
+<img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
+
+Learn more: [Configuring Connections](configuring-connections.md#GitHub).
+
+### Reusing Perforce Sources on Cloud Agents
+{product="tcc"}
+
+You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
+
+Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
+
+
+
+## Schedule Custom Builds
+{product="tcc"}
+
+When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
+
+<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
+
+Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
+
+
+
 ## Agents with Bundled JDKs
 {product="tcc"}
 
@@ -441,47 +503,6 @@ Learn more: [](install-teamcity-agent.md).
 
 
 
-## Seamless GitHub App Registration
-{product="tcc"}
-
-
-In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
-
-Starting with version 2023.11, you will be able to create these connections much faster, without manually setting up and registering new apps in GitHub. Choose the **Automatic** creation mode in the **Add connection** dialog and TeamCity will do the rest.
-
-<img src="dk-GhAppManifestButton.png" width="706" alt="GitHub Manifest App Button"/>
-
-Learn more: [Configuring Connections](configuring-connections.md#GitHub).
-
-
-## AWS Connection Improvements
-{product="tcc"}
-
-New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
-
-<img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
-
-Learn more: [](configuring-connections.md#AmazonWebServices).
-
-
-
-## Schedule Custom Builds
-{product="tcc"}
-
-When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
-
-<img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
-
-Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
-
-## Reusing Perforce Sources on Cloud Agents
-{product="tcc"}
-
-You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
-
-Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
-
-
 ## Versioned Settings: Load Additional Settings From a VCS
 {product="tcc"}
 
@@ -496,15 +517,6 @@ To enable the updated behavior, tick the **Apply changes in snapshot dependencie
 Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
 
 
-## Additional ReSharper Plugins for the Inspections Runner
-{product="tcc"}
-
-The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
-
-<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
-
-Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
-
 
 ## Token-Based Authentication
 {product="tcc"}
@@ -516,6 +528,18 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 * For Bitbucket Cloud, you can specify permanent access tokens issued for a specific repository, project, or workspace.
 
 * For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) features can now utilize refreshable tokens obtained via configured OAuth connections.
+
+
+
+
+## Additional ReSharper Plugins for the Inspections Runner
+{product="tcc"}
+
+The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
+
+<img src="dk-inspections-plugins.png" width="706" alt="ReSharper plugins list"/>
+
+Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+Settings).
 
 
 
@@ -574,6 +598,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 * [EC2 Cloud Images](setting-up-teamcity-for-amazon-ec2.md) now feature the **Image priority** setting that allows you to specify which images should spin up new cloud agents first. Images with higher priority values are prioritized over images with lower priorities.
 * If your build runs a large amount of [parallel tests](parallel-tests.md) in each batch, TeamCity can automatically switch to an alternative test filtering mode that reduces potential performance issues. See this article for more information: [](parallel-tests.md#Alternative+Test+Filtering+for+.NET).
+* The [](build-cache.md) feature is no longer in experimental stage. The **Administration | Experimental features** page is hidden.
 
 
 
