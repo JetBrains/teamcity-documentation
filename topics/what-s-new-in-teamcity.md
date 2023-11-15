@@ -69,35 +69,6 @@ Learn more: [](configuring-connections.md#AmazonWebServices).
 ## VCS Integrations
 {product="tc"}
 
-
-### Azure DevOps
-{product="tc"}
-
-The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
-
-<img src="dk-azureOauth-token.png" width="706" alt="Azure OAuth in CSP"/>
-
-Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) | [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests).
-
-
-### Bitbucket Cloud
-{product="tc"}
-
-[Pull Requests](pull-requests.md#Bitbucket+Cloud+Pull+Requests) features that track Bitbucket Cloud repositories have two new Authentication Type options:
-
-* Refreshable access tokens issued via corresponding [OAuth connections](configuring-connections.md#Bitbucket+Cloud).
-
-* Permanent access tokens issued for a specific repository, project, or workspace.
-
-Learn more: [](pull-requests.md#Bitbucket+Cloud+Pull+Requests).
-
-### Bitbucket Server and Data Center
-{product="tc"}
-
-The [Pull Requests](pull-requests.md#Bitbucket+Server+Pull+Requests) feature can now utilize refreshable OAuth tokens to access repositories on Bitbucket Server / Data Center.
-
-Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests).
-
 ### GitHub
 {product="tc"}
 
@@ -117,13 +88,6 @@ Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 You can now issue refreshable access tokens for [GitHub App connections](configuring-connections.md#GitHub).
 
-
-### GitLab
-{prdocut="tc"}
-
-[Commit Status Publishers](commit-status-publisher.md#GitLab) and [Pull Requests](pull-requests.md#GitLab+Merge+Requests) features that target GitLab repositories can now utilize refreshable application tokens to pass the authentication.
-
-<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
 
 ### JetBrains Space
 {product="tc"}
@@ -159,6 +123,7 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 
 You can now issue refreshable access tokens for [JetBrains Space connections](configuring-connections.md#jetbrains-space-connection).
 
+
 ### Perforce
 {product="tc"}
 
@@ -177,6 +142,44 @@ In version 2023.11, we have overhauled the "Perforce Helix Swarm" publisher of t
 <img src="dk-swarm-personalbuild.png" width="706" alt="Personal build in TeamCity"/>
 
 Learn more: [](integrating-with-helix-swarm.md).
+
+
+### GitLab
+{prdocut="tc"}
+
+[Commit Status Publishers](commit-status-publisher.md#GitLab) and [Pull Requests](pull-requests.md#GitLab+Merge+Requests) features that target GitLab repositories can now utilize refreshable application tokens to pass the authentication.
+
+<img src="dk-csp-GitLabToken.png" width="708" alt="Acquire access token for GitLab"/>
+
+
+### Bitbucket Cloud
+{product="tc"}
+
+[Pull Requests](pull-requests.md#Bitbucket+Cloud+Pull+Requests) features that track Bitbucket Cloud repositories have two new Authentication Type options:
+
+* Refreshable access tokens issued via corresponding [OAuth connections](configuring-connections.md#Bitbucket+Cloud).
+
+* Permanent access tokens issued for a specific repository, project, or workspace.
+
+Learn more: [](pull-requests.md#Bitbucket+Cloud+Pull+Requests).
+
+
+### Bitbucket Server and Data Center
+{product="tc"}
+
+The [Pull Requests](pull-requests.md#Bitbucket+Server+Pull+Requests) feature can now utilize refreshable OAuth tokens to access repositories on Bitbucket Server / Data Center.
+
+Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests).
+
+
+### Azure DevOps
+{product="tc"}
+
+The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
+
+<img src="dk-azureOauth-token.png" width="706" alt="Azure OAuth in CSP"/>
+
+Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) | [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests).
 
 
 
@@ -204,6 +207,17 @@ You can now set a specific date and time when a build should run. To do this, in
 Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
+## Build Cache
+{product="tc"}
+
+The new **Build Cache** feature allows configurations to cache files required by builds (for instance, downloaded npm packages) and reuse them in consecutive builds. This technique assists build agents in offloading excessive operations and can significantly speed up your building routines.
+
+<img src="dk-buildCaches-singleConfDescription.png" width="706" alt="Build Cache feature"/>
+
+In addition to sharing caches with its own future builds, a configuration that caches files can pass them to other build configurations within the same project.
+
+Learn more: [](build-cache.md).
+
 
 ## Agents with Bundled JDKs
 {product="tc"}
@@ -222,15 +236,6 @@ Learn more: [](install-teamcity-agent.md).
 
 
 
-## Build Cache
-{product="tc"}
-
-The **Build Cache** feature [released for TeamCity Cloud 2023.03](https://blog.jetbrains.com/teamcity/2023/03/teamcity-cloud-2023-03/#optimize-your-ci-cd-runtime-with-build-cache) is now available in TeamCity On-Premises. This feature allows you to cache files required by builds (for instance, downloaded npm packages) and reuse them in consecutive builds to speed up your building routines.
-
-Learn more: [](build-cache.md).
-
-
-
 ## Versioned Settings: Load Additional Settings From a VCS
 {product="tc"}
 
@@ -245,7 +250,7 @@ To enable the updated behavior, tick the **Apply changes in snapshot dependencie
 Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
 
 
-
+<!--
 ## Remote Parameters
 {product="tc"}
 
@@ -255,12 +260,12 @@ Currently, remote parameters support only [HashiCorp Vault](https://www.vaultpro
 
 We are committed to expanding storage options in upcoming TeamCity releases and highly value your input. Your feedback matters; please share your suggestions on which remote sources you'd like us to prioritize for future support.
 
-<!--Learn more: [](hashicorp-vault.md).-->
+Learn more: [](hashicorp-vault.md).
 
 > The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
 >
 {type="note"}
-
+-->
 
 
 ## Access Parallel Builds' Artifacts from a Primary Build
