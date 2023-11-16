@@ -599,23 +599,64 @@ where:
 
 ### Reporting Build Status
 
-TeamCity allows changing the __build status text__ from the build script. Unlike [progress messages](#Reporting+Build+Progress), this change persists even after a build has finished.  
-You can also change the build status of a failing build to `SUCCESS`.
+Use the `buildStatus` to set the **build status text**.
 
->To change the build status to `FAILURE`, uses the [`buildProblem`](#Reporting+Build+Problems) service message.
-
-To set the status and/or change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity), use the `buildStatus` message with the following format:
+<img src="dk-serviceMessage-customBuildStatus.png" width="706" alt="Custom build status"/>
 
 ```Shell
-##teamcity[buildStatus status='<status_value>' text='{build.status.text} and some aftertext']
-
+##teamcity[buildStatus text='NuGet packages were successfully published.']
 ```
 
-where:
- * `status` (optional): use the `SUCCESS` value to change the build status to _Success_.
- * `text` (mandatory): set the new build status text.    
- Optionally, the text can use the `{build.status.text}` substitution pattern, which represents the status calculated by TeamCity automatically using passed test count, compilation messages, and so on.   
-The status set will be presented while the build is running and will also affect the final build results.
+Unlike [progress messages](#Reporting+Build+Progress) designed to reflect currently ongoing operations in the build status, a `buildStatus` message sets the final build status that persists after a build finishes.
+
+You can add separate steps with different [step execution conditions](build-step-execution-conditions.md) to differentiate "green" builds from failing ones, and set different custom statuses for each of them.
+
+```Kotlin
+steps {
+    // ...
+    script {
+        id = "set-custom-green-text"
+        scriptContent = """echo "##teamcity[buildStatus text='NuGet packages were successfully published.']""""
+    }
+    
+    script {
+    id = "set-custom-red-text"
+    executionMode = BuildStep.ExecutionMode.RUN_ONLY_ON_FAILURE
+    scriptContent = """echo "##teamcity[buildStatus text='Build failed! NuGet packages were not updated.']""""
+    }
+}
+```
+
+The default status text can be referenced via the `{build.status.text}` placeholder.
+
+```Shell
+##teamcity[buildStatus text='The default status of this build is: {build.status.text}']
+```
+
+#### The Status Parameter
+
+The optional `status` parameter of the `buildStatus` service message allows you to override the appearance of the build: paint failed builds as successful and (not recommended) successful builds as failed.
+
+* To change the build's status from failed to successful, add the `status='SUCCESS'` parameter.
+    
+    ```Shell
+    ##teamcity[buildStatus status='SUCCESS' text='{build.status.text}, the build is marked as successful']
+    ```
+    
+    <img src="dk-servicemessage-buildstatus-sc.png" width="706" alt="Successful status assigned manually"/>
+    
+* If you want a "green" build to appear as failed, you can send the following message:
+    
+    ```Shell
+    ##teamcity[buildStatus status='FAILURE' text='The build status was manually switched to {build.status.text}']
+    ```
+  
+    However, since that only changes the build status and does not provide any actionable insights to anyone investigating this "failed" build, we recommend sending the [`buildProblem`](#Reporting+Build+Problems) message instead. This message allows you to genuinely fail the build (and provide specific details related to this issue) rather than merely changing the final status. As a result, project maintainers will be able to use the variety of tools TeamCity offers for resolving issues: investigations, mutes, and so on.
+
+    ```Shell
+    ##teamcity[buildProblem description='The artifact size has decreased dramatically, please check all content is in place' identity='2281488']
+    ```
+
 
 ### Reporting Build Number
 
