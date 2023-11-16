@@ -654,7 +654,7 @@ The optional `status` parameter of the `buildStatus` service message allows you 
     However, since that only changes the build status and does not provide any actionable insights to anyone investigating this "failed" build, we recommend sending the [`buildProblem`](#Reporting+Build+Problems) message instead. This message allows you to genuinely fail the build (and provide specific details related to this issue) rather than merely changing the final status. As a result, project maintainers will be able to use the variety of tools TeamCity offers for resolving issues: investigations, mutes, and so on.
 
     ```Shell
-    ##teamcity[buildProblem description='The artifact size has decreased dramatically, please check all content is in place' identity='2281488']
+    ##teamcity[buildProblem description='The artifact size has decreased dramatically' identity='2281488']
     ```
 
 
