@@ -14,6 +14,7 @@ In TeamCity, you can leverage [build parameters](configuring-build-parameters.md
 
 Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the **Overview** page that allows you to identify at a glance which parameter/value combinations are failing.
 
+<img src="matrix-build-summary.png" width="706" alt="Matrix Build Summary screen"/>
 
 The Matrix Build feature offers multiple pre-configured options that allow you to quickly set up your build configuration so that it runs in environments that differ by the installed operating systems, default Java versions, and architectures.
 
@@ -441,6 +442,7 @@ In TeamCity, you can leverage [build parameters](configuring-build-parameters.md
 
 Adding multiple parameters, each with its own set of values, forms a matrix. TeamCity will run a build for each cell of this matrix, and report the results to the **Overview** page that allows you to identify at a glance which parameter/value combinations are failing.
 
+<img src="matrix-build-summary.png" width="706" alt="Matrix Build Summary screen"/>
 
 The Matrix Build feature offers multiple pre-configured options that allow you to quickly set up your build configuration so that it runs in environments that differ by the installed operating systems, default Java versions, and architectures.
 
