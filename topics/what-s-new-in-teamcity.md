@@ -397,7 +397,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
-* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if it is no longer available.
+* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if this instance is no longer available.
 
   <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
 
@@ -589,7 +589,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
   <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 
-* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if it is no longer available.
+* Cloud images' **Build History** tab now displays a search box that allows you to find all builds of a specific cloud agent, even if this instance is no longer available.
 
   <img src="dk-deletedAgentHistory.png" width="706" alt="History for deleted agent"/>
 
