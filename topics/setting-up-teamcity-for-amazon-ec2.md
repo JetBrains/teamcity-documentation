@@ -126,7 +126,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
 
 
 1. Click the **Add image** button.
-2. Specify the image name. All images in a cloud profile must have unique names.
+2. Specify the optional image name.
 
    <anchor name="Amazon+EC2+Spot+Fleet+Support"/>
    <anchor name="Amazon+EC2+Spot+Instances+Support"/>
@@ -220,7 +220,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    </tabs>
    
-4. Enter a positive integer number in the **Image priority** field. When TeamCity needs to spin up a new cloud agent, it chooses an image that has the highest priority value.
+4. Enter a integer number ranging from `-10000` to `10000` in the **Image priority** field (the default priority is `0`). When TeamCity needs to spin up a new cloud agent, it chooses an image that has the highest priority value.
    
    TeamCity uses priority values to range images from all existing profiles. For example, newly queued builds can run on cloud agents spawned from profiles A and B. The Profile A has three images with priorities 20, 40, and 60. The Profile B has 10, 30, and 50 priority images. TeamCity will spin up new agents in the following order:
    
