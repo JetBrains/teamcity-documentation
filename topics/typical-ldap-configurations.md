@@ -5,12 +5,12 @@ This page contains samples of the `ldap-config.properties` file for different co
 
 ## Basic LDAP Login
 
-The examples of minimal working configurations are given below.
+The examples of minimal working configurations are given below. We recommend using a TLS/SSL-encrypted LDAPS as a more secure option.
 
 ### Windows Active Directory
 
 ```Shell
-java.naming.provider.url=ldap://dc.example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://dc.example.com:636/DC=example,DC=com
 java.naming.security.principal=<username>
 java.naming.security.credentials=<password>
 teamcity.users.login.filter=(sAMAccountName=$capturedLogin$)
@@ -23,7 +23,7 @@ Note that `sAMAccountName` is limited to 20 symbols. You might want to use anoth
 ### Unix
 
 ```Shell
-java.naming.provider.url=ldap://dc.example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://dc.example.com:636/DC=example,DC=com
 java.naming.security.principal=<username>
 java.naming.security.credentials=<password>
 teamcity.users.login.filter=(uid=$capturedLogin$)
@@ -39,7 +39,7 @@ You can specify a backup LDAP server in the `java.naming.provider.url` property 
 
 ```Shell
 # The second URL is used when the first server is down.
-java.naming.provider.url=ldap://example.com:389/DC=example,DC=com ldap://failover.example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://example.com:636/DC=example,DC=com ldaps://failover.example.com:636/DC=example,DC=com
 
 ```
 
@@ -48,7 +48,7 @@ java.naming.provider.url=ldap://example.com:389/DC=example,DC=com ldap://failove
 Only users from a specific user group are allowed to log in. The users need to enter the username only the without domain part to log in. The example is for Windows Active Directory:
 
 ```Shell
-java.naming.provider.url=ldap://example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://example.com:636/DC=example,DC=com
 java.naming.security.principal=<username>
 java.naming.security.credentials=<password>
  
@@ -72,7 +72,7 @@ teamcity.options.groups.synchronize=false
 Users can log in to TeamCity with their domain name without the domain part, there is an account "teamcity" with the password "secret" that can read all Active Directory entries. The TeamCity user display name and email are synchronized from Active Directory.
 
 ```Shell
-java.naming.provider.url=ldap://example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://example.com:636/DC=example,DC=com
 java.naming.security.principal=CN=teamcity,CN=Users,DC=example,DC=com
 java.naming.security.credentials=secret
 teamcity.users.login.filter=(sAMAccountName=$capturedLogin$)
@@ -91,7 +91,7 @@ teamcity.users.property.email=mail
 Users can log in to TeamCity with their domain name without the domain part, there is an account "teamcity" with the password "secret" that can read all Active Directory entries. The TeamCity user display name and email are synchronized from Active Directory. The users not existing in the TeamCity database are created. Users no longer existing in Active Directory are deleted from the TeamCity user database.
 
 ```Shell
-java.naming.provider.url=ldap://example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://example.com:636/DC=example,DC=com
 java.naming.security.principal=CN=teamcity,CN=Users,DC=example,DC=com
 java.naming.security.credentials=secret
 teamcity.users.login.filter=(sAMAccountName=$capturedLogin$)
@@ -116,7 +116,7 @@ There should be `ldap-mapping.xml` file with one or more group mappings defined.
 `ldap-config.properties` file:
 
 ```Shell
-java.naming.provider.url=ldap://example.com:389/DC=example,DC=com
+java.naming.provider.url=ldaps://example.com:636/DC=example,DC=com
 java.naming.security.principal=CN=teamcity,CN=Users,DC=example,DC=com
 java.naming.security.credentials=secret
 teamcity.users.login.filter=(sAMAccountName=$capturedLogin$)

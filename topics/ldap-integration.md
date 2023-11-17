@@ -35,7 +35,7 @@ The file is reread on any modification: there is no need to restart the server t
 
 It is strongly recommended backing up the previous version of the file: if you misconfigure LDAP integration, you may no longer be able to log in into TeamCity. The users who are already logged in are not affected by the modified LDAP integration settings because users are authenticated only on login.
 
-The mandatory property in the `ldap-config.properties` file is `java.naming.provider.url` that configures the server and root DN. The property stores the URL to the LDAP server node that is used in following LDAP queries. For example, `ldap://dc.example.com:389/CN=Users,DC=Example,DC=Com`. Note that the value of the property should use URL-escaping if necessary. For example, use `%20` if you need the space character.
+The mandatory property in the `ldap-config.properties` file is `java.naming.provider.url` that configures the server and root DN. The property stores the URL to the LDAP server node that is used in following LDAP queries. For example, `ldaps://dc.example.com:636/CN=Users,DC=Example,DC=Com`. Note that the value of the property should use URL-escaping if necessary. For example, use `%20` if you need the space character.
 
 <note>
 
@@ -63,7 +63,7 @@ The following template enables authentication against active directory:
 
 Add the following code to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/ldap-config.properties file (assuming the domain name is `Example.Com` and domain controller is `dc.example.com`).
 
-For using secure connection (LDAPS) use URL like `ldaps://dc.example.com:636/DC=Example,DC=Com`, for plain connection (ldap) use URL like `ldap://dc.example.com:389/DC=Example,DC=Com` (note the different port).
+To use a more secure LDAPS connection (recommended), specify a URL in the corresponding format: `ldaps://dc.example.com:636/DC=Example,DC=Com`. URLs like `ldap://dc.example.com:389/DC=Example,DC=Com` allow you to establish a regular non-encrypted LDAP connection (note the different port). We recommend using LDAPS as a more secure alternative to the regular LDAP.
 
 
 ```Shell
@@ -89,7 +89,7 @@ You can use an LDAP explorer to browse LDAP directory and verify the settings (f
 There is an ability to specify failover servers using the following pattern:
 
 ```Shell
-java.naming.provider.url=ldap://ldap.mycompany.com:389 ldap://ldap2.mycompany.com:389 ldap://ldap3.mycompany.com:389
+java.naming.provider.url=ldaps://ldap.mycompany.com:636 ldaps://ldap2.mycompany.com:636 ldaps://ldap3.mycompany.com:636
 
 ```
 
