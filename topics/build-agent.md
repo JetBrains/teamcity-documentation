@@ -136,7 +136,9 @@ teamcity.agent.priority=54
 ## Agent Priority
 {product="tc"}
 
-TeamCity uses a complex internal logic to choose an agent that best fits the specific building task. You can manually lower or raise the priority of a any agent by modifying its integer `teamcity.agent.priority` property. This property accepts values in the `-10000` ~ `10000` range with the default value of `0`. For [AWS-hosted cloud agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
+TeamCity employs an advanced agent selection logic, considering factors like CPU count, past building performance, agent sources (cloud or local), and more, to match your builds with the most suitable agents for the job.
+
+You can manually lower or raise the priority of a any agent by modifying its integer `teamcity.agent.priority` property. This property accepts values in the `-10000` ~ `10000` range with the default value of `0`. For [AWS-hosted cloud agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
 
 <img src="dk-agentpriority.png" width="706" alt="Set the image priority for a EC2 Cloud Image"/>
 
