@@ -230,6 +230,10 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    An image with a lower priority is used only when an available image with a higher priority reaches its active agents limit.
 
+   > The value of the **Image priority** field is assigned to the [teamcity.agent.priority](build-agent.md#Agent+Priority) property of each agent that originates from this image. You can manually specify this property for any other non-AWS-hosted agent to control which agents TeamCity should prioritize.
+   > 
+   {type="note"}
+
 5. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
 6. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
 7. Click **Save** to exit the image settings page.
