@@ -2,10 +2,6 @@
 
 The "Build Cache" feature allows build configurations to publish specific files produced during a build run (for example, downloaded [npm](nodejs.md) packages or [Maven local repository artifacts](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)). Published caches can be reused during subsequent builds by the same configuration that published them, or other configurations. This technique optimizes and accelerates building routines.
 
-> Build Cache is currently available as an experimental feature and may be changed in future releases.
-> 
-{type="warning"}
-
 ## Common Information
 
 ### Cache Publishers and Consumers
@@ -45,7 +41,7 @@ This section illustrates how to set up the Build Cache feature that allows a bui
    For example, to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.
    
    <tip>
-   To cache local Maven artifacts, set the <b>Artifact repository</b> setting of your <a href="maven.md">Maven</a> runner to <b>Maven default</b>. If you choose the <b>Per agent</b> mode, add the <code>-Dmaven.repo.local</code> parameter to additional runner commands to specify the directory for these artifacts.
+   To cache local Maven artifacts, set the <b>Artifact repository</b> setting of your <a href="maven.md">Maven</a> runner to <b>Maven default</b>. If you choose the <b>Per agent</b> mode, use the default .m2 location in the feature's publishing rules. Alternatively, add the <code>-Dmaven.repo.local</code> parameter to additional runner commands and point the Build Cache feature to the same directory.
 
    <!--teamcity.agent.home.dir/system/jetbrains.maven.runner/maven.repo.local-->
    
