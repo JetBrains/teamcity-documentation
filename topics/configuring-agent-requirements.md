@@ -3,7 +3,7 @@
 
 By specifying [Agent Requirements](agent-requirements.md) for build configuration you can control on which agents the configuration will be run.
 
-To add a requirement, click the corresponding link and specify the following options:
+To add a requirement, go to **Build Configuration Settings | Agent Requirements**, click **Add new requirement**,  and specify the following options:
 
 <table>
 
@@ -15,18 +15,6 @@ To add a requirement, click the corresponding link and specify the following opt
 </tr>
 
 <tr>
-
-<td>
-
-Parameter type
-
-</td>
-
-<td>
-
-Specify the type of the parameter: system property, environment variable, or configuration parameter. For details on the types of parameters available in TeamCity, refer to [this section](configuring-build-parameters.md).
-
-</td></tr><tr>
 
 <td>
 
