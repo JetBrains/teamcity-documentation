@@ -1,6 +1,7 @@
 [//]: # (title: Build on TeamCity)
 [//]: # (auxiliary-id: Build on TeamCity)
 
+To simplify the process of integrating JetBrains Space with TeamCity, you can click the **Build on TeamCity** button from the Space repository page. This button redirects you to TeamCity and guides you through the process of setting up the required connections or, if the connections are already configured, it brings you to the corresponding TeamCity build page for your Space repository.
 
 ## Setting up Connections from TeamCity
 
