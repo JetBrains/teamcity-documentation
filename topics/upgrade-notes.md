@@ -32,6 +32,10 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 * The **Open IAM Console** link is hidden.
 * Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
 
+### TeamCity Plugin for IntelliJ Platform Updates
+
+* From TeamCity 2023.11 onwards, when two-factor authentication (2FA) is enabled on the TeamCity server, it is no longer possible to log in to TeamCity from the IntelliJ Platform using username/password credentials. You can log in with username/access token credentials instead.
+
 ### HTTP / SSO Authentication Modules Updates
 
 The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cloud, GitHub App, GitHub Enterprise, GitHub.com, GitLab CE/EE, and GitLab.com [authentication modules](https://www.jetbrains.com/help/teamcity/configuring-authentication-settings.html#HTTP+%2F+SSO+Authentication+Modules):
