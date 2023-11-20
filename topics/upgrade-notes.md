@@ -19,6 +19,7 @@
 * The bundled dotCover tool has been updated to version 2023.2.2.
 * To reduce the size of TeamCity distributions, the largest TeamCity build tool, IntelliJ IDEA, no longer ships with TeamCity installers. Instead, TeamCity will download and install this tool on the first server startup. To check the download/install progress (or to manually install [the required version of IntelliJ IDEA](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip) on server instances that failed to do so automatically), navigate to the **Administration | Tools** page and scroll to the **IntelliJ Inspections and Duplicates Engine** section.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 1.8.22.
+* The bundled ReSharper CLT was updated to version 2023.1.1. This version does not include the dupFinder Command-Line Tool, which deprecates the TeamCity [](duplicates-finder-resharper.md) runner (see the [initial deprecation announcement](#Upcoming+DupFinder+Runner+Deprecation)). To continue using this runner, install [JetBrains ReSharper Command Line Tools 2021.2.3](https://www.jetbrains.com/resharper/download/other.html) or older and specify a path to this tool in the runner's advanced settings (the **R# CLT Home Directory** field).
 
 ### S3 Plugin Updates
 {id="2023-11-s3-update"}
@@ -564,6 +565,7 @@ The following old versions of [REST API](https://www.jetbrains.com/help/teamcity
 * Bundled Kotlin, used in the [Kotlin Script](kotlin-script.md) build runner, has been updated to version 1.5.0.
 * JGit version, used in the [Git](git.md) plugin, has been updated to 5.10.0.202012080955-r.
 * SVNKit, used in [Subversion](subversion.md) VCS roots, has been updated to version 1.10.3.
+
 
 ### Other Updates
 {id="other-updates-20211"}
