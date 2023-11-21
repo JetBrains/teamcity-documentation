@@ -75,16 +75,15 @@ You can read more on Ant wildcards in the corresponding [section](https://ant.ap
 See the pattern examples for the following file structure inside the current directory:
 
 ```Shell
-
-\a
- -\b
-   -\c
-     -file1.txt
-   -file2.txt
-   -file3.log
- -\d
-   -file4.log
- -file5.log
+a
+├── b
+│   ├── c
+│   │   └── file1.txt
+│   ├── file2.txt
+│   └── file3.log
+├── d
+│   └── file4.log
+└── file5.log
 ```
 
 Examples:
@@ -99,7 +98,7 @@ Description
 
 </td>
 
-<td>
+<td width="100">
 
 Pattern
 
@@ -128,16 +127,15 @@ All files inside the current directory
 <td>
 
 ```Shell
-\a
- -\b
-   -\c
-     -file1.txt
-   -file2.txt
-   -file3.log
- -\d
-   -file4.log
- -file5.log
- 
+a
+├── b
+│   ├── c
+│   │   └── file1.txt
+│   ├── file2.txt
+│   └── file3.log
+├── d
+│   └── file4.log
+└── file5.log
 ```
 
 </td>
@@ -160,13 +158,12 @@ All log files inside the current directory
 <td>
 
 ```Shell
-
-\a
- -\b
-   -file3.log
- -\d
-   -file4.log
- -file5.log
+a
+├── b
+│   └── file3.log
+├── d
+│   └── file4.log
+└── file5.log
  ```
 
 </td>
@@ -189,12 +186,12 @@ All files inside the `a/b` directory including those in subdirectories
 <td>
 
 ```Shell
-\b
- -\c
-   -file1.txt
- -file2.txt
- -file3.log
- 
+a
+└── b
+    ├── c
+    │   └── file1.txt
+    ├── file2.txt
+    └── file3.log
 ```
 
 </td>
@@ -216,9 +213,37 @@ All files inside the `a/b` directory
 <td>
 
 ```Shell
-\b
- -file2.txt
- -file3.log
+a
+└── b
+    ├── file2.txt
+    └── file3.log
+```
+
+</td>
+</tr>
+<tr>
+
+<td>
+
+All pathnames containing a `b` directory
+
+</td>
+
+<td>
+
+`**/b/**`
+
+</td>
+
+<td>
+
+```Shell
+a
+└── b
+    ├── c
+    │   └── file1.txt
+    ├── file2.txt
+    └── file3.log
 ```
 
 </td>
