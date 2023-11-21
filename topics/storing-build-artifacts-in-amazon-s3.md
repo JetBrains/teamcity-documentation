@@ -22,6 +22,12 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 4. Set the **Type** field to "AWS S3".
 
 5. Choose an existing [AWS Connection](configuring-connections.md#AmazonWebServices) that TeamCity should use to access your Amazon resources. If no suitable AWS connection exists, click the "+" icon to add one.
+    
+    > You cannot use AWS Connections that belong to a parent project and have their **Available for sub-projects** settings disabled.
+    > 
+    > However, if a parent project has an S3 storage configured using a non-shared connection, this storage is still available to child projects.
+    > 
+    {type="tip"}
 
     <anchor name="permissions"/>
 

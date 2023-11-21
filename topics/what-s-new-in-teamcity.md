@@ -56,7 +56,7 @@ Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrad
 ### AWS Connection Improvements
 {product="tc"}
 
-New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and features (for example, [](aws-credentials.md) or [custom S3 storages](storing-build-artifacts-in-amazon-s3.md)).
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
@@ -451,7 +451,7 @@ The Matrix Build feature offers multiple pre-configured options that allow you t
 ## AWS Connection Improvements
 {product="tcc"}
 
-New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and [](aws-credentials.md) build features.
+New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and features (for example, [](aws-credentials.md)).
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
