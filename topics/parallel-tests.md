@@ -144,7 +144,7 @@ The build step with custom tests' execution logic should use this file and filte
 
 If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse and consume for test engines like NUnit.
 
-To avoid potential performance issues, TeamCity automatically employs an alternative testing mode optimized for these cases. This mode is enabled on a per-agent basis if the following conditions are met:
+To avoid potential performance issues, TeamCity automatically employs an alternative test filtering mode optimized for these cases. This mode is enabled on a per-agent basis if the following conditions are met:
 
 * An agent that runs a test batch reports .NET CLI (SDK or runtime) 6.0 or newer.
 * A test batch has 1000 or more test classes. You can change this threshold value via the `teamcity.internal.dotnet.test.suppression.test.classes.threshold` [configuration parameter](configuring-build-parameters.md).
