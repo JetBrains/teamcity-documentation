@@ -632,6 +632,60 @@ object CommandLineRunnerTest : BuildType({
 
 As a result, your Command Line build step will run a custom script with the body specified in `scripts\test.sh`.
 
+### How to Use Special Characters
+
+When writing Kotlin DSL for script runners ([Command Line](command-line.md), [](powershell.md), [](python.md), and others), be aware that special characters used in the scripts may conflict with Kotlin DSL syntax. These potential issues most commonly fall under either of the following categories:
+
+* Not escaping special characters as required by [Kotlin guidelines](https://kotlinlang.org/docs/strings.html). For example, the `echo $(date +"%A")` Shell command does not conflict with Kotlin syntax rules and can be used in Kotlin DSL as is:
+   
+   ```Kotlin
+   script {
+      id = "simpleRunner"
+      scriptContent = """
+          #...
+          echo $(date +"%A")
+      """.trimIndent()
+   }
+   ```
+
+   However, a direct variable reference will result in the "Kotlin DSL compilation error: Unresolved reference" build log message, if not escaped.
+   
+   ```Kotlin
+   script {
+      id = "simpleRunner"
+      scriptContent = """
+          #...
+          day_of_week=Monday
+            # Compilation error
+          echo $day_of_week 
+            # No compilation error, returns "Monday"
+          echo ${'$'}day_of_week 
+      """.trimIndent()
+   }
+   ```
+  
+* Not escaping `%` characters. TeamCity may interpret such non-escaped strings as references to [build parameter](configuring-build-parameters.md). To escape a percent character, repeat it twice (`%%`).
+    
+    For example, the following Kotlin DSL will produce a configuration with no compatible agents if you replace double percent characters (`%\%regex%%`) with single ones (`%\regex%`):
+
+    ```Kotlin
+    script {
+        name = "Bash script"
+        scriptContent = """
+            //...
+            set "regex=[0-9]+[.][0-9][0-9](.1)? EAP"
+            set "items="
+            for /r "$tcInstallDir" %%i in (*) do (
+                findstr /r "%\%regex%%" "%%i" >nul 2>nul
+                if errorlevel 1 (
+                    set "items=1"
+                )
+            )
+            //...
+    """
+    }
+    ```
+
 ### New URL of Settings VCS Root (Non portable format)
 
 _Problem_: I changed the URL of the VCS root where settings are stored in Kotlin, and now TeamCity cannot find any settings in the repository at the new location.
