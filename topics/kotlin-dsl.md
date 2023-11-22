@@ -654,12 +654,9 @@ When writing Kotlin DSL for script runners ([Command Line](command-line.md), [](
    script {
       id = "simpleRunner"
       scriptContent = """
-          #...
           day_of_week=Monday
-            # Compilation error
-          echo $day_of_week 
-            # No compilation error, returns "Monday"
-          echo ${'$'}day_of_week 
+          echo $day_of_week // Compilation error
+          echo ${'$'}day_of_week // No compilation error, returns "Monday"
       """.trimIndent()
    }
    ```
