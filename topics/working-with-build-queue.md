@@ -5,17 +5,16 @@ In TeamCity, _build queue_ is a list of builds that were [triggered](configuring
 
 ## Queue Page
 
-TeamCity shows the list of builds waiting to be run on the __Queue__ page.
+Access the __Queue__ page from the top navigation bar.
+This page shows the list of builds waiting to be run and displays the following information for each build:
 
-This page displays the following information for each build:
 * The position in the queue, which also serves as a link to the __Build Results__ page.
 * The source branch name (if available).
 * A linkable path in the hierarchy: all parent subprojects and the build configuration.
 * Time to start: the estimated wait duration. Hovering over the estimated time value shows a tooltip with the following information:
     * Expected start/finish time.
     * The link to the planned agent.
-    * If the current build is a part of a <emphasis tooltip="build-chain">build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip, for example:
-   <img src="unpredictableDuration.png" alt="Unpredictable build duration" width="400"/>
+    * If the current build is a part of a <emphasis tooltip="build-chain">build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip.
 * A brief description of the [event that triggered the build](configuring-build-triggers.md).
 * The number of agents compatible with this build configuration. You can click an agent's name link to open the __[Agents](viewing-build-agent-details.md)__ page, or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
 
