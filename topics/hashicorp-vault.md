@@ -29,7 +29,9 @@ When a build that utilizes this parameter starts, the TeamCity server uses the V
 4. Choose the desired authentication method. TeamCity can authenticate to HCP Vault using a Vault's AppRole, an AWS IAM role, or a directory access protocol (LDAP).
 
     <tabs>
-    
+
+    <!--
+
     <tab title="AWS IAM Auth">
 
     <table><tr><td>
@@ -42,7 +44,9 @@ When a build that utilizes this parameter starts, the TeamCity server uses the V
 
     </td></tr></table>
 
-    </tab>
+    </tab>-->
+   
+   
     
     <tab title="Vault AppRole">
 
