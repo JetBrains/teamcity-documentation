@@ -60,7 +60,7 @@ Please generate own token or configuration file per each self-hosted agent.
 
 <chunk id="agents-terminal">
 
-After an agent was installed and connected, you can invoke a terminal[what-s-new-in-teamcity.md](what-s-new-in-teamcity.md) for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
 To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**.
 
