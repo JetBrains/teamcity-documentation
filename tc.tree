@@ -319,6 +319,7 @@
             <toc-element id="golang.md" show-structure-for="chapter"/>
             <toc-element id="investigations-auto-assigner.md"/>
             <toc-element id="jira-cloud-integration.md" show-structure-for="chapter"/>
+            <toc-element id="matrix-build.md" show-structure-for="chapter" show-structure-depth="4"/>
             <toc-element id="notifications.md" show-structure-for="chapter"/>
             <toc-element id="nuget-feed-credentials.md"/>
             <toc-element id="nuget-packages-indexer.md"/>
