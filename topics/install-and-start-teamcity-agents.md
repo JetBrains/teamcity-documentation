@@ -60,15 +60,23 @@ Please generate own token or configuration file per each self-hosted agent.
 
 <chunk id="agents-terminal">
 
-After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+After an agent was installed and connected, you can invoke a terminal[what-s-new-in-teamcity.md](what-s-new-in-teamcity.md) for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
-To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**. When a terminal opens, you can click the **Open in a separate tab** link to get a bigger client area.
+To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**.
 
 <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
 
+You can also open this terminal from the [](build-results-page.md).
+
+<img src="dk-agentTerminal-2023-11-new.png" width="706" alt="Agent Terminal Window"/>
+
+When a terminal opens, you can click the **Open in a separate tab** link to get a bigger client area.
+
+
+
 The **Open terminal** button is available for all types of agent machines (Linux, Windows, and macOS) and invokes terminals under the same user identity who starts TeamCity agents.
 
-To ensure your build agent is idle while you perform maintenance, disable it but do not stop it since the terminal session requires a [running](start-teamcity-agent.md) build agent. [Stopping a build agent](start-teamcity-agent.md#Stop+Build+Agent) also closes the related terminal browser tab.
+To ensure your build agent is idle while you perform maintenance, disable it but do not stop it since the terminal session requires a [running](start-teamcity-agent.md) build agent. [Stopping a build agent](start-teamcity-agent.md#Stop+Build+Agent) freezes a previously open terminal tab, preventing users from typing new commands.
 
 For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
 
