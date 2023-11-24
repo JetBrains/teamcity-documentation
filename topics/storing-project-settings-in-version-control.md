@@ -400,7 +400,9 @@ The aforementioned setting allows TeamCity to automatically generate missing con
 
 <img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
 
-> Auto-generated build configurations are "service" configurations that ensure that all required settings are successfully applied. These configuration are not designed to be manually run, and should only be triggered by TeamCity when running chains with custom branch-specific settings.
+> Auto-generated build configurations are "service" configurations that ensure that all required settings are successfully applied. These configurations are not designed to be manually run, and should only be triggered by TeamCity when running chains with custom branch-specific settings.
+> 
+> If you merge settings from a custom branch into the default one, the history of auto-generated configurations' builds will be preserved.
 > 
 {type="note"}
 
