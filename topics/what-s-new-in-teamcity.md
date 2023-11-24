@@ -242,13 +242,13 @@ Learn more: [](install-teamcity-agent.md).
 
 Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
 
-When detecting these previously ignored settings, TeamCity dynamically creates required entities (sub-projects, build configurations, roots) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
+When detecting these previously ignored settings, TeamCity dynamically creates required hidden entities (such as virtual build configurations) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
 
 <img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
 
 To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
 
-Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
+Learn more: [](storing-project-settings-in-version-control.md#Apply+Changes+in+Snapshot+Dependencies+and+Version+Control+Settings).
 
 
 <!--
@@ -515,13 +515,13 @@ Learn more: [](install-teamcity-agent.md).
 
 Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
 
-When detecting these previously ignored settings, TeamCity dynamically creates required entities (sub-projects, build configurations, roots) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
+When detecting these previously ignored settings, TeamCity dynamically creates required hidden entities (such as virtual build configurations) that are in effect only for the current build and remain hidden for other revisions/branches that use different settings.
 
 <img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
 
 To enable the updated behavior, tick the **Apply changes in snapshot dependencies and version control settings** option on your project's **Versioned Settings** page.
 
-Learn more: [](storing-project-settings-in-version-control.md#Load+Advanced+Settings+From+VCS).
+Learn more: [](storing-project-settings-in-version-control.md#Apply+Changes+in+Snapshot+Dependencies+and+Version+Control+Settings).
 
 
 

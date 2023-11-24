@@ -89,7 +89,7 @@ To specify which settings TeamCity should apply when a build starts, choose a re
 > * agent requirements in [custom runs](running-custom-build.md)
 > * settings of certain build features (for example, [Commit Status Publisher](commit-status-publisher.md) uses VCS settings, while [Pull Requests](pull-requests.md) always use the current server settings)
 > * edits to existing artifact rules (you can still add new and remove existing rules)
-> * snapshot dependencies, checkout rules, and VCS roots if the [corresponding setting](#Load+Advanced+Settings+From+VCS) is disabled.
+> * (only if the [Apply Changes in Snapshot Dependencies and Version Control Settings](#Apply+Changes+in+Snapshot+Dependencies+and+Version+Control+Settings) setting is disabled) creating new and editing existing snapshot dependencies, checkout rules, and VCS roots.
 > 
 {type="warning"}
 
@@ -127,6 +127,7 @@ To specify which settings TeamCity should apply when a build starts, choose a re
    * **Project settings VCS root**: Choose your project's VCS root
    * **Settings format**: Kotlin
    * **When build starts**: Select "use settings from VCS"
+   * **Apply changes in snapshot dependencies and version control settings**: On (see the [](#Apply+Changes+in+Snapshot+Dependencies+and+Version+Control+Settings) section)
    
 5. Click **Apply** to save your new settings. TeamCity will verify the validity of your build configuration and push the `.teamcity` folder with your settings to the related VCS repository.
 6. Clone TeamCity settings from a remote repository to local storage.
@@ -177,9 +178,23 @@ To specify which settings TeamCity should apply when a build starts, choose a re
 
 As a result, your build configuration now performs different actions depending on which branch build runs: a [Python Script](python.md) for the main branch and a [](c-script.md) for a custom branch. You can experiment by adding more differences between branch settings and running branch builds to see how TeamCity handles different versions of your `settings.kts` file.
 
-### Load Advanced Settings From VCS
+### Apply Changes in Snapshot Dependencies and Version Control Settings
 
-Assume your TeamCity project is set up similarly to the [sample above](#Example%3A+Branch-Specific+Settings), and the remote repository stores the following settings:
+If the corresponding option is disabled on the project's **Versioned Settings** page, TeamCity ignores edits made to:
+
+* snapshot dependencies
+* checkout rules
+* VCS roots
+
+This applies to both editing existing and creating new dependencies, checkout rules, and roots.
+
+For example, the following Kotlin sample illustrates two [versions of settings](#Example%3A+Branch-Specific+Settings) for the same project.
+
+* The main (default) branch defines three build configurations linked in a single BC0 &rarr; BC3 &rarr; BC5 [build chain](build-chain.md). Each configuration edits the "output.txt" file and passes it to the next configuration.
+    
+    <img src="dk-vcsSettings-3step.png" width="706" alt="3-Step Setup"/>
+
+* The custom branch extends the original chain with two new configurations: BC0 &rarr; BC2 &rarr; BC3 &rarr; BC4 &rarr; BC5.
 
 <tabs>
 
@@ -377,25 +392,17 @@ object BC5 : BuildType({
 
 </tab></tabs>
 
-TeamCity project is set up according to main branch settings: the three build configurations are linked in a single BC0 &rarr; BC3 &rarr; BC5 [build chain](build-chain.md) with each configuration adding a line to the "output.txt" file and passing it to the next configuration. Builds launched for this main branch finish successfully.
-
-<img src="dk-vcsSettings-3step.png" width="706" alt="3-Step Setup"/>
-
-If you try to run this chain for the custom branch, it will fail with the "Failed to resolve artifact dependency" error. This happens because the build chain loaded from the custom branch VCS settings includes two new build configurations (BC0 &rarr; BC2 &rarr; BC3 &rarr; BC4 &rarr; BC5). Both snapshot and artifact dependencies of all configurations are modified to reflect this change. From TeamCity's point of view, this configuration is invalid since BC3 and BC5 configurations depend on non-existent BC2 and BC4 respectively.
+If you disable the **Apply changes in snapshot dependencies and version control settings** option and try to run a build for the custom branch, it will fail with the "Failed to resolve artifact dependency" error. This happens because edits made to snapshot dependencies are ignored. From the TeamCity's point of view, this setup is invalid since it requires non-existing configurations.
 
 <img src="dk-vcsSettings-failing.png" width="706" alt="Failing chain from custom branch"/>
 
-To fix this issue, go to **Administration | &lt;Project&gt; | Versioned Settings** and enable the **Apply changes in snapshot dependencies and version control settings** option. With this setting in place, TeamCity will dynamically create temporary build configurations and successfully resolve all artifact and snapshot dependencies. These virtual configurations are hosted in a hidden "... (auto-generated)" subproject.
+The aforementioned setting allows TeamCity to automatically generate missing configurations and resolve updated dependencies, which in turn makes it possible to apply these custom branch settings.
 
 <img src="dk-vcsSettings-5step.png" width="706" alt="5-Step Setup"/>
 
-Leaving this option disabled adds the following settings to the [list of settings](#general-rules) TeamCity cannot load from a VCS:
-
-* snapshot dependencies
-* checkout rules
-* VCS roots
-
-
+> Auto-generated build configurations are "service" configurations that ensure that all required settings are successfully applied. These configuration are not designed to be manually run, and should only be triggered by TeamCity when running chains with custom branch-specific settings.
+> 
+{type="note"}
 
 ## Storing Secure Settings 
 
