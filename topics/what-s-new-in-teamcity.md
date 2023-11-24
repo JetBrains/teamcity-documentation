@@ -622,7 +622,7 @@ Before upgrading, we highly recommend reading about important changes in version
 ## Fixed Issues
 {product="tc"}
 
-See [TeamCity 2023.11 release notes](teamcity-2023-11-release-notes.md).
+See the [TeamCity 2023.11 release notes](teamcity-2023-11-release-notes.md) article for the summary of implemented features and fixed issues.
 
 
 
@@ -630,7 +630,7 @@ See [TeamCity 2023.11 release notes](teamcity-2023-11-release-notes.md).
 
 See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.
 
-## We'd Love to Hear From You
+## Your Feedback Matters
 
 
 We place a high value on your feedback and encourage you to share your thoughts and suggestions. See this link for more information: [Feedback](feedback.md).
