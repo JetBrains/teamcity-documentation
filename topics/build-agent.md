@@ -94,21 +94,21 @@ For a build agent configuration, refer to [this section](configure-agent-install
 ## Agent Upgrade
 {product="tc"}
 
-A TeamCity agent is upgraded automatically when necessary. The process involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](system-requirements.md#Common+Requirements) permissions.
+TeamCity agents are automatically upgraded when needed. Typically, this happens when:
 
-Typically, an agent upgrade happens when:
 * the server is [upgraded](upgrading-teamcity-server-and-agents.md)
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
 
+Upon receiving updated files from the server, an agent can schedule a restart. The internal agent logic ensures this happens only when necessary, aiming to maintain agent availability and prevent unnecessary restarts. For example, the agent remains operational following the download of a new tool version. However, a restart is required when the TeamCity server assigns a build dependent on this tool to the agent.
+
+For a build agent to execute a restart, a user under whose account this agent runs must possess [sufficient poermissions](system-requirements.md#Common+Requirements).
+
+
 ## Agent Upgrade
 {product="tcc"}
 
-JetBrains hosted agents are upgraded automatically when the server is upgraded.
-
-The upgrade of self-hosted agents is also automated and involves downloading new agent files from the TeamCity server and restarting the agent on the new files. In order to successfully accomplish this, the user under whose account the agent runs should have [enough](system-requirements.md#Common+Requirements) permissions.
-
-Typically, an agent upgrade happens when the server is upgraded.
+Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that receiving new files from the server can require an agent restart for the changes to take effect. This happens automatically and does not require your interaction, however a user under whose account this agent runs must possess [sufficient poermissions](system-requirements.md#Common+Requirements).
 
 ## Agent Priority
 {product="tcc"}
