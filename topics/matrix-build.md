@@ -197,10 +197,10 @@ object Build : BuildType({
     
     features {
         matrix {
-            param("os", listOf(
+            os = listOf(
                 value("Linux"),
                 value("Mac OS")
-            ))
+            )
        }
     }
 })
