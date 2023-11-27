@@ -51,6 +51,7 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
     
     As a side effect, if TeamCity is hosted behind a [proxy server](configuring-proxy-server.md) that does not provide the `X-Forwarded-Host` header, attempts to access build artifacts may cause infinite redirect loops. If you experience issues with the `ERR_TOO_MANY_REDIRECTS` error, make sure your proxy server provides valid `X-Forwarded-Host` headers. You can also manually rollback this change by setting the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
 
+* If your TeamCity username includes encoded special symbols (for example, emoji), you may be unable to log in to TeamCity via the [](intellij-platform-plugin.md). See the following ticket for more information: [TW-85284](https://youtrack.jetbrains.com/issue/TW-85284/Unable-to-log-in-from-the-IntelliJ-IDEA-TeamCity-plugin).
 
 ## Changes from 2023.05.3 to 2023.05.4
 
