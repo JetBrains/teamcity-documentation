@@ -1,11 +1,51 @@
 [//]: # (title: Creating Backup via maintainDB command-line tool)
 [//]: # (auxiliary-id: Creating Backup via maintainDB command-line tool)
 
-TeamCity [.tar.gz and .exe distributions](install-and-start-teamcity-server.md) provide the `maintainDB.bat|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also back up data using the [UI](creating-backup-from-teamcity-web-ui.md).
+TeamCity [.tar.gz and .exe distributions](install-and-start-teamcity-server.md) provide the `maintainDB.cmd|sh` utility located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. This command-line tool enables you to back up the server data, [restore it](restoring-teamcity-data-from-backup.md), and [migrate between different databases](migrating-to-external-database.md). You can also back up data using the [UI](creating-backup-from-teamcity-web-ui.md).
 
-## Before You Back up
+## maintainDB Backup Procedure
 
-Before backing up data, it is recommended to shut down the TeamCity server to include all builds into the backup. If the backup process is started when the TeamCity server is up, running and queued builds are not included into the backup.
+To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
+
+1. Before proceeding, review the [alternative backup procedures](teamcity-data-backup.md#Backup+Alternatives) (particularly with respect to the [scope of the backed-up data](teamcity-data-backup.md#What+Data+is+Backed+Up)), to be sure that the `maintainDB.cmd|sh` backup procedure meets your backup needs.
+2. Review your artifacts backup strategy. The `maintainDB.cmd|sh` tool does _not_ back up build artifacts, because a production system is usually configured with [external artifacts storage](configuring-artifacts-storage.md) that has dedicated backup facilities.
+   > If necessary, you can manually back up build artifacts and build logs by copying files from `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`, which is the default location for artifacts storage.
+   >
+   {type="tip"}
+3. Stop the TeamCity server.
+   > If the backup process is started while the TeamCity server is running, the running builds and queued builds are not included in the backup.
+   >
+   {type="note"}
+4. Decide on the backup scope:
+    * `--basic` — back up only the most essential data
+    * `--all` — back up the maximum amount of data possible with maintainDB
+    * Custom — choose from the options, `-D -C -U -L -P`
+   > For more details about the backup scope, see [](teamcity-data-backup.md#What+Data+is+Backed+Up).
+   >
+   {type="tip"}
+5. Enter the following command to back up TeamCity:
+    <tabs>
+    <tab title="Linux"><p/>
+
+    ```Plain Text
+    maintainDB.sh backup \
+        -A <TeamCity Data Directory> \
+        -D -C -U -L -P \
+        -F <Backup File Name> --timestamp
+    ```
+
+    </tab>
+    <tab title="Windows"><p/>
+
+    ```Plain Text
+    maintainDB.cmd backup \
+        -A <TeamCity Data Directory> \
+        -D -C -U -L -P \
+        -F <Backup File Name> --timestamp
+    ```
+
+    </tab>
+    </tabs>
 
 ## Backup File Location and Format
 
