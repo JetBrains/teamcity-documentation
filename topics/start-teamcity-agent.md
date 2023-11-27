@@ -17,7 +17,11 @@ TeamCity build agents can be started manually or configured to start automatical
 
 Run the following script:
 * on Windows: `<installation path>\bin\agent.bat start`
-* on Linux and macOS: `<installation path>\bin\agent.sh start`
+* on Linux and macOS: `<installation path>/bin/agent.sh start`
+
+> The agent uses the `serverUrl` setting from `buildAgent.properties` to connect to the TeamCity server (automatically authorizing on the first connection). If the server URL is not accessible from the agent host, you might need to configure the [proxy settings](configuring-proxy-server.md#Use+Proxy+to+Connect+Agents+to+TeamCity+Server).
+>
+{type="tip"}
 
 ## Automatic Start
 
