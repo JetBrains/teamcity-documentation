@@ -17,6 +17,7 @@
 
 * The bundled Tomcat was updated to version 9.0.80.
 * The bundled Git was updated to version 2.43 in both Server and Agent Docker images.
+* Following the [initial end-of-life announcement](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-version-2004-end-of-servicing) by Microsoft, TeamCity server and agent Docker images will no longer use Windows 10 version 2004. Starting with the 2023.11 release, we will publish images based on Windows Server 2022 images instead. Older Docker images that were already published (for example, `jetbrains/teamcity-minimal-agent:2023.05.4-nanoserver-2004`) will be neither upgraded nor removed.
 * The bundled dotCover tool has been updated to version 2023.2.2.
 * To reduce the size of TeamCity distributions, the largest TeamCity build tool, IntelliJ IDEA, no longer ships with TeamCity installers. Instead, TeamCity will download and install this tool on the first server startup. To check the download/install progress (or to manually install [the required version of IntelliJ IDEA](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip) on server instances that failed to do so automatically), navigate to the **Administration | Tools** page and scroll to the **IntelliJ Inspections and Duplicates Engine** section.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 1.8.22.
