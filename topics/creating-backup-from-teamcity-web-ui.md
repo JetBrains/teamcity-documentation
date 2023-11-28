@@ -7,7 +7,10 @@ TeamCity enables you to create a backup of TeamCity data using the Web UI.
 
 To back up TeamCity server data from the Web UI:
 
-1. Before proceeding, review the [alternative backup procedures](teamcity-data-backup.md#Backup+Alternatives) (particularly with respect to the [scope of the backed-up data](teamcity-data-backup.md#What+Data+is+Backed+Up)), to be sure that the Web UI backup procedure meets your backup needs.
+1. Before proceeding, review the [alternative backup procedures](teamcity-data-backup.md#Backup+Alternatives) (particularly with respect to the [scope of the backed-up data](teamcity-data-backup.md#What+Data+is+Backed+Up)), to ensure that the Web UI backup procedure meets your backup needs.
+   > Some types of data are not backed up by this procedure. See [](teamcity-data-backup.md#What+Data+is+Backed+Up) to decide whether additional manual backup steps are required.
+   >
+   {type="warning"}
 2. Review your artifacts backup strategy. The TeamCity Web UI does _not_ back up build artifacts, because a production system is usually configured with [external artifacts storage](configuring-artifacts-storage.md) that has dedicated backup facilities.
    > If necessary, you can manually back up build artifacts and build logs by copying files from `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`, which is the default location for artifacts storage.
    >

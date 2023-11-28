@@ -7,7 +7,10 @@ TeamCity [.tar.gz and .exe distributions](install-and-start-teamcity-server.md) 
 
 To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
 
-1. Before proceeding, review the [alternative backup procedures](teamcity-data-backup.md#Backup+Alternatives) (particularly with respect to the [scope of the backed-up data](teamcity-data-backup.md#What+Data+is+Backed+Up)), to be sure that the `maintainDB.cmd|sh` backup procedure meets your backup needs.
+1. Before proceeding, review the [alternative backup procedures](teamcity-data-backup.md#Backup+Alternatives) (particularly with respect to the [scope of the backed-up data](teamcity-data-backup.md#What+Data+is+Backed+Up)), to ensure that the `maintainDB.cmd|sh` backup procedure meets your backup needs.
+   > Some types of data are not backed up by this procedure. See [](teamcity-data-backup.md#What+Data+is+Backed+Up) to decide whether additional manual backup steps are required.
+   >
+   {type="warning"}
 2. Review your artifacts backup strategy. The `maintainDB.cmd|sh` tool does _not_ back up build artifacts, because a production system is usually configured with [external artifacts storage](configuring-artifacts-storage.md) that has dedicated backup facilities.
    > If necessary, you can manually back up build artifacts and build logs by copying files from `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`, which is the default location for artifacts storage.
    >
@@ -19,16 +22,16 @@ To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
 4. Decide on the backup scope:
     * `--basic` — back up only the most essential data
     * `--all` — back up the maximum amount of data possible with maintainDB
-    * Custom — choose from the options, `-D -C -U -L -P`
-   > For more details about the backup scope, see [](teamcity-data-backup.md#What+Data+is+Backed+Up).
+    * Custom — choose from the options: `-D -C -U -L -P`
+   > For more details, see [backup scope options](#Backup+Scope+Options).
    >
    {type="tip"}
-5. Enter the following command to back up TeamCity:
+5. From the `<TeamCity Home>/bin` directory, enter the following command to back up TeamCity from the `<TeamCity Data Directory>`, saving the backup to the `<Backup File Name>` file with timestamp suffix:
     <tabs>
     <tab title="Linux"><p/>
 
     ```Plain Text
-    maintainDB.sh backup \
+    ./maintainDB.sh backup \
         -A <TeamCity Data Directory> \
         -D -C -U -L -P \
         -F <Backup File Name> --timestamp
@@ -38,86 +41,81 @@ To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
     <tab title="Windows"><p/>
 
     ```Plain Text
-    maintainDB.cmd backup \
-        -A <TeamCity Data Directory> \
-        -D -C -U -L -P \
-        -F <Backup File Name> --timestamp
+    .\maintainDB.cmd backup -A <TeamCity Data Directory> -D -C -U -L -P -F <Backup File Name> --timestamp
     ```
 
     </tab>
     </tabs>
+6. Restart the TeamCity server.
 
 ## Backup File Location and Format
 
-The default directory for backup files is the `<TeamCity Data Directory>\backup`.
+The default directory for backup files is the `<TeamCity Data Directory>/backup`.
 
 <note>
 
-If not specified otherwise with the `-A` option, TeamCity will read the TeamCity Data Directory path from the `TEAMCITY_DATA_PATH` environment variable, or the default path (`$HOME\.Buildserver`) will be used.
+If not specified otherwise with the `-A` option, TeamCity will read the TeamCity Data Directory path from the `TEAMCITY_DATA_PATH` environment variable, or the default path (`$HOME/.Buildserver`) will be used.
 </note>
 
-The default format of the backup file name is `TeamCity_Backup_<timestamp>.zip`; the `<timestamp>` suffix is added in the `YYYYMMDD_HHMMSS` format.
+The default format of the backup file name is `TeamCity_Backup_<timestamp>.zip`. The `<timestamp>` suffix is added in the `YYYYMMDD_HHMMSS` format.
 
-## Performing TeamCity Data Backup with maintainDB Utility
+<anchor name="Performing+TeamCity+Data+Backup+with+maintainDB+Utility"/>
 
-This section describes some of the `maintainDB` options. For a complete list of all available options, run `maintainDB` from the command line with no parameters.
+## maintainDB Command Options
 
-__To create a data backup file__, from the command line start `maintainDB` utility with the `backup` command:
+This section describes some of the `maintainDB` options. For the complete list of options, run `maintainDB` from the command line with no parameters.
 
-```Plain Text
-maintainDB.[cmd|sh] backup
-```
+### Backup Scope Options
 
-TeamCity data backup has [some limitations](teamcity-data-backup.md#Backing+up+Data). By default, if you run `maintainDB` utility with no optional parameters, only the database, server settings, projects and builds configurations, plugins and supplementary data (settings history, triggers states, plugins data, and so on) will be backed up, omitting build logs and personal changes.
+<table>
+<tr>
+<td width="200"><p><b>Option</b></p></td>
+<td><p><b>Description</b></p></td>
+</tr>
 
-### Configuring backup scope
+<tr>
+<td><p><code>-D</code></p> <p><code>--include-database</code></p></td>
+<td><p>Includes database data in backup/restore</p></td>
+</tr>
 
-To configure the scope of data to include in the backup file, use the following options:
-* `-C` or `--include-config` — includes build configurations settings
-* `-D` or `--include-database` — includes database
-* `-L` or `--include-build-logs` — includes build logs
-* `-P` or `--include-personal-changes` — includes personal changes
-* `-U` or `--include-supplementary-data` — includes supplementary (plugins') data
+<tr>
+<td><p><code>-C</code></p> <p><code>--include-config</code></p></td>
+<td><p>Includes server, projects and build configurations settings, and plugins in backup/restore</p></td>
+</tr>
 
-Specifying different combinations of the above options, you can control the content of the backup file. For example, to create backup with all supported types of data, run
+<tr>
+<td><p><code>-U</code></p> <p><code>--include-supplementary-data</code></p></td>
+<td><p>Includes supplementary plugin data in backup/restore</p></td>
+</tr>
 
-```Plain Text
-maintainDB backup -C -D -L -P -U
-```
+<tr>
+<td><p><code>-L</code></p> <p><code>--include-build-logs</code></p></td>
+<td><p>Includes build logs in backup/restore</p></td>
+</tr>
+
+<tr>
+<td><p><code>-P</code></p> <p><code>--include-personal-changes</code></p></td>
+<td><p>Includes changes from personal builds in backup/restore</p></td>
+</tr>
+
+<tr>
+<td><p><code>--basic</code></p></td>
+<td><p>Combines the <code>-D -C -U</code> options</p></td>
+</tr>
+
+<tr>
+<td><p><code>--all</code></p></td>
+<td><p>Combines the <code>-D -C -U -L -P</code> options</p></td>
+</tr>
+
+</table>
+
 
 [//]: # (Internal note. Do not delete. "Creating Backup via maintainDB command-line toold102e196.txt")    
 
-### maintainDB Usage Examples for Data Backup
+<anchor name="maintainDB+Startup+Options"/>
 
-__To create a backup file with a custom name__, run maintainDB with `-F` or `--backup-file` option and specify desired backup file name without extension:
-
-```Plain Text
-maintainDB.cmd backup -F <backup file custom name>
-or
-maintainDB.cmd backup --backup-file <backup file custom name>
-
-```
-
-Executing the command above will create a new ZIP file with the specified name in the default backup directory.
-
-__To add a timestamp suffix to a custom filename__, add `-M` or `--timestamp-suffix` option:
-
-```Plain Text
-maintainDB.cmd backup -F <backup file custom name> -M
-or
-maintainDB.cmd backup -F <backup file custom name> --timestamp-suffix
-
-```
-
-__To create a backup file in a custom directory__, run maintainDB with the `-F` option:
-
-```Plain Text
-maintainDB backup -F <absolute path to the custom backup directory>
-or
-maintainDB backup --data-dir <absolute path to the custom backup directory>
-```
-
-## maintainDB Startup Options
+## JVM Startup Options for maintainDB
 
 If you customize TeamCity server startup options via `TEAMCITY_SERVER_OPTS/TEAMCITY_SERVER_MEM_OPTS` environment variables or use custom JDK installation to run the server, you might need to run `maintainDB` script with related options added into `TEAMCITY_MAINTAINDB_OPTS/TEAMCITY_MAINTAINDB_MEM_OPTS` environment variables and run the script with all the same environment as the TeamCity server, so that the same JVM is used.
  
