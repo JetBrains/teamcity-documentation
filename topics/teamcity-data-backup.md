@@ -9,7 +9,7 @@ The database of your TeamCity Cloud instance is backed up on a daily basis. The 
 ## Backup Alternatives
 {product="tc"}
 
-TeamCity provides several alternative backup methods:
+TeamCity provides the following alternatives for backing up data:
 
 <table>
 <tr>
@@ -34,7 +34,7 @@ TeamCity provides several alternative backup methods:
 <td><p><a href="creating-backup-via-maintaindb-command-line-tool.md"><i>maintainDB tool</i></a></p></td>
 <td><p>
 <list>
-<li><p>Main use case involves stopping TeamCity server</p></li>
+<li><p>Main use case requires stopping TeamCity server</p></li>
 <li><p>Database agnostic</p></li>
 <li><p>Includes running builds and build queue state (when server is stopped)</p></li>
 <li><p>Does not include all types of data</p></li>
@@ -146,7 +146,7 @@ Depending on the chosen backup method, the following data can be backed up:
 </tr>
 
 <tr>
-<td><p>TeamCity application logs</p></td>
+<td><p>TeamCity server logs</p></td>
 <td><p><b>No</b></p></td>
 <td><p><b>No</b></p></td>
 <td><p>Yes</p></td>
@@ -175,22 +175,22 @@ The types of data from the preceding table are, as follows:
 * Server settings, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
 * Supplementary data — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
 * Build logs — are usually stored together with build artifacts (by default, under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`).
-   > If logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
+   > If build logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
    >
    {type="note"}
-* Personal builds — a feature of IDE integration with TeamCity that enables a developer to trigger a TeamCity build based on code that has not been committed to a VCS. For details, see [](personal-build.md).
-* Custom plugins — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>\plugins`.
+* [Personal builds](personal-build.md) — the history of VCS changes (commits) related to personal builds.
+* Custom plugins — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins`.
 * Database drivers — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib`.
-* Running builds and build queue state — requires you to stop the TeamCity server. You can then back up this data using the maintainDB tool.
+* Running builds and build queue state — requires the TeamCity server to be stopped. You can back up this type of data using the maintainDB tool.
 
-* Build artifacts — are not normally included in the TeamCity backup. Because of the large data volumes involved, it usually makes sense to develop a dedicated artifacts storage strategy, for example:
+* Build artifacts — are not normally included in the TeamCity backup. Because of the large data volumes involved, it usually makes sense to implement a dedicated artifacts storage strategy, for example:
    * By customizing the directory for [artifacts storage](teamcity-configuration-and-maintenance.md#artifact-directories), configuring it to use the mount point of a redundant storage medium.
    * By configuring [external artifacts storage](configuring-artifacts-storage.md#external-artifacts-storage) to store data in the cloud.
    > Build artifacts and logs can (if necessary) be backed up manually by copying files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` (default location).
    >
    {type="tip"}
 
-* TeamCity application logs — files under `<[TeamCity Home](teamcity-home-directory.md)>/logs`.
+* [TeamCity server logs](teamcity-server-logs.md) — files under `<[TeamCity Home](teamcity-home-directory.md)>/logs`.
 * Manual customizations under `<[TeamCity Home](teamcity-home-directory.md)>` — including the server port number, which is configured in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file.
 * Manually created files under `<[TeamCity Data Directory](teamcity-data-directory.md)>` — any files under `<TeamCity Data Directory>` that have not already been mentioned.
 

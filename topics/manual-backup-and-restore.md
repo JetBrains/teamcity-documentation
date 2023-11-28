@@ -29,6 +29,11 @@ If you decide to skip backing up data under `<[TeamCity Data Directory](teamcity
 
 The `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.*` files store the internal database (HSQLDB) data. You need to back them up if you use HSQLDB (the default setting not suitable for production use).
 
+### Build Artifacts
+
+In a production system, build artifacts are often stored outside the `<TeamCity Data Directory>` — for example, by configuring [external artifacts storage](configuring-artifacts-storage.md#external-artifacts-storage) to store the artifacts data in the cloud. If this is the case, you can use the backup facilities from your cloud provider to create a backup of the artifacts storage.
+
+
 <anchor name="database_data"/>
 
 ### Database Data
@@ -39,7 +44,7 @@ The database stores all information on the build results (build history and all 
 
 ### Application Files
 
-You do not need to back up TeamCity application directory (web server alone with the web application), provided you still have the original distribution package and you did not:
+You do not need to back up the TeamCity application directory (web server along with the web application), provided you still have the original distribution package and you did not:
 * place any custom libraries for TeamCity to use
 * install any non-default TeamCity plugins directly into web application files
 * make any startup script/configuration changes.
@@ -51,7 +56,7 @@ If you feel you need to back up the application files:
 
 ### Log files
 
-If you need [TeamCity server log files](teamcity-server-logs.md) (which are mainly used for problem-solving or debug purposes), back up the  `<[TeamCity Data Directory](teamcity-data-directory.md)>/logs` directory.
+If you need [TeamCity server log files](teamcity-server-logs.md) (which are mainly used for problem-solving or debug purposes), back up the  `<TeamCity Home>/logs` directory.
 
 <note>
 

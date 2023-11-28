@@ -20,13 +20,13 @@ To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
    >
    {type="note"}
 4. Decide on the backup scope:
-    * `--basic` — back up only the most essential data
+    * `--basic` — back up only the most essential data (default)
     * `--all` — back up the maximum amount of data possible with maintainDB
     * Custom — choose from the options: `-D -C -U -L -P`
    > For more details, see [backup scope options](#Backup+Scope+Options).
    >
    {type="tip"}
-5. From the `<TeamCity Home>/bin` directory, enter the following command to back up TeamCity from the `<TeamCity Data Directory>`, saving the backup to the `<Backup File Name>` file with timestamp suffix:
+5. From the `<TeamCity Home>/bin` directory, enter the following command to back up TeamCity with data from the `<TeamCity Data Directory>`, saving the backup data to the `<Backup File Name>` file with a timestamp suffix:
     <tabs>
     <tab title="Linux"><p/>
 
