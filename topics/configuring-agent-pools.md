@@ -19,6 +19,10 @@ Using agent pools allows:
 * Use grouping by pool on the [Agent Matrix and Agent Statistics](viewing-agents-workload.md) pages.
 * Monitoring the required agents' capacity.
 
+> You can access agent pool functionality using the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-agent-pools.html).
+> 
+{type="note"}
+
 ## Required Permissions
 
 To be able to add/remove pools and set maximum number of agents in the pool, you need to have the "_Manage agent pools_" permission granted to the System Administrator and Agent Manager [roles](managing-roles-and-permissions.md) in the default TeamCity [per-project authorization mode](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
