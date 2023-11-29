@@ -312,6 +312,27 @@ Where the cron expressions in this table have the following format:
 Sec Min Hour Day-of-month Month Day-of-week Year
 ```
 
-
-
 See also [other examples](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html).
+
+### Kotlin DSL
+
+Using Kotlin DSL to configure a [schedule trigger](configuring-schedule-triggers.md) with the `0 0 0/2 ? * 2-6 *` cron expression:
+
+```Kotlin
+object Build : BuildType({
+    triggers {
+        schedule {
+            schedulingPolicy = cron {
+                seconds = "0"
+                minutes = "0"
+                hours = "0/2"
+                dayOfMonth = "?"
+                month = "*"
+                dayOfWeek = "2-6"
+                year = "*"
+            }
+            triggerBuild = always()
+        }
+    }
+})
+```
