@@ -106,7 +106,7 @@ Note that updating agent plugins and receiving new files following the server up
 ## Agent Upgrade
 {product="tcc"}
 
-Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that updating agent plugins and receiving new files following the server upgrade may trigger an agent restart for the changes to take effect. If your self-hosted agents run under user accounts with [sufficient permissions](system-requirements.md#Common+Requirements), all restarts happen automatically and do not require your input.
+Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that receiving new files following the server upgrade may trigger an agent restart for the changes to take effect. If your self-hosted agents run under user accounts with [sufficient permissions](system-requirements.md#Common+Requirements), all restarts happen automatically and do not require your input.
 
 
 ## Agent Priority
