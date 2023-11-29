@@ -192,6 +192,7 @@ The following protocols are supported for Git repository URL:
 <note>
 
 The SCP-like syntax requires a colon after the hostname, while a usual SSH URL does not. This is a common source of errors.
+
 </note>
 
 * Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
@@ -201,6 +202,7 @@ The SCP-like syntax requires a colon after the hostname, while a usual SSH URL d
 <note>
 
 When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.
+
 </note>
 
 ## Authentication Settings
@@ -972,6 +974,8 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 ## Agent-side checkout rules limitations
 {id="Limitations"}
 
+<chunk include-id="git-checkout-rules-limitations">
+
 The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. 
 The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
@@ -1008,6 +1012,8 @@ For example:
 Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfix`. If you append `[/postfix]` to the checkout directory path and the configuration's  **VCS checkout mode** is set to "Always checkout files on agent", new builds will be unable to start.
 
 <img src="dk-postfixCheckoutError.png" width="706" alt="Checkout directory path error"/>
+
+</chunk>
 
 ## Known Issues
 {product="tc"}
