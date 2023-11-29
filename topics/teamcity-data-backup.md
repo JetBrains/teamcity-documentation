@@ -11,11 +11,7 @@ The database of your TeamCity Cloud instance is backed up on a daily basis. The 
 
 TeamCity provides the following alternatives for backing up data:
 
-<table>
-<tr>
-<td><p><b>Backup method</b></p></td>
-<td><p><b>Advantages/disadvantages</b></p></td>
-</tr>
+<table header-style="none">
 
 <tr>
 <td><p><a href="creating-backup-from-teamcity-web-ui.md"><i>Web UI</i></a></p></td>
@@ -168,31 +164,33 @@ Depending on the chosen backup method, the following data can be backed up:
 
 </table>
 
+### Types of Data
+
 The types of data from the preceding table are, as follows:
 
-* Database — [data stored in the database](manual-backup-and-restore.md#Database+Data). In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
+* _Database_ — [data stored in the database](manual-backup-and-restore.md#Database+Data). In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
 
-* Server settings, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
-* Supplementary data — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
-* Build logs — are usually stored together with build artifacts (by default, under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`).
+* _Server settings_, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
+* _Supplementary data_ — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
+* _Build logs_ — are usually stored together with build artifacts (by default, under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`).
    > If build logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
    >
    {type="note"}
-* [Personal builds](personal-build.md) — the history of VCS changes (commits) related to personal builds.
-* Custom plugins — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins`.
-* Database drivers — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib`.
-* Running builds and build queue state — requires the TeamCity server to be stopped. You can back up this type of data using the maintainDB tool.
+* _[Personal builds](personal-build.md)_ — the history of VCS changes (commits) related to personal builds.
+* _Custom plugins_ — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins`.
+* _Database drivers_ — files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib`.
+* _Running builds and build queue state_ — requires the TeamCity server to be stopped. You can back up this type of data using the maintainDB tool.
 
-* Build artifacts — are not normally included in the TeamCity backup. Because of the large data volumes involved, it usually makes sense to implement a dedicated artifacts storage strategy, for example:
+* _Build artifacts_ — are not normally included in the TeamCity backup. Because of the large data volumes involved, it usually makes sense to implement a dedicated artifacts storage strategy, for example:
    * By customizing the directory for [artifacts storage](teamcity-configuration-and-maintenance.md#artifact-directories), configuring it to use the mount point of a redundant storage medium.
    * By configuring [external artifacts storage](configuring-artifacts-storage.md#external-artifacts-storage) to store data in the cloud.
    > Build artifacts and logs can (if necessary) be backed up manually by copying files under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` (default location).
    >
    {type="tip"}
 
-* [TeamCity server logs](teamcity-server-logs.md) — files under `<[TeamCity Home](teamcity-home-directory.md)>/logs`.
-* Manual customizations under `<[TeamCity Home](teamcity-home-directory.md)>` — including the server port number, which is configured in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file.
-* Manually created files under `<[TeamCity Data Directory](teamcity-data-directory.md)>` — any files under `<TeamCity Data Directory>` that have not already been mentioned.
+* _[TeamCity server logs](teamcity-server-logs.md)_ — files under `<[TeamCity Home](teamcity-home-directory.md)>/logs`.
+* _Manual customizations under `<[TeamCity Home](teamcity-home-directory.md)>`_ — including the server port number, which is configured in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file.
+* _Manually created files under `<[TeamCity Data Directory](teamcity-data-directory.md)>`_ — any files under `<TeamCity Data Directory>` that have not already been mentioned.
 
 [//]: # (Internal note. Do not delete. also https://youtrack.jetbrains.com/issue/TW-43056)
 
