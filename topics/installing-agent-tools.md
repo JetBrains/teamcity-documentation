@@ -33,12 +33,6 @@ When editing settings of a build step that directly depends on a tool, you just 
 
 However, there are cases when an arbitrary build script needs a certain tool. In such case, you can reference a required tool via a `%teamcity.tool.<installed_tool_ID>%` parameter in the build step settings that support the input of parameters. You can also reference a tool in [values of build configuration parameters](configuring-build-parameters.md) or in [agent requirements](agent-requirements.md). For instance, in case with agent requirements, you can define a requirement of the type `exists` for a parameter with the name `%teamcity.tool.<installed_tool_ID>%`, and this will instruct TeamCity that the build requires the referenced tool. Before starting a build, the TeamCity server scans all build steps' settings, finds all such tool references, and informs an agent what tools are required for the build.
 
-<note>
-
-When a new tool is installed on the server, it is propagated to all TeamCity build agents. A build agent remains operational following its tooling update, but initiates a restart when the TeamCity server assigns a build dependent on this tool to the agent. Agent restarts occur only when necessary and are fully automatic. However, note that a user under whose account this agent runs must possess [sufficient poermissions](system-requirements.md#Common+Requirements) to allow agents to schedule their restarts.
-
-</note>
-
 To check that the tool appears on the agent, look for `teamcity.tool.<installed_tool_ID>` in [configuration parameters reported by the agent](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) in the TeamCity UI.
 
 If you delete a tool in the TeamCity UI, each agent that have this tool installed will detect this, delete own copy of the tool, and restart.

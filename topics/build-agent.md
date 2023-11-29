@@ -100,15 +100,14 @@ TeamCity agents are automatically upgraded when needed. Typically, this happens 
 * an agent plugin is [added](installing-additional-plugins.md) or [updated](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#PluginsPackaging-AgentUpgradeonUpdatingPlugins) on the server
 * [a new tool is installed](installing-agent-tools.md)
 
-Upon receiving updated files from the server, an agent can schedule a restart. The internal agent logic ensures this happens only when necessary, aiming to maintain agent availability and prevent unnecessary restarts. For example, the agent remains operational following the download of a new tool version. However, a restart is required when the TeamCity server assigns a build dependent on this tool to the agent.
-
-For a build agent to execute a restart, a user under whose account this agent runs must possess [sufficient poermissions](system-requirements.md#Common+Requirements).
+Note that updating agent plugins and receiving new files following the server upgrade may trigger an agent restart for the changes to take effect. If agents run under user accounts with [sufficient permissions](system-requirements.md#Common+Requirements), all restarts happen automatically and do not require your input.
 
 
 ## Agent Upgrade
 {product="tcc"}
 
-Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that receiving new files from the server can require an agent restart for the changes to take effect. This happens automatically and does not require your interaction, however a user under whose account this agent runs must possess [sufficient poermissions](system-requirements.md#Common+Requirements).
+Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that updating agent plugins and receiving new files following the server upgrade may trigger an agent restart for the changes to take effect. If your self-hosted agents run under user accounts with [sufficient permissions](system-requirements.md#Common+Requirements), all restarts happen automatically and do not require your input.
+
 
 ## Agent Priority
 {product="tcc"}
