@@ -52,7 +52,7 @@ TeamCity provides the following alternatives for backing up data:
 
 </table>
 
-__The recommended approach__ is either to perform the [manual backup process](manual-backup-and-restore.md) or run a backup [from the UI](creating-backup-from-teamcity-web-ui.md) regularly (for example, automated via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-data-backup.html)) with the "Basic" level — this will ensure backing up all important data except build artifacts and build logs.
+For example, one possible backup strategy would be to perform a full manual backup on a regular schedule, complemented by more frequent Basic level Web UI backups (which could be automated using the TeamCity REST API).
 
 > If you only need to back up data from a build agent, see the procedure for [](backing-up-build-agent-s-data.md).
 >
@@ -168,7 +168,11 @@ Depending on the chosen backup method, the following data can be backed up:
 
 The types of data from the preceding table are, as follows:
 
-* _Database_ — [data stored in the database](manual-backup-and-restore.md#Database+Data). In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
+<anchor name="database_data"/>
+
+* _Database_ — The database stores all information on the build results (build history and all the build-associated data except for artifacts and build logs), VCS changes, agents, build queue, user accounts and user permissions, and so on.
+
+  In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
 
 * _Server settings_, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
 * _Supplementary data_ — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
