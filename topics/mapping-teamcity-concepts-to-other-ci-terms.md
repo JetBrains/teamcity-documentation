@@ -3,130 +3,182 @@
 
 This information can be used when migrating to TeamCity from other Continuous Integration tools.
 
-## Jenkins mapping
+## Jenkins Mapping
 
 <include src="jenkins-to-teamcity-migration-guidelines.md" include-id="jenkins-mapping-to-teamcity"/>
 
-## Bamboo mapping
+## Bamboo Mapping
 
-<table><tr>
+<table>
 
-<td>
+<tr>
+<td width="300"><p><b>Bamboo</b></p></td>
+<td><p><b>TeamCity</b></p></td>
+</tr>
 
-Bamboo
+<tr>
+<td><p>Project</p></td>
+<td><p><a href="project.md">Project</a></p></td>
+</tr>
 
+<tr>
+<td><p>Plan</p></td>
+<td><p><a href="build-chain.md">Build Chain</a></p></td>
+</tr>
+
+<tr>
+<td><p>Stage</p></td>
+<td><p>Build, <a href="composite-build-configuration.md">Composite Build</a>, or <a href="matrix-build.md">Matrix Build</a></p></td>
+</tr>
+
+<tr>
+<td><p>Job</p></td>
+<td><p><a href="creating-and-editing-build-configurations.md">Build Configuration</a></p></td>
+</tr>
+
+<tr>
+<td><p>(Plan or Job) Build</p></td>
+<td><p>Build</p></td>
+</tr>
+
+<tr>
+<td><p>Task</p></td>
+<td><p><a href="configuring-build-steps.md">Build Step</a></p></td>
+</tr>
+
+<tr>
+<td><p>Artifact</p></td>
+<td><p><a href="build-artifact.md">Build Artifact</a></p></td>
+</tr>
+
+<tr>
+<td><p>Trigger method</p></td>
+<td><p><a href="configuring-build-triggers.md">Build Trigger</a></p></td>
+</tr>
+
+<tr>
+<td><p>Agent</p></td>
+<td><p><a href="build-agent.md">Build Agent</a></p></td>
+</tr>
+
+<tr>
+<td><p>Requirement</p></td>
+<td><p><a href="agent-requirements.md">Agent Requirement</a></p></td>
+</tr>
+
+<tr>
+<td><p>Capability</p></td>
+<td><p>(Agent) <a href="using-build-parameters.md">Build Parameter</a></p></td>
+</tr>
+
+</table>
+
+
+## GitLab CI/CD Mapping
+
+<table>
+
+<tr>
+<td width="300"><p><b>GitLab CI/CD</b></p></td>
+<td><p><b>TeamCity</b></p></td>
+</tr>
+
+<tr>
+<td><p>Project</p></td>
+<td><p><a href="project.md">Project</a></p></td>
+</tr>
+
+<tr>
+<td><p>Pipeline</p></td>
+<td><p><a href="build-chain.md">Build Chain</a></p></td>
+</tr>
+
+<tr>
+<td><p>Stage</p></td>
+<td><p>Build, <a href="composite-build-configuration.md">Composite Build</a>, or <a href="matrix-build.md">Matrix Build</a></p></td>
+</tr>
+
+<tr>
+<td><p>Job</p></td>
+<td><p><a href="creating-and-editing-build-configurations.md">Build Configuration</a></p></td>
+</tr>
+
+<tr>
+<td><p>Job</p></td>
+<td><p>Build</p></td>
+</tr>
+
+<tr>
+<td><p>Job artifact</p></td>
+<td><p><a href="build-artifact.md">Build Artifact</a></p></td>
+</tr>
+
+<tr>
+<td><p>Branch pipeline</p>
+<p>Merge request pipeline</p>
 </td>
+<td><p><a href="configuring-build-triggers.md">Build Trigger</a></p></td>
+</tr>
 
-<td>
+<tr>
+<td><p>Runner</p></td>
+<td><p><a href="build-agent.md">Build Agent</a></p></td>
+</tr>
 
-TeamCity
+<tr>
+<td><p>Rules</p></td>
+<td><p><a href="build-step-execution-conditions.md">Build Step Execution Conditions</a></p></td>
+</tr>
 
-</td></tr><tr>
+</table>
 
-<td>
+## Concourse Mapping
 
-Project
+<table>
 
-</td>
+<tr>
+<td width="300"><p><b>Concourse</b></p></td>
+<td><p><b>TeamCity</b></p></td>
+</tr>
 
-<td>
+<tr>
+<td><p>Pipeline</p></td>
+<td><p><a href="build-chain.md">Build Chain</a></p></td>
+</tr>
 
-Project
+<tr>
+<td><p>Job</p></td>
+<td><p><a href="creating-and-editing-build-configurations.md">Build Configuration</a></p></td>
+</tr>
 
-</td></tr><tr>
+<tr>
+<td><p>Build</p></td>
+<td><p>Build</p></td>
+</tr>
 
-<td>
+<tr>
+<td><p>Step</p></td>
+<td><p><a href="configuring-build-steps.md">Build Step</a></p></td>
+</tr>
 
-Plan
+<tr>
+<td><p>Artifact</p></td>
+<td><p><a href="build-artifact.md">Build Artifact</a></p></td>
+</tr>
 
-</td>
+<tr>
+<td><p>Get step</p></td>
+<td><p><a href="configuring-build-triggers.md">Build Trigger</a></p></td>
+</tr>
 
-<td>
+<tr>
+<td><p>Worker</p></td>
+<td><p><a href="build-agent.md">Build Agent</a></p></td>
+</tr>
 
-Build Configuration
+<tr>
+<td><p>Vars</p></td>
+<td><p><a href="using-build-parameters.md">Build Parameter</a></p></td>
+</tr>
 
-</td></tr><tr>
-
-<td>
-
-Stage
-
-</td>
-
-<td>
-
-Build Step
-
-</td></tr><tr>
-
-<td>
-
-Job
-
-</td>
-
-<td>
-
-Build
-
-</td></tr><tr>
-
-<td>
-
-Task — a part of the Job, often making use of an executable
-
-</td>
-
-<td>
-
-a part of Build Step
-
-</td></tr><tr>
-
-<td>
-
-Builder task
-
-</td>
-
-<td>
-
-Build runner step
-
-</td></tr><tr>
-
-<td>
-
-Agent
-
-</td>
-
-<td>
-
-Build Agent
-
-</td></tr><tr>
-
-<td>
-
-(Agent) capability
-
-</td>
-
-<td>
-
-(Agent) Parameter
-
-</td></tr><tr>
-
-<td>
-
-(Job) requirement
-
-</td>
-
-<td>
-
-Agent Requirement
-
-</td></tr></table>
+</table>

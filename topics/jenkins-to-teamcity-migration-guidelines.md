@@ -22,13 +22,13 @@ Jenkins and TeamCity mostly feature the same set of concepts, however, with slig
 
 <td>
 
-Jenkins
+<b>Jenkins</b>
 
 </td>
 
 <td>
 
-TeamCity
+<b>TeamCity</b>
 
 </td></tr><tr>
 
