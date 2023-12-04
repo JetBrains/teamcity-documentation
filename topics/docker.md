@@ -5,6 +5,10 @@ The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push
 
 >For the `run` command, use [](container-wrapper.md).
 
+If you need to push the newly built image to a registry, you can authorize to a Docker or Podman registry by configuring the _Docker Support_ build feature, as follows:
+1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
+2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
+
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
 ## Common Settings
@@ -233,7 +237,8 @@ buildagentuser ALL=(ALL) NOPASSWD:SETENV:<full_path_to_docker>
 ```
 
 We recommend removing (or commenting out) the `Defaults requiretty` line from the `sudoers` file to prevent the [problem with `docker login`](https://youtrack.jetbrains.com/issue/TW-60990).
- 
+
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
