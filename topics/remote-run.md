@@ -1,7 +1,9 @@
 [//]: # (title: Remote Run)
 [//]: # (auxiliary-id: Remote Run)
 
-A _remote run_ is a [personal build](personal-build.md) initiated by a developer from one of the supported IDE plugins to test how the changes will integrate into the project's code base. Unlike [Pre-tested (delayed) commit](pre-tested-delayed-commit.md), no code is checked into the VCS regardless of the state of the personal build initiated via Remote Run.
+A _remote run_ is a [personal build](personal-build.md) initiated by a developer from one of the supported IDE plugins to test how the changes will integrate into the project's code base. For example, to initiate a remote run from the IntelliJ IDEA Platform, see [Running Builds Remotely](https://www.jetbrains.com/help/teamcity/ij-addin/tc-run-build-remotely.html).
+
+Unlike [Pre-tested (delayed) commit](pre-tested-delayed-commit.md), no code is checked into the VCS regardless of the state of the personal build initiated via Remote Run.
 
 For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md#IDE+Integration).
 
