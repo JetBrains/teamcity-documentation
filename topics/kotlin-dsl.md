@@ -56,7 +56,8 @@ Usually it takes a minute or two, depending on the _Changes Checking Interval_ d
 After the commit to the repository, you will get the `.teamcity` settings directory with the following files:
 * `settings.kts` — The main file containing all the project configuration.
 * `pom.xml` —  Allows TeamCity and external IDEs (that you use to open Kotlin projects) to resolve dependencies required to compile and run DSL code.
-* 
+
+
 ## Edit Kotlin Projects in IntelliJ IDEA
 
 You can create, edit, and debug TeamCity Kotlin DSL projects in IntelliJ IDEA (both Ultimate and Community versions are supported).
