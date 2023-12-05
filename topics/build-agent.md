@@ -7,6 +7,10 @@ A TeamCity _build agent_ is a piece of software which listens for the commands f
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. There are two types of agents in TeamCity Cloud: JetBrains-hosted and self-hosted. The first ones are maintained and configured by JetBrains. They are started on-demand as soon as each new build requires to be run. The second ones are [stored and configured](install-and-start-teamcity-agents.md) by the customer. Both types of agents can be successfully combined in one TeamCity Cloud installation. Please see [Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md) on details between these agents in terms of the TeamCity Cloud subscription.
 {product="tcc"}
 
+> This article covers the basic build agent concepts. See the article links in the page footer for details of administering build agents.
+> 
+{type="tip"}
+
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
 * Agent launcher — a Java process that launches the agent process.
 * Agent — the main process for a build agent; runs as a child process for the agent launcher.
@@ -149,13 +153,14 @@ teamcity.agent.priority=54
 
 <seealso>
         <category ref="installation">
-            <a href="install-and-start-teamcity-agents.md">Setting up Additional Build Agents</a>
+            <a href="install-and-start-teamcity-agents.md">Install and Start TeamCity Agents</a>
         </category>
         <category ref="concepts">
             <a href="agent-work-directory.md">Agent Work Directory</a>
             <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
         </category>
         <category ref="admin-guide">
+            <a href="build-agents-configuration-and-maintenance.md">Build Agents Configuration and Maintenance</a>
             <a href="configuring-agent-pools.md">Agent Pools</a>
             <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>
             <a href="licensing-policy.md" product="tc">Licensing Policy</a>
