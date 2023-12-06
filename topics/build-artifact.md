@@ -79,7 +79,7 @@ title="TeamCity tutorial — How to work with artifacts (logs, graphics, binarie
         <category ref="admin-guide">
             <a href="configuring-general-settings.md#Artifact+Paths">Configuring General Settings</a>
             <a href="configuring-dependencies.md">Configuring Dependencies</a>
-            <a href="configuring-artifacts-storage.md">Configuring Artifacts Storage</a>
+            <a href="configuring-artifacts-storage.md" product="tc">Configuring Artifacts Storage</a>
             <a href="patterns-for-accessing-build-artifacts.md">Patterns For Accessing Build Artifacts</a>
         </category>
 </seealso>
