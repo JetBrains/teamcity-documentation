@@ -50,11 +50,22 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 * At TeamCity, we are fully dedicated to bolstering the comprehensive security of our platform, and we consistently enhance our product to realize this commitment. Due to one of these security-related updates, TeamCity no longer serves build artifacts from its main domain if you set up the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
     
-    As a side effect, if TeamCity is hosted behind a [proxy server](configuring-proxy-server.md) that does not provide the `X-Forwarded-Host` header, attempts to access build artifacts may cause infinite redirect loops. If you experience issues with the `ERR_TOO_MANY_REDIRECTS` error, make sure your proxy server provides valid `X-Forwarded-Host` headers. You can also manually rollback this change by setting the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
+    As a side effect of this change, some users can experience the following issues when TeamCity is hosted behind a [proxy server](configuring-proxy-server.md):
+
+    * Attempts to access build artifacts cause infinite redirect loops (`ERR_TOO_MANY_REDIRECTS`). To fix this issue, make sure your proxy server provides valid `X-Forwarded-Host` headers.
+    * Inability to log in TeamCity using a browser.
+    * Builds failing with the "Failed to publish artifacts: Artifacts URL is dedicated to storing artifacts and cannot be used to log in or serve other content" error.
+  
+    You can roll back this change by setting the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
 
 * If your TeamCity username includes encoded special symbols (for example, emoji), you may be unable to log in to TeamCity via the [](intellij-platform-plugin.md). See the following ticket for more information: [TW-85284](https://youtrack.jetbrains.com/issue/TW-85284/Unable-to-log-in-from-the-IntelliJ-IDEA-TeamCity-plugin).
 
 * Remote TeamCity runs from the Visual Studio's ReSharper extension is currently unavailable for projects that target SVN repositories. See this issue for more information: [TW-85310](https://youtrack.jetbrains.com/issue/TW-85310).
+
+* LDAP synchronization currently fetches first 1000 users. As a workaround, set the `teamcity.ldap.search.pageSize` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to a larger value. See this YouTrack ticket for the resolution progress: [TW-85444](https://youtrack.jetbrains.com/issue/TW-85444/LDAP-sync-retrieves-only-1000-users).
+
+
+
 
 ## Changes from 2023.05.3 to 2023.05.4
 
