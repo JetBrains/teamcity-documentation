@@ -198,34 +198,6 @@ Escape as
 
 </td></tr></table>
 
-### Message FlowId
-
-Any message supports the optional attribute `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
-
-`flowId` is a unique identifier of the message flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
-
-```Shell
-##teamcity[<messageName> flowId='flowId' ...]
-
-```
-
-In most cases, `flowId` is the only attribute required to start a message flow.
-
-When you absolutely need to start a flow not inside the root flow but as a subflow inside an existing flow, add the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.   
-To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
-
-```Shell
-##teamcity[flowStarted flowId='MainFlow' ...]
-##teamcity[flowStarted flowId='SubFlow1' parent='MainFlow' ...]
-##teamcity[flowFinished flowId='SubFlow1' ...]
-##teamcity[flowStarted flowId='SubFlow2' parent='MainFlow' ...]
-##teamcity[flowFinished flowId='SubFlow2' ...]
-##teamcity[flowFinished flowId='MainFlow' ...]
-
-```
-
-This custom subflow order affects the sequence of reports in a build log and allows reporting results as subtrees.
-
 ## Reporting Messages to Build Log
 
 You can report messages to a build log as follows:
@@ -286,6 +258,34 @@ Block closing:
 where:
 * `compiler_name` is an arbitrary name of the compiler performing compilation, for example, `javac` or `groovyc`. Currently, it is used as a block name in the build log.
 * Any message with status `ERROR` reported between `compilationStarted` and `compilationFinished` will be treated as a compilation error.
+
+### Message FlowId
+
+Any message supports the optional attribute `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
+
+`flowId` is a unique identifier of the message flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
+
+```Shell
+##teamcity[<messageName> flowId='flowId' ...]
+
+```
+
+In most cases, `flowId` is the only attribute required to start a message flow.
+
+When you absolutely need to start a flow not inside the root flow but as a subflow inside an existing flow, add the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.   
+To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
+
+```Shell
+##teamcity[flowStarted flowId='MainFlow' ...]
+##teamcity[flowStarted flowId='SubFlow1' parent='MainFlow' ...]
+##teamcity[flowFinished flowId='SubFlow1' ...]
+##teamcity[flowStarted flowId='SubFlow2' parent='MainFlow' ...]
+##teamcity[flowFinished flowId='SubFlow2' ...]
+##teamcity[flowFinished flowId='MainFlow' ...]
+
+```
+
+This custom subflow order affects the sequence of reports in a build log and allows reporting results as subtrees.
 
 ### Reporting Tests
 
