@@ -257,7 +257,7 @@ Artifacts' URL
 
 <td>
   
-Specify a URL to serve build artifacts from. The URL must be different from the [Server URL](#server-url).
+Specify a URL to serve build artifacts from. Note the URLs for artifacts isolation and the [TeamCity server](#server-url) must have different hostnames. Using different ports of the same hostname for both resources may lead to various problems, including failed builds and issues with signing in to TeamCity.
 
 On receiving a request for a content of some artifact, TeamCity will redirect your browser to a temporary URL that uses this artifacts' URL as a base. The temporary URL expires after some time to prevent unauthorized access to the artifact. Upon accessing the expired URL, a regular authentication will be performed and a new URL will be generated.  
 The same logic applies to the [custom report tabs](including-third-party-reports-in-the-build-results.md) because their content also comes from the build artifacts.

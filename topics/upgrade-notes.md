@@ -48,15 +48,11 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 ### Known Issues
 {id="known-issues-2023-11"}
 
-* At TeamCity, we are fully dedicated to bolstering the comprehensive security of our platform, and we consistently enhance our product to realize this commitment. Due to one of these security-related updates, TeamCity no longer serves build artifacts from its main domain if you set up the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation).
-    
-    As a side effect of this change, some users can experience the following issues when TeamCity is hosted behind a [proxy server](configuring-proxy-server.md):
+* At TeamCity, we are fully dedicated to bolstering the comprehensive security of our platform, and we consistently enhance our product to realize this commitment.
 
-    * Attempts to access build artifacts cause infinite redirect loops (`ERR_TOO_MANY_REDIRECTS`). To fix this issue, make sure your proxy server provides valid `X-Forwarded-Host` headers.
-    * Inability to log in TeamCity using a browser.
-    * Builds failing with the "Failed to publish artifacts: Artifacts URL is dedicated to storing artifacts and cannot be used to log in or serve other content" error.
-  
-    You can roll back this change by setting the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
+    In version 2023.11, we have fixed certain issues related to the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) feature. As a side effect of these changes, some users can experience infinite redirect loops (`ERR_TOO_MANY_REDIRECTS`) when attempting to access build artifacts. To fix this issue, make sure your proxy server provides valid `X-Forwarded-Host` headers (see the [](configuring-proxy-server.md) article for the configuration examples).
+
+    You can also roll back these changes by adding the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
 
 * If your TeamCity username includes encoded special symbols (for example, emoji), you may be unable to log in to TeamCity via the [](intellij-platform-plugin.md). See the following ticket for more information: [TW-85284](https://youtrack.jetbrains.com/issue/TW-85284/Unable-to-log-in-from-the-IntelliJ-IDEA-TeamCity-plugin).
 
