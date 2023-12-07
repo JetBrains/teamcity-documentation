@@ -13,7 +13,7 @@
 |[Unity Hub](https://unity.com/unity-hub)|3.6.1.0|
 |[Unity](https://unity.com/)|2022.3.12.59104|
 |[JDK](https://aws.amazon.com/corretto/)|11|
-|[.NET](https://dotnet.microsoft.com/)|7.0.102|
+|[.NET](https://dotnet.microsoft.com/)|8.0.100|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|1.25.3|
 |[NUnit](https://nunit.org/)|3.16.3|
 |[WiX Toolset](https://wixtoolset.org/)|3.11.2|
@@ -22,7 +22,7 @@
 |[Mercurial](https://www.mercurial-scm.org/)|1.0.0.1|
 |[SVN](https://subversion.apache.org/)|1.14.2.64502|
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
-|[Node.js](https://nodejs.org/en/)|v20.9.0|
+|[Node.js](https://nodejs.org/en/)|v20.10.0|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
 |[vcpkg](https://vcpkg.io/en/)|2023-11-16-4c1df40a3c5c5e18de299a99e9accb03c2a82e1e|
 |[Docker](https://www.docker.com/)|20.10.9|
