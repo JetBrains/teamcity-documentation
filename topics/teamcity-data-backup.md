@@ -86,7 +86,7 @@ Depending on the chosen backup method, the following data can be backed up:
 </tr>
 
 <tr>
-<td><p>Server settings, project settings, and build settings — <b>secure values</b></p></td>
+<td><p>Server settings, project settings, and build settings (<b>secure values</b>)</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
@@ -174,11 +174,11 @@ The types of data from the preceding table are, as follows:
 
   In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
 
-* _Server settings_, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
+* _Server settings, project settings, and build settings_ — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
    > Secure values under this directory include data such as authentication tokens, SSH keys, and passwords.
    >
    {type="warning"}
-* _Supplementary data_ — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
+* _Supplementary data_ — settings history, triggers states, plugins data, and everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData`.
 * _Build logs_ — are usually stored together with build artifacts (by default, under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`).
    > If build logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
    >

@@ -50,7 +50,7 @@ To back up TeamCity server data using the `maintainDB.cmd|sh` tool:
 
 ## Backup File Location and Format
 
-The default directory for backup files is the `<TeamCity Data Directory>/backup`.
+The default directory for backup files is `<TeamCity Data Directory>/backup`.
 
 <note>
 

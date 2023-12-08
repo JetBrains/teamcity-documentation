@@ -24,11 +24,11 @@ To back up TeamCity server data manually:
    >
    {type="note"}
 4. Review your artifacts backup strategy. In a production system, build artifacts are often stored in the cloud by configuring [external artifacts storage](configuring-artifacts-storage.md#external-artifacts-storage). If this is the case, you can use the backup facilities from your cloud provider to create a backup of the artifacts storage.
-   > By default, TeamCity stores build artifacts and build logs under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` directory.
+   > By default, TeamCity stores build artifacts and build logs under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`.
    >
    {type="tip"}
-6. Back up the `<[TeamCity Data Directory](teamcity-data-directory.md)>` directory using a file archiving tool (Zip or similar) and copy the resulting archive file to a safe and secure location.
-   > Some of the contents of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` directory are not strictly needed for backup. If you want to reduce the size of this file, see [](#Reducing+Backup+Size).
+6. Back up the `<[TeamCity Data Directory](teamcity-data-directory.md)>` using a file archiving tool (Zip or similar) and copy the resulting archive file to a safe and secure location.
+   > Some of the contents of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` are not strictly needed for backup. If you want to reduce the size of this file, see [](#Reducing+Backup+Size).
    >
    {type="tip"}
 7. (Optional) In some cases, you might need to back up additional files (for example, custom files under `[<TeamCity Home>](teamcity-home-directory.md)`). For details, see [](#Optional+Backup+Data).
@@ -69,7 +69,7 @@ The following data might need to be backed up in some cases:
 
 ### Reducing Backup Size
 
-To reduce the size of the backup, you can exclude certain parts of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` directory, as follows:
+To reduce the size of the backup, you can exclude certain parts of the `<[TeamCity Data Directory](teamcity-data-directory.md)>`, as follows:
 
 * `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory — you can safely exclude the `system/caches` directory from the backup, because the cache gets rebuilt on TeamCity startup.
 
