@@ -21,7 +21,7 @@ TeamCity provides the following alternatives for backing up data:
 <li><p>Database agnostic</p></li>
 <li><p>Can be triggered by <a href="https://www.jetbrains.com/help/teamcity/rest/manage-data-backup.html">REST API</a></p></li>
 <li><p>Does not include running builds and build queue state</p></li>
-<li><p>Does not include all types of data</p></li>
+<li><p>Does not include manual customizations</p></li>
 </list>
 </p></td>
 </tr>
@@ -33,7 +33,7 @@ TeamCity provides the following alternatives for backing up data:
 <li><p>Main use case requires stopping TeamCity server</p></li>
 <li><p>Database agnostic</p></li>
 <li><p>Includes running builds and build queue state (when server is stopped)</p></li>
-<li><p>Does not include all types of data</p></li>
+<li><p>Does not include manual customizations</p></li>
 </list>
 </p></td>
 </tr>
@@ -45,7 +45,7 @@ TeamCity provides the following alternatives for backing up data:
 <li><p>Requires stopping TeamCity server</p></li>
 <li><p>Database backup with database-specific tools</p></li>
 <li><p>Includes running builds and build queue state</p></li>
-<li><p>Can include all types of data</p></li>
+<li><p>Can include manual customizations</p></li>
 </list>
 </p></td>
 </tr>
@@ -86,7 +86,7 @@ Depending on the chosen backup method, the following data can be backed up:
 </tr>
 
 <tr>
-<td><p>Server settings, project settings, and build settings</p></td>
+<td><p>Server settings, project settings, and build settings — <b>secure values</b></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
@@ -175,6 +175,9 @@ The types of data from the preceding table are, as follows:
   In the case of Web UI or maintainDB backup, the data is extracted in a database-agnostic format, which makes it possible to restore the data to a different database if required (database migration). On the other hand, for enterprise production systems, exporting data from the database might not be an efficient solution and data replication using database-specific tools is probably more performant. For example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
 
 * _Server settings_, project settings, and build settings — includes everything under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config`), including secure values.
+   > Secure values under this directory include data such as authentication tokens, SSH keys, and passwords.
+   >
+   {type="warning"}
 * _Supplementary data_ — settings history, triggers states, plugins data, and everything under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory.
 * _Build logs_ — are usually stored together with build artifacts (by default, under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts`).
    > If build logs are selected for backup, TeamCity will search for them in [all artifact directories](build-artifact.md) currently specified on the server.
