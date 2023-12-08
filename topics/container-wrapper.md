@@ -3,6 +3,10 @@
 
 The _Container Wrapper_ extension allows running a build step inside the specified Docker/LXC image. Images are pulled via `docker pull` or `podman pull` commands, depending on which container manager is installed on the agent that runs the build.
 
+> To configure the _Container Wrapper_ extension in Kotlin DSL, see the Docker example in [MavenBuildStep](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildSteps/maven-build-step/index.html).
+>
+{type="note"}
+
 TeamCity can pull containers anonymously (if images are publicly available) or after logging into a registry (for private registries or to avoid DockerHub penalties for anonymous downloads). If you need TeamCity to authorize to a registry before pulling an image, configure the _Docker Support_ build feature, as follows:
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
 2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
