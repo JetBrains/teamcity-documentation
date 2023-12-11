@@ -17,7 +17,21 @@ When [parameter references](using-build-parameters.md) are used in a VCS root, T
 
 ## Attach VCS Root
 
-VCS settings are configured on the __Version Control Settings__ page for a project or a build configuration: you can attach an existing [VCS root](configuring-vcs-roots.md) to your project/build configuration, or create a new one to be attached. This is the main part of VCS parameters setup; a VCS root is a description of a version control system where project sources are located. Learn more about VCS Roots and configuration details [here](configuring-vcs-roots.md).
+<procedure title="Attach or Create VCS Root">
+<step><p>Go to <b>Administration</b> and click the project you want to configure.</p></step>
+<step><p>From the project's <b>General Settings</b> page, click the relevant build under <b>Build Configurations</b></p></step>
+<step><p>Select <b>Version Control Settings</b> from the sidebar.</p></step>
+<step><p>Click <b>Attach VCS root</b>.</p></step>
+<step><p>If there is at least one existing VCS root available, TeamCity offers a choice between the following actions:</p>
+<list>
+<li><p><b>Attach existing VCS root</b> — select the VCS root to attach and then complete the <b>Update Checkout Rules</b> form.</p></li>
+<li><p><b>Create new VCS root</b> — configure the new VCS root, following the guidelines in <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>.</p></li>
+</list>
+<note>
+<p>If there is no existing VCS root available, TeamCity jumps straight to the <b>Create new VCS root</b> page.</p>
+</note>
+</step>
+</procedure>
 
 ### Configure Checkout Rules
 
