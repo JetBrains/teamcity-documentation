@@ -371,7 +371,7 @@ To provide up-to-date status information on specific build configurations, use t
     
     ```
 
-It is also possible to show the status of all projects build configurations by replacing `&buildTypeId=<external build configuration ID>` with `&projectId=<external project ID>`. You can select a combination of these parameters to display the needed projects and build configurations on your web page.
+It is also possible to show the status of all projects build configurations by replacing `&[buildTypeId](identifier.md)=<external build configuration ID>` with `&[projectId](identifier.md)=<external project ID>`. You can select a combination of these parameters to display the needed projects and build configurations on your web page.
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
