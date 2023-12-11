@@ -915,7 +915,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 
 <tr>
    <td>MariaDB</td>
-   <td>10.2 and later</td>
+   <td>10.2 or later</td>
 </tr>
 
 </table>
