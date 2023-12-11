@@ -52,6 +52,8 @@ Is shown for the conditions which require the value to match against (like "equa
 
 </td></tr></table>
 
+To delete a requirement, go to **Build Configuration Settings | Agent Requirements** and, in the row with the requirement you want to delete, click the dropdown icon <img src="configuring-agent-requirements-dropdown.png" width="45"/> and select **Delete**.
+
 [//]: # (Internal note. Do not delete. "Configuring Agent Requirementsd68e98.txt")
 Note that the __[Agent Requirements](agent-requirements.md)__ page also displays the list of compatible and incompatible build agents for this build configuration, which is updated each time you modify the list of requirements. Possible reasons why build agent may be incompatible with this build configuration are [described separately](agent-requirements.md).
 
