@@ -56,7 +56,7 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 * If your TeamCity username includes encoded special symbols (for example, emoji), you may be unable to log in to TeamCity via the [](intellij-platform-plugin.md). See the following ticket for more information: [TW-85284](https://youtrack.jetbrains.com/issue/TW-85284/Unable-to-log-in-from-the-IntelliJ-IDEA-TeamCity-plugin).
 
-* Remote TeamCity runs from the Visual Studio's ReSharper extension is currently unavailable for projects that target SVN repositories. See this issue for more information: [TW-85310](https://youtrack.jetbrains.com/issue/TW-85310).
+* TeamCity may be unable to run new builds for Subversion repositories accessed over the secure SSH protocol (SVN+SSH). See this issue for more information: [TW-85310](https://youtrack.jetbrains.com/issue/TW-85310).
 
 * LDAP synchronization currently fetches first 1000 users. As a workaround, set the `teamcity.ldap.search.pageSize` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to a larger value. See this YouTrack ticket for the resolution progress: [TW-85444](https://youtrack.jetbrains.com/issue/TW-85444/LDAP-sync-retrieves-only-1000-users).
 
