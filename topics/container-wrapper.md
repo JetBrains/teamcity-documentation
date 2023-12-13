@@ -133,6 +133,22 @@ If a Docker image does not define an [`ENTRYPOINT`](https://docs.docker.com/engi
 
 TeamCity will start the specified Docker image with the defined `ENTRYPOINT`.
 
+## Setting Container User
+
+If your step creates or accesses files or folders on local storage, ensure these actions are performed under the correct user with sufficient permissions. To do this, add `--user=<value>` to **Additional run arguments** of the runner.
+
+```Kotlin
+steps {
+    script {
+        // ...
+        dockerImage = "python:windowsservercore-ltsc2022"
+        dockerRunParameters = "--user=1001"
+    }
+}
+```
+
+The host UID can be retrieved via the `env.UID` parameter (`--user=%env.UID%`).
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
