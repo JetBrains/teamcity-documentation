@@ -147,7 +147,7 @@ steps {
 }
 ```
 
-The host UID can be retrieved via the `env.UID` parameter (`--user=%env.UID%`).
+The host UID can be retrieved via the `env.UID` parameter (`--user=\%env.UID%`).
 
 <seealso>
         <category ref="admin-guide">
