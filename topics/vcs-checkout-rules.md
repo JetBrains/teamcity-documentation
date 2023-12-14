@@ -14,7 +14,13 @@ To display changes but not to trigger a build on a commit, use [VCS trigger rule
 
 The general recommendation is to keep a number of VCS roots, pointing to the root of the repository, as small as possible and define what is checked out by a specific build configuration via checkout rules.
 
-__To add a checkout rule__, go to the build configuration's __Version Control Settings__ page, locate the VCS root in the list, and click __Edit checkout rules__ to open a form for entering the rules. Use the VCS repository browser ![VCS-browserIcon.png](VCS-browserIcon.png) to select a directory to check out.
+<procedure title="To add a checkout rule">
+<step><p>Go to <b>Administration</b> and click the project you want to configure.</p></step>
+<step><p>From the project's <b>General Settings</b> page, click the relevant build under <b>Build Configurations</b></p></step>
+<step><p>Select <b>Version Control Settings</b> from the sidebar.</p></step>
+<step><p>Locate the VCS root in the list, and click <b>Edit checkout rules</b> to open a form for entering the rules.</p></step>
+<step><p>Use the VCS repository browser <img src="VCS-browserIcon.png" alt="VCS browser icon"/> to select a directory to check out.</p></step>
+</procedure>
 
 <chunk include-id="note-perforce-vcs">
 

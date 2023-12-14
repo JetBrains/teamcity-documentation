@@ -3,6 +3,10 @@
 
 Using the _Command Line_ build runner, you can run any script supported by the OS.
 
+> To configure the _Command Line_ build runner in Kotlin DSL, see [ScriptBuildStep](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildSteps/script-build-step/index.html).
+> 
+{type="note"}
+
 >See our **video guide** on how to [run command-line scripts in TeamCity](https://www.youtube.com/watch?v=oKNdLRrO3mA).
 
 ## General Settings

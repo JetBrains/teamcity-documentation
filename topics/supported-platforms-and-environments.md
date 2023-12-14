@@ -883,35 +883,40 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 
 <table>
 
-<tr><td>Database</td><td>Supported versions</td></tr><tr>
+<tr>
+   <td>Database</td>
+   <td>Supported versions</td>
+</tr>
 
-<td>
+<tr>
+   <td>HSQLDB(The internal HSQLDB database can be used for __evaluation purposes only__.)</td>
+   <td>2.3.2</td>
+</tr>
 
-HSQLDB
+<tr>
+   <td>MySQL</td>
+   <td>5.7.34 or later</td>
+</tr>
 
-(The internal HSQLDB database can be used for __evaluation purposes only__.)
+<tr>
+   <td>Microsoft SQL Server</td>
+   <td>2012 or later (including Express editions), SQL Azure</td>
+</tr>
 
-</td><td>2.3.2</td></tr><tr><td>
+<tr>
+   <td>PostgreSQL</td>
+   <td>9.6 or later</td>
+</tr>
 
-MySQL
+<tr>
+   <td>Oracle</td>
+   <td>10g or later (tested with the [driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1</td>
+</tr>
 
-</td><td>5.7.34 or later</td></tr><tr><td>
-
-Microsoft SQL Server
-
-</td><td>2012 or later (including Express editions), SQL Azure</td></tr><tr><td>
-
-PostgreSQL
-
-</td><td>9.6 or later</td></tr><tr><td>
-
-Oracle
-
-</td><td>
-
-10g or later (tested with the [driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1
-
-</td></tr>
+<tr>
+   <td>MariaDB</td>
+   <td>10.2 or later</td>
+</tr>
 
 </table>
 

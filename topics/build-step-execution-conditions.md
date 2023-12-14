@@ -10,9 +10,15 @@ Execution conditions make builds more flexible and address many common use cases
 
 You can quickly select any of the available common options in the build step __Add condition__ menu:
 
-<img src="execution-conditions.png" alt="Build step execution condition"/>
+<img src="execution-conditions.png" alt="Build step execution condition" width="706" border-effect="line"/>
 
-Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent. For example, check the `teamcity.agent.jvm.os.name` parameter to run the current build step only on Windows agents.
+Alternatively, select the __Other condition__ option to add the _parameter-based execution condition_, which is a logical condition that takes on input any [build parameter](configuring-build-parameters.md) provided by the TeamCity server or agent.
+
+For example, to run the build step only on the `testbranch` branch, you can test the value of the `teamcity.build.branch` parameter, as follows:
+
+<img src="execution-conditions-other.png" alt="teamcity.build.branch equals testbranch" width="460" border-effect="line"/>
+
+In the Kotlin DSL, you can check the `teamcity.agent.jvm.os.name` parameter to run the current build step only on Windows agents, as follows:
 
 ```Kotlin
 package _Self.buildTypes

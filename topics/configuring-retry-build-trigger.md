@@ -3,6 +3,10 @@
 
 The _retry build trigger_ automatically adds a new build to the queue if the previous build of the current build configuration has failed.
 
+> To configure the _retry build trigger_ in Kotlin DSL, see [RetryBuildTrigger](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/triggers/retry-build-trigger/index.html).
+>
+{type="note"}
+
 ## Triggering Settings
 
 The following settings are available for the retry build trigger:
