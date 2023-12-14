@@ -112,7 +112,7 @@ http {
             proxy_set_header    X-Forwarded-Host $http_host; # necessary for proper absolute redirects and TeamCity CSRF check
             proxy_set_header    X-Forwarded-Proto $scheme;
             proxy_set_header    X-Forwarded-For $remote_addr;
-            proxy_set_header    pgrade $http_upgrade; # WebSocket support
+            proxy_set_header    Upgrade $http_upgrade; # WebSocket support
             proxy_set_header    Connection $connection_upgrade; # WebSocket support
         }
     }
