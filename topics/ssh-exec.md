@@ -16,30 +16,56 @@ When strong cryptography is required by the server that receives the deployment,
 
 <table><tr>
 
+<th width="200">
+<p><b>Option</b></p>
+</th>
+
+<th>
+<p><b>Description</b></p>
+</th>
+</tr>
+
+<tr>
+<td>
+<p>Step name</p>
+</td>
+<td>
+<p><i>Optional</i> Name of the build step displayed in the TeamCity UI.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Step ID</p>
+</td>
+<td>
+<p>ID for this build step, which must be unique across all steps of this configuration. Used in URLs, REST API, DSL, HTTP requests to the server, and configuration settings in the TeamCity Data Directory.</p>
+</td>
+</tr>
+
+<tr>
 <td>
 
-Option
+<p>Execute step</p>
 
 </td>
-
 <td>
 
-Description
+<p>Enables you to modify the default build condition, and optionally add more <a href="configuring-build-steps.md#Execution+Policy">build conditions</a>.</p>
 
-</td></tr><tr>
+</td>
+</tr>
 
-<td>
+<tr>
+
+<td colspan="2">
 
 __Deployment Target__
 
 </td>
+</tr>
 
-<td>
-
-</td>
-
-</tr><tr>
-
+<tr>
 <td>
 
 Target
@@ -48,22 +74,20 @@ Target
 
 <td>
 
-__Target__ should point to an SSH server location. Enter hostname or IP address.
+SSH server hostname or IP address.
 
-</td></tr><tr>
+</td></tr>
 
+<tr>
 <td>
-
-Port
-
+<p>Port</p>
 </td>
-
 <td>
+<p><i>Optional</i> Port. Defaults to port 22.</p>
+</td>
+</tr>
 
-Optional. By default, port 22 is used.
-
-</td></tr><tr>
-
+<tr>
 <td>
 
 Use pty
@@ -72,24 +96,26 @@ Use pty
 
 <td>
 
-Optional. Specify the type of the pty terminal. For example, `vt100`.
+<i>Optional</i> Specify the type of the pseudoterminal (pty). For example, `vt100`.
 
-If empty, pty will not be allocated (default).
+If empty, pty is not allocated (default).
 
-</td></tr><tr>
+</td>
+</tr>
 
-<td>
+
+<tr>
+
+<td colspan="2">
 
 __Deployment Credentials__
 
 </td>
 
-<td>
+</tr>
 
-The settings in this section will vary depending on the selected authentication method.
 
-</td></tr><tr>
-
+<tr>
 <td>
 
 Authentication method
@@ -98,33 +124,33 @@ Authentication method
 
 <td>
 
-Select an SSH authentication method.
 
-* __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
-* __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
-* __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase.
-* __Password__ — simple password authentication.
-* __SSH-Agent__ — use ssh-agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
+Select an authentication method:
+
+* __Uploaded key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default private key__ — performs private key authentication using the `~/.ssh/config` settings or, if no settings file exists, using the `~/.ssh/id_rsa` private key file.
+* __Custom private key__ — performs private key authentication using the specified private key file and passphrase.
+* __Password__ — uses simple password authentication.
+* __SSH-Agent__ — uses SSH agent for authentication, where the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 <note>
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
 
-</td></tr><tr>
+</td>
+</tr>
 
-<td>
+<tr>
+
+<td colspan="2">
 
 __SSH Commands__
 
 </td>
+</tr>
 
-<td>
-
-</td>
-
-</tr><tr>
-
+<tr>
 <td>
 
 Commands
@@ -133,13 +159,9 @@ Commands
 
 <td>
 
-Specify a new-line delimited set of commands that will be executed in the remote shell. The remote shell will be started in the home directory of an authenticated user. The shell output will be available in the TeamCity build log.
+<p>Specify a new-line delimited set of commands to execute in the remote shell. The remote shell is started in the home directory of an authenticated user. The shell output will be available in the TeamCity build log.</p>
 
-<note>
-
-SSH Exec runs the shell in non-interactive mode which imposes respective restrictions.
-
-</note>
+<note><p>SSH Exec runs the shell in non-interactive mode, which imposes corresponding restrictions.</p></note>
 
 <tip>
 
@@ -156,3 +178,26 @@ source /home/user/.bash_profile
 </tip>
 
 </td></tr></table>
+
+### Example
+
+For example, consider how to create a build step that builds static content for a web site. After uploading the static content to the web server, you need to execute a `deploy.sh` script to refresh the site. Suppose you use the `jdoe` account on the SSH server with the home directory `/jdoe`, and the SSH server is configured to use SSH keys for authentication.
+
+1. Follow the steps in [Generated SSH Keys](ssh-keys-management.md#Generated+SSH+Keys) to generate a new SSH key pair in your project. Call the key pair `WebServerKey`.
+2. Copy the public key from the `WebServerKey` key pair.
+3. Log in to the `jdoe` account on your SSH server and follow the instructions from your SSH server provider to add the `WebServerKey` public key to this account.
+3. In your project's build configuration, go to the **Build Steps** page and click **Add build step**.
+4. On the **New Build Step** page, select the **SSH Exec** runner.
+5. On the **New Build Step: SSH Exec** page, fill in the fields, as follows:
+    * **Step name** — Enter `RunDeployScript`
+    * **Target** — Enter `ssh.example.com`
+    * **Authentication method** — Select _Uploaded key_
+    * **Username** — Enter `jdoe` (the username for the account on the SSH server)
+    * **Select key** — Select `WebServerKey` from the dropdown list
+    * **Commands** — Enter the following shell commands:
+
+       ```Plain Text
+       echo 'running deploy.sh ...'
+       /home/jdoe/scripts/deploy.sh
+       ```
+6. Click **Save** to create the build step.

@@ -14,29 +14,52 @@ When strong cryptography is required by the server that receives the deployment,
 
 <table><tr>
 
-<td width="200">
+<th width="200"><p><b>Option</b></p></th>
 
-Option
+<th><p><b>Description</b></p></th>
+</tr>
+
+<tr>
+<td>
+<p>Step name</p>
+</td>
+<td>
+<p><i>Optional</i> Name of the build step displayed in the TeamCity UI.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Step ID</p>
+</td>
+<td>
+<p>ID for this build step, which must be unique across all steps of this configuration. Used in URLs, REST API, DSL, HTTP requests to the server, and configuration settings in the TeamCity Data Directory.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+
+<p>Execute step</p>
 
 </td>
-
 <td>
 
-Description
+<p>Enables you to modify the default build condition, and optionally add more <a href="configuring-build-steps.md#Execution+Policy">build conditions</a>.</p>
 
-</td></tr><tr>
+</td>
+</tr>
 
-<td>
+
+<tr>
+<td colspan="2">
 
 __Deployment Target__
 
 </td>
+</tr>
 
-<td>
-
-</td>
-
-</tr><tr>
+<tr>
 
 <td>
 
@@ -46,14 +69,14 @@ Target
 
 <td>
 
-__Target__ should point to an SSH server location. The syntax is similar to the one used by the \*nix `scp` command:
+<p>SSH server location where the files will be uploaded, specified in the format:</p>
 
 ```Shell
 {hostname|IP_address}[:targer_dir[/sub_path]] 
 
 ```
 
-where `target_dir` can be absolute or relative; `sub_path` can have any depth.
+where `target_dir` can be absolute or relative and `sub_path` can have any depth.
 
 </td></tr><tr>
 
@@ -67,32 +90,36 @@ Transport protocol
 
 Select a protocol to transfer data over SSH. The available options are: SCP and SFTP
 
-</td></tr><tr>
+</td></tr>
 
+<tr>
 <td>
-
-Port
-
+<p>Port</p>
 </td>
-
 <td>
+<p><i>Optional</i> Port. Defaults to port 22.</p>
+</td>
+</tr>
 
-Optional. By default, port 22 is used.
-
-</td></tr><tr>
-
+<tr>
 <td>
+<p>Timeout</p>
+</td>
+<td>
+<p><i>Optional</i> Timeout for the connection in seconds. Defaults to 0.</p>
+</td>
+</tr>
+
+<tr>
+
+<td colspan="2">
 
 __Deployment Credentials__
 
 </td>
+</tr>
 
-<td>
-
-The settings in this section will vary depending on the selected authentication method.
-
-</td></tr><tr>
-
+<tr>
 <td>
 
 Authentication method
@@ -102,33 +129,33 @@ Authentication method
 <td>
 
 
-Select an authentication method.
+Select an authentication method:
 
-* __Uploaded key__ uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
-* __Default private key__ will try to perform private key authentication using the `~/.ssh/config` settings. If no settings file exists, will try to use the `~/.ssh/rsa_pub` public key file. No passphrases should be set.
-* __Custom private key__ will try to perform private key authentication using the given public key file with given passphrase
-* __Password__ — simple password authentication.
-* __SSH-Agent__ — use SSH agent for authentication, the [SSH-Agent build feature](ssh-agent.md) must be enabled.
+* __Uploaded key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default private key__ — performs private key authentication using the `~/.ssh/config` settings or, if no settings file exists, using the `~/.ssh/id_rsa` private key file.
+* __Custom private key__ — performs private key authentication using the specified private key file and passphrase.
+* __Password__ — uses simple password authentication.
+* __SSH-Agent__ — uses SSH agent for authentication, where the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
 <note>
 
 The current secure connection implementation accepts _any_ certificate provided by the remote host. No trust checks are performed!
 </note>
 
-</td></tr><tr>
+</td>
+</tr>
 
-<td>
+
+<tr>
+
+<td colspan="2">
 
 __Deployment Source__
 
 </td>
+</tr>
 
-<td>
-
-</td>
-
-</tr><tr>
-
+<tr>
 <td>
 
 Paths to sources
@@ -143,3 +170,24 @@ The field supports [Ant-style wildcard patterns](wildcards.md#Antlike+Wildcards)
 You can also specify a target directory to be created using the `file => directory` pattern (for example, `*.zip => winFiles,unix/distro.tgz => linuxFiles` will create the `winFiles` and `linuxFiles` directories, and respectively put the declared files inside them).
 
 </td></tr></table>
+
+### Example
+
+For example, consider the case where you need to add an SSH Upload build step to upload Java packages to an SSH server (on the `ssh.example.com` host). Suppose you use the `jdoe` account on the SSH server with the home directory `/jdoe`, and the SSH server is configured to use SSH keys for authentication.
+
+1. Follow the steps in [Generated SSH Keys](ssh-keys-management.md#Generated+SSH+Keys) to generate a new SSH key pair in your project. Call the key pair `PackageUploadKey`.
+2. Copy the public key from the `PackageUploadKey` key pair.
+3. Log in to the `jdoe` account on your SSH server and follow the instructions from your SSH server provider to add the `PackageUploadKey` public key to this account.
+3. In your project's build configuration, go to the **Build Steps** page and click **Add build step**.
+4. On the **New Build Step** page, select the **SSH Upload** runner.
+5. On the **New Build Step: SSH Upload** page, fill in the fields, as follows:
+   * **Step name** — Enter `UploadJavaPackages`
+   * **Target** — Enter `ssh.example.com:/jdoe`
+   * **Authentication method** — Select _Uploaded key_
+   * **Username** — Enter `jdoe` (the username for the account on the SSH server)
+   * **Select key** — Select `PackageUploadKey` from the dropdown list
+   * **Paths to sources** — Enter the following paths:
+      ```
+      ch-simple/simple/target/*.jar => packages
+      ```
+6. Click **Save** to create the build step.
