@@ -34,6 +34,10 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 * The **Open IAM Console** link is hidden.
 * Existing storages with custom endpoints and enabled **Default Credential Provider Chain** option are now explicitly converted to the "Custom S3" type.
 
+## EC2 Plugin Updates
+
+The Amazon EC2 plugin was [significantly reworked](what-s-new-in-teamcity.md#EC2+Plugin+Update) in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) EC2 instances spawned from an AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
+
 ### TeamCity Plugin for IntelliJ Platform Updates
 
 * From TeamCity 2023.11 onwards, when two-factor authentication (2FA) is enabled on the TeamCity server, it is no longer possible to log in to TeamCity from the IntelliJ Platform using username/password credentials. You can log in with username/access token credentials instead.
