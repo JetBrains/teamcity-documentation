@@ -24,8 +24,7 @@ By default, TeamCity optimizes the build queue as follows:
 * If a similar build exists in the queue, a new build (on the same change set and with the same custom properties) will not be added.
 * If an automatically triggered build chain has more changes than a build chain that is already queued, the latter will be replaced with the automatically triggered build chain, if such replacement will not delay obtaining the build chain results (based on the [estimated duration](#Queue+Page)).
 * While a build chain is in the queue, TeamCity tries to replace the queued builds with equivalent started builds.
-* Builds that have been staying in a queue for longer than 15 days are canceled automatically (for example, if there are no compatible agents).  
-  This default behavior can be manually disabled via the corresponding options in the [VCS](configuring-vcs-triggers.md) and [schedule](configuring-schedule-triggers.md) build triggers.
+* Builds that have been staying in a queue for longer than 15 days are canceled automatically (for example, if there are no compatible agents).
 
 ## Agent Selection for Queued Build
 
