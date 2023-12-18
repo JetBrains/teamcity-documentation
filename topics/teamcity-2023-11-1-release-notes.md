@@ -9,6 +9,8 @@
 
 ### Bug
 
+**[TW-85393](https://youtrack.jetbrains.com/issue/TW-85393)** — Bitbucket commit status rejected due to too long key
+
 **[TW-85409](https://youtrack.jetbrains.com/issue/TW-85409/Multiple-Problems-after-Upgrade-to-2023.11)** — Multiple Problems after Upgrade to 2023.11
 
 **[TW-85386](https://youtrack.jetbrains.com/issue/TW-85386/Test-parsing-doesnt-work)** — Test parsing doesn't work
