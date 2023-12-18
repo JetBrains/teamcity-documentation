@@ -162,6 +162,10 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 4. Invoke [`docker run`](https://hub.docker.com/r/jetbrains/teamcity-server) to start the new container on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
 5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
 
+### Upgrading Multinode Setups
+
+The [Multinode Setup](multinode-setup.md) distributes the tasks performed by your TeamCity server between multiple individual nodes, which significantly boosts the system stability and performance. In this setup, each node needs an individual upgrade. See this section for more information: [](multinode-setup.md#Upgrade%2FDowngrade).
+
 ## IDE Plugins
 {product="tc"}
 

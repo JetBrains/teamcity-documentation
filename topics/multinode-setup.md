@@ -800,10 +800,9 @@ When __upgrading to a minor version__ (a bugfix release), the main and the secon
 When __upgrading the main node to a major version__, its TeamCity data format changes. Because of that, as soon as the main node of a new version starts, the secondary nodes detect the main node has a different data format and switch to the read-only mode. It may take some time for the secondary nodes to become read-only. During this time the main node will wait until it ensures that all the other nodes do not change data anymore. 
 
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
-1. Start the [upgrade](upgrading-teamcity-server-and-agents.md) on the main TeamCity node as usual.
-2. Proceed with the upgrade.
-3. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
-4. Perform upgrade of TeamCity on the secondary nodes to the same version.
+1. [Upgrade](upgrading-teamcity-server-and-agents.md) the main TeamCity node. The procedure of ugrading notes is identical to updating standalone servers.
+2. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
+3. Perform upgrade of TeamCity on the secondary nodes to the same version.
 
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main node and the secondary nodes.
