@@ -12,7 +12,7 @@
 |[7-Zip](https://www.7-zip.org/)|22.1|
 |[Unity Hub](https://unity.com/unity-hub)|3.6.1.0|
 |[Unity](https://unity.com/)|2022.3.12.59104|
-|[JDK](https://aws.amazon.com/corretto/)|11|
+|[JDK](https://aws.amazon.com/corretto/)|17|
 |[.NET](https://dotnet.microsoft.com/)|8.0.100|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|1.25.3|
 |[NUnit](https://nunit.org/)|3.16.3|
