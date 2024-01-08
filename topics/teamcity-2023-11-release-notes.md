@@ -517,7 +517,7 @@
 
 **[TW-83237](https://youtrack.jetbrains.com/issue/TW-83237/Progress-messages-in-default-flow-are-not-cleaned-up)** — Progress messages in default flow are not cleaned-up
 
-**[TW-82582](https://youtrack.jetbrains.com/issue/TW-82582/provideAwsCredentials-feature-Cant-use-env.AWSSHAREDCREDENTIALSFILE-without-explicitly-listing-it-as-a-parameter)** — provideAwsCredentials feature: Can't use %env.AWS_SHARED_CREDENTIALS_FILE% without explicitly listing it as a parameter
+**[TW-82582](https://youtrack.jetbrains.com/issue/TW-82582/provideAwsCredentials-feature-Cant-use-env.AWSSHAREDCREDENTIALSFILE-without-explicitly-listing-it-as-a-parameter)** — provideAwsCredentials feature: Can't use env.AWS_SHARED_CREDENTIALS_FILE without explicitly listing it as a parameter
 
 **[TW-80285](https://youtrack.jetbrains.com/issue/TW-80285/The-ImageBuilder-plugin-does-not-work-on-secondary-node)** — The ImageBuilder plugin does not work on secondary node
 
