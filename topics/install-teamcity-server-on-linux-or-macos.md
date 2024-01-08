@@ -27,23 +27,23 @@ To install the TeamCity server, unpack the `TeamCity<version number>.tar.gz` arc
 
 Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory (see [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server)).
 
-## Example Installation using Ubuntu Linux
+## Example: Installation using Ubuntu Linux
 
  1. Create a dedicated user account called `teamcity` to run TeamCity.
     
-    ```
+    ```Shell
     root@ubuntu:/# adduser teamcity
     ```
 
  2. Install `wget` to download tar.gz files.
     
-    ```
+    ```Shell
     root@ubuntu:/# apt update && apt install wget -y
     ```
 
  3. Download the Linux tar.gz file from the [TeamCity Downloads Page](https://www.jetbrains.com/teamcity/download/other.html).
     
-    ```
+    ```Shell
     # Switch to the /opt directory, where TeamCity will be unpacked
     root@ubuntu:/# cd /opt
     # Download the tar.gz file using wget
@@ -52,20 +52,20 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
 
  4. Unpack the tar.gz file.
     
-    ```
+    ```Shell
     root@ubuntu:/opt# tar xfz TeamCity-2022.10.1.tar.gz
     ```
 
  5. Ensure a compatible Java is installed or the `JAVA_HOME` environment variable stores the correct path to Java.
     
-    ```
+    ```Shell
     root@ubuntu:/opt# java -version
     root@ubuntu:/opt# echo $JAVA_HOME
     ```
     
     If no compatible Java is installed, install it like follows (the following example installs the [Amazon Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html) Java):
 
-    ```
+    ```Shell
     root@ubuntu:/opt# apt install java-common -y
     root@ubuntu:/opt# wget https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.deb
     root@ubuntu:/opt# dpkg --install amazon-corretto-11-x64-linux-jdk.deb
@@ -78,20 +78,20 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
 
  6. Change the owner of the /opt/TeamCity directory to the `teamcity` user created in step 1.
     
-    ```
+    ```Shell
     root@ubuntu:/opt# chown -R teamcity:teamcity TeamCity
     ```
 
  7. Switch to the `teamcity` user.
     
-    ```
+    ```Shell
     root@ubuntu:/opt# su teamcity
     teamcity@ubuntu:/opt$
     ```
 
  8. Start the TeamCity server and its bundled build agent.
     
-    ```
+    ```Shell
     teamcity@ubuntu:/opt$ TeamCity/bin/runAll.sh start
     Spawning TeamCity restarter in separate process
     TeamCity restarter running with PID 2817
