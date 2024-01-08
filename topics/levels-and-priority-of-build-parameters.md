@@ -6,6 +6,8 @@
 
 TeamCity parameters can obtain their values from one or multiple sources listed below.
 
+* Values from a template selected as the [enforced settings template](build-configuration-template.md#Enforcing+settings+inherited+from+template). These values cannot be disabled or overridden by users.
+
 * The **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog.
 
     <img src="dk-params-runcustombuild.png" width="706" alt="Run Custom Build Dialog"/>
@@ -14,7 +16,7 @@ TeamCity parameters can obtain their values from one or multiple sources listed 
 
 * Custom values entered on the **Project Settings | Parameters** page. Parameters defined within a project are inherited by all its subprojects and build configurations. If required, you can override them in individual build configurations.
 
-* Values specified in a [build configuration template](build-configuration-template.md).
+* Values specified in a regular [build configuration template](build-configuration-template.md).
 
 * Values specified in a build agent's [configuration file](configure-agent-installation.md) (the `<AGENT_HOME>/conf/buildAgent.properties` file). For example, the following sample demonstrates how to implement a custom build agents' ranking system that you can use in [](agent-requirements.md):
 
