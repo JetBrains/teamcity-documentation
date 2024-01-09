@@ -97,6 +97,27 @@ then no additional changes to your DSL are required and you can change the confi
 
 You should review these suggestions and apply them to your DSL scripts. The _configs version_ can be changed only after all these suggestions are applied.
 
+<anchor name="dsl202311"/>
+
+## Update DSL from 2022.05.x to 2023.11.x
+
+* The bundled Kotlin version has been updated to 1.8.22.
+* For security reasons, existing AWS connections can now be used only by parent projects of these connections. Child sub-projects cannot access parent AWS connections. To allow a subproject use the AWS connection of its parent project, add the `allowInSubProjects = true` parameter to this connection's settings block.
+
+
+<anchor name="dsl202305"/>
+
+## Update DSL from 2022.10.x to 2023.05.x
+
+* The bundled Kotlin version has been updated to 1.7.10.
+
+<anchor name="dsl202210"/>
+
+## Update DSL from 2022.04.x to 2022.10.x
+
+* The [Pull Requests build feature](pull-requests.md) for build configurations targeting Bitbutcket Server/Data Center repositories no longer tracks officially unsupported pull request branches (and watches source branches instead). To manually switch to the previous (deprecated) behavior, add the `usePullRequestBranches = true` parameter. See this TeamCity Kotlin DSL documentation article for more information: [PullRequests](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildFeatures/pull-requests/index.html).
+
+
 <anchor name="dsl202204"/>
 
 ## Update DSL from 2021.2.x to 2022.04.x
