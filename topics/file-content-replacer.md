@@ -72,6 +72,8 @@ Fail build if no files match pattern
 
 Enabled by default. Disable this option to prevent build failure even if no files match the specified pattern.
 
+Note that if the runner finds at least one file that matches the given pattern, the step is considered successful even if this file has no content to replace.
+
 </td>
 
 </tr>
