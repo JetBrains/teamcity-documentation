@@ -739,6 +739,54 @@ object BuildC: buildType ({
 
 With these settings, the build configurations will be displayed in the UI in the following order: C, A, B.
 
+### How to split a .kts file
+
+_Problem_: I have a huge .kts file with settings for all my projects and subprojects. I want to split these settings into multiple files that would be easier to manage.
+
+_Solution_: You may end up with a single .kts file that describes settings for all projects on your server in two cases.
+
+* The file was produced by TeamCity. When you export project settings via the **Actions | Download settings in Kotlin format...** menu, TeamCity first calculates how many entities (projects, configurations, roots) you currently have. If this number is less than 20, TeamCity writes a single .kts file. Otherwise, it produces multiple folders with individual .kt files for each project.
+
+* The file was created manually. If you start with a single .kts file and keep adding new projects to it, over time it may become too bulky to manage. In this case, you can split it to the following structure:
+
+  ```Plain Text
+  .teamcity
+    └─── pom.xml
+    └─── settings.kts   # Stores only the Kotlin DSL version and the "project(_Self.Project)" line
+    └─── _Self
+           └─── ...
+           └─── ...
+    └─── ProjectA
+           └─── ...
+           └─── ...
+    └─── ProjectA_Subproject1
+           └─── ...
+           └─── ...
+    └─── ProjectA_Subproject2
+           └─── ...
+           └─── ...
+    └─── ProjectB
+           └─── ...
+           └─── ...
+    └───...
+    └───...
+  ```
+  
+  Each folder (including the "_Self" folder for the &lt;Root&gt; project) has the following structure:
+  
+  ```Plain Text
+  ProjectA
+    └─── Project.kt   # Stores a list of subprojects, parameters, connections, and other project-level settings
+    └─── buildTypes   # A folder with .kt files that define build configurations, their steps, triggers, build features, and more
+            └─── ProjectA_MyBuildConfig1.kt
+            └─── ProjectA_MyBuildConfig2.kt 
+    └─── vcsRoots     # A folder with .kt files that define VCS roots (for example, custom GitVcsRoot class descendants)
+            └─── ProjectA_MyRoot1.kt
+            └─── ProjectA_MyRoot2.kt
+  ```
+  
+  You can download the ZIP archive attached to the [TW-64768](https://youtrack.jetbrains.com/issue/TW-64768/How-can-I-split-up-big-settings.kts) ticket to inspect a sample hierarchly and learn what content individual .kt files typically store.
+
 ### Kotlin DSL API documentation is not initialized yet
 {product="tc"}
 
