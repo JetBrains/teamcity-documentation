@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.11 to 2023.11.1
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2023-11-1"}
+
+* The bundled Tomcat was updated to version 9.0.83.
 
 ## Changes from 2023.05.4 to 2023.11
 
