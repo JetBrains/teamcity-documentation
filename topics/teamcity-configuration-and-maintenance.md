@@ -135,7 +135,10 @@ Maximum number of artifacts per build
 Limits the number of artifacts published per build.   
 This helps prevent memory consumption problems in case multiple builds publish many artifacts in parallel.
 
-The limit does not consider [hidden artifacts](build-artifact.md#Hidden+Artifacts).
+
+> This setting does not consider [hidden artifacts](build-artifact.md#Hidden+Artifacts), which have their own limit. If the number of **hidden** artifacts your build produces exceeds this separate threshold, TeamCity reports the "Failed to publish artifacts" error. To fix this issue, add the `teamcity.artifact.limit.internalArtifactsNumber=<value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (the default value is 1000).
+>
+> {type="tip" product="tc"}
 
 </td></tr>
 
