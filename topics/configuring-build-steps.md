@@ -1,9 +1,10 @@
 [//]: # (title: Configuring Build Steps)
 [//]: # (auxiliary-id: Configuring Build Steps)
 
-When creating a build configuration, it is important to configure the sequence of _build steps_ to be executed.
+Once you have a TeamCity project with a build configuration within it, you can configure **build steps**. A build step (also referred to as a "job") is a task to be executed by a [build runner](build-runner.md). One build configuration can include multiple steps, executed consecutively.
 
-Build steps are configured in the __Build Steps__ section of the __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ page. Here, you can:
+Build steps are configured in the __Build Steps__ section of the __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ page. This page allows you to:
+
 * Add new steps manually.
 * [Autodetect steps](#Autodetecting+Build+Steps) by scanning the source VCS repository.
 * Copy and delete steps.
