@@ -17,14 +17,19 @@ If the format of the service message is incorrect, a corresponding note about it
 
 The types of data which can be recognised by TeamCity are as follows:
 
-### Numbers
+### Numeric Values
+
+TeamCity draws a graph with numeric values for the given test. Each subsequent build run adds a new dot to the graph. The Y-axis is formatted according to the "type" parameter value: `number`, `ms` (for milliseconds), `bytes`, or `percent`.
 
 ```Shell
 
-##teamcity[testMetadata testName='package.Test.testName' name='setUp time' type='number' value='434.5']
+##teamcity[testMetadata testName='package.Test.testName' name='setUp time' type='ms' value='434.5']
+##teamcity[testMetadata testName='package.Test2.testName' name='Success rate' type='percent' value='91.2']
+##teamcity[testMetadata testName='package.Test3.testName' name='Total amount' type='number' value='54']
+##teamcity[testMetadata testName='package.Test4.testName' name='Package size' type='bytes' value='1048576']
 ```
 
-You can see a graph of changes for a numeric value, from build to build for the given test.
+
 
 ### String/Text
 
