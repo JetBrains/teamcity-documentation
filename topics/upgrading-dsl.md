@@ -102,7 +102,7 @@ You should review these suggestions and apply them to your DSL scripts. The _con
 ## Update DSL from 2022.05.x to 2023.11.x
 
 * The bundled Kotlin version has been updated to 1.8.22.
-* For security reasons, existing AWS connections can now be used only by parent projects of these connections. Child sub-projects cannot access parent AWS connections. To allow a subproject use the AWS connection of its parent project, add the `allowInSubProjects = true` parameter to this connection's settings block.
+* For security reasons, existing AWS connections can now be used only those TeamCity project that own these connections. Child sub-projects cannot access connections of their parent projects. To allow a subproject to use the AWS connection of its parent project, add the `allowInSubProjects = true` parameter to this connection's settings block.
 
 
 <anchor name="dsl202305"/>
@@ -115,7 +115,7 @@ You should review these suggestions and apply them to your DSL scripts. The _con
 
 ## Update DSL from 2022.04.x to 2022.10.x
 
-* The [Pull Requests build feature](pull-requests.md) for build configurations targeting Bitbutcket Server/Data Center repositories no longer tracks officially unsupported pull request branches (and watches source branches instead). To manually switch to the previous (deprecated) behavior, add the `usePullRequestBranches = true` parameter. See this TeamCity Kotlin DSL documentation article for more information: [PullRequests](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildFeatures/pull-requests/index.html).
+* The [Pull Requests build feature](pull-requests.md) for build configurations targeting Bitbucket Server/Data Center repositories no longer tracks officially unsupported pull request branches (and watches source branches instead). To manually switch to the previous (deprecated) behavior, add the `usePullRequestBranches = true` parameter to your Pull Requests feature(s). See this TeamCity Kotlin DSL documentation article for more information: [PullRequests](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildFeatures/pull-requests/index.html).
 
 
 <anchor name="dsl202204"/>
