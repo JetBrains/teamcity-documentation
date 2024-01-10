@@ -741,13 +741,13 @@ With these settings, the build configurations will be displayed in the UI in the
 
 ### How to split a .kts file
 
-_Problem_: I have a huge .kts file with settings for all my projects and subprojects. I want to split these settings into multiple files that would be easier to manage.
-
-_Solution_: You may end up with a single .kts file that describes settings for all projects on your server in two cases.
+A single .kts file that describes settings for all projects on your server can be difficult to maintain. You can end up with such file in two cases:
 
 * The file was produced by TeamCity. When you export project settings via the **Actions | Download settings in Kotlin format...** menu, TeamCity first calculates how many entities (projects, configurations, roots) you currently have. If this number is less than 20, TeamCity writes a single .kts file. Otherwise, it produces multiple folders with individual .kt files for each project.
 
-* The file was created manually. If you start with a single .kts file and keep adding new projects to it, over time it may become too bulky to manage. In this case, you can split it to the following structure:
+* The file was created manually. If you start with a single .kts file and keep adding new projects to it, over time it may become too bulky to manage.
+
+In the first case, TeamCity automatically splits its settings once your build server grows beyond 20 entities. For manually created .kts files, you can split them as follows:
 
   ```Plain Text
   .teamcity
