@@ -130,7 +130,7 @@ Specify whether you want to download the latest version of `handle.exe` or uploa
 
 `handle.exe` is present on agents only after the upgrade.
 
-Note that running `handle.exe` requires some additional permissions for the build agent user. For more details read [this thread](https://social.technet.microsoft.com/Forums/en-US/e8d97be5-8265-418a-9f44-00a399858bcf/handleexe-amp-user-rights-needed?forum=miscutils).
+Note that running `handle.exe` [requires administrator privileges](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) for the build agent user.
 
 ## Debug options
 
