@@ -37,7 +37,7 @@ Full agents are preferable if you use scripts for creating agent images. All clo
 
 Full agent distributions are also available in two variations:
 
-* Regular agent distributions without Java Development Kits. If you download and install this variation, make sure that the agent machine has the required JDK version installed and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
+* Regular agent distributions without Java Development Kits. If you download and install this variation, make sure that the agent machine has the required JDK version installed (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)) and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
 * Distributions bundled with OS-specific JDKs. These distributions allow you to install an agent and a JDK it requires in a single go. To download these distributions, add required JDK versions on the **Administration | Agent JDKs** page and wait for TeamCity to build a related agent distribution.
 
     <img src="dk-addAgentJDK.png" alt="Add Agent JDK" width="706"/>
@@ -115,7 +115,7 @@ Linux
 
 <td>
 
-* Installed JDK (JRE) 8-11. The JVM should be reachable via the `JAVA_HOME` (`JRE_HOME`) global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file).
+* Installed JDK or JRE (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)). The JVM should be reachable via the `JAVA_HOME` or `JRE_HOME` global environment variable or be in the global path (instead of being specified in, for example, user's `.bashrc` file).
 * The `unzip` utility.
 * Either `wget` or `curl`.
 
@@ -133,7 +133,7 @@ Windows
 
 [//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
 
-* Installed JDK/JRE 8-11.
+* Installed JDK or JRE (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)).
 * `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it in __Administration | Tools__. Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:
     * [Administrative share](https://en.wikipedia.org/wiki/Administrative_share) on a remote host is enabled and accessible.
     * Remote services work (MMC snap-in can connect to the machine).
