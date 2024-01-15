@@ -133,6 +133,8 @@ __Project Administrator__
 Can customize general settings of a project and settings of build configurations, assign roles to the project users, create subprojects, change a user's VCS username in the project without adding the permission to modify user profile and roles.
 Has all the [Project Developer's](#project-developer) permissions.
 
+Project administrators can assign roles and modify groups that correspond only to projects they administer. For example, a project A administrator can neither grant users any roles for project B, nor add them to a group with project B-specific permissions; only a project B administrator (or system administrator) can do that.
+
 With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
 
 </td></tr><tr>
