@@ -55,6 +55,11 @@ The names set here will be used to:
 
 Use the __Groups__ tab to view the [groups](creating-and-managing-user-groups.md) the user belongs to and add/remove the user from groups.
 
+To add a user to the specific group (for example, a group of developers for the given project), you should have one of the following permissions:
+
+* **Change user roles in project** (included in the **Project administrator** role) — this permission is sufficient to add new people to a group of users who are working on the same project you administer. For example, if you administer only project A, you cannot add users to a group with the "Project developers" role for project B.
+* **Modify user profile and roles** (included in the **System administrator** role) — allows you to add any users to any groups.
+
 ## Add User to Project
 
 To add a user to a specific project and manage permissions this user has in it, you need to assign them with a certain role. Read how to [manage roles](managing-roles-and-permissions.md#Managing+Roles).
@@ -77,6 +82,8 @@ There are several ways to assign roles to one or several users:
 When assigning a role, you can:
 * Select whether a role should be granted globally, or in particular projects.
 * Replace existing roles with the newly selected. This will remove all roles assigned to user(s)/group and replace them with the selected one instead.
+
+Note that if you are logged in as a project administrator, you can assign roles only in the scope of the same project. For example, an administrator of project A cannot grant users any roles for project B; only project B administrators (and system administrators) can do that.
 
 ## Notification Rules
 
