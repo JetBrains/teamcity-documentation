@@ -157,7 +157,13 @@ Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradl
 
 ### Build properties
 
-The TeamCity system parameters can be accessed in Gradle build scripts in the same way as Gradle properties. The recommended way to reference properties is as follows:
+In Gradle builds, TeamCity system properties are different from Java system properties.
+
+* Regular Java system properties can be accessed globally. Use the `System.getProperty("my.property")` or `providers.systemProperty("my.property").get()` methods to obtain these properties' values.
+
+* TeamCity system properties are written to the [Project](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html) object when a build initializes. Therefore, TeamCity system properties can be accessed anywhere the `Project` is available (use `project.hasProperty("property.name")` to check whether the required property is available).
+
+The recommended way to reference TeamCity system properties is as follows:
 
 <tabs>
 
