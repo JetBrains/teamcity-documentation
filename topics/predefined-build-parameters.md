@@ -3,7 +3,7 @@
 
 TeamCity provides a dozens of predefined [build parameters](configuring-build-parameters.md) ready to be used in the settings of a build configuration or in build scripts.
 
-All these parameters (except [](#Predefined+Configuration+Parameters)) are **passed to a build process**. Note that the techniques required to access these parameters may vary depending on your build type (for example, see the [Build Properties](gradle.md#Build+Properties) section for the information on accessing TeamCity system properties in Gradle builds).
+All these parameters (except [](#Predefined+Configuration+Parameters)) are **passed to a build process**. Note that the techniques required to access these parameters may vary depending on your build type (for example, see the [Build Properties](gradle.md#Build+properties) section for the information on accessing TeamCity system properties in Gradle builds).
 
 > To check the list of available parameters, click the ![paramsPopupHover.gif](paramsPopupHover.gif) button next to a text field in TeamCity UI, or enter `%`.
 >
