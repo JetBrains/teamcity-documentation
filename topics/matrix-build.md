@@ -292,7 +292,9 @@ When a matrix build starts, TeamCity runs the build, as follows:
 3. As soon as the first generated build starts to run, TeamCity starts the parent build (effectively, a type of [composite build](composite-build-configuration.md) with dependencies on the generated builds), which aggregates the build results from all the generated builds.
 4. After the matrix build is complete, you can view the summary table on the **Overview** tab of the matrix build.
 
-If you only need to build a part of the matrix, running a custom build is a convenient way of doing this.
+If you only need to build a part of the matrix, running a custom build is a convenient way of doing this. Switch to the **Parameters** tab of the **Run Custom Build** dialog and specify required parameter values (use comma as a separator). Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
+
+<img src="dk-matrix-partial.png" alt="Running a portion of the matrix" width="706"/>
 
 In particular, when configuring a [build trigger](configuring-build-triggers.md) on the matrix build, you can configure the **Build Customization** tab in the trigger configuration dialog to customize the matrix parameter values used for the triggered builds.
 
