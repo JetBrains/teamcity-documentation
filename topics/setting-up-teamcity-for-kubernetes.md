@@ -255,7 +255,7 @@ Docker image name
 
 <td>
 
-Name of the Docker image, similarly to the one used with the `docker run` command (for example, `jetbrains/teamcity-agent/`).
+Name of the Docker image, similarly to the one used with the `docker run` command (for example, `jetbrains/teamcity-agent`).
 
 </td>
 
