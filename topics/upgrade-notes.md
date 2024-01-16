@@ -44,7 +44,9 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 
 ### EC2 Plugin Updates
 
-The Amazon EC2 plugin was [significantly reworked](what-s-new-in-teamcity.md#EC2+Plugin+Update) in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from an AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
+The Amazon EC2 plugin was [significantly reworked](what-s-new-in-teamcity.md#EC2+Plugin+Update) in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
+
+In version 2023.11.2, we expect to rollback this change for cloud profiles configured before the 2023.11 update. This will allow you to continue using the agent push functionality for the existing cloud agents. However, we encourage you to update your setup and bake TeamCity agents into your AMIs instead of installing them via the agent push. The latter option will be completely disabled in one of the future releases.
 
 ### TeamCity Plugin for IntelliJ Platform Updates
 
