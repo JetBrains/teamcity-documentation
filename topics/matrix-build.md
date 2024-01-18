@@ -292,7 +292,7 @@ When a matrix build starts, TeamCity runs the build, as follows:
 3. As soon as the first generated build starts to run, TeamCity starts the parent build (effectively, a type of [composite build](composite-build-configuration.md) with dependencies on the generated builds), which aggregates the build results from all the generated builds.
 4. After the matrix build is complete, you can view the summary table on the **Overview** tab of the matrix build.
 
-If you only need to build a part of the matrix, running a custom build is a convenient way of doing this. Switch to the **Parameters** tab of the **Run Custom Build** dialog and specify required parameter values (use comma as a separator). Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
+If you only need to build a part of the matrix, running a custom build is a convenient way of doing this (you can also upvote the [TW-84312](https://youtrack.jetbrains.com/issue/TW-84312/Matrix-builds-Allow-to-exclude-parameter-combinations-run-subset-of-matrix-parameters) request for a dedicated UI to run individual combinations). Switch to the **Parameters** tab of the **Run Custom Build** dialog and specify required parameter values (use comma as a separator). Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
 
 <img src="dk-matrix-partial.png" alt="Running a portion of the matrix" width="706"/>
 
@@ -367,3 +367,5 @@ After configuring the matrix parameters on Build1, you also need to update the a
 * Reverse dependency parameters, `reverse.dep.*`, do not work correctly in matrix builds. Related YouTrack ticket: [TW-84730](https://youtrack.jetbrains.com/issue/TW-84730).
 * When a matrix build is configured with a snapshot dependency on a preceding build, test results from the preceding build are reported in the matrix build, which is an unexpected behavior. Related YouTrack ticket: [TW-75412](https://youtrack.jetbrains.com/issue/TW-75412).
 * When a matrix build is configured with a snapshot dependency on a preceding build, the reported build time of the matrix build increases, because it includes the durations of all the preceding builds in the chain. This might require you to revise timeout settings. Related YouTrack ticket: [TW-76020](https://youtrack.jetbrains.com/issue/TW-76020).
+* The **Run Custom Build** dialog does not allow you to assign labels to new values.
+* If a value that was specified in the feature settings has a label and its raw value includes a comma, you cannot reference it in a custom build via the label only; both label and raw value portions must be entered.
