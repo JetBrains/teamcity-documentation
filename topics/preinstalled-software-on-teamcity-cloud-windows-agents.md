@@ -10,7 +10,7 @@
 |[Ruby](https://www.ruby-lang.org/en/)|3.2.2|
 |[AWS CLI](https://aws.amazon.com/cli/)|2.8.3|
 |[7-Zip](https://www.7-zip.org/)|22.1|
-|[Unity Hub](https://unity.com/unity-hub)|3.6.1.0|
+|[Unity Hub](https://unity.com/unity-hub)|3.7.0.0|
 |[Unity](https://unity.com/)|2022.3.12.59104|
 |[JDK](https://aws.amazon.com/corretto/)|17|
 |[.NET](https://dotnet.microsoft.com/)|8.0.100|
@@ -24,7 +24,7 @@
 |[RTools](https://cran.r-project.org/bin/windows/Rtools/)||
 |[Node.js](https://nodejs.org/en/)|v20.10.0|
 |[Yarn](https://yarnpkg.com/)|1.22.19|
-|[vcpkg](https://vcpkg.io/en/)|2023-11-16-4c1df40a3c5c5e18de299a99e9accb03c2a82e1e|
+|[vcpkg](https://vcpkg.io/en/)|2023-12-12-1c9ec1978a6b0c2b39c9e9554a96e3e275f7556e|
 |[Docker](https://www.docker.com/)|20.10.9|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
 |[Bazelisk](https://github.com/bazelbuild/bazelisk)|1.17.0|
