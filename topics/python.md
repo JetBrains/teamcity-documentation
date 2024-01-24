@@ -339,9 +339,23 @@ Arguments that will be passed to the Python interpreter if a custom command is s
 
 In this block of settings, you can choose a Python version to run.
 
-The Python runner automatically detects Python versions installed on a [build agent](build-agent.md). On Windows, it checks (1) the default install paths, (2) the system register, (3) the `PATH` variable. On Linux and macOS, it checks (1) the default install paths, (2) the `PATH` variable.
+The Python runner automatically detects Python versions installed on a [build agent](build-agent.md). The runner checks the following locations (in the same order as listed below):
+
+On Windows:
+   
+   1. The default installation paths
+   2. The system registry
+   3. The `PATH` variable
+
+On Linux and macOS:
+   
+   1. The default installation paths
+   2. The `PATH` variable
+
 
 The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters. Alternatively, you can provide a path to any installed version manually.
+
+<img src="dk-python-custompath.png" width="706" alt="Custom Python path"/>
 
 You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, a custom environment tool run or reporting run).
 
