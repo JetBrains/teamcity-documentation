@@ -19,11 +19,17 @@ Upon the build finish, TeamCity searches for artifacts in the build [checkout di
 
 To download artifacts of a build, go to the [Artifacts](build-results-page.md#Artifacts+Tab) tab of the build results page or use the artifacts icon ![artifactIcon.png](artifactIcon.png) available on the project or build configuration __Overview__ page and on the TeamCity pages that list the builds.
 
+> If you're using Safari and experiencing issues with incomplete artifact downloads, disable the "Open "safe" files after downloading" option in Safari general settings.
+>
+{type="tip"}
+
 <anchor name="artifacts-as-archive"/>
 
->If you want to publish many artifacts in one build, we suggest that you pack them into an archive beforehand. This will make the publishing and the following downloads significantly faster. You will still be able to browse files within an archive in the build results and access archived files individually via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts).  
+>If you want to publish many artifacts in one build, we suggest that you pack them into an archive beforehand. This will make the publishing and the following downloads significantly faster. You will still be able to browse files within an archive in the build results and access archived files individually via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts).
+> 
 >TeamCity can automatically create an archive from a directory when publishing build artifacts. To configure this behavior, you need to specify the build artifact path as follows: `directory => directory.*`, where `*` is the archive extension (like `directory.zip`). See more information and examples [here](configuring-general-settings.md#Artifact+Paths).
->
+> 
+{type="note"}
 
 In case of the built-in storage, TeamCity keeps artifacts on the disk in a directory structure that can be accessed directly (for example, by configuring the operating system to share the directory over the network). The storage format is described in [TeamCity Data Directory](teamcity-data-directory.md#artifacts). The artifacts are stored on the server "as is" without additional compression. By default, the artifacts are stored under the `<[TeamCity Data Directory](teamcity-data-directory.md)\>/system/artifacts` directory which [can be changed](teamcity-configuration-and-maintenance.md).   
 You can [configure an external artifacts](configuring-artifacts-storage.md#external-artifacts-storage) storage to replace the built-in one.
