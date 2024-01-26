@@ -9,6 +9,12 @@ If a commit message includes a reference to an existing issue, TeamCity shows a 
 
 This integration also works for projects with configured [](pull-requests.md) feature: if a pull request mentions an existing issue, TeamCity displays corresponding data in its UI.
 
+Note that with this integration in place, any string that matches the GitHub issue ID pattern (for example, `#054`) is treated as a reference to the corresponding GitHub issue and converted to a clickable link. For example, you may reference issues when writing a reason for [manually switching the build status](build-actions.md) to "Successful" or "Failed".
+
+<img src="dk-ghissue-link.png" width="706" alt="Link to GitHub issue"/>
+
+If your GitHub repository has no issue with this ID, the **Issue not found** hint is shown.
+
 ## Configure the GitHub Issues Integration
 
 Before you start, make sure the GitHub issues feature [is enabled](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository) in your repository, and that there is at least one active issue.
