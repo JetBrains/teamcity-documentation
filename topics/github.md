@@ -1,45 +1,93 @@
 [//]: # (title: Integrating TeamCity with GitHub Issues)
 [//]: # (auxiliary-id: Integrating TeamCity with GitHub Issues;Integrating TeamCity with GitHub;GitHub)
 
-TeamCity integration with GitHub issue tracker enables you to create connections to issues associated with GitHub projects. You need to create one issue tracker connection for each GitHub repository. After the connection is created, TeamCity displays links to GitHub issues in the TeamCity UI (for example, when these issues are mentioned in a commit message).
+[GitHub issues](https://github.com/features/issues) allow your development team to prioritize the current problems, break them down into actionable tasks, and track their statuses.
 
-If your GitHub repository is public, you can configure the connection with Anonymous authentication. More generally, for private repositories, you need to ensure that the provided credentials have sufficient permission to access the connected repository.
+If a commit message includes a reference to an existing issue, TeamCity shows a link to this issue on the build history and [Build Results](build-results-page.md) pages.
 
-If you already have a GitHub connection or a GitHub App connection configured in your TeamCity project (under **Project Settings | Connections**), you can use these connections to simplify the creation of a new GitHub Issues connection.
+<img src="dk-githubissues-overview.png" width="706" alt="Link to GitHub issue in TeamCity UI"/>
 
+This integration also works for projects with configured [](pull-requests.md) feature: if a pull request mentions an existing issue, TeamCity displays corresponding data in its UI.
 
-## Creating a GitHub Issues Connection
+## Configure the GitHub Issues Integration
 
-Before creating a GitHub Issues connection:
+Before you start, make sure the GitHub issues feature [is enabled](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository) in your repository, and that there is at least one active issue.
 
-* Ensure that the [GitHub issues feature](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository) is enabled in the corresponding repository and that there is at least one issue in the repository, so that you can test the connection.
-* If you want to leverage a GitHub connection or a GitHub App connection to create the issue tracker connection, make sure that a connection of this type already exists in **Project Settings | Connections**.
+1. In TeamCity, navigate to project settings (**Administration | &lt;Your_Project&gt;**) and switch to the **Issue Trackers** tab.
+   
+   <img src="dk-issuetrackerstab.png" width="706" alt="The Issue Trackers tab"/>
 
-To create a new issue tracker connection for GitHub Issues:
+2. Click **Create New Connection** and choose **GitHub** as the connection type.
+3. Enter the public name for your integration. This name is used solely for TeamCity UI.
+4. Fill in the repository URL and authentication fields. You can enter all data manually or leverage existing [GitHub connections](configuring-connections.md#GitHub).
 
-1. Go to **Project Settings | Issue Trackers** and click **Create new connection**.
-2. In the **Create New Issue Tracker Connection** dialog, select GitHub as the **Connection Type**.
-3. In the **Display Name** field, enter a symbolic name that will be used to identify this issue tracker connection in the TeamCity UI.
-4. In the **Repository URL** field, enter the URL of the GitHub repository's main page (not the URL for cloning).
+   <table><tr><td><tabs>
+   
+   <tab title="Enter Data Manually">
+   
+   5. In the **Repository URL** field, enter the URL of your repository main page (not the clone URL). For example, `https://github.com/johndoe/my-repo` (not `https://github.com/johndoe/my-repo.git` or `git@github.com:johndoe/my-repo.git`).
+   6. Choose the required **Authentication** method.
+      
+      * **Anonymous** authentication can be used for public repositories and issues that do not require users to log in.
+      * **Access token** requires a static [personal token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) issued on GitHub.
+      * **GitHub App access token** is the most secure option that leverages dynamic non-personal tokens. If the repository whose URL you specified is available via an existing [GitHub App connection](configuring-connections.md#GitHub), TeamCity will display this connection along with the **Acquire** button. Click it to issue a new token that will allow TeamCity to access this repository.
+         
+         <img src="dk-ghissues-token.png" width="706" alt="GitHub App token"/>
+   
+   </tab>
+   
+   <tab title="Use a GitHub connection">
+   
+   5. Click a GitHub icon next to the the **Repository URL** field.
+   
+   <tip>
+   
+   If multiple [GitHub connections](configuring-connections.md#GitHub) exist, hover over icons to view connection names as hints.
+   
+   </tip>
 
-   <procedure title="Configure using an existing GitHub connection" initial-collapse-state="true">
-      <p>If you have a GitHub connection or a GitHub App connection configured in the current project, you can use them to initialize this connection.</p>
-      <step>
-          <p>Next to the <b>Repository URL</b> field click the icon corresponding either to the GitHub connection or the GitHub App connection.</p>
-      </step>
-      <step><p>If this is the first time you use the connection, TeamCity prompts you to <b>Sign in to GitHub</b> or <b>Sign in to GitHub App</b>. When you click the button, you are redirected to a pop-up window to authorize access to your GitHub account.</p></step>
-      <step><p>TeamCity loads a list of accessible repositories and displays the list with a filter box. Enter some text in the box to find the repository you want and then select it from the list.</p></step>
-      <step><p>TeamCity automatically fills in the authentication and authorization fields in the dialog.</p></step>
-   </procedure>
+   <note>
+   
+   If this is the first time you use the connection, TeamCity prompts you to Sign in to GitHub or Sign in to GitHub App. When you click the button, you are redirected to a pop-up window to authorize access to your GitHub account.
+   
+   </note>
+   6. TeamCity will scan for repositories available through the related connection. Choose the required repository and all required options (including authentication settings) will be filled in automatically.
+   
+   </tab>
+   
+   </tabs></td></tr></table>
 
-5. Choose one of the following **Authentication** options from the dropdown list:
-   * Anonymous
-   * Access Token — enter your GitHub [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) in the **Access token** field
-   * Username / Password — _deprecated_ consider using an access token instead
-   * GitHub App access token — select a GitHub App access token from the dropdown list (requires at least one [GitHub App connection](configuring-connections.md#GitHub) to be configured in this project)
-6. In the **Issue ID Pattern** field, specify a regular expression pattern to filter the issues that belong to this project. You can usually leave this at the default setting, `#(\d+)`. See [Converting Strings into Links to Issues](https://www.jetbrains.com/help/teamcity/integrating-teamcity-with-issue-tracker.html#Converting+Strings+into+Links+to+Issues).
-7. Click **Test Connection** and follow the dialog instructions to test the issue tracker connection.
-8. Click **Create**.
+<ol start="7">
+
+<li>In the Issue ID Pattern field, specify a regular expression pattern to filter the issues that belong to this project. You can usually leave this at the default setting, <code>#(\d+)</code>. See this article for more information: <a href="integrating-teamcity-with-issue-tracker.md#Converting+Strings+into+Links+to+Issues">Converting Strings into Links to Issues</a></li>
+
+<li>Click <b>Test Connection</b> and follow the dialog instructions to test the issue tracker connection. </li>
+
+<li>Click <b>Create</b> to save your settings and exit the setup.</li>
+
+</ol>
+
+## Kotlin DSL
+
+To create a TeamCity-GitHub issue integration in [Kotlin DSL](kotlin-dsl.md), add a new `githubIssues` object to the `features` block of your project.
+
+```Kotlin
+project {
+    // ...
+    features {
+        githubIssues {
+            id = "PROJECT_EXT_17"
+            displayName = "Default GH Issue Tracker"
+            repositoryURL = "..."
+            authType = storedToken {
+                tokenId = "..."
+            }
+        }
+    }
+}
+```
+
+See also: [GitHubIssueTracker | Kotlin DSL Documentation](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/projectFeatures/git-hub-issue-tracker/index.html)
 
 <seealso>
         <category ref="concepts">
