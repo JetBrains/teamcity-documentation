@@ -24,6 +24,10 @@ Build 147512
 
 ## TeamCity 2023.11.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+> 
+{type="warning"}
+
 Release date: 18 January 2024<br/>
 Build 147486
 
@@ -35,6 +39,10 @@ Build 147486
 
 ## TeamCity 2023.11.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 15 December 2023<br/>
 Build 147412
 
@@ -44,6 +52,10 @@ Build 147412
 [Release notes](teamcity-2023-11-1-release-notes.md)
 
 ## TeamCity 2023.11
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 28 November 2023<br/>
 Build 147331
@@ -56,6 +68,10 @@ Build 147331
 
 ## TeamCity 2023.05.4
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 18 September 2023<br/>
 Build 129421
 
@@ -66,6 +82,10 @@ Build 129421
 
 
 ## TeamCity 2023.05.3
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 24 August 2023<br/>
 Build 129390
@@ -78,6 +98,10 @@ Build 129390
 
 ## TeamCity 2023.05.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 25 July 2023<br/>
 Build 129341
 
@@ -87,6 +111,10 @@ Build 129341
 [Release notes](teamcity-2023-05-2-release-notes.md)
 
 ## TeamCity 2023.05.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 11 July 2023<br/>
 Build 129321
@@ -98,6 +126,10 @@ Build 129321
 
 ## TeamCity 2023.05
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 26 May 2023 
 Build 129203
 
@@ -107,6 +139,10 @@ Build 129203
 [Release notes](teamcity-2023-05-release-notes.md)
 
 ## TeamCity 2022.10.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 8 June 2023  
 Build 117134
@@ -118,6 +154,10 @@ Build 117134
 
 ## TeamCity 2022.10.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 21 March 2023   
 Build 117072
 
@@ -127,6 +167,10 @@ Build 117072
 [Release notes](teamcity-2022-10-2-release-notes.md)
 
 ## TeamCity 2022.10.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 3 February 2023   
 Build 117025
@@ -138,6 +182,10 @@ Build 117025
 
 ## TeamCity 2022.10.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 1 December 2022   
 Build 116934
 
@@ -147,6 +195,10 @@ Build 116934
 [Release notes](teamcity-2022-10-1-release-notes.md)
 
 ## TeamCity 2022.10
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: __27 October 2022__   
 Build 116751
@@ -158,6 +210,10 @@ Build 116751
 
 ## TeamCity 2022.04.5
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 8 June 2023 
 Build 108886
 
@@ -167,6 +223,10 @@ Build 108886
 [Release notes](teamcity-2022-04-4-release-notes.md)
 
 ## TeamCity 2022.04.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 19 September 2022   
 Build 108763
@@ -178,6 +238,10 @@ Build 108763
 
 ## TeamCity 2022.04.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 10 August 2022   
 Build 108706
 
@@ -187,6 +251,10 @@ Build 108706
 [Release notes](teamcity-2022-04-3-release-notes.md)
 
 ## TeamCity 2022.04.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 13 July 2022   
 Build 108502
@@ -198,6 +266,10 @@ Build 108502
 
 ## TeamCity 2022.04.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 1 June 2022   
 Build 108575
 
@@ -207,6 +279,10 @@ Build 108575
 [Release notes](teamcity-2022-04-1-release-notes.md)
 
 ## TeamCity 2022.04
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: __28 April 2022__   
 Build 108502
@@ -218,6 +294,10 @@ Build 108502
 
 ## TeamCity 2021.2.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 16 February 2022   
 Build 99711
 
@@ -227,6 +307,10 @@ Build 99711
 [Release notes](teamcity-2021-2-3-release-notes.md)
 
 ## TeamCity 2021.2.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 11 January 2022   
 Build 99660
@@ -238,6 +322,10 @@ Build 99660
 
 ## TeamCity 2021.2.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 29 November 2021   
 Build 99602
 
@@ -247,6 +335,10 @@ Build 99602
 [Release notes](teamcity-2021-2-1-release-notes.md)
  
 ## TeamCity 2021.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 25 October 2021   
 Build 99542
@@ -258,6 +350,10 @@ Build 99542
 
 ## TeamCity 2021.1.4
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 08 October 2021   
 Build 92954
 
@@ -267,6 +363,10 @@ Build 92954
 [Release notes](teamcity-2021-1-4-release-notes.md)
 
 ## TeamCity 2021.1.3
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 08 September 2021   
 Build 92914
@@ -278,6 +378,10 @@ Build 92914
 
 ## TeamCity 2021.1.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 02 August 2021   
 Build 92869
 
@@ -287,6 +391,10 @@ Build 92869
 [Release notes](teamcity-2021-1-2-release-notes.md)
 
 ## TeamCity 2021.1.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 18 June 2021   
 Build 92714
@@ -298,6 +406,10 @@ Build 92714
 
 ## TeamCity 2021.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: __20 May 2021__   
 Build 92597
 
@@ -307,6 +419,10 @@ Build 92597
 [Release notes](teamcity-2021-1-release-notes.md)
 
 ## TeamCity 2020.2.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 15 April 2021    
 Build 86063
@@ -318,6 +434,10 @@ Build 86063
 
 ## TeamCity 2020.2.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 10 March 2021   
 Build 86002
 
@@ -327,6 +447,10 @@ Build 86002
 [Release notes](teamcity-2020-2-3-release-notes.md)
 
 ## TeamCity 2020.2.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 29 January 2021   
 Build 85899
@@ -338,6 +462,10 @@ Build 85899
 
 ## TeamCity 2020.2.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 16 December 2020   
 Build 85633
 
@@ -347,6 +475,10 @@ Build 85633
 [Release notes](teamcity-2020-2-1-release-notes.md)
 
 ## TeamCity 2020.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: __23 November 2020__   
 Build 85487
@@ -358,6 +490,10 @@ Build 85487
 
 ## TeamCity 2020.1.5
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 8 October 2020  
 Build 78938
 
@@ -367,6 +503,10 @@ Build 78938
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.5+%28build+78938%29+Release+Notes)
 
 ## TeamCity 2020.1.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 10 September 2020  
 Build 78906
@@ -378,6 +518,10 @@ Build 78906
 
 ## TeamCity 2020.1.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 11 August 2020  
 Build 78866
 
@@ -388,6 +532,10 @@ Build 78866
 
 ## TeamCity 2020.1.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 09 July 2020  
 Build 78726
 
@@ -397,6 +545,10 @@ Build 78726
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1.2+%28build+78726%29+Release+Notes)
 
 ## TeamCity 2020.1.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 
 Release date: 23 June 2020  
@@ -409,6 +561,10 @@ Build 78657
 
 ## TeamCity 2020.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 **Release date: 18 May 2020**  
 Build 78475
 
@@ -418,6 +574,10 @@ Build 78475
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2020.1+Release+Notes)
 
 ## TeamCity 2019.2.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 8 May 2020  
 Build 72059
@@ -429,6 +589,10 @@ Build 72059
 
 ## TeamCity 2019.2.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 20 April 2020  
 Build 72031
 
@@ -438,6 +602,10 @@ Build 72031
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.3+%28build+72031%29+Release+Notes)
 
 ## TeamCity 2019.2.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 24 February 2020  
 Build 71923
@@ -449,6 +617,10 @@ Build 71923
 
 ## TeamCity 2019.2.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 23 January 2020  
 Build 71758
 
@@ -458,6 +630,10 @@ Build 71758
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.2.1+%28build+71758%29+Release+Notes)
 
 ## TeamCity 2019.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 **Release date: 9 December 2019**  
 Build 71499
@@ -469,6 +645,10 @@ Build 71499
 
 ## TeamCity 2019.1.5
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 7 November 2019  
 Build 66605
 
@@ -478,6 +658,10 @@ Build 66605
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.5+%28build+66605%29+Release+Notes)
 
 ## TeamCity 2019.1.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 11 October 2019  
 Build 66526
@@ -489,6 +673,10 @@ Build 66526
 
 ## TeamCity 2019.1.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 29 August 2019  
 Build 66439
 
@@ -498,6 +686,10 @@ Build 66439
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.3+%28build+66439%29+Release+Notes)
 
 ## TeamCity 2019.1.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 31 July 2019  
 Build 66342
@@ -509,6 +701,10 @@ Build 66342
 
 ## TeamCity 2019.1.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 24 June 2019  
 Build 66192
 
@@ -518,6 +714,10 @@ Build 66192
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2019.1.1+%28build+66192%29+Release+Notes)
 
 ## TeamCity 2019.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 **Release date: 23 May 2019  
 **Build 65998
@@ -529,6 +729,10 @@ Build 66192
 
 ## TeamCity 2018.2.4
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 8 April 2019  
 Build 61678
 
@@ -538,6 +742,10 @@ Build 61678
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.4+%28build+61678%29+Release+Notes)
 
 ## TeamCity 2018.2.3
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 6 March 2019  
 Build 61544
@@ -549,6 +757,10 @@ Build 61544
 
 ## TeamCity 2018.2.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 23 January 2019  
 Build 61245
 
@@ -558,6 +770,10 @@ Build 61245
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2.2+%28build+61245%29+Release+Notes)
 
 ## TeamCity 2018.2.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 27 December 2018  
 Build 61078
@@ -569,6 +785,10 @@ Build 61078
 
 ## TeamCity 2018.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 **Release date: 06 December 2018**  
 Build 60925
 
@@ -578,6 +798,10 @@ Build 60925
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.2+Release+Notes)
 
 ## TeamCity 2018.1.5
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 19 December 2018  
 Build 58744
@@ -590,6 +814,10 @@ Build 58744
 
 ## TeamCity 2018.1.4
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 27 November 2018  
 Build 58724
 
@@ -600,6 +828,10 @@ Build 58724
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes)
 
 ## TeamCity 2018.1.3
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 09 October 2018  
 Build 58658
@@ -612,6 +844,10 @@ Build 58658
 
 ## TeamCity 2018.1.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 31 August 2018  
 Build 58537
 
@@ -622,6 +858,10 @@ Build 58537
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.1+%28build+58406%29+Release+Notes)
 
 ## TeamCity 2018.1.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 24 July 2018  
 Build 58406
@@ -634,6 +874,10 @@ Build 58406
 
 ## TeamCity 2018.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 **Release date: 21 June 2018**  
 Build 58245
 
@@ -644,6 +888,10 @@ Build 58245
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2018.1+Release+Notes)
 
 ## TeamCity 2017.2.4
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 17 May 2018  
 Build 51228
@@ -656,6 +904,10 @@ Build 51228
 
 ## TeamCity 2017.2.3
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 13 March 2018  
 Build 51047
 
@@ -666,6 +918,10 @@ Build 51047
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.3+%28build+51047%29+Release+Notes)
 
 ## TeamCity 2017.2.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 31 January 2018  
 Build 50909
@@ -678,6 +934,10 @@ Build 50909
 
 ## TeamCity 2017.2.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 20 December 2017  
 Build 50732
 
@@ -688,6 +948,10 @@ Build 50732
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2.1+%28build+50732%29+Release+Notes)
 
 ## TeamCity 2017.2
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 **Release date: 27 November 2017**  
 Build 50574
@@ -700,6 +964,10 @@ Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2+Relea
 
 ## TeamCity 2017.1.5
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 16 October 2017  
 Build 47175
 
@@ -711,6 +979,10 @@ Build 47175
 
 ## TeamCity 2017.1.4
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 6 September 2017  
 Build 47070  
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2017.1.4.exe)  
@@ -720,6 +992,10 @@ Build 47070
 [Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.1.4+%28build+47070%29+Release+Notes)
 
 ## TeamCity 2017.1.3
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 Release date: 25 July 2017  
 Build 46961
@@ -732,6 +1008,10 @@ Build 46961
 
 ## TeamCity 2017.1.2
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 2 June 2017  
 Build 46812
 
@@ -743,6 +1023,10 @@ Build 46812
 
 ## TeamCity 2017.1.1
 
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
+
 Release date: 28 April 2017  
 Build 46654
 
@@ -753,6 +1037,10 @@ Build 46654
 [Release notes](https://confluence.jetbrains.com/display/TW/Indore+2017.1.1+%28build+46654%29+Release+Notes)
 
 ## TeamCity 2017.1
+
+> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
+>
+{type="warning"}
 
 **Release date: 10 April 2017**   
 Build 46533
