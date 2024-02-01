@@ -163,7 +163,7 @@ dotCover Version
 </tr>
 
 <tr>
-<td>2023.11</td>
+<td>2023.11 and newer</td>
 <td>2023.2.2
 </td>
 </tr>
