@@ -1,6 +1,18 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.11.2 to 2023.11.3
+
+No potential breaking changes.
+
+See this article for the complete list of fixed issues: [](teamcity-2023-11-3-release-notes.md).
+
+## Changes from 2023.11.1 to 2023.11.2
+
+No potential breaking changes.
+
+See this article for the complete list of fixed issues: [](teamcity-2023-11-2-release-notes.md).
+
 ## Changes from 2023.11 to 2023.11.1
 
 * Previously, [reporting test metadata](reporting-test-metadata.md) with the `##teamcity[testMetadata testName='...' name='...' type='number' value='...']` service messages resulted in TeamCity showing a graph with milliseconds as the Y-axis units. This behavior was unexpected for users who passed non-DateTime values. In version 2023.11.1, the `type='number'` parameter formats the Y-axis of the graph as plain numbers. To continue viewing values as milliseconds, change the type to the new `ms` value. Other available values introduced in this version are `bytes` and `percent`.
