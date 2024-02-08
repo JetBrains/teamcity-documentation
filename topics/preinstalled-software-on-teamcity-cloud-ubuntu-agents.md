@@ -45,7 +45,7 @@
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
 |[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.25.0|
-|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.11.17|
+|[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.12.0|
 |[Python Poetry](https://python-poetry.org/)|1.7.1)|
 |[rustup](https://rustup.rs/)|1.26.0|
 |[Cargo](https://doc.rust-lang.org/cargo/)|1.75.0|
