@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.11.3 to 2023.11.4
+
+TBD
+
 ## Changes from 2023.11.2 to 2023.11.3
 
 No potential breaking changes.
