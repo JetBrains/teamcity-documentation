@@ -3,13 +3,39 @@
 
 <!--OnPrem-->
 
+## Optional Artifact Dependencies
+{product="tc"}
 
+[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To do that, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that specify what files should be downloaded and where they should be stored.
+
+If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account scenarios where a downloaded artifact is not mandatory for a dependent build.
+
+Starting with this version, you can run a dependent build even if its artifact rules yield no files.
+
+<img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
+
+To mark an artifact rule as optional, start it with the `?:` prefix.
+
+Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 
 
 <!--Cloud-->
 
+## Optional Artifact Dependencies
+{product="tcc"}
 
+[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To do that, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that specify what files should be downloaded and where they should be stored.
+
+If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account scenarios where a downloaded artifact is not mandatory for a dependent build.
+
+Starting with this version, you can run a dependent build even if its artifact rules yield no files.
+
+<img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
+
+To mark an artifact rule as optional, start it with the `?:` prefix.
+
+Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 
 ## Upgrade Notes
