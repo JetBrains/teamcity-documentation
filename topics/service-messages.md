@@ -1051,7 +1051,7 @@ To initiate monitoring of several directories or parse several types of the repo
 Send the following service message to start tracking the contents of a file and write its new lines to the build log.
 
 ```Shell
-##teamcity[importData type='streamToBuildLog' filePath='path-to-file' filePattern='pattern' wrapFileContentInBlock='false' charset='UTF-8']
+##teamcity[importData type='streamToBuildLog' filePath='path-to-file' wrapFileContentInBlock='false' charset='UTF-8']
 ```
 
 <img src="dk-streamFiletoLog.png" width="706" alt="Stream file to log"/>
