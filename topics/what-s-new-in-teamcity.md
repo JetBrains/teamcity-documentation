@@ -6,7 +6,7 @@
 ## Untrusted Builds
 {product="tc"}
 
-In software development, collaboration emerges as an invaluable tool, enabling teams to maintain flexibility while swiftly incorporating user requests into their projects. Concurrently, predictability stands as another indispensable asset, providing developers with the foresight to discern which changes are safe and which may potentially disrupt the codebase prior to their integration. However, despite their individual merits, these two principles do not always go along.
+In software development, collaboration emerges as an invaluable tool, enabling teams to swiftly incorporate user requests into their projects. Concurrently, predictability stands as another indispensable asset, providing developers with the foresight to discern which changes are safe and which may potentially disrupt the codebase prior to their integration. However, despite their individual merits, these two principles do not always go along.
 
 With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
 
