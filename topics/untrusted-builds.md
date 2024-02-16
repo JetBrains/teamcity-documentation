@@ -40,11 +40,46 @@ Depending on the exact build configuration setup and the desired behavior, you m
 
 ## Configure Untrusted Build Settings
 
+Settings that correspond to untrusted builds are configured on the project level, meaning they affect all build configurations owned by this project and its subprojects.
+
+1. Navigate to project settings (**Administration | &lt;Your_Project&gt;**) and switch to the **Untrusted builds** section in the sidebar.
+
+   <img src="dk-untrusted-builds-common.png" width="706" alt="Untrusted build settings"/>
+
+2. Choose the **Default action**.
+
+   * *Do nothing* — builds that process changes authored by external users do not require additional authorization to start.
+   * *Cancel build* — TeamCity cancels builds that process changes authored by external users. This includes both builds initiated by the [](pull-requests.md) feature and manually started builds.
+   * *Require approval* — builds that process changes authored by external users are queued, but will not start until the required number of reviewers approve it.
+
+3. Choose whether untrusted builds should be logged. TeamCity warns you the build is untrusted in the [build log](build-log.md)...
+
+   !!!IMAGE!!!
+
+   ...as well as writes corresponding messages to the [server log](teamcity-server-logs.md).
+
+   !!!IMAGE!!!
+
+4. Use the approval rules to appoint users who should review incoming changes and either approve or block corresponding builds. Use the `user:<username>` syntax to appoint individual users or add all trusted reviewers to a dedicated [user group](creating-and-managing-user-groups.md) and use the `group:<group key>:<count>` syntax. The `count` is a number of votes required to allow a build.
+
+5. Set up the **Timeout** (in minutes) to automatically cancel queued builds that remain unverified longer than this threshold.
+
+6. If the **Approve manually started builds** setting is on, builds initiated by a reviewer (a person added to **Approval rules**) automatically get the approval vote from that person. Note that in case new builds should be validated by a user group, other people should cast their remaining votes to start this build.
 
 ## Kotlin DSL
 
 The following [](kotlin-dsl.md) snippet illustrates how to configure Untrusted Builds in code.
 
 ```Kotlin
-
+project {
+    features {
+        untrustedBuildsSettings {
+            id = "PROJECT_EXT_42"
+            defaultAction = UntrustedBuildsSettings.DefaultAction.APPROVE
+            enableLog = true
+            approvalRules = "group:CODE_REVIEWERS:2"
+            timeoutMinutes = 120
+        }
+    }
+}
 ```
