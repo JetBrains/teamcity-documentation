@@ -5,7 +5,9 @@ The _Pull Requests_ [build feature](adding-build-features.md) lets you automatic
 
 \* Or _merge requests_ in case of GitLab and JetBrains Space.
 
-> If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, start new builds manually after you inspect and verify incoming changes. Otherwise, TeamCity can execute malicious code introduced in these changes (for example, handle a [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files).
+> If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, TeamCity can execute malicious code introduced in these changes. For example, handle a harmful [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files.
+> 
+> To prevent this from happening, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, either start new builds manually after you inspect and verify incoming changes, or set up [](untrusted-builds.md) to require additional review for external pull requests. 
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
