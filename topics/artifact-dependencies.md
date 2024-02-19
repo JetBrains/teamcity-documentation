@@ -84,7 +84,7 @@ The order of a rules is irrelevant. For each artifact the most specific rule (th
 
 * The `-:` prefix allows you to exclude a specific file from the download or unpacking. For example, if directory you wish to pass as an artifact dependency includes a few irrelevant for a build files, you may either go over all required files and include them using the `+:directory/file` syntax, or add the entire directory (`+:directory`) and exclude a few ignored files (`-:directory/junkfile`).
 
-* The `?:` prefix allows you to create optional inclusive dependencies. If a build cannot obtain an artifact referenced in the `+:/myartifact` rule, this build fails with the "Failed to resolve artifact dependency" message. The `?:/myartifact` rule allows you to run a dependent build anyway (with a warning that the required artifact was not found printed in the build log). See the following example for more information: [](#Optional+dependency).
+* The `?:` prefix allows you to create optional inclusive dependencies. If a build cannot obtain an artifact referenced in the `+:...` rule, this build fails with the "Failed to resolve artifact dependency" message. The `?:...` rule allows you to run a dependent build anyway (with a warning that the required artifact was not found printed in the build log). You can use the `?:` prefix to label as optional both standalone files (`?:/myfile.txt`) and files from [archives](#Archive+Path) (`?:dist.zip!myfile.txt `). See the following example for more information: [](#Optional+dependency).
 
 
 
