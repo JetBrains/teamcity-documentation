@@ -1,44 +1,103 @@
 [//]: # (title: Pull Requests)
 [//]: # (auxiliary-id: Pull Requests)
 
-The _Pull Requests_ [build feature](adding-build-features.md) lets you automatically load pull request\* information and run builds on pull request branches in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), [Azure DevOps](#Azure+DevOps+Pull+Requests), and [JetBrains Space](#JetBrains+Space+Merge+Requests).
+The _Pull Requests_ [build feature](adding-build-features.md) enhances TeamCity integration with pull (merge) requests in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), [Azure DevOps](#Azure+DevOps+Pull+Requests), and [JetBrains Space](#JetBrains+Space+Merge+Requests) repositories.
 
-\* Or _merge requests_ in case of GitLab and JetBrains Space.
+## Common Information
 
-> If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, TeamCity can execute malicious code introduced in these changes. For example, handle a harmful [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files.
+Adding the Pull Requests feature to a build configuration allows you to:
+
+* View pull request branches and their pending changes on the build configuration's overview page.
+
+   <img src="dk-pull-branches.png" width="706" alt="New pull branches on the main build configuration page"/>
+
+* View pull request's details on the **Overview** tab of the [build results page](build-results-page.md).
+
+   <img src="pr-info.png" alt="Pull request details" width="706" border-effect="line"/>
+   
+   In the case of a draft pull request, the icon is grayed-out and the **Draft** status appears before the pull request number:
+   
+   <img src="pr-info2.png" alt="Pull request details" width="706" border-effect="line"/>
+
+* Set up specific criteria that govern which pull requests to monitor. You can filter pull requests by their authors, target and origin branches.
+
+* Set up a workflow in which developers work in their local branches and TeamCity does not waste resources building these changes unless they are sent as a pull (merge) request (see the [](#Interaction+with+VCS+Roots) section).
+
+
+The Pull Requests feature **does not** automatically trigger new builds against pull (merge) request branches. To assess changes from pull request branches before they are merged into the main codebase, add a [VCS trigger](configuring-vcs-triggers.md) that targets required branches (for example, `refs/pull/*` for GitHub). New build configurations created in TeamCity UI already include a trigger with the `+:*` specification, which allows TeamCity to build changes from pull (merge) request branches.
+
+> If your build configuration targets a public repository where non-trusted users can push commits or create pull (merge) requests, building these changes means TeamCity can execute malicious code introduced in them. For example, TeamCity may handle a harmful [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files.
 > 
-> To prevent this from happening, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, either start new builds manually after you inspect and verify incoming changes, or set up [](untrusted-builds.md) to require additional review for external pull requests. 
+> To prevent this from happening, do not configure [VCS triggers](configuring-vcs-triggers.md) and [Pull Requests build features](pull-requests.md) in such a manner that builds with pull (merge) request changes start automatically. Instead, either start new builds manually after you inspect and verify incoming changes, or set up [](untrusted-builds.md) to require additional review for external pull requests. 
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
 {type="warning"}
 
-When adding this build feature, you need to specify a VCS root and select a VCS hosting type.  
-Other settings depend on the selected VCS hosting type.
 
-This feature extends the original branch specification of [VCS roots](vcs-root.md), attached to the current build configuration, to include pull requests that match the specified filtering criteria.
+If your project targets a GitHub or GitLab repository, you can automate your setup even further by letting TeamCity build pull request branches and merge those requests that yield successful builds. To do this, add the [Automatic Merge](automatic-merge.md) build feature in addition to **Pull Requests**.
 
-<note>
+## Interaction with VCS Roots
 
-* The branch specification of the VCS root __must not__ contain patterns matching pull request branches.
-* If you want to trigger builds __only__ on pull requests, leave the branch specification of the VCS root empty.
+The Pull Requests feature extends the original branch specification of [VCS roots](vcs-root.md) attached to the current build configuration. As such, branch specifications of a VCS root **must not** contain patterns that match pull request branches to avoid ambiguous and unexpected behavior.
 
-</note>
+If you want to build **only** pull requests, clear the VCS root's branch specification.
 
-You can find the pull request's details displayed on the __Overview__ tab of the __Build Results__:
 
-<img src="pr-info.png" alt="Pull request details" width="706" border-effect="line"/>
+```Kotlin
+object MyRepoRoot : GitVcsRoot({
+    name = "MyRoot"
+    url = "https://github.com/username/reponame"
+    branch = "refs/heads/main"
+    // the "branchSpec = ..." parameter is missing
+})
+```
 
-In the case of a draft pull request, the icon is grayed-out and the **Draft** status appears before the pull request number:
+The sample below illustrates how to correctly set up your TeamCity project so that the root branch specifications and the Pull Requests feature complete each other to implement the following workflow:
 
-<img src="pr-info2.png" alt="Pull request details" width="706" border-effect="line"/>
+* TeamCity tracks only `main`, `production`, and `sandbox` branches, as well as all branches that start with "release-" (for example, `release-2077.02`).
 
-If you configure a [VCS trigger](configuring-vcs-triggers.md) for your build configuration, TeamCity will automatically run builds on changes detected in the monitored branches. For example, to auto-start building pull requests for [GitHub](#GitHub+Pull+Requests) repositories, add a new trigger (or modify the existing one) with the `+:pull/*` branch filter rule.
+* Developers can create local branches and work with them without any exposure to TeamCity.
 
->For requests from GitHub and GitLab, you can set up TeamCity to automatically run a build on each request and merge the request if the build is successful.   
-To achieve this, enable and configure the Pull Requests and [Automatic Merge](automatic-merge.md) build features.
+* When a developer is ready to publish their changes, they can create a request to merge their commits from a personal (untracked) into core (tracked) branch. This will result in a new pull branch (for example, `refs/pull/54` on GitHub). The Pull Requests feature will detect this new branch, making it possible to build and test changes in TeamCity before they are merged.
 
-See the [example](#Pull+Requests+workflow+example) on how to set up TeamCity to run builds on GitHub pull requests, or watch our **[video tutorial](https://www.youtube.com/watch?v=4yFck9PvXI4)**.
+* Due to feature's **Filter by author** setting, TimCity ignores similar `refs/pull/<Int>` branches created for unauthorized (external) users' requests.
+
+```Kotlin
+project {
+    vcsRoot(MyRepoRoot)
+    buildType(Build)
+}
+
+object Build : BuildType({
+    name = "Build"
+    vcs { root(MyRepoRoot) }
+
+    // ...
+
+    features {
+        pullRequests {
+            vcsRootExtId = "${MyRepoRoot.id}"
+            provider = github {
+                authType = vcsRoot()
+                filterAuthorRole = PullRequests.GitHubRoleFilter.MEMBER
+            }
+        }
+    }
+})
+
+object MyRepoRoot : GitVcsRoot({
+    name = "MyRoot"
+    url = "https://github.com/username/reponame"
+    branch = "refs/heads/main"
+    branchSpec = """
+        refs/heads/main
+        refs/heads/production
+        refs/heads/sandbox
+        refs/heads/release-*
+    """.trimIndent()
+})
+```
 
 ## VCS-specific settings
 
