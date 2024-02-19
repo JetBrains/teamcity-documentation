@@ -5,13 +5,17 @@
 
 ### Maven Tooling Updates
 
-Version 2024.03 introduces a number of changes related to bundled Maven tools. These changes are dictated by certain Maven version reaching their end-of-life stage, and carry on the initiative that aims to reduce the size of TeamCity installers by unbundling certain non-crucial components and tools.
+Version 2024.03 introduces a number of changes related to bundled Maven tools. These changes are dictated by certain Maven versions containing known CVEs, and carry on the initiative that aims to reduce the size of TeamCity installers by unbundling certain non-crucial components and tools.
 
 These changes and their potential effects on your existing projects include the following:
 
-* All Maven versions that are not in use by Maven [steps](maven.md) and [triggers](configuring-maven-triggers.md) are removed. Maven versions required by existing configurations will be downloaded and installed when your TeamCity server first starts. If the server cannot establish connection with `jetbrains.com`, you will need to manually [install the missing tools](installing-tools.md). If no configurations require Maven, only the latest version 3.9.6 will be installed.
-* The TeamCity server will not download and install Maven 2.x version even if they are required by existing projects. These versions reached their EOL and no longer receive security updates. Build configurations configured to use these outdated versions will display corresponding health reports that suggest switching to a newer version or installing required Maven 2.x manually.
-* If there are existing configurations that utilize the "Default" version of Maven, version 3.6.3 will remain the "Default" one. Otherwise, the newest 3.9.6 version becomes a default.
+* All Maven versions that are not in use by Maven [steps](maven.md) and [triggers](configuring-maven-triggers.md) are removed. Maven versions required by existing configurations will be downloaded and installed when your TeamCity server first starts. If the server cannot establish connection with [https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven), you will need to manually [install the missing tools](installing-agent-tools.md). If no existing configurations are using Maven, only the latest version 3.9.6 will be installed.
+
+    > You can add the `teamcity.tools.bundled.maven.installOnStartup=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to prevent TeamCity from lazy-loading Maven tools.
+    > 
+    {type="tip"}
+
+* If there are no existing configurations that utilize the "Default" version of Maven, version 3.9.6 becomes the new "Default". Otherwise, the "Default" option will keep pointing to the same Maven tool as before (for example, 3.6.3).
 * If an existing build configuration utilizes manually installed Maven 3.9.6 and [stores its settings in VCS](storing-project-settings-in-version-control.md), editing this configuration generates a [patch](kotlin-dsl.md#Edit+Project+Settings+via+Web+UI) that changes the value of the `mavenVersion` parameter from `custom` to `bundled_3_9_6`.
 
 
