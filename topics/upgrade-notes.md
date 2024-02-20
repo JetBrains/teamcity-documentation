@@ -21,13 +21,19 @@ These changes and their potential effects on your existing projects include the 
 
 ## Changes from 2023.11.3 to 2023.11.4
 
-The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
+* The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
 
 ## Changes from 2023.11.2 to 2023.11.3
 
 No potential breaking changes.
 
 See this article for the complete list of fixed issues: [](teamcity-2023-11-3-release-notes.md).
+
+### Known Issues
+{id="known-issues-2023-11"}
+
+* TeamCity performance is decreased if the server cannot reach the jetbrains.com domain. See this YouTrack ticket for more information: [https://youtrack.jetbrains.com/issue/TW-86288](https://youtrack.jetbrains.com/issue/TW-86288). This issue is [addressed](teamcity-2023-11-4-release-notes.md) in the 2023.11.4 bug-fix date.
+
 
 ## Changes from 2023.11.1 to 2023.11.2
 
