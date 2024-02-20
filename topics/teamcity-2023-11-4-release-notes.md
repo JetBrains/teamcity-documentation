@@ -41,12 +41,6 @@
 **[TW-80270](https://youtrack.jetbrains.com/issue/TW-80270/Flying-loader-on-show-all-N-configurations)** — Flying loader on "show all N configurations"
 
 
-### Feature
-
-**[TW-85738](https://youtrack.jetbrains.com/issue/TW-85738/Support-for-markdown-in-the-custom-messages-shown-about-newly-available-TeamCity-versions)** — Support for markdown in the custom messages shown about newly available TeamCity versions
-
-
-
 
 <!--project: TeamCity Fix versions: 2023.11.4  #Fixed #{Security Problem}  -{Trunk issue}-->
 
