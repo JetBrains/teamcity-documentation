@@ -3,7 +3,7 @@
 
 ## Changes from 2023.11.3 to 2023.11.4
 
-TBD
+The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
 
 ## Changes from 2023.11.2 to 2023.11.3
 
