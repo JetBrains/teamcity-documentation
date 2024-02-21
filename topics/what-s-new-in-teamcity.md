@@ -10,6 +10,8 @@ With the [](pull-requests.md) feature added to your configurations you can asses
 
 Version 2024.03 introduces a new setup that eliminates this trade-off between collaboration and security. The new **Untrusted Builds** group under project settings allows TeamCity to differentiate changes authored by trusted users from changes coming from an external source. New builds are triggered regardless of the changes' author, but builds that incorporate unverified changes will remain in queue until a designated reviewer (or a group of reviewers) marks them as safe to run.
 
+<img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
+
 Learn more: [](untrusted-builds.md).
 
 ## Optional Artifact Dependencies
@@ -37,6 +39,8 @@ Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
 
 Version 2024.03 introduces a new setup that eliminates this trade-off between collaboration and security. The new **Untrusted Builds** group under project settings allows TeamCity to differentiate changes authored by trusted users from changes coming from an external source. New builds are triggered regardless of the changes' author, but builds that incorporate unverified changes will remain in queue until a designated reviewer (or a group of reviewers) marks them as safe to run.
+
+<img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
 
 Learn more: [](untrusted-builds.md).
 
