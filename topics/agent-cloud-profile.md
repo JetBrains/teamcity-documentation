@@ -29,7 +29,11 @@ For each cloud profile, create one or more cloud image. Images store such settin
 * Post-launch scripts.
 * An [agent pool](configuring-agent-pools.md) that should own cloud agents spawned from this image.
 
-<img src="dk-cloudProfileOverview.png" width="706" alt="TeamCity Cloud Profile"/>
+   > You can only select the pool that contains the current project and/or its subprojects. Pools containing projects other than the current one and its subprojects will not be available for assignment. If the selected agent pool is changed in the future so that the criteria are not met or if the agent pool is not specified, TeamCity will automatically assign the cloud agents to the _project pool_. You can also select the _\<Project pool\>_ in the drop-down menu manually.   
+   > 
+   > TeamCity automatically composes the project pool containing agents from all cloud profiles of the current project and all its subprojects. Thus, the added image will be available to all the subprojects as well. On the __Agents | Pools__ page, this pool is marked as "_\<Project name\> project pool_". Project pools cannot be deleted or modified.
+   > 
+   {type="note"}
 
 When a build is queued, TeamCity attempts to run queued builds on regular (non-cloud) agents first. If none are currently available, TeamCity finds a compatible cloud image and (if the limit of simultaneously running instances is not yet reached) starts a new cloud instance.
 
