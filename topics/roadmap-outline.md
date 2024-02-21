@@ -7,7 +7,7 @@ __Current TeamCity Version is 2024.03__
 
 ### Next Major Release
 
-We expect to release the next major TeamCity version (TeamCity 2024.06) in the second half of June 2024.
+We expect to release the next major TeamCity version (TeamCity 2024.07) in the second half of July 2024.
 
 ### Next BugFix Release
 
