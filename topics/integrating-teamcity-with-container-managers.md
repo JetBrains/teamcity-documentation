@@ -51,6 +51,8 @@ TeamCity checks the following [parameters](configuring-build-parameters.md) to i
 
 * `container.engine` — returns "docker", "podman" or "docker,podman", depending on which container manager is installed on the agent machine. If both Docker and Podman are installed, TeamCity uses Docker by default.
 
+* `teamcity.default.сontainer.engine` — set this property to either `docker` or `podman` to always use the desired tool. This property allows you to override the default logic that forces TeamCity to use Docker when both tools are available. You can set this property as a [configuration parameter](configuring-build-parameters.md) or as an individual agent's setting (in the [buildAgent.properties](configure-agent-installation.md) file).
+
 * `docker.server.version`, `docker.version` — return versions of installed [Docker Engine](https://docs.docker.com/engine/reference/commandline/dockerd/)  and [Docker CLI](https://docs.docker.com/engine/reference/commandline/docker/), respectively.
 
 * `podman.version` — stores the version of installed Podman software.
