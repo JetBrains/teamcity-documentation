@@ -81,6 +81,10 @@ ownAddress=<own IP address or server-accessible domain name>
 
 ```
 
+### Alternative Fetch URL
+
+If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you can allow these agents to download sources from this mirror. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. See this section for more information: [Git VCS Root | General Settings](git.md#General+Settings).
+
 ## Set up Agent Behind Proxy
 
 It is possible to configure a forward proxy server for agent-to-server connections.

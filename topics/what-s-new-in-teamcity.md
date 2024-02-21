@@ -14,6 +14,14 @@ Version 2024.03 introduces a new setup that eliminates this trade-off between co
 
 Learn more: [](untrusted-builds.md).
 
+
+## Alternative Fetch URLs
+{product="tc"}
+
+If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you set up these agents to download sources from this mirror instead. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. The redirection rules can use wildcards to provide an alternative fetch URL for multiple projects.
+
+Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
+
 ## Optional Artifact Dependencies
 {product="tc"}
 

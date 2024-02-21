@@ -54,124 +54,49 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
 ## General Settings
 
-<table><tr>
+* **Fetch URL** — the URL of the remote Git repository used for fetching data from the repository.
 
-<td width="150">
-
-Option
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Fetch URL
-
-</td>
-
-<td>
-
-The URL of the remote Git repository used for fetching data from the repository.
-
-</td></tr><tr>
-
-<td>
-
-Push URL
-
-</td>
-
-<td>
-
-The URL of the target remote Git repository used for pushing annotated tags created via [VCS labeling](vcs-labeling.md) build feature to the remote repository. If blank, the fetch URL is used.
-
-</td></tr><tr>
-
-<td>
-
-Default branch
-
-</td>
-
-<td id="defaultBranch">
-
-Configures [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
-
-<note>
-
-You can configure Git-plugin to fetch all heads by adding the `teamcity.git.fetchAllHeads=true` [custom parameter](typed-parameters.md).
-
-</note>
+   You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
+   
+   ```Plain Text
+   teamcity.git.fetchUrlMapping.firstrule = https://example.com/org/test.git => http://proxy.com/test.git
+   ```
+   
+   You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
+   
+   ```Plain Text
+   teamcity.git.fetchUrlMapping.secondrule = https://example.com/org/* => http://proxy.com/
+   ```
+   
+   Note that along with a fetch URL a VCS root also stores authentication settings required to access a repository. As such, replacing fetch URL is in effect only for VCS roots that use **Anonymous** or **Private key** authentication modes. Other modes do not guarantee an agent will be able to access a repository (for example, a refreshable token issued for a source VCS will not be accepted by a proxy hosting).
 
 
-</td></tr><tr>
+* **Push URL** — the URL of the target remote Git repository used for pushing annotated tags created via [VCS labeling](vcs-labeling.md) build feature to the remote repository. If blank, the fetch URL is used.
 
-<td>
+<anchor name="defaultBranch"/>
 
-Branch specification
+* **Default branch** - the [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
-</td>
+   <note>
+   
+   You can configure Git-plugin to fetch all heads by adding the `teamcity.git.fetchAllHeads=true` [custom parameter](typed-parameters.md).
+   
+   </note>
 
-<td>
 
-Lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
+* **Branch specification** — lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+   <include src="branch-filter.md" include-id="OR-syntax-tip"/>
 
-</td></tr><tr>
+* **Use tags as branches** — allows monitoring / checking out git [tags](vcs-labeling.md) as branches making branch specification match tag names as well as branches (for example,`+|-:refs/tags/<tag_name>`). By default, tags are ignored.
 
-<td>
+* **Username style** — defines a way TeamCity reports username for a VCS change. Changing the username style will affect only newly collected changes. Old changes will continue to be stored with the style that was active at the time of collecting changes.
 
-Use tags as branches
+* **Submodules** — select whether you want to ignore the submodules, or treat them as a part of the source tree. Submodule repositories should either not require authentication or use the same protocol and accept the same authentication as configured in the VCS root.
 
-</td>
+* **Username for tags/merge**  — a custom username used for [labeling](vcs-labeling.md).
 
-<td>
 
-Allows monitoring / checking out git [tags](vcs-labeling.md) as branches making branch specification match tag names as well as branches (for example,`+|-:refs/tags/<tag_name>`). By default, tags are ignored.
-
-</td></tr><tr>
-
-<td>
-
-Username style
-
-</td>
-
-<td>
-
-Defines a way TeamCity reports username for a VCS change. Changing the username style will affect only newly collected changes. Old changes will continue to be stored with the style that was active at the time of collecting changes.
-
-</td></tr><tr>
-
-<td>
-
-Submodules
-
-</td>
-
-<td>
-
-Select whether you want to ignore the submodules, or treat them as a part of the source tree. Submodule repositories should either not require authentication or use the same protocol and accept the same authentication as configured in the VCS root.
-
-</td></tr><tr>
-
-<td>
-
-Username for tags/merge
-
-</td>
-
-<td>
-
-A custom username used for [labeling](vcs-labeling.md).
-
-</td></tr></table>
 
 ### Branch Matching Rules
 {id="branchMatchingRules" auxiliary-id="Branch Matching Rules"}
@@ -207,103 +132,56 @@ When you run TeamCity as a Windows service, it cannot access mapped network driv
 
 ## Authentication Settings
 
-<table><tr>
+* **Anonymous** — select this option to clone a repository with anonymous read access.
 
-<td>
+<anchor name="passwordAuth"/>
 
-Authentication Method
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Anonymous
-
-</td>
-
-<td>
-
-Select this option to clone a repository with anonymous read access.
-
-</td></tr><tr>
-
-<td>
-
-Password / personal access token
-
-</td>
-
-<td id="passwordAuth">
-
-Specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
+* **Password / personal access token** — specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](https://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
+   
+   You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
-You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
+   >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
+   >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
+   >
+   {type="warning"}
 
->Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
->We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
->
-{type="warning"}
+   When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root, 
+   TeamCity will use a refreshable token instead of the password.
 
-When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root, 
-TeamCity will use a refreshable token instead of the password.
+<anchor name="refresh-token"/>
 
-</td></tr><tr>
-
-<td>
-
-Refreshable token
-
-</td>
-<td id="refresh-token">
-
-If a VCS root that fetches data from a GitHub, GitHub App, Bitbucket Server, Bitbucket Cloud, Azure DevOps, GitLab, or JetBrains Space was configured using a TeamCity [connection](configuring-connections.md),
+* **Refreshable token** — if a VCS root that fetches data from a GitHub, GitHub App, Bitbucket Server, Bitbucket Cloud, Azure DevOps, GitLab, or JetBrains Space was configured using a TeamCity [connection](configuring-connections.md),
 refreshable tokens are enabled by default. Such tokens are short-lived providing more security than passwords or personal access tokens:
 the TeamCity server refreshes them automatically without sharing any related data with agents.
 
-The **Token** field displays information about the user who obtained the token and the connection that provided the token.
+   The **Token** field displays information about the user who obtained the token and the connection that provided the token.
 
-You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
+   You can specify a **username** here if there is no username in the clone URL (the username specified here overrides the username from the URL).
 
-For Azure DevOps, GitHub App, Bitbucket Server, Bitbucket Cloud, JetBrains Space and GitLab connections you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
+   For Azure DevOps, GitHub App, Bitbucket Server, Bitbucket Cloud, JetBrains Space and GitLab connections you can click the *Acquire new* button to instantly reissue the token used by the VCS root with a token issued for the current user.
 
-<img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
+   <img src="dk-refreshableGitToken.png" width="706" alt="Reissue Token" />
 
-</td></tr><tr>
 
-<td>
+* **Private Key** — valid only for SSH protocol. A private key must be in the __OpenSSH format__.
 
-Private Key
+   >Recent versions of OpenSSH no longer generate keys in PEM format by default. The new OpenSSH format is not yet supported by TeamCity (see [TW-53615](https://youtrack.jetbrains.com/issue/TW-53615)). Use the following command to generate TeamCity-compatible keys: `ssh-keygen -t rsa -m PEM`.
+   >
+   {type="note"}
 
-</td>
+   Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
+   Available __Private Key__ options:
+   
+   <chunk include-id="ssh-key-options">
 
-<td>
+  * __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
+  * __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
+  * __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. Fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If the key is encrypted, specify the passphrase in the corresponding field.
+   
+   </chunk>
 
-Valid only for SSH protocol. A private key must be in the __OpenSSH format__.
-
->Recent versions of OpenSSH no longer generate keys in PEM format by default. The new OpenSSH format is not yet supported by TeamCity (see [TW-53615](https://youtrack.jetbrains.com/issue/TW-53615)). Use the following command to generate TeamCity-compatible keys: `ssh-keygen -t rsa -m PEM`.
->
-{type="note"}
-
-Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
-Available __Private Key__ options:
-
-<chunk include-id="ssh-key-options">
-
-* __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
-* __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
-* __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. Fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If the key is encrypted, specify the passphrase in the corresponding field.
-
-</chunk>
-
-</td></tr></table>
 
 For all available options to connect to GitHub, see the [comment](https://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
 
