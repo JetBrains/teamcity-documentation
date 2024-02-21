@@ -31,6 +31,7 @@ Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 
 ## Miscellaneous Changes
+{product="tc"}
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 
@@ -64,6 +65,11 @@ Starting with this version, you can run a dependent build even if its artifact r
 To mark an artifact rule as optional, start it with the `?:` prefix.
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
+
+## Miscellaneous Changes
+{product="tcc"}
+
+* The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 
 
 ## Upgrade Notes
