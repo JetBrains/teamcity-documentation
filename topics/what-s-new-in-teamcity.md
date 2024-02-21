@@ -74,6 +74,13 @@ To mark an artifact rule as optional, start it with the `?:` prefix.
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
+## Alternative Fetch URLs
+{product="tcc"}
+
+If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you set up these agents to download sources from this mirror instead. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. The redirection rules can use wildcards to provide an alternative fetch URL for multiple projects.
+
+Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
+
 ## Miscellaneous Changes
 {product="tcc"}
 
