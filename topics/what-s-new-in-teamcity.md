@@ -30,6 +30,11 @@ To mark an artifact rule as optional, start it with the `?:` prefix.
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 
+## Miscellaneous Changes
+
+* The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
+
+
 
 <!--Cloud-->
 

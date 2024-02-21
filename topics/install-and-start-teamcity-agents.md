@@ -66,9 +66,9 @@ To invoke a terminal, click **Agents** in the TeamCity header, choose the requir
 
 <img src="dk-agentTerminal-2023-11.png" width="706" alt="Agent Terminal Window"/>
 
-You can also open this terminal from the [](build-results-page.md).
+You can also open this terminal from the [](build-results-page.md). In this case, the terminal opens in the [checkout directory](build-checkout-directory.md) instead of the `$HOME` folder.
 
-<img src="dk-agentTerminal-2023-11-new.png" width="706" alt="Agent Terminal Window"/>
+<img src="dk-terminal-in-checkout-folder.png" width="706" alt="Agent Terminal Window"/>
 
 When a terminal opens, you can click the **Open in a separate tab** link to get a bigger client area.
 
