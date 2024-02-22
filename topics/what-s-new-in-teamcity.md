@@ -18,7 +18,9 @@ Learn more: [](untrusted-builds.md).
 ## Alternative Fetch URLs
 {product="tc"}
 
-If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you set up these agents to download sources from this mirror instead. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. The redirection rules can use wildcards to provide an alternative fetch URL for multiple projects.
+In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
+
+Fetch URL mapping rules, defined in agent configuration files, offer granular control over the checkout process per agent. Additionally, wildcard and partial URL support in redirection rules enables the creation of universal, project-agnostic mapping patterns.
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
@@ -27,13 +29,11 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 [](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
 
-If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account scenarios where a downloaded artifact is not mandatory for a dependent build.
+If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account more flexible setups where a downloaded artifact is not mandatory for a dependent build to run.
 
-Starting with this version, you can run a dependent build even if its artifact rules yield no files.
+Starting with version 2024.03, you can run a dependent build even if its artifact rules yield no files. To do so, start an artifact rule with the `?:` prefix.
 
 <img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
-
-To mark an artifact rule as optional, start it with the `?:` prefix.
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
@@ -62,22 +62,22 @@ Learn more: [](untrusted-builds.md).
 ## Optional Artifact Dependencies
 {product="tcc"}
 
-[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
+by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
 
-If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account scenarios where a downloaded artifact is not mandatory for a dependent build.
+If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account more flexible setups where a downloaded artifact is not mandatory for a dependent build to run.
 
-Starting with this version, you can run a dependent build even if its artifact rules yield no files.
+Starting with version 2024.03, you can run a dependent build even if its artifact rules yield no files. To do so, start an artifact rule with the `?:` prefix.
 
 <img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
-
-To mark an artifact rule as optional, start it with the `?:` prefix.
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 ## Alternative Fetch URLs
 {product="tcc"}
 
-If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you set up these agents to download sources from this mirror instead. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. The redirection rules can use wildcards to provide an alternative fetch URL for multiple projects.
+In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
+
+Fetch URL mapping rules, defined in agent configuration files, offer granular control over the checkout process per agent. Additionally, wildcard and partial URL support in redirection rules enables the creation of universal, project-agnostic mapping patterns.
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
