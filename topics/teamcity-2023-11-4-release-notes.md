@@ -2,13 +2,15 @@
 [//]: # (auxiliary-id: TeamCity 2023.11.4 Release Notes)
 
 
-**Build 147556, 21 February 2024**
+**Build 147568, 28 February 2024**
 
 
-<!--project: TeamCity Fix versions: 2023.11.4  #Fixed #Testing visible to: {All Users} -{Trunk issue}}-->
+<!--project: TeamCity Fix versions: 2023.11.4  #Fixed #Testing visible to: {All Users} -{Trunk issue}-->
 
 
 ### Bug
+
+**[TW-86511](https://youtrack.jetbrains.com/issue/TW-86511/EC2-cloud-profile-configuration-missing-agent-push-preset)** — EC2 cloud profile configuration missing agent push preset
 
 **[TW-86288](https://youtrack.jetbrains.com/issue/TW-86288/If-TeamCity-is-unable-to-reach-jetbrains.com-it-can-slow-down-the-start-of-the-builds-as-well-as-some-pages)** — If TeamCity is unable to reach jetbrains.com, it can slow down the start of the builds as well as some pages
 
@@ -42,11 +44,15 @@
 
 
 
-<!--project: TeamCity Fix versions: 2023.11.4  #Fixed #{Security Problem}  -{Trunk issue}-->
+<!--project: TeamCity Fix versions: 2023.11.4  #Fixed #Testing  #{Security Problem}  -{Trunk issue}-->
 
 ### Security
 
-2 security problems have been fixed.
+4 security problems have been fixed.
+
+> We highly recommend installing this update as it includes a fix for a critical security vulnerability.
+>
+{type="warning"}
 
 > We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2023.11) for the list of disclosed vulnerability fixes. Security bulletins for new versions are typically published within the next few days after the release date.
 >
