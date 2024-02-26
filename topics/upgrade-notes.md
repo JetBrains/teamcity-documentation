@@ -88,6 +88,8 @@ The Amazon EC2 plugin was significantly reworked in version 2023.11. As a part o
 
 In version 2023.11.2, we expect to rollback this change for cloud profiles configured before the 2023.11 update. This will allow you to continue using the agent push functionality for the existing cloud agents. However, we encourage you to update your setup and bake TeamCity agents into your AMIs instead of installing them via the agent push. The latter option will be completely disabled in one of the future releases.
 
+**2023.11.4 Update:** Agent pushes are temporarily re-enabled for all cloud profiles, both those configured prior to version 2023.11 and new ones.
+
 ### TeamCity Plugin for IntelliJ Platform Updates
 
 * From TeamCity 2023.11 onwards, when two-factor authentication (2FA) is enabled on the TeamCity server, it is no longer possible to log in to TeamCity from the IntelliJ Platform using username/password credentials. You can log in with username/access token credentials instead.
