@@ -1,6 +1,7 @@
 [//]: # (title: Create and Set Up Custom Parameters)
 [//]: # (auxiliary-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
 
+
 This topic explains how to create custom TeamCity parameters and configure their appearance and behavior.
 
 ## Name Restrictions
@@ -15,13 +16,40 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
 2. Click the **Add new parameter** button.
 
-3. Specify the parameter kind and enter the parameter name. See this article for more information on the difference between different parameter types: [](configuring-build-parameters.md).
-
     <img src="dk-params-createNewParam.png" width="706" alt="Create New Parameter"/>
 
-4. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
+3. Specify the parameter kind and enter the parameter name. See this article for more information on the difference between different parameter types: [](configuring-build-parameters.md).
 
-5. Optional: Set up the required parameter specification. Using parameter [specs](#Adding+Parameter+Specification), you can force users to enter parameter values each time they start a build, hide parameter values from TeamCity UI and REST API requests, and more. Refer to the corresponding sections of this document to learn more.
+4. Choose the required **Value type** option. These options control what values a parameter can have.
+
+   * **Text** — the default type that allows the parameter to have any string value. You can optionally choose a required option under **Show allowed value** to limit the allowed values to only those that match the specific RegEx pattern, or ensure a parameter is never empty.
+
+   * **Checkbox** — limits the number of possible parameter values to two. Rendered as a checkbox in the [Run Custom Build](running-custom-build.md) dialog, allowing users to toggle between these values. The default values for checked and unchecked states are `true` and `null` respectively. You can set up your custom value pairs (yes/no, 1/0, debug/release, and so on) via the **Checked value** and **Unchecked value** fields.
+
+   * **Password** — similar to the "Text" type, "Password" parameters can accept any string as a value. However, this value is never exposed outside a build: TeamCity hides this sensitive value from the UI, build logs, DSL code, and REST API response payloads.
+
+   * **Select** — allows you to specify a set of predefined values. Users that invoke the [Run Custom Build](running-custom-build.md) dialog can choose one or multiple values from the list, depending on the **Allow multiple selection** value. Values can be supplied with optional values displayed in TeamCity UI (for example, `Windows => win`).
+
+   * **Remote secret** — a parameter whose value cannot be entered manually. Instead, a value is securely retrieved from a remote storage when the running builds needs this value. See the following article to learn more: [](hashicorp-vault.md).
+
+5. Optional: Click **Customize settings for the "Run Custom Build" dialog** to specify additional options that affect users who run [custom builds](running-custom-build.md).
+
+   * **Display** — specifies whether users can (or should) edit this parameter.
+
+      * **Normal** parameters are default parameters that are shown in the [Run Custom Build](running-custom-build.md) dialog.
+      * **Hidden** parameters are not visible in the [Run Custom Build](running-custom-build.md) dialog. Use this type for service parameters that you do not want users to see. Unlike with secret parameters, it is possible to echo a value of a hidden parameter to a build log, request it via REST API, and so on.
+
+      * **Prompt** parameters invoke the [Run Custom Build](running-custom-build.md) dialog every time users trigger a new build to ensure a valid value is provided for each run. You can also use this type to implement custom confirmation dialogs (see the Examples section below).
+
+   * **Description** and **Label** fields allow you to add hints that help users choose a correct parameter value.
+   
+      <img src="dk-newparameters-labelanddescription.png" width="706" alt="Parameter Label and Description"/>
+
+   * **Read-only** parameters display disabled editors in the [Run Custom Build](running-custom-build.md) dialog, which prevents users from changing parameter values. If along with locking the value you also want to hide this parameter from users, set the **Display** option to **Hidden**.
+   
+6. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
+
+
 
 
 ### In Kotlin DSL
@@ -85,7 +113,7 @@ Request body:
 </tabs>
 
 
-You can also send requests to the `/app/rest/buildQueue` endpoint to create one-time parameters for a single build run only. The following request starts a new build and adds a [password parameter](typed-parameters.md#Password).
+You can also send requests to the `/app/rest/buildQueue` endpoint to create one-time parameters for a single build run only. The following request starts a new build with a new password parameter.
 
 ```Shell
 /app/rest/buildQueue
@@ -148,152 +176,57 @@ This method allows you to declare parameters available only for those build conf
 You can modify the name and path to the properties file via the `teamcity.default.properties` parameter of a build configuration.
 
 
-## Parameter Specifications
-{id="Adding+Parameter+Specification"}
+## Examples
 
-Setting up a parameter specification allows you to alter the parameter behavior and appearance.
 
-### Label and Description
+### Checkbox parameter
 
-These fields allow you to set up custom strings for the **Run Custom Build** dialog.
-
-<img src="dk-params-LabelAndDescription.png" width="706" alt="Custom parameter label and description"/>
-
-If these values are not specified, TeamCity leaves the parameter description empty and uses the regular parameter name as its label.
-
-### Display Modes
-
-The **Display** setting controls whether the parameter should be visible in the [Run Custom Build](running-custom-build.md) dialog. The default parameter display mode is **Normal**.
-
-#### Hidden
-
-Parameters with this display mode are not shown in the **Run Custom Build** dialog when a user triggers a custom build. Choose this mode to hide parameters you do not want users to see.
-
-If you want to prevent users from editing a parameter value but still leave the parameter visible, leave the display mode as "Normal" and tick the **Read-only** checkbox instead.
-
-#### Prompt
-
-If a build configuration has a parameter of the "Prompt" type, every time a user triggers a new build, the **Run Custom Build** dialog appears. This behavior ensures that a user sets a valid value for all "Prompt" parameters before the build process starts.
-
-For example, the following parameter adds a run confirmation to your build configuration: users cannot start new builds unless they type "deploy" in the corresponding field.
-
-<img src="dk-params-startPrompt.png" width="706" alt="Starting Prompt"/>
-
-```Kotlin
-object MyBuildConf : BuildType({
-params {
-    text("launch.confirmation", "",
-            label = "Deployment build confirmation",
-            description = "This configuration triggers the deployment chain, which uploads updated NuGet packages and Docker images to public sources. Do you want to continue?",
-            display = ParameterDisplay.PROMPT,
-            regex = "deploy",
-            validationMessage = """Type "deploy" to run this build""")
-    }
-})
-```
-
-### Editor Types
-
-The **Type** setting allows you to choose the editor displayed next to the parameter label in the **Run Custom Build** dialog.
-
-#### Text
-
-This is the default editor type. Parameters of this type display a regular text box. Choose this type to apply an input mask for user values.
-
-For example, the following parameter uses a regular expression to accept only e-mail addresses:
-
-<img src="dk-params-TextParameterRegex.png" width="706" alt="Text parameter with regex"/>
-
-```Kotlin
-object PromptTest : BuildType({
-   params {
-       text("a.text.mail.param", "", label = "Email Address",
-               regex = """^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}${'$'}""",
-               validationMessage = "Invalid e-mail address")
-   }
-})
-```
-
-#### Checkbox
-
-Choose this type to display a checkbox next to the parameter label.
-
-<img src="dk-params-CheckboxParam.png" width="706" alt="Checkbox parameter"/>
-
-By default, the checked editor corresponds to the `true` value; otherwise, the parameter has no value. Use the **Checked value** and **Unchecked value** to provide custom values.
-
-The initial checkbox state depends on the default parameter value.
-
-> The editor supports only checked and unchecked states; the indeterminate state is not allowed. However, if the default (initial) parameter value corresponds to neither checked nor unchecked states, the parameter can report three potential values.
->
-> ```Kotlin
-> object PromptTest : BuildType({
->    params {
->       checkbox("checkbox.param", "value-not-set",
->       label = "Checkbox parameter", description = "",
->       checked = "checked", unchecked = "unchecked")
->    }
-> })
-> ```
-> The default value applies during regular builds, checked and unchecked values are used in custom build runs.
->
-{type="tip"}
-
-<anchor id="Password+Type"/>
-
-#### Password
-
-Choose this editor type to hide the parameter value.
-
-<img src="dk-params-password.png" width="706" alt="Password parameter"/>
-
-Password parameter values are hidden not only from the TeamCity UI, but also from DSL code (visible via the **View as code** button and saved to a remote repository when you enable [versioned settings](storing-project-settings-in-version-control.md)).
-
-```Kotlin
-object PromptTest : BuildType({
-   params {
-       password("a.password.param", "******", label = "Registry password")
-   }
-})
-```
-
-Requesting parameters via REST API also returns a payload without parameter values.
-
-```Shell
-<SERVER_URL/app/rest/buildTypes/MyBuildConfig/parameters?locator=name:password.param
-```
-{prompt="GET"}
-
-Response payload:
+This parameter shows a checkbox in the **Run Custom Build** dialog. The parameter can be toggled between `release` (checked) and `debug` (unchecked) values.
 
 <tabs>
 
-<tab title="XML">
+<tab title="TeamCity UI">
 
-```XML
-<properties count="1">
-    <property name="password.param">
-        <type rawValue="password display='normal' label='Registry password'"/>
-    </property>
-</properties>
+<img src="dk-checkbox-settings.png" width="460" alt="Checkbox parameter settings"/>
+
+</tab>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object MyConfig : BuildType({
+   params {
+      checkbox("CheckBoxDefaultParam",
+              "debug", // default value
+              label = """Run the build in the "Release" configuration""",
+              checked = "release",
+              unchecked = "debug")
+   }
+})
 ```
 
 </tab>
 
-<tab title="JSON">
+<tab title="REST API">
+
+**JSON payload:**
 
 ```JSON
 {
-    "count": 1,
-    "property": [
-        {
-            "name": "password.param",
-            "type": {
-                "rawValue": "password display='normal' label='Registry password'"
-            }
-        }
-    ]
+    "name": "CheckBoxDefaultParam",
+    "value": "debug",
+    "type": {
+        "rawValue": "checkbox label='Run the build in the \"Release\" configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"
+    }
 }
+```
+
+**XML payload:**
+
+```XML
+<property name="CheckBoxDefaultParam" value="debug">
+    <type rawValue="checkbox label='Run the build in the &quot;Release&quot; configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"/>
+</property>
 ```
 
 </tab>
@@ -301,52 +234,262 @@ Response payload:
 </tabs>
 
 
-If you need to create a password parameter not in TeamCity UI, you can use [secure value tokens](storing-project-settings-in-version-control.md#Managing+Tokens) to set up parameter values.
+### RegEx Parameter
+
+This parameter accepts only string values that match the given RegEx expression. TeamCity does not allow to run a build if an invalid value is entered.
+
+<img src="dk-regexparam-overview.png" width="706" alt="RegEx Parameter"/>
+
+<tabs>
+
+<tab title="TeamCity UI">
+
+<img src="dk-newparams-email.png" width="460" alt="RegEx parameter settings"/>
+
+</tab>
+
+<tab title="Kotlin DSL">
 
 ```Kotlin
-params {
-   password("my.password.param", "credentialsJSON:<token>")
-}
-```
-
-#### Select
-
-Choose this editor type to display a combo box next to the parameter label and limit the range of possible values by multiple predefined options.
-
-<img src="dk-params-selectParameter.png" width="706" alt="Select parameter"/>
-
-Each item of the editor drop-down menu has a publicly visible label and an underlying value assigned to the parameter. In TeamCity UI, use the `label => value` syntax to set different strings or `value` if you want them to match. In Kotlin DSL, use the `"label" to "value"` syntax.
-
-The following sample illustrates a parameter that allows users to select a value passed to the [](vcs-labeling.md) build feature.
-
-```Kotlin
-object MyBuildConf : BuildType({
-    name = "Select Parameter Sample"
-
-    params {
-        select("release.status", "", label = "Deployment Tag",
-                options = listOf("EAP" to "eap",
-                        "CTP" to "ctp",
-                        "Alpha preview" to "alpha",
-                        "Beta preview" to "beta",
-                        "Release" to "release")
-        )
-    }
-   
-features {
-    vcsLabeling {
-        vcsRootId = "${MavenRepoRootGithub.id}"
-        labelingPattern = "%\release.status%"
-    }
-}
+object MyBuildConfig : BuildType({
+   params {
+      text("EmailRegExParam",
+           "johndoe@jetbrains.com",
+           regex = """^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}${'$'}""",
+           validationMessage = "Invalid email address")
+   }
 })
 ```
 
-If the **Allow multiple selection** option is enabled, users can tick multiple options at once.
+</tab>
 
-<img src="dk-params-multiselect.png" width="706" alt="Multiselect parameter"/>
+<tab title="REST API">
 
-In this case, the parameter value is a string that contains values of all selected items separated by a given char.
+**JSON payload:**
+
+```JSON
+{
+    "name": "EmailRegExParam",
+    "value": "johndoe@jetbrains.com",
+    "type": {
+        "rawValue": "text regexp='^|[\\w-\\.|]+@(|[\\w-|]+\\.)+|[\\w-|]{2,4}$' validationMode='regex' validationMessage='Invalid email address' display='normal'"
+    }
+}
+```
+
+**XML payload:**
+
+```XML
+<property name="EmailRegExParam" value="johndoe@jetbrains.com">
+    <type rawValue="text regexp='^|[\w-\.|]+@(|[\w-|]+\.)+|[\w-|]{2,4}$' validationMode='regex' validationMessage='Invalid email address' display='normal'"/>
+</property>
+```
+
+</tab>
+
+</tabs>
+
+
+### Single-Select Parameter
+
+This parameter defines multiple values but allows users to select only one value at a time. Values are displayed as combobox items in the **Run Custom Build** dialog.
+
+<img src="dk-newparams-singleselect1.png" width="706" alt="Single selection parameter 1"/>
+
+<img src="dk-newparams-singleselect2.png" width="706" alt="Single selection parameter 2"/>
+
+
+<tabs>
+
+<tab title="TeamCity UI">
+
+<img src="dk-newparams-singleselect.png" width="406" alt="Single select parameter settings"/>
+
+</tab>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object MyBuildConf : BuildType({
+   params {
+      select("SingleSelectParam",
+              "linux",
+              options = listOf(
+                      "Windows" to "win",
+                      "Linux" to "linux",
+                      "macOS" to "mac"
+              )
+      )
+   }
+})
+```
+
+</tab>
+
+<tab title="REST API">
+
+**JSON payload:**
+
+```JSON
+{
+  "name": "SingleSelectParam",
+  "value": "linux",
+  "type": {
+    "rawValue": "select data_5='mac' label_5='macOS' label_3='Linux' display='normal' data_1='win' label_1='Windows' data_3='linux'"
+  }
+}
+```
+
+**XML payload:**
+
+```XML
+<property name="SingleSelectParam" value="linux">
+    <type rawValue="select data_5='mac' label_5='macOS' label_3='Linux' display='normal' data_1='win' label_1='Windows' data_3='linux'"/>
+</property>
+```
+
+</tab>
+
+</tabs>
+
+
+
+### Multi-Select Parameter
+
+This parameter allows users to select multiple values from the predefined list.
+
+<img src="dk-newparams-multiselect.png" alt="Multiselect parameter" width="706"/>
+
+If multiple items are selected, the parameter joins their values using the specified separator char. For example, if the separator was changed from a default comma (`,`) to a vertical bar (`|`), the parameter value looks like the following: `2023.03|2023.11|2024.03`.
+
+
+<tabs>
+
+<tab title="TeamCity UI">
+
+<img src="dk-multiselect-uisettings.png" width="406" alt="Multiselect parameter UI settings"/>
+
+</tab>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object Test : BuildType({
+   name = "Test"
+   params {
+      select("MultiSelectParam",
+              "2023.03",
+              allowMultiple = true,
+              valueSeparator = "|",
+              options = listOf(
+                      "master" to "2023.03",
+                      "2023.05",
+                      "2023.11",
+                      "2024.03",
+                      "2024.06"))
+   }
+})
+```
+
+</tab>
+
+<tab title="REST API">
+
+**JSON payload:**
+
+```JSON
+{
+  "name": "MultiSelectParam",
+  "value": "2023.03",
+  "type": {
+    "rawValue": "select data_6='2024.06' data_5='2024.03' display='normal' multiple='true' valueSeparator='||' data_1='2023.03' label_1='master' data_4='2023.11' data_3='2023.05'"
+  }
+}
+```
+
+**XML payload:**
+
+```XML
+<property name="MultiSelectParam" value="2023.03">
+    <type rawValue="select data_6='2024.06' data_5='2024.03' display='normal' multiple='true' valueSeparator='||' data_1='2023.03' label_1='master' data_4='2023.11' data_3='2023.05'"/>
+</property>
+```
+
+</tab>
+
+</tabs>
+
+
+
+### Confirmation Dialog
+
+If a configuration has a **prompt** type parameter, every time a user attempts to run a new build the [Run Custom Build](running-custom-build.md) dialog pops up. The build will start only after a user enters a valid value for this parameter. You can use this behavior to implement a custom confirmation dialog that protects a configuration from excessive runs.
+
+<img src="dk-params-startPrompt.png" width="706" alt="Starting Prompt"/>
+
+
+<tabs>
+
+<tab title="TeamCity UI">
+
+<img src="dk-promptdialog-uisettings.png" width="460" alt="Prompt dialog settings"/>
+
+</tab>
+
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object Test : BuildType({
+   name = "Test"
+   params {
+      text("PromptConfirmation",
+              "",
+              label = "Deployment build confirmation",
+              description = "This configuration triggers the deployment chain, which uploads updated NuGet packages and Docker images to public sources. Do you want to continue?",
+              display = ParameterDisplay.PROMPT, 
+              regex = "deploy",
+              validationMessage = """Type "deploy" to run this build""")
+   }
+})
+```
+
+</tab>
+
+<tab title="REST API">
+
+**JSON payload:**
+
+```JSON
+{
+  "name": "PromptConfirmation",
+  "value": "",
+  "type": {
+    "rawValue": "text regexp='deploy' validationMessage='Type \"deploy\" to run this build' display='prompt' description='This configuration triggers the deployment chain, which uploads updated NuGet packages and Docker images to public sources. Do you want to continue?' label='Deployment build confirmation' validationMode='regex'"
+  }
+}
+```
+
+**XML payload:**
+
+```XML
+<property name="PromptConfirmation" value="">
+    <type rawValue="text regexp='deploy' validationMessage='Type &quot;deploy&quot; to run this build' display='prompt' description='This configuration triggers the deployment chain, which uploads updated NuGet packages and Docker images to public sources. Do you want to continue?' label='Deployment build confirmation' validationMode='regex'"/>
+</property>
+```
+
+</tab>
+
+</tabs>
+
+
+
+
+
+
+
+
+
 
 
 

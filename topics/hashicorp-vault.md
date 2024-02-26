@@ -18,12 +18,15 @@ When a build that utilizes this parameter starts, the TeamCity server uses the V
 
 ## Set Up a Vault Connection
 
+<img src="dk-vaultConnection.png" width="460" alt="Vault connection settings"/>
+
 1. Navigate to **Administration | &lt;Your Project&gt; | Connections** and click **Add Connection**.
 2. Choose **HashiCorp Vault** as the connection type.
-3. Specify the basic connection settings: the connection name, Vault and parameter namespaces, and Vault URL.
+3. Specify the basic connection settings: the connection name, Vault URL and namespace, and an optional ID.
+
 
    * [Vault namespaces](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) allow you to create "vaults within a vault" — isolated tenants inside a single Vault Enterprise instance. If you store Vault secrets in this isolated environment, specify its namespace in the **Vault namespace** connection field (for example, `TeamABC/secrets/`). Otherwise, leave this setting empty.
-   * **Parameter namespace** is a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and specify which connection a specific parameter should use. Otherwise, leave this field blank.
+   * **ID** is a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and specify which connection a specific parameter should use. Otherwise, leave this field blank.
    * **Vault URL** is the address of your Vault instance. Local Vault installations (the default URL is `http://localhost:8200`) are also supported.
 
 4. Choose the desired authentication method. TeamCity can authenticate to HCP Vault using a Vault's AppRole, an AWS IAM role, or a directory access protocol (LDAP).
@@ -89,6 +92,9 @@ When a build that utilizes this parameter starts, the TeamCity server uses the V
 
 5. Tick **Fail in case of error** if you want builds to fail with the "Error while fetching data from HashiCorp Vault" message if the agent cannot obtain Vault secrets and write them to [TeamCity parameters](#Create+and+Set+Up+a+Parameter). Note that builds will fail even if these parameters are never used. If this setting is disabled, builds will continue running with empty strings as secret parameter values.
 
+
+
+
 **Kotlin DSL:**
 
 ```Kotlin
@@ -133,11 +139,11 @@ To create such a parameter, do the following:
 
    * **Type**: Remote
    * **Remote Connection Type**: HashiCorp Vault Parameter
-   * **Parameter Namespace**: choose the same value as in the [Vault connection](#Set+Up+a+Vault+Connection) you wish to use.
+   * **Parameter Namespace**: choose existing [Vault connection](#Set+Up+a+Vault+Connection) you wish to use to retrieve this parameter's value. This drop-down menu shows **Display names** for all connections that have IDs.
 
-       <img src="dk-param-namespace.png" width="706" alt="Parameter Namespace"/>
-
-     Select **Default Namespace (empty)** to choose a connection with an empty **Parameter Namespace** field.
+       <img src="dk-hcv-id-in-connection.png" width="706" alt="Connection ID"/>
+   
+      <img src="dk-hcv-id-in-param.png" width="706" alt="Parameter ID"/>
 
    * **Vault Query**: the path to the secret in the `path!/key` format. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in the KV2 engine: `secret/data/awscreds!/access_key`.
 
@@ -151,7 +157,7 @@ project {
         hashiCorpVaultParameter {
             name = "env.AWS_ACCESS_KEY_ID"
             query = "secret/data/awscreds!/access_key"
-            namespace = "DataLore"
+            vaultId = "DataLore"
         }
     }
 }
@@ -200,7 +206,7 @@ project {
 
 Note that, unlike the original parameter value, the `query` field of a new parameter has neither the `vault:` prefix nor the percent characters.
 
-If your legacy parameter had the `%\vault:foobar:/path!/key%` format, the "foobar" part identifies which Vault connection this parameter should use to retrieve the secret. Move this value to the `namespace` field of a remote parameter:
+If your legacy parameter had the `%\vault:foobar:/path!/key%` format, the "foobar" part identifies which Vault connection this parameter should use to retrieve the secret. Move this value to the `vaultId` field of a remote parameter:
 
 ```Kotlin
 project {
@@ -208,7 +214,7 @@ project {
       hashiCorpVaultParameter {
          name = "parameter name"
          query = "path!/key"
-         namespace = "foobar"
+         vaultId = "foobar"
       }
    }
 }
