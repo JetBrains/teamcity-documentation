@@ -432,7 +432,7 @@ params {
 }
 ```
 
-> You can use tokens to reference secure values only in configuration files. If you insert "credentialsJSON:&lt;token&gt;" as a value of a [password parameter](typed-parameters.md#Password) in TeamCity UI, TeamCity will not retrieve the token's underlying secure value. Instead, the "credentialsJSON:&lt;token&gt;" string itself will be used as an actual password value.
+> You can use tokens to reference secure values only in configuration files. If you insert "credentialsJSON:&lt;token&gt;" as a value of a [password parameter](typed-parameters.md) in TeamCity UI, TeamCity will not retrieve the token's underlying secure value. Instead, the "credentialsJSON:&lt;token&gt;" string itself will be used as an actual password value.
 >
 {type="note"}
 
@@ -448,7 +448,7 @@ Moreover, if the required tokens are available in other projects you are permitt
 When there is one or more secure values available for a token, the <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> button appears opposite this token. Click it to review available projects and choose a project to copy a value from, and then click __Copy__ to confirm your choice.
 
 Secure values can be inherited by project hierarchy. If a setting in a project (VCS root, OAuth connection, cloud profile) requires a password, the token generated for this password can be used in this project and in any of its subprojects. To be able to use the inherited password, the subproject must have versioned settings enabled and store settings in the same VCS, as its parent project.  
-Alternatively, you can add a [password parameter](typed-parameters.md#Adding+Parameter+Specification) with the secure value and use a [reference](using-build-parameters.md) to the parameter in the nested projects.
+Alternatively, you can add a [password parameter](typed-parameters.md) with the secure value and use a [reference](using-build-parameters.md) to the parameter in the nested projects.
 
 ### Implications of Storing Security Data in VCS 
 

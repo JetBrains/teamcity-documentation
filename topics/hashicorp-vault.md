@@ -169,7 +169,7 @@ If you already used the TeamCity Vault plugin before the 2023.11 version, you mi
 
 Compared to these legacy parameters, new "remote parameters" showcase the following advantages:
 
-* Vault paths are stored in the [parameter spec](typed-parameters.md#Adding+Parameter+Specification), which leaves the **Value** field free for the default/initial parameter value.
+* Vault paths are stored in the **Vault Query** field, which leaves the **Value** field free for the default/initial parameter value.
 * Secret paths (queries) use a more straightforward format without the `vault:` prefix.
 
 

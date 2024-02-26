@@ -31,7 +31,7 @@ Storing values in parameters allows you to:
 
 * Add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
 
-* [Hide sensitive information](typed-parameters.md#Password) that should not be visible to regular TeamCity developers;
+* [Hide sensitive information](typed-parameters.md) that should not be visible to regular TeamCity developers;
 
 * Improve the readability of your configurations by using shorter parameter references instead of lengthy plain values, and so on.
 

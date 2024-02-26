@@ -112,7 +112,7 @@ The [](vcs-labeling.md) build feature allows build configurations to tag reposit
 
 <img src="dk-params-vcs-labeling.png" width="706" alt="VCS Labeling with Parameters"/>
 
-The following setup illustrates how to use the values of the `release.status` parameter as tags. See also: [Parameters Display Mode](typed-parameters.md#Select).
+The following setup illustrates how to use the values of the `release.status` parameter as tags. See also: [Parameters Display Mode](typed-parameters.md).
 
 
 ```Kotlin
