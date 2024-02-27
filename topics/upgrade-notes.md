@@ -19,6 +19,14 @@ These changes and their potential effects on your existing projects include the 
 * If an existing build configuration utilizes manually installed Maven 3.9.6 and [stores its settings in VCS](storing-project-settings-in-version-control.md), editing this configuration generates a [patch](kotlin-dsl.md#Edit+Project+Settings+via+Web+UI) that changes the value of the `mavenVersion` parameter from `custom` to `bundled_3_9_6`.
 
 
+### Bundled Tools Updates
+{id="bundled-tools-updates-2024-03"}
+
+* Maven 3.9.6 was added as one of the standard versions of the tool available in TeamCity. See also the [](#Maven+Tooling+Updates) section for the information about notable changes related to Maven in version 2024.03.
+
+
+
+
 ## Changes from 2023.11.3 to 2023.11.4
 
 * The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
