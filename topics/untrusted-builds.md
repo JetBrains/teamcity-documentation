@@ -57,7 +57,7 @@ Settings that correspond to untrusted builds are configured on the project level
    * *Cancel build* — TeamCity cancels builds that process changes authored by external users. This includes both builds initiated by the [](pull-requests.md) feature and manually started builds.
    * *Require approval* — builds that process changes authored by external users are queued, but will not start until the required number of reviewers approve it.
 
-3. Choose whether untrusted builds should be logged. TeamCity warns you the build is untrusted in the [build log](build-log.md) (only if the **Default action** is not **Cancel build**)...
+3. Choose whether untrusted builds should be logged. TeamCity warns you the build is untrusted in the [build log](build-log.md) (only if the **Default action** is not **Cancel build**)... {product="tc"}
 
    <img src="dk-untrustedbuilds-log.png" width="706" alt="Warning in build log"/>
 
@@ -69,6 +69,10 @@ Settings that correspond to untrusted builds are configured on the project level
    Reasons: {Pull request from a fork in a public repository (target repository url: https://github.com/...)}
    Build URL: http://localhost:8111/buildConfiguration/MyProject_Build/-1
    ```
+   
+3. Choose whether untrusted builds should be logged. If this option is enabled and the **Default action** is not set to **Cancel build**, TeamCity adds a corresponding note to a [build log](build-log.md) when running an untrusted build. {product="tcc"}
+   
+   <img src="dk-untrustedbuilds-log.png" width="706" alt="Warning in build log"/>
 
 4. Use the **Approval rules** field to appoint users who should review incoming changes and either approve or block corresponding builds. Use the `user:<username>` syntax to appoint individual users or add all trusted reviewers to a dedicated [user group](creating-and-managing-user-groups.md) and use the `group:<group key>:<count>` syntax. The `count` is a number of votes required to allow a build.
 
