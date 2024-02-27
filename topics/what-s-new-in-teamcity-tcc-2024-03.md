@@ -32,7 +32,7 @@ Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 ## New Parameter Dialog
 {product="tcc"}
 
-In version 2024.03 we have moderately redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
+In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
 
 <img src="dk-newparams-singleselect.png" width="460" alt="Single select parameter settings"/>
 

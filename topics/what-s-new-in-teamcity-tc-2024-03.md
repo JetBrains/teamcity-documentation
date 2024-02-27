@@ -17,13 +17,13 @@ Learn more: [](untrusted-builds.md).
 ## New Parameter Dialog
 {product="tc"}
 
-In version 2024.03 we have moderately redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
+In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
 
 <img src="dk-newparams-singleselect.png" width="460" alt="Single select parameter settings"/>
 
 In addition to other notable enhancements, the updated dialog allows you to select a new parameter type — **Remote secret**. Choose this type for parameters whose values should be retrieved from a remote source (for example, HashiCorp Vault).
 
-Learn more: [[hashicorp-vault.md](hashicorp-vault.md)](typed-parameters.md).
+Learn more: [](typed-parameters.md).
 
 
 ## New Bundled Plugin: HashiCorp Vault
