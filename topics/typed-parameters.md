@@ -183,6 +183,8 @@ You can modify the name and path to the properties file via the `teamcity.defaul
 
 This parameter shows a checkbox in the **Run Custom Build** dialog. The parameter can be toggled between `release` (checked) and `debug` (unchecked) values.
 
+<img src="dk-checkbox-param.png" width="706" alt="Checkbox parameter"/>
+
 <tabs>
 
 <tab title="TeamCity UI">
@@ -194,11 +196,14 @@ This parameter shows a checkbox in the **Run Custom Build** dialog. The paramete
 <tab title="Kotlin DSL">
 
 ```Kotlin
-object MyConfig : BuildType({
+object Test : BuildType({
+   name = "Test"
    params {
       checkbox("CheckBoxDefaultParam",
-              "debug", // default value
-              label = """Run the build in the "Release" configuration""",
+              "debug", // Initial value
+              label = "Release configuration",
+              description = """Check to run the build in "Release" configuration. Otherwise, the "Debug" configuration is used.""",
+              display = ParameterDisplay.PROMPT,
               checked = "release",
               unchecked = "debug")
    }
@@ -213,11 +218,11 @@ object MyConfig : BuildType({
 
 ```JSON
 {
-    "name": "CheckBoxDefaultParam",
-    "value": "debug",
-    "type": {
-        "rawValue": "checkbox label='Run the build in the \"Release\" configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"
-    }
+  "name": "CheckBoxDefaultParam",
+  "value": "debug",
+  "type": {
+    "rawValue": "checkbox description='Check to run the build in \"Release\" configuration. Otherwise, the \"Debug\" configuration is used.' label='Release configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"
+  }
 }
 ```
 
@@ -225,7 +230,7 @@ object MyConfig : BuildType({
 
 ```XML
 <property name="CheckBoxDefaultParam" value="debug">
-    <type rawValue="checkbox label='Run the build in the &quot;Release&quot; configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"/>
+    <type rawValue="checkbox description='Check to run the build in &quot;Release&quot; configuration. Otherwise, the &quot;Debug&quot; configuration is used.' label='Release configuration' uncheckedValue='debug' checkedValue='release' display='prompt'"/>
 </property>
 ```
 
@@ -236,7 +241,7 @@ object MyConfig : BuildType({
 
 ### RegEx Parameter
 
-This parameter accepts only string values that match the given RegEx expression. TeamCity does not allow to run a build if an invalid value is entered.
+This parameter accepts only string values that match the given regular expression. TeamCity does not allow running a new build if an invalid value is entered.
 
 <img src="dk-regexparam-overview.png" width="706" alt="RegEx Parameter"/>
 
@@ -303,7 +308,7 @@ This parameter defines multiple values but allows users to select only one value
 
 <tab title="TeamCity UI">
 
-<img src="dk-newparams-singleselect.png" width="406" alt="Single select parameter settings"/>
+<img src="dk-newparams-singleselect.png" width="460" alt="Single select parameter settings"/>
 
 </tab>
 
@@ -367,7 +372,7 @@ If multiple items are selected, the parameter joins their values using the speci
 
 <tab title="TeamCity UI">
 
-<img src="dk-multiselect-uisettings.png" width="406" alt="Multiselect parameter UI settings"/>
+<img src="dk-multiselect-uisettings.png" width="460" alt="Multiselect parameter UI settings"/>
 
 </tab>
 

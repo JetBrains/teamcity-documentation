@@ -2,7 +2,9 @@
 
 [HashiCorp Vault](https://www.vaultproject.io) is a secure storage for your tokens, passwords, certificates, and encryption keys. Instead of storing sensitive information inside TeamCity parameters and tokens, you can keep it in Vault and set up TeamCity to securely access this data from Vault engines (KV/KV2, AWS, Google Cloud, and others).
 
+<!--
 To set up a TeamCity-Vault integration, download the official [Vault plugin](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) and install it as described in the [](installing-additional-plugins.md) article.
+-->
 
 ## Common Information
 
