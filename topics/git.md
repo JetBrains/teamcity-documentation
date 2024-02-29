@@ -185,7 +185,7 @@ the TeamCity server refreshes them automatically without sharing any related dat
 
 For all available options to connect to GitHub, see the [comment](https://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
 
-## Authenticating to Azure DevOps Services
+### Authenticating to Azure DevOps Services
 
 If you use Git source control with Azure DevOps Services, you can use both [Azure DevOps OAuth](configuring-connections.md#azure-devops-connection) and [Azure DevOps PAT](configuring-connections.md#Azure+DevOps+PAT+Connection) connections.
 
@@ -367,13 +367,44 @@ Git garbage collection is executed every night at 2 AM. This can be changed by s
 
 If the local Git clones need some kind of manual maintenance, you can find them under the `<TeamCity Data Directory>/system/caches/git` directory. The `map` file in the directory contains mapping between the repository URL and the subdirectory storing the bare clone of the repository.
 
-## Git LFS
+## LFS and Submodules Support
 
-TeamCity supports Git LFS for agent-side checkout. To use it, install git 1.8.\+ and Git LFS on the build agent machine. Git LFS should be enabled using the `git lfs install` command (on Windows, an elevated command prompt may be needed). More information is available in the [Git LFS documentation](https://git-lfs.github.com/).
+### Common Information
 
-For LFS, you need to use the same credentials as used for the Git VCS root itself.
+Submodules and LFS are integral parts of many complex software products whose source code is stored in Git-based version control systems.
 
-We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
+* [Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) allow you to keep Git repositories as subdirectories of other Git repositories. For example, you may want to include a microservice developed by another team in your organization, or a 3rd-party open source project that your code relies on. As a result, you can clone a repository into your parent project while keeping commits separate.
+* [Large File Storage (LFS)](https://git-lfs.com) allows you to drastically reduce the size of your repository by moving bulky files (media files, databases, and so on) to an external storage, and replacing these files with pointers.
+
+
+Although different in their scenarios and implementation mechanisms, both concepts suggest incorporating essential project components from external sources (a file hosted on a remote LFS server or another repository within a VCS). This means your TeamCity project needs to authenticate to different resources to check out source files.
+
+
+### Additional Credentials
+
+If your repository imports submodules hosted on the same VCS and these imported repositories can be accessed via the same credentials stored in your [](vcs-root.md), you do not need to perform any additional modifications. TeamCity will be able to check out all required source files using a single set of credentials.
+
+Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
+
+```Plain Text
+teamcity.git.https.credentials.<ALIAS>.url = https://example.com/...
+teamcity.git.https.credentials.<ALIAS>.username = johndoe
+teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
+```
+
+* **&lt;ALIAS&gt;** is a custom string that groups your `teamcity.git.https.credentials...` properties into sets of three, and is used to identify required properties. For example, if your GitHub repo should import heavy database files from [Sonatype Nexus](https://help.sonatype.com/en/git-lfs-repositories.html) and additional repositories from Azure, you will need six properties. Three of them can have the `nexus` alias while the remaining have the `azure` alias. When TeamCity needs to access an Azure submodule repository, it will notice the URL is stored in an `...azure.url` property and look for matching properties with the same alias: `...azure.username` and `...azure.password`.
+
+* **URL** is an HTTP(S) fetch URL for a submodule repo (for example, `https://github.com/username/repo-name.git`) or an HTTP(S) link to an LFS storage (for example, `https://mynexus.com/repository/repo-name/info/lfs`). SSH protocols are currently not supported.
+
+* **Username** and **Password** store credentials for the corresponding service. Note that all limitations and guidelines that are normally in effect for accessing regular repositories apply as well. For example, the `...password` property should store a personal access token instead of a regular account password since the latter option is being continuously discounted by the majority of Git hostings. The `...username` property should also store a value that can be used in conjunction with an access token (for example, a regular account name for GitLab or "x-token-auth" for Bitbucket Cloud). 
+
+
+### Limitations and Tips
+
+* Configuration properties that store additional credentials should be configured for a TeamCity project, not a build configuration.
+* For security reasons, switch all `...password` parameters to the [password type](typed-parameters.md). This will ensure your tokens and passwords are securely hidden from TeamCity UI, build logs, Kotlin DSL and REST API payloads.
+* We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
+* TeamCity supports Git LFS only for the [agent-side checkout](vcs-checkout-mode.md).
 
 ## Internal Properties
 {id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
