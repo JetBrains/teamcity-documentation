@@ -492,7 +492,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Building projects based on Git repositories](git.md)
 * [Remote run](remote-run.md), [remote debug](remote-debug.md), and [pretesting commits](pre-tested-delayed-commit.md) of Git-based projects
 * Multiple checkout modes on [server](git.md#Server+Settings) and [agent](git.md#GitAgentSettings) machines
-* [Support for Git LFS](git.md#Git+LFS)
+* [Support for Git LFS](git.md#LFS+and+Submodules+Support)
 * [Automatically tagging build sources](vcs-labeling.md)
 * [Automatically merging build sources after successful builds](automatic-merge.md)
 
