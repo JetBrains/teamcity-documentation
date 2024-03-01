@@ -137,7 +137,7 @@ You can also view the related change from the build's **Changes** tab:
 
 <img src="dk-swarm-changes-tab.png" width="706" alt="Open Swarm changes from TeamCity"/>
 
-As the TeamCity builds goes through scheduled-started-finished stages, the Commit Status Publisher posts updates in the **Comments** section of a Helix Swarm review.
+When the TeamCity build finishes, Commit Status Publisher can announce the result as a new comment under the **Comments** section of a Helix Swarm review.
 
 <img src="dk-swarm-comments.png" width="706" alt="TeamCity comments in Swarm"/>
 
