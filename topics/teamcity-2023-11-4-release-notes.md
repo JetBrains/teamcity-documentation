@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: TeamCity 2023.11.4 Release Notes)
 
 
-**Build 147568, 28 February 2024**
+**Build 147586, 4 March 2024**
 
 
 <!--project: TeamCity Fix versions: 2023.11.4  #Fixed #Testing visible to: {All Users} -{Trunk issue}-->
@@ -10,15 +10,21 @@
 
 ### Bug
 
-**[TW-86511](https://youtrack.jetbrains.com/issue/TW-86511/EC2-cloud-profile-configuration-missing-agent-push-preset)** — EC2 cloud profile configuration missing agent push preset
-
 **[TW-86288](https://youtrack.jetbrains.com/issue/TW-86288/If-TeamCity-is-unable-to-reach-jetbrains.com-it-can-slow-down-the-start-of-the-builds-as-well-as-some-pages)** — If TeamCity is unable to reach jetbrains.com, it can slow down the start of the builds as well as some pages
 
-**[TW-75123](https://youtrack.jetbrains.com/issue/TW-75123/Log-statuses-from-Commit-status-publisher-to-the-teamcity-commit-status.log)** — Log statuses from Commit status publisher to the teamcity-commit-status.log
+**[TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used)** — jacocoReport.xml is created empty due to ClassNotFoundError (if non bundled Jacoco is used)
 
 **[TW-86186](https://youtrack.jetbrains.com/issue/TW-86186/AWS-instance-role-profile-permissions-no-longer-used-by-EC2-Cloud-Profile-in-2023.11.3)** — AWS instance role/profile permissions no longer used by EC2 Cloud Profile in 2023.11.3
 
-**[TW-86261](https://youtrack.jetbrains.com/issue/TW-86261/Regression-java.lang.InstantiationException-bean-bean-not-found-within-scope-while-processing-request-GET-admin)** — Regression: java.lang.InstantiationException: bean bean not found within scope; while processing request: GET '/admin/admin.html?item=diagnostics&tab=dataDir&file=..%2F..%2Fopt%2FTeamCity_Data%2Fconfig%2Finternal.properties'
+**[TW-86234](https://youtrack.jetbrains.com/issue/TW-86234/Builds-take-incorrect-revision-if-using-settings-from-VCS-and-only-negative-checkout-rules-are-defined)** — Builds take incorrect revision if using settings from VCS and only negative checkout rules are defined
+
+**[TW-86511](https://youtrack.jetbrains.com/issue/TW-86511/EC2-cloud-profile-configuration-missing-agent-push-preset)** — EC2 cloud profile configuration missing agent push preset
+
+**[TW-80467](https://youtrack.jetbrains.com/issue/TW-80467/Cannot-find-a-node100479888-may-occur-when-collecting-VCS-changes-on-the-secondary-node)** — Cannot find a node:100479888 may occur when collecting VCS changes on the secondary node
+
+**[TW-75123](https://youtrack.jetbrains.com/issue/TW-75123/Log-statuses-from-Commit-status-publisher-to-the-teamcity-commit-status.log)** — Log statuses from Commit status publisher to the teamcity-commit-status.log
+
+**[TW-86261](https://youtrack.jetbrains.com/issue/TW-86261/Regression-java.lang.InstantiationException-bean-bean-not-found-within-scope-while-processing-request-GET-admin)** — Regression: java.lang.InstantiationException: bean not found within scope while processing request
 
 **[TW-84895](https://youtrack.jetbrains.com/issue/TW-84895/Agent-JDKs-Clean-Up-JDK-distribution-if-it-was-replaced)** — Agent JDKs: Clean Up JDK distribution if it was replaced
 

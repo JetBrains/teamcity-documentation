@@ -43,6 +43,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-3-re
 {id="known-issues-2023-11-3"}
 
 * TeamCity performance is decreased if the server cannot reach the jetbrains.com domain. See this YouTrack ticket for more information: [https://youtrack.jetbrains.com/issue/TW-86288](https://youtrack.jetbrains.com/issue/TW-86288). This issue is [addressed](teamcity-2023-11-4-release-notes.md) in the 2023.11.4 bug-fix date.
+* Generating coverage reports using JaCoCo may fail with the `ClassNotFoundError`. To resolve this issue, upgrade to TeamCity 2023.11.4. Depending on whether your current JaCoCo coverage tool was installed pre- or post- 2023.11.x server update, you may also need to reinstall this tool and restart your build agents. See this YouTrack ticket for more information: [TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used#post-fix-notes).
 
 
 ## Changes from 2023.11.1 to 2023.11.2
@@ -50,6 +51,12 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-3-re
 No potential breaking changes.
 
 See this article for the complete list of fixed issues: [](teamcity-2023-11-2-release-notes.md).
+
+### Known Issues
+{id="known-issues-2023-11-2"}
+
+* Generating coverage reports using JaCoCo may fail with the `ClassNotFoundError`. To resolve this issue, upgrade to TeamCity 2023.11.4. Depending on whether your current JaCoCo coverage tool was installed pre- or post- 2023.11.x server update, you may also need to reinstall this tool and restart your build agents. See this YouTrack ticket for more information: [TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used#post-fix-notes).
+
 
 ## Changes from 2023.11 to 2023.11.1
 
@@ -59,6 +66,11 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 {id="bundled-tools-updates-2023-11-1"}
 
 * The bundled Tomcat was updated to version 9.0.83.
+
+### Known Issues
+{id="known-issues-2023-11-1"}
+
+* Generating coverage reports using JaCoCo may fail with the `ClassNotFoundError`. To resolve this issue, upgrade to TeamCity 2023.11.4. Depending on whether your current JaCoCo coverage tool was installed pre- or post- 2023.11.x server update, you may also need to reinstall this tool and restart your build agents. See this YouTrack ticket for more information: [TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used#post-fix-notes).
 
 ## Changes from 2023.05.4 to 2023.11
 
