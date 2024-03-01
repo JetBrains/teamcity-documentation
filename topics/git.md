@@ -392,17 +392,17 @@ teamcity.git.https.credentials.<ALIAS>.username = johndoe
 teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 ```
 
-* **&lt;ALIAS&gt;** is a custom string that groups your `teamcity.git.https.credentials...` properties into sets of three, and is used to identify required properties. For example, if your GitHub repo should import heavy database files from [Sonatype Nexus](https://help.sonatype.com/en/git-lfs-repositories.html) and additional repositories from Azure, you will need six properties. Three of them can have the `nexus` alias while the remaining have the `azure` alias. When TeamCity needs to access an Azure submodule repository, it will notice the URL is stored in an `...azure.url` property and look for matching properties with the same alias: `...azure.username` and `...azure.password`.
+* **&lt;ALIAS&gt;** is a custom string that groups your `teamcity.git.https.credentials...` properties into sets of three, and is used to identify required properties. For example, if your GitHub repo should import heavy database files from [Sonatype Nexus](https://help.sonatype.com/en/git-lfs-repositories.html) and additional repositories from [](configuring-connections.md#Azure+DevOps), you will need six properties. Three of them can have the `nexus` alias while the remaining have the `azure` alias. When TeamCity needs to access an Azure submodule repository, it will notice the URL is stored in an `...azure.url` property and look for matching properties with the same alias: `...azure.username` and `...azure.password`.
 
-* **URL** is an HTTP(S) fetch URL for a submodule repo (for example, `https://github.com/username/repo-name.git`) or an HTTP(S) link to an LFS storage (for example, `https://mynexus.com/repository/repo-name/info/lfs`). SSH protocols are currently not supported.
+* **URL** is an HTTP(S) fetch URL for a submodule repo or an HTTP(S) link to an LFS storage. For example, `https://helpserver.labs.jb.gg/help/teamcity/2024.03/git.html#LFS+and+Submodules+Support` or `https://mynexus.com/repository/repo-name/info/lfs`. SSH protocols are currently not supported.
 
-* **Username** and **Password** store credentials for the corresponding service. Note that all limitations and guidelines that are normally in effect for accessing regular repositories apply as well. For example, the `...password` property should store a personal access token instead of a regular account password since the latter option is being continuously discounted by the majority of Git hostings. The `...username` property should also store a value that can be used in conjunction with an access token (for example, a regular account name for GitLab or "x-token-auth" for Bitbucket Cloud). 
+* **Username** and **Password** store credentials for the corresponding service. Note that all limitations and guidelines that are normally in effect for accessing regular repositories apply for LFS/submodule checkout as well. For example, the `...password` property should store a personal access token instead of a regular account password since the latter option is being continuously discontinued by the majority of Git hostings. The `...username` property should also store a value that can be used in conjunction with an access token (for example, a regular account name for GitLab or "x-token-auth" for Bitbucket Cloud). 
 
 
 ### Limitations and Tips
 
 * Configuration properties that store additional credentials should be configured for a TeamCity project, not a build configuration.
-* For security reasons, switch all `...password` parameters to the [password type](typed-parameters.md). This will ensure your tokens and passwords are securely hidden from TeamCity UI, build logs, Kotlin DSL and REST API payloads.
+* For security reasons, switch all `...password` parameters to the [password type](typed-parameters.md). This will ensure your tokens and passwords are hidden from TeamCity UI, build logs, Kotlin DSL and REST API payloads.
 * We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
 * TeamCity supports Git LFS only for the [agent-side checkout](vcs-checkout-mode.md).
 
