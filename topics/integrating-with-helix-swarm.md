@@ -109,9 +109,17 @@ Helix Swarm [Project](https://www.perforce.com/manuals/swarm/Content/Swarm/chapt
    
    If you already have a workflow that a Commit Status Publisher can use (or you choose to create one to avoid passing administrator credentials to the build feature), leave this checkbox empty.
 
-8. Click **Test Connection** to verify the Commit Status Publisher can access your Swarm instance. If you are getting the "Provided credentials lack admin permissions" error, ensure you are not trying to enable the **Create Swarm Tests** option for non-admin user credentials.
+8. Commit Status Publisher can notify Swarm users about the current TeamCity build status by posting build results (success/fail) under the review's **Comments** tab and by updating the **Tests** section.
 
-9. Click **Save** to add the build feature to your configuration.
+   <img src="dk-swarm-comments.png" width="706" alt="TeamCity comments in Swarm"/>
+
+   <img src="dk-swarm-testInReview.png" width="706" alt="Tests section of a review"/>
+
+   Use the **Code Review Comments** checkbox to specify whether the Commit Status Publisher should post these comments to a corresponding Swarm review tab.
+
+9. Click **Test Connection** to verify the Commit Status Publisher can access your Swarm instance. If you are getting the "Provided credentials lack admin permissions" error, ensure you are not trying to enable the **Create Swarm Tests** option for non-admin user credentials.
+
+10. Click **Save** to add the build feature to your configuration.
 
 
 
@@ -121,7 +129,7 @@ After you have set up the Commit Status Publisher, modify and shelve any depot f
 
 <img src="dk-swarm-testInReview.png" width="706" alt="Tests section of a review"/>
 
-TeamCity attempts to find a user with the same username as a person who requested a review in Helix Swarm, and starts a new personal build for this user. You can click links in the build's **Swarm Reviews** section to open the shelved change and review in Swarm.
+TeamCity attempts to find a user with the same username as a person who requested a review in Helix Swarm, and starts a new personal build for this user. You can click links in the build's **Swarm Reviews** section to open the shelved change and the related Swarm review.
 
 <img src="dk-swarm-personalbuild.png" width="706" alt="Personal build in TeamCity"/>
 
@@ -132,3 +140,5 @@ You can also view the related change from the build's **Changes** tab:
 As the TeamCity builds goes through scheduled-started-finished stages, the Commit Status Publisher posts updates in the **Comments** section of a Helix Swarm review.
 
 <img src="dk-swarm-comments.png" width="706" alt="TeamCity comments in Swarm"/>
+
+You can uncheck the **Create Swarm Tests** option in the Commit Status Publisher's settings dialog to disable these comments. In this case the build feature will only update the **Tests** section of a Swarm review.

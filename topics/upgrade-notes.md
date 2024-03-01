@@ -3,6 +3,8 @@
 
 ## Changes from 2023.11.4 to 2024.03
 
+* The [](commit-status-publisher.md) build feature configured for [Perforce Helix Swarm](integrating-with-helix-swarm.md) no longer posts intermediate build statuses (queued, started, canceled) to the Swarm review's **Comments** tab. Instead, the feature announces only the final build status (successful or failed). You can additionally uncheck the **Code Review Comments** option in the build feature's settings dialog to disable these remaining status notifications as well (in this case, the Commit Status Publisher will only update the review's **Tests** tab).
+
 ### Maven Tooling Updates
 
 Version 2024.03 introduces a number of changes related to bundled Maven tools. These changes are dictated by certain Maven versions containing known CVEs, and carry on the initiative that aims to reduce the size of TeamCity installers by unbundling certain non-crucial components and tools.

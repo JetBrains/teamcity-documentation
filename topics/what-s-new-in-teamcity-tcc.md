@@ -1,9 +1,11 @@
-[//]: # (title: What's New in TeamCity On-Premises 2024.03)
+[//]: # (title: What's New in TeamCity Cloud 2024.03)
 
-<chunk include-id="2024-03-tc">
+
+<chunk include-id="2024-03-tcc">
+
 
 ## Untrusted Builds
-{product="tc"}
+{product="tcc"}
 
 With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
 
@@ -14,8 +16,21 @@ Version 2024.03 introduces a new setup that eliminates this trade-off between co
 Learn more: [](untrusted-builds.md).
 
 
+## Optional Artifact Dependencies
+{product="tcc"}
+
+by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
+
+If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account more flexible setups where a downloaded artifact is not mandatory for a dependent build to run.
+
+Starting with version 2024.03, you can run a dependent build even if its artifact rules yield no files. To do so, start an artifact rule with the `?:` prefix.
+
+<img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
+
+Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
+
 ## New Parameter Dialog
-{product="tc"}
+{product="tcc"}
 
 In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
 
@@ -27,7 +42,7 @@ Learn more: [](typed-parameters.md).
 
 
 ## New Bundled Plugin: HashiCorp Vault
-{product="tc"}
+{product="tcc"}
 
 The [HashiCorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is now an integral component of the standard TeamCity installation. This plugin allows you to store sensitive data in a remote source, and enables TeamCity parameters to seamlessly retrieve these values during build processes.
 
@@ -39,15 +54,16 @@ Learn more: [](hashicorp-vault.md).
 
 
 ## Enhanced Git LFS and Submodules Support
-{product="tc"}
+{product="tcc"}
 
 [Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
 
 Learn more: [](git.md#LFS+and+Submodules+Support).
 
 
+
 ## Alternative Fetch URLs
-{product="tc"}
+{product="tcc"}
 
 In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
 
@@ -55,25 +71,13 @@ Fetch URL mapping rules, defined in agent configuration files, offer granular co
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
-## Optional Artifact Dependencies
-{product="tc"}
-
-[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
-
-If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account more flexible setups where a downloaded artifact is not mandatory for a dependent build to run.
-
-Starting with version 2024.03, you can run a dependent build even if its artifact rules yield no files. To do so, start an artifact rule with the `?:` prefix.
-
-<img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
-
-Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
-
-
 ## Miscellaneous Changes
-{product="tc"}
+{product="tcc"}
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
-
+* New [](commit-status-publisher.md) setting allows you to choose whether you want TeamCity to post [Swarm review comments](integrating-with-helix-swarm.md) when a build finishes. If this option is disabled, the build feature will only update the review's **Tests** section.
 
 
 </chunk>
+
+
