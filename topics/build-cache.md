@@ -62,7 +62,7 @@ This section illustrates how to set up the Build Cache feature that allows a bui
 
 ## Exchange Caches Between Separate Build Configurations
 
-In this setup, the "publisher" Build Cache feature added to one build configuration publishes its cache, while the "consumer" Build Cache feature added to another configuration downloads this cache to this configuration's checkout directory.
+In this setup, the "publisher" Build Cache feature added to one build configuration publishes its cache, while the "consumer" Build Cache feature added to another configuration downloads this cache. The dowloaded cache is placed to the same location that matches the publisher's **Publishing rules** path.
 
 
 You can set up as many publisher and consumer features as required as long as you add features for configurations that belong to the same project.
