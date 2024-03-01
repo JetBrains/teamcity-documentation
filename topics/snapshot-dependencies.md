@@ -142,6 +142,7 @@ If a dependency fails, you can manage the status of the dependent build by selec
 In terms of snapshot dependencies, a _suitable_ build is a build which can be used instead a queued dependency build within a [build chain](build-chain.md). That is, a queued build which is a part of a build chain can be dropped — and the builds depending on it can be made dependent on another queued, running, or already finished "suitable" build. This behavior only works when the "_Do not run new build if there is a suitable one_" option of a corresponding snapshot dependency is enabled.
 
 For a build to be considered "suitable", it should comply with all these conditions:
+* It must belong to the same or the default branch.
 * It must use _the same sources' snapshot_ as the entire queued build chain being processed. If the build configurations have the same VCS settings, this means _the same sources' revision_. If the VCS settings are different (VCS roots or checkout rules), this means _the revisions taken simultaneously at some moment in time_.
 * It must be successful (if the "_Only use successful builds from suitable ones_" snapshot dependency option is enabled).
 * It must be a usual, not a [personal build](personal-build.md).
@@ -151,7 +152,7 @@ For a build to be considered "suitable", it should comply with all these conditi
 * There is no other build configuration snapshot-depending on the current one with the disabled "_Do not run new build if there is a suitable one_" option.
 * The running build is not "hanging".
 * The settings of the build configuration have not changed since the build (that is, the build was run with the current build configuration settings). This also includes no changes to the parameters of all the parent projects of the build configuration. You can check if the settings were changed between several builds by comparing `.teamcity/settings/digest.txt` file in the [hidden build's artifacts](build-artifact.md#Hidden+Artifacts).
-* If there is also an artifact dependency in addition to the snapshot one, the suitable build should have artifacts.
+* If there is also an artifact dependency in addition to the snapshot one, the suitable build should have artifacts. Otherwise, a build with no published artifacts and a build whose artifacts were removed during a [cleanup](teamcity-data-clean-up.md) are both equally suitable.
 * All the dependency builds (the builds the current one depends on) are "suitable" and are appropriately merged.
 
 #### VCS Settings Disabling Builds Reuse
