@@ -21,7 +21,7 @@ Parameters are `name=value` pairs that can be referenced throughout TeamCity. Th
 
 ## Common Information
 
-Parameters allow you to avoid using plain values in TeamCity UI and build scripts. Instead, you can reference a parameter by its name using the `%\<parameter_name>%` syntax. In addition, parameters can reference other parameters in their values (for example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
+Parameters allow you to avoid using plain values in TeamCity UI and build scripts. Instead, you can reference a parameter by its name using the `%\parameter_name%` syntax. In addition, parameters can reference other parameters in their values (for example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
 
 Storing values in parameters allows you to:
 
