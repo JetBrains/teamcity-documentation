@@ -25,6 +25,7 @@ These changes and their potential effects on your existing projects include the 
 {id="bundled-tools-updates-2024-03"}
 
 * Maven 3.9.6 was added as one of the standard versions of the tool available in TeamCity. See also the [](#Maven+Tooling+Updates) section for the information about notable changes related to Maven in version 2024.03.
+* The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 1.9.22.
 
 
 
