@@ -56,7 +56,7 @@
 
 4 security problems have been fixed.
 
-> We highly recommend installing this update as it includes a fix for a critical security vulnerability.
+> We highly recommend installing this update as it includes a fix for critical security vulnerabilities.
 >
 {type="warning"}
 
