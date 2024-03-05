@@ -292,7 +292,7 @@ The following rule allows an object to accept only those requests whose target b
 
 ### Filter Priority
 
-Pull request filter expressions are applied in the same manner as regular `+|-:<branch_name>` expressions: one by one starting with the first one. This means in case of conflicting expressions, the last one has the highest priority. For example, the following ruleset enables tracking by all branches, excludes all pull request branches, and re-enables pull requests authored by organization members.
+Pull request filter expressions are applied in the same manner as regular `+|-:<branch_name>` expressions: one by one starting with the first one. This means in case of conflicting expressions, the last one has the highest priority. For example, the following ruleset allows its parent object to accept all available branches, then excludes all pull request branches, and finally re-enables pull requests authored by organization members.
 
 ```Kotlin
 +:*
@@ -300,7 +300,6 @@ Pull request filter expressions are applied in the same manner as regular `+|-:<
 +pr:github_role=member
 ```
 
-> * Use `+pr:*` or `-pr:*` to include or exclude all pull (merge) requests respectively.
 
 
 ### Example
