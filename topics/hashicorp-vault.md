@@ -6,6 +6,10 @@
 To set up a TeamCity-Vault integration, download the official [Vault plugin](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) and install it as described in the [](installing-additional-plugins.md) article.
 -->
 
+<video href="cRNl2dTulTA"
+title="HashiCorp Vault plugin for TeamCity"/>
+
+
 ## Common Information
 
 To set up an integration with HashiCorp Vault, you need the following:

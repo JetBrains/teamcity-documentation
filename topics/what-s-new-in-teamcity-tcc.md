@@ -71,6 +71,14 @@ Fetch URL mapping rules, defined in agent configuration files, offer granular co
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
+## Pull Request Branch Filters
+{product="tcc"}
+
+[Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more. 
+
+Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
+
+
 ## Miscellaneous Changes
 {product="tcc"}
 

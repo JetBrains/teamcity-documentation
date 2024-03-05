@@ -68,6 +68,13 @@ Starting with version 2024.03, you can run a dependent build even if its artifac
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
+## Pull Request Branch Filters
+{product="tc"}
+
+[Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more.
+
+Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
+
 
 ## Miscellaneous Changes
 {product="tc"}
