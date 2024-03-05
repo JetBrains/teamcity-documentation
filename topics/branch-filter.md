@@ -272,7 +272,7 @@ The `<parameter>=<value>` expressions are combined using the logical `AND` opera
 
 * `github_role ` — allows you to filter pull (merge) requests by their authors (relative to the repository organization). Supported values: `COLLABORATOR`, `CONTRIBUTOR`, `MEMBER`, `OWNER`, `NONE`.
 
-> * Currently, joint parameter values are not supported. To enumerate multiple accepted values, add multiple stand-alone filter expressions (for example, `+pr: github_role=COLLABORATOR` and `+pr: github_role=CONTRIBUTOR`).
+> Currently, joint parameter values are not supported. To enumerate multiple accepted values, add multiple stand-alone filter expressions (for example, `+pr: github_role=COLLABORATOR` and `+pr: github_role=CONTRIBUTOR`).
 >
 {type="note"}
 
