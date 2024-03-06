@@ -5,6 +5,11 @@
 
 * The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
 
+### Known Issues
+{id="known-issues-2023-11-4"}
+
+* Installing this bugfix or a stand-alone security patch causes older versions of the [GitHub Commit Hooks](configuring-vcs-post-commit-hooks-for-teamcity.md#GitHub+and+GitHub+Enterprise) plugin to fail with the "403: Access Denied" responses. To fix this issue, update your plugin to version [2023.11-157452](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/edit/versions/stable/498931) or newer. See  this ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680/GitHub-Commit-Hooks-fail-in-TeamCity-2023.11.4).
+
 ## Changes from 2023.11.2 to 2023.11.3
 
 No potential breaking changes.
