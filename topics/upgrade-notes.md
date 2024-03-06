@@ -8,7 +8,10 @@
 ### Known Issues
 {id="known-issues-2023-11-4"}
 
-* Installing this bugfix or a stand-alone security patch causes older versions of the [GitHub Commit Hooks](configuring-vcs-post-commit-hooks-for-teamcity.md#GitHub+and+GitHub+Enterprise) plugin to fail with the "403: Access Denied" responses. To fix this issue, update your plugin to version [2023.11-157452](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/edit/versions/stable/498931) or newer. See  this ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680/GitHub-Commit-Hooks-fail-in-TeamCity-2023.11.4).
+* Installing this bugfix or a stand-alone security patch causes older versions of multiple unbundled plugins to fail with the "403: Access Denied" responses. These issues have been fixed in newer versions of corresponding plugins or TeamCity server.
+    * [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md#GitHub+and+GitHub+Enterprise) plugin — update your plugin to version [2023.11-157452](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/edit/versions/stable/498931) or newer. More information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680/GitHub-Commit-Hooks-fail-in-TeamCity-2023.11.4).
+    * [Static UI Extensions](https://plugins.jetbrains.com/plugin/21016-static-ui-extensions) — update your plugin to version 0.x.37 or newer. More information: [TW-86707](https://youtrack.jetbrains.com/issue/TW-86707/Static-UI-extensions-broken-after-patching-2023.11.3-upgrade-to-2023.11.4).
+    * [SAML Authentication](https://plugins.jetbrains.com/plugin/12588-saml-authentication) — update your TeamCity server to version 2022.04.5 or newer.
 
 ## Changes from 2023.11.2 to 2023.11.3
 
