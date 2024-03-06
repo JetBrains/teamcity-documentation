@@ -9,7 +9,7 @@ For more details on migration, refer to the [.NET runner description](net.md#Mig
 
 </note>
 
-The _Visual Studio Tests_ build runner integrates functionality of the MSTest framework and [VSTest console runner](https://plugins.jetbrains.com/plugin/9056-vstest-console-runner). Support for both frameworks enables TeamCity to execute tests and automatically import their test results. 
+The _Visual Studio Tests_ build runner integrates functionality of the MSTest framework and VSTest console runner. Support for both frameworks enables TeamCity to execute tests and automatically import their test results. 
 
 The Visual Studio Test runner requires Visual Studio Test Agent or Microsoft Visual Studio installed on the build agent.
 
