@@ -323,11 +323,9 @@ CVE-2015-0204 vulnerability is found in the OpenSSL implementation. TeamCity doe
 
 ### Apache Struts
 
-CVE-2017-5638 affects Jakarta Multipart parser in Apache Struts. CVE-2016-1181 also affects multipart requests processing in some older versions of Apache Struts.
+TeamCity bundles IntelliJ IDEA which contains JARs from both Apache Struts 1.x and Apache Struts 2.x. These JARs are exclusively used by the IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
 
-TeamCity bundles IntelliJ IDEA which contains JARs from both Apache Struts 1.x and Apache Struts 2.x. These JARs are only used by IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
-
-Under no circumstances these versions of Apache Struts are used to handle any HTTP requests. Thus neither TeamCity server, nor TeamCity agent are affected by these vulnerabilities.
+TeamCity does not employ Apache Struts for any HTTP request handling. As such, neither TeamCity server, nor TeamCity agent are affected by related Struts vulnerabilities (CVE-2016-1181, CVE-2017-5638, CVE-2023-50164, and others).
 
 <seealso>
     <category ref="admin-guide">
