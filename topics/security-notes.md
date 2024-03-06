@@ -323,7 +323,7 @@ CVE-2015-0204 vulnerability is found in the OpenSSL implementation. TeamCity doe
 
 ### Apache Struts
 
-TeamCity bundles IntelliJ IDEA which contains JARs from both Apache Struts 1.x and Apache Struts 2.x. These JARs are exclusively used by the IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
+TeamCity can download IntelliJ IDEA which contains JARs from both Apache Struts 1.x and Apache Struts 2.x. These JARs are exclusively used by the IntelliJ IDEA Struts plugin when IntelliJ IDEA collects inspections for a project on a TeamCity agent.
 
 TeamCity does not employ Apache Struts for any HTTP request handling. As such, neither TeamCity server, nor TeamCity agent are affected by related Struts vulnerabilities (CVE-2016-1181, CVE-2017-5638, CVE-2023-50164, and others).
 
