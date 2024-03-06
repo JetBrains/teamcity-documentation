@@ -99,6 +99,10 @@ object MyRepoRoot : GitVcsRoot({
 })
 ```
 
+## Pull Request Branch Filters
+
+After you configure the **Pull Requests** feature in your build configurations, you can add `+|-pr <attribute>=<value>` expressions to branch filters of triggers, notifications, configuration Version Control Settings, and more. These expressions allow corresponding objects to work only with specific pull (merge) requests. For example, you can set up the triggers to start new builds only for non-draft requests coming from your organization members. Refer to this section for more information: [](branch-filter.md#Pull+Request+Branch+Filters).
+
 ## VCS-specific settings
 
 ### GitHub Pull Requests

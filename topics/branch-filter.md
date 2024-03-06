@@ -262,23 +262,27 @@ Other examples:
 
 Use the `+|-pr: <parameter1>=<value1> <parameter2>=<value2> ...` syntax to create filters that target specific pull (merge) request branches. This universal syntax allows you to define fine-grained VCS-agnostic filter expressions that consider more specific parameters than just logical branch names.
 
+> For the `+|-pr:...` filters to have any effect, the related VCS root must first be able to detect pull request branches. To do so, configure the [](pull-requests.md) build feature.
+>
+{type="tip"}
+
 The `<parameter>=<value>` expressions are combined using the logical `AND` operator, meaning a pull (merge) request branch must satisfy all conditions to pass the filter. Currently, the following parameters and values are supported:
 
-* `target` and `source` — allow you to filter requests by their incoming and outgoing branches. The `source` parameter is ignored if a request originates from a forked repository. Supported values: logical branch names.
+* `target` and `source` — allow you to filter requests by their incoming and outgoing branches. The `source` parameter is always `false` if a request originates from a forked repository. Supported values: logical branch names with optional [wildcards](#Wildcards+and+Patterns).
 
 * `sourceRepo` — allows you to target only pull requests from the same repository (for example, when merging one repository branch into another), from forked repositories, or both. Supported values: `same`, `fork`, `any`.
 
 * `draft` — specifies whether draft pull requests are accepted. This parameter is in effect only for GitHub and GitLab. Supported values: `true` to accept **only** requests labeled as drafts; `false` to accept **only** non-draft requests.
 
-* `github_role ` — allows you to filter pull (merge) requests by their authors (relative to the repository organization). Supported values: `COLLABORATOR`, `CONTRIBUTOR`, `MEMBER`, `OWNER`, `NONE`.
+* `author` — allows you to filter pull (merge) requests by their authors. Note that the actual author of incoming changes may be different from a person who sent a request. Supported values: usernames.
+
+* `github_role` — allows you to filter pull (merge) requests by author roles (relative to the repository organization). Supported values: `collaborator`, `contributor`, `member`, `owner`, `none` (not case-sensitive).
 
 > Currently, joint parameter values are not supported. To enumerate multiple accepted values, add multiple stand-alone filter expressions (for example, `+pr: github_role=COLLABORATOR` and `+pr: github_role=CONTRIBUTOR`).
 >
 {type="note"}
 
-> For the `+|-pr:...` filters to have any effect, the related VCS root must first be able to detect pull request branches. To do so, configure the [](pull-requests.md) build feature or manually modify the root's **Branch specification** setting.
->
-{type="tip"}
+
 
 ### Wildcards and Patterns
 
@@ -294,22 +298,27 @@ The following rule allows an object to accept only those requests whose target b
 
 Pull request filter expressions are applied in the same manner as regular `+|-:<branch_name>` expressions: one by one starting with the first one. This means in case of conflicting expressions, the last one has the highest priority. For example, the following ruleset allows its parent object to accept all available branches, then excludes all pull request branches, and finally re-enables pull requests authored by organization members.
 
-```Kotlin
+```Plain Text
 +:*
 -pr:*
 +pr:github_role=member
 ```
 
+The following combination of filters rejects pull requests coming from forked repositories even if they target the `main` branch (since the `sourceRepo` condition comes last).
+
+```Plain Text
++pr:target=main
+-pr:sourceRepo=fork
+```
 
 
 ### Example
 
 The following [Kotlin DSL](kotlin-dsl.md) sample illustrates how to combine [VCS](configuring-vcs-triggers.md) and [Schedule](configuring-schedule-triggers.md) triggers to implement the following setup:
 
-* Changes in local branches are build as soon as TeamCity detects them;
+* Changes in existing branches are build as soon as TeamCity detects them;
 * Non-draft pull (merge) requests authored by organization members are built as soon as TeamCity collects information about them;
 * Non-draft pull (merge) requests from collaborators and contributors are built nightly at 3:00 AM if these requests target one of the two stable repository branches.
-
 
 
 ```Kotlin
@@ -317,7 +326,7 @@ object Build : BuildType({
   triggers {
     vcs {
         branchFilter = """
-            +:refs/heads/*
+            +:*
             -pr:*
             +pr: draft=false github_role=MEMBER
         """.trimIndent()
@@ -325,7 +334,6 @@ object Build : BuildType({
     schedule {
         schedulingPolicy = daily { hour = 3 }
         branchFilter = """
-            -pr:*
             +pr: draft=false github_role=COLLABORATOR target=main
             +pr: draft=false github_role=COLLABORATOR target=development
             +pr: draft=false github_role=CONTRIBUTOR target=main
