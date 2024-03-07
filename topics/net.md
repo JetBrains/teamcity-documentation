@@ -397,7 +397,7 @@ If you set the version in this field and choose to run the current step using Do
 
 </td>
 
-</tr>[what-s-new-in-teamcity.md](what-s-new-in-teamcity.md)
+</tr>
 
 </table>
 
