@@ -531,7 +531,11 @@ See also: [Run selected unit tests](https://learn.microsoft.com/en-us/dotnet/cor
 
 <tr>
 
-<td>Test retry count</td>
+<td>
+
+Test retry count
+
+</td>
 
 <td>
 
@@ -541,11 +545,15 @@ Tests that initially failed but managed to finish successfully during subsequent
 
 <img src="dk-test-rerun-flaky.png" width="706" alt="Flaky tests during a re-run"/>
 
-> Current limitations:
-> * The maximum number of test retries is limited by 1000.
-> * Granular retries of parametrised tests are not supported. Tests like `[Theory]` in XUnit and NUnit or `[DynamicData]` in MSTest are retried with all their parameters. See this ticket for more information: [TW-86141](https://youtrack.jetbrains.com/issue/TW-86141/Parameterized-test-retry-in-.NET-Plugin).
-> 
-{type="warning"}
+<warning>
+
+Current limitations:
+
+* The maximum number of test retries is limited by 1000.
+* Granular retries of parametrised tests are not supported. Tests like <code>[Theory]</code> in XUnit and NUnit or <code>[DynamicData]</code> in MSTest are retried with all their parameters. See this ticket for more information: [TW-86141](https://youtrack.jetbrains.com/issue/TW-86141/Parameterized-test-retry-in-.NET-Plugin).
+
+</warning>
+
 
 
 </td>
