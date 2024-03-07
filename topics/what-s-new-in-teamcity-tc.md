@@ -2,30 +2,6 @@
 
 <chunk include-id="2024-03-tc">
 
-## Untrusted Builds
-{product="tc"}
-
-With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
-
-Version 2024.03 introduces a new setup that eliminates this trade-off between collaboration and security. The new **Untrusted Builds** group under project settings allows TeamCity to differentiate changes authored by trusted users from changes coming from an external source. New builds are triggered regardless of the changes' author, but builds that incorporate unverified changes will remain in queue until a designated reviewer (or a group of reviewers) marks them as safe to run.
-
-<img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
-
-Learn more: [](untrusted-builds.md).
-
-
-## New Parameter Dialog
-{product="tc"}
-
-In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
-
-<img src="dk-newparams-singleselect.png" width="460" alt="Single select parameter settings"/>
-
-In addition to other notable enhancements, the updated dialog allows you to select a new parameter type — **Remote secret**. Choose this type for parameters whose values should be retrieved from a remote source (for example, HashiCorp Vault).
-
-Learn more: [](typed-parameters.md).
-
-
 ## New Bundled Plugin: HashiCorp Vault
 {product="tc"}
 
@@ -38,22 +14,43 @@ To set up the TeamCity integration with HashiCorp Vault, create a new Vault conn
 Learn more: [](hashicorp-vault.md).
 
 
-## Enhanced Git LFS and Submodules Support
+## Untrusted Builds
 {product="tc"}
 
-[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
+With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
 
-Learn more: [](git.md#LFS+and+Submodules+Support).
+Version 2024.03 introduces a new setup that eliminates this trade-off between collaboration and security. The new **Untrusted Builds** group under project settings allows TeamCity to differentiate changes authored by trusted users from changes coming from an external source. New builds are triggered regardless of the changes' author, but builds that incorporate unverified changes will remain in queue until a designated reviewer (or a group of reviewers) marks them as safe to run.
+
+<img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
+
+Learn more: [](untrusted-builds.md).
 
 
-## Alternative Fetch URLs
+## New dotCover Runner
 {product="tc"}
 
-In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
+TBD
 
-Fetch URL mapping rules, defined in agent configuration files, offer granular control over the checkout process per agent. Additionally, wildcard and partial URL support in redirection rules enables the creation of universal, project-agnostic mapping patterns.
 
-Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
+## Automatic Retry of Failed .NET Tests
+{product="tc"}
+
+If the [](net.md) runner executes the `test` or `vstest` command, the runner's settings now display the new **Test retry count** option. This field allows you to specify how many times during the same build TeamCity can re-run failed test. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts.
+
+<img src="dk-test-rerun-flaky.png" width="706" alt="Flaky tests during a re-run"/>
+
+This technique allows you to identify [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
+
+Learn more: [.NET | Vstest Command](net.md#vstest).
+
+
+
+## Gradle Configuration Cache
+{product="tc"}
+
+TBD
+
+
 
 ## Optional Artifact Dependencies
 {product="tc"}
@@ -68,12 +65,44 @@ Starting with version 2024.03, you can run a dependent build even if its artifac
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
+
 ## Pull Request Branch Filters
 {product="tc"}
 
 [Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more.
 
 Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
+
+
+
+## Enhanced Git LFS and Submodules Support
+{product="tc"}
+
+[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
+
+Learn more: [](git.md#LFS+and+Submodules+Support).
+
+
+## New Parameter Dialog
+{product="tc"}
+
+In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
+
+<img src="dk-newparams-singleselect.png" width="460" alt="Single select parameter settings"/>
+
+In addition to other notable enhancements, the updated dialog allows you to select a new parameter type — **Remote secret**. Choose this type for parameters whose values should be retrieved from a remote source (for example, HashiCorp Vault).
+
+Learn more: [](typed-parameters.md).
+
+
+## Alternative Fetch URLs
+{product="tc"}
+
+In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
+
+Fetch URL mapping rules, defined in agent configuration files, offer granular control over the checkout process per agent. Additionally, wildcard and partial URL support in redirection rules enables the creation of universal, project-agnostic mapping patterns.
+
+Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 
 ## Miscellaneous Changes

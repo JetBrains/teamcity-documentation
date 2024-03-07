@@ -3,6 +3,17 @@
 
 <chunk include-id="2024-03-tcc">
 
+## New Bundled Plugin: HashiCorp Vault
+{product="tcc"}
+
+The [HashiCorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is now an integral component of the standard TeamCity installation. This plugin allows you to store sensitive data in a remote source, and enables TeamCity parameters to seamlessly retrieve these values during build processes.
+
+<img src="dk-vaultConnection.png" width="460" alt="Vault connection settings"/>
+
+To set up the TeamCity integration with HashiCorp Vault, create a new Vault connection and use it to set up the **Remote secret** parameter in the [updated Add New Parameter dialog](#New+Parameter+Dialog).
+
+Learn more: [](hashicorp-vault.md).
+
 
 ## Untrusted Builds
 {product="tcc"}
@@ -14,6 +25,31 @@ Version 2024.03 introduces a new setup that eliminates this trade-off between co
 <img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
 
 Learn more: [](untrusted-builds.md).
+
+
+## New dotCover Runner
+{product="tcc"}
+
+TBD
+
+
+## Automatic Retry of Failed .NET Tests
+{product="tcc"}
+
+If the [](net.md) runner executes the `test` or `vstest` command, the runner's settings now display the new **Test retry count** option. This field allows you to specify how many times during the same build TeamCity can re-run failed test. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts.
+
+<img src="dk-test-rerun-flaky.png" width="706" alt="Flaky tests during a re-run"/>
+
+This technique allows you to identify [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
+
+Learn more: [.NET | Vstest Command](net.md#vstest).
+
+
+
+## Gradle Configuration Cache
+{product="tcc"}
+
+TBD
 
 
 ## Optional Artifact Dependencies
@@ -29,6 +65,26 @@ Starting with version 2024.03, you can run a dependent build even if its artifac
 
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
+
+
+## Pull Request Branch Filters
+{product="tcc"}
+
+[Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more.
+
+Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
+
+
+
+## Enhanced Git LFS and Submodules Support
+{product="tcc"}
+
+[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
+
+Learn more: [](git.md#LFS+and+Submodules+Support).
+
+
+
 ## New Parameter Dialog
 {product="tcc"}
 
@@ -41,26 +97,6 @@ In addition to other notable enhancements, the updated dialog allows you to sele
 Learn more: [](typed-parameters.md).
 
 
-## New Bundled Plugin: HashiCorp Vault
-{product="tcc"}
-
-The [HashiCorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is now an integral component of the standard TeamCity installation. This plugin allows you to store sensitive data in a remote source, and enables TeamCity parameters to seamlessly retrieve these values during build processes.
-
-<img src="dk-vaultConnection.png" width="460" alt="Vault connection settings"/>
-
-To set up the TeamCity integration with HashiCorp Vault, create a new Vault connection and use it to set up the **Remote secret** parameter in the [updated Add New Parameter dialog](#New+Parameter+Dialog).
-
-Learn more: [](hashicorp-vault.md).
-
-
-## Enhanced Git LFS and Submodules Support
-{product="tcc"}
-
-[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
-
-Learn more: [](git.md#LFS+and+Submodules+Support).
-
-
 
 ## Alternative Fetch URLs
 {product="tcc"}
@@ -70,13 +106,6 @@ In TeamCity 2024.03, build agents can now fetch sources from a pre-configured re
 Fetch URL mapping rules, defined in agent configuration files, offer granular control over the checkout process per agent. Additionally, wildcard and partial URL support in redirection rules enables the creation of universal, project-agnostic mapping patterns.
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
-
-## Pull Request Branch Filters
-{product="tcc"}
-
-[Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more. 
-
-Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
 
 
 ## Miscellaneous Changes

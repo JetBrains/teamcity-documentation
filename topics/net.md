@@ -397,7 +397,7 @@ If you set the version in this field and choose to run the current step using Do
 
 </td>
 
-</tr>
+</tr>[what-s-new-in-teamcity.md](what-s-new-in-teamcity.md)
 
 </table>
 
@@ -528,6 +528,30 @@ See also: [Run selected unit tests](https://learn.microsoft.com/en-us/dotnet/cor
 </td>
 
 </tr>
+
+<tr>
+
+<td>Test retry count</td>
+
+<td>
+
+In the event of a test failure, TeamCity can seamlessly initiate automated re-runs of said test during the same build run. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts. This technique allows you to identify [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
+
+Tests that initially failed but managed to finish successfully during subsequent re-runs are automatically muted. You can check the [Tests tab](build-results-page.md#Tests+Tab) of a build results page to see how many re-runs were required for each test.
+
+<img src="dk-test-rerun-flaky.png" width="706" alt="Flaky tests during a re-run"/>
+
+> Current limitations:
+> * The maximum number of test retries is limited by 1000.
+> * Granular retries of parametrised tests are not supported. Tests like `[Theory]` in XUnit and NUnit or `[DynamicData]` in MSTest are retried with all their parameters. See this ticket for more information: [TW-86141](https://youtrack.jetbrains.com/issue/TW-86141/Parameterized-test-retry-in-.NET-Plugin).
+> 
+{type="warning"}
+
+
+</td>
+
+</tr>
+
 
 <tr>
 
