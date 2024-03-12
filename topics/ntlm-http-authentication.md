@@ -46,9 +46,7 @@ teamcity.ntlm.ignore.user.agent=true
 
 ### NTLM login URLs
 
-There are two more ways to force NTLM authentication for a certain connection (there is no need to set the `forceProtocols` attribute for this case):
-* Send request to `<Your TeamCity server URL>/ntlmLogin.html` and TeamCity will initiate NTLM authentication and redirect you to the overview page.
-* Send request to `<Your TeamCity server URL>/ntlmAuth/<path>` and TeamCity will initiate NTLM authentication and show you the &lt;path&gt; page (without redirect).
+To force NTLM authentication for a certain connection, send a request to `<Your TeamCity server URL>/ntlmLogin.html` and TeamCity will initiate NTLM authentication and redirect you to the overview page. There is no need to set the `forceProtocols` attribute for this case.
 
 ## Using NTLM HTTP Authentication Module with LDAP Authentication
 
