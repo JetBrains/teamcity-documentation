@@ -147,9 +147,9 @@ To create such a parameter, do the following:
    * **Remote Connection Type**: HashiCorp Vault Parameter
    * **Parameter Namespace**: choose existing [Vault connection](#Set+Up+a+Vault+Connection) you wish to use to retrieve this parameter's value. This drop-down menu shows **Display names** for all connections that have IDs.
 
-       <img src="dk-hcv-id-in-connection.png" width="706" alt="Connection ID"/>
+       <img src="dk-hcv-id-in-connection.png" width="560" alt="Connection ID"/>
    
-      <img src="dk-hcv-id-in-param.png" width="706" alt="Parameter ID"/>
+      <img src="dk-hcv-id-in-param.png" width="560" alt="Parameter ID"/>
 
    * **Vault Query**: the path to the secret in the `path!/key` format. For example, the following string points the parameter to the "access_key" key of the "awscreds" secret stored in the KV2 engine: `secret/data/awscreds!/access_key`.
 
@@ -171,7 +171,8 @@ project {
 
 ### Update Legacy Parameters
 
-If you already used the TeamCity Vault plugin before the 2023.11 version, you might have legacy parameters that store paths to Vault secrets directly in their parameter values (in the `%\vault:PATH!/KEY%` format).
+If you already used the TeamCity Vault plugin before the 2023.11 version, you might have legacy parameters that store paths to Vault secrets directly in their parameter values (in the `%vault:PATH!/KEY%` format).
+{interpolate-variables="false"}
 
 Compared to these legacy parameters, new "remote parameters" showcase the following advantages:
 
