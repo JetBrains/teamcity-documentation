@@ -178,6 +178,7 @@
                 </toc-element>
                 <toc-element id="docker.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="docker-compose.md" show-structure-for="chapter" show-structure-depth="4"/>
+                <toc-element id="dotcover-runner.md"/>
                 <toc-element id="duplicates-finder-java.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="duplicates-finder-resharper.md" show-structure-for="chapter" show-structure-depth="4"/>
                 <toc-element id="fxcop.md" show-structure-for="chapter" show-structure-depth="4"/>

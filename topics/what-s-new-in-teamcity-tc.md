@@ -29,7 +29,11 @@ Learn more: [](untrusted-builds.md).
 ## New dotCover Runner
 {product="tc"}
 
-TBD
+The new **dotCover** runner can automatically retrieve code coverage snapshots from multiple preceding [](net.md) steps, and use these individual snapshots to publish a single coverage report.
+
+<img src="dk-dotcover-settings.png" width="706" alt="DotCover Runner Settings"/>
+
+Learn more: [](dotcover-runner.md).
 
 
 ## Automatic Retry of Failed .NET Tests

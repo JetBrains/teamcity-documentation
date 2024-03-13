@@ -833,7 +833,7 @@ The .NET CLI build step can be run in a specified [Docker container](container-w
 
 ## Code Coverage
 
-[JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for `msbuild`, `test`, `vstest`, and a number of custom commands.
+[JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for `msbuild`, `test`, `vstest`, and a number of custom commands. To merge snapshots produced by multiple individual .NET runners into one consolidated report, add the [](dotcover-runner.md) to your configuration.
 
 ## Authentication in Private NuGet Feeds
 

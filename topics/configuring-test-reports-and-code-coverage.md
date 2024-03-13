@@ -48,7 +48,7 @@ To get the code coverage information displayed in TeamCity for the supported too
 * [NAnt](nant.md)
 * [NUnit](nunit.md)
 * [MSpec](mspec.md)
-* [.NET](net.md)
+* [.NET](net.md) (either stand-alone or combined with the [](dotcover-runner.md) runner)
 * [Python](python.md)
 
 Note that currently the Maven2 runner supports only [IntelliJ IDEA](intellij-idea.md) and [JaCoCo](jacoco.md) coverage engines.
