@@ -66,6 +66,8 @@ Starting with version 2024.03, you can run a dependent build even if its artifac
 Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 
+<!--
+
 ## Pull Request Branch Filters
 {product="tc"}
 
@@ -73,7 +75,7 @@ Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 
 Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
 
-
+-->
 
 ## Enhanced Git LFS and Submodules Support
 {product="tc"}

@@ -28,7 +28,7 @@ The Pull Requests feature **does not** automatically trigger new builds against 
 
 > If your build configuration targets a public repository where non-trusted users can push commits or create pull (merge) requests, building these changes means TeamCity can execute malicious code introduced in them. For example, TeamCity may handle a harmful [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files.
 > 
-> To prevent this from happening, do not configure [VCS triggers](configuring-vcs-triggers.md) and [Pull Requests build features](pull-requests.md) in such a manner that builds with pull (merge) request changes start automatically. Instead, either start new builds manually after you inspect and verify incoming changes, or set up [](untrusted-builds.md) to require additional review for external pull requests. 
+> To prevent this from happening, do not configure [VCS triggers](configuring-vcs-triggers.md) and [Pull Requests build features](pull-requests.md) in such a manner that builds with unverified pull (merge) request changes can start automatically. Instead, either start new builds manually after you inspect and verify incoming changes, or set up [](untrusted-builds.md) to require additional review for external pull requests. 
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
@@ -99,9 +99,13 @@ object MyRepoRoot : GitVcsRoot({
 })
 ```
 
+<!--
+
 ## Pull Request Branch Filters
 
 After you configure the **Pull Requests** feature in your build configurations, you can add `+|-pr <attribute>=<value>` expressions to branch filters of triggers, notifications, configuration Version Control Settings, and more. These expressions allow corresponding objects to work only with specific pull (merge) requests. For example, you can set up the triggers to start new builds only for non-draft requests coming from your organization members. Refer to this section for more information: [](branch-filter.md#Pull+Request+Branch+Filters).
+
+-->
 
 ## VCS-specific settings
 

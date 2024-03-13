@@ -257,6 +257,7 @@ Other examples:
 
    ```
 
+<!--
 
 ## Pull Request Branch Filters
 
@@ -282,7 +283,7 @@ The `<parameter>=<value>` expressions are combined using the logical `AND` opera
 >
 {type="note"}
 
-
+-->
 
 ### Wildcards and Patterns
 
