@@ -65,6 +65,7 @@ object MyConfig : BuildType({
     }
 })
 ```
+{interpolate-variables="false"}
 
 However, in this simple scenario the final result is similar to running a [](net.md) step with dotNet coverage enabled in its settings. The true strength of the **dotCover** runner lies in its ability to collect snapshots from different sources and produce a combined code coverage report. The samples below illustrate how to set up the dotCover runner depending on the exact sources of these snapshots.
 
