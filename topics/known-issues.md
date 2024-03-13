@@ -326,6 +326,15 @@ To work around this issue without upgrading to 2019.1.5, uninstall the previousl
 To uninstall the agent, invoke `Uninstall.exe` in the [Agent Home Directory](agent-home-directory.md), clear all the "_Remove..._" checkboxes to keep the agent logs and configuration, and click __Uninstall__. After the successful uninstallation, you can proceed with installing the new agent version via the agent installer.
 
 
+## Incorrect TeamCity Server Version in Windows
+
+Automatic TeamCity updates may fail to write new version numbers to the related Windows registry key. This causes the standard Windows **Add or Remove Programs** application to show the version of the initial TeamCity installation that never changes after updates.
+
+To manually update the registry key and set a correct version, follow the instructions on the TeamCity **Administration | Updates** page to run a PowerShell script shipped with your TeamCity installation:
+
+```Shell
+runas /user: Administrator "powershell -File C:\TeamCity\bin\update-registry-version.ps1"
+```
 
 ## Windows Docker Containers
 {product="tc"}
