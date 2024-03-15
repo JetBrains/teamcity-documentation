@@ -787,6 +787,10 @@ In the first case, TeamCity automatically splits its settings once your build se
   
   You can download the ZIP archive attached to the [TW-64768](https://youtrack.jetbrains.com/issue/TW-64768/How-can-I-split-up-big-settings.kts) ticket to inspect a sample hierarchly and learn what content individual .kt files typically store.
 
+### How to Test Kotlin DSL Scripts
+
+Kotlin scripts can be tested using regular testing frameworks such as JUnit. See this blog post for more information: [Configuration as Code, Part 6: Testing Configuration Scripts](https://blog.jetbrains.com/teamcity/2019/05/configuration-as-code-part-6-testing-configuration-scripts/).
+
 ### Kotlin DSL API documentation is not initialized yet
 {product="tc"}
 
