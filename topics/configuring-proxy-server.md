@@ -141,14 +141,14 @@ To configure a TeamCity server behind an IIS reverse proxy:
 5. Steps 5 to 8 are perfomed in Powershell. Use the [Get-IISConfigSection](https://learn.microsoft.com/en-us/powershell/module/iisadministration/get-iisconfigsection?view=windowsserver2022-ps) and [Set-IISConfigAttributeValue](https://learn.microsoft.com/en-us/powershell/module/iisadministration/set-iisconfigattributevalue?view=windowsserver2022-ps) cmdlets to enable SSL flags:
 
     ```Shell
-    $ConfigSectionTC = Get-IISConfigSection -SectionPath "system.webServer/security/access" -Location "TCProxy";
+    $ConfigSectionTC = Get-IISConfigSection -SectionPath "system.webServer/security/access" -Location "<IIS Website name>";
     Set-IISConfigAttributeValue -AttributeName sslFlags -AttributeValue Ssl -ConfigElement $ConfigSectionTC;
     ``` 
 
 6. Use the [Set-WebConfigurationProperty](https://learn.microsoft.com/en-us/powershell/module/webadministration/set-webconfigurationproperty?view=windowsserver2022-ps) cmdlet to add a server variable that allows the HTTP forwarded IP to be passed from the web requests:
 
     ```Shell
-    Set-WebConfigurationProperty -pspath "IIS:/" -Location "TCProxy" -filter "system.webServer/rewrite/allowedServerVariables" -name "." -value @{name="HTTP_FORWARDED"} -FORCE
+    Set-WebConfigurationProperty -pspath "IIS:/" -Location "<IIS Website name>" -filter "system.webServer/rewrite/allowedServerVariables" -name "." -value @{name="HTTP_FORWARDED"} -FORCE
     ```
 
 7. Enable proxy setting:
