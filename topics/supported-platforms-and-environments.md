@@ -894,7 +894,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 
 <tr>
    <td>HSQLDB<br/><br/>The internal HSQLDB database can be used for <b>evaluation purposes only</b>.</td>
-   <td>2.3.2</td>
+   <td>2.7.2</td>
 </tr>
 
 <tr>
