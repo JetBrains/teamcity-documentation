@@ -780,7 +780,7 @@ To create a secondary node in a manner that is suitable for automation, follow t
    ```
    Where:
    * `<node_ID>` is the unique ID of the node, which should be generated specifically for this node.
-   * `<node_URL>` is the secondary node root URL, which should be accessible from the main node and agents.
+   * `<node_URL>` is the secondary node root URL, which should be accessible from the main node.
    * `<Node-specific Data Directory>` is the path to the node-specific TeamCity Data Directory.
    * `<responsibilities_list>` is the comma-separated [list of responsibilities](#Setting+Responsibilities+on+the+Command+Line) to enable on this node.
    > In the case of automated creation, all of the secondary nodes should be configured with the same responsiblities.
