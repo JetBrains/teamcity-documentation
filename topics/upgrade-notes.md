@@ -33,6 +33,7 @@ These changes and their potential effects on your existing projects include the 
 * Maven 3.9.6 was added as one of the standard versions of the tool available in TeamCity. See also the [](#Maven+Tooling+Updates) section for the information about notable changes related to Maven in version 2024.03.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 1.9.22.
 * The [internal HSQLDB database](supported-platforms-and-environments.md#Databases) was updated to version 2.7.2. Note that this database should not be used for actual production purposes.
+* The bundled dotCover tool has been updated to version 2023.3.3.
 
 
 
