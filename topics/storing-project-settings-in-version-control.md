@@ -418,6 +418,11 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 
 </warning>
 
+
+
+
+
+
 <anchor name="tokensGen"/>
 
 ### Managing Tokens
@@ -462,6 +467,27 @@ If you decide to store secure settings in VCS, it is recommended to carefully co
 It is recommended to store passwords, API tokens, and other secure settings outside of VCS using the corresponding option [described above](#Storing+Secure+Settings).
 
 Note that SSH keys will not be stored in the VCS repository.
+
+## Storing and Managing Global Server Settings
+
+<chunk include-id="iac-terraform">
+
+Storing [](kotlin-dsl.md) or XML settings in a VCS allows you to utilize the configuration-as-code approach for projects and build configurations. You can specify the hierarchy of projects, manage individual configurations, dynamically change step settings and parameters, and more.
+
+However, this approach does not allow you to manage server-wide settings (such as user and user group settings, clean-up rules, notifications, authentication modules, licenses, and more). To automate your server administration, define required settings in the HCL language format and use [HashiCorp Terraform](https://www.terraform.io) to manage them. To allow Terraform to communicate with your TeamCity server instance, add the dedicated **TeamCity Terraform Provider** to your Terraform configuration.
+
+<video href="gXteNQIWkwU"
+title="TeamCity Terraform Provider"/>
+
+**Learn more:**
+
+* [TeamCity Terraform Provider on Terraform Registry](https://registry.terraform.io/providers/JetBrains/teamcity/0.0.68)
+* [TeamCity Terraform Provider on GitHub (source code and examples)](https://github.com/JetBrains/terraform-provider-teamcity)
+* [TeamCity Terraform Provider Documentation](https://registry.terraform.io/providers/JetBrains/teamcity/latest/docs)
+* [Configuration as Code for TeamCity Using Terraform | The TeamCity Blog](https://blog.jetbrains.com/teamcity/2024/02/configuration-as-code-terraform-teamcity/#managing-github-resources-via-terraform)
+
+</chunk>
+
 
 <anchor name="settingsFormat"/>
 

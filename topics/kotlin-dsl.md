@@ -379,6 +379,13 @@ The TeamCity server does not use Maven for generating settings from your DSL scr
 
 </note>
 
+
+## Storing and Managing Global Server Settings
+
+<include include-id="iac-terraform" src="storing-project-settings-in-version-control.md"/>
+
+
+
 ## Advanced Topics
 
 ### Build Chain DSL Extension
