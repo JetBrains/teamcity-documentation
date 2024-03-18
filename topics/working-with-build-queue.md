@@ -54,7 +54,10 @@ Additionally, you can:
 ### Moving Builds to Top
 
 To move a build to the top spot in the queue, do one of the following:
-* On the **Queue** page, click the arrow button next to the build sequence number ![moveToTop.png](moveToTop.png).
+* On the **Queue** page, click the arrow button next to the build sequence number.
+
+  <img src="dk-movetotop.png" width="706" alt="Move to top"/>
+
 * Click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the queued build, click the __Actions__ menu in the upper right corner. Select the __Move to top__ action.
 
 For a [composite build](composite-build-configuration.md), the whole build chain will be moved to the top of the queue. If a running composite build has dependency builds that have not yet started, click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the running build, click the __Actions__ menu in the upper right corner. Select the __Move queued dependencies to top__ action. All queued dependencies of this build will be moved to the top of the queue.
