@@ -4,6 +4,12 @@
 ## Changes from 2023.11.4 to 2024.03
 
 * The [](commit-status-publisher.md) build feature configured for [Perforce Helix Swarm](integrating-with-helix-swarm.md) no longer posts intermediate build statuses (queued, started, canceled) to the Swarm review's **Comments** tab. Instead, the feature announces only the final build status (successful or failed). You can additionally uncheck the **Code Review Comments** option in the build feature's settings dialog to disable these remaining status notifications as well (in this case, the Commit Status Publisher will only update the review's **Tests** tab).
+* Starting with version 2023.03, versions of dotCover Command Line Tools that are no longer supported by the JetBrains dotCover team are explicitly marked as "deprecated".
+    
+    <img src="dk-deprecated-dotnetcli.png" width="706" alt="Deprecated dotNet Cli versions"/>
+    
+    Although these versions will remain functional, we encourage you to migrate to non-deprecated versions instead. Note that you should also install .NET Framework 4.7.2+ or .NET Core 3.1+ on agent machines for the non-deprecated versions to operate.
+
 
 ### Maven Tooling Updates
 
