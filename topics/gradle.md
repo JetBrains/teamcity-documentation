@@ -224,6 +224,32 @@ In this section, you can specify a Docker image which will be [used to run the b
 
 The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
 
+
+## Configuration Cache
+
+Starting with version 2024.03, TeamCity Gradle runner supports [configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html). This feature significantly improves build performance by caching the result of the configuration phase and reusing this cache in subsequent builds.
+
+Configuration cache is enabled if either of the following is true:
+
+* The `--configuration-cache` parameter was added to the runner's **Additional Gradle command line parameters** field.
+* A `gradle.properties` file includes the `org.gradle.configuration-cache=true` (for Gradle 8.1+) or `org.gradle.unsafe.configuration-cache=true` (for older Gradle versions) line. This applies to both the project's `gradle.properties` file and the one in the `GRADLE_USER_HOME` directory.
+
+### Current Limitations and Known Issues
+
+Gradle configuration caches may not work as expected in the following cases:
+
+* if virtual builds (those spawned during [parallel testing](parallel-tests.md) or [Matrix Build](matrix-build.md) runs) run in a different order from when the caches were created. See this YouTrack ticket for more information: [TW-86556](https://youtrack.jetbrains.com/issue/TW-86556/Gradle-Configuration-cache-can-be-not-reused-in-virtual-builds-parallel-tests-or-matrix-builds).
+
+* if the [](clean-checkout.md) is enabled;
+
+* if a build step runs within a Docker or Podman container;
+
+* if Gradle [ignores configuration cache problems](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage:ignore_problems).
+
+* if the list of additional command line arguments includes those unsupported by Gradle Tooling API (`--daemon`, `--stop`, and others).
+
+
+
 <seealso>
         <category ref="admin-guide">
             <a href="intellij-idea.md">IntelliJ IDEA Code Coverage</a>

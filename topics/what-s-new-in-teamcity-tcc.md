@@ -53,7 +53,9 @@ Learn more: [.NET | Vstest Command](net.md#vstest).
 ## Gradle Configuration Cache
 {product="tcc"}
 
-TBD
+Starting with this version, you can enable the [configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html) feature for Gradle builds running in TeamCity. This feature substantially enhances build performance by caching the configuration phase's result and reusing it in subsequent builds.
+
+Learn more: [](gradle.md#Configuration+Cache).
 
 
 ## Optional Artifact Dependencies
