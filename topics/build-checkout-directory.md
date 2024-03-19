@@ -60,7 +60,9 @@ The time frame for automatic directory expiration can be changed by specifying a
    * `never` will let TeamCity know that the directory should never be deleted by TeamCity 
    * `default` will enforce using the default value
 
-Expiration-based directory cleaning is performed in the background when the build agent is idle (no builds are running).
+_Expiration-based directory cleaning_ is performed in the background when build agent is idle (i.e. no builds are running).
+
+Bear in mind that once the parameter is set, the change will only apply to all _newly executed builds_. For older checkout directories, where no new builds were executed after specifying the parameter, the _expiration_ value will remain as it was before the change.
 
  <seealso>
         <category ref="admin-guide">
