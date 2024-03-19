@@ -118,6 +118,7 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 * New [](commit-status-publisher.md) setting allows you to choose whether you want TeamCity to post [Swarm review comments](integrating-with-helix-swarm.md) when a build finishes. If this option is disabled, the build feature will only update the review's **Tests** section.
+* The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](snapshot-dependencies.md#Suitable+Builds) instead of running them anew.
 
 
 </chunk>
