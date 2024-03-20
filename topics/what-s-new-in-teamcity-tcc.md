@@ -86,7 +86,7 @@ Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
 ## Enhanced Git LFS and Submodules Support
 {product="tcc"}
 
-[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files.
+[Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files. This feature allows you to set up TeamCity integration with [Sonatype Nexus LFS repositories](https://help.sonatype.com/en/git-lfs-repositories.html)) and other popular solutions.
 
 Learn more: [](git.md#LFS+and+Submodules+Support).
 
