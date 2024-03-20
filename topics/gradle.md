@@ -248,6 +248,14 @@ Gradle configuration caches may not work as expected in the following cases:
 
 * if the list of additional command line arguments includes those unsupported by Gradle Tooling API (`--daemon`, `--stop`, and others).
 
+[Build parameters](configuring-build-parameters.md) whose values always change from build to build (for example, `build.id` or `build.number`) will be loaded only on demand. You can still obtain values of these properties using direct references (for example, `project.teamcity["build.number"]`), but the `findProperty()` method (`project.findProperty("build.number")`) yields no results. If you need to call this method in your Gradle script, use the following workaround:
+
+1. Create a new configuration parameter and map it to the affected parameter: `MyBuildNumber=%\build.number%`.
+2. Create a new system property and map it to your new configuration parameter: `system.buildNumber = %\MyBuildNumber%`.
+3. Use the `${findProperty}("buildNumber")}` syntax to obtain a required value in your Gradle script.
+
+Note that this workaround prevents your build configuration from reusing the configuration cache, so you may also want to disable it.
+
 
 
 <seealso>
