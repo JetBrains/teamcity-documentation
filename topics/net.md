@@ -551,9 +551,17 @@ Current limitations:
 
 * The maximum number of test retries is limited by 1000.
 * Granular retries of parametrised tests are not supported. Tests like <code>[Theory]</code> in XUnit and NUnit or <code>[DynamicData]</code> in MSTest are retried with all their parameters. See this ticket for more information: [TW-86141](https://youtrack.jetbrains.com/issue/TW-86141/Parameterized-test-retry-in-.NET-Plugin).
+* [TeamCity.VSTest.TestAdapter](https://github.com/JetBrains/TeamCity.VSTest.TestAdapter) is supported starting with version 1.0.40.
+* [Microsoft.NET.Test.Sdk](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk) of versions 16.0 and newer are supported.
+* The runner uses the `/TestCaseFilter` option of the VSTest.Console.exe tool to separate and re-run failed tests. Since `/TestCaseFilter` [cannot be used](https://learn.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2022) along with the `/Tests` option, failed tests cannot be automatically re-run if you manually filter tests by their names (set the runner's **Tests filtration** option to "Test names").
 
 </warning>
 
+<tip>
+
+Re-running failed tests is also available for the `test` command.
+
+</tip>
 
 
 </td>
