@@ -17,6 +17,20 @@ TeamCity supports upgrades from any of the previous versions to the later ones. 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way, you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
 {product="tc"}
 
+## Security Patches
+
+TeamCity is a web application that heavily relies on communications among the server, build agents, VCS providers, and other external services (such as [AWS S3](storing-build-artifacts-in-amazon-s3.md) buckets or [Nexus LFS](git.md#LFS+and+Submodules+Support) repositories). As such, when deployed in non-closed environments, TeamCity is vulnerable to attacks exploiting common vulnerabilities and exposures (CVEs), including those inherited from third-party solutions and libraries it employs.
+
+To reduce the risks, it is highly advised to promptly install any updates containing security fixes. Fixes that eliminate non-critical security vulnerabilities are addressed in regular [bug-fix updates](teamcity-release-cycle.md). Refer to the [Release Notes](what-s-new-in-teamcity.md#Fixed+Issues) and check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) for the list of fixed issues.
+
+Critical vulnerabilities that present major security threats are fixed in separate unscheduled security patches. Once a solution is found, these patches are released immediately. If such an update is available, TeamCity automatically downloads it and prompts administrators for installation.
+
+> TeamCity notifies users about critical security patches via emails and health reports. These notifications are sent to users with the "Manage server installation: view logs, restart, etc." [permission](managing-roles-and-permissions.md). By default, this permission is included only in the "System administrator" role.
+> 
+{style="tip"}
+
+To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Administration | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates (including updates for [unbundled plugins](installing-additional-plugins.md)).
+
 ## Before Upgrade
 {product="tc"}
 

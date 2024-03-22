@@ -113,6 +113,15 @@ Fetch URL mapping rules, defined in agent configuration files, offer granular co
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 
+## Semi-Automatic Security Updates
+{product="tc"}
+
+To keep you ahead of the curve in resolving security issues, TeamCity 2024.03 automatically downloads critical security updates. This approach ensures your system remains fortified against emerging risks and swiftly tackles major vulnerabilities — including those stemming from non-bundled plugins. Note that system administrators still need to approve the installation of these updates.
+
+Learn more: [Upgrading TeamCity Server and Agents](upgrading-teamcity-server-and-agents.md#Security+Patches). 
+
+
+
 ## Miscellaneous Changes
 {product="tc"}
 

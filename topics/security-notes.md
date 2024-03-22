@@ -153,6 +153,10 @@ We strongly recommend that you regularly update TeamCity to the [latest released
 
 TeamCity will automatically notify you via the UI once a new update is available. You can also manually check for new TeamCity versions under __Server Administration | Updates__ for TeamCity itself and under __Server Administration | Plugins__ for any available plugin updates.
 
+> To keep you ahead of the curve in resolving critical security issues, TeamCity offers automatic downloads for critical security updates, swiftly tackling vulnerabilities — even those stemming from non-bundled plugins. Note that system administrators still need to approve the installation of these updates. See this article for more information: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
+>
+{type="note"}
+
 From a technical perspective, upgrades between bugfix releases within the same major/minor version are backwards compatible (for example, 2021.1.1 → 2021.1.2) and support relatively simple rollbacks. For all other major upgrades, we do our best to ensure that they run as smoothly as possible, though [backups](teamcity-data-backup.md) are strongly recommended for easy rollbacks.
 
 From a licensing perspective, upgrades between bugfix releases are also safe. If your license covers 2021.2, then you will be able to upgrade to any 2021.2.x version.
