@@ -12,7 +12,7 @@ _Build artifacts_ are files produced by a build. Typically, these include distri
 TeamCity contains an integrated lightweight builds artifact repository. The artifacts are stored either on the [server-accessible file system](configuring-artifacts-storage.md#Built-in+Artifacts+Storage) or on an [external storage](configuring-artifacts-storage.md#external-artifacts-storage).
 {product="tc"}
 
-TeamCity contains an integrated lightweight builds artifact repository.
+TeamCity contains an integrated lightweight [Amazon S3](https://aws.amazon.com/s3) builds artifact repository.
 {product="tcc"}
 
 Upon the build finish, TeamCity searches for artifacts in the build [checkout directory](build-checkout-directory.md) according to the specified [artifact path or path patterns](configuring-general-settings.md#Artifact+Paths). The matching files are then uploaded ("published") to the TeamCity server, where they become available for downloading through the web UI or can be used in other builds using [artifact dependencies](dependent-build.md#Artifact+Dependency). You can [choose when to publish artifacts](configuring-general-settings.md#publish-artifacts): for all completed builds, only for successful builds, or for all builds, even the interrupted ones.
