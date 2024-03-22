@@ -406,7 +406,10 @@ teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 ### Limitations and Tips
 
 * Configuration properties that store additional credentials should be configured for a TeamCity project, not a build configuration.
-* For security reasons, switch all `...password` parameters to the [password type](typed-parameters.md). This will ensure your tokens and passwords are hidden from TeamCity UI, build logs, Kotlin DSL and REST API payloads.
+* For security reasons, switch all `...password` parameters to the [password type](typed-parameters.md). This will ensure your tokens and passwords are hidden from TeamCity UI, build logs, Kotlin DSL and REST API payloads. In addition, we recommend enabling the **Read-only** setting for `teamcity.git.https.credentials.<ALIAS>.url` parameters to prevent potential attackers from writing their own handcrafted URL to this parameter and stealing your authorization tokens.
+
+  <img src="dk-lfsTips.png" width="706" alt="Secret type and read-only property"/>
+
 * We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
 * TeamCity supports Git LFS only for the [agent-side checkout](vcs-checkout-mode.md).
 * Accessing submodule repositories and LFS files is currently supported only via secure HTTPS protocol. SSH and HTTP protocols are not supported.
