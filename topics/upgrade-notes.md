@@ -34,7 +34,7 @@ These changes and their potential effects on your existing projects include the 
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 1.9.22.
 * The [internal HSQLDB database](supported-platforms-and-environments.md#Databases) was updated to version 2.7.2. Note that this database should not be used for actual production purposes.
 * The bundled dotCover tool has been updated to version 2023.3.3.
-* The [Jersey](https://eclipse-ee4j.github.io/jersey/) library used by [TeamCity REST API](rest-api.md) was updated to version 2.41. This change does not affect regular REST API users. However, since version 2.41 exhibits significant changes compared to the previous 1.19 (for example, the modified dependency injection logic), this update may require a notable rework of your custom TeamCity plugins' code.
+* The [Jersey](https://eclipse-ee4j.github.io/jersey/) library used by [TeamCity REST API](rest-api.md) was updated to version 2.41. This change does not affect regular REST API users. However, since version 2.41 exhibits significant changes compared to the previous 1.19 (for example, the modified dependency injection logic), 3rd-party TeamCity plugins that rely on REST API (for example, a highly popular [tcWebHooks](https://github.com/tcplugins/tcWebHooks)) may become incompatible with the updated TeamCity server.
 
 
 
