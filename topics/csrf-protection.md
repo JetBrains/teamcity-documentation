@@ -30,6 +30,8 @@ If you face problems regarding CSRF protection in TeamCity (for example, you get
 * Enforce verification of `Origin/Referer` headers for CORS operations by setting the `teamcity.csrf.paranoid=false` internal property, similarly to how it worked in TeamCity versions prior to 2020.1 (read our [Upgrade Notes](upgrade-notes.md#Limitation+of+CORS+support+for+writing+operations)) for more details).
 * Temporary disable CSRF protection at all by setting the `teamcity.csrf.origin.check.enabled=logOnly` internal property.
 * Information about failed CSRF attempts is logged into `TeamCity/logs/teamcity-auth.log` files. For more detailed diagnostics of the requests, enable the [debug-auth logging preset](reporting-issues.md#Logging+events).
+* If your "unsafe" (`PUT`, `POST`, `DELETE`) requests utilize [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) to employ the Bearer authentication scheme, consider clearing your session cookies. Doing so allows TeamCity to skip validating CSRF tokens entirely.
+* If your environment or scenario mandates that session cookies are present, ensure your requests are not using CSRF tokens that correspond to expired sessions. As a workaround, you may want to reuse session cookies of the first HTTP request for the following ones. To do so in cURL, use the `--cookie-jar` and `--cookie` [command-line options](https://curl.se/docs/http-cookies.html) to save and read cookies to/from a file.
 
 In case none of the listed steps help to resolve your problem, please contact our [support](feedback.md) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
 
