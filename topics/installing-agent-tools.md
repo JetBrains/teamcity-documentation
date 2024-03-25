@@ -22,8 +22,8 @@ The following types of tools can be managed up via the __Administration | Tools_
 * __NUnit 3__: different versions can be installed and the default version set/changed.
 * __Sysinternals handle.exe__ used to determine processes which hold files in the checkout directory on Windows agents.
 * __Sysinternals psexec.exe__ required for installing a TeamCity agent from a Windows server to a Windows host using Agent push.
-* You can also upload __your own tool as a .zip archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the ZIP file as the tool name on all agents. The ZIP file will be automatically unpacked on the agents to the directory with the same name.   
-When the first custom tool is installed, the __Zip Archive__ section appears on the page. In this section, you can see all the tool usages, remove the tool, or install a new one.
+* You can also upload __your own tool as a `.zip`, `.tar`, or `.tar.gz` archive__: the structure of the tool plugin is described on the [Plugins Packaging page](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Tools). TeamCity will use the name of the ZIP file as the tool name on all agents. The ZIP file will be automatically unpacked on the agents to the directory with the same name.   
+When the first custom tool is installed, the __Custom Archive__ section appears on the page. In this section, you can see all the tool usages, remove the tool, or install a new one.
 
 TeamCity places installed tools into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins/.tools` and monitors the content of this directory.
 

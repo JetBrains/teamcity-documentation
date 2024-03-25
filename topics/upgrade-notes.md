@@ -9,6 +9,7 @@
     <img src="dk-deprecated-dotnetcli.png" width="706" alt="Deprecated dotNet Cli versions"/>
     
     Although these versions will remain functional, we encourage you to migrate to non-deprecated versions instead. Note that you should also install .NET Framework 4.7.2+ or .NET Core 3.1+ on agent machines for the non-deprecated versions to operate.
+* Setting permissions in the `executable-files` section of the "teamcity-plugin.xml" is now deprecated. As such, make sure the archived files already contain all required file permissions when [installing custom agent tools](installing-agent-tools.md).
 
 
 ### Maven Tooling Updates
