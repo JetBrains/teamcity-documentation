@@ -85,6 +85,8 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 
 5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
 
+   <table><tr><td>
+
    <tabs>
    
    <tab title="Access Keys">
@@ -111,6 +113,8 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 
    </tabs>
 
+   </td></tr></table>
+
 6. Choose an AWS region in which your instances are hosted.
 7. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
 8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
@@ -132,6 +136,8 @@ Cloud profiles specify global settings, such as authorization credentials and in
    <anchor name="Amazon+EC2+Spot+Instances+Support"/>
 
 3. Choose the required image type.
+
+   <table><tr><td>
    
    <tabs>
    
@@ -216,9 +222,15 @@ Cloud profiles specify global settings, such as authorization credentials and in
       >
       {type="note"}
 
+      > Currently, [LaunchTemplateConfigs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html) are not supported. Use [LaunchSpecifications](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetLaunchSpecification.html) instead to describe required Spot instances.
+      >
+      {type="warning"}
+
    </tab>
    
    </tabs>
+
+   </td></tr></table>
    
 4. Enter a integer number ranging from `-10000` to `10000` in the **Image priority** field (the default priority is `0`). When TeamCity needs to spin up a new cloud agent, it chooses an image that has the highest priority value.
    
