@@ -25,11 +25,13 @@ To reduce the risks, it is highly advised to promptly install any updates contai
 
 Critical vulnerabilities that present major security threats are fixed in separate unscheduled security patches. Once a solution is found, these patches are released immediately. If such an update is available, TeamCity automatically downloads it and prompts administrators for installation.
 
-> TeamCity notifies users about critical security patches via emails and health reports. These notifications are sent to users with the "Manage server installation: view logs, restart, etc." [permission](managing-roles-and-permissions.md). By default, this permission is included only in the "System administrator" role.
+> TeamCity notifies users about critical security patches via emails and health reports. These notifications are visible to users with the "Manage server installation: view logs, restart, etc." [permission](managing-roles-and-permissions.md). By default, this permission is included only in the "System administrator" role.
+> 
+> Make sure that users who should receive email notifications about available security patches have email addresses specified in their [user profiles](configuring-your-user-profile.md) and [email notifications are enabled](configuring-notifications.md).
 > 
 {style="tip"}
 
-To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Administration | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates (including updates for [unbundled plugins](installing-additional-plugins.md)).
+To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Administration | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates.
 
 ## Before Upgrade
 {product="tc"}
