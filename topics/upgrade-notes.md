@@ -38,6 +38,9 @@ These changes and their potential effects on your existing projects include the 
 * The bundled dotCover tool has been updated to version 2023.3.3.
 * The [Jersey](https://eclipse-ee4j.github.io/jersey/) library used by [TeamCity REST API](teamcity-rest-api.md) was updated to version 2.41. This change does not affect regular REST API users. However, since version 2.41 exhibits significant changes compared to the previous 1.19 (for example, the modified dependency injection logic), 3rd-party TeamCity plugins that rely on REST API (for example, a highly popular [tcWebHooks](https://github.com/tcplugins/tcWebHooks)) may become incompatible with the updated TeamCity server.
 * The bundled Tomcat was updated to version 9.0.87.
+* [](agent-docker-images.md) for Linux now ship with updated Docker-related tools.
+    * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 24.0.9. This change also leads to the Docker Compose update to version v2.25.0.
+    * [containerd](https://containerd.io) was updated to version 1.6.28.
 
 
 
