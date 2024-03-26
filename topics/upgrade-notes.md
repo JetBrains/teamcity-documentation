@@ -12,6 +12,8 @@
 
 * When [installing custom agent tools](installing-agent-tools.md), editing the `teamcity-plugin.xml` file to [set executable bits](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Making+File+Executable) is no longer required. Instead, make sure that the archived files already contain all required file permissions. In this case, files remain executable when the tool archive is unpacked on the agent machine.
 
+* If your existing configurations continue using the [TeamCity.Node](https://github.com/jonnyzzz/TeamCity.Node) plugin, download the latest version [here](https://teamcity.jetbrains.com/buildConfiguration/bt434?mode=builds). Older plugin versions fail to load with agents reporting the "Failed to initialize spring context" error.
+
 
 ### Maven Tooling Updates
 
