@@ -10,7 +10,7 @@
 ## Upgrade Notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version <!--LINK!!!!!--> [2023.11 compared to 2023.05.4](upgrade-notes.md#Changes+from+2023.05.4+to+2023.11).
+Before upgrading, we highly recommend reading about important changes in version [2024.03 compared to 2023.11.4](upgrade-notes.md#Changes+from+2023.11.4+to+2024.03).
 
 
 ## Fixed Issues
