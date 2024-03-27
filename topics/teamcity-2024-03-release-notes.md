@@ -9,6 +9,8 @@
 
 ### Bug
 
+**[TW-85960](https://youtrack.jetbrains.com/issue/TW-85960)** — Matrix builds overview: all status filters become enabled when current filter is not relevant anymore
+
 **[TW-86526](https://youtrack.jetbrains.com/issue/TW-86526/Project-whose-uuid-was-changed-cannot-be-loaded-if-it-has-a-sub-project)** — Project whose uuid was changed cannot be loaded if it has a sub project
 
 **[TW-80329](https://youtrack.jetbrains.com/issue/TW-80329/Docker-support-build-feature-The-Docker-events-log-shows-image-ID-instead-of-image-digest)** — Docker support build feature: The Docker events log shows image ID instead of image digest
