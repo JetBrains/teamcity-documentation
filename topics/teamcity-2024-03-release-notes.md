@@ -7,6 +7,49 @@
 
 <!--project: TeamCity Fix versions: {2024.03 (156166)} , {2024.01 Cloud} , -{2023.11 (147331)} , -{2023.11.1 (147412)} , -{2023.11.2 (147486)} , -{2023.11.3 (147512)} , -{2023.11.4 (147586)} #Fixed #Testing visible to: {All Users} -{Trunk issue}-->
 
+
+### Feature
+
+**[TW-81623](https://youtrack.jetbrains.com/issue/TW-81623/Approval-of-untrusted-builds-on-pull-requests-from-forks-for-GitHub-and-GitLab)** — Approval of "untrusted" builds on pull requests from forks for GitHub and GitLab
+
+**[TW-84116](https://youtrack.jetbrains.com/issue/TW-84116/Open-the-Agent-Terminal-in-checkout-directory-if-it-is-opened-from-the-build-page)** — Open the Agent Terminal in checkout directory if it is opened from the build page
+
+**[TW-85424](https://youtrack.jetbrains.com/issue/TW-85424/Calculate-and-store-optimized-time-as-build-statistics-in-composite-builds)** — Calculate and store optimized time as build statistics in composite builds
+
+**[TW-21673](https://youtrack.jetbrains.com/issue/TW-21673/Support-plugins-tools-packing-for-executable-bits-support)** — Support plugins/tools packing for executable bits support
+
+**[TW-71916](https://youtrack.jetbrains.com/issue/TW-71916/Support-configuration-cache-in-the-Gradle-runner)** — Support configuration cache in the Gradle runner
+
+**[TW-79582](https://youtrack.jetbrains.com/issue/TW-79582/Extending-vstest-command-of-the-.NET-runner-to-allow-retry-of-failing-tests)** — Extending vstest command of the .NET runner to allow retry of failing tests
+
+**[TW-85030](https://youtrack.jetbrains.com/issue/TW-85030/Add-dotCover-runner)** — Add dotCover runner
+
+**[TW-84686](https://youtrack.jetbrains.com/issue/TW-84686/Support-kotlin-1.9.x)** — Support kotlin 1.9.x
+
+**[TW-21761](https://youtrack.jetbrains.com/issue/TW-21761/Ability-to-configure-submodule-authentication-different-from-the-main-repository-one)** — Ability to configure submodule authentication different from the main repository one
+
+**[TW-79525](https://youtrack.jetbrains.com/issue/TW-79525/Redesign-the-add-new-parameter-dialog)** — Redesign the "add new parameter" dialog
+
+**[TW-85783](https://youtrack.jetbrains.com/issue/TW-85783/Bundle-Hashicorp-Vault-plugin)** — Bundle Hashicorp Vault plugin
+
+**[TW-19132](https://youtrack.jetbrains.com/issue/TW-19132/Option-to-run-the-build-even-if-artifact-dependency-failed-to-download-optional-dependency)** — Option to run the build even if artifact dependency failed to download (optional dependency)
+
+**[TW-71308](https://youtrack.jetbrains.com/issue/TW-71308/Support-custom-lfs-URL-and-credentials)** — Support custom lfs URL and credentials
+
+**[TW-77455](https://youtrack.jetbrains.com/issue/TW-77455/More-control-over-helix-swarm-review-comments-from-commit-status-publisher)** — More control over helix swarm review comments from commit status publisher
+
+**[TW-80947](https://youtrack.jetbrains.com/issue/TW-80947/Allow-disabling-Commit-Status-Publisher-comments-in-Perforce-Swarm)** — Allow disabling Commit Status Publisher comments in Perforce Swarm
+
+**[TW-84952](https://youtrack.jetbrains.com/issue/TW-84952/Make-it-possible-to-remap-VCS-root-fetch-URL-on-the-agent)** — Make it possible to remap VCS root fetch URL on the agent
+
+**[TW-83261](https://youtrack.jetbrains.com/issue/TW-83261/Expose-information-about-the-tests-that-were-running-when-the-build-was-stopped)** — Expose information about the tests that were running when the build was stopped
+
+**[TW-82632](https://youtrack.jetbrains.com/issue/TW-82632/Telegraf-as-PerfMon-backend-to-collect-system-metrics)** — Telegraf as PerfMon backend to collect system metrics
+
+**[TW-59046](https://youtrack.jetbrains.com/issue/TW-59046/Extend-PerfMon-to-track-free-space-on-agent-during-build)** — Extend PerfMon to track free space on agent during build
+
+**[TW-84537](https://youtrack.jetbrains.com/issue/TW-84537/Allow-configuring-a-signal-to-terminate-the-build-processes)** — Allow configuring a signal to terminate the build processes
+
 ### Bug
 
 **[TW-85960](https://youtrack.jetbrains.com/issue/TW-85960)** — Matrix builds overview: all status filters become enabled when current filter is not relevant anymore
@@ -188,49 +231,6 @@
 **[TW-75353](https://youtrack.jetbrains.com/issue/TW-75353/Failed-tests-status-is-reported-for-canceled-builds-using-Helix-Swarm-status-API.)** — Failed tests status is reported for canceled builds using Helix Swarm status API.
 
 **[TW-69407](https://youtrack.jetbrains.com/issue/TW-69407/Provide-better-DSL-for-GitHub-Commit-Status-Publisher-build-feature-with-Access-Token-authentication)** — Provide better DSL for GitHub Commit Status Publisher build feature with Access Token authentication
-
-
-### Feature
-
-**[TW-81623](https://youtrack.jetbrains.com/issue/TW-81623/Approval-of-untrusted-builds-on-pull-requests-from-forks-for-GitHub-and-GitLab)** — Approval of "untrusted" builds on pull requests from forks for GitHub and GitLab
-
-**[TW-84116](https://youtrack.jetbrains.com/issue/TW-84116/Open-the-Agent-Terminal-in-checkout-directory-if-it-is-opened-from-the-build-page)** — Open the Agent Terminal in checkout directory if it is opened from the build page
-
-**[TW-85424](https://youtrack.jetbrains.com/issue/TW-85424/Calculate-and-store-optimized-time-as-build-statistics-in-composite-builds)** — Calculate and store optimized time as build statistics in composite builds
-
-**[TW-21673](https://youtrack.jetbrains.com/issue/TW-21673/Support-plugins-tools-packing-for-executable-bits-support)** — Support plugins/tools packing for executable bits support
-
-**[TW-71916](https://youtrack.jetbrains.com/issue/TW-71916/Support-configuration-cache-in-the-Gradle-runner)** — Support configuration cache in the Gradle runner
-
-**[TW-79582](https://youtrack.jetbrains.com/issue/TW-79582/Extending-vstest-command-of-the-.NET-runner-to-allow-retry-of-failing-tests)** — Extending vstest command of the .NET runner to allow retry of failing tests
-
-**[TW-85030](https://youtrack.jetbrains.com/issue/TW-85030/Add-dotCover-runner)** — Add dotCover runner
-
-**[TW-84686](https://youtrack.jetbrains.com/issue/TW-84686/Support-kotlin-1.9.x)** — Support kotlin 1.9.x
-
-**[TW-21761](https://youtrack.jetbrains.com/issue/TW-21761/Ability-to-configure-submodule-authentication-different-from-the-main-repository-one)** — Ability to configure submodule authentication different from the main repository one
-
-**[TW-79525](https://youtrack.jetbrains.com/issue/TW-79525/Redesign-the-add-new-parameter-dialog)** — Redesign the "add new parameter" dialog
-
-**[TW-85783](https://youtrack.jetbrains.com/issue/TW-85783/Bundle-Hashicorp-Vault-plugin)** — Bundle Hashicorp Vault plugin
-
-**[TW-19132](https://youtrack.jetbrains.com/issue/TW-19132/Option-to-run-the-build-even-if-artifact-dependency-failed-to-download-optional-dependency)** — Option to run the build even if artifact dependency failed to download (optional dependency)
-
-**[TW-71308](https://youtrack.jetbrains.com/issue/TW-71308/Support-custom-lfs-URL-and-credentials)** — Support custom lfs URL and credentials
-
-**[TW-77455](https://youtrack.jetbrains.com/issue/TW-77455/More-control-over-helix-swarm-review-comments-from-commit-status-publisher)** — More control over helix swarm review comments from commit status publisher
-
-**[TW-80947](https://youtrack.jetbrains.com/issue/TW-80947/Allow-disabling-Commit-Status-Publisher-comments-in-Perforce-Swarm)** — Allow disabling Commit Status Publisher comments in Perforce Swarm
-
-**[TW-84952](https://youtrack.jetbrains.com/issue/TW-84952/Make-it-possible-to-remap-VCS-root-fetch-URL-on-the-agent)** — Make it possible to remap VCS root fetch URL on the agent
-
-**[TW-83261](https://youtrack.jetbrains.com/issue/TW-83261/Expose-information-about-the-tests-that-were-running-when-the-build-was-stopped)** — Expose information about the tests that were running when the build was stopped
-
-**[TW-82632](https://youtrack.jetbrains.com/issue/TW-82632/Telegraf-as-PerfMon-backend-to-collect-system-metrics)** — Telegraf as PerfMon backend to collect system metrics
-
-**[TW-59046](https://youtrack.jetbrains.com/issue/TW-59046/Extend-PerfMon-to-track-free-space-on-agent-during-build)** — Extend PerfMon to track free space on agent during build
-
-**[TW-84537](https://youtrack.jetbrains.com/issue/TW-84537/Allow-configuring-a-signal-to-terminate-the-build-processes)** — Allow configuring a signal to terminate the build processes
 
 
 ### Performance Problem
