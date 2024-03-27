@@ -2,6 +2,13 @@
 
 <chunk include-id="2024-03-tc">
 
+## Semi-Automatic Security Updates
+{product="tc"}
+
+To keep you ahead of the curve in preventing and mitigating security issues, TeamCity 2024.03 now automatically downloads critical security updates. This approach helps to keep your system fortified against emerging risks and to swiftly tackle major vulnerabilities. Note that after an update is downloaded automatically, a system administrator still needs to approve its installation.
+
+Learn more: [Upgrading TeamCity Server and Agents](upgrading-teamcity-server-and-agents.md#Security+Patches).
+
 ## New Bundled Plugin: HashiCorp Vault
 {product="tc"}
 
@@ -112,13 +119,6 @@ Fetch URL mapping rules, defined in agent configuration files, offer granular co
 
 Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
-
-## Semi-Automatic Security Updates
-{product="tc"}
-
-To keep you ahead of the curve in preventing and mitigating security issues, TeamCity 2024.03 now automatically downloads critical security updates. This approach helps to keep your system fortified against emerging risks and to swiftly tackle major vulnerabilities. Note that after an update is downloaded automatically, a system administrator still needs to approve its installation.
-
-Learn more: [Upgrading TeamCity Server and Agents](upgrading-teamcity-server-and-agents.md#Security+Patches). 
 
 
 
