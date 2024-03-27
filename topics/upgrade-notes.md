@@ -44,6 +44,11 @@ These changes and their potential effects on your existing projects include the 
     * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 24.0.9. This change also leads to the Docker Compose update to version v2.25.0.
     * [containerd](https://containerd.io) was updated to version 1.6.28.
 
+### Known Issues
+{id="known-issues-2024-03"}
+
+* Agents running from the Windows [2024.03-nanoserver-2022](https://hub.docker.com/layers/jetbrains/teamcity-agent/2024.03-nanoserver-2022/images/sha256-ed5c37ef169896e87dd37c250ee3447403f9609dd5f49348b39b75d0a01a8b57?context=explore) Docker image become incompatible with certain runners after they restart. This issue occurs only after a restart, after their initial launch agents operate as expected. View this YouTrack ticket to track this issue: [TW-87124](https://youtrack.jetbrains.com/issue/TW-87124).
+
 
 
 ## Changes from 2023.11.3 to 2023.11.4
