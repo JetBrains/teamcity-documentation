@@ -531,6 +531,8 @@ See also: [Run selected unit tests](https://learn.microsoft.com/en-us/dotnet/cor
 
 <tr>
 
+<anchor name="test-retry"/>
+
 <td>
 
 Test retry count
