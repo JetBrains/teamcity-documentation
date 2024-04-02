@@ -126,9 +126,7 @@ If the build is set up to checkout on the agent, by default Swabra ignores all `
 
 You can install `handle.exe` from the __Administration__ | __Tools__ page.  
 Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.  
-Specify whether you want to download the latest version of `handle.exe` or upload it manually choosing the path on local machine, and click __Add__. TeamCity will download or upload `handle.exe` and send it to Windows agents.
-
-`handle.exe` is present on agents only after the upgrade.
+Specify whether you want to download the latest version of `handle.exe` or upload it manually choosing the path on local machine, and click __Add__. After the TeamCity server downloads or uploads `handle.exe`, it sends this tool to Windows agents during a scheduled upgrade.
 
 Note that running `handle.exe` [requires administrator privileges](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) for the build agent user.
 
