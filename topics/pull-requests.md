@@ -21,6 +21,8 @@ Adding the Pull Requests feature to a build configuration allows you to:
 
 * Set up specific criteria that govern which pull requests to monitor. You can filter pull requests by their authors, target and origin branches.
 
+   <include src="branch-filter.md" include-id="vcs-branch-names-for-prs"/>
+
 * Set up a workflow in which developers work in their local branches and TeamCity does not waste resources building these changes unless they are sent as a pull (merge) request (see the [](#Interaction+with+VCS+Roots) section).
 
 
