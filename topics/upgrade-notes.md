@@ -49,6 +49,7 @@ These changes and their potential effects on your existing projects include the 
 
 * Agents running from the Windows [2024.03-nanoserver-2022](https://hub.docker.com/layers/jetbrains/teamcity-agent/2024.03-nanoserver-2022/images/sha256-ed5c37ef169896e87dd37c250ee3447403f9609dd5f49348b39b75d0a01a8b57?context=explore) Docker image become incompatible with certain runners after they restart. This issue occurs only after a restart, after their initial launch agents operate as expected. View this YouTrack ticket to track this issue: [TW-87124](https://youtrack.jetbrains.com/issue/TW-87124).
 * Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". To fix this issue, download an updated **VCS support: TFVC** plugin compatible with TeamCity 2024.03 from this YouTrack issue: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
+* If you face the "Invalid or corrupt jarfile /data/build/teamcity/buildAgent/plugins/environment-fetcher..." error reported by the bundled [](nodejs.md) or legacy [TeamCity.Node](https://github.com/jonnyzzz/TeamCity.Node) plugins, download the updated **Process Environment Fetcher** plugin from this YouTrack issue: [TW-87170](https://youtrack.jetbrains.com/issue/TW-87170).
 
 
 
