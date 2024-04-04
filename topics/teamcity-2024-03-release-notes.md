@@ -249,11 +249,7 @@
 
 ### Security
 
-26 security problems have been fixed.
+26 security problems have been fixed. This number includes both native TeamCity issues and vulnerabilities found in 3rd-party libraries TeamCity depends on. Upstream library issues usually make up the majority of this total number, and are promptly resolved by updating these libraries to their newest versions.
 
-> Getting timely security updates is now easier than ever! Starting with version 2024.03, TeamCity can auto-download lightweight security patches for crucial security issues. See this section for more information: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
-
-> We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2023.11) for the list of disclosed vulnerability fixes. Security bulletins for new versions are typically published within the next few days after the release date.
->
-{type="note"}
+To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2024.03). Security bulletins for new versions are typically published within the next few days after the release date.
 
