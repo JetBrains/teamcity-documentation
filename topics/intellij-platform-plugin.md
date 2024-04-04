@@ -3,7 +3,10 @@
 
 This plugin implements the TeamCity integration with IntelliJ Platform-based IDEs, including JetBrains IntelliJ IDEA, RubyMine, PyCharm, PhpStorm/WebStorm, AppCode, and Rider. Remote run / pretested commit functionality is only supported with the VCS integrations bundled with the IDEs by JetBrains. See the [plugin's page](https://plugins.jetbrains.com/plugin/1820-teamcity/versions) in the JetBrains marketplace for the list of supported versions.
 
->A usage example is provided in the related [blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/).
+> This is an introduction article that covers the very basics of working with the IntelliJ Platform Plugin. Refer to the [Plugin Documentation](https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html) and [this blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/) for more information.
+> 
+{type="note"}
+
 
 ## Features
 
@@ -40,7 +43,7 @@ __To install the TeamCity plugin for IntelliJ platform IDE__:
 3. In the __Plugins__ section, search for 'TeamCity' or click __Install JetBrains plugin...__ to view the list of available plugins.
 4. Select the TeamCity Integration, click the __Install__ button.
 5. Restart the IDE.
-6. Use the TeamCity menu to log in to your TeamCity server from the plugin.
+6. Use the TeamCity menu to [log in](https://www.jetbrains.com/help/teamcity/ij-addin/tc-logging-in-and-out.html) to your TeamCity server from the plugin.
 7. Invoke the __Update__ command in the __TeamCity__ menu to install the plugin version matching the server version and restart the IDE.
 
 ### Installing the Plugin Manually
