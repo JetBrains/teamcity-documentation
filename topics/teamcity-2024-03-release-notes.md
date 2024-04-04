@@ -253,3 +253,4 @@
 
 To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2024.03). Security bulletins for new versions are typically published within the next few days after the release date.
 
+> Getting timely security updates is now easier than ever! Starting with version 2024.03, TeamCity can auto-download lightweight security patches for crucial security issues. See this section for more information: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
