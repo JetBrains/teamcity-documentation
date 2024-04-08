@@ -29,7 +29,7 @@ If you have a build configuration which publishes images, you need to remove the
 
 It works as follows: when an image is published, TeamCity stores the information about the registry of the images published by the build. When the [server clean-up](teamcity-data-clean-up.md) is run and it deletes the build, all the configured connections are searched for the address of this registry, and the images published by the build are cleaned up using the credentials specified in the found connection.
 
-Clean-up is not currently available for build agents using Podman.
+Cleaning-up images pushed via Podman is currently enabled only if images were pushed from Linux agents, and only if the `--digestfile=<fileName>` option was set. Note that the `fileName` should be a path relative to the [checkout directory](build-checkout-directory.md) and should point to the final digest file location (this path should not be modified by further navigation commands).
 
 ### Clean-up of Images on Build Agent
                                    
