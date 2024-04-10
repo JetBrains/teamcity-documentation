@@ -122,7 +122,7 @@ The __Build branch__ drop-down menu is available if this build configuration (or
 If a project [stores its settings in a VCS](storing-project-settings-in-version-control.md), this tab allows you to choose which settings should be used for this new build:
 
 
-* Ssettings currently defined on the TeamCity server
+* Settings currently defined on the TeamCity server
 * Settings loaded from the VCS revision calculated for this build.
 
 The default behavior depends on the currently selected **Project Settings | Versioned Settings** page setting (see this section for more information: [](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
@@ -155,7 +155,7 @@ This tab allows you to add optional comments and [tags](build-actions.md#Add+Tag
 
 Promoted builds are custom builds with an overridden [artifact or snapshot dependencies](dependent-build.md). Such builds utilize different dependency builds compared to those they would use by default.
 
-For example, a build configuration A retrieves artifacts from a build configuration B. Normally, running a new A build utilizes the last successfull B build. If you want A to use an older B build, this earlier B build needs to be promoted.
+For example, a build configuration A retrieves artifacts from a build configuration B. Normally, running a new A build utilizes the last successful B build. If you want A to use an older B build, this earlier B build needs to be promoted.
 
 To promote a build, open the build results page of the dependency build and click __Actions | Promote__. Promotion has a one-time effect: after the current run, build configurations revert back to their default dependency logic (last successful or last pinned build).
 
