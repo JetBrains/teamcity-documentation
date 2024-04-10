@@ -131,6 +131,8 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dotCover
 object ConfigA : BuildType({
     name = "Configuration A: Test with code coverage and publish snapshots"
     // Publish snaphots
+    // Note that the path to the snapshot directory may vary depending on the runner type and/or settings
+    // For example, for NUnit runner use "%teamcity.agent.work.dir%\..\temp\agentTmp\dotNetCoverageResults\*.dcvr" instead
     artifactRules = """%teamcity.agent.work.dir%\..\temp\agentTmp\*.dcvr"""
     
     steps {
