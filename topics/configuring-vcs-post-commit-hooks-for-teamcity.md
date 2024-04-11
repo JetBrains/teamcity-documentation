@@ -223,7 +223,7 @@ To check the current polling interval and the commit hook status, navigate to **
 
 <img src="dk-vcs-root-hooks.png" width="706" alt="Polling and hook information"/>
 
-Click a VCS root name to view its settings, and scroll down to the **Changes Checking** section if you need to set up a [custom polling interval](configuring-vcs-roots.md#checkingInterval).
+To set a custom value for the [minimum polling interval](configuring-vcs-roots.md#checkingInterval), navigate to VCS root settings and scroll down to the **Changes Checking** section. 
 
 <img src="dk-vcsroot-pollingInterval.png" width="706" alt="Change polling interval"/>
 
