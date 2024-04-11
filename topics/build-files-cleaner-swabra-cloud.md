@@ -1,17 +1,20 @@
 [//]: # (title: Build Files Cleaner \(Swabra\))
 [//]: # (auxiliary-id: viewpage.actionpageId113084151;Build Files Cleaner \(Swabra\))
 
-_Swabra_ is a bundled plugin allowing you to clean files created during the build.
+_Swabra_ is a bundled TeamCity plugin that allows you to add the Swabra [build feature](adding-build-features.md) to your build configurations. This build feature allows you to do the following:
 
-The plugin remembers the state of the file tree after the sources checkout and deletes all the newly added files at the end of the build or at the next build start depending on the settings. Swabra also detects files modified or deleted during the build and reports them to the build log (however, such files are not restored by the plugin). The plugin can also ensure that by the start of the build there are no files modified or deleted by previous builds and initiate clean checkout if such files are detected.
+* Remove files generated during a build. The feature creates a list of all files in the checkout directory after the sources checkout is complete. After a build finishes (or before the next build starts), files that are not on this list are automatically removed.
 
-Moreover, Swabra gives the ability to dump processes which lock directory by the end of the build (requires [handle.exe](#Installing+Handle))
+* Detect files modified or deleted during the build. Such files are reported to the build log (however, deleted files are not restored). This allows you to ensure your new builds do not start with certain source files deleted or modified by previous builds, and initiate a clean checkout if this is the case.
 
-Swabra can be added as a [build feature](adding-build-features.md) to your build configuration regardless of what set of build steps you have. By configuring its options you can enable scanning the checkout directory for newly created, modified and deleted files and enable file locking processes detection.
+* Dump processes that lock directory by the end of the build (requires [handle.exe](#Installing+Handle)).
 
->Swabra should be used with the [automatic checkout](vcs-checkout-mode.md) only: after this build feature is configured, it will run __before the first build step__ to remember the state of the file tree after the sources checkout and to restore it after the build.
 
-The checkout directory state is saved into a file in the caches directory named `<checkout-directory-name-hash>.snapshot` using the DiskDir format. The path to the checkout directory to be cleaned is saved into the `snapshot.map` file. The snapshot is used later (at the end of the build or at the next build start) to determine which files and directories are newly created, modified or deleted. It is done based on the actual files' presence, last modification data and size comparison with the corresponding records in the snapshot.
+> Swabra is compatible with any build configuration regardless of its build steps. However, it should be used only when the checkout mode is set to [automatic checkout](vcs-checkout-mode.md): when configured, Swabra runs __before the first build step__ to record the file tree after the sources checkout and to restore it after the build finishes.
+>
+{type="note"}
+
+Swabra saves the checkout directory state to the `<checkout-directory-name-hash>.snapshot` file in the caches directory using the DiskDir format. The path to the checkout directory to be cleaned is stored in the `snapshot.map` file. The snapshot stores information about existing files, their last modification and size. This information is used when a build finishes (or a new build is about to start) to identify changes.
 
 ## Configuring Swabra Options
 
@@ -54,9 +57,9 @@ Clean checkout
 
 <td>
 
-Select the __Force clean checkout if cannot restore clean directory state__ option to ensure that the checkout directory corresponds to the sources in the repository at the build start. If Swabra detects any modified or deleted files in the checkout directory before the build start, it will enforce [clean checkout](clean-checkout.md). The build will fail if Swabra cannot delete some files created during the previous build.
+Select the __Force clean checkout if cannot restore clean directory state__ option to ensure new builds utilize source files that fully match those stored in the remote repository. If Swabra detects files in the checkout directory that were modified or deleted, it enforces the [clean checkout](clean-checkout.md). If Swabra cannot remove any leftover files created by a previous build, the current build will fail.
 
-If this option is disabled, you will only get warnings about modified and deleted files.
+If this option is disabled, Swabra displays warnings when it finds modified and deleted files, but does not trigger the clean checkout.
 
 
 </td></tr><tr>
@@ -70,10 +73,11 @@ Paths to monitor
 
 <td>
 
-Specify a newline\-separated set of `+-:path` rules to define which files and directories are to be involved in the files collection process (by default and until explicitly excluded, the entire checkout directory is monitored). The path can be relative (based on the [build's checkout directory](build-checkout-directory.md)) or absolute and can include Ant-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
+Specify a newline-separated set of `+:path` (to include) and `-:path` (to exclude) rules to specify files and directories Swabra should watch. By default, the entire checkout directory is monitored. The path can be relative to the [build's checkout directory](build-checkout-directory.md) or absolute, and can include Ant-like wildcards. If no `+:` or `-:` prefix is specified, a rule as treated as "include".
 
-Rules on any path must come in the order __from more general to more concrete__.    
-The top level path must always point to a directory. Specifying a directory affects its entire content and subdirectories. Note also that Swabra is __case-sensitive.__
+Rules should be arranged according to their explicitness: less specific rules that point to directories and use wildcards should be placed above more targeted rules that point to individual files. The first rule should always point to a directory.
+
+Swabra is __case-sensitive.__
 
 Examples:
 
@@ -84,7 +88,8 @@ Examples:
 
 <note>
 
-Note that after removing some exclude rules, it is advisable to run a clean checkout.
+We recommend that you run a clean checkout after removing exclude (`-:...`) rules.
+
 </note>
 
 
@@ -99,7 +104,7 @@ Locking processes
 
 <td>
 
-Select whether you want Swabra to inspect the checkout directory for processes locking files in this directory, and what to do with such processes. Note that [`handle.exe`](#Installing+Handle) is required on agents for locking processes detection.
+Select whether Swabra should search for processes that lock checkout directory files, and how it should handle such processes. Note that Swabra requires [`handle.exe`](#Installing+Handle) installed on agents to detect such processes.
 
 
 </td></tr><tr>
@@ -113,20 +118,18 @@ Verbose output
 
 <td>
 
-Check this option to enable detailed logging to build log.
+Check this option to enable detailed logging to the build log.
 
 
 </td></tr></table>
 
 ## Default excluded paths
 
-If the build is set up to checkout on the agent, by default Swabra ignores all `.svn`, `.git`, `.hg`, `CVS` directories and their content. To turn off this behaviour, specify an empty `swabra.default.rules` configuration parameter.
+If a build employs the agent checkout, Swabra ignores all `.svn`, `.git`, `.hg`, `CVS` directories and their content. To disable this behaviour, specify an empty `swabra.default.rules` configuration parameter.
 
 ## Installing Handle
 
-TeamCity Cloud doesn't currently support installation of Agent Tools by the user. Contact TeamCity Support if you need it to be installed in your TeamCity Cloud instance.
-
-`handle.exe` is present on agents only after the upgrade.
+TeamCity Cloud does not currently support manual installation of agent tools. Contact TeamCity Support if you need Handle to be installed in your TeamCity Cloud instance.
 
 Note that running `handle.exe` [requires administrator privileges](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) for the build agent user.
 
