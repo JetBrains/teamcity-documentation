@@ -1,7 +1,7 @@
 [//]: # (title: NTLM HTTP Authentication)
 [//]: # (auxiliary-id: NTLM HTTP Authentication)
 
-The TeamCity NTLM HTTP authentication feature employs Integrated Windows Authentication and allows transparent/SSO login to the TeamCity web UI when using browsers/clients supporting NTLM and Negotiate HTTP authentications with NTLMv1, NTLMv1, NTLMv2 and Kerberos logic. The authentication is supported when the TeamCity server runs under Windows OS. Generally, it allows users to log in to the TeamCity server web UI using their NT domain account without the need to enter credentials manually.
+The TeamCity NTLM HTTP authentication feature employs Integrated Windows Authentication and allows transparent/SSO login to the TeamCity web UI when using browsers/clients supporting NTLM and Negotiate HTTP authentications with NTLMv1, NTLMv2 and Kerberos logic. The authentication is supported when the TeamCity server runs under Windows OS. Generally, it allows users to log in to the TeamCity server web UI using their NT domain account without the need to enter credentials manually.
 
 ## Configuration
 
