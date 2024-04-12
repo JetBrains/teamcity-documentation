@@ -165,6 +165,10 @@ If MySQL server is going to be used with TeamCity in addition to the [basic setu
 
 The following settings should be reviewed and/or changed:
 
+### Table primary keys
+
+TeamCity manages tables that do not have primary keys. For that reason, the MySQL server's [sql_require_primary_key](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_require_primary_key) system variable must be set to `OFF`.
+
 ### InnoDB database engine
 
 Make sure you're using InnoDB database engine for tables in TeamCity database. You can check what engine is used with help of this command:

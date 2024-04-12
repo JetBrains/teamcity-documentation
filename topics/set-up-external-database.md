@@ -45,6 +45,7 @@ Recommended database server settings:
  * Use [utf8mb4 character set](configuring-utf8-character-set-for-mysql.md) (or utf8 if MySQL version is 5.5.2 or earlier).
  * Use case-sensitive collation.
  * Make sure that the time zone of the JVM running TeamCity and that of MySQL instance are the same using the `my.cnf` file or by configuring time zones at the OS level.
+ * The server's [sql_require_primary_key](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_require_primary_key) system variable must be set to `OFF` since TeamCity manages tables without primary keys.
  * [See also recommendations for MySQL server settings](how-to.md#Configure+Newly+Installed+MySQL+Server).
 
 The MySQL user account that will be used by TeamCity must be granted all permissions on the TeamCity database. This can be done by executing the following SQL commands from the MySQL console:
