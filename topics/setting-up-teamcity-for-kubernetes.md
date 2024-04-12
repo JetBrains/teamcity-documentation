@@ -334,6 +334,71 @@ spec:
           memory: "2Gi"
 ```
 
+## Kotlin DSL
+
+To create and setup k8s profiles and images, create [KubernetesCloudProfile](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/kubernetes-cloud-profile/index.html?query=KubernetesCloudProfile) and [KubernetesCloudImage](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/kubernetes-cloud-image/index.html) class instances under the project's `features` group. Set an image `profileId` property to the profile `id` value to assign this image to the target profile.
+
+
+```Kotlin
+project {
+    // ...
+    features {
+        // ...
+        kubernetesCloudProfile {
+            id = "kube-1"
+            name = "K8S Agents"
+            description = "EKS"
+            serverURL = "https://myteamcityserver.com"
+            terminateIdleMinutes = 30
+            apiServerURL = "https://123.gr7.eu-west-1.eks.amazonaws.com"
+            caCertData = "abc"
+            authStrategy = eks {
+                accessId = "aws_access_id"
+                secretKey = "aws_key"
+                clusterName = "my-k8s-cluster"
+            }
+        }
+        kubernetesCloudImage {
+            id = "PROJECT_EXT_10"
+            profileId = "kube-1"
+            agentPoolId = "21"
+            agentNamePrefix = "k8s-singlec"
+            maxInstancesCount = 5
+            podSpecification = runContainer {
+                dockerImage = "jetbrains/teamcity-agent"
+            }
+        }
+        kubernetesCloudImage {
+            id = "PROJECT_EXT_11"
+            profileId = "kube-1"
+            agentPoolId = "21"
+            agentNamePrefix = "k8s-pspec"
+            maxInstancesCount = 5
+            podSpecification = customTemplate {
+                customPod = """
+                    apiVersion: v1
+                    kind: Pod
+                    metadata:
+                      labels:
+                        app: teamcity-agent
+                    spec:
+                      restartPolicy: Never
+                      containers:
+                        - name: teamcity-agent
+                          image: jetbrains/teamcity-agent
+                          resources:
+                            limits:
+                              memory: "2Gi"
+                """.trimIndent()
+            }
+        }
+    }
+}
+```
+
+See [KubernetesCloudProfile](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/kubernetes-cloud-profile/index.html?query=KubernetesCloudProfile) and [KubernetesCloudImage](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/kubernetes-cloud-image/index.html) for more examples and API descriptions.
+
+
 <seealso>
         <category ref="concepts">
             <a href="agent-cloud-profile.md">Agent Cloud Profile</a>
