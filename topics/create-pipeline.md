@@ -1,21 +1,25 @@
 [//]: # (title: Create Pipeline)
 [//]: # (auxiliary-id: Create Pipeline)
 
-_This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md)._
-{product="tc"}
+> This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
+> 
+{type= "note" product="tc"}
 
-_This tutorial assumes that you have already started your TeamCity instance. We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md)._
-{product="tcc"}
+This tutorial assumes that you have already started your TeamCity instance. We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
+{type= "note" product="tcc"}
 
-In TeamCity terms, a pipeline is called a _build chain_.
+A _build chain_ or a _pipeline_ is a sequence of consecutively run [build configurations](creating-and-editing-build-configurations.md). In TeamCity, these configurations can belong to different projects, and pass files (artifacts) from one build to another.
 
-Builds perform various CI/CD jobs. When you connect them into a sequence, they form a chain. Builds inside a chain can use the same revision of the source project and pass artifacts to one another. Such chains can be quite complex and contain dozens of builds connected in series or in parallel. They are often designed to compile, test, and deploy a certain project, but you can create them for any other goal.
-
-In this tutorial, we will explain the basics of creating pipelines in TeamCity and learn how to create a chain like this:
+This tutorial walks you through setting up the following project:
 
 <img src="buildChainSimple.png" width="674" alt="Simple build chain in TeamCity"/>
 
-While running this chain, TeamCity will (1) build a Spring Boot application and (2) create its Docker image. Then, it will (3-4) check the app with two sets of tests and (5) report the test results.
+The pipeline above cycles through the following stages:
+
+1 — Building the sample Spring Boot application
+2 — Creating a Docker image for this app
+3 and 4 — Running two sets of parallel tests
+
 
 >You can also watch our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs). It shows a different example than the one described in this article.
 
