@@ -532,7 +532,7 @@ Required on the build agent:
 
 JUnit
 
-</td><td>3.8.1+, 4.x</td><td></td></tr>
+</td><td>3.8.1+, 4.x, 5.x</td><td></td></tr>
 
 <tr><td>
 

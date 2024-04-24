@@ -47,14 +47,15 @@ If the "_[Show changes from snapshot dependencies](configuring-vcs-settings.md#s
 ### Build Changes
 
 A schedule trigger can watch a build in any specified build configuration and trigger a build only if the watched build has changed since the previous triggering. You can select which build to watch:
+
 * Last finished build
 * Last successful build
 * Last [pinned build](build-actions.md#Pin+Build)
 * Last finished build with a specified [build tag](build-actions.md#Add+Tags+to+Build)
 
-If the trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in own configuration.
+If the trigger detects a new build that satisfies the selected characteristic in the watched configuration, it queues a new build in its own configuration.
  
-The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the default branch.
+The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the target branch. If the watched configuration has finished builds in multiple branches, the trigger settings also include the **Build branch filter** field that allows you to watch builds in the specific branch only. This setting is initially set to `+:<default>`, which means the trigger will monitor builds only in the default branch of the watched configuration.
  
 If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](running-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
 

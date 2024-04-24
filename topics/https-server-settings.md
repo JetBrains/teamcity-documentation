@@ -213,3 +213,10 @@ teamcity.https.use.protocols=TLSv1.3
 After you modify this property, restart your TeamCity server for the change to take effect.
 
 <img src="dk-tls-protocols.png" width="706" alt="TeamCity using the TLS 1.3 Protocol"/>
+
+
+## Additional Information
+
+If the HTTPS access is enabled, TeamCity adds the [Strict Transport Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS) header with one-year validity. As a result, your browser starts enforcing the HTTPS protocol and prevents you from accessing HTTP resources hosted on the same domain.
+
+This behavior is intentional and cannot be disabled. If you need to access internal resources via HTTP URLs, consider moving these resources behind a proxy and configuring HTTPS access for them. As a workaround, you can also manually remove HSTS settings in your browser when you need to visit an HTTP URL.
