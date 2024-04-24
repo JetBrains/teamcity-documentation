@@ -22,6 +22,16 @@ To see all the current server warnings and errors, go to __Administration | Proj
 
 </note>
 
+> Clean-ups do not affect the following build types:
+>
+> * [pinned builds](build-actions.md#Pin+Build)
+> * builds used as an [artifact of snapshot dependency](configuring-dependencies.md) in other builds when the "_[Prevent clean-up](#Base+Rule+Behavior+for+Dependency+Builds)_" option for dependencies is enabled in the build configuration. Such builds are marked with the ![link.png](link.png) icon in the build history list
+> * builds of [recently removed build configurations](#Deleted+Build+Configurations+Clean-up)
+> 
+> These builds retain all their data after server clean-up routines.
+>
+{type="note"}
+
 TeamCity Cloud also comes bundled with the [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) plugin that helps easily free disk space.
 {product="tcc"}
 
@@ -161,10 +171,7 @@ When a project or a build configuration is deleted, the corresponding build data
 To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to the required number of seconds to protect the data from deletion.
 {product="tc"}
 
-There are builds that preserve all their data and are not affected during clean-up. These are:
-* [pinned builds](build-actions.md#Pin+Build)
-* builds used as an [artifact of snapshot dependency](configuring-dependencies.md) in other builds when the "_[Prevent clean-up](#Base+Rule+Behavior+for+Dependency+Builds)_" option for dependencies is enabled in the build configuration. Such builds are marked with the ![link.png](link.png) icon in the build history list
-* builds of build configurations that were deleted less than one day ago
+
 
 [//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
 
