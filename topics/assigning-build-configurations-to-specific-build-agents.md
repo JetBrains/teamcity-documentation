@@ -25,7 +25,7 @@ To establish a Build Agent's run configuration policy:
 	
 1. Click the __Agents__ and select the desired build agent.
 2. Click the __Compatible Configurations__ tab.
-3. Select __Run assigned configurations only__.
+3. Set the **Current run configuration policy** option to **Run assigned configurations only**.
 4. Click the **Assign configurations** button and tick the desired build configurations names to run on the build agent.
 
 ## Making Build Agent Name and Property a Build Configuration Requirement
@@ -33,15 +33,30 @@ To establish a Build Agent's run configuration policy:
 To make a build configuration run the builds on a build agent with the specified name and properties:
 	
 1. Click __Administration__ and select the desired build configuration.
-2. Click Agent Requirements (see [Configuring Agent Requirements](configuring-agent-requirements.md)).
-3. Click the __Add requirement for a property__ link, type the `agent.name` property, set its condition to __equals__ and specify the build agent's name.
-4. Click the __Add requirement for a property__ link and add the required property, condition, and value. For example, if you have several Linux-only builds, you can add the `teamcity.agent.jvm.os.name` property and set the __starts with__ condition and the `linux` value.
+2. Select the **Agent Requirements** tab in the left navigation panel (see [Configuring Agent Requirements](configuring-agent-requirements.md)).
+3. Click **Add new requirement** and enter "teamcity.agent.name" in the **Parameter name** field.
+4. Change the condition to "equals" and enter the full agent name in the **Value** field. 
 
-<tip>
+The following [Kotlin](kotlin-dsl.md) snippet illustrates the result:
 
-You can also use the condition __contains__, however, it may include more than one specific build agent (for example, a build configuration with a requirement `agent.name` __contains__ `Agent10`, will run on agents named __Agent10__, __Agent10a__, and __Agent10b__).
+```Kotlin
+object Build : BuildType({
+   name = "Build"
+   steps {
+      // build steps
+   }
+   // ...
+   requirements {
+      equals("teamcity.agent.name", "SandboxBuilder14")
+   }
+})
+```
 
-</tip>
+Depending on your needs, you can modify this requirement as follows:
+
+* Change the **Condition** from "equals" to a non-strict operator (for example, "contains") to include multiple similarly named agents. For instance, the `startsWith("teamcity.agent.name", "NightlyAgent")` condition allows builds to run on "NightlyAgent1", "NightlyAgent_24", "NightlyAgent.A" and other build agents whose names satisfy the requirement.
+* Use the `teamcity.agent.jvm.os.name` parameter to choose agents by their operating systems rather than names. For example, `equals("teamcity.agent.jvm.os.name", "Mac OS X")`.
+
 
 [//]: # (Internal note. Do not delete. "Assigning Build Configurations to Specific Build Agentsd17e193.txt")    
 
