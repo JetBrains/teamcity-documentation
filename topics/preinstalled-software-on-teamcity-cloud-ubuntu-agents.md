@@ -8,17 +8,17 @@
 |[Git](https://git-scm.com/)|2.43.2|
 |[Git LFS](https://git-lfs.github.com/)|3.5.1|
 |[Zsh](https://www.zsh.org/)|5.8|
-|[Chromium](https://www.chromium.org/)|123.0.6312.122|
+|[Chromium](https://www.chromium.org/)|124.0.6367.60|
 |[Firefox](https://www.mozilla.org/en-US/firefox/)||
-|[Google Chrome](https://www.google.com/chrome/)|123.0.6312.122|
+|[Google Chrome](https://www.google.com/chrome/)|124.0.6367.78|
 |[ChromeDriver](https://chromedriver.chromium.org/)|114.0.5735.90|
-|[Docker](https://www.docker.com/)|26.0.1|
-|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|26.0.1|
+|[Docker](https://www.docker.com/)|26.1.0|
+|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|26.1.0|
 |[Docker Compose](https://docs.docker.com/compose/)|1.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.15.38|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.15.40|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)||
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.59.0|
-|[Google Cloud SDK](https://cloud.google.com/sdk)|471.0.0|
+|[Google Cloud SDK](https://cloud.google.com/sdk)|473.0.0|
 |[JDK 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)|java-1.8.0-amazon-corretto|
 |[JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)|java-11-amazon-corretto|
 |[JDK 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html)|java-21-amazon-corretto|
@@ -44,7 +44,7 @@
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
 |[RVM](https://rvm.io/)|1.29.12-next|
-|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.25.1|
+|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.26.0|
 |[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2023.12.1|
 |[Python Poetry](https://python-poetry.org/)|1.8.2)|
 |[rustup](https://rustup.rs/)|1.27.0|
