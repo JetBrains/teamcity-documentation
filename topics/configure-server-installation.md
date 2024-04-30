@@ -38,14 +38,41 @@ By default, the TeamCity server is accessible under the root context of the serv
 
 TeamCity Server has the main process which can also launch child processes. Child processes use available memory on the machine. This section covers the memory settings of the main TeamCity server process only, as it requires special configuration.
 
-As a JVM application, the TeamCity main server process utilizes only memory available to the JVM. The required memory depends on the JVM bitness (64- or 32-bit). The memory used by JVM usually consists of: _heap_ (configured via `-Xmx`) and _metaspace_ (limited by the amount of available native memory), internal JVM (usually tens of MB), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory. This setting can be manually configured by [passing](server-startup-properties.md#JVM+Options) the `-Xmx` (heap space) option to the JVM running the TeamCity server. In most cases, it means setting `TEAMCITY_SERVER_MEM_OPTS` environment variable to a value like `-Xmx750m`. To apply the changed memory value, [stop and then start the server process](start-teamcity-server.md) via the respective commands.
+As a JVM application, the TeamCity main server process utilizes only memory available to the JVM. The required memory depends on the JVM bitness (64- or 32-bit). The memory used by JVM usually consists of: _heap_ (configured via `-Xmx`) and _metaspace_ (limited by the amount of available native memory), internal JVM (usually tens of MB), and OS-dependent memory features like memory-mapped files. TeamCity mostly depends on the heap memory. To configure the heap memory size:
 
-Once you start [using TeamCity for production purposes](#Configuring+Server+for+Production+Use) or if you want to load the server during evaluation, you should manually set the appropriate memory settings for the TeamCity server.
+<tabs>
 
-Possible values:
-* __Minimum setting__: for 64-bit Java (bundled) `-Xmx1024m`, for 32-bit Java `-Xmx750m`.
-* __Recommended setting for medium server__: for 64-bit Java `-Xmx2048m`, for 32-bit Java `-Xmx1024m`. Greater settings with the 32-bit Java can cause `OutOfMemoryError` with "_Native memory allocation (malloc) failed_" JVM crashes or "Unable to create new native thread" messages.
-* __Recommended setting for large server__ (64-bit Java should be used): `-Xmx4g`. This setting should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
+<tab title="On Windows">
+
+1. Stop the TeamCity server.
+2. Run the `sysdm.cpl` command and navigate to **Advanced | Environment Variables**.
+3. Check if the `TEAMCITY_SERVER_MEM_OPTS` entry exists under the System variables section, and if it's not, add it.
+4. Set this property to the `Xmx<Size>` value. For example, `TEAMCITY_SERVER_MEM_OPTS=-Xmx3g`. See the paragraph below for more examples.
+5. Restart your server machine.
+6. [Start TeamCity server](start-teamcity-server.md) after your server reboots.
+
+</tab>
+
+
+<tab title="On Linux and macOS">
+
+1. Stop the TeamCity server.
+2. Open the `/etc/environment` file.
+3. Check if the `TEAMCITY_SERVER_MEM_OPTS` line exists in the file, and if it's not, add it.
+4. Set this property to the `Xmx<Size>` value. For example, `TEAMCITY_SERVER_MEM_OPTS=-Xmx3g`. See the paragraph below for more examples.
+5. Save the file and restart your server machine.
+6. [Start TeamCity server](start-teamcity-server.md) after your server reboots.
+
+</tab>
+
+</tabs>
+
+
+Possible values for the `TEAMCITY_SERVER_MEM_OPTS` variable:
+
+* __Minimum setting__: `-Xmx1024m` for 64-bit Java (bundled), and `-Xmx750m` for 32-bit Java.
+* __Recommended setting for medium server__: `-Xmx2048m` for 64-bit Java, `-Xmx1024m` for 32-bit Java. Greater settings with the 32-bit Java can cause `OutOfMemoryError` with "_Native memory allocation (malloc) failed_" JVM crashes or "Unable to create new native thread" messages.
+* __Recommended setting for a large server__ (64-bit Java should be used): `-Xmx4g`. This setting should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
 * __Maximum setting for large-scale server__ (64-bit Java should be used): `-Xmx10g`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
 The `ReservedCodeCacheSize=640m` attribute is set by default for new server installations. 
