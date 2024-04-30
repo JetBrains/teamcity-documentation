@@ -61,17 +61,36 @@ If a branch specification has several patterns with the `*` wildcard, then TeamC
 will include the `refs/heads/v1/hotfix` branch (because `v1` is shorter than `hotfix`).    
 If 2 patterns with `*` wildcard produce logical names of the same length, then the last pattern wins.
 
-The branch specification supports comments as lines beginning with `#`.
-
-There is also a special escaping syntax defined via `#! escape: CHARACTER` syntax: for example, to use round brackets in a branch name, you need to escape them. Let's say you want to track the `release-(7.1)` branch: to do that, specify an escaping symbol as the first line in the specification. For Mercurial, the following branch specification does that:
-
-
-```Plain Text
-#! escape: \
-+:release-\(7.1\)
-```
-
 >To run builds on GitHub and GitLab pull request branches, use the [Pull Requests](pull-requests.md) build feature.
+
+### Comments and Service Expressions
+
+Branch specifications also support expressions starting with the `#` character. As opposed to regular expressions that define names of branches that should be included or excluded to (from) the specification, these are specially crafted "service" lines designed for specific tasks.
+
+* Any line starting with `#` is treated as regular comment.
+
+    ```Plain Text
+    +:refs/heads/main
+    # Exclude legacy branch. DO NOT REMOVE!
+    -:refs/heads/release-v1
+    ```
+
+* The `#! escape: <YOUR_CHARACTER>` expression defines an escape character that allows you to use special chars in branch names. For example, to write a branch specification rule for the "release-(7.1)" branch, you need to escape round brackets. If you want to use the backslash (`\`) as an escape character, your final branch spec can look like the following:
+
+    ```Plain Text
+    #! escape: \
+    +:release-\(7.1\)
+    ```
+  
+* The `#! fallbackToDefault: false` expression allows you to prohibit TeamCity from using a [default branch](#Default+Branch) whenever the required branch is not found. For example, when you utilize [](teamcity-rest-api.md) to start a build for a non-existent branch (by default, TeamCity will run a new build for the default branch in this case).
+
+    ```Plain Text
+    #! fallbackToDefault: false
+    +:included_branch
+    -:excluded_branch
+    ```
+
+
 
 
 ## Branch-Specific Build Configuration Settings
