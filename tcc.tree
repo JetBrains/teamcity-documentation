@@ -24,6 +24,7 @@
     </toc-element>
     <toc-element toc-title="Installation and Upgrade">
         <toc-element id="supported-platforms-and-environments.md" show-structure-for="chapter" show-structure-depth="4">
+            <toc-element id="jetbrains-hosted-agents.md"/>
             <toc-element id="testing-frameworks.md"/>
             <toc-element id="code-quality-tools.md" show-structure-for="chapter" show-structure-depth="4"/>
         </toc-element>
