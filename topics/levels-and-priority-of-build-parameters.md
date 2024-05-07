@@ -99,7 +99,34 @@ echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.a
 <include src="configuring-build-parameters.md" include-id="change-parameter-from-build"/>
 
 
-
+> Note that using the `setParameter` service message overrides the parameter value only in the scope of the current build or build chain. To **permanently** override a parameter value, send the REST API request from your build step like shown below:
+> 
+> ```Kotlin
+> import jetbrains.buildServer.configs.kotlin.*
+> import jetbrains.buildServer.configs.kotlin.buildSteps.script
+>
+> object UpdateBuildVersion : BuildType({
+> name = "Update Build Version"
+> 
+>     steps {
+>         script {
+>             id = "simpleRunner"
+>             scriptContent = """
+>                 version=%\build.version%
+>                 ((version=version+1))
+>                 
+>                 curl --location --request PUT 'http://<server_URL>/app/rest/projects/<project_name>/parameters/build.version' \
+>                 --header 'Accept: */*' \
+>                 --header 'Content-Type: text/plain' \
+>                 --header 'Authorization: Bearer your_token' \
+>                 --data ${'$'}version
+>             """.trimIndent()
+>         }
+>     }
+> })
+> ```
+>
+{type="warning"}
 
 
 ## Checking Parameter Values
