@@ -21,9 +21,9 @@ The _finish build trigger_ starts a build of the current build configuration whe
 * **Build customization** — provides options similar to the [Run Custom Build dialog](running-custom-build.md). See the [](#Triggered+Build+Customization) section for more information.
 
 
-## Finish Trigger and Snapshot Dependencies
+## Finish Build Triggers and Snapshots
 
-To understand the difference between Finish Triggers and Snapshot depenendencies, let's have a look at the following example.
+To understand the difference between **finish build triggers** and [](snapshot-dependencies.md), let's have a look at the following example.
 
 A sample project has three child build configurations:
 
