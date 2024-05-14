@@ -22,6 +22,8 @@ To set up an integration with HashiCorp Vault, you need the following:
 
 When a build that utilizes this parameter starts, the TeamCity server uses the Vault connection to request a one-time [response wrapping token](https://developer.hashicorp.com/vault/docs/concepts/response-wrapping), which it then passes to a TeamCity agent that runs this build. The build agent uses this token to request Vault secrets and never shares obtained credentials with the TeamCity server. When the build finishes, the agent's token is revoked.
 
+Since all communication with Vault is orchestrated by the TeamCity server, this integration is highly scalable and not affected by the number of build agents accessing Vault secrets. The tokens received by agents from the TeamCity server are not lease tokens (which are solely utilized for testing Vault connections), thus the number of actual build agents does not impact your quota. Consequently, only one Vault license for the TeamCity server is required.
+
 ## Set Up a Vault Connection
 
 <img src="dk-vaultConnection.png" width="460" alt="Vault connection settings"/>
