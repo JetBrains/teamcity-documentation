@@ -617,7 +617,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 ## Upgrade Notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version [2023.11 compared to 2023.05.4](upgrade-notes.md#Changes+from+2023.05.4+to+2023.11).
+Before upgrading, we highly recommend reading about important changes in version [2023.11 compared to 2023.05](upgrade-notes.md#Changes+from+2023.05+to+2023.11).
 
 ## Fixed Issues
 {product="tc"}
