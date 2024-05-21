@@ -52,7 +52,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 
 * Generating coverage reports using JaCoCo may fail with the `ClassNotFoundError`. To resolve this issue, upgrade to TeamCity 2023.11.4. Depending on whether your current JaCoCo coverage tool was installed pre- or post- 2023.11.x server update, you may also need to reinstall this tool and restart your build agents. See this YouTrack ticket for more information: [TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used#post-fix-notes).
 
-## Changes from 2023.05.4 to 2023.11
+## Changes from 2023.05 to 2023.11
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-11"}
@@ -123,6 +123,13 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 
 
+## Changes from 2023.05.4 to 2023.05.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
 ## Changes from 2023.05.3 to 2023.05.4
 
 No potential breaking changes.
@@ -130,8 +137,9 @@ No potential breaking changes.
 See this article for the complete list of fixed issues: [](teamcity-2023-05-4-release-notes.md).
 
 
-
 ## Changes from 2023.05.2 to 2023.05.3
+
+No potential breaking changes.
 
 See this article for the complete list of fixed issues: [](teamcity-2023-05-3-release-notes.md).
 
@@ -150,7 +158,6 @@ See this article for the complete list of fixed issues: [](teamcity-2023-05-2-re
 Starting with the next TeamCity version, the [](duplicates-finder-resharper.md) runner will be unable to operate since it relies on a tool that is no longer shipped with ReSharper Command Line Tools. See the corresponding [server health report](server-health.md#Duplicates+Finder+Runner) for more information.
 
 ### Known Issues
-{id="known-issues-2023-5-2"}
 
 * Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". See this YouTrack issue for more information: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
 
@@ -173,7 +180,8 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 
 
-## Changes from 2022.10.3 to 2023.05
+
+## Changes from 2022.10 to 2023.05
 
 ### Planned deprecation of Java 8 in TeamCity Server
 
@@ -196,11 +204,11 @@ The Web Application Description Language (WADL) generator is now removed. See th
 * The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests".
 * The `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
 
-See the What's New page for more responsibility-related changes.
+See the What's New page for more responsibility-related changes: [](what-s-new-in-teamcity.md#Multinode+Setup+Enhancements).
 
 ### Podman Support
 
-Due to the implementation of Podman support, the following changes were made:
+Due to the implementation of [](what-s-new-in-teamcity.md#Podman+Support), the following changes were made:
 
 * The "Docker Wrapper" extension was renamed to [](container-wrapper.md).
 * The "Docker Info" tab on the [](build-results-page.md) was renamed to "Container Info".
@@ -228,7 +236,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 ### Miscellaneous Updates
 
 * Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
-* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
+* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](what-s-new-in-teamcity.md#Interactive+Agent+Terminals) for more details.
 * Configurations with [agent-side checkout](vcs-checkout-mode.md) mode do not support postfixes in checkout directory paths (for instance, `+:src/main => src/main/postfixDirectory`). If you specified a postfix in checkout rules, previous TeamCity versions silently swallowed this error and ran builds that ignored your postfixes. Starting with version 2023.05, TeamCity shows the corresponding error message and does not allow new builds to start. See this section for more information: [](git.md#Limitations).
 
 
@@ -242,6 +250,18 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * If a directory published as a build artifacts contains symbolic links, files and folderes referenced by these symlinks are no longer included in the produced artifact archive. This issue will be resolved in the 2023.05.1 bugfix update, see this article for more information: [](configuring-general-settings.md#Publishing+Symlinks).
 * Some TeamCity pages are missing their `html` and `body` tags. See this ticket for more information: [TW-82749](https://youtrack.jetbrains.com/issue/TW-82749).
 * Agents spawned from AWS machine images that utilize the first version of Amazon Metadata (IMDSv1) fail to retrieve property values from metadata and pass automatic [authorization](configure-agent-installation.md). See this ticket for more information: [TW-82176](https://youtrack.jetbrains.com/issue/TW-82176).
+
+
+## Changes from 2022.10.4 to 2022.10.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.10.3 to 2022.10.4
+
+No potential breaking changes.
 
 ## Changes from 2022.10.2 to 2022.10.3
 
@@ -335,7 +355,7 @@ if you want the dependency resolver to look in it.
 
 TeamCity system administrators are now granted the new role, _Open an interactive session to the agent_,
 which lets them use an interactive browser-based shell on an EC2 agent from the TeamCity UI without providing Amazon credentials.
-It is possible to connect to agents if they are configured as described [here](setting-up-teamcity-for-amazon-ec2.md).
+It is possible to connect to agents if they are configured as described [here](setting-up-teamcity-for-amazon-ec2.md#debugging-and-maintenance).
 
 
 #### Free disk space for artifacts is calculated automatically
@@ -377,6 +397,17 @@ The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.je
 if a project's Kotlin DSL settings use third-party libraries.
 
 If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
+
+## Changes from 2022.04.5 to 2022.04.6
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.04.4 to 2022.04.5
+
+No potential breaking changes.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
