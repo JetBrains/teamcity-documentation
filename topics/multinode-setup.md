@@ -454,6 +454,7 @@ http {
 
 > * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the **Server URL** on the __Administration | Global Settings__ page and inside [build agents' configurations](configure-agent-installation.md).
 > * The configurations above are designed for the two-node TeamCity setup. You can add more nodes if necessary.
+> * Nodes without the *Handling UI actions and load balancing user requests* [responsibility](#Responsibilities) will report HTTP error 503 to health check requests sent from your reverse proxy server. TeamCity categorizes these proxy requests as user operations, which these nodes cannot handle. This behavior is normal, does not affect node functionality, and does not indicate any malfunction.
 >
 {type="note"}
 
@@ -607,6 +608,10 @@ In setups with many build agents, a significant amount of the main node's CPU is
 #### Handling UI Actions and Load Balancing User Requests
 
 This responsibility is responsible for allowing user actions on a secondary node. It is especially useful when the main node is down or goes through maintenance.
+
+> Nodes without this responsibility will report HTTP error 503 to health check requests sent from your reverse proxy server. TeamCity categorizes these proxy requests as user operations, which these nodes cannot handle. This behavior is normal, does not affect node functionality, and does not indicate any malfunction.
+> 
+{type="note"}
 
 Enabling of this responsibility also adds the node to the list of the nodes participating in [round-robin](#Round-Robin). 
 
