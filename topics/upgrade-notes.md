@@ -59,7 +59,7 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 
 
-## Changes from 2022.10.5 to 2023.05
+## Changes from 2022.10 to 2023.05
 
 ### Planned deprecation of Java 8 in TeamCity Server
 
@@ -192,7 +192,7 @@ To use a custom endpoint for Amazon alternatives like [MinIO](https://min.io/), 
 <!--<include src="upgrade-notes-older-versions.md" include-id="older-upgrade-notes" />-->
 
 
-## Changes from 2022.04.06 to 2022.10
+## Changes from 2022.04 to 2022.10
 
 
 ### Planned deprecation of Java 8 in TeamCity Server 2023.04
