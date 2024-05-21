@@ -1,6 +1,10 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.10.4 to 2022.10.5
+
+No potential breaking changes.
+
 ## Changes from 2022.10.3 to 2022.10.4
 
 No potential breaking changes.
