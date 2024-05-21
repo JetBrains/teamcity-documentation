@@ -1,6 +1,16 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2022.04.5 to 2022.04.6
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.04.4 to 2022.04.5
+
+No potential breaking changes.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
