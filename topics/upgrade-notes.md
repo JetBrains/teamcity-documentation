@@ -3,7 +3,10 @@
 
 ## Changes from 2022.10.4 to 2022.10.5
 
-No potential breaking changes.
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
 
 ## Changes from 2022.10.3 to 2022.10.4
 
@@ -141,6 +144,17 @@ If you face this problem, please use the following workaround:
 1. Download [this version of the Kotlin DSL plugin](https://uploads.jetbrains.com/files/2022_11_05_Kbfk6dc751LkfZtzLKwrea_JBS/configs-dsl.zip?secret=3aQYCYDCvptvgh13EYD8Yoo8NhguVrzp).
 2. Install the plugin on your TeamCity Server via the **[Administration | Plugins](installing-additional-plugins.md)** page.
 3. Restart your TeamCity server.
+
+## Changes from 2022.04.5 to 2022.04.6
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.04.4 to 2022.04.5
+
+No potential breaking changes.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
