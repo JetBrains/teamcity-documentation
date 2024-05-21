@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.11.4 to 2023.11.5
+
+The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
+
+
 ## Changes from 2023.11.3 to 2023.11.4
 
 * The bundled Git was updated to version 2.43.2 in both Server and Agent Docker images for Linux and ARM. Windows images keep using version 2.43.0 as this is the latest currently available version of [Git-For-Windows](https://github.com/git-for-windows/git/releases/).
