@@ -142,7 +142,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 ### S3 Plugin Updates
 {id="2023-11-s3-update"}
 
-Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the following settings are no longer available:
+Due to the [S3 Plugin overhaul](storing-build-artifacts-in-amazon-s3.md), the following settings are no longer available:
 
 * The **Use pre-signed URLs** feature is available by default and cannot be disabled.
 * The **Access Key ID**, **Secret Access Key**, **IAM Role** and **Default provider chain** options are no longer available for native AWS S3 storages. Instead, use settings of an [AWS Connection](configuring-connections.md#AmazonWebServices) these storages utilize to edit corresponding options. When you view or edit an existing S3 bucket that employed any of these settings, TeamCity shows the **Convert to AWS Connection** link that allows you to transfer them to a new AWS Connection. We recommend that you do so to keep all connection-related options outside storage settings.
@@ -152,7 +152,7 @@ Due to the [S3 Plugin overhaul](what-s-new-in-teamcity.md#S3+Plugin+Update), the
 
 ### EC2 Plugin Updates
 
-The Amazon EC2 plugin was [significantly reworked](what-s-new-in-teamcity.md#EC2+Plugin+Update) in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
+The [Amazon EC2 plugin](setting-up-teamcity-for-amazon-ec2.md) was significantly reworked in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
 
 In version 2023.11.2, we expect to rollback this change for cloud profiles configured before the 2023.11 update. This will allow you to continue using the agent push functionality for the existing cloud agents. However, we encourage you to update your setup and bake TeamCity agents into your AMIs instead of installing them via the agent push. The latter option will be completely disabled in one of the future releases.
 

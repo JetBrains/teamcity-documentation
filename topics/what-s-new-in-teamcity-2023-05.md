@@ -392,7 +392,7 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 ## Upgrade Notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version [2023.05 compared to 2022.10.x](upgrade-notes.md#Changes+from+2022.10.3+to+2023.05).
+Before upgrading, we highly recommend reading about important changes in version [2023.05 compared to 2022.10.x](upgrade-notes.md#Changes+from+2022.10+to+2023.05).
 
 ## Fixed Issues
 {product="tc"}
