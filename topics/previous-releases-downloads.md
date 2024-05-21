@@ -10,7 +10,17 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version: TeamCity 2023.05.4
+## Current version: TeamCity 2023.05.5
+
+Release date: ??? May 2024<br/>
+Build ???
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.tar.gz)
+
+[Release notes](teamcity-2023-05-5-release-notes.md)
+
+## TeamCity 2023.05.4
 
 Release date: 18 September 2023<br/>
 Build 129421
@@ -62,6 +72,16 @@ Build 129203
 
 [Release notes](teamcity-2023-05-release-notes.md)
 
+## TeamCity 2022.10.5
+
+Release date: ??? May 2024  
+Build ???
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.tar.gz)
+
+[Release notes](teamcity-2022-10-5-release-notes.md)
+
 ## TeamCity 2022.10.4
 
 Release date: 8 June 2023  
@@ -70,7 +90,7 @@ Build 117134
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.tar.gz)
 
-[Release notes](teamcity-2022-10-2-release-notes.md)
+[Release notes](teamcity-2022-10-4-release-notes.md)
 
 ## TeamCity 2022.10.3
 
@@ -112,6 +132,16 @@ Build 116751
 
 [Release notes](teamcity-2022-10-release-notes.md)
 
+## TeamCity 2022.04.6
+
+Release date: ??? May 2024
+Build ???
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.tar.gz)
+
+[Release notes](teamcity-2022-04-6-release-notes.md)
+
 ## TeamCity 2022.04.5
 
 Release date: 8 June 2023 
@@ -120,7 +150,7 @@ Build 108886
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.tar.gz)
 
-[Release notes](teamcity-2022-04-4-release-notes.md)
+[Release notes](teamcity-2022-04-5-release-notes.md)
 
 ## TeamCity 2022.04.4
 

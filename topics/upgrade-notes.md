@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2023.05.4 to 2023.05.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
 
 ## Changes from 2023.05.3 to 2023.05.4
 
@@ -9,8 +15,9 @@ No potential breaking changes.
 See this article for the complete list of fixed issues: [](teamcity-2023-05-4-release-notes.md).
 
 
-
 ## Changes from 2023.05.2 to 2023.05.3
+
+No potential breaking changes.
 
 See this article for the complete list of fixed issues: [](teamcity-2023-05-3-release-notes.md).
 
@@ -52,7 +59,7 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 
 
-## Changes from 2022.10.3 to 2023.05
+## Changes from 2022.10.5 to 2023.05
 
 ### Planned deprecation of Java 8 in TeamCity Server
 
@@ -122,6 +129,18 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * Some TeamCity pages are missing their `html` and `body` tags. See this ticket for more information: [TW-82749](https://youtrack.jetbrains.com/issue/TW-82749).
 * Agents spawned from AWS machine images that utilize the first version of Amazon Metadata (IMDSv1) fail to retrieve property values from metadata and pass automatic [authorization](configure-agent-installation.md). See this ticket for more information: [TW-82176](https://youtrack.jetbrains.com/issue/TW-82176).
 
+
+## Changes from 2022.10.4 to 2022.10.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.10.3 to 2022.10.4
+
+No potential breaking changes.
+
 ## Changes from 2022.10.2 to 2022.10.3
 
 ### Bundled Tools Updates
@@ -173,7 +192,7 @@ To use a custom endpoint for Amazon alternatives like [MinIO](https://min.io/), 
 <!--<include src="upgrade-notes-older-versions.md" include-id="older-upgrade-notes" />-->
 
 
-## Changes from 2022.04 to 2022.10
+## Changes from 2022.04.06 to 2022.10
 
 
 ### Planned deprecation of Java 8 in TeamCity Server 2023.04
@@ -256,6 +275,17 @@ The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.je
 if a project's Kotlin DSL settings use third-party libraries.
 
 If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
+
+## Changes from 2022.04.5 to 2022.04.6
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+## Changes from 2022.04.4 to 2022.04.5
+
+No potential breaking changes.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
