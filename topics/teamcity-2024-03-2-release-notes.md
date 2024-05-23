@@ -50,10 +50,19 @@
 
 **[TW-87434](https://youtrack.jetbrains.com/issue/TW-87434/Optimize-data-loading-from-ignoredtests-table-for-MSSQL-database)** — Optimize data loading from ignored_tests table for MSSQL database
 
-<!--Project: TeamCity Fix versions: 2024.03.2 -{2024.03.1 (156270)} #{Security Problem}  #Fixed #Testing -{Trunk issue}-->
+<!--Project: TeamCity Fix versions: {2024.03.2 (156319)}  #{Security Problem}  #Fixed #Testing -{Trunk issue} -bulletin-exclude -->
 
 ### Security
 
-??? security problems have been fixed. This number includes both native TeamCity issues and vulnerabilities found in 3rd-party libraries TeamCity depends on. Upstream library issues usually make up the majority of this total number, and are promptly resolved by updating these libraries to their newest versions.
+8 security issues were fixed. To protect customers who have not yet updated their servers, we typically withhold details about these fixes. Instead, we encourage you to review our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after each bugfix release for more information.
 
-To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2024.03.2). Security bulletins for new versions are typically published within the next few days after the release date.
+In our effort to enhance transparency and due to potential delays in publishing new security bulletins (stemming from the simultaneous release of the 2022.04.6, 2022.10.5, 2023.05.5, 2023.11.5, and 2024.03.2 bug-fix updates), we have decided to provide a summary of both new and backported fixes. You can still expect details on these issues to be published in our Security Bulletin shortly.
+
+* Path traversal allowing to read files from the server was possible
+* Several stored XSS in untrusted builds settings were possible
+* A third-party agent could impersonate a cloud agent
+* Stored XSS via build step settings was possible
+* Technical information regarding the TeamCity server could be exposed
+* TeamCity users could perform actions that should not be available to them based on their permissions
+* Certain TeamCity API endpoints did not check user permissions 
+* TeamCity server was susceptible to DoS attacks with incorrect auth tokens
