@@ -14,10 +14,45 @@ __??? May 2024__
 
 **[TW-87750](https://youtrack.jetbrains.com/issue/TW-87750/The-user-with-the-Project-Administrator-role-cant-see-the-NuGet-feed)** — The user with the Project Administrator role can't see the NuGet feed
 
-<!--Project: TeamCity Fix versions: 2022.04.6  #{Security Problem}  #Fixed #Testing -{Trunk issue}-->
+<!--Project: TeamCity Fix versions: {2022.04.6 (109057)}  #{Security Problem}  #Fixed #Testing -{Trunk issue} -bulletin-exclude-->
 
 ### Security Problems
 
-27 security problems have been fixed. This number includes both native TeamCity issues and vulnerabilities found in 3rd-party libraries TeamCity depends on. Upstream library issues usually make up the majority of this total number, and are promptly resolved by updating these libraries to their newest versions.
+23 security issues were fixed. To protect customers who have not yet updated their servers, we typically withhold details about these fixes. Instead, we encourage you to review our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after each bugfix release for more information.
 
-To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2022.04.6). Security bulletins for new versions are typically published within the next few days after the release date.
+In our effort to enhance transparency and due to potential delays in publishing new security bulletins (stemming from the simultaneous release of the 2022.04.6, 2022.10.5, 2023.05.5, 2023.11.5, and 2024.03.2 bug-fix updates), we have decided to provide a summary of both new and backported fixes.
+
+### Backported Fixes
+
+These issues were resolved in newer major TeamCity versions and backported to this bug-fix update. You can find more info about them in our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity).
+
+* Path traversal allowed reading data within JAR archives. Reported by Sndav Bai and Crispr Xiang from TianShu Dubhe Team (TW-86017)
+* Stored XSS during restore from backup was possible (TW-82309)
+* Authentication bypass allowing to perform admin actions was possible. Reported by Rapid7 team (TW-86500)
+* Authentication bypass leading to RCE was possible. Reported by Sndav Bai and Crispr Xiang from TianShu Dubhe Team (TW-86005)
+* Path traversal allowing to perform limited admin actions was possible. Reported by Rapid7 team (TW-86502)
+* XXE was possible in the Maven build steps detector (TW-86300)
+* Authenticated users without administrative permissions could register other users when self-registration was disabled (TW-87046)
+* Server administrators could remove arbitrary files from the server by installing tools (TW-86039)
+* Presigned URL generation requests in S3 Artifact Storage plugin were authorized improperly (TW-85562)
+* Stored XSS was possible during nodes configuration (TW-83216)
+* Open redirect was possible on the login page (TW-87062)
+* Limited directory traversal was possible in the Kotlin DSL documentation (TW-85585)
+* Authentication bypass leading to RCE on TeamCity Server was possible. Reported by Stefan Schiller from Sonar (TW-83545)
+
+### Undisclosed Fixes
+
+The following list enumerates issues that are not currently available in our Security Bulletin. These include newly found and fixed problems, issues that arise from upstream libraries and do not originate in the TeamCity codebase, issues that are specific cases of another reported vulnerability, and more.
+
+Details about most of these issues will be published in our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after the official release announcement.
+
+* Path traversal allowing to read files from server was possible
+* TeamCity server could be accessed without authorization during specific brief moments of its lifecycle
+* Several Stored XSS in code inspection reports
+* Improper access control in Pull Requests and Commit status publisher build features
+* A third-party agent could impersonate a cloud agent
+* An XSS could be executed via certain report grouping and filtering operations
+* Stored XSS via third-party reports was possible
+* Reflected XSS via OAuth provider configuration was possible
+* Stored XSS via issue tracker integration was possible
+* Stored XSS via OAuth connection settings was possible
