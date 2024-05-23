@@ -42,9 +42,9 @@ These issues were resolved in newer major TeamCity versions and backported to th
 
 ### Undisclosed Fixes
 
-The following list enumerates issues that are not currently available in our Security Bulletin. These include newly found and fixed problems, issues that arise from upstream libraries and do not originate in the TeamCity codebase, issues that are specific cases of another reported vulnerability, and more.
+Fixes for the following security issues are not immediately available in our Security Bulletin: newly discovered and fixed problems, issues from upstream libraries outside the TeamCity codebase, specific cases of previously reported vulnerabilities, and others.
 
-Details about most of these issues will be published in our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after the official release announcement.
+You can expect details on most of these issues to be published in our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after the official release.
 
 * Path traversal allowing to read files from server was possible
 * TeamCity server could be accessed without authorization during specific brief moments of its lifecycle
