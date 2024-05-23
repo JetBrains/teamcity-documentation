@@ -22,7 +22,7 @@ __??? May 2024__
 
 In our effort to enhance transparency and due to potential delays in publishing new security bulletins (stemming from the simultaneous release of the 2022.04.6, 2022.10.5, 2023.05.5, 2023.11.5, and 2024.03.2 bug-fix updates), we have decided to provide a summary of both new and backported fixes.
 
-### Backported Fixes
+#### Backported Fixes
 
 These issues were resolved in newer major TeamCity versions and backported to this bug-fix update. You can find more info about them in our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity).
 
@@ -40,7 +40,7 @@ These issues were resolved in newer major TeamCity versions and backported to th
 * Limited directory traversal was possible in the Kotlin DSL documentation (TW-85585)
 * Authentication bypass leading to RCE on TeamCity Server was possible. Reported by Stefan Schiller from Sonar (TW-83545)
 
-### Undisclosed Fixes
+#### Undisclosed Fixes
 
 Fixes for the following security issues are not immediately available in our Security Bulletin: newly discovered and fixed problems, issues from upstream libraries outside the TeamCity codebase, specific cases of previously reported vulnerabilities, and others.
 
