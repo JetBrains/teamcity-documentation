@@ -98,7 +98,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 > In particular, automatic update cannot be used with a Docker installation (see [](#manual-update-of-docker-image)) and the [AWS CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template#readme) is no longer supported.
 {type="note"}
 
-To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/).
+To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/), `download.jetbrains.com` and `download-cdn.jetbrains.com`.
 
 When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description, and controls to perform the automatic update if you want to use that instead of performing the manual updating procedure.
 
