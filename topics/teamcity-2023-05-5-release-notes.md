@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2023.05.5 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2023.05.5 Release Notes)
 
-__Build: ???__
+__Build: 129472__
 
-__??? May 2024__
+__24 May 2024__
 
 
 <!--Project: TeamCity Fix versions: 2023.05.5 -{2023.05.4 (129421)}  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
@@ -71,7 +71,7 @@ These issues were resolved in newer major TeamCity versions and backported to th
 * Limited directory traversal was possible in the Kotlin DSL documentation (TW-85585)
 * Stored XSS while viewing the build log was possible (TW-81777)
 
-#### Undisclosed Fixes
+#### Recently Resolved Issues
 
 Fixes for the following security issues are not immediately available in our Security Bulletin: newly discovered and fixed problems, issues from upstream libraries outside the TeamCity codebase, specific cases of previously reported vulnerabilities, and others.
 
