@@ -1,9 +1,9 @@
 [//]: # (title: TeamCity 2022.04.6 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2022.04.6 Release Notes)
 
-__Build: ???__
+__Build: 109057__
 
-__??? May 2024__
+__24 May 2024__
 
 <!--Project: TeamCity Fix versions: 2022.04.6  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
 
@@ -40,7 +40,7 @@ These issues were resolved in newer major TeamCity versions and backported to th
 * Limited directory traversal was possible in the Kotlin DSL documentation (TW-85585)
 * Authentication bypass leading to RCE on TeamCity Server was possible. Reported by Stefan Schiller from Sonar (TW-83545)
 
-#### Undisclosed Fixes
+#### Recently Resolved Issues
 
 Fixes for the following security issues are not immediately available in our Security Bulletin: newly discovered and fixed problems, issues from upstream libraries outside the TeamCity codebase, specific cases of previously reported vulnerabilities, and others.
 
