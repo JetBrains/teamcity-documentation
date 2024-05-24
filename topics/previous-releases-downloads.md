@@ -12,8 +12,8 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version: TeamCity 2023.05.5
 
-Release date: ??? May 2024<br/>
-Build ???
+Release date: 24 May 2024<br/>
+Build 129472
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.tar.gz)
@@ -74,8 +74,8 @@ Build 129203
 
 ## TeamCity 2022.10.5
 
-Release date: ??? May 2024  
-Build ???
+Release date: 24 May 2024  
+Build 117305
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.tar.gz)
@@ -134,8 +134,8 @@ Build 116751
 
 ## TeamCity 2022.04.6
 
-Release date: ??? May 2024
-Build ???
+Release date: 24 May 2024
+Build 109057
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.tar.gz)
