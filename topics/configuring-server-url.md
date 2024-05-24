@@ -17,3 +17,8 @@ In most cases TeamCity correctly autodetects its own URL and sets it as the __Se
 ```
 
 Remember to include the protocol specification in the URL.
+
+See also:
+
+* [](https-server-settings.md)
+* [](using-https-to-access-teamcity-server.md)
