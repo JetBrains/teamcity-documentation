@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: TeamCity 2023.11.5 Release Notes)
 
 
-**Build ???, ??? May 2024**
+**Build 147631, 24 May 2024**
 
 
 <!--Project: TeamCity Fix versions: 2023.11.5  -{2023.11.4 (147586)}  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
@@ -39,7 +39,7 @@ These issues were resolved in newer major TeamCity versions and backported to th
 * 2FA could be bypassed by providing a special URL parameter (TW-86989)
 
 
-#### Undisclosed Fixes
+#### Recently Resolved Issues
 
 Fixes for the following security issues are not immediately available in our Security Bulletin: newly discovered and fixed problems, issues from upstream libraries outside the TeamCity codebase, specific cases of previously reported vulnerabilities, and others.
 
