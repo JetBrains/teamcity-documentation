@@ -12,7 +12,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version: TeamCity 2022.10.5
 
-Release date: 24 May 2024<br/>
+Release date: 28 May 2024<br/>
 Build 117305
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.exe)<br/>
@@ -72,7 +72,7 @@ Build 116751
 
 ## TeamCity 2022.04.6
 
-Release date: 24 May 2024<br/>
+Release date: 28 May 2024<br/>
 Build 109057
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.exe)<br/>
