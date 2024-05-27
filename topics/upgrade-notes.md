@@ -5,11 +5,16 @@
 
 The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
 
+### Known Issues
+{id="known-issues-2024-03-2"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2024.03-156166](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/512727) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
 ## Changes from 2024.03 to 2024.03.1
 
 No potential breaking changes.
 
-## Changes from 2023.11.5 to 2024.03
+## Changes from 2023.11 to 2024.03
 
 * The [](commit-status-publisher.md) build feature configured for [Perforce Helix Swarm](integrating-with-helix-swarm.md) no longer posts intermediate build statuses (queued, started, canceled) to the Swarm review's **Comments** tab. Instead, the feature announces only the final build status (successful or failed). You can additionally uncheck the **Code Review Comments** option in the build feature's settings dialog to disable these remaining status notifications as well (in this case, the Commit Status Publisher will only update the review's **Tests** tab).
 * Starting with version 2023.03, versions of dotCover Command Line Tools that are no longer supported by the JetBrains dotCover team are explicitly marked as "deprecated".
@@ -196,6 +201,11 @@ Tooling updates in Server and Agent Docker imaages:
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
 
+### Known Issues
+{id="known-issues-2023-05-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
 ## Changes from 2023.05.3 to 2023.05.4
 
 No potential breaking changes.
@@ -322,6 +332,11 @@ Tooling updates in Server and Agent Docker imaages:
 
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-10-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
 
 ## Changes from 2022.10.3 to 2022.10.4
 
@@ -468,6 +483,11 @@ Tooling updates in Server and Agent Docker imaages:
 
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-04-6"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
 
 ## Changes from 2022.04.4 to 2022.04.5
 
