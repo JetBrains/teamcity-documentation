@@ -9,6 +9,7 @@ Tooling updates in Server and Agent Docker imaages:
 * Perforce was updated to version 2022.2-2531894.
 
 ### Known Issues
+{id="known-issues-2022-04-6"}
 
 * Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
 
