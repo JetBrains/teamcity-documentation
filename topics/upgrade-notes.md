@@ -8,6 +8,11 @@ Tooling updates in Server and Agent Docker imaages:
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
 
+### Known Issues
+{id="known-issues-2023-05-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
 ## Changes from 2023.05.3 to 2023.05.4
 
 No potential breaking changes.
@@ -136,6 +141,11 @@ Tooling updates in Server and Agent Docker imaages:
 
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-10-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
 
 ## Changes from 2022.10.3 to 2022.10.4
 
@@ -282,6 +292,11 @@ Tooling updates in Server and Agent Docker imaages:
 
 * Git and Git for Windows were updated to version 2.45.1.
 * Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-04-6"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
 
 ## Changes from 2022.04.4 to 2022.04.5
 
