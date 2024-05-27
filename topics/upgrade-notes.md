@@ -5,11 +5,6 @@
 
 The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
 
-### Known Issues
-{id="known-issues-2024-03-2"}
-
-* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2024.03-156166](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/512727) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
-
 ## Changes from 2024.03 to 2024.03.1
 
 No potential breaking changes.
