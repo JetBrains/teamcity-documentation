@@ -147,6 +147,34 @@ When viewing a list of storages available for a project, click <b>Make Active</b
 <include src="storing-build-artifacts-in-amazon-s3.md" include-id="make_storage_active"/>
 
 
+## S3 Storage Classes
+
+[Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/) allow you to fine-tune your storage based on its desired performance, as well as availability and resilience of its data.
+
+There are two ways to enable the required storage class:
+
+* **On TeamCity side**. When uploading artifacts to an S3 bucket, TeamCity adds the `x-amz-storage-class` header to its `PUT` requests. The header value depends on the corresponding storage setting in TeamCity (for example, `x-amz-storage-class: INTELLIGENT_TIERING`). This mode does not require any additional setup on the AWS side.
+
+    Although this approach is not currently supported, we hope to implement this functionality in our future release cycles. Upvote and comment on this YouTrack ticket to support the feature and share your feedback: [TW-79992](https://youtrack.jetbrains.com/issue/TW-79992).
+
+* **On AWS side**. In this mode, TeamCity uploads artifacts in a regular manner and the required storage class is applied by a pre-configured lifecycle rule after the artifacts were uploaded. To set up this rule, do the following:
+
+    1. Open the required S3 storage and switch to the **Management** tab.
+    2. Click **Create lifecycle rule**.
+    3. Check **Move current versions of objects between storage classes** under the **Lifecycle rule actions** section.
+    4. Choose the required storage class and the delay between the upload and transition dates. Set the **Days after object creation** to "0" to transition your artifacts as soon as TeamCity uploads them.
+        > TeamCity does not support archive storage classes since their files are not immediately available and require additional unpack/warmup actions before they can be fetched.
+        >
+        {type="tip"}
+    5. Enable additional rules for stored artifacts. For example, you can check **Expire current versions of objects** to label previously uploaded artifacts as expired, and **Permanently delete noncurrent versions of objects** to periodically clean your storage.
+    6. Specify the rule scope to choose whether it should apply to the entire storage or only those artifacts that match the required filter.
+    7. Review your rule at the bottom of the page. It may look like the following:
+        <img src="dk-s3-lifecycle-rule.png" width="706" alt="S3 lifecycle rule"/>
+    8. Click **Create rule** to save your lifecycle rule.
+
+See the following AWS help article for more information: [Using Amazon S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html).
+
+
 
 ## Transferring Artifacts via CloudFront
 {id="CloudFrontSettings" auxiliary-id="CloudFrontSettings"}
