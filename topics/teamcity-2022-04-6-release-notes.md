@@ -3,7 +3,7 @@
 
 __Build: 109057__
 
-__28 May 2024__
+__29 May 2024__
 
 > This update can be installed on pre-2022.04 TeamCity servers with lapsed licenses that do not normally support upgrading to newer versions. See this post for more information: [TeamCity Major Bug Fix for All Versions](https://blog.jetbrains.com/teamcity/2024/05/teamcity-major-bug-fix-release-for-all-versions/).
 
