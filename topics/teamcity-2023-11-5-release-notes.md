@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: TeamCity 2023.11.5 Release Notes)
 
 
-**Build 147631, 28 May 2024**
+**Build 147631, 29 May 2024**
 
 
 <!--Project: TeamCity Fix versions: 2023.11.5  -{2023.11.4 (147586)}  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
