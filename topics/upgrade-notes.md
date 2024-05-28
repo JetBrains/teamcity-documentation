@@ -3,7 +3,12 @@
 
 ## Changes from 2024.03.1 to 2024.03.2
 
-The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
+* The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
+
+### Known Issues
+{id="known-issues-2024-03-2"}
+
+* If you utilize the [Amazon Elastic Container Service Support](https://plugins.jetbrains.com/plugin/10067-amazon-elastic-container-service-support/versions/stable) plugin, please update it to the latest "SNAPSHOT-20240513140730" version. Older versions may malfunction with the 2024.03.2 version of the TeamCity server.
 
 ## Changes from 2024.03 to 2024.03.1
 
