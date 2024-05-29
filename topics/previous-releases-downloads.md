@@ -10,7 +10,15 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version: TeamCity 2024.03.1
+## Current version: TeamCity 2024.03.2
+
+Release date: 29 May 2024<br/>
+Build 156319
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2024.03.1.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2024.03.1.tar.gz)
+
+## TeamCity 2024.03.1
 
 Release date: 3 May 2024<br/>
 Build 156270
@@ -30,6 +38,16 @@ Build 156166
 
 [Release notes](teamcity-2024-03-release-notes.md)
 
+
+## TeamCity 2023.11.5
+
+Release date: 29 May 2024<br/>
+Build 147631
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.11.5.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2023.11.5.tar.gz)
+
+[Release notes](teamcity-2023-11-5-release-notes.md)
 
 ## TeamCity 2023.11.4
 
@@ -96,11 +114,17 @@ Build 147331
 [Release notes](teamcity-2023-11-release-notes.md)
 
 
-## TeamCity 2023.05.4
+## TeamCity 2023.05.5
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
+Release date: 29 May 2024<br/>
+Build 129472
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2023.05.5.tar.gz)
+
+[Release notes](teamcity-2023-05-5-release-notes.md)
+
+## TeamCity 2023.05.4
 
 Release date: 18 September 2023<br/>
 Build 129421
@@ -113,10 +137,6 @@ Build 129421
 
 ## TeamCity 2023.05.3
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: 24 August 2023<br/>
 Build 129390
 
@@ -128,10 +148,6 @@ Build 129390
 
 ## TeamCity 2023.05.2
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: 25 July 2023<br/>
 Build 129341
 
@@ -141,10 +157,6 @@ Build 129341
 [Release notes](teamcity-2023-05-2-release-notes.md)
 
 ## TeamCity 2023.05.1
-
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
 
 Release date: 11 July 2023<br/>
 Build 129321
@@ -156,11 +168,7 @@ Build 129321
 
 ## TeamCity 2023.05
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
-Release date: 26 May 2023 
+Release date: 26 May 2023<br/>
 Build 129203
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2023.05.exe)<br/>
@@ -168,11 +176,17 @@ Build 129203
 
 [Release notes](teamcity-2023-05-release-notes.md)
 
-## TeamCity 2022.10.4
+## TeamCity 2022.10.5
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
+Release date: 29 May 2024  
+Build 117305
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.tar.gz)
+
+[Release notes](teamcity-2022-10-5-release-notes.md)
+
+## TeamCity 2022.10.4
 
 Release date: 8 June 2023  
 Build 117134
@@ -180,13 +194,9 @@ Build 117134
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.4.tar.gz)
 
-[Release notes](teamcity-2022-10-2-release-notes.md)
+[Release notes](teamcity-2022-10-4-release-notes.md)
 
 ## TeamCity 2022.10.3
-
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
 
 Release date: 21 March 2023   
 Build 117072
@@ -194,13 +204,9 @@ Build 117072
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.3.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.3.tar.gz)
 
-[Release notes](teamcity-2022-10-2-release-notes.md)
+[Release notes](teamcity-2022-10-3-release-notes.md)
 
 ## TeamCity 2022.10.2
-
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
 
 Release date: 3 February 2023   
 Build 117025
@@ -212,10 +218,6 @@ Build 117025
 
 ## TeamCity 2022.10.1
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: 1 December 2022   
 Build 116934
 
@@ -226,10 +228,6 @@ Build 116934
 
 ## TeamCity 2022.10
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: __27 October 2022__   
 Build 116751
 
@@ -238,11 +236,17 @@ Build 116751
 
 [Release notes](teamcity-2022-10-release-notes.md)
 
-## TeamCity 2022.04.5
+## TeamCity 2022.04.6
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
+Release date: 29 May 2024
+Build 109057
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.exe)   
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.tar.gz)
+
+[Release notes](teamcity-2022-04-6-release-notes.md)
+
+## TeamCity 2022.04.5
 
 Release date: 8 June 2023 
 Build 108886
@@ -250,13 +254,9 @@ Build 108886
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.exe)   
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.5.tar.gz)
 
-[Release notes](teamcity-2022-04-4-release-notes.md)
+[Release notes](teamcity-2022-04-5-release-notes.md)
 
 ## TeamCity 2022.04.4
-
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
 
 Release date: 19 September 2022   
 Build 108763
@@ -268,10 +268,6 @@ Build 108763
 
 ## TeamCity 2022.04.3
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: 10 August 2022   
 Build 108706
 
@@ -282,10 +278,6 @@ Build 108706
 
 ## TeamCity 2022.04.2
 
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
-
 Release date: 13 July 2022   
 Build 108502
 
@@ -295,10 +287,6 @@ Build 108502
 [Release notes](teamcity-2022-04-2-release-notes.md)
 
 ## TeamCity 2022.04.1
-
-> This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
->
-{type="warning"}
 
 Release date: 1 June 2022   
 Build 108575

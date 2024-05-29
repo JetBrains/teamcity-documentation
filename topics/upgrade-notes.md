@@ -1,7 +1,20 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2023.11.4 to 2024.03
+## Changes from 2024.03.1 to 2024.03.2
+
+* The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
+
+### Known Issues
+{id="known-issues-2024-03-2"}
+
+* If you utilize the [Amazon Elastic Container Service Support](https://plugins.jetbrains.com/plugin/10067-amazon-elastic-container-service-support/versions/stable) plugin, please update it to the latest "SNAPSHOT-20240513140730" version. Older versions may malfunction with the 2024.03.2 version of the TeamCity server.
+
+## Changes from 2024.03 to 2024.03.1
+
+No potential breaking changes.
+
+## Changes from 2023.11 to 2024.03
 
 * The [](commit-status-publisher.md) build feature configured for [Perforce Helix Swarm](integrating-with-helix-swarm.md) no longer posts intermediate build statuses (queued, started, canceled) to the Swarm review's **Comments** tab. Instead, the feature announces only the final build status (successful or failed). You can additionally uncheck the **Code Review Comments** option in the build feature's settings dialog to disable these remaining status notifications as well (in this case, the Commit Status Publisher will only update the review's **Tests** tab).
 * Starting with version 2023.03, versions of dotCover Command Line Tools that are no longer supported by the JetBrains dotCover team are explicitly marked as "deprecated".
@@ -52,6 +65,11 @@ These changes and their potential effects on your existing projects include the 
 * If you face the "Invalid or corrupt jarfile /data/build/teamcity/buildAgent/plugins/environment-fetcher..." error reported by the bundled [](nodejs.md) or legacy [TeamCity.Node](https://github.com/jonnyzzz/TeamCity.Node) plugins, download the updated **Process Environment Fetcher** plugin from this YouTrack issue: [TW-87170](https://youtrack.jetbrains.com/issue/TW-87170).
 * Build agents can unregister due to inactivity after the server restarts. See this issue for more information: [TW-87156](https://youtrack.jetbrains.com/issue/TW-87156/Agent-Disconnected-Unregistered-because-of-inactivity).
 
+
+
+## Changes from 2023.11.4 to 2023.11.5
+
+The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
 
 
 ## Changes from 2023.11.3 to 2023.11.4
@@ -105,7 +123,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 
 * Generating coverage reports using JaCoCo may fail with the `ClassNotFoundError`. To resolve this issue, upgrade to TeamCity 2023.11.4. Depending on whether your current JaCoCo coverage tool was installed pre- or post- 2023.11.x server update, you may also need to reinstall this tool and restart your build agents. See this YouTrack ticket for more information: [TW-86574](https://youtrack.jetbrains.com/issue/TW-86574/jacocoReport.xml-is-created-empty-due-to-ClassNotFoundError-if-non-bundled-Jacoco-is-used#post-fix-notes).
 
-## Changes from 2023.05.4 to 2023.11
+## Changes from 2023.05 to 2023.11
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2023-11"}
@@ -129,7 +147,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 ### S3 Plugin Updates
 {id="2023-11-s3-update"}
 
-Due to the S3 Plugin overhaul, the following settings are no longer available:
+Due to the [S3 Plugin overhaul](storing-build-artifacts-in-amazon-s3.md), the following settings are no longer available:
 
 * The **Use pre-signed URLs** feature is available by default and cannot be disabled.
 * The **Access Key ID**, **Secret Access Key**, **IAM Role** and **Default provider chain** options are no longer available for native AWS S3 storages. Instead, use settings of an [AWS Connection](configuring-connections.md#AmazonWebServices) these storages utilize to edit corresponding options. When you view or edit an existing S3 bucket that employed any of these settings, TeamCity shows the **Convert to AWS Connection** link that allows you to transfer them to a new AWS Connection. We recommend that you do so to keep all connection-related options outside storage settings.
@@ -139,7 +157,7 @@ Due to the S3 Plugin overhaul, the following settings are no longer available:
 
 ### EC2 Plugin Updates
 
-The Amazon EC2 plugin was significantly reworked in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
+The [Amazon EC2 plugin](setting-up-teamcity-for-amazon-ec2.md) was significantly reworked in version 2023.11. As a part of this overhaul, it is no longer possible to [push TeamCity agents](install-teamcity-agent.md#Install+via+Agent+Push) to EC2 instances spawned from AWS Cloud Image. As an alternative, use EC2 images that already include TeamCity agents.
 
 In version 2023.11.2, we expect to rollback this change for cloud profiles configured before the 2023.11 update. This will allow you to continue using the agent push functionality for the existing cloud agents. However, we encourage you to update your setup and bake TeamCity agents into your AMIs instead of installing them via the agent push. The latter option will be completely disabled in one of the future releases.
 
@@ -176,6 +194,18 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 
 
+## Changes from 2023.05.4 to 2023.05.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2023-05-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
 ## Changes from 2023.05.3 to 2023.05.4
 
 No potential breaking changes.
@@ -183,8 +213,9 @@ No potential breaking changes.
 See this article for the complete list of fixed issues: [](teamcity-2023-05-4-release-notes.md).
 
 
-
 ## Changes from 2023.05.2 to 2023.05.3
+
+No potential breaking changes.
 
 See this article for the complete list of fixed issues: [](teamcity-2023-05-3-release-notes.md).
 
@@ -203,7 +234,6 @@ See this article for the complete list of fixed issues: [](teamcity-2023-05-2-re
 Starting with the next TeamCity version, the [](duplicates-finder-resharper.md) runner will be unable to operate since it relies on a tool that is no longer shipped with ReSharper Command Line Tools. See the corresponding [server health report](server-health.md#Duplicates+Finder+Runner) for more information.
 
 ### Known Issues
-{id="known-issues-2023-5-2"}
 
 * Builds that pull TFS repositories fail with the `java.lang.NoClassDefFoundError` message if the checkout mode is "Always checkout files on agent". See this YouTrack issue for more information: [TW-82824](https://youtrack.jetbrains.com/issue/TW-82824).
 
@@ -226,7 +256,8 @@ With this bugfix update, automatically created [batch builds](parallel-tests.md)
 
 
 
-## Changes from 2022.10.3 to 2023.05
+
+## Changes from 2022.10 to 2023.05
 
 ### Planned deprecation of Java 8 in TeamCity Server
 
@@ -248,8 +279,6 @@ The Web Application Description Language (WADL) generator is now removed. See th
 
 * The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests".
 * The `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
-
-See the What's New page for more responsibility-related changes.
 
 ### Podman Support
 
@@ -281,7 +310,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 ### Miscellaneous Updates
 
 * Users with the "Project Developer" [role](managing-roles-and-permissions.md) can now download and view the `.teamcity/settings/buildSettings.xml` [hidden artifact](build-artifact.md#Hidden+Artifacts). Previously, this action required the "Edit project" permission that is enabled for "Project Administrator" and higher roles.
-* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely).
+* Agent pages no longer display the **Open SSM Terminal** action link. This functionality was deprecated in favor of more generic **Open Terminal** button. See [](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) for more details.
 * Configurations with [agent-side checkout](vcs-checkout-mode.md) mode do not support postfixes in checkout directory paths (for instance, `+:src/main => src/main/postfixDirectory`). If you specified a postfix in checkout rules, previous TeamCity versions silently swallowed this error and ran builds that ignored your postfixes. Starting with version 2023.05, TeamCity shows the corresponding error message and does not allow new builds to start. See this section for more information: [](git.md#Limitations).
 
 
@@ -295,6 +324,23 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * If a directory published as a build artifacts contains symbolic links, files and folderes referenced by these symlinks are no longer included in the produced artifact archive. This issue will be resolved in the 2023.05.1 bugfix update, see this article for more information: [](configuring-general-settings.md#Publishing+Symlinks).
 * Some TeamCity pages are missing their `html` and `body` tags. See this ticket for more information: [TW-82749](https://youtrack.jetbrains.com/issue/TW-82749).
 * Agents spawned from AWS machine images that utilize the first version of Amazon Metadata (IMDSv1) fail to retrieve property values from metadata and pass automatic [authorization](configure-agent-installation.md). See this ticket for more information: [TW-82176](https://youtrack.jetbrains.com/issue/TW-82176).
+
+
+## Changes from 2022.10.4 to 2022.10.5
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-10-5"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
+## Changes from 2022.10.3 to 2022.10.4
+
+No potential breaking changes.
 
 ## Changes from 2022.10.2 to 2022.10.3
 
@@ -430,6 +476,22 @@ The Kotlin DSL plugin may fail [to resolve DSL dependencies](https://youtrack.je
 if a project's Kotlin DSL settings use third-party libraries.
 
 If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
+
+## Changes from 2022.04.5 to 2022.04.6
+
+Tooling updates in Server and Agent Docker imaages:
+
+* Git and Git for Windows were updated to version 2.45.1.
+* Perforce was updated to version 2022.2-2531894.
+
+### Known Issues
+{id="known-issues-2022-04-6"}
+
+* Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+
+## Changes from 2022.04.4 to 2022.04.5
+
+No potential breaking changes.
 
 ## Changes from 2022.04.3 to 2022.04.4
 
