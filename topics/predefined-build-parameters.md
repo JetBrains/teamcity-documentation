@@ -1,7 +1,7 @@
 [//]: # (title: List of Predefined Build Parameters)
 [//]: # (auxiliary-id: List of Predefined Build Parameters;Predefined Build Parameters)
 
-TeamCity provides a dozens of predefined [build parameters](configuring-build-parameters.md) ready to be used in the settings of a build configuration or in build scripts.
+TeamCity provides dozens of predefined [build parameters](configuring-build-parameters.md) ready to be used in the settings of a build configuration or in build scripts.
 
 All these parameters (except [](#Predefined+Configuration+Parameters)) are **passed to a build process**. Note that the techniques required to access these parameters may vary depending on your build type (for example, see the [Build Properties](gradle.md#Build+properties) section for the information on accessing TeamCity system properties in Gradle builds).
 
