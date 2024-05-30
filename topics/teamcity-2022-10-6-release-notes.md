@@ -1,19 +1,11 @@
-[//]: # (title: TeamCity 2022.04.6 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2022.04.6 Release Notes)
+[//]: # (title: TeamCity 2022.10.6 Release Notes)
+[//]: # (auxiliary-id: TeamCity 2022.10.6 Release Notes)
 
-__Build: 109057__
+__Build: 117311__
 
-__29 May 2024__
+__30 May 2024__
 
-> Due to a technical issue, this release does not include the announced bug fixes and security updates. We have promptly prepared another bugfix update (2022.04.7) to address this matter.
->
-> We strongly recommend updating to the newest version to ensure you receive the necessary bug fixes and security improvements.
->
-{type="warning"}
-
-
-
-<!--Project: TeamCity Fix versions: 2022.04.6  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
+<!--Project: TeamCity Fix versions: 2022.10.5  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
 
 
 ### Bug
@@ -22,9 +14,10 @@ __29 May 2024__
 
 **[TW-87750](https://youtrack.jetbrains.com/issue/TW-87750/The-user-with-the-Project-Administrator-role-cant-see-the-NuGet-feed)** — The user with the Project Administrator role can't see the NuGet feed
 
-<!--Project: TeamCity Fix versions: {2022.04.6 (109057)}  #{Security Problem}  #Fixed #Testing -{Trunk issue} -bulletin-exclude-->
+<!--Project: TeamCity Fix versions: {2022.10.5 (117305)}  #{Security Problem} #Fixed #Testing -{Trunk issue} -bulletin-exclude-->
 
-### Security Problems
+
+### Security
 
 23 security issues were fixed. To protect customers who have not yet updated their servers, we typically withhold details about these fixes. Instead, we encourage you to review our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) a few days after each bugfix release for more information.
 

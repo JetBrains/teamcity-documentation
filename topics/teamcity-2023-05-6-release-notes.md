@@ -1,15 +1,9 @@
-[//]: # (title: TeamCity 2023.05.5 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2023.05.5 Release Notes)
+[//]: # (title: TeamCity 2023.05.6 Release Notes)
+[//]: # (auxiliary-id: TeamCity 2023.05.6 Release Notes)
 
-__Build: 129472__
+__Build: 129475__
 
-__29 May 2024__
-
-> Due to a technical issue, this release does not include the announced bug fixes and security updates. We have promptly prepared another bugfix update (2023.05.6) to address this matter.
->
-> We strongly recommend updating to the newest version to ensure you receive the necessary bug fixes and security improvements.
-> 
-{type="warning"}
+__30 May 2024__
 
 
 <!--Project: TeamCity Fix versions: 2023.05.5 -{2023.05.4 (129421)}  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->

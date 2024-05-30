@@ -1,20 +1,13 @@
-[//]: # (title: TeamCity 2022.04.6 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2022.04.6 Release Notes)
+[//]: # (title: TeamCity 2022.04.7 Release Notes)
+[//]: # (auxiliary-id: TeamCity 2022.04.7 Release Notes)
 
-__Build: 109057__
+__Build: 109063__
 
-__29 May 2024__
+__30 May 2024__
 
-> Due to a technical issue, this release does not include the announced bug fixes and security updates. We have promptly prepared another bugfix update (2022.04.7) to address this matter.
->
-> We strongly recommend updating to the newest version to ensure you receive the necessary bug fixes and security improvements.
->
-{type="warning"}
-
-
+> This update can be installed on pre-2022.04 TeamCity servers with lapsed licenses that do not normally support upgrading to newer versions. See this post for more information: [TeamCity Major Bug Fix for All Versions](https://blog.jetbrains.com/teamcity/2024/05/teamcity-major-bug-fix-release-for-all-versions/).
 
 <!--Project: TeamCity Fix versions: 2022.04.6  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
-
 
 ### Bug
 
