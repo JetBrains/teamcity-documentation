@@ -5,6 +5,13 @@ __Build: 117305__
 
 __29 May 2024__
 
+
+> Due to a technical issue, this release does not include the announced bug fixes and security updates. We have promptly prepared another bugfix update (2022.10.6) to address this matter.
+>
+> We strongly recommend updating to the newest version to ensure you receive the necessary bug fixes and security improvements.
+>
+{type="warning"}
+
 <!--Project: TeamCity Fix versions: 2022.10.5  visible to: {All Users} #Fixed #Testing -{Trunk issue}-->
 
 
