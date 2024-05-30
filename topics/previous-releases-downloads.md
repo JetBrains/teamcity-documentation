@@ -10,15 +10,22 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version: TeamCity 2022.10.5
+## Current version: TeamCity 2022.10.6
+
+Release date: 30 May 2024<br/>
+Build 117311
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.6.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.6.tar.gz)
+
+[Release notes](teamcity-2022-10-6-release-notes.md)
+
+## TeamCity 2022.10.5
 
 Release date: 29 May 2024<br/>
 Build 117305
 
-[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.exe)<br/>
-[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.10.5.tar.gz)
-
-[Release notes](teamcity-2022-10-5-release-notes.md)
+Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2022.10.6 instead.
 
 ## TeamCity 2022.10.4
 
@@ -70,15 +77,22 @@ Build 116751
 
 [Release notes](teamcity-2022-10-release-notes.md)
 
+## TeamCity 2022.04.7
+
+Release date: 30 May 2024<br/>
+Build 109063
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.7.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.7.tar.gz)
+
+[Release notes](teamcity-2022-04-7-release-notes.md)
+
 ## TeamCity 2022.04.6
 
 Release date: 29 May 2024<br/>
 Build 109057
 
-[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.exe)<br/>
-[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2022.04.6.tar.gz)
-
-[Release notes](teamcity-2022-04-6-release-notes.md)
+Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2022.04.7 instead.
 
 ## TeamCity 2022.04.5
 
