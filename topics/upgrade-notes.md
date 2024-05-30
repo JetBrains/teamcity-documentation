@@ -1,7 +1,7 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2022.04.5 to 2022.04.6
+## Changes from 2022.04.5 to 2022.04.7
 
 Tooling updates in Server and Agent Docker imaages:
 
