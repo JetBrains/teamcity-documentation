@@ -128,7 +128,7 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 
 
-## Changes from 2023.05.4 to 2023.05.5
+## Changes from 2023.05.4 to 2023.05.6
 
 Tooling updates in Server and Agent Docker imaages:
 
@@ -260,7 +260,7 @@ In addition to these changes, TeamCity no longer reports the "experimental" tag 
 * Agents spawned from AWS machine images that utilize the first version of Amazon Metadata (IMDSv1) fail to retrieve property values from metadata and pass automatic [authorization](configure-agent-installation.md). See this ticket for more information: [TW-82176](https://youtrack.jetbrains.com/issue/TW-82176).
 
 
-## Changes from 2022.10.4 to 2022.10.5
+## Changes from 2022.10.4 to 2022.10.6
 
 Tooling updates in Server and Agent Docker imaages:
 
@@ -411,7 +411,7 @@ if a project's Kotlin DSL settings use third-party libraries.
 
 If you face this problem, upgrade to the bug-fix version 2022.10.1 that ships with an updated version of the DSL plugin.
 
-## Changes from 2022.04.5 to 2022.04.6
+## Changes from 2022.04.5 to 2022.04.7
 
 Tooling updates in Server and Agent Docker imaages:
 
