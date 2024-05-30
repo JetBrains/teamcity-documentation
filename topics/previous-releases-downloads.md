@@ -170,7 +170,7 @@ Build 117311
 Release date: 29 May 2024  
 Build 117305
 
-Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2023.05.6 instead.
+Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2022.10.6 instead.
 
 ## TeamCity 2022.10.4
 
@@ -238,7 +238,7 @@ Build 109063
 Release date: 29 May 2024
 Build 109057
 
-Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2023.05.6 instead.
+Due to a technical error, this version does not include announced bug fixes and security updates, and should not be installed on your server. Download version 2022.04.7 instead.
 
 ## TeamCity 2022.04.5
 
