@@ -12,6 +12,7 @@ Tooling updates in Server and Agent Docker imaages:
 {id="known-issues-2023-05-5"}
 
 * Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+* The **Administration** page is not accessible from TeamCity UI if the plain-text [LDAP connection](ldap-integration.md) URL (`ldap://...`) is used. To resolve this issue, switch to a secure LDAPS connection (recommended) or add an internal property as suggested in the following ticket: [TW-88069](https://youtrack.jetbrains.com/issue/TW-88069).
 
 ## Changes from 2023.05.3 to 2023.05.4
 
