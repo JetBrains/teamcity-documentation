@@ -9,6 +9,8 @@
 {id="known-issues-2024-03-2"}
 
 * If you utilize the [Amazon Elastic Container Service Support](https://plugins.jetbrains.com/plugin/10067-amazon-elastic-container-service-support/versions/stable) plugin, please update it to the latest "SNAPSHOT-20240513140730" version. Older versions may malfunction with the 2024.03.2 version of the TeamCity server.
+* AWS-hosted agents of the "Instance" type may fail to authorize to TeamCity server. As a workaround, you can resolve this issue by adding [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) as suggested in the following ticket: [TW-88068](https://youtrack.jetbrains.com/issue/TW-88068#focus=Comments-27-9864960.0-0).
+* TeamCity server fails to authorize Azure cloud agents from attached Virtual Machines. Note that this issue does not affect Azure images hosted in managed images. If migrating Azure cloud agents from VMs to images does not suit your requirements, please track the [TW-88070](https://youtrack.jetbrains.com/issue/TW-88070) to get timely notifications on [Azure Resource Manager Cloud Support](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support) plugin updates that we expect to implement in the nearest future.
 
 ## Changes from 2024.03 to 2024.03.1
 
@@ -205,6 +207,7 @@ Tooling updates in Server and Agent Docker imaages:
 {id="known-issues-2023-05-5"}
 
 * Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+* The **Administration** page is not accessible from TeamCity UI if the plain-text [LDAP connection](ldap-integration.md) URL (`ldap://...`) is used. To resolve this issue, switch to a secure LDAPS connection (recommended) or add an internal property as suggested in the following ticket: [TW-88069](https://youtrack.jetbrains.com/issue/TW-88069).
 
 ## Changes from 2023.05.3 to 2023.05.4
 
@@ -334,9 +337,10 @@ Tooling updates in Server and Agent Docker imaages:
 * Perforce was updated to version 2022.2-2531894.
 
 ### Known Issues
-{id="known-issues-2022-10-5"}
+{id="known-issues-2022-10-6"}
 
 * Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+* The **Administration** page is not accessible from TeamCity UI if the plain-text [LDAP connection](ldap-integration.md) URL (`ldap://...`) is used. To resolve this issue, switch to a secure LDAPS connection (recommended) or add an internal property as suggested in the following ticket: [TW-88069](https://youtrack.jetbrains.com/issue/TW-88069).
 
 ## Changes from 2022.10.3 to 2022.10.4
 
@@ -488,6 +492,7 @@ Tooling updates in Server and Agent Docker imaages:
 {id="known-issues-2022-04-6"}
 
 * Requests sent by the [GitHub Commit Hook](configuring-vcs-post-commit-hooks-for-teamcity.md) plugin fail with the "403: Access Denied" error. Update your plugin to [version 2022.04-109057](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks/versions/stable/544827) to resolve this issue. See this YouTrack ticket for more information: [TW-86680](https://youtrack.jetbrains.com/issue/TW-86680).
+* The **Administration** page is not accessible from TeamCity UI if the plain-text [LDAP connection](ldap-integration.md) URL (`ldap://...`) is used. To resolve this issue, switch to a secure LDAPS connection (recommended) or add an internal property as suggested in the following ticket: [TW-88069](https://youtrack.jetbrains.com/issue/TW-88069).
 
 ## Changes from 2022.04.4 to 2022.04.5
 
