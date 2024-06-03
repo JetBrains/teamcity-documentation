@@ -78,6 +78,17 @@ To **configure automatic triggering** for a Perforce shelved changelist:
 2. Add a new trigger of the _Perforce Shelve Trigger_ type.
 3. Configure its settings as described in [this article](perforce-shelve-trigger.md).
 
+To build the target shelved changelist with [TeamCity REST API](teamcity-rest-api.md), send a request to the following endpoint:
+
+```Shell
+/app/perforce/runBuildForShelve?buildTypeId=<BUILD_TYPE_ID>&vcsRootId=<VCS_ROOT_ID>&shelvedChangelist=<SHELVED_CHANGELIST_ID>
+```
+{prompt="POST"}
+
+* `BUILD_TYPE_ID` — the ID of your build configuration.
+* `VCS_ROOT_ID` — the external ID of a related [](vcs-root.md).
+* `SHELVED_CHANGELIST_ID` — the ID of the required changelist.
+
 ### Publishing Build Statuses to Perforce Helix Swarm
 
 If you use [Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) for code review of shelved files, you can configure TeamCity to posts build statuses as comments to your reviews.
