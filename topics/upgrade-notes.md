@@ -2,6 +2,7 @@
 [//]: # (auxiliary-id: Upgrade Notes)
 
 ## Changes from 2024.03 to 2024.07
+{id="2024.07"}
 
 ???
 

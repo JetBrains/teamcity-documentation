@@ -103,7 +103,7 @@ To toggle the new option, go to __Project Settings | Versioned Settings | Config
 
 <img src="versioned-settings-sync.png" width="460" alt="Read-only project settings"/>
 
-[Read this article](storing-project-settings-in-version-control.md#Synchronizing+Settings+with+VCS) for more details.
+[Read this article](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS) for more details.
 
 ## Limit permissions of access tokens
 

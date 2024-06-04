@@ -11,7 +11,7 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 > 
 {type="warning"}
 
-<anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
+
 
 ## Key Takeways
 
@@ -21,6 +21,8 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 * You can choose whether a project [can be edited](#SynchronizingSettingswithVCS) via TeamCity UI (in this case TeamCity synchronizes edits made in the UI with remotely stored settings) or only by modifying settings files on the VCS side.
 * Different repository branches can store [different project settings](#Example%3A+Branch-Specific+Settings).
 * Global server-wide settings can be stored and managed via HashiCorp Terraform using the [dedicated TeamCity Provider](#Storing+and+Managing+Global+Server+Settings).
+
+<anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
 
 ## Synchronizing Settings with VCS
 {id="SynchronizingSettingswithVCS" auxiliary-id="SynchronizingSettingswithVCS"}
