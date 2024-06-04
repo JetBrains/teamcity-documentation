@@ -1,16 +1,16 @@
-[//]: # (title: What's New in TeamCity 2024.03)
-[//]: # (auxiliary-id: What's New in TeamCity 2024.03;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity 2024.07)
+[//]: # (auxiliary-id: What's New in TeamCity 2024.07;What's New in TeamCity)
 
 
-<include src="what-s-new-in-teamcity-tc.md" include-id="2024-03-tc"/>
+<include src="what-s-new-in-teamcity-tc.md" include-id="2024-07-tc"/>
 
-<include src="what-s-new-in-teamcity-tcc.md" include-id="2024-03-tcc"/>
+<include src="what-s-new-in-teamcity-tcc.md" include-id="2024-07-tcc"/>
 
 
 ## Upgrade Notes
 {product="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version [2024.03 compared to 2023.11](upgrade-notes.md#Changes+from+2023.11+to+2024.03).
+Before upgrading, we highly recommend reading about important changes in version [2024.07 compared to 2023.03](upgrade-notes.md#Changes+from+2023.03+to+2024.07).
 
 
 ## Fixed Issues
