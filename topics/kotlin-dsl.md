@@ -284,17 +284,27 @@ This is especially useful if you need to add some build feature or trigger to yo
 
 One of the advantages of the portable DSL script is that the script can be used by more than one project on the same server or more than one server (hence the name: portable).
 
-If you have a repository with `.teamcity` containing settings in portable format, you can easily create another project based on these settings. The [Create Project From URL](creating-and-editing-projects.md) feature can be used for this.
+When creating a new project, point TeamCity to a repository that stores project settings in a Kotlin DSL format. TeamCity will display three options to choose from:
 
-Point TeamCity to your repository, and it will detect the `.teamcity` directory and offer to import settings from there:
+* Apply these settings without enabling synchronization. You can then customize your new project and these edits will not be committed back to the remote repository.
+* Apply these settings and enable synchronization. Changes made in TeamCity UI will update the remote DSL script and vice versa, editing a script on the VCS side will update your TeamCity project.
+* Ignore the settings and create a new project from scratch.
 
-<img src="NewKotlinProjectURL.png" width="638" alt="Importing Kotlin settings when creating a project from URL"/>
+<img src="NewKotlinProjectURL.png" width="706" alt="Importing Kotlin settings when creating a project from URL"/>
 
-<note>
+Starting with version 2024.07, Kotlin scripts can be stored at any [custom location](storing-project-settings-in-version-control.md#Custom+Settings+Path) within the remote repository. However, when you create new a new project, TeamCity can currently detect existing DSL scripts only if they are stored in the default `.teamcity` folder. As a workaround, proceed to create a blank project and do the following:
 
-It seems pointless to keep two projects using the same DSL scripts on one server, as such projects will be identical. All changes to the one project will be replicated to another. However, since TeamCity 2019.2, it is possible to customize generation of project settings with help of [DSL context parameters](#contextParameters).
+   1. Navigate to the **Versioned Settings** tab of project settings.
+   2. Check **Synchronization enabled**.
+   3. Specify the path to the settings directory in the **Settings path in VCS** field.
+   4. Click **Load project settings from VCS...** to import remotely stored DSL scripts.
 
-</note>
+Once the project has applied remotely stored settings, you can disable the synchronization if it is no longer needed.
+
+> [DSL context parameters](#contextParameters) allow you to create discrepant projects from the same DSL script.
+> 
+{type="tip"}
+
 
 
 <anchor name="contextParameters"/>
