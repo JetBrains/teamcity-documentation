@@ -35,8 +35,11 @@ DESCRIPTION
 Learn more: LINK
 
 
-</chunk>
-
 ## Miscellaneous Changes
+{product="tc"}
 
 * The list of [statistic values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported by TeamCity now includes the **AllTestsDuration** value.
+
+
+</chunk>
+
