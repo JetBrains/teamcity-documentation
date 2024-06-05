@@ -413,6 +413,24 @@ Unit
 
 <td>
 
+`AllTestsDuration`
+
+</td>
+
+<td>
+
+The total duration of all tests that were run during this build.
+
+</td>
+
+<td>
+
+Milliseconds
+
+</td></tr><tr>
+
+<td>
+
 `ArtifactsSize`
 
 </td>
