@@ -72,6 +72,21 @@ A VCS repository [URL](guess-settings-from-repository-url.md). TeamCity recogniz
 
 Icons next to this field represent VCS hosting services supported by TeamCity. If you click an active (highlighted) icon, you will be able to select an existing connection specification. If you click an inactive icon, you will be redirected to the _Add Connection_ form.
 
+Depending on the URL format, the following authentication settings may vary.
+
+</td></tr><tr>
+
+<td>
+
+Authentication
+
+
+</td>
+
+<td>
+
+TeamCity automatically sets this field to either "Password / Access token" or "SSH key" depending on the URL format.
+
 </td></tr><tr>
 
 <td>
@@ -83,8 +98,7 @@ Username
 
 <td>
 
-Provide a username if access to the repository requires authentication.
-
+Available if the **Authentication** is set to "Password / Access token". Specifies a username required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access. 
 
 </td></tr><tr>
 
@@ -97,7 +111,35 @@ Password
 
 <td>
 
-Provide a password or token if access to the repository requires authentication.
+Available if the **Authentication** is set to "Password / Access token". Specifies a password or token required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access.
+
+
+</td></tr><tr>
+
+<td>
+
+SSH key
+
+
+</td>
+
+<td>
+
+Available if the **Authentication** is set to "SSH key". Allows you to upload a new private SSH key or choose a [previously uploaded key](ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project).
+
+
+</td></tr><tr>
+
+<td>
+
+SSH passphrase
+
+
+</td>
+
+<td>
+
+Available if the **Authentication** is set to "SSH key". Allows you to specify a passphrase for encrypted SSH keys.
 
 
 </td></tr></table>

@@ -136,7 +136,7 @@ When you run TeamCity as a Windows service, it cannot access mapped network driv
 
 <anchor name="passwordAuth"/>
 
-* **Password / personal access token** — specify a valid __username__ (if there is no username in the clone URL; the username specified here overrides the username from the URL) and a __password__ to be used to clone the repository.    
+* **Password / personal access token** — specify a valid __username__ (if there is no username in the clone URL, the username specified in this field overrides the username from the URL) and a __password__ to be used to clone the repository.    
 For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](https://youtrack.jetbrains.com/issue/TW-18711).    
 For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
    

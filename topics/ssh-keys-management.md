@@ -11,16 +11,30 @@ TeamCity supports keys in the PEM and OpenSSH formats. Keys that use different f
 
 ## Upload SSH Keys to TeamCity Server
 
-To allow TeamCity projects to access remote repositories via SSH keys, you first need to upload your keys to these projects.
+To allow TeamCity projects to access remote repositories via SSH URLs, you first need to upload your private keys to these projects.
 
 1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
+   <img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
 3. In the "_Upload SSH Key_" dialog, browse for a private key file and specify a name for this key.
 4. Click **Save** to save the uploaded key.
 
-<img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
+You can also upload private keys when creating new projects [from repository URLs](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL). If you use an SSH URL, TeamCity switches the **Authentication** mode to "SSH Keys" and shows a list of the previously uploaded private keys. If you did not upload a required key before, click **Upload SSH key** and point TeamCity to the required file.
 
-Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys` directory. TeamCity tracks this directory so uploaded keys become available in the current project and its subprojects without the need to restart a server.
+<img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
+
+
+
+
+Uploaded SSH keys are stored in the following directory:
+
+* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/<project>/pluginData/ssh_keys`
+
+If a key was uploaded from the "Create Project" page, TeamCity assigns it to the root project, making it available for further projects you create. In this case, uploaded keys are saved to the following directory instead:
+
+* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/_Root/pluginData/ssh_keys`
+
+
 
 > Keep the access to the [TeamCity Data Directory](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
 >
@@ -48,20 +62,23 @@ If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connec
 
 ## Configure VCS Root Settings
 
-Once required SSH keys are uploaded, modify the VCS Root settings to select a key that your project should use.
-
-
-> Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If your "Fetch URL" / "Push URL" in **Project Settings** are set to HTTPS (for instance, `https://github.com/...`), authorization with SSH keys is disabled.
->
-{type="note"}
-
 > Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
 
-1. Go to the **Project Settings | VCS Roots** page and click the required root.
-2. In the **Authentication Settings** section, click the required "Private Key" option:
-   <include src="git.md" include-id="ssh-key-options"/>
+Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If you create a project using an SSH URL and choose/upload a private key from the "Create Project" page, TeamCity automatically sets up required settings, and you do not need to modify a [](vcs-root.md).
 
-<img src="dk-selectSshKeyOptions.png" width="706" alt="Select an SSH key"/>
+Otherwise, if you want to update a project that authenticates to a VCS via a token or a password so that it starts using an SSH key instead, you will need to manually update a corresponding [](vcs-root.md).
+
+1. Navigate to **Administration | &lt;Your_Project&gt; | VCS Roots** and click **Edit** next to the required root.
+2. Update the **Fetch URL** and/or **Push URL** fields to use an SSH URL instead. For example, change `https://github.com/username/repository_name.git` to `git@github.com:username/repository_name.git`.
+3. Scroll down to **Authentication Settings** and choose one of the **Private Key** options.
+    
+    <img src="dk-selectSshKeyOptions.png" width="706" alt="Select an SSH key"/>
+    
+    <include src="git.md" include-id="ssh-key-options"/>
+
+4. Click **Test Connection** at the bottom of the page to check you current values, and **Apply** to save and exit the root settings.
+
+
 
 
 

@@ -17,12 +17,16 @@ Learn more: [Storing Project Settings in Version Control Systems](storing-projec
 
 
 
-## Feature Two
+## Upload SSH Keys from the Create Project Page
 {product="tc"}
 
-DESCRIPTION
+When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
-Learn more: LINK
+<img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
+
+This minor enhancement streamlines the workflow by eliminating the need to upload keys in advance from the [SSH Keys](ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project) page.
+
+Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
 
 
 
