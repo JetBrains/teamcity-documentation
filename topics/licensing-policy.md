@@ -164,12 +164,9 @@ When there are more authorized agents than the valid agent licenses available, t
 
 You can enter new license keys and review the currently used ones (including the license issue date and maintenance period) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page. Adding or removing licenses on the page is applied immediately.
 
-A single license can only be used on a single running TeamCity server at any given time. Running secondary TeamCity nodes in addition to the main node does not require a separate license at this time.
+See the following article for more information: [](manage-teamcity-license.md).
 
-If you create a copy of the server and run two servers at the same time, you should ensure each license key is used on a single server only. You can use the Evaluation (limited time) license to run a server for testing/non-production purposes. The licenses are not bound to a specific server instance, machine, and so on. The only limitation is that a license cannot be used on several servers at the same time.
 
-When you already own license(s) and buy more licenses, you can [request](https://www.jetbrains.com/support/sales/) JetBrains sales to make the new licenses co\-termed with those already purchased, so that all the licenses have equal maintenance expiration date. The cost of the licenses is then lowered proportionally.   
-When buying many licenses, you are welcome to [contact](https://www.jetbrains.com/support/sales/) our sales for available volume discounts.
 
 ## Valid TeamCity Versions
 

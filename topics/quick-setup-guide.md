@@ -97,3 +97,12 @@ When you launch TeamCity in a browser for the first time, it will prompt you to 
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  
 
 You are signed in to TeamCity: now you can configure your user settings and [create and run your first build](configure-and-run-your-first-build.md).
+
+
+## Activating TeamCity
+
+TeamCity provides a wide range of [licensing options](https://www.jetbrains.com/teamcity/buy/#on-premises) that suite teams of any size. In addition to multiple available server licenses, you can purchase additional agents to scale the performance of your build server.
+
+Server and agent licenses can be activated on the **Administration | Licenses** page. We recommend activating your server license, even for the free Professional version, to ensure system administrators receive timely email notifications about critical TeamCity server security updates.
+
+Learn more: [](licensing-policy.md), [](manage-teamcity-license.md)
