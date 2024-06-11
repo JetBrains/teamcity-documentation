@@ -17,8 +17,11 @@ If you are both TeamCity and JetBrains Account administrator and TeamCity server
 
 1. Navigate to **Administration | Licenses** page.
 2. Click **Get License Key** and log into your JetBrains Account.
-3. Choose a server license you want to activate.
-4. Click **Get license key** to confirm. The license will get activated automatically.
+3. Choose a server license you want to activate. This page shows licenses owned by all teams associated with the current account.
+   <img src="dk-choose-license.png" width="706" alt="Choose a license"/>
+4. Click **Get license key** to confirm. The activation key will be transfered to your TeamCity server automatically. You can also manually copy a key and insert it in the **I already have a key** field.
+    
+    <img src="dk-activation-successful.png" width="706" alt="Successful activation"/>
 
 If you have [no access to the required JetBrains Account](#Offline+Mode):
 
@@ -39,7 +42,7 @@ Activating a license is a two-way process: linking your TeamCity instance to the
 
 On the **Administration | Licenses** page, click **Revoke** to revoke a license. By doing so you disable the target license, but it still remains active in your JetBrains account. This means if you need to re-activate this license on the same server, copy a key from the JBA page and insert it using the **I already have a key** button.
 
-<img src="dk-get-licence-key-from-jba.png" width="706" alt="Get license key from JBA"/>
+<img src="dk-get-license-key.png" width="706" alt="Get license key from JBA"/>
 
 This license key will be accepted without the need to follow the **Get license key** link first and select which license you want to activate in JetBrains Account.
 
@@ -47,7 +50,13 @@ This license key will be accepted without the need to follow the **Get license k
 
 After you click **Revoke** in TeamCity, the JetBrains Account page opens. You can revoke a required license right away, or do it [later as a separate step](https://sales.jetbrains.com/hc/en-gb/articles/207739209-Revoking-licenses-from-users).
 
-Revoking a license from the JetBrains Account severs the link between JBA and your instance. This means if you need to reactivate the same license on the same server, you need to repeat all steps described in the [](#Activate+a+License) section. If a TeamCity instance is not linked to the JBA, the **License key** link mentioned in the [previous](#Revoke+in+TeamCity) section produces a shorter key in the [legacy format](#Legacy+Activation) that will not be accepted in the **I already have a key** field.
+Revoking a license from the JetBrains Account severs the link between JBA and your instance. This means if you need to reactivate the same license on the same server, you need to repeat all steps described in the [](#Activate+a+License) section.
+
+Licenses that are not yet activated display a corresponding status next to their IDs in JetBrains Account.
+
+<img src="dk-jba-license.png" width="706" alt="Not activated license"/>
+
+Both **License key** and **Generate legacy license key** links for such licenses produce the same legacy key that is not accepted in the **I already have a key** field in TeamCity.
 
 
 ## Organizations and Teams
@@ -65,10 +74,12 @@ The nature of the JBA-based license activation mechanism implies that TeamCity p
 
 When TeamCity server is behind a proxy server that does not permit communications with `account.jetbrains.com`, the majority of these benefits do not apply. However, we still recommend to activate your license to get timely email notifications about available server security updates. See the [](#Activate+a+License) section for the instructions.
 
-All license-related changes made in a [team](#Organizations+and+Teams) affect the **server key** (even if the change does not relate to the server directly, for example adding or removing additional agents). Since TeamCity cannot automatically fetch these updates when in offline mode, you need to refresh your server key manually. To do so, copy a server license key from the JetBrains Account page (see [](#Revoke+in+TeamCity)) and paste it using the **I already have a key** link in TeamCity.
+All license-related changes made in a [team](#Organizations+and+Teams) affect the **server key** (even if the change does not relate to the server directly, for example adding or removing additional agents). Since TeamCity cannot automatically fetch these updates when in offline mode, you need to refresh your server key manually. To do so, copy a <u>server license key</u> from the JetBrains Account page (see [](#Revoke+in+TeamCity)) and paste it using the **Enter your license key** link in TeamCity.
+
+<img src="dk-get-license-key.png" width="706" alt="Get license key from JBA"/>
 
 
-## Legacy Activation
+## Legacy Licenses
 
 Existing customers who purchased TeamCity licences previously can still employ the legacy workflow by clicking the **Enter new license key** button and inserting the license key. However, we recommend switching to the JBA-based workflow to benefit from crucial security email notifications and automatic license updates.
 
