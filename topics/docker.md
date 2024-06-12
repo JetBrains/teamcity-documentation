@@ -241,7 +241,7 @@ We recommend removing (or commenting out) the `Defaults requiretty` line from th
 
 ## Building Multi-Arch Images
 
-The **other...** command allows you to execute any custom `docker ...` commands. For example, you can invoke [buildx](https://github.com/docker/buildx) commands to build multi-arch images.
+The **other...** command option allows you to execute any custom `docker ...` command. For example, you can invoke [buildx](https://github.com/docker/buildx) commands to build multi-arch images.
 
 1. Add a new **Docker** runner to your build configuration.
 2. Switch its **Docker command** option to "other...".
