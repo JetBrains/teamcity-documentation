@@ -225,7 +225,7 @@ Additional arguments that will be passed to the `docker` command.
 
 </td></tr></table>
 
-### Running Docker via sudo
+## Running Docker via sudo
 
 You can enforce starting Docker commands on a TeamCity agent via `sudo`. Add the `teamcity.docker.use.sudo=true` setting in the [build agent configuration file](configure-agent-installation.md) or as an agent's system property. On the agent start, the TeamCity agent log will inform you that the `sudo` prefix is used to run Docker commands.
 
@@ -237,6 +237,16 @@ buildagentuser ALL=(ALL) NOPASSWD:SETENV:<full_path_to_docker>
 ```
 
 We recommend removing (or commenting out) the `Defaults requiretty` line from the `sudoers` file to prevent the [problem with `docker login`](https://youtrack.jetbrains.com/issue/TW-60990).
+
+
+## Building Multi-Arch Images
+
+The **other...** command allows you to execute any custom `docker ...` commands. For example, you can invoke [buildx](https://github.com/docker/buildx) commands to build multi-arch images.
+
+1. Add a new **Docker** runner to your build configuration.
+2. Switch its **Docker command** option to "other...".
+3. Type "buildx" in the **Command name** field and "create --use" in **Additional arguments for the command**. TeamCity will combine these fields into a single `docker buildx create --use` command.
+4. Repeat steps 1~3 to for each new command you want to execute. For example, you may want to add additional nodes (`docker buildx create --append --name mybuild <context_name>`) or call `docker buildx build <path> --platform linux/amd64,linux/arm64` to start building and image.
 
 
 <seealso>
