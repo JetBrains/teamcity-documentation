@@ -376,7 +376,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 ## Sakura UI and UX Enhancements
 {product="tc"}
 
-* We have reworked the **Agent Parameters** tab. You can navigate to this tab when viewing any TeamCity agent to instantly check this agent's configuration and environment paramters and system properties.
+* We have reworked the agent **Parameters** tab. You can navigate to this tab when viewing any TeamCity agent to instantly check this agent's configuration and environment paramters and system properties.
 
   <img src="dk-sakura-agentParameters.png" width="706" alt="New Agent Parameters tab"/>
 

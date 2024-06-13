@@ -138,7 +138,7 @@ To check current values of agent parameters, navigate to **Agents | Parameters r
 
 <img src="dk-params-checkparamsonagents.png" width="706" alt="Check the specific on agents"/>
 
-You can also click any build agent to open the agent details page, and switch to the **Agent Parameters** tab to view all parameters reported by this specific agent.
+You can also click any build agent to open the agent details page, and switch to the **Parameters** tab to view all parameters reported by this specific agent.
 
 <img src="dk-params-allParamsOnAgent.png" width="706" alt="Check all parameters on an agent"/>
 
