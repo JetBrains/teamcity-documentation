@@ -286,7 +286,7 @@ the build log and the agent log will contain the line "Patch is saved to file $\
 ## Build triggers debug logging
 {product="tc"}
 
-To collect all build triggers debug logs in TeamCity 2021.1 and later, switch the logging preset on the __Administration | Diagnostics page__ to `debug-triggers`, reproduce the problem and then collect all the `teamcity-triggers.log` files.
+To collect all build triggers debug logs in TeamCity 2021.1 and later, switch the logging preset on the __Administration | Diagnostics__ page to `debug-triggers`, reproduce the problem and then collect all the `teamcity-triggers.log` files.
 
 In TeamCity versions before 2021.1, it is only possible to enable debug logging for a VCS trigger defined in a specific build configuration:
 
@@ -311,7 +311,7 @@ In TeamCity versions before 2021.1, it is only possible to enable debug logging 
    ```
    Note: in the example above, `MyBuildConfigurationId` is the ID of the build configuration with a VCS trigger which we want to debug.
 
-3. Switch the logging preset on the __Administration | Diagnostics page__ to the newly created preset file.
+3. Switch the logging preset on the __Administration | Diagnostics__ page to the newly created preset file.
 
 No server restart is required. If the configuration is correct, TeamCity will create the `teamcity-vcs-trigger.log` log file in a few minutes. The file will contain the debug log related to the selected configuration only.
 
