@@ -780,7 +780,7 @@ Save the connection and proceed with adding a [Commit Status Publisher](commit-s
 ## NPM Registry
 {id="npm-registry-settings" auxiliary-id="npm-registry-settings"}
 
-This type of connection allows accessing a private [npm registry](https://docs.npmjs.com/cli/v7/using-npm/registry) during a build.
+This type of connection allows the [](nodejs.md) runner to access a private [npm registry](https://docs.npmjs.com/cli/v7/using-npm/registry) during a build. Since a project can have multiple NPM registry connections, you also need to [configure the related build feature](nodejs.md#Accessing+Private+NPM+Registries) to choose a connection that Node.js build steps should utilize.
 
 Connection settings:
 
