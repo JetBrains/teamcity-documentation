@@ -659,7 +659,7 @@ The members of your [organization](https://help.github.com/en/articles/about-org
 TeamCity can detect each pull request sent to the `master` branch and build the web application based on the updated sources.
 
 To configure the described workflow for the `web-app` build configuration in TeamCity:
-1. __Add a [VCS root](vcs-root.md) to the build configuration__:   
+1. Add a [VCS root](vcs-root.md) to the build configuration:   
    * Go to __Build Configuration Settings | Version Control Settings__ and click __Attach VCS root__.
    * Configure the root parameters:
       - __Type of VCS__: _Git_
@@ -669,7 +669,7 @@ To configure the described workflow for the `web-app` build configuration in Tea
       - __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
       - __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
    * Test the connection and, if successful, click __Create__.
-2. __Add the _Pull Requests_ [build feature](adding-build-features.md) to the build configuration__:
+2. Add the _Pull Requests_ [build feature](adding-build-features.md) to the build configuration:
    * Go to __Build Configuration Settings | Build Features__ and click __Add build feature__.
    * Configure the feature parameters:
         * __VCS Root__: the VCS root created at Step 1
@@ -681,7 +681,8 @@ To configure the described workflow for the `web-app` build configuration in Tea
    * Test the connection and, if successful, click __Save__.
 3. Add a [VCS trigger](configuring-vcs-triggers.md) to the build configuration.
 
-That's it! Now, whenever a member of your GitHub organization sends a pull request to the `master` branch, TeamCity acts as follows:
+With this integration in place, whenever a member of your GitHub organization sends a pull request to the `master` branch, TeamCity does the following:
+
 1. Detects the pull request sent to the `master` branch.
 2. Runs the `web-app` build configuration: collects sources, builds and tests the app according to your predefined build steps.
 3. Displays information about the processed pull request on the build configuration __Overview__ page. You can instantly see the pull request status (1) and refresh the information about its state (2).
