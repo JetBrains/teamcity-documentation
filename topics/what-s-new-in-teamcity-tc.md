@@ -2,6 +2,15 @@
 
 <chunk include-id="2024-07-tc">
 
+## New Licensing Mechanism
+{product="tc"}
+
+Experience seamless license management with our newest [JetBrains Account](https://account.jetbrains.com/licenses) integration. Log into the JetBrains Account from TeamCity and choose a server license to activate. Once connected, TeamCity will automatically receive updates for all server and agent licenses, meaning you will no longer need to manually enter your license codes for any additional agents or server subscription updates.
+
+The new licensing mechanism benefits free-tier TeamCity Professional users as well, since linking your server instance to the JetBrains account allows your server administrators to receive timely email notifications when new critical security updates are available.
+
+Learn more: [](manage-teamcity-license.md).
+
 ## Custom Location for Versioned Settings
 {product="tc"}
 
