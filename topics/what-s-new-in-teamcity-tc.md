@@ -53,6 +53,10 @@ Learn more: LINK
 
 * The list of [statistic values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported by TeamCity now includes the **AllTestsDuration** value.
 * Working with the [interactive agent terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) now counts as a valid agent activity that prolongs the agent lifetime and prevents it from automatic inactivity shutdown.
+* The database connection setup wizard that pops up during the first TeamCity server launch now installs the following JDBC drivers depending on the selected database type:
+  * MySQL database file: `mysql-connector-j-8.3.0.jar`
+  * MS SQL server: `mssql-jdbc-12.6.0.jre8.jar` and `sqlserver12-win-auth.jar` for authentification.
+  * PostgreSQL: `postgresql-42.7.1.jar`
 
 
 </chunk>

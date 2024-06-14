@@ -61,9 +61,9 @@ grant process on *.* to <user-name>;
 #### On TeamCity Server Side (with MySQL)
 
 JDBC driver installation:
-1. Download the MySQL [JDBC driver](http://dev.mysql.com/downloads/connector/j/). Make sure to use a version compatible with your server. If the MySQL server version is 5.5 or later, the JDBC driver version should be at least 5.1.23. For versions above 8, driver version 8 should be used.
+1. Download the MySQL [JDBC driver](http://dev.mysql.com/downloads/connector/j/). Make sure to use a version compatible with your server. 
 2. For Windows, run the installer in "Custom" mode and select "MySQL Connectors | Connector/J" to install a standalone connector.
-3. Copy `mysql-connector-java-*-bin.jar` from the downloaded archive (Linux) or the installation folder (Windows) into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
+3. Copy `mysql-connector-j-<version>.jar` from the downloaded archive (Linux) or the installation folder (Windows) into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). Proceed with the TeamCity setup.
 
 ### PostgreSQL
 
@@ -130,8 +130,8 @@ For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with
 
 #### On TeamCity Server Side (with MS SQL)
 
-1. Download the [Microsoft JDBC driver v8.4+](https://docs.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#84) (`sqljdbc_8.4.x` package) from the [Microsoft Download Center](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
-2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-*.jre11.jar` from the just downloaded package into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
+1. Download the [Microsoft JDBC driver v12.6+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#126) (`sqljdbc_12.6.x` package) from the [Microsoft Download Center](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
+2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre8.jar` from the just downloaded package into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 3. Proceed with the TeamCity setup.
 
 #### jTDS Driver
