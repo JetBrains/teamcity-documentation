@@ -33,11 +33,17 @@ This connection can be used for [authenticating users via Azure DevOps](configur
 To configure an Azure DevOps OAuth 2.0 connection:
 1. In __Project Administration | Connections__, click __Add Connection__.
 2. Select _Azure DevOps OAuth 2.0_ as the connection type.
-3. TeamCity will display the _Callback URL_ and _scopes_ required for registering an OAuth application in Azure DevOps.  
+3. Ensure the **Enable unique callback URL** setting is enabled to generate a unique ID added to your callback URL. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the `/oauth/azuredevops/rid:your-unique-id/accessToken.html` URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+
+   > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
+   > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
+   >
+   {type="note"}
+4. TeamCity will display the _Callback URL_ and _scopes_ required for registering an OAuth application in Azure DevOps.  
    Go to the [Register Application](https://app.vsaex.visualstudio.com/app/register) page in Azure and create a new app using the provided parameters. When created, copy the app's ID and client secret.
-4. Go back to the connection form in TeamCity and enter the Azure DevOps Services URL, the new application ID, and client secret.
-5. Specify the application scope that must be the same as the scope of the created Azure DevOps OAuth App.
-6. Save the connection.
+5. Go back to the connection form in TeamCity and enter the Azure DevOps Services URL, the new application ID, and client secret.
+6. Specify the application scope that must be the same as the scope of the created Azure DevOps OAuth App.
+7. Save the connection.
 
 To activate the Azure DevOps Services authentication on your server, proceed to enabling the respective [authentication module](configuring-authentication-settings.md#Azure+DevOps+Services).
 
@@ -100,16 +106,23 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 
 1. Create a new connection and choose the **"Bitbucket Server / Data Center"** option.
 
-2. In a separate browser tab, go to the Bitbucket **"Administration | Application Links"** page.
+2. Ensure the **Enable unique redirect URL** setting is enabled to generate a unique ID added to your redirect URL. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the `/oauth/bitbucketserver/rid:your_unique_id/accessToken.html` URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+   
+   > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
+   > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
+   >
+   {type="note"}
 
-3. Create a new [application link](https://confluence.atlassian.com/bitbucketserver/link-to-other-applications-1018764620.html) with the following parameters:
+3. In a separate browser tab, go to the Bitbucket **"Administration | Application Links"** page.
+
+4. Create a new [application link](https://confluence.atlassian.com/bitbucketserver/link-to-other-applications-1018764620.html) with the following parameters:
 
    * Application type: _External application_
    * Direction: _Incoming_
    * Redirect URL: _&lt;copy URL from the TeamCity new connection tab&gt;_
    * Application permissions: *tick "Write" under "Repositories"*
 
-4. Once the application link is ready, Bitbucket will generate the _"Client ID"_ and _"Client Secret"_ values. Copy these values and paste them into corresponding fields on the TeamCity new connection tab.
+5. Once the application link is ready, Bitbucket will generate the _"Client ID"_ and _"Client Secret"_ values. Copy these values and paste them into corresponding fields on the TeamCity new connection tab.
 
 5. Save the connection in TeamCity.
 
@@ -182,6 +195,24 @@ To manually create a new GitHub App and configure a TeamCity connection that use
 <li>Choose <b>GitHub App</b> from the drop-down menu (regardless of whether you need to connect to regular GitHub or GitHub Enterprise).</li>
 
 <li>Switch the connection's creation mode to <b>Manual</b>.</li>
+
+<li>
+
+Ensure the <b>Enable unique callback URL</b> setting is enabled to generate a unique ID added to your callback URL. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the <code>/oauth/githubapp/rid:your-unique-id/accessToken.html</code> URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+
+<note>
+
+<ul>
+
+<li>Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.</li>
+
+<li>IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.</li>
+
+</ul>
+
+</note>
+
+</li>
 
 <li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>
 
@@ -275,11 +306,17 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 1. Choose the project where you would like to create a new connection, noting that the connection will only be available to the chosen project and its subprojects.
 2. Go to *Project Settings | Connections* and click *Add Connection*.
 3. Choose *GitLab.com* or *GitLab CE/EE*.
-4. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
+4. For the **GitLab CE/EE** option, ensure the **Enable unique redirect URL** setting is enabled to generate a unique ID added to your redirect URL. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the `/oauth/gitlab/rid:your_unique_id/accessToken.html` URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+
+   > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
+   > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
+   >
+   {type="note"}
+5. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
    - [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application)
    - [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application)
    - [Instance-wide applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-an-instance-wide-application)
-5. When filling out the *Add new application* form in GitLab:
+6. When filling out the *Add new application* form in GitLab:
    1. Choose a Name for the application
    2. Copy the *Redirect URL* from the TeamCity dialog into the GitLab form
    3. Under *Scopes*, check *api*
@@ -288,9 +325,9 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
     >
     {type="note"}
 
-6. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
-7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
-8. Click *Save* to save your new connection.
+7. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
+8. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
+9. Click *Save* to save your new connection.
 
 > When your GitLab CE/EE server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 >
@@ -762,7 +799,7 @@ Configuring manual connections to JetBrains Space includes two steps: create a S
    You can approve project-level permissions right in this **Authorization** tab if you are the project's administrator. Global permissions like viewing a member profile require a server administrator's approval.
 5. Go back to the app's __Overview__ and open the __Authentication__ tab.
 6. Enable _Client Credentials Flow_.
-7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI.  
+7. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter your TeamCity server's URL as the redirect URI. If you wish TeamCity to add a unique ID to your callback URL, start with creating a TeamCity connection and copy the URL from the **Add Connection** dialog. This URL will look like the following: `.../oauth/space/rid:your-unique-id/accessToken.html`. 
    To ensure that your TeamCity server can always connect to JetBrains Space, specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
 8. Copy the app's _Client ID_ and _Client secret_.
 
