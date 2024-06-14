@@ -38,15 +38,25 @@ This minor enhancement streamlines the workflow by eliminating the need to uploa
 Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
 
 
-
-
-## Feature Three
+## Security Enhancement for TeamCity Connections
 {product="tc"}
 
-DESCRIPTION
+Following our commitment to identify and eliminate security vulnerabilities, we have added the new **Enable unique callback/redirect URL** setting to the following [TeamCity connections](configuring-connections.md):
 
-Learn more: LINK
+* Azure DevOps OAuth 2.0
+* Bitbucket Server/Data Center
+* GitHub App (manual)
+* GitHub Enterprise
+* GitLab CE/EE
+* JetBrains Space (manual)
 
+<img src="dk-unique-url.png" width="706" alt="Unique URL in connections"/>
+
+This setting adds a unique string to callback/redirect URLs required to configure OAuth integration with version control systems. Using unique URLs prevents attackers from implementing a malicious authentication server that mimics a real one — the technique used in potential mix-up attacks that trick client applications into leaking VCS authentication codes.
+
+The **Enable unique callback/redirect URL** setting is enabled by default for all newly created OAuth connections. If you wish to enable it for your existing connections, remember to update the modified URL on the VCS side.
+
+Learn more: [](configuring-connections.md)
 
 ## Miscellaneous Changes
 {product="tc"}
