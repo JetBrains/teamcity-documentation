@@ -78,7 +78,9 @@ The **Open terminal** button is available for all types of agent machines (Linux
 
 To ensure your build agent is idle while you perform maintenance, disable it but do not stop it since the terminal session requires a [running](start-teamcity-agent.md) build agent. [Stopping a build agent](start-teamcity-agent.md#Stop+Build+Agent) freezes a previously open terminal tab, preventing users from typing new commands.
 
-For cloud agents that are automatically terminated after idling for a certain period of time, click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running.
+For cloud agents that are automatically terminated after idling for a certain period of time, you may want to click the ["Disable for maintenance..."](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI) button to keep the agent's machine running. Executing terminal commands is a valid activity that prevents automatic agent shutdown. However, if the terminal is not used, the agent will shut down as scheduled. Shortly before this, TeamCity will display a pop-up notification.
+
+<img src="dk-agent-terminal-warning.png" width="706" alt="Terminal shutdown warning"/>
 
 > The "Open interactive terminal" link opens in the `<SERVER-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a separate panel or a browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 
