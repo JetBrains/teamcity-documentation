@@ -7,7 +7,7 @@
 
 Experience seamless license management with our newest [JetBrains Account](https://account.jetbrains.com/licenses) integration. Log into the JetBrains Account from TeamCity and choose a server license to activate. Once connected, TeamCity will automatically receive updates for all server and agent licenses, meaning you will no longer need to manually enter your license codes for any additional agents or server subscription updates.
 
-The new licensing mechanism benefits free-tier TeamCity Professional users as well, since linking your server instance to the JetBrains account allows your server administrators to receive timely email notifications when new critical security updates are available.
+The new mechanism does not impact existing licensing or purchase policies and is entirely free, regardless of your server license type (including free-tier Professional servers). It benefits all TeamCity users by linking your server instance to the JetBrains account, enabling server administrators to receive timely email notifications about critical security updates.
 
 Learn more: [](manage-teamcity-license.md).
 
