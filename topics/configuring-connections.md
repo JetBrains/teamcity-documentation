@@ -148,7 +148,11 @@ A connection to GitHub can be used to:
 
 Depending on your needs, you can create connections to GitHub that operate via GitHub Apps or GitHub OAuth Applications.
 
+
+
 <dl>
+
+<anchor name="github-app"/>
 
 <dt>GitHub App</dt>
 <dd>
@@ -243,6 +247,8 @@ TeamCity currently issues single-repository access tokens for GitHub App connect
 </warning>
 
 </dd>
+
+<anchor name="github-oauth"/>
 
 <dt>GitHub OAuth Application</dt>
 <dd>OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.<br/>
