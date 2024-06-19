@@ -9,6 +9,7 @@ While creating/editing a build configuration, you can configure triggers using t
 
 For each build configuration the following triggers can be configured:
 * [VCS trigger](configuring-vcs-triggers.md): the build is triggered when changes are detected in the version control system roots attached to the build configuration.
+* [](github-checks-trigger.md): the build is triggered for every single commit pushed to the source GitHub repository. In addition, posts detailed build result info on a GitHub page without a [](commit-status-publisher.md) configured.
 * [Schedule trigger](configuring-schedule-triggers.md): the build is triggered at a specified time.
 * [Finish build trigger](configuring-finish-build-trigger.md): the build is triggered after a build of the selected configuration is finished.
 * [Maven artifact dependency trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger): the build is triggered if there is a content modification of the specified Maven artifact which is detected by the checksum change.

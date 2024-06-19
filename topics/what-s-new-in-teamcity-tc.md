@@ -11,6 +11,18 @@ The new mechanism does not impact existing licensing or purchase policies and is
 
 Learn more: [](manage-teamcity-license.md).
 
+
+## New GitHub Checks Webhook Trigger
+{product="tc"}
+
+Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via TeamCity GitHub App connections.
+
+<img src="dk-checkstrigger-ghsummary.png" width="706" alt="Build summary info on GitHub"/>
+
+This new trigger is an all-in-one solution that implements a two-way GitHub-TeamCity integration: TeamCity configuration runs a build for all commits, no matter how frequently they are pushed, and communicates the build result status back to GitHub. With this trigger in place, you no longer need to configure the standard [VCS trigger](configuring-vcs-triggers.md) or [](commit-status-publisher.md).
+
+Learn more: [](github-checks-trigger.md)
+
 ## Custom Location for Versioned Settings
 {product="tc"}
 

@@ -247,7 +247,7 @@ If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps
 
    <img src="dk-webhook-deliveries.png" width="706" alt="Webhook deliveries"/>
 
-
+If a build configuration is configured via a valid GitHub App connection, you can utilize [GitHub Checks Webhook triggers](github-checks-trigger.md) that replace the traditional combo of VCS trigger and Commit Status Publisher build feature.
 
 ### GitLab
 

@@ -361,7 +361,8 @@
          <toc-element id="build-failure-conditions.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="configuring-build-triggers.md">
             <toc-element id="configuring-vcs-triggers.md" show-structure-for="chapter" show-structure-depth="4"/>
-            <toc-element id="branch-remote-run-trigger.md"/>
+             <toc-element id="github-checks-trigger.md"/>
+             <toc-element id="branch-remote-run-trigger.md"/>
             <toc-element id="configuring-schedule-triggers.md" show-structure-for="chapter" show-structure-depth="4">
                <toc-element id="builds-schedule.md"/>
             </toc-element>

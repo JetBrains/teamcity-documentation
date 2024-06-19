@@ -158,7 +158,9 @@ Depending on your needs, you can create connections to GitHub that operate via G
 <dd>
 <anchor name="github-app"/>
 
-A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
+A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access.See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
+
+In addition, configuration created via GitHub App connections can employ [GitHub Checks Webhook triggers](github-checks-trigger.md) that replace the traditional combo of VCS trigger and Commit Status Publisher build feature.
 
 
 If you do not already have a suitable GitHub App, you can allow TeamCity to register it and create a connection that employs this new app in one go. TeamCity uses <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">manifests</a> to register new GitHub Apps.
