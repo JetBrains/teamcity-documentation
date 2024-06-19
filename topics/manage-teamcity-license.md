@@ -30,17 +30,9 @@ This simple sequence may vary depending on whether you can access the <a href="h
 
 <li>Send this link to your JBA administrator. This link contains your unique TeamCity instance key and looks like the following: <code>https://account.jetbrains.com/license/activate?product=TCS&amp;instPubKey=&lt;your_public_key&gt;</code>.</li>
 
-<li>
-Your JetBrains Account administrator can then activate the required server license and save or copy the activation key.
-
-<img src="dk-activation-successful.png" width="706" alt="Successful activation"/>
-</li>
-
-<li>
-Ask them to send you this activation key and click <b>I already have a key</b> on the TeamCity <b>Licenses</b> page to activate the corresponding license.
-</li>
-
 </ol>
+
+Once the administrator follows this link and activates a license, your TeamCity server will automatically apply it. All future license updates, including build agent license assignments and expirations, will be automatically communicated to your server, you will not require further administrator assistance after the activation is complete.
 
 </dd>
 
@@ -48,7 +40,29 @@ Ask them to send you this activation key and click <b>I already have a key</b> o
 
 <dd>
 
-<b>Solution:</b> Similarly to the previous case, you can right-click the <b>Get License Key</b> button and copy the link. Open this link on a trusted device with an internet access and complete the activation, then copy the key and paste it to the <b>I already have a key</b> field on the TeamCity <b>Licenses</b> page.
+<b>Solution:</b> Similarly to the previous case, you can utilize the activation link generated in TeamCity.
+
+<ol>
+
+<li>On the <b>Administration | Licenses</b> page, right-click the <b>Get License Key</b> and copy the link.</li>
+
+<li>Open this link on a trusted device that has access to the JetBrains Account. This link contains your unique TeamCity instance key and looks like the following: <code>https://account.jetbrains.com/license/activate?product=TCS&amp;instPubKey=&lt;your_public_key&gt;</code>.</li>
+
+<li>
+After you activate a license in your JetBrains Account, copy or save the activation key.
+
+<img src="dk-activation-successful.png" width="706" alt="Successful activation"/>
+</li>
+
+<li>
+
+On the TeamCity <b>Licenses</b> page, click <b>I already have a key</b> and paste the activation key.
+
+</li>
+</ol>
+
+
+Note that since an offline TeamCity server is unable to receive automatic updates from JBA, you will need to copy and paste activation keys whenever additional licenses are purchased.
 
 See also: <a href="configuring-proxy-server.md">Configuring Proxy Server</a>
 
