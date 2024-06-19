@@ -145,7 +145,7 @@ For a build to be considered "suitable", it should comply with all these conditi
 * It must belong to the same or the default branch.
 * It must use _the same sources' snapshot_ as the entire queued build chain being processed. If the build configurations have the same VCS settings, this means _the same sources' revision_. If the VCS settings are different (VCS roots or checkout rules), this means _the revisions taken simultaneously at some moment in time_.
 * It must be successful (if the "_Only use successful builds from suitable ones_" snapshot dependency option is enabled).
-* It must be a usual, not a [personal build](personal-build.md).
+* It must be a regular, not a [personal build](personal-build.md).
 * It must have no customized parameters, including those set via `reverse.dep.` parameters (related feature request: [TW-23700](https://youtrack.jetbrains.com/issue/TW-23700)).
 * The original build must not be triggered by the "Rebuild" action for the dependency build configuration.
 * It must have no VCS settings preventing effective revision calculation, see [more  details](#VCS+Settings+Disabling+Builds+Reuse).
