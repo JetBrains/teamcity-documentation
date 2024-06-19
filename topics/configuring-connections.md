@@ -148,10 +148,15 @@ A connection to GitHub can be used to:
 
 Depending on your needs, you can create connections to GitHub that operate via GitHub Apps or GitHub OAuth Applications.
 
+
+
 <dl>
+
+
 
 <dt>GitHub App</dt>
 <dd>
+<anchor name="github-app"/>
 
 A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access. See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
 
@@ -244,8 +249,13 @@ TeamCity currently issues single-repository access tokens for GitHub App connect
 
 </dd>
 
+
+
 <dt>GitHub OAuth Application</dt>
-<dd>OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.<br/>
+<dd>
+<anchor name="github-oauth"/>
+   
+OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.<br/>
 
 
 To create a TeamCity connection that utilizes a GitHub OAuth Application:
