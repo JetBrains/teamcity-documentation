@@ -209,7 +209,7 @@ http(s)://username:PAT@TeamCityServerURL/app/rest/vcs-root-instances/commitHookN
 
 * **username:PAT** — the combination of a regular username and a [personal access token](configuring-your-user-profile.md#Managing+Access+Tokens). Requires the enabled ["Token-Based Authentication" module](authentication-modules.md) in **Administration | Authentication**.
 
-Requests should use the credentials of a user with the "_View project and all parent projects_" permission for all the projects where the VCS root is defined.
+Requests should use the credentials of a user with the "View project and all parent projects" and "View build configuration settings" permissions for all the projects where the VCS root is defined.
 
 In case of authentication issues, navigate to **Administration | Diagnostics** and choose the "debug-auth" preset in the **Troubleshooting** section. You can then inspect the `TeamCity_Folder/logs/teamcity-auth.log` file to view the detailed problem information.
 {product="tc"}
@@ -385,7 +385,7 @@ exit 0
 
 For Perforce, you can use this [dedicated script](#Perforce+Server).
 
-Set the  variables according to your TeamCity server. The user must have the "_View build configuration settings_" permission for projects where the VCS root is defined. This permission is included in the Project Developer role by default.
+Set the  variables according to your TeamCity server. The user must have the "View build configuration settings" permission for projects where the VCS root is defined. This permission is included in the Project Developer role by default.
 
 
 > If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
@@ -453,7 +453,7 @@ Set the  variables according to your TeamCity server. The user must have the "_V
 
 This section explains how to set up the dedicated Perforce script. Note that utilizing the [generic script](#Edit+Perforce+Specification+with+Generic+Script) is also possible, but this is the outdated approach that is no longer recommended.
 
-The dedicated post-commit script on installed on your Perforce server automatically detects Perforce VCS roots in TeamCity and triggers the respective builds. To be able to use the script, you need to generate an [access token](configuring-your-user-profile.md#Managing+Access+Tokens) first. The TeamCity user assigned to this token must have the "_Run build_" permission for projects where Perforce VCS roots are defined. This permission is included in the Project Developer role by default.
+The dedicated post-commit script on installed on your Perforce server automatically detects Perforce VCS roots in TeamCity and triggers the respective builds. To be able to use the script, you need to generate an [access token](configuring-your-user-profile.md#Managing+Access+Tokens) first. The TeamCity user assigned to this token must have the "Run build" permission for projects where Perforce VCS roots are defined. This permission is included in the Project Developer role by default.
 
 It is also recommended configuring a _[Perforce Administrator Access](perforce-workspace-handling-in-teamcity.md#perforce-admin-access)_ connection in the project settings. TeamCity will use it to ensure that all changed files in the Perforce changelist are collected. If such a connection is not configured explicitly, TeamCity will try to connect to Perforce using settings of one of the project's VCS roots. 
 
