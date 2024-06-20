@@ -4,7 +4,10 @@
 ## Changes from 2024.03 to 2024.07
 {id="2024.07"}
 
-???
+### Bundled Tools Updates
+{id="bundled-tools-updates-2024-07"}
+
+* The bundled Git was updated to version 2.45.2 in both Server and Agent Docker images.
 
 ## Changes from 2024.03.1 to 2024.03.2
 
