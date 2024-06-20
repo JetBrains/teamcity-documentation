@@ -10,7 +10,22 @@
 * The bundled Git was updated to version 2.45.2 in both Server and Agent Docker images.
 * TeamCity distribution no longer bundles the HSQLDB library. Instead, it is now downloaded on demand (in case you already use the HyperSQL database or select this option for a new TeamCity server on its first launch). If your TeamCity instance is offline or fails to download the required library due to proxy server settings, download the `hsqldb1-1.0.0.jar` directly from [download.jetbrains.com](https://download.jetbrains.com/teamcity-repository/org/jetbrains/teamcity/hsqldb1/1.0.0/hsqldb1-1.0.0.jar) and place it to `[TeamCity_Data_Directory](teamcity-data-directory.md)/lib/jdbc`.
 
+
+## Changes from 2024.03.2 to 2024.03.3
+{id="2024.03.3"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2024-03-3"}
+
+???
+
+### Known Issues
+{id="known-issues-2024-03-3"}
+
+???
+
 ## Changes from 2024.03.1 to 2024.03.2
+{id="2024.03.2"}
 
 * The bundled Git was updated to version 2.45.1 in both Server and Agent Docker images.
 
