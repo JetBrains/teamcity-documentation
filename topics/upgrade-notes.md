@@ -17,7 +17,7 @@
 
 * If you utilize the [Amazon Elastic Container Service Support](https://plugins.jetbrains.com/plugin/10067-amazon-elastic-container-service-support/versions/stable) plugin, please update it to the latest "SNAPSHOT-20240513140730" version. Older versions may malfunction with the 2024.03.2 version of the TeamCity server.
 * AWS-hosted agents of the "Instance" type may fail to authorize to TeamCity server. As a workaround, you can resolve this issue by adding [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) as suggested in the following ticket: [TW-88068](https://youtrack.jetbrains.com/issue/TW-88068#focus=Comments-27-9864960.0-0).
-* TeamCity server fails to authorize Azure cloud agents from attached Virtual Machines. Note that this issue does not affect Azure images hosted in managed images. If migrating Azure cloud agents from VMs to images does not suit your requirements, please track the [TW-88070](https://youtrack.jetbrains.com/issue/TW-88070) to get timely notifications on [Azure Resource Manager Cloud Support](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support) plugin updates that we expect to implement in the nearest future.
+* TeamCity server fails to authorize Azure cloud agents from attached Virtual Machines. Note that this issue does not affect Azure images hosted in managed images. If migrating Azure cloud agents from VMs to images does not suit your requirements, please update [Azure Resource Manager Cloud Support](https://plugins.jetbrains.com/plugin/9260-azure-resource-manager-cloud-support) to the latest "0.12.15" version.
 
 ## Changes from 2024.03 to 2024.03.1
 
