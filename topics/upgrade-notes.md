@@ -5,7 +5,7 @@
 ## Changes from 2024.03.2 to 2024.03.3
 {id="2024.03.3"}
 
-???
+No potential breaking changes.
 
 ## Changes from 2024.03.1 to 2024.03.2
 {id="2024.03.2"}
