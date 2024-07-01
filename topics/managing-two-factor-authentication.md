@@ -9,11 +9,11 @@ To select the required 2FA authentication mode, navigate to the **Administration
 
 <img src="dk-2FASettings.png" width="708" alt="Available 2FA modes"/>
 
-| 2FA Mode  | Behavior                                                                                                                                                                                        |
-|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Optional  | Lets users decide whether they want to enable 2FA for their accounts. This is the default setting.                                                                                              |
-| Mandatory | Requires all users to set up 2FA within one week. The grace period starts from the moment you enable the "Mandatory" mode (for existing users), or the moment a user registers (for new users). |
-| Disabled  | Users cannot set up 2FA.                                                                                                                                                                        |
+| 2FA Mode  | Behavior                                                                                                                                                                                                                                                                                                                                                                           |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Optional  | Lets users decide whether they want to enable 2FA for their accounts. This is the default setting.<br/><br/>                                                                    System administrators can poll the `/app/rest/users?fields=user(id,username,email,enabled2FA)` [endpoint](teamcity-rest-api.md) to quickly check which of TeamCity users have opted to enable 2FA. |
+| Mandatory | Requires all users to set up 2FA within one week. The grace period starts from the moment you enable the "Mandatory" mode (for existing users), or the moment a user registers (for new users).                                                                                                                                                                                    |
+| Disabled  | Users cannot set up 2FA.                                                                                                                                                                                                                                                                                                                                                           |
 
 
 ## Critical Settings Protection
