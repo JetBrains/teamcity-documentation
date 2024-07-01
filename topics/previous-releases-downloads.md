@@ -22,8 +22,8 @@ Build ???
 
 ## TeamCity 2024.03.3
 
-Release date: ??? June 2024<br/>
-Build ???
+Release date: 27 June 2024<br/>
+Build 156364
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2024.03.3.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2024.03.3.tar.gz)
