@@ -37,6 +37,18 @@ Additionally, this feature enables you to organize the versioned settings of all
 Learn more: [Storing Project Settings in Version Control Systems](storing-project-settings-in-version-control.md#Custom+Settings+Path)
 
 
+## Bootstrap Steps
+{product="tc"}
+
+You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
+
+<img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
+
+This enhancement allows you to perform preliminary setup, such as preparing a required directory hierarchy or making sure the required files in the checkout directory are not locked by another process.
+
+Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
+
+
 
 ## Upload SSH Keys from the Create Project Page
 {product="tc"}
