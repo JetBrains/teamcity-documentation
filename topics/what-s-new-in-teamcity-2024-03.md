@@ -49,7 +49,7 @@ If the [](net.md) runner executes the `test` or `vstest` command, the runner's s
 
 <img src="dk-test-rerun-flaky.png" width="706" alt="Flaky tests during a re-run"/>
 
-This technique allows you to identify [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
+This technique allows you to identify [flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
 
 Learn more: [.NET | Vstest Command](net.md#vstest).
 
