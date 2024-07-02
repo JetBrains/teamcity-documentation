@@ -216,7 +216,7 @@ __Tests are muted or unmuted__
 
 <td>
 
-Check this option to receive notifications on the test [mute](investigating-and-muting-build-failures.md#Muting+Tests) status change in the affected build configurations.
+Check this option to receive notifications on the test [mute](investigating-and-muting-build-failures.md) status change in the affected build configurations.
 
 </td></tr><tr>
 

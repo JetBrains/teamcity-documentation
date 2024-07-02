@@ -5,11 +5,11 @@ This section contains articles concerning support of test reports, code inspecti
 
 ## Test Reports in TeamCity
 
-TeamCity provides out-of-the-box support for a number of testing frameworks. To reduce the feedback time on test failures, it reports [detailed test results](viewing-tests-and-configuration-problems.md) on the fly whenever possible. These results are displayed in the [build overview](working-with-build-results.md). See the list of currently [supported testing frameworks](testing-frameworks.md).
+TeamCity provides out-of-the-box support for a number of testing frameworks. To reduce the feedback time on test failures, it reports [detailed test results](investigating-and-muting-build-failures.md) on the fly whenever possible. These results are displayed in the [build overview](working-with-build-results.md). See the list of currently [supported testing frameworks](testing-frameworks.md).
 
 Many build runners produce test reports automatically, depending on the settings you configure: [Gradle](gradle.md), [Maven](maven.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Python](python.md), [Node.js](nodejs.md), [NUnit](nunit.md) and others.
 
->You can [assign a user to investigate a failed test](investigating-and-muting-build-failures.md#Assigning+Investigations+of+Build+Problems+and+Failed+Tests), or [mute this test](investigating-and-muting-build-failures.md#Muting+Tests), so it doesn't affect the build status.
+>You can [assign a user to investigate a failed test](investigating-and-muting-build-failures.md#Manage+Build+Problems+and+Test+Failures), or [mute this test](investigating-and-muting-build-failures.md), so it doesn't affect the build status.
 
 ## Code Inspection in TeamCity
 

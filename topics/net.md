@@ -539,7 +539,7 @@ Test retry count
 
 <td>
 
-In the event of a test failure, TeamCity can seamlessly initiate automated re-runs of said test during the same build run. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts. This technique allows you to identify [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
+In the event of a test failure, TeamCity can seamlessly initiate automated re-runs of said test during the same build run. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts. This technique allows you to identify [flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
 
 Tests that initially failed but managed to finish successfully during subsequent re-runs are automatically muted. You can check the [Tests tab](build-results-page.md#Tests+Tab) of a build results page to see how many re-runs were required for each test.
 

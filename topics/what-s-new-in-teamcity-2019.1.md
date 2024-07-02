@@ -244,7 +244,7 @@ Use the default Maven repository location. The repository is shared between all 
 * New API for setting agent requirements based on build features.
 * The former _GitHub Pull Requests_ plugin to _Pull Requests_.
 * The server startup performance has been improved.
-* The __[My Investigations](investigating-and-muting-build-failures.md#Viewing+My+Investigations)__ page now displays failures in the currently running builds.
+* The __[My Investigations](investigating-and-muting-build-failures.md#Investigations)__ page now displays failures in the currently running builds.
 * [Build runners](supported-platforms-and-environments.md#.NET+Runners) now support .NET Framework 4.8.
 
 ## Known issues

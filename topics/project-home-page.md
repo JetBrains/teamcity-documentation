@@ -11,10 +11,9 @@ This page has the following tabs:
 * __Investigations__: shows active [problem investigations](investigating-and-muting-build-failures.md) in the current project.
 * __Change Log__: shows a detailed visual change log of the current project.
 * __Statistics__: shows [custom statistics charts](custom-chart.md) of the current project.
-* __Current Problems__: shows the actual [build failures and failed tests](viewing-tests-and-configuration-problems.md) of the current project.
-* __Muted Problems__: shows what build problems have been [muted](investigating-and-muting-build-failures.md#Muting+Build+Problems) in the current project.
+* __Problems__: shows the actual [build failures and failed tests](investigating-and-muting-build-failures.md) of the current project.
 * __Build Chains__: if the current project has [build chains](build-chain.md), shows their details and graphs (currently, this page uses the classic UI approach for visualization).
-* __Flaky Tests__: shows [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests) of the current project.
+* __Flaky Tests__: shows [flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests) of the current project.
 
 From __Project Home__, you can switch to other view modes:
 * To switch to __Project Settings__, use the __Edit project__ link in the upper right corner. To access a particular section of the settings, open the context menu to the right of this link.

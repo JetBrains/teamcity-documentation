@@ -82,7 +82,7 @@ TeamCity provides `teamcity.build.step.status.<step_ID>` parameters that report 
 The available values of the `teamcity.build.step.status.<step_ID>` parameters are:
 
 * `success` — when a step finishes with no errors.
-* `failure` — when a step failed. This status is reported even when all build problems were [muted](investigating-and-muting-build-failures.md#Muting+Build+Problems).
+* `failure` — when a step failed. This status is reported even when all build problems were [muted](investigating-and-muting-build-failures.md).
 * `cancelled` — when a build was cancelled while this step was running.
 
 The `teamcity.build.step.status.<step_ID>` parameters appear only after their corresponding steps finish, and are not available right from the moment a build starts. This means neither steps that are still running, nor skipped steps have their `teamcity.build.step.status.<step_ID>` parameters available.
