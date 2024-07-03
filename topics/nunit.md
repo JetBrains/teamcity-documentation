@@ -1,18 +1,31 @@
 [//]: # (title: NUnit)
 [//]: # (auxiliary-id: NUnit)
 
-The _NUnit_ build runner is intended to run NUnit tests right on the TeamCity server. However, there are other ways to report NUnit tests results to TeamCity, refer to the [NUnit Support](nunit-support.md) page for the details and supported versions.
+The _NUnit_ build runner is designed to run NUnit tests on the TeamCity server. However, you can also use the [](net.md) runner to launch NUnit tests and view test reports in TeamCity. Refer to the [](nunit-support.md) article for more information.
 
 <anchor name="NUnit3Extensions"/>
 
-Note that this runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET Core](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. See the [NUnit Support in TeamCity](nunit-support.md) article for details.
+> NUnit build runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects targeting version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. See the [NUnit Support in TeamCity](nunit-support.md) article for details.
+> 
+{type="note"}
+
+## Legacy and Updated NUnit Runners
+
+<chunk include-id="2024-07-nunit">
+
+Version 2024.07 introduces an updated NUnit runner that, compared to the legacy runner, does not allow you to select a .NET Runtime or .NET Framework version. If needed, use the **Additional command line parameters** field to specify these settings. In addition, the updated runner no longer supports outdated NUnit 2.x.x versions.
+
+In version 2024.07, both updated and legacy runners are fully functional and available from the [Build Steps](configuring-build-steps.md) page. In the following release cycles we expect to unbundle the legacy runner and move it to a separate plugin. When it is done, you will need to manually install this plugin from JetBrains Marketplace to continue using the legacy runner. As such, we recommend migrating your projects to either updated NUnit or regular [](net.md) runners.
+
+</chunk>
 
 ## Installing NUnit
 
 <chunk include-id="installing-nunit">
 
 To use the NUnit build runner, you need to install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents via one of the following options:
-* Instruct the first build step to install NUnit from a NuGet package.  
+* Instruct the first build step to install NUnit from a NuGet package. 
+
   For example, you can add a [Command Line](command-line.md) build step which will install the `NUnit.Console` NuGet package as follows:
 
     ```Shell
@@ -20,7 +33,8 @@ To use the NUnit build runner, you need to install the [NUnit NuGet package](htt
    
     ```
     
-    Note that `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` is a reference to the NuGet installed under the TeamCity agent.   
+    The `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` string is a reference to the NuGet installed under the TeamCity agent.
+
     You can install NuGet on agents on the __Administration | Tools__ page, where you can also mark any of the installed NuGet versions as default.
     
     After that, the `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` parameter reference should properly resolve to the NuGet installation path on the agent.   
@@ -60,13 +74,16 @@ Description
 
 <anchor name="NUnit-runner"/>
 
-NUnit runner
+NUnit runner<br/><br/>
+
 
 </td>
 
 <td>
 
 Select the NUnit version to be used to run the tests. The set of available settings varies depending on the selected version.
+
+This option is available only for the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>.
 
 </td></tr><tr>
 
@@ -80,9 +97,9 @@ NUnit Console
 
 <td>
 
-_Available for NUnit 3.0_
-
 Select a preinstalled console tool or specify a custom path to the `nunit3-console.exe` console executable, including the filename.
+
+If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
@@ -96,9 +113,10 @@ Working directory
 
 <td>
 
-_Available for NUnit 3.0_
 
 Specify the path to the [build working directory](build-working-directory.md) if it differs from the directory of the testing assembly.
+
+If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
@@ -112,9 +130,9 @@ Path to application configuration file
 
 <td>
 
-_Available for NUnit 3.0_
-
 Specifу the path to the application configuration file to be used when running tests. The path should be either absolute or relative to the [checkout directory](build-checkout-directory.md).
+
+If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
@@ -126,9 +144,9 @@ Additional command line parameters
 
 <td>
 
-_Available for NUnit 3.0_
-
 Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to `nunit-console.exe`.
+
+If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
@@ -144,6 +162,8 @@ From the __Platform__ drop-down menu, select the desired execution mode on an x6
 
 From the __Version__ drop-down menu, select the required .NET Framework version. Supported values are: `v2.0`, `v4.0`; and `auto`, _available if NUnit 3.0 is selected_.   
 _For NUnit 3.0_, if `auto` is selected, tests will run under the framework they are compiled with.
+
+This option is available only for the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>.
 
 </td></tr><tr>
 
@@ -229,9 +249,9 @@ Run process per assembly
 
 <td>
 
-_Available for versions prior to NUnit 3.0 only_
-
 Select this option if you want to run each assembly in a new process.
+
+This option is available only for the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a> with NUnit versions prior to 3.0.
 
 </td></tr><tr>
 

@@ -94,6 +94,11 @@ The new "Non-recursive checkout" option added in this version allows you to limi
 
 Learn more: [Git General Settings](git.md#General+Settings)
 
+## NUnit Runner Update
+{product="tc"}
+
+<include src="nunit.md" include-id="2024-07-nunit"/>
+
 ## Miscellaneous Changes
 {product="tc"}
 
