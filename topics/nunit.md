@@ -144,7 +144,7 @@ Additional command line parameters
 
 <td>
 
-Enter [additional command line parameters](https://github.com/nunit/docs/wiki/Console-Command-Line) to pass to `nunit-console.exe`.
+Enter [additional command line parameters](https://docs.nunit.org/articles/nunit/running-tests/Console-Command-Line.html) to pass to `nunit-console.exe`.
 
 If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
 
