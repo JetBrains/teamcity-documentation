@@ -82,6 +82,18 @@ The **Enable unique callback/redirect URL** setting is enabled by default for al
 
 Learn more: [](configuring-connections.md)
 
+
+## Non-Recursive Submodule Checkout
+{product="tc"}
+
+The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
+
+The new "Non-recursive checkout" option added in this version allows you to limit the depth of submodule hierarchy by 1. In this mode, TeamCity checks out only those submodules directly referenced by the main repository. Lower-level repositories referenced by submodules are ignored.
+
+<img src="dk-nonrecursive-checkout.png" width="706" alt="Non-recursive checkout"/>
+
+Learn more: [Git General Settings](git.md#General+Settings)
+
 ## Miscellaneous Changes
 {product="tc"}
 

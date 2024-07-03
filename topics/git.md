@@ -92,7 +92,21 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
 * **Username style** — defines a way TeamCity reports username for a VCS change. Changing the username style will affect only newly collected changes. Old changes will continue to be stored with the style that was active at the time of collecting changes.
 
-* **Submodules** — select whether you want to ignore the submodules, or treat them as a part of the source tree. Submodule repositories should either not require authentication or use the same protocol and accept the same authentication as configured in the VCS root.
+* **Submodules** — specifies whether submodule repositories should be checked out. For multi-level submodule setup, you can choose between the "Checkout" (recursively fetches the entire repository tree) and "Non-recursive checkout" (fetches only those submodules that are directly referenced by the main repository) modes. In the diagram below, submodules A and B are available in both modes, whereas submodules C and D require the recursive "Checkout" mode.
+
+  ```Plain Text
+  Main_Repo
+  |
+  |_________ Tier 1 Submodule A
+  |                 |
+  |                 |_________ Tier 2 Submodule C
+  |
+  |_________ Tier 1 Submodule B
+                   |
+                   |_________ Tier 2 Submodule D
+  ```
+
+  Submodule repositories should either not require authentication or use the same protocol and accept the same authentication as configured in the VCS root. Otherwise, you need to configure additional credentials to access these repositories as described in the [](#LFS+and+Submodules+Support) section.
 
 * **Username for tags/merge**  — a custom username used for [labeling](vcs-labeling.md).
 
