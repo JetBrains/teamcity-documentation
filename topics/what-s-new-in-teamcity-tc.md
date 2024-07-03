@@ -26,7 +26,7 @@ Learn more: [](github-checks-trigger.md)
 ## Custom Location for Versioned Settings
 {product="tc"}
 
-When you enable synchronization on the **Versioned Settings** page in your project settings, you can now specify a custom location for your remotely stored Kotlin DSL scripts.
+When you enable synchronization on the **Versioned Settings** page in your project settings, you can now specify a custom location for your remotely stored Kotlin DSL scripts and XML settings.
 
 <img src="dk-vcs-settings-custompath.png" width="706" alt="Custom settings path"/>
 
