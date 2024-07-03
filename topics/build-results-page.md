@@ -7,7 +7,7 @@ This article gives an overview of the __Build Results__ page of the new TeamCity
 
 ## Internal Build ID
 
-In the URL of the __Build Results__ page, you can find the parameter `buildId` with a numeric value. This number is the internal build ID uniquely identifying the build in the TeamCity installation. You might need this ID when composing a URL manually. For example, for [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) requests or when [downloading build artifacts](patterns-for-accessing-build-artifacts.md).
+In the URL of the __Build Results__ page, you can find a numeric value. It may be denoted by the parameter `buildId`. It is also found on the build's Parameters tab denoted by the `teamcity.build.id` key. This number is the internal build ID uniquely identifying the build in the TeamCity installation. You might need this ID when composing a URL manually. For example, for [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) requests or when [downloading build artifacts](patterns-for-accessing-build-artifacts.md).
 
 ## Build Results Title Panel
 
