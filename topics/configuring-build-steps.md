@@ -63,7 +63,7 @@ Since TeamCity 2020.1, you can also add granular [execution conditions](build-st
 
 A bootstrap step is performed right after a build is triggered, before a build agent checks out source files. This allows you to add a runner (typically the [](command-line.md) one) that performs initial setup and ensures the following steps run as expected.
 
-To specify that a step should run before a checkout phase begins, do one of the following:
+To enable bootstrap steps, first add the `teamcity.internal.bootstrap.steps.enabled=true` entry either to [](server-startup-properties.md#TeamCity+Internal+Properties) or to the individual project (as this project's [configuration parameter](configuring-build-parameters.md)). This setting allows you to do the following:
 
 * Enable the **Run during bootstrap** option in step settings.
   <img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
@@ -71,7 +71,7 @@ To specify that a step should run before a checkout phase begins, do one of the 
 * On the configuration's **Build Steps** page, click **Reorder build steps** and drag the required step before the "Preparation stage" block.
   <img src="dk_bootstrap_step_drag.png" width="706" alt="Drag and drop bootstrap step"/>
 
-Both options are available if the `teamcity.internal.bootstrap.steps.enabled=true` entry is added either to [](server-startup-properties.md#TeamCity+Internal+Properties) or to the individual project (as this project's [configuration parameter](configuring-build-parameters.md)).
+
 
 You can create a build configuration with a bootstrap step and turn this configuration into a [template](build-configuration-template.md). Such template allows you to quickly create more configurations that perform required prerequisite actions before the actual building process starts.
 
