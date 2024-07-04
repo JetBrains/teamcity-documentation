@@ -25,6 +25,8 @@ If [token-based authentication](configuring-authentication-settings.md#Token-Bas
    ```Shell
    curl --header "Authorization: Bearer <token-value>" http://<host>:<port>/app/rest/builds
    ```
+  
+<include src="configuring-authentication-settings.md" include-id="access-token-expiration-note"/>
 
 You can manage tokens in __Your Profile | Access Tokens__. Note that the token value is only available during token creation and is not possible for retrieval afterwards.
   
