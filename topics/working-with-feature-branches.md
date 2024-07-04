@@ -75,11 +75,16 @@ Branch specifications also support expressions starting with the `#` character. 
     -:refs/heads/release-v1
     ```
 
-* The `#! escape: <YOUR_CHARACTER>` expression defines an escape character that allows you to use special chars in branch names. For example, to write a branch specification rule for the "release-(7.1)" branch, you need to escape round brackets. If you want to use the backslash (`\`) as an escape character, your final branch spec can look like the following:
+* The `#! escape: <YOUR_CHARACTER>` expression defines an escape character that allows you to use special chars in branch names. For example, to write a branch specification rule for the "release-(7.1)" branch, you need to escape round brackets. The default escape symbol in TeamCity is backslash (`\`), so your branch specification should look like the following:
 
     ```Plain Text
-    #! escape: \
     +:release-\(7.1\)
+    ```
+    If you want to use a different escape character, define it as shown below:
+
+    ```Plain Text
+    #! escape: !
+    +:release-!(7.1!)
     ```
   
 * The `#! fallbackToDefault: false` expression allows you to prohibit TeamCity from using a [default branch](#Default+Branch) whenever the required branch is not found. For example, when you utilize [](teamcity-rest-api.md) to start a build for a non-existent branch (by default, TeamCity will run a new build for the default branch in this case).
