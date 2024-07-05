@@ -94,10 +94,14 @@ The new "Non-recursive checkout" option added in this version allows you to limi
 
 Learn more: [Git General Settings](git.md#General+Settings)
 
-## NUnit Runner Update
+## NUnit and NAnt Runners Update
 {product="tc"}
 
 <include src="nunit.md" include-id="2024-07-nunit"/>
+
+Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
+
+
 
 ## Miscellaneous Changes
 {product="tc"}

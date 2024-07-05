@@ -56,14 +56,176 @@ The extensions can be installed as separate packages or in bulk using the [NUnit
 
 ## NUnit Test Settings
 
+Legacy and updated NUnit runners exhibit a few differences.
+
+### New NUnit Settings
+
 <table><tr>
-       
+
 <td>
 
 Setting
 
 </td>
-       
+
+<td>
+
+Description
+
+</td></tr><tr>
+
+<td id="pathToNUnitConsoleTool">
+
+<anchor name="NUnit-pathToNUnitConsoleTool"/>
+
+NUnit Console
+
+</td>
+
+<td>
+
+Select a preinstalled console tool or specify a custom path to the `nunit3-console.exe` console executable, including the filename.
+
+</td></tr><tr>
+
+<td id="workingDirectory">
+
+<anchor name="NUnit-workingDirectory"/>
+
+Working directory
+
+</td>
+
+<td>
+
+
+Specify the path to the [build working directory](build-working-directory.md) if it differs from the directory of the testing assembly.
+
+</td></tr><tr>
+
+<td id="appConfigFile">
+
+<anchor name="NUnit-appConfigFile"/>
+
+Path to application configuration file
+
+</td>
+
+<td>
+
+Specifу the path to the application configuration file to be used when running tests. The path should be either absolute or relative to the [checkout directory](build-checkout-directory.md).
+
+</td></tr><tr>
+
+<td id="NUnit-cmdParameters">
+
+Additional command line parameters
+
+</td>
+
+<td>
+
+Enter [additional command line parameters](https://docs.nunit.org/articles/nunit/running-tests/Console-Command-Line.html) to pass to `nunit-console.exe`.
+
+</td></tr><tr>
+
+<td>
+
+Run tests from
+
+</td>
+
+<td>
+
+Specify the .NET assemblies where the NUnit tests stored. Multiple entries should be comma-separated. The MSBuild wildcards are supported. The paths to assembly files should be absolute or relative to the [checkout directory](build-checkout-directory.md).
+
+In the example, TeamCity will search for the tests assemblies in all the project directories and run these tests:
+
+```Shell
+**\*.dll
+
+```
+
+Wildcards are specified relatively to the checkout directory.
+
+</td></tr><tr>
+
+<td>
+
+Do not run tests from
+
+</td>
+
+<td>
+
+Specify .NET assemblies that should be excluded from the list of assemblies to test. Multiple entries should be comma-separated. The MSBuild wildcards are supported. The paths to assembly files should be absolute or relative to the [checkout directory](build-checkout-directory.md).
+
+In the example, TeamCity will omit tests specified in this directory:
+
+
+```Shell
+**\obj\**\*.dll
+
+```
+
+
+Wildcards are specified relatively to the checkout directory.
+
+</td></tr><tr>
+
+<td>
+
+Include categories
+
+</td>
+
+<td>
+
+Specify NUnit categories of tests to be run. Multiple entries should be comma-separated.    
+[Category expressions](nunit-support.md#Category+Expression) are supported as well. Commas, semicolons, and new lines are treated as global __or__ operations (prior to the expression parsing).
+
+Since NUnit 3.0, category expressions are not supported and must be set via the command line as described in the [NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
+
+</td></tr><tr>
+
+<td>
+
+Exclude categories
+
+</td>
+
+<td>
+
+Specify NUnit categories to be excluded from the tests to be run. Multiple entries should be comma-separated.   
+[Category expressions](nunit-support.md#Category+Expression) are supported here as well. Commas, semicolons, and new lines are treated as global __or__ operations (prior to the expression parsing).
+
+Since NUnit 3.0, category expressions are not supported_and must be set via the command line as described in the [NUNit documentation](https://github.com/nunit/docs/wiki/Test-Selection-Language).
+
+</td></tr><tr>
+
+<td>
+
+Reduce test failure feedback time
+
+</td>
+
+<td>
+
+Use this option to instruct TeamCity to run some tests before others.
+
+</td></tr></table>
+
+### Legacy NUnit Settings
+{initial-collapse-state="collapsed"}
+
+<table><tr>
+
+<td>
+
+Setting
+
+</td>
+
 <td>
 
 Description
@@ -83,13 +245,9 @@ NUnit runner<br/><br/>
 
 Select the NUnit version to be used to run the tests. The set of available settings varies depending on the selected version.
 
-This option is available only for the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>.
-
 </td></tr><tr>
 
-<td id="pathToNUnitConsoleTool">
-
-<anchor name="NUnit-pathToNUnitConsoleTool"/>
+<td>
 
 NUnit Console
 
@@ -99,13 +257,11 @@ NUnit Console
 
 Select a preinstalled console tool or specify a custom path to the `nunit3-console.exe` console executable, including the filename.
 
-If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
+This option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
-<td id="workingDirectory">
-
-<anchor name="NUnit-workingDirectory"/>
+<td>
 
 Working directory
 
@@ -116,13 +272,11 @@ Working directory
 
 Specify the path to the [build working directory](build-working-directory.md) if it differs from the directory of the testing assembly.
 
-If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
+This option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
-<td id="appConfigFile">
-
-<anchor name="NUnit-appConfigFile"/>
+<td>
 
 Path to application configuration file
 
@@ -132,11 +286,11 @@ Path to application configuration file
 
 Specifу the path to the application configuration file to be used when running tests. The path should be either absolute or relative to the [checkout directory](build-checkout-directory.md).
 
-If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
+This option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
-<td id="NUnit-cmdParameters">
+<td>
 
 Additional command line parameters
 
@@ -146,7 +300,7 @@ Additional command line parameters
 
 Enter [additional command line parameters](https://docs.nunit.org/articles/nunit/running-tests/Console-Command-Line.html) to pass to `nunit-console.exe`.
 
-If you're using the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>, this option is available only if NUnit 3.0 is selected.
+This option is available only if NUnit 3.0 is selected.
 
 </td></tr><tr>
 
@@ -163,7 +317,6 @@ From the __Platform__ drop-down menu, select the desired execution mode on an x6
 From the __Version__ drop-down menu, select the required .NET Framework version. Supported values are: `v2.0`, `v4.0`; and `auto`, _available if NUnit 3.0 is selected_.   
 _For NUnit 3.0_, if `auto` is selected, tests will run under the framework they are compiled with.
 
-This option is available only for the <a href="#Legacy+and+Updated+NUnit+Runners">legacy NUnit runner</a>.
 
 </td></tr><tr>
 
