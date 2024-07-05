@@ -58,7 +58,7 @@ The extensions can be installed as separate packages or in bulk using the [NUnit
 
 Legacy and updated NUnit runners exhibit a few differences.
 
-### New NUnit Settings
+### Updated Runner Settings
 
 <table><tr>
 
@@ -215,7 +215,7 @@ Use this option to instruct TeamCity to run some tests before others.
 
 </td></tr></table>
 
-### Legacy NUnit Settings
+### Legacy Runner Settings
 {initial-collapse-state="collapsed"}
 
 <table><tr>
