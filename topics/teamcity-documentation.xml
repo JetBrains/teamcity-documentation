@@ -12,7 +12,7 @@
         </description>
 
         <tip-group>
-            <a href="getting-started-with-teamcity.md" description="Learn the basics of TeamCity features and capabilities and run your free evaluation setup." type="install">Set up TeamCity for evaluation</a>
+            <a href="getting-started-with-teamcity.md" description="Learn the basics of TeamCity features and capabilities and run your free trial setup." type="install">Set up TeamCity for evaluation</a>
             <a href="install-and-start-teamcity-server.md" description="When you are ready to use TeamCity for production purposes, learn how to install the server, build agents, and database." type="start">Set up TeamCity for production</a>
         </tip-group>
 

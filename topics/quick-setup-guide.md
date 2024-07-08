@@ -15,7 +15,7 @@ To install TeamCity for the production setup, read [this section](install-and-st
 ## Download TeamCity
 
 __[Download](https://www.jetbrains.com/teamcity/download/) the free Professional Edition of TeamCity__, which is a full-featured TeamCity bundled with 3 build agents with a limit of 100 build configurations.  
-After evaluation, you can __switch to the Enterprise Edition__. Read the details of our [licensing policy](licensing-policy.md) and [pricing](https://www.jetbrains.com/teamcity/buy/).
+After trial, you can __switch to the Enterprise Edition__. Read the details of our [licensing policy](licensing-policy.md) and [pricing](https://www.jetbrains.com/teamcity/buy/).
 
 ## Install and run on Windows
 

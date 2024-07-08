@@ -3,7 +3,7 @@
 
 [JetBrains TeamCity](https://www.jetbrains.com/teamcity/) is a powerful and user-friendly Continuous Integration and Deployment server that works out of the box.
 
-This guide provides basic information on TeamCity features and capabilities and includes instruction on the __evaluation__ TeamCity setup. Details on [installation](configure-server-installation.md) and more complex [production](configure-server-installation.md#Configuring+Server+for+Production+Use) configuration adjusted to your needs are available in the [installation guide](install-and-start-teamcity-server.md).
+This guide provides basic information on TeamCity features and capabilities and includes instruction on the __Trial__ TeamCity setup. Details on [installation](configure-server-installation.md) and more complex [production](configure-server-installation.md#Configuring+Server+for+Production+Use) configuration adjusted to your needs are available in the [installation guide](install-and-start-teamcity-server.md).
 
 ## Before you start
 

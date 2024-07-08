@@ -58,7 +58,7 @@ Before upgrading, make sure the maintenance period of your licenses is not yet e
 Typically all the minor updates (indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version) use the same effective release date (that of the major release).   
 If not all the licenses cover the target version release date, consider [renewing the licenses](https://www.jetbrains.com/teamcity/buy/#license-type=renewal) before the upgrade (you can replace the old license keys with the renewed ones even before the upgrade).
 
-If you are only evaluating a newer version, you can get an evaluation license on the [download page](https://www.jetbrains.com/teamcity/download/). Note that each TeamCity version can be evaluated only once. To extend the evaluation period, [contact](https://www.jetbrains.com/company/contacts/#contactSales) the JetBrains sales department.
+If you are only evaluating a newer version, you can get a trial license on the [download page](https://www.jetbrains.com/teamcity/download/). Note that each TeamCity version can be evaluated only once. To extend the trial period, [contact](https://www.jetbrains.com/company/contacts/#contactSales) the JetBrains sales department.
 
 When upgrading from TeamCity 4.x or earlier, note that the licensing policy in TeamCity versions 5.0 and later are different from that of the previous TeamCity versions. Review the [Licensing Policy](licensing-policy.md) page and the [Licensing and Upgrade](https://www.jetbrains.com/teamcity/buy#upgradeuser) section on the official site.
 
