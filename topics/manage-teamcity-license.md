@@ -123,9 +123,11 @@ All license-related changes made in a [team](#Organizations+and+Teams) affect th
 
 Existing customers who purchased TeamCity licences previously can still employ the legacy workflow by clicking the **Enter new license key** button and inserting the license key. However, we recommend switching to the JetBrains Account-based workflow to benefit from crucial security email notifications and automatic license updates.
 
-To activate your currently applied licenses using the JetBrains Account:
+To activate your currently applied licenses using the JetBrains Account, Navigate to **Administration | Licenses** page and click the **Get License key** button. If you have required JetBrains Account access permissions, the license will get activated automatically.
 
-1. Navigate to **Administration | Licenses** page.
+If JetBrains Account fails to find an appropriate license to activate, or you have no access to this resource, try the following steps instead (you might need your JetBrains Account administrator's help in case of limited permissions):
+
+1. Go to the **Administration | Licenses** page in TeamCity.
 2. Click **Download hashed offline keys** under the "Active license keys" table.
 3. Click **Get License Key** and log into your JetBrains Account.
 4. You should be able to see the "Already have license keys on your server?" tile that suggests you to convert your existing keys. Click **Upload license keys** and upload the "teamcity-offline-keys.txt" file generated in step 2.
