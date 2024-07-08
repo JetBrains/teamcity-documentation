@@ -81,3 +81,8 @@ If you want to run a copy of the server, make sure the servers use distinct data
 ### Restoring Build Logs
 
 Build logs located in the `/logs` subdirectory of [`/artifacts`](teamcity-data-directory.md#artifacts) from [multiple artifact directories](build-artifact.md) are backed up and restored into the single directory `system/<project ID>/<build configuration name>/<internal_build_id>/.teamcity/logs`.
+
+
+### Restoring Configuration Files
+
+Set up an [external configuration storage](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control) to maintain a complete history of server edits. This allows you to quickly restore files in the `[Data_Directory](teamcity-data-directory.md)/config` directory if they become corrupted.

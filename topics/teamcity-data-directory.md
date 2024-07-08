@@ -63,6 +63,27 @@ We highly recommend placing the Data Directory outside of the TeamCity installat
 [//]: # (Internal note. Do not delete. "TeamCity Data Directoryd311e146.txt")    
 
 
+### Upload Configuration Files to a Version Control
+
+You can configure TeamCity to push files from the `.BuildServer/config` directory (excluding the `_trash` subfolder) to an external VCS repository. This setup allows you to:
+
+* Monitor all configuration changes. Each edit to server configuration files is automatically pushed as a separate commit, enabling you to review and investigate the change history.
+* Restore your server if its configuration files become corrupted. To roll back, shut down the TeamCity server and pull files from an earlier repository revision into the `.BuildServer/config` directory.
+
+To set up a repository that should store your server's configuration files:
+
+1. Go to **Administration | ???**.
+2. Tick **???**.
+3. Enter the path to your repository in the SSH format.
+    > Configuration files contain scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
+    > 
+    {type="warning"}
+4. Enter a fully specified name (`heads/refs/<name>`) of the repository branch that should store configuration files.
+5. Upload a private key to allow TeamCity to access your repository via SSH.
+
+
+
+
  <anchor name="data_directory_structure"/>
 
 ## Structure of TeamCity Data Directory

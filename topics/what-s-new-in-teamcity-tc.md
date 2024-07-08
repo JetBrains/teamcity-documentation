@@ -102,6 +102,13 @@ Learn more: [Git General Settings](git.md#General+Settings)
 Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
 
 
+## Store Server Configuration Files in the Version Control
+{product="tc"}
+
+Starting with this version you can store the contents of your server's `[Data_Directory](teamcity-data-directory.md)/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
+
+Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control)
+
 
 ## Miscellaneous Changes
 {product="tc"}
