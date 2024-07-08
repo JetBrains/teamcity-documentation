@@ -19,7 +19,7 @@
         <main-group>
             <title>Learn basics</title>
             <a href="introduction-to-teamcity-terminology.md" description="Find out how (and if?) TeamCity builds are different from jobs and explore the main TeamCity concepts.">Terms and concepts</a>
-            <a href="https://www.jetbrains.com/teamcity/ci-cd-guide/" description="Read about the principles of continuous integration and development.">CI/CD Guide</a>
+            <a href="https://www.jetbrains.com/teamcity/ci-cd-guide/" description="Read about the principles of continuous integration and delivery.">CI/CD Guide</a>
             <a href="supported-platforms-and-environments.md" description="Explore a wide range of software supported by TeamCity.">Supported platforms and environments</a>
             <a href="https://www.jetbrains.com/teamcity/tutorials/" description="If you use Maven, Gradle, .NET, or Python, explore basic CI/CD tutorials on our website. Guidelines for many other tech stacks can be found in this documentation.">Tutorials</a>
         </main-group>
