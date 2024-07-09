@@ -12,17 +12,6 @@ The new mechanism does not impact existing licensing or purchase policies and is
 Learn more: [](manage-teamcity-license.md).
 
 
-## New GitHub Checks Webhook Trigger
-{product="tc"}
-
-Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via [TeamCity GitHub App connections](configuring-connections.md#github-app).
-
-<img src="dk-checkstrigger-ghsummary.png" width="706" alt="Build summary info on GitHub"/>
-
-The new trigger is an all-in-one solution that implements a two-way GitHub-TeamCity integration: TeamCity configuration runs a build for all pushes, no matter how frequently they occur, and communicates the build result status back to GitHub. With this trigger in place, you no longer need to configure the standard [VCS trigger](configuring-vcs-triggers.md) or [](commit-status-publisher.md).
-
-Learn more: [](github-checks-trigger.md)
-
 ## Custom Location for Versioned Settings
 {product="tc"}
 
@@ -37,32 +26,42 @@ Additionally, this feature enables you to organize the versioned settings of all
 Learn more: [Storing Project Settings in Version Control Systems](storing-project-settings-in-version-control.md#Custom+Settings+Path)
 
 
-## Bootstrap Steps
+## Store Server Configuration Files in the Version Control
 {product="tc"}
 
-You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
+Starting with this version you can store the contents of your server's `[Data_Directory](teamcity-data-directory.md)/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
 
-<img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
-
-This enhancement allows you to perform preliminary setup, such as preparing a required directory hierarchy or making sure the required files in the checkout directory are not locked by another process.
-
-Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
+Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control)
 
 
-
-## Upload SSH Keys from the Create Project Page
+## VCS Intergration Enhancements
 {product="tc"}
 
-When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
+### New GitHub Checks Webhook Trigger
+{product="tc"}
 
-<img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
+Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via [TeamCity GitHub App connections](configuring-connections.md#github-app).
 
-This minor enhancement streamlines the workflow by eliminating the need to upload keys in advance from the [SSH Keys](ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project) page.
+<img src="dk-checkstrigger-ghsummary.png" width="706" alt="Build summary info on GitHub"/>
 
-Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
+The new trigger is an all-in-one solution that implements a two-way GitHub-TeamCity integration: TeamCity configuration runs a build for all pushes, no matter how frequently they occur, and communicates the build result status back to GitHub. With this trigger in place, you no longer need to configure the standard [VCS trigger](configuring-vcs-triggers.md) or [](commit-status-publisher.md).
+
+Learn more: [](github-checks-trigger.md)
 
 
-## Security Enhancement for TeamCity Connections
+### Non-Recursive Submodule Checkout
+{product="tc"}
+
+The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
+
+The new "Non-recursive checkout" option added in this version allows you to limit the depth of submodule hierarchy by 1. In this mode, TeamCity checks out only those submodules directly referenced by the main repository. Lower-level repositories referenced by submodules are ignored.
+
+<img src="dk-nonrecursive-checkout.png" width="706" alt="Non-recursive checkout"/>
+
+Learn more: [Git General Settings](git.md#General+Settings)
+
+
+### Security Enhancement for TeamCity Connections
 {product="tc"}
 
 Following our commitment to identify and eliminate security vulnerabilities, we have added the new **Enable unique callback/redirect URL** setting to the following [TeamCity connections](configuring-connections.md):
@@ -80,21 +79,25 @@ This setting adds a unique string to callback/redirect URLs required to configur
 
 The **Enable unique callback/redirect URL** setting is enabled by default for all newly created OAuth connections. If you wish to enable it for your existing connections, remember to update the modified URL on the VCS side.
 
-Learn more: [](configuring-connections.md)
+Learn more: [Configuring Connections](configuring-connections.md)
 
 
-## Non-Recursive Submodule Checkout
+## Build Runner Updates
 {product="tc"}
 
-The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
+### Bootstrap Steps
+{product="tc"}
 
-The new "Non-recursive checkout" option added in this version allows you to limit the depth of submodule hierarchy by 1. In this mode, TeamCity checks out only those submodules directly referenced by the main repository. Lower-level repositories referenced by submodules are ignored.
+You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
 
-<img src="dk-nonrecursive-checkout.png" width="706" alt="Non-recursive checkout"/>
+<img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
 
-Learn more: [Git General Settings](git.md#General+Settings)
+This enhancement allows you to perform preliminary setup, such as preparing a required directory hierarchy or making sure the required files in the checkout directory are not locked by another process.
 
-## NUnit and NAnt Runners Update
+Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
+
+
+### NUnit and NAnt Runners Deprecation
 {product="tc"}
 
 <include src="nunit.md" include-id="2024-07-nunit"/>
@@ -102,12 +105,31 @@ Learn more: [Git General Settings](git.md#General+Settings)
 Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
 
 
-## Store Server Configuration Files in the Version Control
+## Upload SSH Keys from the Create Project Page
 {product="tc"}
 
-Starting with this version you can store the contents of your server's `[Data_Directory](teamcity-data-directory.md)/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
+When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
-Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control)
+<img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
+
+This minor enhancement streamlines the workflow by eliminating the need to upload keys in advance from the [SSH Keys](ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project) page.
+
+Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
+
+
+
+## Sakura UI: Problems Page Redesign
+{product="tc"}
+
+We have overhauled the **Problems** tab of the [](project-home-page.md) to simplify the user experience and facilitate build failure investigation and resolution workflows.
+
+<img src="dk-problems-tab.png" width="706" alt="Problems tab"/>
+
+In futher release cycles, we expect to update other UI elements related to browsing, investigating, muting, and fixing build problems.
+
+
+Learn more: [](investigating-and-muting-build-failures.md)
+
 
 
 ## Miscellaneous Changes
@@ -125,6 +147,11 @@ Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Versio
   +:release-\(7.1\)
   ```
   This first line is no longer required and can be safely removed, but your existing specifications will remain valid even if you don't.
+* TeamCity [metrics](teamcity-monitoring-and-diagnostics.md#Metrics) set now includes four more experimental metrics that allow you to measure the number of tasks that carry out [version settings](storing-project-settings-in-version-control.md) synchronization.
+  * `executors_versionedSettingsUpdate_activeTasks`
+  * `executors_versionedSettingsUpdate_completedTasks`
+  * `executors_versionedSettingsUpdate_poolSize`
+  * `executors_versionedSettingsUpdate_queuedTasks`
 
 </chunk>
 
