@@ -169,7 +169,11 @@ The Token-Based Authentication module allows users to authenticate via [access t
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when switching [nodes](multinode-setup.md) in the TeamCity UI or when the token expires.
 >
-{type="note"}
+{type="note"}{product="tc"}
+
+> For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when the token expires.
+>
+{type="note"}{product="tcc"}
 
 </chunk>
 

@@ -60,6 +60,7 @@ __Tips:__
 Since TeamCity 2020.1, you can also add granular [execution conditions](build-step-execution-conditions.md) for build steps.
 
 ## Bootstrap Steps
+{product="tc"}
 
 A bootstrap step is performed right after a build is triggered, before a build agent checks out source files. This allows you to add a runner (typically the [](command-line.md) one) that performs initial setup and ensures the following steps run as expected.
 
