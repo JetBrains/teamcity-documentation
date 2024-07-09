@@ -84,7 +84,7 @@ When specifying users, enter usernames instead of public names.
 <anchor name="delay-auto-assign"/>
 
 If necessary, you can delay the auto-assignment of investigations.   
-TeamCity needs time after the build finish to detect [flaky tests](viewing-tests-and-configuration-problems.md#Flaky+Tests). In some cases, Investigations Auto Assigner may assign an investigation to a user even if the build fails without any user involvement. When there are many flaky tests in a project, this may be distracting.   
+TeamCity needs time after the build finish to detect [flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests). In some cases, Investigations Auto Assigner may assign an investigation to a user even if the build fails without any user involvement. When there are many flaky tests in a project, this may be distracting.   
 
 
 To prevent this scenario, select __Assign__: "_On second failure_" when configuring this build feature. Investigations Auto Assigner will delay the assignment until the problem repeats in a build configuration twice in a row (in the default branch). This option affects only failed tests and "Exit code" build problems; any compilation errors will be assigned with an investigation right on the first failure.

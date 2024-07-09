@@ -207,7 +207,7 @@ If you have previously used the `teamcity.git.fetch.process.max.memory` internal
 * You can configure more than one SSH key for a build. It is useful if the build needs to authenticate in several external systems or repositories. To use multiple SSH keys in a build:
   * On the project level: specify these keys in SSH Keys.
   * On the build configuration level: add several SSH Agent build features, one per each key.
-* TeamCity uses [improved rules](investigating-and-muting-build-failures.md#Notes+on+Automatic+Fix+of+Investigations+and+Muted+Problems) for resolving assigned investigations and unmuting muted problems and tests in active branches. Now it waits until the build problem (or failed test) is fixed in all active branches before unmuting it or resolving its investigation.
+* TeamCity uses [improved rules](investigating-and-muting-build-failures.md#Relation+with+Branches) for resolving assigned investigations and unmuting muted problems and tests in active branches. Now it waits until the build problem (or failed test) is fixed in all active branches before unmuting it or resolving its investigation.
 * The [retry build trigger](configuring-retry-build-trigger.md) now can trigger a new build with the same revision and put it to the queue top.
 
 ## Fixed issues

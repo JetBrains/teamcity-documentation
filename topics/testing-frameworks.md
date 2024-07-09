@@ -39,7 +39,7 @@ See [notes](how-to.md#Integrate+with+Build+and+Reporting+Tools) on integrating w
 
 <seealso>
         <category ref="user-guide">
-            <a href="viewing-tests-and-configuration-problems.md">Viewing Tests and Configuration Problems</a>
+            <a href="investigating-and-muting-build-failures.md">Viewing and Managing Tests and Configuration Problems</a>
         </category>
         <category ref="concepts">
             <a href="build-state.md">Build State</a>
