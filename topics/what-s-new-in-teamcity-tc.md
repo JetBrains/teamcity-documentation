@@ -153,6 +153,8 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
   * `executors_versionedSettingsUpdate_completedTasks`
   * `executors_versionedSettingsUpdate_poolSize`
   * `executors_versionedSettingsUpdate_queuedTasks`
+  
+  In addition, the new `build_queue_incompatible` metric allows you to track the number of builds that are not compatible with any of the currently available TeamCity agents (including cloud existing cloud profiles).
 
 </chunk>
 
