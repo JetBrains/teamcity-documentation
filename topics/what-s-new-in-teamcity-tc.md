@@ -82,28 +82,6 @@ The **Enable unique callback/redirect URL** setting is enabled by default for al
 Learn more: [Configuring Connections](configuring-connections.md)
 
 
-## Build Runner Updates
-{product="tc"}
-
-### Bootstrap Steps
-{product="tc"}
-
-You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
-
-<img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
-
-This enhancement allows you to perform preliminary setup, such as preparing a required directory hierarchy or making sure the required files in the checkout directory are not locked by another process.
-
-Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
-
-
-### NUnit and NAnt Runners Deprecation
-{product="tc"}
-
-<include src="nunit.md" include-id="2024-07-nunit"/>
-
-Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
-
 
 ## Upload SSH Keys from the Create Project Page
 {product="tc"}
@@ -131,6 +109,28 @@ In futher release cycles, we expect to update other UI elements related to brows
 Learn more: [](investigating-and-muting-build-failures.md)
 
 
+## Build Runner Updates
+{product="tc"}
+
+### Bootstrap Steps
+{product="tc"}
+
+You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
+
+<img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
+
+This enhancement allows you to perform preliminary setup, such as preparing a required directory hierarchy or making sure the required files in the checkout directory are not locked by another process.
+
+Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
+
+
+### NUnit and NAnt Runners Deprecation
+{product="tc"}
+
+<include src="nunit.md" include-id="2024-07-nunit"/>
+
+Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
+
 
 ## Miscellaneous Changes
 {product="tc"}
@@ -147,6 +147,7 @@ Learn more: [](investigating-and-muting-build-failures.md)
   +:release-\(7.1\)
   ```
   This first line is no longer required and can be safely removed, but your existing specifications will remain valid even if you don't.
+* TeamCity now supports Perforce depots mapped to multiple workplace locations (the [ditto mapping](https://www.perforce.com/manuals/p4guide/Content/P4Guide/configuration.workspace_view.one-to-many.html)).
 * TeamCity [metrics](teamcity-monitoring-and-diagnostics.md#Metrics) set now includes four more experimental metrics that allow you to measure the number of tasks that carry out [version settings](storing-project-settings-in-version-control.md) synchronization.
   * `executors_versionedSettingsUpdate_activeTasks`
   * `executors_versionedSettingsUpdate_completedTasks`
