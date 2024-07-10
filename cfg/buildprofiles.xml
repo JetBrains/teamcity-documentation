@@ -29,9 +29,14 @@
     </variables>
 
     <build-profile product="tc">
-        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
+        <variables>
+            <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
+        </variables>
     </build-profile>
+
     <build-profile product="tcc">
-        <config-versions-switcher/>
+        <variables>
+            <config-versions-switcher/>
+        </variables>
     </build-profile>
 </buildprofiles>
