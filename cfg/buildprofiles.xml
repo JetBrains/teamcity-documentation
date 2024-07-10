@@ -17,7 +17,7 @@
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
         <config-algloia-product-version>2024.07</config-algloia-product-version>
         <!--version selector for TeamCity OnPremises-->
-        <!--<config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>->
+        <!--<config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>-->
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2024.07/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
@@ -28,6 +28,10 @@
         <download-page>https://www.jetbrains.com/teamcity/download/</download-page>
     </variables>
 
-    <build-profile product="tc"/>
-    <build-profile product="tcc"/>
+    <build-profile product="tc">
+        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
+    </build-profile>
+    <build-profile product="tcc">
+        <config-versions-switcher/>
+    </build-profile>
 </buildprofiles>
