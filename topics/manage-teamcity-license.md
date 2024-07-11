@@ -60,13 +60,12 @@ On the TeamCity <b>Licenses</b> page, click <b>I already have a key</b> and past
 
 </li>
 
-See also: [Offline Mode](#Offline+Mode).
 </ol>
 
 
 Note that since an offline TeamCity server is unable to receive automatic updates from JBA, you will need to copy and paste **server** license keys whenever the server license is renewed or additional agents are purchased.
 
-See also: <a href="configuring-proxy-server.md">Configuring Proxy Server</a>
+See also: <a href="configuring-proxy-server.md">Configuring Proxy Server</a>, [Offline Mode](#Offline+Mode).
 
 </dd>
 
