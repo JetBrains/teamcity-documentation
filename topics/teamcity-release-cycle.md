@@ -74,7 +74,7 @@ __TeamCity On-Premises Major Release__
 
 <td>
 
-A major TeamCity On-Premises version is usually released every 6-7 months. There are multiple _minor (bugfix) releases_ following the major release. Bugfix releases and support patches for critical issues, if applicable, are provided until __End of Sale__ of the release.
+A major TeamCity On-Premises version is usually released every 4 months. There are multiple _minor (bugfix) releases_ following the major release. Bugfix releases and support patches for critical issues, if applicable, are provided until __End of Sale__ of the release.
 
 [Release download page](https://www.jetbrains.com/teamcity/download/)
 
@@ -108,7 +108,7 @@ __TeamCity On-Premises End of Support__
 
 <td>
 
-Occurs with the release of two newer major versions. At this point, we stop providing regular technical support for the On-Premises release.
+Occurs with the release of two or three newer major versions (depends on the frequency of releases). At this point, we stop providing regular technical support for the On-Premises release.
 
 </td>
 

@@ -162,8 +162,10 @@ When there are more authorized agents than the valid agent licenses available, t
 
 ## Managing Licenses
 
-You can enter new license keys and review the currently used ones (including the license issue date and maintenance period) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page. Adding or removing licenses on the page is applied immediately.
+You can activate server license keys (and enter non-activated legacy keys) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page.
 
+<include include-id="license-limitations" src="manage-teamcity-license.md"/>
+[teamcity-release-cycle.md](teamcity-release-cycle.md)
 See the following article for more information: [](manage-teamcity-license.md).
 
 

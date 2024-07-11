@@ -59,16 +59,33 @@ After you activate a license in your JetBrains Account, copy or save the activat
 On the TeamCity <b>Licenses</b> page, click <b>I already have a key</b> and paste the activation key.
 
 </li>
+
+See also: [Offline Mode](#Offline+Mode).
 </ol>
 
 
-Note that since an offline TeamCity server is unable to receive automatic updates from JBA, you will need to copy and paste activation keys whenever the server license is renewed or additional agents are purchased.
+Note that since an offline TeamCity server is unable to receive automatic updates from JBA, you will need to copy and paste **server** license keys whenever the server license is renewed or additional agents are purchased.
 
 See also: <a href="configuring-proxy-server.md">Configuring Proxy Server</a>
 
 </dd>
 
 </dl>
+
+
+### Activate Existing Legacy Licenses
+
+Existing customers who purchased TeamCity licenses previously can still employ the legacy workflow by clicking the **Enter new license key** button and inserting the license key. However, we recommend switching to the JetBrains Account-based workflow to benefit from crucial security email notifications and automatic license updates.
+
+
+To activate your currently active server license:
+
+1. Go to the **Administration | Licenses** page in TeamCity.
+2. Click **Download hashed offline keys** under the "Active license keys" table.
+3. Click **Get License Key** and log into your JetBrains Account.
+4. You should be able to see the "Already have license keys on your server?" tile that suggests you to convert your existing keys. Click **Upload license keys** and upload the "teamcity-offline-keys.txt" file generated in step 2.
+5. Review the information about your license and click **Get license key** to generate an updated key.
+6. Paste the generated key on the **Administration | Licenses** page.
 
 
 ## Deactivate a License
@@ -81,20 +98,35 @@ Deactivating a license is the opposite of the [activation process](#Activate+a+L
 
 2. When you click **Deactivate**, TeamCity automatically brings you to the JetBrains Account page where you can proceed to deactivate this license.
    
-   If you do not complete this step, the server license (although inactive in TeamCity) will remain linked to this specific server instance. This means you cannot activate it on another server. On the other hand, keeping a license linked to the TeamCity instance allows you to easily re-activate it should you plan to do this later. Instead of completing all four [activation steps](#Activate+a+License), go directly to JetBrains Account and copy an activation key.
-   
-   <img src="dk-get-license-key.png" width="706" alt="Get license key from JBA"/>
-   
-   Insert this key on the TeamCity **Licenses** page using the **I already have a key** button, and your license will re-activate.
-   
-   If you do not plan to re-activate this license on the same server (for example, you wish to activate it on a different TeamCity instance), complete this second step to sever the link between this TeamCity instance and the license.
-
-   > To completely deactivate a license, you can also skip step #1 and head directly to the JetBrains Account. Locate a required license and click the **Deactivate** link. The JetBrains account will send the required license revoke command to the TeamCity server.
-   >
-   {type="tip"}
+   If you do not complete this step, the server license (although inactive in TeamCity) will remain linked to this specific server instance. This means you cannot activate it on another server.
 
 
-Similarly to activating a license, the deactivation process may change if you have no access to the related JetBrains account. In this case, copy the **Deactivate** button link before clicking it, and send this link to a JetBrains Account administrator.
+<dl>
+
+<dt>Case 1: You are not a JetBrains Account administrator or TeamCity server is offline</dt>
+<dd>
+
+<b>Solution:</b> Similarly to the activation process, copy the **Deactivate** button link and send it to your [JetBrains Account administrator](https://sales.jetbrains.com/hc/en-gb/articles/207739139-Administrator-and-user-roles-in-JetBrains-Account#h_01J0Y2GEAFYT6RQ0JX8YN6Y5FX).
+
+</dd>
+
+<dt>Case 2: You forgot to deactivate a server license and uninstalled the TeamCity server instance. The license is now linked to a non-existent server and cannot be transfered to another instance/team</dt>
+
+<dd>
+
+<b>Solution:</b> Navigate to the JetBrains account and find this active license, then click the **Deactivate** link.
+
+<img src="dk-deactivate-from-jba.png" width="706" alt="Deactivate from JBA"/>
+
+This is an emergency workaround that should only be used when the TeamCity instance is not accessible. In any other case, initiate the deactivation process from the TeamCity UI.
+
+
+</dd>
+
+</dl>
+
+
+If you have already removed a TeamCity and forgot to deactivate a license (that you now need to transfer to another instance/JBA team), go directly to the JetBrains account, locate the required license and click **Deactivate**.
 
 
 
@@ -126,24 +158,12 @@ All license-related changes made in a [team](#Manage+Build+Agent+Licenses) affec
 The same page allows you to acquire legacy license keys (the **Legacy license key** link). For more information on this process for individual (non-organization) customers, refer to this knowledge base article: [Downloading TeamCity legacy license keys](https://www.google.com/url?q=https://sales.jetbrains.com/hc/en-gb/articles/20070395820562&sa=D&source=docs&ust=1720640931653896&usg=AOvVaw3RKRsCR4OKQQNntEHiz-Cg).
 
 
-## Activate Existing Legacy Licenses
 
-Existing customers who purchased TeamCity licenses previously can still employ the legacy workflow by clicking the **Enter new license key** button and inserting the license key. However, we recommend switching to the JetBrains Account-based workflow to benefit from crucial security email notifications and automatic license updates.
-
-
-To activate your currently applied licenses using the JetBrains Account, navigate to **Administration | Licenses** page and click the **Get License key** button. If you have required JetBrains Account access permissions, the license will get activated automatically.
-
-If JetBrains Account fails to find an appropriate license to activate, or you have no access to this resource, try the following steps instead (you might need your JetBrains Account administrator's help in case of limited permissions):
-
-1. Go to the **Administration | Licenses** page in TeamCity.
-2. Click **Download hashed offline keys** under the "Active license keys" table.
-3. Click **Get License Key** and log into your JetBrains Account.
-4. You should be able to see the "Already have license keys on your server?" tile that suggests you to convert your existing keys. Click **Upload license keys** and upload the "teamcity-offline-keys.txt" file generated in step 2.
-5. Review the information about your license and click **Get license key** to generate an updated key.
-6. Paste the generated key on the **Administration | Licenses** page.
 
 
 ## Limitations and Requirements
+
+<chunk include-id="license-limitations">
 
 A single license can only be used on a single running TeamCity server at any given time. Running secondary TeamCity nodes in addition to the main node does not require a separate license at this time.
 
@@ -151,3 +171,6 @@ If you create a copy of the server and run two servers at the same time, you sho
 
 When you already own license(s) and buy more licenses, you can [request](https://www.jetbrains.com/support/sales/) JetBrains sales to make the new licenses co\-termed with those already purchased, so that all the licenses have equal maintenance expiration date. The cost of the licenses is then lowered proportionally.   
 When buying many licenses, you are welcome to [contact](https://www.jetbrains.com/support/sales/) our sales for available volume discounts.
+
+
+</chunk>
