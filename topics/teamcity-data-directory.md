@@ -74,8 +74,10 @@ You can configure TeamCity to push files from the `.BuildServer/config` director
 
 To set up a repository that should store your server's configuration files:
 
-1. Go to **Administration | ???**.
-2. Tick **???**.
+<img src="dk-settings-repo.png" width="706" alt="Settings repository"/>
+
+1. Go to **Administration | Configs Repository**.
+2. Tick **Commit changes in configuration files to the configs repository**.
 3. Enter the path to your repository in the SSH format.
     > Configuration files contain scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
     > 
