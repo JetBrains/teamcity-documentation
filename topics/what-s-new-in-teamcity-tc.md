@@ -148,6 +148,8 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
   ```
   This first line is no longer required and can be safely removed, but your existing specifications will remain valid even if you don't.
 * TeamCity now supports Perforce depots mapped to multiple workplace locations (the [ditto mapping](https://www.perforce.com/manuals/p4guide/Content/P4Guide/configuration.workspace_view.one-to-many.html)).
+* The [](vcs-labeling.md) build feature now allows you to specify a string that should be written to the description field of Perforce labels.
+  <img src="dk-vcslabeling-p4message.png" width="706" alt="Custom message"/>
 * TeamCity [metrics](teamcity-monitoring-and-diagnostics.md#Metrics) set now includes four more experimental metrics that allow you to measure the number of tasks that carry out [version settings](storing-project-settings-in-version-control.md) synchronization.
   * `executors_versionedSettingsUpdate_activeTasks`
   * `executors_versionedSettingsUpdate_completedTasks`
