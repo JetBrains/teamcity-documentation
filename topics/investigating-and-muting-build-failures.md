@@ -109,16 +109,16 @@ Your build script might need adjustment to make the build successful when there 
 
 Both [](#Build+Results+Page) and [](#Problems+Tab) display UI elements that allow users to mute, unmute, investigate problems, mark them as fixed, or reassign them to different users. To apply the same action to multiple problems at once, go to the **Problems** tab and select required entries.
 
-<img src="dk-bulk-mute.png" width="706" alt="Bulk mute problems"/>
+<img src="dk-bulk-mute-old.png" width="706" alt="Bulk mute problems"/>
 
-When editing problems' investigations and mutes, TeamCity allows you to specify the following settings:
+When editing investigations and mutes, TeamCity allows you to specify the following settings:
 
 
 * Investigation/mute scope. Choose "Project wide" to mute/investigate this problem in builds that belong to all configurations within the same project (including its child sub-projects). The "Selected build configuration" option allows you to mute/investigate a problem only for required configurations.
   > Project administrators can add the `teamcity.internal.preferredInvestigationProject` [configuration parameter](configuring-build-parameters.md) to a parent project to set this project as the default investigation/mute scope for all of its children. The parameter value must be set to the target project's [ID](identifier.md). This property changes only the option suggested by default, users will still be able to choose a different scope.
   > 
   {type="tip"}
-* Investigations and assignees. Muted problems make failed builds appear successful, which can obscure underlying issues. We recommend pairing mutes with investigations. Having people assigned to investigations ensures that muted problems are not abandoned.
+* Investigations and assignees. Muted problems make failed builds appear successful, which can obscure underlying issues. For that reason, we recommend pairing mutes with investigations and avoid keeping muted problems that are not investigated by anyone.
 * Automatic unmute/resolve policy. You can specify conditions under which TeamCity should unmute the problem or mark it as fixed.
   * `Automatically when fixed` — if a problem is resolved in a newer build, TeamCity unmutes it and/or closes the related investigation. This is the default scenario that allows your team to quickly respond to the issue, should it re-appear in further builds.
 
