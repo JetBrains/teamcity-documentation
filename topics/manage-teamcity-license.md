@@ -125,8 +125,6 @@ This is an emergency workaround that should only be used when the TeamCity insta
 </dl>
 
 
-If you have already removed a TeamCity and forgot to deactivate a license (that you now need to transfer to another instance/JBA team), go directly to the JetBrains account, locate the required license and click **Deactivate**.
-
 
 
 
@@ -154,7 +152,7 @@ All license-related changes made in a [team](#Manage+Build+Agent+Licenses) affec
 
 <img src="dk-license-offline-refresh.png" width="706" alt="Enter activation key in offline mode"/>
 
-The same page allows you to acquire legacy license keys (the **Legacy license key** link). For more information on this process for individual (non-organization) customers, refer to this knowledge base article: [Downloading TeamCity legacy license keys](https://www.google.com/url?q=https://sales.jetbrains.com/hc/en-gb/articles/20070395820562&sa=D&source=docs&ust=1720640931653896&usg=AOvVaw3RKRsCR4OKQQNntEHiz-Cg).
+The same page allows you to acquire legacy license keys (the **Legacy license key** link). If you are an individual (non-organization) customer, refer to this knowledge base article for more information: [Downloading TeamCity legacy license keys](https://sales.jetbrains.com/hc/en-gb/articles/20070395820562).
 
 
 
