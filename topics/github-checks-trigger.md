@@ -10,6 +10,8 @@ If a processed changeset is a part of a Pull Request, this request shows the sam
 
 <img src="dk-checksTrigger-pullrequest.png" width="706" alt="Build report in the Checks tab"/>
 
+If you do not wish to expose your build server address, tick the **Disable TeamCity links in GitHub check run output** option in trigger settings. In this case build status messages will not publish links to TeamCity builds and build logs.
+
 The trigger leverages [GitHub Checks API](https://docs.github.com/en/rest/checks?apiVersion=2022-11-28#check-runs) and can be used as the only commit verification mechanism, or compliment native [GitHub Actions](https://github.com/features/actions) workflows.
 
 <img src="dk-checkstrigger-with-actions.png" width="706" alt="TC builds with GH actions"/>
@@ -20,7 +22,11 @@ The **GitHub checks trigger** handles webhooks received from GitHub. For that re
 
 <img src="dk-githubchecks-from-connection.png" width="706" alt="Create a configuration via a GitHub App connection"/>
 
-The connection must have its **Support Webhooks** option enabled. In addition, the trigger requires the related GitHub App to have the `Checks: Read and write` permission and handle the `Check run` and `Check suite` events. In case you configure a new GitHub App TeamCity connection in "Automatic" mode, all required permissions and event handlers will already be enabled. Otherwise, if you configure a new connection in "Manual" mode or wish to update connections created prior to version 2024.07, modify your App settings on the GitHub side accordingly.
+The connection must have its **Support Webhooks** option enabled. In addition, the trigger requires the related GitHub App to have the `Checks: Read and write` permission and handle the `Check run` and `Check suite` events. In case you configure a new GitHub App TeamCity connection in "Automatic" mode, all required permissions and event handlers will already be enabled. Otherwise, if you configure a new connection in "Manual" mode or wish to update connections created prior to version 2024.07, modify your App settings on the GitHub side accordingly. You will also need to re-acquire an [auth token](git.md#Authentication+Settings) for the updated permissions to take effect.
+
+If a related VCS root has the [Use tags as branches](git.md#General+Settings) option enabled, the GitHub checks trigger does not automatically start new builds when a new [tagged release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) is created.
+
+
 
 ## Comparing Checks and VCS Triggers
 
