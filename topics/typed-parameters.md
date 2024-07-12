@@ -28,6 +28,14 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
    * **Password** — similar to the "Text" type, "Password" parameters can accept any string as a value. However, this value is never exposed outside a build: TeamCity hides this sensitive value from the UI, build logs, DSL code, and REST API response payloads.
 
+      Passwords are stored in the configuration files under [TeamCity Data Directory](teamcity-data-directory.md). Depending on the [server encryption settings](teamcity-configuration-and-maintenance.md#encryption-settings), the value is either scrambled or encrypted with a custom key.
+      
+      > Password values are hidden from the build log by a plain search-and-replace algorithm. If you have a trivial password such as "123", all occurrences of the "123" string will be replaced in the log, which could potentially expose the password.
+      > 
+      > It is also important to remember that setting the parameter to the "Password" type does not completely guarantee the safety of your data. Any project administrator can retrieve the parameter's raw value, and any developer who can change the build script can potentially write malicious code to leak the password.
+      >
+      {type="warning"}
+
    * **Select** — allows you to specify a set of predefined values. Users that invoke the [Run Custom Build](running-custom-build.md) dialog can choose one or multiple values from the list, depending on the **Allow multiple selection** value. Values can be supplied with optional values displayed in TeamCity UI (for example, `Windows => win`).
 
    * **Remote secret** — a parameter whose value cannot be entered manually. Instead, a value is securely retrieved from a remote storage when the running builds needs this value. See the following article to learn more: [](hashicorp-vault.md).
