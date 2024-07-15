@@ -63,7 +63,7 @@ We highly recommend placing the Data Directory outside of the TeamCity installat
 [//]: # (Internal note. Do not delete. "TeamCity Data Directoryd311e146.txt")
 
 
-<anchor id="config-in-vcs" auxiliary-id="config-in-vcs"/>
+<anchor id="TeamCityDataDirectory-centralRepository" auxiliary-id="TeamCityDataDirectory-centralRepository"/>
 
 ### Upload Configuration Files to a Version Control
 
