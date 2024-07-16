@@ -30,9 +30,9 @@ Uploaded SSH keys are stored in the following directory:
 
 * `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/<project>/pluginData/ssh_keys`
 
-If a key was uploaded from the "Create Project" page, TeamCity assigns it to the root project, making it available for further projects you create. In this case, uploaded keys are saved to the following directory instead:
+If a key was uploaded from the "Create Project" page, TeamCity assigns it to the corresponding project directory, making it available for child subprojects. In this case, uploaded keys are saved to the following directory instead:
 
-* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/_Root/pluginData/ssh_keys`
+* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/<Project_ID>/pluginData/ssh_keys`
 
 
 
