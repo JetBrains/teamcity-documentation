@@ -674,7 +674,7 @@ To configure the described workflow for the `web-app` build configuration in Tea
    * Configure the feature parameters:
         * __VCS Root__: the VCS root created at Step 1
         * __VCS hosting type__: _GitHub_
-        * __Authentication type__: _Use VCS root credentials_, or select _Access token_ to use a GitHub token instead        
+        * __Authentication Type__: _Use VCS root credentials_, or select _Access token_ to use a GitHub token instead        
         * __Pull Requests filtering__:
            * __By authors__: _Members of the same organization_
            * __By target branch__: leave empty to apply no filters and monitor all new pull requests in the repository, or explicitly specify the target branch (in this example, _`master`_)

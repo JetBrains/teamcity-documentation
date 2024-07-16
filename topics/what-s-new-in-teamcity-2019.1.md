@@ -43,7 +43,7 @@ We've also added support for [GitLab merge requests](pull-requests.md#GitLab+Mer
 
 Now the [Pull Requests](pull-requests.md) build feature can detect pull requests created in Bitbucket Server.   
 To add a Bitbucket VCS root, select _Bitbucket Server_ as a _VSC hosting type_ and configure the connection parameters:
-* Authentication type: VCS root credentials or username/password
+* Authentication Type: VCS root credentials or username/password
 * Filtration by target PR branches
 * Bitbucket Server's base URL
 
