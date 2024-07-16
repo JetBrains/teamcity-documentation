@@ -77,7 +77,9 @@ See also: <a href="configuring-proxy-server.md">Configuring Proxy Server</a>, [O
 Existing customers who purchased TeamCity licenses previously can still employ the legacy workflow by clicking the **Enter new license key** button and inserting the license key. However, we recommend switching to the JetBrains Account-based workflow to benefit from crucial security email notifications and automatic license updates.
 
 
-To activate your currently active server license:
+To activate your currently active legacy server license, click the **Get License Key** in TeamCity UI to get into the JetBrains Account. Your legacy license should be recognized and pre-selected in the list of all available licenses. Ensure this is the correct license and follow instructions on your screen to proceed.
+
+If the JetBrains Account is unable to recognize your legacy license, use an alternative approach as shown below:
 
 1. Go to the **Administration | Licenses** page in TeamCity.
 2. Click **Download hashed offline keys** under the "Active license keys" table.

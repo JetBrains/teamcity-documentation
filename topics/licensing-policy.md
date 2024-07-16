@@ -165,7 +165,7 @@ When there are more authorized agents than the valid agent licenses available, t
 You can activate server license keys (and enter non-activated legacy keys) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page.
 
 <include include-id="license-limitations" src="manage-teamcity-license.md"/>
-[teamcity-release-cycle.md](teamcity-release-cycle.md)
+
 See the following article for more information: [](manage-teamcity-license.md).
 
 
