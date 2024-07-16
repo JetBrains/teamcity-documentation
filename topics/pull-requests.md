@@ -667,7 +667,7 @@ To configure the described workflow for the `web-app` build configuration in Tea
       - __Fetch URL__: _\<GitHub_repository_URL\>_
       - __Default branch__: the branch to be monitored; by default, _`refs/heads/master`_ (read more [about feature branches](working-with-feature-branches.md))
       - __Branch specification__: a filter for additional branches to be monitored (for example, _`+:refs/heads/*`_)
-      - __Authentication parameters__ of the GitHub user that has access rights to the `web-app` repository
+      - __Authentication Settings__ of the GitHub user that has access rights to the `web-app` repository
    * Test the connection and, if successful, click __Create__.
 2. Add the _Pull Requests_ [build feature](adding-build-features.md) to the build configuration:
    * Go to __Build Configuration Settings | Build Features__ and click __Add build feature__.
