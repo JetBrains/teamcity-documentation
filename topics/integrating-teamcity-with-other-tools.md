@@ -603,7 +603,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 <tr product="tc"><td>
 
-**Amazon S3 protocols**
+**Amazon S3**
 
 </td><td>
 
