@@ -90,19 +90,19 @@ The order of a rules is irrelevant. For each artifact the most specific rule (th
 
 ### Source Path
 
-The _SourcePath_ should be relative to the artifacts' directory of the "source" build. The path can either identify a specific file, directory, or use wildcards to match multiple files. [Ant-like wildcards](wildcards.md) are supported.   
+The `SourcePath` should be relative to the artifacts' directory of the "source" build. The path can either identify a specific file, directory, or use wildcards to match multiple files. [Ant-like wildcards](wildcards.md) are supported.   
 
 Downloaded artifacts will keep the "source" directory structure starting with the first `*` or `?` wildcard.
 
 ### Archive Path
 
-_ArchivePath_ is used to extract downloaded [compressed](configuring-general-settings.md#Artifact+Paths) artifacts. `zip`, `7zip`, `jar`, `tar`, and `tar.gz` are supported.   
+`ArchivePath` is used to extract downloaded [compressed](configuring-general-settings.md#Artifact+Paths) artifacts. `zip`, `7zip`, `jar`, `tar`, and `tar.gz` are supported.   
 
-_ArchivePath_ follows general rules for _SourcePath_: ant-like wildcards are allowed, the files matched inside the archive will be placed in the directory corresponding to the first wildcard match (relative to destination path). For example, the `release.zip!*.dll` rule will extract all .dll files residing in the root of the `release.zip` artifact.
+`ArchivePath` follows general rules for `SourcePath`: ant-like wildcards are allowed, the files matched inside the archive will be placed in the directory corresponding to the first wildcard match (relative to destination path). For example, the `release.zip!*.dll` rule will extract all .dll files residing in the root of the `release.zip` artifact.
 
 ### Destination Path
 
-_DestinationPath_ specifies the destination directory on the agent where downloaded artifacts are to be placed. If the path is relative (which is recommended), it will be resolved against the build checkout directory. If needed, the destination directories can be cleaned before downloading artifacts. If the destination path is empty, artifacts will be downloaded directly to the checkout root.
+`DestinationPath` specifies the destination directory on the agent where downloaded artifacts are to be placed. If the path is relative (which is recommended), it will be resolved against the build checkout directory. If needed, the destination directories can be cleaned before downloading artifacts. If the destination path is empty, artifacts will be downloaded directly to the checkout root.
 
 Destination paths are ignored for exclusive (starting with the `-:` prefix) rules.
 
