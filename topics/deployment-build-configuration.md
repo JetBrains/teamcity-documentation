@@ -73,7 +73,7 @@ object DeploymentConfigsProject : Project({
 1. On the **General Settings** tab of your new subproject, click **Create build configuration**.
 2. Choose the **Manually** option and enter *"Deploy Console (Windows)"* as the configuration name.
 3. Set the build configuration type to "Deployment".
-4. In the **Version Control Settings**, click **Attach VCS Root** and choose the same root all *"Build..."* configurations use.
+4. In the **Version Control Settings**, click **Attach VCS root** and choose the same root all *"Build..."* configurations use.
 5. *"Deploy Console (Windows)"* depends on the *"Build console & web (win-x64)"* build configuration and must be able to access its artifacts.
     
     Navigate to **Building Configuration | Dependencies"** and add corresponding snapshot and artifact (`bin => context`) dependencies.
