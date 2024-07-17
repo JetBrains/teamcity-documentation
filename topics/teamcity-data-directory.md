@@ -85,7 +85,7 @@ To set up a repository that should store your server's configuration files:
 4. Enter a fully specified name (`heads/refs/<name>`) of the repository branch that should store configuration files.
 5. Upload a private key to allow TeamCity to access your repository via SSH.
 
-
+If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugin/9057-autoincrementer), we recommend that you update it to the latest version.
 
 
  <anchor name="data_directory_structure"/>
