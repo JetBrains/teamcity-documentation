@@ -238,6 +238,37 @@ If such an error occurs, TeamCity:
 * such builds will not affect the build configuration status and the status of developer changes
 * shows a "configuration error" stripe for a build configuration with such a build
 
+
+## Project and Build Configuration Icons
+
+Build states affect the way TeamCity projects and build configurations are presented. Color-coded icons provide a bird's eye view of the build farm, enabling you to instantly spot problematic projects.
+
+Project and configuration icons have three distinctive colors:
+
+* **Gray** — corresponds to unknown (neither successful nor failure) project/configuration status.
+    <img src="dk-icons-gray.png" width="660" alt="Gray project and configuration icons"/>
+
+* **Green** — used for configurations whose last builds were successful and projects whose configurations are all green.
+
+* **Red** — used for configurations whose last builds failed and projects that have at least one red configuration.
+
+
+TeamCity uses builds of the **specific branch** to identify the project/configuration status. If a configuration's version selector points to the specific branch, builds of this branch affect the configuration status. Global views, such as project overview and side navigation bar, use configuration default branches instead.
+
+
+For example, the configuration below has multiple successful builds in the "development" branch. The configuration's branch selector targets this specific branch, and the configuration's icon is green.
+
+<img src="dk-confbuttons-green.png" width="706" alt="Green configuration icons"/>
+
+The same configuration but in the "sandbox" branch has failed its last build, which turns the configuration icon red.
+
+<img src="dk-confbuttons-red.png" width="706" alt="Red configuration icons"/>
+
+However, since there were no builds in the default "main" branch, project icons on both screens above are gray. The same color is used for configuration icons when the version selector is not pointing to any branch.
+
+<img src="dk-confbuttons-gray.png" width="706" alt="Gray configuration icons"/>
+
+
 <seealso>
         <category ref="concepts">
             <a href="changing-build-configuration-status.md">Build Configuration Status</a>
