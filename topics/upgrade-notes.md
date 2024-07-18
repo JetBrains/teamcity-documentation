@@ -10,6 +10,11 @@
 * The bundled Git was updated to version 2.45.2 in both Server and Agent Docker images.
 * TeamCity distribution no longer bundles the HSQLDB library. Instead, it is now downloaded on demand (in case you already use the HyperSQL database or select this option for a new TeamCity server on its first launch). If your TeamCity instance is offline or fails to download the required library due to proxy server settings, download the `hsqldb1-1.0.0.jar` directly from [download.jetbrains.com](https://download.jetbrains.com/teamcity-repository/org/jetbrains/teamcity/hsqldb1/1.0.0/hsqldb1-1.0.0.jar) and place it to `[TeamCity_Data_Directory](teamcity-data-directory.md)/lib/jdbc`.
 
+### Known Issues
+{id="known-issues-2024-07"}
+
+* Build agents that originate from `2024.07-nanoserver-1809` and `2024.07-windowsservercore-1809` Docker images become incompatible with some of TeamCity runners after these agents restart. To work around this issue, remove the `C:/BuildAgent/plugins` directory from the image to enforce plugins update. [TW-88962](https://youtrack.jetbrains.com/issue/TW-88962)
+
 
 ## Changes from 2024.03.2 to 2024.03.3
 {id="2024.03.3"}
