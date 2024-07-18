@@ -7,7 +7,6 @@
 
 <!--project: TeamCity Fix versions: {2024.07 (160569)}  #Fixed #Testing visible to: {All Users} -{Trunk issue}-->
 
-
 ### Feature
 
 **[TW-75072](https://youtrack.jetbrains.com/issue/TW-75072/Commit-all-configuration-changes-in-a-Git-repository)** — Commit all configuration changes in a Git repository
@@ -225,7 +224,6 @@
 **[TW-84589](https://youtrack.jetbrains.com/issue/TW-84589/authentication-modules-shows-alert-discard-your-changes-on-profile-page)** — authentication modules shows alert "discard your changes" on profile page
 
 
-
 ### Task
 
 **[TW-39885](https://youtrack.jetbrains.com/issue/TW-39885/Add-tests-total-duration-statistics-metric)** — Add tests total duration statistics metric
@@ -251,7 +249,6 @@
 **[TW-84380](https://youtrack.jetbrains.com/issue/TW-84380/Remove-dotCover-bundled-tool-and-install-it-after-TeamCity-server-startup)** — Remove dotCover bundled tool and install it after TeamCity server startup
 
 **[TW-86054](https://youtrack.jetbrains.com/issue/TW-86054/Update-Gradle-Tooling-API-in-Gradle-plugin-to-the-latest-version)** — Update Gradle Tooling API in Gradle plugin to the latest version
-
 
 
 
@@ -288,6 +285,9 @@
 **[TW-87192](https://youtrack.jetbrains.com/issue/TW-87192/Improve-performance-of-multi-node-tasks-processing)** — Improve performance of multi node tasks processing
 
 **[TW-86911](https://youtrack.jetbrains.com/issue/TW-86911/Inefficient-code-in-Change.isVersionedSettings-possibly-leading-to-higher-CPU-usage)** — Inefficient code in Change.isVersionedSettings possibly leading to higher CPU usage
+
+
+
 
 
 
