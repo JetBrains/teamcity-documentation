@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
         SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
-<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-cloud-documentation.xml" status="release">
+<product-profile id="tcc" name="TeamCity Cloud" start-page="teamcity-cloud-documentation.xml" status="deprecated">
     <toc-element id="teamcity-cloud-documentation.xml" toc-title="TeamCity Cloud Documentation Home"/>
     <toc-element id="getting-started-with-teamcity-cloud.md">
         <toc-element id="continuous-integration-with-teamcity.md" show-structure-for="chapter" show-structure-depth="4"/>
