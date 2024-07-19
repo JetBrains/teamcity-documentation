@@ -63,7 +63,7 @@ The sample below illustrates how to correctly set up your TeamCity project so th
 
 * When a developer is ready to publish their changes, they can create a request to merge their commits from a personal (untracked) into core (tracked) branch. This will result in a new pull branch (for example, `refs/pull/54` on GitHub). The Pull Requests feature will detect this new branch, making it possible to build and test changes in TeamCity before they are merged.
 
-* Due to feature's **Filter by author** setting, TimCity ignores similar `refs/pull/<Int>` branches created for unauthorized (external) users' requests.
+* Due to feature's **Filter by author** setting, TeamCity ignores similar `refs/pull/<Int>` branches created for unauthorized (external) users' requests.
 
 ```Kotlin
 project {
