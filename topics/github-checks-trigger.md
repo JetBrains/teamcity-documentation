@@ -12,6 +12,10 @@ If a processed changeset is a part of a Pull Request, this request shows the sam
 
 If you do not wish to expose your build server address, tick the **Disable TeamCity links in GitHub check run output** option in trigger settings. In this case build status messages will not publish links to TeamCity builds and build logs.
 
+> The "View more details on JetBrains BuildServer" link at the bottom of the check run output page remains visible even with this setting enabled because it is displayed by the GitHub App, not the TeamCity trigger. To remove this link, edit the **Homepage URL** field in the GitHub App settings.
+> 
+{type="tip"}
+
 The trigger leverages [GitHub Checks API](https://docs.github.com/en/rest/checks?apiVersion=2022-11-28#check-runs) and can be used as the only commit verification mechanism, or compliment native [GitHub Actions](https://github.com/features/actions) workflows.
 
 <img src="dk-checkstrigger-with-actions.png" width="706" alt="TC builds with GH actions"/>

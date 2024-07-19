@@ -139,6 +139,8 @@ For TeamCity, additional agent licenses should belong to the same team that owns
 
 If you need to [transfer an agent license to another team](https://sales.jetbrains.com/hc/en-gb/articles/208460205-Transfer-licenses-between-teams), you do not need to deactivate any server licenses in TeamCity. Given that the server licenses of both teams are activated, both TeamCity servers will automatically update their agent numbers.
 
+See also: [Managing TeamCity build agents](https://sales.jetbrains.com/hc/en-gb/articles/20114538108306-Managing-TeamCity-build-agents).
+
 
 ## Offline Mode
 
