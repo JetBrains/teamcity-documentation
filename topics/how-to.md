@@ -599,16 +599,16 @@ Please also review the [section](agent-home-directory.md) for a list of director
 
 A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
 
-For example, you have build configurations A and B that you want to build in sync: use the same sources and take the same build number.   
+For example, you have build configurations "A" and "B" that you want to build in sync: use the same sources and take the same build number.   
 Do the following:
-1. Create build configuration C, then snapshot dependencies: __A on C__ and __B on C__.
-2. Set the [Build number format](configuring-general-settings.md#Build+Number+Format) in A and B to:
+1. Create build configuration "C", then snapshot dependencies: "A" on "C" and "B" on "C".
+2. Set the [Build number format](configuring-general-settings.md#Build+Number+Format) in "A" and "B" to:
 
 ```Shell
 %dep.<btID>.system.build.number%
 ```
 
-Where `<btID>` is the [ID of the build configuration](managing-builds.md) C. The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
+Where `<btID>` is the [ID of the build configuration](managing-builds.md) "C". The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
 
 [Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 
