@@ -16,7 +16,7 @@ To configure code coverage using IntelliJ IDEA engine, follow these steps:
 
 1. While creating/editing Build Configuration, go to the __Build Step__ page.
 2. Select the [Ant](ant.md), [IntelliJ IDEA Project](intellij-idea-project.md), [Gradle](gradle.md) or [Maven](maven.md) build runner.
-3. In the __Code Coverage__ section, select __IntelliJ IDEA__ as a coverage tool in the __Choose coverage__ runner drop-down menu.
+3. In the __Code Coverage__ section, select __IntelliJ IDEA__ as a coverage tool in the __Choose coverage runner__ drop-down menu.
 4. Set up the coverage options - refer to the description of the available options below.
 
 <table><tr>
