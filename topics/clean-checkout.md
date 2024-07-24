@@ -35,7 +35,7 @@ You can also enable automatic cleaning the sources before every build, if you ch
 TeamCity tries to detect if the sources in the checkout directory are not corresponding to the expected state and triggers clean checkout in such cases to ensure sources are appropriate. This means that under certain circumstances TeamCity can detect clean checkout is necessary even if it is not enabled in the VCS settings and not requested by the user from web UI. In such cases, all the content of the checkout directory is deleted and it is repopulated by the sources from scratch. If any details are available on the decision, they are added into the build log before checkout-related logging.
 
 Here is the summary of cases when TeamCity performs automatic clean checkout:
-* if it is enabled using the __Clean all files in the checkout directory before the build__ option in the "Version Control Settings" of the build configuration
+* if it is enabled using the __Delete all files in the checkout directory before the build__ option in the "Version Control Settings" of the build configuration
 * build checkout directory was not found or is empty (either the build configuration is started on the agent for the first time or the directory has disappeared since the last build). This also covers the following: 
   * no builds were run in a specific checkout directory for a configured (or default) time and the directory became empty. See more at [automatic checkout directory cleaning](build-checkout-directory.md#Automatic+Checkout+Directory+Cleaning)
   * there was not enough [free space on disk](free-disk-space.md) in one of the earlier builds and the directory was deleted

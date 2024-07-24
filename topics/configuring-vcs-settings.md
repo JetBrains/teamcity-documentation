@@ -88,7 +88,7 @@ Clean build
 
 <td>
 
-Define whether you want to clean all files in the checkout directory before the build. See [Clean Checkout](clean-checkout.md) for details.
+Define whether you want to delete all files in the checkout directory before the build. See [Clean Checkout](clean-checkout.md) for details.
 
 </td></tr></table>
 
