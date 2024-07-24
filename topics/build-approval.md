@@ -86,7 +86,7 @@ If this option is enabled, and a build is triggered by a user who has the right 
 
 ## Notifications & Audit
 
-All approvers will receive an e-mail notification: it is included in the in the default [notification rules](adding-notification-rules.md) for the [All Users](creating-and-managing-user-groups.md#allusers) group. Consider adding a related Slack notification. Notifications related to build approval will override the *Builds with my changes only* option in the notification rules.
+All approvers will receive an e-mail notification: it is included in the default [notification rules](adding-notification-rules.md) for the [All Users](creating-and-managing-user-groups.md#allusers) group. Consider adding a related Slack notification. Notifications related to build approval will override the *Builds with my changes only* option in the notification rules.
 
 You can also [add notifications for your build configuration](configuring-notifications.md) using the [Notifications](notifications.md) build feature with the **Build requires approval** option enabled. 
 

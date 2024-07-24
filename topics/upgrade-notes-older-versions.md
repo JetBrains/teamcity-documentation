@@ -1998,7 +1998,7 @@ If you used any of the above, please, verify if you are affected by the change.
 Learn more about IDs at [Identifier](identifier.md).
 
 On upgrade, all the projects get automatically generated IDs based on their names.   
-Build configuration IDs are set to be equal to internal (btNNN) ids and can be later changed from the Administration UI via the __Regenerate ID__ or __Bulk Edit IDs__ actions.
+Build configuration IDs are set to be equal to internal (btNNN) ids and can be later changed from the Administration UI via the __Regenerate ID__ or __Bulk edit IDs__ actions.
 
 Please note that the names of the projects and build configurations are no longer unique server\-wide (are only unique within the direct parent project) and can contain any symbols which might be relevant if you used these in directory or file names.
 
