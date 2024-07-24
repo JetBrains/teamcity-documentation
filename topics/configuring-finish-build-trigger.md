@@ -27,6 +27,8 @@ To understand the difference between **finish build triggers** and [](snapshot-d
 
 A sample project has three child build configurations:
 
+<img src="dk-finish-build-diagram.png" width="706" alt="Chain diagram"/>
+
 <table><tr><td>
 
 <tabs>
@@ -145,9 +147,15 @@ In this setup, running new builds will result the following:
 
 * If a new "Update Release Date" build is triggered, other configurations will not be affected. A build will calculate a new parameter value that will not be used anywhere.
 
+    <img src="dk-fbt-onlyB.png" width="706" alt="Trigger Update Release Date"/>
+
 * If the "Update Build Version" configuration is triggered, once this build finishes a new "Update Packages" configuration build will be spawned because of the **Finish build trigger** added to this configuration. However, since "Update Packages" also has a snapshot dependency on "Update Release Date" (with disabled [build reuse](snapshot-dependencies.md#Suitable+Builds)), it will also request a current date. As a result, the entire "Update Build Version &rarr; Update Release Date &rarr; Update Packages" pipeline will run.
 
+    <img src="dk-fbt-all3.png" width="706" alt="Trigger Update Build Version"/>
+
 * If a new "Update Packages" build is triggered, it will first run its dependency "Update Release Date" build. The release version will be taken from the project parameter without running a new "Update Release Version" build.
+
+    <img src="dk-fbt-B-and-C.png" width="706" alt="Trigger Update Packages"/>
 
 As a result, delivery builds always ensure the date is correct, but reuse the existing product version unless the "Update Build Version" configuration produces a new build. Incrementing a build version automatically triggers the delivery process.
 
