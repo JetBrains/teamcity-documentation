@@ -30,7 +30,7 @@ TeamCity maintains an internal cache for the sources to optimize communications 
 
 ## Automatic Clean Checkout
 
-You can also enable automatic cleaning the sources before every build, if you check the option __Clean all files before build__ on the __[Create/Edit Build Configuration](creating-and-editing-build-configurations.md)&gt; [Version Control Settings](configuring-vcs-settings.md)__ page. If this option is checked, TeamCity performs a full checkout before each build. If clean checkout is not enabled, TeamCity updates the sources in the checkout directory incrementally to the required state. 
+You can also enable automatic cleaning the sources before every build, if you check the option __Delete all files in the checkout directory before the build__ on the __[Create/Edit Build Configuration](creating-and-editing-build-configurations.md)&gt; [Version Control Settings](configuring-vcs-settings.md)__ page. If this option is checked, TeamCity performs a full checkout before each build. If clean checkout is not enabled, TeamCity updates the sources in the checkout directory incrementally to the required state. 
 
 TeamCity tries to detect if the sources in the checkout directory are not corresponding to the expected state and triggers clean checkout in such cases to ensure sources are appropriate. This means that under certain circumstances TeamCity can detect clean checkout is necessary even if it is not enabled in the VCS settings and not requested by the user from web UI. In such cases, all the content of the checkout directory is deleted and it is repopulated by the sources from scratch. If any details are available on the decision, they are added into the build log before checkout-related logging.
 
