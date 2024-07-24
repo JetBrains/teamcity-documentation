@@ -76,7 +76,7 @@ object DeploymentConfigsProject : Project({
 4. In the **Version Control Settings**, click **Attach VCS root** and choose the same root all *"Build..."* configurations use.
 5. *"Deploy Console (Windows)"* depends on the *"Build console & web (win-x64)"* build configuration and must be able to access its artifacts.
     
-    Navigate to **Building Configuration | Dependencies"** and add corresponding snapshot and artifact (`bin => context`) dependencies.
+    Navigate to **Building Configuration | Dependencies** and add corresponding snapshot and artifact (`bin => context`) dependencies.
   
 6. Since we need to upload generated containers, add the [](docker-support.md) build feature that uses a Docker connection created in the [](#Create+a+Deployment+Subproject) section.
 7. Add three build steps to your configuration:
