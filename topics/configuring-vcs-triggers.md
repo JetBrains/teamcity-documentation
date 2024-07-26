@@ -43,7 +43,7 @@ This helps to figure out whose change broke a build or caused a new test failure
 
 By specifying the quiet period you can ensure the build is not triggered in the middle of non-atomic check-ins consisting of several VCS check\-ins.
 
-A __quiet period__ is a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. If new VCS change is detected in the Build Configuration within the period, the period starts over from the new change detection time. The build is added into the queue only if there were no new VCS changes detected within the quiet period.
+A __quiet period__ is a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. If a new VCS change is detected in the Build Configuration within the period, the period starts over from the new change detection time. The build is added into the queue only if there were no new VCS changes detected within the quiet period.
 
 [//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")
 
