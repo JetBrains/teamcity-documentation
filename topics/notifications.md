@@ -11,9 +11,10 @@ This feature adds to the functionality of [user-level notifications](configuring
 
 To configure email notifications for a build configuration:
 
-1. Enter a recipient email address. If you need to specify multiple addresses, enter each following address on a new line.
-2. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
-3. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
+1. Add the **Notifications** build feature to your build configuration and switch its **Notifier** selector to "Email Notifier".
+2. Enter a recipient email address. If you need to specify multiple addresses, enter each following address on a new line.
+3. Configure a [branch filter](branch-filter.md). If it is not configured, you will receive notifications about the default branch only.
+4. Select [events to watch](adding-notification-rules.md#Which+Events+Will+Trigger+Notifications).
 
 >To customize the notification texts, you can modify [notification templates](customizing-notification-templates.md).
 >
@@ -29,8 +30,9 @@ Note that TeamCity Email Notifier relies on the SMTP server settings configured 
 
 The Slack Notifier feature relies on a [Slack connection](configuring-connections.md#Slack) that should be preconfigured in the parent project's settings.
 
-After configuring the connection, go to the settings of the build configuration you want to receive notifications for:
-1. In __Build Features__, add the _Notifications_ feature and select _Slack Notifier_.
+After configuring the connection, do the following:
+
+1. Add the **Notifications** build feature to your build configuration and switch its **Notifier** selector to "Slack Notifier".
 2. Choose the created connection.
 3. Enter the ID of a channel or user who will be receiving notifications.   
    > Start typing the user ID, and TeamCity will autocomplete it. Alternatively, you can copy this ID from your Slack user profile options (__Profile | More | Copy member ID__).
