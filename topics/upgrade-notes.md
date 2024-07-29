@@ -14,6 +14,7 @@
 {id="known-issues-2024-07"}
 
 * Build agents that originate from `2024.07-nanoserver-1809` and `2024.07-windowsservercore-1809` Docker images become incompatible with some of TeamCity runners after these agents restart. To work around this issue, remove the `C:/BuildAgent/plugins` directory from the image to enforce plugins update. [TW-88962](https://youtrack.jetbrains.com/issue/TW-88962)
+* [Maven](maven.md) steps may fail with the "Error injecting: org.apache.maven.DefaultMaven" message. We expect to ship a fix for this issue with the TeamCity 2024.07.1 bug-fix update. As a workaround, install the [patched Maven plugin](https://youtrack.jetbrains.com/issue/TW-89060/Mavens-releaseprepare-goal-is-failing-in-TC-build-step-with-ProvisionException#focus=Comments-27-10197532.0-0) or execute your build commands from the [CLI](command-line.md) runner instead.
 
 
 ## Changes from 2024.03.2 to 2024.03.3
