@@ -261,18 +261,31 @@ where:
 
 ### Message FlowId
 
-Any message supports the optional attribute `flowId`. In the following examples, `<messageName>` is the name of the specific service message.
+Any message supports the optional attribute `flowId` that allows you to group messages into separate categories (flows). For example, since every message is processed in the order it is sent, the following sample produces a hierarchy of blocks where both output messages are owned by the latest block:
 
-`flowId` is a unique identifier of the message flow in a build. Flow tracking is necessary, for example, to distinguish separate processes running in parallel. The identifier is a string that must be unique in the scope of an individual build.
-
-```Shell
-##teamcity[<messageName> flowId='flowId' ...]
-
+```Plain Text
+##teamcity[blockOpened name='block 1']
+##teamcity[blockOpened name='block 2']
+##teamcity[message text='Message 1']
+##teamcity[message text='Message 2']
 ```
 
-In most cases, `flowId` is the only attribute required to start a message flow.
+<img src="dk-messages-noFlowId.png" alt="Block without flowID" width="706"/>
 
-When you absolutely need to start a flow not inside the root flow but as a subflow inside an existing flow, add the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.   
+Adding the `flowId` attribute allows you to split the messages into two parallel flows.
+
+```Plain Text
+##teamcity[blockOpened name='block 1' flowId='1']
+##teamcity[blockOpened name='block 2' flowId='2']
+##teamcity[message text='Message 1' flowId='1']
+##teamcity[message text='Message 2' flowId='2']
+```
+
+<img src="dk-messages-FlowId.png" width="706" alt="Block with flowID"/>
+
+
+In most cases, `flowId` is the only attribute required to start a message flow. In [](#Nested+Test+Reporting), you may want to start a flow not inside the root flow but as a subflow inside an existing flow. To do this, add the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.
+
 To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
 
 ```Shell
@@ -285,7 +298,7 @@ To end a subflow, use the `flowFinished` parameter. Ending a parent flow automat
 
 ```
 
-This custom subflow order affects the sequence of reports in a build log and allows reporting results as subtrees.
+Note that the `flowStarted` and `flowFinished` messages are in effect only when emitted between the `testStarted` and `testFinished` messages.
 
 ### Reporting Tests
 
