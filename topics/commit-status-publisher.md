@@ -45,6 +45,8 @@ For connection, select one of the available authentication types:
 * **Password** — Provide the GitHub username and password. Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
 
 >To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully.
+> 
+{type="note"}
 
 
 > If your VCS root connects to a GitHub using the App Token, you can leverage the [GitHub Checks API](https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-checks?apiVersion=2022-11-28) to automatically post Markdown-formatted build statuses without setting up the Commit Status Publisher feature. See this article for more information: [](github-checks-trigger.md).
