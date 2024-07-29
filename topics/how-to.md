@@ -489,7 +489,7 @@ Below is the list of settings which should be changed __before__ the test server
 * Disable cloud integrations: the test server should not be able to start new cloud agents. Set the
 `teamcity.cloud.integration.enabled=false` internal property in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file (create this file if it does not already exist).
 
-* Disable plugins that can modify external systems' states, such as commit status publisher. Create the file `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/disabled-plugins.xml` with the following content:
+* Disable plugins that can modify external systems' states, such as Commit Status Publisher. Create the file `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/disabled-plugins.xml` with the following content:
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>

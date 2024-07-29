@@ -61,7 +61,7 @@
 
 **[TW-86315](https://youtrack.jetbrains.com/issue/TW-86315/Failed-to-perform-checkout-on-agent-Problem-while-checkout-on-agent-java.lang.IllegalStateException-NotNull-method-jetbrains)** — Failed to perform checkout on agent: Problem while checkout on agent: java.lang.IllegalStateException: @NotNull method jetbrains/buildServer/vcs/perforce/ClientNameBuilder.getWorkspaceName must not return null
 
-**[TW-87019](https://youtrack.jetbrains.com/issue/TW-87019/refreshable-token-cannot-be-used-in-commit-status-publisher-if-vcs-root-is-defined-higher-in-the-hierarchy-than-GitHubApp)** — refreshable token cannot be used in commit status publisher if vcs root is defined higher in the hierarchy than GitHubApp connection
+**[TW-87019](https://youtrack.jetbrains.com/issue/TW-87019/refreshable-token-cannot-be-used-in-commit-status-publisher-if-vcs-root-is-defined-higher-in-the-hierarchy-than-GitHubApp)** — refreshable token cannot be used in Commit Status Publisher if VCS root is defined higher in the hierarchy than GitHubApp connection
 
 **[TW-87024](https://youtrack.jetbrains.com/issue/TW-87024/A-build-does-not-start-for-hours-until-server-restart)** — A build does not start for hours, until server restart
 

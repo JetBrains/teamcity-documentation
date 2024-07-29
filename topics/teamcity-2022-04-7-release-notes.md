@@ -50,7 +50,7 @@ You can expect details on most of these issues to be published in our [Security 
 * Path traversal allowing to read files from server was possible
 * TeamCity server could be accessed without authorization during specific brief moments of its lifecycle
 * Several Stored XSS in code inspection reports
-* Improper access control in Pull Requests and Commit status publisher build features
+* Improper access control in Pull Requests and Commit Status Publisher build features
 * A third-party agent could impersonate a cloud agent
 * An XSS could be executed via certain report grouping and filtering operations
 * Stored XSS via third-party reports was possible

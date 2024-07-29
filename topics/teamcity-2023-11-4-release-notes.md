@@ -22,7 +22,7 @@
 
 **[TW-80467](https://youtrack.jetbrains.com/issue/TW-80467/Cannot-find-a-node100479888-may-occur-when-collecting-VCS-changes-on-the-secondary-node)** — Cannot find a node:100479888 may occur when collecting VCS changes on the secondary node
 
-**[TW-75123](https://youtrack.jetbrains.com/issue/TW-75123/Log-statuses-from-Commit-status-publisher-to-the-teamcity-commit-status.log)** — Log statuses from Commit status publisher to the teamcity-commit-status.log
+**[TW-75123](https://youtrack.jetbrains.com/issue/TW-75123/Log-statuses-from-Commit-status-publisher-to-the-teamcity-commit-status.log)** — Log statuses from Commit Status Publisher to the teamcity-commit-status.log
 
 **[TW-86261](https://youtrack.jetbrains.com/issue/TW-86261/Regression-java.lang.InstantiationException-bean-bean-not-found-within-scope-while-processing-request-GET-admin)** — Regression: java.lang.InstantiationException: bean not found within scope while processing request
 
@@ -36,7 +36,7 @@
 
 **[TW-85243](https://youtrack.jetbrains.com/issue/TW-85243/S3-Storage-new-UI-unnecessary-patch-is-generated-after-saving-S3-settings-using-UI-after-TeamCity-update)** — S3 Storage new UI: unnecessary patch is generated after saving S3 settings using UI after TeamCity update
 
-**[TW-86255](https://youtrack.jetbrains.com/issue/TW-86255/GitHub-App-installation-token-can-not-be-acquired-in-Pull-requests-Build-feature-and-Commit-Status-publisher-if-VCS-Root-URL-has)** — GitHub App installation token can not be acquired in Pull requests Build feature and Commit Status publisher if VCS Root URL has alternative scp-like syntax user@host.xz:owner/repo.git
+**[TW-86255](https://youtrack.jetbrains.com/issue/TW-86255/GitHub-App-installation-token-can-not-be-acquired-in-Pull-requests-Build-feature-and-Commit-Status-publisher-if-VCS-Root-URL-has)** — GitHub App installation token can not be acquired in Pull requests Build feature and Commit Status Publisher if VCS Root URL has alternative scp-like syntax user@host.xz:owner/repo.git
 
 **[TW-84599](https://youtrack.jetbrains.com/issue/TW-84599/Log-info-about-agent-selected-based-on-CPU-build-duration-and-agent-priority-to-teamcity-server.log-debug)** — Log info about agent, selected based on CPU, build duration and agent priority, to teamcity-server.log (debug)
 

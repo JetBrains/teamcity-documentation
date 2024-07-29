@@ -46,7 +46,7 @@ __10 August 2022__
 
 **[TW-76753](https://youtrack.jetbrains.com/issue/TW-76753/Bad-alignment-on-the-Changes-page-in-the-Classic-UI-Author-field)** — Bad alignment on the Changes page in the Classic UI (Author field)
 
-**[TW-76574](https://youtrack.jetbrains.com/issue/TW-76574/Commit-status-publisher-for-Perforce-Swarm-posts-to-all-reviews-when-a-build-triggers-without-ShelvePersonal-build)** — Commit status publisher for Perforce Swarm posts to all reviews when a build triggers without Shelve/Personal build
+**[TW-76574](https://youtrack.jetbrains.com/issue/TW-76574/Commit-status-publisher-for-Perforce-Swarm-posts-to-all-reviews-when-a-build-triggers-without-ShelvePersonal-build)** — Commit Status Publisher for Perforce Swarm posts to all reviews when a build triggers without Shelve/Personal build
 
 **[TW-76899](https://youtrack.jetbrains.com/issue/TW-76899/Non-daemon-thread-started-by-the-search-plugin-prevents-proper-server-shutdown)** — Non daemon thread started by the search plugin prevents proper server shutdown
 

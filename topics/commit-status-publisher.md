@@ -178,7 +178,7 @@ To manually set up the Commit Status Publisher, you will need a predefined [Spac
 
 Then, in the build configuration's settings:
 
-1. Open __Build Features__ and add the _Commit status publisher_ build feature.
+1. Open __Build Features__ and add the _Commit Status Publisher_ build feature.
 2. Select the _JetBrains Space_ publisher and the created connection.
 3. Specify the name that will be displayed for this service in Space.
 4. Save the settings.

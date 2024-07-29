@@ -36,7 +36,7 @@
 
 **[TW-71308](https://youtrack.jetbrains.com/issue/TW-71308/Support-custom-lfs-URL-and-credentials)** — Support custom lfs URL and credentials
 
-**[TW-77455](https://youtrack.jetbrains.com/issue/TW-77455/More-control-over-helix-swarm-review-comments-from-commit-status-publisher)** — More control over helix swarm review comments from commit status publisher
+**[TW-77455](https://youtrack.jetbrains.com/issue/TW-77455/More-control-over-helix-swarm-review-comments-from-commit-status-publisher)** — More control over helix swarm review comments from Commit Status Publisher
 
 **[TW-80947](https://youtrack.jetbrains.com/issue/TW-80947/Allow-disabling-Commit-Status-Publisher-comments-in-Perforce-Swarm)** — Allow disabling Commit Status Publisher comments in Perforce Swarm
 

@@ -105,7 +105,7 @@ __1 December 2022__
 
 **[TW-78529](https://youtrack.jetbrains.com/issue/TW-78529/Unclear-Parameter-based-build-step-execution-condition-type-purpose)** — Unclear Parameter-based build step execution condition type purpose
 
-**[TW-65519](https://youtrack.jetbrains.com/issue/TW-65519/Exception-on-attempt-to-disable-and-than-enable-commit-status-publisher-plugin)** — Exception on attempt to disable and than enable commit status publisher plugin
+**[TW-65519](https://youtrack.jetbrains.com/issue/TW-65519/Exception-on-attempt-to-disable-and-than-enable-commit-status-publisher-plugin)** — Exception on attempt to disable and than enable Commit Status Publisher plugin
 
 **[TW-77568](https://youtrack.jetbrains.com/issue/TW-77568/No-modified-parameters-in-failed-build-if-it-was-stopped-by-failure-condition)** — No modified parameters in failed build if it was stopped by failure condition
 
