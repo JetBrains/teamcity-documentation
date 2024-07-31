@@ -94,9 +94,13 @@ Additional run arguments
 
 Allows specifying additional options for the `docker run` and `podman run` commands. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
 
->If you intend to utilize [environment variables](configuring-build-parameters.md#Environment+Variables) in this field (for example, `%\env.FOO_BAR%`), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific variables declared in ["buildAgent.properties"](configure-agent-installation.md) files are not passed to containers.
+>If you intend to utilize [environment variables](configuring-build-parameters.md#Environment+Variables) in this field (for example, `%\env.FOO%`), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific environment variables declared in the [buildAgent.properties](configure-agent-installation.md) file are not passed to containers.
 > 
-> If you need a parameter declared in this file, define the configuration parameter and map it to the agent's environment variable (`system.FOO_BAR=env_var_value`) . You can then reference it as `%\system.FOO_BAR%` in the "Additional run arguments" field.
+> If you need a parameter declared in this file, use this approach:
+>1. Define a system property (`system.FOO=BAR`) in [buildAgent.properties](configure-agent-installation.md).
+>2. Add a [build configuration parameter](configuring-build-parameters.md) with the name `system.FOO` and value `%\system.FOO%`.
+>3. Reference the system property as `%\system.FOO%` in the "Additional run arguments" field.
+>4. If you need to use the same value as an environment variable in your build script, you can also add a build configuration parameter with the name `env.FOO` and value `%\system.FOO%`.
 >
 {type="note"}
 
