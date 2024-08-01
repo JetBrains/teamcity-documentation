@@ -3,7 +3,7 @@
 
 During a build run, you can typically encounter one of the following failure types:
 
-* **test failure** — a failure of a unit or functional test that was attemted during a build.
+* **test failure** — a failure of a unit or functional test that was attempted during a build.
 * **build problem** — any other issue that occurred during a build: inability to access a remote repository, failure to obtain or upload a build artifact, compilation error, and so on.
 
 
