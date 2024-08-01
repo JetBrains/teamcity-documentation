@@ -131,9 +131,9 @@ Authentication method
 
 Select an authentication method:
 
-* __Uploaded key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
-* __Default private key__ — performs private key authentication using the `~/.ssh/config` settings or, if no settings file exists, using the `~/.ssh/id_rsa` private key file.
-* __Custom private key__ — performs private key authentication using the specified private key file and passphrase.
+* __Uploaded Key__ — uses the key(s) uploaded to the project. See [SSH Keys Management](ssh-keys-management.md) for details.
+* __Default Private Key__ — performs private key authentication using the `~/.ssh/config` settings or, if no settings file exists, using the `~/.ssh/id_rsa` private key file.
+* __Custom Private Key__ — performs private key authentication using the specified private key file and passphrase.
 * __Password__ — uses simple password authentication.
 * __SSH-Agent__ — uses SSH agent for authentication, where the [SSH-Agent build feature](ssh-agent.md) must be enabled.
 
