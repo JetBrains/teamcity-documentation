@@ -67,13 +67,25 @@ Full agent distributions are also available in two variations:
 
 5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)), the name of the agent, and the [authentication token](install-and-start-teamcity-agents.md#Generating+Authentication+Token). Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
    {product="tcc"}
+
+   > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
+   >
+   {type="note"}
+
 5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)) and the name of the agent. Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
    {product="tc"}
+
+   > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
+   >
+   {type="note"}
+
+
 
 
 On Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
 
 On Windows, you may want to install the [build agent Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service) instead of using the manual agent startup.
+
 
 
 ## Install via Agent Push

@@ -85,6 +85,58 @@ ownAddress=<own IP address or server-accessible domain name>
 
 If you have a self-updating Git repository proxy that is significantly closer than the original Git repository for certain agents, you can allow these agents to download sources from this mirror. To do so, add the `teamcity.git.fetchUrlMapping.<name>=<original URL> => <proxy URL>` setting to the agent configuration file. See this section for more information: [Git VCS Root | General Settings](git.md#General+Settings).
 
+## The Configure Command
+
+<chunk include-id="agent-configure-command">
+
+To set up the [buildAgent.properties](configure-agent-installation.md#General+Agent+Configuration) file, you can run the `<Agent_folder>/bin/agent.bat` or `<Agent_folder>/bin/agent.sh` script with the `configure` command. This command allows you to set up core agent properties and save them to the target configuration file. If no configuration file path is specified, the changes will be saved to the default `<Agent_folder>/conf/buildAgent.properties` properties.
+
+To view the list of available parameters, run this command with the `--help` flag.
+
+
+```Shell
+./agent.sh configure --help
+Java executable is found: '/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/bin/java'
+Configuring TeamCity build agent...
+TeamCity Agent configurator
+Usage: 
+	configure PROPERTIES_FILE
+	configure -f PROPERTIES_FILE
+	configure [PROPERTIES]
+	configure --usage
+	status
+	status short
+Where PROPERTIES format is --key=value or --key value
+Supported properties:
+	* --agent-config-file=PATH - path to build agent properties file (<Agent Root>/conf/buildAgent.properties by default)
+	* All default properties that can be configured in buildAgent.properties file
+	  Also there are aliases for some of them:
+		address = ownAddress
+		auth-token = authorizationToken
+		logs-dir = logsDir
+		name = name
+		port = ownPort
+		server-url = serverUrl
+		system-dir = systemDir
+		temp-dir = tempDir
+		work-dir = workDir
+
+
+```
+
+Sample command that writes the server URL and sets up the custom agent name:
+
+```Shell
+./agent.sh configure --server-url http://localhost:8111/ --name AG2
+```
+
+> * The `configure` command writes the required parameters to `.properties` file, but does not automatically create it if no such file is present. Make sure the target properties file exists when specifying a custom file location.
+> * Adding and changing custom properties (for example, `./agent.sh configure --myCustomProperty=newValue`) is not supported.
+> 
+{type="note"}
+
+</chunk>
+
 ## Set up Agent Behind Proxy
 
 It is possible to configure a forward proxy server for agent-to-server connections.
