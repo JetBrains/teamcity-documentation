@@ -47,11 +47,15 @@ Server build parameters are typically available as a system property and a corre
 <dt>system.build.number &nbsp; | &nbsp; env.BUILD_NUMBER</dt>
 <dd>The build number assigned to the build by TeamCity. The parameter uses the special <a href="configuring-general-settings.md#Build+Number+Format">build number format</a>.</dd>
 
+
 <dt>env.BUILD_URL</dt>
 <dd>The link to the current build.</dd>
 
 <dt>system.teamcity.build.id</dt>
 <dd>The internal unique ID used by TeamCity to reference builds.</dd>
+
+<dt>teamcity.build.responsibleNode.id</dt>
+<dd>In <a href="multinode-setup.md">multinode setup</a>, this parameter returns the node to which it is attached. Can be assigned to the <code>X-TeamCity-Node-Id-Cookie</code> cookie when sending logging <a href="teamcity-rest-api.md">REST API</a> requests to the <code>/app/rest/builds/id:build_id/log</code> endpoint.</dd>
 
 <dt>system.teamcity.auth.userId</dt>
 <dd>A generated username that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</dd>

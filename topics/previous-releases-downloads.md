@@ -10,7 +10,18 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
-## Current version: TeamCity 2024.07
+
+## Current version: TeamCity 2024.07.1
+
+Release date: 6 August 2024<br/>
+Build 160635
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2024.07.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2024.07.tar.gz)
+
+[Release notes](teamcity-2024-07-release-notes.md)
+
+## TeamCity 2024.07
 
 Release date: 18 July 2024<br/>
 Build 160569

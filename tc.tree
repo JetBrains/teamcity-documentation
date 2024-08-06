@@ -86,6 +86,7 @@
       <toc-element id="upgrade-notes.md" show-structure-for="chapter" show-structure-depth="4"/>
       <toc-element id="what-s-new-in-teamcity.md">
          <toc-element id="teamcity-2024-07-release-notes.md"/>
+         <toc-element id="teamcity-2024-07-1-release-notes.md"/>
       </toc-element>
       <toc-element id="what-s-new-in-teamcity-2024-03.md" hidden="true">
          <toc-element id="teamcity-2024-03-release-notes.md" hidden="true"/>

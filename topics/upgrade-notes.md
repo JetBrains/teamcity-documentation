@@ -1,6 +1,15 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+
+## Changes from 2024.07 to 2024.07.1
+{id="2024.07.1"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2024-07-1"}
+
+* The bundled Git was updated to version 2.46 in both Server and Agent Docker images.
+
 ## Changes from 2024.03 to 2024.07
 {id="2024.07"}
 
