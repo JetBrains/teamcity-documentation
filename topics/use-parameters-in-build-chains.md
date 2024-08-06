@@ -4,7 +4,7 @@ This topic illustrates how you can use TeamCity [build parameters](configuring-b
 
 ## Access Parameters of Preceding Chain Builds
 
-Dependent builds can access predefined and custom parameters of the previous chain builds as `dep.<bcID>.<parameter_name>`, where `bcID` is the name of a source build configuration whose parameter value you need to access.
+Dependent builds can access predefined and custom parameters of the previous chain builds as `dep.<bcID>.<parameter_name>`, where `bcID` is the ID of a source build configuration whose parameter value you need to access.
 
 <img src="dk-params-in-chains.png" width="706" alt="Parameters in dependent builds"/>
 
@@ -19,7 +19,7 @@ docker push your.registry/MyApp:v1
 echo "##teamcity[setParameter name='DockerImageName' value='MyApp:${TAG}']"
 ```
 
-If this configuration's name is "ConfigA", builds executed further down the build chain can access the image name as `dep.ConfigA.DockerImageName`:
+If this configuration's ID is "ConfigA", builds executed further down the build chain can access the image name as `dep.ConfigA.DockerImageName`:
 
 ```Shell
 docker run -d your.registry/%\dep.ConfigA.DockerImageName%
