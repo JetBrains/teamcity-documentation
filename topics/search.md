@@ -669,7 +669,7 @@ By default, TeamCity does not search build logs for the entered string. To enabl
 
 1. Increase the [server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) by at least 5 GB in the `-Xmx` JVM option (more if you have large build logs or many builds).
 2. Set the `tc.search.indexBuildLog=true` TeamCity [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-3. [Reset](#Resetting+Search+Index) the search index.
+3. [Reset](search.md#Resetting+Search+Index) the search index.
 
 After reindexing, TeamCity will be able to search for text within build logs and display the relevant builds.
 
