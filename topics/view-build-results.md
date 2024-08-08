@@ -64,6 +64,10 @@ The __Build Log__ tab shows a structured log with highlighted warnings and error
 
 If you want to customize how TeamCity produces the log output, use special [service messages](build-log.md#Customizing+Log+Output).
 
+## Search in All Build Logs
+
+<include include-id="search-in-logs" src="search.md"/>
+
 ## Extras
 
 Apart from viewing the __Build Results__ page directly, you can monitor the build statuses by:

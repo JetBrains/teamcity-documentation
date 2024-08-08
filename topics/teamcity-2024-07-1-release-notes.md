@@ -11,7 +11,7 @@
 
 **[TW-88719](https://youtrack.jetbrains.com/issue/TW-88719/JB-license-Offline-activation-and-Licenses-page-loading-may-take-several-seconds-if-request-to-JBA-is-waiting-for-response)** — JB license: Offline activation and Licenses page loading may take several seconds, if request to JBA is waiting for response
 
-**[TW-89184](https://youtrack.jetbrains.com/issue/TW-89184/Running-Maven-in-docker-using-Custom-maven-version-fails)** — Running Maven in docker using &lt;Custom> maven version fails
+**[TW-89184](https://youtrack.jetbrains.com/issue/TW-89184/Running-Maven-in-docker-using-Custom-maven-version-fails)** — Running Maven in docker using &lt;Custom&gt; maven version fails
 
 **[TW-89131](https://youtrack.jetbrains.com/issue/TW-89131/Custom-build-dialog-triggers-a-build-with-original-artifact-dependency-even-if-dependency-is-set-to-rebuild)** — Custom build dialog triggers a build with original artifact dependency even if dependency is set to rebuild
 

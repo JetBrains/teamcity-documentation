@@ -663,14 +663,17 @@ Search for personal builds. For example, using `-$p` expression in your query wi
 
 ## Search by Build Log
 
-By default, TeamCity does not search for builds by a certain text in build logs.
+<chunk include-id="search-in-logs">
 
-To enable search by the build logs, perform the following:
-1. Since the logic will increase server memory usage, you need to increase [memory size](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) in the `-Xmx` JVM option on at least 5 Gb (more if you have large build logs/many builds).
+By default, TeamCity does not search build logs for the entered string. To enable this feature, do the following:
+
+1. Increase the [server memory](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) by at least 5 GB in the `-Xmx` JVM option (more if you have large build logs or many builds).
 2. Set the `tc.search.indexBuildLog=true` TeamCity [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 3. [Reset](#Resetting+Search+Index) the search index.
 
-After reindexing, TeamCity will be able to perform searching by specified text in the build logs and will list the relevant builds.
+After reindexing, TeamCity will be able to search for text within build logs and display the relevant builds.
+
+</chunk>
 
 ## Resetting Search Index
 
