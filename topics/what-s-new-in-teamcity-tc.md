@@ -34,7 +34,7 @@ Starting with this version you can store the contents of your server's `[Data_Di
 Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control)
 
 
-## VCS Intergration Enhancements
+## VCS Integration Enhancements
 {product="tc"}
 
 ### New GitHub Checks Webhook Trigger
