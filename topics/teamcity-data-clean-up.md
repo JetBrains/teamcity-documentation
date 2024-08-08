@@ -172,6 +172,22 @@ To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [intern
 {product="tc"}
 
 
+## Cleanup Diagnostics
+
+When TeamCity performs a clean-up, some older builds may still be retained, which might seem inconsistent with the current clean-up or retention rules. For example, builds referenced in [dependencies](build-dependencies-setup.md) are preserved.
+
+To investigate why a build was not removed, label it with the `diagnostics:cleanup` [tag](build-actions.md#Add+Tags+to+Build). During clean-up, TeamCity identifies all tagged builds and generates a detailed report explaining why these builds were kept. This report is saved as a [build artifact](build-artifact.md) to the hidden `.teamcity/cleanup/` directory.
+
+The report contains the following information:
+
+* General build and server details: build ID, server version, and clean-up start time.
+* Relevant [base](#Base+Rule) and [keep](#Keep+Rule) rules applicable to the parent build configuration.
+* A summary of each applicable rule: whether it matches the current build and, if not, why.
+* A list of build components that need to be preserved based on the relevant rules.
+* A summary of builds that depend on the current build, if any.
+
+After generating the report, TeamCity removes the `diagnostics:cleanup` tag from the build.
+
 
 [//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
 
