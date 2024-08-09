@@ -42,7 +42,9 @@ Approval rules
 * user-based rules require an approval from a specific [user](creating-and-managing-users.md); each user should be specified via the `user:<username>` syntax. Use the list of users separated by a new-line.
 
 * group-based rules require a certain number of approvals from members of a specific [group](creating-and-managing-user-groups.md); each rule should follow the `group:<groupKey>:<approvalCount>` syntax. Use the list of groups separated by a new-line.
->Note that `<groupKey>` is **case-sensitive**.
+
+> * The `<groupKey>` field is **case-sensitive**.
+> * Users assigned to approve builds must be granted the "Run build" [permission](managing-roles-and-permissions.md). Otherwise, TeamCity will not show them the **Approve** button. By default, this permission is granted to users with the "Project developer" [role](managing-users-and-roles.md).
 
 
 
