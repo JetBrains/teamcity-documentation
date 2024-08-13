@@ -130,7 +130,7 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 10. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines. The agent will be terminated if any condition is met, but only after that agent finishes the current build.
    
    <img src="dk-ec2-terminateConditions.png" width="460" alt="Agents terminate conditions"/>
-11. Click **Apply changes** to save the profile and exit the profile settings page.
+11. Click **Create** or **Apply changes** to save the profile and exit the profile settings page.
 
 
 ### Add a Cloud Image
