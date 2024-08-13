@@ -118,7 +118,7 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 6. Choose an AWS region in which your instances are hosted.
 7. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
 8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
-9. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines.
+9. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines. The agent will be terminated if any condition is met, but only after that agent finishes the current build.
    
    <img src="dk-ec2-terminateConditions.png" width="460" alt="Agents terminate conditions"/>
 10. Click **Apply changes** to save the profile and exit the profile settings page.
