@@ -225,7 +225,7 @@ Ensure the <b>Enable unique callback URL</b> setting is enabled to generate a un
 
 <li>Open the general settings of your GitHub App. Copy required values (App ID, client ID, client secret) and paste them to the TeamCity dialog.</li>
 
-<li>If you have a <a href="https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28">GitHub App webhook</a> configured, set its secret and copy the same value to the <b>Webhook secret</b> field. GitHub can use this webhook to notify the TeamCity server it should scan a repository for changes when they occur, instead of letting the server to constantly poll GitHub for changes. See also: <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">Configuring VCS Post-Commit Hooks</a>.</li>
+<li>If you have a <a href="https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28">GitHub App webhook</a> configured, set its secret and copy the same value to the <b>Webhook secret</b> field. GitHub can use this webhook to notify the TeamCity server it should scan a repository for changes when they occur, instead of letting the server to constantly poll GitHub for changes. See also: <a href="configuring-vcs-post-commit-hooks-for-teamcity.md#GitHub+and+GitHub+Enterprise">Configuring VCS Post-Commit Hooks</a>.</li>
 
 <li>Enter the Owner URL — the link to a personal account or organization where this GitHub App is installed.</li>
 
