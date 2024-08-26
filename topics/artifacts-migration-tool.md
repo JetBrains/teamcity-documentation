@@ -153,7 +153,7 @@ migrate.bat --project="SampleProject" --source="PROJECT_EXT_2" --start-migration
 </tabs>
 
 
-> Once the migration process begins, the migration plan can only be updated after the process is fully completed. For completion, the migration must conclude with either the `--remove-artifacts-in-source` or `--revert-migration` command. Simply copying artifacts to new storage using the `--start-migration` command alone is considered incomplete.
+> The migration process must conclude with either the `--remove-artifacts-in-source` or `--revert-migration` command. Simply copying artifacts to new storage using the `--start-migration` command alone is considered incomplete, and may lead to issues like duplicated artifacts in the TeamCity UI or migration plan stuck in the same state.
 > 
 {type="warning"}
 
