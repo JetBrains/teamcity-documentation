@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2024.07.1 to 2024.07.2
+{id="2024.07.2"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2024-07-2"}
+
+* The Perforce Helix Core client (p4) was updated to version 2022.2-2637361 in Agent and Server Docker images.
+
 
 ## Changes from 2024.07 to 2024.07.1
 {id="2024.07.1"}
