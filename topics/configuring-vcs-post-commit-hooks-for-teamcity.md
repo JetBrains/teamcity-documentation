@@ -234,10 +234,14 @@ This section explains how to set up hooks for VCS providers that allow seamless 
 
 ### GitHub and GitHub Enterprise
 
+<!--
+
 Install a stand-alone [Commit Hooks Plugin](https://github.com/JetBrains/teamcity-commit-hooks) to add GitHub webhooks from TeamCity UI in one click.
 
 <video href="VzDI2HoiHk4"
 title="Use GitHub commit hooks for faster checkouts"/>
+
+-->
 
 If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps](configuring-connections.md#GitHub), you can set up a post-commit hook directly in the connection properties.
 
@@ -247,7 +251,7 @@ If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps
 
    <img src="dk-webhook-deliveries.png" width="706" alt="Webhook deliveries"/>
 
-If a build configuration is configured via a valid GitHub App connection, you can utilize [GitHub Checks Webhook triggers](github-checks-trigger.md) that replace the traditional combo of VCS trigger and Commit Status Publisher build feature.
+The alternative approach is to utilize [GitHub Checks Webhook triggers](github-checks-trigger.md) that leverage [GitHub check run API](https://docs.github.com/en/rest/checks/runs) to trigger new TeamCity builds on every commit. This trigger also acts as a replacement for the Commit Status Publisher build feature.
 
 ### GitLab
 
