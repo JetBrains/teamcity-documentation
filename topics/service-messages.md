@@ -633,9 +633,9 @@ steps {
     }
     
     script {
-    id = "set-custom-red-text"
-    executionMode = BuildStep.ExecutionMode.RUN_ONLY_ON_FAILURE
-    scriptContent = """echo "##teamcity[buildStatus text='Build failed! NuGet packages were not updated.']""""
+        id = "set-custom-red-text"
+        executionMode = BuildStep.ExecutionMode.RUN_ONLY_ON_FAILURE
+        scriptContent = """echo "##teamcity[buildStatus text='Build failed! NuGet packages were not updated.']""""
     }
 }
 ```
