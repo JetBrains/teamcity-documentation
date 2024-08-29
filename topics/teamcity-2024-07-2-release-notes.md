@@ -36,7 +36,7 @@
 
 **[TW-85394](https://youtrack.jetbrains.com/issue/TW-85394/Nodes-do-not-synchronize-the-entire-queue-from-the-database)** — Nodes do not synchronize the entire queue from the database
 
-**[TW-89267](https://youtrack.jetbrains.com/issue/TW-89267/Parameter-teamcity.build.triggeredBy-gets-broken-by-matrix-build)** — Parameter %teamcity.build.triggeredBy% gets "broken" by matrix build
+**[TW-89267](https://youtrack.jetbrains.com/issue/TW-89267/Parameter-teamcity.build.triggeredBy-gets-broken-by-matrix-build)** — Parameter `teamcity.build.triggeredBy` gets "broken" by matrix build
 
 **[TW-88291](https://youtrack.jetbrains.com/issue/TW-88291/Improve-error-messages-in-service-messages-from-teamcity-containing-URLs)** — Improve error messages in service messages from teamcity containing URLs
 
