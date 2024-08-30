@@ -9,6 +9,11 @@
 
 * The Perforce Helix Core client (p4) was updated to version 2022.2-2637361 in Agent and Server Docker images.
 
+### Known Issues
+{id="known-issues-2024-07-2"}
+
+* The [SSH Agent](ssh-agent.md) build feature fails to load SSH keys on Windows agents. See this YouTrack ticket for more information: [TW-89529](https://youtrack.jetbrains.com/issue/TW-89529).
+
 
 ## Changes from 2024.07 to 2024.07.1
 {id="2024.07.1"}
