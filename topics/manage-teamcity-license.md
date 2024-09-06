@@ -6,7 +6,7 @@ For users with paid licenses, activating a license grants the "set it and forget
 
 ## Activate a License
 
-If you can access the <a href="https://account.jetbrains.com">JetBrains Account</a> and your TeamCity server's machine is connected to the internet, do the following to activate a license:
+If you can access the <a href="https://account.jetbrains.com">JetBrains Account</a> and your TeamCity server's machine is connected to the internet and can regularly communicate with <a href="https://account.jetbrains.com">account.jetbrains.com</a> via HTTPS, do the following to activate a license:
 
 1. Navigate to **Administration | Licenses** page.
 2. Click **Get License Key** and log into your JetBrains Account.
