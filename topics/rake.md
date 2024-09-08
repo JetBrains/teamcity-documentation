@@ -336,4 +336,4 @@ Sets `BUNDLE_PATH` if TeamCity doesn't fetch it correctly from `<Gemfile_contain
 
 ## Development Links
 
-Rake support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://confluence.jetbrains.com/display/TW/Rake+Runner).
+Rake support is implemented as an open-source plugin. For development links refer to the [plugin's repository](https://github.com/JetBrains/teamcity-rake).

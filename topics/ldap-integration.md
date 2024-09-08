@@ -17,7 +17,6 @@ LDAP integration might be not trivial to configure, so it might require some tri
 
 To allow logging into TeamCity with LDAP credentials, you need to configure LDAP connection settings in the `ldap-config.properties` file and enable LDAP authentication in the server's [Authentication section](configuring-authentication-settings.md).
 
-If you need to configure authentication without access to web UI refer to the [corresponding section](https://confluence.jetbrains.com/display/TCD8/LDAP+Integration) in the previous documentation version.
 
 When the "_Allow creating new users on the first login_" option is selected (by default) a new user account will be created on the first successful login. The TeamCity usernames for the new users will be derived from their LDAP data based on the configured setting. All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles can [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 

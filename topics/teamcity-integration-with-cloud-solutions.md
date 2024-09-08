@@ -47,7 +47,7 @@ Available as non-bundled plugins:
 * [Google Cloud](https://plugins.jetbrains.com/plugin/9704-google-cloud-agents)
 * [Others](https://plugins.jetbrains.com/category/102-cloud-support/teamcity)
 
-New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
+New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://plugins.jetbrains.com/docs/teamcity/implement-cloud-support.html).
 
 ## Available Integrations
 {product="tcc"}

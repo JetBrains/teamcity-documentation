@@ -226,7 +226,7 @@ Please refer to the [dedicated page](ldap-integration.md).
 
 Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for details about the basic HTTP authentication.
 
->For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+>For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [plugin documentation](https://plugins.jetbrains.com/docs/teamcity/custom-authentication-module.html).
 
 
 ### NTLM HTTP Authentication

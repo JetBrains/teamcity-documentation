@@ -9,8 +9,6 @@ Note that this approach __can be discontinued__ in the future TeamCity versions,
 
 TeamCity has the ability to change the build status directly from the build script. You can set the status (build failure or success) and change the text of the build status (for example, note the number of failed tests if the test framework is not supported by TeamCity).
 
-[XML schema for teamcity-info.xml](https://confluence.jetbrains.com/download/attachments/113084407/teamcity-info.xsd?version=1&modificationDate=1271791190000&api=v2)
-
 It is possible to set the following information for the build:
 
 * __Build number__ — sets the new number for the finished build. You can reference the TeamCity-provided build number using `{build.number}`.
