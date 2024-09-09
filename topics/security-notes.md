@@ -293,7 +293,7 @@ __Be careful with third-party plugins__.
 When [installing plugins](installing-additional-plugins.md), make sure they come from a trusted source and that their source code is available. Plugins can potentially access all information on a TeamCity server, including sensitive information.
 {instance="tc"}
 
-[//]: # (Internal note. Do not delete. "How To...d160e890.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e890.txt")-->
 
 ## Encryption Used by TeamCity
 

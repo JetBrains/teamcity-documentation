@@ -150,7 +150,7 @@ Use this option to instruct TeamCity to run the tests which failed in the previo
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")
+<!--[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")-->
 
 ## Code Coverage
 

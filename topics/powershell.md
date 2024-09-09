@@ -277,4 +277,4 @@ The TeamCity PowerShell plugin uses temporary files as an entry point; these fil
 
 The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://github.com/JetBrains/teamcity-powershell).
 
-[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")
+<!--[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")-->

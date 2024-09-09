@@ -107,7 +107,7 @@ Working directory
 
 Enter a path to the [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "Duplicates Finder \(Java\)d129e140.txt")
+<!--[//]: # (Internal note. Do not delete. "Duplicates Finder \(Java\)d129e140.txt")-->
 
 Optional, specify if differs from the checkout directory.
 

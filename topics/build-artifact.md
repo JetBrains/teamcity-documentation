@@ -66,7 +66,7 @@ To browse or download artifacts individually, use the artifacts' tree. To downlo
 
 To hide an artifact, you need to publish it under the `.teamcity` directory.
 
-[//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Artifactd28e144.txt")-->
 
 ## Artifacts Cache on Agent
 
