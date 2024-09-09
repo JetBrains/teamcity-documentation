@@ -131,7 +131,7 @@ Enter parameters of the script. Parameters are passed as the `Args` array. View 
 >This way, you can reuse the token’s value anywhere in the script.
 >This practice will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself is stored, which might compromise the security of your data.
 > 
-{type="note"}
+{style="note"}
 
 </td>
 

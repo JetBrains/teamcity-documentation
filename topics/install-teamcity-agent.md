@@ -70,14 +70,14 @@ Full agent distributions are also available in two variations:
 
    > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
    >
-   {type="note"}
+   {style="note"}
 
 5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)) and the name of the agent. Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
    {product="tc"}
 
    > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
    >
-   {type="note"}
+   {style="note"}
 
 
 

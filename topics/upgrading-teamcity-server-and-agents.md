@@ -81,7 +81,7 @@ Agents connected to the server are upgraded [automatically](#Automatic+Build+Age
 >__Important note on TeamCity data structure upgrade__  
 >TeamCity server stores its data in the database and in [TeamCity Data Directory](teamcity-data-directory.md) on the file system. Different TeamCity versions use different data structure of the database and Data Directory. Upon starting a newer version of TeamCity, the data is kept in the old format until you confirm the upgrade and data conversion on the Maintenance page in the web UI. Until you do so, you can back up the old data; however, once the upgrade is complete, the data is converted to the new format.  
 >__Once the data is converted, downgrade to the previous TeamCity versions which uses different data format is not possible!__
-{type="warning"}
+{style="warning"}
 
 There are several important issues with data format upgrade:
 
@@ -96,7 +96,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 > Automatic update is available only for `.tar.gz` and `.exe` installations.
 > In particular, automatic update cannot be used with a Docker installation (see [](#manual-update-of-docker-image)) and the [AWS CloudFormation template](https://github.com/JetBrains/teamcity-cloudformation-template#readme) is no longer supported.
-{type="note"}
+{style="note"}
 
 To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/), `download.jetbrains.com` and `download-cdn.jetbrains.com`.
 
@@ -122,7 +122,7 @@ In case of an automatic update failure, perform the following to restore your Te
 >
 > See also: [supported Java versions for TeamCity Server](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Server).
 > 
-{type="warning"}
+{style="warning"}
 
 Other limitations of the automatic update:
 * Some files like `TeamCityService.exe` and `teamcity-server.bat` are not included into the scope of the autoupdate.
@@ -170,7 +170,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 {id="manual-update-of-docker-image" auxilary-id="Manual Update of Docker Image"}
 
 > Manual update is the only option for Docker containers.
-{type="note"}
+{style="note"}
 
 1. [Create a backup](teamcity-data-backup.md).
 2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)

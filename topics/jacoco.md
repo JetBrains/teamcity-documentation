@@ -58,7 +58,7 @@ __Classfile directories or jars__
 
 Newline-delimited set of path patterns in the form of `+|-:[path]` relative to the [checkout directory](build-checkout-directory.md) to scan for classfiles to be analyzed. Libraries and test classfiles don't have to be listed unless their coverage is wanted.
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 </td>
 

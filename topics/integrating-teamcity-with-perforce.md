@@ -41,7 +41,7 @@ TeamCity can monitor commits in Perforce [streams](https://www.perforce.com/vide
 
 If a [Perforce root](perforce.md) is configured to use the _Stream_ mode, you can enable the feature branches support in the root settings. After it is enabled, all streams which have the specified main stream as a parent will be included into the set of [feature branches](working-with-feature-branches.md) processed by TeamCity. To include only specific streams to this set, edit the branch specification to filter these streams. Each filter rule should start with a new line. The syntax is `+|-:stream_name`. For example, use `+://stream-depot/*` to monitor only streams located in the `stream-depot` depot, where `*` (for example, `master`) is a logical branch name. Note that streams used in the branch specification should be descendants of the main stream.
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 TeamCity can process task streams as well, but it only detects new task streams if there is a non-merge commit made to them.
 

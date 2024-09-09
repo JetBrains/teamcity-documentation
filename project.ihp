@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ihp
-        SYSTEM "https://resources.jetbrains.com/stardust/ihp.dtd">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE ihp SYSTEM "https://resources.jetbrains.com/stardust/ihp.dtd">
 <ihp version="2.0">
     <settings>
         <caps for="toc-element">sentence</caps>
@@ -9,12 +8,7 @@
     <module name="teamcity-docs"/>
     <vars src="v.list"/>
     <topics dir="topics"/>
-    <images dir="images" version="2024.07"
-            web-path="https://resources.jetbrains.com/help/img/teamcity/2024.07/"/>
+    <images dir="images" version="2024.07" web-path="https://resources.jetbrains.com/help/img/teamcity/2024.07/"/>
     <categories src="c.list"/>
     <tags src="g.list"/>
-    <product src="tc.tree" web-path="/teamcity/2024.07/"
-             teamcity-build-path="Documentation_Teamware_TeamCity" version="2024.07" keymaps-mode="none"/>
-    <product src="tcc.tree" web-path="/teamcity/cloud/2024.07/"
-             teamcity-build-path="Documentation_Teamware_TeamCity_TeamCityCloud" version="2024.07" keymaps-mode="none"/>
-</ihp>
+    </ihp>

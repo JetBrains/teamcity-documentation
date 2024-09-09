@@ -13,7 +13,7 @@ Whether you run a build agent via the `agent.bat|sh` script or as a Windows serv
 
 >Please avoid changing the startup options unless you are advised to do so by the TeamCity support team or you are absolutely confident in consequences of these changes.
 >
-{type="note"}
+{style="note"}
 
 ## Agent Properties
 

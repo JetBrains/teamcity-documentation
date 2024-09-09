@@ -36,7 +36,7 @@ To import the sample project:
    > 
    > <img src="dk-import-wo-sync.png" width="706" alt="Import with no sync"/>
    >
-   {type="note"}
+   {style="note"}
 
 4. TeamCity will import the sample project's settings and redirect you to its __General Settings__ page. Here, you can scroll a bit and see the _TodoBackend_ subproject. Click it to view all the created build configurations.
 

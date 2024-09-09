@@ -3,7 +3,7 @@
 
 >The following notes are provided for reference only and are not guaranteed to be complete or entirely accurate. We suggest that you follow the best security practices when using TeamCity for production purposes. This document contains our recommendations and points to consider when configuring your CI/CD pipeline with TeamCity.
 >
-{type="warning"}
+{style="warning"}
 
 TeamCity is developed with security concerns in mind. We make reasonable efforts to ensure the system is invulnerable to different types of attacks. We work with third parties on assessing TeamCity security using security scanners and penetration tests. Newly discovered security issues are promptly addressed in the nearest bugfix releases ([read more](teamcity-release-cycle.md) about our release cycle). It is recommended to [upgrade to newly released TeamCity versions](https://www.jetbrains.com/teamcity/download/) as soon as they become available.  
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__, with no possibility for it to be accessed by malicious users.
@@ -155,7 +155,7 @@ TeamCity will automatically notify you via the UI once a new update is available
 
 > To keep you ahead of the curve in preventing and mitigating security issues, TeamCity automatically downloads critical security updates. This approach helps to keep your system fortified against emerging risks and to swiftly tackle major vulnerabilities. Note that after an update is downloaded automatically, a system administrator still needs to approve its installation. See this article for more information: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
 >
-{type="note"}
+{style="note"}
 
 From a technical perspective, upgrades between bugfix releases within the same major/minor version are backwards compatible (for example, 2021.1.1 → 2021.1.2) and support relatively simple rollbacks. For all other major upgrades, we do our best to ensure that they run as smoothly as possible, though [backups](teamcity-data-backup.md) are strongly recommended for easy rollbacks.
 

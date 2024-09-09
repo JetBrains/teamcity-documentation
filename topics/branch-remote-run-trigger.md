@@ -61,7 +61,7 @@ If your build configuration has more than one VCS root which support branch remo
 
 ## Triggered Build Customization
 
-<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
+<include from="configuring-vcs-triggers.md" element-id="triggered-build-customization"/>
 
  <seealso>
         <category ref="admin-guide">

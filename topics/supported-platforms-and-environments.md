@@ -22,7 +22,7 @@ For Apple ARM systems (for example, Apple M1 or M2), consider using a different 
 
 >Java 8 support will be discontinued in one of the future TeamCity releases. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 or 17.
 > 
-{type="warning"}
+{style="warning"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Server" auxiliary-id="Supported+Platforms+for+TeamCity+Server"}
@@ -75,11 +75,11 @@ For Apple ARM systems (for example, Apple M1 or M2), consider using a different 
 
 > Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
-{type="note"}
+{style="note"}
 
 >Java 8 support will be discontinued in one of the future TeamCity releases. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 or 17.
 >
-{type="warning"}
+{style="warning"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}
@@ -135,7 +135,7 @@ Supported Java versions: OpenJDK and Oracle Java 8 - 17. We recommend using the 
 
 > Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
-{type="note"}
+{style="note"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}

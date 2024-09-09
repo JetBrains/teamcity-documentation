@@ -6,7 +6,7 @@ This tutorial aims at describing the basic practices of using [NUnit 3](https://
 ## Installing NUnit
 {id="installing-nunit-1"}
 
-<include src="nunit.md" include-id="installing-nunit"/>
+<include from="nunit.md" element-id="installing-nunit"/>
 
 ## Case 1. Command Line
 
@@ -37,7 +37,7 @@ TeamCity supports collecting code coverage statistics out of the box.
 
 The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/master/sample2.proj) is trivial: the [Exec](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx) task, which launches tests, is run:
 
-<chunk include-id="msbuild-examples-nunit">
+<snippet include-id="msbuild-examples-nunit">
 
 ```Shell
 
@@ -61,7 +61,7 @@ TeamCity controls the test execution progress, but the NUnit infrastructure exce
 
 Besides the project file, you can define the MSBuild version and target platform, use profiles and other settings.
 
-</chunk>
+</snippet>
    
 To make the build more stable, you can introduce a few changes to the project file. For example, you can define the path to the NUnit console dynamically. This path may change with the updates of the NUnit console NuGet package, but our build configuration will not require any changes. The code below gets the path to the NUnit console to the `pathToNUnitConsole` variable:
 

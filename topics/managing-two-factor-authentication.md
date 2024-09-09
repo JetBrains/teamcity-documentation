@@ -28,7 +28,7 @@ Actions that are blocked until a user passes another verification include:
 
 > These actions are blocked only if a user makes them in the TeamCity UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
 > 
-{type="note"}
+{style="note"}
 
 This behavior adds an extra layer of protection that prevents attackers who gain access to a user's account from modifying user settings and inflicting more damage.
 

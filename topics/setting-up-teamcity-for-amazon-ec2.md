@@ -25,7 +25,7 @@ This section describes the steps that you must perform in your AWS account befor
    
    > The exact instance type (for example, `t2.small` or `x1e.xlarge`) is irrelevant: you can set the required type in TeamCity settings (see the [](#Add+a+Cloud+Image) section).
    > 
-   {type="tip"}
+   {style="tip"}
    
 3. Install an agent on your instance. Depending on the OS type, the required steps may vary. See these articles for more information:
 
@@ -43,7 +43,7 @@ This section describes the steps that you must perform in your AWS account befor
    > * [Kubernetes](setting-up-teamcity-for-kubernetes.md) (both self-hosted clusters and hosting services, such as Google Cloud GKE or Amazon EKS)
    > * [Amazon Container Service (ECS)](https://github.com/JetBrains/teamcity-amazon-ecs-plugin)
    > 
-   {type="tip"}
+   {style="tip"}
 
 5. Run the agent and ensure it successfully connects to your TeamCity server and is compatible with all required configurations.
 6. Configure the system to [automatically run a TeamCity agent](start-teamcity-agent.md#Automatic+Start) when an instance starts.
@@ -164,7 +164,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
       
       > Mac instances support only `mac1.metal` and `mac2.metal` types and are available only as bare metal instances on [Dedicated Hosts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html), with a minimum allocation period of 24 hours before you can release the Dedicated Host. Learn more: [Amazon EC2 Mac instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
       > 
-      {type="note"}
+      {style="note"}
 
    3.4.&ensp;Optional: Specify additional image settings.
       * **IAM Role** — The IAM role that all launched instances will assume. This role specifies the permissions [granted to applications](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) running on your EC2 instances. The AWS account used by TeamCity must have `iam:ListInstanceProfiles` and `iam:PassRole` permissions to utilize IAM roles.
@@ -178,7 +178,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
       > It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem and re-add this build to the build queue.
       >
-      {type="note"}
+      {style="note"}
    3.6.&ensp;Specify networking settings for your EC2 instances.
       * **VPC** — The [virtual private cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html) to which new instances will belong.
       * **Subnets** — The [IP addresses range](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) for your VPS.
@@ -220,11 +220,11 @@ Cloud profiles specify global settings, such as authorization credentials and in
       > * `ValidUntil`: the `ValidFrom` value plus 5 minutes
       > * `Type`: `request`
       >
-      {type="note"}
+      {style="note"}
 
       > Currently, [LaunchTemplateConfigs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html) are not supported. Use [LaunchSpecifications](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetLaunchSpecification.html) instead to describe required Spot instances.
       >
-      {type="warning"}
+      {style="warning"}
 
    </tab>
    
@@ -244,7 +244,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
 
    > The value of the **Image priority** field is assigned to the [teamcity.agent.priority](build-agent.md#Agent+Priority) property of each agent that originates from this image. You can manually specify this property for any other non-AWS-hosted agent to control which agents TeamCity should prioritize.
    > 
-   {type="note"}
+   {style="note"}
 
 5. Set up the maximum number of active cloud agents starting from this image. Note that the total number of agents started from all images added to a profile cannot exceed the limit set on the settings page of this profile.
 6. Specify the [agent pool](configuring-agent-pools.md) to which newly created instances will belong.
@@ -515,7 +515,7 @@ Commented out, see TW-85775
 > 1. Install the [latest EC2Config](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_Install.html?shortFooter=true#ec2config-update-version).
 > 2. Set the dependency of the `TCBuildAgent` service on both `EC2Config` and `AmazonSSMAgent` via the command: `sc config TCBuildAgent depend=Ec2Config/AmazonSSMAgent`.
 >
-{type="warning"}
+{style="warning"}
 
 -->
 

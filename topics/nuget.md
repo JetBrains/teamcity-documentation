@@ -16,12 +16,12 @@ TeamCity integrates with [NuGet](https://github.com/nuget/home) package manager 
 >
 {type="warning" product="tcc"}
 
-<chunk include-id="nuget-OS">
+<snippet include-id="nuget-OS">
 
 __Supported Operating Systems__:   
 NuGet build runners are supported on build agents running Windows OS by default. Linux and macOS are supported when [Mono](https://www.mono-project.com/docs/getting-started/install/) is installed on the agent (only NuGet 3.3+ on Mono 4.4.2+ is supported).
 
-</chunk>
+</snippet>
 
 <note>
 

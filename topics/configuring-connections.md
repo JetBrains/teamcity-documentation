@@ -15,7 +15,7 @@ After configuring the proxy, remember to also set the new address as the _Server
 
 ## Azure DevOps
 
-<chunk include-id="azure-devops">
+<snippet include-id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
 * __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git repositories.
@@ -38,7 +38,7 @@ To configure an Azure DevOps OAuth 2.0 connection:
    > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
    > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
    >
-   {type="note"}
+   {style="note"}
 4. TeamCity will display the _Callback URL_ and _scopes_ required for registering an OAuth application in Azure DevOps.  
    Go to the [Register Application](https://app.vsaex.visualstudio.com/app/register) page in Azure and create a new app using the provided parameters. When created, copy the app's ID and client secret.
 5. Go back to the connection form in TeamCity and enter the Azure DevOps Services URL, the new application ID, and client secret.
@@ -65,11 +65,11 @@ To configure an Azure DevOps PAT connection:
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Bitbucket Cloud
 
-<chunk include-id="bb-cloud">
+<snippet include-id="bb-cloud">
 
 >In TeamCity Cloud, a connection to Bitbucket Cloud is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
@@ -93,7 +93,7 @@ After the consumer is created:
 A Bitbucket icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your Bitbucket profile. TeamCity will be granted access to your repositories. 
 If you configure multiple Bitbucket connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Bitbucket Server and Data Center
 
@@ -111,7 +111,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
    > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
    > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
    >
-   {type="note"}
+   {style="note"}
 
 3. In a separate browser tab, go to the Bitbucket **"Administration | Application Links"** page.
 
@@ -129,7 +129,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 
 ## GitHub
 
-<chunk include-id="github">
+<snippet include-id="github">
 
 >In TeamCity Cloud, a connection to GitHub.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
@@ -289,15 +289,15 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 
 > When your GitHub Enterprise server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 > 
-{type="note"}
+{style="note"}
 
 Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## GitLab
 
-<chunk include-id="gitlab">
+<snippet include-id="gitlab">
 
 >In TeamCity Cloud, a connection to GitLab.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
@@ -323,7 +323,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
    > * Whenever you toggle this setting on or off, the callback URL changes. Update OAuth settings on the VCS side accordingly.
    > * IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.
    >
-   {type="note"}
+   {style="note"}
 5. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
    - [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application)
    - [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application)
@@ -335,7 +335,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
    4. Click *Save application*
     > For a GitLab instance-wide application, there is an additional *Trusted* checkbox, which skips the user authorization step when it is enabled.
     >
-    {type="note"}
+    {style="note"}
 
 7. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
 8. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
@@ -343,11 +343,11 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 
 > When your GitLab CE/EE server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 >
-{type="note"}
+{style="note"}
 
 A GitLab icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitLab profile. TeamCity will be granted access to your repositories. If you configure multiple GitLab connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Google
 
@@ -776,7 +776,7 @@ To configure an organization connection:
     
     > Note that TeamCity retrieves the server URL from **Administration | General settings** and passes this URL as the endpoint for the newly created Space application. You will not be able to update this endpoint after the application is installed, so verify TeamCity uses the correct URL.
     >
-    {type="note"}
+    {style="note"}
 
 7. Click **Approve all and go back to TeamCity** to grant the newly installed Space application required permissions.
 

@@ -7,7 +7,7 @@ Note that you can create a new Maven-based build configuration [automatically fr
 
 >This build runner has some [Remote Run limitations](#Remote+Run+limitations).
 > 
-{type="note"}
+{style="note"}
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 >
@@ -69,7 +69,7 @@ Specify the list of command-line parameters.
 
 >The following parameters are ignored: `-q`, `-f`, `-s` (if __User settings path__ is provided).
 > 
-{type="note"}
+{style="note"}
 
 </td></tr><tr>
 
@@ -220,7 +220,7 @@ If Custom or Predefined settings are used, the path to the effective user settin
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 <anchor name="Maven-LocalArtifactRepositorySettings"/>
 
@@ -311,7 +311,7 @@ The Maven build runner supports code coverage based on the IDEA coverage engine.
 
 >Only Surefire version 2.4 or later is supported.
 >
-{type="note"}
+{style="note"}
 
 If you have several build agents installed on the same machine, by default they use the same local repository. However, there are two ways to allocate a custom local repository to each build agent:
 
