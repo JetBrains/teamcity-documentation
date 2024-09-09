@@ -10,7 +10,7 @@ The most typical case for migration is when you evaluated TeamCity with the defa
 Database migration cannot be combined with the server upgrade. If you want to upgrade at the same time, you should first [upgrade](upgrading-teamcity-server-and-agents.md), run the new version of TeamCity, and then migrate to another database.
 </note>
 
-[//]: # (Internal note. Do not delete. "Migrating to an External Databased212e19.txt")    
+<!--[//]: # (Internal note. Do not delete. "Migrating to an External Databased212e19.txt")-->    
 
 There are several ways to migrate data into a new database:
 * [Switch](#Switch+with+No+Data+Migration) with no data migration: build configurations settings will be preserved, but not the historical builds data or users.

@@ -25,7 +25,7 @@ If necessary, you can exclude parts of the directory from the backup to save spa
 
 If you decide to skip backing up data under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` directory, make sure you note the most recent files in each of the `artifacts`, `messages`, and `changes` subdirectories and save this information. It will be needed if you decide to restore the database backup with the TeamCity Data Directory corresponding to a newer state than that of the database.
 
-[//]: # (Internal note. Do not delete. "Manual Backup and Restored203e71.txt")
+<!--[//]: # (Internal note. Do not delete. "Manual Backup and Restored203e71.txt")-->
 
 The `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.*` files store the internal database (HSQLDB) data. You need to back them up if you use HSQLDB (the default setting not suitable for production use).
 

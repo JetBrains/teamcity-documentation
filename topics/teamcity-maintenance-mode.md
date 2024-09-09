@@ -13,7 +13,7 @@ After you have provided this token, you can review the details on what kind of m
 * [TeamCity startup error](#TeamCity+Startup+Error)
 * [TeamCity database creation](#TeamCity+Database+Creation)
 
-[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e49.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e49.txt")-->
 
 ## TeamCity Data Upgrade
 
@@ -25,7 +25,7 @@ Once TeamCity converts the data, downgrade will not be possible. If you need to 
 
 After the data is backed up, click __Upgrade__.
 
-[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e91.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Maintenance Moded316e91.txt")-->
 
 ## New TeamCity Data Format
 

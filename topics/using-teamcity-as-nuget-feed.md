@@ -126,4 +126,4 @@ TeamCity uses own [credential provider](https://docs.microsoft.com/en-us/nuget/r
 
 Internet Explorer settings may need to be set to trust the TeamCity server when working in a mixed authentication environment.
 
-[//]: # (Internal note. Do not delete. "Using TeamCity as NuGet Feedd342e197.txt")
+<!--[//]: # (Internal note. Do not delete. "Using TeamCity as NuGet Feedd342e197.txt")-->

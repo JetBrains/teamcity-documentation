@@ -214,7 +214,7 @@ Discard types
 
 If this option is checked, similar content with different type names will be recognized as duplicates. These include all possible type references (as shown below):
 
-```csharp
+```C#
 Logger.GetInstance("text");
 OtherUtility.GetInstance("text");
 ... where Logger and OtherUtility are both type names (thus GetInstance is a static method in both classes)
