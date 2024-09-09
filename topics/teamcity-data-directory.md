@@ -60,7 +60,7 @@ We highly recommend placing the Data Directory outside of the TeamCity installat
 
 </warning>
 
-[//]: # (Internal note. Do not delete. "TeamCity Data Directoryd311e146.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Data Directoryd311e146.txt")-->
 
 
 <anchor id="TeamCityDataDirectory-centralRepository" auxiliary-id="TeamCityDataDirectory-centralRepository"/>

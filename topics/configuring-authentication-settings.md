@@ -218,7 +218,7 @@ If the library does not find the domain controller to authenticate against, cons
 
 Please refer to the [dedicated page](ldap-integration.md).
 
-[//]: # (Internal note. Do not delete. "Configuring Authentication Settingsd70e480.txt")
+<!--[//]: # (Internal note. Do not delete. "Configuring Authentication Settingsd70e480.txt")-->
 
 ## HTTP / SSO Authentication Modules
 

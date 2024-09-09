@@ -45,7 +45,7 @@ Specifying different combinations of the above options, you can control the cont
 maintainDB backup -C -D -L -P -U
 ```
 
-[//]: # (Internal note. Do not delete. "Creating Backup via maintainDB command-line toold102e196.txt")    
+<!--[//]: # (Internal note. Do not delete. "Creating Backup via maintainDB command-line toold102e196.txt")-->  
 
 ### maintainDB Usage Examples for Data Backup
 

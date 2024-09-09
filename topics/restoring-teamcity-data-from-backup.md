@@ -148,7 +148,7 @@ maintainDB.[cmd|sh] restore <all previously used restore options> --continue
 ```
 
 
-[//]: # (Internal note. Do not delete. "Restoring TeamCity Data from Backupd270e422.txt")    
+<!--[//]: # (Internal note. Do not delete. "Restoring TeamCity Data from Backupd270e422.txt")-->    
 
 <seealso>
         <category ref="admin-guide">

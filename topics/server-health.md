@@ -112,7 +112,7 @@ All URLs used by browsers that do not support the WebSocket connection are liste
 
 If Tomcat is configured to use the [BIO connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html), the WebSocket protocol is [automatically disabled](https://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
 
-[//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")    
+<!--[//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")-->    
 
 ### Critical Errors
 {instance="tc"}

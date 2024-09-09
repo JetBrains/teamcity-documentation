@@ -14,13 +14,13 @@ For Git and Mercurial the recommended way to use [Branch Remote Run Trigger](bra
 
 ## Matching Changes and Build Configurations
 
-[//]: # (Internal note. Do not delete. "Pre-Tested \(Delayed\) Commitd256e43.txt")
+<!--[//]: # (Internal note. Do not delete. "Pre-Tested \(Delayed\) Commitd256e43.txt")-->
 
 To submit changed files to pre-tested commit or remote run, VCS integration should work in the IDE and TeamCity should be able to check that the files, when committed, will affect the build configurations on the server.
 
 If TeamCity cannot match the changes with the builds, a message "Submitted changes cannot be applied to the build configuration" is displayed.
 
-[//]: # (Internal note. Do not delete. "Pre-Tested \(Delayed\) Commitd256e52.txt")
+<!--[//]: # (Internal note. Do not delete. "Pre-Tested \(Delayed\) Commitd256e52.txt")-->
 
 The VCS integration should be correctly configured in the IDE, and TeamCity should be able to match the files on the developer workstation to the build configurations present on the TeamCity server. In order to be able to do that, VCS should be configured in the same way on the developer's workstation and on the server.
 
