@@ -123,6 +123,6 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 * The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](snapshot-dependencies.md#Suitable+Builds) instead of running them anew.
 
 
-</chunk>
+</snippet>
 
 
