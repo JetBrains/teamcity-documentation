@@ -658,7 +658,7 @@ Run tests from assemblies:
 
 ```
 
-[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")-->
 
 ### NUnit for NAnt Build Runner
 {initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
@@ -1080,7 +1080,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 
 ```
 
-[//]: # (Internal note. Do not delete. "MSBuild Service Tasksd214e94.txt")
+<!--[//]: # (Internal note. Do not delete. "MSBuild Service Tasksd214e94.txt")-->
 
 * The mandatory `description` attribute is a human-readable text describing the build problem. By default, `description` appears in the build status text.
 * `identity` is an optional attribute and characterizes a particular build problem instance. It shouldn't change throughout builds if the same problem occurs: for example, the same compilation error. It should be a valid Java ID up to 60 characters long. By default, `identity` is calculated based on `description`.

@@ -309,7 +309,7 @@ where:
 * `TAG_NAME.tcbuildtag` - last build tagged with the TAG_NAME tag
 
 
-[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")    
+<!--[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")-->   
 
 * `ARTIFACT_FILE_NAME_WITHOUT_EXTENSION` filename or regular expression of the artifact without the extension part.
 * `ARTIFACT_FILE_NAME_EXTENSION` the extension part of the artifact filename.

@@ -46,7 +46,7 @@ By specifying the quiet period you can ensure the build is not triggered in the 
 
 A __quiet period__ is a period (in seconds) that TeamCity maintains between the moment the last VCS change is detected and a build is added into the queue. If new VCS change is detected in the Build Configuration within the period, the period starts over from the new change detection time. The build is added into the queue only if there were no new VCS changes detected within the quiet period.
 
-[//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")
+<!--[//]: # (Internal note. Do not delete. "Configuring VCS Triggersd93e129.txt")-->
 
 Note that the actual quiet period will not be less than the maximum [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) among the VCS roots of a build configuration, as TeamCity must ensure that changes were collected at least once during the quiet period. 
 

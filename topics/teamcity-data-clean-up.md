@@ -173,7 +173,7 @@ To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [intern
 
 
 
-[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
+<!--[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")-->    
 
 <seealso>
         <category ref="concepts">

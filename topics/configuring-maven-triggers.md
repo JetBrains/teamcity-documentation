@@ -1,6 +1,6 @@
 [//]: # (title: Configuring Maven Triggers)
 [//]: # (auxiliary-id: Configuring Maven Triggers)
-[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e3.txt")    
+<!--[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e3.txt")-->   
 
 The __Triggers__ page of __Build Configuration Settings__ allows you to add the following Maven-related triggers:
 
@@ -29,7 +29,7 @@ Note that since Maven deploys artifacts to remote repositories sequentially duri
 </note>
 
 
-[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e53.txt")    
+<!--[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e53.txt")-->    
 
 <note>
 
@@ -325,7 +325,7 @@ The trigger will check the latest snapshot version for updates
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e322.txt")
+<!--[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e322.txt")-->
 
 ## Triggered Build Customization
 

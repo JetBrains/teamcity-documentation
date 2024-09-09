@@ -1046,7 +1046,7 @@ Milliseconds
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Custom Chartd106e1036.txt")    
+<!--[//]: # (Internal note. Do not delete. "Custom Chartd106e1036.txt")-->   
 
 
 #### Custom Build Metrics

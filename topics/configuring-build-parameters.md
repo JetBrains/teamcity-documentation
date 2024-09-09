@@ -1,6 +1,6 @@
 [//]: # (title: Configuring Build Parameters)
 [//]: # (auxiliary-id: Configuring Build Parameters)
-[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")
+<!--[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")-->
 
 Parameters are `name=value` pairs that can be referenced throughout TeamCity. There are three major parameter types in TeamCity:
 
