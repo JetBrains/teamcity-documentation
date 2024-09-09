@@ -36,26 +36,11 @@ This section illustrates how to set up the Build Cache feature that allows a bui
 
 1. <snippet id="settings-add-feature"><a href="adding-build-features.md">Add the build feature</a> to a build configuration and specify a unique <b>Cache Name</b>.</snippet>
 2. Since we want the feature to both publish and use cache, leave both **Publish** and **Use Cache** settings enabled.
-3. <snippet id="settings-specify-paths">Specify paths to files and folders that should be cached. Each path should start from a new line. Wildcards are not supported. Relative paths are resolved against checkout directories.<br/>
-
-   For example, to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.
-   
-   <tip>
-   To cache local Maven artifacts, set the <b>Artifact repository</b> setting of your <a href="maven.md">Maven</a> runner to <b>Maven default</b>. If you choose the <b>Per agent</b> mode, use the default .m2 location in the feature's publishing rules. Alternatively, add the <code>-Dmaven.repo.local</code> parameter to additional runner commands and point the Build Cache feature to the same directory.
-
-   <!--teamcity.agent.home.dir/system/jetbrains.maven.runner/maven.repo.local-->
-   
-   </tip></snippet>
-
+3. <snippet id="settings-specify-paths"><p>Specify paths to files and folders that should be cached. Each path should start from a new line. Wildcards are not supported. Relative paths are resolved against checkout directories.</p><p>For example, to cache NodeJS packages downloaded by the <code>npm install</code> or <code>yarn install</code> commands, type <code>node_modules/</code> in this field.</p><tip>To cache local Maven artifacts, set the <b>Artifact repository</b> setting of your <a href="maven.md">Maven</a> runner to <b>Maven default</b>. If you choose the <b>Per agent</b> mode, use the default .m2 location in the feature's publishing rules. Alternatively, add the <code>-Dmaven.repo.local</code> parameter to additional runner commands and point the Build Cache feature to the same directory.<!--teamcity.agent.home.dir/system/jetbrains.maven.runner/maven.repo.local--></tip></snippet>
 4. <snippet id="settings-publish-if-changed">By default, new builds do not publish caches if they are identical to those published by previous builds. If you wish each build to upload a cache, uncheck the <b>Publish only if changed</b> setting.</snippet>
-   
 5. Save the settings. The feature's description on the **Build Features** page should state that it publishes and uses the same cache.
-
    <img src="dk-buildCaches-singleConfDescription.png" width="706" alt="Build Cache feature description"/>
-
 6. <snippet id="settings-check-if-published">Run the build and ensure all cached files are available on the build results page as the ".teamcity.build_cache" <a href="build-artifact.md#Hidden+Artifacts">hidden artifact</a>.</snippet>
-
-
 7. To confirm that cache published during the previous run is used, run the build again and check the build log for corresponding messages.
 
 
