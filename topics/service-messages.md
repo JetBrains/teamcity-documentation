@@ -1109,7 +1109,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 
    * `notifier` — always equals "slack".
    * `message` — the message to show. Supports [Markdown](https://api.slack.com/reference/surfaces/formatting) syntax (apart from "\n" for line breaks, use "|n" or "|r" [instead](#Escaped+Values)).
-     <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages"/>
+     <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages" style="block"/>
    * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance, "C052UHDRZU7"), or user ID (starts with "U", for instance, "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
    * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that TeamCity should use to send this message. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
    

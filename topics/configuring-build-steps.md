@@ -67,10 +67,10 @@ A bootstrap step is performed right after a build is triggered, before a build a
 To enable bootstrap steps, first add the `teamcity.internal.bootstrap.steps.enabled=true` entry either to [](server-startup-properties.md#TeamCity+Internal+Properties) or to the individual project (as this project's [configuration parameter](configuring-build-parameters.md)). This setting allows you to do the following:
 
 * Enable the **Run during bootstrap** option in step settings.
-  <img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step"/>
+  <img src="dk_bootstrap_step.png" width="706" alt="Bootstrap step" style="block"/>
 
 * On the configuration's **Build Steps** page, click **Reorder build steps** and drag the required step before the "Preparation stage" block.
-  <img src="dk_bootstrap_step_drag.png" width="706" alt="Drag and drop bootstrap step"/>
+  <img src="dk_bootstrap_step_drag.png" width="706" alt="Drag and drop bootstrap step" style="block"/>
 
 
 

@@ -128,7 +128,7 @@ You can now monitor cloud agents right on a secondary node.
 <note>
 
 Our [experimental UI](teamcity-sakura-ui.md) is a work in progress: we introduce the changes in the early stages of development so you can already benefit from the new features. Based on your feedback, we will make sure to optimize the experimental pages and migrate all the important classic features in the future releases.   
-For now, if any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png) button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
+For now, if any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png){style="block"} button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
 
 __Try out the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.1)!__
 
@@ -146,7 +146,7 @@ One of the most requested features, missing in the experimental UI, was the abil
 
 To start customizing the projects' sidebar, click ![wn-pencil.png](wn-pencil.png) in its upper-right corner. You can move a project or build configuration in the list via a keyboard or using the arrow UI button. You can also mark/clear projects as favorite directly in this configuration window.
 
-<img src="wn-configure-sidebar.png" alt="Customizing experimental sidebar"/>
+<img src="wn-configure-sidebar.png" alt="Customizing experimental sidebar" style="block"/>
 
 ### Improvements for Project Home
 
