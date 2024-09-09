@@ -37,6 +37,7 @@ To do that, select the __Trigger a build on each check-in__ option. If you selec
 This helps to figure out whose change broke a build or caused a new test failure, should such issue arise.
 
 <anchor name="quietPeriod"/>
+
 <anchor name="ConfiguringVCSTriggers-quietPeriod"/>
 
 ### Quiet Period Settings

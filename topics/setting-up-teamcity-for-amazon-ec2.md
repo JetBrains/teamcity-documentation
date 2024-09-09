@@ -133,6 +133,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
 2. Specify the optional image name.
 
    <anchor name="Amazon+EC2+Spot+Fleet+Support"/>
+   
    <anchor name="Amazon+EC2+Spot+Instances+Support"/>
 
 3. Choose the required image type.

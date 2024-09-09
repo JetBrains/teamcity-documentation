@@ -13,7 +13,9 @@ title="TeamCity tutorial — How to work with feature branches"/>
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
 
 <anchor name="branchSpec"/>
+
 <anchor name="Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec"/>
+
 <anchor name="WorkingwithFeatureBranches-branchSpec"/>
 
 ## Configuring Branches

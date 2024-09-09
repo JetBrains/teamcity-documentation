@@ -536,6 +536,7 @@ By default, the VCS trigger will ignore such changes. To enable build triggering
 All changes in the VCS root, where project settings are stored, are listed on the __Versioned Settings | Change log__ tab.
 
 <anchor name="enableAfterUpgrade"/>
+
 <anchor name="StoringProjectSettingsinVersionControl-enableAfterUpgrade"/>
 
 ## Enabling Versioned Settings after TeamCity Upgrade
