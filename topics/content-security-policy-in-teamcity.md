@@ -35,27 +35,27 @@ To allow Google Analytics you must change the values of the following directives
 
 * [`connect-src`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/connect-src) to allow loading Google Analytics URLs:
 
-     ```Resource
+     ```
      connect-src 'self' ws: wss: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net
   
      ```
  
 * [`img-src`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/img-src) to allow loading images:   
-     ```Resource
+     ```
      img-src 'self' data: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net;
   
      ```
  
 * [`script-src`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src) to allow loading JavaScript:   
 
-     ```Resource
+     ```
      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com
   
      ```
 
 The internal properties must be set as follows:
 
-```Resource
+```
 # For TeamCity administration pages:
 teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=frame-ancestors 'self'; default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; connect-src 'self' ws: wss: https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net
 

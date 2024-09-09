@@ -120,7 +120,7 @@ http {
 
 ```
 
-[//]: # (Internal note. Do not delete. "How To...d160e1234.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e1234.txt")-->
 
 ### IIS
 
@@ -279,7 +279,7 @@ If a TeamCity server is configured behind an IIS reverse proxy:
 ```
 
 
-[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")-->
 
 <anchor name="Use+Proxy+for+Outgoing+Connections"/>
 

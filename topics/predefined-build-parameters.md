@@ -266,7 +266,7 @@ To check all existing parameters and their current values for a given build agen
 {style="tip"}
 
 
-[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e948.txt")
+<!--[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e948.txt")-->
 
 ### Java-Related Environment Variables
 
@@ -366,7 +366,7 @@ $JDK_1_6/bin/javac
 
 ## Predefined Configuration Parameters
 
-[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e258.txt")
+<!--[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e258.txt")-->
 
 Configuration parameters can be referenced by other parameters (only if defined on the __Parameters__ page), but they are not passed to the build.
 
@@ -379,7 +379,7 @@ To view the complete list of these server parameters, open the [Parameters tab](
 
 See the following article to learn more about dependency parameters: [](use-parameters-in-build-chains.md).
 
-[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e388.txt")
+<!--[//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e388.txt")-->
 
 ### VCS Parameters
 

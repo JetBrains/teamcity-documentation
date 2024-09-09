@@ -880,7 +880,7 @@ When checkout on agent: whether TeamCity should use native SSH implementation.
 
 <td>
 
-[//]: # (Internal note. Do not delete. "Gitd153e964.txt")    
+<!--[//]: # (Internal note. Do not delete. "Gitd153e964.txt")    -->
 
 </td></tr><tr>
 

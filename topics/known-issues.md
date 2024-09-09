@@ -314,7 +314,7 @@ See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/s
 This problem may happen when changing JVM from 1.6 to 1.7 and connecting some incorrectly configured HTTPS servers. 
 The problem and workaround for it are described in [this issue](https://youtrack.jetbrains.com/issue/TW-30210).
 
-[//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")
+<!--[//]: # (Internal note. Do not delete. "Known Issuesd193e619.txt")-->
 
 ## Distorted Configuration Window During Agent Reinstallation
 

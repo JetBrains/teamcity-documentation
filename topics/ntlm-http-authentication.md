@@ -20,7 +20,7 @@ NTLM HTTP authentication is supported only for TeamCity servers installed on __W
 </note>
 
 
-[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e47.txt")    
+<!--[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e47.txt")   --> 
 
 ## Requirements
 
@@ -35,7 +35,7 @@ After the NTLM HTTP authentication module is configured, users will see a link o
 
 Without this attribute, NTLM HTTP authentication will work only if the client explicitly initiates it (e.g. clicks the "Login using NT domain account" link on the login page), and in the usual case an unauthenticated user will be simply redirected to the TeamCity login page.
 
-[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e74.txt")
+<!--[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e74.txt")-->
 
 The TeamCity server forces NTLM HTTP authentication only for Windows users by default. If you want to enable it for all users, set the following [internal property](server-startup-properties.md):
 
@@ -73,4 +73,4 @@ On Windows, Chrome normally uses IE's behavior, see more information [here](http
 1. Type `about:config` in the browser's address bar.
 2. Add your TeamCity server URL to the [network.automatic-ntlm-auth.trusted-uris](http://kb.mozillazine.org/Network.automatic-ntlm-auth.trusted-uris) property.
 
-[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e165.txt")
+<!--[//]: # (Internal note. Do not delete. "NTLM HTTP Authenticationd226e165.txt")-->

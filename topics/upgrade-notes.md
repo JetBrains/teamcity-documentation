@@ -1835,7 +1835,7 @@ See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46385) for detail
 See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")-->
 
 
 ### Changes in agent properties reporting .NET 4.x runtime
@@ -2177,7 +2177,7 @@ __Finding builds__
 Summary (tl;dr): Some build filtering rules has subtle changes. Most importantly, a queued build can now be returned instead of 404 when searching by build id and meaning of the "project" locator dimension has changed to be not recursive. Also, failed to start builds are now not included until "failedToStart:any" locator dimension is specified.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2056.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2056.txt")-->
 
 
 Details:   
@@ -2274,7 +2274,7 @@ The location of the build logs in the internal format stored under [TeamCity Dat
 Old build logs are migrated to the new location on TeamCity server startup ([TW-37362](https://youtrack.jetbrains.com/issue/TW-37362)). To avoid this migration, `teamcity.skip.logs.migration` internal property should be set __before__ server startup.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2251.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2251.txt")-->
 
 
 #### Builds re-indexing after upgrade
@@ -2501,7 +2501,7 @@ Build configurations with feature branches now process clean\-up rules per\-bran
 TFS now prefers Team Explorer 2012 to Team Explorer 2010 (if both are installed) for TFS operations
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2777.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2777.txt")-->
 
 
 
@@ -2512,7 +2512,7 @@ If you use JetBrains YouTrack and use its TeamCity integration features, please 
 If you need earlier YouTrack versions to work with TeamCity 8.0, please [let us know](feedback.md).
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2793.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2793.txt")-->
 
 
 #### REST API
@@ -2587,7 +2587,7 @@ __teamcity.build.branch__ parameter semantics has changed, see [https://youtrack
 No potential breaking changes.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2962.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2962.txt")-->
 
 ## Changes from 7.1.2 to 7.1.3
 
