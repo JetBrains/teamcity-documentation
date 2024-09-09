@@ -34,14 +34,14 @@ Every TeamCity installation has the default __Root__ project that will contain a
    https://github.com/mkjetbrains/SimpleMavenSample
    ```
    If access to your repository is restricted, enter the credentials as well.
-   <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line"/>
+   <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line" style="block"/>
 3. Click __Proceed__ and follow the wizard.   
    TeamCity will identify the type of your repository, test the connection, and autoconfigure the repository settings, as well as suggest the project and build configuration names.
-   <img src="CreateProject2.png" alt="" width="706" border-effect="line"/>
+   <img src="CreateProject2.png" alt="" width="706" border-effect="line" style="block"/>
 4. Click __Proceed__.   
    TeamCity will scan your VCS repository and autodetect the [build steps](configuring-build-steps.md).
 5. Check the boxes of the suitable steps, and they will be added to the first build configuration of this project.   
-   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line"/>
+   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line" style="block"/>
 
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
 

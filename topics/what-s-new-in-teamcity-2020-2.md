@@ -80,7 +80,7 @@ Read [how to configure this integration](commit-status-publisher.md#JetBrains+Sp
 Our [experimental UI](teamcity-sakura-ui.md) is a work in progress: we introduce the changes in the early stages of development so you can already benefit from the new features. In each release, we polish already existing experimental pages and reproduce all the important classic features in the new UI. Our roadmap strongly depends on our users' feedback.   
 In version 2020.2, we added the __Test History__ and __Build Queue__ pages, implemented the full-text search in the build log, and improved the __Dependencies__ tab of the build results.
 
-If any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png) button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
+If any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png){style="block"} button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
 
 >__You can leave feedback about your experience with the experimental UI via [this survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2020.2)!__
 
