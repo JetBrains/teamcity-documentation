@@ -85,7 +85,7 @@ If an `OutOfMemory` error occurs or you consistently see a memory-related warnin
 >* Large TeamCity installations might benefit from fine-tuning of the memory settings. The amount of memory dedicated to the TeamCity server JVM should not regularly exceed 60% of the total available physical memory on the machine (to allow for nested process and OS-level caches usage). Also, with heaps (`–Xmx`) set to more than 8 GB, if the machine has many CPU cores (for example, more than 8) and current CPU usage is below 60%, enabling G1 JVM garbage collector via the `-XX:+UseG1GC` JVM option might reduce the length of stop-the-world GC pauses.  
    > The recommended approach is to start with the default settings and monitor the used memory on the __Administration | Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a signal to increase the `-Xmx` memory value by another 20%.
 
-[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e1122.txt")
+<!--[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e1122.txt")-->
 
 ## Configure TeamCity Data Directory
 
