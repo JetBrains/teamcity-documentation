@@ -15,7 +15,7 @@ The necessary steps to update the Java installation depend on the distribution u
 If your TeamCity installation has a bundled JRE (there is the `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory.   
 If you also run a TeamCity agent from the `<[TeamCity Home](teamcity-home-directory.md)>\buildAgent` directory, install JDK (Java SDK) installation instead of JRE and copy the content of the JDK installation directory into `<[TeamCity Home](teamcity-home-directory.md)>\jre`.
 
-[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")
+<!--[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")-->
 
 >If you use a different Java version, specified via an environment variable (`TEAMCITY_JRE`, `JRE_HOME`, or `JAVA_HOME`), make sure it is available for the process launching the TeamCity server (it is recommended to set a global OS environment variable). The variable should point to the home directory of the installed JRE or JVM (Java SDK) respectively.
 
@@ -515,7 +515,7 @@ After the test server starts:
 See also the section below on [moving the server](#Move+TeamCity+Installation+to+a+New+Machine) from one machine to another.
 {instance="tc"}
 
-[//]: # (Internal note. Do not delete. "How To...d160e1901.txt")  
+<!--[//]: # (Internal note. Do not delete. "How To...d160e1901.txt")  -->
 
 ## Move TeamCity Projects from One Server to Another
 {instance="tc"}
@@ -900,4 +900,4 @@ TeamCity can also store diagnostics data like thread dumps which can record user
 
 These notes only address bundled TeamCity functionality with the most common documented settings. You should assess your specific TeamCity installation considering customizations like the configured build scripts, installed plugins, external systems communicating with TeamCity via API, etc.
 
-[//]: # (Internal note. Do not delete. "How To...d160e3129.txt")    
+<!--[//]: # (Internal note. Do not delete. "How To...d160e3129.txt") -->   

@@ -41,7 +41,7 @@ Description
  
 6
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e59.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e59.txt")-->
 
 </td>
 
@@ -64,7 +64,7 @@ This property works only if the WebSocket connection is not available and pollin
  
 6
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e83.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e83.txt")-->
 
 </td>
 
@@ -90,7 +90,7 @@ The delay between an event (received via polling or WebSockets) and the ajax req
  
 20
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e125.txt")    
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e125.txt")-->    
 
 </td>
 
@@ -110,7 +110,7 @@ The delay between an event (received via polling or WebSockets) and the ajax req
  
 8
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e146.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e146.txt")-->
 
 </td>
 
@@ -131,7 +131,7 @@ The delay between an event (received via polling or WebSockets) and the ajax req
  
 10
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e168.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e168.txt")-->
 
 </td>
 
@@ -141,4 +141,4 @@ The delay between an event (received via polling or WebSockets) and the ajax req
 </tr>
 </table>
 
-[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e181.txt")    
+<!--[//]: # (Internal note. Do not delete. "TeamCity Tweaksd323e181.txt")-->    

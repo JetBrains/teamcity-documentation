@@ -26,7 +26,7 @@ Several [internal properties](server-startup-properties.md#TeamCity+Internal+Pro
 * `teamCity.memoryUsageMonitor[<Pool name>].warningThreshold` can be used to modify single memory pool threshold. Spaces should be escaped or changed to `\` symbols.
 * `teamCity.memoryUsageMonitor.gcWarningThreshold` allows setting up the allowed percentage of resources to spent for cleaning the memory.
 
-[//]: # (Internal note. Do not delete. "TeamCity Memory Monitord317e56.txt")    
+<!--[//]: # (Internal note. Do not delete. "TeamCity Memory Monitord317e56.txt")-->    
 
 <seealso>
         <category ref="troubleshooting">

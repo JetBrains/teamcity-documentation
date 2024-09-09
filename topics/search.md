@@ -13,7 +13,7 @@ As Lucene, TeamCity uses the `OR` operator in a query by default: if there is no
 
 To narrow your search and get more precise results, use the available search fields — indexed parameters of each build. For complete list of available search fields (keywords), refer to the [related section](#search-fields-list).
 
-[//]: # (Internal note. Do not delete. "Searchd278e44.txt")
+<!--[//]: # (Internal note. Do not delete. "Searchd278e44.txt")-->
 
 ### Performing Fuzzy Search
 
@@ -679,7 +679,7 @@ The search uses an "index" cached on the disk. Only the data previously added to
 To reset the cached search index, click `reset` for the "search" entry on the __Administration | Server Administration | Diagnostics__, __Caches__ tab or manually delete files from \<[TeamCity Data Directory](teamcity-data-directory.md)\>\system\caches\search while the server is not running. After that, reindexing will start which is a resource-intensive operation on the server and can take hours (depending on the number and "size" of builds, as well as the server machine and database performance). You can monitor the progress in the UI on the Search page or in the server logs.
 
 
-[//]: # (Internal note. Do not delete. "Searchd278e621.txt")
+<!--[//]: # (Internal note. Do not delete. "Searchd278e621.txt")-->
 
 <seealso>
         <category ref="admin-guide">
