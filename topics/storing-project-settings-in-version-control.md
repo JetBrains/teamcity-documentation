@@ -520,10 +520,10 @@ Before committing settings to the VCS, consider the recommended approach to stor
 If you want to commit the current configuration to the VCS (for example, earlier you committed misconfigured settings to the repository and TeamCity was unable to load it displaying errors and warnings), you can use the _Commit current project settings_ option on the __Versioned Settings | Configuration__ page.
 
 When TeamCity commits settings into a VCS, it uses the standard commit message noting the TeamCity user as the committer and the project whose settings have changed. It is possible to add a fixed custom prefix to each settings' change committed by TeamCity via the `teamcity.versionedSettings.commitMessagePrefix` [internal property](server-startup-properties.md), for example, `teamcity.versionedSettings.commitMessagePrefix=TC Change\n\n`.
-{product="tc"}
+{instance="tc"}
 
 When TeamCity commits settings into a VCS, it uses the standard commit message noting the TeamCity user as the committer and the project whose settings have changed.
-{product="tcc"}
+{instance="tcc"}
 
 ## Displaying Changes
 

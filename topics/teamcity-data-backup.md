@@ -2,10 +2,10 @@
 [//]: # (auxiliary-id: TeamCity Data Backup)
 
 The database of your TeamCity Cloud instance is backed up on a daily basis. The backed up files are usually store for 5 days. We constantly monitor active servers and can quickly restore the lost data in case the database gets corrupted due to any error.
-{product="tcc"}
+{instance="tcc"}
 
 ## About Data Backup in TeamCity
-{product="tc"}
+{instance="tc"}
 
 TeamCity provides several ways to back up its data:
 * [Backup from the Web UI](creating-backup-from-teamcity-web-ui.md): an action in the web UI (can also be triggered via [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-data-backup.html)) to create a backup while the server is running. It is recommended for regular maintenance backups. Some limitations on the backed up data apply (see the [related section](#Backing+up+Data) below). This option is also available on upgrade in the maintenance screen: on the first start of a newer version of the TeamCity server.
@@ -19,7 +19,7 @@ We strongly urge you to make the backup of TeamCity data before upgrading. Note 
 </note>
 
 ## Backing up Data
-{product="tc"}
+{instance="tc"}
 
 You can choose what data is backed up either in the UI or by adding the respective parameters in maintainDB.
 
@@ -47,7 +47,7 @@ If logs are selected for backup, TeamCity will search for them in [all artifact 
 
 Note that for large production TeamCity installations, exporting and importing of data from/to the database may not be an optimal solution and maintaining database backup via replication might be a better option; for example, see the corresponding [documentation](https://dev.mysql.com/doc/refman/8.0/en/replication.html) for MySQL database.
 
-<seealso product="tc">
+<seealso instance="tc">
         <category ref="installation">
             <a href="upgrading-teamcity-server-and-agents.md">Upgrade</a>
         </category>

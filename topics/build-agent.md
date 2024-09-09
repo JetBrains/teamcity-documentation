@@ -2,10 +2,10 @@
 [//]: # (auxiliary-id: Build Agent)
 
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. It is [installed and configured](install-and-start-teamcity-agents.md) separately from the TeamCity server. An agent can be installed on the same computer as the server or on a different machine (the latter is a preferred setup for server performance reasons); an agent can run the same operating system (OS) as the TeamCity server or a different OS.
-{product="tc"}
+{instance="tc"}
 
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. There are two types of agents in TeamCity Cloud: JetBrains-hosted and self-hosted. The first ones are maintained and configured by JetBrains. They are started on-demand as soon as each new build requires to be run. The second ones are [stored and configured](install-and-start-teamcity-agents.md) by the customer. Both types of agents can be successfully combined in one TeamCity Cloud installation. Please see [Subscription and Licensing](teamcity-cloud-subscription-and-licensing.md) on details between these agents in terms of the TeamCity Cloud subscription.
-{product="tcc"}
+{instance="tcc"}
 
 > This article covers the basic build agent concepts. See the article links in the page footer for details of administering build agents.
 > 
@@ -51,7 +51,7 @@ An agent is connected if it is registered on the TeamCity server and responds to
 >If an agent stays disconnected during 14 days, its state changes to _Unauthorized_. If you try to reconnect it to the server, you will have to authorize it again.  
 >The default timeout duration (14 days) can be adjusted by changing the `teamcity.server.cleanup.agents.inactivityDays` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 >
-{type="note" product="tc"}
+{type="note" instance="tc"}
 
 </td></tr><tr>
 
@@ -64,10 +64,10 @@ __Authorized/ Unauthorized__
 <td>
 
 Agents are manually authorized via the web UI on the __Agents__ page (except for the agents from the machines launched by the [cloud integrations](teamcity-integration-with-cloud-solutions.md)). Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of [agent licenses](licensing-policy.md#Number+of+Agents) entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
-{product="tc"}
+{instance="tc"}
 
 Agents are manually authorized via the web UI on the __Agents__ page. Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of agent licenses entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
-{product="tcc"}
+{instance="tcc"}
 
 If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
 
@@ -96,7 +96,7 @@ Only users with certain roles can manage agents. See [this article](managing-rol
 For a build agent configuration, refer to [this section](configure-agent-installation.md).
 
 ## Agent Upgrade
-{product="tc"}
+{instance="tc"}
 
 TeamCity agents are automatically upgraded when needed. Typically, this happens when:
 
@@ -108,13 +108,13 @@ Note that updating agent plugins and receiving new files following the server up
 
 
 ## Agent Upgrade
-{product="tcc"}
+{instance="tcc"}
 
 Both JetBrains-hosted and self-hosted agents upgrade automatically when the server is upgraded. Note that receiving new files following the server upgrade may trigger an agent restart for the changes to take effect. If your self-hosted agents run under user accounts with [sufficient permissions](system-requirements.md#Common+Requirements), all restarts happen automatically and do not require your input.
 
 
 ## Agent Priority
-{product="tcc"}
+{instance="tcc"}
 
 If you have a mix of [JetBrains-hosted](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) and [self-hosted](supported-platforms-and-environments.md#Self-Hosted+Agents) agents, TeamCity uses the following set of rules to pick an optimal agent that is the most balanced in terms of both performance and price:
 
@@ -137,7 +137,7 @@ teamcity.agent.priority=54
 
 
 ## Agent Priority
-{product="tc"}
+{instance="tc"}
 
 TeamCity employs an advanced agent selection logic, considering factors like CPU count, past building performance, agent sources (cloud or local), and more, to match your builds with the most suitable agents for the job.
 
@@ -163,6 +163,6 @@ teamcity.agent.priority=54
             <a href="build-agents-configuration-and-maintenance.md">Build Agents Configuration and Maintenance</a>
             <a href="configuring-agent-pools.md">Agent Pools</a>
             <a href="assigning-build-configurations-to-specific-build-agents.md">Assigning Build Configurations to Specific Build Agents</a>
-            <a href="licensing-policy.md" product="tc">Licensing Policy</a>
+            <a href="licensing-policy.md" instance="tc">Licensing Policy</a>
         </category>
 </seealso>

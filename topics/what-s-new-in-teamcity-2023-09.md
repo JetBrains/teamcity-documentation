@@ -38,7 +38,7 @@ Starting with this version, you can enable or disable the **Available for sub-pr
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
 In addition, you can now refer to the new section of our "Configuring Connections" documentation article to learn how to configure secure AWS connections that follow Amazon guidelines and do not require permanent user credentials: [](configuring-connections.md#Recommended+Setup).
-{product="tc"}
+{instance="tc"}
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
 
@@ -122,12 +122,12 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Upgrade notes are not published for TCC.
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 Release notes are not published for TCC.
 

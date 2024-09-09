@@ -12,7 +12,7 @@ If stream support is enabled in a Perforce VCS Root, the [Perforce Shelve Trigge
 * Autodetection also works in the REST API when the ```desiredBranch parameter``` is not set in HTTP request.
 
 ## Fixed issues
-{product="tcc"}
+{instance="tcc"}
 
 See [TeamCity Build 115122 release notes](teamcity-release-notes-build-115122.md).
 

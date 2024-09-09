@@ -3,7 +3,7 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 In TeamCity, a [build agent](build-agent.md) contains two processes:
 * Agent launcher — a Java process that launches the agent process.
@@ -83,7 +83,7 @@ Make sure to renumber all lines after the inserted ones.
 
 <seealso>
         <category ref="concepts">
-            <a href="server-startup-properties.md" product="tc">Configuring TeamCity Server Startup Properties</a>
+            <a href="server-startup-properties.md" instance="tc">Configuring TeamCity Server Startup Properties</a>
         </category>
         <category ref="admin-guide">
             <a href="agent-home-directory.md">Agent Home Directory</a>

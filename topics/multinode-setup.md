@@ -124,7 +124,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 <anchor name="MultinodeSetup-ProxyConfiguration"/>
 
 ## Proxy Configuration
-{id="Proxy+Configuration" auxiliary-id="Proxy+Configuration" product="tc"}
+{id="Proxy+Configuration" auxiliary-id="Proxy+Configuration" instance="tc"}
 
 The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
 

@@ -14,7 +14,7 @@ Refer to [Configuring Build Steps](configuring-build-steps.md) for a description
 The runner's requirements:
 * .NET runtime 6.0.0 or later must be installed on a build agent, or available in a Docker container if this step is run inside Docker.
 * The [TeamCity.csi](https://www.nuget.org/packages/TeamCity.csi/) package must be [installed as an agent tool](installing-agent-tools.md).
-{product="tc"}
+{instance="tc"}
 
 >__Use TeamCity.csi outside TeamCity__   
 >You can use our custom tool to run tasks in C# from the command line, similarly to using a regular C# Interactive tool. TeamCity.csi can be run on Windows, Linux, and macOS. See its [README](https://github.com/JetBrains/teamcity-csharp-interactive) for more details.
@@ -152,10 +152,10 @@ If you [refer to a package](#Commands+and+Arguments+Supported+in+Scripts) from a
 By default, TeamCity restores NuGet packages from their sources published on [NuGet.org](https://nuget.org). In this field, you can specify paths to other NuGet repositories, and TeamCity will search for packages there, by the order of declaration. If a package source cannot be found in any of the specified repositories, TeamCity will search for it on NuGet.org.
 
 To be able to access private repositories, configure [NuGet feed credentials](nuget-feed-credentials.md).
-{product="tc"}
+{instance="tc"}
 
 You can also refer a [TeamCity internal feed](using-teamcity-as-nuget-feed.md).
-{product="tc"}
+{instance="tc"}
 
 </td>
 

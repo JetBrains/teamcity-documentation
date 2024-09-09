@@ -8,13 +8,13 @@
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2024.03 compared to 2023.11](upgrade-notes.md#Changes+from+2023.11+to+2024.03).
 
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 See the [TeamCity 2024.03 release notes](teamcity-2024-03-release-notes.md) article for the summary of implemented features and fixed issues.
 

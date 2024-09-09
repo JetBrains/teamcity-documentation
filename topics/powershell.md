@@ -188,7 +188,7 @@ Specify parameters to be passed to the PowerShell executable.
 </td></tr></table>
 
 ## Docker Settings
-{product="tc"}
+{instance="tc"}
 
 In this section, you can specify the Docker image which will be [used to run the build step](container-wrapper.md).
 

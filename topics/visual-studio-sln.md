@@ -12,7 +12,7 @@ For more details on migration, refer to the [.NET runner description](net.md#mig
 
 For compatibility, the Visual Studio (sln) runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.  
 However, we will unbundle this runner after a sufficient transition period. In this case, you will still be able to install it as an external plugin. Remember to check our [upgrade notes](upgrade-notes.md) before upgrading to each following version.
-{product="tc"}
+{instance="tc"}
 
 </note>
 

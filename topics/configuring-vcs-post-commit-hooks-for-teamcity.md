@@ -212,7 +212,7 @@ http(s)://username:PAT@TeamCityServerURL/app/rest/vcs-root-instances/commitHookN
 Requests should use the credentials of a user with the "View project and all parent projects" and "View build configuration settings" permissions for all the projects where the VCS root is defined.
 
 In case of authentication issues, navigate to **Administration | Diagnostics** and choose the "debug-auth" preset in the **Troubleshooting** section. You can then inspect the `TeamCity_Folder/logs/teamcity-auth.log` file to view the detailed problem information.
-{product="tc"}
+{instance="tc"}
 
 
 ### Repository Polling with Configured Hooks

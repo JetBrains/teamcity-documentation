@@ -3,7 +3,7 @@
 
 Thanks to the [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin, TeamCity can run [build agents](build-agent.md) in your Kubernetes cluster.
 
-<note product="tc">
+<note instance="tc">
 
 If you were using the Helm build runner, included in the external Kubernetes Support plugin, note that the built-in integration does not comprise the Helm runner. Refer to our [upgrade notes](upgrade-notes.md#Bundled+Kubernetes+Support+plugin+does+not+contain+Helm+runner) for more details.
 

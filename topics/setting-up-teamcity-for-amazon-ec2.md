@@ -553,7 +553,7 @@ When launching Amazon EC2 instances, TeamCity tags all the resources (for exampl
 As mentioned [above](#Tagging+Instances+Launched+by+TeamCity), TeamCity tags every instance it launches with the `teamcity:TeamcityData` tag that stores information about a server, cloud profile, and source (AMI or EBS-instance). So, when several TeamCity servers try to use the same EBS instance, the second one will see the following message "Instance is used by another TeamCity server. Unable to start/stop it". If you are sure that no other TeamCity servers are working with this instance, you can delete the `teamcity:TeamcityData` tag and the instance will become available for all TeamCity servers again.
 
 ### Proxy settings
-{product="tc"}
+{instance="tc"}
 
 If your TeamCity server needs to use a proxy to connect to AWS API endpoint, configure the following server [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) to connect to Amazon AWS addresses.
 
@@ -574,7 +574,7 @@ For NTLM authentication:
 Standard Amazon EC2 pricing applies. Amazon charges can depend on the specific configuration implemented to deploy TeamCity. We advise you to regularly check your configuration and Amazon account data to discover and prevent unexpected expenses as soon as possible.
 
 Note that traffic volumes and necessary server and agent machines characteristics depend a big deal on the TeamCity setup and nature of the builds run. See also [Estimate Hardware Requirements for TeamCity](system-requirements.md#Estimating+External+Database+Capacity).
-{product="tc"}
+{instance="tc"}
 
 ### Estimating Traffic
 

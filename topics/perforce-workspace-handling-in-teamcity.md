@@ -76,7 +76,7 @@ Usually, each [clean checkout](clean-checkout.md) build results in `p4 sync -f` 
 When an error occurs during a checkout, or a build is interrupted/stopped during the checkout, or a timeout occurs, no [clean checkout](clean-checkout.md) will occur for the subsequent builds on the same build agent. Instead, TeamCity will rely on the Perforce ability to recover from the state. 
 
 ### VCS Root Client Mapping Modification
-{product="tc"}
+{instance="tc"}
 
 Usually, when a project administrator modifies a VCS root client mapping specified in the VCS root, this is considered a change in the VCS root settings and results in a [clean checkout](clean-checkout.md). This clean checkout behaviour can be disabled using the `teamcity.perforce.enable-no-clean-checkout=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 

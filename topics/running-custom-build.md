@@ -30,7 +30,7 @@ This setting allows you to choose an agent that should run your build. The follo
 * __&lt;the fastest idle agent in the N pool&gt;__ — TeamCity will run a build on an agent from a specified pool.
 
 * if [cloud integration](teamcity-integration-with-cloud-solutions.md) is configured, you can run a build on an agent spawned from a __certain cloud image__. If no cloud agents of this type are available, TeamCity will attempt to start a new one.
-  {product="tc"}
+  {instance="tc"}
 
 * __&lt;All enabled compatible agents&gt;__ — run a build simultaneously on all agents that are enabled and compatible with the build configuration. Use this option to:
   * Run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function correctly after an environment upgrade/update).
@@ -81,10 +81,10 @@ If the current build configuration uses a [Perforce](perforce.md) VCS root, you 
 _This tab is available only for builds that have dependencies on other builds_.
 
 The **Dependencies** tab allows you to rebuild all dependencies and select a particular build whose artifacts this new build should use. By default, TeamCity shows the last 20 builds. To increase the number of available recent builds, add the `teamcity.runCustomBuild.buildsLimit=<your value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 The **Dependencies** tab allows you to rebuild all dependencies and select a particular build whose artifacts this new build should use.
-{product="tcc"}
+{instance="tcc"}
 
 If you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including those that previously failed.
 
@@ -163,7 +163,7 @@ See the [following blog post](https://blog.jetbrains.com/teamcity/2012/04/teamci
 
  <seealso>
         <category ref="installation">
-            <a href="upgrading-teamcity-server-and-agents.md" product="tc">Upgrade</a>
+            <a href="upgrading-teamcity-server-and-agents.md" instance="tc">Upgrade</a>
         </category>
         <category ref="concepts">
             <a href="working-with-build-queue.md">Working with Build Queue</a>

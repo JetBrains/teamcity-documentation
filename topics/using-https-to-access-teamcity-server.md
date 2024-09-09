@@ -3,14 +3,14 @@
 
 This document describes how to configure Java applications to use HTTPS for communicating with the server.  
 If you need to connect the TeamCity server to a service behind a self-signed certificate (for example, Git) or if you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
-{product="tc"}
+{instance="tc"}
 
 This document describes how to configure Java applications to use HTTPS for communicating with the server.  
 If you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
-{product="tcc"}
+{instance="tcc"}
 
 We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. You can do it using the [TeamCity HTTPS settings](https-server-settings.md) or to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup, make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
-{product="tc"}
+{instance="tc"}
 
 ## Accessing the server via HTTPS
 
@@ -18,7 +18,7 @@ __If your certificate is valid__ (i.e. it was signed by a well known Certificate
 
 __If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
 * To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in should be able to connect by HTTPS.
-  {product="tc"}
+  {instance="tc"}
 * To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 
 ## Configuring JVM

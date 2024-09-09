@@ -5,9 +5,9 @@
 
 Agent cloud profile
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and [others](teamcity-integration-with-cloud-solutions.md). 
-{product="tc"}
+{instance="tc"}
 : A collection of settings according to which TeamCity starts virtual machines with build agents in the cloud. Configuring a cloud profile is a mandatory step of integrating TeamCity with the cloud providers: Amazon EC2, Kubernetes, VMWare vSphere, and others. 
-{product="tcc"}
+{instance="tcc"}
 
 Agent Home Directory
 : A directory where a build agent is installed. Its location can be changed manually. This directory contains the agent configuration file and other important files, such as scripts for starting and stopping the agent.
