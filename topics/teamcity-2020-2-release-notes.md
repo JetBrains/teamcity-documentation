@@ -228,7 +228,7 @@ __23 November 2020__
 [**TW-67786**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67786) — Muted section is missing for muted test in the Test History in Experimental UI.  
 [**TW-68190**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68190) — User with the &quot;Use experimental UI&quot; option is redirected to the overview page in classic UI after login using GitHub/Bitbucket  
 [**TW-68076**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68076) — Schedule trigger with daily policy may work twice in case of multi-node setup  
-[**TW-68213**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68213) — `$commented` magic word search doesn&#39;t work for non-pinned builds  
+[**TW-68213**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68213) — \$commented magic word search doesn&#39;t work for non-pinned builds  
 [**TW-68049**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68049) — Artifacts of a composite build are not cleaned if the build is a dependency itself  
 [**TW-68014**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-68014) — Project pool is displayed instead of not existing pool on the build page.  
 [**TW-67763**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67763) — Direct URLs do not open Test History page in the Experimental UI.  
@@ -263,7 +263,7 @@ __23 November 2020__
 [**TW-67761**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67761) — Deleted with project external artifact storage is deleted form list in Disk usage only after server restart  
 [**TW-67756**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67756) — All artifact storages and total sizes for all projects are displayed for user with limited administration rights  
 [**TW-67821**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67821) — Compatible agents of cloud profile are displayed as incompatible in the Compatible agents tab  
-[**TW-67809**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67809) — Lots of `S3Util$InvalidSettingsException` exceptions in the server log for running builds from a non existing project  
+[**TW-67809**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67809) — Lots of S3Util\$InvalidSettingsException exceptions in the server log for running builds from a non existing project  
 [**TW-67752**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67752) — Unknown scheduling policy for incorrect cron expressions in the Schedule Trigger after upgrade.  
 [**TW-67274**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67274) — Enable/Disable Agent popup. Selecting some value in Disable automatically field closes the dialog.  
 [**TW-67466**](https://youtrack.jetbrains.com/oauth?state=%2Fissue%2FTW-67466) — No possibility to get test runs for personal builds  
