@@ -78,7 +78,7 @@ inspections-graph
 To disable charts of particular type for a project, use the following syntax:
 
 
-```Plain Text
+```
 <coverage-graph enabled="false">
 
 ```
@@ -89,7 +89,7 @@ In this example, all code coverage charts will be removed from the Statistics pa
 
 To show the code coverage chart related only to a particular build configuration, use the following syntax:
 
-```Plain Text
+```
 <coverage-graph enabled="true">
     <build-type id="myConf1"/>
     <build-type id="myConf2"/>

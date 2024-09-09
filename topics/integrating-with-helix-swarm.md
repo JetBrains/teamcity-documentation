@@ -38,14 +38,14 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
    {style="note"}
 
 6. In the **URL** field, enter the following value:
-   ```Plain Text
+   ```
    <TeamCity_server_URL>/app/perforce/runBuildForShelve
    ```
    This value is a TeamCity REST API endpoint that Helix Swarm will use to communicate with your build configuration.
 
 7. Enter the following string in the **Body** field:
    
-   ```Plain Text
+   ```
    buildTypeId=<X>&vcsRootId=<Y>&shelvedChangelist={change}&swarmUpdateUrl={update}
    ```
 
@@ -56,7 +56,7 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
      
    This string allows Helix Swarm tests to locate a specific TeamCity configuration and schedule a new build for it. For example:
    
-   ```Plain Text
+   ```
    buildTypeId=P4-Remote_MyBuildConfig&vcsRootId=MainP4Root&shelvedChangelist={change}&swarmUpdateUrl={update}
    ```
 

@@ -165,7 +165,7 @@ To enable usage of [Azure DevOps Proxy](https://www.visualstudio.com/en-us/docs/
 
 Example:
 
-```Plain Text
+```
 TFSPROXY=https://tfs-proxy:8081
 ```
 
@@ -183,7 +183,7 @@ The default Java proxy server settings specified for the TeamCity server or agen
 The default Java proxy server settings specified for the TeamCity agent will be used in the Azure DevOps integration. On the TeamCity agent, [build agent configuration](configure-agent-installation.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity — Azure DevOps integration supports the following options:
 {product="tcc"}
 
-```Plain Text
+```
 http.proxyHost
 http.proxyPort
 http.nonProxyHosts

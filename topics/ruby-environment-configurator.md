@@ -44,7 +44,7 @@ The path to the Ruby interpreter. If not specified, the interpreter will be sear
 
 Example:
 
-```Plain Text
+```
 %\env.I_AM_DEFINED_IN_BUILDAGENT_CONFIGURATION%
 
 ```

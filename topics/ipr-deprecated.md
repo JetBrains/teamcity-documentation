@@ -141,7 +141,7 @@ Each pattern should be placed on a separate line and has the following format:
 
 
 
-```Plain Text
+```
 [-]moduleName:[testFileNamePattern]
 
 ```
@@ -152,7 +152,7 @@ where:
 * `moduleName`: this name can contain wildcards.
 * `[testFileNamePattern]`: Default value for `testFileNamePattern` is `**/*Test.java`, i.e. all files ending with Test.java in all directories. You can use [Ant syntax](https://ant.apache.org/manual/CoreTypes/patternset.html) for file patterns. The sample below includes all test files from modules ending with "test" and excludes all files from packages containing the "ui" subpackage:
 
-```Plain Text
+```
 *test:**/*Test.java
 -*:**/ui/**/*.java
 

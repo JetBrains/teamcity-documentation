@@ -142,7 +142,7 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
   * MS SQL server: `mssql-jdbc-12.6.0.jre8.jar` and `sqlserver12-win-auth.jar` for authentification.
   * PostgreSQL: `postgresql-42.7.1.jar`
 * The backslash character (`\`) is now the default escape symbol that allows you to use special characters in [feature branch specifications](working-with-feature-branches.md). This symbol was commonly recommended as an escape symbol in TeamCity documentation and support tickets, and you might already have branch specifications that look like the following:
-  ```Plain Text
+  ```
   #! escape: \
   +:release-\(7.1\)
   ```

@@ -32,7 +32,7 @@ The server URL and default artifact storage paths can be found on the **Administ
 
 The snippet below demonstrates the contents of a sample `application.properties` file.
 
-```Plain Text
+```
 teamcity.storage.migration.access.token=aBcEfgHIjkLMnoPQRsTUVwxyz
 teamcity.storage.migration.artifact.directories=C:\\ProgramData\\JetBrains\\TeamCity\\system\\artifacts
 teamcity.storage.migration.host=http://localhost:8111
@@ -44,7 +44,7 @@ To migrate artifacts to or from [Amazon S3 buckets](storing-build-artifacts-in-a
 
 If a project has multiple S3-compatible storages that need to be migrated and require different credentials, use [Custom AWS profiles](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_profiles.html) to provide these credentials. To associate a specific profile in the credentials file with the particular storage, add the following property to the tool's `config/application.properties` file:
 
-```Plain Text
+```
 teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
 ```
 

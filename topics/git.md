@@ -58,13 +58,13 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
    You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
    
-   ```Plain Text
+   snippet idPlain Text
    teamcity.git.fetchUrlMapping.firstrule = https://example.com/org/test.git => http://proxy.com/test.git
    ```
    
    You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
    
-   ```Plain Text
+   ```
    teamcity.git.fetchUrlMapping.secondrule = https://example.com/org/* => http://proxy.com/
    ```
    
@@ -94,7 +94,7 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
 * **Submodules** — specifies whether submodule repositories should be checked out. For multi-level submodule setup, you can choose between the "Checkout" (recursively fetches the entire repository tree) and "Non-recursive checkout" (fetches only those submodules that are directly referenced by the main repository) modes. In the diagram below, submodules A and B are available in both modes, whereas submodules C and D require the recursive "Checkout" mode.
 
-  ```Plain Text
+  ```
   Main_Repo
   |
   |_________ Tier 1 Submodule A
@@ -400,7 +400,7 @@ If your repository imports submodules hosted on the same VCS and these imported 
 
 Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
 
-```Plain Text
+```
 teamcity.git.https.credentials.<ALIAS>.url = https://example.com/...
 teamcity.git.https.credentials.<ALIAS>.username = johndoe
 teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh

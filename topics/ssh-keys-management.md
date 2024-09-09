@@ -106,14 +106,14 @@ In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build f
 ### View Uploaded Keys
 
 
-```Plain Text
+```
 /app/rest/projects/<project_locator>/sshKeys
 ```
 {prompt="GET"}
 
 ### Upload New SSH Keys to a Project
 
-```Plain Text
+```
 /app/rest/projects/<project_locator>/sshKeys?fileName=<Key_Name>
 ```
 {prompt="POST"}
@@ -124,7 +124,7 @@ In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build f
 
 ### Generate a New Key
 
-```Plain Text
+```
 /app/rest/projects/<project_locator>/sshKeys/generated?keyName=NewKey&keyType=RSA
 ```
 {prompt="POST"}
@@ -136,28 +136,28 @@ In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build f
 
 * Switch the "Authentication method" to "Uploaded Key". Request body: "TEAMCITY_SSH_KEY".
 
-    ```Plain Text
+    ```
     /app/rest/vcs-roots/<locator>/properties/authMethod
     ```
   {prompt="PUT"}
 
 * Select a particular SSH key. Request body: SSH key name.
 
-    ```Plain Text
+    ```
     /app/rest/vcs-roots/<locator>/properties/teamcitySshKey
     ```
   {prompt="PUT"}
 
 * Specify a passphrase required by password-encrypted SSH keys. Request body: plain password string.
 
-    ```Plain Text
+    ```
     /app/rest/vcs-roots/<locator>/properties/secure:passphrase
     ```
   {prompt="PUT"}
 
 ### Delete a Key
 
-```Plain Text
+```
 /app/rest/projects/<project_locator>/sshKeys?fileName=<Key_Name>
 ```
 {prompt="DELETE"}

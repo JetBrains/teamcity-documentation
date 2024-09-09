@@ -70,27 +70,27 @@ To perform restore from a backup file via `maintainDB`:
     
     * if the  `database.properties` file is in the TeamCity Data Directory:
     
-    ```Plain Text
+    ```
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <config/database.properties>
     ``` 
     
    * if the `database.properties` file is outside the TeamCity Data Directory:
     
-    ```Plain Text
+    ```
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file> -T <absolute path to the database.properties file of the target database on the file system outside data dir>
     ```
     
     b. To restore the data into the __same database the backup was created from__:
     
     
-    ```Plain Text
+    ```
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -F <path to the TeamCity backup file>
     ```
     
    c. To restore the backup into the __internal database__:
     
     
-    ```Plain Text
+    ```
     maintainDB.[cmd|sh] restore -A <absolute path to the newly created TeamCity Data Directory> -I -F <path to the TeamCity backup file>
     ```
 
@@ -123,7 +123,7 @@ To restore a TeamCity database only from a backup file to an existing server:
 4. If the _supplementary data_ is present in the backup, delete the content of the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData` directory (consider backing it up in another location first).
 5. Use the `restore` command (The `-T` argument must point to the `database.properties` file created in step 1):
 
-    ```Plain Text
+    ```
     maintainDB.[cmd|sh] restore -A <absolute path to TeamCity Data Directory> -F <path to the TeamCity backup file> -T <path to the database.properties file of the target database> -D
     ```
 6. See the `maintainDB` utility console output. You may have to copy the `database.properties` file manually if requested.
@@ -142,7 +142,7 @@ To resume the backup restore after an interruption:
 Run the `maintainDB` utility with the `restore` command with the required options and the `--continue` option:
 
 
-```Plain Text
+```
 maintainDB.[cmd|sh] restore <all previously used restore options> --continue
 
 ```

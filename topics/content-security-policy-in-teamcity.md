@@ -17,12 +17,12 @@ As a plugin developer, you can provide CSP directives via the [`ContentSecurityP
 As a server administrator, you can change the CSP header value via the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
 
 * For TeamCity administration pages:   
-    ```Plain Text
+    ```
     teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=<value>
  
     ```
 * For other TeamCity pages:   
-    ```Plain Text
+    ```
     teamcity.web.header.Content-Security-Policy.protectedValue=<value>
  
     ```

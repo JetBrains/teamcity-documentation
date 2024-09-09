@@ -72,7 +72,7 @@ To issue the certificate, try the following:
 
 Certificates issued by Let's Encrypt are valid for 90 days. TeamCity attempts to renew certificates 30 days before they expire automatically. You can set a different threshold via the `teamcity.https.close.expiration.threshold.<units>=value` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 
-```Plain Text
+```
 teamcity.https.close.expiration.threshold.minutes=60
 teamcity.https.close.expiration.threshold.days=40
 ```
@@ -90,7 +90,7 @@ If you do not wish to let TeamCity request certificates from Let's Encrypt, obta
 
   > If your key has a password, you can utilize OpenSSL to remove it:
   >
-  > ```Plain Text
+  > ```
   > openssl pkcs8 -topk8 -nocrypt -in [original.key] -out [new.key]
   > ```
   >
@@ -206,7 +206,7 @@ The default protocol TeamCity uses to communicate with clients is **TLS Version 
 
 To set a list of available protocols or to force TeamCity to use one specific protocol, add the `teamcity.https.use.protocols` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to a required value using the common Tomcat syntax. See this page's "protocols" attribute description to view available values: [The HTTP Connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html#SSL_Support_-_SSLHostConfig).
 
-```Plain Text
+```
 teamcity.https.use.protocols=TLSv1.3
 ```
 
