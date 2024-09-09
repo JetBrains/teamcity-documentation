@@ -160,7 +160,7 @@ Specify additional options for the builds of this build configuration.
 
 In the _Build number format_ field you can specify a pattern which is resolved and assigned to the <emphasis tooltip="build-number">build number</emphasis> on the build start.
 
-[//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")
+<!--[//]: # (Internal note. Do not delete. "Configuring General Settingsd79e124.txt")-->
 
 The following substitutions are supported in the pattern:
 

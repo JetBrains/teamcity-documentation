@@ -1,7 +1,7 @@
 [//]: # (title: Accessing Server by HTTP)
 [//]: # (auxiliary-id: Accessing Server by HTTP)
 
-[//]: # (Internal note. Do not delete. "Accessing Server by HTTPd2e3.txt")
+<!--[//]: # (Internal note. Do not delete. "Accessing Server by HTTPd2e3.txt")-->
 
 <warning>
 

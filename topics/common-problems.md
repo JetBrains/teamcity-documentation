@@ -50,7 +50,7 @@ If it still behaves differently in TeamCity, most probably this is an environmen
 
 If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](https://youtrack.jetbrains.com/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
 
-[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")
+<!--[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")-->
 
 ## Build is slow under TeamCity
 

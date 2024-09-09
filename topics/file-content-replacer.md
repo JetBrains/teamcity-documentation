@@ -249,7 +249,7 @@ Suppose you do not want to replace your `AssemblyConfiguration` with a fixed lit
 
 Do the following: change the default replacement `$1MyAssemblyConfiguration$7` to `$1$5 built by TeamCity$7`.
 
-[//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")    
+<!--[//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")-->  
 
 For changing complex regex patterns, [this external tool](https://regex101.com/) might be useful.
 
@@ -269,7 +269,7 @@ Spaces are usually considered a part of the pattern, unless they follow a comma,
 
 Note that the TeamCity server UI trims leading and trailing spaces in input fields, so a single-line pattern like `<spaces>foo.bar` will become `foo.bar` upon save. The following workarounds are available:
 
-[//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")    
+<!--[//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")-->    
 
 ### Changing only the last version part / build number of the AssemblyVersion attribute:
 

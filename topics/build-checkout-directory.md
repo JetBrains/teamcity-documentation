@@ -84,7 +84,7 @@ With the [server-side](vcs-checkout-mode.md#server-checkout) and [agent-side che
 
 It is recommended to use the [Free disk space](free-disk-space.md) build feature to ensure that the build gets enough disk free space on the build agent.
 
-[//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")-->
 
 The time frame for automatic directory expiration can be changed by specifying a new value (in hours) by either of the following ways:
 * `teamcity.agent.build.checkoutDir.expireHours` agent property in the `buildAgent.properties` file

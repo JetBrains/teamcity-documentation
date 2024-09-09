@@ -86,7 +86,7 @@ Allows you to use tags in branch specification. By default, tags are ignored.
 
 <td>
 
-[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")
+<!--[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")-->
 
 </td></tr><tr>
 

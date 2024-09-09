@@ -3,7 +3,7 @@
 
 A _history build_ is a build that starts after a build with more recent changes. That is, a history build is a build that disrupts a normal build flow according to the [order of the source revisions](revision.md#Revision+order).
 
-[//]: # (Internal note. Do not delete. "History Buildd159e7.txt")    
+<!--[//]: # (Internal note. Do not delete. "History Buildd159e7.txt")-->    
 
 A build may become a history build in the following situations:
 * If you initiate a build on particular changes manually using the _[Run Custom Build](running-custom-build.md)_ dialog.
@@ -16,7 +16,7 @@ As the history build does not reflect the current state of the sources, the foll
 * History builds are not shown on the __Projects__ or __Build Configuration Home__ page as the last finished build of a configuration.
 * The [Investigation](investigating-and-muting-build-failures.md) option is not available for history builds.
 
-[//]: # (Internal note. Do not delete. "History Buildd159e60.txt")    
+<!--[//]: # (Internal note. Do not delete. "History Buildd159e60.txt")-->    
 
  <seealso>
         <category ref="concepts">
