@@ -39,6 +39,7 @@ The __Authentication Settings__ section appears if several authentication module
 You can map external OAuth usernames with an existing TeamCity user. If a user with the respective username signs in to TeamCity via OAuth, TeamCity will be able to recognize them.
 
 <anchor name="vcsUsername"/>
+
 <anchor name="ManagingUsersandUserGroups-vcsUsername"/>
 
 ### VCS Usernames

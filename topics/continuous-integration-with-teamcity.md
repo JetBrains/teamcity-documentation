@@ -43,6 +43,7 @@ To learn more about major TeamCity features, refer to the [official JetBrains we
 
 TeamCity works well not only for administrators and build engineers, but also for developers. 
 Watch this video to learn about some of its signature features:
+
 <video src="https://youtu.be/icuhBgEFtVM"
        title="TeamCity for developers"/>
 
