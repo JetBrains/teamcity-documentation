@@ -5,7 +5,7 @@ The _Matrix Build_ [build feature](adding-build-features.md) enables you to defi
 
 For example, given a matrix build configured with the following parameters:
 
-```Plain Text
+```
 Browser: Chrome, Safari, Firefox
 env.ShouldFail: true, false
 Java: 11, 17, 21
@@ -24,7 +24,7 @@ When the matrix build is triggered, it runs builds for every combination of the 
 The **Matrix Build** dialog enables you to define the parameters of the matrix build, where each parameter definition consists of a parameter name and a list of associated values.
 
 For example, suppose you want to configure a matrix build with the following matrix parameters:
-```Plain Text
+```
 Browser: Chrome, Firefox
 Java: jdk-17, jdk-21
 ```
@@ -217,13 +217,13 @@ You can reference matrix parameters in [agent requirements](agent-requirements.m
 
 For example, when setting up automated UI testing against different browser types, you might define the following `Browser` matrix parameter:
 
-```Plain Text
+```
 Browser: Firefox, Chrome, Edge
 ```
 
 Given that the agents define environment variables to specify browser versions:
 
-```Plain Text
+```
 env.Chrome=119.0.6045.123
 env.Firefox=119.0.1
 ```
@@ -244,7 +244,7 @@ There are many different contexts where it can be useful to reference the matrix
    {style="tip"}
 
 * To reference resources needed by the build. For example, if the `Java` matrix parameter has the possible values `java-17` or `java-21`, you might reference it directly in the definition of the JDK path for your build:
-    ```Plain Text
+    ```
     /usr/lib/jvm/%\Java%-openjdk-amd64
     ```
 * If you have a build step that builds a Dockerfile for a particular Java version, you could reference the `Java` matrix parameter in the generated image file name, setting the **Image name:tag** field to `myapp:%\Java%`.
@@ -256,17 +256,17 @@ There are many different contexts where it can be useful to reference the matrix
 When you run a matrix build, artifacts from all of the generated builds are aggregated to the same location in the parent build. This can result in artifact files being overwritten.
 
 To avoid overwriting artifact files, it is better to sort the generated artifacts using a directory name defined by the combination of matrix parameter values, for example:
-```Plain Text
+```
 %\Browser%-%\Java%
 ```
 
 You can then define the artifact path as:
-```Plain Text
+```
 ch-simple/simple/target/*.jar => %\Browser%-%\Java%
 ```
 
 The artifacts from the generated builds are then written to separate directories:
-```Plain Text
+```
 Chrome-JDK_17/
 Chrome-JDK_21/
 Firefox-JDK_17/
@@ -339,17 +339,17 @@ In this section, we focus on the scenario `MatrixBuild1 -> RegularBuild2`, where
 Consider an ordinary (non-matrix) build chain with two stages:
 
 * _Build1_ has a Maven build runner configured to generate a Java package. The **Artifact paths** field in the general settings section of the build configuration is configured to capture the generated package as an artifact:
-  ```Plain Text
+  ```
   ch-simple/simple/target/*.jar => packages
   ```
 * _Build2_ is configured with an [artifact dependency](artifact-dependencies.md) on Build1, with the following **Artifacts rules** setting:
-  ```Plain Text
+  ```
   packages => dependencies
   ```
 
 In order to extend the testing to multiple browsers and Java versions, Build1 needs to be refactored as a matrix build, covering the following browser and Java version combinations:
 
-```Plain Text
+```
 Browser: Chrome, Firefox
 Java: JDK_17, JDK_21
 ```
@@ -357,7 +357,7 @@ Java: JDK_17, JDK_21
 After configuring the matrix parameters on Build1, you also need to update the artifact settings:
 
 * In _Build1_, modify the **Artifact paths** field in the general settings section of the build configuration to sort the aggregated artifacts by parameter combination:
-   ```Plain Text
+   ```
    ch-simple/simple/target/*.jar => packages/%\Browser%-%\Java%
    ```
 

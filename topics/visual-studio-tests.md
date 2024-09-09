@@ -254,40 +254,40 @@ __To install the custom logger__:
 2\. Extract the contents of the downloaded archive on the agent machine to the following path:
 * for VisualStudio 2019 update:
    
-```Plain Text
+```
 PROGRAM_FILES(x86)\Microsoft Visual Studio\2019<Edition>\Common7\IDE\Extensions\TestPlatform\Extensions
 
 ```
 
 * for VisualStudio 2017 update 5 onwards:
    
-```Plain Text
+```
 PROGRAM_FILES(x86)\Microsoft Visual Studio\2017<Edition>\Common7\IDE\Extensions\TestPlatform\Extensions
 
 ```
 * for VisualStudio 2017 up to update 4:
    
-```Plain Text
+```
 PROGRAM_FILES(x86)\Microsoft Visual Studio\2017<Edition>\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Extensions
 
 ```
 * for VisualStudio 2015:
 
-```Plain Text
+```
 PROGRAM_FILES\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Extensions
 
 ```
 
 * for VisualStudio 2013:
 
-```Plain Text
+```
 PROGRAM_FILES\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Extensions
 
 ```
 
 * for VisualStudio 2012:
 
-```Plain Text
+```
 PROGRAM_FILES\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Extensions
 
 ```

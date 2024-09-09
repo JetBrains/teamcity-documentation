@@ -196,7 +196,7 @@ For example, consider how to create a build step that builds static content for 
     * **Select key** — Select `WebServerKey` from the dropdown list
     * **Commands** — Enter the following shell commands:
 
-       ```Plain Text
+       ```
        echo 'running deploy.sh ...'
        /home/jdoe/scripts/deploy.sh
        ```

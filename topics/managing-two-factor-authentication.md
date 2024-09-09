@@ -35,7 +35,7 @@ This behavior adds an extra layer of protection that prevents attackers who gain
 You can modify the duration of this interval via the `teamcity.2fa.sensitive.settings.access.duration` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 {product="tc"}
 
-```Plain Text
+```
 teamcity.2fa.sensitive.settings.access.duration.seconds=45
 # or
 teamcity.2fa.sensitive.settings.access.duration.minutes=5
@@ -49,7 +49,7 @@ teamcity.2fa.sensitive.settings.access.duration.hours=3
 
 If the global two-factor authentication mode is "Optional", you can force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
-```Plain Text
+```
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 

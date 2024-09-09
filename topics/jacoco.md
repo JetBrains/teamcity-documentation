@@ -101,7 +101,7 @@ The code coverage results can be viewed on the __Overview__ tab of the __Build R
 
 TeamCity can parse JaCoCo coverage data and generate a report using a [service message](service-messages.md) of the following format:
 
-```Plain Text
+```
 ##teamcity[jacocoReport dataPath='<path to jacoco.exec file>']
 
 ```
@@ -288,7 +288,7 @@ Use `\` (backslash) to escape space characters in paths.
 
 An example of a complete service message:
 
-```Plain Text
+```
 ##teamcity[jacocoReport dataPath='jacoco.exec' includes='com.package.core.*' classpath='classes/lib/some.jar' reportDir='temp/jacocoReport']
 
 ```

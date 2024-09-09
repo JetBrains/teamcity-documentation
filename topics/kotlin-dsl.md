@@ -756,7 +756,7 @@ A single .kts file that describes settings for all projects on your server can b
 
 In the first case, TeamCity automatically splits its settings once your build server grows beyond 20 entities. For manually created .kts files, you can split them as follows:
 
-  ```Plain Text
+  ```
   .teamcity
     └─── pom.xml
     └─── settings.kts   # Stores only the Kotlin DSL version and the "project(_Self.Project)" line
@@ -781,7 +781,7 @@ In the first case, TeamCity automatically splits its settings once your build se
   
   Each folder (including the "_Self" folder for the &lt;Root&gt; project) has the following structure:
   
-  ```Plain Text
+  ```
   ProjectA
     └─── Project.kt   # Stores a list of subprojects, parameters, connections, and other project-level settings
     └─── buildTypes   # A folder with .kt files that define build configurations, their steps, triggers, build features, and more

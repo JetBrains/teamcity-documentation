@@ -137,7 +137,7 @@ TeamCity now supports the [ChangeView](https://www.perforce.com/manuals/p4guide/
 
 Moreover, if a [Perforce VCS root](perforce.md) is set to the _Client mapping mode_, you can use the `ChangeView` specification to limit the root's scope to a particular revision or multiple revisions. To do this, open the settings of a Perforce VCS root, choose the Client mapping connection mode, and enter the client mapping. For example:
 
-```Plain Text
+```
 //my-depot/... //team-city-agent/...
 ChangeView:
     //my-depot/dir1/…@90

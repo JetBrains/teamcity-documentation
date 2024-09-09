@@ -34,7 +34,7 @@ TeamCity parameters can obtain their values from one or multiple sources listed 
   })
   ```
 
-  ```Plain Text
+  ```
   # An agent's "buildAgent.properties" files
   
   ######################################

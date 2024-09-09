@@ -36,7 +36,7 @@ To label Subversion VCS roots, it is required to set [labeling rules](subversion
 
 Labeling rules are specified as newline-delimited rules in the following format:
 
-```Plain Text
+```
 TrunkOrBranchRepositoryPath => tagDirectoryRepositoryPath
 
 ```
@@ -53,7 +53,7 @@ If the `tagDirectoryRepositoryPath` directory already contains a subdirectory wi
 
 For example, there is a VCS root with the URL `svn://address/root/project` where `svn://address/root` is the repository root, and the repository has the structure:
 
-```Plain Text
+```
 -project
 --trunk
 --branch1
@@ -64,7 +64,7 @@ For example, there is a VCS root with the URL `svn://address/root/project` where
 
 In this case, the labeling rules should be:
 
-```Plain Text
+```
 /project/trunk=>/project/tags
 /project/branch1=>/project/tags
 /project/branch2=>/project/tags
@@ -84,7 +84,7 @@ If you prefer using static labels, you can enable the previous behavior by setti
 
 You can use variables substitution in both labeling rules and labeling patterns. See a labeling rule example in a VCS root used in different configurations:
 
-```Plain Text
+```
 /projects/%\projectName%/trunk => /projects/%\projectName%/tags
 
 ```
@@ -93,7 +93,7 @@ This will require you to set the `%\projectName%` [configuration parameter](conf
 
 By default, TeamCity will append the label name to the end of the specified target path. If you want to have a different directory structure and put the label in the middle of the target path, you can use the following syntax:
 
-```Plain Text
+```
 /project/trunk => /tagged_configurations/%\%system.build.label%%/project
 /modules/module1/trunk => /tagged_configurations/%\%system.build.label%%/module1
 /modules/module2/trunk => /tagged_configurations/%\%system.build.label%%/module2

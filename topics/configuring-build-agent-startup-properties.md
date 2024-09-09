@@ -29,7 +29,7 @@ Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` sc
 
 In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option):
 
-```Plain Text
+```
 wrapper.app.parameter.<N>
 
 ```
@@ -67,7 +67,7 @@ Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` sc
 
 In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option, the `N` number should increase):
 
-```Plain Text
+```
 wrapper.java.additional.<N>
 
 ```
