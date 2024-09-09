@@ -1,7 +1,7 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud macOS Agents)
 [//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud macOS Agents)
 
-<chunk id="macos-jb-agents">
+<snippet id="macos-jb-agents">
 
 |Software|Version|
 |---|---|

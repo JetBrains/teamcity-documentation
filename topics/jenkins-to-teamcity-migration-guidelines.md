@@ -16,7 +16,7 @@ This document provides the basics you need to know when migrating from Jenkins t
 
 Jenkins and TeamCity mostly feature the same set of concepts, however, with slightly different naming. The following table provides a mapping for some of the Jenkins concepts to the TeamCity counterparts.
 
-<snippet include-id="jenkins-mapping-to-teamcity">
+<snippet id="jenkins-mapping-to-teamcity">
 
 <table><tr>
 

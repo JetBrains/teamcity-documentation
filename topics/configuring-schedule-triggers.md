@@ -73,7 +73,7 @@ Use this option to run a build simultaneously on all agents that are enabled and
 * run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update)
 * run a build on different platforms (for example, you can set up a configuration and specify for it a number of compatible build agents with different environments installed)
 
-<snippet include-id="queue-optimization">
+<snippet id="queue-optimization">
 
 ### Build Queue Optimization Settings
 

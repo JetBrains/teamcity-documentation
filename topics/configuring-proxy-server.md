@@ -337,7 +337,7 @@ teamcity.https.proxyPassword=password
 
 A build agent typically needs to make a variety of outbound connections: to the TeamCity server, to S3 artifact storage, to VCS hosts, and so on. This section describes how to configure the build agent so that the outbound connections continue to work after the build agent is deployed behind a proxy.
 
-<snippet include-id="agent-proxy-server">
+<snippet id="agent-proxy-server">
 
 On the TeamCity agent side, specify the proxy to connect to the TeamCity server using the following properties in the [`buildAgent.properties`](configure-agent-installation.md) file:
 

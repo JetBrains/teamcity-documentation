@@ -1,7 +1,7 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud Windows Agents)
 [//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud Windows Agents)
 
-<chunk id="windows-jb-agents">
+<snippet id="windows-jb-agents">
 
 |Software|Version|
 |---|---|

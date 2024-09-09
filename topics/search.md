@@ -663,7 +663,7 @@ Search for personal builds. For example, using `-$p` expression in your query wi
 
 ## Search by Build Log
 
-<snippet include-id="search-in-logs">
+<snippet id="search-in-logs">
 
 By default, TeamCity does not search build logs for the entered string. To enable this feature, do the following:
 

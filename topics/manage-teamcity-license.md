@@ -164,7 +164,7 @@ The same page allows you to acquire legacy license keys (the **Legacy license ke
 
 ## Limitations and Requirements
 
-<snippet include-id="license-limitations">
+<snippet id="license-limitations">
 
 A single license can only be used on a single running TeamCity server at any given time. Running secondary TeamCity nodes in addition to the main node does not require a separate license at this time.
 

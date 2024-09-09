@@ -11,7 +11,7 @@ The _NUnit_ build runner is designed to run NUnit tests on the TeamCity server. 
 
 ## Legacy and Updated NUnit Runners
 
-<snippet include-id="2024-07-nunit">
+<snippet id="2024-07-nunit">
 
 Version 2024.07 introduces an updated NUnit runner that, compared to the legacy runner, does not allow you to select a .NET Runtime or .NET Framework version. If needed, use the **Additional command line parameters** field to specify these settings. In addition, the updated runner no longer supports outdated NUnit 2.x.x versions.
 
@@ -21,7 +21,7 @@ In version 2024.07, both updated and legacy runners are fully functional and ava
 
 ## Installing NUnit
 
-<snippet include-id="installing-nunit">
+<snippet id="installing-nunit">
 
 To use the NUnit build runner, you need to install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents via one of the following options:
 * Instruct the first build step to install NUnit from a NuGet package. 

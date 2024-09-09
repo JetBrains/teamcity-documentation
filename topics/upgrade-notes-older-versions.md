@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Upgrade Notes  for Older Versions)
 
 
-<chunk id="older-upgrade-notes">
+<snippet id="older-upgrade-notes">
 
 ## Changes from 2022.04 to 2022.10
 

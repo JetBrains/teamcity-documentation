@@ -149,7 +149,7 @@ This page explains conditions used in [agent requirements](agent-requirements.md
 
 ## Combining Conditions
 
-<snippet include-id="combining-conditions">
+<snippet id="combining-conditions">
 
 When multiple requirements are defined, they are implicitly joined by boolean AND. For example, the following set of conditions requires that both the `env.JDK_17_0` parameter AND the `env.JDK_21_0` parameter exist:
 

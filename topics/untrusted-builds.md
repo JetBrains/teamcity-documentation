@@ -4,7 +4,7 @@ The **Untrusted Builds** section allows you to set up the changes verification p
 
 <img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
 
-<snippet include-id="untrusted-builds-and-build-approval">
+<snippet id="untrusted-builds-and-build-approval">
 
 > Do not confuse the [](untrusted-builds.md) and [](build-approval.md) features. Despite certain similarities, these are separate features that serve different purposes.
 > 
