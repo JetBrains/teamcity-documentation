@@ -143,7 +143,7 @@ Windows
 <td>
 
 
-[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
+<!--[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")-->
 
 * Installed JDK or JRE (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)).
 * `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it in __Administration | Tools__. Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:

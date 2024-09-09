@@ -60,11 +60,11 @@ Apart from the __Actions__ menu, you can tag a build in the _[Run Custom Build](
 
 You can also add and modify build tags using [service messages](service-messages.md#Adding+and+Removing+Build+Tags) and [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags).
 
-[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")-->
 
 ### Add Build to Favorites
 
-[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")
+<!--[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")-->
 
 You can add builds to _favorites_ to have quick access to them. Favorite builds can also be set as a filter option for [notifications](set-up-notifications.md).
 

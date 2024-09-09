@@ -1,6 +1,6 @@
 [//]: # (title: Git)
 [//]: # (auxiliary-id: Git)
-[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
+<!--[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")-->  
  
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 

@@ -189,7 +189,7 @@ The report contains the following information:
 After generating the report, TeamCity removes the `diagnostics:cleanup` tag from the build.
 
 
-[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
+<!--[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")-->    
 
 <seealso>
         <category ref="concepts">

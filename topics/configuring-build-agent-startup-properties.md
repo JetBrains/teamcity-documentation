@@ -79,7 +79,7 @@ Make sure to renumber all lines after the inserted ones.
 
 
 
-[//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
+<!--[//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")-->    
 
 <seealso>
         <category ref="concepts">

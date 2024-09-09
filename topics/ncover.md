@@ -10,7 +10,7 @@ __Important Notes__
 * You don't need to explicitly pass any of the NCover/NCoverExplorer arguments to the TeamCity NUnit test runner.
 * NCover supports .NET Framework 2.0 and 3.5 started under x86 platform (NCover 3.x also supports x64 platform and works with .NET Framework 4.0). Make sure, you use have specified the same platform both for NCover and NUnit.
 
-[//]: # (Internal note. Do not delete. "NCoverd221e55.txt")    
+<!--[//]: # (Internal note. Do not delete. "NCoverd221e55.txt")-->    
 
 ## Configuring NCover 1.x
 

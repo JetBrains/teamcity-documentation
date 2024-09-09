@@ -58,7 +58,7 @@ Depending on your needs, you can modify this requirement as follows:
 * Use the `teamcity.agent.jvm.os.name` parameter to choose agents by their operating systems rather than names. For example, `equals("teamcity.agent.jvm.os.name", "Mac OS X")`.
 
 
-[//]: # (Internal note. Do not delete. "Assigning Build Configurations to Specific Build Agentsd17e193.txt")    
+<!--[//]: # (Internal note. Do not delete. "Assigning Build Configurations to Specific Build Agentsd17e193.txt")--> 
 
  <seealso>
         <category ref="concepts">
