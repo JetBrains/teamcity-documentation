@@ -379,8 +379,11 @@ An integer value to use as the maximum for the Y axis value .
 </td></tr></table>
 
 <anchor name="listOfDefaultStatisticValues"/>
+
 <anchor name="Build Metrics Provided by TeamCity"/>
+
 <anchor name="predefinedStatisticsKeys"/>
+
 <anchor name="CustomChart-DefaultStatisticsValuesProvidedbyTeamCity"/>
 
 #### Default Statistics Values Provided by TeamCity

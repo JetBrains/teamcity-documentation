@@ -104,6 +104,7 @@ If enabled, TeamCity will look for Gradle Wrapper scripts in the checkout direct
 </td></tr></table>
 
 <anchor name="LaunchingParameters"/>
+
 <anchor name="Gradle-LaunchingParameters"/>
 
 ### Run Parameters
