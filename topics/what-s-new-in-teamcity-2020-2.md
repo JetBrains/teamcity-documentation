@@ -135,7 +135,7 @@ To add a new token, go to __My Settings & Tools | Access tokens__:
 <img src="tmp-access-token.png" alt="Temporary access tokens"/>
 
 ## Editing project settings on secondary nodes
-{product="tc"}
+{instance="tc"}
 
 TeamCity 2020.2 adds a [new responsibility](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) for secondary nodes. If granted to a node, it allows UI actions: running, stopping, tagging, commenting builds, and much more. Users can now also edit projects and build configurations on secondary nodes (with a few limitations, such as editing cloud profiles).   
 Disabling this responsibility will switch a secondary node to a read-only mode.
@@ -143,7 +143,7 @@ Disabling this responsibility will switch a secondary node to a read-only mode.
 See also [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 
 ## Monitoring disk usage in external storage
-{product="tc"}
+{instance="tc"}
 
 An increasing number of our users prefer storing build artifacts in cloud — for example, in Amazon S3. However, it was not previously possible to see what amount of data is stored there.
 
@@ -207,7 +207,7 @@ If you need to publish NuGet packages and then use their contents within one bui
    * [Test statistics for personal builds](https://www.jetbrains.com/help/teamcity/rest/manage-tests-and-build-problems.html)
 * The [.NET](net.md) build runner now supports earlier versions of Visual Studio and MSBuild. Currently supported versions are: Visual Studio 2010 or later, MSBuild 4 / 12 or later.
 * To see all bundled tool updates, read our [upgrade notes](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
-{product="tc"}
+{instance="tc"}
 * Version 2020.2 comes with ~30 performance fixes in various pieces of functionality (for example, in the Custom Run dialog).
 
 ## Fixed issues
@@ -215,7 +215,7 @@ If you need to publish NuGet packages and then use their contents within one bui
 See [TeamCity 2020.2 release notes](teamcity-2020-2-release-notes.md).
 
 ## Upgrade notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in [version 2020.2 comparing to 2020.1.x](upgrade-notes.md#Changes+from+2020.1.x+to+2020.2).
 

@@ -3,7 +3,7 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 _Agent work directory_ is the directory on a build agent that is used as a containing directory for the default [checkout directories](build-checkout-directory.md). By default, this is the `<[build_agent_home](agent-home-directory.md)>/work` directory.
 

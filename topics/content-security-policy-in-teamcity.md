@@ -6,13 +6,13 @@ TeamCity implements additional HTTP security with the [Content-Security-Policy](
 The header prohibits TeamCity pages from downloading external resources, with some whitelisted exceptions. Downloading from non-whitelisted resources will be blocked.
 
 In some setups, you may need to allow downloading external resources. For example, when using analytics tools or when integrating TeamCity with external services via a plugin.
-{product="tc"}
+{instance="tc"}
 
 As a plugin developer, you can provide CSP directives via the [`ContentSecurityPolicyConfig`](https://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/web/ContentSecurityPolicyConfig.html) OpenAPI interface.
-{product="tc"}
+{instance="tc"}
 
 ## Changing CSP Header Value
-{product="tc"}
+{instance="tc"}
 
 As a server administrator, you can change the CSP header value via the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
 

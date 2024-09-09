@@ -49,7 +49,7 @@ Build tags are labels that can help:
 * Organize the history of your builds.
 * Quickly navigate to the builds marked with a specific tag.
 * [Search](search.md) for a build with a particular tag.
-{product="tc"}
+{instance="tc"}
 * Create an [artifact dependency](artifact-dependencies.md) on a build with a particular tag.
 
 In the _Edit tags_ dialog, enter one or more tags separated by space, comma, or semicolon. For example, `v2022 release` will create two tags: `v2022` and `release`.

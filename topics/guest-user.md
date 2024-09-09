@@ -5,7 +5,7 @@ TeamCity provides the ability to turn on the guest login allowing anonymous acce
 
 >If you are using TeamCity Cloud, please be extremely cautious when enabling this functionality. Unlike the TeamCity On-Premises instances, most often installed in private environments, each TeamCity Cloud instance is globally available via its URL. If guest login is disabled on the instance (default behavior), only authorized users will be able to access it. If you enable it, anyone who knows your server address will be able to view its UI in the read-only mode. We suggest that you enable it for a Cloud server only if absolutely necessary and carefully manage the restrictions of the guest user roles.
 >
-{type="warning" product="tcc"}
+{type="warning" instance="tcc"}
 
 A server administrator can [enable guest login](enabling-guest-login.md) on the __Administration | Authentication__ page.
 
@@ -28,6 +28,6 @@ http://buildserver:8111/guestAuth/repository/download/<BuildConfigName>/<BuildID
         <category ref="admin-guide">
             <a href="enabling-guest-login.md">Enabling Guest Login</a>
             <a href="managing-roles-and-permissions.md">Roles and Permissions</a>
-            <a href="super-user.md" product="tc">Super User</a>
+            <a href="super-user.md" instance="tc">Super User</a>
         </category>
 </seealso>

@@ -3,7 +3,7 @@
 
 >This page is related only to [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). Data of [JetBrains-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) is backed up automatically.
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 To back up build agent's data:
 	

@@ -2,13 +2,13 @@
 [//]: # (auxiliary-id: Install and Start TeamCity Server;Installation;Installing and Configuring the TeamCity Server)
 
 TeamCity Server is a web application responsible for the core functionality of TeamCity. It provides a user interface, distributes the jobs (builds) to TeamCity agents, and aggregates their results. This section contains articles related to installing and starting your own instance of TeamCity Server.
-{product="tc"}
+{instance="tc"}
 
 TeamCity Server is a web application responsible for the core functionality of TeamCity. It provides a user interface, distributes the jobs (builds) to TeamCity agents, and aggregates their results. Your TeamCity Cloud server is installed automatically after your register an account: no extra actions are required. After the server is ready, an invitation link will be sent to your email.
-{product="tcc"}
+{instance="tcc"}
 
 ## Preliminaries
-{product="tc"}
+{instance="tc"}
 
 Before installing the server, make sure to:
 1. Estimate your [system requirements](system-requirements.md).
@@ -16,7 +16,7 @@ Before installing the server, make sure to:
 3. Select a convenient installation package, as described [below](#Select+TeamCity+Installation+Package).
 
 ## Select TeamCity Installation Package
-{product="tc"}
+{instance="tc"}
 
 TeamCity installation package is identical for both Professional and Enterprise Editions.
 

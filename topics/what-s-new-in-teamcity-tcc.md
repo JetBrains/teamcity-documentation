@@ -5,7 +5,7 @@
 
 
 ## Custom Location for Versioned Settings
-{product="tcc"}
+{instance="tcc"}
 
 When you enable synchronization on the **Versioned Settings** page in your project settings, you can now specify a custom location for your remotely stored Kotlin DSL scripts and XML settings.
 
@@ -20,10 +20,10 @@ Learn more: [Storing Project Settings in Version Control Systems](storing-projec
 
 
 ## VCS Intergration Enhancements
-{product="tcc"}
+{instance="tcc"}
 
 ### New GitHub Checks Webhook Trigger
-{product="tcc"}
+{instance="tcc"}
 
 Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via [TeamCity GitHub App connections](configuring-connections.md#github-app).
 
@@ -35,7 +35,7 @@ Learn more: [](github-checks-trigger.md)
 
 
 ### Non-Recursive Submodule Checkout
-{product="tcc"}
+{instance="tcc"}
 
 The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
 
@@ -47,7 +47,7 @@ Learn more: [Git General Settings](git.md#General+Settings)
 
 
 ### Security Enhancement for TeamCity Connections
-{product="tcc"}
+{instance="tcc"}
 
 Following our commitment to identify and eliminate security vulnerabilities, we have added the new **Enable unique callback/redirect URL** setting to the following [TeamCity connections](configuring-connections.md):
 
@@ -69,7 +69,7 @@ Learn more: [Configuring Connections](configuring-connections.md)
 
 
 ## Upload SSH Keys from the Create Project Page
-{product="tcc"}
+{instance="tcc"}
 
 When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
@@ -82,7 +82,7 @@ Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
 
 
 ## Sakura UI: Problems Page Redesign
-{product="tcc"}
+{instance="tcc"}
 
 We have overhauled the **Problems** tab of the [](project-home-page.md) to simplify the user experience and facilitate build failure investigation and resolution workflows.
 
@@ -96,7 +96,7 @@ Learn more: [](investigating-and-muting-build-failures.md)
 
 
 ## NUnit and NAnt Runners Deprecation
-{product="tcc"}
+{instance="tcc"}
 
 <include src="nunit.md" include-id="2024-07-nunit"/>
 
@@ -105,7 +105,7 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
 
 
 ## Miscellaneous Changes
-{product="tcc"}
+{instance="tcc"}
 
 * The list of [statistic values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported by TeamCity now includes the **AllTestsDuration** value.
 <!--* Working with the [interactive agent terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) now counts as a valid agent activity that prolongs the agent lifetime and prevents it from automatic inactivity shutdown.-->

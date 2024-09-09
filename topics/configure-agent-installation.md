@@ -3,7 +3,7 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 A build agent can be configured by adjusting in the `<TeamCity Agent Home>/conf/buildAgent.properties` file.
 
@@ -53,7 +53,7 @@ authorizationToken=1234567890abcdefghijklml
 Make sure the file is writable for the build agent process itself. For example, that the file is updated to store its authorization token generated on the server-side.
 
 If you install multiple TeamCity nodes [behind a reverse proxy](multinode-setup.md#Proxy+Configuration), `serverUrl` should be set to the proxy URL.
-{product="tc"}
+{instance="tc"}
 
 If the `name` property is not specified, the server will generate a build agent name automatically. By default, this name will be created from the build agent's host name.
 
