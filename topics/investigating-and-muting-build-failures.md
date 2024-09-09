@@ -127,7 +127,7 @@ When editing investigations and mutes, TeamCity allows you to specify the follow
   * `On a specific date` — TeamCity closes the investigation or unmutes a problem on a given date. This condition is useful for non-critical issues that your team cannot fix right away, but you need the CI routines to keep running.
 
 * Copy settings to child subprojects. If you edit a investigation/mute that exists in this project and its child subprojects, TeamCity allows you to choose whether the updated settings should be propagated to these subprojects. Otherwise, investigations/mutes of child subprojects will differ (for example, assigned to a different user).
-  <img src="dk-copy-investigation-settings.png" width="706" alt="Copy settings"/>
+  <img src="dk-copy-investigation-settings.png" width="706" alt="Copy settings" style="block"/>
 
 ### Required Permissions
 

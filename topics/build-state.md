@@ -246,13 +246,13 @@ Build states affect the way TeamCity projects and build configurations are prese
 Project and configuration icons have three distinctive colors:
 
 * **Gray** — corresponds to unknown (neither successful nor failure) project/configuration status. This typically happens when no recent builds exist.
-    <img src="dk-icons-gray.png" width="660" alt="Gray project and configuration icons"/>
+    <img src="dk-icons-gray.png" width="660" alt="Gray project and configuration icons" style="block"/>
 
 * **Green** — used for configurations whose last builds were successful and projects whose configurations are all green.
-  <img src="dk-icons-green.png" width="660" alt="Green project and configuration icons"/>
+  <img src="dk-icons-green.png" width="660" alt="Green project and configuration icons" style="block"/>
 
 * **Red** — used for configurations whose last builds failed and projects that have at least one red configuration.
-  <img src="dk-icons-red.png" width="660" alt="Red project and configuration icons"/>
+  <img src="dk-icons-red.png" width="660" alt="Red project and configuration icons" style="block"/>
 
 
 TeamCity uses builds of the **specific branch** to identify the project/configuration status. If a configuration's version selector points to the specific branch, builds of this branch affect the configuration status. Global views, such as project overview and side navigation bar, use configuration default branches instead.
