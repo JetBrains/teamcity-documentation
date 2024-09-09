@@ -124,6 +124,6 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
   <img src="dk-vcslabeling-p4message.png" width="706" alt="Custom message"/>
 
 
-</chunk>
+</snippet>
 
 
