@@ -328,7 +328,7 @@ Currently, if Kotlin DSL uses context parameters, then the settings of such proj
 To use a context parameter in a TeamCity project, you need to (1) define it in the project versioned settings in the UI and (2) reference it in the project DSL.
 
 1. __Managing context parameters in UI__   
-   You can manage project context parameters on the __Versioned Settings | Context Parameters__ tab. <img src="context-dsl-parameters.png" width="800" alt="Kotlin DSL parameters"/>   
+   You can manage project context parameters on the __Versioned Settings | Context Parameters__ tab. <img src="context-dsl-parameters.png" width="800" alt="Kotlin DSL parameters" style="block"/>   
    After you add, edit, or delete the parameters and click __Save__, TeamCity will reload the DSL configuration and apply the changed values to the project settings.
 2. __Referencing context parameters in DSL__   
    To reference a context parameter in the DSL code, use the `getParameter()` method of the `DslContext` object. You can specify a default value of this parameter as an optional second argument: `getParameter("<parameter-name>", "<default-value>")`.   
