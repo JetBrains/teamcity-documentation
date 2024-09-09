@@ -54,8 +54,8 @@ Server build parameters are typically available as a system property and a corre
 <dt>system.teamcity.build.id</dt>
 <dd>The internal unique ID used by TeamCity to reference builds.</dd>
 
-<dt product="tc">teamcity.build.responsibleNode.id</dt>
-<dd product="tc">In <a href="multinode-setup.md">multinode setup</a>, this parameter returns the node to which it is attached. Can be assigned to the <code>X-TeamCity-Node-Id-Cookie</code> cookie when sending logging <a href="teamcity-rest-api.md">REST API</a> requests to the <code>/app/rest/builds/id:build_id/log</code> endpoint.</dd>
+<dt instance="tc">teamcity.build.responsibleNode.id</dt>
+<dd instance="tc">In <a href="multinode-setup.md">multinode setup</a>, this parameter returns the node to which it is attached. Can be assigned to the <code>X-TeamCity-Node-Id-Cookie</code> cookie when sending logging <a href="teamcity-rest-api.md">REST API</a> requests to the <code>/app/rest/builds/id:build_id/log</code> endpoint.</dd>
 
 <dt>system.teamcity.auth.userId</dt>
 <dd>A generated username that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</dd>
@@ -117,11 +117,11 @@ To check all existing parameters and their current values for a given build agen
 
 <dl>
 
-<dt product="tc">teamcity.agent.name</dt>
-<dd product="tc">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
+<dt instance="tc">teamcity.agent.name</dt>
+<dd instance="tc">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
 
-<dt product="tcc">teamcity.agent.name</dt>
-<dd product="tcc">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
+<dt instance="tcc">teamcity.agent.name</dt>
+<dd instance="tcc">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
 
 
 <dt>teamcity.agent.work.dir</dt>
@@ -133,8 +133,8 @@ To check all existing parameters and their current values for a given build agen
 <dt>teamcity.agent.home.dir</dt>
 <dd>The path to the <a href="agent-home-directory.md">agent home directory</a></dd>
 
-<dt product="tc">teamcity.agent.tools.dir</dt>
-<dd product="tc">The path to the <a href="installing-agent-tools.md">Tools</a> directory on the agent.</dd>
+<dt instance="tc">teamcity.agent.tools.dir</dt>
+<dd instance="tc">The path to the <a href="installing-agent-tools.md">Tools</a> directory on the agent.</dd>
 
 <dt>teamcity.agent.jvm.os.version</dt>
 <dd>The operating system version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
@@ -282,7 +282,7 @@ The following locations are searched (some locations are common for all OSs, som
 * A custom directory on the agent, if defined. See [how to define a custom directory](#Defining+Custom+Directory+to+Search+for+Java).
 * The [agent tools](installing-agent-tools.md) directory, `<Agent Home Directory>/tools`, is checked for containing a JRE or JDK. By default, the subdirectories of `/tools` are not scanned. To search the subdirectories, define `teamcity.agent.java.search.path=%\agent.tools.NAME%/INNER_PATH` in the `buildAgent.properties` file.  
   For Unix and macOS, remember to [set the executable bit](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html) on the files for TeamCity to be able to launch the discovered Java.
-{product="tc"}  
+{instance="tc"}  
 * In the paths specified by the `JAVA_HOME`, `JDK_HOME`, `JRE_HOME` environment variables, if defined.
 * The OS-specific locations:  
 

@@ -4,13 +4,13 @@
 >Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
 
 To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
-{product="tc"}
+{instance="tc"}
 
 To change the server configuration, go to __Administration | Cloud Server Settings__.
-{product="tcc"}
+{instance="tcc"}
 
 ## TeamCity Configuration
-{product="tc"}
+{instance="tc"}
 
 <table><tr>
 
@@ -122,7 +122,7 @@ Maximum size in bytes. KB, MB, GB or TB suffixes are allowed.
 
 </td></tr>
 
-<tr product="tc">
+<tr instance="tc">
 
 <td>
 
@@ -138,7 +138,7 @@ This helps prevent memory consumption problems in case multiple builds publish m
 
 > This setting does not consider [hidden artifacts](build-artifact.md#Hidden+Artifacts), which have their own limit. If the number of **hidden** artifacts your build produces exceeds this separate threshold, TeamCity reports the "Failed to publish artifacts" error. To fix this issue, add the `teamcity.artifact.limit.internalArtifactsNumber=<value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (the default value is 1000).
 >
-> {type="tip" product="tc"}
+> {type="tip" instance="tc"}
 
 </td></tr>
 
@@ -172,7 +172,7 @@ Setting
 
 Description
 
-</td></tr><tr product="tc">
+</td></tr><tr instance="tc">
 
 <td>
 
@@ -203,7 +203,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
 ## Encryption Settings
-{id="encryption-settings" auxiliary-id="Encryption Settings" product="tc"}
+{id="encryption-settings" auxiliary-id="Encryption Settings" instance="tc"}
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 
@@ -222,7 +222,7 @@ During backup, your custom keys will be exported along with their projects and a
 </note>
 
 ## Artifacts' Domain Isolation
-{id="artifacts-domain-isolation" auxiliary-id="Artifacts Domain Isolation" product="tc"}
+{id="artifacts-domain-isolation" auxiliary-id="Artifacts Domain Isolation" instance="tc"}
 
 <table><tr>
 

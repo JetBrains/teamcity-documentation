@@ -70,7 +70,7 @@ You can configure the notifier settings, create, change, and delete notification
         <category ref="user-guide">
             <a href="adding-notification-rules.md">Subscribing to Notifications</a>
         </category>
-        <category ref="admin-guide" product="tc">
+        <category ref="admin-guide" instance="tc">
             <a href="customizing-notification-templates.md">Customizing Notifications</a>
         </category>
 </seealso>

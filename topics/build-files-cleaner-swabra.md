@@ -129,7 +129,7 @@ If a build employs the agent checkout, Swabra ignores all `.svn`, `.git`, `.hg`,
 
 
 ## Installing Handle
-{product="tc"}
+{instance="tc"}
 
 You can install `handle.exe` from the __Administration__ | __Tools__ page.  
 Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.  
@@ -138,7 +138,7 @@ Specify whether you want to download the latest version of `handle.exe` or uploa
 Note that running `handle.exe` [requires administrator privileges](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) for the build agent user.
 
 ## Installing Handle
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity Cloud does not currently support manual installation of agent tools. Contact TeamCity Support if you need Handle to be installed in your TeamCity Cloud instance.
 

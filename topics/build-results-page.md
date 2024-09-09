@@ -69,7 +69,7 @@ For each change on this page, you can:
 * Download the patch.
 * Download the patch to your IDE.
 * Review the change in an [external change viewer](external-changes-viewer.md), if configured by the administrator.
-  {product="tc"}
+  {instance="tc"}
 
 ## Build Log Tab
 

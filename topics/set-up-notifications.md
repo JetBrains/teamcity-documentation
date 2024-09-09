@@ -56,6 +56,6 @@ The notification about a certain event is only sent if this event satisfies any 
 Admins can configure these rules per [user group](creating-and-managing-user-groups.md), and its users will inherit these rules automatically.
 
 ## Customize Notifications
-{product="tc"}
+{instance="tc"}
 
 You can change the text and structure of the notification messages by altering their templates. Read [our instructions](customizing-notification-templates.md) on this subject.

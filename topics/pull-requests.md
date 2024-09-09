@@ -697,7 +697,7 @@ You can automate your setup further, so TeamCity:
 * If you want to run a whole [build chain](build-chain.md) on a pull request, remember to add the Pull Requests feature to each build configuration of the chain. To simplify this procedure, you can set everything in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 
 ## Troubleshooting
-{product="tc"}
+{instance="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Pull Requests build feature to the `teamcity-pull-requests.log` file. Apply the "debug-pull-requests" preset to include DEBUG-level events to this log.
 

@@ -22,21 +22,21 @@ Contact us about:
 
 Before requesting support, we suggest that you check if the answer is already available in:
 * online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md), [Licensing Policy](licensing-policy.md)
-{product="tc"}
+{instance="tc"}
 * online documentation: [Common Problems](common-problems.md), [Known Issues](known-issues.md)
-  {product="tcc"}
+  {instance="tcc"}
 * [public issue tracker](https://youtrack.jetbrains.com/issues/TW)
 * [community forum](https://jb.gg/teamcity-forum)
 
 When submitting a request, make sure:
-{product="tc"}
+{instance="tc"}
 * to provide all necessary information by reviewing the [Reporting Issues guidelines](reporting-issues.md#Best+Practices+When+Reporting+Issues);
-{product="tc"}
+{instance="tc"}
 * you use a [recent TeamCity version](previous-releases-downloads.md). Generally, we do not provide regular support for [non-current major versions](teamcity-release-cycle.md) older than one year.
-{product="tc"}
+{instance="tc"}
 
 ## Licensed Users Support
-{product="tc"}
+{instance="tc"}
 
 You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](teamcity-release-cycle.md) and their bugfix updates are covered by our support.
 

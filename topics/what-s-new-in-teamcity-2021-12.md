@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: What's New in TeamCity 2021.12)
 
 ## Running builds in your own Cloud infrastructure
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity Cloud can run builds _in a customer's local environment_ or in a _JetBrains-managed cloud_. Usually, the first approach works best for companies who want to have full control over their build processes, while the second one suits teams whose processes rely on IaaS. Since this update, we want to introduce the third approach that stays somewhere in between: **_running builds in a customer's cloud_**.  
 If you have a cloud infrastructure in Amazon EC2, Kubernetes, or VMware vSphere/vCenter, you can now integrate your TeamCity Cloud instance with it. This opens all the capabilities of cloud solutions (like custom launch policies and spot fleets) and gives you more control over the build environment than using JetBrains-hosted agents. In terms of subscription, such agents are considered [self-hosted](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents), which means you purchase monthly slots for concurrent builds — there is no limit to their duration.  
@@ -22,7 +22,7 @@ To integrate your TeamCity Cloud project with your cloud infrastructure:
 After the cloud profile is configured, TeamCity will be able to launch agents in your cloud and assign builds to them. If given a variety of agent environments (local and cloud), it will always try to choose the least expensive option for each build.
 
 ## Prepaid JetBrains-hosted build agents
-{product="tcc"}
+{instance="tcc"}
 
 Another improvement related to build agents is an alternative pricing model: now, JetBrains-hosted agents can be prepaid on a monthly basis. This option is the most convenient if you run a lot of builds on agents of certain types (6 or more hours a workday). As JetBrains-hosted agents are charged per build time, some customers could greatly benefit from paying a fixed amount of credits monthly, without caring about the builds' duration.
 
@@ -37,7 +37,7 @@ There is no need to wait until the end of the next month: whenever you prepay ag
 If you plan to reduce the number of prepaid agents in the next month, you can adjust this number straight away. The setting will only be applied since the next month, and you won't have to worry about forgetting to change it at the end of the current one.
 
 ## Single sign-on authentication via SAML 2.0
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity Cloud now supports a new authentication method: Single Sign-On (SSO) via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). Enabling it in your instance will allow users to authenticate in TeamCity with their account stored in one of the major identity providers: [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and so on.
 
@@ -95,7 +95,7 @@ It is now possible to edit the scope of [agent pools](configuring-agent-pools.md
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
 > 
-{product="tc"}
+{instance="tc"}
 
 To edit an agent pool, click **Assign agents** in its settings. In this dialog, you can choose what agents you want to assign to the pool:
 
@@ -114,7 +114,7 @@ Similarly, you can also associate projects with this pool: open the **Projects**
   When configuring a _Fail build on specific text in build log_ [failure condition](build-failure-conditions.md), you can now specify whether to create a build problem only for the first text occurrence found in a build log (default) or for each error that matches the specified pattern.
 
 ## Fixed issues
-{product="tcc"}
+{instance="tcc"}
 
 See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md).
 
@@ -124,7 +124,7 @@ See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md
 - TeamCity stops supporting the [Microsoft Edge Legacy](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224) web browsers.
 - It is now impossible to automatically [trigger builds via REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Advanced+Build+Run) when the [queue limit](https://www.jetbrains.com/help/teamcity/2021.12/ordering-build-queue.html#Limiting+Maximum+Size+of+Build+Queue) is reached on the server.
 - Updates in TeamCity Agent Docker images:
-{product="tc"}
+{instance="tc"}
     - Bundled .NET Core SDK has been updated to 6.0.100.
 {product="tс"}
     - Bundled two versions of .NET Core Runtime: 3.1.21 and 5.0.12.
@@ -132,13 +132,13 @@ See [TeamCity Build 107109 release notes](teamcity-release-notes-build-107109.md
 - Bundled IntelliJ IDEA has been updated to version 2021.2.3. Note that this version requires Java 11.
 - The [SBT](https://www.scala-sbt.org/) launcher, used in the [Simple Build Tool (Scala)](https://www.jetbrains.com/help/teamcity/2021.12/simple-build-tool-scala.html) plugin, has been updated to version 1.5.5.
 - The [Octopus Deploy integration plugin](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) bundled with TeamCity Cloud has been updated to version 6.1.8.
-{product="tcc"}
+{instance="tcc"}
 - The [Unity Support plugin](https://plugins.jetbrains.com/plugin/11453-unity-support) bundled with TeamCity Cloud has been updated to version SNAPSHOT-20211116104228.
-{product="tcc"}
+{instance="tcc"}
 
 
 ## Previous releases
-{product="tc"}
+{instance="tc"}
 
 * [What's New in TeamCity 2021.2](https://www.jetbrains.com/help/teamcity/2021.2/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2021.1](https://www.jetbrains.com/help/teamcity/2021.1/what-s-new-in-teamcity.html)

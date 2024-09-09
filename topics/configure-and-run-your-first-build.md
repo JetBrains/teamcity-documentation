@@ -4,10 +4,10 @@
 In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
 
 After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.
-{product="tc"}
+{instance="tc"}
 
 After you have started TeamCity as described [here](getting-started-with-teamcity-cloud.md#2.+Start+TeamCity), you are ready to configure and run your first build.
-{product="tcc"}
+{instance="tcc"}
 
 <img src="run-first-build.png" width="611" alt="Run your first build"/>
 
@@ -47,7 +47,7 @@ Congratulations! You are now ready to run the first build based on the just crea
 
 ## Run your first build
 To run builds in TeamCity, you need [build agents](build-agent.md). A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered build agent that runs on the same computer. Let's use this agent to run a build on the sample project.
-{product="tc"}
+{instance="tc"}
 
 On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:
 

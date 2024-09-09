@@ -36,22 +36,22 @@ Refer to a separate page for information on [viewing the agents workload](viewin
 ### Cloud
 
 Lists all configured [agent cloud profiles](agent-cloud-profile.md).
-{product="tc"}
+{instance="tc"}
 
 Lists all configured [JetBrains-hosted agents](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents).
-{product="tcc"}
+{instance="tcc"}
 
 ### Diff 
 
 Compare two agents and see their differences highlighted.
 
 ## Debug Agents Remotely
-{product="tc"}
+{instance="tc"}
 
 <include from="install-and-start-teamcity-agents.md" element-id="agents-terminal"/>
 
 ## Installing Software to Self-Hosted Agents
-{product="tcc"}
+{instance="tcc"}
 
 You can manually install any [supported software](supported-platforms-and-environments.md) to a [self-hosted build agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) and keep multiple versions of one tool on the same agent, if necessary.
 

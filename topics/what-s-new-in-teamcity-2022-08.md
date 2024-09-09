@@ -23,7 +23,7 @@ even if you just logged in to a build agent to investigate an issue.
 
 Starting from this version, you can disable [a self-hosted cloud agent](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents) for maintenance, which means
 that the agents will not process any new builds, and you can, for example, log in to it and view its log.
-{product="tcc"}
+{instance="tcc"}
 
 ## New UI for the list of build runners
 
@@ -38,7 +38,7 @@ Starting from TeamCity 2022.08, Project Administrators get a new permission allo
 The permission will be present for this role in the new TeamCity installations; for existing installations it has to be added manually.
 
 See [TeamCity Build 115573 release notes](teamcity-release-notes-build-115573.md).
-{product="tcc"}
+{instance="tcc"}
 
 ## Roadmap
 

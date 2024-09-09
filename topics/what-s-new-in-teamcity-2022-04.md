@@ -16,22 +16,22 @@ Now you can enable the _Qodana_ build runner and add static analysis to your bui
 run advanced code inspections, find code duplicates, track code quality progress of your code. For details about the build runner, refer to [Qodana](qodana.md).
 
 If you previously installed the non-bundled Qodana plugin and used DSL, please check our [upgrade notes](upgrade-notes.md#bundled-tools-updates-2022-04)
-{product="tc"}
+{instance="tc"}
 
 ## Enhanced integration with Amazon Web Services
-{product="tc"}
+{instance="tc"}
 
 TeamCity 2022.04 adds new features to its cloud integrations.
 
 ### Migration of build artifacts from the local storage to Amazon S3
-{product="tc"}
+{instance="tc"}
 
 Version 2022.04 allows you to not only store new build artifacts in Amazon S3,
 but also [move existing artifacts from TeamCity’s local storage to Amazon S3](artifacts-migration-tool.md).
 This is particularly useful for teams who are just starting their migration from a self-hosted setup to a cloud platform.
 
 ### Transferring build artifacts via Amazon CloudFront
-{product="tc"}
+{instance="tc"}
 
 The speed of transferring build artifacts stored in Amazon S3 depends on the geographical distance between you and the region where the S3 bucket is located.
 To help you increase the artifacts' upload/download speed and reduce costs, TeamCity 2022.04 adds native support for [Amazon CloudFront](https://aws.amazon.com/cloudfront/), a content delivery network that offers low latency and high transfer speeds.
@@ -55,7 +55,7 @@ For example, your main branch may have an unlimited number of builds that will o
 TeamCity improves VCS integrations and provides the following new features.
 
 ### Space merge requests
-{product="tc"}
+{instance="tc"}
 
 TeamCity integration with JetBrains Space now includes the [Pull Requests](pull-requests.md) build feature. If you enable this feature in a build configuration, TeamCity will automatically detect changes in merge requests submitted to your Space repository. For a build run on these changes, it will display the merge request details in the build's overview and send the build statuses back to JetBrains Space.
 
@@ -105,7 +105,7 @@ Similarly to Log4Shell, the Spring4Shell vulnerability (CVE-2022-22965) does not
 
 
 ## Native Git for VCS-related operations on the server
-{id="Native+Git" product="tc"}
+{id="Native+Git" instance="tc"}
 
 TeamCity can now use native Git as the default option for Git operations on the server.
 Switching to native Git improves the performance of the checking for changes operations on the server
@@ -128,7 +128,7 @@ new changes and branches appear several times faster in comparison with JGit.
 
 
 ## Native Git for VCS-related operations on the server
-{id="Native+Git" product="tcc"}
+{id="Native+Git" instance="tcc"}
 
 TeamCity now uses native Git for VCS-related operations on the server.
 Using native Git improves the performance of the checking for changes operations on the server
@@ -138,7 +138,7 @@ in comparison with the previously used JGit implementation. It also fixes a numb
 ## New UI
 
 ### Editing agent pools
-{product="tc"}
+{instance="tc"}
 
 >We keep reproducing the classic TeamCity features in its experimental UI, and a majority of them have already received a new implementation. If you haven't tried the new UI for a while or at all, we encourage you to give it a try this time. Our goal is to make the experimental UI not only as functional as the classic one but a lot more responsive and enhanced with easier navigation and widgets.
 
@@ -154,7 +154,7 @@ The new [Changes page](viewing-user-changes-in-builds.md) comes with filters pro
 <img src="new-changes-page.png" alt="Changes in new TeamCity UI" width="460" />
 
 ## Storing Docker images produced by build in a public ECR registry
-{product="tc"}
+{instance="tc"}
 
 TeamCity can now store Docker images produced by a build to both private and — since this update — public ECR registries.
 
@@ -165,7 +165,7 @@ To be able to use this functionality, you need to add an [Amazon ECR connection]
 Remember to also enable [](docker-support.md) in your builds.
 
 ## Automatic import of user avatars from external systems
-{product="tc"}
+{instance="tc"}
 
 When a user signs in to TeamCity [via a third-party account](configuring-authentication-settings.md), like GitHub or Bitbucket, for the first time, TeamCity will automatically fetch their avatar from the external system and attach it to their TeamCity user profile. Note that TeamCity will only be able to access avatars of users with verified emails (if you are using GitLab, check that a _public email_ is set in your account).
 
@@ -173,7 +173,7 @@ It is possible to upload a different avatar in the TeamCity user profile setting
 
 
 ## Applying actions to multiple builds
-{product="tc"}
+{instance="tc"}
 
 It is now possible to select multiple builds and apply actions to all of them at once:
 * Pin/unpin
@@ -188,12 +188,12 @@ On the **Overview** tab of **Build Configuration Home**, you can select the requ
 <img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
 
 ## Perforce integration: Automatic creation of Helix Swarm test runs and status synchronization with builds
-{product="tc"}
+{instance="tc"}
 
 [Commit Status Publisher](commit-status-publisher.md) has a new option for sending build status reports to Perforce Helix Swarm — **Create Swarm Test**. If you enable it, TeamCity will [create a test run](https://www.perforce.com/manuals/swarm/Content/Swarm/swarm-apidoc_endpoint_integration_tests.html#Create_a__testrun_for_a_review_version) on the Helix Swarm server and update its status according to the build status in TeamCity.
 
 ## Kotlin DSL API without version in package names
-{product="tc"}
+{instance="tc"}
 
 Kotlin DSL code generated by previous TeamCity versions had imports with `v2019_2` in the package names, for instance:
 ```Kotlin
@@ -208,7 +208,7 @@ To fix the issue with code completion, a new version of DSL API Maven artifacts 
 These DSL API artifacts do not have a version in their package names. The newly generated Kotlin DSL code is switched to these _unversioned_ artifacts automatically. The existing Kotlin DSL projects can be switched [manually](upgrading-dsl.md#packages-without-dsl-api-version).
 
 ## Getting the public part of project's SSH keys via the UI
-{product="tc"}
+{instance="tc"}
 
 You can now copy the public part of an uploaded non-encrypted SSH key from the project settings. To do this, go to **Project Settings | SSH keys** and click **Copy the public key** under the key name.
 
@@ -217,7 +217,7 @@ You can now copy the public part of an uploaded non-encrypted SSH key from the p
 This way, project admins no longer need to ask the system administrator for a public SSH key whenever they need it (for example, to integrate their TeamCity projects with a VCS hosting service) — they can just get it via the TeamCity UI.
 
 ## Other updates
-{product="tc"}
+{instance="tc"}
 
 * **Queued builds optimization improvements**
   Before TeamCity 2022.04 a build in the queue could be optimized to an already started or finished build only.
@@ -237,13 +237,13 @@ This way, project admins no longer need to ask the system administrator for a pu
 See [TeamCity 2022.04 release notes](teamcity-2022-04-release-notes.md)
 
 ## Upgrade notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about [important changes in version 2022.04 compared to 2021.2.x](upgrade-notes.md#Changes+from+2021.2+to+2022.04).
 
 
 ## Previous releases
-{product="tc"}
+{instance="tc"}
 
 * [What's New in TeamCity 2021.2](https://www.jetbrains.com/help/teamcity/2021.2/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2021.1](https://www.jetbrains.com/help/teamcity/2021.1/what-s-new-in-teamcity.html)

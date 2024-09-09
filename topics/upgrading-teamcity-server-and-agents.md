@@ -2,20 +2,20 @@
 [//]: # (auxiliary-id: Upgrading TeamCity Server and Agents;Upgrade)
 
 Your TeamCity Cloud instance is kept to date automatically. We upgrade all Cloud instances during the week following each major and minor release. The upgrade occurs in the least loaded server time. The duration of upgrade depends on the size of your instance.
-{product="tcc"}
+{instance="tcc"}
 
 Refer to [TeamCity Release Cycle](teamcity-release-cycle.md) for information on expected release updates.
-{product="tcc"}
+{instance="tcc"}
 
 >Unless specifically noted, TeamCity does not support downgrade between major releases (changes in the first two numbers of the version). It is strongly recommended [backing up your data](teamcity-data-backup.md) before any upgrade.
 >
-{type="note" product="tc"}
+{type="note" instance="tc"}
 
 TeamCity supports upgrades from any of the previous versions to the later ones. All the settings and data are preserved unless noted in the [Upgrade Notes](upgrade-notes.md).
-{product="tc"}
+{instance="tc"}
 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way, you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
-{product="tc"}
+{instance="tc"}
 
 ## Security Patches
 
@@ -34,7 +34,7 @@ Critical vulnerabilities that present major security threats are fixed in separa
 To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Administration | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates.
 
 ## Before Upgrade
-{product="tc"}
+{instance="tc"}
 
 Before upgrading TeamCity:
 
@@ -65,7 +65,7 @@ When upgrading from TeamCity 4.x or earlier, note that the licensing policy in T
 <anchor name="Upgrade-UpgradingTeamCityServer"/>
 
 ## Upgrading TeamCity Server
-{product="tc"}
+{instance="tc"}
 
 TeamCity supports upgrades from any of the previous versions to the current one.   
 Unless specifically noted, downgrades with preserving the data are not possible with changing the major version and are possible within bugfix releases.
@@ -179,18 +179,18 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.
 
 ### Upgrading Multinode Setups
-{product="tc"}
+{instance="tc"}
 
 The [Multinode Setup](multinode-setup.md) distributes the tasks performed by your TeamCity server between multiple individual nodes, which significantly boosts the system stability and performance. In this setup, each node needs an individual upgrade. See this section for more information: [](multinode-setup.md#Upgrade%2FDowngrade).
 
 ## IDE Plugins
-{product="tc"}
+{instance="tc"}
 
 It is recommended for all users to regularly update their IDE plugins to the latest version compatible with the TeamCity server version in use — at least to the version available from the TeamCity server's **Tools** section in the user profile.   
 Generally, the versions of the IntelliJ IDEA TeamCity plugin and Visual Studio TeamCity add-in have to be the same as the TeamCity server version. Users with non-matching plugin versions get a message on an attempt to log in to the TeamCity server with a non-matching version.
 
 ## Server Rollback
-{product="tc"}
+{instance="tc"}
 
 In a rare scenario of an automatic or manual server upgrade failing, you can restore TeamCity to its previous state. See the following articles for more information:
 
@@ -198,7 +198,7 @@ In a rare scenario of an automatic or manual server upgrade failing, you can res
 * [](manual-backup-and-restore.md)
 
 ## Upgrading Build Agents
-{product="tc"}
+{instance="tc"}
 
 * [Automatic Build Agent Upgrading](#Automatic+Build+Agents+Update)
 * [Upgrading Build Agents Manually](#Manual+Build+Agents+Update)
@@ -259,7 +259,7 @@ This procedure is applicable ONLY to an agent running with _new_ service wrapper
 
 </note>
 
-<seealso product="tc">
+<seealso instance="tc">
         <category ref="concepts">
             <a href="teamcity-data-directory.md">TeamCity Data Directory</a>
         </category>

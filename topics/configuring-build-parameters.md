@@ -190,12 +190,12 @@ For example, the following condition allows only Mac agents to run builds for th
 ```Kotlin
 matches("teamcity.agent.jvm.os.family", "Mac OS")
 ```
-{product="tcc"}
+{instance="tcc"}
 
 ```Kotlin
 startsWith("teamcity.agent.jvm.os.name", "Mac")
 ```
-{product="tc"}
+{instance="tc"}
 
 The sample condition below allows builds to run only on machines with "Android" workload installed for .NET 7 SDK:
 

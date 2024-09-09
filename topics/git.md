@@ -21,7 +21,7 @@ __Important notes__:
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## Native Git for VCS-related operations on the server
-{product="tc"}
+{instance="tc"}
 
 TeamCity can now use native Git as the default option for Git operations on the server.
 Switching to native Git improves the performance of the checking for changes operations on the server
@@ -44,7 +44,7 @@ If the connection test is successful, you can enable the native Git support on y
 {style="warning"} 
 
 ## Native Git for VCS-related operations on the server
-{id="Native+Git" product="tcc"}
+{id="Native+Git" instance="tcc"}
 
 TeamCity can now use native Git for VCS-related operations on the server.
 Using native Git improves the performance of the checking for changes operations on the server
@@ -289,7 +289,7 @@ This setting defines how TeamCity performs a checkout to a build agent.
 
 >Read how to add a [Git mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
 >
-{product="tc"}
+{instance="tc"}
 
 </td></tr>
 
@@ -311,7 +311,7 @@ If a build configuration depends on multiple VCS roots, we suggest that you conf
 </td></tr>
 </table>
 
-<tip product="tc">
+<tip instance="tc">
 
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
 
@@ -342,7 +342,7 @@ If Git is not found in any of these locations, it tries to run the git accessibl
 If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](vcs-root.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
 
 ### Git mirrors on cloud agents
-{auxiliary-id="Git mirrors on cloud agents" product="tc"}
+{auxiliary-id="Git mirrors on cloud agents" instance="tc"}
 
 By default, TeamCity creates a [mirror](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository), that is a copy, of your Git repository under the agent's `system/git` directory. To save time and disk space on fetching source files, TeamCity points to this mirror via the Git alternate mechanism when updating the checkout directory for a build.
 
@@ -363,7 +363,7 @@ This way, builds will run significantly faster, with no need to check out the wh
 > Alternatively, you can store the `system/git` directory in a persistent volume, so it keeps all the updates even when a cloud agent is destroyed, and configure its automatic mounting on each newly created agent.
 
 ## Configuring Git Garbage Collection on Server
-{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
+{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" instance="tc"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.  
 TeamCity can automatically run `git gc` periodically when the native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -429,7 +429,7 @@ teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 * Accessing submodule repositories and LFS files is currently supported only via secure HTTPS protocol. SSH and HTTP protocols are not supported.
 
 ## Internal Properties
-{id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
+{id="internalProperties" auxiliary-id="Internal Properties" instance="tc"}
 
 For Git VCS, it is possible to configure the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties):
 
@@ -535,7 +535,7 @@ By default, TeamCity starts nested Java processes for `git fetch` and `git patch
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
 Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) may be needed.
-{product="tc"}
+{instance="tc"}
 
 </td></tr>
 
@@ -947,7 +947,7 @@ Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfi
 </snippet>
 
 ## Known Issues
-{product="tc"}
+{instance="tc"}
 
 * `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
 * TeamCity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.
