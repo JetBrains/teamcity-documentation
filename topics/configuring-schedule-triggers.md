@@ -78,6 +78,7 @@ Use this option to run a build simultaneously on all agents that are enabled and
 ### Build Queue Optimization Settings
 
 By default, TeamCity [optimizes the build queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity): already queued build can be replaced with an already started build or a more recent queued build. You can disable this default behavior by unchecking the corresponding box.
+
 </snippet>
 
 ### Branch Filter

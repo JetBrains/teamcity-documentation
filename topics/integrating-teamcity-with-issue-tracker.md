@@ -135,12 +135,13 @@ To integrate TeamCity with other issue trackers, configure TeamCity to turn any 
 
 Dedicated support for an issue tracker can also be added via a custom [issue tracker integration plugin](https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html).
 
+
 <seealso>
         <category ref="concepts">
             <a href="supported-platforms-and-environments.md#Issue+Trackers">Supported Issue Trackers</a>
         </category>
         <category ref="admin-guide">
-            <a href="mapping-external-links-in-comments.md">Mapping External Links in Comments</a>
+            <a href="https://www.jetbrains.com/help/teamcity/mapping-external-links-in-comments.html">Mapping External Links in Comments</a>
         </category>
         <category ref="external">
             <a href="https://plugins.jetbrains.com/docs/teamcity/issue-tracker-integration-plugin.html">Developing TeamCity Plugins: Issue Tracker Integration Plugin</a>

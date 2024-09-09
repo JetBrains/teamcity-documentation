@@ -17,56 +17,21 @@ These parameters are generated on the server side in the scope of a particular b
 
 Server build parameters are typically available as a system property and a corresponding environment variable.
 
-<dl>
-
-
-<dt>system.teamcity.version &nbsp; | &nbsp; env.TEAMCITY_VERSION</dt>
-<dd>The version of the TeamCity server. This property can be used to determine if the build runs within TeamCity.</dd>
-
-
-<dt>system.teamcity.projectName &nbsp; | &nbsp; env.TEAMCITY_PROJECT_NAME</dt>
-<dd>The name of the project the current build belongs to.</dd>
-
-<dt>system.teamcity.buildConfName &nbsp; | &nbsp; env.TEAMCITY_BUILDCONF_NAME</dt>
-<dd>The name of the build configuration the current build belongs to.</dd>
-
-<dt>system.teamcity.buildType.id</dt>
-<dd>The <a href="identifier.md">unique ID</a> used by TeamCity to reference the build configuration the current build belongs to.</dd>
-
-
-
-<dt>system.teamcity.configuration.properties.file</dt>
-<dd>The full name (including the path) of the file that contains all the build parameters in alphabetical order. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped). See also: <a href="#BuildPropertiesFile">build.properties.file</a></dd>
-
-
-
-<dt>system.build.is.personal &nbsp; | &nbsp; env.BUILD_IS_PERSONAL</dt>
-<dd>Returns <code>true</code> for <a href="personal-build.md">personal builds</a>. Undefined (does not exist) for regular builds.</dd>
-
-
-<dt>system.build.number &nbsp; | &nbsp; env.BUILD_NUMBER</dt>
-<dd>The build number assigned to the build by TeamCity. The parameter uses the special <a href="configuring-general-settings.md#Build+Number+Format">build number format</a>.</dd>
-
-
-<dt>env.BUILD_URL</dt>
-<dd>The link to the current build.</dd>
-
-<dt>system.teamcity.build.id</dt>
-<dd>The internal unique ID used by TeamCity to reference builds.</dd>
-
-<dt instance="tc">teamcity.build.responsibleNode.id</dt>
-<dd instance="tc">In <a href="multinode-setup.md">multinode setup</a>, this parameter returns the node to which it is attached. Can be assigned to the <code>X-TeamCity-Node-Id-Cookie</code> cookie when sending logging <a href="teamcity-rest-api.md">REST API</a> requests to the <code>/app/rest/builds/id:build_id/log</code> endpoint.</dd>
-
-<dt>system.teamcity.auth.userId</dt>
-<dd>A generated username that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</dd>
-
-<dt>system.teamcity.auth.password</dt>
-<dd>A generated password that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</dd>
-
-<dt>system.build.vcs.number.&lt;VCS_root_ID&gt; &nbsp; | &nbsp; env.BUILD_VCS_NUMBER_&lt;VCS_root_ID&gt;</dt>
-<dd>The latest VCS revision included in the build for the specified root. See the following article for more information about VCS root IDs: <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>.<br/><br/>If a build configuration has only one VCS root, you can use the <code>build.vcs.number</code> parameter without the root ID identifier.<br/><br/>This value is a VCS-specific. For example, a revision number for SVN and a timestamp for CVS.</dd>
-
-</dl>
+<deflist>
+<def title="system.teamcity.version &nbsp; | &nbsp; env.TEAMCITY_VERSION">The version of the TeamCity server. This property can be used to determine if the build runs within TeamCity.</def>
+<def title="system.teamcity.projectName &nbsp; | &nbsp; env.TEAMCITY_PROJECT_NAME">The name of the project the current build belongs to.</def>
+<def title="system.teamcity.buildConfName &nbsp; | &nbsp; env.TEAMCITY_BUILDCONF_NAME">The name of the build configuration the current build belongs to.</def>
+<def title="system.teamcity.buildType.id">The <a href="identifier.md">unique ID</a> used by TeamCity to reference the build configuration the current build belongs to.</def>
+<def title="system.teamcity.configuration.properties.file">The full name (including the path) of the file that contains all the build parameters in alphabetical order. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped). See also: <a href="#BuildPropertiesFile">build.properties.file</a></def>
+<def title="system.build.is.personal &nbsp; | &nbsp; env.BUILD_IS_PERSONAL">Returns <code>true</code> for <a href="personal-build.md">personal builds</a>. Undefined (does not exist) for regular builds.</def>
+<def title="system.build.number &nbsp; | &nbsp; env.BUILD_NUMBER">The build number assigned to the build by TeamCity. The parameter uses the special <a href="configuring-general-settings.md#Build+Number+Format">build number format</a>.</def>
+<def title="env.BUILD_URL">The link to the current build.</def>
+<def title="system.teamcity.build.id">The internal unique ID used by TeamCity to reference builds.</def>
+<def instance="tc" title="teamcity.build.responsibleNode.id">In <a href="multinode-setup.md">multinode setup</a>, this parameter returns the node to which it is attached. Can be assigned to the <code>X-TeamCity-Node-Id-Cookie</code> cookie when sending logging <a href="teamcity-rest-api.md">REST API</a> requests to the <code>/app/rest/builds/id:build_id/log</code> endpoint.</def>
+<def title="system.teamcity.auth.userId">A generated username that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</def>
+<def title="system.teamcity.auth.password">A generated password that can be used to <a href="configuring-dependencies.md">download artifacts</a> of other build configurations. Valid only during the build. See this section for more information: <a href="artifact-dependencies.md#Build-level+authentication">Build-level Authentication</a>.</def>
+<def title="system.build.vcs.number.&lt;VCS_root_ID&gt; &nbsp; | &nbsp; env.BUILD_VCS_NUMBER_&lt;VCS_root_ID&gt;">The latest VCS revision included in the build for the specified root. See the following article for more information about VCS root IDs: <a href="configuring-vcs-roots.md">Configuring VCS Roots</a>.<br/><br/>If a build configuration has only one VCS root, you can use the <code>build.vcs.number</code> parameter without the root ID identifier.<br/><br/>This value is a VCS-specific. For example, a revision number for SVN and a timestamp for CVS.</def>
+</deflist>
 
 
 
@@ -77,27 +42,15 @@ Server build parameters are typically available as a system property and a corre
 These <emphasis tooltip="system-property">system properties</emphasis> are unique for each build (for example, a path to a file that contains a list of changes). Their values are calculated on the agent side right before the build starts and then passed to the build.
 
 
-<dl>
-
-<dt>system.teamcity.build.checkoutDir</dt>
-<dd>The <a href="build-checkout-directory.md">checkout directory</a> used for the build.</dd>
-
-
-<dt>system.teamcity.build.workingDir</dt>
-<dd>The <a href="build-working-directory.md">working directory</a> where the build is started. This is the path where a TeamCity build runner is supposed to start a process. This is a runner-specific property, thus it has a different value for each step.</dd>
-
-
-<dt>system.teamcity.build.tempDir</dt>
-<dd>A full path of the build temp directory generated by TeamCity. The directory is cleaned after the build.</dd>
-
-<dt>system.teamcity.build.changedFiles.file</dt>
-<dd>A full path to the file with information about changed files included in the build. You can use this property to <a href="https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html">support risk test reordering</a> in your custom runner for tests.<br/><br/>This file is not available for <a href="history-build.md">history builds</a> and if there were no changes in this particular build.</dd>
+<deflist>
+<def title="system.teamcity.build.checkoutDir">The <a href="build-checkout-directory.md">checkout directory</a> used for the build.</def>
+<def title="system.teamcity.build.workingDir">The <a href="build-working-directory.md">working directory</a> where the build is started. This is the path where a TeamCity build runner is supposed to start a process. This is a runner-specific property, thus it has a different value for each step.</def>
+<def title="system.teamcity.build.tempDir">A full path of the build temp directory generated by TeamCity. The directory is cleaned after the build.</def>
+<def title="system.teamcity.build.changedFiles.file">A full path to the file with information about changed files included in the build. You can use this property to <a href="https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html">support risk test reordering</a> in your custom runner for tests.<br/><br/>This file is not available for <a href="history-build.md">history builds</a> and if there were no changes in this particular build.</def>
 
 <anchor name="BuildPropertiesFile"/>
-<dt>system.teamcity.build.properties.file &nbsp; | &nbsp; env.TEAMCITY_BUILD_PROPERTIES_FILE</dt>
-<dd>The full name (including the path) of the file containing all build system properties without their <code>system.</code> postfix. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped).</dd>
-
-</dl>
+<def title="system.teamcity.build.properties.file &nbsp; | &nbsp; env.TEAMCITY_BUILD_PROPERTIES_FILE" name="">The full name (including the path) of the file containing all build system properties without their <code>system.</code> postfix. This file is written when a build process starts and uses the <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html">Java Properties File format</a> (for example, special characters are backslash-escaped).</def>
+</deflist>
 
 
 
@@ -115,147 +68,65 @@ Agent environment parameters can be used to set build configuration options, def
 To check all existing parameters and their current values for a given build agent, open the agent details page and switch to the **Parameters** tab. See this link for more information: [](levels-and-priority-of-build-parameters.md#Checking+Parameter+Values).
 
 
-<dl>
+<deflist>
 
-<dt instance="tc">teamcity.agent.name</dt>
-<dd instance="tc">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
+<def instance="tc" title="teamcity.agent.name">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</def>
+<def instance="tcc" title="teamcity.agent.name">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</def>
 
-<dt instance="tcc">teamcity.agent.name</dt>
-<dd instance="tcc">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</dd>
+<def title="teamcity.agent.work.dir">The path to the <a href="agent-work-directory.md">agent work directory</a>.</def>
+<def title="teamcity.agent.work.dir.freeSpaceMb">Free space available in the <a href="agent-work-directory.md">agent work directory</a>.</def>
+<def title="teamcity.agent.home.dir">The path to the <a href="agent-home-directory.md">agent home directory</a></def>
 
+<def instance="tc" title="teamcity.agent.tools.dir">The path to the <a href="installing-agent-tools.md">Tools</a> directory on the agent.</def>
 
-<dt>teamcity.agent.work.dir</dt>
-<dd>The path to the <a href="agent-work-directory.md">agent work directory</a>.</dd>
+<def title="teamcity.agent.jvm.os.version">The operating system version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.country">The user country. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.home">The user's home directory. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.timezone">The user's timezone. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/TimeZone.html">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.name">The user's account name. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.language">The user's primary OS language. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.user.variant">An arbitrary value used to indicate a variation of a user locale. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.file.encoding">The name of the default charset, defaults to UTF-8. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.file.separator">The file separator. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.path.separator">The path separator. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.specification">Java Runtime Environment specification version. Return the value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">java.specification.version JVM property</a>.</def>
+<def title="teamcity.agent.jvm.version">Java Virtual Machine implementation version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
+<def title="teamcity.agent.jvm.java.home">Java installation directory. See the following section for more information: <a href="#Java-Related+Environment+Variables">Java-Related Environment Variables</a>.</def>
+<def title="teamcity.agent.os.arch.bits">The agent's OS bitness.</def>
 
-<dt>teamcity.agent.work.dir.freeSpaceMb</dt>
-<dd>Free space available in the <a href="agent-work-directory.md">agent work directory</a>.</dd>
-
-<dt>teamcity.agent.home.dir</dt>
-<dd>The path to the <a href="agent-home-directory.md">agent home directory</a></dd>
-
-<dt instance="tc">teamcity.agent.tools.dir</dt>
-<dd instance="tc">The path to the <a href="installing-agent-tools.md">Tools</a> directory on the agent.</dd>
-
-<dt>teamcity.agent.jvm.os.version</dt>
-<dd>The operating system version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.country</dt>
-<dd>The user country. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.home</dt>
-<dd>The user's home directory. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.timezone</dt>
-<dd>The user's timezone. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/TimeZone.html">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.name</dt>
-<dd>The user's account name. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.language</dt>
-<dd>The user's primary OS language. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.user.variant</dt>
-<dd>An arbitrary value used to indicate a variation of a user locale. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.file.encoding</dt>
-<dd>The name of the default charset, defaults to UTF-8. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.file.separator</dt>
-<dd>The file separator. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.path.separator</dt>
-<dd>The path separator. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.specification</dt>
-<dd>Java Runtime Environment specification version. Return the value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">java.specification.version JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.version</dt>
-<dd>Java Virtual Machine implementation version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</dd>
-
-<dt>teamcity.agent.jvm.java.home</dt>
-<dd>Java installation directory. See the following section for more information: <a href="#Java-Related+Environment+Variables">Java-Related Environment Variables</a>.</dd>
-
-<dt>teamcity.agent.os.arch.bits</dt>
-<dd>The agent's OS bitness.</dd>
 
 
 <snippet include-id="dotnet-related-properties">
 
-<dt>DotNetCLI</dt>
-<dd>The .NET CLI version.</dd>
+<def title="DotNetCLI">The .NET CLI version.</def>
+<def title="DotNetCLI_Path">The path to .NET CLI executable.</def>
+<def title="DotNetFramework&lt;version&gt;[_x86|_x64]">Defined only if the corresponding version(s) of .NET Framework runtime is installed.</def>
+<def title="DotNetFramework&lt;version&gt;[_x86|_x64]_Path">This parameter's value is set to the corresponding framework runtime version(s) path(s). <br/><br/>Note that this parameter is defined only for the latest installed version per major release. For example, if you installed versions 3.5, 4.5, and 4.8, this parameter will only be defined for 3.5 and 4.8. Version/Parameter 4.5 will be omitted since a newer version of .NET Framework 4 is present. To explicitly define such a version, consider using the <code>DotNetFrameworkTargetingPack&lt;version&gt;_Path</code> parameter instead.</def>
+<def title="DotNetFrameworkSDK&lt;version&gt;[_x86|_x64]">Defined if the corresponding version(s) of .NET Framework SDK is installed.</def>
+<def title="DotNetFrameworkSDK&lt;version&gt;[_x86|_x64]_Path">The path to the corresponding framework SDK version.</def>
+<def title="DotNetFrameworkTargetingPack&lt;version&gt;_Path">The path to the corresponding Reference assemblies (AKA Targeting Pack) location.</def>
+<def title="DotNetCoreSDKx.x_Path">The .NET SDK version.</def>
+<def title="DotNetWorkloads_&lt;version&gt;">Lists all <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install">.NET workloads</a> installed on the agent machine.<br/><br/>The <code>&lt;version&gt;</code> suffix is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetWorkloads_7.0.300` parameter.<br/><br/>In addition to these full SDK versions, agents report workload parameters with shortened <code>major.minor</code> suffixes. For example, if an agent machine has 7.0.100, 7.0.200, and 7.0.300 .NET SDKs installed, the <code>DotNetWorkloads_7.0</code> parameter that refers to the highest 7.0.300 version will be reported.<br/><br/>The parameter value is a string of comma-separated workload names, according to folders in the <b>&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads</b> directory. For instance, "android,maui-ios,wasm-tools".</def>
+<def title="WindowsSDK&lt;version&gt;">Defined only if the corresponding version of Windows SDK is installed.</def>
+<def title="WindowsSDK&lt;version&gt;_Path">The path of the corresponding version of Windows SDK.</def>
+<def title="VS&lt;Version&gt;">Defined if the corresponding version(s) of Visual Studio is installed</def>
+<def title="VS&lt;Version&gt;_Path">The path to the Visual Studio installation folder (the directory that contains devenv.exe).</def>
+<def title="teamcity.dotnet.nunitlauncher&lt;version&gt;">The path to the directory that contains the standalone NUnit test launcher, <code>NUnitLauncher.exe</code>. The version number refers to the version of .NET Framework under which the test will run. The version equals the version of .NET Framework.</def>
+<def title="teamcity.dotnet.nunitlauncher.msbuild.task">The path to the directory that contains the MSBuild task <code>dll</code> providing the NUnit task for MSBuild, Visual Studio (sln).</def>
+<def title="teamcity.dotnet.msbuild.extensions2.0">The path to the directory that contains MSBuild 2.0 listener and tasks assemblies.</def>
+<def title="teamcity.dotnet.msbuild.extensions4.0">The path to the directory that contains MSBuild 4.0 listener and tasks assemblies.</def>
 
-
-<dt>DotNetCLI_Path</dt>
-<dd>The path to .NET CLI executable.</dd>
-
-
-<dt>DotNetFramework&lt;version&gt;[_x86|_x64]</dt>
-<dd>Defined only if the corresponding version(s) of .NET Framework runtime is installed.</dd>
-
-
-<dt>DotNetFramework&lt;version&gt;[_x86|_x64]_Path</dt>
-<dd>This parameter's value is set to the corresponding framework runtime version(s) path(s). <br/><br/>Note that this parameter is defined only for the latest installed version per major release. For example, if you installed versions 3.5, 4.5, and 4.8, this parameter will only be defined for 3.5 and 4.8. Version/Parameter 4.5 will be omitted since a newer version of .NET Framework 4 is present. To explicitly define such a version, consider using the <code>DotNetFrameworkTargetingPack&lt;version&gt;_Path</code> parameter instead.</dd>
-
-<dt>DotNetFrameworkSDK&lt;version&gt;[_x86|_x64]</dt>
-<dd>Defined if the corresponding version(s) of .NET Framework SDK is installed.</dd>
-
-<dt>DotNetFrameworkSDK&lt;version&gt;[_x86|_x64]_Path</dt>
-<dd>The path to the corresponding framework SDK version.</dd>
-
-<dt>DotNetFrameworkTargetingPack&lt;version&gt;_Path</dt>
-<dd>The path to the corresponding Reference assemblies (AKA Targeting Pack) location.</dd>
-
-<dt>DotNetCoreSDKx.x_Path</dt>
-<dd>The .NET SDK version.</dd>
-
-<dt>DotNetWorkloads_&lt;version&gt;</dt>
-<dd>Lists all <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install">.NET workloads</a> installed on the agent machine.<br/><br/>The <code>&lt;version&gt;</code> suffix is the version of an installed .NET SDK. For instance, if version 7.0.300 is installed, the agent will report the `DotNetWorkloads_7.0.300` parameter.<br/><br/>In addition to these full SDK versions, agents report workload parameters with shortened <code>major.minor</code> suffixes. For example, if an agent machine has 7.0.100, 7.0.200, and 7.0.300 .NET SDKs installed, the <code>DotNetWorkloads_7.0</code> parameter that refers to the highest 7.0.300 version will be reported.<br/><br/>The parameter value is a string of comma-separated workload names, according to folders in the <b>&lt;dotnet_dir&gt;/metadata/workloads/&lt;sdk_version&gt;/InstalledWorkloads</b> directory. For instance, "android,maui-ios,wasm-tools".</dd>
-
-<dt>WindowsSDK&lt;version&gt;</dt>
-<dd>Defined only if the corresponding version of Windows SDK is installed.</dd>
-
-<dt>WindowsSDK&lt;version&gt;_Path</dt>
-<dd>The path of the corresponding version of Windows SDK.</dd>
-
-<dt>VS&lt;Version&gt;</dt>
-<dd>Defined if the corresponding version(s) of Visual Studio is installed</dd>
-
-<dt>VS&lt;Version&gt;_Path</dt>
-<dd>The path to the Visual Studio installation folder (the directory that contains devenv.exe).</dd>
-
-<dt>teamcity.dotnet.nunitlauncher&lt;version&gt;</dt>
-<dd>The path to the directory that contains the standalone NUnit test launcher, <code>NUnitLauncher.exe</code>. The version number refers to the version of .NET Framework under which the test will run. The version equals the version of .NET Framework.</dd>
-
-<dt>teamcity.dotnet.nunitlauncher.msbuild.task</dt>
-<dd>The path to the directory that contains the MSBuild task <code>dll</code> providing the NUnit task for MSBuild, Visual Studio (sln).</dd>
-
-<dt>teamcity.dotnet.msbuild.extensions2.0</dt>
-<dd>The path to the directory that contains MSBuild 2.0 listener and tasks assemblies.</dd>
-
-<dt>teamcity.dotnet.msbuild.extensions4.0</dt>
-<dd>The path to the directory that contains MSBuild 4.0 listener and tasks assemblies.</dd>
 
 </snippet>
 
-<dt>teamcity.agent.ownPort</dt>
-<dd>The <a href="configure-agent-installation.md#Build+Agent+Port">agent port</a> used by the TeamCity server to connect to the agent.</dd>
+<def title="teamcity.agent.ownPort">The <a href="configure-agent-installation.md#Build+Agent+Port">agent port</a> used by the TeamCity server to connect to the agent.</def>
+<def title="teamcity.agent.protocol">The <a href="install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer">protocol</a> used for data transfers between the agent and the server.</def>
+<def title="teamcity.agent.cpuBenchmark">The <a href="viewing-build-agent-details.md#Agent+Summary">CPU benchmarking</a> result for the agent.</def>
+<def title="teamcity.agent.hardware.cpuCount">The number of cores/threads on the agent machine's CPU.</def>
+<def title="teamcity.agent.hostname">The name of the build agent host.</def>
 
 
-<dt>teamcity.agent.protocol</dt>
-<dd>The <a href="install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer">protocol</a> used for data transfers between the agent and the server.</dd>
-
-
-<dt>teamcity.agent.cpuBenchmark</dt>
-<dd>The <a href="viewing-build-agent-details.md#Agent+Summary">CPU benchmarking</a> result for the agent.</dd>
-
-
-<dt>teamcity.agent.hardware.cpuCount</dt>
-<dd>The number of cores/threads on the agent machine's CPU.</dd>
-
-<dt>teamcity.agent.hostname</dt>
-<dd>The name of the build agent host.</dd>
-
-</dl>
+</deflist>
 
 
 
@@ -423,16 +294,10 @@ where `<VCS_root_ID>` is the [VCS root ID](configuring-vcs-roots.md).
 
 ### Other Parameters
 
-<dl>
-
-<dt>teamcity.build.triggeredBy</dt>
-<dd>Returns the human-friendly description of how the build was triggered.</dd>
-
-<dt>teamcity.build.triggeredBy.username</dt>
-<dd>If the build was triggered by a user, the username of this user is reported. When a build is triggered not by a user, this property is not reported.</dd>
-
-
-</dl>
+<deflist>
+  <def title="teamcity.build.triggeredBy">Returns the human-friendly description of how the build was triggered.</def>
+  <def title="teamcity.build.triggeredBy.username">If the build was triggered by a user, the username of this user is reported. When a build is triggered not by a user, this property is not reported.</def>
+</deflist>
 
 
 
