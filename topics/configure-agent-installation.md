@@ -87,7 +87,7 @@ If you have a self-updating Git repository proxy that is significantly closer th
 
 ## The Configure Command
 
-<snippet include-id="agent-configure-command">
+<snippet id="agent-configure-command">
 
 To set up the [buildAgent.properties](configure-agent-installation.md#General+Agent+Configuration) file, you can run the `<Agent_folder>/bin/agent.bat` or `<Agent_folder>/bin/agent.sh` script with the `configure` command. This command allows you to set up core agent properties and save them to the target configuration file. If no configuration file path is specified, the changes will be saved to the default `<Agent_folder>/conf/buildAgent.properties` properties.
 

@@ -195,7 +195,7 @@ It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the
 
 #### Trigger on changes in snapshot dependencies
 
-<snippet include-id="trigger-on-ssdep-chngs">
+<snippet id="trigger-on-ssdep-chngs">
 
 The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
 

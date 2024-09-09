@@ -179,7 +179,7 @@ To check all existing parameters and their current values for a given build agen
 <dd>The agent's OS bitness.</dd>
 
 
-<snippet include-id="dotnet-related-properties">
+<snippet id="dotnet-related-properties">
 
 <dt>DotNetCLI</dt>
 <dd>The .NET CLI version.</dd>

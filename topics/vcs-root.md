@@ -1,7 +1,7 @@
 [//]: # (title: VCS Root)
 [//]: # (auxiliary-id: VCS Root)
 
-<snippet include-id="VCSRoot">
+<snippet id="VCSRoot">
 
 A _VCS root_ in TeamCity defines a [connection to a version control system](configuring-vcs-settings.md). It represents a set of parameters (paths to sources, username, password, and other settings) that determine how TeamCity communicates with a VCS to [monitor changes](configuring-vcs-roots.md#Common+VCS+Root+Properties) and get sources for a build.
 

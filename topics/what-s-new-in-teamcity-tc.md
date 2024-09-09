@@ -1,6 +1,6 @@
 [//]: # (title: What's New in TeamCity On-Premises 2024.07)
 
-<chunk include-id="2024-07-tc">
+<snippet id="2024-07-tc">
 
 ## New Licensing Mechanism
 {instance="tc"}

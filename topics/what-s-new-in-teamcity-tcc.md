@@ -1,7 +1,7 @@
 [//]: # (title: What's New in TeamCity Cloud 2024.07)
 
 
-<chunk include-id="2024-07-tcc">
+<snippet id="2024-07-tcc">
 
 
 ## Custom Location for Versioned Settings

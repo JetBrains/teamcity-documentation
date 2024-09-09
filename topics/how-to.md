@@ -358,7 +358,7 @@ The contents of this section have been moved to the [dedicated article](configur
 
 This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
 
-<snippet include-id="agent-proxy-server">
+<snippet id="agent-proxy-server">
 
 On the TeamCity agent side, specify the proxy to connect to TeamCity server using the following properties in the [`buildAgent.properties`](configure-agent-installation.md) file:
 
