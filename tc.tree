@@ -491,7 +491,7 @@
 	<toc-element toc-title="Licensing and Release Cycle">
 		<toc-element topic="licensing-policy.md">
 			<toc-element topic="manage-teamcity-license.md"/>
-			<toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TC" accepts-web-file-names="third-party-license-agreements.html"/>
+			<toc-element toc-title="Third-Party Software and Licenses" target-for-accept-web-file-names="https://www.jetbrains.com/legal/third-party-software/?product=TC" accepts-web-file-names="third-party-license-agreements.html"/>
 			<toc-element hidden="true" topic="third-party-license-agreements.md"/>
 		</toc-element>
 		<toc-element topic="previous-releases-downloads.md"/>

@@ -8,19 +8,10 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 
 
-1. <snippet id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.
-
-   * Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.
-   * Edit one specific project if your new storage should be available only for this project and its sub-projects.
-
-    </snippet>
-   
+1. <snippet id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.<list><li>Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.</li><li>Edit one specific project if your new storage should be available only for this project and its sub-projects.</li></list></snippet>
 2. <snippet id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</snippet>
-
 3. <snippet id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</snippet>
-
 4. Set the **Type** field to "AWS S3".
-
 5. Choose an existing [AWS Connection](configuring-connections.md#AmazonWebServices) that TeamCity should use to access your Amazon resources. If no suitable AWS connection exists, click the "+" icon to add one.
     
     > You cannot use AWS Connections that belong to a parent project and have their **Available for sub-projects** settings disabled.
@@ -41,7 +32,8 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
    * `DeleteObject`
    * `GetAccelerateConfiguration` (if [Transfer Acceleration](#TransferAcceleration) is enabled)
     
-    > <anchor name="transferToConnection"/>In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentials in the default AWS locations (the **Default provider chain** setting).
+    <anchor name="transferToConnection"/>
+    > In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentials in the default AWS locations (the **Default provider chain** setting).
     > 
     > Starting with version 2023.11, these settings are exclusive to [AWS Connections](configuring-connections.md#AmazonWebServices). If you're migrating from an older version of TeamCity and your existing AWS S3 storages used any of these settings, click the **Convert to AWS Connection** link. This action transfers AWS-related settings to a new AWS Connection, and selects this new connection as the source connection of your storage.
     >
@@ -79,15 +71,9 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 <anchor name="multipartUpload"/>
 
-9. <snippet id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).
-
-    <img src="dk-s3-multipart.png" width="706" alt="Multipart upload"/>
-
-    Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is <code>5MB</code>. If left empty, TeamCity will use <code>8MB</code> as the default value.
-    </snippet>
+9. <snippet id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).<img src="dk-s3-multipart.png" width="706" alt="Multipart upload"/>Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is <code>5MB</code>. If left empty, TeamCity will use <code>8MB</code> as the default value.</snippet>
     
     > We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
-    >
     {style="tip"}
 
 <anchor name="forceVirtualHostAddressing"/>
