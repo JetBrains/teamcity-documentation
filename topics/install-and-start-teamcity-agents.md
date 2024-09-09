@@ -30,7 +30,7 @@ Agents use unidirectional agent-to-server connection via the polling protocol: a
 >
 {type="warning" instance="tc"}
 
-[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")
+<!--[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")-->
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents"/>
 

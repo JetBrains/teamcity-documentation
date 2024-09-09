@@ -325,7 +325,7 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md), if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")
+<!--[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")-->
 
 Optional, specify if differs from the checkout directory.
 

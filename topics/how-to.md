@@ -593,7 +593,7 @@ With these steps the agent will be recognized by TeamCity server as the same and
 
 Please also review the [section](agent-home-directory.md) for a list of directories that can be deleted without affecting builds consistency.
 
-[//]: # (Internal note. Do not delete. "How To...d160e2180.txt")    
+<!--[//]: # (Internal note. Do not delete. "How To...d160e2180.txt")-->    
 
 ## Share the Build number for Builds in a Chain Build
 
@@ -705,7 +705,7 @@ Further recommendations:
 * [Change title](https://youtrack.jetbrains.com/issue/TW-20617#comment=27-527943) of the build configuration "Run" button. Buttons of [Deployment configurations](deployment-build-configuration.md) automatically change their titles to "Deploy".
 
 
-[//]: # (Internal note. Do not delete. "How To...d160e2430.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e2430.txt")-->
 
 ## Use an External Tool that My Build Relies on
 {instance="tc"}

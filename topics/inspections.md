@@ -123,7 +123,7 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "Inspectionsd166e196.txt")    
+<!--[//]: # (Internal note. Do not delete. "Inspectionsd166e196.txt")-->    
 
 
 Optional, specify if differs from the checkout directory.
@@ -327,7 +327,7 @@ Optional, specify to restrict the sources scope to run Inspections on.
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")
+<!--[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")-->
 
 Include/exclude patterns are newline-delimited set of rules of the form:
 

@@ -45,7 +45,7 @@ When you copy a project, TeamCity automatically assigns new IDs to all the child
 
 TeamCity projects, build configurations, and VCS roots have a UUID which is an automatically generated, globally unique ID. UUID is stored in the corresponding entity XML configuration file located in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` directory. These UUID must never be edited manually. When a new entity is created by placing a file to the Data Directory, it should have no `uuid` attribute. TeamCity will generate the UUID automatically, and it will persist in the file.
 
-[//]: # (Internal note. Do not delete. "Identifierd161e161.txt")    
+<!--[//]: # (Internal note. Do not delete. "Identifierd161e161.txt")-->    
 
 <seealso>
         <category ref="concepts">

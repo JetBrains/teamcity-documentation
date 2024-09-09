@@ -180,7 +180,7 @@ Escape as
 
 |[
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e192.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e192.txt")-->    
 
 </td></tr>
 
@@ -608,7 +608,7 @@ where:
  *  `description` (mandatory): a human-readable plain text describing the build problem. By default, the `description` appears in the build status text and in the list of build's problems. The text is limited to 4000 symbols, and will be truncated if the limit is exceeded.
  * `identity` (optional): a unique problem ID. Different problems must have different identity, same problems — same identity, which should not change throughout builds if the same problem, for example, the same compilation error occurs. It must be a valid Java ID up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")-->    
 
 ### Reporting Build Status
 
@@ -735,7 +735,7 @@ If you need for some reason to disable searching for service messages in the out
 
 Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server-side processing of service messages, enable/disable service messages also supports the `flowId` attribute and will ignore only the messages with the same `flowId`.
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")-->    
 
 ### Importing XML Reports
 
@@ -1056,7 +1056,7 @@ To initiate monitoring of several directories or parse several types of the repo
 >
 {style="note"}
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")-->
 
 
 ## Writing the File into the Build Log

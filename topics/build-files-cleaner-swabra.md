@@ -147,7 +147,7 @@ TeamCity Cloud does not currently support manual installation of agent tools. Co
 
 Generally snapshot file is deleted after files collection. Set the `swabra.preserve.snapshot` system property to preserve snapshots for debugging purposes.
 
-[//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")-->
 
 ## Clean Checkout
 

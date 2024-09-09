@@ -86,7 +86,7 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 * `.tar.gzip`
 * `.tar`
 
-[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e253.txt")
+<!--[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e253.txt")-->
 
 ## Obtaining Artifacts from a Build Script
 
@@ -132,7 +132,7 @@ http://teamcity.yourdomain.com/repository/download/MyConfExtId/.lastFinished/Tea
 
 ```
 
-[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e349.txt")    
+<!--[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e349.txt")-->    
 
 <seealso>
         <category ref="extending_tc">
