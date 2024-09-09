@@ -15,7 +15,7 @@ After configuring the proxy, remember to also set the new address as the _Server
 
 ## Azure DevOps
 
-<snippet include-id="azure-devops">
+<snippet id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
 * __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git repositories.
@@ -63,7 +63,7 @@ To configure an Azure DevOps PAT connection:
 
 ## Bitbucket Cloud
 
-<snippet include-id="bb-cloud">
+<snippet id="bb-cloud">
 
 >In TeamCity Cloud, a connection to Bitbucket Cloud is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
@@ -116,7 +116,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 
 ## GitHub
 
-<snippet include-id="github">
+<snippet id="github">
 
 >In TeamCity Cloud, a connection to GitHub.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
@@ -254,7 +254,7 @@ Once a connection is successfully configured, the GitHub icon will become active
 
 ## GitLab
 
-<snippet include-id="gitlab">
+<snippet id="gitlab">
 
 >In TeamCity Cloud, a connection to GitLab.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >

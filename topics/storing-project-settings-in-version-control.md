@@ -470,7 +470,7 @@ Note that SSH keys will not be stored in the VCS repository.
 
 ## Storing and Managing Global Server Settings
 
-<snippet include-id="iac-terraform">
+<snippet id="iac-terraform">
 
 Storing [](kotlin-dsl.md) or XML settings in a VCS allows you to utilize the configuration-as-code approach for projects and build configurations. You can specify the hierarchy of projects, manage individual configurations, dynamically change step settings and parameters, and more.
 

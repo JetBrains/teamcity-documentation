@@ -174,7 +174,7 @@ the TeamCity server refreshes them automatically without sharing any related dat
    Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
    Available __Private Key__ options:
    
-   <snippet include-id="ssh-key-options">
+   <snippet id="ssh-key-options">
 
   * __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
   * __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
@@ -891,7 +891,7 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 ## Agent-side checkout rules limitations
 {id="Limitations"}
 
-<snippet include-id="git-checkout-rules-limitations">
+<snippet id="git-checkout-rules-limitations">
 
 The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. 
 The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.

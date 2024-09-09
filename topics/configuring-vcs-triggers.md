@@ -65,7 +65,7 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 ## VCS Trigger Rules
 {id="vcs-trigger-rules-1"}
 
-<snippet include-id="vcs-trigger-rules">
+<snippet id="vcs-trigger-rules">
 
 If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [checkout rules](vcs-checkout-rules.md).
 
@@ -81,7 +81,7 @@ Each rule is ether an "include" (starts with `+`) or an "exclude" (starts with `
 
 ### General Syntax
 
-<snippet include-id="general-syntax">
+<snippet id="general-syntax">
 
 The general syntax for a single rule is:
 
@@ -113,7 +113,7 @@ Also, rules are sorted according to path specificity. If you have an explicit in
 #### Trigger Rules Examples
 {id="trigger-rules-examples-1"}
 
-<snippet include-id="trigger-rules-examples">
+<snippet id="trigger-rules-examples">
 
 <table>
 <tr>
@@ -253,7 +253,7 @@ When changes are merged / fast-forwarded from one branch to another, strictly sp
 
 ## Triggered Build Customization
 
-<snippet include-id="triggered-build-customization">
+<snippet id="triggered-build-customization">
 
 The __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and choose if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
 

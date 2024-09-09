@@ -217,7 +217,7 @@ If there are multiple branch filters configured atop a single root, the followin
 
 To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`). The name is case-sensitive.
 
-<snippet include-id="OR-syntax-tip">
+<snippet id="OR-syntax-tip">
 
 > Here, the _pipe_ symbol `|` represents the __OR__ command, as in regular expressions: use `+` for including, __OR__ `-` for excluding.
 >
@@ -225,7 +225,7 @@ To filter branches, use a newline-delimited list of `+|-:logical_branch_name` ru
 
 </snippet>
 
-<snippet include-id="vcs-branch-names-for-prs">
+<snippet id="vcs-branch-names-for-prs">
 
 > Note that branch filters for the [](pull-requests.md) build feature accept fully clarified VCS branch names only, regardless of how these branches are displayed in TeamCity UI.
 > 

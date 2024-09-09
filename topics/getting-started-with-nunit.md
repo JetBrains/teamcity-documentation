@@ -37,7 +37,7 @@ TeamCity supports collecting code coverage statistics out of the box.
 
 The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/master/sample2.proj) is trivial: the [Exec](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx) task, which launches tests, is run:
 
-<snippet include-id="msbuild-examples-nunit">
+<snippet id="msbuild-examples-nunit">
 
 ```Shell
 

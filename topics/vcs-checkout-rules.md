@@ -22,7 +22,7 @@ The general recommendation is to keep a number of VCS roots, pointing to the roo
 <step><p>Use the VCS repository browser <img src="VCS-browserIcon.png" alt="VCS browser icon"/> to select a directory to check out.</p></step>
 </procedure>
 
-<snippet include-id="note-perforce-vcs">
+<snippet id="note-perforce-vcs">
 
 Note that Perforce support in TeamCity treats checkout rules as case-sensitive. Case-insensitivity for Perforce-based build configurations can be enabled on the __Version Control Settings__ page by adding the following comment in the _Edit Checkout Rules_ form: `##teamcity ignore-case`.
 
