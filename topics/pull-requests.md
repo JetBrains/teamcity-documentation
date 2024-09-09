@@ -421,7 +421,7 @@ The following parameters are available for the [Bitbucket Cloud](https://bitbuck
 * **Username/password** — Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
 
 * **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
-  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud" style="block"/>
 
 * **Permanent Access Token** — Enter a Bitbucket [Repository Access Token](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/), [Project Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-project-access-tokens/), or [Workspace Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-workspace-access-tokens/) to configure long-lived access to a repository, workspace, or project. The token must be configured with the _Pull Requests | Read_ scope.
 </td>
@@ -474,7 +474,7 @@ Authentication Type
 * **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
 
 * **GitLab Application Token** — Displays a list of configured [GitLab OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
-<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
+<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab" style="block"/>
 
 </td>
 </tr>

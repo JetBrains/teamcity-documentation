@@ -139,7 +139,7 @@ TeamCity Kotlin DSL receives the following updates:
 <note>
 
 Our experimental UI is a work in progress: we introduce the changes in the early stages of development so you can already benefit from the new features. Based on your feedback, we will make sure to optimize the experimental pages and migrate all the important classic features in the future releases.   
-For now, if any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png) button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
+For now, if any of the familiar features are missing, you can switch an experimental page to the classic UI with the ![mammoth.png](mammoth.png){style="block"} button, or turn off the experimental UI on the server completely in __My Settings & Tools__.
 
 __Try out the TeamCity experimental UI and leave your feedback via our [UI survey](https://surveys.jetbrains.com/s3/feedback-form-for-teamcity?tcv=2019.2)!__
 
@@ -165,11 +165,11 @@ Click any build stage to open the corresponding line of the build log. Note that
 
 Apart from the build timeline and build log, the __Overview__ tab gives quick access to build problems, tests, changes, and dependencies. The corresponding tabs have also been updated and now offer new features:
 
-* The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details. <img src="exp-changes-tab.png" width="700" alt="Experimental Changes tab"/>
+* The __Changes__ tab displays more information about changes in the build. You can separately browse user and artifact changes, and optionally display changes in build settings. Click any change to preview its details. <img src="exp-changes-tab.png" width="700" alt="Experimental Changes tab" style="block"/>
 
-* The __Tests__ tab allows quickly switching between failed, ignored, and succeeded tests. Click a test to view its details and assign an investigation. <img src="exp-tests-tab.png" width="700" alt="Experimental Tests tab"/>
+* The __Tests__ tab allows quickly switching between failed, ignored, and succeeded tests. Click a test to view its details and assign an investigation. <img src="exp-tests-tab.png" width="700" alt="Experimental Tests tab" style="block"/>
 
-* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: visual timeline, structured list, and build chain. <img src="exp-dependencies-tab.png" width="700" alt="Experimental Dependencies tab"/>
+* The __Dependencies__ tab provides three alternative modes of displaying the build dependencies: visual timeline, structured list, and build chain. <img src="exp-dependencies-tab.png" width="700" alt="Experimental Dependencies tab" style="block"/>
 
 ### Experimental Agents page
 

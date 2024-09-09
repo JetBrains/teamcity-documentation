@@ -48,7 +48,7 @@ To customize a sidebar, click ![wn-pencil.png](wn-pencil.png) in its upper-right
 The _Projects_ sidebar lists all the projects available to the current TeamCity user and allows searching them by name. 
 You can expand any project to see its nested subprojects / build configurations and quickly switch between them. 
 The status icons and counters for all its nested objects are also displayed in the sidebar.
-<img src="sidebar_search.gif" alt="Sakura projects sidefar" width="300"/>
+<img src="sidebar_search.gif" alt="Sakura projects sidefar" width="300" style="block"/>
 
 The sidebar allows accessing the __Favorite projects__ and __Favorite builds__ views with the lists of your favorite projects and favorite build configurations respectively.  
 You can also toggle the display of archived projects.
@@ -64,24 +64,24 @@ The __Trends__ view comprises cards that represent build configurations of the s
 <img src="project-trends.png" alt="Sakura Project Trends page"/>
 
 Each card contains a preview of the most recent builds displayed as bars on a timescale. You can hover over any bar to instantly see more information about the build: its duration, queue statistics, test results, used agent, and more. The card also displays the number of pending changes.
-![project-trends.gif](project-trends.gif)
+![project-trends.gif](project-trends.gif){style="block"}
 
 The __Builds__ view is similar to the classic UI and displays the list of the recent builds in subprojects and build configurations of the current project.
-![project-builds.png](project-builds.png)
+![project-builds.png](project-builds.png){style="block"}
 
 ### Sakura Build Configuration Home page
 
 The __Overview__ tab of the Sakura __Build Configuration Home__ page provides two views:
 
 * __Branches__, listing the recent builds in active branches
-![bc-branches.png](bc-branches.png)
+![bc-branches.png](bc-branches.png){style="block"}
 
 * __Builds__, listing all the recent builds of the configuration
-![bc-builds-history.png](bc-builds-history.png)
+![bc-builds-history.png](bc-builds-history.png){style="block"}
  
 Every build item in the list is expandable: click it to preview the most important information about the build and get quick access to any of the __Build Results__ tabs.
 
-Click a specific build problem or failed test to see the related stack trace: ![build-test-stacktrace.png](build-test-stacktrace.png)
+Click a specific build problem or failed test to see the related stack trace: ![build-test-stacktrace.png](build-test-stacktrace.png){style="block"}
 
 Click __Open in build log__ to open the new build log exactly at the line where the problem occurred.
 
@@ -95,7 +95,7 @@ Example of the _Changes_ pop-up block:
 
 This page visualizes build results and provides several handy widgets.
 
-The __Actions__ menu offers several handy options: ![build-actions.png](build-actions.png)
+The __Actions__ menu offers several handy options: ![build-actions.png](build-actions.png){style="block"}
 
 <tip>
 
@@ -118,13 +118,13 @@ Click any stage to open the corresponding line of the build log. The long logs c
 #### Changes tab
 
 The __Changes__ tab displays more information about the changes in the build, separately for user commits and artifact changes. 
-You can filter changes by their author and display changes made in the build configuration settings.![build-changes.png](build-changes.png)
+You can filter changes by their author and display changes made in the build configuration settings.![build-changes.png](build-changes.png){style="block"}
 
 #### Tests tab
 
 The __Tests__ tab allows switching between failed, ignored, and succeeded tests. Click a test to quickly view its details or, for example, to assign an investigation. You can also view its history on the new __Test History__ page.
 
-The __Test History__ page has better performance now. It also has an adjustable range slider allowing you to select a period of the test history that will be displayed below. The tests timeline is interactive:![build-test-history.gif](build-test-history.gif)
+The __Test History__ page has better performance now. It also has an adjustable range slider allowing you to select a period of the test history that will be displayed below. The tests timeline is interactive:![build-test-history.gif](build-test-history.gif){style="block"}
 
 The list of builds that ran this test has improved usability now: on clicking a build, the stacktrace is displayed.
 
@@ -135,11 +135,11 @@ The __Dependencies__ tab boasts of a new more user-friendly design.
 
 It provides three alternative modes of displaying the build dependencies: a visual timeline, structured list, and build chain. Choose the mode that is the most helpful for your current task.
 
-The interactive timeline shows the sequence of builds and the duration of each build in this pipeline. It has an adjustable range slider allowing you to select a build of the pipeline. ![dependencies-timeline.png](dependencies-timeline.png)
+The interactive timeline shows the sequence of builds and the duration of each build in this pipeline. It has an adjustable range slider allowing you to select a build of the pipeline. ![dependencies-timeline.png](dependencies-timeline.png){style="block"}
 
-The list is a flat line of the builds, which also has a lot of interactive features: you can click and expand a build line and review the results.![dependencies-list.png](dependencies-list.png)
+The list is a flat line of the builds, which also has a lot of interactive features: you can click and expand a build line and review the results.![dependencies-list.png](dependencies-list.png){style="block"}
 
-The chain page loads faster and demonstrates build dependencies more clearly. ![dependencies-chains.png](dependencies-chains.png)
+The chain page loads faster and demonstrates build dependencies more clearly. ![dependencies-chains.png](dependencies-chains.png){style="block"}
 
 ### Sakura Agents page
 
@@ -162,7 +162,7 @@ Similarly, you can also associate projects with this pool: open the **Projects**
 #### Agents sidebar
 
 The _Agents_ sidebar allows browsing the agent pool hierarchy including cloud profiles and searching agents and pools by name. 
-The __Overview__ view provides statistics about all the agents on the server.![agents-sidebar-overview.png](agents-sidebar-overview.png)
+The __Overview__ view provides statistics about all the agents on the server.![agents-sidebar-overview.png](agents-sidebar-overview.png){style="block"}
 
 
 ### Sakura Changes page
@@ -180,4 +180,4 @@ On this page, you can see the position of a build in the queue and view the queu
 
 ### Plugin API
 
-The Sakura UI extends the TeamCity plugin API and provides [a set of handy tools](https://plugins.jetbrains.com/docs/teamcity/front-end-extensions.html) to create plugins. ![plugin-api-qodana.png](plugin-api-qodana.png)
+The Sakura UI extends the TeamCity plugin API and provides [a set of handy tools](https://plugins.jetbrains.com/docs/teamcity/front-end-extensions.html) to create plugins. ![plugin-api-qodana.png](plugin-api-qodana.png){style="block"}
