@@ -360,7 +360,7 @@ The following old versions of [REST API](https://www.jetbrains.com/help/teamcity
 
 To ensure that the integration with NuGet is secure, TeamCity now checks if a trusted NuGet installer is used when starting builds on Windows with a [NuGet dependency trigger](nuget-dependency-trigger.md). If your triggers use a NuGet version installed via __[Administration | Tools](installing-agent-tools.md)__, this verification will go smoothly, with no user actions required. Otherwise, you might get the "_Problem with NuGet Dependency Trigger_" error. The recommended solution is to switch all affected triggers to any NuGet version that has been regularly [installed via the TeamCity UI](installing-agent-tools.md). Such versions automatically appear in the _NuGet.exe_ drop-down menu in the trigger's settings. Alternatively, if you need to use a custom NuGet executable and absolutely trust it, you can add it to the whitelist by specifying the following [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 
-```Plain Text
+```
 teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
 ```
 

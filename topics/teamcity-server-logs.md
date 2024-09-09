@@ -387,7 +387,7 @@ Most useful settings of log4j configuration:
 
 To change the minimum log level to save in the file, tweak the `level` attribute of the `Logger` element.
 
-```Plain Text
+```
 <Loggers>
     <Logger name="jetbrains.buildServer" level="INFO">
 ...
@@ -396,7 +396,7 @@ To change the minimum log level to save in the file, tweak the `level` attribute
 
 The logs are rotated by default. When debug is enabled, it makes sense to increase the `max` attribute of `<DefaultRolloverStrategy/>` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
 
-```Plain Text
+```
 <DelegateAppender>
     ...
     <DefaultRolloverStrategy max="20" fileIndex="min"/>

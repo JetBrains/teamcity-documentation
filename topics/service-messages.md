@@ -263,7 +263,7 @@ where:
 
 Any message supports the optional attribute `flowId` that allows you to group messages into separate categories (flows). For example, since every message is processed in the order it is sent, the following sample produces a hierarchy of blocks where both output messages are owned by the latest block:
 
-```Plain Text
+```
 ##teamcity[blockOpened name='block 1']
 ##teamcity[blockOpened name='block 2']
 ##teamcity[message text='Message 1']
@@ -274,7 +274,7 @@ Any message supports the optional attribute `flowId` that allows you to group me
 
 Adding the `flowId` attribute allows you to split the messages into two parallel flows.
 
-```Plain Text
+```
 ##teamcity[blockOpened name='block 1' flowId='1']
 ##teamcity[blockOpened name='block 2' flowId='2']
 ##teamcity[message text='Message 1' flowId='1']

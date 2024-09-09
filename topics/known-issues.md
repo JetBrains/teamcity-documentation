@@ -589,7 +589,7 @@ The regular ZIP format supports archives up to 2^32 bytes (4 GB) in size. Since 
 
 If tools that you utilize to unzip TeamCity build artifacts do not support ZIP64 (for example, you may observe header error warnings), add the following [configuration parameters](configuring-build-parameters.md) to a project (either a &lt;Root project&gt; or a specific project that produces unsupported archives):
 
-```Plain Text
+```
 teamcity.internal.artifacts.useZip64=Never
 teamcity.internal.artifacts.useByteChannelForZip=false
 ```
