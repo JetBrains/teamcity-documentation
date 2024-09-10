@@ -28,7 +28,7 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Medium<br/>Medium-22.04-Small</td>
+<td>Ubuntu-20.04-Medium<br/>Ubuntu-22.04-Medium</td>
 <td>4</td>
 <td>8 GB</td>
 <td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
