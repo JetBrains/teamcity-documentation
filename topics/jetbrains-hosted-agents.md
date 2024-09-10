@@ -179,3 +179,8 @@ include-id="windows-jb-agents"/>
 
 <include src="preinstalled-software-on-teamcity-cloud-ubuntu-agents.md"
 include-id="ubuntu-jb-agents"/>
+
+### macOS Agents
+
+<include src="preinstalled-software-on-teamcity-cloud-macos-agents.md"
+include-id="macos-jb-agents"/>
