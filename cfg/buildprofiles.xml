@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildprofiles>
+<buildprofiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd">
+	<sitemap priority="0.35" change-frequency="monthly"/>
 	<variables>
+		<analytics-head-script-file>thirdparty/dpk-gtm-analytics.html</analytics-head-script-file>
+		<website-title>%instance% Documentation</website-title>
 		<search-scope/>
 		<fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
 		<feedbackRequireEmail>false</feedbackRequireEmail>
