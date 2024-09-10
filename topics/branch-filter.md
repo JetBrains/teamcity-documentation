@@ -184,7 +184,7 @@ Set a filter to receive alerts only on the builds from the specified branches. B
 
 Specify on which branches to monitor and trigger pull requests.
 
-Filters for this feature should reference branches by their fully clarified VCS names (`refs/heads/branch-*`) instead of shortened logical names (`branch-*`).
+Filters for this feature should reference branches by their fully qualified VCS names (`refs/heads/branch-*`) instead of shortened logical names (`branch-*`).
 
 </td>
 
@@ -227,7 +227,7 @@ To filter branches, use a newline-delimited list of `+|-:logical_branch_name` ru
 
 <chunk include-id="vcs-branch-names-for-prs">
 
-> Note that branch filters for the [](pull-requests.md) build feature accept fully clarified VCS branch names only, regardless of how these branches are displayed in TeamCity UI.
+> Note that branch filters for the [](pull-requests.md) build feature accept fully qualified VCS branch names only, regardless of how these branches are displayed in TeamCity UI.
 > 
 > For example, if a user creates a new pull request by executing the `gh pr create --base source-branch --head master --assignee "@johndoe"` GitHub CLI command, use `refs/heads/source-branch` and/or `refs/heads/master` names to point the Pull Requests feature to the related target/source branches. Omitting `refs/heads/` and using shortened logical branch names (`[+|-]:source-branch`, `[+|-]:master`, `[+|-]:pull/10`) will result in faulty filters that do not target required branches.
 > 
