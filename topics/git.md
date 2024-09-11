@@ -396,7 +396,7 @@ Although different in their scenarios and implementation mechanisms, both concep
 
 ### Additional Credentials
 
-If your repository imports submodules hosted on the same VCS and these imported repositories can be accessed via the same credentials stored in your [](vcs-root.md), you do not need to perform any additional modifications. TeamCity will be able to check out all required source files using a single set of credentials.
+If your repository imports submodules hosted on the same VCS and these imported repositories can be accessed via the same credentials stored in your [](vcs-root.md), you do not need to perform any additional modifications. TeamCity will check out all required source files using a single set of credentials.
 
 Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
 
