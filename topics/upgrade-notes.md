@@ -1,6 +1,13 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2024.07 to 2024.11
+{id="2024.11"}
+
+
+
+
+
 ## Changes from 2024.07.1 to 2024.07.2
 {id="2024.07.2"}
 

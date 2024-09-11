@@ -15,11 +15,11 @@
         <config-feedback-support>https://teamcity-support.jetbrains.com/</config-feedback-support>
         <config-sideblocks>true</config-sideblocks>
         <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
-        <config-algloia-product-version>2024.07</config-algloia-product-version>
+        <config-algloia-product-version>2024.11</config-algloia-product-version>
         <!--version selector for TeamCity OnPremises-->
         <config-versions-switcher></config-versions-switcher>
         <enable-browser-edits>true</enable-browser-edits>
-        <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2024.07/</browser-edits-url>
+        <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2024.11/</browser-edits-url>
         <disable-prev-next-links>true</disable-prev-next-links>
         <disable-variable-interpolation>true</disable-variable-interpolation>
         <web-root>https://www.jetbrains.com/help</web-root>
