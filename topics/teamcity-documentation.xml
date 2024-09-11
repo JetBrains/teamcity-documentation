@@ -8,7 +8,7 @@
     <section-starting-page>
         <title>TeamCity On-Premises Documentation Home</title>
         <description>
-            Welcome to the documentation for TeamCity 2024.07 — a CI/CD solution for all sorts of workflows and development practices.
+            Welcome to the documentation for TeamCity 2024.11 — a CI/CD solution for all sorts of workflows and development practices.
         </description>
 
         <tip-group>
@@ -27,7 +27,7 @@
         <highlighted-group>
             <title>Explore features</title>
             <a href="https://www.jetbrains.com/teamcity/features/" description="Learn what are the most powerful features of TeamCity and why it can be used in any area, for a product of any scale.">Key features</a>
-            <a href="what-s-new-in-teamcity.md" description="See the recently introduced features.">What's New in TeamCity 2024.07</a>
+            <a href="what-s-new-in-teamcity.md" description="See the recently introduced features.">What's New in TeamCity 2024.11</a>
             <a href="https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap" description="Learn about our plans for the future releases.">TeamCity Roadmap</a>
             <a href="https://blog.jetbrains.com/teamcity/" description="Follow our blog to get the freshest updates and tutorials.">TeamCity Blog</a>
             <a href="https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/%product-version%/index.html" description="Use Kotlin DSL to define TeamCity settings programmatically.">TeamCity Kotlin DSL</a>
