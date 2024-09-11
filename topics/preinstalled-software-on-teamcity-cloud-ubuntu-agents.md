@@ -22,13 +22,13 @@
 |[.NET 7](https://dotnet.microsoft.com/)|7.0.410|
 |[.NET 8](https://dotnet.microsoft.com/)|8.0.401|
 |[.NET (default)](https://dotnet.microsoft.com/)|8.0.401|
-|[Chromium](https://www.chromium.org/)|128.0.6613.113|
+|[Chromium](https://www.chromium.org/)|128.0.6613.119|
 |[Google Chrome](https://www.google.com/chrome/)|128.0.6613.119|
 |[ChromeDriver](https://chromedriver.chromium.org/)|114.0.5735.90|
-|[Docker](https://www.docker.com/)|27.2.0|
-|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|27.2.0|
+|[Docker](https://www.docker.com/)|27.2.1|
+|[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)|27.2.1|
 |[Docker Compose](https://docs.docker.com/compose/)|2.29.2|
-|[AWS CLI](https://aws.amazon.com/cli/)|2.17.45|
+|[AWS CLI](https://aws.amazon.com/cli/)|2.17.46|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)|1.29.8|
 |[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)|2.64.0|
 |[Google Cloud SDK](https://cloud.google.com/sdk)|491.0.0|
@@ -56,7 +56,7 @@
 |[PowerShell](https://docs.microsoft.com/en-us/powershell/)|7.4.5|
 |[R](https://www.r-project.org/)|3.6.3|
 |[Groovy](https://groovy-lang.org/)|4.0.5|
-|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.26.3|
+|[Python Virtualenv](https://virtualenv.pypa.io/en/latest/)|20.26.4|
 |[Python Pipenv](https://pipenv.pypa.io/en/latest/)|2024.0.1|
 |[Python Poetry](https://python-poetry.org/)||
 |[rustup](https://rustup.rs/)|1.27.1|
