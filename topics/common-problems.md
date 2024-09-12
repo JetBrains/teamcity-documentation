@@ -461,6 +461,12 @@ This error can occur when the Oracle JDBC driver is not compatible with the Orac
 
 In order to resolve the problem, use the Oracle JDBC driver from your Oracle server installation, or [download the driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) of the same version as the Oracle server.
 
+### MySQL data directory contains `<hostname>-bin.<index>` files which use a lot of space
+
+These files are the [MySQL Server binary log files](https://dev.mysql.com/doc/refman/8.0/en/binary-log.html), which contain a sequential log of changes to MySQL databases. They are used for MySQL Server replication and data recovery.
+
+By default, the binary log files are set to expire automatically after 30 days.
+
 ## Common Maven issues
 
 There are two kinds of Maven-related issues commonly seen in the TeamCity build configurations:
