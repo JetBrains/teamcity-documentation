@@ -5,7 +5,7 @@ The **artifacts migration tool** is a command-line tool that allows you to trans
 
 <img src="dk-baMigrationTool-overview.png" width="708" alt="TeamCity Artifacts Migration Tool"/>
 
-Currently, the tool accepts only Amazon S3 as a migration target.
+Currently, the tool accepts only Amazon S3 buckets and Azure storages as migration targets. Note that you need to install an unbundled plugin to set up Azure storages: [Azure Artifact Storage](https://plugins.jetbrains.com/plugin/9617-azure-artifact-storage).
 
 
 ## Download the Artifacts Migration Tool
@@ -38,7 +38,9 @@ teamcity.storage.migration.artifact.directories=C:\\ProgramData\\JetBrains\\Team
 teamcity.storage.migration.host=http://localhost:8111
 ```
 
-## AWS-Specific Settings
+## Auth Settings for Cloud Storages
+
+### AWS S3
 
 To migrate artifacts to or from [Amazon S3 buckets](storing-build-artifacts-in-amazon-s3.md), the artifacts migration tool needs to use AWS credentials stored on the server machine. See this documentation article for more information: [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html).
 
@@ -51,6 +53,15 @@ teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
 * `<FEATURE_ID>` is the storage ID from [the storage settings](storing-build-artifacts-in-amazon-s3.md#Create+and+Set+Up+a+New+AWS+S3+Storage) page.
 * `<PROFILE_NAME>` is the profile name from the AWS credentials file.
 
+### Microsoft Azure
+
+Authentication in Microsoft Azure is enabled by using [EnvironmentCredential](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.environmentcredential?view=azure-dotnet) instances. TeamCity uses authentication with a client secret, which requires the following environment variables to be present on the TeamCity server machine:
+
+* `AZURE_TENANT_ID`
+* `AZURE_CLIENT_ID`
+* `AZURE_CLIENT_SECRET`
+
+We expect to support more authentication scenarios (including authentication via Azure CLI commands) in future release cycles.
 
 ## Target Storage Settings
 
@@ -112,7 +123,10 @@ migrate.bat -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
 
 
 
-> Currently, the tool accepts only Amazon S3 bucket IDs as the "source" parameter values.
+> Currently, the tool accepts IDs of the following entities as the "source" parameter values.
+> * Amazon S3 bucket
+> * Azure storage
+> * Internal TeamCity artifact storage
 
 The first time you run the migration tool in this mode, it detects artifacts that should be copied, saves the migration plan, and asks you for the next step.
 
