@@ -129,7 +129,7 @@ For __Bugzilla__, __GitHub__, __GitLab__, and __Bitbucket Cloud__, you need to s
 TeamCity will resolve the issue number mentioned in a VCS comment and will display a link to this issue in the UI (for example, on the __[Changes](build-results-page.md#Changes+Tab)__ page, or the __[Issues](build-results-page.md#Issues+Tab)__ tab of __[Build Results](working-with-build-results.md)__).
 
 ## Integrating TeamCity with Other Issue Trackers
-{product="tc"}
+{instance="tc"}
 
 To integrate TeamCity with other issue trackers, configure TeamCity to turn any issue tracker issue ID mentions in change comments into links. See [mapping external links in comments](mapping-external-links-in-comments.md) for details.
 

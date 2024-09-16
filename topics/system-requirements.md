@@ -2,13 +2,13 @@
 [//]: # (auxiliary-id: System Requirements)
 
 This article contains general recommendations on choosing and configuring the environment for TeamCity Server and Agents, as well as the network connection between them and a dedicated external database. If you have specific questions that are not covered here, please contact our support via any convenient [feedback channel](feedback.md).
-{product="tc"}
+{instance="tc"}
 
 This article contains general recommendations on choosing and configuring the environment for TeamCity Agents. If you have specific questions that are not covered here, please contact our support via any convenient [feedback channel](feedback.md).
-{product="tcc"}
+{instance="tcc"}
 
 ## TeamCity Server Requirements
-{product="tc"}
+{instance="tc"}
 
 ### Choosing Server OS/Platform
 
@@ -145,7 +145,7 @@ This section contains a checklist of recommendations on tweaking the TeamCity se
 
 * Regularly review [Server Health](server-health.md) reports (including hidden ones).
 * Use a separate [reverse proxy server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) (for example, NGINX) to handle HTTPS.
-{product="tc"}
+{instance="tc"}
 * Use a separate server for the external database. Monitor the database performance.
 * Monitor the server's CPU and I/O performance. Increase hardware resources as necessary.
 * Make sure [clean-up](teamcity-data-clean-up.md) is configured for all the projects with a due retention policy. Check __Administration | Clean-Up__ to make sure that the clean-up is performed regularly.
@@ -172,7 +172,7 @@ TeamCity Agent can run on any recent version of Windows, Linux, or macOS. Requir
 The agent Java process has to:
 * be able to open outbound HTTP connections to the server URL that is configured via the `serverUrl` property in the `[buildAgent.properties](configure-agent-installation.md)` file (typically the same address you use in the browser to view the TeamCity UI).  
 Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration, and proxies (if any) comply with these requirements.
-{product="tc"}
+{instance="tc"}
 * have full permissions (read/write/delete) to the following directories recursively: `<Agent Home Directory>` (necessary for automatic agent upgrade and agent tools support), `<Agent Work Directory>`, `<Agent Temp Directory>`, and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file).
 * be able to launch processes (to run builds).
 * be able to launch nested processes with the following parent process exit (used during the agent upgrade).
@@ -216,10 +216,10 @@ The agents’ hardware requirements are determined by the builds they run. Runni
 Although you can run a build agent on the same machine as the TeamCity server, the recommended approach is to use a separate machine (it can be virtual) for each build agent. If you chose to install several agents on the [same machine](install-multiple-agents-on-one-machine.md), consider the potential CPU, disk, memory, or network bottlenecks that might occur. The [Performance Monitor](performance-monitor.md) build feature can help analyze live data.
 
 If you consider cloud deployment for TeamCity agents (for example, on Amazon EC2), also see [this article](setting-up-teamcity-for-amazon-ec2.md).
-{product="tc"}
+{instance="tc"}
 
 ## Estimating Network Traffic Between Server and Agents
-{product="tc"}
+{instance="tc"}
 
 The network traffic mostly depends on your settings as some of them imply transferring binaries between the agent and the server.
 
@@ -233,7 +233,7 @@ The most important flows of traffic between a TeamCity agent and the TeamCity se
 * Some runners (like coverage or code analysis) include automatic uploading of their results' reports to the server.
 
 ## Estimating External Database Capacity
-{product="tc"}
+{instance="tc"}
 
 If a TeamCity server is used extensively, the database performance starts to play a greater role. To ensure production-level performance and reliability, an [external database](set-up-external-database.md) must be used. Its size and performance are crucial aspects to consider.
 

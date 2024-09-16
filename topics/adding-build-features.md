@@ -57,8 +57,8 @@ TeamCity ships with the following build features that can be added to your confi
 <dt>NuGet Feed Credentials</dt>
 <dd>Allows builds to interact with NuGet feeds that require authentication.&emsp;<a href="nuget-feed-credentials.md">Learn more...</a></dd>
 
-<dt product="tc">NuGet Packages Indexer</dt>
-<dd product="tc">Indexes NuGet packages and adds them to TeamCity remote private feeds, with no need for additional authorization.&emsp;<a href="nuget-packages-indexer.md">Learn more...</a></dd>
+<dt instance="tc">NuGet Packages Indexer</dt>
+<dd instance="tc">Indexes NuGet packages and adds them to TeamCity remote private feeds, with no need for additional authorization.&emsp;<a href="nuget-packages-indexer.md">Learn more...</a></dd>
 
 <dt>Performance Monitor</dt>
 <dd>Allows you to get the statistics on the CPU, disk I/O, and memory usage during a build run on a build agent. &emsp;<a href="performance-monitor.md">Learn more...</a></dd>

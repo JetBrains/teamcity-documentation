@@ -12,12 +12,12 @@ This article describes how to integrate TeamCity with [Perforce Helix Core](http
 
 * TeamCity supports Perforce Helix Core servers/clients starting from Helix Core 2017.1
 * A Perforce Helix Core client must be installed on the TeamCity server machine.
-{product="tc"}
+{instance="tc"}
 * The path to the Perforce client must be added to the `PATH` environment variable.  
   Alternatively, a full path to `p4` could be set via the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.perforce.customP4Path`. The property value must include the `p4` filename.
-{product="tc"}
+{instance="tc"}
 * If you plan to use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), you need to install a Perforce Helix Core client and add it to `PATH` on build agent machines as well.
-{product="tcc"}
+{instance="tcc"}
 
 ## Running Builds on Perforce Helix Core Sources
 
@@ -125,6 +125,6 @@ To configure automatic labeling for a build configuration:
 If a build contains a changelist that is associated with one or more [jobs](https://www.perforce.com/manuals/p4guide/Content/P4Guide/chapter.jobs.html), TeamCity will show a wrench icon ![wrench.png](wrench.png) next to this change in the build results. Click or hover it to view the details of the relevant jobs.
 
 ### View Perforce Logs
-{product="tc"}
+{instance="tc"}
 
 All operations of the Perforce plugin are logged in to the `teamcity-vcs.log` files with the category `jetbrains.buildServer.VCS.P4` (on an agent or on a server, depending on the operation mode). The detailed logging can be enabled with [TeamCity Server Logs](teamcity-server-logs.md).

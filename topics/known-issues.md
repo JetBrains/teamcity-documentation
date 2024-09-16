@@ -4,12 +4,12 @@
 This page contains a list of workarounds for known issues in TeamCity.
 
 To see issues specific to particular versions of TeamCity, go to the respective section of [upgrade notes](upgrade-notes.md).
-{product="tc"}
+{instance="tc"}
 
 <anchor name="jdk8_240"/>
 
 ## Incompatibility with JDK 8 update 242+
-{product="tc"}
+{instance="tc"}
 
 TeamCity versions up to 2019.2.1 running under JDK 8u242+ can report `java.lang.NoClassDefFoundError: Could not initialize class XXX` errors, for example, on Git operations or Windows domain authentication operations.
 
@@ -136,13 +136,13 @@ Certain antivirus software like Kaspersky Internet Security can result in Java p
 ESET antivirus can also slow down Ant/IntelliJ IDEA project builds a great deal (slowing down TCP connections to localhost on an agent).
 
 If you run antivirus on the TeamCity server or agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks — ensure you take proper security measures before doing this.
-{product="tc"}
+{instance="tc"}
 
 If you run antivirus on the TeamCity agent machines and get disk access errors or experience degraded performance, you may consider temporarily disabling the antivirus software before investigating the issue and reporting it to JetBrains. Note that disabling the antivirus can make your setup more vulnerable to potential external attacks — ensure you take proper security measures before doing this.
-{product="tcc"}
+{instance="tcc"}
 
 It is recommended to exclude entire TeamCity server home and [TeamCity Data Directory](teamcity-data-directory.md) from the background checks and perform periodical checks there in the well-known maintenance window so that those do not affect server performance much. On TeamCity agent, it is recommended to exclude TeamCity agent home from the background checks.
-{product="tc"}
+{instance="tc"}
 
 There might be problems with the Windows Indexing Service, so disable various indexing services. See [the related issue](https://youtrack.jetbrains.com/issue/TW-10033#comment=27-82484) for more details. Windows System Restore Feature might also need disabling.
 
@@ -153,7 +153,7 @@ Skype software is known to corrupt layout of pages displayed in Internet Explore
 ## Subversion issues
 
 ### svn: E175002: Received fatal alert: bad_record_mac
-{product="tc"}
+{instance="tc"}
 
 Add a system property `-Dsvnkit.http.sslProtocols=SSLv3,TLS` on the build server (see [Configuring TeamCity Server Startup Properties](server-startup-properties.md)).   
 If you use checkout on agent, add this property [on build agent](configuring-build-agent-startup-properties.md) as well.
@@ -167,12 +167,12 @@ Anyway, upgrading the JVM used to the [latest available version](https://java.su
 
 
 ## NUnit 2.4.6 Performance
-{product="tc"}
+{instance="tc"}
 
 Due to an issue in NUnit 2.4.6, its performance may be slower than NUnit 2.4.1. For additional information, refer to the corresponding issue in our issue tracker: [TW-4709](https://youtrack.jetbrains.com/issue/TW-4709)
 
 ## StarTeam Performance
-{product="tc"}
+{instance="tc"}
 
 Using StarTeam SDK 9.0 instead of StarTeam SDK 9.3 on the TeamCity server can significantly improve VCS performance when there is a slow connection between TeamCity and StarTeam servers.
 
@@ -181,7 +181,7 @@ Using StarTeam SDK 9.0 instead of StarTeam SDK 9.3 on the TeamCity server can si
 If you run Perforce 2009.2 on Windows you may experience significant slow down. This is an issue with P4 server running on Windows. Refer to corresponding [section](https://www.perforce.com/manuals/p4sag/Content/P4SAG/chapter.performance.html) in Perforce documentation.
 
 ## Wrong times for build scheduled triggering (Timezone issues)
-{product="tc"}
+{instance="tc"}
 
 Make sure you use the latest update for Java 8 installation available for your platform (e.g. OpenJDK 8 by [Amazon Corretto](https://aws.amazon.com/corretto/)).
 
@@ -191,12 +191,12 @@ Make sure you use the latest update for Java 8 installation available for your p
 Before you upgrade to IntelliJ IDEA X (or other IntelliJ X platform products), make sure you do not have active pre-tested commits, otherwise they will not be able to be committed after upgrade. This is only relevant if you use directory-based IDEA project (project files are stored under `.idea` directory).
 
 ## Other Java Applications Running on the Same Server
-{product="tc"}
+{instance="tc"}
 
 If other web applications are available via the same hostname, a session cookie conflict can occur. This usually is visible via random user logouts or losing session-level data. (e.g. [TW-12654](https://youtrack.jetbrains.com/issue/TW-12654)). To resolve this, you can use different host names when accessing the applications.
 
 ## The Server Does Not Start Claiming the Database is in Use
-{product="tc"}
+{instance="tc"}
 
 Only a single TeamCity server can work with one database, which is checked on the TeamCity server start.
  
@@ -208,7 +208,7 @@ Only a single TeamCity server can work with one database, which is checked on th
 The error is most probably caused by the fact that there is another running TeamCity installation which is connected to the same database. Сheck that the [database properties](set-up-external-database.md) are correct and there is no other TeamCity server using the same database.
 
 ## Slow download from TeamCity server
-{product="tc"}
+{instance="tc"}
 
 If you experience slow speed when downloading artifacts from TeamCity, try checking the speed on the server machine, downloading from localhost. 
 If the speed is OK for the localhost, the issue can be in the network configuration or OS/hardware settings when combined with TeamCity (Tomcat) settings.
@@ -291,7 +291,7 @@ The most common cause for this is `maxAllowedContentLength` setting (in IIS) is 
 So any artifact larger than `maxAllowedContentLength` is discarded by IISCheck the settings value and try to rerun your build
 
 ### Artifacts Domain Isolation in setups with IIS causes authorization error on accessing artifacts
-{product="tc"}
+{instance="tc"}
 
 If [Artifacts Domain Isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) is enabled on your TeamCity server, trying to access build artifacts might result in the 401 Unauthorized error. This issue is most likely caused by the default behavior of your IIS web server: it rewrites the response headers targeting them back from the artifacts' domain to the main server domain. To disable this behavior, go to __Application Request Routing | Server Proxy Settings__ in the IIS interface and disable the "_Reverse rewrite host in response headers_" option.
 
@@ -309,7 +309,7 @@ See also: [Request Limits](https://learn.microsoft.com/en-us/iis/configuration/s
 
 
 ## SSL problems when connecting to HTTPS from TeamCity (handshake alert: unrecognized_name)
-{product="tc"}
+{instance="tc"}
 
 This problem may happen when changing JVM from 1.6 to 1.7 and connecting some incorrectly configured HTTPS servers. 
 The problem and workaround for it are described in [this issue](https://youtrack.jetbrains.com/issue/TW-30210).
@@ -337,7 +337,7 @@ runas /user: Administrator "powershell -File C:\TeamCity\bin\update-registry-ver
 ```
 
 ## Windows Docker Containers
-{product="tc"}
+{instance="tc"}
 
 Problems common to TeamCity Docker container images.
 
@@ -411,7 +411,7 @@ If you try to run dotCover on an agent with the Nano Server OS, the build will f
 dotCover does not support collection of coverage statistics for the `dotnet msbuild /t:vstest` command — use `dotnet test` instead.
 
 ### Code coverage configuration using Test Settings is deprecated
-{product="tc"}
+{instance="tc"}
 
 Code coverage configuration using Test Settings is deprecated in dotCover. [Read more](https://docs.microsoft.com/en-us/previous-versions/dd504821(v=vs.140)) in Microsoft documentation.
 
@@ -428,7 +428,7 @@ See [Xcode documentation](https://developer.apple.com/documentation/xcode_releas
 To resolve this issue, we suggest that you use Xcode 11 instead. To work around this issue in Xcode 10, you can either clean the output directory manually or try using the previous build system by passing `-UseNewBuildSystem=NO` to command line parameters.
 
 ## Cross-server Projects pop-up menu may not work in latest browsers
-{product="tc"}
+{instance="tc"}
 
 Due to the recent updates in the [SameSite cookie](https://web.dev/samesite-cookies-explained/) support, the __Projects__ pop-up menu may not display [cross-server projects](configuring-cross-server-projects-pop-up-menu.md) in some latest web browsers (see [more details](https://www.chromestatus.com/feature/5088147346030592) for Chrome Platform).
  
@@ -447,7 +447,7 @@ This problem will be resolved in the TeamCity 2020.1.5 update. See the [related 
 ## .NET runner known issues
 
 ### .NET runner is not compatible with obsolete external .NET CLI Support plugin
-{product="tc"}
+{instance="tc"}
 
 The reworked [.NET build runner](net.md) is not compatible with the obsolete external plugin [.NET CLI Support](https://plugins.jetbrains.com/plugin/9190--net-cli-support) (used in versions 2017.1 and earlier). If the obsolete plugin is installed on your server, you will get the _Error creating bean with name "jetbrains.buildServer.dotnet.DotnetRunnerRunType"_ after updating to TeamCity 2020.1. To solve this issue, please [uninstall the obsolete plugin](installing-additional-plugins.md#Uninstalling+Plugin+via+Web+UI) from your server.
 
@@ -474,7 +474,7 @@ __Cause__: NuGet clients __prior to version 3__ fail to list prerelease packages
 __Solution__: Delete build artifacts whose versions violate  [the required format](http://docs.nuget.org/create/versioning#user-content-prerelease-versions).
 
 ### Packages indexing is slow in TeamCity NuGet feed
-{product="tc"}
+{instance="tc"}
 
 __Problem__: After TeamCity server host machine move or upgrade, build metadata can be reset.
 
@@ -507,7 +507,7 @@ __Cause__: NuGet caches the server responses, thus pulling does not detect the m
 __Solution__: To send a new request directly to the server instead of the cache, use the `--no-cache` parameter in your request.
 
 ### Packages are not found in NuGet feed
-{product="tc"}
+{instance="tc"}
 
 __Problem__: Not all packages are found in a NuGet feed, though artifacts are present on the disk and in the UI and <path>teamcity-nuget.log</path> does not indicate that indexing of packages is in progress.
 
@@ -556,7 +556,7 @@ These issues concern the use of native [Git](git.md) for checking out sources to
 Switching the server to native Git results in builds failing to authorize in repositories via SSH DSA keys. See the related issue [TW-74580](https://youtrack.jetbrains.com/issue/TW-74580).
 
 To work around this issue, please set the `teamcity.git.sshCommandOptions` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `-o "PubkeyAcceptedKeyTypes=+ssh-dss"`.
-{product="tc"}
+{instance="tc"}
 
 ### Native Git via OpenSSH may fail
 
@@ -567,14 +567,14 @@ Native Git via OpenSSH may fail on Windows if the server/agent installation path
 TeamCity uses an ssh proxy when connecting via native Git. See [the related issue](https://youtrack.jetbrains.com/issue/TW-27672/Add-a-nonProxyHosts-option-for-ssh-proxy-in-git-plugin)
 
 ### Custom ssl certificates are not supported for native Git 
-{product="tc"}
+{instance="tc"}
 
 Custom ssl certificates support for native Git on the server is not available. See [the related issue](https://youtrack.jetbrains.com/issue/TW-75507/Custom-ssl-certificate-support-for-native-git-on-server)
 
 __This issue was fixed in TeamCity 2022.10.1__.
 
 ### Publishing artifacts to third party S3-compatibles storages may fail 
-{product="tc"}
+{instance="tc"}
 
 TeamCity 2022.04 changes [the ACL setting related to the Amazon S3 artifact storage](https://youtrack.jetbrains.com/issue/TW-75512), 
 which may cause publishing artifacts to third party S3-compatibles storages, such as Backblaze, to fail. 

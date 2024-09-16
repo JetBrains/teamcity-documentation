@@ -130,9 +130,9 @@ Notes on using this mode:
     
     ```
 * If the direct client mapping is changed between two builds, a [clean checkout](clean-checkout.md) for the second build __will be forced__, unless the `teamcity.perforce.enable-no-clean-checkout` [internal property](server-startup-properties.md) is set on the server.
-{product="tc"}
+{instance="tc"}
 * If the direct client mapping is changed, a clean checkout __will be forced__.
-{product="tcc"}
+{instance="tcc"}
 * Changing client mapping __will not force__ clean checkout for the agent-side checkout when:
   * A Perforce client name is used: changing the Perforce client mapping for the client will not result in a clean checkout.
   * A Perforce stream is used: changing the stream name while keeping the same stream root will not result in a clean checkout.
@@ -286,10 +286,10 @@ Specify the path to the Perforce command-line client (`p4.exe`).
 This works only for the [agent-side checkout](vcs-checkout-mode.md#agent-checkout). On the agent side, the value of this parameter could be overridden via the `TEAMCITY_P4_PATH` environment variable, if such a variable is set in `[buildAgent.properties](configure-agent-installation.md)` or comes from [build parameters](configuring-build-parameters.md).
 
 For the server, the p4 binary should be present in the `PATH` environment variable of the TeamCity server machine, or can be specified via the `teamcity.perforce.customP4Path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 >In the past versions, TeamCity supported a semicolon-separated list of allowed p4 paths. To restore this obsolete behavior, you can set the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 </td></tr><tr>
 

@@ -28,7 +28,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
    * **Password** — similar to the "Text" type, "Password" parameters can accept any string as a value. However, this value is never exposed outside a build: TeamCity hides this sensitive value from the UI, build logs, DSL code, and REST API response payloads.
 
-      <p product="tc">Passwords are stored in the configuration files under <a href="teamcity-data-directory.md">TeamCity Data Directory</a>. Depending on the <a href="teamcity-configuration-and-maintenance.md#encryption-settings">server encryption settings</a>, the value is either scrambled or encrypted with a custom key.</p>
+      <p instance="tc">Passwords are stored in the configuration files under <a href="teamcity-data-directory.md">TeamCity Data Directory</a>. Depending on the <a href="teamcity-configuration-and-maintenance.md#encryption-settings">server encryption settings</a>, the value is either scrambled or encrypted with a custom key.</p>
       
       > Password values are hidden from the build log by a plain search-and-replace algorithm. If you have a trivial password such as "123", all occurrences of the "123" string will be replaced in the log, which could potentially expose the password.
       > 

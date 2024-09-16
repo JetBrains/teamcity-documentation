@@ -32,10 +32,10 @@ You can connect TeamCity to JetBrains Space using two different techniques. The 
 2. creating a preset of connection to Space.
 
 Starting with version 2023.07, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.11, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
-{product="tc"}
+{instance="tc"}
 
 
 This tutorial explains how to manually setup the TeamCity-Space integration. For the detailed instructions on how to implement the Space integration using the newer semi-automatic approach, see this section instead: [Configuring Connections, JetBrains Space](configuring-connections.md#jetbrains-space-connection).
@@ -62,7 +62,7 @@ In your JetBrains Space instance:
    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter the redirect URI (`https://<server>:<port>/oauth/space/accessToken.html`) of your TeamCity Server.
       >To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
       >
-      {product="tc"}
+      {instance="tc"}
    4. Copy the app's _Client ID_ and _Client secret_. You will need them for configuration on the TeamCity side.
 
 Now, you can return to TeamCity and add a connection to JetBrains Space.

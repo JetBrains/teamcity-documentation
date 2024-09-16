@@ -11,7 +11,7 @@ Note that you can create a new Maven-based build configuration [automatically fr
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 >
-{type="warning" product="tcc"}
+{type="warning" instance="tcc"}
 
 This **video guide** explains [how to get the best from platform-specific build runners](https://www.youtube.com/watch?v=wLmLgh5OK5o): it uses Maven as an example.
 
@@ -91,10 +91,10 @@ If you change the goal from `test` to `deploy` (or any other sequential goal fro
 ### Maven Settings
 
 Choose the Maven version you want to use. You can also [manage the installed versions](installing-agent-tools.md).
-{product="tc"}
+{instance="tc"}
 
 Choose the Maven version you want to use.
-{product="tcc"}
+{instance="tcc"}
 
 <table>
 
@@ -137,10 +137,10 @@ The path to the Maven installation is taken from the `M2_HOME` environment varia
 <td>
 
 The bundled version is used as default. See how to [change the defaults](installing-agent-tools.md).
-{product="tc"}
+{instance="tc"}
 
 The bundled version is used as default.
-{product="tcc"}
+{instance="tcc"}
 
 </td></tr><tr>
 

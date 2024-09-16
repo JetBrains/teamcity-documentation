@@ -116,7 +116,7 @@ Specify a [Java Regular Expression](https://java.sun.com/j2se/1.5.0/docs/api/jav
 </td></tr></table>
 
 ## Custom Resolved States
-{product="tc"}
+{instance="tc"}
 
 TeamCity supports custom states for work items. For example, to customize the _resolved_ states, set the `teamcity.tfs.workItems.resolvedStates` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `Closed?|Done|Fixed|Resolved?|Removed?`.
 

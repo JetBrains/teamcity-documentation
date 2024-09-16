@@ -80,7 +80,7 @@ The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/
 ### Bitbucket Cloud
 
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
-{product="tc"}
+{instance="tc"}
 
 For the **Authentication Type**, you have the following options:
 
@@ -167,10 +167,10 @@ To set up the Commit Status Publisher for Azure DevOps, specify your Azure serve
 ### JetBrains Space
 
 Starting with version 2023.09, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.11, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
-{product="tc"}
+{instance="tc"}
 
 Set up a project using Space connections and TeamCity will automatically post build-related comments under the **Automation** section of Space **Commits** and **Branches** tabs.
 
@@ -244,6 +244,6 @@ In the scope of such a chain, Commit Status Publisher will not be bound by the c
 
 
 ## Troubleshooting
-{product="tc"}
+{instance="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Commit Status Publisher build feature to the `teamcity-commit-status.log` file. Apply the "debug-commit-status" preset to include DEBUG-level events to this log.

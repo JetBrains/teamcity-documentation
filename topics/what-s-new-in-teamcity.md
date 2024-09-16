@@ -8,13 +8,13 @@
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2024.11 compared to 2024.07](upgrade-notes.md#2024.11).
 
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 See the [TeamCity 2024.11 release notes](teamcity-2024-11-release-notes.md) article for the summary of implemented features and fixed issues.
 

@@ -24,7 +24,7 @@ To use CORS request, configure the CORS support as described [here](https://www.
 If you need to send `POST/PUT/DELETE` requests via CORS, you should obtain a CSRF token using the `authenticationTest.html?csrf` call, and then provide this token with your modifying HTTP requests.
 
 ## Troubleshooting
-{product="tc"}
+{instance="tc"}
 
 If you face problems regarding CSRF protection in TeamCity (for example, you get the "_Responding with 403 status code due to failed CSRF check_" response from the server), you can try these steps:
 * Enforce verification of `Origin/Referer` headers for CORS operations by setting the `teamcity.csrf.paranoid=false` internal property, similarly to how it worked in TeamCity versions prior to 2020.1 (read our [Upgrade Notes](upgrade-notes.md#Limitation+of+CORS+support+for+writing+operations)) for more details).
@@ -36,6 +36,6 @@ If you face problems regarding CSRF protection in TeamCity (for example, you get
 In case none of the listed steps help to resolve your problem, please contact our [support](feedback.md) and provide your `teamcity-auth.log` logs with the enabled teamcity-auth [logging preset](reporting-issues.md#Logging+events).
 
 ## Troubleshooting
-{product="tcc"}
+{instance="tcc"}
 
 If you face problems regarding CSRF protection in TeamCity, please contact our [support](feedback.md).

@@ -4,7 +4,7 @@
 The _Duplicates Finder (Java)_ build runner is intended for catching similar code fragments and providing a report on discovered repetitive blocks of Java code. This runner is based on IntelliJ IDEA capabilities, so an IntelliJ IDEA project file (`.ipr`) or directory (`.idea`) is required to configure the runner.
 
 In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
-{product="tc"}
+{instance="tc"}
 
 The Duplicates Finder (Java) runner can also find Java duplicates in projects built by Maven2 or above.
 

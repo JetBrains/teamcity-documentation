@@ -2,10 +2,10 @@
 [//]: # (auxiliary-id: Disk Usage)
 
 TeamCity analyses disk space and provides the __Disk Usage__ report. It detects all local and remote [artifact directories](configuring-artifacts-storage.md) configured on the server and analyses the disk space occupied by builds in these storages.
-{product="tc"}
+{instance="tc"}
 
 TeamCity analyses disk space and provides the __Disk Usage__ report. It analyses the disk space occupied by builds in the artifact storage.
-{product="tcc"}
+{instance="tcc"}
 
 To see the report, open __Administration| Disk Usage__.
 
@@ -14,7 +14,7 @@ To see the report, open __Administration| Disk Usage__.
 The report contains information on the total free disk space and the amount of space taken by build artifacts and build logs.
 
 The default location for these directories is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system`. If build logs and artifacts directories are [located on different disks](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location), free space is reported for each of the disks.
-{product="tc"}
+{instance="tc"}
 
 The report also displays [pinned builds](build-actions.md#Pin+Build), if available, and the space taken by their logs and artifacts.
 

@@ -30,10 +30,10 @@ To sum up, with this simple case you can use the basic features of the TeamCity-
 This use case is very similar to the previous one, but it aims at MSBuild which is the most widely used build platform for .NET projects.
 
 TeamCity supports collecting code coverage statistics out of the box; additional plugins can be [installed](installing-additional-plugins.md) to use the [JetBrains dotTrace](https://github.com/JetBrains/teamcity-dottrace) and [JetBrains dotMemory Unit](https://github.com/JetBrains/teamcity-dotmemory) in TeamCity.
-{product="tc"}
+{instance="tc"}
 
 TeamCity supports collecting code coverage statistics out of the box.
-{product="tcc"}
+{instance="tcc"}
 
 The [project file](https://github.com/JetBrains/teamcity-nunit-samples/blob/master/sample2.proj) is trivial: the [Exec](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx) task, which launches tests, is run:
 

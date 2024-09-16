@@ -15,7 +15,7 @@ On copying, TeamCity automatically assigns a new [ID](configuring-general-settin
 
 If the build configuration uses VCS roots or is associated with a template, which is not accessible in the target project (does not belong to the target project or one of its parent projects), the copies of these VCS roots and the template will be created in the target project (also see the related issue [TW-28550](https://youtrack.jetbrains.com/issue/TW-28550)).
 
-<note product="tc">
+<note instance="tc">
 
 When running TeamCity in the [Professional mode](licensing-policy.md#Licensing+Overview) with the maximum allowed number of build configurations (100), unless you purchased additional build agent licenses), the __Copy__ option will not be displayed for build configurations.
 

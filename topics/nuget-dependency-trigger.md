@@ -30,7 +30,7 @@ For a TeamCity server running on __Linux__, the NuGet dependency trigger will re
        teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
        ```
    > 
-   {product="tc"}
+   {instance="tc"}
 2. Specify the NuGet package source, if it is different from `nuget.org`.
 3. Specify the credentials to access NuGet feed if required.
 4. Enter the package ID to check for updates.

@@ -16,16 +16,16 @@ refer to [our website](https://www.jetbrains.com/teamcity/ci-cd-guide/continuous
 ## What is TeamCity?
 
 JetBrains TeamCity is a user-friendly continuous integration (CI) server for developers and build engineers [free of charge with the Professional Server License](https://www.jetbrains.com/teamcity/buy/index.jsp) and easy to set up!
-{product="tc"}
+{instance="tc"}
 
 JetBrains TeamCity is a user-friendly and easy to set up continuous integration (CI) server for developers and build engineers.
-{product="tcc"}
+{instance="tcc"}
 
 This video gives a general overview of the main TeamCity features and explains the [licensing policy](licensing-policy.md):
-{product="tc"}
+{instance="tc"}
 
 This video gives a general overview of the main TeamCity features:
-{product="tcc"}
+{instance="tcc"}
 
 <video src="https://youtu.be/s68u2shSo6o"
        title="General TeamCity overview"/>
@@ -83,11 +83,11 @@ and it can run the same operating system (OS) as the server or a different OS.
 Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments. 
 Different types of tests can be run on different platforms simultaneously, 
 so the developers get faster feedback and more reliable testing results.
-{product="tc"}
+{instance="tc"}
 
 >It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
 >
-{type="note" product="tc"}
+{type="note" instance="tc"}
 
 A piece of software that actually executes the build process. 
 It is installed and configured separately from the TeamCity server. 
@@ -96,7 +96,7 @@ but you can also host agents on a physical machine.
 Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments. 
 Different types of tests can be run on different platforms simultaneously, 
 so the developers get faster feedback and more reliable testing results.
-{product="tcc"}
+{instance="tcc"}
 
 </td></tr><tr>
 
@@ -118,7 +118,7 @@ agents, build queue, user accounts, user permissions, and so on, are stored in a
 
 >It is possible for the server and an agent to coexist on the same computer, but for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
 >
-{type="note" product="tc"}
+{type="note" instance="tc"}
 
 
 </td></tr><tr>

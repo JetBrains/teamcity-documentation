@@ -3,7 +3,7 @@
 
 
 ## New Licensing Mechanism
-{product="tc"}
+{instance="tc"}
 
 Experience seamless license management with our newest [JetBrains Account](https://account.jetbrains.com/licenses) integration. Log into the JetBrains Account from TeamCity and choose a server license to activate. Once connected, TeamCity will automatically receive updates for all server and agent licenses, meaning you will no longer need to manually enter your license codes for any additional agents or server subscription updates.
 
@@ -13,7 +13,7 @@ Learn more: [](manage-teamcity-license.md).
 
 
 ## Custom Location for Versioned Settings
-{product="tc"}
+{instance="tc"}
 
 When you enable synchronization on the **Versioned Settings** page in your project settings, you can now specify a custom location for your remotely stored Kotlin DSL scripts and XML settings.
 
@@ -27,7 +27,7 @@ Learn more: [Storing Project Settings in Version Control Systems](storing-projec
 
 
 ## Store Server Configuration Files in the Version Control
-{product="tc"}
+{instance="tc"}
 
 Starting with this version you can store the contents of your server's `[Data_Directory](teamcity-data-directory.md)/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
 
@@ -35,10 +35,10 @@ Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Versio
 
 
 ## VCS Integration Enhancements
-{product="tc"}
+{instance="tc"}
 
 ### New GitHub Checks Webhook Trigger
-{product="tc"}
+{instance="tc"}
 
 Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via [TeamCity GitHub App connections](configuring-connections.md#github-app).
 
@@ -50,7 +50,7 @@ Learn more: [](github-checks-trigger.md)
 
 
 ### Non-Recursive Submodule Checkout
-{product="tc"}
+{instance="tc"}
 
 The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
 
@@ -62,7 +62,7 @@ Learn more: [Git General Settings](git.md#General+Settings)
 
 
 ### Security Enhancement for TeamCity Connections
-{product="tc"}
+{instance="tc"}
 
 Following our commitment to identify and eliminate security vulnerabilities, we have added the new **Enable unique callback/redirect URL** setting to the following [TeamCity connections](configuring-connections.md):
 
@@ -84,7 +84,7 @@ Learn more: [Configuring Connections](configuring-connections.md)
 
 
 ## Upload SSH Keys from the Create Project Page
-{product="tc"}
+{instance="tc"}
 
 When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
@@ -97,7 +97,7 @@ Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
 
 
 ## Sakura UI: Problems Page Redesign
-{product="tc"}
+{instance="tc"}
 
 We have overhauled the **Problems** tab of the [](project-home-page.md) to simplify the user experience and facilitate build failure investigation and resolution workflows.
 
@@ -110,10 +110,10 @@ Learn more: [](investigating-and-muting-build-failures.md)
 
 
 ## Build Runner Updates
-{product="tc"}
+{instance="tc"}
 
 ### Bootstrap Steps
-{product="tc"}
+{instance="tc"}
 
 You can now add [build steps](configuring-build-steps.md) that run right after a build starts, before source files are checked out on an agent.
 
@@ -125,7 +125,7 @@ Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
 
 
 ### NUnit and NAnt Runners Deprecation
-{product="tc"}
+{instance="tc"}
 
 <include from="nunit.md" element-id="2024-07-nunit"/>
 
@@ -133,7 +133,7 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
 
 
 ## Miscellaneous Changes
-{product="tc"}
+{instance="tc"}
 
 * The list of [statistic values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported by TeamCity now includes the **AllTestsDuration** value.
 <!--* Working with the [interactive agent terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) now counts as a valid agent activity that prolongs the agent lifetime and prevents it from automatic inactivity shutdown.-->
@@ -163,7 +163,7 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
 
 
 ## Custom Location for Versioned Settings
-{product="tcc"}
+{instance="tcc"}
 
 When you enable synchronization on the **Versioned Settings** page in your project settings, you can now specify a custom location for your remotely stored Kotlin DSL scripts and XML settings.
 
@@ -178,10 +178,10 @@ Learn more: [Storing Project Settings in Version Control Systems](storing-projec
 
 
 ## VCS Intergration Enhancements
-{product="tcc"}
+{instance="tcc"}
 
 ### New GitHub Checks Webhook Trigger
-{product="tcc"}
+{instance="tcc"}
 
 Version 2024.07 extends the collection of [build triggers](configuring-build-triggers.md) with a new trigger designed exclusively for GitHub-facing build configurations set up via [TeamCity GitHub App connections](configuring-connections.md#github-app).
 
@@ -193,7 +193,7 @@ Learn more: [](github-checks-trigger.md)
 
 
 ### Non-Recursive Submodule Checkout
-{product="tcc"}
+{instance="tcc"}
 
 The **Submodules** setting of [Git VCS roots](git.md) allows you to choose whether TeamCity should check out submodule repositories referenced by your main repo. The "Checkout" option corresponds to the recursive checkout process, making TeamCity fetch the entire hierarchy of repositories.
 
@@ -205,7 +205,7 @@ Learn more: [Git General Settings](git.md#General+Settings)
 
 
 ### Security Enhancement for TeamCity Connections
-{product="tcc"}
+{instance="tcc"}
 
 Following our commitment to identify and eliminate security vulnerabilities, we have added the new **Enable unique callback/redirect URL** setting to the following [TeamCity connections](configuring-connections.md):
 
@@ -227,7 +227,7 @@ Learn more: [Configuring Connections](configuring-connections.md)
 
 
 ## Upload SSH Keys from the Create Project Page
-{product="tcc"}
+{instance="tcc"}
 
 When you create a new project [from an SSH URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
@@ -240,7 +240,7 @@ Learn more: [](ssh-keys-management.md#Upload+SSH+Keys+to+TeamCity+Server)
 
 
 ## Sakura UI: Problems Page Redesign
-{product="tcc"}
+{instance="tcc"}
 
 We have overhauled the **Problems** tab of the [](project-home-page.md) to simplify the user experience and facilitate build failure investigation and resolution workflows.
 
@@ -254,7 +254,7 @@ Learn more: [](investigating-and-muting-build-failures.md)
 
 
 ## NUnit and NAnt Runners Deprecation
-{product="tcc"}
+{instance="tcc"}
 
 <include from="nunit.md" element-id="2024-07-nunit"/>
 
@@ -263,7 +263,7 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
 
 
 ## Miscellaneous Changes
-{product="tcc"}
+{instance="tcc"}
 
 * The list of [statistic values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported by TeamCity now includes the **AllTestsDuration** value.
 <!--* Working with the [interactive agent terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) now counts as a valid agent activity that prolongs the agent lifetime and prevents it from automatic inactivity shutdown.-->
@@ -284,13 +284,13 @@ Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2024.07 compared to 2023.03](upgrade-notes.md#2024.07).
 
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 See the [TeamCity 2024.07 release notes](teamcity-2024-07-release-notes.md) article for the summary of implemented features and fixed issues.
 

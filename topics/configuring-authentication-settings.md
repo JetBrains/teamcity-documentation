@@ -12,14 +12,14 @@ TeamCity provides several preconfigured authentication options (presets) to cove
 * [Credentials authentication modules](#Credentials+Authentication+Modules)
   * [Built-in](#Built-in+Authentication)
   * [Windows Domain Authentication](#Windows+Domain+Authentication)
-    {product="tc"}
+    {instance="tc"}
   * [LDAP Integration](ldap-integration.md)
-    {product="tc"}
+    {instance="tc"}
   * [Token-Based Authentication](#Token-Based+Authentication)
 * [HTTP / SSO authentication modules](#HTTP+%2F+SSO+Authentication+Modules)
   * [Basic HTTP Authentication](#Basic+HTTP+Authentication)
   * [NTLM HTTP Authentication](ntlm-http-authentication.md)
-    {product="tc"}
+    {instance="tc"}
   * [Bitbucket Cloud](#Bitbucket+Cloud)
   * [GitHub App](#GitHub)
   * [GitHub.com](#GitHub)
@@ -33,16 +33,16 @@ TeamCity provides several preconfigured authentication options (presets) to cove
 
 >If you are using [JetBrains Hub](https://www.jetbrains.com/hub/), you can configure the single sign-on setting (SSO) from the TeamCity login form and IDE using a [separate plugin for TeamCity](https://plugins.jetbrains.com/plugin/9156-jetbrains-hub-integration).
 >
-{product="tc"}
+{instance="tc"}
 
 When you first sign in to TeamCity, the default authentication, including the Built-in and Basic HTTP authentication modules, is enabled.
 
 To modify the existing settings, click __Edit__ next to the description of the enabled authentication module.
 
 To switch to a different preconfigured scheme, use the __Load preset__ button.
-{product="tc"}
+{instance="tc"}
 
-<tip product="tc">
+<tip instance="tc">
 
 Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file. 
 If using the UI is not possible (for example, you need to change the authentication settings before the server is started), 
@@ -69,7 +69,7 @@ Also, TeamCity plugins can provide additional authentication modules. The server
 </tip>
 
 ### Using Presets
-{product="tc"}
+{instance="tc"}
 
 To load a preconfigured set of modules, use the __Load preset__ button, select a required option, and __Apply__ your changes. The following presets are available:
 * Default ([built-in authentication](#Built-in+Authentication) — [Token-based](#Token-Based+Authentication) and [Basic HTTP](accessing-server-by-http.md))
@@ -91,10 +91,10 @@ and later changes authentication from mixed to built-in, the users with no passw
 </warning>
 
 It is possible to use a combination of internal and external authentication. The recommended approach is to configure [LDAP Integration](ldap-integration.md) for your internal employees first and then to add [Built-in](#Built-in+Authentication) authentication for external users. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
-{product="tc"}
+{instance="tc"}
 
 It is possible to use a combination of internal and external authentication. Since TeamCity 2020.2, you can also enable authentication via OAuth services.
-{product="tcc"}
+{instance="tcc"}
 
 To add a module:
 1. Click __Add Module__ and select a module from the drop-down menu.
@@ -110,14 +110,14 @@ In the __General Settings__ block, you can:
 * Customize the view of the login form: enter an introductory text and hide the default username/password fields (convenient if you prefer [authentication through third-party services](#HTTP+%2F+SSO+Authentication+Modules)).
 * Enable the [per-project authorization mode](managing-roles-and-permissions.md#Changing+Authorization+Mode).
 * Enable the [two-factor authentication](managing-two-factor-authentication.md).
-{product="tc"}
+{instance="tc"}
 * Enforce the [email verification](enabling-email-verification.md) for all TeamCity users.
 * Log out all currently signed in users and delete all [personal access tokens](configuring-your-user-profile.md#Managing+Access+Tokens).
 
 ## User Authentication Settings
 
 The very first time TeamCity server starts with no users (and no administrator), so the first user is prompted for the administrator account. If you are not prompted for the administrator account, refer to [How To Retrieve Administrator Password](how-to.md#Retrieve+Administrator+Password) for a resolution.
-{product="tc"}
+{instance="tc"}
 
 The TeamCity administrator can modify the authentication settings of every user on their profile page.
 
@@ -136,14 +136,14 @@ If, for example, the Windows domain username of that administrator is "john.smit
 not via the default authentication since it is disabled, nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username. 
 The solution, nevertheless, is quite simple: the administrator can sign in using the [superuser account](super-user.md) 
 and change their TeamCity username or specify their Windows domain username on their own profile page.
-{product="tc"}
+{instance="tc"}
 
 Be cautious when modifying authentication settings: there can be a case when the administrator cannot sign in after changing authentication modules.   
 Let's imagine that the administrator had the "jsmith" TeamCity username and used the default authentication. Then, the authentication module was changed to Windows domain authentication (i.e. Windows domain authentication module was added and the default one was removed). If, for example, the Windows domain username of that administrator is "john.smith", they will not be able to sign in anymore: not via the default authentication since it is disabled nor via Windows domain authentication since their Windows domain username is not equal to the TeamCity username.
-{product="tcc"}
+{instance="tcc"}
 
 ### Special User Accounts
-{product="tc"}
+{instance="tc"}
 
 By default, TeamCity has a [Super User](super-user.md) account with maximum permissions and a [Guest User](guest-user.md) with minimal permissions. These accounts have no personal settings such as the __[Changes](viewing-user-changes-in-builds.md)__ page and Profile information as they are not related to any particular person but rather intended for special use cases.
 
@@ -169,16 +169,16 @@ The Token-Based Authentication module allows users to authenticate via [access t
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when switching [nodes](multinode-setup.md) in the TeamCity UI or when the token expires.
 >
-{style="note"}{product="tc"}
+{style="note"}{instance="tc"}
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when the token expires.
 >
-{style="note"}{product="tcc"}
+{style="note"}{instance="tcc"}
 
 </snippet>
 
 ### Windows Domain Authentication
-{product="tc"}
+{instance="tc"}
 
 Allows user sign in using a Windows domain name and password. TeamCity checks these credentials: the server should be aware of the domain(s) users use to sign in. The supported syntax for the username is `DOMAIN\user.name` or `<username>@<domain>`.
 
@@ -214,7 +214,7 @@ If the default settings do not work for your environment, refer to [JCIFS](http:
 If the library does not find the domain controller to authenticate against, consider adding the `jcifs.netbios.wins` property to the `ntlm-config.properties` file with the address of your WINS server. For other domain services locating properties, see [JCIFS](http://jcifs.samba.org/src/docs/resolver.html).
 
 ### LDAP Authentication
-{product="tc"}
+{instance="tc"}
 
 Please refer to the [dedicated page](ldap-integration.md).
 
@@ -230,7 +230,7 @@ Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for deta
 
 
 ### NTLM HTTP Authentication
-{product="tc"}
+{instance="tc"}
 
 Please refer to the [dedicated page](ntlm-http-authentication.md).
 

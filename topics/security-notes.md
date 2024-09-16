@@ -9,10 +9,10 @@ TeamCity is developed with security concerns in mind. We make reasonable efforts
 However, the general assumption and __recommended setup is to deploy TeamCity in a trusted environment__, with no possibility for it to be accessed by malicious users.
 
 Along with these guidelines, please review [notes](configure-server-installation.md#Configuring+Server+for+Production+Use) on configuring the TeamCity server for production use. For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/blog/tag/security-bulletin/) and the "Security" section in the release notes.
-{product="tc"}
+{instance="tc"}
 
 For the list of disclosed security-related issues, see the [JetBrains Security Bulletin](https://blog.jetbrains.com/?s=security+bulletin) and the "Security" section in the release notes.
-{product="tcc"}
+{instance="tcc"}
 
 We also recommend that you subscribe to the [security notification service](https://www.jetbrains.com/privacy-security/subscribe/) to obtain the latest information about security issues that may affect TeamCity or any other JetBrains products.
 
@@ -41,13 +41,13 @@ TeamCity users with administrative permissions should have complex passwords.
 To make user password storage safer, TeamCity uses the BCrypt hashing algorithm.
 
 __Consider disabling the super user access.__
-{product="tc"}
+{instance="tc"}
 
 The [](super-user.md) feature in TeamCity enables users to log in as system administrators using a token found in the [&lt;TeamCity_server_home&gt;/logs/teamcity-server.log](teamcity-server-logs.md) file.
-{product="tc"}
+{instance="tc"}
 
 If you publish TeamCity logs to an external source, add the `teamcity.superUser.disable=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to disable this authorization option and prevent unwanted administrator access. Restart the TeamCity server after modifying the `teamcity.superUser.disable` property for the change to apply.
-{product="tc"}
+{instance="tc"}
 
 __Store secure data using parameters with the "password" type__.
 
@@ -60,23 +60,23 @@ Although password parameters are masked in the UI, encrypted at REST, and protec
 You may consider using a tool like [HashiCorp Vault](https://www.vaultproject.io/), which lets you manage and rotate all the sensitive credentials you'll be using in a build and which [integrates well with TeamCity](https://blog.jetbrains.com/teamcity/2017/09/vault/).
 
 __Use external authentication__.
-{product="tc"}
+{instance="tc"}
 
 If applicable, configure one of our [external authentication modules](authentication-modules.md), ranging from LDAP and Windows Domain integration to authenticating via GitHub, GitLab, or others. You can then [disable the TeamCity built-in authentication](configuring-authentication-settings.md), so that TeamCity no longer keeps hashed passwords in the internal database.
-{product="tc"}
+{instance="tc"}
 
 If any of the OAuth [authentication modules](configuring-authentication-settings.md) (Bitbucket Cloud, GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE) are enabled on your server __and__ you restrict authentication to members of a specific Bitbucket workspace, GitHub organization, or GitLab group, note the following:  
 Once signed in to the TeamCity server with an external account, a user can create a password or token which will allow them to sign in to this server directly, bypassing the VCS hosting provider verification. If you delete a user from a workspace/organization/group, remember to restrict their access or delete their user profile in TeamCity as well.
-{product="tc"}
+{instance="tc"}
 
 __Use a custom encryption key__.
-{product="tc"}
+{instance="tc"}
 
 Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in the [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by a user who has access to the server file system or database.
-{product="tc"}
+{instance="tc"}
 
 Instead of this default scrambling strategy, consider enabling a [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings). In this case, TeamCity will use your unique custom key to encrypt all secure values, instead of using the default scrambling mechanism.
-{product="tc"}
+{instance="tc"}
 
 __Use encrypted SSH keys__.
 
@@ -129,9 +129,9 @@ Note the following nuances:
   * can download artifacts from any build on the server.
     <anchor name="view-build-config-settings"/>
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server. To restrict this, you can use the `teamcity.buildAuth.enableStrictMode=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-  {product="tc"}
+  {instance="tc"}
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
-  {product="tcc"}
+  {instance="tcc"}
 * Users with the "Edit project" permission (the "Project Administrator" TeamCity role by default) in one project, by changing settings can retrieve artifacts and trigger builds from any build configuration they have only the view permission for ([TW-39209](https://youtrack.jetbrains.com/issue/TW-39209)).
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
 * The TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
@@ -145,7 +145,7 @@ Note the following nuances:
   * Users who can customize build configuration settings on a per-build basis (for example, one who can run personal builds when versioned settings are set to "use settings from VCS") via changing settings in a build can retrieve artifacts and trigger builds from any build configuration they have only view permission for ([TW-46065](https://youtrack.jetbrains.com/issue/TW-46065)).
 
 ### Server and Data
-{product="tc"}
+{instance="tc"}
 
 __Update your TeamCity server regularly__.
 
@@ -180,7 +180,7 @@ Note that binaries of the agent plugins installed on the server are available to
 __Use HTTPS everywhere__.
 
 Access to the TeamCity web interface is [secured with HTTPS](using-https-to-access-teamcity-server.md) (for example, with the help a [proxy server](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) like NGINX). Make sure that best practices for securing web applications are employed for the TeamCity web interface: for example, that it is not possible to access the server using HTTP the protocol. The reverse proxy does not strip the _Referer_ request header.
-{product="tc"}
+{instance="tc"}
 
 To learn how to configure a connection between a TeamCity agent and the TeamCity server, see [this section](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer).
 
@@ -220,10 +220,10 @@ __Control permissions of the OS user who runs a TeamCity agent__.
 It is advised to run TeamCity agents under an OS account with only a [necessary set of permissions](system-requirements.md#Common+Requirements).
 
 __Connect agents only to a trusted server__.
-{product="tc"}
+{instance="tc"}
 
 TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents support automatic updates download from the server, agents should only connect to a trusted server. Note that an administrator of the server computer can force execution of arbitrary code on a connected agent.
-{product="tc"}
+{instance="tc"}
 
 ### Version Control
 
@@ -242,7 +242,7 @@ __Use a dedicated VCS user__.
 If you are not using advanced features like [Kotlin DSL](kotlin-dsl.md) or, in general, if you don't need to commit to your repository as part of your build process, we recommend keeping a dedicated VCS user without write permissions to connect to your repositories.
 
 ### Artifact Storage
-{product="tc"}
+{instance="tc"}
 
 __Disable anonymous access__.
 
@@ -265,13 +265,13 @@ Keep your build history and logs for a longer period of time, especially for bui
 Both measures may help with tracing malicious activities, even if they happened a long time ago.
 
 __Archive server and agent logs__.
-{product="tc"}
+{instance="tc"}
 
 Collect the [TeamCity server](teamcity-server-logs.md) and [build agent logs](viewing-build-agent-logs.md) in an archive and put them under a properly secured storage.
-{product="tc"}
+{instance="tc"}
 
 Collect [build agent logs](viewing-build-agent-logs.md) in an archive and put them under a properly secured storage.
-{product="tcc"}
+{instance="tcc"}
 
 ### Integrations
 
@@ -288,20 +288,20 @@ When you use [versioned settings](storing-project-settings-in-version-control.md
 As an option, you could use a separate repository that only a limited number of users can commit to for your versioned settings.
 
 __Be careful with third-party plugins__.
-{product="tc"}
+{instance="tc"}
 
 When [installing plugins](installing-additional-plugins.md), make sure they come from a trusted source and that their source code is available. Plugins can potentially access all information on a TeamCity server, including sensitive information.
-{product="tc"}
+{instance="tc"}
 
 [//]: # (Internal note. Do not delete. "How To...d160e890.txt")
 
 ## Encryption Used by TeamCity
 
 TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key, or [using a custom key](teamcity-configuration-and-maintenance.md#encryption-settings).
-{product="tc"}
+{instance="tc"}
 
 TeamCity tries not to pass password values via the web UI (from a browser to the server) in clear text: instead, it uses RSA with 1024-bit key to encrypt them. However, it is recommended to use the TeamCity web UI only via HTTPS so this precaution should not be relevant. TeamCity stores passwords in the settings (where the original password value is necessary to perform authentication in other systems) in a scrambled form. The scrambling is done using 3DES with a fixed key.
-{product="tcc"}
+{instance="tcc"}
 
 ## Third-party Software Vulnerabilities
 
@@ -339,10 +339,10 @@ TeamCity does not employ Apache Struts for any HTTP request handling. As such, n
         <a href="using-https-to-access-teamcity-server.md">Using HTTPS to Access TeamCity Server</a>
     </category>
     <category ref="howto">
-        <a href="how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server" product="tc">How to Set Up TeamCity behind a Proxy Server</a>
-        <a href="how-to.md#Configure+HTTPS+for+TeamCity+Web+UI" product="tc">How to Configure HTTPS for TeamCity Web UI</a>
-        <a href="how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections" product="tc">How to Configure TeamCity to Use Proxy Server for Outgoing Connections</a>
+        <a href="how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server" instance="tc">How to Set Up TeamCity behind a Proxy Server</a>
+        <a href="how-to.md#Configure+HTTPS+for+TeamCity+Web+UI" instance="tc">How to Configure HTTPS for TeamCity Web UI</a>
+        <a href="how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections" instance="tc">How to Configure TeamCity to Use Proxy Server for Outgoing Connections</a>
         <a href="how-to.md#Configure+TeamCity+Agent+to+Use+Proxy+To+Connect+to+TeamCity+Server">How to Configure TeamCity Agent to Use Proxy To Connect to TeamCity Server</a>
-        <a href="how-to.md#Personal+User+Data+Processing" product="tc">Personal User Data Processing</a>
+        <a href="how-to.md#Personal+User+Data+Processing" instance="tc">Personal User Data Processing</a>
     </category>
 </seealso>

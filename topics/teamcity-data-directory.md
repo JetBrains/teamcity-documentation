@@ -4,21 +4,21 @@
 TeamCity Data Directory is the directory on the file system used by the TeamCity server to store configuration, build results, and current operation files. The directory is the primary storage for all the configuration settings and holds the data critical to the TeamCity installation.
 
 For TeamCity Cloud instances, this directory is fully operated by the TeamCity team.
-{product="tcc"}
+{instance="tcc"}
 
 The build history, users and their data and some other data are stored in the [database](set-up-external-database.md). See notes on [backup](manual-backup-and-restore.md) for the description of the data stored in the directory and the database.
-{product="tc"}
+{instance="tc"}
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`. If you have a different name for it, replace `.BuildServer` with the actual name.
-{product="tc"}
+{instance="tc"}
 
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`.
-{product="tcc"}
+{instance="tcc"}
 
 <anchor name="SpecifyLocationoftheTeamCityDataDirectory"/>
 
 ## Location of the TeamCity Data Directory
-{product="tc"}
+{instance="tc"}
 
 The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new or modify the existing files in the directory.
 
@@ -91,7 +91,7 @@ If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugi
  <anchor name="data_directory_structure"/>
 
 ## Structure of TeamCity Data Directory
-{product="tc"}
+{instance="tc"}
 
 The `config` subdirectory of TeamCity Data Directory contains the configuration of your TeamCity projects, and the `system` subdirectory contains build logs, artifacts, and database files (if internal database (HSQLDB) is used which is default). You can also review information on [Manual Backup and Restore](manual-backup-and-restore.md) to understand better which data is stored in the database, and which is on the file system.
 * __`BuildServer/config`__ — a directory where projects, build configurations and general server settings are stored.
@@ -141,7 +141,7 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
 * __`.BuildServer/lib/jdbc`__ — directory that TeamCity uses to search for [database drivers](set-up-external-database.md). Create the directory if necessary. TeamCity does not manage the files in the directory, it only scans it for `.jar` files that store the necessary driver.
 
 ## Direct Modifications of Configuration Files
-{product="tc"}
+{instance="tc"}
 
 The files under the `config` directory can be edited manually (unless explicitly noted). The changes will be taken into account without the server restart. TeamCity monitors these files for changes and rereads them automatically when modifications or new files are detected. Bear in mind that it is easy to break the physical or logical structure of these files, so edit them with extreme caution. Always [back up](teamcity-data-backup.md) your data before making any changes.
 
@@ -163,7 +163,7 @@ If you plan to modify the configuration manually, note that there are entries in
 
 See also the related [section](how-to.md#Move+TeamCity+Projects+from+One+Server+to+Another) on moving projects between TeamCity servers.
 
-<seealso product="tc">
+<seealso instance="tc">
         <category ref="installation">
             <a href="teamcity-data-backup.md">TeamCity Data Backup</a>
         </category>

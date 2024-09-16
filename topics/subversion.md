@@ -281,14 +281,14 @@ Sometimes, the SVN checkout operation for remote SVN servers may fail with an er
 Connection timeout is applied when TeamCity creates a connection to the SVN server. The default timeout for this operation is __60 seconds__, and can be specified via the `teamcity.svn.connect.timeout` property, in seconds.
 
 The value of the property is set differently for server-side checkout and agent-side checkout:
-{product="tc"}
+{instance="tc"}
 * Server-side operations — [configure an internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 * Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
-{product="tc"}
+{instance="tc"}
   
 For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
-{product="tcc"}
+{instance="tcc"}
 
 ### Read timeout
 
@@ -305,21 +305,21 @@ If not specified, the default value for the timeout is 1 hour.
 In this case, the read timeout can be specified in seconds via the TeamCity `teamcity.svn.read.timeout` internal property. The default value is 30 minutes.
 
 The value of the property is set differently for a server-side checkout and agent-side checkout:
-{product="tc"}
+{instance="tc"}
 * Server-side operations — [configure an internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 * Agent-side checkout — [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
-{product="tc"}
+{instance="tc"}
 
 For agent-side checkout, [add a start-up property](configuring-build-agent-startup-properties.md#Agent+Properties).
-{product="tcc"}
+{instance="tcc"}
 
 ## Ignored changes
 
 TeamCity ignores changes in the `svn:mergeinfo` properties and does not consider a directory _changed_ if only these properties are modified in a given commit.
 
 You can alter the list of ignored SVN properties via the TeamCity [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.svn.ignorable.properties`. The value of this property is a comma-separated list of SVN properties; the default value is `svn:mergeinfo`.
-{product="tc"}
+{instance="tc"}
 
  <seealso>
         <category ref="admin-guide">

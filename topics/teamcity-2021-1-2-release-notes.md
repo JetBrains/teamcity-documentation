@@ -3,7 +3,7 @@
 
 __Build: 92869__  
 __02 August 2021__
-{product="tc"}
+{instance="tc"}
 
 ### Feature
 

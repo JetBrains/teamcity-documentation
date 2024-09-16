@@ -9,6 +9,6 @@ Learn how to:
 * [Manage roles and permissions](managing-roles-and-permissions.md).
 * View the [audit of user actions](tracking-user-actions.md).
 * Access TeamCity as a [Super User](super-user.md) or a [Guest User](guest-user.md).
-{product="tc"}
+{instance="tc"}
 * Access TeamCity as a [Guest User](guest-user.md).
-{product="tcc"}
+{instance="tcc"}
