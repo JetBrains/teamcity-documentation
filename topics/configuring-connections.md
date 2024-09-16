@@ -434,7 +434,8 @@ To configure an AWS connection in TeamCity:
    :
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
      This approach provides an alternatives to storing credentials in plain text.
-     >Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources,
+     
+>Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources,
       using the **Default Provider Chain** credentials may present a security risk: 
       in this case the TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.    
   

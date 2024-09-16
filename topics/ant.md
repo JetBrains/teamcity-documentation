@@ -19,10 +19,15 @@ TeamCity collects detailed data from Ant as to the performed activities, provide
 <anchor name="antAntParamsOptionDescription"/>
 
 <anchor name="Path to build.xml file"/>
+
 <anchor name="Build file content"/>
+
 <anchor name="Working directory"/>
+
 <anchor name="Targets"/>
+
 <anchor name="Ant home path"/>
+
 <anchor name="Additional Ant command line parameters"/>
 
 ## Ant Runner Settings

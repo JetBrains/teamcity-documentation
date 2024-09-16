@@ -169,6 +169,7 @@ $N sequence references N-th capturing group. All backslashes (`\`) and dollar si
 </td></tr></table>
 
 <anchor name="Pre-defined templates"/>
+
 <anchor name="FileContentReplacer-Predefinedtemplates"/>
 
 ### Templates

@@ -97,6 +97,7 @@ Notes on using this mode:
 * <include from="vcs-checkout-rules.md" element-id="note-perforce-vcs"/>
 
 <anchor name="branch-support"/>
+
 <anchor name="branchStreams"/>
 
 The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. [Read more](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) about this functionality.

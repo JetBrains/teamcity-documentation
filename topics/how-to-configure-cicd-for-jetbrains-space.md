@@ -58,6 +58,7 @@ In your JetBrains Space instance:
 6. Configure _Authentication Mode_:
    1. Go back to the app's __Overview__ and open the __Authentication__ tab.
    2. Enable _Client Credentials Flow_.
+   
       <anchor name="redirect-uri"/>
    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter the redirect URI (`https://<server>:<port>/oauth/space/accessToken.html`) of your TeamCity Server.
       >To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
