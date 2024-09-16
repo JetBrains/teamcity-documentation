@@ -208,6 +208,7 @@ With the VCS Trigger set up in the `pack setup` configuration, the whole build c
 </snippet>
  
 <anchor name="show-changes-from-dependencies"/>
+
 <anchor name="BuildDependenciesSetup-ShowChangesfromDeps"/>
 
 __Changes from Dependencies__

@@ -601,6 +601,7 @@ params {
 ## FAQ and Common Problems
 
 <anchor name="KotlinDSL-nonUniformIDs"/>
+
 <anchor name="nonUniformIDs"/>
 
 ### Why portable DSL requires the same prefix for all IDs?

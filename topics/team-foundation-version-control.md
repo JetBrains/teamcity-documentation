@@ -142,8 +142,11 @@ To differentiate local mappings, it is recommended to use checkout rules in the 
 >If you use TFS version 11 or later, or Azure DevOps, note that the checkout rules are treated as case-sensitive.
 
 <anchor name="TeamFoundationServer-azure-devops"/>
+
 <anchor name="VisualStudioOnline"/>
+
 <anchor name="vsts"/>
+
 <anchor name="teamFoundationServerLive"/>
 
 ## Authentication in Azure DevOps

@@ -64,7 +64,7 @@ Java: jdk-17, jdk-21
                    style="steps"
                    hide-from-structure="true">
             <step><p>To configure the matrix parameters, add a <code>matrix</code> block to the <code>features</code> block in the build type configuration, and create a sequence of <code>param</code> objects inside it:</p>
-<p>
+
 
 ```Kotlin
 package _Self.buildTypes
@@ -92,9 +92,8 @@ object Build : BuildType({
         }
     }
 })
-```
-</p>
-            </step>
+``` 
+</step>
             <step><p>When configuring parameter names and parameter values:</p>
                     <list type="alpha-lower">
                         <li><p>A parameter name can be:</p>
@@ -151,7 +150,6 @@ Examples of configuring predefined parameters in Kotlin DSL:
 
 <tabs>
 <tab title="arch">
-<p>
 
 ```Kotlin
 object Build : BuildType({
@@ -167,11 +165,8 @@ object Build : BuildType({
     }
 })
 ```
-
-</p>
 </tab>
 <tab title="env.JAVA_HOME">
-<p>
 
 ```Kotlin
 object Build : BuildType({
@@ -187,10 +182,9 @@ object Build : BuildType({
 })
 ```
 
-</p>
 </tab>
 <tab title="os">
-<p>
+
 
 ```Kotlin
 object Build : BuildType({
@@ -206,7 +200,6 @@ object Build : BuildType({
 })
 ```
 
-</p>
 </tab>
 </tabs>
 

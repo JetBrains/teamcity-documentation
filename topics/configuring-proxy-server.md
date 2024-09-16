@@ -227,6 +227,7 @@ IIS-related issues:
 
 
 <anchor name="Proxy-Tomcat-Connector"/>
+
 <anchor name="Proxy-Tomcat-RemoteIpValve"/>
 
 ## TeamCity Tomcat Configuration

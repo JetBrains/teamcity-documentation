@@ -39,6 +39,7 @@ The __Authentication Settings__ section appears if several authentication module
 You can map external OAuth usernames with an existing TeamCity user. If a user with the respective username signs in to TeamCity via OAuth, TeamCity will be able to recognize them.
 
 <anchor name="vcsUsername"/>
+
 <anchor name="ManagingUsersandUserGroups-vcsUsername"/>
 
 ### VCS Usernames
@@ -67,6 +68,7 @@ To add a user to a specific project and manage permissions this user has in it, 
 The __Roles__ tab for a user is available only if per-project permissions are enabled on the server __Administration | Authentication__ page_. You can view this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here.
 
 <anchor name="assigningRoles"/>
+
 <anchor name="ManagingUsersandUserGroups-Assigningrolestousers"/>
 
 ## Assigning Roles to Users

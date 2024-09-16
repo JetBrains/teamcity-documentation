@@ -15,6 +15,7 @@ If you install TeamCity bundled with a Tomcat servlet container, or use the Team
 {instance="tc"}
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
+
 <anchor name="SettingupandRunningAdditionalBuildAgents-Agent-ServerDataTransfers"/>
 
 ## Agent-Server Data Transfer
