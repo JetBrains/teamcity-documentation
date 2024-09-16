@@ -36,7 +36,7 @@ To manually create custom charts to be displayed in the TeamCity UI, configure t
 
 Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
 
-```Plain Text
+```
 features {
   projectCustomChart {
     id = "SampleChart"

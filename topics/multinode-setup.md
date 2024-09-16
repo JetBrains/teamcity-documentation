@@ -107,7 +107,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 1. Check that the version of the TeamCity server installed on both nodes is the same and corresponds to the version of the Data Directory.
 2. Select an ID for each of the nodes: for example, a short ID based on a hostname.
 3. Create the `TEAMCITY_SERVER_OPTS` environment variable on each node. This variable should have the following arguments:
-    ```Plain Text
+    ```
     -Dteamcity.server.nodeId=<node_ID> -Dteamcity.server.rootURL=<node_root_URL> -Dteamcity.data.path=<TeamCity Data Directory> -Dteamcity.node.data.path=<Node-specific Data Directory>
     ```
     >You can also specify a path to the shared TeamCity Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
@@ -134,7 +134,7 @@ When used with TeamCity, a proxy server also acts as a load balancer for incomin
 
 <tab title="HAProxy">
 
-```Plain Text
+```
 defaults
     mode http
     timeout connect 240s
@@ -231,7 +231,7 @@ backend clients_not_supporting_cookies
 
 <tab title="NGINX Plus">
 
-```Plain Text
+```
 events {
     worker_connections 10000;
 }
@@ -361,7 +361,7 @@ http {
 
 <tab title="NGINX">
 
-```Plain Text
+```
 events {
     worker_connections 10000;
 }
@@ -624,7 +624,7 @@ When the previous main node starts again, it becomes a secondary node, as the _M
 
 You can define a server's responsibilities with the following JVM option:
 
-```Plain Text
+```
 teamcity.server.responsibilities=<responsibilities_list>
 ```
 
@@ -780,7 +780,7 @@ To create a secondary node in a manner that is suitable for automation, follow t
 2. Mount the shared TeamCity Data Directory (for example, using NFS or SMB).
 3. Provide the path to the shared TeamCity Data Directory by setting the `TEAMCITY_DATA_PATH` environment variable.
 4. Provide the JVM options for the node by setting the `TEAMCITY_SERVER_OPTS` environment variable with a space-separated list of JVM options, as follows:
-   ```Plain Text
+   ```
    TEAMCITY_SERVER_OPTS = -Dteamcity.server.nodeId=<node_ID> -Dteamcity.server.rootURL=<node_URL> -Dteamcity.node.data.path=<Node-specific Data Directory> -Dteamcity.server.responsibilities=<responsibilities_list>
    ```
    Where:

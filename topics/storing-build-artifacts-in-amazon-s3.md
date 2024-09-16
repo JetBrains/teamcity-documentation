@@ -243,7 +243,7 @@ Automatic setup requires giving Teamcity additional permissions:
 
 Example policy providing all necessary permissions:
 
-```Plain Text
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -314,7 +314,7 @@ When configured, the distributions should automatically appear in the _Download 
 
 For accessing a private bucket with OAI:
 
-```Plain Text
+```
 {
 "Sid": "1",
 "Effect": "Allow",
@@ -332,7 +332,7 @@ For accessing a private bucket with OAI:
 
 For accessing a public bucket:
 
-```Plain Text
+```
 {
 "Sid": "PublicRead",
 "Effect": "Allow",

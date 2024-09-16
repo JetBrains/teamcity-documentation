@@ -178,7 +178,7 @@ You can now send TeamCity [service messages](service-messages.md) to add and rem
 
 To add and remove tags, send the following messages:
 
-```Plain Text
+```
 ##teamcity[addBuildTag 'your-custom-tag']
 ##teamcity[removeBuildTag 'tag-to-remove']
 ```
@@ -242,7 +242,7 @@ Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protectio
 
 If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
-```Plain Text
+```
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 

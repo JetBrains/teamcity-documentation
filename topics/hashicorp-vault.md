@@ -71,7 +71,7 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
           
     * **AppRole Role ID** and **AppRole Secret ID** — these values can be obtained in CLI using the following commands:<br/><br/>
           
-        ```Plain Text
+        ```
         vault read -field=role_id auth/<AE>/role/<RN>/role-id
         vault write -f -field=secret_id auth/<AE>/role/<RN>/secret-id  
         ```

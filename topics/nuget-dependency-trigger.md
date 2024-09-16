@@ -26,7 +26,7 @@ For a TeamCity server running on __Linux__, the NuGet dependency trigger will re
 
 1. Select the NuGet version to use from the __NuGet.exe__ drop-down menu.
    >The recommended approach is to preinstall NuGet via __[Administration | Tools](nuget.md#Installing+NuGet+to+TeamCity+agents)__. In this case, the installed version will automatically appear in this menu. If you want to provide a custom path to a NuGet executable, you need to explicitly allow its usage on the server by specifying the following [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
-       ```Plain Text
+       ```
        teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
        ```
    > 

@@ -124,7 +124,7 @@ Notes on using this mode:
   * TeamCity will handle file separators according to the OS/platform of the build agent where a build is run. To be able to use a specific line separator for all build agents, choose the _Client_ or _Stream_ option instead (with `LineEnd` specified in Perforce). Alternatively, you can add an [agent requirement](configuring-agent-requirements.md) to run builds only on a specific platform.
   * Use `team-city-agent` instead of the client name in the mapping.  
     Example:
-    ```Plain Text
+    ```
     //depot/MPS/... //team-city-agent/...
     //depot/MPS/lib/tools/... //team-city-agent/tools/...
     

@@ -248,27 +248,27 @@ When a single branch is matched by several lines of the branch filter, the most 
 Other examples:
 
 * Only the default branch is accepted:   
-   ```Plain Text  
+   ```  
    +:<default>
 
    ```
 
 * All branches except the default one are accepted:   
-   ```Plain Text  
+   ```  
    +:*
    -:<default>
 
    ```
    
 * Only branches with the `feature-` prefix are accepted:   
-   ```Plain Text   
+   ```   
    +:feature-*
 
    ```
    
    
 * Empty branch filter (all branches are accepted):   
-   ```Plain Text   
+   ```   
    +:*
 
    ```
@@ -307,7 +307,7 @@ Use the asterisk ("*") as a wildcard for any string. For example, the `+pr:*` an
 
 The following rule allows an object to accept only those requests whose target branch starts with "dev/":
 
-```Plain Text
+```
 +pr:target=dev/*
 ```
 
@@ -315,7 +315,7 @@ The following rule allows an object to accept only those requests whose target b
 
 Pull request filter expressions are applied in the same manner as regular `+|-:<branch_name>` expressions: one by one starting with the first one. This means in case of conflicting expressions, the last one has the highest priority. For example, the following ruleset allows its parent object to accept all available branches, then excludes all pull request branches, and finally re-enables pull requests authored by organization members.
 
-```Plain Text
+```
 +:*
 -pr:*
 +pr:github_role=member
@@ -323,7 +323,7 @@ Pull request filter expressions are applied in the same manner as regular `+|-:<
 
 The following combination of filters rejects pull requests coming from forked repositories even if they target the `main` branch (since the `sourceRepo` condition comes last).
 
-```Plain Text
+```
 +pr:target=main
 -pr:sourceRepo=fork
 ```

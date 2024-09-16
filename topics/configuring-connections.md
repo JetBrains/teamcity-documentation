@@ -445,7 +445,7 @@ To configure an AWS connection in TeamCity:
         1. Java System Properties: `aws.accessKeyId` and `aws.secretAccessKey`.
         2. Environment Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
         3. [Web Identity Token credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-oidc) from system properties or environment variables.
-            ```Plain Text
+            ```
             # In ~/.aws/config
             
             [profile web-identity]
@@ -455,7 +455,7 @@ To configure an AWS connection in TeamCity:
         4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI.
             
             
-            ```Plain Text
+            ```
             # In ~/.aws/credentials
             
             [default]
@@ -526,7 +526,7 @@ TeamCity allows your project to access required AWS resources using connections 
 
 9. Click **Test connection** to ensure TeamCity can assume **Role B**.
     
-    ```Plain Text
+    ```
     Running STS get-caller-identity...
     Caller Identity:
      Account ID: <your account ID>

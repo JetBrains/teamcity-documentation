@@ -44,7 +44,7 @@ When a single VCS branch is matched by several lines of the branch specification
 
 That is, if the specification contains an exact pattern matching the branch (i.e. a pattern without the `*` wildcard), then the last such pattern is used. So if you have a specification like this:
 
-```Plain Text
+```
 +:refs/heads/release-v1
 -:refs/heads/release-v1
 ```
@@ -53,7 +53,7 @@ then the last pattern will win and the branch will be excluded.
     
 If a branch specification has several patterns with the `*` wildcard, then TeamCity selects the pattern producing the shortest logical name. This branch specification:
 
-```Plain Text
+```
 +:refs/heads/*/hotfix
 -:refs/heads/v1/*
 ```
@@ -69,7 +69,7 @@ Branch specifications also support expressions starting with the `#` character. 
 
 * Any line starting with `#` is treated as regular comment.
 
-    ```Plain Text
+    ```
     +:refs/heads/main
     # Exclude legacy branch. DO NOT REMOVE!
     -:refs/heads/release-v1
@@ -77,19 +77,19 @@ Branch specifications also support expressions starting with the `#` character. 
 
 * The `#! escape: <YOUR_CHARACTER>` expression defines an escape character that allows you to use special chars in branch names. For example, to write a branch specification rule for the "release-(7.1)" branch, you need to escape round brackets. The default escape symbol in TeamCity is backslash (`\`), so your branch specification should look like the following:
 
-    ```Plain Text
+    ```
     +:release-\(7.1\)
     ```
     If you want to use a different escape character, define it as shown below:
 
-    ```Plain Text
+    ```
     #! escape: !
     +:release-!(7.1!)
     ```
   
 * The `#! fallbackToDefault: false` expression allows you to prohibit TeamCity from using a [default branch](#Default+Branch) whenever the required branch is not found. For example, when you utilize [](teamcity-rest-api.md) to start a build for a non-existent branch (by default, TeamCity will run a new build for the default branch in this case).
 
-    ```Plain Text
+    ```
     #! fallbackToDefault: false
     +:included_branch
     -:excluded_branch
@@ -128,7 +128,7 @@ A logical branch name is a branch name shown in the user interface for the build
 
 For example, if the branch specification is defined like this:
 
-```Plain Text
+```
 +:refs/heads/*
 ```
 
@@ -136,13 +136,13 @@ then the part matched by `*` (for example, `master`) is a logical branch name.
 
 If the branch specification pattern uses parentheses, the logical name is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
 
-```Plain Text
+```
 +:refs/heads/(v8.1/*)
 ```
 
 You do not need to include the default branch into the branch specification as it is already included there implicitly. However, if you want to have some short logical branch name for the default branch in the UI, for example, `master`, you can include it in the branch specification and use the parentheses:
 
-```Plain Text
+```
 +:refs/heads/(master)
 ```
 
