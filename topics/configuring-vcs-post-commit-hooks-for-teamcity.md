@@ -263,7 +263,7 @@ The alternative approach is to utilize [GitHub Checks Webhook triggers](github-c
 3. Click **Add new webhook**.
 4. Specify the URL to which the webhook should send `POST` requests. Include username and password/PAT as described in the [](#Authentication) section. For example:
     
-    ```Plain Text
+    ```
     http://valravn:querty@myteamcityfarm.build.gg/app/rest/vcs-root-instances/commitHookNotification?locator=87
     ```
 
@@ -303,7 +303,7 @@ You can utilize this approach in Bitbucket Cloud, Bitbucket Server, and Bitbucke
 4. Specify the webhook name and tick **Push** under the "Triggers" or "Events" section.
 5. Specify the URL to which Bitbucket should send `POST` requests to trigger TeamCity update checkups. Include user credentials in the URL as described in the [](#Authentication) section. For example:
 
-   ```Plain Text
+   ```
    https://valravn:querty@mybuildfarm.gg/app/rest/vcs-root-instances/commitHookNotification?locator=id:34
    ```
 

@@ -179,7 +179,7 @@ Mercurial config
 
 Specify the Mercurial configuration options to be applied to the repository during agent-side checkout, for example, enter the following to enable the `largefiles` extension:   
 
-```Plain Text
+```
 [extensions] 
 `largefiles =
 

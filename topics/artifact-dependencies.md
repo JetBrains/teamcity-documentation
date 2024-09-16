@@ -68,7 +68,7 @@ An artifact rule specifies which artifacts of the source build should be downloa
 
 Each individual artifact rule should start from a new line and have the following syntax:
 
-```Plain Text
+```
 [+:|-:|?:]SourcePath[!ArchivePath][=>DestinationPath]
 ```
 
@@ -136,7 +136,7 @@ Start an artifact rule with the `-:` prefix to tell TeamCity a file or files tha
 
 * Two following rules result in downloading all text files from all directories, apart from the `exclude.txt` file located in the `bad` directory. Downloaded files are saved to the `texts` folder.
 
-  ```Plain Text
+  ```
   **/*.txt=>texts
   -:bad/exclude.txt
   ```
@@ -144,14 +144,14 @@ Start an artifact rule with the `-:` prefix to tell TeamCity a file or files tha
 
 * The following set of rules finds all archives that start with `release`, unpacks its `.dll` libraries, and saves them to the `dlls` directory. The `Bad.dll` file from the `release-0.0.1.zip` archive is skipped.
 
-  ```Plain Text
+  ```
   +:release-*.zip!**/*.dll=>dlls
   -:release-0.0.1.zip!Bad.dll
   ```
 
 * The combination below results in dowloading all artifacts to the `target` directory. The dependent build will completely ignore the `excl` directory except for the `excl/must_have.txt` file.
 
-  ```Plain Text
+  ```
   **/*.*=>target 
   -:excl/**/*.*
   +:excl/must_have.txt=>target

@@ -98,7 +98,7 @@ The servers are contacted until any of them responds. There is no particular ord
 
 When an LDAP client requests information from an LDAP server that does not have all required data, the server can return referral URLs to other servers to contact for this missing data. To disable this behavior, uncomment the `java.naming.referral=ignore` line in the `ldap-config.properties` file:
 
-```Plain Text
+```
 # Ignore referrals returned by LDAP server ("follow" by default). See also https://youtrack.jetbrains.com/issue/TW-35264
 #java.naming.referral=ignore
 ```

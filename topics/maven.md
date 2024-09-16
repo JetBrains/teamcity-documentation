@@ -317,7 +317,7 @@ If you have several build agents installed on the same machine, by default they 
 
 * Specify the following property in `teamcity-agent/conf/buildAgent.properties`:
 
-    ```Plain Text
+    ```
     system.maven.repo.local=%\system.agent.work.dir%/<subdirectory_name>
     
     ```   

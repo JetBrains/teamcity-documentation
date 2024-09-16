@@ -46,7 +46,7 @@ Solution file path
 A path to the solution to be built is relative to the [build checkout directory](build-checkout-directory.md). For example:
 
 
-```Plain Text
+```
 vs-addin\addin\addin.sln
 
 ```
@@ -136,7 +136,7 @@ Type the URL's map
 Click this link and specify the desired map in the text area. Use the following format:
 
 
-```Plain Text
+```
 http://localhost:8111=myProjectPath/myProject
 
 ```
@@ -224,7 +224,7 @@ Run NUnit tests for
 Specify .NET assemblies, where the NUnit tests to be run are stored. Multiple entries are comma\-separated; usage of NAnt wildcards is enabled. In the following example, TeamCity will search for the tests assemblies in all project directories and run these tests.
 
 
-```Plain Text
+```
 **\*.dll
 
 ```
@@ -246,7 +246,7 @@ Do not run NUnit tests for
 Specify .NET assemblies that should be excluded from the list of found assemblies to test. Multiple entries are comma\-separated; usage of NAnt wildcards is enabled. In the following example, TeamCity will omit tests specified in this directory.
 
 
-```Plain Text
+```
 **\obj\**\*.dll
 
 ```

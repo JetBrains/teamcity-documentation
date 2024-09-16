@@ -30,13 +30,13 @@ If TeamCity detects that it cannot build an incremental patch, a [clean checkout
 
 The default checkout directory location (when **Checkout directory** field is set to _Auto_ in the build settings [Version Control Settings](configuring-vcs-settings.md) page) is given by:
 
-```Plain Text
+```
 <Build_Agent_Home>/work/<VCS_Settings_Hash_Code>
 ```
 
 If the location of the [agent work directory](agent-work-directory.md) is customized, this changes to:
 
-```Plain Text
+```
 <Agent_Work_Dir>/<VCS_Settings_Hash_Code>
 ```
 

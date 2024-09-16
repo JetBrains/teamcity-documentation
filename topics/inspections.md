@@ -210,14 +210,14 @@ JDK Jar File Patterns
 
 Click this link to open a text area where you can define templates for the jar files of the project JDK. Use Ant rules to define the jar file patterns. The default value is used for Linux and Windows operating systems:
 
-```Plain Text
+```
 jre/lib/*.jar
 
 ```
 
 For macOS, use the following lines:
 
-```Plain Text
+```
 lib/*.jar
 
 ../Classes/*.jar
@@ -331,7 +331,7 @@ Optional, specify to restrict the sources scope to run Inspections on.
 
 Include/exclude patterns are newline-delimited set of rules of the form:
 
-```Plain Text
+```
 [+:|-:]pattern
 
 ```
@@ -348,7 +348,7 @@ Some notes on patterns processing:
 
 Example:
 
-```Plain Text
+```
 +:testData/tables/**
 -:testData/**
 -:testdata/**

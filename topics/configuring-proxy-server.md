@@ -88,7 +88,7 @@ On Windows, you may need to increase the [ThreadsPerChild](https://httpd.apache.
 Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol.
 
 
-```Plain Text
+```
 
 http {
     ... default settings here

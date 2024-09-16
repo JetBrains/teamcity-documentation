@@ -63,7 +63,7 @@ Settings that correspond to untrusted builds are configured on the project level
 
    ...as well as writes corresponding messages to the [teamcity-server.log](teamcity-server-logs.md) (regardless of the selected default action).
 
-   ```Plain Text
+   ```
    [2024-02-21 11:31:05,337]
    WARN — jetbrains.buildServer.SERVER — Build(promotion id: 7004, configuration id: MyProject_Build) detected as untrusted.
    Reasons: {Pull request from a fork in a public repository (target repository url: https://github.com/...)}
