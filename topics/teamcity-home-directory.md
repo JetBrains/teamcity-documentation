@@ -2,13 +2,13 @@
 [//]: # (auxiliary-id: TeamCity Home Directory)
 
 The _TeamCity Home Directory_ or the _TeamCity Installation Directory_ is the directory where the TeamCity server application files and libraries have been unpacked when TeamCity was [installed](install-and-start-teamcity-server.md). The location of the TeamCity Home directory is defined when you install the TeamCity server. The default directory suggested by the Windows [installation package](install-and-start-teamcity-server.md) is `C:\TeamCity`; however, TeamCity can be installed into any directory.
-{product="tc"}
+{instance="tc"}
 
 The _TeamCity Home Directory_ or the _TeamCity Installation Directory_ is the directory where the TeamCity server application files and libraries are stored. For TeamCity Cloud instances, this directory is fully operated by the TeamCity team.
-{product="tcc"}
+{instance="tcc"}
 
 ## Important Files and Directories
-{product="tc"}
+{instance="tc"}
 
 * `TeamCity-readme.txt` — description of the directory
 * `BUILD_<number>` — TeamCity server application build number

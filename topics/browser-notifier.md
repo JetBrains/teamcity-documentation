@@ -4,7 +4,7 @@
 The TeamCity _Browser Notifier_ extension allows receiving real-time notifications about build statuses and events.   
 The extension is available for Mozilla Firefox, Opera, and Google Chrome (including all Chromium-based browsers such as Microsoft Edge).
 
-<note product="tc">
+<note instance="tc">
 
 Browser Notifier aims at replacing the obsolete Windows Tray Notifier and automatically uses all rules configured for it, if any. The __Your Profile | Notification Rules | Windows Tray Notifier__ tab in TeamCity is renamed to __Browser Notifier__.
 

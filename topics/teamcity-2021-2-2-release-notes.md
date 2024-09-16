@@ -3,7 +3,7 @@
 
 __Build: 99660__  
 __11 January 2022__
-{product="tc"}   
+{instance="tc"}   
 
 ### Usability Problem
 

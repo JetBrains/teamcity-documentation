@@ -245,7 +245,7 @@ In this case, TeamCity will automatically attach the builds' history to the buil
 This also applies to the case when IDs of several build configurations are changed within one commit:
 TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones. 
 An entry for this action will appear in [the server log](teamcity-monitoring-and-diagnostics.md#Server+Logs). 
-{product="tc"}
+{instance="tc"}
 
 However, if you modify the build configuration ID in the DSL,
 note that for TeamCity this modification will look as if the configuration with the previous ID was deleted
@@ -253,7 +253,7 @@ and a new configuration with the new ID was created with a single commit.
 In this case, TeamCity will automatically attach the builds' history to the build configuration with the new ID.
 This also applies to the case when IDs of several build configurations are changed within one commit:
 TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones.
-{product="tcc"}
+{instance="tcc"}
 
 If you use two commits to modify the build configuration ID — 
 one to delete the configuration with the previous ID and another to add the build configuration with the new ID — 
@@ -809,7 +809,7 @@ In the first case, TeamCity automatically splits its settings once your build se
 Kotlin scripts can be tested using regular testing frameworks such as JUnit. See this blog post for more information: [Configuration as Code, Part 6: Testing Configuration Scripts](https://blog.jetbrains.com/teamcity/2019/05/configuration-as-code-part-6-testing-configuration-scripts/).
 
 ### Kotlin DSL API documentation is not initialized yet
-{product="tc"}
+{instance="tc"}
 
 _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
@@ -818,7 +818,7 @@ _Problem_:
 _Solution_: set the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=1500m` and restart the server.
 
 ### OutOfMemory Error
-{product="tc"}
+{instance="tc"}
 
 _Problem_: Synchronizing Kotlin DSL setting fails with the "Compilation error: java.lang.OutOfMemoryError: Java heap space" error written to the [teamcity-versioned-settings.log](teamcity-server-logs.md) file.
 

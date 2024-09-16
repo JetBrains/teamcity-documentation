@@ -251,7 +251,7 @@ You may already have some notification rules configured by your System Administr
 
 <seealso>
         <category ref="admin-guide">
-            <a href="customizing-notification-templates.md" product="tc">Customizing Notifications</a>
+            <a href="customizing-notification-templates.md" instance="tc">Customizing Notifications</a>
             <a href="notifications.md">Notifications</a>
         </category>
 </seealso>

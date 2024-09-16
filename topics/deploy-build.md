@@ -26,7 +26,7 @@ Here's how you can deploy your build artifacts:
 * __Using a specific runner for your platform__. For example, if you build .NET projects, the best way to deploy them is via our [.NET runner](net.md). It supports all the relevant .NET commands such as `pack` or `publish` and offers a variety of other features. Other runners are listed under [this section](configuring-build-steps.md).
 * __Using a deployer__. TeamCity offers several build runners dedicated to deployment: [SMB Upload](smb-upload.md), [FTP Upload](ftp-upload.md), [SSH Upload](ssh-upload.md), and [SSH Exec](ssh-exec.md). They can upload build artifacts via different protocols and let you configure this upload process in the TeamCity UI.
 * __Using the AWS CodeDeploy runner__ to deploy applications to AWS EC2 and on-premises instances. To use this runner, you need to download and install our [AWS CodeDeploy plugin](https://plugins.jetbrains.com/plugin/9018-aws-codedeploy) as described [here](installing-additional-plugins.md). See the related [blog posts](https://blog.jetbrains.com/teamcity/tag/codedeploy/).
-{product="tc"}
+{instance="tc"}
 
 >If you deploy products by means of third-party services, TeamCity allows [detaching builds from agents](detaching-build-from-agent.md) before starting the external deployment operations. This helps utilize agents more optimally.  
 >This method requires some advanced configuration, so we suggest trying it only after you feel comfortable configuring builds and agents in TeamCity.

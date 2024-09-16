@@ -3,13 +3,13 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 When the newly installed agent connects to the server for the first time, it appears on the __Agents | Unauthorized agents__ page visible to administrators/users with the permissions to authorize it. Agents will not run builds until they are authorized in the TeamCity UI. The agent running on the same computer as the server is authorized by default.
-{product="tc"}
+{instance="tc"}
 
 The number of authorized agents is limited by the number of agent licenses on the server. See more under [Licensing Policy](licensing-policy.md).
-{product="tc"}
+{instance="tc"}
 
 TeamCity build agents can be started manually or configured to start automatically.
 
@@ -21,7 +21,7 @@ Run the following script:
 
 > The agent uses the `serverUrl` setting from `buildAgent.properties` to connect to the TeamCity server (automatically authorizing on the first connection). If the server URL is not accessible from the agent host, you might need to configure the [proxy settings](configuring-proxy-server.md#Use+Proxy+to+Connect+Agents+to+TeamCity+Server).
 >
-{type="tip" product="tc"}
+{type="tip" instance="tc"}
 
 ## Automatic Start
 
@@ -43,7 +43,7 @@ To run builds, the build agent must be started under a user with sufficient perm
 
 >If you start an Amazon EC2 cloud agent as a Windows service, check the [related notes](setting-up-teamcity-for-amazon-ec2.md).
 >
-{type="tip" product="tc"}
+{type="tip" instance="tc"}
 
 The following instructions can be used to install a Windows service manually (for example, after `.zip` agent installation). This procedure should also be performed to create Windows services for the [second and following agents](install-multiple-agents-on-one-machine.md) on the same machine.
 

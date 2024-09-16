@@ -4,7 +4,7 @@
 <chunk include-id="2024-11-tcc">
 
 ## Cloud Feature
-{product="tcc"}
+{instance="tcc"}
 
 
 

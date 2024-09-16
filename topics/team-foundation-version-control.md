@@ -19,10 +19,10 @@ When detecting the Team Explorer version, TeamCity checks [.NET GAC](https://msd
 * `Windows x64: %\CommonProgramFiles(x86)%\Microsoft Shared\Azure DevOps Server\%\version_number%`
 
 To enforce the cross-platform mode, set the `teamcity.tfs.mode=java` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) or [build configuration parameter](configuring-build-parameters.md).
-{product="tc"}
+{instance="tc"}
 
 To enforce the cross-platform mode, set the `teamcity.tfs.mode=java` [build configuration parameter](configuring-build-parameters.md).
-{product="tcc"}
+{instance="tcc"}
 
 ## Settings
 
@@ -178,10 +178,10 @@ To interact with the Azure DevOps Server, the proxy server settings specified fo
 ### Cross-Platform Working Mode
 
 The default Java proxy server settings specified for the TeamCity server or agent will be used in the Azure DevOps integration. On the TeamCity server, [internal properties or Java options](server-startup-properties.md) can be used. On the TeamCity agent, [build agent configuration](configure-agent-installation.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity-TFS integration supports the following options:
-{product="tc"}
+{instance="tc"}
 
 The default Java proxy server settings specified for the TeamCity agent will be used in the Azure DevOps integration. On the TeamCity agent, [build agent configuration](configure-agent-installation.md) or [Java options](configuring-build-agent-startup-properties.md) can be used. The TeamCity — Azure DevOps integration supports the following options:
-{product="tcc"}
+{instance="tcc"}
 
 ```
 http.proxyHost

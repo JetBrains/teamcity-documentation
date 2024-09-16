@@ -106,7 +106,7 @@ If caching artifacts is not required, it can be turned off by adding the `teamci
 
  <seealso>
         <category ref="admin-guide">
-            <a href="teamcity-disk-space-watcher.md" product="tc">TeamCity Server Disk Space Watcher</a>
+            <a href="teamcity-disk-space-watcher.md" instance="tc">TeamCity Server Disk Space Watcher</a>
             <a href="build-failure-conditions.md">Build Failure Conditions</a>
         </category>
 </seealso>

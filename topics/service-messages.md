@@ -1151,7 +1151,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 
 
 ## Sending Custom Email Messages
-{product="tc"}
+{instance="tc"}
 
 You can use TeamCity service messages to send emails from inside build scripts.
 

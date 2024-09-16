@@ -72,13 +72,13 @@ The `experimental` tag for metrics is not reported starting with TeamCity 2022.1
 The `?experimental=true` URL parameter for metrics in the Prometheus format still works, and some of the metrics still have the experimental status.
 If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics,
 let us know via our [support channel](feedback.md).
-{product="tcc"}
+{instance="tcc"}
 
 The `experimental` tag for metrics is not reported starting with TeamCity 2023.05.
 The `?experimental=true` URL parameter for metrics in the Prometheus format still works, and some of the metrics still have the experimental status.
 If you find any of the experimental metrics useful and would want them to be graduated to the supported metrics,
 let us know via our [support channel](feedback.md).
-{product="tc"}
+{instance="tc"}
 
 ## Server Logs
 

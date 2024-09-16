@@ -82,7 +82,7 @@ The optional message format setting allows you to specify a message written to t
 <img src="dk-vcslabeling-p4message.png" width="706" alt="Custom message"/>
 
 If you prefer using static labels, you can enable the previous behavior by setting the `teamcity.perforce.useStaticLabels=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 ## Labeling Rule Examples
 

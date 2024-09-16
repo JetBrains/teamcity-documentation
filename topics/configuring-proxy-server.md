@@ -357,9 +357,9 @@ If the proxy has a HTTPS endpoint, you can also configure the `teamcity.https.*`
 
 > * The proxy has to be configured not to cache any TeamCity server responses. For example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 > * Since TeamCity Cloud servers' integrated [](build-artifact.md#Artifacts+Storage) is hosted on [Amazon S3](https://aws.amazon.com/s3/), the proxy should allow `*.amazonaws.com` traffic.
-> {product="tcc"}
+> {instance="tcc"}
 > * If you're using a [custom artifact storage](configuring-artifacts-storage.md), make sure the agent can connect to the required service. For example, if you use [S3 buckets to store artifacts](storing-build-artifacts-in-amazon-s3.md), the proxy should allow `*.amazonaws.com` traffic.
-> {product="tc"}
+> {instance="tc"}
 
 </snippet>
 
