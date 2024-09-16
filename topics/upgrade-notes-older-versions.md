@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: Upgrade Notes  for Older Versions)
 
 
-<chunk id="older-upgrade-notes">
+<snippet id="older-upgrade-notes">
 
 ## Changes from 2022.04 to 2022.10
 
@@ -2716,7 +2716,7 @@ Move your database settings from the `<TeamCity installation folder>/ROOT/WEB-IN
   
 The [bug with temp tool folders](https://youtrack.jetbrains.com/issue/TW-46648) introduced in the previous version has been fixed.
 
-</chunk>
+</snippet>
 
 <seealso>
         <category ref="admin-guide">

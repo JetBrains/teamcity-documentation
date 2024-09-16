@@ -48,7 +48,7 @@ Compare two agents and see their differences highlighted.
 ## Debug Agents Remotely
 {product="tc"}
 
-<include src="install-and-start-teamcity-agents.md" include-id="agents-terminal"/>
+<include from="install-and-start-teamcity-agents.md" element-id="agents-terminal"/>
 
 ## Installing Software to Self-Hosted Agents
 {product="tcc"}

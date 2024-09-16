@@ -440,7 +440,7 @@ If you cannot access the cross-server __Projects__ menu, you can try to temporar
 
 >By disabling this setting, you reduce the overall security of your browser. Use this workaround only if necessary. We highly recommend that you wait until this issue is fixed in the next version of TeamCity.
 >
-{type="note"}
+{style="note"}
  
 This problem will be resolved in the TeamCity 2020.1.5 update. See the [related issue](https://youtrack.jetbrains.com/issue/TW-67644) for more details.
 

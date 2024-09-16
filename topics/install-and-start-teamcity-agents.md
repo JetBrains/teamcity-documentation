@@ -37,7 +37,7 @@ Agents use unidirectional agent-to-server connection via the polling protocol: a
 
 After you [install a build agent locally](install-teamcity-agent.md), it needs to be [configured](configure-agent-installation.md) and connected to your TeamCity server or cloud instance. Watch this video for a quick guide:
 
-<video href="dvyDCzOJJZw"
+<video src="https://youtu.be/dvyDCzOJJZw"
 title="TeamCity tutorial — How to connect local agents to your TeamCity server"/>
 
 >Please note that the _Use authentication token..._ option referenced in the video is currently available only for TeamCity Cloud instances.
@@ -58,7 +58,7 @@ Please generate own token or configuration file per each self-hosted agent.
 
 ## Debug Agents Remotely
 
-<chunk id="agents-terminal">
+<snippet id="agents-terminal">
 
 After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
@@ -92,4 +92,4 @@ For cloud agents that are automatically terminated after idling for a certain pe
 
 The **Open terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Invoke interactive agent terminals"* permission. This permission should be granted for all projects associated with the agent pool of the corresponding agent. Users with the "Project Administrator" and "System Administrator" roles have such a permission by default. As an additional precaution, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
 
-</chunk>
+</snippet>

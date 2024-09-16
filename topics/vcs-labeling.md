@@ -13,7 +13,7 @@ It is possible to override the labeling settings inherited from a template compl
 
 >Labeling uses credentials specified for the VCS root. The write access to the source repository is required.
 > 
-{type="note"}
+{style="note"}
 
 Note that if you change VCS settings of a labeled build configuration, they will be used for labeling only in the following new builds.
 

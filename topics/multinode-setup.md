@@ -7,7 +7,7 @@ As the main use case of a multinode setup is to achieve high availability (HA), 
 
 >The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](documentation-for-previous-versions.md).
 >
-{type="note"}
+{style="note"}
 
 ## Main vs. Secondary Node
 
@@ -30,7 +30,7 @@ The minimum number of server machines necessary for a high-availability setup is
 
 >All nodes that use the same data directory share the same license key. If you own a TeamCity Enterprise license, no additional purchases are required.
 >
-{type="note"}
+{style="note"}
 
 ### Shared Data Directory
 
@@ -69,7 +69,7 @@ TeamCity server nodes require you to configure the following JVM options:
 
 > You can choose between setting this option or setting the <code>TEAMCITY_DATA_PATH</code> environment variable.
 >
-{type="note"}
+{style="note"}
 </dd>
 
 <dt>teamcity.node.data.path=&lt;Node-specific Data Directory&gt;
@@ -83,7 +83,7 @@ TeamCity server nodes require you to configure the following JVM options:
 
 > You can choose between setting this option or manually updating the responsibilities from the UI or REST API.
 >
-{type="note"}
+{style="note"}
 </dd>
 
 </dl>
@@ -92,7 +92,7 @@ The JVM options can be configured using the `TEAMCITY_SERVER_OPTS` environment v
 
 >Paths like `<TeamCity Data Directory>` or `<Node-specific data directory>` can be different on each node. To keep the setup simple, we recommend that you keep them the same.
 > 
-{type="tip"}
+{style="tip"}
 
 ### Configuring HA Setup
 
@@ -112,11 +112,11 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
     ```
     >You can also specify a path to the shared TeamCity Data Directory via the `TEAMCITY_DATA_PATH` environment variable.
     > 
-    {type="tip"}
+    {style="tip"}
     
     >Make sure the database is configured to accept enough parallel connections to handle requests from both nodes. By default, each node requires 50 connections to the database.
     >
-    {type="tip"}
+    {style="tip"}
 4. Start both nodes using [regular TeamCity scripts](start-teamcity-server.md) or via the TeamCity service.
 5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the _[Main TeamCity node](#Main+Node+Responsibility)_ responsibility for a node you want to make main.
 6. Proceed with [configuring the reverse HTTP proxy](#Proxy+Configuration).
@@ -448,7 +448,7 @@ http {
 
 > The sample configs above have multiple placeholders (for instance, `{node1_hostname}`). These placeholders must be replaced with your actual values.
 >
-{type="warning"}
+{style="warning"}
 
 
 
@@ -456,7 +456,7 @@ http {
 > * The configurations above are designed for the two-node TeamCity setup. You can add more nodes if necessary.
 > * Nodes without the *Handling UI actions and load balancing user requests* [responsibility](#Responsibilities) will report HTTP error 503 to health check requests sent from your reverse proxy server. TeamCity categorizes these proxy requests as user operations, which these nodes cannot handle. This behavior is normal, does not affect node functionality, and does not indicate any malfunction.
 >
-{type="note"}
+{style="note"}
 
 
 #### Choosing the Right Proxy Server
@@ -490,7 +490,7 @@ To add or remove a node to/from the round-robin list, change the state of the
 
 > Since the round-robin distribution logic utilizes sticky sessions, we recommend HAProxy and NGINX Plus reverse proxy servers that support this feature. See this section to learn more: [](#Choosing+the+Right+Proxy+Server).
 > 
-{type="note"}
+{style="note"}
 
 
 
@@ -587,11 +587,11 @@ If you assign more than one secondary nodes to this responsibility, builds will 
 > You can control how many builds can be run by each node.  
 >To do this, find the required node in the list of available nodes and click __Edit__  next to its _Processing data produced by running builds_ responsibility. The _Limit builds_ dialog will open. Here, you can enter a relative limit of builds allowed to run on this node. We suggest that you choose this limit according to the node's hardware capabilities.
 >
-{type="tip"}
+{style="tip"}
 
 > If a main TeamCity node is down, agents automatically reconnect to a secondary node. However, to avoid excessive configuration updates when the main node is only temporarily unavailable (for instance, due to the node restart or a rare network issue), builds assigned to this main node are not immediately relayed to a secondary node. A secondary node waits for 10 minutes before taking over these builds.
 > 
-{type="note"}
+{style="note"}
 
 
 #### VCS Repositories Polling on Secondary Node
@@ -611,7 +611,7 @@ This responsibility is responsible for allowing user actions on a secondary node
 
 > Nodes without this responsibility will report HTTP error 503 to health check requests sent from your reverse proxy server. TeamCity categorizes these proxy requests as user operations, which these nodes cannot handle. This behavior is normal, does not affect node functionality, and does not indicate any malfunction.
 > 
-{type="note"}
+{style="note"}
 
 Enabling of this responsibility also adds the node to the list of the nodes participating in [round-robin](#Round-Robin). 
 
@@ -693,7 +693,7 @@ Note the following limitations that apply when a server's responsibilities are s
 
 > When a server's responsibilities are set on the command line, it is generally recommended not to edit the responsibilities using the UI, because any manual changes will be reset when the node restarts.
 >
-{type="note"}
+{style="note"}
 
 
 ### Internal Properties
@@ -766,7 +766,7 @@ A secondary node has access to all plugins enabled on the main node. It also wat
 
 >Secondary nodes can load an external/non-bundled plugin if this plugin supports secondary nodes. See the [Plugins F.A.Q.](https://plugins.jetbrains.com/docs/teamcity/plugin-development-faq.html#How+to+adapt+plugin+for+secondary+node) for details.
 >
-{type="note"}
+{style="note"}
 
 <anchor name="Installing+Additional+Secondary+Node"/>
 
@@ -791,7 +791,7 @@ To create a secondary node in a manner that is suitable for automation, follow t
    > In the case of automated creation, all of the secondary nodes should be configured with the same responsiblities.
    > The `MAIN_NODE` responsibility must not be included for a secondary node.
    >
-   {type="tip"}
+   {style="tip"}
 5. If required, specify the JVM memory options by setting the `TEAMCITY_SERVER_MEM_OPTS` environment variable.
 6. Start the TeamCity server using the [regular TeamCity scripts](start-teamcity-server.md) or using the TeamCity service or by running the TeamCity server docker container.
 
@@ -835,7 +835,7 @@ The [restore operation](restoring-teamcity-data-from-backup.md) can be done on e
 
 >Currently, the contents of the `<Node-specific data directory>` are not included in the backup.
 >
-{type="note"}
+{style="note"}
 
 
 ## Multinode Setup Health Reports

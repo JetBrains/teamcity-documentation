@@ -5,7 +5,7 @@ Using the _Command Line_ build runner, you can run any script supported by the O
 
 > To configure the _Command Line_ build runner in Kotlin DSL, see [ScriptBuildStep](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildSteps/script-build-step/index.html).
 > 
-{type="note"}
+{style="note"}
 
 >See our **video guide** on how to [run command-line scripts in TeamCity](https://www.youtube.com/watch?v=oKNdLRrO3mA).
 
@@ -108,7 +108,7 @@ Specify how the error output is handled by the runner:
 
 >TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
 >
-{type="note"}
+{style="note"}
 
 ## Docker Settings
 

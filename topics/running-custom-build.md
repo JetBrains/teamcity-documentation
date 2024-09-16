@@ -69,12 +69,12 @@ If the current build configuration uses a [Perforce](perforce.md) VCS root, you 
 
 > If stream support is enabled in a Perforce VCS Root, TeamCity will automatically detect the target stream from the changed files even if the default stream is specified.
 > 
-{type="note"}
+{style="note"}
 
 
 > Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
 >
-{type="tip"}
+{style="tip"}
 
 ## Dependencies
 

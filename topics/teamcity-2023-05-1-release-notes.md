@@ -152,4 +152,4 @@ __11 July 2023__
 
 > We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://blog.jetbrains.com/blog/tag/security-bulletin/) for the list of disclosed vulnerability fixes.
 > 
-{type="note"}
+{style="note"}

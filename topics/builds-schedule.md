@@ -7,11 +7,11 @@ If you have configured any [schedule triggers](configuring-schedule-triggers.md)
 
 > The **Builds Schedule** page is not visible, unless there is at least one schedule trigger configured in the current project.
 > 
-{type="note"}
+{style="note"}
 
 > The builds schedule page for the [Root Project](project.md#Root+Project) displays the list of triggers for the entire TeamCity server.
 > 
-{type="tip"}
+{style="tip"}
 
 You can conveniently view the available schedule and plan your builds, optimizing the allocation of dependent hardware and software resources.
 

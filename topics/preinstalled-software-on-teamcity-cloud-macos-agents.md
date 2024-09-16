@@ -1,7 +1,7 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud macOS Agents)
 [//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud macOS Agents)
 
-<chunk id="macos-jb-agents">
+<snippet id="macos-jb-agents">
 
 |Software|Version|
 |---|---|
@@ -50,4 +50,4 @@
 |[JDK 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html)|21.0.4|
 |[JDK (default)](https://aws.amazon.com/corretto/)|17.0.12|
 
-</chunk> 
+</snippet> 

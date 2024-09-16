@@ -8,16 +8,16 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 
 
-1. <chunk id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.
+1. <snippet id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.
 
    * Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.
    * Edit one specific project if your new storage should be available only for this project and its sub-projects.
 
-    </chunk>
+    </snippet>
    
-2. <chunk id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</chunk>
+2. <snippet id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</snippet>
 
-3. <chunk id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</chunk>
+3. <snippet id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</snippet>
 
 4. Set the **Type** field to "AWS S3".
 
@@ -27,7 +27,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     > 
     > However, if a parent project has an S3 storage configured using a non-shared connection, this storage is still available to child projects.
     > 
-    {type="tip"}
+    {style="tip"}
 
     <anchor name="permissions"/>
 
@@ -45,13 +45,13 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     > 
     > Starting with version 2023.11, these settings are exclusive to [AWS Connections](configuring-connections.md#AmazonWebServices). If you're migrating from an older version of TeamCity and your existing AWS S3 storages used any of these settings, click the **Convert to AWS Connection** link. This action transfers AWS-related settings to a new AWS Connection, and selects this new connection as the source connection of your storage.
     >
-    {type="tip"}
+    {style="tip"}
     
 6. TeamCity uses the selected AWS Connection to retrieve the list of available S3 buckets. Open the **Bucket** drop-down menu to choose a specific item from the list.
 
 <anchor name="pathPrefix"/>
 
-7. <chunk id="settings_path_prefix">(Optional) Specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html">path prefix</a> if you want to use the same S3 bucket for all TeamCity projects and configure prefix-based permissions.</chunk>
+7. <snippet id="settings_path_prefix">(Optional) Specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html">path prefix</a> if you want to use the same S3 bucket for all TeamCity projects and configure prefix-based permissions.</snippet>
 
 
 
@@ -66,7 +66,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     
     > Choosing the **AWS CloudFront** option requires setting up additional fields. See this section for more information: [](#CloudFrontSettings).
     > 
-    {type="note"}
+    {style="note"}
 
     > Using Transfer Acceleration applies the following restrictions:
     >
@@ -75,57 +75,57 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     > * Buckets [cannot have dots (.) in their names](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
    > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
     >
-    {type="note"}
+    {style="note"}
 
 <anchor name="multipartUpload"/>
 
-9. <chunk id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).
+9. <snippet id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).
 
     <img src="dk-s3-multipart.png" width="706" alt="Multipart upload"/>
 
     Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is <code>5MB</code>. If left empty, TeamCity will use <code>8MB</code> as the default value.
-    </chunk>
+    </snippet>
     
     > We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
     >
-    {type="tip"}
+    {style="tip"}
 
 <anchor name="forceVirtualHostAddressing"/>
 
-10. <chunk id="settings_virtual_host">Uncheck the <b>Force virtual host addressing</b> option to turn off the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html">corresponding feature</a> (enabled by default). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access">Amazon stopped supporting path-style access</a> for new buckets since September 2020.</chunk>
+10. <snippet id="settings_virtual_host">Uncheck the <b>Force virtual host addressing</b> option to turn off the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html">corresponding feature</a> (enabled by default). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access">Amazon stopped supporting path-style access</a> for new buckets since September 2020.</snippet>
 
     > This setting cannot be disabled if your storage uses [Transfer Acceleration](#TransferAcceleration).
     >
-    {type="note"}
+    {style="note"}
 
-11. <chunk id="settings_verify_integrity">Tick <b>Verify file integrity after upload</b> to allow TeamCity to perform an additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5">check-up on uploaded files</a>. If the integrity verification fails, TeamCity writes a corresponding message to the build log.</chunk>
+11. <snippet id="settings_verify_integrity">Tick <b>Verify file integrity after upload</b> to allow TeamCity to perform an additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5">check-up on uploaded files</a>. If the integrity verification fails, TeamCity writes a corresponding message to the build log.</snippet>
 
-12. <chunk id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</chunk>
+12. <snippet id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</snippet>
 
-<chunk id="make_storage_active">
+<snippet id="make_storage_active">
 
 > If your build agent is deployed behind a proxy, you must also configure the proxy settings on the build agent.
 > See [](configuring-proxy-server.md#Use+Proxy+for+Outgoing+Build+Agent+Connections).
 >
-{type="note"}
+{style="note"}
 
 When viewing a list of storages available for a project, click <b>Make Active</b> to start using the corresponding storage for all new builds of this project. The <b>has N usages</b> link allows you to view which builds used this storage to upload their artifacts.
 
 
 <img src="dk-s3-makeActive.png" width="706" alt="Make storage active"/>
 
-</chunk>
+</snippet>
 
 
 
 ## Create and Set Up a New S3-Compatible Storage
 
 
-1. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_art_storage_page"/>
+1. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_art_storage_page"/>
 
-2. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_add_new_storage"/>
+2. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_add_new_storage"/>
 
-3. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_name_id"/>
+3. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_name_id"/>
 
 4. Set the **Type** field to "Custom S3".
 
@@ -133,18 +133,18 @@ When viewing a list of storages available for a project, click <b>Make Active</b
 
 6. Specify the storage endpoint TeamCity should use to access your bucket.
 
-7. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_path_prefix"/>
+7. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_path_prefix"/>
 
-8. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_mulipart_upload"/>
+8. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_mulipart_upload"/>
 
-9. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_virtual_host"/>
+9. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_virtual_host"/>
 
-10. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_verify_integrity"/>
+10. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_verify_integrity"/>
 
-11. <include src="storing-build-artifacts-in-amazon-s3.md" include-id="settings_save_and_exit"/>
+11. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_save_and_exit"/>
 
 
-<include src="storing-build-artifacts-in-amazon-s3.md" include-id="make_storage_active"/>
+<include from="storing-build-artifacts-in-amazon-s3.md" element-id="make_storage_active"/>
 
 
 ## S3 Storage Classes
@@ -165,7 +165,7 @@ There are two ways to enable the required storage class:
     4. Choose the required storage class and the delay between the upload and transition dates. Set the **Days after object creation** to "0" to transition your artifacts as soon as TeamCity uploads them.
         > TeamCity does not support archive storage classes since their files are not immediately available and require additional unpack/warmup actions before they can be fetched.
         >
-        {type="tip"}
+        {style="tip"}
     5. Enable additional rules for stored artifacts. For example, you can check **Expire current versions of objects** to label previously uploaded artifacts as expired, and **Permanently delete noncurrent versions of objects** to periodically clean your storage.
     6. Specify the rule scope to choose whether it should apply to the entire storage or only those artifacts that match the required filter.
     7. Review your rule at the bottom of the page. It may look like the following:
@@ -382,8 +382,8 @@ project {
 > 
 > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 > 
-{type="tip"}
+{style="tip"}
 
 ## Migrating Artifacts To a Different Storage
 
-<include src="configuring-artifacts-storage.md" include-id="artifactMigrationToS3"/>
+<include from="configuring-artifacts-storage.md" element-id="artifactMigrationToS3"/>

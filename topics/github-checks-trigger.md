@@ -14,7 +14,7 @@ If you do not wish to expose your build server address, tick the **Disable TeamC
 
 > The "View more details on JetBrains BuildServer" link at the bottom of the check run output page remains visible even with this setting enabled because it is displayed by the GitHub App, not the TeamCity trigger. To remove this link, edit the **Homepage URL** field in the GitHub App settings.
 > 
-{type="tip"}
+{style="tip"}
 
 The trigger leverages [GitHub Checks API](https://docs.github.com/en/rest/checks?apiVersion=2022-11-28#check-runs) and can be used as the only commit verification mechanism, or compliment native [GitHub Actions](https://github.com/features/actions) workflows.
 

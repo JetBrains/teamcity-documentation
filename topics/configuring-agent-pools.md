@@ -21,7 +21,7 @@ Using agent pools allows:
 
 > You can access agent pool functionality using the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-agent-pools.html).
 > 
-{type="note"}
+{style="note"}
 
 ## Required Permissions
 

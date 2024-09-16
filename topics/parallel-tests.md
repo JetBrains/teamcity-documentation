@@ -140,7 +140,7 @@ The build step with custom tests' execution logic should use this file and filte
 
 ## Alternative Test Filtering for .NET
 
-<chunk id="alternative-dotnet-parallel-filtering">
+<snippet id="alternative-dotnet-parallel-filtering">
 
 If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse and consume for test engines like NUnit.
 
@@ -151,7 +151,7 @@ To avoid potential performance issues, TeamCity automatically employs an alterna
 
 You can prevent TeamCity from switching to this mode and force it to always run parallel .NET tests using the regular filtering mechanism in any individual project or build configuration. To do so, add the `teamcity.internal.dotnet.test.suppression=false` [parameter](configuring-build-parameters.md) to the required configuration or project.
 
-</chunk>
+</snippet>
 
 
 

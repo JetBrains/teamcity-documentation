@@ -53,7 +53,7 @@ Filters
 
 Specify a new-line separated list of filters for code coverage. Use `+|-:assembly=*;type=**;method=***` to include or exclude assemblies from covered assemblies:
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 For example, to run coverage on all `MyDemoApp` assemblies but not on `MyDemoApp.*.Tests`, specify the following assembly filters for coverage:   
 `+:MyDemoApp.*`   

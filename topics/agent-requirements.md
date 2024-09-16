@@ -48,7 +48,7 @@ For example, if you define a build runner parameter as a reference to another pr
 
 ## Agent Requirements Video Guide
 
-<video href="5gaoW8IfNJA"
+<video src="https://youtu.be/5gaoW8IfNJA"
 title="TeamCity tutorial — Agent Requirements"/>
 
  <seealso>

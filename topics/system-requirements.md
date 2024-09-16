@@ -137,7 +137,7 @@ The server load produced by each build depends on the amount of this build's dat
 **If you need many more agents/parallel builds, we highly recommend using a [multinode setup](multinode-setup.md) and distribute the projects between the nodes**.
 
 We are constantly improving the TeamCity performance and work closely with organizations running large TeamCity installations. This way, we can study performance issues and improve TeamCity to handle larger loads.
-{type="note"}
+{style="note"}
 
 ### Configuring TeamCity Server for Performance
 

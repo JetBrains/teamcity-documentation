@@ -40,7 +40,7 @@ You can also opt to trigger build if pre-release package version is detected by 
 
 ## Triggered Build Customization
 
-<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
+<include from="configuring-vcs-triggers.md" element-id="triggered-build-customization"/>
 
  <seealso>
         <category ref="admin-guide">

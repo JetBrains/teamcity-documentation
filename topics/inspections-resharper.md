@@ -173,7 +173,7 @@ Note that the `--source` parameter affects all plugins, so you cannot mix Market
 > * Some of ReSharper plugins may not work for R# CLT.
 > * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2021.3.0 and newer. Older versions may incorrectly interpret values from this field.
 >
-{type="note"}
+{style="note"}
 
 
 </td>

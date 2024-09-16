@@ -259,7 +259,7 @@ You can use references to external properties when defining the values, like `%\
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ## Inspection Parameters
 

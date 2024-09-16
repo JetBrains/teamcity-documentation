@@ -38,7 +38,7 @@ If a key was uploaded from the "Create Project" page, TeamCity assigns it to the
 
 > Keep the access to the [TeamCity Data Directory](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
 >
-{type="note"}
+{style="note"}
 
 
 ## Generated SSH Keys
@@ -74,7 +74,7 @@ Otherwise, if you want to update a project that authenticates to a VCS via a tok
     
     <img src="dk-selectSshKeyOptions.png" width="706" alt="Select an SSH key"/>
     
-    <include src="git.md" include-id="ssh-key-options"/>
+    <include from="git.md" element-id="ssh-key-options"/>
 
 4. Click **Test Connection** at the bottom of the page to check you current values, and **Apply** to save and exit the root settings.
 
@@ -90,7 +90,7 @@ If you configure the [agent-side checkout](vcs-checkout-mode.md#agent-checkout),
 
 > Keys are removed from agents for security reasons. For example, the tests executed by the build can leave some malicious code that will access the build agent file system and acquire the key. However, tests cannot get the key directly since it is removed by the time they are running. It makes it harder but not impossible to steal the key. Therefore, the agent must also be secure.
 >
-{type="note"}
+{style="note"}
 
 To transfer the key from the server to the agent, TeamCity encrypts it with a DES symmetric cipher. For a more secure way, configure an [HTTPS connection between agents and the server](using-https-to-access-teamcity-server.md).
 

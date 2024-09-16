@@ -21,7 +21,7 @@ Adding the Pull Requests feature to a build configuration allows you to:
 
 * Set up specific criteria that govern which pull requests to monitor. You can filter pull requests by their authors, target and origin branches.
 
-   <include src="branch-filter.md" include-id="vcs-branch-names-for-prs"/>
+   <include from="branch-filter.md" element-id="vcs-branch-names-for-prs"/>
 
 * Set up a workflow in which developers work in their local branches and TeamCity does not waste resources building these changes unless they are sent as a pull (merge) request (see the [](#Interaction+with+VCS+Roots) section).
 
@@ -34,7 +34,7 @@ The Pull Requests feature **does not** automatically trigger new builds against 
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
-{type="warning"}
+{style="warning"}
 
 
 If your project targets a GitHub or GitLab repository, you can automate your setup even further by letting TeamCity build pull request branches and merge those requests that yield successful builds. To do this, add the [Automatic Merge](automatic-merge.md) build feature in addition to **Pull Requests**.
@@ -321,7 +321,7 @@ Description
 * **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
   >
-  {type="note"}
+  {style="note"}
 
 </td>
 </tr>
@@ -395,7 +395,7 @@ Be careful: new builds might be triggered for changes committed within the last 
 
 ### Bitbucket Cloud Pull Requests
 
-<video href="M2wi6l0pZe4"
+<video src="https://youtu.be/M2wi6l0pZe4"
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly source branches in a source repository (forks are not supported).   

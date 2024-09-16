@@ -178,7 +178,7 @@ Note that if a build configuration with the finish build trigger __has__ a snaps
 
 ## Triggered Build Customization
 
-<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
+<include from="configuring-vcs-triggers.md" element-id="triggered-build-customization"/>
 
 <seealso>
         <category ref="admin-guide">

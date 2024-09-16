@@ -56,7 +56,7 @@ Process files
 Click __Edit file list__ and specify paths to files where the values to be replaced will be searched. Provide a newline- or comma-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
 [Ant-like wildcards](wildcards.md#Antlike+Wildcards) are supported, for example, `dir/**/*.cs`.
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 _If a [predefined template](#Templates) is selected, the files associated with that template will be used._
 
