@@ -7,21 +7,21 @@ The _NUnit_ build runner is designed to run NUnit tests on the TeamCity server. 
 
 > NUnit build runner supports only [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/get-started/overview). To run tests for [.NET](https://docs.microsoft.com/en-us/dotnet/framework/get-started/net-core-and-open-source) projects (and .NET Framework projects targeting version 4.0 or later), use the [.NET](net.md) build runner with the [`test`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) command instead. See the [NUnit Support in TeamCity](nunit-support.md) article for details.
 > 
-{type="note"}
+{style="note"}
 
 ## Legacy and Updated NUnit Runners
 
-<chunk include-id="2024-07-nunit">
+<snippet include-id="2024-07-nunit">
 
 Version 2024.07 introduces an updated NUnit runner that, compared to the legacy runner, does not allow you to select a .NET Runtime or .NET Framework version. If needed, use the **Additional command line parameters** field to specify these settings. In addition, the updated runner no longer supports outdated NUnit 2.x.x versions.
 
 In version 2024.07, both updated and legacy runners are fully functional and available from the [Build Steps](configuring-build-steps.md) page. In the following release cycles we expect to unbundle the legacy runner and move it to a separate plugin. When it is done, you will need to manually install this plugin from JetBrains Marketplace to continue using the legacy runner. As such, we recommend migrating your projects to either updated NUnit or regular [](net.md) runners.
 
-</chunk>
+</snippet>
 
 ## Installing NUnit
 
-<chunk include-id="installing-nunit">
+<snippet include-id="installing-nunit">
 
 To use the NUnit build runner, you need to install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents via one of the following options:
 * Instruct the first build step to install NUnit from a NuGet package. 
@@ -50,7 +50,7 @@ If the extensions are not found in versions 3.2.0 and 3.2.1, the build will fail
 
 The extensions can be installed as separate packages or in bulk using the [NUnit Console Version 3](https://www.nuget.org/packages/NUnit.Console) NuGet package.
 
-</chunk>
+</snippet>
 
 <anchor name="NUnit-settings"/>
 
@@ -216,7 +216,7 @@ Use this option to instruct TeamCity to run some tests before others.
 </td></tr></table>
 
 ### Legacy Runner Settings
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 <table><tr>
 

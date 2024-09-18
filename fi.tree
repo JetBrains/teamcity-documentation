@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE product-profile
-        SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
-<product-profile id="fi"
-                 name="Sample Product"
-                 icon=""
-                 start-page="first-topic">
-    <toc-element id="first-topic"/>
-</product-profile>
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE instance-profile SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+<instance-profile id="fi" name="Sample Product" icon="" start-page="first-topic">
+	<toc-element topic="first-topic"/>
+</instance-profile>

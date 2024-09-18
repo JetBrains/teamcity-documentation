@@ -29,18 +29,18 @@ If the "_[Show changes from snapshot dependencies](configuring-vcs-settings.md#s
 
 ### VCS Trigger Rules
 
-<include src="configuring-vcs-triggers.md" include-id="vcs-trigger-rules"/>
+<include from="configuring-vcs-triggers.md" element-id="vcs-trigger-rules"/>
 
 #### General Syntax
 {id="general-syntax-1"}
 
-<include src="configuring-vcs-triggers.md" include-id="general-syntax"/>
+<include from="configuring-vcs-triggers.md" element-id="general-syntax"/>
 
 <anchor name="ConfiguringScheduleTriggers-WatchedBuild"/>
 
 #### Trigger Rules Examples
 
-<include src="configuring-vcs-triggers.md" include-id="trigger-rules-examples"/>
+<include from="configuring-vcs-triggers.md" element-id="trigger-rules-examples"/>
 
 <anchor name="ConfiguringScheduleTriggers-BuildChanges"/>
 
@@ -73,12 +73,12 @@ Use this option to run a build simultaneously on all agents that are enabled and
 * run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function properly after an environment upgrade/update)
 * run a build on different platforms (for example, you can set up a configuration and specify for it a number of compatible build agents with different environments installed)
 
-<chunk include-id="queue-optimization">
+<snippet include-id="queue-optimization">
 
 ### Build Queue Optimization Settings
 
 By default, TeamCity [optimizes the build queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity): already queued build can be replaced with an already started build or a more recent queued build. You can disable this default behavior by unchecking the corresponding box.
-</chunk>
+</snippet>
 
 ### Branch Filter
 
@@ -94,4 +94,4 @@ For example, if you specify a comment text in the trigger rules field and provid
 
 ## Triggered Build Customization
 
-<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
+<include from="configuring-vcs-triggers.md" element-id="triggered-build-customization"/>

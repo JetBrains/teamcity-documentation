@@ -14,7 +14,7 @@ The Qodana runner requires a TeamCity agent to be deployed on a non-Windows OS w
 
 > See the following Qodana help article for the detailed setup instructions: [Integration with TeamCity](https://www.jetbrains.com/help/qodana/teamcity.html).
 > 
-{type="note"}
+{style="note"}
 
 You can enable advanced code quality inspections and do the following:
 

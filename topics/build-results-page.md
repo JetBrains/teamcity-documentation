@@ -89,7 +89,7 @@ If the build produced [artifacts](build-artifact.md), they all are displayed on 
 
 The **Parameters** tab shows all actual (at the time of this build) values of [build parameters](configuring-build-parameters.md). 
 
-<include src="levels-and-priority-of-build-parameters.md" include-id="build-results-parameters-tab"/>
+<include from="levels-and-priority-of-build-parameters.md" element-id="build-results-parameters-tab"/>
 
 
 ## Dependencies Tab

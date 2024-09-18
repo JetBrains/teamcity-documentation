@@ -12,7 +12,7 @@ _Swabra_ is a bundled TeamCity plugin that allows you to add the Swabra [build f
 
 > Swabra is compatible with any build configuration regardless of its build steps. However, it should be used only when the checkout mode is set to [automatic checkout](vcs-checkout-mode.md): when configured, Swabra runs __before the first build step__ to record the file tree after the sources checkout and to restore it after the build finishes.
 >
-{type="note"}
+{style="note"}
 
 Swabra saves the checkout directory state to the `<checkout-directory-name-hash>.snapshot` file in the caches directory using the DiskDir format. The path to the checkout directory to be cleaned is stored in the `snapshot.map` file. The snapshot stores information about existing files, their last modification and size. This information is used when a build finishes (or a new build is about to start) to identify changes.
 

@@ -13,7 +13,7 @@ After you have started TeamCity as described [here](getting-started-with-teamcit
 
 You can watch a quick video guide or read the full tutorial below.
 
-<video href="SYjnb7pW4Cg"
+<video src="https://youtu.be/SYjnb7pW4Cg"
        title="Running your first build in TeamCity"/>
 
 ## Create your first project
@@ -24,7 +24,7 @@ There are several ways to create a project in TeamCity: automatically from a rep
 >To try out the setup flow with a sample project, you can use this [GitHub repository](https://github.com/mkjetbrains/SimpleMavenSample).  
 >Or, you can configure the first build based on your own project's sources. In this case, if TeamCity autodetects any build steps in it, we recommend that you read about [their available settings](configuring-build-steps.md) before running the build.
 >
-{type="note"}
+{style="note"}
 
 Every TeamCity installation has the default __Root__ project that will contain all the other projects you create. The first project you create will be added as a child of the __Root__ project. To add your first project:
 

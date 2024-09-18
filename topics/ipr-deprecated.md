@@ -28,7 +28,7 @@ Here are the recommended steps to perform the migration from Ipr to IntelliJ IDE
 
 ## IntelliJ IDEA Project Settings
 
-<include src="intellij-idea-project.md" include-id="idea-project-settings"/>
+<include from="intellij-idea-project.md" element-id="idea-project-settings"/>
 
 ## Additional Pre/Post Processing (Ant)
 

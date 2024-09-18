@@ -5,7 +5,7 @@ TeamCity can parse the MSTest results file (`.trx` file) and show test reports i
 
 >Due to specifics of the MSTest tool, TeamCity does not support on-the-fly test reporting for MSTest. All test results are imported after the tests are finished.
 > 
-{type="note"}
+{style="note"}
 
 ## Reporting MSTest Results
 

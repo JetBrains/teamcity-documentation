@@ -220,7 +220,7 @@ You can insert references to parameters as `%\parameter_name%` when writing scri
 
 > Note that these runners resolve parameter values only if scripts are written directly in runner settings pages in TeamCity UI. If you include parameter references in external script files, TeamCity will not replace these references with parameter values.
 > 
-{type="note"}
+{style="note"}
 
 
 <table><tr><td>
@@ -304,7 +304,7 @@ You can use parameters to pass simple data from one step/script to another. To d
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
 
-<chunk id="change-parameter-from-build">
+<snippet id="change-parameter-from-build">
 
 In the following configuration, a C# script checks the current day of the week and writes it to the `day.of.week` parameter. A subsequent Python runner then uses the updated parameter value.
 
@@ -334,7 +334,7 @@ object MyBuildConf : BuildType({
 })
 ```
 
-</chunk>
+</snippet>
 
 
 <anchor id="Using+Build+Parameters+in+Build+Scripts"/>
@@ -345,7 +345,7 @@ object MyBuildConf : BuildType({
 
 > Parameters used in this scenario should start with either `env.` or `system.` prefixes but referenced without these prefixes. For example, use `${build.number}` in Maven configuration files to reference the predefined `system.build.number` parameter.
 > 
-{type="warning"}
+{style="warning"}
 
 <tabs>
 
@@ -357,7 +357,7 @@ In .NET, pass parameter values using the `$(<parameter_name>)` syntax.
 > * MSBuild does not support names with dots (.), so you need to replace dots with underscores ("_") when using the parameter inside a build script.
 > * The `nuget push` and `nuget delete` commands do not support parameters.
 >
-{type="note"}
+{style="note"}
 
 The following sample `.csproj` file defines two custom MSBuild [targets](https://learn.microsoft.com/en-us/visualstudio/msbuild/target-element-msbuild?view=vs-2022):
 

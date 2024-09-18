@@ -6,7 +6,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
 
 > This article explains how to configure webhooks that notify third-party services about specific TeamCity events. To read about VCS webhooks that notify TeamCity about new repository changes, refer to this article instead: [](configuring-vcs-post-commit-hooks-for-teamcity.md).
 > 
-{type="note"}
+{style="note"}
 
 ## Enable Webhooks
 

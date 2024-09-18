@@ -16,11 +16,11 @@ Running TeamCity agents inside Docker container is a part of a broad TeamCity-Do
 
 > You can also start a TeamCity server inside a container. See instructions on this page for more information: [jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server).
 >
-{type="tip"}
+{style="tip"}
 
 > Since 3rd-party tool vendors may not provide binaries for every OS/architecture, some images may include fewer installed components compared to the others. For instance, ARM-based images do not include Perforce CLI (p4) and Windows images ship without Mercurial.
 >
-{type="note"}
+{style="note"}
 
 
 |                                                                                                  | Regular Agent Image                                                                                           | Minimal Agent Image                                                                                                   |

@@ -84,7 +84,7 @@ These changes and their potential effects on your existing projects include the 
 
     > You can add the `teamcity.tools.bundled.maven.installOnStartup=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to prevent TeamCity from lazy-loading Maven tools.
     > 
-    {type="tip"}
+    {style="tip"}
 
 * If there are no existing configurations that utilize the "Default" version of Maven, version 3.9.6 becomes the new "Default". Otherwise, the "Default" option will keep pointing to the same Maven tool as before (for example, 3.6.3).
 * If an existing build configuration utilizes manually installed Maven 3.9.6 and [stores its settings in VCS](storing-project-settings-in-version-control.md), editing this configuration generates a [patch](kotlin-dsl.md#Edit+Project+Settings+via+Web+UI) that changes the value of the `mavenVersion` parameter from `custom` to `bundled_3_9_6`.
@@ -180,7 +180,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
   > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0) or a later version (for example, .NET SDK 7.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
   > See the [README](https://github.com/JetBrains/teamcity-docker-images/tree/master/custom#readme) for custom agent images in the [`teamcity-docker-images`](https://github.com/JetBrains/teamcity-docker-images) repository for more details.
   > 
-  {type="note"}
+  {style="note"}
 
 * The bundled Tomcat was updated to version 9.0.80.
 * The bundled Git was updated to version 2.43 in both Server and Agent Docker images.
@@ -438,7 +438,7 @@ To use a custom endpoint for Amazon alternatives like [MinIO](https://min.io/), 
 
 
 
-<!--<include src="upgrade-notes-older-versions.md" include-id="older-upgrade-notes" />-->
+<!--<include from="upgrade-notes-older-versions.md" element-id="older-upgrade-notes" />-->
 
 
 ## Changes from 2022.04 to 2022.10
@@ -466,7 +466,7 @@ In Kotlin 1.7 this behavior changes. Maven Central is only checked if no `@file:
 If you use such annotations in your code, you’ll need to mention Maven Central explicitly
 if you want the dependency resolver to look in it.
 >
-{type="note"}
+{style="note"}
 * Maven 3.8.6 has been added as one of the bundled versions of the tool.
 * The embedded Maven library has been updated to version 3.8.6.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
@@ -1114,7 +1114,7 @@ See the [.NET description](net.md) for more information about the new .NET step 
 
 > Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
 >
-{type="note"}
+{style="note"}
 
 If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](feedback.md).
 
@@ -1163,7 +1163,7 @@ If your custom scripts or settings depend on the main alternates source for subm
 >
 > For versions 2019.2.1 and earlier, please __[do not use](known-issues.md#jdk8_240) Java 8 newer than [update 232](https://github.com/corretto/corretto-8/releases/tag/8.232.09.1)__ for the TeamCity server.
 >
-{type="tip"}
+{style="tip"}
 
 No potential breaking changes.
 
@@ -2149,7 +2149,7 @@ MSTest runner is merged with [VSTest console runner](https://confluence.jetbrain
 > If you have used [VSTest.Console runner plugin](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner), make sure that you have latest version (build __32407__) installed. The plugin version can be viewed on __Administration | Plugins List__ page. Earlier versions of this plugin are __not compatible__ with TeamCity 9.1 and may cause malfunction of .NET related build runners which can manifest with `java.lang.NoSuchMethodError: jetbrains.buildServer.runner.NUnit.NUnitVersion.parse(Ljava/lang/String;)` build errors. The plugin can be downloaded from [its page](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner).
 Consider migrating your vstest.console execution steps to the bundled Visual Studio Tests runner.
 >
-{type="note"}
+{style="note"}
 
 #### MSTest installation agent properties
 
@@ -2677,7 +2677,7 @@ Starting with this version the following requirements
 
 > If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](install-and-start-teamcity-agents.md).
 >
-{type="note"}
+{style="note"}
 
 __Project/Template parameters override__   
 In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](https://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
@@ -2928,12 +2928,12 @@ The [bug](https://youtrack.jetbrains.com/issue/TW-11854) was fixed. The behavior
 
 > If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](https://youtrack.jetbrains.com/issue/TW-11813#comment=27-148589)
 >
-{type="tip"}
+{style="tip"}
 
 
 > NCover 3 support may not work. See [TW-11680](https://youtrack.jetbrains.com/issue/TW-11680#comment=27-148573)
 >
-{type="tip"}
+{style="tip"}
 
 __Notification templates change__   
 Since 5.1, TeamCity uses [new template engine](customizing-notification-templates.md) (Freemarker) to generate notification messages. New default templates are supplied and customizations to the templates made prior to upgrading are no longer effective.
@@ -2977,7 +2977,7 @@ No potential breaking changes.
 > There is a known issue with .NET duplicates finder: [TW-11320](https://youtrack.jetbrains.com/issue/TW-11320)   
 Please use the patch attached to the issue.
 >
-{type="tip"}
+{style="tip"}
 
 ## Changes from 5.0.1 to 5.0.2
 

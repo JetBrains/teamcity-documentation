@@ -174,7 +174,7 @@ Select JDK to run the script:
 > `An illegal reflective access operation has occurred`  
 > This is caused by a known issue of the Kotlin compiler and will not affect your build anyhow. The details of the issue and its workaround are described [here](https://youtrack.jetbrains.com/issue/TW-70604#focus=Comments-27-4763145.0-0).
 >
-{type="warning"}
+{style="warning"}
 
 </td>
 

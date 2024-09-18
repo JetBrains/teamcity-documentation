@@ -160,7 +160,7 @@ To make TeamCity send build/deploy information to Jira Cloud:
 
 ## TeamCity Integration with Jira Cloud Video Guide
 
-<video href="rK7faWbCh0Q"
+<video src="https://youtu.be/rK7faWbCh0Q"
 title="TeamCity tutorial — How to integrate TeamCity and Jira (Cloud)"/>
 
  <seealso>

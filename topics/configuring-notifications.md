@@ -76,7 +76,7 @@ TeamCity Browser Notifier can show notifications directly in your web browser. I
 
 TeamCity Slack Notifier requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack [here](configuring-connections.md#Slack), or watch a video tutorial:
 
-<video href="d_Xuw7kkp4c"
+<video src="https://youtu.be/d_Xuw7kkp4c"
 title="TeamCity tutorial — How to integrate TeamCity and Slack"/>
 
 ### IDE Notifications

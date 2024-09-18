@@ -30,7 +30,7 @@ The plugin takes into account only the files updated since the build start (dete
 Add XML Report Processing as a [build feature](adding-build-features.md) and configure its settings:
 * Choose the report type and specify monitoring rules in the form of `+|-:path` separating them by a comma or new line.
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 <note>
 

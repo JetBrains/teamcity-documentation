@@ -172,15 +172,15 @@ Each JetBrains-hosted agent comes with a set of preinstalled software. If none o
 
 ### Windows Agents
 
-<include src="preinstalled-software-on-teamcity-cloud-windows-agents.md"
-include-id="windows-jb-agents"/>
+<include from="preinstalled-software-on-teamcity-cloud-windows-agents.md"
+element-id="windows-jb-agents"/>
 
 ### Ubuntu Agents
 
-<include src="preinstalled-software-on-teamcity-cloud-ubuntu-agents.md"
-include-id="ubuntu-jb-agents"/>
+<include from="preinstalled-software-on-teamcity-cloud-ubuntu-agents.md"
+element-id="ubuntu-jb-agents"/>
 
 ### macOS Agents
 
-<include src="preinstalled-software-on-teamcity-cloud-macos-agents.md"
-include-id="macos-jb-agents"/>
+<include from="preinstalled-software-on-teamcity-cloud-macos-agents.md"
+element-id="macos-jb-agents"/>

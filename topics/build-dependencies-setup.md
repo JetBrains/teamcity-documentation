@@ -195,7 +195,7 @@ It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the
 
 #### Trigger on changes in snapshot dependencies
 
-<chunk include-id="trigger-on-ssdep-chngs">
+<snippet include-id="trigger-on-ssdep-chngs">
 
 The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
 
@@ -205,7 +205,7 @@ Let's take a build chain from the example: `pack setup` — depends on — `test
 
 With the VCS Trigger set up in the `pack setup` configuration, the whole build chain is usually triggered when TeamCity detects changes in `pack setup`; changes in `compile` will trigger `compile` only and not the whole chain. If you want the whole chain to be triggered on a VCS change in `compile`, add a VCS trigger with the "_Trigger on changes in snapshot dependencies_" [option](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) enabled to the final build configuration of the chain, `pack setup`. This will not change the order in which builds are executed, but will only trigger the whole build chain, if there is a change in any of snapshot dependencies. In this setup, no VCS triggers are required for the `compile` or `tests` build configuration. 
  
-</chunk>
+</snippet>
  
 <anchor name="show-changes-from-dependencies"/>
 <anchor name="BuildDependenciesSetup-ShowChangesfromDeps"/>

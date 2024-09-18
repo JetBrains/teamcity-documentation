@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE root
-        SYSTEM "https://resources.jetbrains.com/stardust/build-script.dtd">
+  SYSTEM 'https://resources.jetbrains.com/writerside/1.0/build-script.dtd'>
 <root>
-    <builds>
-        <product id="tc" master="project.ihp" family="idea">
-            <artifact type="web2" platform="primary" local-update="true" local-update-path="teamcity" image-bundle="true" local-update-images="true"/>
-        </product>
-        <product id="tcc" master="project.ihp" family="idea">
-            <artifact type="web2" platform="primary" local-update="true" local-update-path="teamcity-cloud" image-bundle="true" local-update-images="true"/>
-        </product>
-    </builds>
+	<builds>
+		<instance id="tc" master="writerside.cfg" family="idea">
+			<artifact type="web2" platform="primary" local-update="true" local-update-path="teamcity" image-bundle="true" local-update-images="true"/>
+		</instance>
+		<instance id="tcc" master="writerside.cfg" family="idea">
+			<artifact type="web2" platform="primary" local-update="true" local-update-path="teamcity-cloud" image-bundle="true" local-update-images="true"/>
+		</instance>
+	</builds>
 </root>

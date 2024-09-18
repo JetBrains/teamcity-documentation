@@ -94,7 +94,7 @@ Notes on using this mode:
 * To use the `StreamAtChange` option, you need to define _[Label/changelist to sync](#Other+Settings)_.
 * When streams are used with the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are supported only when the "_Create non-stream workspace_" option is enabled (see [below](#Agent+Checkout+Settings)).
 * When task streams are used for feature branches, TeamCity may miss some changes in task streams until a modifying commit is made, which means that merge commits from the parent stream are not detected until a _real_ commit to the task stream is made (see ticket [TW-44765](https://youtrack.jetbrains.com/issue/TW-44765)).
-* <include src="vcs-checkout-rules.md" include-id="note-perforce-vcs"/>
+* <include from="vcs-checkout-rules.md" element-id="note-perforce-vcs"/>
 
 <anchor name="branch-support"/>
 <anchor name="branchStreams"/>

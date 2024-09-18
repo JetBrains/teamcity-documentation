@@ -7,7 +7,7 @@ Using the version control-stored DSL enables you to define settings programmatic
 
 Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity, and the [Recommended Refactorings](https://blog.jetbrains.com/teamcity/2021/04/kotlin-dsl-for-beginners-recommended-refactorings/) article.
 
-<video href="AEYjAnR2-MY"
+<video src="https://youtu.be/AEYjAnR2-MY"
 title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
 
 See more TeamCity Kotlin DSL video tutorials:
@@ -303,7 +303,7 @@ Once the project has applied remotely stored settings, you can disable the synch
 
 > [DSL context parameters](#contextParameters) allow you to create discrepant projects from the same DSL script.
 > 
-{type="tip"}
+{style="tip"}
 
 
 
@@ -392,7 +392,7 @@ The TeamCity server does not use Maven for generating settings from your DSL scr
 
 ## Storing and Managing Global Server Settings
 
-<include include-id="iac-terraform" src="storing-project-settings-in-version-control.md"/>
+<include element-id="iac-terraform" from="storing-project-settings-in-version-control.md"/>
 
 
 
@@ -596,7 +596,7 @@ params {
 
 >To generate a token for a secure value, follow [this instruction](storing-project-settings-in-version-control.md#Managing+Tokens).
 >
-{type="tip"}
+{style="tip"}
 
 ## FAQ and Common Problems
 

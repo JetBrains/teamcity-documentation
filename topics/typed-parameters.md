@@ -34,7 +34,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
       > 
       > It is also important to remember that setting the parameter to the "Password" type does not completely guarantee the safety of your data. Any project administrator can retrieve the parameter's raw value, and any developer who can change the build script can potentially write malicious code to leak the password.
       >
-      {type="warning"}
+      {style="warning"}
 
    * **Select** — allows you to specify a set of predefined values. Users that invoke the [Run Custom Build](running-custom-build.md) dialog can choose one or multiple values from the list, depending on the **Allow multiple selection** value. Values can be supplied with optional values displayed in TeamCity UI (for example, `Windows => win`).
 

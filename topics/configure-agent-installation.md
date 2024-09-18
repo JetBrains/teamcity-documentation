@@ -87,7 +87,7 @@ If you have a self-updating Git repository proxy that is significantly closer th
 
 ## The Configure Command
 
-<chunk include-id="agent-configure-command">
+<snippet include-id="agent-configure-command">
 
 To set up the [buildAgent.properties](configure-agent-installation.md#General+Agent+Configuration) file, you can run the `<Agent_folder>/bin/agent.bat` or `<Agent_folder>/bin/agent.sh` script with the `configure` command. This command allows you to set up core agent properties and save them to the target configuration file. If no configuration file path is specified, the changes will be saved to the default `<Agent_folder>/conf/buildAgent.properties` properties.
 
@@ -133,15 +133,15 @@ Sample command that writes the server URL and sets up the custom agent name:
 > * The `configure` command writes the required parameters to `.properties` file, but does not automatically create it if no such file is present. Make sure the target properties file exists when specifying a custom file location.
 > * Adding and changing custom properties (for example, `./agent.sh configure --myCustomProperty=newValue`) is not supported.
 > 
-{type="note"}
+{style="note"}
 
-</chunk>
+</snippet>
 
 ## Set up Agent Behind Proxy
 
 It is possible to configure a forward proxy server for agent-to-server connections.
 
-<include src="configuring-proxy-server.md" include-id="agent-proxy-server"/>
+<include from="configuring-proxy-server.md" element-id="agent-proxy-server"/>
 
 <seealso>
         <category ref="concepts">

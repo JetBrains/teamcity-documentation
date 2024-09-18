@@ -3,7 +3,7 @@
 
 >This plugin is unbundled from TeamCity since version 2022.04. If you want to continue using it after upgrade, please [download it from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/18552-vcs-support-cvs) and install it as described [here](installing-additional-plugins.md).
 > 
-{type="warning"}
+{style="warning"}
 
 Common VCS root properties are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 

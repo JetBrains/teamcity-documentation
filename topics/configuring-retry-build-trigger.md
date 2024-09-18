@@ -5,7 +5,7 @@ The _retry build trigger_ automatically adds a new build to the queue if the pre
 
 > To configure the _retry build trigger_ in Kotlin DSL, see [RetryBuildTrigger](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/triggers/retry-build-trigger/index.html).
 >
-{type="note"}
+{style="note"}
 
 ## Triggering Settings
 
@@ -81,4 +81,4 @@ Apply a [branch filter](branch-filter.md) to rerun failed builds only in branche
 
 ## Triggered Build Customization
 
-<include src="configuring-vcs-triggers.md" include-id="triggered-build-customization"/>
+<include from="configuring-vcs-triggers.md" element-id="triggered-build-customization"/>

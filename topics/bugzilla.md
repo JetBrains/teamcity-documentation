@@ -114,7 +114,7 @@ Specify a [Java Regular Expression](https://java.sun.com/j2se/1.5.0/docs/api/jav
 
 >If the username and password are specified, you need to have Bugzilla XML-RPC interface switched on. This is not required if you use anonymous access to Bugzilla without the username and password.
 >
-{type="note"}
+{style="note"}
 
 Note that a user specified in the connection to Bugzilla should have sufficient permissions to view Bugzilla issues. This will allow TeamCity to retrieve the information about issues and display it in the UI.
 

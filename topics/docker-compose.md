@@ -40,7 +40,7 @@ docker-compose -f <docker-compose.yml> [-f <docker-compose2.yml>] down -v
 
 > If a standalone Docker [installation](#Docker+Compose+Installation+Options) is not found, the Compose V2 syntax is used (for example, `docker compose down` instead of `docker-compose down`).
 >
-{type="note"}
+{style="note"}
 
 
 If the __pull image explicitly__ option is enabled, `docker-compose pull` will be run before the `docker-compose up` command.

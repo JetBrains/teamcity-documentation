@@ -4,22 +4,22 @@ The **Untrusted Builds** section allows you to set up the changes verification p
 
 <img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
 
-<chunk include-id="untrusted-builds-and-build-approval">
+<snippet include-id="untrusted-builds-and-build-approval">
 
 > Do not confuse the [](untrusted-builds.md) and [](build-approval.md) features. Despite certain similarities, these are separate features that serve different purposes.
 > 
 > * **Untrusted Builds** provide an additional security layer that blocks potentially harmful changes authored by external users.
 > * The **Build Approval** feature implements a confirmation mechanism that avoids mindless/excessive builds for certain configurations (configurations that deploy build results to public resources, configurations that require significant resources to run, and so on).
 >
-{type="tip"}
+{style="tip"}
 
-</chunk>
+</snippet>
 
 > Untrusted Builds currently support the following version control systems:
 > * GitHub
 > * GitLab
 > 
-{type="note"}
+{style="note"}
 
 ## Common Information
 
@@ -32,7 +32,7 @@ In this case external users can fork your public repository, introduce malicious
 
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
-{type="warning"}
+{style="warning"}
 
 Depending on the exact build configuration setup and the desired behavior, you may want to make the following adjustments:
 

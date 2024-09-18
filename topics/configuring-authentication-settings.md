@@ -165,17 +165,17 @@ By default, the users are allowed to change their password on their profile page
 
 The Token-Based Authentication module allows users to authenticate via [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) that they can create and invalidate themselves. This authentication module is enabled by default.
 
-<chunk include-id="access-token-expiration-note">
+<snippet include-id="access-token-expiration-note">
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when switching [nodes](multinode-setup.md) in the TeamCity UI or when the token expires.
 >
-{type="note"}{product="tc"}
+{style="note"}{product="tc"}
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when the token expires.
 >
-{type="note"}{product="tcc"}
+{style="note"}{product="tcc"}
 
-</chunk>
+</snippet>
 
 ### Windows Domain Authentication
 {product="tc"}
@@ -358,7 +358,7 @@ A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-t
 This list limits the set of users who can register or authenticate in TeamCity with their GitHub account to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application or GitHub App used in the Root project's [GitHub connection](configuring-connections.md#GitHub) is approved/installed in each specified organization.
-{type="note"}
+{style="note"}
 
 >Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
 
@@ -371,7 +371,7 @@ This list limits the set of users who can register or authenticate in TeamCity w
 
 >If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, [contact our support](feedback.md).
 >
-{type="warning"}
+{style="warning"}
 
 ### GitLab.com
 
@@ -505,7 +505,7 @@ This list limits the set of users who can register or authenticate in TeamCity w
 
 >If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
 >
-{type="warning"}
+{style="warning"}
 
 ### Google
 

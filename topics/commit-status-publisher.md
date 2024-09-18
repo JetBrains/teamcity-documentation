@@ -46,12 +46,12 @@ For connection, select one of the available authentication types:
 
 >To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully.
 > 
-{type="note"}
+{style="note"}
 
 
 > If your VCS root connects to a GitHub using the App Token, you can leverage the [GitHub Checks API](https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-checks?apiVersion=2022-11-28) to automatically post Markdown-formatted build statuses without setting up the Commit Status Publisher feature. See this article for more information: [](github-checks-trigger.md).
 > 
-{type="tip"}
+{style="tip"}
 
 
 ### GitLab
@@ -72,7 +72,7 @@ The **Authentication Type** option allows you to choose which authentication met
 > * The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
 > * In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
 > 
-{type="note"}
+{style="note"}
 
 The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/api/v4` format. This field is optional: if left blank, TeamCity uses a value that corresponds to the fetch URL specified in VCS root settings.
 
@@ -136,7 +136,7 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 * **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
   >
-  {type="note"}
+  {style="note"}
 
 </td>
 </tr>
@@ -152,7 +152,7 @@ To protect a branch and ensure that only verified pull requests are merged into 
 
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
 > 
-{type="note"}
+{style="note"}
 
 ### Azure DevOps
 

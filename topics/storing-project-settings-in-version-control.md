@@ -9,7 +9,7 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 > 
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 > 
-{type="warning"}
+{style="warning"}
 
 
 
@@ -103,7 +103,7 @@ You can change the default `.teamcity` value to any custom path (for example, `.
 
 > Before committing a new revision of project settings, TeamCity clears the target settings directory. To prevent TeamCity from wiping important files, make sure this directory is not used for anything but project settings. Be extra careful when specifying "." as the settings directory: this value should only be used if you want a dedicated repository that stores TeamCity project settings and nothing else.
 > 
-{type="warning"}
+{style="warning"}
 
 
 To prevent unexpected errors caused by ambiguous settings source, TeamCity does not allow you to change the settings path when the synchronization is already active. To modify this path, disable the synchronization and save the settings, then re-enable it and specify the required directory.
@@ -114,7 +114,7 @@ To prevent unexpected errors caused by ambiguous settings source, TeamCity does 
 > 3. Specify the path to existing project settings in the **Settings path in VCS** field.
 > 4. Click **Apply** to save your settings, then **Load project settings from VCS...** at the bottom of the page.
 >
-{type="note"}
+{style="note"}
 
 
 
@@ -160,11 +160,11 @@ To specify which settings TeamCity should apply when a build starts, choose a re
 > * edits to existing artifact rules (you can still add new and remove existing rules)
 > * (only if the [Apply Changes in Snapshot Dependencies and Version Control Settings](#Apply+Changes+in+Snapshot+Dependencies+and+Version+Control+Settings) setting is disabled) creating new and editing existing snapshot dependencies, checkout rules, and VCS roots.
 > 
-{type="warning"}
+{style="warning"}
 
 > Before starting a build, TeamCity stores a configuration for this build as a [hidden artifact](build-artifact.md#Hidden+Artifacts) under the `<[project_settings_directory](#Custom+Settings+Path)>/settings` directory. You can inspect these configuration files to determine what settings were actually used by the build.
 > 
-{type="tip"}
+{style="tip"}
 
 ### Example: Branch-Specific Settings
 
@@ -473,7 +473,7 @@ The aforementioned setting allows TeamCity to automatically generate missing con
 > 
 > If you merge settings from a custom branch into the default one, the history of auto-generated configurations' builds will be preserved.
 > 
-{type="note"}
+{style="note"}
 
 ## Storing Secure Settings 
 
@@ -508,7 +508,7 @@ params {
 
 > You can use tokens to reference secure values only in configuration files. If you insert "credentialsJSON:&lt;token&gt;" as a value of a [password parameter](typed-parameters.md) in TeamCity UI, TeamCity will not retrieve the token's underlying secure value. Instead, the "credentialsJSON:&lt;token&gt;" string itself will be used as an actual password value.
 >
-{type="note"}
+{style="note"}
 
 You can also generate new secure tokens on the __Tokens__ tab of the project __Versioned Settings__ section. The tab is available for projects with the enabled "_[Store secure values outside of VCS](#Storing+Secure+Settings)_" option.
 
@@ -539,13 +539,13 @@ Note that SSH keys will not be stored in the VCS repository.
 
 ## Storing and Managing Global Server Settings
 
-<chunk include-id="iac-terraform">
+<snippet include-id="iac-terraform">
 
 Storing [](kotlin-dsl.md) or XML settings in a VCS allows you to utilize the configuration-as-code approach for projects and build configurations. You can specify the hierarchy of projects, manage individual configurations, dynamically change step settings and parameters, and more.
 
 However, this approach does not allow you to manage server-wide settings (such as user and user group settings, clean-up rules, notifications, authentication modules, licenses, and more). To automate your server administration, define required settings in the HCL language format and use [HashiCorp Terraform](https://www.terraform.io) to manage them. To allow Terraform to communicate with your TeamCity server instance, add the dedicated **TeamCity Terraform Provider** to your Terraform configuration.
 
-<video href="gXteNQIWkwU"
+<video src="https://youtu.be/gXteNQIWkwU"
 title="TeamCity Terraform Provider"/>
 
 **Learn more:**
@@ -555,7 +555,7 @@ title="TeamCity Terraform Provider"/>
 * [TeamCity Terraform Provider Documentation](https://registry.terraform.io/providers/JetBrains/teamcity/latest/docs)
 * [Configuration as Code for TeamCity Using Terraform | The TeamCity Blog](https://blog.jetbrains.com/teamcity/2024/02/configuration-as-code-terraform-teamcity/#managing-github-resources-via-terraform)
 
-</chunk>
+</snippet>
 
 
 <anchor name="settingsFormat"/>

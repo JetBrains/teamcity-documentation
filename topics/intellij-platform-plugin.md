@@ -5,7 +5,7 @@ This plugin implements the TeamCity integration with IntelliJ Platform-based IDE
 
 > This is an introduction article that covers the very basics of working with the IntelliJ Platform Plugin. Refer to the [Plugin Documentation](https://www.jetbrains.com/help/teamcity/ij-addin/tc-welcome.html) and [this blog post](https://blog.jetbrains.com/teamcity/2017/10/teamcity-integration-with-intellij-based-ides/) for more information.
 > 
-{type="note"}
+{style="note"}
 
 
 ## Features

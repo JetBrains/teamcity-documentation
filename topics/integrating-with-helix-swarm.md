@@ -35,7 +35,7 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
 
    > Note that Helix Swarm has a limit of 32 characters for test names. If your build configuration ID exceeds this limit, change it in TeamCity build configuration settings.
    > 
-   {type="note"}
+   {style="note"}
 
 6. In the **URL** field, enter the following value:
    ```Plain Text
@@ -83,7 +83,7 @@ Helix Swarm [Workflows](https://www.perforce.com/manuals/swarm/Content/Swarm/wor
    
    >To get notified about the events, make sure to [configure Swarm triggers](https://www.perforce.com/manuals/swarm-admin/Content/Swarm/setup.perforce.html).
    >
-   {type="tip"}
+   {style="tip"}
 
 5. Leave the **Blocks** value as "Nothing".
 6. Click **Save** to exit workflow settings.

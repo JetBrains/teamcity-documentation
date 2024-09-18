@@ -30,7 +30,7 @@ By default, the TeamCity server is accessible under the root context of the serv
 
 >After this change, [automatic update](upgrading-teamcity-server-and-agents.md#Automatic+Update) will be disabled for your installation and you will have to upgrade TeamCity [manually](upgrading-teamcity-server-and-agents.md#Manual+Update).
 > 
-{type="note"}
+{style="note"}
 
 <anchor name="InstallingandConfiguringtheTeamCityServer-SettingUpMemorysettingsforTeamCityServer"/>
 

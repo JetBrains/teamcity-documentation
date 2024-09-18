@@ -16,7 +16,7 @@ Each build step is represented by a [build runner](build-runner.md) and provides
 
 This video tutorial explains how to choose a build runner based on your project's needs:
 
-<video href="wLmLgh5OK5o"
+<video src="https://youtu.be/wLmLgh5OK5o"
 title="TeamCity - How to use specific runners to supercharge your builds"/>
 
 ## Build Steps Execution
