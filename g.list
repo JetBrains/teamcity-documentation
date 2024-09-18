@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tags xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/stardust/tags.dtd"
+<tags xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/tags.dtd"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <tag name="sampletag"/>
 </tags>
