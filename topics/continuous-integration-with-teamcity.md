@@ -27,7 +27,7 @@ This video gives a general overview of the main TeamCity features and explains t
 This video gives a general overview of the main TeamCity features:
 {product="tcc"}
 
-<video href="s68u2shSo6o"
+<video src="https://youtu.be/s68u2shSo6o"
        title="General TeamCity overview"/>
 
 ### What can you do with TeamCity?
@@ -43,7 +43,7 @@ To learn more about major TeamCity features, refer to the [official JetBrains we
 
 TeamCity works well not only for administrators and build engineers, but also for developers. 
 Watch this video to learn about some of its signature features:
-<video href="icuhBgEFtVM"
+<video src="https://youtu.be/icuhBgEFtVM"
        title="TeamCity for developers"/>
 
 The complete list of supported platforms and environments is available [here](supported-platforms-and-environments.md).

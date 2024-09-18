@@ -2,9 +2,9 @@
 [//]: # (auxiliary-id: What's New in TeamCity 2024.11;What's New in TeamCity)
 
 
-<include src="what-s-new-in-teamcity-tc.md" include-id="2024-11-tc"/>
+<include from="what-s-new-in-teamcity-tc.md" element-id="2024-11-tc"/>
 
-<include src="what-s-new-in-teamcity-tcc.md" include-id="2024-11-tcc"/>
+<include from="what-s-new-in-teamcity-tcc.md" element-id="2024-11-tcc"/>
 
 
 ## Upgrade Notes

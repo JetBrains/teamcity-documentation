@@ -7,7 +7,7 @@ All these parameters (except [](#Predefined+Configuration+Parameters)) are **pas
 
 > To check the list of available parameters, click the ![paramsPopupHover.gif](paramsPopupHover.gif) button next to a text field in TeamCity UI, or enter `%`.
 >
-{type="tip"}
+{style="tip"}
 
 
 
@@ -179,7 +179,7 @@ To check all existing parameters and their current values for a given build agen
 <dd>The agent's OS bitness.</dd>
 
 
-<chunk include-id="dotnet-related-properties">
+<snippet include-id="dotnet-related-properties">
 
 <dt>DotNetCLI</dt>
 <dd>The .NET CLI version.</dd>
@@ -235,7 +235,7 @@ To check all existing parameters and their current values for a given build agen
 <dt>teamcity.dotnet.msbuild.extensions4.0</dt>
 <dd>The path to the directory that contains MSBuild 4.0 listener and tasks assemblies.</dd>
 
-</chunk>
+</snippet>
 
 <dt>teamcity.agent.ownPort</dt>
 <dd>The <a href="configure-agent-installation.md#Build+Agent+Port">agent port</a> used by the TeamCity server to connect to the agent.</dd>
@@ -263,7 +263,7 @@ To check all existing parameters and their current values for a given build agen
 > * The `_x86` and `_x64` parameter suffixes are used to designate the specific version of the framework.
 > * The `teamcity.dotnet.nunitlauncher` parameters cannot be hidden or disabled.
 >
-{type="tip"}
+{style="tip"}
 
 
 [//]: # (Internal note. Do not delete. "Predefined Build Parametersd257e948.txt")

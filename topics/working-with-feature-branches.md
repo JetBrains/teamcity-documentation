@@ -5,7 +5,7 @@ _Feature branches_ in distributed version control systems (DVCS) allow you to wo
 
 TeamCity support for feature branches is continuously extending and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
-<video href="aTE_1A0Fuh0"
+<video src="https://youtu.be/aTE_1A0Fuh0"
 title="TeamCity tutorial — How to work with feature branches"/>
 
 ## Supported Version Control Systems
@@ -26,7 +26,7 @@ Once you've configured the branch specification, TeamCity will start to monitor 
 <anchor name="branch-spec-syntax"/>
 
 The syntax of the branch specification field is newline-delimited list of `+|-:branch_name` rules.       
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 Each rule can have one optional `*` placeholder which matches one or more characters.    
 For example, `+:refs/heads/teamcity*` matches all branches starting with `refs/heads/teamcity` __and at least one additional character__.   

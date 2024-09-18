@@ -81,7 +81,7 @@ To set up a repository that should store your server's configuration files:
 3. Enter the path to your repository in the SSH format.
     > Configuration files contain scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
     > 
-    {type="warning"}
+    {style="warning"}
 4. Enter a fully specified name (`heads/refs/<name>`) of the repository branch that should store configuration files.
 5. Upload a private key to allow TeamCity to access your repository via SSH.
 

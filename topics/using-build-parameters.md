@@ -60,7 +60,7 @@ object MyBuildConfig : BuildType({
 >
 > This approach is based on the mechanism that passes all parameters with the `system.` prefix to a build engine. See this section for more information: [](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
 >
-{type="tip"}
+{style="tip"}
 
 
 

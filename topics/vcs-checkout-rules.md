@@ -10,7 +10,7 @@ To display changes but not to trigger a build on a commit, use [VCS trigger rule
 
 >If a [dependent build](dependent-build.md) (1) has a [VCS trigger](configuring-vcs-triggers.md) that monitors changes in its [snapshot dependency](snapshot-dependencies.md) build and (2) shares a VCS root with this dependency, its checkout rules' scope should cover the scope of rules of this dependency. That is, each commit relevant for a dependency must be also relevant for the dependent build.
 >
-{type="tip"}
+{style="tip"}
 
 The general recommendation is to keep a number of VCS roots, pointing to the root of the repository, as small as possible and define what is checked out by a specific build configuration via checkout rules.
 
@@ -22,11 +22,11 @@ The general recommendation is to keep a number of VCS roots, pointing to the roo
 <step><p>Use the VCS repository browser <img src="VCS-browserIcon.png" alt="VCS browser icon"/> to select a directory to check out.</p></step>
 </procedure>
 
-<chunk include-id="note-perforce-vcs">
+<snippet include-id="note-perforce-vcs">
 
 Note that Perforce support in TeamCity treats checkout rules as case-sensitive. Case-insensitivity for Perforce-based build configurations can be enabled on the __Version Control Settings__ page by adding the following comment in the _Edit Checkout Rules_ form: `##teamcity ignore-case`.
 
-</chunk>
+</snippet>
 
 
 <note>
@@ -48,7 +48,7 @@ The general syntax of a single checkout rule is as follows:
 
 ```
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 
 If no rule is specified, all files are included.   
@@ -161,7 +161,7 @@ In the above example, the first rule excludes the `src/help` directory and its c
 
 ## Checkout Rules Limitations for Git Roots
 
-<include src="git.md" include-id="git-checkout-rules-limitations"/>
+<include from="git.md" element-id="git-checkout-rules-limitations"/>
 
  <seealso>
         <category ref="admin-guide">

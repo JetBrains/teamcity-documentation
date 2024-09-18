@@ -15,7 +15,7 @@ With the agentless approach, the agent does not need to handle the final deploym
 
 <img src="agentless-build.png" alt="Build with agentless step" width="518"/>
 
-<video href="O7LdxtiBkLY"
+<video src="https://youtu.be/O7LdxtiBkLY"
 title="New in TeamCity 2020.2: Agentless Build Steps"/>
 
 <seealso>

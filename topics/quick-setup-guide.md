@@ -5,7 +5,7 @@ This article describes the __evaluation setup__ of a TeamCity server and one bui
 
 To get a general idea of how to install TeamCity for evaluation, you can watch this video tutorial, or read the full guide below.
 
-<video href="5Akqy-vEFr0"
+<video src="https://youtu.be/5Akqy-vEFr0"
        title="TeamCity Installation and initial setup"/>
 
 To install TeamCity for the production setup, read [this section](install-and-start-teamcity-server.md).

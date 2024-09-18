@@ -3,4 +3,4 @@
 
 >The CloudFormation template is deprecated and will no longer receive support.
 >
-{type="warning"}
+{style="warning"}

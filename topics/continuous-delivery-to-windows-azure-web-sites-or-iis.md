@@ -3,7 +3,7 @@
 
 >The TeamCity Azure Resource Manager template is deprecated and will no longer receive support. The existing TeamCity installations, based on this template, will continue to work for some time. We recommend running TeamCity via a custom template instead.
 >
-{type="warning"}
+{style="warning"}
 
 In this tutorial, we'll go over the basics of these and see how we can deploy an ASP.NET MVC project to IIS or Windows Azure Web Sites from our TeamCity server using WebDeploy.
 

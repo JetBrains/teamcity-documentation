@@ -35,7 +35,7 @@ If you are viewing the results of an older build while a newer build has complet
 
 > Successful [history builds](history-build.md) are not shown as builds in which failed test are already fixed.
 > 
-{type="tip"}
+{style="tip"}
 
 If a test frequently changes its status from failed to successful and back, TeamCity marks such test as **flaky**. See the dedicated [](#Flaky+Tests) section for more information.
 
@@ -62,7 +62,7 @@ Users see a total number of investigations assigned to them in the TeamCity head
 
 > Users who have the **Highlight my changes and investigations** option enabled in their [profile settings](configuring-your-user-profile.md) can spot their assigned investigations easier in TeamCity UI.
 > 
-{type="tip"}
+{style="tip"}
 
 TeamCity draws a police officer icon to visualize investigated problems. Hovering overing this icon displays more information about the problem and allows users to reassign it or manually label it as fixed.
 
@@ -90,7 +90,7 @@ You can mute build problems or tests to temporarily ignore a known issue that is
 > * for build steps, change the [step execution condition](build-step-execution-conditions.md) to "Even if some of the previous steps failed";
 > * for [dependent build chain configurations](build-chain.md), ensure the **On failed dependency** setting of a corresponding [snapshot dependency](snapshot-dependencies.md) is set to one of the "Run build..." options.
 >
-{type="tip"}
+{style="tip"}
 
 
 TeamCity draws a loudspeaker icon to visualize muted problems. Hovering overing this icon displays more information about this issue.
@@ -117,7 +117,7 @@ When editing investigations and mutes, TeamCity allows you to specify the follow
 * Investigation/mute scope. Choose "Project wide" to mute/investigate this problem in builds that belong to all configurations within the same project (including its child sub-projects). The "Selected build configuration" option allows you to mute/investigate a problem only for required configurations.
   > Project administrators can add the `teamcity.internal.preferredInvestigationProject` [configuration parameter](configuring-build-parameters.md) to a parent project to set this project as the default investigation/mute scope for all of its children. The parameter value must be set to the target project's [ID](identifier.md). This property changes only the option suggested by default, users will still be able to choose a different scope.
   > 
-  {type="tip"}
+  {style="tip"}
 * Investigations and assignees. Muted problems make failed builds appear successful, which can obscure underlying issues. For that reason, we recommend pairing mutes with investigations and avoid keeping muted problems that are not investigated by anyone.
 * Automatic unmute/resolve policy. You can specify conditions under which TeamCity should unmute the problem or mark it as fixed.
   * `Automatically when fixed` — if a problem is resolved in a newer build, TeamCity unmutes it and/or closes the related investigation. This is the default scenario that allows your team to quickly respond to the issue, should it re-appear in further builds.

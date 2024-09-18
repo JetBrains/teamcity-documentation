@@ -127,7 +127,7 @@ Learn more: [](configuring-build-steps.md#Bootstrap+Steps)
 ### NUnit and NAnt Runners Deprecation
 {product="tc"}
 
-<include src="nunit.md" include-id="2024-07-nunit"/>
+<include from="nunit.md" element-id="2024-07-nunit"/>
 
 Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
 
@@ -256,7 +256,7 @@ Learn more: [](investigating-and-muting-build-failures.md)
 ## NUnit and NAnt Runners Deprecation
 {product="tcc"}
 
-<include src="nunit.md" include-id="2024-07-nunit"/>
+<include from="nunit.md" element-id="2024-07-nunit"/>
 
 Additionally, we are deprecating the [](nant.md) runner. Unlike NUnit, it has no updated counterpart and will only be available via a separate Marketplace plugin once unbundled.
 

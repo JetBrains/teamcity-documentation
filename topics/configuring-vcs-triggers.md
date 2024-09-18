@@ -13,7 +13,7 @@ The global default value for both options is 60 seconds and can be configured fo
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
-{type="warning"}
+{style="warning"}
 
 <anchor name="ConfiguringVCSTriggers-Triggerabuildonchangesinsnapshotdependencies"/>
 
@@ -21,7 +21,7 @@ The global default value for both options is 60 seconds and can be configured fo
 
 If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
-<include src="build-dependencies-setup.md" include-id="trigger-on-ssdep-chngs"/>
+<include from="build-dependencies-setup.md" element-id="trigger-on-ssdep-chngs"/>
 
 If triggering rules are specified (described [below](#vcs-trigger-rules-1)), they are applied to all the changes (including changes from snapshot dependencies) and only the changes matching the rules trigger the build chain.
 
@@ -56,7 +56,7 @@ The quiet period can be set to the default value (60 seconds, can be changed glo
 Note that when a build is triggered by a trigger with the VCS quiet period set, the build is put into the queue with fixed VCS revisions. This ensures the build will be started with only the specific changes included. Under certain circumstances this build can later become a [History Build](history-build.md).
 </note>
 
-<include src="configuring-schedule-triggers.md" include-id="queue-optimization"/>
+<include from="configuring-schedule-triggers.md" element-id="queue-optimization"/>
 
 <anchor name="buildTriggerRules"/>
 
@@ -65,7 +65,7 @@ Note that when a build is triggered by a trigger with the VCS quiet period set, 
 ## VCS Trigger Rules
 {id="vcs-trigger-rules-1"}
 
-<chunk include-id="vcs-trigger-rules">
+<snippet include-id="vcs-trigger-rules">
 
 If no trigger rules are specified, a build is triggered upon any change detected for the build configuration. You can control what changes are detected by changing the VCS root settings and specifying [checkout rules](vcs-checkout-rules.md).
 
@@ -77,11 +77,11 @@ To limit the changes that trigger the build, use the VCS trigger rules. You can 
 
 Each rule is ether an "include" (starts with `+`) or an "exclude" (starts with `-`).
 
-</chunk>
+</snippet>
 
 ### General Syntax
 
-<chunk include-id="general-syntax">
+<snippet include-id="general-syntax">
 
 The general syntax for a single rule is:
 
@@ -92,7 +92,7 @@ The general syntax for a single rule is:
 
 ```
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 where:
 * `Ant_like_wildcard`: A [wildcard](wildcards.md) to match the changed file path. Only `*` and `**` patterns are supported, the `?` pattern is __not__ supported. The file paths in the rule can be relative (not started with `/` or `\`) to match resulting paths on the agent or absolute (started with `/`) to match VCS paths relative to a VCS root. For each file in a change the most specific rule is found (the rule matching the longest file path). The build is triggered if there is at least one file with a matching "include" rule or a file with no matching "exclude" rules.   
@@ -108,12 +108,12 @@ To include all the files, use `+:.` rule.
 Also, rules are sorted according to path specificity. If you have an explicit inclusion rule for `/some/path`, and exclusion rule `-:user=some_user:.` for all paths, commits to the `/some/path` from `some_user` will be __included__ unless you add a specific exclusion rule for this user and this path at once, like `-:user=some_user:/some/path/**`
 </tip>
 
-</chunk>
+</snippet>
 
 #### Trigger Rules Examples
 {id="trigger-rules-examples-1"}
 
-<chunk include-id="trigger-rules-examples">
+<snippet include-id="trigger-rules-examples">
 
 <table>
 <tr>
@@ -229,7 +229,7 @@ For example, the following comment will trigger the build:
 </td></tr>
 </table>
 
-</chunk>
+</snippet>
 
 ### Branch Filter
 {id="branch-filter-1"}
@@ -253,7 +253,7 @@ When changes are merged / fast-forwarded from one branch to another, strictly sp
 
 ## Triggered Build Customization
 
-<chunk include-id="triggered-build-customization">
+<snippet include-id="triggered-build-customization">
 
 The __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and choose if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
 
@@ -265,4 +265,4 @@ Note that if you redefine a build parameter inside a trigger and then delete the
 
 TeamCity allows solving similar tasks in multiple ways, and in some cases it is still preferable to create different build configurations. For example, if there are too many custom runs in the same configuration, it might be harder for TeamCity to predict the exact duration of each build. If you need to trigger builds with numerous different parameters, we suggest that you create a [build configuration template](build-configuration-template.md) and use it as a blueprint for several configurations, each with its own parameters.
 
-</chunk>
+</snippet>

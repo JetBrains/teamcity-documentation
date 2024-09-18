@@ -164,7 +164,7 @@ The same page allows you to acquire legacy license keys (the **Legacy license ke
 
 ## Limitations and Requirements
 
-<chunk include-id="license-limitations">
+<snippet include-id="license-limitations">
 
 A single license can only be used on a single running TeamCity server at any given time. Running secondary TeamCity nodes in addition to the main node does not require a separate license at this time.
 
@@ -174,4 +174,4 @@ When you already own license(s) and buy more licenses, you can [request](https:/
 When buying many licenses, you are welcome to [contact](https://www.jetbrains.com/support/sales/) our sales for available volume discounts.
 
 
-</chunk>
+</snippet>

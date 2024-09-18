@@ -5,7 +5,7 @@ The _build checkout directory_ is a directory on the TeamCity agent machine wher
 
 > For the complete Version Control Settings available in a TeamCity build configuration, see [](configuring-vcs-settings.md).
 > 
-{type="tip"}
+{style="tip"}
 
 ## Checkout Process
 

@@ -14,7 +14,7 @@ To enable email verification in TeamCity:
 
 >During the [project import](projects-import.md) TeamCity will take verified emails into account. If there are two users with different usernames, but the same verified email, TeamCity will provide an ability to merge these users.
 > 
-{type="note"}
+{style="note"}
 
 <seealso>
         <category ref="concepts">

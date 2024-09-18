@@ -5,7 +5,7 @@ The TeamCity _Projects_ pop-up menu allows browsing projects and build configura
 
 >To see the Projects menu, click the arrow button next to the _Projects_ link in the upper left corner, or use the "P" keyboard shortcut.
 >
-{type="tip"}
+{style="tip"}
 
 The Projects pop-up menu uses separate REST API requests to get the list of projects to display. If peer servers are configured, REST API calls are made to them as well.   
 For these REST API calls to work, the servers [need to be configured](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html#CORS-support) to allow CORS requests from all of their peers. Besides, they must be accessible from the user's browser and the user must be logged in on those servers.

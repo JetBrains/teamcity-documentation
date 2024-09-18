@@ -3,7 +3,7 @@
 
 The _NuGet Pack_ build runner allows building a NuGet package from a given specification file. If you want to publish this package, add a [NuGet Publish](nuget-publish.md) build step.
 
-<include src="nuget.md" include-id="nuget-OS"/>
+<include from="nuget.md" element-id="nuget-OS"/>
 
 >To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 

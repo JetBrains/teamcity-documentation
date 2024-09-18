@@ -135,7 +135,7 @@ Selecting the _Log debug messages_ checkbox is equivalent to adding the `-d` Gra
 
 >Running Gradle with the `DEBUG` log level can potentially expose sensitive information in the build log (learn more in the [Gradle documentation](https://docs.gradle.org/current/userguide/logging.html#sec:debug_security)). Before enabling this mode, make sure that the log can be viewed only by trusted users.
 > 
-{type="warning"}
+{style="warning"}
 
 </td></tr><tr>
 
@@ -153,7 +153,7 @@ Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradl
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ### Build properties
 

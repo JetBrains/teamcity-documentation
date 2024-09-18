@@ -385,7 +385,7 @@ __\*__ TeamCity-provided tasks may have different syntax/behavior. Some workarou
 In addition to the common test reporting features, TeamCity allows running NUnit tests under the x86 process on the x64 machine by introducing an explicit specification of the platform and runtime environment versions. You can define whether to use .NET Framework 1.1, 2.0 or 4.0 started under an MSIL, x64 or x86 platform.
 
 ### NUnit Test Launcher
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 TeamCity provides its own NUnit tests launcher that can be used from the command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
 
@@ -661,7 +661,7 @@ Run tests from assemblies:
 [//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")
 
 ### NUnit for NAnt Build Runner
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 This section assumes, that you already have a NAnt build script with the configured `nunit2` task in it, and want TeamCity to track test reports without making any changes to the existing build script. Otherwise, consider adding the [NUnit build runner](nunit.md) as one of the steps for your build configuration.
 
@@ -814,7 +814,7 @@ Note that in this case, the following property should be added __before__ the `n
 ```
 
 ### Using NUnit for MSBuild
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 This section describes how to use NUnit from MSBuild.
 * For [NUnit prior to 3.0](#Working+with+NUnit+Task+in+MSBuild+Build)
@@ -1035,7 +1035,7 @@ Starting from version 3.0, NUnit supports TeamCity natively, so there is no need
 The [Getting Started with NUnit](getting-started-with-nunit.md) article contains details and examples.
 
 ### MSBuild Service Tasks
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 For MSBuild, TeamCity provides the following service tasks that implement the same options as the [Build Script Interaction](build-script-interaction-with-teamcity.md):
 
@@ -1095,7 +1095,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 `{build.status.text` is substituted with an older status text. The status can have the `SUCCESS` value.
 
 ### NUnit Add-ins Support
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 NUnit Add-in is an extension that plugs in to the NUnit core and changes the way it operates. Refer to the [NUnit add-ins page](https://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of the NUnit add-ins support for NAnt, MSBuild, and NUnit Console Launcher.
 
@@ -1156,7 +1156,7 @@ For example:
 ```
 
 ### TeamCity Add-in for NUnit
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 TeamCity NUnit Add-in supports __NUnit prior to version 3.0__. For later versions, refer to the [this section](#Using+NUnit+for+MSBuild).
 

@@ -136,7 +136,7 @@ To use the tool, specify `-lib "%\teamcity.tool.ant-net-tasks%"` in [Additional 
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ### Test Parameters
 

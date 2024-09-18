@@ -265,7 +265,7 @@ Learn more: [](hashicorp-vault.md).
 
 > The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
 >
-{type="note"}
+{style="note"}
 -->
 
 

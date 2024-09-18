@@ -39,7 +39,7 @@ Google Cloud Artifact Storage is implemented as a [plugin](https://plugins.jetbr
 ## Migrating Artifacts To a Different Storage
 <anchor name="migratingArtifactsToS3"/>
 
-<chunk include-id="artifactMigrationToS3">
+<snippet include-id="artifactMigrationToS3">
 
 TeamCity server ships with [a command-line tool](artifacts-migration-tool.md) that transfers build artifacts from one storage to another. You can download this tool on the __Project Settings | Artifacts Storage__ page.
 
@@ -54,7 +54,7 @@ We're working on supporting other cloud storage options as well.
 
 Learn more: [](artifacts-migration-tool.md).
 
-</chunk>
+</snippet>
 
 
 

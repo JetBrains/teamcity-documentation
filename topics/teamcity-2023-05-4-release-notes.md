@@ -63,5 +63,5 @@ __18 September 2023__
 
 > We do not share the details of security-related issues to avoid compromising clients that keep using previous bugfix and/or major versions of TeamCity. Check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2023.05.4) for the list of disclosed vulnerability fixes. Security bulletins for new versions are typically published within the next few days after the release date.
 >
-{type="note"}
+{style="note"}
 

@@ -5,7 +5,7 @@
 
 > Since TeamCity does not require any elevated permissions, it is recommended to run the server under a regular user account (you can configure a dedicated account for TeamCity). Running the server under an Administrator/SYSTEM account is considered a security threat since potential attackers who exploit possible TeamCity vulnerabilities can gain unwanted access to your server machine.
 > 
-{type="warning"}
+{style="warning"}
 
 ## Download TeamCity Server
 

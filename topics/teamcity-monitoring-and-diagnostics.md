@@ -9,7 +9,7 @@ This article describes the diagnostics tools available in __Administration | Dia
 > * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
 > * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 >
-{type="tip"}
+{style="tip"}
 
 ## Troubleshooting
 
