@@ -1,7 +1,7 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud Ubuntu Agents)
 [//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud Ubuntu Agents)
 
-<chunk id="ubuntu-jb-agents">
+<snippet id="ubuntu-jb-agents">
 
 |Software|Version|
 |---|---|
@@ -66,4 +66,4 @@
 |[Ansible](https://www.ansible.com/)|2.9.6|
 |[HashiCorp Packer](https://www.packer.io/)|v1.11.2|
 
-</chunk> 
+</snippet> 

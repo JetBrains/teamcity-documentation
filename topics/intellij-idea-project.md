@@ -249,7 +249,7 @@ Profiling plugins
 
 ## IntelliJ IDEA Project Settings
 
-<snippet include-id="idea-project-settings">
+<snippet id="idea-project-settings">
 
 <table><tr>
 

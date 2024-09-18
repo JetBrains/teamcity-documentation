@@ -1,7 +1,7 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud Windows Agents)
 [//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud Windows Agents)
 
-<chunk id="windows-jb-agents">
+<snippet id="windows-jb-agents">
 
 |Software|Version|
 |---|---|
@@ -37,4 +37,4 @@
 |[Gradle](https://gradle.org/)|7.5.1|
 |[CMake](https://cmake.org/)|3.24.2|
 
-</chunk> 
+</snippet> 

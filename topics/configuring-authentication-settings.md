@@ -165,7 +165,7 @@ By default, the users are allowed to change their password on their profile page
 
 The Token-Based Authentication module allows users to authenticate via [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) that they can create and invalidate themselves. This authentication module is enabled by default.
 
-<snippet include-id="access-token-expiration-note">
+<snippet id="access-token-expiration-note">
 
 > For security reasons, TeamCity ignores the "Remember me" checkbox when users log in with access tokens. Additionally, users must re-login when switching [nodes](multinode-setup.md) in the TeamCity UI or when the token expires.
 >

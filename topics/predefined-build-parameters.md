@@ -95,7 +95,7 @@ To check all existing parameters and their current values for a given build agen
 
 
 
-<snippet include-id="dotnet-related-properties">
+<snippet id="dotnet-related-properties">
 
 <def title="DotNetCLI">The .NET CLI version.</def>
 <def title="DotNetCLI_Path">The path to .NET CLI executable.</def>
