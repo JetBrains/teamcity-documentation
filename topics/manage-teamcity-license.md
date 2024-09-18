@@ -9,7 +9,7 @@ For users with paid licenses, activating a license grants the "set it and forget
 If you can access the <a href="https://account.jetbrains.com">JetBrains Account</a> and your TeamCity server's machine is connected to the internet and can regularly communicate with <a href="https://account.jetbrains.com">account.jetbrains.com</a> via HTTPS, do the following to activate a license:
 
 1. Navigate to **Administration | Licenses** page.
-2. Click **Get License Key** and log into your JetBrains Account.
+2. Click **Get License Key** and log into your JetBrains Account. Note that TeamCity does not display this button if the server already has an active license. If your server uses a trial license, [deactivate it](#Deactivate+a+License) before you can switch to a paid version.
 3. Choose a server license you want to activate. This page shows licenses owned by all organizations and teams for which you have administrator permissions. See this page for information on permissions required to activate a license: [Required permissions to activate your on-premises team tool license](https://www.google.com/url?q=https://sales.jetbrains.com/hc/en-gb/articles/20070316403090&sa=D&source=docs&ust=1720640931638823&usg=AOvVaw1UTiHZ6e45kndMi-CoDhWL).
    <img src="dk-choose-license.png" width="706" alt="Choose a license"/>
 4. Click **Get license key** to confirm. The activation key will be transferred to your TeamCity server automatically. You can also manually copy a key and paste it to the **I already have a key** field on the TeamCity **Licenses** page.
@@ -97,8 +97,8 @@ Deactivating a license is the opposite of the [activation process](#Activate+a+L
 
 1. To remove a license from TeamCity, click **Deactivate** on the **Administration | Licenses** page. In case you had a paid license, your server will revert back to the free Professional tier.
 
-2. When you click **Deactivate**, TeamCity automatically brings you to the JetBrains Account page where you can proceed to deactivate this license.
-   
+2. After you click **Deactivate** in TeamCity, you can navigate to your JetBrains Account to complete the deactivation process.
+
    If you do not complete this step, the server license (although inactive in TeamCity) will remain linked to this specific server instance. This means you cannot activate it on another server.
 
 
