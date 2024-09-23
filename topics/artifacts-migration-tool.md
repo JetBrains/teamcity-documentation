@@ -128,6 +128,11 @@ migrate.bat -p "NetFrameworkProject3" --source="PROJECT_EXT_2"
 > * Azure storage
 > * Internal TeamCity artifact storage
 
+
+> Note that while the full parameter syntax accepts both "space" and "equals" characters as value delimiters (both `--project "MyProj"` and `--project="MyProj"` options are valid), the shortened syntax accepts space character only (`-p "MyProj"`).
+> 
+{style="note"}
+
 The first time you run the migration tool in this mode, it detects artifacts that should be copied, saves the migration plan, and asks you for the next step.
 
 * Update the migration plan.
