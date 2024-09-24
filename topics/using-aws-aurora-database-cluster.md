@@ -40,7 +40,7 @@ The following options may affect your TeamCity server performance.
 </note>
 
 1. Configure the database connection pool to use a special validation query, so that the connections to the DB instance are tested before and/or after use and if a connection to the read-only database is detected, they are evicted from the pool.   
-For this, add the following lines to the `<TeamCity Data Directory>/config/`[database.properties](set-up-external-database.md#Database+Configuration+Properties):   
+For this, add the following lines to the `<TeamCity Data Directory>/config/`[`database.properties`](set-up-external-database.md#Database+Configuration+Properties):   
 For Aurora MySQL:
     ```Shell
     testOnBorrow=true

@@ -73,7 +73,7 @@ Note that the content of the checkout directory can be deleted by TeamCity under
 
 ### Finding a Checkout Directory
 
-If you are investigating an issue and need to know the directory used by the build configuration, you can get the directory from the build log, or you can consult the generated file, `<[Agent_Work_Dir](agent-work-directory.md)>/directory.map`, which lists build configurations together with the directories they used last.
+If you are investigating an issue and need to know the directory used by the build configuration, you can get the directory from the build log, or you can consult the generated file, [`<Agent_Work_Dir>`](agent-work-directory.md)`/directory.map`, which lists build configurations together with the directories they used last.
 
 In your [build script](build-script-interaction-with-teamcity.md), you can refer to the effective value of the build checkout directory using the `teamcity.build.checkoutDir` [property](configuring-build-parameters.md) provided by TeamCity. By default, this is also the directory [where builds run](build-working-directory.md).
 

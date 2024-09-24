@@ -28,11 +28,11 @@ You can also upload private keys when creating new projects [from repository URL
 
 Uploaded SSH keys are stored in the following directory:
 
-* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/<project>/pluginData/ssh_keys`
+* [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<project>/pluginData/ssh_keys`
 
 If a key was uploaded from the "Create Project" page, TeamCity assigns it to the parent project of the created project. In this case, uploaded keys are saved to the following directory:
 
-* `[<TeamCity Data Directory>](teamcity-data-directory.md)/config/projects/<Parent_Project_ID>/pluginData/ssh_keys`
+* [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<Parent_Project_ID>/pluginData/ssh_keys`
 
 
 
@@ -53,7 +53,7 @@ If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connec
 3. Enter the key name, select the key type, and click **Generate**.
 4. If you need a private or a public key for your new generated key:
 
-   * A private key is stored in the `[Data Directory](teamcity-data-directory.md)/config/projects/<parent project>/pluginData/ssh_keys` directory.
+   * A private key is stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<parent project>/pluginData/ssh_keys` directory.
    * A public key is accessible from the main **SSH Keys** page (click the **Copy the public key** link under a required key). Paste this key to your version control service (for example, in GitHub: "Repository settings | Deploy Keys | Add deploy key").
 
 5. Select the generated key in the [](git.md#Authentication+Settings) of your TeamCity VCS root. For your convenience, keys generated in TeamCity are placed in a separate category.

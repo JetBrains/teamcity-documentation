@@ -3,7 +3,7 @@
 
 ## Start Server
 
-If TeamCity is installed using the `.exe` or `.tar.gz` distributions, it can be started and stopped by the `teamcity-server` scripts located in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory. The scripts accept `run` (run in the same console), `start` (start a new detached process and exit from the script), and `stop` commands. To restart TeamCity, send `stop` and then, after it stops, send `start`.
+If TeamCity is installed using the `.exe` or `.tar.gz` distributions, it can be started and stopped by the `teamcity-server` scripts located in the [`<TeamCity Home>`](teamcity-home-directory.md)`/bin` directory. The scripts accept `run` (run in the same console), `start` (start a new detached process and exit from the script), and `stop` commands. To restart TeamCity, send `stop` and then, after it stops, send `start`.
 
 __(evaluation only) To start/stop the TeamCity server and one default agent at the same time__, use the `runAll` script, for example:
 * Use `runAll.bat start` to start the server and default agent.
@@ -31,8 +31,8 @@ If you cannot access the TeamCity UI after a successful installation, please ref
 
 If the TeamCity UI cannot be accessed, check the following:
 * The _TeamCity Server_ service is running (if you installed TeamCity as a Windows service).
-* The TeamCity server process (Tomcat) is running (a Java process run in the `<[TeamCity Home](teamcity-home-directory.md)>/bin` directory).
+* The TeamCity server process (Tomcat) is running (a Java process run in the [`<TeamCity Home>`](teamcity-home-directory.md)`/bin` directory).
 * Any warnings in the console output if you run the server from a console.
-* The `teamcity-server.log` file and other files in the `<[TeamCity Home](teamcity-home-directory.md)>\logs` directory for error messages.
+* The `teamcity-server.log` file and other files in the [`<TeamCity Home>`](teamcity-home-directory.md)`\logs` directory for error messages.
 
 One of the most common issues with the server installation is using a port that is already used by another program. See [how to change the default port](configure-server-installation.md#Changing+Server+Port).

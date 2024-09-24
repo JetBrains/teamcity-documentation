@@ -41,7 +41,7 @@ TeamCity will scale to utilize whatever amount of memory there is: for example, 
 
 #### Disk
 
-The performance of a TeamCity server highly depends on the disk performance. As TeamCity stores large amounts of data under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (most notably, VCS caches and build results), it is important to ensure that the access to the disk is fast (in particular, reading/writing files in multiple threads and listing files with attributes).
+The performance of a TeamCity server highly depends on the disk performance. As TeamCity stores large amounts of data under [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system` (most notably, VCS caches and build results), it is important to ensure that the access to the disk is fast (in particular, reading/writing files in multiple threads and listing files with attributes).
 
 If you plan to store the Data Directory on a network drive, you need to ensure that it has good performance. However, we highly recommend using local storage for the `<TeamCity Data Directory>/system/caches` directory. See also: notes on [choosing the Data Directory location](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location).
 
@@ -149,7 +149,7 @@ This section contains a checklist of recommendations on tweaking the TeamCity se
 * Use a separate server for the external database. Monitor the database performance.
 * Monitor the server's CPU and I/O performance. Increase hardware resources as necessary.
 * Make sure [clean-up](teamcity-data-clean-up.md) is configured for all the projects with a due retention policy. Check __Administration | Clean-Up__ to make sure that the clean-up is performed regularly.
-* Consider ensuring good I/O performance for the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory: for example, move it to a separate local drive.
+* Consider ensuring good I/O performance for the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` directory: for example, move it to a separate local drive.
 * Regularly [archive](archiving-projects.md) obsolete projects.
 * Regularly review the installed not bundled plugins and remove those not essential for the server operation.
 * Consider using [agent-side checkout](vcs-checkout-mode.md) whenever possible.
@@ -170,7 +170,7 @@ TeamCity Agent can run on any recent version of Windows, Linux, or macOS. Requir
 ### Common Requirements
 
 The agent Java process has to:
-* be able to open outbound HTTP connections to the server URL that is configured via the `serverUrl` property in the `[buildAgent.properties](configure-agent-installation.md)` file (typically the same address you use in the browser to view the TeamCity UI).  
+* be able to open outbound HTTP connections to the server URL that is configured via the `serverUrl` property in the [`buildAgent.properties`](configure-agent-installation.md) file (typically the same address you use in the browser to view the TeamCity UI).  
 Sending requests to the paths under the configured URL should not be limited. See also the recommended [reverse proxy settings](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server). Ensure that any firewalls installed on the agent or server machines, network configuration, and proxies (if any) comply with these requirements.
 {instance="tc"}
 * have full permissions (read/write/delete) to the following directories recursively: `<Agent Home Directory>` (necessary for automatic agent upgrade and agent tools support), `<Agent Work Directory>`, `<Agent Temp Directory>`, and agent system directory (set by `workDir`, `tempDir`, and `systemDir` parameters in the `buildAgent.properties` file).
@@ -203,7 +203,7 @@ subinacl.exe /service TCBuildAgent /grant=<user login name>=PTO
 
 ### Requirements for Linux-based Agents
 
-The Linux user who runs an agent process must be able to run the `shutdown` command (for the agent machine reboot and shutdown functionality when running in a cloud environment). If you are using `systemd`, it should not kill the processes on the main process exit (use `[RemainAfterExit=yes](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading)`). See also: [how to set up an automatic agent start under Linux](start-teamcity-agent.md#Automatic+Agent+Start+Under+Linux).
+The Linux user who runs an agent process must be able to run the `shutdown` command (for the agent machine reboot and shutdown functionality when running in a cloud environment). If you are using `systemd`, it should not kill the processes on the main process exit (use [`RemainAfterExit=yes`](https://serverfault.com/questions/660063/teamcity-build-agent-gets-killed-by-systemd-when-upgrading)). See also: [how to set up an automatic agent start under Linux](start-teamcity-agent.md#Automatic+Agent+Start+Under+Linux).
 
 ### Build-related Permissions
 

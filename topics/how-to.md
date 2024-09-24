@@ -7,13 +7,14 @@
 TeamCity Server requires a Java SE JRE installation to run. A compatible JRE version is bundled in the TeamCity `.exe` installer but needs to be installed separately when using other distributions.
 
 TeamCity selects the Java version to run the server process as follows:
-* By default, if your TeamCity installation has a bundled JRE (the `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory exists), it will be used to run the TeamCity server process. To use a different JRE, specify its path via the `TEAMCITY_JRE` environment variable.
-* If there is no `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory present, TeamCity looks for the `JRE_HOME` or `JAVA_HOME` environment variable pointing to the installation directory of JRE or JVM (Java SDK) respectively. If both variables are declared, JRE will be used.
+* By default, if your TeamCity installation has a bundled JRE (the [`<TeamCity Home>`](teamcity-home-directory.md)`\jre` directory exists), it will be used to run the TeamCity server process. To use a different JRE, specify its path via the `TEAMCITY_JRE` environment variable.
+* If there is no [`<TeamCity Home>`](teamcity-home-directory.md)`\jre` directory present, TeamCity looks for the `JRE_HOME` or `JAVA_HOME` environment variable pointing to the installation directory of JRE or JVM (Java SDK) respectively. If both variables are declared, JRE will be used.
 
 The necessary steps to update the Java installation depend on the distribution used.
 
-If your TeamCity installation has a bundled JRE (there is the `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing `<[TeamCity Home](teamcity-home-directory.md)>\jre` directory.   
-If you also run a TeamCity agent from the `<[TeamCity Home](teamcity-home-directory.md)>\buildAgent` directory, install JDK (Java SDK) installation instead of JRE and copy the content of the JDK installation directory into `<[TeamCity Home](teamcity-home-directory.md)>\jre`.
+If your TeamCity installation has a bundled JRE (there is the [`<TeamCity Home>`](teamcity-home-directory.md)`\jre` directory), update it by installing a newer JRE per installation instructions and copying the content of the resulting directory to replace the content of the existing [`<TeamCity Home>`](teamcity-home-directory.md)`\jre` directory.
+
+If you also run a TeamCity agent from the [`<TeamCity Home>`](teamcity-home-directory.md)`\buildAgent` directory, install JDK (Java SDK) installation instead of JRE and copy the content of the JDK installation directory into [`<TeamCity Home>`](teamcity-home-directory.md)`\jre`.
 
 <!--[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e906.txt")-->
 
@@ -188,7 +189,7 @@ show table status like '%';
 
 ### max_connections
 
-You should ensure `max_connections` parameter has a bigger value than the one specified in TeamCity `<[TeamCity Home Directory](teamcity-home-directory.md)>/config/database.properties` file.
+You should ensure `max_connections` parameter has a bigger value than the one specified in TeamCity [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/config/database.properties` file.
 
 ### innodb_buffer_pool_size and innodb_redo_log_capacity
 
@@ -406,9 +407,9 @@ You can create a copy of the server using TeamCity backup functionality or manua
 1. Create a [backup](teamcity-data-backup.md) including everything. (You can skip the option to backup build logs is you are moving the artifacts, see below).
 2. Install a new TeamCity server of the same version that you are already running. Ensure that:
    * the appropriate environment is configured (see the notes below) 
-   * the server uses its own `<[TeamCity Data Directory](teamcity-data-directory.md)>` and its own [database](set-up-external-database.md) (check the `<[TeamCity Data Directory](teamcity-data-directory.md)>config/database.properties` file)
+   * the server uses its own [`<TeamCity Data Directory>`](teamcity-data-directory.md) and its own [database](set-up-external-database.md) (check the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file)
 3. [Restore the backup](restoring-teamcity-data-from-backup.md).
-4. Move the artifacts (these are not included into the backup) by moving the content of `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` directory from the old location to the new one. Since the artifacts can be large in the size, this can take a lot of time, so plan accordingly.
+4. Move the artifacts (these are not included into the backup) by moving the content of [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/artifacts` directory from the old location to the new one. Since the artifacts can be large in the size, this can take a lot of time, so plan accordingly.
 5. Perform the necessary [environment transfer](#Environment+transferring).
 
 <note>
@@ -422,7 +423,7 @@ If you do not want to use the bundled backup functionality or need manual contro
 1. Create a [backup](teamcity-data-backup.md) so that you can restore it if anything goes wrong.
 2. Ensure the server is not running.
 3. Either perform clean [installation](install-and-start-teamcity-server.md) or copy the TeamCity binaries ([`TeamCity Home Directory`](teamcity-home-directory.md)) into a new place (the `temp` and `work` subdirectories can be omitted during copying). Use exactly the same TeamCity version. If you plan to upgrade after copying, perform the upgrade only after you have the existing version up and running.
-4. Copy `<[TeamCity Data Directory](teamcity-data-directory.md)>`. If you do not need the full copy, refer to the items below for options.
+4. Copy [`<TeamCity Data Directory>`](teamcity-data-directory.md). If you do not need the full copy, refer to the items below for options.
     * `.BuildServer/config` to preserve projects and build configurations settings
     * `.BuildServer/lib` and `.BuildServer/plugins` if you have them
     * files from the root of `.BuildServer/system` if you use an internal database and you do not want to move this database
@@ -432,7 +433,7 @@ If you do not want to use the bundled backup functionality or need manual contro
     * `.BuildServer/system/caches` and `.BuildServer/system/caches` (optional) are not necessary to copy to the new server, they will be recreated on startup, but can take some time to be rebuilt (expect some slow down)
 5. Artifacts directory is usually large. If you need to minimize the downtime of the server when moving it, you can use the generic approach for copying the data: use rsync, robocopy or alike tool to copy the data while the original server is running. Repeat the sync run several times until the amount of synced data reduces. Run the final sync after the original server shutdown. Alternative solution for the server move is to make the old data artifacts directory accessible to the new server and configure it as a second [location of artifacts](teamcity-configuration-and-maintenance.md). Then copy the files over from this second location to the main one while the server is running. Restart the server after copying completion.
 6. Create a copy of the [database](set-up-external-database.md), which your TeamCity installation is using, in a new schema or new database server. This can be done with database-specific tools or with the bundled maintainDB tool by [backing up](creating-backup-via-maintaindb-command-line-tool.md) database data and then [restoring](restoring-teamcity-data-from-backup.md) it.
-7. Configure the new TeamCity installation to use proper `<[TeamCity Data Directory](teamcity-data-directory.md)>` and [database](set-up-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
+7. Configure the new TeamCity installation to use proper [`<TeamCity Data Directory>`](teamcity-data-directory.md) and [database](set-up-external-database.md) (`.BuildServer/config/database.properties` points to a copy of the database).
 8. Perform the necessary [environment transfer](#Environment+transferring).
 
 >If you want to do a quick check and do not need to preserve the build history on the new server, you can skip Step 6 (cloning database) and all the optional items of Step 4.
@@ -450,8 +451,8 @@ Consider transferring the relevant environment if it was specially modified for 
 * consider replicating any special settings or exceptions related to the machine in the network configuration, and so on
 * if the TeamCity installation was patched in any way (GroovyPlug plugin, native driver for MS SQL Server integrated security authentication), apply the same modifications to the installation copy
 * if you run TeamCity with the OS startup (for example, Windows service), make sure the same configuration is performed on the new machine
-* review and transfer settings in the `<[TeamCity Home](teamcity-home-directory.md)>\conf\teamcity-startup.properties` file
-* consider any custom settings in `<[TeamCity Home](teamcity-home-directory.md)>\conf\server.xml`
+* review and transfer settings in the [`<TeamCity Home>`](teamcity-home-directory.md)`\conf\teamcity-startup.properties` file
+* consider any custom settings in [`<TeamCity Home>`](teamcity-home-directory.md)`\conf\server.xml`
 
 <anchor name="copy_server_license"/>
 
@@ -469,7 +470,7 @@ A single TeamCity license __cannot be used on two running servers__ at the same 
 If you need to create a copy of a server (rather than move your server to a new location), follow the checklist below:
 
 * Ensure the original and copied servers use different [Data Directories](teamcity-data-directory.md), databases, and artifact directories.
-* Change the unique server ID by removing "uuid" attribute from XML of `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file before the first start.
+* Change the unique server ID by removing "uuid" attribute from XML of [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/main-config.xml` file before the first start.
 * Ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues)).
 * Update [Server URL](configuring-server-url.md) on the __Administration | Global Settings__ page to the actual URL of the server.
 * Check that you can successfully authenticate on the new server, use [super user](super-user.md) access if necessary.
@@ -483,13 +484,13 @@ If you copy a production server to create a __test server__, you need to ensure 
 
 Below is the list of settings which should be changed __before__ the test server is first started:
 
-* Disable cleanup process to avoid cleanup of files in external storages, such as S3 buckets or Docker Registry. To do this, locate the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/main-config.xml` file and change the `<db-compact enabled="true">` line to `<db-compact enabled="false">`.
+* Disable cleanup process to avoid cleanup of files in external storages, such as S3 buckets or Docker Registry. To do this, locate the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/main-config.xml` file and change the `<db-compact enabled="true">` line to `<db-compact enabled="false">`.
 
 
 * Disable cloud integrations: the test server should not be able to start new cloud agents. Set the
-`teamcity.cloud.integration.enabled=false` internal property in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/internal.properties` file (create this file if it does not already exist).
+`teamcity.cloud.integration.enabled=false` internal property in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/internal.properties` file (create this file if it does not already exist).
 
-* Disable plugins that can modify external systems' states, such as Commit Status Publisher. Create the file `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/disabled-plugins.xml` with the following content:
+* Disable plugins that can modify external systems' states, such as Commit Status Publisher. Create the file [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/disabled-plugins.xml` with the following content:
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -564,13 +565,13 @@ If you need to move an existing TeamCity installation to new hardware or a clean
 
 After the move, make the clients [use the new server address](#Switching+from+one+server+to+another), if changed.
 
-You can use the existing [license keys](licensing-policy.md#Managing+Licenses) when you move the server from one machine to another (as long as there are no two servers running at the same time). As license keys are stored under `<[TeamCity Data Directory](teamcity-data-directory.md)>`, you transfer the license keys with all the other TeamCity settings data.
+You can use the existing [license keys](licensing-policy.md#Managing+Licenses) when you move the server from one machine to another (as long as there are no two servers running at the same time). As license keys are stored under [`<TeamCity Data Directory>`](teamcity-data-directory.md), you transfer the license keys with all the other TeamCity settings data.
 
 It is usually advised not to combine TeamCity update with any other actions, like environment or hardware changes, and perform the changes one at a time so that, if something goes wrong, the cause can be easily tracked.
 
 ### Switching from one server to another
  
- Note that `<[TeamCity Data Directory](teamcity-data-directory.md)>` and database should be used by a single TeamCity instance at any given moment. If you configured a new TeamCity instance to use the same data, ensure you shutdown and disable the old TeamCity instance before starting the new one.
+ Note that [`<TeamCity Data Directory>`](teamcity-data-directory.md) and database should be used by a single TeamCity instance at any given moment. If you configured a new TeamCity instance to use the same data, ensure you shutdown and disable the old TeamCity instance before starting the new one.
 
 Generally it is recommended to use a domain name to access the server (in the agent configuration and when users access the TeamCity web UI). This way you can update the DNS entry to make the address resolve to the IP address of the new server and after all cached DNS results expire, all clients will automatically use the new server. You might need to reduce the DNS server cache/lease time in advance before the change to make the clients "understand" the change fast.
 
@@ -628,7 +629,7 @@ Also there is an ability to delete many builds from the build queue in a single 
 If you need a level of automation and web administration UI does not suite your needs, there several possibilities:
 
 * use [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html)
-* change configuration files directly on disk (see more at `<[TeamCity Data Directory](teamcity-data-directory.md)>`)
+* change configuration files directly on disk (see more at [`<TeamCity Data Directory>`](teamcity-data-directory.md))
   {instance="tc"}
 * write a TeamCity Java plugin that will perform the tasks using [open API](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).
 
@@ -763,9 +764,9 @@ For advanced integration, a custom plugin will be necessary to store and present
 ## Restore Just Deleted Project
 {instance="tc"}
 
-TeamCity moves deleted projects settings directories (which are named after the project id) to `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_trash` directory adding `"<internal ID>"` suffix to the directories.
+TeamCity moves deleted projects settings directories (which are named after the project id) to [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/_trash` directory adding `"<internal ID>"` suffix to the directories.
 
-To restore a project, find the project directory in the `_trash` directory and move it into regular projects settings directory: `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects` while removing the `".projectN"` suffix from the directory name.   
+To restore a project, find the project directory in the `_trash` directory and move it into regular projects settings directory: [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects` while removing the `".projectN"` suffix from the directory name.   
 You can do this while server is running, it should pick up the restored project automatically.
 
 Note that TeamCity preserves builds history and other data stored in the database for deleted projects/build configurations for 5 days after the deletion time. All the associated data (builds and test history, changes, etc.) is removed during the next clean-up after the [configurable](teamcity-data-clean-up.md#Deleted+Build+Configurations+Clean-up) (5 days by default) timeout elapses. 
@@ -894,7 +895,7 @@ If you want to ensure that you do not store the internal TeamCity logs for more 
 
 Per\-day rotation can be configured by adding `<param name="rotateOnDayChange" value="true"/>` line within all required `<appender name="..." class="jetbrains.buildServer.util.TCRollingFileAppender">` appenders. This change should be done to the default `conf\teamcity-server-log4j.xml` and also logging presets stored under `<TeamCity Data Directory>\config\_logging`.
 
-TeamCity can also store diagnostics data like thread dumps which can record user-related data in unstructured way. It is recommended to review the content of the `<[TeamCity Home](teamcity-home-directory.md)>\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc. There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
+TeamCity can also store diagnostics data like thread dumps which can record user-related data in unstructured way. It is recommended to review the content of the [`<TeamCity Home>`](teamcity-home-directory.md)`\logs` directory regularly and ensure that no old files are preserved in there. Also, the extra logs should be deleted after logging customization sessions like collecting debug logs, etc. There is a [known issue](https://youtrack.jetbrains.com/issue/TW-22596) that `logs\catalina.out` file if not rotated automatically at all. It is recommended to establish an automatic procedure to rotate the file regularly.
 
 ### Customizations
 

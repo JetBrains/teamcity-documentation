@@ -219,7 +219,7 @@ After you modify this property, restart your TeamCity server for the change to t
 
 ### HTTPS Settings Location
 
-If you have incorrectly configured HTTPS, you may be unable to log in or experience other issues that prevent you from rolling back these changes. In this case you can manually edit the **https-settings.xml** configuration file located under the `[data_directory](teamcity-data-directory.md)/config/_https` folder of a server/node machine.
+If you have incorrectly configured HTTPS, you may be unable to log in or experience other issues that prevent you from rolling back these changes. In this case you can manually edit the **https-settings.xml** configuration file located under the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/_https` folder of a server/node machine.
 
 ### Strict Transport Security
 

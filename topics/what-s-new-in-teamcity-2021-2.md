@@ -80,7 +80,7 @@ If you prefer using static labels, please read our [upgrade notes](upgrade-notes
 
 If a build agent needs to connect to several Perforce VCS roots during one build run, it can now get connection parameters of each of these roots.
 
-Previously, if you wanted to use `[P4PORT](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html)`, `[P4USER](https://www.perforce.com/perforce/r12.1/manuals/cmdref/env.P4USER.html)`, or `[P4CLIENT](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html)` in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root: `P4USER`, `P4PORT`, `P4CLIENT`. For example, `env.P4PORT=%vcsRoot.<rootID>.port%`.
+Previously, if you wanted to use [`P4PORT`](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html), [`P4USER`](https://www.perforce.com/perforce/r12.1/manuals/cmdref/env.P4USER.html), or [`P4CLIENT`](https://www.perforce.com/manuals/v18.1/cmdref/Content/CmdRef/P4CLIENT.html) in your build scripts, you could only refer to variables of the first Perforce root. Now, TeamCity stores these variables as parameters, so you can reference them in the scripts separately for each root: `P4USER`, `P4PORT`, `P4CLIENT`. For example, `env.P4PORT=%vcsRoot.<rootID>.port%`.
 
 where `rootID` is the VCS root’s external ID, specified in its settings.
 

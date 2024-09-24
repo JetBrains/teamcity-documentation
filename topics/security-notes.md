@@ -136,8 +136,8 @@ Note the following nuances:
 * Users with the "Change server settings" permission (the "System Administrator" TeamCity role by default): It is assumed that the users also have access to the computer on which the TeamCity server is running under the user account used to run the server process. Thus, the users can get full access to the machine under that OS user account: browse file system, change files, run arbitrary commands, and so on.
 * The TeamCity server computer administrators: have full access to TeamCity stored data and can affect TeamCity executed processes. Passwords that are necessary to authenticate in external systems (like VCS, issue trackers, and so on) are stored in a scrambled form in [TeamCity Data Directory](teamcity-data-directory.md) and can also be stored in the database. However, the values are only scrambled, which means they can be retrieved by any user who has access to the server file system or database.
 * Users who have read access to the TeamCity server logs (TeamCity server home directory) can escalate their access to the TeamCity server administrator.
-* Users who have read access to `<[TeamCity Data Directory](teamcity-data-directory.md)>` can access all the settings on the server, including configured passwords.
-* Users who have read access to the build artifacts in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` get the same permissions as users with the "View build runtime parameters and data" permission (in particular, with access to the values of all the password parameters used in the build).
+* Users who have read access to [`<TeamCity Data Directory>`](teamcity-data-directory.md) can access all the settings on the server, including configured passwords.
+* Users who have read access to the build artifacts in [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/artifacts` get the same permissions as users with the "View build runtime parameters and data" permission (in particular, with access to the values of all the password parameters used in the build).
 * TeamCity agent computer administrators: same as "users who can change code that is used in the builds run by TeamCity".
 * When [storing settings in VCS](storing-project-settings-in-version-control.md) is enabled:
   * Any user who can access the settings' repository (including users with "View file content" permission for the build configurations using the same VCS root) can see the settings and retrieve the actual passwords based on their stored scrambled form.
@@ -171,7 +171,7 @@ __Protect your server machine__.
 
 Limit access to the machine your TeamCity server runs on. Enable access logs and regularly review them.
 
-In general, don't use the TeamCity server machine for running [build agents](build-agent.md) (at least under the user permitted to read the `<[TeamCity Home Directory](teamcity-home-directory.md)>` and `<[TeamCity Data Directory](teamcity-data-directory.md)>`).
+In general, don't use the TeamCity server machine for running [build agents](build-agent.md) (at least under the user permitted to read the [`<TeamCity Home Directory>`](teamcity-home-directory.md) and [`<TeamCity Data Directory>`](teamcity-data-directory.md)).
 
 The TeamCity server (and agents) processes run under users with minimal required [permissions](managing-roles-and-permissions.md). Installation directories are readable and writable only by a limited set of OS users. The `conf\buildAgent.properties` file and server logs as well as the [Data Directory](teamcity-data-directory.md) are only readable by OS users who represent administrators of the services, because reading those locations may allow taking over the agent or server respectively.
 
@@ -192,7 +192,7 @@ __Secure your database__.
 
 Make sure to use a dedicated database user account with strong credentials for your TeamCity server's database schema. Consider encrypting the database if supported.
 
-Consider adding the `teamcity.installation.completed=true` line into the `<[TeamCity Home Directory](teamcity-home-directory.md)>\conf\teamcity-startup.properties` file — this will prevent the server started with an empty database from granting access to the machine for the first coming user.
+Consider adding the `teamcity.installation.completed=true` line into the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\conf\teamcity-startup.properties` file — this will prevent the server started with an empty database from granting access to the machine for the first coming user.
 
 __Secure build files__.
 

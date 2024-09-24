@@ -124,7 +124,7 @@ reported by the build.
    }
    ```
 
-- Modify the TeamCity configuration file `<[TeamCity_Data_Directory](teamcity-data-directory.md)>/config/main-config.xml`, 
+- Modify the TeamCity configuration file [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/main-config.xml`, 
 which requires system administrator privileges. 
    Add the following section to your `main-config.xml` under the `server` node:
 

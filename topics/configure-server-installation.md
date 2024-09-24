@@ -7,7 +7,7 @@ If another application uses the same port as the TeamCity server, the server won
 
 If you install a server from `.exe`, you can customize the port in the installation wizard.
 
-To change the port of the installed/unpacked server, open the `<[TeamCity Home Directory](teamcity-home-directory.md)>/conf/server.xml` file and set another number in the not commented `<Connector>` XML node:
+To change the port of the installed/unpacked server, open the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/conf/server.xml` file and set another number in the not commented `<Connector>` XML node:
 
 ```XML
 <Connector port="8111" ...
@@ -25,7 +25,7 @@ If you want to use the HTTPS protocol, it should be enabled separately. The proc
 
 By default, the TeamCity server is accessible under the root context of the server address (for example, [`http://localhost:8111/`](http://localhost:8111/){nullable="true"}). To make it available under a nested path instead (for example, [`http://localhost:8111/teamcity/`](http://localhost:8111/teamcity/){nullable="true"}), you need to:
 1. Stop the TeamCity server.
-2. Rename the `<[TeamCity Home Directory](teamcity-home-directory.md)>\webapps\ROOT` directory to `<[TeamCity Home Directory](teamcity-home-directory.md)>\webapps\teamcity`.
+2. Rename the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\webapps\ROOT` directory to [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\webapps\teamcity`.
 3. [Start the TeamCity server](start-teamcity-server.md).
 
 >After this change, [automatic update](upgrading-teamcity-server-and-agents.md#Automatic+Update) will be disabled for your installation and you will have to upgrade TeamCity [manually](upgrading-teamcity-server-and-agents.md#Manual+Update).
@@ -102,7 +102,7 @@ An out-of-the-box TeamCity server installation is suitable for evaluation purpos
 * Configure [recommended memory settings](#Configure+Memory+Settings+for+TeamCity+Server). Use "maximum settings" for active or growing servers.
 * Plan for regular [backups](teamcity-data-backup.md).
 * Plan for regular [upgrades](upgrading-teamcity-server-and-agents.md) to the latest TeamCity releases.
-* Consider adding the `teamcity.installation.completed=true` line into the `<[TeamCity Data Directory](teamcity-data-directory.md)>\conf\teamcity-startup.properties` file — this will prevent the server from creating an administrator user if no such user is found.
+* Consider adding the `teamcity.installation.completed=true` line into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\conf\teamcity-startup.properties` file — this will prevent the server from creating an administrator user if no such user is found.
 * Make sure to read the [notes on configuring the server for performance](system-requirements.md#Configuring+TeamCity+Server+for+Performance) and [security notes](security-notes.md).
 
 

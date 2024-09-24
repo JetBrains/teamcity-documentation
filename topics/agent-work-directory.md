@@ -5,7 +5,7 @@
 >
 {type="note" instance="tcc"}
 
-_Agent work directory_ is the directory on a build agent that is used as a containing directory for the default [checkout directories](build-checkout-directory.md). By default, this is the `<[build_agent_home](agent-home-directory.md)>/work` directory.
+_Agent work directory_ is the directory on a build agent that is used as a containing directory for the default [checkout directories](build-checkout-directory.md). By default, this is the [`<Build Agent Home>`](agent-home-directory.md)`/work` directory.
 
 To modify the default directory location, see `workDir` parameter in [Build Agent Configuration](configure-agent-installation.md).
 

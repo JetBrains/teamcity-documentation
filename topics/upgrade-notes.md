@@ -30,7 +30,7 @@
 {id="bundled-tools-updates-2024-07"}
 
 * The bundled Git was updated to version 2.45.2 in both Server and Agent Docker images.
-* TeamCity distribution no longer bundles the HSQLDB library. Instead, it is now downloaded on demand (in case you already use the HyperSQL database or select this option for a new TeamCity server on its first launch). If your TeamCity instance is offline or fails to download the required library due to proxy server settings, download the `hsqldb1-1.0.0.jar` directly from [download.jetbrains.com](https://download.jetbrains.com/teamcity-repository/org/jetbrains/teamcity/hsqldb1/1.0.0/hsqldb1-1.0.0.jar) and place it to `[TeamCity_Data_Directory](teamcity-data-directory.md)/lib/jdbc`.
+* TeamCity distribution no longer bundles the HSQLDB library. Instead, it is now downloaded on demand (in case you already use the HyperSQL database or select this option for a new TeamCity server on its first launch). If your TeamCity instance is offline or fails to download the required library due to proxy server settings, download the `hsqldb1-1.0.0.jar` directly from [download.jetbrains.com](https://download.jetbrains.com/teamcity-repository/org/jetbrains/teamcity/hsqldb1/1.0.0/hsqldb1-1.0.0.jar) and place it to [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc`.
 
 ### Known Issues
 {id="known-issues-2024-07"}
@@ -325,7 +325,7 @@ The Web Application Description Language (WADL) generator is now removed. See th
 ### Multinode Setup Updates
 
 * The "Processing user requests to modify data" responsibility was renamed to "Handling UI actions and load balancing user requests".
-* The `[data_directory](teamcity-data-directory.md)/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
+* The [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/nodes-config.xml` file listed only "MAIN_NODE" responsibility for main nodes. In version 2023.05, this configuration file lists all responsibilities enabled on a main node.
 
 ### Podman Support
 
@@ -2468,7 +2468,7 @@ Please note that the names of the projects and build configurations are no longe
 
 #### Project settings format on disk
 
-The format of the project settings storage on the disk under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` has been changed.   
+The format of the project settings storage on the disk under [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` has been changed.   
 If you used any tools to read or update `project-config.xml` files, you will need to update the tools. It is recommended to use REST API or TeamCity open API (Java) to make changes so that the tools are not hugely affected by the format change.
 
 #### Build Configuration templates

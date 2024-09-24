@@ -86,7 +86,7 @@ Agents connected to the server are upgraded [automatically](#Automatic+Build+Age
 There are several important issues with data format upgrade:
 
 * Data structure downgrade is not possible. Once newer TeamCity version changes the data format of database and Data Directory, you cannot use this data to run an older TeamCity version. Please ensure you [backup](teamcity-data-backup.md) the data before upgrading TeamCity.
-* Both the database and the Data Directory should be upgraded simultaneously. Ensure that during the first start of the newer server it uses the correct [TeamCity Data Directory](teamcity-data-directory.md) that in its turn has the correct database [configured](set-up-external-database.md) in the `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\database.properties` file. Also make sure the Data Directory is complete (for example, all the build logs and artifacts are in place), no Data Directory content supports copying from the Data Directory of the older server versions.
+* Both the database and the Data Directory should be upgraded simultaneously. Ensure that during the first start of the newer server it uses the correct [TeamCity Data Directory](teamcity-data-directory.md) that in its turn has the correct database [configured](set-up-external-database.md) in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\database.properties` file. Also make sure the Data Directory is complete (for example, all the build logs and artifacts are in place), no Data Directory content supports copying from the Data Directory of the older server versions.
 
 If you accidentally performed an inconsistent upgrade, check the [recovery instructions](how-to.md#Recover+from+%22Data+format+of+the+Data+Directory+%28NNN%29+and+the+database+%28MMM%29+do+not+match%22+error).
 
@@ -105,16 +105,16 @@ When a new version of TeamCity is detected, the server displays the correspondin
 The automatic update procedure is as follows:
 1. The TeamCity server is stopped.
 2. The update script is run to do the following:
-    1. Create a backup of the current installation in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory.
+    1. Create a backup of the current installation in the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/.old` directory.
     2. Update the stopped server to the new version.
 3. Next, the updated server starts.  
-   The update progress is logged to the `<[TeamCity Home Directory](teamcity-home-directory.md)>/logs/teamcity-update.log` file.
+   The update progress is logged to the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/logs/teamcity-update.log` file.
 
 In case of an automatic update failure, perform the following to restore your TeamCity to the state prior to the update:
 
 1. Stop your TeamCity server if it is running.
-2. For each folder that exists in the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` directory, remove the corresponding folder in the `<[TeamCity Home Directory](teamcity-home-directory.md)>`. Do not remove the "bin" folder as some of its files are not backed up to the `TC_home/.old` directory.
-3. Copy everything from the `<[TeamCity Home Directory](teamcity-home-directory.md)>/.old` folder and paste it to `<TeamCity Home Directory>`, replacing all duplicate files.
+2. For each folder that exists in the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/.old` directory, remove the corresponding folder in the [`<TeamCity Home Directory>`](teamcity-home-directory.md). Do not remove the "bin" folder as some of its files are not backed up to the `TC_home/.old` directory.
+3. Copy everything from the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/.old` folder and paste it to `<TeamCity Home Directory>`, replacing all duplicate files.
 4. Start the TeamCity server.
 
 >Note that the bundled version of Java is not updated automatically. Learn [how to install the required Java version manually](how-to.md#Install+Non-Bundled+Version+of+Java).  
@@ -135,19 +135,19 @@ Other limitations of the automatic update:
 
 #### Using Windows Installer
 
->The main server configuration file `<[TeamCity Home Directory](teamcity-home-directory.md)>/conf/server.xml` is updated automatically when there have been no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
+>The main server configuration file [`<TeamCity Home Directory>`](teamcity-home-directory.md)`/conf/server.xml` is updated automatically when there have been no changes to it since the last installation. If modification were made, the installer will detect them and backup the old `server.xml` file displaying a warning about the overwrite and the backup file location. Other files under `conf` can be overwitten to their default content as well, so if you have made manual modifications in those, check them after the upgrade.
 
 1. [Create a backup](teamcity-data-backup.md). You can create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
 3. If you have any of the Windows service settings customized, store them to repeat the customizations later.
-4. If you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's __Administration | Diagnostics__ or in a thread dump), consider backing up the `<[TeamCity Home Directory](teamcity-home-directory.md)>\jre` directory.
+4. If you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's __Administration | Diagnostics__ or in a thread dump), consider backing up the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\jre` directory.
 5. (optional as these will not be overwritten by the upgrade) Back up customizations of the bundled Tomcat server (like port, HTTPS protocol, and so on) or JRE if any.
 6. Check if you a have local agent installed (though it is [not recommended](security-notes.md) to have a local agent), so that you can later select this option in the installer.
 7. Run the new installer and point it to the same place TeamCity is installed to (the location used for installation is remembered automatically). Confirm uninstalling the previous installation. The TeamCity uninstaller ensures proper uninstallation, but you might want to make sure the [TeamCity server installation directory](teamcity-home-directory.md) does not contain any non-customized files after uninstallation finishes. If there are any, backup/remove them before proceeding with the installation.
-8. If prompted, specify the `<[TeamCity Data Directory](teamcity-data-directory.md)>/` used by the previous installation.
+8. If prompted, specify the [`<TeamCity Data Directory>`](teamcity-data-directory.md) used by the previous installation.
 9. (optional as these will not be overwritten by the upgrade) Make sure you have the external database driver [installed](set-up-external-database.md#General+Steps) (this applies only if you use an external database).
 10. Check and restore any customizations of Windows services and Tomcat configuration that you need. When upgrading from TeamCity versions 7.1 and earlier, make sure to transfer the [server memory setting](server-startup-properties.md) to the [environment variables](server-startup-properties.md#JVM+Options).
-11. If you were using 64-bit Java to run the server, restore the `<[TeamCity Home Directory](teamcity-home-directory.md)>\jre` directory previously backed up or repeat the 64-bit Java [installation steps](how-to.md#Update+from+32-bit+to+64-bit+Java).
+11. If you were using 64-bit Java to run the server, restore the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\jre` directory previously backed up or repeat the 64-bit Java [installation steps](how-to.md#Update+from+32-bit+to+64-bit+Java).
 12. If you use a customized Log4j configuration in the `conf\teamcity-server-log4j.xml` file and want to preserve it (note that it is recommended using [logging presets](teamcity-server-logs.md#Logging-related+Diagnostics+UI) instead), compare and merge `conf\teamcity-server-log4j.xml.backup` created by the installer from the existing copy with the default file saved with the default name. Compare the `conf\teamcity-*-log4j.xml.dist` file with the corresponding `conf\teamcity-*-log4j.xml` file and make sure that` .xml` file contains all the `.dist` file defaults. It is recommended to copy the `.dist` file over to the corresponding `.xml` file until you really need the changed logging configuration.
 13. Start up the TeamCity server (and agent, if it was installed together with the installer).
 14. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that all data will be converted to the newer format.
@@ -157,11 +157,11 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 #### Using .tar.gz Distributions
 
 1. [Create a backup](teamcity-data-backup.md).
-2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+2. Back up files customized since the previous installation (most probably `<TOMCAT_HOME>/conf/server.xml`)
 3. Remove old installation files (the entire `<TeamCity Home Directory>`). It's advised to back up the directory beforehand.
 4. Unpack the new archive to the location where TeamCity was previously installed.
 5. If you use a Tomcat server (your own or bundled in `.tar.gz` TeamCity distribution), it is recommended to delete the content of the `work` directory. Note that this may affect other web applications deployed into the same web server.
-6. Restore customized settings backed up in step 2 above. If you have the customized `[TOMCAT_HOME]/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
+6. Restore customized settings backed up in step 2 above. If you have the customized `<TOMCAT_HOME>/conf/server.xml` file, apply your changes into the appropriate sections of the default file.
 7. Make sure the previously configured [TeamCity server startup properties](server-startup-properties.md) (if any) are still actual.
 8. Start up the TeamCity server.
 9. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button. Only after that, all the configuration data and database scheme are updated by TeamCity converters.
@@ -173,7 +173,7 @@ If you encounter errors which cannot be resolved, make sure old TeamCity is not 
 {style="note"}
 
 1. [Create a backup](teamcity-data-backup.md).
-2. Back up files customized since the previous installation (most probably `[TOMCAT_HOME]/conf/server.xml`)
+2. Back up files customized since the previous installation (most probably `<TOMCAT_HOME>/conf/server.xml`)
 3. If you have built your own Docker image, [rebuild your Docker image](https://github.com/JetBrains/teamcity-docker-images#readme) based on the new version of the TeamCity server base image.
 4. Invoke [`docker run`](https://hub.docker.com/r/jetbrains/teamcity-server) to start the new container on the target host (either the [official TeamCity](https://hub.docker.com/r/jetbrains/teamcity-server/) image or your rebuilt image).
 5. Review the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page to make sure there are no problems encountered, and confirm the upgrade by clicking the corresponding button.

@@ -170,7 +170,7 @@ Workspace options
 
 <td>
 
-Optionally, set the following options for the `[p4 client](https://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665)` command: `Options`, `SubmitOptions`, and `LineEnd`.
+Optionally, set the following options for the [`p4 client`](https://www.perforce.com/perforce/doc.092/manuals/cmdref/client.html#1040665) command: `Options`, `SubmitOptions`, and `LineEnd`.
 
 For specific environments, define `P4Host` (supported for any type of checkout). See the details on workspace parameters [below](#Perforce+Workspace+Parameters).
 
@@ -210,7 +210,7 @@ Skip the have list update
 
 <td>
 
-Enable this option to not track files on the Perforce server on synchronization (always transfer all files to the agent, `[p4 sync -p](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)`). If disabled, TeamCity will use `p4 have` to keep the list up to date.
+Enable this option to not track files on the Perforce server on synchronization (always transfer all files to the agent, [`p4 sync -p`](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)). If disabled, TeamCity will use `p4 have` to keep the list up to date.
 
 </td></tr><tr>
 
@@ -237,7 +237,7 @@ To specify options that should be declared both before and after the `sync` comm
 <li>Enter <code>-r4 sync --parallel=threads=5</code> to run the <code>p4 -r4 sync --parallel=threads=5</code> command.</li>
 </ul>
 
-See the `[command reference](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html)` for more information.
+See the [`command reference`](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html) for more information.
 
 </td></tr></table>
 
@@ -284,7 +284,7 @@ P4 path on the build agent
 
 Specify the path to the Perforce command-line client (`p4.exe`).
 
-This works only for the [agent-side checkout](vcs-checkout-mode.md#agent-checkout). On the agent side, the value of this parameter could be overridden via the `TEAMCITY_P4_PATH` environment variable, if such a variable is set in `[buildAgent.properties](configure-agent-installation.md)` or comes from [build parameters](configuring-build-parameters.md).
+This works only for the [agent-side checkout](vcs-checkout-mode.md#agent-checkout). On the agent side, the value of this parameter could be overridden via the `TEAMCITY_P4_PATH` environment variable, if such a variable is set in [`buildAgent.properties`](configure-agent-installation.md) file or comes from [build parameters](configuring-build-parameters.md).
 
 For the server, the p4 binary should be present in the `PATH` environment variable of the TeamCity server machine, or can be specified via the `teamcity.perforce.customP4Path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {instance="tc"}

@@ -27,13 +27,13 @@ The current Data Directory location is also available in the `logs/teamcity-serv
 ### Configuring Location
 
 There are three ways to configure the location of the TeamCity Data Directory:
-* __by selecting it in the UI form on the first server startup__. The specified Data Directory is then saved into `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file.
+* __by selecting it in the UI form on the first server startup__. The specified Data Directory is then saved into [`<TeamCity home directory>`](teamcity-home-directory.md)`/conf/teamcity-startup.properties` file.
 * manually, using the `TEAMCITY_DATA_PATH` __environment variable__. The variable can be either system-wide or defined for the user under whom the TeamCity server is started.
 * manually, by specifying the `teamcity.data.path` __[JVM property](server-startup-properties.md#JVM+Options)__.
 
 If during the first startup TeamCity finds the Data Directory location configured as the environment variable, it skips the related startup screen and uses the detected path.
 
-If the `TEAMCITY_DATA_PATH` environment variable is not set and the `<[TeamCity home directory](teamcity-home-directory.md)>/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%\USERPROFILE%/.BuildServer` under Windows).
+If the `TEAMCITY_DATA_PATH` environment variable is not set and the [`<TeamCity home directory>`](teamcity-home-directory.md)`/conf/teamcity-startup.properties` file does not define it either, the default TeamCity Data Directory location will be the user's home directory (for example, it is `$HOME/.BuildServer` under Linux and `%\USERPROFILE%/.BuildServer` under Windows).
 
 ### Recommendations as to choosing Data Directory Location
 
@@ -45,7 +45,7 @@ Note that TeamCity assumes reliable and persistent read/write access to the Team
 
 <anchor name="caches_folder"/>
 
-It is recommended to store `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` on a local disk or even a separate dedicated disk, especially if TeamCity Data Directory is located on a network storage. You can either create a symlink to the `caches` directory from the main directory or redefine its path via the `teamcity.caches.path` JVM system property which can be specified in TEAMCITY_SERVER_OPTS environment variable, for instance:
+It is recommended to store [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` on a local disk or even a separate dedicated disk, especially if TeamCity Data Directory is located on a network storage. You can either create a symlink to the `caches` directory from the main directory or redefine its path via the `teamcity.caches.path` JVM system property which can be specified in TEAMCITY_SERVER_OPTS environment variable, for instance:
 
 ```
 TEAMCITY_SERVER_OPTS=-Dteamcity.caches.path=<path to local caches directory>

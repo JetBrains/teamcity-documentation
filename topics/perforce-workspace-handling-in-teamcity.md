@@ -80,7 +80,7 @@ When an error occurs during a checkout, or a build is interrupted/stopped during
 
 Usually, when a project administrator modifies a VCS root client mapping specified in the VCS root, this is considered a change in the VCS root settings and results in a [clean checkout](clean-checkout.md). This clean checkout behaviour can be disabled using the `teamcity.perforce.enable-no-clean-checkout=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
-Changing the `teamcity.perforce.enable-no-clean-checkout `[internal property](server-startup-properties.md#TeamCity+Internal+Properties) results in one-time clean checkout for all affected build configurations.
+Changing the `teamcity.perforce.enable-no-clean-checkout` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) results in one-time clean checkout for all affected build configurations.
 
 When a VCS root is configured to use Client Name, or Stream, no clean checkout will occur when the client mapping of the corresponding client/stream is edited in Perforce.
 
