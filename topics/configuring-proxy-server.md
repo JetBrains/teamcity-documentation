@@ -236,7 +236,7 @@ For a TeamCity Tomcat configuration, use the __dedicated "Connector" node__ in t
 
 This approach can be used with any proxy configuration, provided the configured port is receiving requests only to the configured public URL.
 
-You need to change the "Connector" node in `<[TeamCity Home](teamcity-home-directory.md)>/conf/server.xml` file as below.
+You need to change the "Connector" node in [`<TeamCity Home>`](teamcity-home-directory.md)`/conf/server.xml` file as below.
 
 ```XML
 <Connector port="8111" protocol="org.apache.coyote.http11.Http11NioProtocol"

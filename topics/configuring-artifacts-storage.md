@@ -7,7 +7,7 @@ By default, the built-in TeamCity artifacts storage is displayed and marked as a
 
 ## Built-in Artifacts Storage
 
-TeamCity stores [artifacts](build-artifact.md) produced by builds on the file system accessible by the TeamCity server. The default artifacts directory location is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/artifacts` but it can be [redefined](teamcity-configuration-and-maintenance.md).
+TeamCity stores [artifacts](build-artifact.md) produced by builds on the file system accessible by the TeamCity server. The default artifacts directory location is [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/artifacts` but it can be [redefined](teamcity-configuration-and-maintenance.md).
 
 ## External Artifacts Storage
 {id="external-artifacts-storage"}

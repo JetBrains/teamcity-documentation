@@ -31,7 +31,7 @@ To enable the plugin after installation, click the plugin context menu and selec
 
 ## Uninstalling Plugin Manually
 
-Remove the plugin package from the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins` directory and restart the TeamCity server.
+Remove the plugin package from the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/plugins` directory and restart the TeamCity server.
 
 <seealso>
         <category ref="admin-guide">

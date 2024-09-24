@@ -5,7 +5,7 @@ If you see the TeamCity Maintenance page on the TeamCity startup, it means that 
 
 For security reasons, the maintenance has to be performed by a __system administrator__ who has administrative access to the environment where the TeamCity server is installed. If you __do not__ have access to the computer where TeamCity is installed, inform your system administrator that TeamCity requires technical maintenance.
 
-If you are a TeamCity system administrator, confirm it by entering the _authentication token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under `<[TeamCity Home Directory>/logs](teamcity-server-logs.md)`.
+If you are a TeamCity system administrator, confirm it by entering the _authentication token_ into the corresponding field on this page. This token can be found in the `teamcity-server.log` file under [`<TeamCity Home Directory>/logs`](teamcity-server-logs.md).
 
 After you have provided this token, you can review the details on what kind of maintenance is required. It can be caused by one of the following factors:
 * [TeamCity data upgrade](#TeamCity+Data+Upgrade)

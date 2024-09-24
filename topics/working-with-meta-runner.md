@@ -31,7 +31,7 @@ Each `*MRPP_*.xml*` file contains a definition of a single meta-runner. Download
 You can install a meta-runner using the TeamCity web UI. Alternatively, you can do it directly via the file system.
 
 * __To install a meta-runner via the Web UI__, go to __Project Settings | Meta-Runners__, click __Upload Meta-Runner__, and select the meta-runner definition file. Save you changes.
-* __To install a meta-runner directly to the file system__, put the meta-runner definition file into the `<[TeamCity Data Directory](teamcity-data-directory.md)\config\projects\<project_ID>\pluginData\metaRunners` directory, where `<project_ID>` is the identifier of a project under which you want to place the meta-runner. If the `metaRunners` directory does not exist, create it manually.   
+* __To install a meta-runner directly to the file system__, put the meta-runner definition file into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory, where `<project_ID>` is the identifier of a project under which you want to place the meta-runner. If the `metaRunners` directory does not exist, create it manually.   
 Once you place the file on the disk, TeamCity will detect it and load the meta-runner; no server restart is required.
 
 If the meta-runner is loaded successfully, you will see it listed on the __Meta-Runners__ page in the project settings; if you have appropriate permissions, you can modify the definition directly in the TeamCity UI.
@@ -107,7 +107,7 @@ The current meta-runner usages can be seen at the project __Meta-Runners__ page:
 
 <img src="meta-runners.png" width="750" alt="Meta-Runners"/>
 
-When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\projects\<project_ID>\pluginData\metaRunners` directory.
+When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory.
 
 ## Creating Meta-Runner from XML Definition of Build Configuration
 

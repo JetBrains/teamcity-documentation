@@ -29,7 +29,7 @@ Learn more: [Storing Project Settings in Version Control Systems](storing-projec
 ## Store Server Configuration Files in the Version Control
 {instance="tc"}
 
-Starting with this version you can store the contents of your server's `[Data_Directory](teamcity-data-directory.md)/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
+Starting with this version you can store the contents of your server's [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` directory in an external repository. This setup allows you to view and investigate the complete history of server edits, and easily restore these configuration files should they ever become corrupted.
 
 Learn more: [](teamcity-data-directory.md#Upload+Configuration+Files+to+a+Version+Control)
 

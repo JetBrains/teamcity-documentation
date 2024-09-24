@@ -48,7 +48,7 @@ SQL Server supports two ways of authentication: SQL Server authentication and Wi
 
 1. Download a [Microsoft JDBC driver version 6.0 or later](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) (pick `.exe` or `.tar.gz` depending on your TeamCity server platform) from the Microsoft Download Center.
 2. Unpack the downloaded package into a temporary directory.
-3. Copy the `sqljdbc42.jar` (or `mssql-jdbc-<version>.jre8.jar` in versions above 6.0) package from the just downloaded package into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc` directory.
+3. Copy the `sqljdbc42.jar` (or `mssql-jdbc-<version>.jre8.jar` in versions above 6.0) package from the just downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory.
 
 <note>
 
@@ -63,8 +63,8 @@ Note that Microsoft JDBC driver v6.0\+ has compatibility issues with Microsoft S
 
 For Windows authentication (MS SQL integrated security), in addition to the JDBC driver, it is necessary to install native driver library `sqljdbc_auth.dll` from the JDBC driver package. The required version of the library depends on the bitness of the Java version used by the server.
 
-For the default 32-bit JVM bundled with the TeamCity server, copy the `<sql_jdbc_home>/enu/auth/x86/sqljdbc_auth.dll` file into `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc/native/windows-i386`.   
-For the 64-bit JVM used to run the TeamCity server, use `<sql_jdbc_home>/enu/auth/x64/sqljdbc_auth.dll`, and place it into the `<[TeamCity Data Directory](teamcity-data-directory.md)>/lib/jdbc/native/windows-amd64` directory.
+For the default 32-bit JVM bundled with the TeamCity server, copy the `<sql_jdbc_home>/enu/auth/x86/sqljdbc_auth.dll` file into [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc/native/windows-i386`.   
+For the 64-bit JVM used to run the TeamCity server, use `<sql_jdbc_home>/enu/auth/x64/sqljdbc_auth.dll`, and place it into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc/native/windows-amd64` directory.
 
 ## Start TeamCity
 

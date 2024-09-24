@@ -21,13 +21,13 @@ For both processes mentioned above, you can customize the final agent behavior b
 
 ### Build Agent is Run via Script
 
-Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` script, set the following [environment variables](https://en.wikipedia.org/wiki/Environment_variable) in your OS:
+Before you run the [`<Agent_Home>`](agent-home-directory.md)`/bin/agent.bat|sh` script, set the following [environment variables](https://en.wikipedia.org/wiki/Environment_variable) in your OS:
 * `TEAMCITY_AGENT_MEM_OPTS` — set agent memory JVM options (for 64-bit agents, consider setting `-Xmx` to 512 MB)
 * `TEAMCITY_AGENT_OPTS` — additional agent JVM options
 
 ### Build Agent is Run as Service
 
-In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option):
+In the [`<Agent_Home>`](agent-home-directory.md)`/launcher/conf/wrapper.conf` file, add the following lines (one per option):
 
 ```
 wrapper.app.parameter.<N>
@@ -60,12 +60,12 @@ Only rare cases might require changing agent launcher properties. Before modifyi
 ### Build Agent is Run via Script
 {id="build-agent-is-run-via-script-1"}
 
-Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` script, set the `TEAMCITY_LAUNCHER_OPTS` environment variable.
+Before you run the [`<Agent_Home>`](agent-home-directory.md)`/bin/agent.bat|sh` script, set the `TEAMCITY_LAUNCHER_OPTS` environment variable.
 
 ### Build Agent is Run as Service
 {id="build-agent-is-run-as-service-1"}
 
-In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option, the `N` number should increase):
+In the [`<Agent_Home>`](agent-home-directory.md)`/launcher/conf/wrapper.conf` file, add the following lines (one per option, the `N` number should increase):
 
 ```
 wrapper.java.additional.<N>

@@ -162,7 +162,7 @@ To specify which settings TeamCity should apply when a build starts, choose a re
 > 
 {style="warning"}
 
-> Before starting a build, TeamCity stores a configuration for this build as a [hidden artifact](build-artifact.md#Hidden+Artifacts) under the `<[project_settings_directory](#Custom+Settings+Path)>/settings` directory. You can inspect these configuration files to determine what settings were actually used by the build.
+> Before starting a build, TeamCity stores a configuration for this build as a [hidden artifact](build-artifact.md#Hidden+Artifacts) under the [`<project_settings_directory>`](#Custom+Settings+Path)`/settings` directory. You can inspect these configuration files to determine what settings were actually used by the build.
 > 
 {style="tip"}
 
@@ -210,7 +210,7 @@ To specify which settings TeamCity should apply when a build starts, choose a re
     ```Shell
     git checkout -b custom-branch
     ```
-8. Edit the local copy of your `<[project settings directory](#Custom+Settings+Path)>/settings.kts` (`.teamcity/settings.kts` by default) file as follows:
+8. Edit the local copy of your [`<project settings directory>`](#Custom+Settings+Path)`/settings.kts` (`.teamcity/settings.kts` by default) file as follows:
 
     ```Kotlin
     import jetbrains.buildServer.configs.kotlin.*

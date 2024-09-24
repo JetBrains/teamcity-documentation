@@ -7,7 +7,7 @@ The Lucene search syntax, supported for both modes, is described in [this articl
 
 ## Local Search
 
-By default, TeamCity stores the search index locally, in `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches`. In the __Builds Search__ section, you can control the indexing and see its statistics.
+By default, TeamCity stores the search index locally, in [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches`. In the __Builds Search__ section, you can control the indexing and see its statistics.
 
 ## Elasticsearch
 {id="ElasticSearchSettings" auxiliary-id="ElasticSearchSettings"}
