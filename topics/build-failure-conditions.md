@@ -12,18 +12,18 @@ TeamCity allows changing the conditions under which a build is marked as _failed
 In the __Common Failure Conditions__ block, you can specify how exactly TeamCity will fail builds.
 
 ### Set Custom Build Execution Timeout
-{product="tc"}
+{instance="tc"}
 
 The _if it runs longer than ... minutes_ condition allows defining an execution timeout for a build, in minutes. If the specified amount of time is exceeded, the build is automatically canceled. This option helps deal with hanging builds and maintains agent efficiency.
 
 If the configuration's timeout is 0 (the default value), the global [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) timeout applies. Otherwise, the timeout specified in this configuration overrides the global value specified in __Administration | Global Settings__.
 
 ### Set Custom Build Execution Timeout
-{product="tcc"}
+{instance="tcc"}
 
 The _if it runs longer than ... minutes_ condition allows defining an execution timeout for a build, in minutes. If the specified amount of time is exceeded, the build is automatically canceled. This option helps deal with hanging builds and maintains agent efficiency.
 
-If the configuration's timeout is 0 (the default value), the default (120 minutes) timeout applies. Otherwise, the timeout specified in this configuration overrides it.
+If the configuration's timeout is 0 (the default value), the default 120-minute timeout is in effect. Otherwise, the timeout specified in this configuration overrides it.
 
 ### Fail Build if Exit Code is not Zero
 
