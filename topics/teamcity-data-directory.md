@@ -15,7 +15,7 @@ Note that in this documentation and other TeamCity materials the directory is of
 Note that in this documentation and other TeamCity materials the directory is often referred to as `.BuildServer`.
 {instance="tcc"}
 
-<anchor name="SpecifyLocationoftheTeamCityDataDirectory"/>
+{id="SpecifyLocationoftheTeamCityDataDirectory"}
 
 ## Location of the TeamCity Data Directory
 {instance="tc"}
@@ -43,7 +43,7 @@ By default, the `system` directory stores all the [artifacts](build-artifact.md)
 
 Note that TeamCity assumes reliable and persistent read/write access to the TeamCity Data Directory and can malfunction if the Data Directory becomes inaccessible. This malfunction can affect TeamCity operation while the directory is unavailable and may also corrupt data of the currently running builds. While TeamCity should be able to tolerate occasional Data Directory inaccessibility, under rare circumstances the data stored in the directory might still be corrupted or partially lost.
 
-<anchor name="caches_folder"/>
+{id="caches_folder"}
 
 It is recommended to store [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` on a local disk or even a separate dedicated disk, especially if TeamCity Data Directory is located on a network storage. You can either create a symlink to the `caches` directory from the main directory or redefine its path via the `teamcity.caches.path` JVM system property which can be specified in TEAMCITY_SERVER_OPTS environment variable, for instance:
 
@@ -90,7 +90,7 @@ To set up a repository that should store your server's configuration files:
 If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugin/9057-autoincrementer), we recommend that you update it to the latest version.
 
 
- <anchor name="data_directory_structure"/>
+ {id="data_directory_structure"}
 
 ## Structure of TeamCity Data Directory
 {instance="tc"}
@@ -99,8 +99,8 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
 * __`BuildServer/config`__ — a directory where projects, build configurations and general server settings are stored.
   * `_trash` — backup copies of deleted projects, it is OK to delete them manually. For details on restoring the projects check [How To](how-to.md#Restore+Just+Deleted+Project).
   * `notifications` — notification templates and notification configuration settings.
-  * `logging` — [internal server logging](teamcity-server-logs.md) configuration files, new files can be added to the directory manually.
-     <anchor name="projects_folder"/>
+  * `logging` — [internal server logging](teamcity-server-logs.md) configuration files, new files can be added to the directory manually.  
+     {id="projects_folder"}
   * `projects` — a directory which contains all project-related settings. Each project has its own directory. Project hierarchy is not used and all the projects have a corresponding directory residing directly under "projects".
     * `<projectID>` — a directory containing all the settings of a project with the `<projectID>` ID (including build configuration settings and excluding subproject settings). New directories can be created provided they have mandatory nested files. The _Root_ directory contains settings of the [root project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects). Whenever `*.xml.N` files occur under the directory, they are backup copies of corresponding files created when a project configuration is changed via the web UI. These backup copies are not used by TeamCity.
       * `buildNumbers` — a directory which contains `<buildConfigurationID>.buildNumbers.properties` files which store the current build number counter for the corresponding build configuration.
@@ -124,17 +124,17 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
   * `*.dtd` — DTD files for the XML configuration files.
   * `*.dist` — default template configuration files for the corresponding files without `.dist`. See [below](#Direct+Modifications+of+Configuration+Files).
 * __`.BuildServer/plugins`__ — a directory where TeamCity plugins can be stored to be loaded automatically on the TeamCity start. New plugins can be added to the directory. Existing ones can be removed while the server is not running. The structure of a plugin is described in [Plugins Packaging](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html).
-  * `.tools` — create this directory to centralize tools to be installed on all agents. Any folder or `.zip` file under this folder will be distributed to all agents and appear under [Agent Home Directory](agent-home-directory.md) folder.
-<anchor name="systemDir"/>
+  * `.tools` — create this directory to centralize tools to be installed on all agents. Any folder or `.zip` file under this folder will be distributed to all agents and appear under [Agent Home Directory](agent-home-directory.md) folder.  
+{id="systemDir"}
 * __`.BuildServer/system`__ — a directory where build results data is stored. The content of the directory is generated by TeamCity and is not meant for manual editing.
    
-  * <anchor name="artifacts"/>`artifacts` — the [default directory](teamcity-configuration-and-maintenance.md) where the builds' artifacts, logs and other data are stored. The format of the artifact storage is `<project ID>/<build configuration name>/<internal_build_id>` (read more about the [internal build ID](build-results-page.md#Internal+Build+ID)). If necessary, the files in each build's directory can be added/removed manually — this will be reflected in the corresponding build's artifacts.
+  * {id="artifacts"}`artifacts` — the [default directory](teamcity-configuration-and-maintenance.md) where the builds' artifacts, logs and other data are stored. The format of the artifact storage is `<project ID>/<build configuration name>/<internal_build_id>` (read more about the [internal build ID](build-results-page.md#Internal+Build+ID)). If necessary, the files in each build's directory can be added/removed manually — this will be reflected in the corresponding build's artifacts.
      * `.teamcity` subdirectory stores build's [hidden artifacts](build-artifact.md#Hidden+Artifacts) and build logs (see below). The files can be deleted manually, if necessary, but it is not recommended as the build will lose the corresponding features backed by the files (like the build log, displaying/using finished build parameters including for the build reuse as snapshot dependency, coverage reports, and so on)      
-    <anchor name="rawLogs"/>
+    {id="rawLogs"}
        *  `logs` subdirectory stores the [build log](build-log.md) in an internal format. The build log stores the build output, compilation errors, test output, and test failure details. The files can be removed manually, if necessary, but corresponding builds will lose build log and failure details (as well as test failure details).
   * `messages` — a directory stores the files which could not be moved (see the server log on the server start for details).
   * `changes` — a directory where the [remote run](personal-build.md) changes are stored in internal format. Name of the files inside the directory contains internal personal change id. The files can be deleted manually, if necessary, but corresponding personal builds will lose personal changes in UI and when affected queued builds try to start, they fail or run without personal patch.
-  *   <anchor name="pluginData"/> `pluginData` — a directory storing various data concerning builds, current system state, and so on. It is not advised to delete or modify this directory. The content of this directory corresponds to the data stored in the database, so when the database is restored, this directory should be restored to the same state to be consistent with the database.
+  *   {id="pluginData"} `pluginData` — a directory storing various data concerning builds, current system state, and so on. It is not advised to delete or modify this directory. The content of this directory corresponds to the data stored in the database, so when the database is restored, this directory should be restored to the same state to be consistent with the database.
     * `audit` — directory holding history of the build configuration changes and used to display diff of the changes. Also stores related data in the database.
   * `caches` — a directory with internal caches (of the VCS repository contents, search index, other). It can be [manually deleted](teamcity-monitoring-and-diagnostics.md#Caches) to clear caches: they will be restored automatically as needed. It is safer to delete the directory while server is not running.
      * `.unpacked` — directory that is created automatically to store unpacked server-side plugins. Should not be modified while the server is running. Can be safely deleted if the server is not running.
@@ -152,7 +152,7 @@ Note that the format of the files can change with newer TeamCity versions, so th
 The [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) has means for most common settings editing and is more stable in terms of functioning after the server upgrade.
 
   
-<anchor name="distfiles"/>
+{id="distfiles"}
    
 ### .dist Template Configuration Files
 

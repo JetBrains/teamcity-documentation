@@ -20,7 +20,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     > 
     {style="tip"}
 
-    <anchor name="permissions"/>
+    {id="permissions"}
 
     A user whose credentials the selected AWS Connection uses (or an IAM Role it assumes) to access the S3 buckets should have the following permissions:
 
@@ -32,7 +32,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
    * `DeleteObject`
    * `GetAccelerateConfiguration` (if [Transfer Acceleration](#TransferAcceleration) is enabled)
     
-    <anchor name="transferToConnection"/>
+    {id="transferToConnection"}
     > In previous TeamCity versions, the **Artifacts Storage** dialog allowed you to explicitly specify connection settings: access key credentials, user IAM role, and whether TeamCity should look for credentials in the default AWS locations (the **Default provider chain** setting).
     > 
     > Starting with version 2023.11, these settings are exclusive to [AWS Connections](configuring-connections.md#AmazonWebServices). If you're migrating from an older version of TeamCity and your existing AWS S3 storages used any of these settings, click the **Convert to AWS Connection** link. This action transfers AWS-related settings to a new AWS Connection, and selects this new connection as the source connection of your storage.
@@ -41,7 +41,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     
 6. TeamCity uses the selected AWS Connection to retrieve the list of available S3 buckets. Open the **Bucket** drop-down menu to choose a specific item from the list.
 
-<anchor name="pathPrefix"/>
+{id="pathPrefix"}
 
 7. <snippet id="settings_path_prefix">(Optional) Specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html">path prefix</a> if you want to use the same S3 bucket for all TeamCity projects and configure prefix-based permissions.</snippet>
 
@@ -50,7 +50,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 8. Amazon S3 buckets support two options to speed up file uploads and downloads:
 
    * [AWS CloudFront](https://aws.amazon.com/cloudfront/) — a content delivery network (CDN) that allows TeamCity to transfer arifacts using low-latency CloudFront servers nearby.
-   * <anchor name="TransferAcceleration"/>[Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) — a bucket-level feature designed to optimize transfer speeds from across the world into centralized S3 buckets. It enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket.
+   * {id="TransferAcceleration"}[Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) — a bucket-level feature designed to optimize transfer speeds from across the world into centralized S3 buckets. It enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket.
     
     If your bucket is configured to use Transfer Acceleration or CloudFront, choose the corresponding option under the **Transfer speed-up** section. Otherwise, if you wish TeamCity to transfer files in the regular mode, choose the **None** type.
 
@@ -69,14 +69,14 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
     >
     {style="note"}
 
-<anchor name="multipartUpload"/>
+{id="multipartUpload"}
 
 9. <snippet id="settings_mulipart_upload">To optimize the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-upload-large-files/">upload of large files</a> to the storage, you can enable the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload</a>. To do this, tick the <b>Customize threshold and part size</b> setting and set the multipart upload threshold. The minimum allowed value is <code>5MB</code>. Supported suffixes: <code>KB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>. If you leave this field empty, multipart upload will be initiated automatically for all files larger than 8 MB (<code>8MB</code> is the default value).<img src="dk-s3-multipart.png" width="706" alt="Multipart upload"/>Additionally, you can configure the maximum allowed size of each uploaded file part. The minimum value is <code>5MB</code>. If left empty, TeamCity will use <code>8MB</code> as the default value.</snippet>
     
     > We recommend that you configure a [bucket lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html) to prevent incomplete multipart uploads.
     {style="tip"}
 
-<anchor name="forceVirtualHostAddressing"/>
+{id="forceVirtualHostAddressing"}
 
 10. <snippet id="settings_virtual_host">Uncheck the <b>Force virtual host addressing</b> option to turn off the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html">corresponding feature</a> (enabled by default). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access">Amazon stopped supporting path-style access</a> for new buckets since September 2020.</snippet>
 

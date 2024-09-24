@@ -16,7 +16,7 @@ For the list of disclosed security-related issues, see the [JetBrains Security B
 
 We also recommend that you subscribe to the [security notification service](https://www.jetbrains.com/privacy-security/subscribe/) to obtain the latest information about security issues that may affect TeamCity or any other JetBrains products.
 
-<anchor name="HowTo...-Security-relatedRisksEvaluation"/>
+{id="HowTo...-Security-relatedRisksEvaluation"}
 
 ## Recommended Security Practices
 
@@ -106,7 +106,7 @@ __Use per-project authorization__.
 To tighten security even more, you can also make use of [per-project authorization](managing-roles-and-permissions.md#Per-Project+Authorization+Mode). This way, your developers could, for example, have access only to the compilation part of your build chain, while devops could access and run the deployment part.
 {instance="tc"}
 
-<anchor name="caution-guest-login"/>
+{id="caution-guest-login"}
 
 __Do not enable Guest Login__.
 
@@ -120,7 +120,7 @@ __Restrict deployment build permissions__.
 
 Make sure that your deployment build chains do not allow [personal builds](personal-build.md). [Limit the number of developers](managing-roles-and-permissions.md) who can trigger those builds, and use a separate pool of clean agents for those builds.
 
-<anchor name="manage-permissions"/>
+{id="manage-permissions"}
 
 __Thoroughly manage permissions granted to users and user groups__.
 
@@ -133,7 +133,7 @@ Note the following nuances:
   * can do everything that users with the "View build configuration settings" permission for all the projects on the server can do (see [below](#view-build-config-settings)).
   * can retrieve settings of the build configurations where the builds are run, including the values of the password fields.
   * can download artifacts from any build on the server.
-    <anchor name="view-build-config-settings"/>
+    {id="view-build-config-settings"}
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can obtain values of [build-level authentication parameters](artifact-dependencies.md#build-level-auth) and exploit them to view all the projects on the server that they normally cannot access. To prevent this from happening, use the `teamcity.buildAuth.enableStrictMode=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
   {instance="tc"}
 * Users with the "View build configuration settings" permission (by default, the Project Developer role) can view all the projects on the server.
