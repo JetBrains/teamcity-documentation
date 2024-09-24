@@ -20,9 +20,9 @@ To allow TeamCity projects to access remote repositories via SSH keys, you first
 
 <img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
 
-Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<project>/pluginData/ssh_keys` directory. TeamCity tracks this directory so uploaded keys become available in the current project and its subprojects without the need to restart a server.
+Uploaded SSH keys are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<project>/pluginData/ssh_keys` directory. TeamCity tracks this directory so uploaded keys become available in the current project and its subprojects without the need to restart a server.
 
-> Keep the access to the [TeamCity Data Directory](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
+> Keep the access to the [](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
 >
 {style="note"}
 

@@ -23,8 +23,8 @@ If you want a fast switch to an external database and _do not want to preserve e
 
 1. [Create and configure an external database](set-up-external-database.md) to be used by TeamCity.
 2. Shut down the TeamCity server.
-3. [Create a backup copy](teamcity-data-backup.md) of the `<[TeamCity Data Directory](teamcity-data-directory.md)>` used by the server.
-4. Clean up the `system` directory: you __must__ remove the `messages` and `artifacts` directories from the `system` directory of your `<[TeamCity Data Directory](teamcity-data-directory.md)>`; you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
+3. [Create a backup copy](teamcity-data-backup.md) of the [`<TeamCity Data Directory>`](teamcity-data-directory.md) used by the server.
+4. Clean up the `system` directory: you __must__ remove the `messages` and `artifacts` directories from the `system` directory of your [`<TeamCity Data Directory>`](teamcity-data-directory.md); you __may__ delete the old HSQLDB files: `buildserver.*` to remove the no longer needed internal storage data.
 5. Start the TeamCity server.
 
 >If you see the __TeamCity Maintenance__ screen, click _"I'm a server administrator, show me the details"_ and enter the [Super User Token](super-user.md). Follow the instructions to create a new TeamCity database.
@@ -33,7 +33,7 @@ If you want a fast switch to an external database and _do not want to preserve e
 
 These steps describe switching to another database while preserving all the data. This is done by the TeamCity migration tool — `maintainDB` command-line utility.
 
-The `maintainDB.[cmd|sh]` shell/batch script is located in the `<[TeamCity Home  Directory](teamcity-home-directory.md)>/bin` directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions.
+The `maintainDB.[cmd|sh]` shell/batch script is located in the [`<TeamCity Home  Directory>`](teamcity-home-directory.md)`/bin` directory and is used for migrating as well as for [backing up](creating-backup-via-maintaindb-command-line-tool.md) and [restoring](restoring-teamcity-data-from-backup.md) TeamCity data. The utility is only available in the TeamCity `.tar.gz` and .`exe` distributions.
 
 TeamCity supports __HSQLDB__, __MySQL__, __Oracle__, __PostgreSQL__, and __Microsoft SQL Server__; the migration is possible between any of these databases.
 
@@ -50,7 +50,7 @@ To migrate all your existing data to a new external database:
 
 2\. Shut down the TeamCity server.
 
-3\. Create a temporary properties file with a custom name (for example, `database.<database_type>.properties`) for the target database using the corresponding template (`<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.<database_type>.properties.dist`). Configure the properties and place the file into any temporary directory. __Do not modify the original `database.<database_type>.properties` file__.
+3\. Create a temporary properties file with a custom name (for example, `database.<database_type>.properties`) for the target database using the corresponding template ([`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.<database_type>.properties.dist`). Configure the properties and place the file into any temporary directory. __Do not modify the original `database.<database_type>.properties` file__.
 
 4\. Run the `maintainDB` tool with the `migrate` command and specify the absolute path to the newly created target database properties file with the `-T` option:
 
@@ -65,7 +65,7 @@ If you don't have the `TEAMCITY_DATA_PATH` environment that points to the [TeamC
  ```
 
 
-Upon the successful completion of the database migration, the temporary file will be copied to the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically renamed to `database.properties.before.<timestamp>`.
+Upon the successful completion of the database migration, the temporary file will be copied to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file which will be used by TeamCity. The temporary file can be safely deleted. If you are migrating between external databases, the original `database.properties` file for the source database will be replaced with the file specified via the `-T` option. The original `database.properties` file will be automatically renamed to `database.properties.before.<timestamp>`.
 
 
 

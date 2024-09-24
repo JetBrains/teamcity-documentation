@@ -143,7 +143,7 @@ The path to the hg executable. Used on TeamCity server only if included into whi
 
 When an agent starts, the hg-plugin detects Mercurial installed on the agent machine.
 
-The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in `<[Agent Home Directory](agent-home-directory.md)>\conf\buildAgent.properties`.
+The plugin tries to run the `hg version` command using the path specified by the `teamcity.hg.agent.path` parameter. You can change this parameter in [`<Agent Home Directory>`](agent-home-directory.md)`\conf\buildAgent.properties`.
 
 If this parameter is not set, the plugin uses `hg` as a path to the command, assuming it is somewhere in the $PATH. If the command is executed successfully and mercurial has an appropriate version (1.5.2\+), then the hg-plugin reports the path to hg in the `teamcity.hg.agent.path` parameter.
 

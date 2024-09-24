@@ -43,7 +43,7 @@ Description
 
 TeamCity searches the following locations for the `settings.xml` file (listed in order of priority):
 
-1. `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/pluginData/maven/settings.xml`
+1. [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/pluginData/maven/settings.xml`
 2. `<User Home>/.m2/settings.xml` (The home directory of the user under whom the TeamCity server process runs is used)
 
 
@@ -69,7 +69,7 @@ Uploaded settings name
 
 <td>
 
-TeamCity automatically uses the specified file content both on the server and agents. Maven settings are defined on the project level: the __Project Settings__ | __Maven Settings__ tab. The settings are stored in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/projects/<projectID>/pluginData/mavenSettings` directory.
+TeamCity automatically uses the specified file content both on the server and agents. Maven settings are defined on the project level: the __Project Settings__ | __Maven Settings__ tab. The settings are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<projectID>/pluginData/mavenSettings` directory.
 
 <note>
 

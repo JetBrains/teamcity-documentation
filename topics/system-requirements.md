@@ -41,7 +41,7 @@ TeamCity will scale to utilize whatever amount of memory there is: for example, 
 
 #### Disk
 
-The performance of a TeamCity server highly depends on the disk performance. As TeamCity stores large amounts of data under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` (most notably, VCS caches and build results), it is important to ensure that the access to the disk is fast (in particular, reading/writing files in multiple threads and listing files with attributes).
+The performance of a TeamCity server highly depends on the disk performance. As TeamCity stores large amounts of data under [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system` (most notably, VCS caches and build results), it is important to ensure that the access to the disk is fast (in particular, reading/writing files in multiple threads and listing files with attributes).
 
 If you plan to store the Data Directory on a network drive, you need to ensure that it has good performance. However, we highly recommend using local storage for the `<TeamCity Data Directory>/system/caches` directory. See also: notes on [choosing the Data Directory location](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location).
 
@@ -149,7 +149,7 @@ This section contains a checklist of recommendations on tweaking the TeamCity se
 * Use a separate server for the external database. Monitor the database performance.
 * Monitor the server's CPU and I/O performance. Increase hardware resources as necessary.
 * Make sure [clean-up](teamcity-data-clean-up.md) is configured for all the projects with a due retention policy. Check __Administration | Clean-Up__ to make sure that the clean-up is performed regularly.
-* Consider ensuring good I/O performance for the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory: for example, move it to a separate local drive.
+* Consider ensuring good I/O performance for the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` directory: for example, move it to a separate local drive.
 * Regularly [archive](archiving-projects.md) obsolete projects.
 * Regularly review the installed not bundled plugins and remove those not essential for the server operation.
 * Consider using [agent-side checkout](vcs-checkout-mode.md) whenever possible.

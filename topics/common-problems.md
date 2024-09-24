@@ -39,7 +39,7 @@ Assuming you have a configured build in TeamCity which is failing, do the follow
 * run the build with a command line as you would do on a developer machine. This is runner-dependent. (For some runners you can look up the command line used by TeamCity in the build log, see also the `logs\teamcity-agent.log` file for the command line used by TeamCity)
 * if the build fails — investigate the reason as the issue is probably not TeamCity-related and should be investigated on the machine.
 * if it runs OK, continue
-* in the same console window `cd` to `<[TeamCity agent home](agent-home-directory.md)>/bin` and start TeamCity agent from there with the `agent start` command
+* in the same console window `cd` to [`<TeamCity agent home>`](agent-home-directory.md)`/bin` and start TeamCity agent from there with the `agent start` command
 * ensure the runner settings in TeamCity are appropriate and should generate the same command line as you used manually. For example, use the _Command Line_ build step with the _Custom script_ option and the same command which can be saved in a `.sh` or `.bat` file and run from the command prompt
 * run the build in TeamCity selecting the agent in the Run custom build dialog
 * when finished, enable the agent
@@ -104,8 +104,8 @@ If during the TeamCity server start-up you encounter errors like: _"error in scr
 
 Here is a way to attempt a manual database restore:
 * stop the TeamCity server
-* back up the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file
-* remove the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/buildserver.data` file and replace it with zero-size file of the same name
+* back up the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/buildserver.data` file
+* remove the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/buildserver.data` file and replace it with zero-size file of the same name
 * start the TeamCity server
 
 However, if the database does not recover automatically, chances that it can be fixed manually are minimal.
@@ -189,7 +189,7 @@ To fix a problem, perform the following steps:
 1. Create a new database with the appropriate character set and collation. We recommend using a __unicode case-sensitive__ collation: see instructions for [PostgreSQL](set-up-external-database.md#On+PostgreSQL+Server+Side) and [MySQL](set-up-external-database.md#On+MySQL+Server+Side). For MySQL, `utf8_bin` or `utf8mb4_bin` is preferred.  
     See also [PostgreSQL](https://www.postgresql.org/docs/9.3/static/multibyte.html), [MySQL](http://dev.mysql.com/doc/refman/5.0/en/charset-mysql.html), [MS SQL](http://technet.microsoft.com/en-us/library/ms180175(v=sql.105).aspx) documentation for details on character set.
     
-2. Copy the current `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file, and change the database references in the copy to the newly created database.
+2. Copy the current [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file, and change the database references in the copy to the newly created database.
 3. Stop the TeamCity server.
 4. Use the `maintainDB` tool to migrate to the new database:
 
@@ -199,7 +199,7 @@ To fix a problem, perform the following steps:
     ```
     Depending on the size of your database, the migration may take from several minutes to several hours. For more information on the `maintainDB tool`, see [this section](migrating-to-external-database.md#Full+Migration).
 
-5. Upon the successful completion of the database migration, the `maintainDB` tool should update the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/database.properties` file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
+5. Upon the successful completion of the database migration, the `maintainDB` tool should update the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file with references to the new database. Ensure that the file has been updated. Edit the file manually if the tool fails to do it automatically.
 6. Start the TeamCity server.
 
 #### MySQL exception: Specified key was too long; max key length is 767 bytes 
@@ -445,7 +445,7 @@ To solve the problem, do the following:
 
 To run TeamCity with the required JRE, do one of the following:
     * either set the `TEAMCITY_JRE` environment variable
-    * or remove the JRE bundled with TeamCity from `<[TeamCity home](teamcity-home-directory.md)>\jre` and set `JAVA_HOME`.  
+    * or remove the JRE bundled with TeamCity from [`<TeamCity home>`](teamcity-home-directory.md)`\jre` and set `JAVA_HOME`.  
     
 <note>
 

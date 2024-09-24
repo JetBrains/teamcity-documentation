@@ -51,7 +51,7 @@ For each imported or merged project, the configuration files are imported to the
 
 The following files are imported:
 * Configuration xml files for the Project with its Build Configurations, Templates, and VCS Roots as well as its subprojects.
-* All files from the `<[TeamCity Data Directory](teamcity-data-directory.md)>/plugins` directory.
+* All files from the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/plugins` directory.
 * Build Numbers files for the newly added build configurations.
 
 ### Importing users and groups

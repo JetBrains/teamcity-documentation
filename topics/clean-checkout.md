@@ -21,7 +21,7 @@ If you set a specific directory as the Build Checkout Directory (instead of usin
 
 </note>
 
-TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up](teamcity-data-clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the UI or by deleting the `<[TeamCity Data Directory](teamcity-data-directory.md)>/system/caches` directory.
+TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up](teamcity-data-clean-up.md). To resolve problems with sources update, the caches may need to be reset manually using the __[Diagnostics | Caches](teamcity-monitoring-and-diagnostics.md#Caches)__ tab in the UI or by deleting the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` directory.
 {instance="tc"}
 
 TeamCity maintains an internal cache for the sources to optimize communications with the VCS server. The caches are reset during the [clean-up](teamcity-data-clean-up.md).

@@ -117,7 +117,7 @@ This is the directory set as current for the build process. By default, the &lt;
 
 <td>
 
-If you have installed TeamCity using the `.exe` or `tar.gz` distribution, the path to the directory is `<[TeamCity Home](teamcity-home-directory.md)>/webapps/ROOT`, by default.
+If you have installed TeamCity using the `.exe` or `tar.gz` distribution, the path to the directory is [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/ROOT`, by default.
 
 </td>
 </tr>

@@ -5,7 +5,7 @@ TeamCity allows mapping patterns in VCS change comments to arbitrary HTML pieces
 
 To configure mapping:
 
-1. Navigate to the file `<[TeamCity Data Directory](teamcity-data-directory.md)>\config\main-config.xml`.
+1. Navigate to the file [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\main-config.xml`.
 2. Locate section `<comment-transformation>`, or create one under the `<server>` tag, if it doesn't exist (you may refer to the `main-config.dtd` file for the XML structure definition).
 3. Specify the search and replace patterns. For example, you can use the following pattern for enabling JIRA integration:
 

@@ -5,24 +5,24 @@
 
 To apply a patch for `vss-native.exe`:
 1. Shut down the TeamCity server.
-2. Open the  `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/plugins/vss/` or `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/lib/` directory.
+2. Open the  [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/plugins/vss/` or [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/lib/` directory.
 3. Back up the `vss-support.jar` file.
 4. Inside the `vss-support.jar` file, replace the `/bin/vss-native.exe` with the new one.
 5. Start the server.
 
 To apply a full VSS plugin patch:
 1. Shut down the TeamCity server.
-2. Open `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/plugins/vss/` or `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/lib/`.
+2. Open [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/plugins/vss/` or [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/lib/`.
 3. Back up `vss-support.jar`.
 4. Replace `vss-support.jar` with the new one.
 5. Start the server.
 
 ### Capturing Logs From VSS-native
 
-Each time TeamCity starts, it creates a new instance of the `vss-native.exe` file and places it into the `<[TeamCity Home](teamcity-home-directory.md)>/temp` directory. The name of the copy is generated automatically and uses the following template: `TC-VSS-NATIVE-<some digits>.exe`.
+Each time TeamCity starts, it creates a new instance of the `vss-native.exe` file and places it into the [`<TeamCity Home>`](teamcity-home-directory.md)`/temp` directory. The name of the copy is generated automatically and uses the following template: `TC-VSS-NATIVE-<some digits>.exe`.
 
 To manually enable detailed logging (for debugging purposes) for VSS Native:
-1. Copy the `<[TeamCity Home](teamcity-home-directory.md)>/temp/TC-VSS-NATIVE-<some digits>.exe` file to any directory.
+1. Copy the [`<TeamCity Home>`](teamcity-home-directory.md)`/temp/TC-VSS-NATIVE-<some digits>.exe` file to any directory.
 2. Run the program with the `/log` switch.
 
 To get the command line syntax and options reference, run the program without any switch.
@@ -38,7 +38,7 @@ To apply a patch for `tfs-native.exe`:
 
 To apply a full Azure DevOps plugin patch:
 1. Shut down the TeamCity server.
-2. Open `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/plugins/tfs/` or `<[TeamCity Home](teamcity-home-directory.md)>/webapps/root/WEB-INF/lib/`.
+2. Open [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/plugins/tfs/` or [`<TeamCity Home>`](teamcity-home-directory.md)`/webapps/root/WEB-INF/lib/`.
 3. Back up `tfs-support.jar`.
 4. Replace `tfs-support.jar` with the new one.
 5. Start the server.

@@ -13,7 +13,7 @@ To see the report, open __Administration| Disk Usage__.
 
 The report contains information on the total free disk space and the amount of space taken by build artifacts and build logs.
 
-The default location for these directories is `<[TeamCity Data Directory](teamcity-data-directory.md)>/system`. If build logs and artifacts directories are [located on different disks](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location), free space is reported for each of the disks.
+The default location for these directories is [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system`. If build logs and artifacts directories are [located on different disks](teamcity-data-directory.md#Recommendations+as+to+choosing+Data+Directory+Location), free space is reported for each of the disks.
 {instance="tc"}
 
 The report also displays [pinned builds](build-actions.md#Pin+Build), if available, and the space taken by their logs and artifacts.

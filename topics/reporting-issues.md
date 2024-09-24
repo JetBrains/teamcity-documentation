@@ -94,9 +94,9 @@ Then [send](feedback.md) us a detailed description of the issue accompanied with
 
 ### Server Thread Dump
 
-When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directories for all the recent dates.
+When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directories for all the recent dates.
 
-It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
+It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
@@ -110,7 +110,7 @@ For this the following [internal properties](server-startup-properties.md#TeamCi
 * `teamcity.diagnostics.periodicThreadDumps.count` - the number of thread dumps to save
 * `teamcity.diagnostics.periodicThreadDumps.period.ms` - the time in milliseconds to wait between each thread dump
 
-Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the `<[TeamCity Home](teamcity-home-directory.md)>/logs/threadDumps-<date>` directory.
+Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directory.
 
 ### Agent Thread Dump
 
@@ -147,7 +147,7 @@ If neither of these work for the server running as a service, try [running the s
 
 #### Under Linux
 
-* run `jstack <pid_of_java_process>` (using jstack from the Java installation as used by the process) or `kill -3 <pid_of_java_process>`. In the latter case output will appear in `<[TeamCity Home](teamcity-home-directory.md)>logs/catalina.out` or `<[TeamCity agent home](agent-home-directory.md)>/logs/error.log`.   
+* run `jstack <pid_of_java_process>` (using jstack from the Java installation as used by the process) or `kill -3 <pid_of_java_process>`. In the latter case output will appear in [`<TeamCity Home>`](teamcity-home-directory.md)`logs/catalina.out` or [`<TeamCity agent home>`](agent-home-directory.md)`/logs/error.log`.   
 
 See also [Server Performance](#Determine+Which+Process+Is+Slow) section above.
 
@@ -181,7 +181,7 @@ If you experience problems with TeamCity consuming too much memory or "OutOfMemo
 * If the problem is on the server's side, check you have increased memory settings from the default ones for using the server in production (see the [section](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)).
 * If the problem is on the build process' side, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
 * If the problem is on the TeamCity server's side and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
-  * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory (`<[TeamCity Home](teamcity-home-directory.md)>/bin` or `<[TeamCity Agent home](agent-home-directory.md)>/bin`);
+  * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory ([`<TeamCity Home>`](teamcity-home-directory.md)`/bin` or [`<TeamCity Agent home>`](agent-home-directory.md)`/bin`);
   * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity UI and click __Dump Memory Snapshot__.
   * another approach to take a memory dump manually is to use the `jmap` standard JVM command line utility of the full JVM installation of the same version as the Java used by the process. Example command line is:   
     
@@ -231,7 +231,7 @@ To enable VCS logging on the server side, [switch logging preset](teamcity-serve
 
 Most VCS operations occur on the TeamCity server, but if you're using the [agent-side checkout](vcs-checkout-mode.md#agent-checkout), VCS checkout occurs on the build agents.
 
-For the agent and the server, you can change the Log4j configuration manually in `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` or `<[BuildAgent home](agent-home-directory.md)>/conf/teamcity-agent-log4j.xml` files to include the following fragment:
+For the agent and the server, you can change the Log4j configuration manually in [`<TeamCity Home>`](teamcity-home-directory.md)`/conf/teamcity-server-log4j.xml` or [`<BuildAgent home>`](agent-home-directory.md)`/conf/teamcity-agent-log4j.xml` files to include the following fragment:
 
 ```Shell
 
@@ -274,7 +274,7 @@ Uncomment the SVN-related parts (the `SVN.LOG` appender and `javasvn.output` cat
 
 #### ClearCase
 
-Uncomment the Clearcase-related lines in the `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` file. The log will be saved to `logs/teamcity-clearcase.log` directory.
+Uncomment the Clearcase-related lines in the [`<TeamCity Home>`](teamcity-home-directory.md)`/conf/teamcity-server-log4j.xml` file. The log will be saved to `logs/teamcity-clearcase.log` directory.
 
 ## Patch Application Problems
 
@@ -290,7 +290,7 @@ To collect all build triggers debug logs in TeamCity 2021.1 and later, switch th
 
 In TeamCity versions before 2021.1, it is only possible to enable debug logging for a VCS trigger defined in a specific build configuration:
 
-1. Take a default logging preset file `<[TeamCity Home](teamcity-home-directory.md)>/conf/teamcity-server-log4j.xml` and save it with some other name under the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/_logging/` directory.
+1. Take a default logging preset file [`<TeamCity Home>`](teamcity-home-directory.md)`/conf/teamcity-server-log4j.xml` and save it with some other name under the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/_logging/` directory.
 2. Modify the resulting file as follows:
    * add a new appender to log VCS trigger related events to a separate file: 
    ```XML
@@ -321,7 +321,7 @@ To investigate process launch issues for [.NET-related runners](supported-platfo
 
 Aa alternative way to enable the logging is as follows:
 Add the `teamcity.agent.dotnet.debug=true` [configuration parameter](configuring-build-parameters.md) in the build configuration or on the agent and run the build.
-1. Open the `<[agent home](agent-home-directory.md)>/plugins/dotnetPlugin/bin` directory.
+1. Open the [`<agent home>`](agent-home-directory.md)`/plugins/dotnetPlugin/bin` directory.
 2. Make a backup copy of `teamcity-log4net.xml`.
 3. Replace `teamcity-log4net.xml` with the content of `teamcity-log4net-debug.xml`.
 
@@ -426,7 +426,7 @@ To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.
 ## JVM Crashes
 
 On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
-If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server home](teamcity-home-directory.md)>/bin` or `<[agent home](agent-home-directory.md)>/bin`.   
+If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually [`<TeamCity server home>`](teamcity-home-directory.md)`/bin` or [`<agent home>`](agent-home-directory.md)`/bin`.   
 Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](https://www.oracle.com/technetwork/java/javase/felog-138657.html).
 {instance="tc"}
 

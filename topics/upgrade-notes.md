@@ -2431,7 +2431,7 @@ Please note that the names of the projects and build configurations are no longe
 
 #### Project settings format on disk
 
-The format of the project settings storage on the disk under `<[TeamCity Data Directory](teamcity-data-directory.md)>/config` has been changed.   
+The format of the project settings storage on the disk under [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` has been changed.   
 If you used any tools to read or update `project-config.xml` files, you will need to update the tools. It is recommended to use REST API or TeamCity open API (Java) to make changes so that the tools are not hugely affected by the format change.
 
 #### Build Configuration templates

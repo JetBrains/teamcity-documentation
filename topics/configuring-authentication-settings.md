@@ -44,7 +44,7 @@ To switch to a different preconfigured scheme, use the __Load preset__ button.
 
 <tip instance="tc">
 
-Any changes made to authentication in the UI are reflected in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml>` file. 
+Any changes made to authentication in the UI are reflected in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/auth-config.xml>` file. 
 If using the UI is not possible (for example, you need to change the authentication settings before the server is started), 
 you can configure authentication settings in the &lt;TeamCity data directory&gt;/config/auth-config.xml file on the server machine as follows:
 
@@ -196,7 +196,7 @@ To disable new user registration on login:
 #### Linux-Specific Configuration
 
 If your TeamCity server runs under Linux, JCIFS library is used for the Windows domain login. This only supports Windows domain servers with SMB (SMBv1) enabled. SMB2 is not supported.  
-The library is configured using the properties specified in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/ntlm-config.properties` file. Changes to the file take effect immediately without the server restart.
+The library is configured using the properties specified in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/ntlm-config.properties` file. Changes to the file take effect immediately without the server restart.
 
 JCIFS library settings which cannot be changed in runtime or settings to affect HTTP NTLM settings can only be set via a properties' file passed via `-Djcifs.properties` JVM option.
 
@@ -216,7 +216,7 @@ Please refer to the [dedicated page](ldap-integration.md).
 
 Please refer to [Accessing Server by HTTP](accessing-server-by-http.md) for details about the basic HTTP authentication.
 
->For information on configuring basic HTTP authentication directly in the `<[TeamCity Data Directory](teamcity-data-directory.md)>/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
+>For information on configuring basic HTTP authentication directly in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/auth-config.xml`, refer to the [earlier documentation version](https://confluence.jetbrains.com/display/TCD8/Configuring+Authentication+Settings).
 
 
 ### NTLM HTTP Authentication

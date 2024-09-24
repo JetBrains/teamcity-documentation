@@ -12,7 +12,7 @@ It is recommended to configure clean-up rules to remove obsolete builds and thei
 
 >If you want to apply one simple clean-up rule to all projects on the server, you can create it on a Root project level. To get predictable clean-up results, make sure to read about the [rules' specifics](#Clean-up+Rules) before configuring them.
 
-Clean-up deletes the data stored under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
+Clean-up deletes the data stored under [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
 {instance="tc"}
 
 <note instance="tc">
