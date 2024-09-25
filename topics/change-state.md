@@ -45,7 +45,7 @@ Even if a change has been successfully integrated into a build, the change will 
 
 <td>
 
-![running_green_transparent.gif](running_green_transparent.gif)
+![running_green_transparent.png](running_green_transparent.png)
 
 </td>
 
@@ -63,7 +63,7 @@ The change is being integrated into a build that is running successfully.
 
 <td>
 
-![success_small.gif](success_small.gif)
+![success_small.gif](success_small.png)
 
 </td>
 
@@ -81,7 +81,7 @@ The change was integrated into a build that finished successfully.
 
 <td>
 
-![running_red_transparent.gif](running_red_transparent.gif)
+![running_red_transparent.gif](running_red_transparent.png)
 
 </td>
 
@@ -157,7 +157,7 @@ The change is scheduled to be integrated into a personal build that is currently
 
 <td>
 
-![personalRunning_green.gif](personalRunning_green.gif)
+![personalRunning_green.gif](personalRunning_green.png)
 
 </td>
 
@@ -193,7 +193,7 @@ The change was integrated into a personal build that finished successfully.
 
 <td>
 
-![personalRunning_red.gif](personalRunning_red.gif)
+![personalRunning_red.gif](personalRunning_red.png)
 
 </td>
 
