@@ -1,17 +1,5 @@
 # Server Administrator Guide
 
-<snippet id="guides-intro">
-
-TeamCity is a powerful and scalable CI/CD solution, adaptable for businesses of any size — from small teams with simple setups to large enterprises managing thousands of build agents running diverse configurations. Whether your team consists of just a few people sharing equal responsibilities or a larger group with specialized roles, tasks typically fall into three main categories:
-
-* **Server administration** — involves configuring and maintaining the core TeamCity infrastructure, including the TeamCity server, nodes, build agents (both cloud and local), proxies, databases, and more. Server admins also manage user access and handle maintenance routines like backups and cleanups.
-
-* **Project administration** — focuses on creating and managing projects and build configurations, integrating TeamCity with external services (such as version control systems, artifact storage, and image registries), and setting up user permissions for individual projects.
-
-* **Regular operations** — daily tasks of running builds (whether through the TeamCity UI or an IDE), tracking and investigating build results, and more.
-
-</snippet>
-
 This section focuses on **Server administration**. To learn more about other aspects of TeamCity, refer to the [](project-administrator-guide.md) and [](user-guide.md) sections.
 
 ## Major Concepts

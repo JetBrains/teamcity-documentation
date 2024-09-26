@@ -3,6 +3,7 @@
 <instance-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.topic" status="release">
 	<toc-element toc-title="TeamCity On-Premises Documentation Home" topic="teamcity-documentation.topic"/>
 
+	<toc-element topic="start-here.md"/>
 
 	<toc-element toc-title="Update Center">
 		<toc-element topic="what-s-new-in-teamcity.md">
