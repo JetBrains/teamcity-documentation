@@ -8,6 +8,81 @@
 		<toc-element topic="what-s-new-in-teamcity.md">
 			<toc-element topic="teamcity-2024-11-release-notes.md"/>
 		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2024-07.md">
+			<toc-element hidden="true" topic="teamcity-2024-07-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2024-07-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2024-07-2-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2024-03.md">
+			<toc-element hidden="true" topic="teamcity-2024-03-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2024-03-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2024-03-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2024-03-3-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2023-11.md">
+			<toc-element hidden="true" topic="teamcity-2023-11-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-11-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-11-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-11-3-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-11-4-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-11-5-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2023-05.md">
+			<toc-element hidden="true" topic="teamcity-2023-05-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-3-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-4-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-5-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2023-05-6-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2022-10.md">
+			<toc-element hidden="true" topic="teamcity-2022-10-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-3-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-4-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-5-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-10-6-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2022-04.md">
+			<toc-element hidden="true" topic="teamcity-2022-04-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-3-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-4-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-5-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-6-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2022-04-7-release-notes.md"/>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2021-2.md">
+			<toc-element hidden="true" topic="teamcity-2021-2-release-notes.md">
+				<toc-element hidden="true" topic="teamcity-2021-2-1-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2021-2-2-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2021-2-3-release-notes.md"/>
+			</toc-element>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2020-2.md">
+			<toc-element hidden="true" topic="teamcity-2020-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2020-2-1-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2020-2-2-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2020-2-3-release-notes.md"/>
+			<toc-element hidden="true" topic="teamcity-2020-2-4-release-notes.md"/>
+			<toc-element hidden="true" topic="what-s-new-in-teamcity-2021-1.md">
+				<toc-element topic="teamcity-2021-1-release-notes.md"/>
+				<toc-element topic="teamcity-2021-1-1-release-notes.md"/>
+				<toc-element topic="teamcity-2021-1-2-release-notes.md"/>
+				<toc-element topic="teamcity-2021-1-3-release-notes.md"/>
+				<toc-element topic="teamcity-2021-1-4-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2018-2-4-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2019-1-5-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2019-2-4-release-notes.md"/>
+				<toc-element hidden="true" topic="teamcity-2020-1-5-release-notes.md"/>
+			</toc-element>
+		</toc-element>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2019.2.md"/>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2019.1.md"/>
+		<toc-element hidden="true" topic="what-s-new-in-teamcity-2020-1.md"/>
 		<toc-element accepts-web-file-names-ref="upgrade" topic="upgrading-teamcity-server-and-agents.md"/>
 		<toc-element accepts-web-file-names-ref="upgrade-dsl" topic="upgrading-dsl.md"/>
 		<toc-element topic="upgrade-notes.md"/>
@@ -24,7 +99,7 @@
 	</toc-element>
 
 
-	<toc-element toc-title="Server Administrator Guide">
+	<toc-element topic="server-administrator-guide.md">
 		<toc-element toc-title="Prerequisites">
 			<toc-element topic="system-requirements.md"/>
 			<toc-element topic="supported-platforms-and-environments.md">
@@ -41,6 +116,8 @@
 			<toc-element topic="configure-server-installation.md">
 				<toc-element accepts-web-file-names-ref="server-startup-properties" topic="server-startup-properties.md"/>
 			</toc-element>
+			<toc-element topic="teamcity-data-directory.md"/>
+			<toc-element topic="teamcity-home-directory.md"/>
 			<toc-element topic="teamcity-maintenance-mode.md"/>
 		</toc-element>
 
@@ -152,6 +229,219 @@
 	</toc-element>
 
 
+	<toc-element topic="project-administrator-guide.md">
+		<toc-element toc-title="Managing Projects">
+			<toc-element topic="creating-and-editing-projects.md"/>
+			<toc-element topic="project-export.md"/>
+			<toc-element topic="projects-import.md"/>
+			<toc-element topic="configuring-vcs-settings.md">
+				<toc-element topic="configuring-vcs-roots.md">
+					<toc-element topic="guess-settings-from-repository-url.md"/>
+					<toc-element topic="cvs.md"/>
+					<toc-element topic="git.md">
+						<toc-element topic="ssh-keys-management.md"/>
+					</toc-element>
+					<toc-element topic="mercurial.md"/>
+					<toc-element topic="perforce.md"/>
+					<toc-element topic="starteam.md"/>
+					<toc-element topic="subversion.md"/>
+					<toc-element accepts-web-file-names="azure-devops.html" topic="team-foundation-version-control.md"/>
+					<toc-element topic="configuring-vcs-post-commit-hooks-for-teamcity.md"/>
+				</toc-element>
+				<toc-element topic="working-with-feature-branches.md">
+					<toc-element topic="branch-filter.md"/>
+				</toc-element>
+				<toc-element topic="vcs-checkout-rules.md"/>
+				<toc-element topic="vcs-checkout-mode.md"/>
+			</toc-element>
+			<toc-element topic="configuring-connections.md">
+				<toc-element topic="configuring-connections-to-docker.md"/>
+			</toc-element>
+			<toc-element topic="storing-project-settings-in-version-control.md">
+				<toc-element topic="kotlin-dsl.md"/>
+			</toc-element>
+			<toc-element topic="ordering-projects-and-build-configurations.md"/>
+			<toc-element topic="configuring-cross-server-projects-pop-up-menu.md"/>
+			<toc-element topic="archiving-projects.md"/>
+			<toc-element topic="customizing-statistics-charts.md"/>
+			<toc-element topic="configuring-artifacts-storage.md">
+				<toc-element topic="storing-build-artifacts-in-amazon-s3.md"/>
+				<toc-element topic="artifacts-migration-tool.md"/>
+			</toc-element>
+		</toc-element>
+		<toc-element toc-title="Managing Build Configurations">
+			<toc-element topic="creating-and-editing-build-configurations.md">
+				<toc-element topic="configuring-general-settings.md"/>
+				<toc-element topic="changing-build-configuration-type.md">
+					<toc-element topic="composite-build-configuration.md"/>
+					<toc-element topic="deployment-build-configuration.md"/>
+				</toc-element>
+				<toc-element topic="changing-build-configuration-status.md"/>
+				<toc-element topic="nuget.md">
+					<toc-element topic="using-teamcity-as-nuget-feed.md"/>
+				</toc-element>
+				<toc-element topic="configuring-build-steps.md">
+					<toc-element accepts-web-file-names-ref="build-step-conditions" topic="build-step-execution-conditions.md"/>
+					<toc-element topic="working-with-meta-runner.md"/>
+					<toc-element topic="ant.md"/>
+					<toc-element topic="command-line.md"/>
+					<toc-element topic="c-script.md"/>
+					<toc-element topic="deployers.md">
+						<toc-element topic="smb-upload.md"/>
+						<toc-element topic="ftp-upload.md"/>
+						<toc-element topic="ssh-upload.md"/>
+						<toc-element topic="container-deployer.md"/>
+						<toc-element topic="ssh-exec.md"/>
+					</toc-element>
+					<toc-element topic="docker.md"/>
+					<toc-element topic="docker-compose.md"/>
+					<toc-element topic="dotcover-runner.md"/>
+					<toc-element topic="duplicates-finder-java.md"/>
+					<toc-element topic="duplicates-finder-resharper.md"/>
+					<toc-element topic="fxcop.md"/>
+					<toc-element topic="gradle.md"/>
+					<toc-element topic="qodana.md"/>
+					<toc-element topic="inspections.md"/>
+					<toc-element topic="inspections-resharper.md"/>
+					<toc-element topic="intellij-idea-project.md"/>
+					<toc-element hidden="true" topic="ipr-deprecated.md"/>
+					<toc-element topic="kotlin-script.md"/>
+					<toc-element topic="maven.md"/>
+					<toc-element topic="mspec.md"/>
+					<toc-element topic="nant.md"/>
+					<toc-element topic="net.md">
+						<toc-element topic="mono-support.md"/>
+						<toc-element toc-title="Deprecated .NET Runners">
+							<toc-element topic="msbuild.md"/>
+							<toc-element topic="net-process-runner.md"/>
+							<toc-element topic="visual-studio-2003.md"/>
+							<toc-element topic="visual-studio-sln.md"/>
+							<toc-element topic="visual-studio-tests.md">
+								<toc-element topic="mstest-support.md"/>
+							</toc-element>
+						</toc-element>
+					</toc-element>
+					<toc-element topic="nodejs.md"/>
+					<toc-element topic="nuget-installer.md"/>
+					<toc-element topic="nuget-pack.md"/>
+					<toc-element topic="nuget-publish.md"/>
+					<toc-element topic="nunit.md">
+						<toc-element accepts-web-file-names-ref="nunit-support" topic="nunit-support.md"/>
+					</toc-element>
+					<toc-element topic="powershell.md"/>
+					<toc-element topic="python.md"/>
+					<toc-element topic="rake.md"/>
+					<toc-element topic="simple-build-tool-scala.md"/>
+					<toc-element topic="xcode-project.md"/>
+				</toc-element>
+				<toc-element topic="adding-build-features.md">
+					<toc-element topic="assemblyinfo-patcher.md"/>
+					<toc-element topic="automatic-merge.md"/>
+					<toc-element topic="aws-credentials.md"/>
+					<toc-element topic="build-approval.md"/>
+					<toc-element topic="build-files-cleaner-swabra.md"/>
+					<toc-element topic="build-cache.md"/>
+					<toc-element topic="commit-status-publisher.md"/>
+					<toc-element topic="docker-support.md"/>
+					<toc-element topic="file-content-replacer.md"/>
+					<toc-element topic="free-disk-space.md"/>
+					<toc-element topic="golang.md"/>
+					<toc-element topic="investigations-auto-assigner.md"/>
+					<toc-element topic="jira-cloud-integration.md"/>
+					<toc-element topic="matrix-build.md"/>
+					<toc-element topic="notifications.md"/>
+					<toc-element topic="nuget-feed-credentials.md"/>
+					<toc-element topic="nuget-packages-indexer.md"/>
+					<toc-element topic="performance-monitor.md"/>
+					<toc-element topic="pull-requests.md"/>
+					<toc-element topic="ruby-environment-configurator.md"/>
+					<toc-element topic="parallel-tests.md"/>
+					<toc-element topic="shared-resources.md"/>
+					<toc-element topic="ssh-agent.md"/>
+					<toc-element topic="vcs-labeling.md"/>
+					<toc-element topic="xml-report-processing.md"/>
+				</toc-element>
+				<toc-element topic="build-failure-conditions.md"/>
+				<toc-element topic="configuring-build-triggers.md">
+					<toc-element topic="configuring-vcs-triggers.md"/>
+					<toc-element topic="github-checks-trigger.md"/>
+					<toc-element topic="branch-remote-run-trigger.md"/>
+					<toc-element topic="configuring-schedule-triggers.md">
+						<toc-element topic="builds-schedule.md"/>
+					</toc-element>
+					<toc-element topic="configuring-maven-triggers.md"/>
+					<toc-element topic="nuget-dependency-trigger.md"/>
+					<toc-element topic="configuring-finish-build-trigger.md"/>
+					<toc-element topic="configuring-retry-build-trigger.md"/>
+					<toc-element topic="perforce-shelve-trigger.md"/>
+				</toc-element>
+				<toc-element topic="configuring-dependencies.md">
+					<toc-element topic="artifact-dependencies.md"/>
+					<toc-element topic="snapshot-dependencies.md"/>
+					<toc-element topic="build-dependencies-setup.md"/>
+				</toc-element>
+				<toc-element topic="configuring-agent-requirements.md"/>
+				<toc-element topic="untrusted-builds.md"/>
+			</toc-element>
+			<toc-element topic="copy-move-delete-build-configuration.md"/>
+			<toc-element topic="assigning-build-configurations-to-specific-build-agents.md"/>
+			<toc-element topic="detaching-build-from-agent.md"/>
+			<toc-element topic="configuring-build-parameters.md">
+				<toc-element topic="using-build-parameters.md"/>
+				<toc-element accepts-web-file-names-ref="levels-and-priority-of-parameters" topic="levels-and-priority-of-build-parameters.md"/>
+				<toc-element topic="typed-parameters.md"/>
+				<toc-element topic="predefined-build-parameters.md"/>
+				<toc-element topic="use-parameters-in-build-chains.md"/>
+			</toc-element>
+		</toc-element>
+		<toc-element accepts-web-file-names-ref="configuring-test-reports-and-code-coverage" topic="configuring-test-reports-and-code-coverage.md">
+			<toc-element topic="net-testing-frameworks-support.md"/>
+			<toc-element topic="java-testing-frameworks-support.md"/>
+			<toc-element topic="configuring-.net-code-coverage.md">
+				<toc-element topic="jetbrains-dotcover.md"/>
+				<toc-element topic="ncover.md"/>
+				<toc-element topic="partcover.md"/>
+				<toc-element topic="manually-configuring-reporting-coverage.md"/>
+			</toc-element>
+			<toc-element topic="configuring-java-code-coverage.md">
+				<toc-element topic="intellij-idea.md"/>
+				<toc-element topic="emma.md"/>
+				<toc-element topic="jacoco.md"/>
+			</toc-element>
+			<toc-element topic="importing-arbitrary-coverage-results-to-teamcity.md"/>
+			<toc-element topic="reporting-test-metadata.md"/>
+			<toc-element topic="including-third-party-reports-in-the-build-results.md"/>
+			<toc-element topic="running-risk-group-tests-first.md"/>
+		</toc-element>
+	</toc-element>
+
+
+	<toc-element topic="user-guide.md">
+		<toc-element toc-title="TeamCity UI">
+			<toc-element toc-title="Sakura UI" accepts-web-file-names="teamcity-experimental-ui.html" topic="teamcity-sakura-ui.md"/>
+			<toc-element toc-title="Project, Build, and Configuration Icons" topic="build-state.md"/>
+			<toc-element toc-title="Change Icons" topic="change-state.md"/>
+		</toc-element>
+		<toc-element accepts-web-file-names-ref="managing-builds" topic="managing-builds.md">
+			<toc-element accepts-web-file-names-ref="build-actions" topic="build-actions.md"/>
+			<toc-element topic="running-custom-build.md"/>
+			<toc-element topic="personal-build.md"/>
+			<toc-element topic="pre-tested-delayed-commit.md"/>
+			<toc-element topic="remote-debug.md"/>
+			<toc-element topic="remote-run.md"/>
+			<toc-element accepts-web-file-names-ref="working-with-build-queue" topic="working-with-build-queue.md"/>
+		</toc-element>
+		<toc-element accepts-web-file-names-ref="working-with-build-results" topic="working-with-build-results.md">
+			<toc-element topic="project-home-page.md"/>
+			<toc-element accepts-web-file-names-ref="build-configuration-home-page" topic="build-configuration-home-page.md"/>
+			<toc-element accepts-web-file-names-ref="build-results-page" topic="build-results-page.md"/>
+			<toc-element topic="build-log.md"/>
+			<toc-element topic="viewing-user-changes-in-builds.md"/>
+			<toc-element accepts-web-file-names-ref="viewing-tests-and-configuration-problems" topic="investigating-and-muting-build-failures.md"/>
+			<toc-element topic="statistic-charts.md"/>
+			<toc-element topic="difference-viewer.md"/>
+		</toc-element>
+	</toc-element>
 
 
 
@@ -159,12 +449,7 @@
 
 
 
-
-
-
-
-
-	<toc-element topic="getting-started-with-teamcity.md">
+	<toc-element hidden="true" topic="getting-started-with-teamcity.md">
 		<toc-element topic="continuous-integration-with-teamcity.md"/>
 		<toc-element topic="quick-setup-guide.md"/>
 		<toc-element topic="configure-and-run-your-first-build.md"/>
@@ -178,7 +463,7 @@
 			<toc-element topic="jenkins-to-teamcity-migration-guidelines.md"/>
 		</toc-element>
 	</toc-element>
-	<toc-element topic="introduction-to-teamcity-terminology.md">
+	<toc-element hidden="true" topic="introduction-to-teamcity-terminology.md">
 		<toc-element topic="glossary.md"/>
 		<toc-element topic="agent-cloud-profile.md"/>
 		<toc-element topic="agent-home-directory.md"/>
@@ -200,299 +485,10 @@
 		<toc-element topic="notifier.md"/>
 		<toc-element topic="project.md"/>
 		<toc-element topic="revision.md"/>
-		<toc-element topic="teamcity-data-directory.md"/>
-		<toc-element topic="teamcity-home-directory.md"/>
+
 		<toc-element topic="vcs-root.md"/>
 	</toc-element>
-	<toc-element toc-title="Installation and Upgrade">
 
-
-
-
-
-
-
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2024-07.md">
-			<toc-element hidden="true" topic="teamcity-2024-07-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2024-07-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2024-07-2-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2024-03.md">
-			<toc-element hidden="true" topic="teamcity-2024-03-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2024-03-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2024-03-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2024-03-3-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2023-11.md">
-			<toc-element hidden="true" topic="teamcity-2023-11-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-11-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-11-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-11-3-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-11-4-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-11-5-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2023-05.md">
-			<toc-element hidden="true" topic="teamcity-2023-05-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-3-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-4-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-5-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2023-05-6-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2022-10.md">
-			<toc-element hidden="true" topic="teamcity-2022-10-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-3-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-4-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-5-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-10-6-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2022-04.md">
-			<toc-element hidden="true" topic="teamcity-2022-04-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-3-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-4-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-5-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-6-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2022-04-7-release-notes.md"/>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2021-2.md">
-			<toc-element hidden="true" topic="teamcity-2021-2-release-notes.md">
-				<toc-element hidden="true" topic="teamcity-2021-2-1-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2021-2-2-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2021-2-3-release-notes.md"/>
-			</toc-element>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2020-2.md">
-			<toc-element hidden="true" topic="teamcity-2020-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2020-2-1-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2020-2-2-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2020-2-3-release-notes.md"/>
-			<toc-element hidden="true" topic="teamcity-2020-2-4-release-notes.md"/>
-			<toc-element hidden="true" topic="what-s-new-in-teamcity-2021-1.md">
-				<toc-element topic="teamcity-2021-1-release-notes.md"/>
-				<toc-element topic="teamcity-2021-1-1-release-notes.md"/>
-				<toc-element topic="teamcity-2021-1-2-release-notes.md"/>
-				<toc-element topic="teamcity-2021-1-3-release-notes.md"/>
-				<toc-element topic="teamcity-2021-1-4-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2018-2-4-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2019-1-5-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2019-2-4-release-notes.md"/>
-				<toc-element hidden="true" topic="teamcity-2020-1-5-release-notes.md"/>
-			</toc-element>
-		</toc-element>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2019.2.md"/>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2019.1.md"/>
-		<toc-element hidden="true" topic="what-s-new-in-teamcity-2020-1.md"/>
-	</toc-element>
-
-	<toc-element toc-title="Managing Projects">
-		<toc-element topic="creating-and-editing-projects.md"/>
-		<toc-element topic="project-export.md"/>
-		<toc-element topic="projects-import.md"/>
-		<toc-element topic="configuring-vcs-settings.md">
-			<toc-element topic="configuring-vcs-roots.md">
-				<toc-element topic="guess-settings-from-repository-url.md"/>
-				<toc-element topic="cvs.md"/>
-				<toc-element topic="git.md">
-					<toc-element topic="ssh-keys-management.md"/>
-				</toc-element>
-				<toc-element topic="mercurial.md"/>
-				<toc-element topic="perforce.md"/>
-				<toc-element topic="starteam.md"/>
-				<toc-element topic="subversion.md"/>
-				<toc-element accepts-web-file-names="azure-devops.html" topic="team-foundation-version-control.md"/>
-				<toc-element topic="configuring-vcs-post-commit-hooks-for-teamcity.md"/>
-			</toc-element>
-			<toc-element topic="working-with-feature-branches.md">
-				<toc-element topic="branch-filter.md"/>
-			</toc-element>
-			<toc-element topic="vcs-checkout-rules.md"/>
-			<toc-element topic="vcs-checkout-mode.md"/>
-		</toc-element>
-		<toc-element topic="configuring-connections.md">
-			<toc-element topic="configuring-connections-to-docker.md"/>
-		</toc-element>
-		<toc-element topic="storing-project-settings-in-version-control.md">
-			<toc-element topic="kotlin-dsl.md"/>
-		</toc-element>
-		<toc-element topic="ordering-projects-and-build-configurations.md"/>
-		<toc-element topic="configuring-cross-server-projects-pop-up-menu.md"/>
-		<toc-element topic="archiving-projects.md"/>
-		<toc-element topic="customizing-statistics-charts.md"/>
-		<toc-element topic="configuring-artifacts-storage.md">
-			<toc-element topic="storing-build-artifacts-in-amazon-s3.md"/>
-			<toc-element topic="artifacts-migration-tool.md"/>
-		</toc-element>
-	</toc-element>
-	<toc-element toc-title="Managing Build Configurations">
-		<toc-element topic="creating-and-editing-build-configurations.md">
-			<toc-element topic="configuring-general-settings.md"/>
-			<toc-element topic="changing-build-configuration-type.md">
-				<toc-element topic="composite-build-configuration.md"/>
-				<toc-element topic="deployment-build-configuration.md"/>
-			</toc-element>
-			<toc-element topic="changing-build-configuration-status.md"/>
-			<toc-element topic="nuget.md">
-				<toc-element topic="using-teamcity-as-nuget-feed.md"/>
-			</toc-element>
-			<toc-element topic="configuring-build-steps.md">
-				<toc-element accepts-web-file-names-ref="build-step-conditions" topic="build-step-execution-conditions.md"/>
-				<toc-element topic="working-with-meta-runner.md"/>
-				<toc-element topic="ant.md"/>
-				<toc-element topic="command-line.md"/>
-				<toc-element topic="c-script.md"/>
-				<toc-element topic="deployers.md">
-					<toc-element topic="smb-upload.md"/>
-					<toc-element topic="ftp-upload.md"/>
-					<toc-element topic="ssh-upload.md"/>
-					<toc-element topic="container-deployer.md"/>
-					<toc-element topic="ssh-exec.md"/>
-				</toc-element>
-				<toc-element topic="docker.md"/>
-				<toc-element topic="docker-compose.md"/>
-				<toc-element topic="dotcover-runner.md"/>
-				<toc-element topic="duplicates-finder-java.md"/>
-				<toc-element topic="duplicates-finder-resharper.md"/>
-				<toc-element topic="fxcop.md"/>
-				<toc-element topic="gradle.md"/>
-				<toc-element topic="qodana.md"/>
-				<toc-element topic="inspections.md"/>
-				<toc-element topic="inspections-resharper.md"/>
-				<toc-element topic="intellij-idea-project.md"/>
-				<toc-element hidden="true" topic="ipr-deprecated.md"/>
-				<toc-element topic="kotlin-script.md"/>
-				<toc-element topic="maven.md"/>
-				<toc-element topic="mspec.md"/>
-				<toc-element topic="nant.md"/>
-				<toc-element topic="net.md">
-					<toc-element topic="mono-support.md"/>
-					<toc-element toc-title="Deprecated .NET Runners">
-						<toc-element topic="msbuild.md"/>
-						<toc-element topic="net-process-runner.md"/>
-						<toc-element topic="visual-studio-2003.md"/>
-						<toc-element topic="visual-studio-sln.md"/>
-						<toc-element topic="visual-studio-tests.md">
-							<toc-element topic="mstest-support.md"/>
-						</toc-element>
-					</toc-element>
-				</toc-element>
-				<toc-element topic="nodejs.md"/>
-				<toc-element topic="nuget-installer.md"/>
-				<toc-element topic="nuget-pack.md"/>
-				<toc-element topic="nuget-publish.md"/>
-				<toc-element topic="nunit.md">
-					<toc-element accepts-web-file-names-ref="nunit-support" topic="nunit-support.md"/>
-				</toc-element>
-				<toc-element topic="powershell.md"/>
-				<toc-element topic="python.md"/>
-				<toc-element topic="rake.md"/>
-				<toc-element topic="simple-build-tool-scala.md"/>
-				<toc-element topic="xcode-project.md"/>
-			</toc-element>
-			<toc-element topic="adding-build-features.md">
-				<toc-element topic="assemblyinfo-patcher.md"/>
-				<toc-element topic="automatic-merge.md"/>
-				<toc-element topic="aws-credentials.md"/>
-				<toc-element topic="build-approval.md"/>
-				<toc-element topic="build-files-cleaner-swabra.md"/>
-				<toc-element topic="build-cache.md"/>
-				<toc-element topic="commit-status-publisher.md"/>
-				<toc-element topic="docker-support.md"/>
-				<toc-element topic="file-content-replacer.md"/>
-				<toc-element topic="free-disk-space.md"/>
-				<toc-element topic="golang.md"/>
-				<toc-element topic="investigations-auto-assigner.md"/>
-				<toc-element topic="jira-cloud-integration.md"/>
-				<toc-element topic="matrix-build.md"/>
-				<toc-element topic="notifications.md"/>
-				<toc-element topic="nuget-feed-credentials.md"/>
-				<toc-element topic="nuget-packages-indexer.md"/>
-				<toc-element topic="performance-monitor.md"/>
-				<toc-element topic="pull-requests.md"/>
-				<toc-element topic="ruby-environment-configurator.md"/>
-				<toc-element topic="parallel-tests.md"/>
-				<toc-element topic="shared-resources.md"/>
-				<toc-element topic="ssh-agent.md"/>
-				<toc-element topic="vcs-labeling.md"/>
-				<toc-element topic="xml-report-processing.md"/>
-			</toc-element>
-			<toc-element topic="build-failure-conditions.md"/>
-			<toc-element topic="configuring-build-triggers.md">
-				<toc-element topic="configuring-vcs-triggers.md"/>
-				<toc-element topic="github-checks-trigger.md"/>
-				<toc-element topic="branch-remote-run-trigger.md"/>
-				<toc-element topic="configuring-schedule-triggers.md">
-					<toc-element topic="builds-schedule.md"/>
-				</toc-element>
-				<toc-element topic="configuring-maven-triggers.md"/>
-				<toc-element topic="nuget-dependency-trigger.md"/>
-				<toc-element topic="configuring-finish-build-trigger.md"/>
-				<toc-element topic="configuring-retry-build-trigger.md"/>
-				<toc-element topic="perforce-shelve-trigger.md"/>
-			</toc-element>
-			<toc-element topic="configuring-dependencies.md">
-				<toc-element topic="artifact-dependencies.md"/>
-				<toc-element topic="snapshot-dependencies.md"/>
-				<toc-element topic="build-dependencies-setup.md"/>
-			</toc-element>
-			<toc-element topic="configuring-agent-requirements.md"/>
-			<toc-element topic="untrusted-builds.md"/>
-		</toc-element>
-		<toc-element topic="copy-move-delete-build-configuration.md"/>
-		<toc-element topic="assigning-build-configurations-to-specific-build-agents.md"/>
-		<toc-element topic="detaching-build-from-agent.md"/>
-		<toc-element topic="configuring-build-parameters.md">
-			<toc-element topic="using-build-parameters.md"/>
-			<toc-element accepts-web-file-names-ref="levels-and-priority-of-parameters" topic="levels-and-priority-of-build-parameters.md"/>
-			<toc-element topic="typed-parameters.md"/>
-			<toc-element topic="predefined-build-parameters.md"/>
-			<toc-element topic="use-parameters-in-build-chains.md"/>
-		</toc-element>
-	</toc-element>
-	<toc-element accepts-web-file-names-ref="configuring-test-reports-and-code-coverage" topic="configuring-test-reports-and-code-coverage.md">
-		<toc-element topic="net-testing-frameworks-support.md"/>
-		<toc-element topic="java-testing-frameworks-support.md"/>
-		<toc-element topic="configuring-.net-code-coverage.md">
-			<toc-element topic="jetbrains-dotcover.md"/>
-			<toc-element topic="ncover.md"/>
-			<toc-element topic="partcover.md"/>
-			<toc-element topic="manually-configuring-reporting-coverage.md"/>
-		</toc-element>
-		<toc-element topic="configuring-java-code-coverage.md">
-			<toc-element topic="intellij-idea.md"/>
-			<toc-element topic="emma.md"/>
-			<toc-element topic="jacoco.md"/>
-		</toc-element>
-		<toc-element topic="importing-arbitrary-coverage-results-to-teamcity.md"/>
-		<toc-element topic="reporting-test-metadata.md"/>
-		<toc-element topic="including-third-party-reports-in-the-build-results.md"/>
-		<toc-element topic="running-risk-group-tests-first.md"/>
-	</toc-element>
-	<toc-element toc-title="Running Builds and Viewing Results">
-		<toc-element accepts-web-file-names-ref="managing-builds" topic="managing-builds.md">
-			<toc-element accepts-web-file-names-ref="build-actions" topic="build-actions.md"/>
-			<toc-element topic="running-custom-build.md"/>
-			<toc-element topic="personal-build.md"/>
-			<toc-element topic="pre-tested-delayed-commit.md"/>
-			<toc-element topic="remote-debug.md"/>
-			<toc-element topic="remote-run.md"/>
-			<toc-element accepts-web-file-names-ref="working-with-build-queue" topic="working-with-build-queue.md"/>
-		</toc-element>
-		<toc-element accepts-web-file-names-ref="working-with-build-results" topic="working-with-build-results.md">
-			<toc-element topic="project-home-page.md"/>
-			<toc-element accepts-web-file-names-ref="build-configuration-home-page" topic="build-configuration-home-page.md"/>
-			<toc-element accepts-web-file-names-ref="build-results-page" topic="build-results-page.md"/>
-			<toc-element topic="build-log.md"/>
-			<toc-element topic="viewing-user-changes-in-builds.md"/>
-			<toc-element accepts-web-file-names-ref="viewing-tests-and-configuration-problems" topic="investigating-and-muting-build-failures.md"/>
-			<toc-element topic="statistic-charts.md"/>
-			<toc-element topic="difference-viewer.md"/>
-		</toc-element>
-	</toc-element>
 	<toc-element topic="integrating-teamcity-with-other-tools.md">
 		<toc-element topic="integrating-teamcity-with-vcs-hosting-services.md"/>
 		<toc-element accepts-web-file-names-ref="integrating-teamcity-with-perforce" topic="integrating-teamcity-with-perforce.md">
@@ -537,16 +533,16 @@
 	</toc-element>
 	<toc-element toc-title="Reference">
 		<toc-element topic="how-to.md"/>
-		<toc-element topic="change-state.md"/>
+
 		<toc-element topic="cron-expressions-in-teamcity.md"/>
-		<toc-element topic="build-state.md"/>
+
 		<toc-element topic="identifier.md"/>
 		<toc-element topic="patterns-for-accessing-build-artifacts.md"/>
 		<toc-element topic="requirement-conditions.md"/>
 		<toc-element topic="search.md"/>
 		<toc-element topic="teamcity-specific-directories.md"/>
 		<toc-element topic="wildcards.md"/>
-		<toc-element accepts-web-file-names="teamcity-experimental-ui.html" topic="teamcity-sakura-ui.md"/>
+
 	</toc-element>
 
 	<toc-element topic="troubleshooting.md">
