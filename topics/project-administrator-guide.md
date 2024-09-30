@@ -60,16 +60,23 @@ Sections related to VCS roots are available in both project and configuration se
 
 <img src="dk-roots-in-projects-and-configs-v.png" alt="Root settings in projects and configs" width="706"/>
 
-However, configurations never own roots. You can "attach" a VCS root to a configuration, but roots are always stored in (owned by) projects. This technique leads to the following:
+However, configurations never own roots. You can "attach" a VCS root to a configuration, but roots are always stored in (owned by) projects. This technique results in the following:
 
-* Multiple build configurations can access the same repository with the same auth and checkout settings by sharing the same root;
-* Changing VCS root settings affects all configurations that use it;
+* Multiple build configurations can access the same repository with the same auth and checkout settings by sharing the same root.
+* Changing VCS root settings affects all configurations that use it.
 * When editing VCS root settings, you have an option to duplicate this root and store updated settings in this new clone, keeping the original root unchanged. This allows you to customize one build configuration but leave other configurations that share this root unaffected.
+
+Although a VCS root is an existential part of any build configuration that works with a remote repository, in many scenarios TeamCity generates roots automatically and does not require that you create them by hand for each new build configuration. See the [tutorial](#Tutorial%3A+Create+Your+First+Project+in+TeamCity) at the end of this document for an example.
+
+
 
 ## Build Chains
 
-How to link multiple separate configurations in one pipeline.
+???
 
+Snapshot vs artifact dependencies
+
+Related article: [](configuring-dependencies.md)
 
 ## Tutorial: Create Your First Project in TeamCity
 
