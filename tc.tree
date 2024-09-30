@@ -123,14 +123,17 @@
 		</toc-element>
 
 		<toc-element accepts-web-file-names-ref="install-and-start-agents" topic="install-and-start-teamcity-agents.md">
+			<toc-element topic="build-agent.md"/>
 			<toc-element topic="install-teamcity-agent.md"/>
 			<toc-element topic="start-teamcity-agent.md"/>
 			<toc-element accepts-web-file-names-ref="configure-agent-installation" topic="configure-agent-installation.md"/>
 			<toc-element toc-title="Set Up Agent Pools" accepts-web-file-names-ref="configuring-agent-pools" topic="configuring-agent-pools.md"/>
+			<toc-element topic="agent-home-directory.md"/>
 			<toc-element topic="configure-java-for-agent.md"/>
 			<toc-element topic="install-multiple-agents-on-one-machine.md"/>
 			<toc-element topic="agent-docker-images.md"/>
 			<toc-element topic="teamcity-integration-with-cloud-solutions.md">
+				<toc-element topic="agent-cloud-profile.md"/>
 				<toc-element topic="setting-up-teamcity-for-amazon-ec2.md"/>
 				<toc-element topic="setting-up-teamcity-for-kubernetes.md"/>
 				<toc-element topic="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md"/>
@@ -376,6 +379,7 @@
 					<toc-element topic="configuring-retry-build-trigger.md"/>
 					<toc-element topic="perforce-shelve-trigger.md"/>
 				</toc-element>
+				<toc-element topic="build-chain.md"/>
 				<toc-element topic="configuring-dependencies.md">
 					<toc-element topic="artifact-dependencies.md"/>
 					<toc-element topic="snapshot-dependencies.md"/>
@@ -387,6 +391,7 @@
 			<toc-element topic="copy-move-delete-build-configuration.md"/>
 			<toc-element topic="assigning-build-configurations-to-specific-build-agents.md"/>
 			<toc-element topic="detaching-build-from-agent.md"/>
+			<toc-element topic="build-configuration-template.md"/>
 			<toc-element topic="configuring-build-parameters.md">
 				<toc-element topic="using-build-parameters.md"/>
 				<toc-element accepts-web-file-names-ref="levels-and-priority-of-parameters" topic="levels-and-priority-of-build-parameters.md"/>
@@ -466,17 +471,16 @@
 	</toc-element>
 	<toc-element hidden="true" topic="introduction-to-teamcity-terminology.md">
 		<toc-element topic="glossary.md"/>
-		<toc-element topic="agent-cloud-profile.md"/>
-		<toc-element topic="agent-home-directory.md"/>
+
 		<toc-element topic="agentless-build-step.md"/>
 		<toc-element topic="agent-requirements.md"/>
 		<toc-element topic="agent-work-directory.md"/>
 		<toc-element topic="authentication-modules.md"/>
-		<toc-element topic="build-agent.md"/>
+
 		<toc-element topic="build-artifact.md"/>
-		<toc-element topic="build-chain.md"/>
+
 		<toc-element topic="build-checkout-directory.md"/>
-		<toc-element topic="build-configuration-template.md"/>
+
 		<toc-element topic="build-runner.md"/>
 		<toc-element topic="build-working-directory.md"/>
 		<toc-element topic="change.md"/>
