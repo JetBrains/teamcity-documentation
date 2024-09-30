@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2024.07.2 to 2024.07.3
+{id="2024.07.3"}
+
+* [REST API](teamcity-rest-api.md): to prevent users from being unable to access TeamCity, [disabling 2FA for a user](https://www.jetbrains.com/help/teamcity/rest/manage-2fa.html#Disable+2FA+for+a+user) now automatically refreshes a one-week grace period for this user.
+
 ## Changes from 2024.07.1 to 2024.07.2
 {id="2024.07.2"}
 
