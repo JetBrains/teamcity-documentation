@@ -12,8 +12,8 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version: TeamCity 2024.07.3
 
-Release date: ??? October 2024<br/>
-Build ???
+Release date: 1 October 2024<br/>
+Build 160765
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2024.07.3.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2024.07.3.tar.gz)
