@@ -1,6 +1,84 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
+This tutorial walks you through the basic TeamCity features and explains how to set up a typical project.
+
+## Create a Project
+
+The majority of projects built in your TeamCity will be solutions actively developed by your teams, and as such, hosted on your personal or organization VCS accounts. Refer to [Option 1](#Option+1%3A+From+Your+Repository) to learn how to set up a project that targets a repository owned by or shared with you.
+
+In some cases you may also want to set up a project that targets a third-party repository. If this repository is public, you can set up a project using a direct link. See [Option 2](#Option+2%3A+From+a+Third-Party+Public+Repository) for the details.
+
+### Option 1: From Your Repository
+
+1. The simplest way to create projects, configurations, and VCS roots is by utilizing a [connection to a VCS hosting](configuring-connections.md). This approach is particularly efficient when you intend to create multiple projects for repositories hosted under the same VCS account, as it saves you from repeatedly configuring the same access settings.
+
+   This tutorial utilizes a GitHub-hosted repository, so start by navigating to **Administration | Root Project | Connections** and creating a new [GitHub connection](configuring-connections.md#GitHub). You can choose between a GitHub App or GitHub OAuth connections.
+
+2. Fork the `https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples` repository to your personal account.
+
+3. Click the "+" icon next to the **Projects** menu item to navigate to the **Create Project** page.
+
+    <img src="dk-create-project-main.png" alt="Main new project menu" width="706"/>
+
+4. The **Create Project** page displays all available connections that you can utilize to access repositories. Click a **From GitHub.com** tile and TeamCity will display the list of all repositories owned by or shared with you.
+
+    <img src="dk-repositories-list.png" alt="Repositories list" width="706"/>
+
+5. Select your forked repository and leave all settings in their default state.
+
+   * Project and build configuration names are public names in TeamCity.
+   * Default branch is the specification for the primary repository branch.
+   * Branch specification is a pattern that specifies which branches TeamCity should track. The default `refs/heads/*` value allows TeamCity to monitor all regular branches.
+
+6. Click **Proceed** to continue to the [](#Set+Up+a+Build+Configuration) stage.
+
+
+
+### Option 2: From a Third-Party Public Repository
+
+
+## Set Up a Build Configuration
+
+
+
+## Build New Changes Automatically
+
+### Triggers
+
+### Webhooks
+
+
+## Configure Additional Build Features
+
+
+## Working with Pull Requests
+
+
+## Choose Agents to Run Your Builds
+
+
+## Configure Project Members
+
+
+## Set Up Notifications
+
+
+## Store Project Settings in a VCS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
 
 After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.

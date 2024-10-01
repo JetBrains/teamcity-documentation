@@ -234,6 +234,8 @@
 
 
 	<toc-element topic="project-administrator-guide.md">
+		<toc-element topic="configure-and-run-your-first-build.md"/>
+		<toc-element topic="create-pipeline.md"/>
 		<toc-element toc-title="Managing Projects">
 			<toc-element topic="creating-and-editing-projects.md"/>
 			<toc-element topic="project-export.md"/>
@@ -428,7 +430,7 @@
 			<toc-element toc-title="Project, Build, and Configuration Icons" topic="build-state.md"/>
 			<toc-element toc-title="Change Icons" topic="change-state.md"/>
 		</toc-element>
-		<toc-element accepts-web-file-names-ref="managing-builds" topic="managing-builds.md">
+		<toc-element topic="managing-builds.md">
 			<toc-element accepts-web-file-names-ref="build-actions" topic="build-actions.md"/>
 			<toc-element topic="running-custom-build.md"/>
 			<toc-element topic="personal-build.md"/>
@@ -458,8 +460,7 @@
 	<toc-element hidden="true" topic="getting-started-with-teamcity.md">
 		<toc-element topic="continuous-integration-with-teamcity.md"/>
 		<toc-element topic="quick-setup-guide.md"/>
-		<toc-element topic="configure-and-run-your-first-build.md"/>
-		<toc-element topic="create-pipeline.md"/>
+
 		<toc-element topic="deploy-build.md"/>
 		<toc-element topic="view-build-results.md"/>
 		<toc-element topic="solve-build-problems.md"/>

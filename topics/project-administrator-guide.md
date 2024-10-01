@@ -66,7 +66,7 @@ However, configurations never own roots. You can "attach" a VCS root to a config
 * Changing VCS root settings affects all configurations that use it.
 * When editing VCS root settings, you have an option to duplicate this root and store updated settings in this new clone, keeping the original root unchanged. This allows you to customize one build configuration but leave other configurations that share this root unaffected.
 
-Although a VCS root is an existential part of any build configuration that works with a remote repository, in many scenarios TeamCity generates roots automatically and does not require that you create them by hand for each new build configuration. See the [tutorial](#Tutorial%3A+Create+Your+First+Project+in+TeamCity) at the end of this document for an example.
+Although a VCS root is an existential part of any build configuration that works with a remote repository, in many scenarios TeamCity generates roots automatically and does not require that you create them by hand for each new build configuration. See [this tutorial](configure-and-run-your-first-build.md) for an example.
 
 
 
@@ -80,15 +80,4 @@ Related article: [](configuring-dependencies.md)
 
 ## Tutorial: Create Your First Project in TeamCity
 
-The majority of projects built in your TeamCity will be solutions actively developed by your teams, and as such, hosted on your personal or organization VCS accounts. Refer to [Option 1](#Option+1%3A+From+Your+Repository) to learn how to set up a project that targets a repository owned by or shared with you.
-
-In some cases you may also want to set up a project that targets a third-party repository. If this repository is public, you can set up a project using a direct link. See [Option 2](#Option+2%3A+From+a+Third+Party+Public+Repository) for the details.
-
-### Option 1: From Your Repository
-
-- Create a connection first! No need to create roots manually
-
-### Option 2: From a Third Party Public Repository
-
-
-### Run Your First Build
+The [](configure-and-run-your-first-build.md) tutorial walks you through the main stages of setting up a TeamCity project: establishing a VCS connection, setting up build actions, configuring additional features, assigning users to this project, and more.
