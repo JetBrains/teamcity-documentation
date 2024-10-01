@@ -25,11 +25,11 @@ The pipeline above cycles through the following stages:
 
 ## Import Sample Project
 
-This tutorial uses a sample project with five separate build configurations which we are about to connect. To follow the tutorial, you can use the [sample repository](https://github.com/JetBrains/TodoApp-NoChain-KTS) and repeat the steps below on your TeamCity server.
+This tutorial uses a sample project with five separate build configurations which we are about to connect. To follow the tutorial, you can use the [sample repository](https://github.com/JetBrains/Gradle-Docker-Pipeline-TeamCity-Samples) and repeat the steps below on your TeamCity server.
 
 To import the sample project:
 1. Go to __Administration | Projects__ and click __Create project__.
-2. In the _Repository URL_ field, enter the [sample repo URL](https://github.com/JetBrains/TodoApp-NoChain-KTS) and click __Proceed__.
+2. In the _Repository URL_ field, enter the [sample repo URL](https://github.com/JetBrains/Gradle-Docker-Pipeline-TeamCity-Samples) and click __Proceed__.
 3. TeamCity will detect the `.teamcity/settings.kts` file, which corresponds to a TeamCity project's settings saved in [Kotlin format](kotlin-dsl.md). Leave the default settings and proceed.
 
    > Choose import without synchronization when prompted. Otherwise, your project can become [non-editable via TeamCity UI](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS).
