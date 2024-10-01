@@ -96,3 +96,14 @@ This tab displays [notification rules](adding-notification-rules.md) for the use
 ## Adding Multiple Users to Group
 
 On the __Administration | Users__ page, select users, click the __Add to groups__ button at the bottom, and specify the groups to add the users to. Note that all these users will inherit the roles defined for the group.
+
+
+## Block and Remove Users
+
+Currently, there is no functionality that allows you to temporarily suspend user accounts. However, you can achieve a similar effect by revoking all of a user's permissions, effectively preventing them from viewing projects or performing any significant actions. For instance, the default TeamCity **All Users** group does not have any roles assigned. If you leave it as is, users who are only part of this group, without any additional roles, will still be able to log in but won't have access to any projects.
+
+<img src="dk-empty-tc.png" alt="Empty TeamCity UI for users with no permissions" width="706"/>
+
+When someone leaves your organization, be sure to delete their user account. This is particularly crucial if you have multiple [authentication modules](authentication-modules.md) configured. While removing users from Google, GitHub, GitLab, or other linked platforms will stop them from logging in through those accounts, they could still access TeamCity using the standard username/password method unless their user account is completely removed.
+
+<img src="dk-remove-user.png" alt="Delete user account" width="706"/>
