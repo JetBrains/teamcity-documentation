@@ -1,19 +1,21 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (auxiliary-id: Configure and Run Your First Build)
 
-This tutorial walks you through the basic TeamCity features and explains how to set up a typical project.
+This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 
-## Create a Project
+To configure and run your first build, complete the [](#Create+a+TeamCity+Project) and [](#Set+Up+a+Build+Configuration) sections. The remaining sections are optional but worth reviewing to familiarize yourself with key TeamCity concepts and features.
 
-The majority of projects built in your TeamCity will be solutions actively developed by your teams, and as such, hosted on your personal or organization VCS accounts. Refer to [Option 1](#Option+1%3A+From+Your+Repository) to learn how to set up a project that targets a repository owned by or shared with you.
+## Create a TeamCity Project
+
+The majority of projects built in your TeamCity will be solutions actively developed by your teams, and as such, hosted on your organization or individual VCS accounts. Refer to [Option 1](#Option+1%3A+From+Your+Repository) to learn how to set up a project that targets a repository owned by or shared with you.
 
 In some cases you may also want to set up a project that targets a third-party repository. If this repository is public, you can set up a project using a direct link. See [Option 2](#Option+2%3A+From+a+Third-Party+Public+Repository) for the details.
 
 ### Option 1: From Your Repository
 
-1. The simplest way to create projects, configurations, and VCS roots is by utilizing a [connection to a VCS hosting](configuring-connections.md). This approach is particularly efficient when you intend to create multiple projects for repositories hosted under the same VCS account, as it saves you from repeatedly configuring the same access settings.
+1. The simplest way to create projects, configurations, and VCS roots is by utilizing a permanent [connection to a VCS hosting](configuring-connections.md). This approach is particularly efficient when you intend to create multiple projects for repositories hosted under the same VCS account, as it saves you from repeatedly configuring the same access settings.
 
-   This tutorial utilizes a GitHub-hosted repository, so start by navigating to **Administration | Root Project | Connections** and creating a new [GitHub connection](configuring-connections.md#GitHub). You can choose between a GitHub App or GitHub OAuth connections.
+   This tutorial utilizes a GitHub-hosted repository, so start by navigating to **Administration | Root Project | Connections** and creating a new [GitHub.com connection](configuring-connections.md#GitHub). You can choose between a GitHub App or GitHub OAuth connections.
 
 2. Fork the `https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples` repository to your personal account.
 
@@ -34,11 +36,64 @@ In some cases you may also want to set up a project that targets a third-party r
 6. Click **Proceed** to continue to the [](#Set+Up+a+Build+Configuration) stage.
 
 
+To create more TeamCity projects that target repositories hosted under the same account, skip the first step. This workflow allows you to set up authorization settings only once, when configuring a TeamCity-to-VCS connection, and then reuse this connection as often as needed.
+
+Further reading: [](configuring-connections.md)
+
 
 ### Option 2: From a Third-Party Public Repository
 
+1. Click the "+" icon next to the **Projects** menu item to navigate to the **Create Project** page.
+
+    <img src="dk-create-project-main.png" alt="Main new project menu" width="706"/>
+
+2. Click the **From a repository URL** tile and enter `https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples` to the **Repository URL** field.
+
+     <img src="CreateProject1.png" alt="Create a project from a repository URL, Step 1" width="706"/>
+
+     The target repository is public and available without authentication, so leave the rest of the properties unchanged and click **Proceed**.
+
+     > Note that you can also insert a repository URL in SSH format: `git@github.com:JetBrains/Maven-Configuration-TeamCity-Samples.git`. TeamCity recognizes such URLs and automatically switches the **Authentication** from "Password / Access token" to "SSH key". In this case you will need to provide a valid SSH key to continue.
+     >    
+     > For the sake of this tutorial, keep using the default HTTPS address. We will switch to a more secure SSH option in the [](#Change+VCS+Root+Settings) section.
+     > 
+     {style="tip"}
+
+3. The next page allows you to set up basic project settings:
+
+    * Project and build configuration names are public names in TeamCity.
+    * Default branch is the specification for the primary repository branch.
+    * Branch specification is a pattern that specifies which branches TeamCity should track. The default `refs/heads/*` value allows TeamCity to monitor all regular branches.
+
+    You can leave the default values for all fields and click **Proceed** to continue to the [](#Set+Up+a+Build+Configuration) stage.
+
+
+
 
 ## Set Up a Build Configuration
+
+
+A project does not perform any building routines, all build actions are configured inside a build configuration. For that reason, TeamCity creates an empty build configuration (with the default "Build" name) along with any new project.
+
+After you set core project and configuration settings at the end of the [](#Create+a+TeamCity+Project) stage, TeamCity brings you to the **Build Steps** page of build configuration settings. TeamCity scans the remote repository to identify the application type and suggest corresponding build steps.
+
+<img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706"/>
+
+You can check the suggested step and click **Use selected**, or add your custom steps:
+
+1. Navigate to configuration settings (**Administration | &lt;Your Configuration&gt;**) and click **Build Steps** in the side menu.
+2. Click **Add build step** and choose a required step type. Since this sample tutorial targets the Java application with Maven, choose "Maven" from the list and type a required command in the **Goals** field (for example, `clean test`).
+
+    > You can perform almost any build action using the **Command Line** step, which runs custom scripts on the agent machine's terminal. For example, creating a CLI step with the command `mvn clean test` in the **Custom script** field will perform the same actions as a Maven step.
+    > 
+    > Command Line steps are ideal for basic system operations (like creating or deleting files and folders) and interacting with custom software installed on agent machines. However, if you're using build tools that have corresponding TeamCity steps (such as Maven, Gradle, .NET, Ant, Node.js, and so on), we recommend using those specific steps. They are tailored to match the build tool and offer unique settings that simplify configuration.
+    {style="tip"} 
+
+3. In step settings, click **Show advanced settings** to view available options. For example, you may want to change [step execution conditions](build-step-execution-conditions.md). By default, steps are executed one after another and if one step fails, the following steps are automatically skipped. This setting allows you to change this default behavior.
+
+Further reading: [](configuring-build-steps.md)
+
+## Change VCS Root Settings
 
 
 
