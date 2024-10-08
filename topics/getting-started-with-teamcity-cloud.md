@@ -48,5 +48,6 @@ Comparing to On-Premises, TeamCity Cloud offers the following new features:
   * [Unity Support](https://plugins.jetbrains.com/plugin/11453-unity-support) for building Unity projects
   * [GitHub Commit Hooks](https://plugins.jetbrains.com/plugin/9179-github-commit-hooks) to easily install GitHub webhooks via the TeamCity UI
   * [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) helps easily free disk space
+  * [Octopus Deploy integration](https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration) for triggering Octopus Deploy deployments after a build
 
 All the listed features will be introduced in our On-Premises version in the nearest future.
