@@ -280,6 +280,61 @@ When viewing your build configuration settings in the UI, you can click __View a
 
 This is especially useful if you need to add some build feature or trigger to your DSL scripts and you're not sure how DSL code should look like.
 
+
+## Add Custom Kotlin Libraries
+
+TeamCity allows you to upload custom `.jar` libraries that extend the default Kotlin syntax. For example, assume you have a custom library that declares the custom `MyBuildType` class inherited from a standard [BuildType](https://teamcity.jetbrains.com/app/dsl-documentation/root/build-type/index.html?query=BuildType) class.
+
+```Kotlin
+package src.main.kotlin.builds
+
+public open class MyBuildType : jetbrains.buildServer.configs.kotlin.BuildType {
+    // ...
+}
+```
+
+In TeamCity, navigate to **Administration | DSL Libraries** and click **Upload DSL Library**. This invokes a dialog that allows you to upload `.jar` libraries and tag them with optional `groupId`, `artifactId`, and `version` Maven coordinates.
+
+<img src="custom-dsl-library-upload.png" width="706" alt="Upload custom Kotlin library"/>
+
+To start using a custom library, you also need to add a [Maven dependency](https://maven.apache.org/pom.html#dependencies) to it. Click **Snippet** to copy a statement...
+
+<img src="dk-copy-dependency.png" width="706" alt="Copy dependency statement"/>
+
+...and paste it to the `pom.xml` file of a required project.
+
+```XML
+<dependencies>
+    ...
+    <dependency>
+        <groupId>org.jetbrains.teamcity</groupId>
+        <artifactId>dsl-library</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
+After that you can start using objects from this library in your `.kts` settings.
+
+```Kotlin
+import src.main.kotlin.builds.MyBuildType
+
+version = "2024.11"
+
+val myConf = MyBuildType("Custom Build Type")
+
+project {
+    buildType(myConf)
+}
+
+// ...
+```
+
+
+
+
+
+
 ## Share Kotlin DSL Scripts
 
 One of the advantages of the portable DSL script is that the script can be used by more than one project on the same server or more than one server (hence the name: portable).

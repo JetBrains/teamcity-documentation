@@ -2,8 +2,16 @@
 
 <snippet id="2024-11-tc">
 
-## OP Feature
+## Upload Custom Kotlin Libraries
 {instance="tc"}
+
+Starting with this version, you can upload custom Kotlin libraries as `.jar` to you TeamCity server.
+
+<img src="custom-dsl-library-upload.png" width="706" alt="Upload custom Kotlin library"/>
+
+To start using these libraries in your project's [.kts files](kotlin-dsl.md), add Maven dependencies to required `pom.xml`s.
+
+Learn more: [](kotlin-dsl.md#Add+Custom+Kotlin+Libraries)
 
 
 ## Miscellaneous Changes
