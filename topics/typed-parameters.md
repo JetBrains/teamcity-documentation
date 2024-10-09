@@ -181,7 +181,7 @@ This method allows you to declare parameters available only for those build conf
 3. Push this file to the root directory of the target repository.
 4. Set up required [checkout settings](configuring-vcs-settings.md#Configure+Checkout+Rules) and ensure the file checks out to the [](build-working-directory.md).
 
-You can modify the name and path to the properties file via the `teamcity.default.properties` parameter of a build configuration. Its value should be relative to the repository's root directory path to the properties file. For example, `teamcity.default.properties=cicd/tc.default.properties`.
+You can use the `teamcity.default.properties` parameter of a build configuration to explicitly specify the name and path to the properties file. This path must be relative to the repository's root directory (for example, `teamcity.default.properties=cicd/tc.default.properties`).
 
 
 ## Examples
