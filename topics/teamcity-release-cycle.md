@@ -108,7 +108,7 @@ __TeamCity On-Premises End of Support__
 
 <td>
 
-Occurs with the release of two or three newer major versions. The exact date depends on the frequency of releases, but as a general rule, this happens a year after the initial release date. At this point, we stop providing regular technical support for the On-Premises release.
+A TeamCity version reaches the end-of-support stage after two newer major releases were rolled out. This means our support engineers try to reproduce issues on the `current`, `current-1`, and `current-2` versions. Although we put our best effort to resolve user issues regardless of their TeamCity version, the general guideline for issues reported in older versions is to update to at least `current-2` whenever possible.
 
 </td>
 
