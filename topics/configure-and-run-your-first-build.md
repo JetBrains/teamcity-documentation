@@ -21,7 +21,7 @@ You can watch a quick video guide or read the full tutorial below.
 There are several ways to create a project in TeamCity: automatically from a repository URL, from a connection to a specific VCS, or manually. In this tutorial, we will focus on the default and easiest way – _from a repository URL_. You will only need to provide a path to your repository — TeamCity will scan it and suggest some settings and potential build steps.
 
 >__Sample Repository__  
->To try out the setup flow with a sample project, you can use this [GitHub repository](https://github.com/mkjetbrains/SimpleMavenSample).  
+>To try out the setup flow with a sample project, you can use this [GitHub repository](https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples).  
 >Or, you can configure the first build based on your own project's sources. In this case, if TeamCity autodetects any build steps in it, we recommend that you read about [their available settings](configuring-build-steps.md) before running the build.
 >
 {style="note"}
@@ -31,7 +31,7 @@ Every TeamCity installation has the default __Root__ project that will contain a
 1. Click __Administration__ in the upper right corner of the TeamCity UI and then click __Create project__.
 2. On the __Create Project__ page, click __From a repository URL__ and paste the URL of your project's source repo as _Repository URL_. It can be a Git, Subversion, Perforce, Azure, or Mercurial repository. All supported URL formats are listed [here](guess-settings-from-repository-url.md#VCS+URL+Formats). To use our sample repo, enter:
    ```Shell
-   https://github.com/mkjetbrains/SimpleMavenSample
+   https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples
    ```
    If access to your repository is restricted, enter the credentials as well.
    <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line" style="block"/>
