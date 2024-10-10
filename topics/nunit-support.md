@@ -674,7 +674,7 @@ If you don't want TeamCity to replace the original `nunit2` task, consider the f
 * Configure reporting tests manually via [service messages](service-messages.md).
 * To disable `nunit2` task replacement, set the `teamcity.dotnet.nant.replaceTasks` [system property](configuring-build-parameters.md) to `false`.
 
-The `nunt2` task implementation in TeamCity supports additional options that can be specified either as NAnt `<property>` tasks in the build script, or as <emphasis tooltip="system-property">system properties</emphasis> under __Build Configuration | Build Parameters__.
+The `nunt2` task implementation in TeamCity supports additional options that can be specified either as NAnt `<property>` tasks in the build script, or as <tooltip term="system-property">_system properties_</tooltip> under __Build Configuration | Build Parameters__.
 
 The following options are supported for the TeamCity `<nunit2>` task implementation:
 
@@ -829,7 +829,7 @@ This section assumes that you already have an MSBuild build script with a config
 TeamCity provides a custom `NUnitTeamCity` task compatible with the `NUnit` task from [MSBuild Community tasks](https://github.com/loresoft/msbuildtasks) project. If you provide the `NUnitTeamCity` task in your build script, TeamCity will launch its own test runner based on the options specified within the task. Thus, you do not need to have any NUnit runner, because TeamCity will run the tests.
 
 To use the `NUnitTeamCity` task correctly:
-* Make sure the `teamcity_dotnet_nunitlauncher` <emphasis tooltip="system-property">system property</emphasis> is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) properties for more information.
+* Make sure the `teamcity_dotnet_nunitlauncher` <tooltip term="system-property">_system property_</tooltip> is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) properties for more information.
 * Configure your MSBuild build script with the `NUnitTeamCity` task using the following syntax:
    ```XML
    <UsingTask TaskName="NUnitTeamCity" AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)" />
@@ -1189,7 +1189,7 @@ The following example shows how to use the NUnit console runner with the TeamCit
 ```
 
 
-If you need to configure <emphasis tooltip="environment-variable">environment variables</emphasis> for NUnit explicitly, specify an environment variable with the value reference of `%\system.teamcity.dotnet.nunitaddin%`. See [this article](configuring-build-parameters.md) for details.
+If you need to configure <tooltip term="environment-variable">_environment variables_</tooltip> for NUnit explicitly, specify an environment variable with the value reference of `%\system.teamcity.dotnet.nunitaddin%`. See [this article](configuring-build-parameters.md) for details.
 
 __NUnit 2.4.8 Issue__  
 NUnit 2.4.8 has the following known issue: NUnit 2.4.8 runner tries to load an assembly according to the created `AssemblyName` object. However, the `addins` folder of NUnit 2.4.8 is not included in application probe paths. As a result, NUnit 2.4.8 fails to load any add-in in the console mode.   

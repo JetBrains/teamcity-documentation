@@ -70,7 +70,7 @@ Now, you can return to TeamCity and add a connection to JetBrains Space.
 
 ### Step 2: Establish Connection to JetBrains Space
 
->TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to connect any other project on the server. To make a connection available only in a certain project, you need to add it in this project.
+>TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <tooltip term="root-project">_Root project_</tooltip> level, this will allow using its settings to connect any other project on the server. To make a connection available only in a certain project, you need to add it in this project.
 
 To create a connection to your JetBrains Space instance:
 1. Go to __Project Settings | Connections__ and click __Add Сonnection__.
@@ -89,11 +89,11 @@ At this stage, you are free to access your JetBrains Space instance from the cur
 There are three ways to integrate a VCS repository with TeamCity:
 * Create a TeamCity _project_ based on a repository.
 * Create a _build configuration_ based on a repository in an existing TeamCity project.
-* Create a <emphasis tooltip="vcs-root">VCS root</emphasis> based on a repository in an existing TeamCity project.
+* Create a <tooltip term="vcs-root">_VCS root_</tooltip> based on a repository in an existing TeamCity project.
 
 We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — the procedure is similar.
 
-Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there.
+Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <tooltip term="root-project">_Root project_</tooltip>, go to __Administration | Projects__ and click __Create project__ there.
 
 You will notice the new button: __From JetBrains Space__. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo. To create a new project:
 

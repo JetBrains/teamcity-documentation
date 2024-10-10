@@ -85,7 +85,7 @@ Agents are manually enabled/disabled via the [web UI](build-agents-configuration
 
  Agent disabling does not affect (stop) the build which is currently running on the agent.
 
-__Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](running-custom-build.md)). This feature is generally used to temporarily remove agents from the <emphasis tooltip="build-grid">build grid</emphasis> to investigate agent-specific issues.
+__Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](running-custom-build.md)). This feature is generally used to temporarily remove agents from the <tooltip term="build-grid">_build grid_</tooltip> to investigate agent-specific issues.
 
 </td></tr></table>
 
