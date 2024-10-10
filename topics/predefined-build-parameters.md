@@ -58,7 +58,7 @@ These <tooltip term="system-property">_system properties_</tooltip> are unique f
 
 ## Predefined Agent Environment Parameters
 
-These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and adds the corresponding <tooltip term="system-property">_system properties_</tooltip> and <tooltip term="environment-variable">environment variables</emphasis>.
+These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and adds the corresponding <tooltip term="system-property">_system properties_</tooltip> and <tooltip term="environment-variable">_environment variables_</tooltip>.
 
 If an agent machine has additional software installed, system administrators can modify the `<Agent Home>/conf/buildAgent.properties` file to override values of corresponding parameters. 
 
