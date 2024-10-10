@@ -1,7 +1,7 @@
 [//]: # (title: Main Actions on Builds)
 [//]: # (auxiliary-id: Main Actions on Builds;Pinned Build;Build Tag;Changing Build Status Manually)
 
-This article describes what actions can be applied to <emphasis tooltip="build">builds</emphasis> in TeamCity.
+This article describes what actions can be applied to <tooltip term="build">_builds_</tooltip> in TeamCity.
 
 ## Run Build
 
@@ -11,7 +11,7 @@ TeamCity allows running builds:
 
 To run a build manually, click __Run__ in the upper right corner of the screen. This action is available in both __Build Configuration Settings__ and __Build Configuration Home__ modes. If the __Run__ button does not appear for a certain build configuration, it means you do not have enough permissions to start builds in it.
 
-The context menu next to the __Run__ button opens the build's settings menu, so you can initiate a <emphasis tooltip="custom-build-run">custom build run</emphasis>. A custom run allows using different settings or/and source code than if running a regular build in the current configuration. This is handy if you want to try different build parameters or pretest local code without affecting common build settings or committing the code to the common repository. Read more about this functionality [here](running-custom-build.md).
+The context menu next to the __Run__ button opens the build's settings menu, so you can initiate a <tooltip term="custom-build-run">_custom build run_</tooltip>. A custom run allows using different settings or/and source code than if running a regular build in the current configuration. This is handy if you want to try different build parameters or pretest local code without affecting common build settings or committing the code to the common repository. Read more about this functionality [here](running-custom-build.md).
 
 <img src="custom-run-menu.png" alt="Run Custom Build" width="460"/>
 
@@ -29,7 +29,7 @@ The following actions can be invoked from the single-build __Actions__ menu. To 
 
 ### Re-run Build
 
-This action will restart the current build only, omitting other builds in its <emphasis tooltip="build-chain">chain</emphasis> if any. It might be helpful if the build failed due to certain infrastructure problems.
+This action will restart the current build only, omitting other builds in its <tooltip term="build-chain">_chain_</tooltip> if any. It might be helpful if the build failed due to certain infrastructure problems.
 
 ### Remove Build
 
@@ -39,7 +39,7 @@ This action will delete the build from the list.
 
 You can pin a build to prevent it from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
-If the current build is a part of a <emphasis tooltip="build-chain">chain</emphasis> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
+If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
 
 A pinned build can be unpinned manually anytime.
 

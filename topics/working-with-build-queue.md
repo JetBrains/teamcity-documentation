@@ -14,7 +14,7 @@ This page shows the list of builds waiting to be run and displays the following 
 * Time to start: the estimated wait duration. Hovering over the estimated time value shows a tooltip with the following information:
     * Expected start/finish time.
     * The link to the planned agent.
-    * If the current build is a part of a <emphasis tooltip="build-chain">build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip.
+    * If the current build is a part of a <tooltip term="build-chain">_build chain_</tooltip> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip.
 * A brief description of the [event that triggered the build](configuring-build-triggers.md).
 * The number of agents compatible with this build configuration. You can click an agent's name link to open the __[Agents](viewing-build-agent-details.md)__ page, or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
 
