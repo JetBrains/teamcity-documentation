@@ -108,7 +108,7 @@ __TeamCity On-Premises End of Support__
 
 <td>
 
-Occurs with the release of two or three newer major versions. The exact date depends on the frequency of releases, but as a general rule, this happens a year after the initial release date. At this point, we stop providing regular technical support for the On-Premises release.
+Occurs with the release of two newer major versions. At this point, we stop providing regular technical support for the On-Premises release.
 
 </td>
 
