@@ -29,12 +29,6 @@ The dates of all previous releases and the sequence of TeamCity versions are lis
 
 ## Release Stages
 
->Since version 2021.12, TeamCity adopts a new scheme of releases. We are discontinuing a former Early Access Program in favor of frequent and stable TeamCity Cloud releases, in which all features will be polished and ready to be used in production, but tested only in the Cloud environment.
-> 
->The TeamCity Cloud infrastructure allows releasing new features more frequently than in On-Premises: they are now rolled out to the Cloud instances bimonthly. On-Premises instances can be upgraded to a new major version twice a year, exactly as before.
-> 
-{style="note"}
-
 The default stages of a TeamCity release:
 
 <table>
@@ -56,7 +50,7 @@ __TeamCity Cloud Major Release__
 
 <td>
 
-This is the first official version where the new features are rolled out to. It is released approximately once in two months as `YYYY.MM`.
+This is the first official version where the new features are rolled out to. It is released approximately once in four months as `YYYY.MM`.
 
 See [TeamCity Cloud licensing policy](https://www.jetbrains.com/help/teamcity/cloud/teamcity-cloud-subscription-and-licensing.html).
 
@@ -74,7 +68,7 @@ __TeamCity On-Premises Major Release__
 
 <td>
 
-A major TeamCity On-Premises version is usually released every 4 months. There are multiple _minor (bugfix) releases_ following the major release. Bugfix releases and support patches for critical issues, if applicable, are provided until __End of Sale__ of the release.
+A major TeamCity On-Premises version is usually released every four months. There are multiple _minor (bugfix) releases_ following the major release. Bugfix releases and support patches for critical issues, if applicable, are provided until __End of Sale__ of the release.
 
 [Release download page](https://www.jetbrains.com/teamcity/download/)
 
