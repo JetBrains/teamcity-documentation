@@ -39,7 +39,7 @@ Server build parameters are typically available as a system property and a corre
 
 ## Predefined Agent Build Parameters
 
-These <emphasis tooltip="system-property">system properties</emphasis> are unique for each build (for example, a path to a file that contains a list of changes). Their values are calculated on the agent side right before the build starts and then passed to the build.
+These <tooltip term="system-property">_system properties_</tooltip> are unique for each build (for example, a path to a file that contains a list of changes). Their values are calculated on the agent side right before the build starts and then passed to the build.
 
 
 <deflist>
@@ -58,7 +58,7 @@ These <emphasis tooltip="system-property">system properties</emphasis> are uniqu
 
 ## Predefined Agent Environment Parameters
 
-These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and adds the corresponding <emphasis tooltip="system-property">system properties</emphasis> and <emphasis tooltip="environment-variable">environment variables</emphasis>.
+These agent-specific parameters are defined on each build agent and vary depending on its environment. Aside from standard parameters (for example, `teamcity.agent.jvm.os.name` or `teamcity.agent.jvm.os.arch` provided by the JVM running on an agent), agents can have parameters based on their installed software. TeamCity automatically detects software like .NET Framework, Mono, or Visual Studio and adds the corresponding <tooltip term="system-property">_system properties_</tooltip> and <tooltip term="environment-variable">_environment variables_</tooltip>.
 
 If an agent machine has additional software installed, system administrators can modify the `<Agent Home>/conf/buildAgent.properties` file to override values of corresponding parameters. 
 
@@ -142,7 +142,7 @@ To check all existing parameters and their current values for a given build agen
 
 When a build agent starts, it detects the installed JDK and JRE and then defines Java-related environment variables as described [below](#Defining+Java-Related+Environment+Variables). If a started agent already has the Java-related environment variables set, they are not redefined.
 
-These variables can be used in build scripts as usual <emphasis tooltip="environment-variable">environment variables</emphasis>.
+These variables can be used in build scripts as usual <tooltip term="environment-variable">_environment variables_</tooltip>.
 
 #### Detecting Java on Agent
 
