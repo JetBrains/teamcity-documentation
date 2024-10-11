@@ -62,9 +62,9 @@ Sections related to VCS roots are available in both project and configuration se
 
 However, configurations never own roots. You can "attach" a VCS root to a configuration, but roots are always stored in (owned by) projects. This technique results in the following:
 
-* Multiple build configurations can access the same repository with the same auth and checkout settings by sharing the same root.
-* Changing VCS root settings affects all configurations that use it.
-* When editing VCS root settings, you have an option to duplicate this root and store updated settings in this new clone, keeping the original root unchanged. This allows you to customize one build configuration but leave other configurations that share this root unaffected.
+* A VCS root can be attached to multiple configurations, meaning that multiple build configurations can access the same repository with the same auth and checkout settings.
+* A single configuration may have multiple VCS roots attached, which allows you to work with different repositories within one configuration.
+* Editing VCS roots affects all configurations that use it. When modifying VCS root settings, you have an option to duplicate this root and store updated settings in this new clone, keeping the original root unchanged. This allows you to customize one build configuration but leave other configurations that share this root unaffected.
 
 Although a VCS root is an existential part of any build configuration that works with a remote repository, in many scenarios TeamCity generates roots automatically and does not require that you create them by hand for each new build configuration. See [this tutorial](configure-and-run-your-first-build.md) for an example.
 
