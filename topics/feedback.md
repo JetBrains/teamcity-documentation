@@ -56,9 +56,7 @@ Please note that our support is restricted to TeamCity-specific issues and does 
 
 If you have an active TeamCity Cloud subscription and require your error report to remain private, please contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360003300299&product_type=teamcity_cloud){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E).
 
-We encourage you to post your questions in the forums, as it helps other users benefit from shared experiences. If you experience a delay in receiving a response on the forum, feel free to email us, referencing the forum post you created.
-
-Our support team works closely with the development team, so you may receive responses directly from the developer responsible for the relevant TeamCity feature. We provide technical support in English during business hours, 10:00-18:00 CET/CEST (Germany, [GMT+1/GMT+2](https://timeanddate.com/worldclock/city.html?n=168)).
+We encourage you to post your questions in the forums, as it helps other users benefit from shared experiences. If you experience a delay in receiving a response on the forum, feel free to email us, referencing the forum post you created. Our support team works closely with the development team, so you may receive responses directly from the developer responsible for the relevant TeamCity feature.
 
 We strive to respond promptly, usually within a few hours of receiving your issue (excluding [public holidays in Germany/Bavaria](https://publicholidays.de/bavaria/)). For urgent matters, please indicate the urgency in the subject line and explain its nature.
 
