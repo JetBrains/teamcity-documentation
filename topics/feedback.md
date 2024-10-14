@@ -36,7 +36,7 @@ When submitting a request, make sure:
 {instance="tc"}
 
 ## Licensed Users Support
-{instance="tc"}
+{id="Licensed+Users+Support" instance="tc"}
 
 You can contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E) if you own a TeamCity Enterprise server license with the active maintenance period and need the error report not to be publicly available. Only [two latest major TeamCity releases](teamcity-release-cycle.md) and their bugfix updates are covered by our support.
 
@@ -49,6 +49,21 @@ If you own more than 30 agent licenses and have an urgent issue affecting your T
 If you do not receive a reply within 48 hours, please check your spam filter and feel free to repeat the message referencing the previous one. 
 
 Please note that our support is restricted to TeamCity-specific issues and does not cover issues related to third-party TeamCity plugins, inappropriate environment configuration for a server application, and so on.
+
+
+## Licensed Users Support
+{id="Licensed+Users+Support+Cloud" instance="tcc"}
+
+If you have an active TeamCity Cloud subscription and require your error report to remain private, please contact us via the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=360003300299&product_type=teamcity_cloud){nullable="true"} or [email](mailto:teamcity-support@jetbrains.com?body=Affected%20TeamCity%20version:%20%3Cversion%20and%20build%20number%3E).
+
+We encourage you to post your questions in the forums, as it helps other users benefit from shared experiences. If you experience a delay in receiving a response on the forum, feel free to email us, referencing the forum post you created.
+
+Our support team works closely with the development team, so you may receive responses directly from the developer responsible for the relevant TeamCity feature. We provide technical support in English during business hours, 10:00-18:00 CET/CEST (Germany, [GMT+1/GMT+2](https://timeanddate.com/worldclock/city.html?n=168)).
+
+We strive to respond promptly, usually within a few hours of receiving your issue (excluding [public holidays in Germany/Bavaria](https://publicholidays.de/bavaria/)). For urgent matters, please indicate the urgency in the subject line and explain its nature.
+
+
+Please note that our support is limited to TeamCity-specific issues and does not extend to third-party plugins or custom tools installed on self-hosted agents.
 
 ## Data Security
 
