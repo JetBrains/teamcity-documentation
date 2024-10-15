@@ -114,7 +114,7 @@ Limit the set of branches the trigger should be applied to.
 
 [Retry build triggers](configuring-retry-build-trigger.md)
 
-</td>
+</td> 
 
 <td>
 
@@ -299,7 +299,7 @@ The `<parameter>=<value>` expressions are combined using the logical `AND` opera
 >
 {style="note"}
 
--->
+
 
 ### Wildcards and Patterns
 
@@ -370,7 +370,7 @@ object Build : BuildType({
   }
 })
 ```
-
+-->
 
 
 
