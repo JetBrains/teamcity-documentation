@@ -173,17 +173,17 @@ Now comes the actual deployment step! Up until now, we have built our project bu
 
 That's quite a bit, right? Let's go through this command:
 	
-* _"C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe"_ is the path to the msdeploy.exe which has to be available on the build agent.
+* `"C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe"` is the path to the msdeploy.exe which has to be available on the build agent.
 	
-* _\-source:package='artifacts\WebDeploy\&lt;target environment&gt;\AcmeCompany.Portal.zip'_ specifies the deployment package we want to upload
+* `-source:package='artifacts\WebDeploy\<target environment>\AcmeCompany.Portal.zip'` specifies the deployment package we want to upload
 	
-* _\-dest:auto,computerName="https://&lt;windows azure web site web publishURL&gt;:443/msdeploy.axd?site=&lt;windows azure web site name&gt;",userName="&lt;deployment user name&gt;",password="&lt;deployment password&gt;",authtype="Basic",includeAcls="False"_ specifies the URL to the deployment service. For Windows Azure Web Sites, this will be in the aforementioned format. For IIS, this may be different (see Sayed Ibrahim Ashimi's excellent post on [WebDeploy parameters](http://sedodream.com/2012/08/20/WebDeployMSDeployHowToSyncAFolder.aspx))
+* `-dest:auto,computerName="https://<windows azure web site web publish URL>:443/msdeploy.axd?site=<windows azure web site name>",userName="<deployment user name>",password="<deployment password>",authtype="Basic",includeAcls="False"` specifies the URL to the deployment service. For Windows Azure Web Sites, this will be in the aforementioned format. For IIS, this may be different (see Sayed Ibrahim Ashimi's excellent post on [WebDeploy parameters](http://sedodream.com/2012/08/20/WebDeployMSDeployHowToSyncAFolder.aspx))
 	
-* _\-verb:sync_ tells WebDeploy to synchronize only changed files (this will drastically reduce deployment time as not all files will be uploaded for every deployment)
+* `-verb:sync` tells WebDeploy to synchronize only changed files (this will drastically reduce deployment time as not all files will be uploaded for every deployment)
 	
-* _\-disableLink:AppPoolExtension \-disableLink:ContentExtension \-disableLink:CertificateExtension_ are used to disable certain configuration steps on the remote machine. These may be different for your environment, see [MSDN for a complete list](http://technet.microsoft.com/en-us/library/dd569028(v=ws.10).aspx).
+* `-disableLink:AppPoolExtension -disableLink:ContentExtension -disableLink:CertificateExtension` are used to disable certain configuration steps on the remote machine. These may be different for your environment, see [MSDN for a complete list](http://technet.microsoft.com/en-us/library/dd569028(v=ws.10).aspx).
 	
-* _\-setParamFile:"msdeploy\parameters\&lt;target environment&gt;\AcmeCompany.Portal.SetParameters.xml"_ is an important one. It specifies the WebDeploy parameters that will be replaced in the deployed Web.config file on the remote server, for example the connection string. More on this file in a second.
+* `-setParamFile:"msdeploy\parameters\<target environment>\AcmeCompany.Portal.SetParameters.xml"` is an important one. It specifies the WebDeploy parameters that will be replaced in the deployed Web.config file on the remote server, for example the connection string. More on this file in a second.
 
 The parameters file passed to the _msdeploy.exe_ has to be created somehow. We've seen the build artifacts for our CI build contained a copy of this file and that one can be used if deployment secrets (such as the production database connection string) are available in source control. We probably don't want this, at least not in the same source control root our developers are all using.
 
