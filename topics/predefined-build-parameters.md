@@ -92,6 +92,7 @@ To check all existing parameters and their current values for a given build agen
 <def title="teamcity.agent.jvm.version">Java Virtual Machine implementation version. Reports a value of the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/System.html#getProperties()">corresponding JVM property</a>.</def>
 <def title="teamcity.agent.jvm.java.home">Java installation directory. See the following section for more information: <a href="#Java-Related+Environment+Variables">Java-Related Environment Variables</a>.</def>
 <def title="teamcity.agent.os.arch.bits">The agent's OS bitness.</def>
+<def title="teamcity.agent.ephemeral">Returns <b>true</b> for cloud agents whose "After the first build" terminate condition is enabled. Not reported for agents that can run multiple builds.</def>
 
 
 
