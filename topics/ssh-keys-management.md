@@ -24,7 +24,7 @@ Uploaded SSH keys are stored in the `<[TeamCity Data Directory](teamcity-data-di
 
 > Keep the access to the [TeamCity Data Directory](teamcity-data-directory.md) secure, as a server stores SSH keys in an unmodified/unencrypted form on the file system.
 >
-{type="note"}
+{style="note"}
 
 
 ## Generated SSH Keys
@@ -53,13 +53,13 @@ Once required SSH keys are uploaded, modify the VCS Root settings to select a ke
 
 > Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If your "Fetch URL" / "Push URL" in **Project Settings** are set to HTTPS (for instance, `https://github.com/...`), authorization with SSH keys is disabled.
 >
-{type="note"}
+{style="note"}
 
 > Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
 
 1. Go to the **Project Settings | VCS Roots** page and click the required root.
 2. In the **Authentication Settings** section, click the required "Private Key" option:
-   <include src="git.md" include-id="ssh-key-options"/>
+   <include from="git.md" element-id="ssh-key-options"/>
 
 <img src="dk-selectSshKeyOptions.png" width="706" alt="Select an SSH key"/>
 
@@ -73,7 +73,7 @@ If you configure the [agent-side checkout](vcs-checkout-mode.md#agent-checkout),
 
 > Keys are removed from agents for security reasons. For example, the tests executed by the build can leave some malicious code that will access the build agent file system and acquire the key. However, tests cannot get the key directly since it is removed by the time they are running. It makes it harder but not impossible to steal the key. Therefore, the agent must also be secure.
 >
-{type="note"}
+{style="note"}
 
 To transfer the key from the server to the agent, TeamCity encrypts it with a DES symmetric cipher. For a more secure way, configure an [HTTPS connection between agents and the server](using-https-to-access-teamcity-server.md).
 

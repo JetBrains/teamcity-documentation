@@ -11,7 +11,7 @@ Approvals also prevent users from triggering a build accidentally.
 
 If a build is not approved within the specified period of time, it will be cancelled.
 
-<include src="untrusted-builds.md" include-id="untrusted-builds-and-build-approval"/>
+<include from="untrusted-builds.md" element-id="untrusted-builds-and-build-approval"/>
 
 
 ## Build Approval Settings

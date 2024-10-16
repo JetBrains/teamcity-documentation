@@ -137,7 +137,7 @@ To add this feature:
 
 >Note that the scope of branches you define in this feature should not overlap with the branch specification of the VCS root. This measure will ensure that no conflicts occur when starting builds on merge requests.
 >
-{type="warning"}
+{style="warning"}
 
 Now, TeamCity will monitor merge requests submitted from the source branches of your repository. If a build is run on a merge request, TeamCity will display the details of the request and report the build status to the code review in Space:
 

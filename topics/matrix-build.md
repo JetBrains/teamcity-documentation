@@ -241,7 +241,7 @@ There are many different contexts where it can be useful to reference the matrix
 * You can use [conditional build steps](build-step-execution-conditions.md) to make execution of a particular build step conditional on the value of a matrix parameter.
    > For example, if your matrix build has a deployment step that must be executed exactly once, you could define a conditional build step that executes the deployment step for just one combination of matrix parameter values.
    >
-   {type="tip"}
+   {style="tip"}
 
 * To reference resources needed by the build. For example, if the `Java` matrix parameter has the possible values `java-17` or `java-21`, you might reference it directly in the definition of the JDK path for your build:
     ```Plain Text
@@ -282,12 +282,12 @@ When a matrix build starts, TeamCity runs the build, as follows:
 1. The first time the matrix build runs, it generates new virtual build configurations for every combination of matrix parameter values. The matrix build effectively behaves like a parent configuration for these generated snapshot dependencies
    > Each of the generated build configurations has the same build steps as the parent configuration. Any subsequent changes to the build steps in the parent configuration will be propagated to the generated build configurations automatically.
    >
-   {type="note"}
+   {style="note"}
 
 2. TeamCity runs the generated builds. Each build is added separately to the build queue and is subject to the usual rules for build priority and agent selection.
    > Normally, the generated builds can run in parallel on multiple agents. If you choose a specific agent in the [custom build options](running-custom-build.md#General+Options), however, the generated builds will run one-by-one on the specified agent.
    >
-   {type="note"}
+   {style="note"}
 
 3. As soon as the first generated build starts to run, TeamCity starts the parent build (effectively, a type of [composite build](composite-build-configuration.md) with dependencies on the generated builds), which aggregates the build results from all the generated builds.
 4. After the matrix build is complete, you can view the summary table on the **Overview** tab of the matrix build.
@@ -300,7 +300,7 @@ In particular, when configuring a [build trigger](configuring-build-triggers.md)
 
 > When setting matrix parameters in the **Build Customization** tab, you must enter the parameter values as a comma-separated list. For example, to iterate over two browser values, you could set the parameter name to `Browser` and the parameter value to `Chrome, Firefox`.
 > 
-{type="note"}
+{style="note"}
 
 
 ## Viewing a Matrix Build
@@ -322,7 +322,7 @@ When you drill down to a specific build in the matrix, you see what looks like a
 
 > If the project has [versioned settings](storing-project-settings-in-version-control.md) enabled, the generated build configurations are not committed to the VCS repository.
 >
-{type="warning"}
+{style="warning"}
 
 
 ## Matrix Builds in a Build Chain

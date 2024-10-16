@@ -3,7 +3,7 @@
 
 >The information on this page can be used for reference purposes only.
 > 
-{type="note"}
+{style="note"}
 
 ## Why Upgrade TeamCity
 {product="tc"}
@@ -33,7 +33,7 @@ The dates of all previous releases and the sequence of TeamCity versions are lis
 > 
 >The TeamCity Cloud infrastructure allows releasing new features more frequently than in On-Premises: they are now rolled out to the Cloud instances bimonthly. On-Premises instances can be upgraded to a new major version twice a year, exactly as before.
 > 
-{type="note"}
+{style="note"}
 
 The default stages of a TeamCity release:
 

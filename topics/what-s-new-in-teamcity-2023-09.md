@@ -115,7 +115,7 @@ Learn more: [](commit-status-publisher.md#JetBrains+Space).
 * The [](commit-status-publisher.md) build feature now correctly publishes build statuses for configurations that target `refs/(merge-requests/*)/head` branches of GitLab repositories (the "merge result" branches). Previously, running TeamCity builds for merge result revisions caused the Publisher to encounter HTTP 404 errors.
 * If users log into TeamCity using credentials of an external 2FA-protected service, TeamCity does not send additional 2FA requests. Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
 <!--* You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).-->
-<!--* <include src="parallel-tests.md" include-id="alternative-dotnet-parallel-filtering-tcc"/>-->
+<!--* <include from="parallel-tests.md" element-id="alternative-dotnet-parallel-filtering-tcc"/>-->
 * [](performance-monitor.md) now shows absolute values of the consumed/total agent memory.
 * The [](build-results-page.md#Dependencies+Tab) now displays a find panel that allows you to search for specific dependent builds by configuration names.
 * You can now add the `dateFormat=<value>` parameter to URLs used by your log analysis tools to retrieve build logs. Learn more: [](build-log.md#Modify+the+DateTime+Pattern).

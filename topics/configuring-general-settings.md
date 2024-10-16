@@ -259,7 +259,7 @@ The target paths cannot be absolute. Non-relative paths will produce errors duri
 
 >There is a known issue with inability to exclude artifact paths specified with the `**` wildcard: for example, `-:**/directory`. Such exclude rules will be ignored by TeamCity. As a workaround, use the `-:**/directory/**` format instead. See the [related issue](https://youtrack.jetbrains.com/issue/TW-59469) in our tracker.
 > 
-{type="warning"}
+{style="warning"}
 
 ### Publishing Symlinks
 

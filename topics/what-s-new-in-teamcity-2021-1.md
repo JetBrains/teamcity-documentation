@@ -255,7 +255,7 @@ Our [build status widget](configuring-general-settings.md#Enable+Status+Widget) 
 
 >Make sure the widget support is enabled in __Build Configuration Settings | Build Options__.
 >
-{type="note"}
+{style="note"}
 
 To access the widget menu from __Build Configuration Home__, open the __Actions__ menu and click __Get build status icon__:
 

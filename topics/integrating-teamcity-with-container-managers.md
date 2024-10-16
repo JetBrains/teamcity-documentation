@@ -66,7 +66,7 @@ Depending on the exact Docker/Podman integration you utilize, TeamCity specifies
 
 > If you are using the [Command Line](command-line.md) build step instead of the [](docker.md) runner, these parameters can be used as [agent requirements](agent-requirements.md) to ensure your build is run only on the agents with Docker installed.
 > 
-{type="tip"}
+{style="tip"}
 
 
 

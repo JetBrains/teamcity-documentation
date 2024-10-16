@@ -426,7 +426,7 @@ This release introduces the new DSL API version, `v2017_2`. The previous API ver
 
 >To get sample DSL code for the newly supported features without switching a project to the Kotlin format, use the __Download settings in Kotlin format__ action on the project administration page.
 >
-{type="note"}
+{style="note"}
 
 If you used 2017.2 EAPs and tested changing DSL settings via the UI, you need to apply all the UI patches created by TeamCity before upgrading as some API is changed in an incompatible way.
 

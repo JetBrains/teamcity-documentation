@@ -27,7 +27,7 @@ docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 
 > For security reasons, parameters of the _Password_ type do not expose their values when referenced as `%\dep.<build_config_ID>.password_parameter%` in dependent builds.
 > 
-{type="note"}
+{style="note"}
 
 ## Override Parameters of Preceding Configurations
 

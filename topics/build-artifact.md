@@ -5,7 +5,7 @@ _Build artifacts_ are files produced by a build. Typically, these include distri
 
 > This article covers the basic build artifact concepts. See the article links in the page footer for details of configuring and administering artifacts.
 >
-{type="tip"}
+{style="tip"}
 
 ## Artifacts Storage
 
@@ -21,7 +21,7 @@ To download artifacts of a build, go to the [Artifacts](build-results-page.md#Ar
 
 > If you're using Safari and experiencing issues with incomplete artifact downloads, disable the "Open "safe" files after downloading" option in Safari general settings.
 >
-{type="tip"}
+{style="tip"}
 
 <anchor name="artifacts-as-archive"/>
 
@@ -29,7 +29,7 @@ To download artifacts of a build, go to the [Artifacts](build-results-page.md#Ar
 > 
 >TeamCity can automatically create an archive from a directory when publishing build artifacts. To configure this behavior, you need to specify the build artifact path as follows: `directory => directory.*`, where `*` is the archive extension (like `directory.zip`). See more information and examples [here](configuring-general-settings.md#Artifact+Paths).
 > 
-{type="note"}
+{style="note"}
 
 In case of the built-in storage, TeamCity keeps artifacts on the disk in a directory structure that can be accessed directly (for example, by configuring the operating system to share the directory over the network). The storage format is described in [TeamCity Data Directory](teamcity-data-directory.md#artifacts). The artifacts are stored on the server "as is" without additional compression. By default, the artifacts are stored under the `<[TeamCity Data Directory](teamcity-data-directory.md)\>/system/artifacts` directory which [can be changed](teamcity-configuration-and-maintenance.md).   
 You can [configure an external artifacts](configuring-artifacts-storage.md#external-artifacts-storage) storage to replace the built-in one.
@@ -75,7 +75,7 @@ However, depending on the size of artifacts, [clean-up](teamcity-data-clean-up.m
 
 ## Build Artifacts Video Guide
 
-<video href="mNYq424IQ-w"
+<video src="https://youtu.be/mNYq424IQ-w"
 title="TeamCity tutorial — How to work with artifacts (logs, graphics, binaries)"/>
 
 <seealso>

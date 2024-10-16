@@ -6,7 +6,7 @@
 To set up a TeamCity-Vault integration, download the official [Vault plugin](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) and install it as described in the [](installing-additional-plugins.md) article.
 -->
 
-<video href="cRNl2dTulTA"
+<video src="https://youtu.be/cRNl2dTulTA"
 title="HashiCorp Vault plugin for TeamCity"/>
 
 
@@ -51,7 +51,7 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
     
     > The AWS IAM auth method requires only build agents and Vault server being hosted on EC2 instances. The TeamCity server can reside in any custom location. However, if the TeamCity server is deployed outside AWS, the connection's **Test connection** button will report issues that agents will not experience during building.
     > 
-    {type="note"}
+    {style="note"}
 
     </td></tr></table>
 
@@ -139,7 +139,7 @@ To create such a parameter, do the following:
 
    > You can set up parameters only for projects with a valid [Vault connection](#Set+Up+a+Vault+Connection) (or inherit it from a parent project).
    >
-   {type="note"}
+   {style="note"}
 
 2. Choose the **Environment variable** type and enter the parameter name. For example, `env.AWS_ACCESS_KEY_ID`.
 

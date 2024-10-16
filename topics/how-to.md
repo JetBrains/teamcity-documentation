@@ -358,7 +358,7 @@ The contents of this section have been moved to the [dedicated article](configur
 
 This section covers the configuration of a proxy server for TeamCity agent-to-server connections.
 
-<chunk include-id="agent-proxy-server">
+<snippet include-id="agent-proxy-server">
 
 On the TeamCity agent side, specify the proxy to connect to TeamCity server using the following properties in the [`buildAgent.properties`](configure-agent-installation.md) file:
 
@@ -376,7 +376,7 @@ teamcity.http.proxyPassword=password
 
 Note that the proxy has to be configured not to cache any TeamCity server responses; for example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 
-</chunk>
+</snippet>
 
 ## Install Multiple Agents on the Same Machine
 

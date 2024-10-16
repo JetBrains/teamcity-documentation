@@ -9,7 +9,7 @@ A TeamCity _build agent_ is a piece of software which listens for the commands f
 
 > This article covers the basic build agent concepts. See the article links in the page footer for details of administering build agents.
 > 
-{type="tip"}
+{style="tip"}
 
 A TeamCity build agent contains [two processes](configuring-build-agent-startup-properties.md):   
 * Agent launcher — a Java process that launches the agent process.

@@ -96,7 +96,7 @@ If you need to manually change a TeamCity parameter from inside a build step, se
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
 
-<include src="configuring-build-parameters.md" include-id="change-parameter-from-build"/>
+<include from="configuring-build-parameters.md" element-id="change-parameter-from-build"/>
 
 
 > Note that using the `setParameter` service message overrides the parameter value only in the scope of the current build or build chain. To **permanently** override a parameter value, send the REST API request from your build step like shown below:
@@ -126,7 +126,7 @@ echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.a
 > })
 > ```
 >
-{type="warning"}
+{style="warning"}
 
 
 ## Checking Parameter Values
@@ -145,7 +145,7 @@ You can also click any build agent to open the agent details page, and switch to
 
 To view which values parameters had during a specific build, open this build's [results page](build-results-page.md) and switch to the **Parameters** tab.
 
-<chunk id="build-results-parameters-tab">
+<snippet id="build-results-parameters-tab">
 
 <img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
 
@@ -155,7 +155,7 @@ This page has two tabs:
 
 * **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
 
-</chunk>
+</snippet>
 
 
 ### Using REST API

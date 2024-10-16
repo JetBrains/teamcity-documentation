@@ -89,7 +89,7 @@ If you have a self-updating Git repository proxy that is significantly closer th
 
 It is possible to configure a forward proxy server for agent-to-server connections.
 
-<include src="configuring-proxy-server.md" include-id="agent-proxy-server"/>
+<include from="configuring-proxy-server.md" element-id="agent-proxy-server"/>
 
 <seealso>
         <category ref="concepts">

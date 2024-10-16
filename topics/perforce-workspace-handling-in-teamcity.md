@@ -19,7 +19,7 @@ If your build configurations use the [agent-side checkout](vcs-checkout-mode.md#
 
 > You can set properties' values during a build by sending the [setParameter Service Message](service-messages.md#set-parameter). To send these messages before the checkout, send them from a [Bootstrap step](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
 > 
-{type="tip"}
+{style="tip"}
 
 
 The workspace name also includes the build agent name and a hash value built from the checkout directory and (optionally) checkout rules.
@@ -118,6 +118,6 @@ To prevent this from happening and reuse sources from a persistent storage, do t
        
        > Since TeamCity updates a workspace according to settings of a corresponding VCS Root, make sure the VCS Root settings have the same [Client Mapping](perforce.md#Map+Perforce+Depot+to+Client) as `customP4ClientName` workspace in your Service Message.
        > 
-       {type="warning"}
+       {style="warning"}
 
 With these bootstrap steps in place, TeamCity updates your P4 client specification, runs the `p4 sync` command and performs a checkout that should fetch only changes between the flushed `<changelist_revision>` and the revision associated with the current build.

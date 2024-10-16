@@ -45,7 +45,7 @@ To temporarily disable or permanently remove a requirement, click the drop-down 
 > 
 > <img src="dk-check-param-values.png" width="706" alt="Check parameter values"/>
 > 
-{type="tip"}
+{style="tip"}
 
 </tab>
 
@@ -84,7 +84,7 @@ Project administrators can edit, disable, and remove inherited requirements unle
 
 ## Combining Conditions
 
-<include src="requirement-conditions.md" include-id="combining-conditions"/>
+<include from="requirement-conditions.md" element-id="combining-conditions"/>
 
 
 

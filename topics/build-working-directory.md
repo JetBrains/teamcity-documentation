@@ -7,7 +7,7 @@ If a build script needs to run from a location other than the checkout directory
 
 >Not all build runners provide the working directory setting.
 >
-{type="note"}
+{style="note"}
 
 The path entered in the __Working Directory__ field can be either absolute or relative to the [build checkout directory](build-checkout-directory.md). When using this option, all the other paths should still be entered relative to the checkout directory.
 

@@ -12,7 +12,7 @@ Basically, a meta-runner is a set of build steps from one build configuration th
 
 > Note that [VCS roots](configuring-vcs-roots.md) are not baked into meta-runners. If build steps of your meta-runner perform operations on repository files and folders, root-less configurations that reuse these meta-runner steps will fail. You can reuse a VCS root the meta-runner's origin configuration utilizes to fix this issue.
 > 
-{type="note"}
+{style="note"}
 
 TeamCity allows extracting meta-runners using the web UI.
 

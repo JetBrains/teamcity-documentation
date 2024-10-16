@@ -217,7 +217,7 @@ You can get the scrambled value using the HTTP request below and then set the pr
 
 >Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
 > 
-{type="warning"}
+{style="warning"}
 
 To get the scrambled password value, execute the following HTTP request under a user who have the System Administrator role granted (i.e. you can just open the URL in the same browser that you use to access TeamCity):
 

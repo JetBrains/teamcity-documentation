@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildprofiles>
-    <variables>
-        <search-scope/>
-        <fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
-        <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
-        <hide-last-modified>true</hide-last-modified>
-        <config-showDownloadButton>true</config-showDownloadButton>
-        <config-disqus-id>jetbrains</config-disqus-id>
-        <config-disqus-show>false</config-disqus-show>
-        <config-feedback-url>https://forms-service.jetbrains.com/feedback</config-feedback-url>
-        <config-feedback-enabled>true</config-feedback-enabled>
-        <config-feedback-widget>true</config-feedback-widget>
-        <config-webmaster>https://teamcity-support.jetbrains.com/</config-webmaster>
-        <config-feedback-support>https://teamcity-support.jetbrains.com/</config-feedback-support>
-        <config-sideblocks>true</config-sideblocks>
-        <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
-        <config-algloia-product-version>2024.03</config-algloia-product-version>
-        <!--version selector for TeamCity OnPremises-->
-        <config-versions-switcher>https://data.services.jetbrains.com/help-versions</config-versions-switcher>
-        <enable-browser-edits>true</enable-browser-edits>
-        <browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2024.03/</browser-edits-url>
-        <disable-prev-next-links>true</disable-prev-next-links>
-        <disable-variable-interpolation>true</disable-variable-interpolation>
-        <web-root>https://www.jetbrains.com/help</web-root>
-        <og-twitter>@teamcity</og-twitter>
-        <og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
-        <download-page>https://www.jetbrains.com/teamcity/download/</download-page>
-    </variables>
-
-    <build-profile product="tc"/>
-    <build-profile product="tcc"/>
+	<variables>
+		<search-scope/>
+		<fallback-url>https://www.jetbrains.com/help/teamcity/</fallback-url>
+		<feedbackRequireEmail>false</feedbackRequireEmail>
+		<hide-last-modified>true</hide-last-modified>
+		<showDownloadButton>true</showDownloadButton>
+		<disqus-id>jetbrains</disqus-id>
+		<disqus-show>false</disqus-show>
+		<feedback-url>https://forms-service.jetbrains.com/feedback</feedback-url>
+		<feedback-enabled>true</feedback-enabled>
+		<feedback-widget>true</feedback-widget>
+		<webmaster>https://teamcity-support.jetbrains.com/</webmaster>
+		<feedback-support>https://teamcity-support.jetbrains.com/</feedback-support>
+		<sideblocks>true</sideblocks>
+		<search-scopes-provider>https://data.services.jetbrains.com/search/</search-scopes-provider>
+		<algloia-product-version>2024.03</algloia-product-version>
+		<!--version selector for TeamCity OnPremises-->
+		<versions-switcher>https://data.services.jetbrains.com/help-versions</versions-switcher>
+		<enable-browser-edits>true</enable-browser-edits>
+		<browser-edits-url>https://github.com/JetBrains/teamcity-documentation/edit/2024.03/</browser-edits-url>
+		<disable-prev-next-links>true</disable-prev-next-links>
+		<disable-variable-interpolation>true</disable-variable-interpolation>
+		<web-root>https://www.jetbrains.com/help</web-root>
+		<og-twitter>@teamcity</og-twitter>
+		<og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
+		<download-page>https://www.jetbrains.com/teamcity/download/</download-page>
+	</variables>
+	<build-profile instance="tc"/>
+	<build-profile instance="tcc"/>
 </buildprofiles>

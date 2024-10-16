@@ -348,7 +348,7 @@ A comma-separated list of [organizations'](https://docs.github.com/en/free-pro-t
 This list limits the set of users who can register or authenticate in TeamCity with their GitHub account to the specified organizations. When combined with the _Allow creating new users on the first login_ option,  this setting allows automatically registering users who have an email in one of the specified organizations and do not have a user profile in TeamCity.
 
 >To use this restriction, make sure that the GitHub OAuth application or GitHub App used in the Root project's [GitHub connection](configuring-connections.md#GitHub) is approved/installed in each specified organization.
-{type="note"}
+{style="note"}
 
 >Once registered on the TeamCity server, a user can create a password or token which will allow them to sign in to this server directly, bypassing the GitHub verification. If you delete a user from an organization in GitHub, remember to restrict their access or delete their user profile in TeamCity.
 
@@ -361,7 +361,7 @@ This list limits the set of users who can register or authenticate in TeamCity w
 
 >If you reconnect a TeamCity server from one GitHub Enterprise server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, [contact our support](feedback.md).
 >
-{type="warning"}
+{style="warning"}
 
 ### GitLab.com
 
@@ -495,7 +495,7 @@ This list limits the set of users who can register or authenticate in TeamCity w
 
 >If you reconnect a TeamCity server from one GitLab CE/EE server to another, TeamCity might not be able to recognize external users after this operation. This case requires reconfiguring user profiles manually. If you encounter any issues, please [contact our support](feedback.md).
 >
-{type="warning"}
+{style="warning"}
 
 ### Google
 

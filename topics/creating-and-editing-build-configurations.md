@@ -14,7 +14,7 @@ To tackle an increased number of build configurations you can use [build configu
 
 This video tutorial illustrates how to work with a build configuration in TeamCity and gives a few extra tips:
 
-<video href="fttWwJG7C38"
+<video src="https://youtu.be/fttWwJG7C38"
 title="Improving your first build configuration"/>
 
 >Build configurations can also be created via [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-details.html#Get+Specific+Builds) and as a versioned [Kotlin DSL code](storing-project-settings-in-version-control.md).
@@ -95,7 +95,7 @@ Alternatively, you can create a build configuration template from an existing bu
 
 > When you create a template from scratch or extract it from an existing build configuration, this template is available only for this project (and its subprojects). This means you cannot create new configurations in "&lt;Root project&gt;/ProjectA" using the "&lt;Root project&gt;/ProjectB/BuildConfTemplate" template.
 > 
-{type="tip"}
+{style="tip"}
 
 You can create a templated build configuration in two ways: from the template settings page, or by creating a regular configuration and choosing a template it should utilize.
 

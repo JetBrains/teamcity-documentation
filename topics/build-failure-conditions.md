@@ -5,7 +5,7 @@ TeamCity allows changing the conditions under which a build is marked as _failed
 
 >To fail a build if sufficient disk space cannot be freed for the build, see the [Free disk space](free-disk-space.md) build feature.
 >
-{type="tip"}
+{style="tip"}
 
 ## Common Build Failure Conditions
 
@@ -50,7 +50,7 @@ To add such failure condition, click __Add build failure condition__ and select 
 
 >You can disable a build failure condition temporarily or permanently at any time, even if it is inherited from a build configuration template.
 >
-{type="tip"}
+{style="tip"}
 
 <anchor name="BuildFailureConditions-Failbuildonmetricchange"/>
 

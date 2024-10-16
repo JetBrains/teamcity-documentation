@@ -30,7 +30,7 @@ To see all the current server warnings and errors, go to __Administration | Proj
 > 
 > These builds retain all their data after server clean-up routines.
 >
-{type="note"}
+{style="note"}
 
 TeamCity Cloud also comes bundled with the [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) plugin that helps easily free disk space.
 {product="tcc"}
@@ -79,7 +79,7 @@ Keep rules are more fine-grained and can cover cases like keeping all the builds
 
 >If a build configuration has no base clean-up rule configured, all its data not covered by keep rules will be scheduled for a clean-up. Before disabling the base rule make sure that keep rules preserve all valuable data.
 > 
-{type="warning"}
+{style="warning"}
 
 During the clean-up, TeamCity analyzes and combines the base and keep rules to determine the scopes of data to preserve and to delete.
 
