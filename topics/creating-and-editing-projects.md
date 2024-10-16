@@ -240,7 +240,7 @@ Description
 
 Optional description for the project. You can add a link in the Markdown format to the description:
 
-```Text
+```
 [My Project](https://www.example.com)
 ```
 

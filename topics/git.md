@@ -58,13 +58,13 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
    You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
    
-   ```Plain Text
+   ```
    teamcity.git.fetchUrlMapping.firstrule = https://example.com/org/test.git => http://proxy.com/test.git
    ```
    
    You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
    
-   ```Plain Text
+   ```
    teamcity.git.fetchUrlMapping.secondrule = https://example.com/org/* => http://proxy.com/
    ```
    
@@ -336,7 +336,7 @@ Comparing to self-hosted TeamCity agents, cloud agents require extra steps to ad
 
 1. When [preparing a cloud image](teamcity-integration-with-cloud-solutions.md#Preparing+Virtual+Machine), clone the repository under the agent image's `system/git` directory. If necessary, you can store multiple `*.git` directories side by side.
 2. Create a `map` file under the `system/git` directory and describe the mapping between the original repository and its mirror. For example,   
-   ```Text
+   ```
 
    ssh://git@<host>/<git_folder>.git = <git_folder>.git
 
@@ -386,7 +386,7 @@ If your repository imports submodules hosted on the same VCS and these imported 
 
 Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
 
-```Plain Text
+```
 teamcity.git.https.credentials.<ALIAS>.url = https://example.com/...
 teamcity.git.https.credentials.<ALIAS>.username = johndoe
 teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
@@ -898,7 +898,7 @@ The plugin is able to perform only simple file mapping operations which limits t
 
 The following rules are supported:
 
-```Text
+```
 
 +:dirA/dirA1
 -:dirA/dirA1/dirA2
@@ -919,7 +919,7 @@ Only the rules `+:dirA => [prefix/]dirA` are supported for agent-side checkout, 
 
 For example:
 
-```Text
+```
 
 +:dirA/dirB/dirC => [prefix/]dirA/dirB/dirC
 +:dirD/dirE/dirF => [prefix/]dirD/dirE/dirF

@@ -1,10 +1,10 @@
 [//]: # (title: What's New in TeamCity Cloud 2024.03)
 
 
-<chunk include-id="2024-03-tcc">
+<snippet id="2024-03-tcc">
 
 ## New Bundled Plugin: HashiCorp Vault
-{product="tcc"}
+{instance="tcc"}
 
 The [HashiCorp Vault Support](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is now an integral component of the standard TeamCity installation. This plugin allows you to store sensitive data in a remote source, and enables TeamCity parameters to seamlessly retrieve these values during build processes.
 
@@ -16,7 +16,7 @@ Learn more: [](hashicorp-vault.md).
 
 
 ## Untrusted Builds
-{product="tcc"}
+{instance="tcc"}
 
 With the [](pull-requests.md) feature added to your configurations you can assess new code before integrating it into the primary codebase. This feature comes with filtering options, enabling you to select whether to run builds from any contributors or solely those affiliated with your organization. The former choice poses a notable security risk, potentially exposing your TeamCity server to malicious code camouflaged within pull requests. Conversely, opting for the latter restricts collaboration opportunities with a broader audience.
 
@@ -28,7 +28,7 @@ Learn more: [](untrusted-builds.md).
 
 
 ## New dotCover Runner
-{product="tcc"}
+{instance="tcc"}
 
 The new **dotCover** runner can automatically retrieve code coverage snapshots from multiple preceding [](net.md) steps, and use these individual snapshots to publish a single coverage report.
 
@@ -38,7 +38,7 @@ Learn more: [](dotcover-runner.md).
 
 
 ## Automatic Retry of Failed .NET Tests
-{product="tcc"}
+{instance="tcc"}
 
 If the [](net.md) runner executes the `test` or `vstest` command, the runner's settings now display the new **Test retry count** option. This field allows you to specify how many times during the same build TeamCity can re-run failed test. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts.
 
@@ -51,7 +51,7 @@ Learn more: [.NET | Vstest Command](net.md#vstest).
 
 
 ## Gradle Configuration Cache
-{product="tcc"}
+{instance="tcc"}
 
 Starting with this version, you can enable the [configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html) feature for Gradle builds running in TeamCity. This feature substantially enhances build performance by caching the configuration phase's result and reusing it in subsequent builds.
 
@@ -59,7 +59,7 @@ Learn more: [](gradle.md#Configuration+Cache).
 
 
 ## Optional Artifact Dependencies
-{product="tcc"}
+{instance="tcc"}
 
 by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
 
@@ -75,7 +75,7 @@ Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
 <!--
 
 ## Pull Request Branch Filters
-{product="tcc"}
+{instance="tcc"}
 
 [Branch filters](branch-filter.md) now support filter expressions in the `+|-pr: <attribute>=<value>` format. Using this syntax you can set up fine-grained rules that filter pull requests by their origin and source branches, authors, origin types, and more.
 
@@ -84,7 +84,7 @@ Learn more: [](branch-filter.md#Pull+Request+Branch+Filters).
 -->
 
 ## Enhanced Git LFS and Submodules Support
-{product="tcc"}
+{instance="tcc"}
 
 [Large File Systems](https://git-lfs.com) and [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) are integral parts of many complex software solutions that import standalone repositories and offload massive files (videos, bitmaps, databases, and so on) to external hostings. In version 2024.03, you can add [parameter-based](configuring-build-parameters.md) credentials to your TeamCity projects. When checking out source files, TeamCity will use these credentials to access and download required files. This feature allows you to set up TeamCity integration with [Sonatype Nexus LFS repositories](https://help.sonatype.com/en/git-lfs-repositories.html)) and other popular solutions.
 
@@ -93,7 +93,7 @@ Learn more: [](git.md#LFS+and+Submodules+Support).
 
 
 ## New Parameter Dialog
-{product="tcc"}
+{instance="tcc"}
 
 In version 2024.03 we have redesigned the **Add/Edit Parameter** dialog that you utilize when configuring [build parameters](configuring-build-parameters.md).
 
@@ -106,7 +106,7 @@ Learn more: [](typed-parameters.md).
 
 
 ## Alternative Fetch URLs
-{product="tcc"}
+{instance="tcc"}
 
 In TeamCity 2024.03, build agents can now fetch sources from a pre-configured repository proxy that mirrors your original Git repository. This capability is especially valuable for large distributed systems, mitigating connectivity issues for agents distant from the primary repository.
 
@@ -116,7 +116,7 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 
 ## Miscellaneous Changes
-{product="tcc"}
+{instance="tcc"}
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 * New [](commit-status-publisher.md) setting allows you to choose whether you want TeamCity to post [Swarm review comments](integrating-with-helix-swarm.md) when a build finishes. If this option is disabled, the build feature will only update the review's **Tests** section.

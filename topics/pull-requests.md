@@ -638,7 +638,7 @@ See known issues with processing JetBrains Space merge requests [here](known-iss
 
 TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
  
-```Text
+```
 teamcity.pullRequest.number //pull request number
 teamcity.pullRequest.title //pull request title
 teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one

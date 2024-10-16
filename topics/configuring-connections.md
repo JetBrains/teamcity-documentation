@@ -460,7 +460,7 @@ TeamCity allows your project to access required AWS resources using connections 
 
 9. Click **Test connection** to ensure TeamCity can assume **Role B**.
     
-    ```Plain Text
+    ```
     Running STS get-caller-identity...
     Caller Identity:
      Account ID: <your account ID>

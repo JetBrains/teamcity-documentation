@@ -89,7 +89,7 @@ TeamCity REST API now provides the `.../app/rest/cloud/profiles`, `.../app/rest/
 
 We have added a few predefined build parameters to expose valuable information on pull requests, so it can be used in the settings of a build configuration or in build scripts:
  
-```Text
+```
 teamcity.pullRequest.number //pull request number
 teamcity.pullRequest.title //pull request title
 teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one

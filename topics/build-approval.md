@@ -48,7 +48,7 @@ Approval rules
 
 For example, the rules below will allow a build to start only if it is approved by the `teamlead` user, the `projectadmin` user, and by at least two members of the`QA` group:
 
-```Text
+```
 user:teamlead
 user:projectadmin
 group:QA:2

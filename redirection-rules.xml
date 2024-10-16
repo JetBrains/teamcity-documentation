@@ -108,5 +108,4 @@
     <rule id="build-results-page">
         <accepts>build-history.html</accepts>
     </rule>
-
 </rules>

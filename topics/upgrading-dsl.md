@@ -81,14 +81,14 @@ For instance, if TeamCity server was upgraded to `%product-version%`, then `%pro
 But before doing so, you should first review the health reports produced by your TeamCity server after it applied the most recent changes in your DSL scripts. These health reports describe what changes should be done to your DSL before you could safely change _configs version_.
 
 If you see a message like:
-  ```text
+  ```
    Please change the configs version to "%product-version%" in projects:
    <the list of projects> 
   ```
 
 then no additional changes to your DSL are required and you can change the config's `version` to `%product-version%`. Otherwise, you will receive the following message:
 
-  ```text
+  ```
   DSL scripts should be updated to produce settings for version %product-version%:
   change DSL for build configurations:
   <affected build configurations>
