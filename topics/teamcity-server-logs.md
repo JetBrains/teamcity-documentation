@@ -369,7 +369,7 @@ While TeamCity is running, active logging settings can be changed by selecting b
 
 >We highly recommend using the Default debug logging preset unless otherwise is suggested by a TeamCity support engineer. Using a different preset creates an extra load on the file system and might slow down various TeamCity operations.
 >
-{type="note"}
+{style="note"}
 
 The active logging preset is changed in the __Administration | Diagnostics | Troubleshooting | Debug logging__ section. Choosing a preset changes logging configuration immediately, and the preset is preserved after a server restart, until manually changed on this page again. It is strongly advised to return to the Default preset once the necessary logs were collected.
 
@@ -387,7 +387,7 @@ Most useful settings of log4j configuration:
 
 To change the minimum log level to save in the file, tweak the `level` attribute of the `Logger` element.
 
-```Plain Text
+```
 <Loggers>
     <Logger name="jetbrains.buildServer" level="INFO">
 ...
@@ -396,7 +396,7 @@ To change the minimum log level to save in the file, tweak the `level` attribute
 
 The logs are rotated by default. When debug is enabled, it makes sense to increase the `max` attribute of `<DefaultRolloverStrategy/>` element to affect the number of preserved log files. While doing so, ensure there is sufficient free disk space available.
 
-```Plain Text
+```
 <DelegateAppender>
     ...
     <DefaultRolloverStrategy max="20" fileIndex="min"/>

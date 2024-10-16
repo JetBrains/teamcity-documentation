@@ -10,7 +10,7 @@ To configure secure HTTPS access, you need a certificate. You can obtain and loa
 > If your TeamCity server is [behind a proxy](configuring-proxy-server.md#Set+Up+TeamCity+Server+Behind+Proxy) (for example, in [multi-node setups](multinode-setup.md)), configure HTTPS on the proxy side.
 Modifying the settings via a web UI may break your existing proxy configuration. Refer to your proxy server documentation to learn how to set up HTTPS certificates.
 >
-{type="warning"}
+{style="warning"}
 
 
 
@@ -25,7 +25,7 @@ Refer to this article to learn how Let's Encrypt validates your domain ownership
 
 > This option is not available for [multinode setups](multinode-setup.md). Configure certificates on the proxy side instead. Refer to your proxy server documentation for more information.
 > 
-{type="note"}
+{style="note"}
 
 ### Technical Information
 
@@ -72,7 +72,7 @@ To issue the certificate, try the following:
 
 Certificates issued by Let's Encrypt are valid for 90 days. TeamCity attempts to renew certificates 30 days before they expire automatically. You can set a different threshold via the `teamcity.https.close.expiration.threshold.<units>=value` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 
-```Plain Text
+```
 teamcity.https.close.expiration.threshold.minutes=60
 teamcity.https.close.expiration.threshold.days=40
 ```
@@ -90,11 +90,11 @@ If you do not wish to let TeamCity request certificates from Let's Encrypt, obta
 
   > If your key has a password, you can utilize OpenSSL to remove it:
   >
-  > ```Plain Text
+  > ```
   > openssl pkcs8 -topk8 -nocrypt -in [original.key] -out [new.key]
   > ```
   >
-  {type="tip"}
+  {style="tip"}
 
 
 ### How to Obtain a Certificate
@@ -135,7 +135,7 @@ Once you obtain a certificate and a private key:
   
     > Ensure that the specified port is not already occupied and the TeamCity server process has access to it. For example, if you’re running the TeamCity server on Unix under an unprivileged account for security reasons, Unix allows access to ports below 1024 to the root user only.
     >
-    {type="tip"}
+    {style="tip"}
 
 5. Click **Apply files** to let TeamCity check if the server URL is accessible. If access is denied, TeamCity shows an error and ignores the invalid settings.
   
@@ -146,7 +146,7 @@ Once you obtain a certificate and a private key:
 > * In a multi-node server configuration, each node’s settings are independent. Upload a certificate to each of the nodes individually.
 > * TeamCity tracks the validity of your certificate and starts showing a warning 30 days before the expiration date. After the certificate expires, an error will be displayed.
 > 
-{type="note"}
+{style="note"}
 
 
 ### Upload Certificates via a Script
@@ -193,7 +193,7 @@ After you have correctly configured the HTTPS access, TeamCity allows you to sel
 
   > This option may lead to the complete inability to access your TeamCity server after you remove an uploaded certificate.
   >
-  {type="warning"} 
+  {style="warning"} 
 
 
 
@@ -206,7 +206,7 @@ The default protocol TeamCity uses to communicate with clients is **TLS Version 
 
 To set a list of available protocols or to force TeamCity to use one specific protocol, add the `teamcity.https.use.protocols` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to a required value using the common Tomcat syntax. See this page's "protocols" attribute description to view available values: [The HTTP Connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html#SSL_Support_-_SSLHostConfig).
 
-```Plain Text
+```
 teamcity.https.use.protocols=TLSv1.3
 ```
 

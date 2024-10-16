@@ -24,6 +24,7 @@ Some TeamCity settings changes require external information and cannot be perfor
 ## Versions in DSL code
 
 <anchor name="UpgradingDSL-configsVersion"/>
+
 <anchor name="configsVersion"/>
 
 ### Configs version
@@ -80,14 +81,14 @@ For instance, if TeamCity server was upgraded to `%product-version%`, then `%pro
 But before doing so, you should first review the health reports produced by your TeamCity server after it applied the most recent changes in your DSL scripts. These health reports describe what changes should be done to your DSL before you could safely change _configs version_.
 
 If you see a message like:
-  ```text
+  ```
    Please change the configs version to "%product-version%" in projects:
    <the list of projects> 
   ```
 
 then no additional changes to your DSL are required and you can change the config's `version` to `%product-version%`. Otherwise, you will receive the following message:
 
-  ```text
+  ```
   DSL scripts should be updated to produce settings for version %product-version%:
   change DSL for build configurations:
   <affected build configurations>
@@ -327,6 +328,7 @@ This release introduces the new DSL API version, __v2018\_2__, its package is `j
 This release introduces the new DSL API version, v2018\_1, its package is __jetbrains.buildServer.configs.kotlin.v2018\_1__. The previous API versions work and you can keep using them if you don't want to use portable DSL scripts.
 
 <anchor name="dslConverter850"/>
+
 <anchor name="UpgradingDSL-UpdatingDockerparameters"/>
 
 ### Updating Docker parameters
@@ -426,7 +428,7 @@ This release introduces the new DSL API version, `v2017_2`. The previous API ver
 
 >To get sample DSL code for the newly supported features without switching a project to the Kotlin format, use the __Download settings in Kotlin format__ action on the project administration page.
 >
-{type="note"}
+{style="note"}
 
 If you used 2017.2 EAPs and tested changing DSL settings via the UI, you need to apply all the UI patches created by TeamCity before upgrading as some API is changed in an incompatible way.
 

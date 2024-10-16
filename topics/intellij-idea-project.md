@@ -249,7 +249,7 @@ Profiling plugins
 
 ## IntelliJ IDEA Project Settings
 
-<chunk include-id="idea-project-settings">
+<snippet id="idea-project-settings">
 
 <table><tr>
 
@@ -325,7 +325,7 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md), if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")
+<!--[//]: # (Internal note. Do not delete. "IntelliJ IDEA Projectd178e242.txt")-->
 
 Optional, specify if differs from the checkout directory.
 
@@ -457,11 +457,11 @@ Click this link to open a text area, where you can define templates for the `.ja
 You can use references to external properties when defining the values, like `%\system.idea_home%` or `%\env.JDK_1_3%`. This will add a [requirement](agent-requirements.md) for the corresponding property.
 </note>
 
-</chunk>
+</snippet>
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ## Compilation settings
 

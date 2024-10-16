@@ -7,7 +7,7 @@ Using the version control-stored DSL enables you to define settings programmatic
 
 Check out the [blog post series](https://blog.jetbrains.com/teamcity/2019/03/configuration-as-code-part-1-getting-started-with-kotlin-dsl) on using Kotlin DSL in TeamCity, and the [Recommended Refactorings](https://blog.jetbrains.com/teamcity/2021/04/kotlin-dsl-for-beginners-recommended-refactorings/) article.
 
-<video href="AEYjAnR2-MY"
+<video src="https://youtu.be/AEYjAnR2-MY"
 title="Getting Started With Kotlin DSL in TeamCity: From Zero to Hero"/>
 
 See more TeamCity Kotlin DSL video tutorials:
@@ -245,7 +245,7 @@ In this case, TeamCity will automatically attach the builds' history to the buil
 This also applies to the case when IDs of several build configurations are changed within one commit:
 TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones. 
 An entry for this action will appear in [the server log](teamcity-monitoring-and-diagnostics.md#Server+Logs). 
-{product="tc"}
+{instance="tc"}
 
 However, if you modify the build configuration ID in the DSL,
 note that for TeamCity this modification will look as if the configuration with the previous ID was deleted
@@ -253,7 +253,7 @@ and a new configuration with the new ID was created with a single commit.
 In this case, TeamCity will automatically attach the builds' history to the build configuration with the new ID.
 This also applies to the case when IDs of several build configurations are changed within one commit:
 TeamCity uses the logic that assigns build histories to the configurations most similar to the deleted ones.
-{product="tcc"}
+{instance="tcc"}
 
 If you use two commits to modify the build configuration ID — 
 one to delete the configuration with the previous ID and another to add the build configuration with the new ID — 
@@ -318,7 +318,7 @@ Currently, if Kotlin DSL uses context parameters, then the settings of such proj
 To use a context parameter in a TeamCity project, you need to (1) define it in the project versioned settings in the UI and (2) reference it in the project DSL.
 
 1. __Managing context parameters in UI__   
-   You can manage project context parameters on the __Versioned Settings | Context Parameters__ tab. <img src="context-dsl-parameters.png" width="800" alt="Kotlin DSL parameters"/>   
+   You can manage project context parameters on the __Versioned Settings | Context Parameters__ tab. <img src="context-dsl-parameters.png" width="800" alt="Kotlin DSL parameters" style="block"/>   
    After you add, edit, or delete the parameters and click __Save__, TeamCity will reload the DSL configuration and apply the changed values to the project settings.
 2. __Referencing context parameters in DSL__   
    To reference a context parameter in the DSL code, use the `getParameter()` method of the `DslContext` object. You can specify a default value of this parameter as an optional second argument: `getParameter("<parameter-name>", "<default-value>")`.   
@@ -382,7 +382,7 @@ The TeamCity server does not use Maven for generating settings from your DSL scr
 
 ## Storing and Managing Global Server Settings
 
-<include include-id="iac-terraform" src="storing-project-settings-in-version-control.md"/>
+<include element-id="iac-terraform" from="storing-project-settings-in-version-control.md"/>
 
 
 
@@ -586,11 +586,12 @@ params {
 
 >To generate a token for a secure value, follow [this instruction](storing-project-settings-in-version-control.md#Managing+Tokens).
 >
-{type="tip"}
+{style="tip"}
 
 ## FAQ and Common Problems
 
 <anchor name="KotlinDSL-nonUniformIDs"/>
+
 <anchor name="nonUniformIDs"/>
 
 ### Why portable DSL requires the same prefix for all IDs?
@@ -756,7 +757,7 @@ A single .kts file that describes settings for all projects on your server can b
 
 In the first case, TeamCity automatically splits its settings once your build server grows beyond 20 entities. For manually created .kts files, you can split them as follows:
 
-  ```Plain Text
+  ```
   .teamcity
     └─── pom.xml
     └─── settings.kts   # Stores only the Kotlin DSL version and the "project(_Self.Project)" line
@@ -781,7 +782,7 @@ In the first case, TeamCity automatically splits its settings once your build se
   
   Each folder (including the "_Self" folder for the &lt;Root&gt; project) has the following structure:
   
-  ```Plain Text
+  ```
   ProjectA
     └─── Project.kt   # Stores a list of subprojects, parameters, connections, and other project-level settings
     └─── buildTypes   # A folder with .kt files that define build configurations, their steps, triggers, build features, and more
@@ -799,7 +800,7 @@ In the first case, TeamCity automatically splits its settings once your build se
 Kotlin scripts can be tested using regular testing frameworks such as JUnit. See this blog post for more information: [Configuration as Code, Part 6: Testing Configuration Scripts](https://blog.jetbrains.com/teamcity/2019/05/configuration-as-code-part-6-testing-configuration-scripts/).
 
 ### Kotlin DSL API documentation is not initialized yet
-{product="tc"}
+{instance="tc"}
 
 _Problem_:
 * `app/dsl-documentation/index.html` on our Teamcity server displays "Kotlin DSL API documentation is not initialized yet"
@@ -808,7 +809,7 @@ _Problem_:
 _Solution_: set the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.kotlinConfigsDsl.docsGenerationXmx=1500m` and restart the server.
 
 ### OutOfMemory Error
-{product="tc"}
+{instance="tc"}
 
 _Problem_: Synchronizing Kotlin DSL setting fails with the "Compilation error: java.lang.OutOfMemoryError: Java heap space" error written to the [teamcity-versioned-settings.log](teamcity-server-logs.md) file.
 

@@ -36,7 +36,7 @@ To manually create custom charts to be displayed in the TeamCity UI, configure t
 
 Charts can also be configured via [Kotlin DSL](kotlin-dsl.md). Example configuration:
 
-```Plain Text
+```
 features {
   projectCustomChart {
     id = "SampleChart"
@@ -379,8 +379,11 @@ An integer value to use as the maximum for the Y axis value .
 </td></tr></table>
 
 <anchor name="listOfDefaultStatisticValues"/>
+
 <anchor name="Build Metrics Provided by TeamCity"/>
+
 <anchor name="predefinedStatisticsKeys"/>
+
 <anchor name="CustomChart-DefaultStatisticsValuesProvidedbyTeamCity"/>
 
 #### Default Statistics Values Provided by TeamCity
@@ -1043,7 +1046,7 @@ Milliseconds
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Custom Chartd106e1036.txt")    
+<!--[//]: # (Internal note. Do not delete. "Custom Chartd106e1036.txt")-->   
 
 
 #### Custom Build Metrics

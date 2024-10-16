@@ -19,10 +19,15 @@ TeamCity collects detailed data from Ant as to the performed activities, provide
 <anchor name="antAntParamsOptionDescription"/>
 
 <anchor name="Path to build.xml file"/>
+
 <anchor name="Build file content"/>
+
 <anchor name="Working directory"/>
+
 <anchor name="Targets"/>
+
 <anchor name="Ant home path"/>
+
 <anchor name="Additional Ant command line parameters"/>
 
 ## Ant Runner Settings
@@ -136,7 +141,7 @@ To use the tool, specify `-lib "%\teamcity.tool.ant-net-tasks%"` in [Additional 
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ### Test Parameters
 

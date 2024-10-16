@@ -76,7 +76,7 @@ These parameters are:
 | system.teamcity.build.parallelTests.excludesFile | Contains a path on the agent to a text file with tests which should be excluded from execution |
 
 The format of the file with excluded tests is as follows:
-```Plain Text
+```
 #version=1
 #algorithm=<name of the algorithm used to split tests, optional>
 #current_batch=<number of the current batch, same as teamcity.build.parallelTests.currentBatch parameter>
@@ -113,7 +113,7 @@ class TestCase1 {
 
 will produce the following test names in TeamCity:
 
-```Plain Text
+```
 
 org.example.tests.TestCase1.testMethod1
 org.example.tests.TestCase1.testMethod2
@@ -122,7 +122,7 @@ org.example.tests.TestCase1.testMethod2
 
 Then the parameter `system.teamcity.build.parallelTests.excludesFile` will point to a text file with the following content:
 
-```Plain Text
+```
 
 #version=1
 #current_batch=1
@@ -140,7 +140,7 @@ The build step with custom tests' execution logic should use this file and filte
 
 ## Alternative Test Filtering for .NET
 
-<chunk id="alternative-dotnet-parallel-filtering">
+<snippet id="alternative-dotnet-parallel-filtering">
 
 If the [](net.md) runner handles a large amount of test classes, parallel testing may produce huge test filters that are hard to parse and consume for test engines like NUnit.
 
@@ -151,7 +151,7 @@ To avoid potential performance issues, TeamCity automatically employs an alterna
 
 You can prevent TeamCity from switching to this mode and force it to always run parallel .NET tests using the regular filtering mechanism in any individual project or build configuration. To do so, add the `teamcity.internal.dotnet.test.suppression=false` [parameter](configuring-build-parameters.md) to the required configuration or project.
 
-</chunk>
+</snippet>
 
 
 
@@ -167,7 +167,7 @@ When batch builds produce identical artifacts, only the latest batch build's art
 
 To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. Since this parameter references the batch build number, it allows builds to organize their artifacts into subdirectories with unique names. For instance:
 
-```Plain Text
+```
 bin => batch-build-%\teamcity.build.parallelTests.currentBatch%/bin
 ```
 

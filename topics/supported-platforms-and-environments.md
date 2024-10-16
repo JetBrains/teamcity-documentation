@@ -2,12 +2,12 @@
 [//]: # (auxiliary-id: Supported Platforms and Environments)
 
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](system-requirements.md#Estimating+External+Database+Capacity).
-{product="tc"}
+{instance="tc"}
 
 ## Operating Systems
 
 ### TeamCity Server
-{product="tc"}
+{instance="tc"}
 
 TeamCity Server is a web application that runs within a capable J2EE servlet container. It requires a Java SE JRE installation to run. See [notes](how-to.md#Install+Non-Bundled+Version+of+Java) on how to install Java on a TeamCity server.
 
@@ -22,7 +22,7 @@ For Apple ARM systems (for example, Apple M1 or M2), consider using a different 
 
 >Java 8 support will be discontinued in one of the future TeamCity releases. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 or 17.
 > 
-{type="warning"}
+{style="warning"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Server" auxiliary-id="Supported+Platforms+for+TeamCity+Server"}
@@ -60,7 +60,7 @@ If you are using a different architecture that is not explicitly mentioned above
 
 
 ### TeamCity Agent
-{product="tc"}
+{instance="tc"}
 
 TeamCity Agent is a standalone Java application. It requires a Java SE JRE installation to run. See [notes](configure-java-for-agent.md) on how to configure Java on agents.
 
@@ -75,11 +75,11 @@ For Apple ARM systems (for example, Apple M1 or M2), consider using a different 
 
 > Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
-{type="note"}
+{style="note"}
 
 >Java 8 support will be discontinued in one of the future TeamCity releases. If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11 or 17.
 >
-{type="warning"}
+{style="warning"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}
@@ -110,7 +110,7 @@ Regarding architectural compatibility, TeamCity is not limited to any specific l
 If you are using a different architecture that is not explicitly mentioned above, you may expect the TeamCity Agent to run on it, provided that your operating system is supported and a suitable Java Virtual Machine (JVM) option exists.
 
 ### TeamCity Agent
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity Agent is a standalone Java application. TeamCity Cloud supports two types of agents:
 * Hosted by JetBrains
@@ -135,7 +135,7 @@ Supported Java versions: OpenJDK and Oracle Java 8 - 17. We recommend using the 
 
 > Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
-{type="note"}
+{style="note"}
 
 #### Supported Platforms
 {id="Supported+Platforms+for+TeamCity+Agent" auxiliary-id="Supported+Platforms+for+TeamCity+Agent"}
@@ -310,13 +310,13 @@ Required on the build agent:
 
 </td><td>2.0 or later</td><td>Python installed on the build agent</td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 [Kotlin Script](kotlin-script.md)
 
 </td><td></td><td></td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 [Node.js](nodejs.md)
 
@@ -432,13 +432,13 @@ A Perforce Helix Core client installed on the server (2017.1+ versions are suppo
 
 </td><td></td><td>A Mercurial "hg" client v1.5.2+ installed on the server</td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 [CVS](cvs.md) (via an external plugin)
 
 </td><td></td><td></td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 [Borland StarTeam](starteam.md)
 
@@ -484,7 +484,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 
 </td><td></td><td>A Mercurial "hg" client v1.5.2+ installed on the agent</td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 [CVS](cvs.md)
 
@@ -500,9 +500,9 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 * Azure DevOps
 * Mercurial
 * CVS
-{product="tc"}
+{instance="tc"}
 * Borland StarTeam
-{product="tc"}
+{instance="tc"}
    
 ### Remote Run
 
@@ -523,7 +523,7 @@ Other VCSs can be supported in TeamCity via [external plugins](https://plugins.j
 * [JetBrains Space](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+JetBrains+Space)
 
 ## Cloud Platforms
-{product="tc"}
+{instance="tc"}
 
 The following cloud platforms can be used to run build agents:
 * [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
@@ -703,7 +703,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 </td></tr></table>
 
 ## Databases
-{product="tc"}
+{instance="tc"}
 
 <table>
 

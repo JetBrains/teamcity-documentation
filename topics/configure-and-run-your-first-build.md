@@ -4,16 +4,16 @@
 In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
 
 After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.
-{product="tc"}
+{instance="tc"}
 
 After you have started TeamCity as described [here](getting-started-with-teamcity-cloud.md#2.+Start+TeamCity), you are ready to configure and run your first build.
-{product="tcc"}
+{instance="tcc"}
 
 <img src="run-first-build.png" width="611" alt="Run your first build"/>
 
 You can watch a quick video guide or read the full tutorial below.
 
-<video href="SYjnb7pW4Cg"
+<video src="https://youtu.be/SYjnb7pW4Cg"
        title="Running your first build in TeamCity"/>
 
 ## Create your first project
@@ -24,7 +24,7 @@ There are several ways to create a project in TeamCity: automatically from a rep
 >To try out the setup flow with a sample project, you can use this [GitHub repository](https://github.com/mkjetbrains/SimpleMavenSample).  
 >Or, you can configure the first build based on your own project's sources. In this case, if TeamCity autodetects any build steps in it, we recommend that you read about [their available settings](configuring-build-steps.md) before running the build.
 >
-{type="note"}
+{style="note"}
 
 Every TeamCity installation has the default __Root__ project that will contain all the other projects you create. The first project you create will be added as a child of the __Root__ project. To add your first project:
 
@@ -34,20 +34,20 @@ Every TeamCity installation has the default __Root__ project that will contain a
    https://github.com/mkjetbrains/SimpleMavenSample
    ```
    If access to your repository is restricted, enter the credentials as well.
-   <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line"/>
+   <img src="CreateProject1.png" dark-src="CreateProject1_dark.png" alt="Create a project from a repository URL, Step 1" width="706" border-effect="line" style="block"/>
 3. Click __Proceed__ and follow the wizard.   
    TeamCity will identify the type of your repository, test the connection, and autoconfigure the repository settings, as well as suggest the project and build configuration names.
-   <img src="CreateProject2.png" alt="" width="706" border-effect="line"/>
+   <img src="CreateProject2.png" alt="" width="706" border-effect="line" style="block"/>
 4. Click __Proceed__.   
    TeamCity will scan your VCS repository and autodetect the [build steps](configuring-build-steps.md).
 5. Check the boxes of the suitable steps, and they will be added to the first build configuration of this project.   
-   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line"/>
+   <img src="CreateProject3.png" alt="Create a project from a repository URL, Step 3" width="706" border-effect="line" style="block"/>
 
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
 
 ## Run your first build
 To run builds in TeamCity, you need [build agents](build-agent.md). A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered build agent that runs on the same computer. Let's use this agent to run a build on the sample project.
-{product="tc"}
+{instance="tc"}
 
 On the __Build Configuration Settings__ page, click __Run__ in the upper right corner:
 

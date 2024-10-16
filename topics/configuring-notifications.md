@@ -63,10 +63,10 @@ Currently, these notifications are available only for email and Slack.
 TeamCity Email Notifier relies on the email address specified in your user profile.
 
 To set up email notifications on a TeamCity server, the System Administrator needs to configure the SMTP server in __Administration | Email Notifier__. You can find the values of the expected parameters in you email server's settings.
-{product="tc"}
+{instance="tc"}
 
 See the [example configuration for Google Mail](setting-up-google-mail-as-notification-server.md).
-{product="tc"}
+{instance="tc"}
 
 ### Browser Notifications
 
@@ -76,7 +76,7 @@ TeamCity Browser Notifier can show notifications directly in your web browser. I
 
 TeamCity Slack Notifier requires signing in to Slack and relies on the Slack connection configured in the project settings. Read more on how to configure the connection to Slack [here](configuring-connections.md#Slack), or watch a video tutorial:
 
-<video href="d_Xuw7kkp4c"
+<video src="https://youtu.be/d_Xuw7kkp4c"
 title="TeamCity tutorial — How to integrate TeamCity and Slack"/>
 
 ### IDE Notifications
@@ -88,9 +88,9 @@ TeamCity IDE Notifier requires installing the TeamCity plugin in your IDE. For t
 To set up notifications on a build configuration level, you need to add the [Notifications](notifications.md) build feature to this build configuration. This feature has two types:
 
 * [Email Notifier](notifications.md#Email+Notifier) sends emails per events in this build configuration. Similarly to the [user-level email notifications](#Email+Notifications), it uses the SMTP server settings configured in __Administration | Email Notifier__.
-{product="tc"}
+{instance="tc"}
 * [Email Notifier](notifications.md#Email+Notifier) sends emails per events in this build configuration.
-  {product="tcc"}
+  {instance="tcc"}
 * [Slack Notifier](notifications.md#Slack+Notifier) posts events to a selected Slack channel. Similarly to the [user-level email notifications](#Slack+Notifications), requires configuring a connection to Slack.
 
 ## Configuring Notification Rules
@@ -104,6 +104,6 @@ Users can manage their own notification rules in their profile settings. Project
 Read more about the composition and processing of notification rules in [this article](adding-notification-rules.md).
 
 ## Changing Notification Templates
-{product="tc"}
+{instance="tc"}
 
 Project Administrators can change the default notifications' format by customizing their text templates. See the detailed instruction in [this article](customizing-notification-templates.md).

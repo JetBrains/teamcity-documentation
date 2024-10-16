@@ -95,12 +95,12 @@ Learn more: [](configuring-build-parameters.md).
     <img src="dk-dotnet-vstestExclide.png" width="706" alt="Excluded assemblies for vstest"/>
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Upgrade notes are not published for TCC.
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 Release notes are not published for TCC.
 

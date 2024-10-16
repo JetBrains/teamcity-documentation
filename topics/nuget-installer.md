@@ -3,7 +3,7 @@
 
 The _NuGet Installer_ build runner performs NuGet [Command-line package restore](http://docs.nuget.org/docs/reference/package-restore#Command-Line_Package_Restore). It can also (optionally) automatically update package dependencies to the most recent ones.
 
-<include src="nuget.md" include-id="nuget-OS"/>
+<include from="nuget.md" element-id="nuget-OS"/>
 
 <note>
 
@@ -12,7 +12,7 @@ Make sure that sources that you check out from VCS ([VCS Settings](configuring-v
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 > 
-{type="warning" product="tcc"}
+{type="warning" instance="tcc"}
 
 NuGet Installer settings:
 
@@ -98,7 +98,7 @@ Packages Sources
 Specify the NuGet package sources. If left blank, [`https://nuget.org`](https://nuget.org/) is used to search for your packages.
 
 If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> or manually specify the URL from the NuGet Feed section of __Project Settings__.
-{product="tc"}
+{instance="tc"}
 
 If you use packages from an authenticated feed, configure the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.   
 

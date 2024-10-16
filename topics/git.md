@@ -1,6 +1,6 @@
 [//]: # (title: Git)
 [//]: # (auxiliary-id: Git)
-[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")  
+<!--[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")-->  
  
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
@@ -9,11 +9,11 @@ For common VCS root properties, see [this section](configuring-vcs-roots.md#Comm
 
 >The Git command-line client needs to be installed on the agents if the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used.
 >
-{type="note"}
+{style="note"}
 
 >Git versions earlier than 2.10.0 will be deprecated in the future versions of TeamCity. If you get the related warning on running a build on some agent, we suggest that you update Git (the one specified in the `TEAMCITY_GIT_VERSION` parameter) and restart the agent.
 >
-{type="warning"}
+{style="warning"}
 
 __Important notes__:
 
@@ -21,7 +21,7 @@ __Important notes__:
 * Initial Git [checkout](build-checkout-directory.md#Checkout+Process) may take significant time (sometimes hours), depending on the size of your project history, because the whole project history is downloaded during the initial checkout.
 
 ## Native Git for VCS-related operations on the server
-{product="tc"}
+{instance="tc"}
 
 TeamCity can now use native Git as the default option for Git operations on the server.
 Switching to native Git improves the performance of the checking for changes operations on the server
@@ -41,10 +41,10 @@ If the connection test is successful, you can enable the native Git support on y
 
 >See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the current native Git implementation in TeamCity.
 > 
-{type="warning"} 
+{style="warning"} 
 
 ## Native Git for VCS-related operations on the server
-{id="Native+Git" product="tcc"}
+{id="Native+Git" instance="tcc"}
 
 TeamCity can now use native Git for VCS-related operations on the server.
 Using native Git improves the performance of the checking for changes operations on the server
@@ -58,13 +58,13 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
    You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
    
-   ```Plain Text
+   ```
    teamcity.git.fetchUrlMapping.firstrule = https://example.com/org/test.git => http://proxy.com/test.git
    ```
    
    You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
    
-   ```Plain Text
+   ```
    teamcity.git.fetchUrlMapping.secondrule = https://example.com/org/* => http://proxy.com/
    ```
    
@@ -86,7 +86,7 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
 * **Branch specification** — lists the patterns for branch names, required for [feature branches](working-with-feature-branches.md#Configuring+Branches) support. The matched branches are monitored for changes in addition to the default branch. The syntax is similar to checkout rules: `+|-:branch_name`, where `branch_name` is specific to the VCS, i.e. `refs/heads/` in Git (with the optional `*` placeholder).
 
-   <include src="branch-filter.md" include-id="OR-syntax-tip"/>
+   <include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 * **Use tags as branches** — allows monitoring / checking out git [tags](vcs-labeling.md) as branches making branch specification match tag names as well as branches (for example,`+|-:refs/tags/<tag_name>`). By default, tags are ignored.
 
@@ -145,7 +145,7 @@ For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
    >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
    >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
    >
-   {type="warning"}
+   {style="warning"}
 
    When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root, 
    TeamCity will use a refreshable token instead of the password.
@@ -169,18 +169,18 @@ the TeamCity server refreshes them automatically without sharing any related dat
 
    >Recent versions of OpenSSH no longer generate keys in PEM format by default. The new OpenSSH format is not yet supported by TeamCity (see [TW-53615](https://youtrack.jetbrains.com/issue/TW-53615)). Use the following command to generate TeamCity-compatible keys: `ssh-keygen -t rsa -m PEM`.
    >
-   {type="note"}
+   {style="note"}
 
    Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
    Available __Private Key__ options:
    
-   <chunk include-id="ssh-key-options">
+   <snippet id="ssh-key-options">
 
   * __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
   * __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
   * __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. Fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If the key is encrypted, specify the passphrase in the corresponding field.
    
-   </chunk>
+   </snippet>
 
 
 For all available options to connect to GitHub, see the [comment](https://youtrack.jetbrains.com/issue/TW-16194#comment=27-475793).
@@ -275,7 +275,7 @@ This setting defines how TeamCity performs a checkout to a build agent.
 
 >Read how to add a [Git mirror on a cloud agent](#Git+mirrors+on+cloud+agents).
 >
-{product="tc"}
+{instance="tc"}
 
 </td></tr>
 
@@ -297,7 +297,7 @@ If a build configuration depends on multiple VCS roots, we suggest that you conf
 </td></tr>
 </table>
 
-<tip product="tc">
+<tip instance="tc">
 
 To configure a connection from a TeamCity server running behind a proxy to a remote Git repository, see [this section](how-to.md#Configure+TeamCity+to+Use+Proxy+Server+for+Outgoing+Connections).
 
@@ -328,7 +328,7 @@ If Git is not found in any of these locations, it tries to run the git accessibl
 If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](vcs-root.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
 
 ### Git mirrors on cloud agents
-{auxiliary-id="Git mirrors on cloud agents" product="tc"}
+{auxiliary-id="Git mirrors on cloud agents" instance="tc"}
 
 By default, TeamCity creates a [mirror](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository), that is a copy, of your Git repository under the agent's `system/git` directory. To save time and disk space on fetching source files, TeamCity points to this mirror via the Git alternate mechanism when updating the checkout directory for a build.
 
@@ -336,7 +336,7 @@ Comparing to self-hosted TeamCity agents, cloud agents require extra steps to ad
 
 1. When [preparing a cloud image](teamcity-integration-with-cloud-solutions.md#Preparing+Virtual+Machine), clone the repository under the agent image's `system/git` directory. If necessary, you can store multiple `*.git` directories side by side.
 2. Create a `map` file under the `system/git` directory and describe the mapping between the original repository and its mirror. For example,   
-   ```Text
+   ```
 
    ssh://git@<host>/<git_folder>.git = <git_folder>.git
 
@@ -349,7 +349,7 @@ This way, builds will run significantly faster, with no need to check out the wh
 > Alternatively, you can store the `system/git` directory in a persistent volume, so it keeps all the updates even when a cloud agent is destroyed, and configure its automatic mounting on each newly created agent.
 
 ## Configuring Git Garbage Collection on Server
-{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" product="tc"}
+{id="Git_gc" auxiliary-id="Configuring Git Garbage Collection on Server" instance="tc"}
 
 TeamCity server maintains a local clone for every Git repository used in the VCS roots configured on the server. Since the server performs fetch in those clones many times a day, the clone needs regular optimization to maintain predictable performance. If the Git garbage collection for the clone was not run for a long time, the process of collecting changes may slow down or start to report memory-related errors.  
 TeamCity can automatically run `git gc` periodically when the native Git client can be found on the server. Inability to run Git GC results in a related health report.
@@ -386,7 +386,7 @@ If your repository imports submodules hosted on the same VCS and these imported 
 
 Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
 
-```Plain Text
+```
 teamcity.git.https.credentials.<ALIAS>.url = https://example.com/...
 teamcity.git.https.credentials.<ALIAS>.username = johndoe
 teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
@@ -415,7 +415,7 @@ teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 * Accessing submodule repositories and LFS files is currently supported only via secure HTTPS protocol. SSH and HTTP protocols are not supported.
 
 ## Internal Properties
-{id="internalProperties" auxiliary-id="Internal Properties" product="tc"}
+{id="internalProperties" auxiliary-id="Internal Properties" instance="tc"}
 
 For Git VCS, it is possible to configure the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties):
 
@@ -521,7 +521,7 @@ By default, TeamCity starts nested Java processes for `git fetch` and `git patch
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
 Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) may be needed.
-{product="tc"}
+{instance="tc"}
 
 </td></tr>
 
@@ -866,7 +866,7 @@ When checkout on agent: whether TeamCity should use native SSH implementation.
 
 <td>
 
-[//]: # (Internal note. Do not delete. "Gitd153e964.txt")    
+<!--[//]: # (Internal note. Do not delete. "Gitd153e964.txt")    -->
 
 </td></tr><tr>
 
@@ -891,14 +891,14 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 ## Agent-side checkout rules limitations
 {id="Limitations"}
 
-<chunk include-id="git-checkout-rules-limitations">
+<snippet id="git-checkout-rules-limitations">
 
 The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. 
 The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
 The following rules are supported:
 
-```Text
+```
 
 +:dirA/dirA1
 -:dirA/dirA1/dirA2
@@ -919,7 +919,7 @@ Only the rules `+:dirA => [prefix/]dirA` are supported for agent-side checkout, 
 
 For example:
 
-```Text
+```
 
 +:dirA/dirB/dirC => [prefix/]dirA/dirB/dirC
 +:dirD/dirE/dirF => [prefix/]dirD/dirE/dirF
@@ -930,10 +930,10 @@ Note that the following rule **is not supported**: `+:dirA=>[prefix/]dirA/postfi
 
 <img src="dk-postfixCheckoutError.png" width="706" alt="Checkout directory path error"/>
 
-</chunk>
+</snippet>
 
 ## Known Issues
-{product="tc"}
+{instance="tc"}
 
 * `java.lang.OutOfMemoryError` while fetching from a repository in case [`teamcity.git.fetch.process.max.memory`](#max-memory) property is specified. Since TeamCity 2019.2, the recommended approach is to disable this property thus delegating the automatic memory management to TeamCity.
 * TeamCity running as a Windows service cannot access a network mapped drives, so you cannot work with git repositories located on such drives. To make this work, run TeamCity using `teamcity-server.bat`.

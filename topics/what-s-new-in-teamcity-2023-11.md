@@ -6,7 +6,7 @@
 
 
 ## Matrix Build
-{product="tc"}
+{instance="tc"}
 
 In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to specify a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
 
@@ -21,10 +21,10 @@ The Matrix Build feature offers multiple pre-configured options that allow you t
 Learn more: [](matrix-build.md).
 
 ## Amazon Web Services Integrations
-{product="tc"}
+{instance="tc"}
 
 ### EC2 Plugin Update
-{product="tc"}
+{instance="tc"}
 
 We have overhauled the Amazon EC2 integration plugin. Apart from a refreshed look, the updated plugin features the following enhancements:
 
@@ -38,7 +38,7 @@ Learn more: [](setting-up-teamcity-for-amazon-ec2.md).
 
 
 ### S3 Plugin Update
-{product="tc"}
+{instance="tc"}
 
 Version 2023.11 ships an updated S3 plugin that features the following enhancements:
 
@@ -54,27 +54,27 @@ Learn more: [](storing-build-artifacts-in-amazon-s3.md) | [Upgrade Notes](upgrad
 
 
 ### AWS Connection Improvements
-{product="tc"}
+{instance="tc"}
 
 New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and features (for example, [](aws-credentials.md) or [custom S3 storages](storing-build-artifacts-in-amazon-s3.md)).
 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
 In addition, you can now refer to the new section of our "Configuring Connections" documentation article to learn how to configure secure AWS connections that follow Amazon guidelines and do not require permanent user credentials: [](configuring-connections.md#Recommended+Setup).
-{product="tc"}
+{instance="tc"}
 
 Learn more: [](configuring-connections.md#AmazonWebServices).
 
 
 
 ## VCS Integrations
-{product="tc"}
+{instance="tc"}
 
 ### GitHub
-{product="tc"}
+{instance="tc"}
 
 #### Seamless GitHub App Registration
-{product="tc"}
+{instance="tc"}
 
 In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
 
@@ -91,10 +91,10 @@ You can now issue refreshable access tokens for [GitHub App connections](configu
 
 
 ### JetBrains Space
-{product="tc"}
+{instance="tc"}
 
 #### Automated Connections
-{product="tc"}
+{instance="tc"}
 
 With this release we introduce the updated hassle-free way to set up integrations between TeamCity and JetBrains Space projects. Instead of manually creating, setting up, and installing Space applications that grant TeamCity all required permissions, you can now delegate this routine to TeamCity. All you need to do is to point TeamCity to the right Space organization, and it will do the rest for you.
 
@@ -109,7 +109,7 @@ Learn more: [](configuring-connections.md#jetbrains-space-connection).
 
 
 #### Automatic Status Publishing
-{product="tc"}
+{instance="tc"}
 
 Starting with this version, TeamCity build configurations that target [JetBrains Space](https://www.jetbrains.com/space/) repositories do not require a configured **Commit Status Publisher** build feature to post build-related updates. Set up a TeamCity project via a predefined [Space connection](configuring-connections.md#jetbrains-space-connection) and build statuses will be posted automatically.
 
@@ -126,17 +126,17 @@ You can now issue refreshable access tokens for [JetBrains Space connections](co
 
 
 ### Perforce
-{product="tc"}
+{instance="tc"}
 
 #### Reusing Sources on Cloud Agents
-{product="tc"}
+{instance="tc"}
 
 You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
 
 Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sources+on+Cloud+Agents).
 
 #### Perforce Helix Swarm Enhancements
-{product="tc"}
+{instance="tc"}
 
 In version 2023.11, we have overhauled the "Perforce Helix Swarm" publisher of the [](commit-status-publisher.md) build feature. TeamCity can now utilize workflows and tests that already exist in your Swarm setup (instead of creating its own tests). In addition, the Publisher no longer requires credentials of a user with administrator access.
 
@@ -154,7 +154,7 @@ Learn more: [](integrating-with-helix-swarm.md).
 
 
 ### Bitbucket Cloud
-{product="tc"}
+{instance="tc"}
 
 [Pull Requests](pull-requests.md#Bitbucket+Cloud+Pull+Requests) features that track Bitbucket Cloud repositories have two new Authentication Type options:
 
@@ -166,7 +166,7 @@ Learn more: [](pull-requests.md#Bitbucket+Cloud+Pull+Requests).
 
 
 ### Bitbucket Server and Data Center
-{product="tc"}
+{instance="tc"}
 
 The [Pull Requests](pull-requests.md#Bitbucket+Server+Pull+Requests) feature can now utilize refreshable OAuth tokens to access repositories on Bitbucket Server / Data Center.
 
@@ -174,7 +174,7 @@ Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests).
 
 
 ### Azure DevOps
-{product="tc"}
+{instance="tc"}
 
 The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
 
@@ -185,7 +185,7 @@ Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) |
 
 
 ## .NET
-{product="tc"}
+{instance="tc"}
 
 
 * Build agents now report the `DotNetWorkloads_<version>` parameter that returns all [.NET workloads](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install) installed on the agent machine. Learn more: [](net.md#Parameters+Reported+by+Agent).
@@ -199,7 +199,7 @@ Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) |
 
 
 ## Schedule Custom Builds
-{product="tc"}
+{instance="tc"}
 
 You can now set a specific date and time when a build should run. To do this, invoke the [Run Custom Build](running-custom-build.md) dialog and use settings from the new **Date** section.
 
@@ -209,7 +209,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
 ## Build Cache
-{product="tc"}
+{instance="tc"}
 
 The new **Build Cache** feature allows configurations to cache files required by builds (for instance, downloaded npm packages) and reuse them in consecutive builds. This technique assists build agents in offloading excessive operations and can significantly speed up your building routines.
 
@@ -221,7 +221,7 @@ Learn more: [](build-cache.md).
 
 
 ## Agents with Bundled JDKs
-{product="tc"}
+{instance="tc"}
 
 Starting with version 2023.11, you can build distributions of TeamCity agents bundled with custom JDKs. These distributions allow you to install both an agent and a JDK it requires to operate in one go.
 
@@ -238,7 +238,7 @@ Learn more: [](install-teamcity-agent.md).
 
 
 ## Versioned Settings: Load Additional Settings From a VCS
-{product="tc"}
+{instance="tc"}
 
 Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
 
@@ -253,7 +253,7 @@ Learn more: [](storing-project-settings-in-version-control.md#Apply+Changes+in+S
 
 <!--
 ## Remote Parameters
-{product="tc"}
+{instance="tc"}
 
 You can now select the **Remote** parameter type when setting up a [parameter specification](typed-parameters.md#Adding+Parameter+Specification). Unlike regular parameters whose values are stored in TeamCity, remote parameters retrieve their values from an external source.
 
@@ -265,12 +265,12 @@ Learn more: [](hashicorp-vault.md).
 
 > The [HashiCorp Vault](https://plugins.jetbrains.com/plugin/10011-hashicorp-vault-support) plugin is not bundled with TeamCity; you need to download and install it manually. We expect to bundle it during the next release cycle.
 >
-{type="note"}
+{style="note"}
 -->
 
 
 ## Access Parallel Builds' Artifacts from a Primary Build
-{product="tc"}
+{instance="tc"}
 
 When you run a build configurations that employs the [](parallel-tests.md) build feature, TeamCity splits a build into batches interconnected in an automatically generated [chain](build-chain.md). In previous version, [artifacts](build-artifact.md) produced during such builds were published in these individual batch builds, while a parent build had none.
 
@@ -290,7 +290,7 @@ Learn more: [](parallel-tests.md#Publish+Artifacts+Produced+By+Batch+Builds).
 
 
 ## Step Statuses and IDs
-{product="tc"}
+{instance="tc"}
 
 Starting with version 2023.11, you can specify IDs for your steps (similarly to project and configuration IDs).
 
@@ -307,7 +307,7 @@ Learn more: [](configuring-build-steps.md#Step+Status+Parameters).
 
 
 ## Additional ReSharper Plugins for the Inspections Runner
-{product="tc"}
+{instance="tc"}
 
 The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
 
@@ -318,7 +318,7 @@ Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+S
 
 
 ## Service Messages
-{product="tc"}
+{instance="tc"}
 
 Added the [new service message](service-messages.md#Writing+the+File+into+the+Build+Log) that allows you to track the contents of the given file and echo new lines to the build log.
 
@@ -329,7 +329,7 @@ Learn more: [](service-messages.md#Writing+the+File+into+the+Build+Log).
 
 
 ## REST API
-{product="tc"}
+{instance="tc"}
 
 ### Move Configurations
 
@@ -374,7 +374,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 
 ## Sakura UI and UX Enhancements
-{product="tc"}
+{instance="tc"}
 
 * We have reworked the **Agent Parameters** tab. You can navigate to this tab when viewing any TeamCity agent to instantly check this agent's configuration and environment paramters and system properties.
 
@@ -409,7 +409,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 
 ## Miscellaneous
-{product="tc"}
+{instance="tc"}
 
 * The [DslContext](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/dsl-context/index.html?query=DslContext) object now exposes a string `serverUrl` property that allows you to get the URL of a TeamCity server in Kotlin DSL code.
 * TeamCity distributes agents more effectively and processes large build chains with failing builds faster. Starting with version 2023.11, dependent builds whose ["On failed dependency" condition](snapshot-dependencies.md) is "Make build failed to start" no longer wait for an available agent when their dependencies fail or are canceled. Instead, the dependent build's status changes to "Failed to start" as soon as possible, and TeamCity proceeds to the next build in the chain.
@@ -434,7 +434,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 
 ## Matrix Build
-{product="tcc"}
+{instance="tcc"}
 
 In TeamCity, you can leverage [build parameters](configuring-build-parameters.md) to replace raw values across build scripts, configuration/project settings, command-line arguments, and so on. Normally, each a parameter stores only one value. Starting with version 2023.11, you can add the **Matrix Build** feature to your configurations to specify a range of possible parameter values. When running such a configuration, TeamCity will spawn multiple builds to automatically cycle through these values.
 
@@ -449,7 +449,7 @@ The Matrix Build feature offers multiple pre-configured options that allow you t
 Learn more: [](matrix-build.md).
 
 ## AWS Connection Improvements
-{product="tcc"}
+{instance="tcc"}
 
 New **Available for sub-projects** and **Available for build steps** settings in AWS connections allow you to ensure these connections are not used by unwanted TeamCity projects and features (for example, [](aws-credentials.md)).
 
@@ -459,10 +459,10 @@ Learn more: [](configuring-connections.md#AmazonWebServices).
 
 
 ## VCS Integrations
-{product="tcc"}
+{instance="tcc"}
 
 ### Seamless GitHub App Registration
-{product="tcc"}
+{instance="tcc"}
 
 
 In version 2023.05, we introduced the [new type](configuring-connections.md#GitHub) of connections to GitHub and GitHub Enterprise. These connections utilize [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps), instead of the traditional OAuth-based access to repositories.
@@ -474,7 +474,7 @@ Starting with version 2023.11, you will be able to create these connections much
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 ### Reusing Perforce Sources on Cloud Agents
-{product="tcc"}
+{instance="tcc"}
 
 You can now reuse sources that are present on (or copied from) persistent storages mounted to your cloud agents. In previous versions this behavior was not possible for Perforce builds running on new agent machines.
 
@@ -483,7 +483,7 @@ Learn more: [](perforce-workspace-handling-in-teamcity.md#Reuse+Checked+Out+Sour
 
 
 ## Schedule Custom Builds
-{product="tcc"}
+{instance="tcc"}
 
 When invoking new builds from the [Run Custom Build](running-custom-build.md) dialog, you now have an option to specify the specific date &amp; time when this build should run.
 
@@ -494,7 +494,7 @@ Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
 
 
 ## Agents with Bundled JDKs
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.11, you can build distributions of TeamCity agents bundled with custom JDKs. These distributions allow you to install both an agent and a JDK it requires to operate in one go.
 
@@ -511,7 +511,7 @@ Learn more: [](install-teamcity-agent.md).
 
 
 ## Versioned Settings: Load Additional Settings From a VCS
-{product="tcc"}
+{instance="tcc"}
 
 Starting from this version, TeamCity can load custom snapshot dependencies, VCS roots and checkout rules from settings stored in a version control system. As a result, you now have even more flexibility to edit versioned settings and create custom branches with settings that significantly differ from those in default/stable branches.
 
@@ -526,7 +526,7 @@ Learn more: [](storing-project-settings-in-version-control.md#Apply+Changes+in+S
 
 
 ## Token-Based Authentication
-{product="tcc"}
+{instance="tcc"}
 
 Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize tokens to access repositories hosted on Bitbucket Cloud and Server/Data Center.
 
@@ -540,7 +540,7 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 
 ## Additional ReSharper Plugins for the Inspections Runner
-{product="tcc"}
+{instance="tcc"}
 
 The [](inspections-resharper.md) runner now features the **R# CLT Plugins** field that allows you to add your favorite ReSharper plugins (such as [StyleCop](https://plugins.jetbrains.com/plugin/11619-stylecop-by-jetbrains), [CleanCode](https://plugins.jetbrains.com/plugin/11677-cleancode), or [Unity Support](https://plugins.jetbrains.com/plugin/11629-unity-support)) downloaded from JetBrains Marketplace or installed from a local storage.
 
@@ -551,7 +551,7 @@ Learn more: [](inspections-resharper.md#JetBrains+ReSharper+Command+Line+Tools+S
 
 
 ## REST API
-{product="tcc"}
+{instance="tcc"}
 
 Previously, you could send the DELETE request to a running cloud agent to terminate it.
 
@@ -575,7 +575,7 @@ The `...actions/forceStop` endpoint allows you to stop a cloud instance even if 
 Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/teamcity/rest/manage-cloud-profiles.html#Start+and+Stop+Cloud+Instances).
 
 ## Sakura UI and UX Enhancements
-{product="tcc"}
+{instance="tcc"}
 
 * You can now bookmark required agent pools to easily access them from the top of the agents and pools list. Learn more: [](configuring-agent-pools.md#Favorite+Pools).
 
@@ -600,7 +600,7 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
   <img src="dk_boldChangesIndicator.png" width="706" alt="Highlighted projects with current user changes"/>
 
 ## Miscellaneous
-{product="tcc"}
+{instance="tcc"}
 
 
 * [EC2 Cloud Images](setting-up-teamcity-for-amazon-ec2.md) now feature the **Image priority** setting that allows you to specify which images should spin up new cloud agents first. Images with higher priority values are prioritized over images with lower priorities.
@@ -615,12 +615,12 @@ Learn more: [Start and Stop Cloud Instances](https://www.jetbrains.com/help/team
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2023.11 compared to 2023.05.4](upgrade-notes.md#Changes+from+2023.05+to+2023.11).
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 See the [TeamCity 2023.11 release notes](teamcity-2023-11-release-notes.md) article for the summary of implemented features and fixed issues.
 

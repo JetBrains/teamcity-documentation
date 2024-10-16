@@ -6,10 +6,10 @@ Instead of having one common set of [build agents](build-agent.md), you can brea
 * A project can use _multiple pools_ for its builds.
 
 The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_.
-{product="tc"}
+{instance="tc"}
 
 The number of agents authorized by the TeamCity server is limited by the number of agent licenses. By default, all newly authorized agents are included into the _Default pool_.
-{product="tcc"}
+{instance="tcc"}
 
 With the help of agent pools you can bind specific agents to specific projects. Project builds can be run only on build agents from the pools assigned to the project. Besides, using agent pools makes it easier to monitor the required agents' capacity.
 
@@ -21,7 +21,7 @@ Using agent pools allows:
 
 > You can access agent pool functionality using the TeamCity [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-agent-pools.html).
 > 
-{type="note"}
+{style="note"}
 
 ## Required Permissions
 
@@ -48,7 +48,7 @@ To populate a pool with agents, click the destination pool in the sidebar, then 
 
 To assign a cloud agent to a pool, you need to configure it in the cloud image details of the [agent cloud profile](agent-cloud-profile.md). Note that agents from all cloud profiles of the current project are automatically combined into a _project pool_.  
 Only cloud agent images configured in the `<Root>` project can be moved using __Assign agents__.
-{product="tc"}
+{instance="tc"}
 
 ### Projects Tab
 
@@ -87,6 +87,6 @@ Favorite pools are user-specific, meaning that each TeamCity user can have their
         </category>
         <category ref="admin-guide">
             <a href="viewing-agents-workload.md">Viewing Agents Workload</a>
-            <a href="agent-cloud-profile.md" product="tc">Agent Cloud Profile</a>
+            <a href="agent-cloud-profile.md" instance="tc">Agent Cloud Profile</a>
         </category>
 </seealso>

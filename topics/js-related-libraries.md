@@ -1,4 +1,4 @@
-<chunk include-id="js-libraries">
+<snippet id="js-libraries">
 
 <tr>
 <td>

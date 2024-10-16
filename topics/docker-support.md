@@ -212,7 +212,7 @@ object MyBuildConfig : BuildType({
 >
 > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 >
-{type="tip"}
+{style="tip"}
 
 
 <seealso>

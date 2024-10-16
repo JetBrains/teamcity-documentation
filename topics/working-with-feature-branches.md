@@ -5,7 +5,7 @@ _Feature branches_ in distributed version control systems (DVCS) allow you to wo
 
 TeamCity support for feature branches is continuously extending and, among other features, includes [Branch Remote Run Trigger](branch-remote-run-trigger.md) starting a new personal build each time TeamCity detects changes in a particular branches of the VCS roots of the build configuration and [Automatic Merge](automatic-merge.md) to merge a branch into another after a successful build.
 
-<video href="aTE_1A0Fuh0"
+<video src="https://youtu.be/aTE_1A0Fuh0"
 title="TeamCity tutorial — How to work with feature branches"/>
 
 ## Supported Version Control Systems
@@ -13,7 +13,9 @@ title="TeamCity tutorial — How to work with feature branches"/>
 [Git](git.md) and [Mercurial](mercurial.md) feature branches are supported as well as Perforce [branch streams support](perforce.md#branch-support).
 
 <anchor name="branchSpec"/>
+
 <anchor name="Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec"/>
+
 <anchor name="WorkingwithFeatureBranches-branchSpec"/>
 
 ## Configuring Branches
@@ -26,7 +28,7 @@ Once you've configured the branch specification, TeamCity will start to monitor 
 <anchor name="branch-spec-syntax"/>
 
 The syntax of the branch specification field is newline-delimited list of `+|-:branch_name` rules.       
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 Each rule can have one optional `*` placeholder which matches one or more characters.    
 For example, `+:refs/heads/teamcity*` matches all branches starting with `refs/heads/teamcity` __and at least one additional character__.   
@@ -44,7 +46,7 @@ When a single VCS branch is matched by several lines of the branch specification
 
 That is, if the specification contains an exact pattern matching the branch (i.e. a pattern without the `*` wildcard), then the last such pattern is used. So if you have a specification like this:
 
-```Plain Text
+```
 +:refs/heads/release-v1
 -:refs/heads/release-v1
 ```
@@ -53,7 +55,7 @@ then the last pattern will win and the branch will be excluded.
     
 If a branch specification has several patterns with the `*` wildcard, then TeamCity selects the pattern producing the shortest logical name. This branch specification:
 
-```Plain Text
+```
 +:refs/heads/*/hotfix
 -:refs/heads/v1/*
 ```
@@ -69,7 +71,7 @@ Branch specifications also support expressions starting with the `#` character. 
 
 * Any line starting with `#` is treated as regular comment.
 
-    ```Plain Text
+    ```
     +:refs/heads/main
     # Exclude legacy branch. DO NOT REMOVE!
     -:refs/heads/release-v1
@@ -77,14 +79,14 @@ Branch specifications also support expressions starting with the `#` character. 
 
 * The `#! escape: <YOUR_CHARACTER>` expression defines an escape character that allows you to use special chars in branch names. For example, to write a branch specification rule for the "release-(7.1)" branch, you need to escape round brackets. If you want to use the backslash (`\`) as an escape character, your final branch spec can look like the following:
 
-    ```Plain Text
+    ```
     #! escape: \
     +:release-\(7.1\)
     ```
   
 * The `#! fallbackToDefault: false` expression allows you to prohibit TeamCity from using a [default branch](#Default+Branch) whenever the required branch is not found. For example, when you utilize [](teamcity-rest-api.md) to start a build for a non-existent branch (by default, TeamCity will run a new build for the default branch in this case).
 
-    ```Plain Text
+    ```
     #! fallbackToDefault: false
     +:included_branch
     -:excluded_branch
@@ -123,7 +125,7 @@ A logical branch name is a branch name shown in the user interface for the build
 
 For example, if the branch specification is defined like this:
 
-```Plain Text
+```
 +:refs/heads/*
 ```
 
@@ -131,13 +133,13 @@ then the part matched by `*` (for example, `master`) is a logical branch name.
 
 If the branch specification pattern uses parentheses, the logical name is made up of the part of the name within the parentheses; to see the `v8.1/feature1` logical name displayed in the UI for the VCS branch `refs/heads/v8.1/feature1`, use this:
 
-```Plain Text
+```
 +:refs/heads/(v8.1/*)
 ```
 
 You do not need to include the default branch into the branch specification as it is already included there implicitly. However, if you want to have some short logical branch name for the default branch in the UI, for example, `master`, you can include it in the branch specification and use the parentheses:
 
-```Plain Text
+```
 +:refs/heads/(master)
 ```
 
@@ -173,10 +175,10 @@ In a build configuration with configured branches, most UI pages show active bra
 An _active branch_ is a branch with the recent activity: it has recent builds or exists in the repository with recent commits.    
 
 The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 The threshold for activity can be configured via build configuration parameters. The parameters can be changed in a build configuration (this will affect one build configuration only) or project.
-{product="tcc"}
+{instance="tcc"}
 
 A branch is considered active if:
 * it is present in the VCS repository and has recent commits (i.e. commits with the age less than the value of the integer parameter `teamcity.activeVcsBranch.age.days`, 7 days by default).

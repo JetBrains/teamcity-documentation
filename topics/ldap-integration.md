@@ -54,7 +54,7 @@ When users log in via LDAP, TeamCity does not store the user passwords. On each 
 
 Note that in certain configurations (for example, with `java.naming.security.authentication=simple`) the login information will be sent to the LDAP server in the unencrypted form. For securing the connection, refer to [Sun documentation](https://java.sun.com/products/jndi/tutorial/ldap/security/sasl.html). Another option is to configure communications via the LDAPS protocol.
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e199.txt")    
+<!--[//]: # (Internal note. Do not delete. "LDAP Integrationd195e199.txt")-->    
 
 
 #### Active Directory
@@ -78,7 +78,7 @@ java.naming.referral=follow
 ```
 
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e234.txt")
+<!--[//]: # (Internal note. Do not delete. "LDAP Integrationd195e234.txt")-->
 
 ### Advanced Configuration
 
@@ -99,7 +99,7 @@ The servers are contacted until any of them responds. There is no particular ord
 
 When an LDAP client requests information from an LDAP server that does not have all required data, the server can return referral URLs to other servers to contact for this missing data. To disable this behavior, uncomment the `java.naming.referral=ignore` line in the `ldap-config.properties` file:
 
-```Plain Text
+```
 # Ignore referrals returned by LDAP server ("follow" by default). See also https://youtrack.jetbrains.com/issue/TW-35264
 #java.naming.referral=ignore
 ```
@@ -200,7 +200,7 @@ The first property allows you to capture the username from the input login and u
 
 Note that if any of these properties are not set or cannot be applied, the username isn't changed (the input login name is used).
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e537.txt")    
+<!--[//]: # (Internal note. Do not delete. "LDAP Integrationd195e537.txt")-->    
 
 More configuration examples are available [here](typical-ldap-configurations.md).
 
@@ -217,7 +217,7 @@ You can get the scrambled value using the HTTP request below and then set the pr
 
 >Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
 > 
-{type="warning"}
+{style="warning"}
 
 To get the scrambled password value, execute the following HTTP request under a user who have the System Administrator role granted (i.e. you can just open the URL in the same browser that you use to access TeamCity):
 
@@ -227,7 +227,7 @@ GET {teamcity_url}/app/rest/debug/values/password/scrambled?value=<text to scram
 
 >Note that this approach is relevant only for LDAP configurations. To get a scrambled value in other configurations, you can use the [`addSecureToken`](https://www.jetbrains.com/help/teamcity/rest/projectapi.html#addSecureToken) REST API method. When used for a project with disabled versioned settings, this method returns a string with the encrypted password. When used for a project with enabled versioned settings, it creates a new secure token and returns the token ID.
 
-[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")
+<!--[//]: # (Internal note. Do not delete. "LDAP Integrationd195e594.txt")-->
 
 ### Debugging LDAP Integration
 

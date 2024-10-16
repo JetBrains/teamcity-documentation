@@ -217,23 +217,23 @@ If there are multiple branch filters configured atop a single root, the followin
 
 To filter branches, use a newline-delimited list of `+|-:logical_branch_name` rules, where `logical_branch_name` is the name displayed in the TeamCity UI (for example, `master`). The name is case-sensitive.
 
-<chunk include-id="OR-syntax-tip">
+<snippet id="OR-syntax-tip">
 
 > Here, the _pipe_ symbol `|` represents the __OR__ command, as in regular expressions: use `+` for including, __OR__ `-` for excluding.
 >
-{type="tip"}
+{style="tip"}
 
-</chunk>
+</snippet>
 
-<chunk include-id="vcs-branch-names-for-prs">
+<snippet id="vcs-branch-names-for-prs">
 
 > Note that branch filters for the [](pull-requests.md) build feature accept fully clarified VCS branch names only, regardless of how these branches are displayed in TeamCity UI.
 > 
 > For example, if a user creates a new pull request by executing the `gh pr create --base source-branch --head master --assignee "@johndoe"` GitHub CLI command, use `refs/heads/source-branch` and/or `refs/heads/master` names to point the Pull Requests feature to the related target/source branches. Omitting `refs/heads/` and using shortened logical branch names (`[+|-]:source-branch`, `[+|-]:master`, `[+|-]:pull/10`) will result in faulty filters that do not target required branches.
 > 
-{type="note"}
+{style="note"}
 
-</chunk>
+</snippet>
 
 
  
@@ -248,27 +248,27 @@ When a single branch is matched by several lines of the branch filter, the most 
 Other examples:
 
 * Only the default branch is accepted:   
-   ```Plain Text  
+   ```  
    +:<default>
 
    ```
 
 * All branches except the default one are accepted:   
-   ```Plain Text  
+   ```  
    +:*
    -:<default>
 
    ```
    
 * Only branches with the `feature-` prefix are accepted:   
-   ```Plain Text   
+   ```   
    +:feature-*
 
    ```
    
    
 * Empty branch filter (all branches are accepted):   
-   ```Plain Text   
+   ```   
    +:*
 
    ```
@@ -281,7 +281,7 @@ Use the `+|-pr: <parameter1>=<value1> <parameter2>=<value2> ...` syntax to creat
 
 > For the `+|-pr:...` filters to have any effect, the related VCS root must first be able to detect pull request branches. To do so, configure the [](pull-requests.md) build feature.
 >
-{type="tip"}
+{style="tip"}
 
 The `<parameter>=<value>` expressions are combined using the logical `AND` operator, meaning a pull (merge) request branch must satisfy all conditions to pass the filter. Currently, the following parameters and values are supported:
 
@@ -297,7 +297,7 @@ The `<parameter>=<value>` expressions are combined using the logical `AND` opera
 
 > Currently, joint parameter values are not supported. To enumerate multiple accepted values, add multiple stand-alone filter expressions (for example, `+pr: github_role=COLLABORATOR` and `+pr: github_role=CONTRIBUTOR`).
 >
-{type="note"}
+{style="note"}
 
 
 
@@ -307,7 +307,7 @@ Use the asterisk ("*") as a wildcard for any string. For example, the `+pr:*` an
 
 The following rule allows an object to accept only those requests whose target branch starts with "dev/":
 
-```Plain Text
+```
 +pr:target=dev/*
 ```
 
@@ -315,7 +315,7 @@ The following rule allows an object to accept only those requests whose target b
 
 Pull request filter expressions are applied in the same manner as regular `+|-:<branch_name>` expressions: one by one starting with the first one. This means in case of conflicting expressions, the last one has the highest priority. For example, the following ruleset allows its parent object to accept all available branches, then excludes all pull request branches, and finally re-enables pull requests authored by organization members.
 
-```Plain Text
+```
 +:*
 -pr:*
 +pr:github_role=member
@@ -323,7 +323,7 @@ Pull request filter expressions are applied in the same manner as regular `+|-:<
 
 The following combination of filters rejects pull requests coming from forked repositories even if they target the `main` branch (since the `sourceRepo` condition comes last).
 
-```Plain Text
+```
 +pr:target=main
 -pr:sourceRepo=fork
 ```

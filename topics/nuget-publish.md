@@ -8,11 +8,11 @@ When using TeamCity as a NuGet server, there are three ways to publish packages 
 * via the NuGet Publish build step
 * via the `##teamcity[publishNuGetPackage]` service message, which ensures the packages are published in all configured NuGet feeds at the end of the current build step and are available in the following build steps
 
-<include src="nuget.md" include-id="nuget-OS"/>
+<include from="nuget.md" element-id="nuget-OS"/>
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 > 
-{type="warning" product="tcc"}
+{type="warning" instance="tcc"}
 
 To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
@@ -88,7 +88,7 @@ Package Source
 Specify the destination NuGet packages feed URL to push packages to, for example, [`nuget.org`](https://nuget.org). Leave blank to let NuGet decide what package repository to use.
 
 If you are using a [TeamCity NuGet feed](using-teamcity-as-nuget-feed.md), select it using the 'magic wand' icon <img src="magic-wand.png" alt="Switch to the Sakura UI" height="20" width="20"/> or manually specify the URL from the NuGet Feed section of the __Project Settings__.
-{product="tc"}
+{instance="tc"}
 
 If you work with an authenticated feed, configure the [NuGet Feed Credentials](nuget-feed-credentials.md) build feature.   
 

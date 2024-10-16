@@ -21,7 +21,7 @@ In this tutorial, you will create multiple build configurations, bind them in a 
 > * [](create-pipeline.md)
 > * [](net.md)
 >
-{type="note"}
+{style="note"}
 
 ### Create a Sample Project
 
@@ -219,7 +219,7 @@ object Building_BuildDesktopWindows : BuildType({
 > * [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#msbuild)
 > * [Set up automated builds for your UWP app](https://learn.microsoft.com/en-us/windows/uwp/packaging/auto-build-package-uwp-apps#configure-the-build-solution-build-task)
 > 
-{type="note"}
+{style="note"}
 
 </tab>
 

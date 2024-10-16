@@ -69,12 +69,12 @@ Since Amazon Aurora MySQL version 2 (compatible with MySQL 5.7 and higher), you 
 If you are using Amazon Aurora MySQL version 1 (compatible with MySQL 5.6 and lower), you can check if the connection between TeamCity and the DB cluster is secure by inspecting its traffic with a packet analyzer like `tcpdump`.   
 To change the mode of the SSL connection (for example, to enforce or disable it), pass the respective `sslMode` parameter to the MySQL Connector/J JDBC driver by adding it to the `<TeamCity data directory>/config/database.properties` file:
 * Either add a separate line:   
-    ```Text 
+    ``` 
     connectionProperties.sslMode=<value>
     ```
     or
 * Append the `?sslMode=<value>` argument to the connection string. For example:   
-    ```Text
+    ```
     connectionUrl=jdbc:mysql://<hostname>:3306/<dbname>?sslMode=<value>
   ``` 
 See the list of supported connection mode values in [Connector/J configuration properties](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-configuration-properties.html).

@@ -11,7 +11,7 @@ Approvals also prevent users from triggering a build accidentally.
 
 If a build is not approved within the specified period of time, it will be cancelled.
 
-<include src="untrusted-builds.md" include-id="untrusted-builds-and-build-approval"/>
+<include from="untrusted-builds.md" element-id="untrusted-builds-and-build-approval"/>
 
 
 ## Build Approval Settings
@@ -48,7 +48,7 @@ Approval rules
 
 For example, the rules below will allow a build to start only if it is approved by the `teamlead` user, the `projectadmin` user, and by at least two members of the`QA` group:
 
-```Text
+```
 user:teamlead
 user:projectadmin
 group:QA:2

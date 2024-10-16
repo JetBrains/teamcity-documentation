@@ -12,7 +12,7 @@ The _Inspections (ReSharper)_ build runner allows you to use the benefits of the
 ReSharper command line tools 2018.2 or newer require .NET Framework 4.6.1 or newer.
 
 If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the _Inspections (.NET)_ build runner's fields.
-{product="tc"}
+{instance="tc"}
 
 You can also refer to the [ReSharper documentation](https://www.jetbrains.com/help/resharper/Detect_code_issues_in_a_build_using_ReSharper_and_TeamCity.html) for more details.
 
@@ -141,13 +141,13 @@ R# CLT Home Directory
 Select the ReSharper Command Line Tools version.
 
 You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page.
-{product="tc"}
+{instance="tc"}
 
 <img src="dk-tools.png" width="706" alt="Check the version of installed Resharper tools"/>
-{product="tc"}
+{instance="tc"}
 
 If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and change the default version to be used.
-{product="tc"}
+{instance="tc"}
 
 
 </td></tr>
@@ -173,7 +173,7 @@ Note that the `--source` parameter affects all plugins, so you cannot mix Market
 > * Some of ReSharper plugins may not work for R# CLT.
 > * We recommend using the "R# CLT Plugins" option for ReSharper CLT 2021.3.0 and newer. Older versions may incorrectly interpret values from this field.
 >
-{type="note"}
+{style="note"}
 
 
 </td>
@@ -459,4 +459,4 @@ ReSharper Version
 
 You can view the installed versions of ReSharper on the __Server Administration | Tools__ page. The bundled version is set as default; you can install other versions and change the default settings.
 
-[//]: # (Internal note. Do not delete. "Inspections ReSharper d165e293.txt")    
+<!--[//]: # (Internal note. Do not delete. "Inspections ReSharper d165e293.txt")-->    

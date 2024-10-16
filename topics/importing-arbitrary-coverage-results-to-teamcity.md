@@ -12,6 +12,6 @@ It is possible to achieve a similar experience with tools that are not supported
 
 >Avoid publishing values like `CodeCoverageB`, `CodeCoverageL`, `CodeCoverageM`, `CodeCoverageC` standing for a block/line/method/class coverage percentage. TeamCity will calculate these values using their absolute parts. For example, `CodeCoverageL` will be calculated as `CodeCoverageAbsLCovered` divided by `CodeCoverageAbsLTotal`. Such values will be published without their decimal parts, which might make them useless.
 > 
-{type="warning"}
+{style="warning"}
 
 See also [how to integrate TeamCity with an arbitrary test reporting tool](how-to.md#Integrate+with+Build+and+Reporting+Tools).

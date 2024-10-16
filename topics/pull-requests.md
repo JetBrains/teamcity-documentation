@@ -21,7 +21,7 @@ Adding the Pull Requests feature to a build configuration allows you to:
 
 * Set up specific criteria that govern which pull requests to monitor. You can filter pull requests by their authors, target and origin branches.
 
-   <include src="branch-filter.md" include-id="vcs-branch-names-for-prs"/>
+   <include from="branch-filter.md" element-id="vcs-branch-names-for-prs"/>
 
 * Set up a workflow in which developers work in their local branches and TeamCity does not waste resources building these changes unless they are sent as a pull (merge) request (see the [](#Interaction+with+VCS+Roots) section).
 
@@ -34,7 +34,7 @@ The Pull Requests feature **does not** automatically trigger new builds against 
 >
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
-{type="warning"}
+{style="warning"}
 
 
 If your project targets a GitHub or GitLab repository, you can automate your setup even further by letting TeamCity build pull request branches and merge those requests that yield successful builds. To do this, add the [Automatic Merge](automatic-merge.md) build feature in addition to **Pull Requests**.
@@ -321,7 +321,7 @@ Description
 * **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
   >
-  {type="note"}
+  {style="note"}
 
 </td>
 </tr>
@@ -395,7 +395,7 @@ Be careful: new builds might be triggered for changes committed within the last 
 
 ### Bitbucket Cloud Pull Requests
 
-<video href="M2wi6l0pZe4"
+<video src="https://youtu.be/M2wi6l0pZe4"
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 Since Bitbucket Cloud does not create dedicated branches for pull requests, this build feature monitors directly source branches in a source repository (forks are not supported).   
@@ -421,7 +421,7 @@ The following parameters are available for the [Bitbucket Cloud](https://bitbuck
 * **Username/password** — Specify a username and password for connection to Bitbucket Cloud. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
 
 * **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
-  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud" style="block"/>
 
 * **Permanent Access Token** — Enter a Bitbucket [Repository Access Token](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/), [Project Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-project-access-tokens/), or [Workspace Access Token](https://support.atlassian.com/bitbucket-cloud/docs/using-workspace-access-tokens/) to configure long-lived access to a repository, workspace, or project. The token must be configured with the _Pull Requests | Read_ scope.
 </td>
@@ -474,7 +474,7 @@ Authentication Type
 * **Personal Access Token** — Use a personal access token issued in GitLab. It must have either the `api` scope.
 
 * **GitLab Application Token** — Displays a list of configured [GitLab OAuth connections](configuring-connections.md#GitLab). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
-<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab"/>
+<img src="dk-pullrequests-GitLabToken.png" width="706" alt="PR Token for GitLab" style="block"/>
 
 </td>
 </tr>
@@ -638,7 +638,7 @@ See known issues with processing JetBrains Space merge requests [here](known-iss
 
 TeamCity provides multiple [predefined build parameters](predefined-build-parameters.md) that expose valuable information on pull requests for builds with the enabled Pull Requests [feature](adding-build-features.md):
  
-```Text
+```
 teamcity.pullRequest.number //pull request number
 teamcity.pullRequest.title //pull request title
 teamcity.pullRequest.source.branch //VCS name of the source branch; provided only if the source repository is the same as the target one
@@ -696,7 +696,7 @@ You can automate your setup further, so TeamCity:
 * If you want to run a whole [build chain](build-chain.md) on a pull request, remember to add the Pull Requests feature to each build configuration of the chain. To simplify this procedure, you can set everything in a [build configuration template](build-configuration-template.md) and then create these build configurations based on it.
 
 ## Troubleshooting
-{product="tc"}
+{instance="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Pull Requests build feature to the `teamcity-pull-requests.log` file. Apply the "debug-pull-requests" preset to include DEBUG-level events to this log.
 

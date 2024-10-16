@@ -86,7 +86,7 @@ Allows you to use tags in branch specification. By default, tags are ignored.
 
 <td>
 
-[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")
+<!--[//]: # (Internal note. Do not delete. "Mercuriald211e104.txt")-->
 
 </td></tr><tr>
 
@@ -124,7 +124,7 @@ Use uncompressed transfer
 
 Uncompressed transfer is faster for repositories in the LAN.
 
-</td></tr><tr product="tc">
+</td></tr><tr instance="tc">
 
 <td>
 
@@ -139,7 +139,7 @@ The path to the hg executable. Used on TeamCity server only if included into whi
 </td></tr></table>
 
 ### Path to hg executable detection
-{product="tc"}
+{instance="tc"}
 
 When an agent starts, the hg-plugin detects Mercurial installed on the agent machine.
 
@@ -179,7 +179,7 @@ Mercurial config
 
 Specify the Mercurial configuration options to be applied to the repository during agent-side checkout, for example, enter the following to enable the `largefiles` extension:   
 
-```Plain Text
+```
 [extensions] 
 `largefiles =
 
@@ -214,7 +214,7 @@ When enabled, TeamCity creates a local agent mirror first (under agent's `system
 </td></tr></table>
 
 ## Internal Properties
-{product="tc"}
+{instance="tc"}
 
 This section describes hg-related [internal properties](server-startup-properties.md#TeamCity+Internal+Properties). You can modify the defaults to adjust the Mercurial settings as needed.
 
@@ -316,7 +316,7 @@ Description
 
 <td>
 
-[//]: # (Internal note. Do not delete. "Mercuriald211e377.txt")
+<!--[//]: # (Internal note. Do not delete. "Mercuriald211e377.txt")-->
 
 </td></tr><tr>
 

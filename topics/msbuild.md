@@ -7,7 +7,7 @@ Since TeamCity 2019.2.3, we have stopped providing active support for the MSBuil
 
 For compatibility, the MSBuild runner will be bundled with the nearest future versions of TeamCity. You can continue using it if migration to the .NET runner is too time-consuming for your setup.   
 However, we will unbundle this runner after a sufficient transition period. In this case, you will still be able to install it as an external plugin. Remember to check our [upgrade notes](upgrade-notes.md) before upgrading to each following version.
-{product="tc"}
+{instance="tc"}
 
 </note>
 
@@ -150,14 +150,14 @@ Use this option to instruct TeamCity to run the tests which failed in the previo
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")
+<!--[//]: # (Internal note. Do not delete. "MSBuildd215e169.txt")-->
 
 ## Code Coverage
 
 To learn about configuring code coverage options, refer to the [Configuring .NET Code Coverage](configuring-.net-code-coverage.md) page.
 
 ## Implementation Notes
-{product="tc"}
+{instance="tc"}
 
 The MSBuild runner generates an MSBuild script that includes the user's script. This script is used to add TeamCity-provided MSBuild tasks. Your MSBuild script will be included with the &lt;Import&gt; task. If you specified a Visual Studio solution file, it will be called from the &lt;MSBuild&gt; task. To disable it, set the `teamcity.msbuild.generateWrappingScript` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false`.
 

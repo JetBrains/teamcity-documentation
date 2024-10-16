@@ -12,7 +12,7 @@ _Swabra_ is a bundled TeamCity plugin that allows you to add the Swabra [build f
 
 > Swabra is compatible with any build configuration regardless of its build steps. However, it should be used only when the checkout mode is set to [automatic checkout](vcs-checkout-mode.md): when configured, Swabra runs __before the first build step__ to record the file tree after the sources checkout and to restore it after the build finishes.
 >
-{type="note"}
+{style="note"}
 
 Swabra saves the checkout directory state to the `<checkout-directory-name-hash>.snapshot` file in the caches directory using the DiskDir format. The path to the checkout directory to be cleaned is stored in the `snapshot.map` file. The snapshot stores information about existing files, their last modification and size. This information is used when a build finishes (or a new build is about to start) to identify changes.
 
@@ -129,7 +129,7 @@ If a build employs the agent checkout, Swabra ignores all `.svn`, `.git`, `.hg`,
 
 
 ## Installing Handle
-{product="tc"}
+{instance="tc"}
 
 You can install `handle.exe` from the __Administration__ | __Tools__ page.  
 Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.  
@@ -138,7 +138,7 @@ Specify whether you want to download the latest version of `handle.exe` or uploa
 Note that running `handle.exe` [requires administrator privileges](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) for the build agent user.
 
 ## Installing Handle
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity Cloud does not currently support manual installation of agent tools. Contact TeamCity Support if you need Handle to be installed in your TeamCity Cloud instance.
 
@@ -147,7 +147,7 @@ TeamCity Cloud does not currently support manual installation of agent tools. Co
 
 Generally snapshot file is deleted after files collection. Set the `swabra.preserve.snapshot` system property to preserve snapshots for debugging purposes.
 
-[//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Files Cleaner Swabra d36e260.txt")-->
 
 ## Clean Checkout
 

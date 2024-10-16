@@ -1,7 +1,7 @@
 [//]: # (title: Main Actions on Builds)
 [//]: # (auxiliary-id: Main Actions on Builds;Pinned Build;Build Tag;Changing Build Status Manually)
 
-This article describes what actions can be applied to <emphasis tooltip="build">builds</emphasis> in TeamCity.
+This article describes what actions can be applied to <tooltip term="build">_builds_</tooltip> in TeamCity.
 
 ## Run Build
 
@@ -11,7 +11,7 @@ TeamCity allows running builds:
 
 To run a build manually, click __Run__ in the upper right corner of the screen. This action is available in both __Build Configuration Settings__ and __Build Configuration Home__ modes. If the __Run__ button does not appear for a certain build configuration, it means you do not have enough permissions to start builds in it.
 
-The context menu next to the __Run__ button opens the build's settings menu, so you can initiate a <emphasis tooltip="custom-build-run">custom build run</emphasis>. A custom run allows using different settings or/and source code than if running a regular build in the current configuration. This is handy if you want to try different build parameters or pretest local code without affecting common build settings or committing the code to the common repository. Read more about this functionality [here](running-custom-build.md).
+The context menu next to the __Run__ button opens the build's settings menu, so you can initiate a <tooltip term="custom-build-run">_custom build run_</tooltip>. A custom run allows using different settings or/and source code than if running a regular build in the current configuration. This is handy if you want to try different build parameters or pretest local code without affecting common build settings or committing the code to the common repository. Read more about this functionality [here](running-custom-build.md).
 
 <img src="custom-run-menu.png" alt="Run Custom Build" width="460"/>
 
@@ -29,7 +29,7 @@ The following actions can be invoked from the single-build __Actions__ menu. To 
 
 ### Re-run Build
 
-This action will restart the current build only, omitting other builds in its <emphasis tooltip="build-chain">chain</emphasis> if any. It might be helpful if the build failed due to certain infrastructure problems.
+This action will restart the current build only, omitting other builds in its <tooltip term="build-chain">_chain_</tooltip> if any. It might be helpful if the build failed due to certain infrastructure problems.
 
 ### Remove Build
 
@@ -39,7 +39,7 @@ This action will delete the build from the list.
 
 You can pin a build to prevent it from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
-If the current build is a part of a <emphasis tooltip="build-chain">chain</emphasis> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
+If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
 
 A pinned build can be unpinned manually anytime.
 
@@ -49,7 +49,7 @@ Build tags are labels that can help:
 * Organize the history of your builds.
 * Quickly navigate to the builds marked with a specific tag.
 * [Search](search.md) for a build with a particular tag.
-{product="tc"}
+{instance="tc"}
 * Create an [artifact dependency](artifact-dependencies.md) on a build with a particular tag.
 
 In the _Edit tags_ dialog, enter one or more tags separated by space, comma, or semicolon. For example, `v2022 release` will create two tags: `v2022` and `release`.
@@ -60,11 +60,11 @@ Apart from the __Actions__ menu, you can tag a build in the _[Run Custom Build](
 
 You can also add and modify build tags using [service messages](service-messages.md#Adding+and+Removing+Build+Tags) and [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags).
 
-[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")-->
 
 ### Add Build to Favorites
 
-[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")
+<!--[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")-->
 
 You can add builds to _favorites_ to have quick access to them. Favorite builds can also be set as a filter option for [notifications](set-up-notifications.md).
 

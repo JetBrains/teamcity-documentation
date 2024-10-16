@@ -2,12 +2,12 @@
 [//]: # (auxiliary-id: Jenkins to TeamCity Migration Guidelines)
 
 ## Introduction
-{product="tc"}
+{instance="tc"}
 
 This document provides the basics you need to know when migrating from Jenkins to a TeamCity CI server. TeamCity is quite different from Jenkins in terms of concepts related to managing CI and CD. To learn more about Continuous Delivery and get tips on building a production pipeline, follow our [CI/CD Guide](https://www.jetbrains.com/teamcity/ci-cd-guide/). If you want to jump in and get started with TeamCity right away, see the [Getting Started](getting-started-with-teamcity.md) instructions.
 
 ## Introduction
-{product="tcc"}
+{instance="tcc"}
 
 This document provides the basics you need to know when migrating from Jenkins to a TeamCity CI server. TeamCity is quite different from Jenkins in terms of concepts related to managing CI and CD. If you just want to jump in and get started, try to follow [this guide](getting-started-with-teamcity-cloud.md).
 
@@ -16,7 +16,7 @@ This document provides the basics you need to know when migrating from Jenkins t
 
 Jenkins and TeamCity mostly feature the same set of concepts, however, with slightly different naming. The following table provides a mapping for some of the Jenkins concepts to the TeamCity counterparts.
 
-<chunk include-id="jenkins-mapping-to-teamcity">
+<snippet id="jenkins-mapping-to-teamcity">
 
 <table><tr>
 
@@ -188,7 +188,7 @@ Label
 
 </td></tr></table>
 
-</chunk>
+</snippet>
 
 ## Migrating Freestyle project
 

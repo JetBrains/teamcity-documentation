@@ -27,7 +27,7 @@ Description
 
 <td>
 
-![build running animation](dk-build-running.gif)
+![build running animation](dk-build-running.png)
 
 </td>
 
@@ -63,7 +63,7 @@ A build finished successfully in all specified build configurations.
 
 <td>
 
-![running and failing.gif](dk-build-failing.gif)
+![running and failing.gif](dk-build-failing.png)
 
 </td>
 
@@ -151,7 +151,7 @@ Description
 
 <td>
 
-![personalRunning.gif](personalRunning.gif)
+![personalRunning.gif](personalRunning.png)
 
 </td>
 
@@ -187,7 +187,7 @@ A personal build has completed successfully for all specified build configuratio
 
 <td>
 
-![personalRunningFailing.gif](personalRunningFailing.gif)
+![personalRunningFailing.gif](personalRunningFailing.png)
 
 </td>
 

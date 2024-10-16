@@ -10,10 +10,10 @@ The following guide explains the main TeamCity terms and concepts. For a quick r
 _[Projects](project.md)_ are the topmost objects of the TeamCity hierarchy, and _Root project_ is the main default project that contains all your custom projects and their subprojects. Each project serves for storing logically related _[build configurations](managing-builds.md)_ and defining their common settings and parameters. Most often, a TeamCity project corresponds to a single software product or its specific version.
 
 Projects can be configured manually or automatically, from a VCS repository. The settings of each repository used in a project are stored in a dedicated preset called _[VCS root](vcs-root.md)_. Besides VCS roots, a project contains other settings shared between its nested subprojects and build configurations: _[cloud profile connections](teamcity-integration-with-cloud-solutions.md)_, _[common parameters](levels-and-priority-of-build-parameters.md)_, _[clean-up rules](teamcity-data-clean-up.md)_, and [many others](creating-and-editing-projects.md).
-{product="tc"}
+{instance="tc"}
 
 Projects can be configured manually or automatically, from a VCS repository. The settings of each repository used in a project are stored in a dedicated preset called _[VCS root](vcs-root.md)_. Besides VCS roots, a project contains other settings shared between its nested subprojects and build configurations: _[common parameters](levels-and-priority-of-build-parameters.md)_, _[clean-up rules](teamcity-data-clean-up.md)_, and [many others](creating-and-editing-projects.md).
-{product="tcc"}
+{instance="tcc"}
 
 Example of a simple object hierarchy in TeamCity:
 
@@ -42,16 +42,16 @@ Example of a build chain in TeamCity:
 
 The [TeamCity server](install-and-start-teamcity-server.md) stores all the objects' settings, manages the _[build queue](working-with-build-queue.md)_, monitors the state of running builds, and performs many other tasks. You can install as many additional _[secondary servers](multinode-setup.md)_ as you need to ensure high availability and scalability of your setup.   
 You can host the server on your own machine or get a [TeamCity Cloud](https://www.jetbrains.com/teamcity/cloud/) subscription so your server is automatically launched and maintained in the cloud.
-{product="tc"}
+{instance="tc"}
 
 The TeamCity server stores all the objects' settings, manages the _[build queue](working-with-build-queue.md)_, monitors the state of running builds, and performs many other tasks.
-{product="tcc"}
+{instance="tcc"}
 
 A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. By default, you get three build agents with your TeamCity server but you can get more if required. A build agent software can be installed on a different machine or alongside the server.
-{product="tc"}
+{instance="tc"}
 
 A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. You automatically get access to cloud build agents with your TeamCity Cloud server, but you can also install a build agent software on your own machines.
-{product="tcc"}
+{instance="tcc"}
 
 >Check out the [basic CI workflow in TeamCity](continuous-integration-with-teamcity.md#Basic+CI+Workflow+in+TeamCity) to see an example of a simple build run.
 
@@ -60,12 +60,12 @@ A different piece of software is used for actually running builds — a _[build 
 To learn more about TeamCity, explore this Help further:
 * The current Concepts section lists the main TeamCity objects and terms. Use it as a reference to learn about unfamiliar notions.
 * To properly install and configure your setup, refer to [Supported Platforms and Environments](supported-platforms-and-environments.md) and [Installation](install-and-start-teamcity-server.md).
-{product="tc"}
+{instance="tc"}
 * If you are using TeamCity only for managing and viewing builds, make sure to read [this section](managing-builds.md).
 * If you have a Project Administrator or Server Administrator access, use the [TeamCity Configuration and Maintenance](teamcity-configuration-and-maintenance.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [licensing](licensing-policy.md) and [configuration as code in TeamCity](kotlin-dsl.md).
-{product="tc"}
+{instance="tc"}
 * If you have a Project Administrator or Server Administrator access, use the [TeamCity Configuration and Maintenance](teamcity-configuration-and-maintenance.md) section to learn how to configure projects or how to use the Administration panel and maintain the server. This section also contains information on [configuration as code in TeamCity](kotlin-dsl.md).
-{product="tcc"}
+{instance="tcc"}
 * Available TeamCity add-ins are described [here](installing-tools.md).
 * Under [Extending TeamCity](extending-teamcity.md), advanced users can learn how to [run build scripts for interacting with TeamCity](build-script-interaction-with-teamcity.md), how to [use TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), and more.
 * If none of these sections answer your questions, try looking into [Troubleshooting](troubleshooting.md) and [How-to](how-to.md).

@@ -3,18 +3,19 @@
 
 >This section is about [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) are maintained by the TeamCity Cloud team and require no actions from users.
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. A production TeamCity setup requires installing additional build agents on dedicated machines. Before that, make sure to read notes on [agent-server communication](#Agent-Server+Data+Transfer), [system requirements](system-requirements.md#TeamCity+Agent+Requirements), [conflicting software](known-issues.md#Conflicting+Software), and [security](security-notes.md#Build+Agents).
-{product="tc"}
+{instance="tc"}
 
 A TeamCity _build agent_ is a piece of software which listens for the commands from the TeamCity server and starts the actual build processes. A production TeamCity setup requires installing additional build agents on dedicated machines. Before that, make sure to read notes on [agent-server communication](#Agent-Server+Data+Transfer), [system requirements](system-requirements.md#TeamCity+Agent+Requirements), [security](security-notes.md#Build+Agents), [conflicting software](known-issues.md#Conflicting+Software), and the [licensing policy](teamcity-cloud-subscription-and-licensing.md) on adding new self-hosted agents.
-{product="tcc"}
+{instance="tcc"}
 
 If you install TeamCity bundled with a Tomcat servlet container, or use the TeamCity installer for Windows, both the server and one build agent are installed on the same machine. This is not a recommended setup for [production purposes](configure-server-installation.md#Configuring+Server+for+Production+Use) because of [security concerns](security-notes.md). Moreover, the build procedure can slow down the responsiveness of the web UI and overall TeamCity server functioning.
-{product="tc"}
+{instance="tc"}
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-ServerDataTransfers"/>
+
 <anchor name="SettingupandRunningAdditionalBuildAgents-Agent-ServerDataTransfers"/>
 
 ## Agent-Server Data Transfer
@@ -27,9 +28,9 @@ Agents use unidirectional agent-to-server connection via the polling protocol: a
 
 >It is recommended using __HTTPS__ for agent-to-server communications (check related [server configuration notes](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI)). If the agents and the server are deployed in a secure environment, agents can be configured to use plain HTTP URL for connections to the server as this reduces transfer overhead. Note that the data travelling through the connection established from an agent to the server includes build settings, repository access credentials and keys, repository sources, build artifacts, build progress messages, and build log. In case of using the HTTP protocol that data can be compromised via the "[man in the middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)" attack.
 >
-{type="warning" product="tc"}
+{type="warning" instance="tc"}
 
-[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")
+<!--[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e376.txt")-->
 
 <anchor name="SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents"/>
 
@@ -37,15 +38,15 @@ Agents use unidirectional agent-to-server connection via the polling protocol: a
 
 After you [install a build agent locally](install-teamcity-agent.md), it needs to be [configured](configure-agent-installation.md) and connected to your TeamCity server or cloud instance. Watch this video for a quick guide:
 
-<video href="dvyDCzOJJZw"
+<video src="https://youtu.be/dvyDCzOJJZw"
 title="TeamCity tutorial — How to connect local agents to your TeamCity server"/>
 
 >Please note that the _Use authentication token..._ option referenced in the video is currently available only for TeamCity Cloud instances.
 >
-{type="warning" product="tc"}
+{type="warning" instance="tc"}
 
 ### Generating Authentication Token
-{product="tcc"}
+{instance="tcc"}
 
 The recommended approach to connecting a self-hosted agent to a TeamCity Cloud instance is to generate a unique authentication token for this agent. To do this, go to __Agents__, open the __Install Build Agents__ menu in the upper right corner of the screen, and click _Use authentication token_. There are two options:
 
@@ -58,7 +59,7 @@ Please generate own token or configuration file per each self-hosted agent.
 
 ## Debug Agents Remotely
 
-<chunk id="agents-terminal">
+<snippet id="agents-terminal">
 
 After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
 
@@ -82,8 +83,8 @@ For cloud agents that are automatically terminated after idling for a certain pe
 
 > The "Open interactive terminal" link opens in the `<SERVER-URL>/plugins/teamcity-agent-terminal/agentTerminal.html?agentId:<ID>` URL in a separate panel or a browser tab. If your server is [behind a proxy](multinode-setup.md#Proxy+Configuration), ensure your proxy configuration allows websocket connections to this page.
 > 
-{type="note" product="tc"}
+{type="note" instance="tc"}
 
 The **Open terminal** link is visible only to users whose [role permissions](managing-roles-and-permissions.md) include the *"Invoke interactive agent terminals"* permission. This permission should be granted for all projects associated with the agent pool of the corresponding agent. Users with the "Project Administrator" and "System Administrator" roles have such a permission by default. As an additional precaution, each request to open a terminal is written as a new "Agent actions | Connect to agent" activity in the [audit log](tracking-user-actions.md).
 
-</chunk>
+</snippet>

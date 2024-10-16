@@ -10,7 +10,7 @@ This page covers __general information__ on how to configure this integration. F
 
 In TeamCity Cloud, you have a choice if you want to use [preconfigured cloud agents hosted by JetBrains](teamcity-cloud-subscription-and-licensing.md#cloud-jb-hosted-agents) or configure them yourself and host them in your Cloud infrastructure. You can also combine these approaches and use them together with [hosting agents in your local environment](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents)).  
 One agent instance launched in your own cloud profile takes one self-hosted agent slot. It is managed according to the same licensing rules as agents hosted locally in a customer's environment.
-{product="tcc"}
+{instance="tcc"}
 
 ## General Description
 
@@ -29,13 +29,13 @@ Depending on the profile settings, when TeamCity realizes it needs more agents, 
 * Create a new virtual machine from an image. Such machines will be destroyed (after the build is finished or an idle timeout elapses). This ensures that the machines will incur no further running costs.
 
 The disconnected agent will be removed from the authorized agents list and deleted from the system to free up TeamCity build agent licenses.
-{product="tc"}
+{instance="tc"}
 
 The disconnected agent will be removed from the authorized agents list and deleted from the system. On removal, one self-hosted slot will be released.
-{product="tcc"}
+{instance="tcc"}
 
 ## Available Integrations
-{product="tc"}
+{instance="tc"}
 
 The following Cloud solutions are supported out of the box (see their dedicated articles for more details):
 * [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
@@ -50,7 +50,7 @@ Available as non-bundled plugins:
 New integrations can be implemented as a TeamCity plugin, see [Implementing Cloud support](https://confluence.jetbrains.com/display/TW/Implementing+Cloud+support).
 
 ## Available Integrations
-{product="tcc"}
+{instance="tcc"}
 
 The following Cloud solutions are supported out of the box (see their dedicated articles for more details):
 * [Amazon EC2](setting-up-teamcity-for-amazon-ec2.md)
@@ -109,7 +109,7 @@ The cloud provider pricing applies. Note that the charges can depend on the spec
 Note that traffic volumes and necessary server and agent machines characteristics greatly depend on the TeamCity setup and nature of the builds run.
 
 ### Estimating Traffic
-{product="tc"}
+{instance="tc"}
 
 Here are some points to help you estimate TeamCity-related traffic:
 

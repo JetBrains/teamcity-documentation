@@ -11,4 +11,4 @@ This guide is intended for anyone using TeamCity. Explore TeamCity and learn how
 * [Investigate and Mute Build Problems](investigating-and-muting-build-failures.md)
 * [Create Statistic Charts](statistic-charts.md)
 * [Perform Search](search.md)
-{product="tc"}
+{instance="tc"}

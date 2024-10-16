@@ -27,7 +27,7 @@ docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 
 > For security reasons, parameters of the _Password_ type do not expose their values when referenced as `%\dep.<build_config_ID>.password_parameter%` in dependent builds.
 > 
-{type="note"}
+{style="note"}
 
 ## Override Parameters of Preceding Configurations
 
@@ -102,14 +102,14 @@ object ChainConfigC : BuildType({
 
 If you run the ConfigA or the ConfigA &rarr; ConfigB sub-chain, the first configuration will report its original parameter value.
 
-```Plain Text
+```
 # ConfigA build log
 Parameter value is: Config A
 ```
 
 However, if you run a full build chain that ends with ConfigC, this last configuration will feed ConfigA a custom parameter value.
 
-```Plain Text
+```
 # ConfigA build log
 Parameter value is: Value Overridden in ConfigC
 ```

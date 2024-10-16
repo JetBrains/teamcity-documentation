@@ -5,7 +5,7 @@ TeamCity allows changing the conditions under which a build is marked as _failed
 
 >To fail a build if sufficient disk space cannot be freed for the build, see the [Free disk space](free-disk-space.md) build feature.
 >
-{type="tip"}
+{style="tip"}
 
 ## Common Build Failure Conditions
 
@@ -26,6 +26,7 @@ The _if the build process exit code is not zero_ condition allows failing a buil
 The _if at least one test failed_ condition marks the build as failed if at least one its test fails. If this option is disabled, the build can be marked successful even if it fails to pass a number of tests. Regardless of this option, TeamCity will run all build steps.
 
 <anchor name="test-retry"/>
+
 If the _support test retry: successful test run mutes previous test failure_ option is enabled, TeamCity will mute a test if it fails and then succeeds within the same build. Such tests will not affect the build status. This is convenient for configurations with flaky tests that alternately fail and succeed when applied to the same source revision. 
 
 ### Fail Build on Error Message
@@ -50,7 +51,7 @@ To add such failure condition, click __Add build failure condition__ and select 
 
 >You can disable a build failure condition temporarily or permanently at any time, even if it is inherited from a build configuration template.
 >
-{type="tip"}
+{style="tip"}
 
 <anchor name="BuildFailureConditions-Failbuildonmetricchange"/>
 

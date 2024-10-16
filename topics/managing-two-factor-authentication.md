@@ -28,28 +28,28 @@ Actions that are blocked until a user passes another verification include:
 
 > These actions are blocked only if a user makes them in the TeamCity UI. TeamCity server still accepts modification requests sent via [REST API](teamcity-rest-api.md).
 > 
-{type="note"}
+{style="note"}
 
 This behavior adds an extra layer of protection that prevents attackers who gain access to a user's account from modifying user settings and inflicting more damage.
 
 You can modify the duration of this interval via the `teamcity.2fa.sensitive.settings.access.duration` [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
-{product="tc"}
+{instance="tc"}
 
-```Plain Text
+```
 teamcity.2fa.sensitive.settings.access.duration.seconds=45
 # or
 teamcity.2fa.sensitive.settings.access.duration.minutes=5
 # or
 teamcity.2fa.sensitive.settings.access.duration.hours=3
 ```
-{product="tc"}
+{instance="tc"}
 
 ## Force 2FA for Individual User Groups
-{product="tc"}
+{instance="tc"}
 
 If the global two-factor authentication mode is "Optional", you can force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
-```Plain Text
+```
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 

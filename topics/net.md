@@ -605,7 +605,7 @@ Devenv allows configuring custom options for the IDE, build, debug, and deploy p
 
 >Before running Visual Studio from TeamCity under a specific user, we highly recommended launching it in the UI mode from this user's account at least once. On the first start, VS usually displays pop-up dialogs which might hang a build running the `devenv` command. Once closed during the first launch, these dialogs won't be generated during the following launches in the devenv-mode and no hanging will occur.
 >
-{type="note"}
+{style="note"}
 
 Devenv-specific fields are:
 
@@ -853,7 +853,7 @@ When starting, the build agent reports the following parameters:
 
 <dl>
 
-<include src="predefined-build-parameters.md" include-id="dotnet-related-properties"/>
+<include from="predefined-build-parameters.md" element-id="dotnet-related-properties"/>
 
 </dl>
 

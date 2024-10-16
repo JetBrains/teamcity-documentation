@@ -7,16 +7,16 @@ One of the key features of TeamCity is straightforward integration with modern s
 
 There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box. Remember that you can extend this scope by [installing additional plugins](installing-additional-plugins.md) or even [writing your own ones](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html).  
 See also [versions of platforms and environments](supported-platforms-and-environments.md) currently supported in TeamCity.
-{product="tc"}
+{instance="tc"}
 
 There are many places in the TeamCity UI where you can set up or adjust software integrations, depending on their context. This article gives an overview of third-party software and platforms supported in TeamCity out of the box.  
 See also [versions of platforms and environments](supported-platforms-and-environments.md) currently supported in TeamCity.
-{product="tcc"}
+{instance="tcc"}
 
 The tables below are updated in accordance with the newly introduced integrations and whenever we have extra guides to share.
 
 ## Operating Systems and Databases
-{product="tc"}
+{instance="tc"}
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>
@@ -160,7 +160,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Detecting .NET code duplicates in a build's source](duplicates-finder-resharper.md)
 * [Uploading to and downloading packages from NuGet feeds](nuget.md):
   * Support for public, private NuGet feeds, and an ability to [use TeamCity as a private NuGet feed](using-teamcity-as-nuget-feed.md)
-      {product="tc"}
+      {instance="tc"}
   * Automatically [installing](nuget-installer.md), [packing](nuget-pack.md), and [publishing packages](nuget-publish.md)
   * [Triggering builds on updates in a NuGet feed](nuget-dependency-trigger.md)
 * [Using FxCop for inspecting .NET assemblies](fxcop.md)
@@ -542,7 +542,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 **CVS**
 
@@ -565,7 +565,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td></td></tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 **Borland StarTeam**
 
@@ -601,7 +601,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </tr>
 
-<tr product="tc"><td>
+<tr instance="tc"><td>
 
 **Amazon S3 protocols**
 
@@ -764,7 +764,7 @@ The tables below are updated in accordance with the newly introduced integration
 </table>
 
 ## Cloud Hosting and Orchestration Solutions
-{product="tc"}
+{instance="tc"}
 
 <table>
 <tr><td>Software</td><td>Available Integrations</td></tr>

@@ -4,7 +4,7 @@
 TeamCity clean-up functionality allows an automatic deletion of old and no longer necessary build data.
 
 The server clean-up configuration is available in __Administration | Server Administration | Clean-up Settings__. It allows setting clean-up schedule and shows general clean-up information.
-{product="tc"}
+{instance="tc"}
 
 Clean-up rules, related to specific projects, are configured in __Project Settings | Clean-up Rules__. These rules define what data to clean and what to preserve. They can be assigned to a project or build configuration.   
 It is recommended to configure clean-up rules to remove obsolete builds and their artifacts, purge unnecessary data from the database and caches in order to free disk space, remove builds from the TeamCity UI and reduce the TeamCity workload.
@@ -13,9 +13,9 @@ It is recommended to configure clean-up rules to remove obsolete builds and thei
 >If you want to apply one simple clean-up rule to all projects on the server, you can create it on a Root project level. To get predictable clean-up results, make sure to read about the [rules' specifics](#Clean-up+Rules) before configuring them.
 
 Clean-up deletes the data stored under `<[TeamCity Data Directory](teamcity-data-directory.md)>/system` and in the database. Also, during the clean-up, the server performs various maintenance tasks (for example, resets VCS full patch caches).
-{product="tc"}
+{instance="tc"}
 
-<note product="tc">
+<note instance="tc">
 
 Note that in case of any critical configuration errors on the server, TeamCity will not clean up the data of deleted projects and build configurations.   
 To see all the current server warnings and errors, go to __Administration | Project-related Settings | Server Health__.
@@ -30,13 +30,13 @@ To see all the current server warnings and errors, go to __Administration | Proj
 > 
 > These builds retain all their data after server clean-up routines.
 >
-{type="note"}
+{style="note"}
 
 TeamCity Cloud also comes bundled with the [Caches Cleanup](https://github.com/JetBrains/teamcity-caches-cleanup-plugin) plugin that helps easily free disk space.
-{product="tcc"}
+{instance="tcc"}
 
 ## Server Clean-up Settings
-{product="tc"}
+{instance="tc"}
 
 The _server clean-up settings_ are configured in __Administration | Server Administration | Clean-up Settings__.
 
@@ -79,7 +79,7 @@ Keep rules are more fine-grained and can cover cases like keeping all the builds
 
 >If a build configuration has no base clean-up rule configured, all its data not covered by keep rules will be scheduled for a clean-up. Before disabling the base rule make sure that keep rules preserve all valuable data.
 > 
-{type="warning"}
+{style="warning"}
 
 During the clean-up, TeamCity analyzes and combines the base and keep rules to determine the scopes of data to preserve and to delete.
 
@@ -169,11 +169,11 @@ Notes on the keep rule behavior:
 When a project or a build configuration is deleted, the corresponding build data is removed during the clean-up, but only if 5 days (432, 000 seconds) have passed since the deletion.
 
 To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to the required number of seconds to protect the data from deletion.
-{product="tc"}
+{instance="tc"}
 
 
 
-[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")    
+<!--[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")-->    
 
 <seealso>
         <category ref="concepts">

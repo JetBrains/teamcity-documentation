@@ -3,10 +3,10 @@
 
 >The information on this page can be used for reference purposes only.
 > 
-{type="note"}
+{style="note"}
 
 ## Why Upgrade TeamCity
-{product="tc"}
+{instance="tc"}
 
 TeamCity is systematically and frequently updated with new features and optimizations. __We highly recommend upgrading your server and agents as soon as the new version is released__. Each release introduces the following key improvements:
 * __New functionality__: including new runners, build features, UI enhancements, integration with third-party software, and instruments for customization. The recent [release notes](what-s-new-in-teamcity.md) give an example of the number and scale of features provided per major release.  
@@ -18,14 +18,14 @@ TeamCity is systematically and frequently updated with new features and optimiza
 Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases. Read more about the release stages in the [following section](#Release+Stages).
 
 ## Version Numbers
-{product="tc"}
+{instance="tc"}
 
 A major release is represented by the `YYYY.MM` number, where `YYYY` is the release year and `MM` is the number of the release month. For example, `2022.04` and `2022.10` are two major versions released in year 2022, in April and October.
 
 A minor release is represented by the `YYYY.MM.B` number, where `YYYY.MM.B` corresponds to its preceding major release and `B` is the serial number of the minor (bugfix) release. For example, `2022.04.1` is the first bugfix update released for major version `2022.04`.
 
 The dates of all previous releases and the sequence of TeamCity versions are listed [here](previous-releases-downloads.md).
-{product="tc"}
+{instance="tc"}
 
 ## Release Stages
 
@@ -33,7 +33,7 @@ The dates of all previous releases and the sequence of TeamCity versions are lis
 > 
 >The TeamCity Cloud infrastructure allows releasing new features more frequently than in On-Premises: they are now rolled out to the Cloud instances bimonthly. On-Premises instances can be upgraded to a new major version twice a year, exactly as before.
 > 
-{type="note"}
+{style="note"}
 
 The default stages of a TeamCity release:
 
@@ -119,8 +119,8 @@ Occurs with the release of two newer major versions. At this point, we stop prov
 
 <seealso>
         <category ref="installation">
-            <a href="licensing-policy.md" product="tc">Licensing Policy</a>
-            <a href="previous-releases-downloads.md" product="tc">Previous Releases Downloads</a>
-            <a href="upgrading-teamcity-server-and-agents.md" product="tc">Upgrade</a>
+            <a href="licensing-policy.md" instance="tc">Licensing Policy</a>
+            <a href="previous-releases-downloads.md" instance="tc">Previous Releases Downloads</a>
+            <a href="upgrading-teamcity-server-and-agents.md" instance="tc">Upgrade</a>
         </category>
 </seealso>

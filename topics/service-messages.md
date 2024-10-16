@@ -180,7 +180,7 @@ Escape as
 
 |[
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e192.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e192.txt")-->    
 
 </td></tr>
 
@@ -240,7 +240,7 @@ Block closing:
 
 >Note that when you close a block, all its inner blocks are closed automatically.
 >
-{type="note"}
+{style="note"}
 
 ### Reporting Compilation Messages
 
@@ -359,7 +359,7 @@ Indicates that `testName` was run. If the `testFailed` message is not present, t
 > 
 > If using Ant's `echo` task to output the messages, make sure to include the `flowId` attribute with the same value in all the messages related to the same test / test suite as otherwise they [will not be processed correctly](https://youtrack.jetbrains.com/issue/TW-5059).
 > 
-{type="note"}
+{style="note"}
 
 It is highly recommended that you ensure that the pair of `test suite` + `test name` is unique within the build. For advanced TeamCity test-related features to work, test names must not deviate from one build to another (a single test must be reported under the same name in every build). Include absolute paths in the reported test names is __strongly discouraged__.
 
@@ -538,7 +538,7 @@ The message should be printed after all the files are ready and no file is locke
 
 >To publish multiple artifact files in one archive, you need to configure the _[Artifact paths](configuring-general-settings.md#Artifact+Paths)_ in __General Settings__ of a build configuration. If you use service messages, only artifacts for the last rule will be published to the archive.
 >
-{type="tip"}
+{style="tip"}
 
 Artifacts are uploaded in the background, which can take time. Make sure the matching files are not deleted till the end of the build (for example, you can put them in a directory that is cleaned on the next build start, in a [temp directory](how-to.md#Make+Temporary+Build+Files+Erased+between+the+Builds), or use [Swabra](build-files-cleaner-swabra.md) to clean them after the build).
 
@@ -546,7 +546,7 @@ Artifacts are uploaded in the background, which can take time. Make sure the mat
 
 > The process of publishing artifacts can affect the build, because it consumes network traffic, and some disk/CPU resources (should be pretty negligible for not large files/directories).
 >
-{type="note"}
+{style="note"}
 
 Artifacts that are specified in the build configuration setting will be published as usual.
 
@@ -579,7 +579,7 @@ If you wish to show a progress message for a part of a build only, use:
 
 > The same message should be used for both `progressStart` and `progressFinish`. This allows nesting progress blocks. Note that in case of Ant builds, progress messages will be replaced if an Ant target starts.
 >
-{type="note"}
+{style="note"}
 
 ### Reporting Build Problems
 
@@ -595,7 +595,7 @@ where:
  *  `description` (mandatory): a human-readable plain text describing the build problem. By default, the `description` appears in the build status text and in the list of build's problems. The text is limited to 4000 symbols, and will be truncated if the limit is exceeded.
  * `identity` (optional): a unique problem ID. Different problems must have different identity, same problems — same identity, which should not change throughout builds if the same problem, for example, the same compilation error occurs. It must be a valid Java ID up to 60 characters. If omitted, the `identity` is calculated based on the `description` text.
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e948.txt")-->    
 
 ### Reporting Build Status
 
@@ -692,7 +692,7 @@ When specifying a build parameter's name, mind the prefix:
 
 >Since the `setParameter` mechanism does not publish anything to the server until the build is finished, it is not possible to get updated parameters during the build via the REST API.
 >
-{type="note"}
+{style="note"}
 
 ### Reporting Build Statistics
 
@@ -722,7 +722,7 @@ If you need for some reason to disable searching for service messages in the out
 
 Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server-side processing of service messages, enable/disable service messages also supports the `flowId` attribute and will ignore only the messages with the same `flowId`.
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")    
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")-->    
 
 ### Importing XML Reports
 
@@ -737,7 +737,7 @@ The service message format is:
 
 > To be processed, report XML files (or a directory) must be located in the [checkout directory](build-checkout-directory.md), and the path must be relative to this directory.
 >
-{type="note"}
+{style="note"}
 
 where `typeID` can be one of the following (see also [XML Report Processing](xml-report-processing.md)):
 
@@ -1033,7 +1033,7 @@ If not specially noted, the report types support Ant-like wildcards in the `path
 The parsing only occurs within the build step in which the messages were received. On the step finish, the agent ensures all the present reports are processed before beginning the next step. This behavior is different from that of [XML Report Processing](xml-report-processing.md) build feature, which completes files parsing only at the end of the build.   
 Ensure the report files are available after the generation process ends (the files are not deleted, nor overwritten by the build script)
 >
-{type="note"}
+{style="note"}
 
 To initiate monitoring of several directories or parse several types of the report, send the corresponding service messages one after another.
 
@@ -1041,9 +1041,9 @@ To initiate monitoring of several directories or parse several types of the repo
 
 > Only several reports of different types can be included in a build. Processing reports of several inspections or duplicates tools in a single build is not supported. See the [related feature request](https://youtrack.jetbrains.com/issue/TW-14260).
 >
-{type="note"}
+{style="note"}
 
-[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1503.txt")-->
 
 
 ## Writing the File into the Build Log
@@ -1096,7 +1096,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
 
    * `notifier` — always equals "slack".
    * `message` — the message to show. Supports [Markdown](https://api.slack.com/reference/surfaces/formatting) syntax (apart from "\n" for line breaks, use "|n" or "|r" [instead](#Escaped+Values)).
-     <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages"/>
+     <img src="dk-slackMessages-markdown.png" width="706" alt="Markdown-formatted service messages" style="block"/>
    * `sendTo` — specifies who should receive the message. Accepts a single Slack channel name, channel ID (starts with "C", for instance, "C052UHDRZU7"), or user ID (starts with "U", for instance, "U02K2UVKJP7") as value. If you need to send the same message to multiple recipients, create multiple service messages with different `sendTo` values.
    * `connectionID` — the optional parameter that allows you to choose a specific Slack connection that TeamCity should use to send this message. Accepts connection IDs as values. If this parameter is not specified, TeamCity will retrieve all Slack connections available for the current project and choose the one whose **Notifications limit** is not zero.
    
@@ -1104,7 +1104,7 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
        >
        > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
        >
-       {type="tip"}
+       {style="tip"}
 
 <!--
       > Currently, you cannot retrieve Slack connection IDs from the TeamCity 
@@ -1131,14 +1131,14 @@ TeamCity utilizes [Slack connections](configuring-connections.md#Slack) to send 
       > ```
       > The connection ID is the value of the "id" field, typically in the "PROJECT_EXT_INT" format.
       > 
-      {type="tip"}
+      {style="tip"}
 -->
 
 4. Run the build to ensure all Slack messages are delivered.
 
 
 ## Sending Custom Email Messages
-{product="tc"}
+{instance="tc"}
 
 You can use TeamCity service messages to send emails from inside build scripts.
 

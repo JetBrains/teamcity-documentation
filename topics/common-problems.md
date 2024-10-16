@@ -2,12 +2,12 @@
 [//]: # (auxiliary-id: Common Problems)
 
 Most user issues are related to the following topics. Before reporting your problem, check if any of these Help pages contains the solution already:
-{product="tc"}
+{instance="tc"}
 
 * [Configuring server memory settings](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)
-{product="tc"}
+{instance="tc"}
 * [Reporting server slowness issues](reporting-issues.md#Collect+Data)
-{product="tc"}
+{instance="tc"}
 
 ## Build works locally but fails or misbehaves in TeamCity
 
@@ -50,7 +50,7 @@ If it still behaves differently in TeamCity, most probably this is an environmen
 
 If the command line runner works but the dedicated runner does not while the options are all the same, create a new issue in our [tracker](https://youtrack.jetbrains.com/issues/TW) detailing the case. Please attach all the build step settings, the build log, all agent logs covering the build, the command you used in the console to run the build and the full console output of the build.
 
-[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")
+<!--[//]: # (Internal note. Do not delete. "Common Problemsd63e112.txt")-->
 
 ## Build is slow under TeamCity
 
@@ -80,7 +80,7 @@ If the agent stays in the state for more than 10 minutes and you have a fast net
 * check that all the related environment [requirements](system-requirements.md#Common+Requirements) are met;
 * check [agent logs](viewing-build-agent-logs.md) (`teamcity-agent.log`, `launcher.log`, `upgrade.log`) for any related messages/errors;
 * check [server logs](teamcity-server-logs.md) (`teamcity-server.log`) for any messages/errors mentioning agent name or IP.
-{product="tc"}
+{instance="tc"}
 
 If you cannot find the cause of the delayed agent upgrade in the logs, [contact us](feedback.md) and provide the full agent and server logs. Be sure to check/include the state of the agent processes (java ones) on the agent machine.
 
@@ -94,7 +94,7 @@ If you encounter a case when artifacts are preserved while they should have been
 Read more on [clean-up settings](teamcity-data-clean-up.md#Base+Rule+Behavior+for+Dependency+Builds).
 
 ## Database-related issues
-{product="tc"}
+{instance="tc"}
 
 ### "out of memory" error with internal (HSQLDB) database
 
@@ -484,12 +484,12 @@ __VCS root with id "XXX" does not exist__
 The build configuration or template reference a VCS root which is not defined in the system. Remedy actions: Restore the VCS root or create a new VCS root with the id noted or edit the file noted in the message to remove the reference to the VCS root.
 
 ## TeamCity installation problems
-{product="tc"}
+{instance="tc"}
 
 If the TeamCity web UI cannot be accessed after installation, you might be running TeamCity on a port that is already in use by another program. [Check and configure](configure-server-installation.md) your TeamCity installation.
 
 ## Problems with TeamCity NuGet Feed
-{product="tc"}
+{instance="tc"}
 
 If you are experiencing issues with partial TeamCity NuGet Feed (for example, missing NuGet packages), you might have to reindex the TeamCity NuGet Feed.
 

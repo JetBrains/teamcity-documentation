@@ -2,10 +2,10 @@
 [//]: # (auxiliary-id: Cron Expressions in TeamCity)
 
 TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md) and [server clean-up](teamcity-data-clean-up.md#Server+Clean-up+Settings).
-{product="tc"}
+{instance="tc"}
 
 TeamCity allows you to flexibly schedule regular operations using the [cron](https://en.wikipedia.org/wiki/Cron#Operators) format. Currently, cron-like expressions are supported for [schedule triggers](configuring-schedule-triggers.md).
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity uses [Quartz](https://www.quartz-scheduler.org/) for working with cron expressions. See the examples below or consider using the [CronMaker](http://www.cronmaker.com/) utility to generate expressions based on the Quartz cron format.
 

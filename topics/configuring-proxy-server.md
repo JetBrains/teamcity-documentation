@@ -88,7 +88,7 @@ On Windows, you may need to increase the [ThreadsPerChild](https://httpd.apache.
 Versions 1.3 or later are recommended. Earlier versions do not support the WebSocket protocol.
 
 
-```Plain Text
+```
 
 http {
     ... default settings here
@@ -120,7 +120,7 @@ http {
 
 ```
 
-[//]: # (Internal note. Do not delete. "How To...d160e1234.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e1234.txt")-->
 
 ### IIS
 
@@ -227,6 +227,7 @@ IIS-related issues:
 
 
 <anchor name="Proxy-Tomcat-Connector"/>
+
 <anchor name="Proxy-Tomcat-RemoteIpValve"/>
 
 ## TeamCity Tomcat Configuration
@@ -278,7 +279,7 @@ If a TeamCity server is configured behind an IIS reverse proxy:
 ```
 
 
-[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")
+<!--[//]: # (Internal note. Do not delete. "How To...d160e1383.txt")-->
 
 <anchor name="Use+Proxy+for+Outgoing+Connections"/>
 
@@ -329,7 +330,7 @@ teamcity.https.proxyPassword=password
 > * [Configure Git to use a proxy](https://gist.github.com/evantoli/f8c23a37eb3558ab8765)
 > * [The `git config` reference](https://git-scm.com/docs/git-config)
 > 
-{type="warning"}
+{style="warning"}
 
 <anchor name="Use+Proxy+to+Connect+Agents+to+TeamCity+Server"/>
 
@@ -337,7 +338,7 @@ teamcity.https.proxyPassword=password
 
 A build agent typically needs to make a variety of outbound connections: to the TeamCity server, to S3 artifact storage, to VCS hosts, and so on. This section describes how to configure the build agent so that the outbound connections continue to work after the build agent is deployed behind a proxy.
 
-<chunk include-id="agent-proxy-server">
+<snippet id="agent-proxy-server">
 
 On the TeamCity agent side, specify the proxy to connect to the TeamCity server using the following properties in the [`buildAgent.properties`](configure-agent-installation.md) file:
 
@@ -357,11 +358,11 @@ If the proxy has a HTTPS endpoint, you can also configure the `teamcity.https.*`
 
 > * The proxy has to be configured not to cache any TeamCity server responses. For example, if you use Squid, add "cache deny all" line to the `squid.conf` file.
 > * Since TeamCity Cloud servers' integrated [](build-artifact.md#Artifacts+Storage) is hosted on [Amazon S3](https://aws.amazon.com/s3/), the proxy should allow `*.amazonaws.com` traffic.
-> {product="tcc"}
+> {instance="tcc"}
 > * If you're using a [custom artifact storage](configuring-artifacts-storage.md), make sure the agent can connect to the required service. For example, if you use [S3 buckets to store artifacts](storing-build-artifacts-in-amazon-s3.md), the proxy should allow `*.amazonaws.com` traffic.
-> {product="tc"}
+> {instance="tc"}
 
-</chunk>
+</snippet>
 
 
 ## Proxy Server for Multinode Setup

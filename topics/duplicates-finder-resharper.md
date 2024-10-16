@@ -3,7 +3,7 @@
 
 > Due to the ReSharper team sunsetting the [dupFinder Command-Line Tool](https://blog.jetbrains.com/dotnet/2021/08/12/sunsetting-dupfinder-command-line-tool/), this runner is now deprecated. This means its underlying tool will no longer be updated to work with newer language features. However, you can continue using this runner in your build configurations. To do so, install [JetBrains ReSharper Command Line Tools 2021.2.3](https://www.jetbrains.com/resharper/download/other.html) and specify a path to this tool in the runner's advanced settings (the **R# CLT Home Directory** field).
 > 
-{type="warning"}
+{style="warning"}
 
 The _Duplicates finder (ReSharper)_ build runner, based on [ReSharper Command Line Tools](http://www.jetbrains.com/resharper/features/command-line.html), is intended to catch similar code fragments and provide a report on the discovered repetitive blocks of C# and Visual Basic .NET code in Visual Studio 2003, 2005, 2008, 2010, 2012, 2013, and 2015 solutions.
 
@@ -83,7 +83,7 @@ R# CLT Home Directory
 Select the ReSharper Command Line Tools version.
 
 You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page. If you want to run ReSharper duplicates using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can use this page to install another version of the tools and can change the default version to be used.
-{product="tc"}
+{instance="tc"}
 
 </td></tr>
 
@@ -214,7 +214,7 @@ Discard types
 
 If this option is checked, similar content with different type names will be recognized as duplicates. These include all possible type references (as shown below):
 
-```csharp
+```C#
 Logger.GetInstance("text");
 OtherUtility.GetInstance("text");
 ... where Logger and OtherUtility are both type names (thus GetInstance is a static method in both classes)

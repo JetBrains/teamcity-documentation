@@ -19,7 +19,7 @@ If your build configurations use the [agent-side checkout](vcs-checkout-mode.md#
 
 > You can set properties' values during a build by sending the [setParameter Service Message](service-messages.md#set-parameter). To send these messages before the checkout, send them from a [Bootstrap step](https://youtrack.jetbrains.com/issue/TW-14646/Ability-to-run-custom-task-before-a-branch-is-checked-out-on-agent-bootstrap-steps).
 > 
-{type="tip"}
+{style="tip"}
 
 
 The workspace name also includes the build agent name and a hash value built from the checkout directory and (optionally) checkout rules.
@@ -76,7 +76,7 @@ Usually, each [clean checkout](clean-checkout.md) build results in `p4 sync -f` 
 When an error occurs during a checkout, or a build is interrupted/stopped during the checkout, or a timeout occurs, no [clean checkout](clean-checkout.md) will occur for the subsequent builds on the same build agent. Instead, TeamCity will rely on the Perforce ability to recover from the state. 
 
 ### VCS Root Client Mapping Modification
-{product="tc"}
+{instance="tc"}
 
 Usually, when a project administrator modifies a VCS root client mapping specified in the VCS root, this is considered a change in the VCS root settings and results in a [clean checkout](clean-checkout.md). This clean checkout behaviour can be disabled using the `teamcity.perforce.enable-no-clean-checkout=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
@@ -118,6 +118,6 @@ To prevent this from happening and reuse sources from a persistent storage, do t
        
        > Since TeamCity updates a workspace according to settings of a corresponding VCS Root, make sure the VCS Root settings have the same [Client Mapping](perforce.md#Map+Perforce+Depot+to+Client) as `customP4ClientName` workspace in your Service Message.
        > 
-       {type="warning"}
+       {style="warning"}
 
 With these bootstrap steps in place, TeamCity updates your P4 client specification, runs the `p4 sync` command and performs a checkout that should fetch only changes between the flushed `<changelist_revision>` and the revision associated with the current build.

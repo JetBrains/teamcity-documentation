@@ -14,7 +14,7 @@ This page shows the list of builds waiting to be run and displays the following 
 * Time to start: the estimated wait duration. Hovering over the estimated time value shows a tooltip with the following information:
     * Expected start/finish time.
     * The link to the planned agent.
-    * If the current build is a part of a <emphasis tooltip="build-chain">build chain</emphasis> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip.
+    * If the current build is a part of a <tooltip term="build-chain">_build chain_</tooltip> and the builds it depends on are not finished yet, a corresponding note will be displayed. For some builds, like the builds that have never been run before, TeamCity cannot estimate possible duration, so the respective message will be displayed in the tooltip.
 * A brief description of the [event that triggered the build](configuring-build-triggers.md).
 * The number of agents compatible with this build configuration. You can click an agent's name link to open the __[Agents](viewing-build-agent-details.md)__ page, or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
 
@@ -63,7 +63,7 @@ To move a build to the top spot in the queue, do one of the following:
 For a [composite build](composite-build-configuration.md), the whole build chain will be moved to the top of the queue. If a running composite build has dependency builds that have not yet started, click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the running build, click the __Actions__ menu in the upper right corner. Select the __Move queued dependencies to top__ action. All queued dependencies of this build will be moved to the top of the queue.
 
 ## Managing Build Priorities
-{product="tc"}
+{instance="tc"}
 
 By default, builds are placed in the build queue in the order they are triggered: the most recently triggered build is added to the bottom of the queue. It is possible to change the build's priorities so that builds are inserted into the build queue at a position depending on their defined priority and the wait time of the currently queued builds.
 
@@ -112,12 +112,12 @@ The build queue can be paused manually or automatically. In this case, the build
 Users with the _Enable/disable agent_ permission (included in the [Agent Manager](managing-roles-and-permissions.md#Per-Project+Authorization+Mode) role by default) can manually pause/resume the build queue (since pausing the queue is equivalent to disabling all agents on the server). This action is available in the upper right corner of the __Queue__ page.
 
 The build queue can be paused automatically [if the TeamCity server runs out of disk space](teamcity-disk-space-watcher.md). The queue will be automatically resumed when sufficient space is available.
-{product="tc"}
+{instance="tc"}
 
 When the queue is paused, every page in TeamCity will contain a message with information on the reasons for pausing.
 
 ## Limiting Maximum Size of Build Queue
-{product="tc"}
+{instance="tc"}
 
 It is possible to limit the maximum number of builds in the queue. By default, the limit is 6000 builds. The default value can be changed by configuring the `teamcity.buildTriggersChecker.queueSizeLimit` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 

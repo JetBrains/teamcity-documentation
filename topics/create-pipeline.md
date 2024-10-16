@@ -3,10 +3,10 @@
 
 > This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
 > 
-{type= "note" product="tc"}
+{type= "note" instance="tc"}
 
 This tutorial assumes that you have already started your TeamCity instance. We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
-{type= "note" product="tcc"}
+{type= "note" instance="tcc"}
 
 A _build chain_ or a _pipeline_ is a sequence of consecutively run [build configurations](creating-and-editing-build-configurations.md). In TeamCity, these configurations can belong to different projects, and pass files (artifacts) from one build to another.
 
@@ -36,7 +36,7 @@ To import the sample project:
    > 
    > <img src="dk-import-wo-sync.png" width="706" alt="Import with no sync"/>
    >
-   {type="note"}
+   {style="note"}
 
 4. TeamCity will import the sample project's settings and redirect you to its __General Settings__ page. Here, you can scroll a bit and see the _TodoBackend_ subproject. Click it to view all the created build configurations.
 

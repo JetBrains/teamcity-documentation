@@ -188,7 +188,7 @@ Specify parameters to be passed to the PowerShell executable.
 </td></tr></table>
 
 ## Docker Settings
-{product="tc"}
+{instance="tc"}
 
 In this section, you can specify the Docker image which will be [used to run the build step](container-wrapper.md).
 
@@ -277,4 +277,4 @@ The TeamCity PowerShell plugin uses temporary files as an entry point; these fil
 
 The PowerShell support is implemented as an open-source plugin. For development links refer to the [plugin's page](https://github.com/JetBrains/teamcity-powershell).
 
-[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")
+<!--[//]: # (Internal note. Do not delete. "PowerShelld255e514.txt")-->

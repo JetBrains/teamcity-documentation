@@ -6,7 +6,7 @@ The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
-{product="tc"}
+{instance="tc"}
 
 A [Kotlin](https://kotlinlang.org/) compiler of version 1.3.70 or later must be [installed as an agent tool](installing-agent-tools.md) to run this step. 
 
@@ -174,7 +174,7 @@ Select JDK to run the script:
 > `An illegal reflective access operation has occurred`  
 > This is caused by a known issue of the Kotlin compiler and will not affect your build anyhow. The details of the issue and its workaround are described [here](https://youtrack.jetbrains.com/issue/TW-70604#focus=Comments-27-4763145.0-0).
 >
-{type="warning"}
+{style="warning"}
 
 </td>
 

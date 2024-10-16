@@ -7,7 +7,7 @@ Various aspects of a TeamCity server behavior can be customized through options 
 
 >Be cautious when altering the TeamCity behavior. If you are not sure in the consequences, contact the [TeamCity support](feedback.md) first.
 >
-{type="warning"}
+{style="warning"}
 
 ## TeamCity Internal Properties 
 

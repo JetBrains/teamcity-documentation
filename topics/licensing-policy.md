@@ -188,7 +188,7 @@ Regular upgrades are highly recommended not only because each new release includ
 Note that TeamCity [email support](feedback.md) covers only the [recent TeamCity versions](teamcity-release-cycle.md) and can only be provided to customers who are under active maintenance for their Enterprise server license.
 
 
-[//]: # (Internal note. Do not delete. "Licensing Policyd197e369.txt")    
+<!--[//]: # (Internal note. Do not delete. "Licensing Policyd197e369.txt")-->    
 
 <anchor name="LicensingPolicy-LicenseExpiration"/>
 
@@ -235,7 +235,7 @@ Any IntelliJ IDEA 6.0 license purchased between July 12, 2006 and January 15, 20
 To check TeamCity upgrade availability for your IntelliJ IDEA licenses and to request your Enterprise Server license, please contact [sales department](https://www.jetbrains.com/support/sales/) with one of your IntelliJ IDEA licenses purchased within the above period.
 
 
-[//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")
+<!--[//]: # (Internal note. Do not delete. "Licensing Policyd197e452.txt")-->
 
 ## Copyright and Trademark Notice
 

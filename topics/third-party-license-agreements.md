@@ -3,11 +3,11 @@
 
 >This document is obsolete. See the relevant list of third-party software used in TeamCity on our [website](https://www.jetbrains.com/legal/third-party-software/?product=TC).
 > 
-{product="tc"}
+{instance="tc"}
 
 >This document is obsolete. See the relevant list of third-party software used in TeamCity on our [website](https://www.jetbrains.com/legal/third-party-software/?product=TCC).
 >
-{product="tcc"}
+{instance="tcc"}
 
 ## Acknowledgements
 

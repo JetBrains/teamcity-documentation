@@ -94,9 +94,10 @@ Notes on using this mode:
 * To use the `StreamAtChange` option, you need to define _[Label/changelist to sync](#Other+Settings)_.
 * When streams are used with the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), simple [checkout rules](vcs-checkout-rules.md) like `. => sub/directory` are supported. Exclude checkout rules, multiple include rules, or rules like `aaa=>bbb` are supported only when the "_Create non-stream workspace_" option is enabled (see [below](#Agent+Checkout+Settings)).
 * When task streams are used for feature branches, TeamCity may miss some changes in task streams until a modifying commit is made, which means that merge commits from the parent stream are not detected until a _real_ commit to the task stream is made (see ticket [TW-44765](https://youtrack.jetbrains.com/issue/TW-44765)).
-* <include src="vcs-checkout-rules.md" include-id="note-perforce-vcs"/>
+* <include from="vcs-checkout-rules.md" element-id="note-perforce-vcs"/>
 
 <anchor name="branch-support"/>
+
 <anchor name="branchStreams"/>
 
 The "_Enable feature branches support_" option allows you to specify branch streams to be monitored for changes, in addition to the default one. [Read more](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) about this functionality.
@@ -124,15 +125,15 @@ Notes on using this mode:
   * TeamCity will handle file separators according to the OS/platform of the build agent where a build is run. To be able to use a specific line separator for all build agents, choose the _Client_ or _Stream_ option instead (with `LineEnd` specified in Perforce). Alternatively, you can add an [agent requirement](configuring-agent-requirements.md) to run builds only on a specific platform.
   * Use `team-city-agent` instead of the client name in the mapping.  
     Example:
-    ```Plain Text
+    ```
     //depot/MPS/... //team-city-agent/...
     //depot/MPS/lib/tools/... //team-city-agent/tools/...
     
     ```
 * If the direct client mapping is changed between two builds, a [clean checkout](clean-checkout.md) for the second build __will be forced__, unless the `teamcity.perforce.enable-no-clean-checkout` [internal property](server-startup-properties.md) is set on the server.
-{product="tc"}
+{instance="tc"}
 * If the direct client mapping is changed, a clean checkout __will be forced__.
-{product="tcc"}
+{instance="tcc"}
 * Changing client mapping __will not force__ clean checkout for the agent-side checkout when:
   * A Perforce client name is used: changing the Perforce client mapping for the client will not result in a clean checkout.
   * A Perforce stream is used: changing the stream name while keeping the same stream root will not result in a clean checkout.
@@ -286,10 +287,10 @@ Specify the path to the Perforce command-line client (`p4.exe`).
 This works only for the [agent-side checkout](vcs-checkout-mode.md#agent-checkout). On the agent side, the value of this parameter could be overridden via the `TEAMCITY_P4_PATH` environment variable, if such a variable is set in `[buildAgent.properties](configure-agent-installation.md)` or comes from [build parameters](configuring-build-parameters.md).
 
 For the server, the p4 binary should be present in the `PATH` environment variable of the TeamCity server machine, or can be specified via the `teamcity.perforce.customP4Path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 >In the past versions, TeamCity supported a semicolon-separated list of allowed p4 paths. To restore this obsolete behavior, you can set the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{product="tc"}
+{instance="tc"}
 
 </td></tr><tr>
 

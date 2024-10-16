@@ -44,7 +44,7 @@ This feature gets even more effective if you combine it with our [build step exe
 <img src="custom-trigger-params.png" width="460" alt="Customize triggered builds"/>
 
 ## Multinode setup improvements
-{product="tc"}
+{instance="tc"}
 
 One of the top priorities of TeamCity is to provide a high-availability solution for your building processes. In this release, we bring multiple updates that make it easier to configure a performant and stable cluster setup.
 
@@ -137,7 +137,7 @@ TeamCity now supports the [ChangeView](https://www.perforce.com/manuals/p4guide/
 
 Moreover, if a [Perforce VCS root](perforce.md) is set to the _Client mapping mode_, you can use the `ChangeView` specification to limit the root's scope to a particular revision or multiple revisions. To do this, open the settings of a Perforce VCS root, choose the Client mapping connection mode, and enter the client mapping. For example:
 
-```Plain Text
+```
 //my-depot/... //team-city-agent/...
 ChangeView:
     //my-depot/dir1/…@90
@@ -213,7 +213,7 @@ TeamCity allows running a custom build with your local changes — without actua
 For this purpose, we've created a new [user permission](managing-roles-and-permissions.md) — _Change build source code with a custom patch_. On upgrading to 2021.1, it will be automatically enabled for the default Project Developer role and other roles with the _Customize build permission_. By toggling this permission, you can granularly control who can patch builds or, if necessary, fully restrict this functionality in important projects.
 
 ## Customize multipart upload of artifacts to Amazon S3
-{product="tc"}
+{instance="tc"}
 
 If you store build artifacts in Amazon S3, you can now control how they are uploaded. TeamCity uses a [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) of large files by default, but it is now possible to customize its parameters: upload threshold and upload part size. This can help use the network bandwidth more effectively and improve throughput.
 
@@ -255,7 +255,7 @@ Our [build status widget](configuring-general-settings.md#Enable+Status+Widget) 
 
 >Make sure the widget support is enabled in __Build Configuration Settings | Build Options__.
 >
-{type="note"}
+{style="note"}
 
 To access the widget menu from __Build Configuration Home__, open the __Actions__ menu and click __Get build status icon__:
 
@@ -287,12 +287,12 @@ You can embed this code into an external page and view the build status without 
 See [TeamCity 2021.1 release notes](teamcity-2021-1-release-notes.md).
 
 ## Upgrade notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about [important changes in version 2021.1 compared to 2020.2.x](upgrade-notes.md#Changes+from+2020.2.x+to+2021.1).
 
 ## Previous releases
-{product="tc"}
+{instance="tc"}
 
 * [What's New in TeamCity 2020.2](https://www.jetbrains.com/help/teamcity/2020.2/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2020.1](https://www.jetbrains.com/help/teamcity/2020.1/what-s-new-in-teamcity.html)

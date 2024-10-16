@@ -4,22 +4,22 @@ The **Untrusted Builds** section allows you to set up the changes verification p
 
 <img src="dk-untrustedbuilds-pending.png" width="706" alt="Pending approval"/>
 
-<chunk include-id="untrusted-builds-and-build-approval">
+<snippet id="untrusted-builds-and-build-approval">
 
 > Do not confuse the [](untrusted-builds.md) and [](build-approval.md) features. Despite certain similarities, these are separate features that serve different purposes.
 > 
 > * **Untrusted Builds** provide an additional security layer that blocks potentially harmful changes authored by external users.
 > * The **Build Approval** feature implements a confirmation mechanism that avoids mindless/excessive builds for certain configurations (configurations that deploy build results to public resources, configurations that require significant resources to run, and so on).
 >
-{type="tip"}
+{style="tip"}
 
-</chunk>
+</snippet>
 
 > Untrusted Builds currently support the following version control systems:
 > * GitHub
 > * GitLab
 > 
-{type="note"}
+{style="note"}
 
 ## Common Information
 
@@ -32,7 +32,7 @@ In this case external users can fork your public repository, introduce malicious
 
 > See this section for more information about potential damage caused by users who can modify repository code: [](security-notes.md#manage-permissions).
 >
-{type="warning"}
+{style="warning"}
 
 Depending on the exact build configuration setup and the desired behavior, you may want to make the following adjustments:
 
@@ -57,20 +57,20 @@ Settings that correspond to untrusted builds are configured on the project level
    * *Cancel build* — TeamCity cancels builds that process changes authored by external users. This includes both builds initiated by the [](pull-requests.md) feature and manually started builds.
    * *Require approval* — builds that process changes authored by external users are queued, but will not start until the required number of reviewers approve it.
 
-3. Choose whether untrusted builds should be logged. TeamCity warns you the build is untrusted in the [build log](build-log.md)... {product="tc"}
+3. Choose whether untrusted builds should be logged. TeamCity warns you the build is untrusted in the [build log](build-log.md)... {instance="tc"}
 
    <img src="dk-untrustedbuilds-log.png" width="706" alt="Warning in build log"/>
 
    ...as well as writes corresponding messages to the [teamcity-server.log](teamcity-server-logs.md) (regardless of the selected default action).
 
-   ```Plain Text
+   ```
    [2024-02-21 11:31:05,337]
    WARN — jetbrains.buildServer.SERVER — Build(promotion id: 7004, configuration id: MyProject_Build) detected as untrusted.
    Reasons: {Pull request from a fork in a public repository (target repository url: https://github.com/...)}
    Build URL: http://localhost:8111/buildConfiguration/MyProject_Build/-1
    ```
    
-3. Choose whether untrusted builds should be logged. If this option is enabled and the **Default action** is not set to **Cancel build**, TeamCity adds a corresponding note to a [build log](build-log.md) when running an untrusted build. {product="tcc"}
+3. Choose whether untrusted builds should be logged. If this option is enabled and the **Default action** is not set to **Cancel build**, TeamCity adds a corresponding note to a [build log](build-log.md) when running an untrusted build. {instance="tcc"}
    
    <img src="dk-untrustedbuilds-log.png" width="706" alt="Warning in build log"/>
 

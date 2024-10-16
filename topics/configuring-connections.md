@@ -11,11 +11,11 @@ When created, a connection can be used in all the nested subprojects of the curr
 
 If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
 After configuring the proxy, remember to also set the new address as the _Server URL_ in __Global Settings__ of TeamCity.
-{product="tc"}
+{instance="tc"}
 
 ## Azure DevOps
 
-<chunk include-id="azure-devops">
+<snippet id="azure-devops">
 
 There are two types of Azure DevOps connections in TeamCity:
 * __Azure DevOps OAuth 2.0__ allows signing in to TeamCity via an Azure DevOps Services account and creating TeamCity projects from Azure Git repositories.
@@ -59,15 +59,15 @@ To configure an Azure DevOps PAT connection:
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Bitbucket Cloud
 
-<chunk include-id="bb-cloud">
+<snippet id="bb-cloud">
 
 >In TeamCity Cloud, a connection to Bitbucket Cloud is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
-{product="tcc"}
+{instance="tcc"}
 
 A connection to Bitbucket Cloud can be used to:
 * Create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
@@ -87,7 +87,7 @@ After the consumer is created:
 A Bitbucket icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your Bitbucket profile. TeamCity will be granted access to your repositories. 
 If you configure multiple Bitbucket connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Bitbucket Server and Data Center
 
@@ -116,11 +116,11 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 
 ## GitHub
 
-<chunk include-id="github">
+<snippet id="github">
 
 >In TeamCity Cloud, a connection to GitHub.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity allows you to create connections to both regular **GitHub.com** instances and **GitHub Enterprise**.
 
@@ -246,19 +246,19 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 
 > When your GitHub Enterprise server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 > 
-{type="note"}
+{style="note"}
 
 Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## GitLab
 
-<chunk include-id="gitlab">
+<snippet id="gitlab">
 
 >In TeamCity Cloud, a connection to GitLab.com is already predefined in the Root project's settings, which makes it available in all the other projects.
 >
-{product="tcc"}
+{instance="tcc"}
 
 There are two types of GitLab connections: *GitLab.com* for accounts hosted on the [](https://gitlab.com) site, and *GitLab CE/EE* for accounts on a self-hosted GitLab Community Edition (CE) or Enterprise Edition (EE) server.
 
@@ -286,7 +286,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
    4. Click *Save application*
     > For a GitLab instance-wide application, there is an additional *Trusted* checkbox, which skips the user authorization step when it is enabled.
     >
-    {type="note"}
+    {style="note"}
 
 6. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
 7. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
@@ -294,11 +294,11 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 
 > When your GitLab CE/EE server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 >
-{type="note"}
+{style="note"}
 
 A GitLab icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitLab profile. TeamCity will be granted access to your repositories. If you configure multiple GitLab connections, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
-</chunk>
+</snippet>
 
 ## Google
 
@@ -381,17 +381,18 @@ To configure an AWS connection in TeamCity:
 
      After the connection is created, you can view and copy the automatically generated external connection ID. We strongly recommend that you always add it to the [trust policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) in AWS to prevent the [confused deputy problem](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html). This ensures that only authorized TeamCity AWS connections will be able to use the specified IAM Role.
 
-   Default credential provider chain {product="tc"}
+   Default credential provider chain {instance="tc"}
    :
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
      This approach provides an alternatives to storing credentials in plain text.
-     >Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources,
+     
+> Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources,
       using the **Default Provider Chain** credentials may present a security risk: 
       in this case the TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.    
   
      To mitigate this risk, the **Default credential provider chain** credentials type is disabled by default. To enable it, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true`. (The default value is `false`.)
      No server restart is required after the property is set.
-   {product="tc"}
+   {instance="tc"}
      When this credentials type is used, TeamCity searches for credentials in the following order:
         1. Java System Properties: `aws.accessKeyId` and `aws.secretAccessKey`.
         2. Environment Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
@@ -399,20 +400,20 @@ To configure an AWS connection in TeamCity:
         4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI. The default location can be overridden via the [`AWS_SHARED_CREDENTIALS_FILE`](aws-credentials.md) environment variable.
         5. Credentials delivered via the Amazon EC2 container service if the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable is set and the security manager has access to it.
         6. Instance profile credentials delivered through the Amazon EC2 metadata service. 
-   {product="tc"}
+   {instance="tc"}
 
 7. Tick the **Available for sub-projects** option if you want this connection to be available for all subprojects of the current project.
 8. Tick the **Available for build steps** option to allow choosing this connection in the [AWS Credentials build feature](aws-credentials.md) feature settings.
 9. Test and save the connection.
 
 A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md), [artifact S3 storages](storing-build-artifacts-in-amazon-s3.md), and other AWS connections that use IAM Roles.
-{product="tc"}
+{instance="tc"}
 
 A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md) and other AWS connections that use IAM Roles.
-{product="tcc"}
+{instance="tcc"}
 
 ### Recommended Setup
-{product="tc"}
+{instance="tc"}
 
 Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) recommend using IAM Roles instead of access keys and static IAM user credentials. Since IAM Roles issue short-lived credentials, this approach minimizes potential damage should your credentials get exposed (accidentally or as a result of a security breach).
 
@@ -459,7 +460,7 @@ TeamCity allows your project to access required AWS resources using connections 
 
 9. Click **Test connection** to ensure TeamCity can assume **Role B**.
     
-    ```Plain Text
+    ```
     Running STS get-caller-identity...
     Caller Identity:
      Account ID: <your account ID>
@@ -650,10 +651,10 @@ This type of connection is used to send notifications via [Slack](https://slack.
 Before configuring a Slack connection, you need to create a [Slack app](https://api.slack.com/apps) with the following [bot token scopes](https://api.slack.com/scopes): `channels:read`, `chat:write`, `im:read`, `im:write`, `users:read`, `team:read`, `groups:read`. You can add these in __Features | OAuth & Permissions | Scopes__ of your Slack app.
 
 To ensure your TeamCity server can connect to Slack, specify all the possible endpoint addresses of the server as __Redirect URLs__ in __Features | OAuth \& Permissions__. In most cases, it would be enough to specify the _Server URL_ set in __[Global Settings](configuring-server-url.md)__ in TeamCity. However, if you use a proxy for your TeamCity server but access this server directly, the authentication in Slack might not work unless the server's IP address is also specified in __Redirect URLs__.
-{product="tc"}
+{instance="tc"}
 
 To ensure your TeamCity server can connect to Slack, specify its address as __Redirect URL__ in __Features | OAuth \& Permissions__.
-{product="tcc"}
+{instance="tcc"}
 
 >See this [Basic app setup](https://api.slack.com/authentication/basics) guide for more details.
 
@@ -709,7 +710,7 @@ To configure an organization connection:
     
     > Note that TeamCity retrieves the server URL from **Administration | General settings** and passes this URL as the endpoint for the newly created Space application. You will not be able to update this endpoint after the application is installed, so verify TeamCity uses the correct URL.
     >
-    {type="note"}
+    {style="note"}
 
 7. Click **Approve all and go back to TeamCity** to grant the newly installed Space application required permissions.
 

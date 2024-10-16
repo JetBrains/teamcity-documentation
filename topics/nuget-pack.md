@@ -3,13 +3,13 @@
 
 The _NuGet Pack_ build runner allows building a NuGet package from a given specification file. If you want to publish this package, add a [NuGet Publish](nuget-publish.md) build step.
 
-<include src="nuget.md" include-id="nuget-OS"/>
+<include from="nuget.md" element-id="nuget-OS"/>
 
 >To view the NuGet Installer's settings in [Kotlin DSL](kotlin-dsl.md), click __View as code__ in the sidebar.
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](build-agent.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 > 
-{type="warning" product="tcc"}
+{type="warning" instance="tcc"}
 
 Configure the following options of the NuGet Pack runner:
 

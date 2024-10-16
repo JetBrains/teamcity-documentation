@@ -5,7 +5,7 @@ The _build checkout directory_ is a directory on the TeamCity agent machine wher
 
 > For the complete Version Control Settings available in a TeamCity build configuration, see [](configuring-vcs-settings.md).
 > 
-{type="tip"}
+{style="tip"}
 
 ## Checkout Process
 
@@ -30,13 +30,13 @@ If TeamCity detects that it cannot build an incremental patch, a [clean checkout
 
 The default checkout directory location (when **Checkout directory** field is set to _Auto_ in the build settings [Version Control Settings](configuring-vcs-settings.md) page) is given by:
 
-```Plain Text
+```
 <Build_Agent_Home>/work/<VCS_Settings_Hash_Code>
 ```
 
 If the location of the [agent work directory](agent-work-directory.md) is customized, this changes to:
 
-```Plain Text
+```
 <Agent_Work_Dir>/<VCS_Settings_Hash_Code>
 ```
 
@@ -84,7 +84,7 @@ With the [server-side](vcs-checkout-mode.md#server-checkout) and [agent-side che
 
 It is recommended to use the [Free disk space](free-disk-space.md) build feature to ensure that the build gets enough disk free space on the build agent.
 
-[//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Checkout Directoryd30e211.txt")-->
 
 The time frame for automatic directory expiration can be changed by specifying a new value (in hours) by either of the following ways:
 * `teamcity.agent.build.checkoutDir.expireHours` agent property in the `buildAgent.properties` file

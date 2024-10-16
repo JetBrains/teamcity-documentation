@@ -20,10 +20,10 @@ Learn more: [Install and Start TeamCity Agents](install-and-start-teamcity-agent
 
 
 ## Multinode Setup Enhancements
-{product="tc"}
+{instance="tc"}
 
 ### Round-Robin
-{product="tc"}
+{instance="tc"}
 
 Version 2023.05 introduces a new requests distribution logic that spreads the load more effectively between TeamCity nodes and minimizes the number of negatively affected users when a node is down due to a planned maintenance or an unexpected failover.
 
@@ -32,7 +32,7 @@ This new logic is based on sending new requests to a random node that has the [H
 Learn more: [](multinode-setup.md#Round-Robin).
 
 ### Assign the VCS Polling Responsibility to Multiple Nodes
-{product="tc"}
+{instance="tc"}
 
 Prior to version 2023.05, the "VCS repositories polling" [responsibility](multinode-setup.md) (allows nodes to poll repositories for new commits and detect changes) was available for a single node in the entire cluster. Starting with this version, you can assign this responsibility to multiple nodes. This enhancement allows you to evenly distribute the load across nodes and reduce the delay before triggering new builds.
 
@@ -45,7 +45,7 @@ To specify which node should handle your current requests (for instance, adding 
 Learn more: [VCS Repositories Polling](multinode-setup.md#VCS+Repositories+Polling+on+Secondary+Node).
 
 ### Disable Main Node Responsibilities
-{product="tc"}
+{instance="tc"}
 
 Previously, the [main TeamCity node](multinode-setup.md) automatically re-gained the *"Processing data produced by running builds"*, *"VCS repositories polling"*, and *"Processing build triggers"* responsibilities when a TeamCity cluster had no nodes with such responsibilities. In addition, when you switched the *"Main TeamCity node"* responsibility to another node, this new node automatically inherited all other responsibilities.
 
@@ -53,7 +53,7 @@ Starting with version 2023.05, main nodes do not automatically accept "missing" 
 
 
 ### Launch TeamCity Backup and Clean-Up from Any Node
-{product="tc"}
+{instance="tc"}
 
 You can now [create backups](creating-backup-from-teamcity-web-ui.md) on any node with the [Handling UI actions and load balancing user requests](multinode-setup.md#Handling+UI+Actions+and+Load+Balancing+User+Requests) responsibility.
 
@@ -73,7 +73,7 @@ GitHub App connections allow you to check out GitHub.com and GitHub Enterprise r
 Learn more: [Configuring Connections](configuring-connections.md#GitHub).
 
 ### Ignore GitHub Draft Pull Requests
-{product="tc"}
+{instance="tc"}
 
 Starting from this version, you can configure the [Pull Requests build feature](pull-requests.md)
 to ignore [GitHub draft pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests) by checking the **Ignore Drafts** box in the build feature settings.
@@ -99,7 +99,7 @@ Short-lived refreshable tokens provide more security compared to passwords or pe
 Learn more: [Refreshable tokens](git.md#refresh-token).
 
 ### Integration with Bitbucket Server and Data Center
-{product="tc"}
+{instance="tc"}
 
 In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data Center. The corresponding option is available in the connection types list, and on the **Create Project** page.
 
@@ -122,7 +122,7 @@ Learn more: [](integrating-teamcity-with-container-managers.md).
 
 
 ## HTTPS Access Enhancements
-{product="tc"}
+{instance="tc"}
 
 ### Fetch HTTPS Certificates via Let's Encrypt
 {id="fetch-certificates-via-lets-encrypt"}
@@ -148,7 +148,7 @@ Learn more: [](https-server-settings.md#Specify+Available+Encryption+Protocols).
 
 
 ### Send Slack Messages and Emails via Service Messages
-{product="tc"}
+{instance="tc"}
 
 TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that sends emails, Slack direct messages, and posts updates to Slack channels.
 
@@ -159,7 +159,7 @@ Built-in security features ensure messages cannot be sent to wrong recipients an
 Learn more: [Slack Messages](service-messages.md#Sending+Custom+Slack+Messages) | [Emails](service-messages.md#Sending+Custom+Email+Messages).
 
 ### Send Slack Messages via Service Messages
-{product="tcc"}
+{instance="tcc"}
 
 TeamCity [](service-messages.md) allow you to report various information about the build by adding special messages to your build scripts. The list of available service messages now includes the `##teamcity[notification ...]` message that Slack direct messages and posts updates to Slack channels.
 
@@ -178,7 +178,7 @@ You can now send TeamCity [service messages](service-messages.md) to add and rem
 
 To add and remove tags, send the following messages:
 
-```Plain Text
+```
 ##teamcity[addBuildTag 'your-custom-tag']
 ##teamcity[removeBuildTag 'tag-to-remove']
 ```
@@ -187,7 +187,7 @@ Learn more: [Service Messages](service-messages.md#Adding+and+Removing+Build+Tag
 
 
 ## AWS-Related Updates
-{product="tc"}
+{instance="tc"}
 
 <!--### Share AWS Connections with Child Projects
 
@@ -218,7 +218,7 @@ Learn more: [](setting-up-teamcity-for-amazon-ec2.md#Amazon+EC2+Launch+Templates
 
 
 ## IMDSv2 Support for Amazon Machine Images
-{product="tcc"}
+{instance="tcc"}
 
 IMDSv2 is the new version of the Instance Metadata Service by Amazon that [addresses a number of IMDSv1 vulnerabilities](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/).
 
@@ -226,10 +226,10 @@ TeamCity 2023.05 supports EC2 instances and Amazon Machine Images (AMIs) with bo
 
 
 ## Two-Factor Authentication Enhancements
-{product="tc"}
+{instance="tc"}
 
 ### Additional Verification for Critical Settings
-{product="tc"}
+{instance="tc"}
 
 Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
 
@@ -238,11 +238,11 @@ This new behavior adds an extra layer of protection for your TeamCity server.
 Learn more: [](managing-two-factor-authentication.md#Critical+Settings+Protection).
 
 ### Force 2FA for Specific User Groups
-{product="tc"}
+{instance="tc"}
 
 If the global two-factor authentication mode is "Optional", you can now force individual [user groups](creating-and-managing-user-groups.md) to use 2FA. To do so, add the `teamcity.2fa.mandatoryUserGroupKey` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set its value to the required group key.
 
-```Plain Text
+```
 teamcity.2fa.mandatoryUserGroupKey=SYSTEM_ADMINISTRATORS_GROUP
 ```
 
@@ -278,13 +278,13 @@ Learn more: [Manage Server Authentication Settings](https://www.jetbrains.com/he
 
 
 ## .NET 8 Support
-{product="tc"}
+{instance="tc"}
 
 TeamCity 2023.05 now supports [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) framework by Microsoft. This means TeamCity agents correctly recognize the corresponding SDK installed on agent machines and the [.NET build runner](net.md) successfully builds projects that target .NET 8.0.
 
 
 ## Additional Verification for Critical Settings
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.05, users who pass the two-factor authentication have one hour to perform security-related actions: disable 2FA, change user password and/or email, and generate access tokens. Once this period expires, users must re-confirm their identities and pass a new 2FA verification before proceeding with these actions.
 
@@ -305,12 +305,12 @@ Build configuration pages now display the "Chains" tab. The page allows you to b
 Previously, this page was available only in Classic UI.
 
 ### Reorder Builds
-{product="tc"}
+{instance="tc"}
 
 You can now manually reorder builds in the build queue by dragging them to the desired position in the Sakura UI.
 
 ### Improved Changes Visibility
-{product="tc"}
+{instance="tc"}
 
 - The **Change Log** tab is now available for projects and build configurations.
 - The **Show graph** option has been implemented on all pages and tabs related to changes. With this option enabled, the changes are displayed as a graph of commits to the related VCS roots.
@@ -326,7 +326,7 @@ Learn more: [](build-results-page.md#Parameters+Tab).
 
 
 ## Run Steps Only for Failed Builds
-{product="tc"}
+{instance="tc"}
 
 You can now choose the "Only if build status is failed" [execution policy](configuring-build-steps.md#Execution+Policy) for individual steps. This policy allows you to create steps that will be ignored when your build finishes successfully and executed only when it fails.
 
@@ -334,7 +334,7 @@ You can now choose the "Only if build status is failed" [execution policy](confi
 
 
 ## Kotlin DSL: Build Failure Conditions on Custom Metrics
-{product="tc"}
+{instance="tc"}
 
 You can now use Kotlin DSL to configure a build failure condition [on a custom statistic value](build-failure-conditions.md#Adding+Custom+Build+Metric)
 reported by the build.
@@ -368,9 +368,9 @@ You can now generate [Server Health reports](server-health.md) for archived proj
 Added two new endpoints that you can check by sending GET requests to obtain the current server status:
 
 * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing or in [maintenance mode](teamcity-maintenance-mode.md).
-  {product="tc"}
+  {instance="tc"}
 * the `<server_URL>/healthCheck/healthy` endpoint returns "200" if a server is running, even if it is still initializing.
-  {product="tcc"}
+  {instance="tcc"}
 * the `<server_URL>/healthCheck/ready` endpoint returns "200" if a server is fully initialized and ready to accept user requests. If the server is still initializing or awaits for a data upgrade, the endpoint returns "503".
 
 
@@ -381,7 +381,7 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 * The [SSH Keys](ssh-keys-management.md) page now displays the button that allows you to generate a new key. Generating keys on TeamCity server is faster and more secure (compared to running `ssh-keygen` locally and manually uploading the keys).
 
 * Added new `teamcity-commit-status.log` and `teamcity-pull-requests.log` [log files](teamcity-server-logs.md) that contain information related to the [](commit-status-publisher.md) and [](pull-requests.md) build features. Each log has a corresponding preset that allows TeamCity to write DEBUG-level events.
-  {product="tc"}
+  {instance="tc"}
 * [TeamCity Enterprise](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) users can now click **Help | Support** to quickly navigate to the new request form at [teamcity-support.jetbrains.com](https://teamcity-support.jetbrains.com).
 
   <img src="dk-helpbtn-support.png" width="460" alt="Support link"/>
@@ -390,12 +390,12 @@ Added two new endpoints that you can check by sending GET requests to obtain the
 
 
 ## Upgrade Notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2023.05 compared to 2022.10.x](upgrade-notes.md#Changes+from+2022.10+to+2023.05).
 
 ## Fixed Issues
-{product="tc"}
+{instance="tc"}
 
 See [TeamCity 2023.05 release notes](teamcity-2023-05-release-notes.md).
 

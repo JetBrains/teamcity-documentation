@@ -29,10 +29,10 @@ You can choose to download full or minimal agent distributions.
 * The **full agent distribution** includes relevant versions of all plugins currently enabled on the server. This makes the full distribution archive larger but significantly reduces the time spent on the first agent run.
 
 Full agents are preferable if you use scripts for creating agent images (for example, [in cloud profiles](agent-cloud-profile.md)). All cloud instances with full agents are synchronized with the server from the moment they start, and can run builds right away.
-{product="tc"}
+{instance="tc"}
 
 Full agents are preferable if you use scripts for creating agent images. All cloud instances with full agents are synchronized with the server from the moment they start, and can run builds right away.
-{product="tcc"}
+{instance="tcc"}
 
 
 Full agent distributions are also available in two variations:
@@ -66,9 +66,9 @@ Full agent distributions are also available in two variations:
 4. Open the `<installation path>\conf` directory and rename the `buildAgent.dist.properties` file to `buildAgent.properties`.
 
 5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)), the name of the agent, and the [authentication token](install-and-start-teamcity-agents.md#Generating+Authentication+Token). Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
-   {product="tcc"}
+   {instance="tcc"}
 5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)) and the name of the agent. Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
-   {product="tc"}
+   {instance="tc"}
 
 
 On Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
@@ -131,7 +131,7 @@ Windows
 <td>
 
 
-[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")
+<!--[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")-->
 
 * Installed JDK or JRE (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)).
 * `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it in __Administration | Tools__. Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:
@@ -160,4 +160,4 @@ Note that to access the __Agent Push__ page, a user needs to have the _Administe
 
 >You can use Agent Push presets in [Agent Cloud profile](agent-cloud-profile.md) settings to automatically install a build agent to a started cloud instance.
 > 
-{product="tc"}
+{instance="tc"}

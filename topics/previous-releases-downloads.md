@@ -87,7 +87,7 @@ Build 147512
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 > 
-{type="warning"}
+{style="warning"}
 
 Release date: 18 January 2024<br/>
 Build 147486
@@ -102,7 +102,7 @@ Build 147486
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 15 December 2023<br/>
 Build 147412
@@ -116,7 +116,7 @@ Build 147412
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 28 November 2023<br/>
 Build 147331
@@ -336,7 +336,7 @@ Build 108575
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: __28 April 2022__   
 Build 108502
@@ -350,7 +350,7 @@ Build 108502
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 16 February 2022   
 Build 99711
@@ -364,7 +364,7 @@ Build 99711
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 11 January 2022   
 Build 99660
@@ -378,7 +378,7 @@ Build 99660
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 29 November 2021   
 Build 99602
@@ -392,7 +392,7 @@ Build 99602
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 25 October 2021   
 Build 99542
@@ -406,7 +406,7 @@ Build 99542
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 08 October 2021   
 Build 92954
@@ -420,7 +420,7 @@ Build 92954
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 08 September 2021   
 Build 92914
@@ -434,7 +434,7 @@ Build 92914
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 02 August 2021   
 Build 92869
@@ -448,7 +448,7 @@ Build 92869
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 18 June 2021   
 Build 92714
@@ -462,7 +462,7 @@ Build 92714
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: __20 May 2021__   
 Build 92597
@@ -476,7 +476,7 @@ Build 92597
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 15 April 2021    
 Build 86063
@@ -490,7 +490,7 @@ Build 86063
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 10 March 2021   
 Build 86002
@@ -504,7 +504,7 @@ Build 86002
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 29 January 2021   
 Build 85899
@@ -518,7 +518,7 @@ Build 85899
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 16 December 2020   
 Build 85633
@@ -532,7 +532,7 @@ Build 85633
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: __23 November 2020__   
 Build 85487
@@ -546,7 +546,7 @@ Build 85487
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 8 October 2020  
 Build 78938
@@ -560,7 +560,7 @@ Build 78938
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 10 September 2020  
 Build 78906
@@ -574,7 +574,7 @@ Build 78906
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 11 August 2020  
 Build 78866
@@ -588,7 +588,7 @@ Build 78866
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 09 July 2020  
 Build 78726
@@ -602,7 +602,7 @@ Build 78726
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 
 Release date: 23 June 2020  
@@ -617,7 +617,7 @@ Build 78657
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 18 May 2020**  
 Build 78475
@@ -631,7 +631,7 @@ Build 78475
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 8 May 2020  
 Build 72059
@@ -645,7 +645,7 @@ Build 72059
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 20 April 2020  
 Build 72031
@@ -659,7 +659,7 @@ Build 72031
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 24 February 2020  
 Build 71923
@@ -673,7 +673,7 @@ Build 71923
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 23 January 2020  
 Build 71758
@@ -687,7 +687,7 @@ Build 71758
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 9 December 2019**  
 Build 71499
@@ -701,7 +701,7 @@ Build 71499
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 7 November 2019  
 Build 66605
@@ -715,7 +715,7 @@ Build 66605
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 11 October 2019  
 Build 66526
@@ -729,7 +729,7 @@ Build 66526
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 29 August 2019  
 Build 66439
@@ -743,7 +743,7 @@ Build 66439
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 31 July 2019  
 Build 66342
@@ -757,7 +757,7 @@ Build 66342
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 24 June 2019  
 Build 66192
@@ -771,7 +771,7 @@ Build 66192
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 23 May 2019  
 **Build 65998
@@ -785,7 +785,7 @@ Build 66192
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 8 April 2019  
 Build 61678
@@ -799,7 +799,7 @@ Build 61678
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 6 March 2019  
 Build 61544
@@ -813,7 +813,7 @@ Build 61544
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 23 January 2019  
 Build 61245
@@ -827,7 +827,7 @@ Build 61245
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 27 December 2018  
 Build 61078
@@ -841,7 +841,7 @@ Build 61078
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 06 December 2018**  
 Build 60925
@@ -855,7 +855,7 @@ Build 60925
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 19 December 2018  
 Build 58744
@@ -870,7 +870,7 @@ Build 58744
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 27 November 2018  
 Build 58724
@@ -885,7 +885,7 @@ Build 58724
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 09 October 2018  
 Build 58658
@@ -900,7 +900,7 @@ Build 58658
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 31 August 2018  
 Build 58537
@@ -915,7 +915,7 @@ Build 58537
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 24 July 2018  
 Build 58406
@@ -930,7 +930,7 @@ Build 58406
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 21 June 2018**  
 Build 58245
@@ -945,7 +945,7 @@ Build 58245
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 17 May 2018  
 Build 51228
@@ -960,7 +960,7 @@ Build 51228
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 13 March 2018  
 Build 51047
@@ -975,7 +975,7 @@ Build 51047
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 31 January 2018  
 Build 50909
@@ -990,7 +990,7 @@ Build 50909
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 20 December 2017  
 Build 50732
@@ -1005,7 +1005,7 @@ Build 50732
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 27 November 2017**  
 Build 50574
@@ -1020,7 +1020,7 @@ Release notes](https://confluence.jetbrains.com/display/TW/TeamCity+2017.2+Relea
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 16 October 2017  
 Build 47175
@@ -1035,7 +1035,7 @@ Build 47175
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 6 September 2017  
 Build 47070  
@@ -1049,7 +1049,7 @@ Build 47070
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 25 July 2017  
 Build 46961
@@ -1064,7 +1064,7 @@ Build 46961
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 2 June 2017  
 Build 46812
@@ -1079,7 +1079,7 @@ Build 46812
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 Release date: 28 April 2017  
 Build 46654
@@ -1094,7 +1094,7 @@ Build 46654
 
 > This version contains a critical vulnerability and is not recommended to be installed. Please use version 2023.11.3 or newer. If you need to use this specific version, contact JetBrains support.
 >
-{type="warning"}
+{style="warning"}
 
 **Release date: 10 April 2017**   
 Build 46533

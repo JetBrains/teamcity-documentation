@@ -56,7 +56,7 @@ Process files
 Click __Edit file list__ and specify paths to files where the values to be replaced will be searched. Provide a newline- or comma-separated set of rules in the form of `+|-:[path relative to the checkout directory]`.   
 [Ant-like wildcards](wildcards.md#Antlike+Wildcards) are supported, for example, `dir/**/*.cs`.
 
-<include src="branch-filter.md" include-id="OR-syntax-tip"/>
+<include from="branch-filter.md" element-id="OR-syntax-tip"/>
 
 _If a [predefined template](#Templates) is selected, the files associated with that template will be used._
 
@@ -169,6 +169,7 @@ $N sequence references N-th capturing group. All backslashes (`\`) and dollar si
 </td></tr></table>
 
 <anchor name="Pre-defined templates"/>
+
 <anchor name="FileContentReplacer-Predefinedtemplates"/>
 
 ### Templates
@@ -248,7 +249,7 @@ Suppose you do not want to replace your `AssemblyConfiguration` with a fixed lit
 
 Do the following: change the default replacement `$1MyAssemblyConfiguration$7` to `$1$5 built by TeamCity$7`.
 
-[//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")    
+<!--[//]: # (Internal note. Do not delete. "File Content Replacerd143e622.txt")-->  
 
 For changing complex regex patterns, [this external tool](https://regex101.com/) might be useful.
 
@@ -268,7 +269,7 @@ Spaces are usually considered a part of the pattern, unless they follow a comma,
 
 Note that the TeamCity server UI trims leading and trailing spaces in input fields, so a single-line pattern like `<spaces>foo.bar` will become `foo.bar` upon save. The following workarounds are available:
 
-[//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")    
+<!--[//]: # (Internal note. Do not delete. "File Content Replacerd143e694.txt")-->    
 
 ### Changing only the last version part / build number of the AssemblyVersion attribute:
 

@@ -9,7 +9,7 @@ Note that this runner supports only [.NET Framework](https://docs.microsoft.com/
 
 ## Installing NUnit
 
-<chunk include-id="installing-nunit">
+<snippet id="installing-nunit">
 
 To use the NUnit build runner, you need to install the [NUnit NuGet package](https://www.nuget.org/packages/NUnit/) on TeamCity agents via one of the following options:
 * Instruct the first build step to install NUnit from a NuGet package.  
@@ -36,7 +36,7 @@ If the extensions are not found in versions 3.2.0 and 3.2.1, the build will fail
 
 The extensions can be installed as separate packages or in bulk using the [NUnit Console Version 3](https://www.nuget.org/packages/NUnit.Console) NuGet package.
 
-</chunk>
+</snippet>
 
 <anchor name="NUnit-settings"/>
 

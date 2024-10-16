@@ -32,10 +32,10 @@ You can connect TeamCity to JetBrains Space using two different techniques. The 
 2. creating a preset of connection to Space.
 
 Starting with version 2023.07, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.11, you can utilize semi-automatic Space connections that allow you to skip setting up Space applications manually. Instead, specify the organization URL (for Space On-Premises) or choose the required Cloud instance (for Space Cloud) and TeamCity will automatically create and install Space applications with all required permissions.
-{product="tc"}
+{instance="tc"}
 
 
 This tutorial explains how to manually setup the TeamCity-Space integration. For the detailed instructions on how to implement the Space integration using the newer semi-automatic approach, see this section instead: [Configuring Connections, JetBrains Space](configuring-connections.md#jetbrains-space-connection).
@@ -58,18 +58,19 @@ In your JetBrains Space instance:
 6. Configure _Authentication Mode_:
    1. Go back to the app's __Overview__ and open the __Authentication__ tab.
    2. Enable _Client Credentials Flow_.
+   
       <anchor name="redirect-uri"/>
    3. To be able to use authentication via Space in TeamCity or/and to create projects/configurations from Space repositories, enable _Authorization Code Flow_ as well. Enter the redirect URI (`https://<server>:<port>/oauth/space/accessToken.html`) of your TeamCity Server.
       >To ensure that your TeamCity server can always connect to JetBrains Space, it is important to specify all the other possible endpoint addresses of the server. In most cases, it would be enough to specify the _Server URL_ set in __Global Settings__ in TeamCity. However, if you use a [proxy](configuring-proxy-server.md) for your TeamCity server but access this server directly, the authentication might not work unless the server's IP address is also specified here.
       >
-      {product="tc"}
+      {instance="tc"}
    4. Copy the app's _Client ID_ and _Client secret_. You will need them for configuration on the TeamCity side.
 
 Now, you can return to TeamCity and add a connection to JetBrains Space.
 
 ### Step 2: Establish Connection to JetBrains Space
 
->TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <emphasis tooltip="root-project">Root project</emphasis> level, this will allow using its settings to connect any other project on the server. To make a connection available only in a certain project, you need to add it in this project.
+>TeamCity allows you to configure all settings of your _connection_ to a service in one place and then reuse these settings in different projects and build configurations. If you add such a _connection_ on the <tooltip term="root-project">_Root project_</tooltip> level, this will allow using its settings to connect any other project on the server. To make a connection available only in a certain project, you need to add it in this project.
 
 To create a connection to your JetBrains Space instance:
 1. Go to __Project Settings | Connections__ and click __Add Сonnection__.
@@ -88,17 +89,17 @@ At this stage, you are free to access your JetBrains Space instance from the cur
 There are three ways to integrate a VCS repository with TeamCity:
 * Create a TeamCity _project_ based on a repository.
 * Create a _build configuration_ based on a repository in an existing TeamCity project.
-* Create a <emphasis tooltip="vcs-root">VCS root</emphasis> based on a repository in an existing TeamCity project.
+* Create a <tooltip term="vcs-root">_VCS root_</tooltip> based on a repository in an existing TeamCity project.
 
 We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — the procedure is similar.
 
-Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <emphasis tooltip="root-project">Root project</emphasis>, go to __Administration | Projects__ and click __Create project__ there.
+Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <tooltip term="root-project">_Root project_</tooltip>, go to __Administration | Projects__ and click __Create project__ there.
 
 You will notice the new button: __From JetBrains Space__. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo. To create a new project:
 
 1. Click __From JetBrains Space__.
 2. As it is the first time you connect this server to your Space instance, you have to authenticate in Space via your user profile. Click __Sign in to Space__ and accept the access request. Next time, you won't have to confirm it again, unless you sign out or change your password.  
-   <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository"/>
+   <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository" style="block"/>
    >If you get the _OAuth 2.0 Error_, this might mean that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri). Note that Space supports only HTTPS connection.
 3. The project creation wizard will display a list of all Space projects your user has access to. Choose a repository and wait until TeamCity verifies the connection settings.
 4. Now it's time to configure the main settings of the new project and its [VCS root](vcs-root.md). You can always adjust them later.
@@ -137,7 +138,7 @@ To add this feature:
 
 >Note that the scope of branches you define in this feature should not overlap with the branch specification of the VCS root. This measure will ensure that no conflicts occur when starting builds on merge requests.
 >
-{type="warning"}
+{style="warning"}
 
 Now, TeamCity will monitor merge requests submitted from the source branches of your repository. If a build is run on a merge request, TeamCity will display the details of the request and report the build status to the code review in Space:
 

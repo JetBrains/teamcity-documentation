@@ -385,7 +385,7 @@ __\*__ TeamCity-provided tasks may have different syntax/behavior. Some workarou
 In addition to the common test reporting features, TeamCity allows running NUnit tests under the x86 process on the x64 machine by introducing an explicit specification of the platform and runtime environment versions. You can define whether to use .NET Framework 1.1, 2.0 or 4.0 started under an MSIL, x64 or x86 platform.
 
 ### NUnit Test Launcher
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 TeamCity provides its own NUnit tests launcher that can be used from the command line. The tests are run according to the passed parameters and, if the process is run inside the TeamCity build agent environment, the results are reported to the TeamCity agent.
 
@@ -658,10 +658,10 @@ Run tests from assemblies:
 
 ```
 
-[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")
+<!--[//]: # (Internal note. Do not delete. "TeamCity NUnit Test Launcherd319e337.txt")-->
 
 ### NUnit for NAnt Build Runner
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 This section assumes, that you already have a NAnt build script with the configured `nunit2` task in it, and want TeamCity to track test reports without making any changes to the existing build script. Otherwise, consider adding the [NUnit build runner](nunit.md) as one of the steps for your build configuration.
 
@@ -674,7 +674,7 @@ If you don't want TeamCity to replace the original `nunit2` task, consider the f
 * Configure reporting tests manually via [service messages](service-messages.md).
 * To disable `nunit2` task replacement, set the `teamcity.dotnet.nant.replaceTasks` [system property](configuring-build-parameters.md) to `false`.
 
-The `nunt2` task implementation in TeamCity supports additional options that can be specified either as NAnt `<property>` tasks in the build script, or as <emphasis tooltip="system-property">system properties</emphasis> under __Build Configuration | Build Parameters__.
+The `nunt2` task implementation in TeamCity supports additional options that can be specified either as NAnt `<property>` tasks in the build script, or as <tooltip term="system-property">_system properties_</tooltip> under __Build Configuration | Build Parameters__.
 
 The following options are supported for the TeamCity `<nunit2>` task implementation:
 
@@ -814,7 +814,7 @@ Note that in this case, the following property should be added __before__ the `n
 ```
 
 ### Using NUnit for MSBuild
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 This section describes how to use NUnit from MSBuild.
 * For [NUnit prior to 3.0](#Working+with+NUnit+Task+in+MSBuild+Build)
@@ -829,7 +829,7 @@ This section assumes that you already have an MSBuild build script with a config
 TeamCity provides a custom `NUnitTeamCity` task compatible with the `NUnit` task from [MSBuild Community tasks](https://github.com/loresoft/msbuildtasks) project. If you provide the `NUnitTeamCity` task in your build script, TeamCity will launch its own test runner based on the options specified within the task. Thus, you do not need to have any NUnit runner, because TeamCity will run the tests.
 
 To use the `NUnitTeamCity` task correctly:
-* Make sure the `teamcity_dotnet_nunitlauncher` <emphasis tooltip="system-property">system property</emphasis> is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) properties for more information.
+* Make sure the `teamcity_dotnet_nunitlauncher` <tooltip term="system-property">_system property_</tooltip> is accessible on build agents. Build agents running Windows should automatically detect these properties as environment variables. If you need to set them manually, see defining [agent-specific](predefined-build-parameters.md#Predefined+Agent+Build+Parameters) properties for more information.
 * Configure your MSBuild build script with the `NUnitTeamCity` task using the following syntax:
    ```XML
    <UsingTask TaskName="NUnitTeamCity" AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)" />
@@ -1035,7 +1035,7 @@ Starting from version 3.0, NUnit supports TeamCity natively, so there is no need
 The [Getting Started with NUnit](getting-started-with-nunit.md) article contains details and examples.
 
 ### MSBuild Service Tasks
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 For MSBuild, TeamCity provides the following service tasks that implement the same options as the [Build Script Interaction](build-script-interaction-with-teamcity.md):
 
@@ -1080,7 +1080,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 
 ```
 
-[//]: # (Internal note. Do not delete. "MSBuild Service Tasksd214e94.txt")
+<!--[//]: # (Internal note. Do not delete. "MSBuild Service Tasksd214e94.txt")-->
 
 * The mandatory `description` attribute is a human-readable text describing the build problem. By default, `description` appears in the build status text.
 * `identity` is an optional attribute and characterizes a particular build problem instance. It shouldn't change throughout builds if the same problem occurs: for example, the same compilation error. It should be a valid Java ID up to 60 characters long. By default, `identity` is calculated based on `description`.
@@ -1095,7 +1095,7 @@ It is possible to use `{build.number}` as a placeholder for older build number.
 `{build.status.text` is substituted with an older status text. The status can have the `SUCCESS` value.
 
 ### NUnit Add-ins Support
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 NUnit Add-in is an extension that plugs in to the NUnit core and changes the way it operates. Refer to the [NUnit add-ins page](https://www.nunit.org/index.php?p=nunitAddins&amp;r=2.6.3) for more information. This section covers description of the NUnit add-ins support for NAnt, MSBuild, and NUnit Console Launcher.
 
@@ -1156,7 +1156,7 @@ For example:
 ```
 
 ### TeamCity Add-in for NUnit
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true" collapsible="true"}
 
 TeamCity NUnit Add-in supports __NUnit prior to version 3.0__. For later versions, refer to the [this section](#Using+NUnit+for+MSBuild).
 
@@ -1189,7 +1189,7 @@ The following example shows how to use the NUnit console runner with the TeamCit
 ```
 
 
-If you need to configure <emphasis tooltip="environment-variable">environment variables</emphasis> for NUnit explicitly, specify an environment variable with the value reference of `%\system.teamcity.dotnet.nunitaddin%`. See [this article](configuring-build-parameters.md) for details.
+If you need to configure <tooltip term="environment-variable">_environment variables_</tooltip> for NUnit explicitly, specify an environment variable with the value reference of `%\system.teamcity.dotnet.nunitaddin%`. See [this article](configuring-build-parameters.md) for details.
 
 __NUnit 2.4.8 Issue__  
 NUnit 2.4.8 has the following known issue: NUnit 2.4.8 runner tries to load an assembly according to the created `AssemblyName` object. However, the `addins` folder of NUnit 2.4.8 is not included in application probe paths. As a result, NUnit 2.4.8 fails to load any add-in in the console mode.   

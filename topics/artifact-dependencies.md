@@ -13,7 +13,7 @@ Artifacts can be passed from:
 
 > TeamCity [automatically frees disk space](free-disk-space.md#artifacts-automatic-space) for resolving artifact dependencies based on the artifacts' size. You don't need to configure it manually.
 > 
-{type="tip"}
+{style="tip"}
 
 ## Configuring Artifact Dependencies Using Web UI
 
@@ -43,7 +43,7 @@ To add an artifact dependency to a build configuration:
         > When selecting the build configuration, take your [clean-up policy settings](teamcity-data-clean-up.md) into account.
         > Builds are cleaned and deleted on a regular basis, thus the build configuration could become dependent on a non-existent build. When artifacts are taken from a build with a specific number, then the specific build will not be deleted during clean-up.
         > 
-        {type="note"}
+        {style="note"}
 
     * **Build number** — the exact [build number](configuring-general-settings.md#Build+Number+Format) of the artifact. This field is available if you have selected build with specific build number in the_ __Get artifacts from__ list.   
 
@@ -68,7 +68,7 @@ An artifact rule specifies which artifacts of the source build should be downloa
 
 Each individual artifact rule should start from a new line and have the following syntax:
 
-```Plain Text
+```
 [+:|-:|?:]SourcePath[!ArchivePath][=>DestinationPath]
 ```
 
@@ -76,7 +76,7 @@ The order of a rules is irrelevant. For each artifact the most specific rule (th
 
 > Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
 >
-{type="tip"}
+{style="tip"}
 
 ### Prefix
 
@@ -136,7 +136,7 @@ Start an artifact rule with the `-:` prefix to tell TeamCity a file or files tha
 
 * Two following rules result in downloading all text files from all directories, apart from the `exclude.txt` file located in the `bad` directory. Downloaded files are saved to the `texts` folder.
 
-  ```Plain Text
+  ```
   **/*.txt=>texts
   -:bad/exclude.txt
   ```
@@ -144,14 +144,14 @@ Start an artifact rule with the `-:` prefix to tell TeamCity a file or files tha
 
 * The following set of rules finds all archives that start with `release`, unpacks its `.dll` libraries, and saves them to the `dlls` directory. The `Bad.dll` file from the `release-0.0.1.zip` archive is skipped.
 
-  ```Plain Text
+  ```
   +:release-*.zip!**/*.dll=>dlls
   -:release-0.0.1.zip!Bad.dll
   ```
 
 * The combination below results in dowloading all artifacts to the `target` directory. The dependent build will completely ignore the `excl` directory except for the `excl/must_have.txt` file.
 
-  ```Plain Text
+  ```
   **/*.*=>target 
   -:excl/**/*.*
   +:excl/must_have.txt=>target
@@ -309,7 +309,7 @@ where:
 * `TAG_NAME.tcbuildtag` - last build tagged with the TAG_NAME tag
 
 
-[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")    
+<!--[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")-->   
 
 * `ARTIFACT_FILE_NAME_WITHOUT_EXTENSION` filename or regular expression of the artifact without the extension part.
 * `ARTIFACT_FILE_NAME_EXTENSION` the extension part of the artifact filename.
@@ -335,7 +335,7 @@ where:
 > * `commons-httpclient`, `commons-logging`, and `commons-codec` are to be in the `classpath` of Ivy tasks.
 > * To clean the Ivy cache directory before retrieving dependencies, uncomment the `<ivy:cleancache />` element in the example above.
 >
-{type="note"}
+{style="note"}
 
 Artifacts repository is protected by a basic authentication. To access the artifacts, you need to provide credentials to the &lt;ivy:configure/&gt; task. For example:
 

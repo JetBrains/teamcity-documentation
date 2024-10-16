@@ -195,7 +195,7 @@ It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the
 
 #### Trigger on changes in snapshot dependencies
 
-<chunk include-id="trigger-on-ssdep-chngs">
+<snippet id="trigger-on-ssdep-chngs">
 
 The VCS build trigger has another [option](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) that alters triggering behavior for a build chain. With this options enabled, the whole build chain will be triggered even if changes are detected in dependencies, not in the final build.   
 
@@ -205,9 +205,10 @@ Let's take a build chain from the example: `pack setup` — depends on — `test
 
 With the VCS Trigger set up in the `pack setup` configuration, the whole build chain is usually triggered when TeamCity detects changes in `pack setup`; changes in `compile` will trigger `compile` only and not the whole chain. If you want the whole chain to be triggered on a VCS change in `compile`, add a VCS trigger with the "_Trigger on changes in snapshot dependencies_" [option](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) enabled to the final build configuration of the chain, `pack setup`. This will not change the order in which builds are executed, but will only trigger the whole build chain, if there is a change in any of snapshot dependencies. In this setup, no VCS triggers are required for the `compile` or `tests` build configuration. 
  
-</chunk>
+</snippet>
  
 <anchor name="show-changes-from-dependencies"/>
+
 <anchor name="BuildDependenciesSetup-ShowChangesfromDeps"/>
 
 __Changes from Dependencies__
@@ -246,6 +247,6 @@ __Running personal build in a chain__
 If you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
 However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
-[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")
+<!--[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")-->
 
 

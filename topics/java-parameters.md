@@ -11,7 +11,7 @@ This page describes general parameters for Java-based runners:
 * [IntelliJ IDEA Project](intellij-idea-project.md)
 * [Kotlin Script](kotlin-script.md)
 
-<chunk include-id="java-param">
+<snippet id="java-param">
 
 <table><tr>
 

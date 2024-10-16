@@ -47,7 +47,7 @@ These changes and their potential effects on your existing projects include the 
 
     > You can add the `teamcity.tools.bundled.maven.installOnStartup=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to prevent TeamCity from lazy-loading Maven tools.
     > 
-    {type="tip"}
+    {style="tip"}
 
 * If there are no existing configurations that utilize the "Default" version of Maven, version 3.9.6 becomes the new "Default". Otherwise, the "Default" option will keep pointing to the same Maven tool as before (for example, 3.6.3).
 * If an existing build configuration utilizes manually installed Maven 3.9.6 and [stores its settings in VCS](storing-project-settings-in-version-control.md), editing this configuration generates a [patch](kotlin-dsl.md#Edit+Project+Settings+via+Web+UI) that changes the value of the `mavenVersion` parameter from `custom` to `bundled_3_9_6`.
@@ -143,7 +143,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
   > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0) or a later version (for example, .NET SDK 7.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
   > See the [README](https://github.com/JetBrains/teamcity-docker-images/tree/master/custom#readme) for custom agent images in the [`teamcity-docker-images`](https://github.com/JetBrains/teamcity-docker-images) repository for more details.
   > 
-  {type="note"}
+  {style="note"}
 
 * The bundled Tomcat was updated to version 9.0.80.
 * The bundled Git was updated to version 2.43 in both Server and Agent Docker images.
@@ -309,7 +309,7 @@ Starting with version 2023.05, [TeamCity metrics](teamcity-monitoring-and-diagno
 To preserve previously collected metrics and use them along with updated data, do one of the following in your metric monitoring solution (such as [Grafana](https://grafana.com)):
 
 * (recommended) Use the `or` operator in graph settings to merge metrics with new and old names. For instance:
-  ```Plain Text
+  ```
   sum(increase(vcs_changes_checking_milliseconds_sum{type="COLLECT_CHANGES"}[1m])) or 
   sum(increase(vcs_changes_checking_milliseconds_total{type="COLLECT_CHANGES"}[1m])) 
   ```
@@ -401,7 +401,7 @@ To use a custom endpoint for Amazon alternatives like [MinIO](https://min.io/), 
 
 
 
-<!--<include src="upgrade-notes-older-versions.md" include-id="older-upgrade-notes" />-->
+<!--<include from="upgrade-notes-older-versions.md" element-id="older-upgrade-notes" />-->
 
 
 ## Changes from 2022.04 to 2022.10
@@ -429,7 +429,7 @@ In Kotlin 1.7 this behavior changes. Maven Central is only checked if no `@file:
 If you use such annotations in your code, you’ll need to mention Maven Central explicitly
 if you want the dependency resolver to look in it.
 >
-{type="note"}
+{style="note"}
 * Maven 3.8.6 has been added as one of the bundled versions of the tool.
 * The embedded Maven library has been updated to version 3.8.6.
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
@@ -609,7 +609,7 @@ Download newer versions of these plugins from JetBrains Marketplace:
 ## Changes from 2021.1 to 2021.2
 
 ### No data converters in 2021.2
-{product="tc"}
+{instance="tc"}
 
 TeamCity 2021.2 does not introduce any new data formats compared to version 2021.1 and does not contain data converters. This simplifies and thus speeds up the upgrade/downgrade between these versions.
 
@@ -781,7 +781,7 @@ The following old versions of [REST API](https://www.jetbrains.com/help/teamcity
 
 To ensure that the integration with NuGet is secure, TeamCity now checks if a trusted NuGet installer is used when starting builds on Windows with a [NuGet dependency trigger](nuget-dependency-trigger.md). If your triggers use a NuGet version installed via __[Administration | Tools](installing-agent-tools.md)__, this verification will go smoothly, with no user actions required. Otherwise, you might get the "_Problem with NuGet Dependency Trigger_" error. The recommended solution is to switch all affected triggers to any NuGet version that has been regularly [installed via the TeamCity UI](installing-agent-tools.md). Such versions automatically appear in the _NuGet.exe_ drop-down menu in the trigger's settings. Alternatively, if you need to use a custom NuGet executable and absolutely trust it, you can add it to the whitelist by specifying the following [internal property](server-startup-properties.md#TeamCity+Internal+Properties):
 
-```Plain Text
+```
 teamcity.nuget.server.cli.path.whitelist=<disk>:\\<path-to-executable>\\NuGet.exe
 ```
 
@@ -1077,7 +1077,7 @@ See the [.NET description](net.md) for more information about the new .NET step 
 
 > Since the reworked .NET runner introduces new options and features, you might not be able to use them if downgrading to the earlier versions of TeamCity. In such case, you will have to return to using the obsolete runners after downgrading. To prevent any issues, you can [back up your TeamCity data](creating-backup-from-teamcity-web-ui.md) before upgrading to version 2019.2.3.
 >
-{type="note"}
+{style="note"}
 
 If you face any problems with migration to the .NET runner or encounter other related issues, do not hesitate to contact us via any convenient [feedback channel](feedback.md).
 
@@ -1126,7 +1126,7 @@ If your custom scripts or settings depend on the main alternates source for subm
 >
 > For versions 2019.2.1 and earlier, please __[do not use](known-issues.md#jdk8_240) Java 8 newer than [update 232](https://github.com/corretto/corretto-8/releases/tag/8.232.09.1)__ for the TeamCity server.
 >
-{type="tip"}
+{style="tip"}
 
 No potential breaking changes.
 
@@ -1791,7 +1791,7 @@ See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46385) for detail
 See request [TW-46385](https://youtrack.jetbrains.com/issue/TW-46489)  for details and for the plugin with the fix
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e995.txt")-->
 
 
 ### Changes in agent properties reporting .NET 4.x runtime
@@ -2112,7 +2112,7 @@ MSTest runner is merged with [VSTest console runner](https://confluence.jetbrain
 > If you have used [VSTest.Console runner plugin](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner), make sure that you have latest version (build __32407__) installed. The plugin version can be viewed on __Administration | Plugins List__ page. Earlier versions of this plugin are __not compatible__ with TeamCity 9.1 and may cause malfunction of .NET related build runners which can manifest with `java.lang.NoSuchMethodError: jetbrains.buildServer.runner.NUnit.NUnitVersion.parse(Ljava/lang/String;)` build errors. The plugin can be downloaded from [its page](https://confluence.jetbrains.com/display/TW/VSTest.Console+Runner).
 Consider migrating your vstest.console execution steps to the bundled Visual Studio Tests runner.
 >
-{type="note"}
+{style="note"}
 
 #### MSTest installation agent properties
 
@@ -2133,7 +2133,7 @@ __Finding builds__
 Summary (tl;dr): Some build filtering rules has subtle changes. Most importantly, a queued build can now be returned instead of 404 when searching by build id and meaning of the "project" locator dimension has changed to be not recursive. Also, failed to start builds are now not included until "failedToStart:any" locator dimension is specified.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2056.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2056.txt")-->
 
 
 Details:   
@@ -2230,7 +2230,7 @@ The location of the build logs in the internal format stored under [TeamCity Dat
 Old build logs are migrated to the new location on TeamCity server startup ([TW-37362](https://youtrack.jetbrains.com/issue/TW-37362)). To avoid this migration, `teamcity.skip.logs.migration` internal property should be set __before__ server startup.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2251.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2251.txt")-->
 
 
 #### Builds re-indexing after upgrade
@@ -2457,7 +2457,7 @@ Build configurations with feature branches now process clean\-up rules per\-bran
 TFS now prefers Team Explorer 2012 to Team Explorer 2010 (if both are installed) for TFS operations
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2777.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2777.txt")-->
 
 
 
@@ -2468,7 +2468,7 @@ If you use JetBrains YouTrack and use its TeamCity integration features, please 
 If you need earlier YouTrack versions to work with TeamCity 8.0, please [let us know](feedback.md).
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2793.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2793.txt")-->
 
 
 #### REST API
@@ -2543,7 +2543,7 @@ __teamcity.build.branch__ parameter semantics has changed, see [https://youtrack
 No potential breaking changes.
 
 
-[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2962.txt")
+<!--[//]: # (Internal note. Do not delete. "Upgrade Notesd333e2962.txt")-->
 
 ## Changes from 7.1.2 to 7.1.3
 
@@ -2640,7 +2640,7 @@ Starting with this version the following requirements
 
 > If any of your agents are running under JDK version less than 1.6, the agents will fail to upgrade and will stop running on the server upgrade. You will need to recover them manually by installing JDK 1.6 and making sure the agents will [use it](install-and-start-teamcity-agents.md).
 >
-{type="note"}
+{style="note"}
 
 __Project/Template parameters override__   
 In TeamCity 7.0 project parameters have higher priority than parameters defined in template, i.e. if there is a parameter with some name and value in the project and there is parameter with the same name and different value in template of the same project, value from the project will be used. This was not so in TeamCity 6.5 and was [changed](https://youtrack.jetbrains.com/issue/TW-17247) to be more flexible when template belongs to anohter project.Build configuration parameters have the highest priority, as usual.
@@ -2891,12 +2891,12 @@ The [bug](https://youtrack.jetbrains.com/issue/TW-11854) was fixed. The behavior
 
 > If you plan to upgrade from version 3.1.x to 5.1, you will need to modify some dtd files in `<TeamCity Data Directory>/config` before upgrade, read more in the issue: [TW-11813](https://youtrack.jetbrains.com/issue/TW-11813#comment=27-148589)
 >
-{type="tip"}
+{style="tip"}
 
 
 > NCover 3 support may not work. See [TW-11680](https://youtrack.jetbrains.com/issue/TW-11680#comment=27-148573)
 >
-{type="tip"}
+{style="tip"}
 
 __Notification templates change__   
 Since 5.1, TeamCity uses [new template engine](customizing-notification-templates.md) (Freemarker) to generate notification messages. New default templates are supplied and customizations to the templates made prior to upgrading are no longer effective.
@@ -2940,7 +2940,7 @@ No potential breaking changes.
 > There is a known issue with .NET duplicates finder: [TW-11320](https://youtrack.jetbrains.com/issue/TW-11320)   
 Please use the patch attached to the issue.
 >
-{type="tip"}
+{style="tip"}
 
 ## Changes from 5.0.1 to 5.0.2
 

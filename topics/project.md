@@ -12,7 +12,7 @@ You can view the hierarchy on the overview page, in the __Projects__ pop-up menu
 
 >To see the Projects menu, click the arrow button next to the _Projects_ link in the upper left corner, or use the "P" keyboard shortcut.
 >
-{type="tip"}
+{style="tip"}
 
 ### Settings Propagation
 

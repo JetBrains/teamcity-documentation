@@ -7,7 +7,7 @@ You can set up post-commit hooks to decrease this load and speed up detecting ne
 
 > This article explains how to configure VCS commit hooks that notify TeamCity about new repository changes. To read about TeamCity webhooks that notify third-party services about specific TeamCity events (starting and canceling builds, registering new agents, and so on), refer to the following article instead: [](teamcity-webhooks.md).
 >
-{type="note"}
+{style="note"}
 
 
 ## Overview
@@ -212,7 +212,7 @@ http(s)://username:PAT@TeamCityServerURL/app/rest/vcs-root-instances/commitHookN
 Requests should use the credentials of a user with the "View project and all parent projects" and "View build configuration settings" permissions for all the projects where the VCS root is defined.
 
 In case of authentication issues, navigate to **Administration | Diagnostics** and choose the "debug-auth" preset in the **Troubleshooting** section. You can then inspect the `TeamCity_Folder/logs/teamcity-auth.log` file to view the detailed problem information.
-{product="tc"}
+{instance="tc"}
 
 
 ### Repository Polling with Configured Hooks
@@ -236,7 +236,7 @@ This section explains how to set up hooks for VCS providers that allow seamless 
 
 Install a stand-alone [Commit Hooks Plugin](https://github.com/JetBrains/teamcity-commit-hooks) to add GitHub webhooks from TeamCity UI in one click.
 
-<video href="VzDI2HoiHk4"
+<video src="https://youtu.be/VzDI2HoiHk4"
 title="Use GitHub commit hooks for faster checkouts"/>
 
 If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps](configuring-connections.md#GitHub), you can set up a post-commit hook directly in the connection properties.
@@ -259,7 +259,7 @@ If your connection to GitHub or GitHub Enterprise is configured via [GitHub Apps
 3. Click **Add new webhook**.
 4. Specify the URL to which the webhook should send `POST` requests. Include username and password/PAT as described in the [](#Authentication) section. For example:
     
-    ```Plain Text
+    ```
     http://valravn:querty@myteamcityfarm.build.gg/app/rest/vcs-root-instances/commitHookNotification?locator=87
     ```
 
@@ -299,7 +299,7 @@ You can utilize this approach in Bitbucket Cloud, Bitbucket Server, and Bitbucke
 4. Specify the webhook name and tick **Push** under the "Triggers" or "Events" section.
 5. Specify the URL to which Bitbucket should send `POST` requests to trigger TeamCity update checkups. Include user credentials in the URL as described in the [](#Authentication) section. For example:
 
-   ```Plain Text
+   ```
    https://valravn:querty@mybuildfarm.gg/app/rest/vcs-root-instances/commitHookNotification?locator=id:34
    ```
 
@@ -308,7 +308,7 @@ You can utilize this approach in Bitbucket Cloud, Bitbucket Server, and Bitbucke
 
 > Bitbucket Server and Data Center users can purchase third-party Atlassian marketplace apps from the **Repository settings | Hooks** page. Some apps (for example, the [Bitbucket Post Webhook](https://help.moveworkforward.com/BPW/bitbucket-post-webhook-main-guide) app) provide additional webhook settings for more advanced setups. For instance, you may utilize the bearer token authentication strategy instead of the basic HTTP auth.
 > 
-{type="tip"}
+{style="tip"}
 
 ### Azure DevOps Server
 
@@ -390,7 +390,7 @@ Set the  variables according to your TeamCity server. The user must have the "Vi
 
 > If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
 >
-{type="note"}
+{style="note"}
 
 ### Git Server
 
@@ -498,7 +498,7 @@ It is also recommended configuring a _[Perforce Administrator Access](perforce-w
 
 >If your TeamCity server uses a custom SSL certificate, you need to pass the `-k` or `--cacert /path/to/correct/internal/CACertificate` parameter to the `curl` command above.
 >
-{type="note"}
+{style="note"}
 
 #### Edit Perforce Specification with Generic Script
 

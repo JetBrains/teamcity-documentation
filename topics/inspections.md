@@ -2,10 +2,10 @@
 [//]: # (auxiliary-id: Inspections)
 
 The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/code-inspection.html) for your project. In addition to the version that TeamCity automatically downloads and installs on its first startup, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
-{product="tc"}
+{instance="tc"}
 
 The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/2016.3/code-inspection.html) for your project. In addition to the version that TeamCity automatically downloads and installs on its first startup, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine.
-{product="tcc"}
+{instance="tcc"}
 
 IntelliJ IDEA's code analysis engine is capable of inspecting your Java, JavaScript, HTML, XML and other code and allows you to
 * find probable bugs;
@@ -123,7 +123,7 @@ Working directory
 
 Enter a path to a [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "Inspectionsd166e196.txt")    
+<!--[//]: # (Internal note. Do not delete. "Inspectionsd166e196.txt")-->    
 
 
 Optional, specify if differs from the checkout directory.
@@ -210,14 +210,14 @@ JDK Jar File Patterns
 
 Click this link to open a text area where you can define templates for the jar files of the project JDK. Use Ant rules to define the jar file patterns. The default value is used for Linux and Windows operating systems:
 
-```Plain Text
+```
 jre/lib/*.jar
 
 ```
 
 For macOS, use the following lines:
 
-```Plain Text
+```
 lib/*.jar
 
 ../Classes/*.jar
@@ -259,7 +259,7 @@ You can use references to external properties when defining the values, like `%\
 
 ### Java Parameters
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ## Inspection Parameters
 
@@ -327,11 +327,11 @@ Optional, specify to restrict the sources scope to run Inspections on.
 
 </td></tr></table>
 
-[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")
+<!--[//]: # (Internal note. Do not delete. "Inspectionsd166e394.txt")-->
 
 Include/exclude patterns are newline-delimited set of rules of the form:
 
-```Plain Text
+```
 [+:|-:]pattern
 
 ```
@@ -348,7 +348,7 @@ Some notes on patterns processing:
 
 Example:
 
-```Plain Text
+```
 +:testData/tables/**
 -:testData/**
 -:testdata/**

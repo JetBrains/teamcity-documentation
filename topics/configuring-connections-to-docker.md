@@ -11,7 +11,7 @@ You can configure a _Docker Registry_ connection on the __Project Settings | Con
 
 >After configuring the Docker Registry connection for a TeamCity project, you need to select it when adding a [](docker-support.md) feature to the respective build configuration.
 > 
-{type="note"}
+{style="note"}
 
 <anchor name="ConfiguringConnectionstoDocker-RegistryAddressFormat"/>
 

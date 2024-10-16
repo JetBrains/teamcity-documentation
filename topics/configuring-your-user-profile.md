@@ -13,7 +13,7 @@ You can reset your built-in authentication password using the _Reset password_ l
 
 >If you have not received the email with the reset instructions, check if TeamCity [Email Notifier](notifier.md) is enabled. Contact your server administrator for details.
 > 
-{type="note"}
+{style="note"}
 
 If you change or reset your password, TeamCity will automatically sign you out of all sessions.
 
@@ -30,7 +30,7 @@ You can manage tokens in __Your Profile | Access Tokens__. Note that the token v
   
 To automatically revoke a token after its expiration, specify its time limit.
 
-<video href="_3oKTnYwKa8"
+<video src="https://youtu.be/_3oKTnYwKa8"
 title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
 <anchor name="token-scope"/>

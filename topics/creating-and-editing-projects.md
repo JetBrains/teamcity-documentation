@@ -240,7 +240,7 @@ Description
 
 Optional description for the project. You can add a link in the Markdown format to the description:
 
-```Text
+```
 [My Project](https://www.example.com)
 ```
 
@@ -280,7 +280,7 @@ Selecting the __Copy project-associated user, agent and other settings__ option 
 
 You can also opt to copy build configurations build numbers.
 
-<note product="tc">
+<note instance="tc">
 
 When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit (100 build configurations, unless you purchased additional build agent licenses).
 </note>
@@ -333,7 +333,7 @@ When you delete a project, TeamCity will remove its `.xml` configuration files. 
 
 >You can [restore](how-to.md#Restore+Just+Deleted+Project) a deleted project before the clean-up is run.
 >
-{product="tc"}
+{instance="tc"}
 
 The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
 

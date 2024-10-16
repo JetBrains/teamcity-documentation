@@ -39,7 +39,7 @@ A warning is displayed if any of the licenses are incompatible with this new ver
 TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all the agents running under Java earlier than version 1.8.
 
 ### Multinode Setup Misconfiguration
-{product="tc"}
+{instance="tc"}
 
 For a [multinode setup](multinode-setup.md), TeamCity might display health reports in the following cases:
 
@@ -75,7 +75,7 @@ TeamCity notifies you if none of the cluster nodes have a certain responsibility
 TeamCity shows this warning when the value of the `X-TeamCity-Proxy` header declared in your proxy configuration indicates that the configuration is not fully compatible with your TeamCity server. Switch this documentation to the version that matches your TeamCity server and ensure your proxy settings are similar to these sample configurations: [](multinode-setup.md#Proxy+Configuration).
 
 ### HTTPS Configuration Issues
-{product="tc"}
+{instance="tc"}
 
 The following reports notify you about issues related to the [HTTPS Access Setup](https-server-settings.md).
 
@@ -89,7 +89,7 @@ This report is shown when you configured the HTTPS access to TeamCity, but your 
 
 
 ### WebSocket connection issues
-{product="tc"}
+{instance="tc"}
 
 The WebSocket protocol is used to get web UI updated for events, running builds updates and statistics counters.
 
@@ -112,10 +112,10 @@ All URLs used by browsers that do not support the WebSocket connection are liste
 
 If Tomcat is configured to use the [BIO connector](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html), the WebSocket protocol is [automatically disabled](https://tomcat.apache.org/tomcat-7.0-doc/web-socket-howto.html#Production_usage). It is recommended to change the Tomcat Connector settings [to use the NIO connector](known-issues.md#Slow+download+from+TeamCity+server).
 
-[//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")    
+<!--[//]: # (Internal note. Do not delete. "Server Healthd280e163.txt")-->    
 
 ### Critical Errors
-{product="tc"}
+{instance="tc"}
 
 This category shows the following errors:
 * errors in project configuration files - occur if the server detects some inconsistency or a broken configuration while it loads configuration files from the disk
@@ -123,7 +123,7 @@ This category shows the following errors:
 * warnings from the TeamCity Server [Memory Monitor](teamcity-memory-monitor.md)
 
 ### Database Related Problems
-{product="tc"}
+{instance="tc"}
 
 TeamCity will warn you if the server currently uses the internal database. [A standalone database is recommended as the storage engine](set-up-external-database.md).
 
@@ -241,7 +241,7 @@ If the default agent-side checkout is not possible, TeamCity will display a corr
 The report helps to find agents which failed to upgrade. [Build agent logs](viewing-build-agent-logs.md) should help identify the cause of the issue.
 
 #### Cloud Agents
-{product="tc"}
+{instance="tc"}
 
 If a user removes an image from a profile, a warning is displayed that the instances already started by TeamCity will not be automatically stopped.
 
@@ -253,7 +253,7 @@ The report is displayed for the agents not used for 3 days and more, if
 * if the builds were run on the server during these 3 days
 
 ### Incorrect Proxy Server Configuration
-{product="tc"}
+{instance="tc"}
 
 The report displays detected misconfiguration of the proxy server that is used to access the TeamCity web interface.
 
@@ -264,6 +264,6 @@ See our [recommendations](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) how t
 TeamCity analyzes the current settings of a build configuration and suggests additional options, for example, adding a VCS trigger, a build step, and so on. Besides the server health report, the suggestions for a specific build configuration are shown right on the configuration settings pages.
 
 ## Extensibility
-{product="tc"}
+{instance="tc"}
 
 The default Server Health report provided by TeamCity might cover either too many, or not all the items required by you. Depending on your infrastructure, configuration, performance aspects, and so on. that you need to analyze, a custom Server Health report can be needed. TeamCity enables you to write a [plugin](https://plugins.jetbrains.com/docs/teamcity/custom-server-health-report.html) which will report on specific items.

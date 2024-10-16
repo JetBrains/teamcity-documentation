@@ -83,7 +83,7 @@ Note that if [branches](working-with-feature-branches.md#Configuring+Branches) a
 
 ## See Where Test is Already Fixed In
 
-For some [test failures](viewing-tests-and-configuration-problems.md), TeamCity can show the "_Already Fixed In_" build. This is the build where this initially failed test was successful and which was run _after_ the build with initial test failure (for the same <emphasis tooltip="build-configuration">build configuration</emphasis>).
+For some [test failures](viewing-tests-and-configuration-problems.md), TeamCity can show the "_Already Fixed In_" build. This is the build where this initially failed test was successful and which was run _after_ the build with initial test failure (for the same <tooltip term="build-configuration">_build configuration_</tooltip>).
 
 Here, _after_ means that:
 * The build with the successful test has newer changes than the build with initial failure.

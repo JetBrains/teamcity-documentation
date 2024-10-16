@@ -71,7 +71,7 @@ object MyBuildConf : BuildType({
 
 > Refer to this documentation article for the reference on available conditions: [](requirement-conditions.md).
 > 
-{type="tip"}
+{style="tip"}
 
 If you declare multiple execution conditions, the build step will be executed only if __all__ of them are satisfied in the current build run.
 
@@ -81,7 +81,7 @@ If you use parameter-based execution conditions in a build which belongs to a [b
 
 In this demo, we explore a use case when you need to run a given step only if the build runs in the specific environment. This can be easily achieved with build step conditions.
 
-<video href="2muXXD2-0jg"
+<video src="https://youtu.be/2muXXD2-0jg"
 title="New in TeamCity 2020.2: Bitbucket Cloud Pull Request Support"/>
 
 You can also read a recap of this tutorial in [this blog post](https://blog.jetbrains.com/teamcity/2020/07/new-in-2020-1-conditional-build-steps/).

@@ -97,7 +97,7 @@ Create an Oracle user account/schema for TeamCity.
 * Make sure that the national character set of the database instance is UTF or Unicode.
 * Grant the `CREATE SESSION` and `CREATE TABLE` permissions to a user whose account will be used by TeamCity to work with this database.
 
-[//]: # (Internal note. Do not delete. "Setting up an External Databased282e338.txt")    
+<!--[//]: # (Internal note. Do not delete. "Setting up an External Databased282e338.txt")   --> 
 
 On the first connect, TeamCity creates all the necessary tables and indices in the user's schema. (Note: TeamCity never attempts to access other schemas even if they are accessible.)
 

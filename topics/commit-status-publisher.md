@@ -65,7 +65,7 @@ The **Authentication Type** option allows you to choose which authentication met
 > * The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
 > * In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
 > 
-{type="note"}
+{style="note"}
 
 The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/api/v4` format. This field is optional: if left blank, TeamCity uses a value that corresponds to the fetch URL specified in VCS root settings.
 
@@ -73,7 +73,7 @@ The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/
 ### Bitbucket Cloud
 
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
-{product="tc"}
+{instance="tc"}
 
 For the **Authentication Type**, you have the following options:
 
@@ -82,7 +82,7 @@ For the **Authentication Type**, you have the following options:
 * **Username/password** — Specify a username and password for connection to Bitbucket Cloud. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
 
 * **Refreshable access token** — Displays a list of configured Bitbucket Cloud [OAuth connections](configuring-connections.md#Bitbucket+Cloud). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
-  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud"/>
+  <img src="dk-pullrequests-BBC-tokens.png" width="706" alt="PR Token for Bitbucket Cloud" style="block"/>
 
 
 ### Bitbucket Server
@@ -129,7 +129,7 @@ If left empty, the URL will be extracted from the VCS root fetch URL.
 * **Refreshable access token** — Displays a list of configured Bitbucket Server/Data Center [OAuth 2.0 connections](configuring-connections.md#Bitbucket+Server+and+Data+Center). Click the **Acquire** button next to the connection that should be used to issue a short-lived OAuth token.
   > Only OAuth connections configured in this project (or in a parent) are included in the list. At least one OAuth connection must be configured in order to use this authentication option.
   >
-  {type="note"}
+  {style="note"}
 
 </td>
 </tr>
@@ -145,7 +145,7 @@ To protect a branch and ensure that only verified pull requests are merged into 
 
 >The _TeamCity Integration for Bitbucket_ app made by Stiltsoft provides a more detailed preview of TeamCity builds in the Bitbucket UI and lets you run them without switching to TeamCity. Read more details about the app in [this post](https://blog.jetbrains.com/teamcity/2021/05/run-and-view-teamcity-builds-from-bitbucket/).
 > 
-{type="note"}
+{style="note"}
 
 ### Azure DevOps
 
@@ -160,10 +160,10 @@ To set up the Commit Status Publisher for Azure DevOps, specify your Azure serve
 ### JetBrains Space
 
 Starting with version 2023.09, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
-{product="tcc"}
+{instance="tcc"}
 
 Starting with version 2023.11, TeamCity build configurations set up via predefined [Space connections](configuring-connections.md#jetbrains-space-connection) do not require a configured Commit Status Publisher to post build statuses.
-{product="tc"}
+{instance="tc"}
 
 Set up a project using Space connections and TeamCity will automatically post build-related comments under the **Automation** section of Space **Commits** and **Branches** tabs.
 
@@ -237,6 +237,6 @@ In the scope of such a chain, Commit Status Publisher will not be bound by the c
 
 
 ## Troubleshooting
-{product="tc"}
+{instance="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Commit Status Publisher build feature to the `teamcity-commit-status.log` file. Apply the "debug-commit-status" preset to include DEBUG-level events to this log.

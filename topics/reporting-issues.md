@@ -4,13 +4,13 @@
 If you experience problems running TeamCity and believe they are related to the software, please [contact us](troubleshooting.md) with a detailed description of the issue.
 
 To fix a problem, we may need a wide range of information about your system as well as various logs. The section below explains how to collect such information for different issues.
-{product="tc"}
+{instance="tc"}
 
 In case with TeamCity Cloud, you only need to provide your server URL, and our support will be able to check the state of your server.
-{product="tcc"}
+{instance="tcc"}
 
 ## Best Practices When Reporting Issues
-{product="tc"}
+{instance="tc"}
 
 Following these guidelines will ensure timely response and effective issue resolution. Check [Feedback](feedback.md) for appropriate ways to contact us. 
 
@@ -67,7 +67,7 @@ __Consider the following guidelines for posts__:
 Check the sections below for common cases and specific information to collect and send to us.
 
 ## Slowness, Hangings and Low Performance
-{product="tc"}
+{instance="tc"}
 
 If TeamCity is running slower than you would expect, please use the notes below to locate the slow process and send us all the relevant details if the process is a TeamCity one.
 
@@ -121,7 +121,7 @@ If the UI is not accessible, you can take the dump thread manually using the app
 > * TeamCity agent consists of two `java` processes: the launcher and agent itself. The agent is triggered by the launcher. You will usually be interested in the agent (nested) process and not the launcher one.
 > * Capturing thread dumps via the `jstack` commands might require [configuring additional agent startup properties](configuring-build-agent-startup-properties.md) to deactivate the [DisableAttachMechanism](https://docs.oracle.com/cd/E15289_01/JRCLR/optionxx.htm#BABJAJBA) option. This Java option is initially enabled for security reasons and prevents external processing from attaching themselves to a JVM. It is recommended that you re-enable it after collecting required dumps.
 > 
-{type="note"}
+{style="note"}
 
 ### Taking Thread Dump
 
@@ -174,7 +174,7 @@ long_query_time=15
 The log can also be sent to us for analysis.
 
 ## OutOfMemory Problems
-{product="tc"}
+{instance="tc"}
 
 If you experience problems with TeamCity consuming too much memory or "OutOfMemoryError"/"Java heap space" errors in the log, do the following:
 * Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI.
@@ -192,7 +192,7 @@ If you experience problems with TeamCity consuming too much memory or "OutOfMemo
 See how to change JVM options for the [server](server-startup-properties.md#JVM+Options) and for [agents](configuring-build-agent-startup-properties.md#Agent+Properties).
 
 ## "Too many open files" Error
-{product="tc"}
+{instance="tc"}
 
 1. Determine what computer it occurs on
 2. Determine the process which has opened a lot of files and the files list (on Linux use `lsof`, on Windows you can use [handle](http://technet.microsoft.com/en-us/sysinternals/bb896655) or [TCPView](http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx) for listing sockets)
@@ -207,7 +207,7 @@ Note that you will most probably need to reboot the machine with the error after
 Please refer to [Common Problems](common-problems.md#Started+Build+Agent+is+not+available+on+the+server+to+run+builds).
 
 ## Logging events
-{product="tc"}
+{instance="tc"}
 
 The TeamCity server and agent create logs that can be used to investigate issues.
 
@@ -284,7 +284,7 @@ In case the [server-side checkout](vcs-checkout-mode.md#server-checkout) is used
 the build log and the agent log will contain the line "Patch is saved to file $\{file.name\}"Get the file and supply it with the problem description.
 
 ## Build triggers debug logging
-{product="tc"}
+{instance="tc"}
 
 To collect all build triggers debug logs in TeamCity 2021.1 and later, switch the logging preset on the __Administration | Diagnostics page__ to `debug-triggers`, reproduce the problem and then collect all the `teamcity-triggers.log` files.
 
@@ -341,7 +341,7 @@ To enable debug logging for the [IntelliJ Platform-based IDE plugin](intellij-pl
 
 > Since platform version 2019.3, this file is no longer loaded by default. Consider adding the configuration via __Help | Diagnostic Tools | Debug Log Settings__ instead. Alternatively, you can copy this file to some location and specify a path to it by adding `idea.log.config.file = /path/to/log.xml` in __Help | Edit Custom Properties__.
 >
-{type="note"}
+{style="note"}
 
 ```Shell
 
@@ -394,7 +394,7 @@ If the settings are the same and you do not use the manual checkout mode but the
 * Provide us with your IDEA VCS settings and TeamCity VCS settings (for the build configurations you expect to be suitable with your IDEA project)
 * Enable debug logs for the TeamCity IntelliJ plugin (see [above](#Logging+in+IntelliJ+IDEA%2FPlatform-based+IDEs))
 * Enable the TeamCity server debug logs (see [above](#Logging+events))
-{product="tc"}
+{instance="tc"}
 * In the [TeamCity IntelliJ plugin](intellij-platform-plugin.md), try to start a remote run build
 * Provide us with the debug logs from the TeamCity IntelliJ plugin and from the TeamCity server.
 
@@ -421,27 +421,27 @@ To troubleshoot common Visual Studio, run Microsoft Visual Studio executable `IN
 
 To collect additional logs generated by [JetBrains dotCover](jetbrains-dotcover.md), add the `teamcity.agent.dotCover.log` [configuration parameter](configuring-build-parameters.md) to the build configuration. This parameter should store an absolute or relative path to an empty agent directory where you want to keep dotCover logs. If you need to publish these logs as [build artifacts](build-artifact.md), add the same directory path to the list of [artifact paths](configuring-general-settings.md#Artifact+Paths). 
 
-[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")
+<!--[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1133.txt")-->
 
 ## JVM Crashes
 
 On a rare occasion of the TeamCity server or agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
 If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually `<[TeamCity server home](teamcity-home-directory.md)>/bin` or `<[agent home](agent-home-directory.md)>/bin`.   
 Under Windows, when running as a service, it can be other like `C:\Windows\SysWOW64`. You can also search the disk for the recent files with "hs_err_pid" in the name. See also the related Fatal Error Log section in this [document](https://www.oracle.com/technetwork/java/javase/felog-138657.html).
-{product="tc"}
+{instance="tc"}
 
 On a rare occasion of the TeamCity agent process terminating unexpectedly with no apparent reason, it can happen that this is caused by a Java runtime crash.   
 If this happens, the JVM regularly creates a file named `hs_err_pid*.log` in the working directory of the process. The working directory is usually or [`agent home`](agent-home-directory.md)`>/bin`. You can also search the disk for the recent files with `hs_err_pid` in the name. See also the related Fatal Error Log section in this [document](https://www.oracle.com/technetwork/java/javase/felog-138657.html).
-{product="tcc"}
+{instance="tcc"}
 
 Please send this file to us for investigation and consider updating the JVM for the [server](how-to.md#Install+Non-Bundled+Version+of+Java) (or for [agents](configure-java-for-agent.md)) to the latest version available.
-{product="tc"}
+{instance="tc"}
 
 Please send this file to us for investigation and consider updating the [agents'](configure-java-for-agent.md) JVM to the latest version available.
-{product="tcc"}
+{instance="tcc"}
 
 If you get the "There is insufficient memory for the Java Runtime Environment to continue. Native memory allocation (malloc) failed to allocate..." message with the crash or in the crash report file, make sure to [switch to 64-bit JVM](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) or reduce the `-Xmx` setting below `1024m`, see details in the [memory configuration section](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
-{product="tc"}
+{instance="tc"}
 
 ## Build Log Issues
 
@@ -464,7 +464,7 @@ To help us investigate issues with inspections, do the following:
 Files under 10 MB in size can be attached right into the [tracker issue](https://youtrack.jetbrains.com/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
 You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
-[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")    
+<!--[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")-->    
 
 Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploads.jetbrains.com/). Please let us know the exact filename after the upload.
 

@@ -17,13 +17,13 @@ To configure email notifications for a build configuration:
 
 >To customize the notification texts, you can modify [notification templates](customizing-notification-templates.md).
 >
-{product="tc"}
+{instance="tc"}
 
 Note that TeamCity Email Notifier relies on the SMTP server settings configured in __Administration | Email Notifier__.
 
 > Starting with version 2023.05, you can also utilize [Service Messages](service-messages.md#Sending+Custom+Email+Messages) to send custom email messages from inside build steps.
 > 
-{type="tip" product="tc"}
+{type="tip" instance="tc"}
 
 ## Slack Notifier
 

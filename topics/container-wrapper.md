@@ -5,7 +5,7 @@ The _Container Wrapper_ extension allows running a build step inside the specifi
 
 > To configure the _Container Wrapper_ extension in Kotlin DSL, see the Docker example in [MavenBuildStep](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildSteps/maven-build-step/index.html).
 >
-{type="note"}
+{style="note"}
 
 TeamCity can pull containers anonymously (if images are publicly available) or after logging into a registry (for private registries or to avoid DockerHub penalties for anonymous downloads). If you need TeamCity to authorize to a registry before pulling an image, configure the _Docker Support_ build feature, as follows:
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
@@ -98,7 +98,7 @@ Allows specifying additional options for the `docker run` and `podman run` comma
 > 
 > If you need a parameter declared in this file, define the configuration parameter and map it to the agent's environment variable (`system.FOO_BAR=env_var_value`) . You can then reference it as `%\system.FOO_BAR%` in the "Additional run arguments" field.
 >
-{type="note"}
+{style="note"}
 
 </td></tr></table>
 

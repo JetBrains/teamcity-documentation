@@ -3,7 +3,7 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 In TeamCity, a [build agent](build-agent.md) contains two processes:
 * Agent launcher — a Java process that launches the agent process.
@@ -13,7 +13,7 @@ Whether you run a build agent via the `agent.bat|sh` script or as a Windows serv
 
 >Please avoid changing the startup options unless you are advised to do so by the TeamCity support team or you are absolutely confident in consequences of these changes.
 >
-{type="note"}
+{style="note"}
 
 ## Agent Properties
 
@@ -29,7 +29,7 @@ Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` sc
 
 In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option):
 
-```Plain Text
+```
 wrapper.app.parameter.<N>
 
 ```
@@ -67,7 +67,7 @@ Before you run the `[<Agent_Home>](agent-home-directory.md)/bin/agent.bat|sh` sc
 
 In the `[<Agent_Home>](agent-home-directory.md)/launcher/conf/wrapper.conf` file, add the following lines (one per option, the `N` number should increase):
 
-```Plain Text
+```
 wrapper.java.additional.<N>
 
 ```
@@ -79,11 +79,11 @@ Make sure to renumber all lines after the inserted ones.
 
 
 
-[//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")    
+<!--[//]: # (Internal note. Do not delete. "Configuring Build Agent Startup Propertiesd71e106.txt")-->    
 
 <seealso>
         <category ref="concepts">
-            <a href="server-startup-properties.md" product="tc">Configuring TeamCity Server Startup Properties</a>
+            <a href="server-startup-properties.md" instance="tc">Configuring TeamCity Server Startup Properties</a>
         </category>
         <category ref="admin-guide">
             <a href="agent-home-directory.md">Agent Home Directory</a>

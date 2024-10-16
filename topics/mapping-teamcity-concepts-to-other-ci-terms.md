@@ -5,7 +5,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 ## Jenkins Mapping
 
-<include src="jenkins-to-teamcity-migration-guidelines.md" include-id="jenkins-mapping-to-teamcity"/>
+<include from="jenkins-to-teamcity-migration-guidelines.md" element-id="jenkins-mapping-to-teamcity"/>
 
 ## Bamboo Mapping
 

@@ -3,7 +3,7 @@
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
-{type="note" product="tcc"}
+{type="note" instance="tcc"}
 
 To analyze agent-specific cases, there are internal log files saved by the TeamCity agent process into `<TeamCity agent home>/logs` directory on the agent machine.
 
@@ -170,7 +170,7 @@ If you're using TeamCity version < 2022.04 then the following replacement should
 Then, see `teamcity-xmlrpc.log`.   
 
 ## Advanced Logging Configuration
-{product="tc"}
+{instance="tc"}
 
 You can configure location of the logs by altering the value of the `teamcity_logs` property (passed to JVM via `-D` option). You can also change the Log4j configuration file location by changing the value of the `log4j2.configuration` property. See the corresponding documentation [section](configuring-build-agent-startup-properties.md) on how to pass the options.
 
@@ -180,7 +180,7 @@ For additional options on tweaking logging, refer to the [TeamCity Server Logs](
         <category ref="troubleshooting">
             <a href="reporting-issues.md">Reporting Issues</a>
         </category>
-        <category ref="admin-guide" product="tc">
+        <category ref="admin-guide" instance="tc">
             <a href="teamcity-server-logs.md">TeamCity Server Logs</a>
         </category>
 </seealso>

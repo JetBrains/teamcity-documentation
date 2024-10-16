@@ -3,14 +3,14 @@
 
 This document describes how to configure Java applications to use HTTPS for communicating with the server.  
 If you need to connect the TeamCity server to a service behind a self-signed certificate (for example, Git) or if you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
-{product="tc"}
+{instance="tc"}
 
 This document describes how to configure Java applications to use HTTPS for communicating with the server.  
 If you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).
-{product="tcc"}
+{instance="tcc"}
 
 We assume that you have [already configured HTTPS](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI) in your TeamCity web server. You can do it using the [TeamCity HTTPS settings](https-server-settings.md) or to set up a reverse proxy server like Nginx or Apache that provides HTTPS access for HTTP-only TeamCity server's Tomcat port. In the setup, make sure that the reverse proxy has correct configuration as per [Set Up TeamCity behind a Proxy Server](how-to.md#Set+Up+TeamCity+behind+a+Proxy+Server) section.
-{product="tc"}
+{instance="tc"}
 
 ## Accessing the server via HTTPS
 
@@ -18,7 +18,7 @@ __If your certificate is valid__ (i.e. it was signed by a well known Certificate
 
 __If your certificate is not valid (is self-signed):__ (i.e. is not signed by a known Certificate Authority and likely to result in "PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" error message)
 * To enable HTTPS connections from the TeamCity [Visual Studio Add-in](visual-studio-addin.md), point your Internet Explorer to the TeamCity server using `https://` URL and import the server certificate into the browser. After that, the Visual Studio Add-in should be able to connect by HTTPS.
-  {product="tc"}
+  {instance="tc"}
 * To enable HTTPS connections from Java clients (TeamCity Agents, IntelliJ IDEA, and so on), see the [section below](#Configuring+JVM) for configuring the JVM installation used by the connecting application.
 
 ## Configuring JVM
@@ -35,7 +35,7 @@ To enable HTTPS connections from Java clients, you need to install the server ce
 * For TeamCity agent or server installed under Windows, the default location for &lt;path to JRE installation&gt; is &lt;TeamCity installation path&gt;/jre
 * import the server certificate into the default JRE installation keystore using JVM's `keytool` tool:
 
-```Plain Text
+```
 keytool -importcert -file <cert file> -keystore <path to JRE installation>/lib/security/cacerts
 ```
 
@@ -53,7 +53,7 @@ If you need to use a client certificate to access a server via https (for exampl
 
 1\. If you have your certificate in a __p12__ file, you can use the following command to convert it to a Java keystore. Make sure you use `keytool` from JDK 1.6-1.8: earlier versions may not understand p12 format.
 
-```Plain Text
+```
 keytool -importkeystore -srckeystore <path to your .p12 certificate> -srcstoretype PKCS12 -srcstorepass <password of your p12 certificate> -destkeystore <path to keystore file>  -deststorepass <keystore password> -destkeypass <keystore password> -srcalias 1
 ```
 
@@ -68,7 +68,7 @@ If your certificate is not signed by a trusted authority, you will also need to 
 2\. You should first extract the root certificate from your certificate. You can do this from a web browser if you have the certificate installed, or you can do this with the [OpenSSL](http://www.openssl.org/) tool using the command:
 
 
-```Plain Text
+```
 openssl.exe pkcs12 -in <path to your .p12 certificate> -out <path to your certificate in .pem format>
 
 ```
@@ -78,7 +78,7 @@ You should know `<path to your .p12 certificate>` and its password (to enter it 
 3\. Then you should extract the root certificate (the root certificate should have the same issuer and subject fields) from the pem file (it has text format) to a separate file. The file should look like:
 
 
-```Plain Text
+```
 -----BEGIN CERTIFICATE-----
 MIIGUjCCBDqgAwIBAgIEAKmKxzANBgkqhkiG9w0BAQQFADBwMRUwEwYDVQQDEwxK
 ...
@@ -91,7 +91,7 @@ Let's assume its name is &lt;path to root certificate&gt;.
 4\. Now import the root certificate to the trusted keystore with the command:
 
 
-```Plain Text
+```
 keytool -importcert -trustcacerts -file <path to root certificate> -keystore <path to trust keystore file> -storepass <trust keystore password>
 ```
 
@@ -107,7 +107,7 @@ __Starting the connecting application JVM__
 
 Now you need to pass the following parameters to the JVM when running the application:
 
-```Plain Text
+```
 -Djavax.net.ssl.keyStore=<path to keystore file>
 -Djavax.net.ssl.keyStorePassword=<keystore password>
 -Djavax.net.ssl.trustStore=<path to trust keystore file>

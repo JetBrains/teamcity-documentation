@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: What's New in TeamCity 2022.10)
 
 ## Easy HTTPS access setup on TeamCity server
-{product="tc"}
+{instance="tc"}
 
 Before this version, setting up HTTPS on a TeamCity server has been one of the challenging tasks for a server administrator. 
 It required the knowledge of the TeamCity server configuration and experience in configuring proxy servers. 
@@ -15,7 +15,7 @@ If your TeamCity server is [behind a proxy](configuring-proxy-server.md),
 configure HTTPS on the proxy side.
 
 [Read this article](https-server-settings.md) for details.
-{product="tc"}
+{instance="tc"}
 
 ## The Sakura UI is now default
 
@@ -48,7 +48,7 @@ The shell helps you investigate agent-related issues and works for EC2 agents
 with preinstalled [AWS Systems Manager Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/prereqs-ssm-agent.html) (SSM Agent).
 
 [Read this article](setting-up-teamcity-for-amazon-ec2.md) for details.
-{product="tc"}
+{instance="tc"}
 
 ## Maintenance mode for cloud agents
 
@@ -99,7 +99,7 @@ You can now [promote](running-custom-build.md#Promoting+Build) a personal build.
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 ## New REST API Requests to monitor and manage server nodes
-{product="tc"}
+{instance="tc"}
 
 In TeamCity 2022.10, you can use new REST API requests to check the status of your nodes in the high availability setup 
 and reassign node responsibilities. See [this section for details](multinode-setup.md#Monitoring+and+Managing+Nodes+via+REST+API).
@@ -123,13 +123,13 @@ you can navigate to the change page on the Helix Swarm using `Open in Helix Swar
 
 
 ## Upgrade notes
-{product="tc"}
+{instance="tc"}
 
 Before upgrading, we highly recommend reading about [important changes in version 2022.10 compared to 2022.04.x](upgrade-notes.md#Changes+from+2022.04+to+2022.10).
 
 
 ## Previous releases
-{product="tc"}
+{instance="tc"}
 
 * [What's New in TeamCity 2022.04](https://www.jetbrains.com/help/teamcity/2022.04/what-s-new-in-teamcity.html)
 * [What's New in TeamCity 2021.2](https://www.jetbrains.com/help/teamcity/2021.2/what-s-new-in-teamcity.html)

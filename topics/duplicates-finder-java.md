@@ -4,7 +4,7 @@
 The _Duplicates Finder (Java)_ build runner is intended for catching similar code fragments and providing a report on discovered repetitive blocks of Java code. This runner is based on IntelliJ IDEA capabilities, so an IntelliJ IDEA project file (`.ipr`) or directory (`.idea`) is required to configure the runner.
 
 In addition to the bundled version, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
-{product="tc"}
+{instance="tc"}
 
 The Duplicates Finder (Java) runner can also find Java duplicates in projects built by Maven2 or above.
 
@@ -107,7 +107,7 @@ Working directory
 
 Enter a path to the [Build Working Directory](build-working-directory.md) if it differs from the [Build Checkout Directory](build-checkout-directory.md).
 
-[//]: # (Internal note. Do not delete. "Duplicates Finder \(Java\)d129e140.txt")
+<!--[//]: # (Internal note. Do not delete. "Duplicates Finder \(Java\)d129e140.txt")-->
 
 Optional, specify if differs from the checkout directory.
 
@@ -242,7 +242,7 @@ Click this link to open a text area, where you can define templates for the jar 
 You can use references to external properties when defining the values, like `%\system.idea_home%` or `%\env.JDK_1_3%`. This will add a [requirement](agent-requirements.md) for the corresponding property.
 </note>
 
-<include src="java-parameters.md" include-id="java-param"/>
+<include from="java-parameters.md" element-id="java-param"/>
 
 ### Java Parameters
 
