@@ -47,7 +47,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
    
    <dt>BUILD_STARTED</dt>
    <dd>
-   <b>Tracked Event:</b> A build started. Follows the <code>BUILD_TYPE_ADDED_TO_QUEUE</code> and <code>CHANGES_LOADED</code> events.<br/>
+   <b>Tracked Event:</b> A build started. Follows the <code>BUILD_TYPE_ADDED_TO_QUEUE</code> event.<br/>
    <b>Parent Project:</b> Any project.<br/>
    <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
    </dd>
@@ -68,7 +68,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
    
    <dt>CHANGES_LOADED</dt>
    <dd>
-   <b>Tracked Event:</b> TeamCity successfully collected changes from a remote repository (or ensured no new changes are present) and is ready to execute build steps.<br/>
+   <b>Tracked Event:</b> TeamCity successfully collected changes from a remote repository (or ensured no new changes are present) and is ready to execute build steps. Depending on the build, may occur before or after the <code>BUILD_STARTED</code> event.<br/>
    <b>Parent Project:</b> Any project.<br/>
    <b>REST API Payload Schema:</b> <a href="https://www.jetbrains.com/help/teamcity/rest/build.html#Schema">#/definitions/build</a>
    </dd>
