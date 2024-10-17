@@ -21,7 +21,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
    
 3. Specify the list of events that should trigger sending POST requests. To do this, create the `teamcity.internal.webhooks.events` configuration parameter for those TeamCity projects whose events you need to track.
 
-   The list below enumerates available `teamcity.internal.webhooks.events` parameter values. Use a semicolon (`;`) as a separator for multiple values.
+   The list below enumerates most frequently used `teamcity.internal.webhooks.events` parameter values. For the full list of available events, see the [Open API Javadoc](https://javadoc.jetbrains.net/teamcity/openapi/current/jetbrains/buildServer/serverSide/tracker/TrackerEventType.html). Use a semicolon (`;`) as a separator for multiple values.
 
    <dl>
    <dt>AGENT_REGISTRED</dt>
