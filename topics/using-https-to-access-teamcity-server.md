@@ -120,3 +120,4 @@ For IntelliJ IDEA, you can add the lines into the `bin\idea.exe.vmoptions` file 
 
 * [Online HTTPS server configuration analysis](https://www.ssllabs.com/ssltest/analyze.html)
 * [SSLPoke](https://gist.github.com/4ndrej/4547029) Java class.
+* [openssl-s_client](https://docs.openssl.org/3.0/man1/openssl-s_client/). This example shows the certificate chain: `openssl s_client -connect <server_name>:<port> -showcerts`. It can be useful if you are using a custom trust store and need to ensure all required certificates are included.
