@@ -43,6 +43,20 @@ General server log
 
 <td>
 
+`teamcity-startup.log`
+
+</td>
+
+<td>
+
+A standalone copy of all messages written to `teamcity-server.log` during server startup. Once the TeamCity server is running, no further log messages are copied.
+
+This log is not included in the log4j2 configuration and is intended to assist in troubleshooting server startup issues.
+
+</td></tr><tr>
+
+<td>
+
 `teamcity-activities.log`
 
 </td>
