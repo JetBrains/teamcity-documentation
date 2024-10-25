@@ -76,45 +76,48 @@ After you have created a required instance or AMI, you can set up cloud profiles
 A **cloud profile** is a collection of general settings for TeamCity to start virtual machines.
 
 1. Navigate to **Administration | &lt;Required Project&gt; | Cloud Profiles**. If you want cloud agents in this profile to be available globally, choose the **&lt;Root project&gt;**. Profiles owned by individual projects can be used to spawn agents that can be used only in these projects.
-
 2. Click **Create new profile**.
-
 3. Set **Cloud type** to "Amazon EC2".
-
 4. Enter your profile name and optional description.
+5. Choose an [AWS Connection](configuring-connections.md#AmazonWebServices) that should be used to access your AWS-based images and instances. Note that IAM connections (see the [configuration example](configuring-connections.md#Recommended+Setup)) require underlying connections of either access keys or default credentials provider chain types to operate.
 
-5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
-
-   <table><tr><td>
-
-   <tabs>
-   
-   <tab title="Access Keys">
-
-   This option lets you specify credentials that TeamCity will use to access your AWS resources. Using static credentials is the least secure approach, we recommend the **Use default credential provider chain** option instead.
-   
-   5.1.&ensp;Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
-
-   5.2.&ensp;Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
-
-   5.3.&ensp;Switch to the **Security Credentials** tab and scroll to the **Access keys** section. 
-
-   5.4.&ensp;Create a new key. Paste its ID and secret to the related fields in TeamCity UI.
-   
-   </tab>
-   
-   <tab title="Local Credentials">
-
-   The **Use default credential provider chain** option allows TeamCity to look for AWS credentials stored on the server machine. Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS, or at `C:\Users\USERNAME\.aws\config` on Windows. This approach is more stable and secure compared to using static access keys.
-   
-   See the following article for more information about locally stored AWS credentials: [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
-
-   </tab>
-
-   </tabs>
-
-   </td></tr></table>
-
+   > For EC2 profiles configured before version 2024.11, TeamCity will continue supporting legacy authorization methods using access keys and the default credentials provider chain. However, it will recommend migrating these settings to a separate or existing AWS connection.
+   >
+   > New EC2 profiles in version 2024.11 support only connection-based access.
+   {style="note"}
+    <!--
+    5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
+    
+        <table><tr><td>
+    
+        <tabs>
+    
+        <tab title="Access Keys">
+    
+        This option lets you specify credentials that TeamCity will use to access your AWS resources. Using static credentials is the least secure approach, we recommend the **Use default credential provider chain** option instead.
+    
+            5.1.&ensp;Go to the [AWS Identity and Access Management](https://console.aws.amazon.com/iam/) (IAM) dashboard.
+    
+            5.2.&ensp;Switch to the **Users** tab and find a user whose credentials can be used by TeamCity to access your EC2 instances and AMIs.
+    
+            5.3.&ensp;Switch to the **Security Credentials** tab and scroll to the **Access keys** section. 
+    
+            5.4.&ensp;Create a new key. Paste its ID and secret to the related fields in TeamCity UI.
+    
+        </tab>
+    
+        <tab title="Local Credentials">
+    
+        The **Use default credential provider chain** option allows TeamCity to look for AWS credentials stored on the server machine. Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS, or at `C:\Users\USERNAME\.aws\config` on Windows. This approach is more stable and secure compared to using static access keys.
+    
+        See the following article for more information about locally stored AWS credentials: [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+    
+        </tab>
+    
+        </tabs>
+    
+    </td></tr></table>
+    -->
 6. Choose an AWS region in which your instances are hosted.
 7. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
 8. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
@@ -201,7 +204,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    <tab title="Spot Fleet Request">
    
-   Amazon [Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html) allows you to book a combination of regular (On-Demand) and [spot]((https://aws.amazon.com/ec2/spot/)) instances based on the given criteria. See the following AWS documentation article for sample requests: [Spot Fleet example configurations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-examples.html).
+   Amazon [Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html) allows you to book a combination of regular (On-Demand) and [spot](https://aws.amazon.com/ec2/spot/)) instances based on the given criteria. See the following AWS documentation article for sample requests: [Spot Fleet example configurations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-examples.html).
 
    3.1.&ensp;In [AWS Management Console](https://aws.amazon.com/console/), Go to __Instances | Spot Requests | Request Spot Instances__.
 
