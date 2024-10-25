@@ -433,13 +433,6 @@ To configure an AWS connection in TeamCity:
    Default credential provider chain {instance="tc"}
    :
    Select this type to provide access credentials according to the [default chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). This approach provides an alternatives to storing credentials in plain text.<br/>
-        
-      > Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources, using the **Default Provider Chain** credentials may present a security risk: in this case the TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.    
-      > 
-      > To mitigate this risk, the **Default credential provider chain** credentials type is disabled by default. To enable it, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true`. (The default value is `false`.)
-      > 
-      > No server restart is required after the property is set.
-      {instance="tc"}
 
       When this credentials type is used, TeamCity searches for credentials in the following order:
 
@@ -457,16 +450,14 @@ To configure an AWS connection in TeamCity:
          ```
 
       4. Credential profiles file in the default location (`~/.aws/credentials`) shared by all AWS SDKs and the AWS CLI.
-         
 
          ```
          # In ~/.aws/credentials
-         
          [default]
          aws_access_key_id = your_key
          aws_secret_access_key = your_secret
          ```
-            
+
          The default location can be overridden via the [`AWS_SHARED_CREDENTIALS_FILE`](aws-credentials.md) environment variable.
 
       5. Credentials delivered via the Amazon EC2 container service if the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable is set and the security manager has access to it.
@@ -480,7 +471,15 @@ To configure an AWS connection in TeamCity:
 
       9. Test and save the connection.
 
-A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md), [artifact S3 storages](storing-build-artifacts-in-amazon-s3.md), and other AWS connections that use IAM Roles.
+    <note instance="tc">
+    Note that if your TeamCity server is hosted on an AWS instance that has an associated IAM role granting access to sensitive resources, using the <b>Default Provider Chain</b> credentials may present a security risk: in this case the TeamCity project administrators who configured this type of connection can access all AWS resources permitted by the role.    
+    
+    To mitigate this risk, the **Default credential provider chain** credentials type is disabled by default. To enable it, set [the internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.internal.aws.connection.defaultCredentialsProviderEnabled=true` (the default value is `false`.)
+    
+    No server restart is required after the property is set.
+    </note>
+
+A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md), [artifact S3 storages](storing-build-artifacts-in-amazon-s3.md), [EC2 cloud profiles](setting-up-teamcity-for-amazon-ec2.md) and other AWS connections that use IAM Roles.
 {instance="tc"}
 
 A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md) and other AWS connections that use IAM Roles.
