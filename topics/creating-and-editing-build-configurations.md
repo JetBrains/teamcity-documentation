@@ -148,7 +148,7 @@ Build configuration settings include:
    * for [snapshot dependencies](snapshot-dependencies.md), TeamCity will run all dependent builds on the sources taken at the moment the build they depend on starts
    * for [artifact dependencies](artifact-dependencies.md), before a build is started, all artifacts this build depends on will be downloaded and placed in their configured target locations and then will be used by the build
 * [Parameters](configuring-build-parameters.md) which allow sharing settings
-* Agent requirements specifying whether a [build configuration](managing-builds.md) can run on a particular [build agent](build-agent.md).
+* Agent requirements specifying whether a [build configuration](managing-builds.md) can run on a particular [build agent](install-and-start-teamcity-agents.md).
 
 <note>
 

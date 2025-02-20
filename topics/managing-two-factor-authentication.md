@@ -3,7 +3,7 @@
 
 Enabling two-factor user authentication (2FA) on your TeamCity server grants it an extra level of security. Users will have to verify their identity in two steps: by providing their regular credentials _plus_ by submitting disposable keys, generated on their personal mobile devices.
 
->You can combine TeamCity 2FA with authentication via an external service. See [supported providers](authentication-modules.md#auth-modules).
+>You can combine TeamCity 2FA with authentication via an external service. See [supported providers](configuring-authentication-settings.md).
 
 To select the required 2FA authentication mode, navigate to the **Administration | Authentication** page and scroll down to the **General settings** section. Note that only [system administrators](managing-roles-and-permissions.md) can modify authentication settings.
 

@@ -23,9 +23,7 @@ Any agent requirement is the `parameter operator [value]` expression, where:
 
 ## Explicit Requirements
 
-**Explicit requirements** are requirements manually configured in the **Agent Requirements** section of build configuration settings. To define an explicit requirement, do the following:
-
-You can add custom agent requirements in both TeamCity UI and in [](kotlin-dsl.md).
+**Explicit requirements** are requirements manually configured in the **Agent Requirements** section of [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes) or in [](kotlin-dsl.md).
 
 1. <include from="common-templates.md" element-id="open-configuration-settings-tab"><var name="configuration-tab-name" value="Agent Requirements"/></include> This page displays which agents are currently eligible to run your build configuration based on which building routines it performs.
 

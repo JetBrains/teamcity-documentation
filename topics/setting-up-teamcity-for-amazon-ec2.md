@@ -247,7 +247,7 @@ Cloud profiles specify global settings, such as authorization credentials and in
    
    An image with a lower priority is used only when an available image with a higher priority reaches its active agents limit.
 
-   > The value of the **Image priority** field is assigned to the [teamcity.agent.priority](build-agent.md#Agent+Priority) property of each agent that originates from this image. You can manually specify this property for any other non-AWS-hosted agent to control which agents TeamCity should prioritize.
+   > The value of the **Image priority** field is assigned to the [teamcity.agent.priority](install-and-start-teamcity-agents.md#Agent+Priority) property of each agent that originates from this image. You can manually specify this property for any other non-AWS-hosted agent to control which agents TeamCity should prioritize.
    > 
    {style="note"}
 

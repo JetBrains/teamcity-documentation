@@ -128,7 +128,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
 ## Proxy Configuration
 {id="Proxy+Configuration" help-id="Proxy+Configuration" instance="tc"}
 
-The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](build-agent.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
+The reverse HTTP proxy serves as a single endpoint for TeamCity users and for [build agents](install-and-start-teamcity-agents.md). This is also a good place to configure HTTPS connection settings for the entire cluster.
 
 When used with TeamCity, a proxy server also acts as a load balancer for incoming requests. It can determine where the request should be sent and route it to the corresponding upstream server. In this article, we provide examples of the proxy configuration for the most popular proxy servers: NGINX, NGINX Plus and HAProxy.
 

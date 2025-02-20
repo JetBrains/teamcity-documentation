@@ -56,8 +56,8 @@
 
 
 
-		<toc-element topic="authentication-modules.md"/>
-		<toc-element topic="build-agent.md"/>
+
+
 		<toc-element topic="build-artifact.md"/>
 		<toc-element topic="build-chain.md"/>
 

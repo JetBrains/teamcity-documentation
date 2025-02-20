@@ -5,7 +5,7 @@
 >
 {type="note" instance="tcc"}
 
-In TeamCity, a [build agent](build-agent.md) contains two processes:
+In TeamCity, a [build agent](install-and-start-teamcity-agents.md) contains two processes:
 * Agent launcher — a Java process that launches the agent process.
 * Agent — the main process for a build agent; runs as a child process for the agent launcher.
 

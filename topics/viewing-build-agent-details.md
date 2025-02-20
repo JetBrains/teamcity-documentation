@@ -7,7 +7,7 @@ For each connected agent TeamCity provides the following information:
 
 ## Agent Summary
 
-* __Status__: [learn more about an agent's status](build-agent.md). 
+* __Status__: [learn more about an agent's status](install-and-start-teamcity-agents.md). 
 * __Details__:
   * the agent name
   * the agent host IP address 
@@ -82,6 +82,6 @@ The tab lists system properties, environment variables, and configuration parame
             <a href="install-and-start-teamcity-server.md" instance="tc">Installing and Running Additional Build Agents</a>
         </category>
         <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
+            <a href="install-and-start-teamcity-agents.md">Build Agent</a>
         </category>
 </seealso>

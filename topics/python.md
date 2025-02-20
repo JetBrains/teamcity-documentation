@@ -339,7 +339,7 @@ Arguments that will be passed to the Python interpreter if a custom command is s
 
 In this block of settings, you can choose a Python version to run.
 
-The Python runner automatically detects Python versions installed on a [build agent](build-agent.md). The runner checks the following locations (in the same order as listed below):
+The Python runner automatically detects Python versions installed on a [build agent](install-and-start-teamcity-agents.md). The runner checks the following locations (in the same order as listed below):
 
 On Windows:
    

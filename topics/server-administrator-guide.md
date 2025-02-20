@@ -20,22 +20,27 @@ agents, build queue, user accounts, user permissions, and so on, are stored in a
 ### Build Agents
 {id="Build+Agents+TC" instance="tc"}
 
-* An agent is a piece of software that actually executes the build process.
-It is installed and configured separately from the TeamCity server.
+<snippet id="basic-agent-info">
 
-* Agents can be installed on both physical and virtual (cloud) machines.
+* An agent is a piece of software that typically checks out the source code, downloads artifacts of other builds and runs the build process. It is installed and configured separately from the TeamCity server.
+
+* Agents can be installed on both physical and  <a href="teamcity-integration-with-cloud-solutions.md">cloud-hosted virtual</a> machines.
 
     > TeamCity agents can be installed on the same machine as TeamCity server. However, for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
     >
     {style="note"}
 
-* To ensure the smooth agent operation, you need to periodically update core software and tools of agents installed from executable files or archives. For example, after you upgrade a TeamCity server to a newer version, all cloud agents started from an existing VM image will need some time to update (this happens automatically but delays the moment your queued builds can start). To ensure your agents are always running the latest software, run them as [Docker containers](agent-docker-images.md) instead.
+* An agent can run builds of any <a href="configuring-agent-requirements.md">compatible build configuration</a>. Each agent can have a unique environment: architecture, operating system, installed tools, and so on. These properties define which builds an agent can run.
 
-* Each agent can have a unique environment: architecture, operating system, installed tools, and so on. These properties define which builds an agent can run.
+* An agent can run a single build at a time. The number of agents basically limits the number of parallel builds and environments in which your build processes are run.
+
+* To ensure the smooth agent operation, you need to periodically update core software and tools of agents installed from executable files or archives. For example, after you upgrade a TeamCity server to a newer version, all cloud agents started from an existing VM image will need some time to update (this happens automatically but delays the moment your queued builds can start). To ensure your agents are always running the latest software, run them as [Docker containers](agent-docker-images.md) instead.
 
 * Since builds can run inside [Docker or Podman containers](container-wrapper.md), the agent machine's OS alone does not limit the agent-project compatibility. In other words, you can run Linux-specific tasks on Windows agents and vice versa.
 
+</snippet>
 
+Related article: [](install-and-start-teamcity-agents.md)
 
 
 ### Build Agents
@@ -50,6 +55,8 @@ Build agents in TeamCity can have different platforms, operating systems, and pr
 Different types of tests can be run on different platforms simultaneously,
 so the developers get faster feedback and more reliable testing results.
 {instance="tcc"}
+
+Related article: [](install-and-start-teamcity-agents.md)
 
 
 ## Database

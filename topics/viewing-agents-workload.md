@@ -30,10 +30,7 @@ You will find this feature helpful in:
 * reducing the cost of your hardware resources ownership
 
 <seealso>
-        <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
-        </category>
         <category ref="installation">
-            <a href="install-teamcity-agent.md">Install TeamCity Agent</a>
+            <a href="install-teamcity-agent.md">Install TeamCity Agents</a>
         </category>
 </seealso>

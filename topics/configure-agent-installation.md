@@ -145,7 +145,7 @@ It is possible to configure a forward proxy server for agent-to-server connectio
 
 <seealso>
         <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
+            <a href="install-and-start-teamcity-agents.md">Build Agent</a>
         </category>
         <category ref="admin-guide">
             <a href="predefined-build-parameters.md">Predefined Build Parameters</a>

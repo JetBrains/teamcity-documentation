@@ -3,7 +3,7 @@
 
 TeamCity can authenticate users via an internal database, or can integrate into your system and use external authentication sources such as Windows Domain, LDAP, or Git hosting providers.
 
-## Configuring Authentication
+## Authentication Modules
 
 Authentication is configured on the __Administration | Authentication__ page. The currently used authentication modules are also displayed there.
 
@@ -818,8 +818,3 @@ Allows hiding a regular login form with a TeamCity internal username and passwor
 
 </table>
 
-<seealso>
-        <category ref="concepts">
-            <a href="authentication-modules.md">Authentication Modules</a>
-        </category>
-</seealso>

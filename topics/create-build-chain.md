@@ -73,7 +73,7 @@ It is important to remember that a _build chain is a sequence of builds connecte
 
 ## Run Simple Chain
 
-At this point, the first two builds are already chained together, and you can run your first chain. Note that to compose a Docker image, a [TeamCity agent](build-agent.md) needs to have [Docker](https://www.docker.com/) installed and running on its machine, so make sure to install it in advance.
+At this point, the first two builds are already chained together, and you can run your first chain. Note that to compose a Docker image, a [TeamCity agent](install-and-start-teamcity-agents.md) needs to have [Docker](https://www.docker.com/) installed and running on its machine, so make sure to install it in advance.
 
 When you run any build from a chain, whether it's the last one or medium one, TeamCity gathers all the other chained builds into a sequence, according to their dependencies. As you saw on our sample chain's scheme, _TodoImage_ always runs after _TodoApp_; _Test1_ and _Test2_ start only after _TodoImage_ finishes and run in parallel to each other.
 

@@ -47,10 +47,10 @@ You can host the server on your own machine or get a [TeamCity Cloud](https://ww
 The TeamCity server stores all the objects' settings, manages the _[build queue](working-with-build-queue.md)_, monitors the state of running builds, and performs many other tasks.
 {instance="tcc"}
 
-A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. By default, you get three build agents with your TeamCity server but you can get more if required. A build agent software can be installed on a different machine or alongside the server.
+A different piece of software is used for actually running builds — a _[build agent](install-and-start-teamcity-agents.md)_. By default, you get three build agents with your TeamCity server but you can get more if required. A build agent software can be installed on a different machine or alongside the server.
 {instance="tc"}
 
-A different piece of software is used for actually running builds — a _[build agent](build-agent.md)_. You automatically get access to cloud build agents with your TeamCity Cloud server, but you can also install a build agent software on your own machines.
+A different piece of software is used for actually running builds — a _[build agent](install-and-start-teamcity-agents.md)_. You automatically get access to cloud build agents with your TeamCity Cloud server, but you can also install a build agent software on your own machines.
 {instance="tcc"}
 
 >Check out the [basic CI workflow in TeamCity](continuous-integration-with-teamcity.md#Basic+CI+Workflow+in+TeamCity) to see an example of a simple build run.

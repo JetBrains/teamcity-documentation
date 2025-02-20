@@ -7,7 +7,7 @@ You can review the TeamCity [license agreement](https://www.jetbrains.com/teamci
 ## Licensing Overview
 
 JetBrains offers several licensing options that allow you to scale TeamCity to your needs.  
-This section illustrates the main differences between the TeamCity server [editions](#Editions) and provides general information on the TeamCity [Build Agent](build-agent.md) license.
+This section illustrates the main differences between the TeamCity server [editions](#Editions) and provides general information on the TeamCity [Build Agent](install-and-start-teamcity-agents.md) license.
 
 _In general, to use TeamCity for production (Enterprise edition), you need to own one **server license**. In addition, you can acquire an indefinite number of **build agent licenses**, depending on how many builds you want to run in parallel._
 
@@ -135,7 +135,7 @@ The __Enterprise edition__ requires a license key, has no limit on the number of
 An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
 </note>
 
-Each TeamCity edition comes bundled with 3 or more [build agents](build-agent.md). To use more agents than the bundled number, separate build agent license keys can be entered. Additional agents can be added to both editions.
+Each TeamCity edition comes bundled with 3 or more [build agents](install-and-start-teamcity-agents.md). To use more agents than the bundled number, separate build agent license keys can be entered. Additional agents can be added to both editions.
 
 <anchor name="evaluation-license"/>
 
@@ -153,11 +153,11 @@ The Professional edition allows 100 [build configurations](managing-builds.md) p
 
 ### Number of Agents
 
-TeamCity Professional edition comes bundled with 3 [build agents](build-agent.md). More build agents can be added by purchasing additional agent license keys.
+TeamCity Professional edition comes bundled with 3 [build agents](install-and-start-teamcity-agents.md). More build agents can be added by purchasing additional agent license keys.
 
 A server license key might include more agent licenses than the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](https://www.jetbrains.com/teamcity/buy/).
 
-The number of agent licenses limits the number of agents which can be [authorized](build-agent.md#Build+Agent+Status) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
+The number of agent licenses limits the number of agents which can be [authorized](install-and-start-teamcity-agents.md#Build+Agent+Statuses) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
 When there are more authorized agents than the valid agent licenses available, the server fails to start any builds and displays a warning message to all users in the web browser.
 
 ## Managing Licenses
@@ -242,7 +242,7 @@ The software described in this documentation is furnished under a software licen
 
 <seealso>
         <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
+            <a href="install-and-start-teamcity-agents.md">Build Agent</a>
         </category>
         <category ref="licensing">
             <a href="https://www.jetbrains.com/teamcity/buy/">Licensing &amp; Upgrade</a>

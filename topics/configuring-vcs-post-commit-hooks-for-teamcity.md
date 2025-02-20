@@ -205,9 +205,9 @@ http(s)://username:password@TeamCityServerURL/app/rest/vcs-root-instances/commit
 http(s)://username:PAT@TeamCityServerURL/app/rest/vcs-root-instances/commitHookNotification?locator=id:value
 ```
 
-* **username:password** — the combination of regular credentials you use to log into TeamCity. Requires the enabled ["Basic HTTP" module](authentication-modules.md) in **Administration | Authentication**.
+* **username:password** — the combination of regular credentials you use to log into TeamCity. Requires the enabled ["Basic HTTP" module](configuring-authentication-settings.md#Authentication+Modules) in **Administration | Authentication**.
 
-* **username:PAT** — the combination of a regular username and a [personal access token](configuring-your-user-profile.md#Managing+Access+Tokens). Requires the enabled ["Token-Based Authentication" module](authentication-modules.md) in **Administration | Authentication**.
+* **username:PAT** — the combination of a regular username and a [personal access token](configuring-your-user-profile.md#Managing+Access+Tokens). Requires the enabled ["Token-Based Authentication" module](configuring-authentication-settings.md#Authentication+Modules) in **Administration | Authentication**.
 
 Requests should use the credentials of a user with the "View project and all parent projects" and "View build configuration settings" permissions for all the projects where the VCS root is defined.
 

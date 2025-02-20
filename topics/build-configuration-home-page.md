@@ -12,7 +12,7 @@ This tab provides information on:
 * The current status of the build configuration, and, if applicable:
     * Number of [queued builds](working-with-build-queue.md).
     * For a running build, the progress details with the __Stop__ option to terminate the build.
-    * For a [failed build](build-state.md), the number, [agent](build-agent.md), and so on.
+    * For a [failed build](build-state.md), the number, [agent](install-and-start-teamcity-agents.md), and so on.
 * [Build history](build-results-page.md#Build+History+in+Classic+UI).
 
 ## History

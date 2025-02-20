@@ -62,7 +62,7 @@ You may consider using a tool like [HashiCorp Vault](https://www.vaultproject.io
 __Use external authentication__.
 {instance="tc"}
 
-If applicable, configure one of our [external authentication modules](authentication-modules.md), ranging from LDAP and Windows Domain integration to authenticating via GitHub, GitLab, or others. You can then [disable the TeamCity built-in authentication](configuring-authentication-settings.md), so that TeamCity no longer keeps hashed passwords in the internal database.
+If applicable, configure one of our [external authentication modules](configuring-authentication-settings.md#Authentication+Modules), ranging from LDAP and Windows Domain integration to authenticating via GitHub, GitLab, or others. You can then [disable the TeamCity built-in authentication](configuring-authentication-settings.md), so that TeamCity no longer keeps hashed passwords in the internal database.
 {instance="tc"}
 
 If any of the OAuth [authentication modules](configuring-authentication-settings.md) (Bitbucket Cloud, GitHub.com, GitHub Enterprise, GitLab.com, GitLab CE/EE) are enabled on your server __and__ you restrict authentication to members of a specific Bitbucket workspace, GitHub organization, or GitLab group, note the following:  
@@ -177,7 +177,7 @@ __Protect your server machine__.
 
 Limit access to the machine your TeamCity server runs on. Enable access logs and regularly review them.
 
-In general, don't use the TeamCity server machine for running [build agents](build-agent.md) (at least under the user permitted to read the [`<TeamCity Home Directory>`](teamcity-home-directory.md) and [`<TeamCity Data Directory>`](teamcity-data-directory.md)).
+In general, don't use the TeamCity server machine for running [build agents](install-and-start-teamcity-agents.md) (at least under the user permitted to read the [`<TeamCity Home Directory>`](teamcity-home-directory.md) and [`<TeamCity Data Directory>`](teamcity-data-directory.md)).
 
 The TeamCity server (and agents) processes run under users with minimal required [permissions](managing-roles-and-permissions.md). Installation directories are readable and writable only by a limited set of OS users. The `conf\buildAgent.properties` file and server logs as well as the [Data Directory](teamcity-data-directory.md) are only readable by OS users who represent administrators of the services, because reading those locations may allow taking over the agent or server respectively.
 
@@ -235,7 +235,7 @@ TeamCity agent is fully controlled by the TeamCity server: since TeamCity agents
 
 __Use a recent version of Git__.
 
-Make sure to always use the latest stable Operating System and Git version on your [build agents](build-agent.md). Update regularly.
+Make sure to always use the latest stable Operating System and Git version on your [build agents](install-and-start-teamcity-agents.md). Update regularly.
 
 __Properly manage your SSH keys__.
 

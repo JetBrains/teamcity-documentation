@@ -235,7 +235,7 @@ TeamCity Home Directory
 ## U
 
 User account
-: A combination of username and password that allows TeamCity users to sign in to the server and use its features. User accounts can be created manually, or automatically upon sign in depending on used authentication scheme (refer to the [Authentication Modules](authentication-modules.md) section for more details).
+: A combination of username and password that allows TeamCity users to sign in to the server and use its features. User accounts can be created manually, or automatically upon sign in depending on used authentication scheme (refer to the [Authentication Modules](configuring-authentication-settings.md#Authentication+Modules) section for more details).
 
 User group
 : A method of aggregating user accounts with similar roles and permissions for easier management.

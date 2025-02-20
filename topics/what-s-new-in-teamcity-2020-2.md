@@ -44,7 +44,7 @@ Now, users can authenticate in TeamCity with their external accounts in:
 * [Bitbucket Cloud](https://bitbucket.org/product/)
 
 This integration requires creating a dedicated application on the VCS hosting provider's side and a _connection_ in TeamCity. You can find detailed instructions on how to configure a connection [here](integrating-teamcity-with-vcs-hosting-services.md).   
-To enable authentication with each of the listed providers, a system administrator needs to activate a respective [authentication module](authentication-modules.md). If any of these modules is enabled on your server, users will see its icon above the login form:
+To enable authentication with each of the listed providers, a system administrator needs to activate a respective [authentication module](configuring-authentication-settings.md#Authentication+Modules). If any of these modules is enabled on your server, users will see its icon above the login form:
 
 <img src="oauth.png" alt="Authentication with VCS hosting provider"/>
 

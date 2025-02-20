@@ -5,7 +5,7 @@ This article gives an overview of the deployment instruments offered by TeamCity
 
 Most often, a deployment build is a finishing stage of a pipeline, or [build chain](build-chain.md). However, if your project is rather simple and you build it with a single configuration, you can deploy its result with just the final step of this configuration — it's totally up to you.
 
-Depending on your environment, all the deployment processes can be executed on a [build agent](build-agent.md) or in any third-party system.
+Depending on your environment, all the deployment processes can be executed on a [build agent](install-and-start-teamcity-agents.md) or in any third-party system.
 
 ## Deployment Build Configuration
 

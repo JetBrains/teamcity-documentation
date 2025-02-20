@@ -69,7 +69,7 @@ in TeamCity programmatically.
 
 ## Google Account
 
-You can sign in to TeamCity with a [Google account](authentication-modules.md). Before enabling this module, 
+You can sign in to TeamCity with a [Google account](configuring-authentication-settings.md#Authentication+Modules). Before enabling this module, 
 you need to configure a [Google connection](configuring-connections.md#Google) in the Root project's settings.
 
 ## Refresh tokens for VCS Roots

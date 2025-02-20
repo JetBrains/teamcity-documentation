@@ -228,7 +228,7 @@ Every TeamCity installation has the default __Root__ project that will contain a
 Congratulations! You are now ready to run the first build based on the just created build configuration. You can go straight to [running it](#Run+your+first+build) and [tweak its settings](#Tweak+your+build+configuration+settings) afterwards.
 
 ## Run your first build
-To run builds in TeamCity, you need [build agents](build-agent.md). A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered build agent that runs on the same computer. Let's use this agent to run a build on the sample project.
+To run builds in TeamCity, you need [build agents](install-and-start-teamcity-agents.md). A fresh TeamCity server, installed as described [here](quick-setup-guide.md), has one registered build agent that runs on the same computer. Let's use this agent to run a build on the sample project.
 {instance="tc"}
 
 On the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes)__ page, click __Run__ in the upper right corner:

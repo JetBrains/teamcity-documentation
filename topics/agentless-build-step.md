@@ -1,7 +1,7 @@
 [//]: # (title: Agentless Build Step)
 [//]: # (auxiliary-id: Agentless Build Step)
 
-_Agentless build steps_ are [steps](configuring-build-steps.md) that can run without an [agent](build-agent.md), in an external software.
+_Agentless build steps_ are [steps](configuring-build-steps.md) that can run without an [agent](install-and-start-teamcity-agents.md), in an external software.
 
 Normally, a running build occupies a build agent until the very finish, even if its final steps are executed outside TeamCity. However, if a build does not need its agent for some remaining steps, it can detach from this agent. The agent becomes available and can be instantly assigned to another build.
 

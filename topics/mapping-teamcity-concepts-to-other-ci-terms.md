@@ -58,7 +58,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Agent</p></td>
-<td><p><a href="build-agent.md">Build Agent</a></p></td>
+<td><p><a href="install-and-start-teamcity-agents.md">Build Agent</a></p></td>
 </tr>
 
 <tr>
@@ -122,7 +122,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Runner</p></td>
-<td><p><a href="build-agent.md">Build Agent</a></p></td>
+<td><p><a href="install-and-start-teamcity-agents.md">Build Agent</a></p></td>
 </tr>
 
 <tr>
@@ -173,7 +173,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Worker</p></td>
-<td><p><a href="build-agent.md">Build Agent</a></p></td>
+<td><p><a href="install-and-start-teamcity-agents.md">Build Agent</a></p></td>
 </tr>
 
 <tr>

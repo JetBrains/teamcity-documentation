@@ -64,7 +64,7 @@ Executor
 
 <td>
 
-[TeamCity Agent](build-agent.md)
+[TeamCity Agent](install-and-start-teamcity-agents.md)
 
 </td></tr><tr>
 
@@ -264,7 +264,7 @@ A build pipeline in TeamCity is called a [Build Chain](build-chain.md). It is a 
 
 In Jenkins, to offload the master node, a permanent agent is configured to run builds.
 
-TeamCity server doesnt run any builds itself. Instead, it always delegates the job to a [build agent](build-agent.md), which means in TeamCity builds are distributed by design.
+TeamCity server doesnt run any builds itself. Instead, it always delegates the job to a [build agent](install-and-start-teamcity-agents.md), which means in TeamCity builds are distributed by design.
 
 The active agents count is visible at the top of the TeamCity server UI:
 

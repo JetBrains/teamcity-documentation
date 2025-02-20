@@ -125,7 +125,7 @@ By default, a TeamCity agent uses the `busybox` image from Docker Hub to run the
 
 ## Environment Variables Handling
 
-TeamCity passes environment variables from the [build configuration](managing-builds.md) into the Docker or Podman process, but it does not pass environment variables from the [build agent](build-agent.md), as they may not be relevant to the container environment. The list of the passed environment variables can be seen in the [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
+TeamCity passes environment variables from the [build configuration](managing-builds.md) into the Docker or Podman process, but it does not pass environment variables from the [build agent](install-and-start-teamcity-agents.md), as they may not be relevant to the container environment. The list of the passed environment variables can be seen in the [Verbose mode](build-log.md#Viewing+Build+Log) in the build log.
 
 ## Setting Image Entrypoint
 

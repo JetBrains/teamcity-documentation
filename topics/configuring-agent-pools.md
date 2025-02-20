@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Agent Pools)
 [//]: # (auxiliary-id: Configuring Agent Pools;Agent Pools;Agent Pool)
 
-Instead of having one common set of [build agents](build-agent.md), you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.
+Instead of having one common set of [build agents](install-and-start-teamcity-agents.md), you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.
 * An agent can belong to _one pool only_.
 * A project can use _multiple pools_ for its builds.
 
@@ -81,7 +81,7 @@ Favorite pools are user-specific, meaning that each TeamCity user can have their
 
 <seealso>
         <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
+            <a href="install-and-start-teamcity-agents.md">Build Agent</a>
             <a href="working-with-build-queue.md">Working with Build Queue</a>
             <a href="configuring-agent-requirements.md">Agent Requirements</a>
         </category>

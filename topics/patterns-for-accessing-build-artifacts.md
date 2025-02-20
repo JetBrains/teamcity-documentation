@@ -140,6 +140,6 @@ http://teamcity.yourdomain.com/repository/download/MyConfExtId/.lastFinished/Tea
         </category>
         <category ref="concepts">
             <a href="build-artifact.md">Build Artifact</a>
-            <a href="authentication-modules.md">Authentication Modules</a>
+            <a href="configuring-authentication-settings.md#Authentication+Modules">Authentication Modules</a>
         </category>
 </seealso>

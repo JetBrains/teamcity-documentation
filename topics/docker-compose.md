@@ -26,7 +26,7 @@ For better backward compatibility, TeamCity first checks whether the standalone 
 
 The Docker Compose runner supports one or multiple [Docker Compose YAML file(s)](https://docs.docker.com/compose/compose-file/compose-file-v2/) with a description of the services to be used during the build. The path to the `docker-compose.yml` file(s) should be relative to the [build checkout directory](build-checkout-directory.md). When specifying multiple files, separate them with a space.
 
-A [build agent](build-agent.md) will execute the following `docker-compose` commands during the build:
+A [build agent](install-and-start-teamcity-agents.md) will execute the following `docker-compose` commands during the build:
 
 
 ```Shell

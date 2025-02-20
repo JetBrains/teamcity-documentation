@@ -22,7 +22,7 @@ For more information on handling the directories inside the agent work directory
 
 <seealso>
         <category ref="concepts">
-            <a href="build-agent.md">Build Agent</a>
+            <a href="install-and-start-teamcity-agents.md">Build Agent</a>
             <a href="build-checkout-directory.md">Build Checkout Directory</a>
         </category>
 </seealso>
