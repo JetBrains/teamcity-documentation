@@ -164,6 +164,28 @@ Some settings in VCS roots can effectively disable builds reuse. These settings 
 * Perforce: __Stream__ or __Client__ connection settings, or label is specified as the __Label/revision to checkout__
 * Starteam: checkout mode option set to __view label__ or __promotion date__
  
+
+## Parallel Tests in Upstream Chain Builds
+
+<snippet id="parallel-chain-builds">
+
+The **Always run new build** behavior ([snapshot dependency](snapshot-dependencies.md) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
+
+In the figure below, the "Composite Conf" configuration depends on "Maven App" configuration. The latter runs its tests in two parallel batches. Note that the main "Maven app" build #18 is triggered anew, whereas the dynamically spawned "Maven app 1" configuration reuses its previous successful build (#12).
+
+<img src="dk-reuse-batch.png" width="706" alt="Reuse Test Batch"/>
+
+You can force TeamCity to re-run all virtual configuration builds. In this case, even if no new repository commits were found, every individual test batch will run anew.
+
+<img src="dk-noreuse-batch.png" width="706" alt="Run New Test Batch"/>
+
+To do so, add the `teamcity.internal.splitBuild.dependency.takeStartedBuildWithSameRevisions=false` [parameter](configuring-build-parameters.md) to the configuration with parallel tests feature.
+
+To apply this behavior to all configurations on the server, add this parameter to the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) list.
+{instance="tc"}
+
+</snippet>
+
 <seealso>
         <category ref="concepts">
             <a href="dependent-build.md">Dependent Build</a>

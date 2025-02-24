@@ -196,6 +196,11 @@ bin => batch-build-%\teamcity.build.parallelTests.currentBatch%/bin
 <img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
 
 
+## Parallel Tests in Upstream Chain Builds
+
+<include from="snapshot-dependencies.md" element-id="parallel-chain-builds"/>
+
+
 ## Known limitations
 
 * The [Code coverage](code-quality-tools.md#code-coverage-tools) statistics will be inaccurate for builds with parallel tests because it will be collected for a fraction of tests executed by the current batch.
@@ -208,6 +213,5 @@ bin => batch-build-%\teamcity.build.parallelTests.currentBatch%/bin
 ### Known bugs
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured. Related YouTrack ticket: [TW-75337](https://youtrack.jetbrains.com/issue/TW-75337/Parallel-tests-Enforce-clean-checkout-Action-does-not-affect-auto-generated-configurations).
-* A subsequent start of a build with parallel tests won't reuse already existing builds of the generated build configurations even if there were no new VCS commits.
 * Batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) run all tests instead of a specified subset of tests. Related YouTrack ticket: [TW-75849](https://youtrack.jetbrains.com/issue/TW-75849/Parallel-tests-All-batches-run-all-tests-from-TestNG-xml-suite).
 
