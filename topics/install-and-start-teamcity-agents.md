@@ -200,7 +200,7 @@ Note that TeamCity recognizes agent properties only after the agent is fully boo
 
 
 
-### Generating Authentication Token
+## Generating Authentication Token
 {instance="tcc"}
 
 The recommended approach to connecting a self-hosted agent to a TeamCity Cloud instance is to generate a unique authentication token for this agent. To do this, go to __Agents__, open the __Install Build Agents__ menu in the upper right corner of the screen, and click _Use authentication token_. There are two options:

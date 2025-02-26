@@ -18,7 +18,6 @@ agents, build queue, user accounts, user permissions, and so on, are stored in a
 * Similarly to agents, a server can run as a [Docker container](https://hub.docker.com/r/jetbrains/teamcity-server) rather than a permanently installed software.
 
 ### Build Agents
-{id="Build+Agents+TC" instance="tc"}
 
 <snippet id="basic-agent-info">
 
@@ -29,6 +28,9 @@ agents, build queue, user accounts, user permissions, and so on, are stored in a
     > TeamCity agents can be installed on the same machine as TeamCity server. However, for production purposes, we recommend installing them on different machines for a number of reasons, the server performance being the most important.
     >
     {style="note"}
+
+* TeamCity cloud allows you to rent [](jetbrains-hosted-agents.md) or configure your own (self-hosted) agents.
+    {instance="tcc"}
 
 * An agent can run builds of any <a href="configuring-agent-requirements.md">compatible build configuration</a>. Each agent can have a unique environment: architecture, operating system, installed tools, and so on. These properties define which builds an agent can run.
 
@@ -43,20 +45,6 @@ agents, build queue, user accounts, user permissions, and so on, are stored in a
 Related article: [](install-and-start-teamcity-agents.md)
 
 
-### Build Agents
-{id="Build+Agents+TCC" instance="tcc"}
-
-An agent is a piece of software that actually executes the build process.
-It is installed and configured separately from the TeamCity server.
-
-You get access to Cloud agents with your TeamCity Cloud subscription,
-but you can also host agents on a physical machine.  
-Build agents in TeamCity can have different platforms, operating systems, and preconfigured environments.
-Different types of tests can be run on different platforms simultaneously,
-so the developers get faster feedback and more reliable testing results.
-{instance="tcc"}
-
-Related article: [](install-and-start-teamcity-agents.md)
 
 
 ## Database
