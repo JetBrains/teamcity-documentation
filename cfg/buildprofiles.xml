@@ -30,6 +30,9 @@
 		<og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
 		<download-page>https://www.jetbrains.com/teamcity/download/</download-page>
 	</variables>
+	<footer>
+		<copyright>2000–2025 JetBrains s.r.o.</copyright>
+	</footer>
 	<build-profile instance="tc">
 		<variables>
 			<versions-switcher>https://data.services.jetbrains.com/help-versions</versions-switcher>

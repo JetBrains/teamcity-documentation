@@ -12,15 +12,17 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
 ### In TeamCity UI
 
-1. Go to the **Project Settings** or **Build Configuration Settings** page and switch to the **Parameters** tab. See this article for information on parameter priority and inheritance rules: [](levels-and-priority-of-build-parameters.md).
+1. Go to [Project or Configuration settings](project-administrator-guide.md#Edit+and+View+Modes) and switch to the **Parameters** tab. See this article for information on parameter priority and inheritance rules: [](levels-and-priority-of-build-parameters.md).
 
-2. Click the **Add new parameter** button.
+2. Switch to the **Input Parameters** tab. Output parameters are used in [build chains](build-chain.md) exclusively, see this article for more information: [](use-parameters-in-build-chains.md).
+
+3. Click the **Add new parameter** button.
 
     <img src="dk-params-createNewParam.png" width="706" alt="Create New Parameter"/>
 
-3. Specify the parameter kind and enter the parameter name. See this article for more information on the difference between different parameter types: [](configuring-build-parameters.md).
+4. Specify the parameter kind and enter the parameter name. See this article for more information on the difference between different parameter types: [](configuring-build-parameters.md).
 
-4. Choose the required **Value type** option. These options control what values a parameter can have.
+5. Choose the required **Value type** option. These options control what values a parameter can have.
 
    * **Text** — the default type that allows the parameter to have any string value. You can optionally choose a required option under **Show allowed value** to limit the allowed values to only those that match the specific RegEx pattern, or ensure a parameter is never empty.
 
@@ -40,7 +42,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
    * **Remote secret** — a parameter whose value cannot be entered manually. Instead, a value is securely retrieved from a remote storage when the running builds needs this value. See the following article to learn more: [](hashicorp-vault.md).
 
-5. Optional: Click **Customize settings for the "Run Custom Build" dialog** to specify additional options that affect users who run [custom builds](running-custom-build.md).
+6. Optional: Click **Customize settings for the "Run Custom Build" dialog** to specify additional options that affect users who run [custom builds](running-custom-build.md).
 
    * **Display** — specifies whether users can (or should) edit this parameter.
 
@@ -55,7 +57,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
    * **Read-only** parameters display disabled editors in the [Run Custom Build](running-custom-build.md) dialog, which prevents users from changing parameter values. If along with locking the value you also want to hide this parameter from users, set the **Display** option to **Hidden**.
    
-6. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
+7. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
 
 
 

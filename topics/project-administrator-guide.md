@@ -57,6 +57,12 @@ Allows you to modify project or configurations settings: configured build steps,
 
 To switch between the two modes, use the **Settings** toggle in the top right corner.
 
+<img src="dk-view-edit-mode-toggle.png" width="706" alt="View/Edit mode toggle"/>
+
+> For TeamCity users with limited access permissions, the **Settings** toggle is either completely disabled or allows them to view project/configuration settings in read-only mode.
+> 
+{style="note"}
+
 TeamCity sticks to the selected mode unless you manually toggle it. This means if you view/edit settings of one configuration, navigating to another one will show reveal its settings as well.
 
 For more information on available project and configuration settings, refer to the [](creating-and-editing-projects.md) and [](creating-and-editing-build-configurations.md) sections.
