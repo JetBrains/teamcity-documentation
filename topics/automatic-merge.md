@@ -1,9 +1,15 @@
 [//]: # (title: Automatic Merge)
 [//]: # (auxiliary-id: Automatic Merge)
 
-The _Automatic Merge_ [build feature](adding-build-features.md) tracks builds in branches matched by the configured filter and merges them into a specified destination branch if the build satisfies the condition configured (for example, the build is successful).   
-The feature is supported for Git and Mercurial VCS roots for build configurations with enabled [feature branches](working-with-feature-branches.md).   
-TeamCity also allows merging branches [manually](working-with-feature-branches.md#Manual+Branch+Merging).
+The _Automatic Merge_ [build feature](adding-build-features.md) tracks builds in branches matched by the configured filter and merges them into a specified destination branch if the build satisfies the condition configured (for example, the build is successful).
+
+> TeamCity also allows merging branches [manually](working-with-feature-branches.md#Manual+Branch+Merging).
+> 
+{style="note"}
+
+## VCS Support
+
+The feature is supported for build configurations that utilize Git, Mercurial, and Perforce VCS roots. A VCS root must have a [branch specification](working-with-feature-branches.md) that allows TeamCity to work with at least two branches. 
 
 ## Automatic Merge Settings
 

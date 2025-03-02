@@ -15,5 +15,14 @@ This update enhances security and grants you more control over parameters. Previ
 
 Learn more: [](use-parameters-in-build-chains.md)
 
+
+## Perforce Manual and Automatic Merge Support
+
+TeamCity now supports merging code changes from one Perforce stream to another. This enhancement enables two features:
+
+* The [](automatic-merge.md) build feature now supports build configurations that utilize Perforce VCS roots.
+* The **Actions** build menu now includes the option to [merge code changes manually](working-with-feature-branches.md#Manual+Branch+Merging).
+
+
 </snippet>
 
