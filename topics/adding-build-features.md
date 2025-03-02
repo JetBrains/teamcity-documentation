@@ -73,6 +73,12 @@ TeamCity ships with the following build features that can be added to your confi
 <dt>Ruby Environment Configurator</dt>
 <dd>Adds the selected Ruby interpreter and gems bin directories to the system <code>PATH</code> environment variable and configures other necessary environment variables in case of the RVM interpreter.&emsp;<a href="ruby-environment-configurator.md">Learn more...</a></dd>
 
+
+<dt>Run in Docker</dt>
+<dd>Allows you to run all steps of a build configuration inside a Docker/Linux container. Steps that do not support containers run outside of it.&emsp;<a href="run-in-docker.md">Learn more...</a>
+
+<tip>You can also configure identical settings for <a href="container-wrapper.md">any individual build step</a> if you do not need all of them to run inside a container.</tip></dd>
+
 <dt>Parallel Tests</dt>
 <dd>Breaks down a huge number of tests into smaller batches, and employs multiple TeamCity agents to run each batch.&emsp;<a href="parallel-tests.md">Learn more...</a></dd>
 
