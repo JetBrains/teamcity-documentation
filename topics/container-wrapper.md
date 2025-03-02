@@ -11,7 +11,7 @@ TeamCity can pull containers anonymously (if images are publicly available) or a
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
 2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
 
-The extension is available for the following [build runners](build-runner.md):
+The extension is available for the following [build steps](build-runner.md):
 
 * [Command Line](command-line.md)
 * [Maven](maven.md)
@@ -22,6 +22,7 @@ The extension is available for the following [build runners](build-runner.md):
 * [PowerShell](powershell.md)
 * [C# Script](c-script.md)
 * [Node.js](nodejs.md)
+* [](kotlin-script.md)
 
 
 >_Container Wrapper_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
