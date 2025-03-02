@@ -5,7 +5,7 @@ A preconfigured Docker connection allows you to:
 * sign in to an authenticated Docker or Podman registry before running a build / sign out after the build;
 * clean up the published images after the build (currently not available for Podman).
 
->This type of connection is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Connection"/></include>
 
 You can configure a _Docker Registry_ connection on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Connections__ page. TeamCity supports connections to [docker.io](https://docker.io/) (default) or private Docker registries. More than one connection can be added to a project. The connection will be available in all the subprojects and build configurations of the current project.
 

@@ -13,15 +13,14 @@ If you need to push the newly built image to a registry, you can authorize to a 
 
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
+
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker build step"/></include>
+
 ## Common Settings
 
-This runner is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
 
-Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
-## Docker Command
-
-The runner provides the following settings, depending on the selected command:
+The build step provides the following settings, depending on the selected Docker command:
 
 <table><tr>
 

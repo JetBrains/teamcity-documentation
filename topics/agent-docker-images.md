@@ -11,12 +11,12 @@ Instead of manually installing TeamCity agents and setting up required build sof
         -v <path to agent config folder>:/data/teamcity_agent/conf  \      
         jetbrains/teamcity-agent
     ```
-  
-Running TeamCity agents inside Docker container is a part of a broad TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md#Compatibility+and+Requirements).
+
 
 > You can also start a TeamCity server inside a container. See instructions on this page for more information: [jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server).
 >
 {style="tip"}
+
 
 > Since 3rd-party tool vendors may not provide binaries for every OS/architecture, some images may include fewer installed components compared to the others. For instance, ARM-based images do not include Perforce CLI (p4) and Windows images ship without Mercurial.
 >

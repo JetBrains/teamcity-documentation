@@ -13,6 +13,8 @@ TeamCity can pull containers anonymously (if images are publicly available) or a
 
 The extension is available for the following [build steps](build-runner.md):
 
+<snippet id="supported-docker-wrapper-steps">
+
 * [Command Line](command-line.md)
 * [Maven](maven.md)
 * [Ant](ant.md)
@@ -24,88 +26,57 @@ The extension is available for the following [build steps](build-runner.md):
 * [Node.js](nodejs.md)
 * [](kotlin-script.md)
 
+</snippet>
 
->_Container Wrapper_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Container Wrapper"/></include>
 
 ## Container Settings
 
 In the _Container Settings_ section of the build step settings, you can specify an image which will be used to run the build step. Once the image is specified, the following options become available.
 
-<table><tr>
+<var name="first_setting_name" value="Run step within container"/>
+<var name="docker_settings_type" value="build step"/>
 
-<td>
+<snippet id="docker-wrapper-and-feature-settings">
 
-Setting
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Run step within container
-
-</td>
-
-<td>
-
-The image name as stated in [Docker Hub](https://hub.docker.com/) or other registry. TeamCity will start a container from the specified image and will try to run this build step within this container.
-
-For example, `ruby:2.4` will run the step within the Ruby container, version 2.4.
+<deflist>
+<def title="%first_setting_name%">
+The image name as stated in <a href="https://hub.docker.com/">DockerHub</a> or other registry. TeamCity will start a container from the specified image and will try to run this %docker_settings_type% within this container. For example, `ruby:2.4` will run the %docker_settings_type% within the Ruby container, version 2.4.
 
 If an agent that runs the build has Podman installed instead of Docker, use either full image names (for example, `docker.io/library/alpine:latest` instead of `alpine:latest`), or ensure the registry domain is specified in the [registries.conf](integrating-teamcity-with-container-managers.md#Environment+Requirements) file on your build agent machine. See also: [How to manage Linux container registries](https://www.redhat.com/sysadmin/manage-container-registries).
+</def>
 
-</td></tr><tr>
 
-<td>
-
-Image platform
-
-</td>
-
-<td>
-
+<def title="Image platform">
 Select &lt;Any&gt; (default), Linux, or Windows. Note that Windows images are not supported by Podman.
+</def>
 
-</td></tr><tr>
+<def title="Force pull on each run">
+If enabled, the image will be pulled from the repository via <code>docker/podman pull &lt;imageName&gt;</code> before the <code>docker/podman run</code> command is sent.
+</def>
 
-<td>
 
-Pull image explicitly
+<def title="Additional run arguments">
+Allows specifying additional options for the <code>docker/podman run</code> command. The default argument is <code>--rm</code>, but you can provide more. For example, add a custom volume mapping.
 
-</td>
+<note>
 
-<td>
+If you need to utilize <a href="configuring-build-parameters.md#Environment+Variables">environment variables</a> in this field (for example, <code>%\env.FOO%</code>), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific environment variables declared in the <a href="configure-agent-installation.md">buildAgent.properties</a> file are not passed to containers.
 
-If enabled, the image will be pulled from the Hub repository via `docker pull <imageName>`/`podman pull <imageName` before the `docker run`/`podman run` command is launched.
+If you need a parameter declared in this file, do the following:
 
-</td></tr><tr>
+1. Define a system property (<code>system.FOO=BAR</code>) in <a href="configure-agent-installation.md">buildAgent.properties</a>.
+2. Add a <a href="configuring-build-parameters.md">build configuration parameter</a> with the <code>system.FOO</code> name and <code>%\system.FOO%</code> value.
+3. Reference the system property as <code>%\system.FOO%</code> in the "Additional run arguments" field.
+4. If you need to use the same value as an environment variable in your build script, you can also add a build configuration parameter with the <code>env.FOO</code> name and <code>%\system.FOO%</code> value.
 
-<td>
+</note>
 
-Additional run arguments
+</def>
+</deflist>
 
-</td>
+</snippet>
 
-<td>
-
-Allows specifying additional options for the `docker run` and `podman run` commands. The default argument is `--rm`, but you can provide more, for instance, add an additional volume mapping.
-
->If you intend to utilize [environment variables](configuring-build-parameters.md#Environment+Variables) in this field (for example, `%\env.FOO%`), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific environment variables declared in the [buildAgent.properties](configure-agent-installation.md) file are not passed to containers.
-> 
-> If you need a parameter declared in this file, use this approach:
->1. Define a system property (`system.FOO=BAR`) in [buildAgent.properties](configure-agent-installation.md).
->2. Add a [build configuration parameter](configuring-build-parameters.md) with the name `system.FOO` and value `%\system.FOO%`.
->3. Reference the system property as `%\system.FOO%` in the "Additional run arguments" field.
->4. If you need to use the same value as an environment variable in your build script, you can also add a build configuration parameter with the name `env.FOO` and value `%\system.FOO%`.
->
-{style="note"}
-
-</td></tr></table>
 
 ## How Container Wrapper Works
 {id="how-it-works-1"}

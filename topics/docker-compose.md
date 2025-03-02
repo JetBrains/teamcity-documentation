@@ -9,7 +9,7 @@ If you need to pull a base image from a private repository or push a newly built
 
 ## Common Settings
 
-This runner is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Compose build step"/></include>
 
 Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
 
@@ -43,7 +43,7 @@ docker-compose -f <docker-compose.yml> [-f <docker-compose2.yml>] down -v
 {style="note"}
 
 
-If the __pull image explicitly__ option is enabled, `docker-compose pull` will be run before the `docker-compose up` command.
+If the __Force pull on each run__ option is enabled, `docker-compose pull` will be run before the `docker-compose up` command.
 
 When using Docker Compose with images which support [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck), TeamCity will wait for the `healthy` status of all containers that support this parameter.
 

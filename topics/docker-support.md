@@ -19,7 +19,7 @@ Logging in and out of repositories and cleaning up images require a configured [
 
 <img src="docker-support.png" width="750" alt="Docker Support build feature"/>
 
->_Docker Support_ is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: [](integrating-teamcity-with-container-managers.md).
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Support"/></include>
 
 ## Docker Images Clean-up
 

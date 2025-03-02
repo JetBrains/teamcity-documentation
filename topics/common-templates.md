@@ -64,3 +64,17 @@ Select the required authentication strategy. Depending on the selected strategy,
 <note>The <b>Token</b> strategy accepts any token types supported by Kubernetes.</note>
 
 </snippet>
+
+
+
+## Docker
+
+<var name="docker-feature-name" value="docker-feature-name"/>
+
+
+
+<snippet id="docker-integration-note>">
+<note>
+<b>%docker-feature-name%</b> is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: <a href="integrating-teamcity-with-container-managers.md"></a>.
+</note>
+</snippet>

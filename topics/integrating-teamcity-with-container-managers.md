@@ -6,6 +6,7 @@ TeamCity integrates with container managers (Docker, Podman) on multiple levels.
 * The [Docker](docker.md) _build runner_ launches Docker commands and creates Docker images during a build.
 * The [](docker-compose.md) _build runner_ starts services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
 * The [](container-wrapper.md) _extension_ executes build steps inside containers. Supports Docker and Podman. Available for multiple runners.
+* The [](run-in-docker.md) build feature allows you to skip setting up same [](container-wrapper.md) settings over and over for each step, and instead specify them once on the build configuration level. All build steps of this build configuration that run in a container will do so.
 * The [](docker-support.md) _build feature_ automatically signs in to container registries using Docker or Podman before starting a build. This feature also adds the __Container Info__ tab of __Build Results__ with the information about the images published to a registry during the build.
 
     <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
@@ -118,7 +119,7 @@ If you have a Team or Pro Docker account, the number of pulls stays unlimited.
 A regular TeamCity agent stores a once pulled image in its cache. This allows running an indefinite number of builds using the same pulled image on a regular basis.   
 However, there are few cases to consider:
 * If you are using cloud agents, all required images will be downloaded every time a new cloud agent is launched.
-* If the _Pull image explicitly_ option is enabled in the build step settings, the image will be downloaded in every new build run, even on a local agent. We recommend that you disable this option to prevent reaching the rate limit.
+* If the _Force pull on each run_ option is enabled in the build step settings, the image will be downloaded in every new build run, even on a local agent. We recommend that you disable this option to prevent reaching the rate limit.
 * While [freeing disk space](free-disk-space.md) for the build, TeamCity may clean up old unused Docker images from the local cache.
 
 If previously your builds were accessing Docker Hub anonymously, you can double the number of allowed pulls by creating a Free Docker user profile and configuring a [Docker connection](configuring-connections-to-docker.md) in your TeamCity project. TeamCity agents will be able to use this connection to authenticate in Docker Hub before each build.
