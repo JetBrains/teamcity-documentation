@@ -239,6 +239,7 @@
 				<toc-element topic="performance-monitor.md"/>
 				<toc-element topic="pull-requests.md"/>
 				<toc-element topic="ruby-environment-configurator.md"/>
+				<toc-element topic="run-in-docker.md"/>
 				<toc-element topic="shared-resources.md"/>
 				<toc-element topic="parallel-tests.md"/>
 				<toc-element topic="ssh-agent.md"/>

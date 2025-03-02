@@ -346,7 +346,7 @@
 			</toc-element>
 			<toc-element topic="adding-build-features.md">
 				<toc-element topic="assemblyinfo-patcher.md"/>
-				<toc-element topic="automatic-merge.md"/>
+                <toc-element topic="automatic-merge.md"/>
 				<toc-element topic="aws-credentials.md"/>
 				<toc-element topic="build-approval.md"/>
 				<toc-element topic="build-files-cleaner-swabra.md"/>
@@ -366,6 +366,7 @@
 				<toc-element topic="performance-monitor.md"/>
 				<toc-element topic="pull-requests.md"/>
 				<toc-element topic="ruby-environment-configurator.md"/>
+				<toc-element topic="run-in-docker.md"/>
 				<toc-element topic="parallel-tests.md"/>
 				<toc-element topic="shared-resources.md"/>
 				<toc-element topic="ssh-agent.md"/>
