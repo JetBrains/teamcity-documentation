@@ -128,7 +128,7 @@ To create such token, invoke the project <b>Actions</b> menu and click <b>Scramb
 
 <img src="dk-scramble-value.png" width="706" alt="Scramble value"/>
 
-In a dialog that pops up, enter a secret value and hit <b>Scramble</b>. Remember to the scrambled value before closing the dialog.
+In a dialog that pops up, enter a secret value and hit <b>Scramble</b>. Remember to copy the scrambled value before closing the dialog.
 </def>
 </deflist>
 
