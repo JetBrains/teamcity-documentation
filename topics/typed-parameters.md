@@ -87,6 +87,53 @@ object MyBuildConf : BuildType({
 ```
 
 
+### From a Build Step
+
+Send the `##teamcity[setParameter name='ddd' value='fff']` [service message](service-messages.md#set-parameter) to update a parameter value or, if a parameter with this name does not yet exist, create a new one.
+
+See this article for more information: [](service-messages.md#set-parameter).
+
+
+
+### Create a Secret
+
+A secret is a parameter that holds sensitive data and must be securely stored to prevent leaks. Depending on your scenario and intended usage, you have the following options.
+
+
+<deflist>
+<def title="Password parameter">
+If you want a secret value to be stored and used within a specific configuration or project, create a regular input parameter with the <b>Password</b> type as described in the <a href="typed-parameters.md#In+TeamCity+UI"/> section.
+</def>
+
+
+<def title="Remote secret">
+If you have an external secrets vault that stores values, create parameter of the <b>Remote secret</b> type. With an additionally configured vault connection, these parameters can securely retrieve values on demand.
+
+Currently, only HashiCorp Vault secrets storage is supported.
+
+See the following article to learn more: <a href="hashicorp-vault.md"/>
+</def>
+
+<def title="Token">
+If your project stores settings <a href="storing-project-settings-in-version-control.md">in a remote VCS</a>, you may need to configure secret values without exposing them. To do this, create a server-side token to store the secret, then pass its name as a parameter value.
+
+See this topic for more information: <a href="storing-project-settings-in-version-control.md#Managing+Tokens"/>
+</def>
+
+
+<def title="Scrambled secret">
+You can also create tokens without using versioned settings. In this case, a token can only be used inside project configuration files stored on a disk (inside the <a href="teamcity-data-directory.md"/>).
+
+To create such token, invoke the project <b>Actions</b> menu and click <b>Scramble secure value...</a>.
+
+<img src="dk-scramble-value.png" width="706" alt="Scramble value"/>
+
+In a dialog that pops up, enter a secret value and hit <b>Scramble</b>. Remember to the scrambled value before closing the dialog.
+</def>
+</deflist>
+
+
+
 ### Using REST API
 
 To create a parameter via [](teamcity-rest-api.md), send the POST request to the required endpoint and pass a [Property](https://www.jetbrains.com/help/teamcity/rest/property.html) as a request body.

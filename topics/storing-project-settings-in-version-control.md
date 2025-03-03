@@ -503,7 +503,8 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 ### Managing Tokens
 [//]: # (AltHead: tokensGen)
 
-If you need to add a password (or other secure value) to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used in the settings instead of this password.   
+If you need to add a password (or other secure value) to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used in the settings instead of this password.
+
 
 In the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes)s__, select _Generate token for a secure value_ in the __Actions__ drop-down menu. Enter the password and click __Generate Token__. The generated token will be stored on the server. You can copy and [use it in the project configuration files](kotlin-dsl.md#Working+with+secure+values+in+DSL) instead of the password.
 
