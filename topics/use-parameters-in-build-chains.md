@@ -26,28 +26,40 @@ See the sections below for more information on how to create and use output para
 
 ## Create an Output Parameter
 
-Since an output parameter is calculated in one configuration and passed into another, it often makes sense to create the input-output parameters pair:
-
-* the input parameter is used inside the origin configuration;
-* the output parameter references the input parameter to expose its value.
-
-For example, [create an input parameter](typed-parameters.md) called "Date" and calculate its value:
+Output parameters can share existing parameters as is, modified parameters, and constants.
 
 ```Kotlin
+outputParams {
+    param("originConfName", "%system.teamcity.buildConfName%") // Expose predefined parameter as is
+    param("buildNumber", "Build %\system.build.number%" // Expose modified parameter value
+    param("name", "%existingInputParam%") // Expose input parameter as is
+    param("number", "54") // Expose static value
+}
+```
+
+The `%\parameterName%` in output parameter value can refer to an existing input parameter, or a dynamically created parameter. For example, the following configuration uses an [input](typed-parameters.md) "DateFormat" parameter to calculate a value of the "Date" parameter created via the [setParameter service message](service-messages.md#set-parameter):
+
+
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.csharpScript
+
 object CalculateDate : BuildType({
     name = "Calculate Date"
     
-    // Create a parameter
-    params { param("Date", "") }
+    params {
+        param("DateFormat", "dd/MM/yyyy") // Input parameter
+    }
 
-    // Calculate paramter value
-    // and write it using the 'setParameter' TeamCity service message
     steps {
         csharpScript {
             id = "csharpScript"
             content = """
                 var date = DateTime.Now;
-                Console.WriteLine("##teamcity[setParameter name='Date' value='" + date.ToString("dd/MM/yyyy") + "']");
+                // Calculate and add a new 'Date' parameter
+                // Its value is shared by the output parameter
+                Console.WriteLine("##teamcity[setParameter name='Date' value='" + date.ToString("%DateFormat%") + "']");
             """.trimIndent()
             tool = "%teamcity.tool.TeamCity.csi.DEFAULT%"
         }
@@ -55,28 +67,29 @@ object CalculateDate : BuildType({
 })
 ```
 
-Now you can create an output parameter that references this input parameter:
-
-<img src="dk-add-output-param.png" width="706" alt="Add output parameter"/>
+Now you can create an output parameter that references this input parameter.
 
 ```Kotlin
 object CalculateDate : BuildType({
-    name = "Calculate Date"
-
-    // Input parameter
-    params { param("Date", "") }
-
-    // Output parameter whose value is synced with the 'Date' input parameter
+    params {
+        param("DateFormat", "dd/MM/yyyy")
+    }
     outputParams {
         exposeAllParameters = false
         param("OutputDate", "%Date%")
     }
-
-    // ...
 })
 ```
 
-The output parameter (and by proxy, the referenced input parameter) is now accessible by another configuration that [depends on](snapshot-dependencies.md) the origin configuration. To access a parameter, use the `dep.<origin configuration ID>.<output parameter name>` syntax.
+> In TeamCity UI, the **Add new output parameter** dialog has two options: enter the value manually, or choose an existing input parameter. Since our "Date" parameter does not exist until the build step executes, we need to enter the `%\Date%` value by hand.
+> 
+> Otherwise, if "Date" was a regular input parameter, you could choose it from the list:
+>
+> <img src="dk-add-output-param.png" width="706" alt="Add output parameter"/>
+>
+{style="tip"}
+
+The output parameter is now accessible by another configuration that [depends on](snapshot-dependencies.md) the origin configuration. To access a parameter, use the `dep.<origin configuration ID>.<output parameter name>` syntax.
 
 <img src="dk-access-output-param.png" width="706" alt="Access output param"/>
 
@@ -98,15 +111,6 @@ object PrintDate : BuildType({
 })
 ```
 
-You can also expose predefined configuration parameters and constants.
-
-```Kotlin
-outputParams {
-    param("originConfName", "%system.teamcity.buildConfName%") // Expose predefined parameter
-    param("number", "54") // Expose static value
-}
-```
-
 > For security reasons, input parameters of the _Password_ type cannot be exposed via output parameters.
 >
 {style="note"}
@@ -124,7 +128,7 @@ If this setting is enabled, all input parameters are accessible by dependent con
 2. Expose input parameters you wish to keep sharing by referencing them in new output parameters.
 3. Disable the **All parameters are available to other build configurations** setting.
 
-This enhances security by keeping hidden parameters that were never designed to be shared.
+Doing so ensures configurations remain easily maintainable: you can edit and remove input parameters as needed, without accidentally breaking downstream configurations that used these parameters via the `dep...` syntax. In addition, it enhances security by keeping hidden parameters that were never designed to be shared.
 
 
 ## Access Output Parameters From Dependent Configurations
@@ -174,7 +178,7 @@ object ChainConfigA : BuildType({
 
     steps {
         script {
-            scriptContent = """echo "Parameter value is: %\chain.ConfigA.param%""""
+            scriptContent = """echo "Parameter value is: %chain.ConfigA.param%""""
         }
     }
 })
@@ -188,7 +192,7 @@ object ChainConfigB : BuildType({
 
     steps {
         script {
-            scriptContent = """echo "Parameter value is: %\chain.ConfigB.param%""""
+            scriptContent = """echo "Parameter value is: %chain.ConfigB.param%""""
         }
     }
 
@@ -209,7 +213,7 @@ object ChainConfigC : BuildType({
 
     steps {
         script {
-            scriptContent = """echo "Parameter value is: %\chain.ConfigC.param%""""
+            scriptContent = """echo "Parameter value is: %chain.ConfigC.param%""""
         }
     }
 
