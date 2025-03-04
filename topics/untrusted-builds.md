@@ -23,10 +23,10 @@ The **Untrusted Builds** section allows you to set up the changes verification p
 
 ## Common Information
 
-TeamCity can run malicious code when your [](vcs-root.md) targets a public repository whose settings allow external users to commit changes via pull requests, the [VCS Trigger](configuring-vcs-triggers.md) automatically starts new builds when new changes are detected, and either of the following is true:
+TeamCity can run malicious code when your [](configuring-vcs-roots.md) targets a public repository whose settings allow external users to commit changes via pull requests, the [VCS Trigger](configuring-vcs-triggers.md) automatically starts new builds when new changes are detected, and either of the following is true:
 
 * The [](pull-requests.md) feature is enabled and its settings allow building changes from all users (the pull requests filtering is set to "Everybody").
-* The branch specification of the project's [](vcs-root.md) includes the pull request branches (for example, `refs/pull/*` for GitHub).
+* The branch specification of the project's [](configuring-vcs-roots.md) includes the pull request branches (for example, `refs/pull/*` for GitHub).
 
 In this case external users can fork your public repository, introduce malicious changes and send a pull (merge) request. TeamCity will detect this request and trigger a new build with these changes.
 

@@ -293,6 +293,6 @@ Other command line parameters to be passed to the `xcodebuild` utility.
             <a href="known-issues.md#Xcode+10+is+unable+to+clean+artifacts+in+custom+output+directory">Xcode Known Issues</a>
         </category>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
 </seealso>

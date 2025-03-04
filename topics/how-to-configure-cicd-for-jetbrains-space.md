@@ -103,7 +103,7 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
    <img src="create-project-from-space.png" width="706" alt="Create a project from a Space repository" style="block"/>
    >If you get the _OAuth 2.0 Error_, this might mean that the _Redirect URI_ has not been configured properly in Step 1 of the preliminary setup. Make sure to [revise it](#redirect-uri). Note that Space supports only HTTPS connection.
 3. The project creation wizard will display a list of all Space projects your user has access to. Choose a repository and wait until TeamCity verifies the connection settings.
-4. Now it's time to configure the main settings of the new project and its [VCS root](vcs-root.md). You can always adjust them later.
+4. Now it's time to configure the main settings of the new project and its [VCS root](configuring-vcs-roots.md). You can always adjust them later.
    * _Project name_ and the name of its first [build configuration](managing-builds.md).
    * _VCS root_: (read-only) matches the URL of a repository you choose in Step 3.
    * _Default branch_: `refs/heads/main`, or another branch of your choice. Remember to keep `refs/heads` and change only the branch name.
@@ -114,7 +114,7 @@ You will notice the new button: __From JetBrains Space__. Its name depends on th
 
 TeamCity will attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+Build+Steps) in your project. You can confirm or reject the proposed steps and explore the project settings further.
 
-If you create a project from a repository automatically, like we just did, TeamCity automatically adds a [VCS trigger](vcs-root.md). This trigger will be watching your Space repository and run builds on each new commit. You can edit its settings or [add other types of triggers](configuring-build-triggers.md).
+If you create a project from a repository automatically, like we just did, TeamCity automatically adds a [VCS trigger](configuring-vcs-roots.md). This trigger will be watching your Space repository and run builds on each new commit. You can edit its settings or [add other types of triggers](configuring-build-triggers.md).
 
 TeamCity shows the commits that got into a build on the build's **Overview** tab. Click the Space icon opposite a commit to open its details in JetBrains Space:
 
@@ -126,7 +126,7 @@ After this basic setup, you can advance the Space integration by following the i
 
 ## Building Sources from Merge Requests
 
-A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](vcs-root.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case for this is prebuilding and pretesting sources of feature branches before they are merged into the default branch.
+A build's checkout scope usually consists of the following items: the default branch of [VCS root(s)](configuring-vcs-roots.md) + the project's [branch specification](working-with-feature-branches.md) + [checkout rules](vcs-checkout-rules.md) of the build configuration. By adding the [Pull Request](pull-requests.md) build feature to this build configuration, you can add one more item to this formula — branches of merge requests. This will allow TeamCity to monitor changes in merge requests and run builds on them. The most common use case for this is prebuilding and pretesting sources of feature branches before they are merged into the default branch.
 
 To add this feature:
 

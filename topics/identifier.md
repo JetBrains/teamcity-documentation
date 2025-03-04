@@ -1,7 +1,7 @@
 [//]: # (title: Entity IDs)
 [//]: # (auxiliary-id: Entity IDs;Identifier)
 
-An _ID_ is an identifier given to TeamCity entities ([projects](project.md), [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on).
+An _ID_ is an identifier given to TeamCity entities ([projects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](configuring-vcs-roots.md), and so on).
 
 Each entity has two identifiers:
 * [external ID](#External+IDs)
@@ -37,7 +37,7 @@ If you consider moving projects between several TeamCity server installations, i
 On changing the ID of a project or build configuration, all the related URLs (including the web UI, artifact download links, and REST API) will change. If any of the URLs containing the old IDs were bookmarked or hardcoded in the scripts, they will stop functioning and will need to be updated. At the moment of the ID change, the correspondingly named directories under TeamCity Data Directory (including directories storing settings and artifacts) are renamed, and this can consume some time.
 </note>
 
-To reset the IDs to match the default scheme for all projects, VCS roots, build configurations, and templates, use the __Bulk edit IDs__ action on the __Administration__ page of the parent [project](project.md). To use the automatically generated ID after it has been modified or after you change an existing object name, you can regenerate ID using the __Regenerate ID__ action.
+To reset the IDs to match the default scheme for all projects, VCS roots, build configurations, and templates, use the __Bulk edit IDs__ action on the __Administration__ page of the parent [project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects). To use the automatically generated ID after it has been modified or after you change an existing object name, you can regenerate ID using the __Regenerate ID__ action.
 
 When you copy a project, TeamCity automatically assigns new IDs to all the child elements. The IDs can be previewed and changed in the _Copy_ dialog. When you move an object, its ID is preserved and you might want to use __Regenerate ID__ action to make the ID reflect the new placement.
 

@@ -1,7 +1,7 @@
 [//]: # (title: Build Chain)
 [//]: # (auxiliary-id: Build Chain)
 
-A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources.
+A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](snapshot-dependencies.md). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources.
 
 >See our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs).
 
@@ -484,9 +484,6 @@ If you skip all of these tests, the entire mid-section of this chain will be gon
 
 
  <seealso>
-        <category ref="concepts">
-            <a href="dependent-build.md">Dependent Build</a>
-        </category>
         <category ref="admin-guide">
             <a href="configuring-dependencies.md">Configuring Dependencies</a>
             <a href="build-dependencies-setup.md">Build Dependencies Setup</a>

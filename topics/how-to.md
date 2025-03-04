@@ -541,7 +541,7 @@ From the [`TeamCity Data Directory`](teamcity-data-directory.md), copy the direc
 
 The set of parent projects is to be identified manually based on the web UI or the directory names on disk (which be default will have the same prefix).
 
-Note: It might make sense to keep the settings of the [root project](project.md#Root+Project) synchronized between all the servers (by synchronizing content of `.BuildServer\config\projects_Root` directory). For example, this will ensure same settings for the default clean-up policy on all the servers.
+Note: It might make sense to keep the settings of the [root project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) synchronized between all the servers (by synchronizing content of `.BuildServer\config\projects_Root` directory). For example, this will ensure same settings for the default clean-up policy on all the servers.
 
 Further steps after projects copying might be:
 * delete unused data in the copied parent projects (if any) on the target server
@@ -598,7 +598,7 @@ Please also review the [section](agent-home-directory.md) for a list of director
 
 ## Share the Build number for Builds in a Chain Build
 
-A build number can be shared for builds connected by a [snapshot dependency](dependent-build.md#Snapshot+Dependency) or an [artifact dependency](dependent-build.md#Artifact+Dependency) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
+A build number can be shared for builds connected by a [snapshot dependency](snapshot-dependencies.md) or an [artifact dependency](artifact-dependencies.md) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
 
 For example, you have build configurations "A" and "B" that you want to build in sync: use the same sources and take the same build number.   
 Do the following:
@@ -693,9 +693,9 @@ See the following articles for more information: [](deploy-build.md), [](deploym
 In general, setup steps for configuring deployments are:
 1. Write a build script that will perform the deployment task for the binary files available on the disk. (e.g. use Ant or MSBuild for this. For typical deployment transports use [Deployer](deployers.md) runners). See also [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools). You can use [Meta-Runner](working-with-meta-runner.md) to reuse a script with convenient UI.
 2. Create a build configuration in TeamCity that will execute the build script and perform the actual deployment. If the deployment is to be visible or startable only by the limited set of users, place the build configuration in a separate TeamCity project and make sure the users have appropriate permissions in the project.
-3. In this build configuration configure [artifact dependency](dependent-build.md#Artifact+Dependency) on a build configuration that produces binaries that need to be deployed.
+3. In this build configuration configure [artifact dependency](artifact-dependencies.md) on a build configuration that produces binaries that need to be deployed.
 4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Deploy" action in the build that produced the binaries to be deployed.
-5. Consider using [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
+5. Consider using [snapshot dependencies](snapshot-dependencies.md) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
 6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](running-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
 7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags) request or a [Service Message](service-messages.md#Adding+and+Removing+Build+Tags)). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
 

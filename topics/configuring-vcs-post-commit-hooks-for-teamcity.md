@@ -1,7 +1,7 @@
 [//]: # (title: Configuring VCS Post-Commit Hooks for TeamCity)
 [//]: # (auxiliary-id: Configuring VCS Post-Commit Hooks for TeamCity)
 
-TeamCity periodically polls remote repositories targeted by each active [VCS root](vcs-root.md) to detect new changes. If your installation has hundreds of VCS roots, this continuous polling can significantly load the server.
+TeamCity periodically polls remote repositories targeted by each active [VCS root](configuring-vcs-roots.md) to detect new changes. If your installation has hundreds of VCS roots, this continuous polling can significantly load the server.
 
 You can set up post-commit hooks to decrease this load and speed up detecting new changes. In this case, whenever a new commit is pushed to the remote repository, a VCS provider will instantly send TeamCity a request to check for recent changes.
 

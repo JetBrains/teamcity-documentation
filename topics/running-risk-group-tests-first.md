@@ -98,6 +98,6 @@ If risk tests reordering option is enabled, the feature for NUnit test runner wo
             <a href="https://plugins.jetbrains.com/docs/teamcity/risk-tests-reordering-in-custom-test-runner.html">Developing TeamCity Plugins: Risk Tests Reordering in Custom Test Runner</a>
         </category>
         <category ref="admin-guide">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
 </seealso>

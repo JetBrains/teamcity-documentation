@@ -61,7 +61,7 @@ The two-way synchronization works as follows:
 
 If you disable the _Allow editing project settings via UI_ option, the project settings become read-only in the UI and only reflect changes made on the VCS side. This is convenient if you prefer defining project settings' [as code](kotlin-dsl.md) or load settings from a read-only VCS branch.
 
-Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](vcs-root.md), and so on) except [SSH keys](ssh-keys-management.md). To exclude individual subprojects from the synchronization, switch them to **Synchronization disabled** mode.
+Enabling synchronization for a project also enables it for all its subprojects with the default "_Use settings from a parent project_" option selected. TeamCity synchronizes all changes to the project settings (including modifications of [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](configuring-vcs-roots.md), and so on) except [SSH keys](ssh-keys-management.md). To exclude individual subprojects from the synchronization, switch them to **Synchronization disabled** mode.
 
 As soon as you enable settings synchronization, TeamCity commits the current project tree and server settings to the remote repository. If the target location already stores project settings, a warning pops up. This warning allows you to choose whether TeamCity should:
 * overwrite the settings in the VCS with the current project settings on the TeamCity server (only if the two-way [synchronization](#two-way-sync) is enabled); or
@@ -83,7 +83,7 @@ To implement these or similar tasks, use the **Project settings VCS root** and *
 ### Separate VCS Root
 
 
-The **Project settings VCS root** selector allows you to choose which [](vcs-root.md) TeamCity should use to obtain and commit project settings. You can choose any root owned by either this project directly, or by any of its parent projects.
+The **Project settings VCS root** selector allows you to choose which [](configuring-vcs-roots.md) TeamCity should use to obtain and commit project settings. You can choose any root owned by either this project directly, or by any of its parent projects.
 
 <img src="dk-versioned-settings-chooseroot.png" width="706" alt="Choose a VCS root"/>
 

@@ -39,7 +39,7 @@ Code coverage is a number of metrics that measure how your code is covered by un
 
 See how to [import reports](how-to.md#Integrate+with+Build+and+Reporting+Tools) or [coverage results](importing-arbitrary-coverage-results-to-teamcity.md) from other tools.
 
-To get the code coverage information displayed in TeamCity for the supported tools, you need to configure it in the dedicated section of a [build runner's](build-runner.md) settings page. The following build runners include code coverage support:
+To get the code coverage information displayed in TeamCity for the supported tools, you need to configure it in the dedicated section of a [build step's](configuring-build-steps.md) settings page. The following build runners include code coverage support:
 
 * [Ant](ant.md)
 * [IntelliJ IDEA Project](intellij-idea-project.md)

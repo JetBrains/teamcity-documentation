@@ -4,7 +4,7 @@
 This section contains articles on how to create and configure build configurations via the TeamCity UI.
 
 A _build configuration_ is a collection of settings used to start a build and group the sequence of the builds in the UI. Examples of build configurations are _distribution_, _integration tests_, _prepare release distribution_, _"nightly" build_.  
-A build configuration belongs to a [project](project.md) and contains builds. You can explore details of a build configuration on its [Home page](build-configuration-home-page.md) and modify its settings on the [Settings page](creating-and-editing-build-configurations.md).
+A build configuration belongs to a [project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) and contains builds. You can explore details of a build configuration on its [Home page](build-configuration-home-page.md) and modify its settings on the [Settings page](creating-and-editing-build-configurations.md).
 
 <img src="create-build-configuration-button.png" alt="Create a build configuration" width="750"/>
 
@@ -47,7 +47,7 @@ In the [build configuration creation wizard](#Where+to+Create+Build+Configuratio
 3. Click __Create__.
 
 TeamCity will suggest the build configuration name and will configure the rest of the settings for you:
-* It will determine the type of the VCS repository and create a [VCS root](vcs-root.md). For a Git repository, it will autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository, but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#Common+Specification+Syntax).
+* It will determine the type of the VCS repository and create a [VCS root](configuring-vcs-roots.md). For a Git repository, it will autodetect the default branch. You have an option to change it now or later, in the [VCS root](configuring-vcs-roots.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository, but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#Common+Specification+Syntax).
 * It will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. You can then always add and edit them [manually](configuring-build-steps.md).
 
 Next, TeamCity will display suggestion icons with prompts to create [build triggers](configuring-build-triggers.md), [failure conditions](build-failure-conditions.md), and [build features](adding-build-features.md). Depending on the build configuration settings, it may suggest some additional configuration options.
@@ -61,7 +61,7 @@ In the [build configuration creation wizard](#Where+to+Create+Build+Configuratio
    Note that to be able to access the selected VCS, TeamCity needs to always have the connection parameters at its disposal. You can configure the connection preset in advance and select the target VCS server in the wizard, or let TeamCity redirect you to the __Connections__ page right from the wizard. The connections settings of supported VCS providers are described [here](configuring-connections.md).
 2. Verify the connection to the VCS.
 3. TeamCity will propose the build configuration name. You can change it if needed.  
-   For a Git repository, it will also autodetect the default branch. You have an option to change it now or later, in the [VCS root](vcs-root.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository, but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#Common+Specification+Syntax).  
+   For a Git repository, it will also autodetect the default branch. You have an option to change it now or later, in the [VCS root](configuring-vcs-roots.md) settings. You can also change the branch specification: by default, TeamCity monitors all branches of the repository, but you can choose what exact branches to monitor by entering [custom rules](working-with-feature-branches.md#Common+Specification+Syntax).  
    Click __Proceed__.
 4. TeamCity will add a VCS build trigger and attempt to [autodetect build steps](configuring-build-steps.md#Autodetecting+Build+Steps): Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects. On the __Auto-detected Build Steps__ page, select the step(s) to use in your build configuration. Click __Use selected__. You can then always add or edit steps [manually](configuring-build-steps.md).  
   Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review the suggested settings ![suggestedSettings.PNG](suggestedSettings.PNG) and configure the required ones.
@@ -139,7 +139,7 @@ You can view all build configurations of a project on the __Project Overview__ p
 
 Build configuration settings include:
 * [General settings](configuring-general-settings.md)
-* [Version control settings](vcs-root.md), defining how the source code is retrieved from VCS, where it is checked out to, and so on
+* [Version control settings](configuring-vcs-roots.md), defining how the source code is retrieved from VCS, where it is checked out to, and so on
 * [Build steps](configuring-build-steps.md), that are sequentially run actions: for example, running msbuild, a script, or unit tests
 * [Triggers](configuring-build-triggers.md), which are rules defining when to start a new build
 * [Failure conditions](build-failure-conditions.md) specifying when a build will be marked as failed

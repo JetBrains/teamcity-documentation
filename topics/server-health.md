@@ -156,17 +156,17 @@ To continue using this runner, install [R# CLT](https://www.jetbrains.com/reshar
 
 #### Unused VCS Roots
 
-TeamCity will show you the [VCS roots](vcs-root.md) defined in a project and will offer to delete the unused roots.
+TeamCity will show you the [VCS roots](configuring-vcs-roots.md) defined in a project and will offer to delete the unused roots.
 
 #### Similar VCS roots
 
-TeamCity qualifies [VCS roots](vcs-root.md) as identical when their major settings (for example, URLs, branch settings) are the same even if some of their settings (for example, username, password) are different.
+TeamCity qualifies [VCS roots](configuring-vcs-roots.md) as identical when their major settings (for example, URLs, branch settings) are the same even if some of their settings (for example, username, password) are different.
 
 The report will show you identical roots and will leave it up to you whether to merge them or not.
 
 #### Similar VCS Root Usages (AKA instances)
 
-You can define values for [VCS root](vcs-root.md) settings or use parameter references to [various parameters defined at different levels](configuring-build-parameters.md).
+You can define values for [VCS root](configuring-vcs-roots.md) settings or use parameter references to [various parameters defined at different levels](configuring-build-parameters.md).
 
 When the referenced VCS roots parameters are resolved to the same values as the values defined, such cases will be reported as identical VCS root usages.
 

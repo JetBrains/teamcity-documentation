@@ -11,7 +11,7 @@ The password can only be changed for the built-in authentication. If you do not 
 
 You can reset your built-in authentication password using the _Reset password_ link on the sign-in page.
 
->If you have not received the email with the reset instructions, check if TeamCity [Email Notifier](notifier.md) is enabled. Contact your server administrator for details.
+>If you have not received the email with the reset instructions, check if TeamCity [Email Notifier](configuring-notifications.md) is enabled. Contact your server administrator for details.
 > 
 {style="note"}
 

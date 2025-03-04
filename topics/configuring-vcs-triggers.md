@@ -1,7 +1,7 @@
 [//]: # (title: Configuring VCS Triggers)
 [//]: # (auxiliary-id: Configuring VCS Triggers)
 
-VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](vcs-root.md) and displays the change in the pending changes. Multiple VCS triggers can be added to a build configuration.
+VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](configuring-vcs-roots.md) and displays the change in the pending changes. Multiple VCS triggers can be added to a build configuration.
 
 A new VCS trigger with the default settings triggers a build once there are pending changes in the build configuration: the version control is polled for changes according to the [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) of a VCS root honoring a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) if configured. Only the changes matched by the [checkout rules](vcs-checkout-rules.md) are displayed as pending and thus are processed by the trigger. If several check-ins are made within short time frame and discovered by TeamCity together, only __one build will be triggered__.
 
@@ -19,7 +19,7 @@ The global default value for both options is 60 seconds and can be configured fo
 
 ## Trigger build on changes in snapshot dependencies
 
-If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](dependent-build.md#Snapshot+Dependency)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
+If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](snapshot-dependencies.md)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
 <include from="build-dependencies-setup.md" element-id="trigger-on-ssdep-chngs"/>
 

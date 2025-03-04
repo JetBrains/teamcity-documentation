@@ -371,7 +371,7 @@ To avoid this, we recommend not using remote run for build configurations which 
 
 <seealso>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
         <category ref="admin-guide">
             <a href="configuring-maven-triggers.md">Maven Artifact Dependency Trigger</a>

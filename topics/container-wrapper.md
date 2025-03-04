@@ -11,7 +11,7 @@ TeamCity can pull containers anonymously (if images are publicly available) or a
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
 2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
 
-The extension is available for the following [build steps](build-runner.md):
+The extension is available for the following [build steps](configuring-build-steps.md):
 
 <snippet id="supported-docker-wrapper-steps">
 
@@ -83,7 +83,7 @@ If you need a parameter declared in this file, do the following:
 
 Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a container with the `docker run` or `podman run` command. To view the details about the started process, text of the script, and so on, check the build log in [Verbose mode](build-log.md#Viewing+Build+Log).
 
-The Container Wrapper maps paths to the [build checkout directory](build-checkout-directory.md) and other agent directories like <path>[buildAgent/work](agent-work-directory.md)</path>, so that all these directories have the same location on a build agent and inside a [](container-wrapper.md).
+The Container Wrapper maps paths to the [build checkout directory](build-checkout-directory.md) and other agent directories like <path>[buildAgent/work](agent-work-directory.md)</path>, so that all these directories have the same location on a build agent and inside a wrapper.
 
 If the process environment contains the `TEAMCITY_DOCKER_NETWORK` environment variable set by the previous [Docker Compose](docker-compose.md) build step, this network is passed to the started `docker run` command with the `--network` switch.
                                      

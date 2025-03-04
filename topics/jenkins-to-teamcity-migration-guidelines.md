@@ -76,7 +76,7 @@ View or [Folder](https://plugins.jenkins.io/cloudbees-folder)
 
 <td>
 
-[Project](project.md)
+[Project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects)
 
 </td></tr><tr>
 
@@ -148,7 +148,7 @@ Source Control Management (SCM)
 
 <td>
 
-[Version Control System (VCS)](vcs-root.md)
+[Version Control System (VCS)](configuring-vcs-roots.md)
 
 </td></tr><tr>
 
@@ -198,11 +198,11 @@ A Freestyle project is the most common project type in Jenkins so we describe th
 
 There are some conceptual differences in how the build jobs are configured in Jenkins and TeamCity.
 
-[Build Configuration](managing-builds.md) is the TeamCitys counterpart of Jenkins Job/Item/Project. However, a Build Configuration requires a [Project](project.md) instance to be created first. In fact, the notion of Project in TeamCity is the first big difference that a user encounters when migrating from Jenkins. The Project contains a good portion of settings required for the build configurations. All settings that are assigned to a Project in TeamCity are listed [here](project.md).
+[Build Configuration](managing-builds.md) is the TeamCity's counterpart of Jenkins Job/Item/Project. However, a Build Configuration requires a [Project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) instance to be created first. In fact, the notion of Project in TeamCity is the first big difference that a user encounters when migrating from Jenkins. The Project contains a good portion of settings required for the build configurations.
 
 ### VCS Roots
 
-Source Code Management (SCM) of a Jenkins build job corresponds to a [VCS root](vcs-root.md) in Project Settings in TeamCity. A Project may include an arbitrary number of VCS Roots. Any Build Configuration may use any number of VCS Roots of the Project.
+Source Code Management (SCM) of a Jenkins build job corresponds to a [VCS root](configuring-vcs-roots.md) in Project Settings in TeamCity. A Project may include an arbitrary number of VCS Roots. Any Build Configuration may use any number of VCS Roots of the Project.
 
 When only a part of the VCS Root is required, it is possible to use [VCS Checkout Rules](vcs-checkout-rules.md). This allows mapping the directories from the configured VCS Root to subdirectories in the [build checkout directory](build-checkout-directory.md) on a Build Agent.
 
@@ -224,7 +224,7 @@ A [number of options](configuring-build-triggers.md) for triggering builds in Te
 
 ### Build
 
-This is where the real work happens. This part is mostly identical in Jenkins and TeamCity. TeamCity provides a large number of [build runners](build-runner.md) out of the box. You can [configure several build steps](configuring-build-steps.md) to run the required tasks for the given Build Configuration.
+This is where the real work happens. This part is mostly identical in Jenkins and TeamCity. TeamCity provides a large number of [build steps](configuring-build-steps.md) out of the box. You can configure several build steps to run the required tasks for the given Build Configuration.
 
 ### Building Maven project
 

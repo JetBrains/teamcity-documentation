@@ -92,7 +92,7 @@ Please make sure that your junit task has the `fork=true` attribute. The recomme
 
  <seealso>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
         <category ref="admin-guide">
             <a href="configuring-test-reports-and-code-coverage.md">Configuring Test Reports and Code Coverage</a>

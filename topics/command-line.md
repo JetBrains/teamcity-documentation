@@ -120,7 +120,7 @@ To learn about configuring code coverage options, refer to the [Configuring Java
 
 <seealso>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
             <a href="build-checkout-directory.md">Build Checkout Directory</a>
             <a href="build-working-directory.md">Build Working Directory</a>
         </category>

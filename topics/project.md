@@ -25,7 +25,7 @@ Settings defined on a project level are propagated to all the subprojects (recur
 * it is possible to export a project with all its subprojects and external dependencies using the [Settings Export](project-export.md) page.
 
 Entities defined in a project become available to all the build configurations residing under the project and its subprojects. These include:
-* [VCS Roots](vcs-root.md)
+* [VCS Roots](configuring-vcs-roots.md)
 * [Build Configuration Template](build-configuration-template.md)
 * [Issue Trackers](integrating-teamcity-with-issue-tracker.md) 
 * [Shared Resources](shared-resources.md)

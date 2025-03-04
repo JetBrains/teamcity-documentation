@@ -43,7 +43,7 @@ See [notes](how-to.md#Integrate+with+Build+and+Reporting+Tools) on integrating w
         </category>
         <category ref="concepts">
             <a href="build-state.md">Build State</a>
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
         <category ref="admin-guide">
             <a href="nunit-support.md">NUnit Support</a>

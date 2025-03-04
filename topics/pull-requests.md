@@ -41,7 +41,7 @@ If your project targets a GitHub or GitLab repository, you can automate your set
 
 ## Interaction with VCS Roots
 
-The Pull Requests feature extends the original branch specification of [VCS roots](vcs-root.md) attached to the current build configuration. As such, branch specifications of a VCS root **must not** contain patterns that match pull request branches to avoid ambiguous and unexpected behavior.
+The Pull Requests feature extends the original branch specification of [VCS roots](configuring-vcs-roots.md) attached to the current build configuration. As such, branch specifications of a VCS root **must not** contain patterns that match pull request branches to avoid ambiguous and unexpected behavior.
 
 If you want to build **only** pull requests, clear the VCS root's branch specification.
 
@@ -653,7 +653,7 @@ TeamCity can detect each pull request sent to the `master` branch and build the 
 
 To configure the described workflow for the `web-app` build configuration in TeamCity:
 
-1. Add a [VCS root](vcs-root.md) to the build configuration:   
+1. Add a [VCS root](configuring-vcs-roots.md) to the build configuration:   
     
     * <include from="common-templates.md" element-id="open-configuration-settings-tab"><var name="configuration-tab-name" value="Version Control Settings"/></include>
    * Click __Attach VCS root__.

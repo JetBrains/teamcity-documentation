@@ -1,4 +1,4 @@
-[//]: # (title: Build Artifact)
+[//]: # (title: Build Artifacts)
 [//]: # (auxiliary-id: Build Artifact)
 
 _Build artifacts_ are files produced by a build. Typically, these include distribution packages, WAR files, reports, log files, and so on. When creating a build configuration, you specify the paths to the artifacts of your build on the [Configuring General Settings](configuring-general-settings.md#Artifact+Paths) page.
@@ -15,7 +15,7 @@ TeamCity contains an integrated lightweight builds artifact repository. The arti
 TeamCity contains an integrated lightweight [Amazon S3](https://aws.amazon.com/s3) builds artifact repository.
 {instance="tcc"}
 
-Upon the build finish, TeamCity searches for artifacts in the build [checkout directory](build-checkout-directory.md) according to the specified [artifact path or path patterns](configuring-general-settings.md#Artifact+Paths). The matching files are then uploaded ("published") to the TeamCity server, where they become available for downloading through the web UI or can be used in other builds using [artifact dependencies](dependent-build.md#Artifact+Dependency). You can [choose when to publish artifacts](configuring-general-settings.md#publish-artifacts): for all completed builds, only for successful builds, or for all builds, even the interrupted ones.
+Upon the build finish, TeamCity searches for artifacts in the build [checkout directory](build-checkout-directory.md) according to the specified [artifact path or path patterns](configuring-general-settings.md#Artifact+Paths). The matching files are then uploaded ("published") to the TeamCity server, where they become available for downloading through the web UI or can be used in other builds using [artifact dependencies](artifact-dependencies.md). You can [choose when to publish artifacts](configuring-general-settings.md#publish-artifacts): for all completed builds, only for successful builds, or for all builds, even the interrupted ones.
 
 To download artifacts of a build, go to the [Artifacts](build-results-page.md#Artifacts+Tab) tab of the build results page or use the artifacts icon ![artifactIcon.png](artifactIcon.png) available on the project or build configuration __Overview__ page and on the TeamCity pages that list the builds.
 
@@ -79,9 +79,6 @@ However, depending on the size of artifacts, [clean-up](teamcity-data-clean-up.m
 title="TeamCity tutorial — How to work with artifacts (logs, graphics, binaries)"/>
 
 <seealso>
-        <category ref="concepts">
-            <a href="dependent-build.md">Dependent Build</a>
-        </category>
         <category ref="admin-guide">
             <a href="configuring-general-settings.md#Artifact+Paths">Configuring General Settings</a>
             <a href="configuring-dependencies.md">Configuring Dependencies</a>

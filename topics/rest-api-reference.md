@@ -381,7 +381,7 @@ GET http://teamcity:8111/app/rest/vcs-root-instances?locator=<vcsRootInstancesLo
  
 <tip>
  
-* A ['VCS root'](vcs-root.md) is the setting configured in the TeamCity UI, a _VCS root instance_ is an internal TeamCity entity which is derived from the _VCS root_ to perform the actual VCS operation. If a VCS root has no %\-references to parameters, a single VCS root corresponds to a single VCS root instance. If a VCS root has %\-reference to a parameter and the reference resolves to a different value when the VCS root is attached to different configurations or when custom builds are run, a single VCS root can generate several VCS root instances.
+* A ['VCS root'](configuring-vcs-roots.md) is the setting configured in the TeamCity UI, a _VCS root instance_ is an internal TeamCity entity which is derived from the _VCS root_ to perform the actual VCS operation. If a VCS root has no %\-references to parameters, a single VCS root corresponds to a single VCS root instance. If a VCS root has %\-reference to a parameter and the reference resolves to a different value when the VCS root is attached to different configurations or when custom builds are run, a single VCS root can generate several VCS root instances.
 
 </tip>
  

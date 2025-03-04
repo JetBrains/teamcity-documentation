@@ -158,7 +158,7 @@ where `90` is the number of the exact revision of `dir1` and `automaticLabelWith
 
 ## Agent Checkout Settings
 
-When the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, TeamCity creates a Perforce workspace for each [checkout directory](build-checkout-directory.md)/[VCS root](vcs-root.md). These workspaces are automatically created when necessary and are automatically deleted after a timeout. See more details on [Perforce workspace handling](perforce-workspace-handling-in-teamcity.md).
+When the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, TeamCity creates a Perforce workspace for each [checkout directory](build-checkout-directory.md)/[VCS root](configuring-vcs-roots.md). These workspaces are automatically created when necessary and are automatically deleted after a timeout. See more details on [Perforce workspace handling](perforce-workspace-handling-in-teamcity.md).
 
 <table><tr>
 

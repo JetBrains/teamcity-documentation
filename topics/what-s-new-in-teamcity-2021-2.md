@@ -104,7 +104,7 @@ TeamCity will display the list of Space repositories available to you:
 
 Choose a repository to create a project or build configuration from — and TeamCity will scan it and suggest the settings, as described [here](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space).
 
->You can similarly add additional JetBrains Space [roots](vcs-root.md) to an existing project.
+>You can similarly add additional JetBrains Space [roots](configuring-vcs-roots.md) to an existing project.
 
 ### Authenticate in TeamCity with JetBrains Space account
 
@@ -175,7 +175,7 @@ To try this option, open the results of any build that is a part of a [chain](bu
 
 ### OpenSSH keys support
 
-TeamCity now supports keys in the OpenSSH format, including ECDSA and ED25519. You can upload such a key to TeamCity and reuse it when configuring [VCS roots](vcs-root.md) or running an [SSH agent](ssh-agent.md) during a build.
+TeamCity now supports keys in the OpenSSH format, including ECDSA and ED25519. You can upload such a key to TeamCity and reuse it when configuring [VCS roots](configuring-vcs-roots.md) or running an [SSH agent](ssh-agent.md) during a build.
 
 The support for this format has also been introduced in a bugfix build TeamCity 2021.1.4.
 

@@ -64,9 +64,9 @@ If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connec
 
 > Watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE) with SSH keys.
 
-Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If you create a project using an SSH URL and choose/upload a private key from the "Create Project" page, TeamCity automatically sets up required settings, and you do not need to modify a [](vcs-root.md).
+Private SSH keys are employed only when your VCS root is configured to work with a remote repository via an SSH URL (for instance, `git@github.com:...`). If you create a project using an SSH URL and choose/upload a private key from the "Create Project" page, TeamCity automatically sets up required settings, and you do not need to modify a [](configuring-vcs-roots.md).
 
-Otherwise, if you want to update a project that authenticates to a VCS via a token or a password so that it starts using an SSH key instead, you will need to manually update a corresponding [](vcs-root.md).
+Otherwise, if you want to update a project that authenticates to a VCS via a token or a password so that it starts using an SSH key instead, you will need to manually update a corresponding [](configuring-vcs-roots.md).
 
 1. Navigate to **Administration | &lt;Your_Project&gt; | VCS Roots** and click **Edit** next to the required root.
 2. Update the **Fetch URL** and/or **Push URL** fields to use an SSH URL instead. For example, change `https://github.com/username/repository_name.git` to `git@github.com:username/repository_name.git`.

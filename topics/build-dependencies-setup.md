@@ -1,7 +1,7 @@
 [//]: # (title: Build Dependencies Setup)
 [//]: # (auxiliary-id: Build Dependencies Setup)
 
-This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [Dependent Build](dependent-build.md).
+This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [](configuring-dependencies.md).
 
 In many cases, it is convenient to use the output of one build in another, as well as to run a number of builds sequentially or in parallel on the same sources. Consider a typical example: you have a cross-platform project that has to be tested under Windows and macOS before you get the production build. The best workflow for this simple case will be to:
 

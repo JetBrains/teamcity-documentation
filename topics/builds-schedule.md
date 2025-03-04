@@ -9,7 +9,7 @@ If you have configured any [schedule triggers](configuring-schedule-triggers.md)
 > 
 {style="note"}
 
-> The builds schedule page for the [Root Project](project.md#Root+Project) displays the list of triggers for the entire TeamCity server.
+> The builds schedule page for the [Root Project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) displays the list of triggers for the entire TeamCity server.
 > 
 {style="tip"}
 

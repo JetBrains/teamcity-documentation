@@ -145,7 +145,7 @@ __Build configuration__
 <td>
 
 A combination of settings defining a build procedure. 
-The settings include _[VCS roots](vcs-root.md)_, _[build steps](configuring-build-steps.md)_, 
+The settings include _[VCS roots](configuring-vcs-roots.md)_, _[build steps](configuring-build-steps.md)_, 
 and _[build triggers](configuring-build-triggers.md)_ described below.
 
 </td></tr><tr>
@@ -173,7 +173,7 @@ __Build step__
 
 <td>
 
-A task to be executed. Each build step is represented by a _[build runner](build-runner.md)_ providing integration with a specific build tool (like Ant, Gradle, MSBuild, and so on), a testing framework (for example, NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
+A task to be executed. TeamCity provides multiple built-in [build steps](configuring-build-steps.md) that enable native integration with a specific build tool (like Ant, Gradle, MSBuild, and so on), a testing framework (for example, NUnit), or a code analysis engine. Thus, in a single build you can have several steps and sequentially invoke test tools, code coverage, and, for instance, compile your project.
 
 </td></tr><tr>
 

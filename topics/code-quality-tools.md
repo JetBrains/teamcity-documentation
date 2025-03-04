@@ -6,7 +6,7 @@ TeamCity comes bundled with a number of tools capable of analyzing the quality o
 
 ## Bundled Tools
 
-Generally, the tools are configured as [build runners](build-runner.md) and the results are displayed on the Build Results page as well as in the IDE for some tools.
+Generally, the tools are configured as [build steps](configuring-build-steps.md) and the results are displayed on the Build Results page as well as in the IDE for some tools.
 
 You can also configure builds to fail based on the results and view the trends as statistics charts.
 

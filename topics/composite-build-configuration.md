@@ -41,7 +41,7 @@ In this step, you will create a project with an empty build configuration and a 
 
     <img src="dk-compositeConf-subproject.png" width="706" alt="Create Subproject"/>
 
-6. Since your subproject uses the same repository as the root project, TeamCity suggests that both projects share the same [VCS root](vcs-root.md) instead of creating a duplicate. Click **Use this** when prompted to agree.
+6. Since your subproject uses the same repository as the root project, TeamCity suggests that both projects share the same [VCS root](configuring-vcs-roots.md) instead of creating a duplicate. Click **Use this** when prompted to agree.
       
     <img src="dk-share-vcsroot.png" width="706" alt="Share VCS root between projects"/>
 

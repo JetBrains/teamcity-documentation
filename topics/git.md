@@ -333,7 +333,7 @@ If `TEAMCITY_GIT_PATH` is not defined, the Git agent plugin tries to detect the 
    * `/opt/bin`
 
 If Git is not found in any of these locations, it tries to run the git accessible via the `PATH` environment variable.   
-If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](vcs-root.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
+If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](configuring-vcs-roots.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
 
 ### Git mirrors on cloud agents
 {help-id="Git mirrors on cloud agents" instance="tc"}
@@ -390,7 +390,7 @@ Although different in their scenarios and implementation mechanisms, both concep
 
 ### Additional Credentials
 
-If your repository imports submodules hosted on the same VCS and these imported repositories can be accessed via the same credentials stored in your [](vcs-root.md), you do not need to perform any additional modifications. TeamCity will check out all required source files using a single set of credentials.
+If your repository imports submodules hosted on the same VCS and these imported repositories can be accessed via the same credentials stored in your [](configuring-vcs-roots.md), you do not need to perform any additional modifications. TeamCity will check out all required source files using a single set of credentials.
 
 Otherwise, if TeamCity needs to access an external LFS server or a different VCS that hosts required submodules, you will need to add three [configuration parameters](configuring-build-parameters.md) to your **project**:
 

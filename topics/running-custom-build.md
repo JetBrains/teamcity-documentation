@@ -153,7 +153,7 @@ This tab allows you to add optional comments and [tags](build-actions.md#Add+Tag
 
 ## Promoting Build
 
-Promoted builds are custom builds with an overridden [artifact or snapshot dependencies](dependent-build.md). Such builds utilize different dependency builds compared to those they would use by default.
+Promoted builds are custom builds with an overridden [artifact or snapshot dependencies](configuring-dependencies.md). Such builds utilize different dependency builds compared to those they would use by default.
 
 For example, a build configuration A retrieves artifacts from a build configuration B. Normally, running a new A build utilizes the last successful B build. If you want A to use an older B build, this earlier B build needs to be promoted.
 
@@ -167,7 +167,7 @@ See the [following blog post](https://blog.jetbrains.com/teamcity/2012/04/teamci
         </category>
         <category ref="concepts">
             <a href="working-with-build-queue.md">Working with Build Queue</a>
-            <a href="dependent-build.md">Dependent Build</a>
+            <a href="configuring-dependencies.md">Artifact and Snapshot Dependencies</a>
             <a href="personal-build.md">Personal Build</a>
         </category>
         <category ref="admin-guide">

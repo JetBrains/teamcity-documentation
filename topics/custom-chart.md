@@ -15,8 +15,8 @@ It is possible to manage custom charts using the TeamCity web UI.
 
 * The __Statistics__ tab for a project or build configuration provides an option to create a new chart. Note that only one build configuration can be currently added as the data source. More configurations can be added manually.
 * On the __Parameters__ tab of the [build results](working-with-build-results.md) page, the list of __Reported statistic values__ provides checkboxes to select the statistics type for a new [project- or build-configuration-level](statistic-charts.md) chart.
-    * A project-level chart will be added to the selected target project. The [root project](project.md) cannot be selected as the target.
-    * A build-configuration-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project.md#Root+Project) as the target will add the chart to all build configurations available on the server.
+    * A project-level chart will be added to the selected target project. The [root project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) cannot be selected as the target.
+    * A build-configuration-level chart will be added to all build configurations of the selected target project and its subprojects. Specifying the [root project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) as the target will add the chart to all build configurations available on the server.
 
 ### Modifying Custom Charts
 
@@ -110,7 +110,7 @@ __Custom build configuration-level chart in `project-config.xml`__
 </project-extensions>
 ```
 
-This chart will be shown on the __Statistics__ tabs of the build configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all build configurations, add it to the `project-config.xml` of the [Root project](project.md#Root+Project).
+This chart will be shown on the __Statistics__ tabs of the build configurations of the project where the `project-config.xml` file is located and all its subprojects. To display a chart for all build configurations, add it to the `project-config.xml` of the [Root project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects).
 
 #### Parameters Reference
 

@@ -3,7 +3,7 @@
 
 Project hosted on Azure DevOps can use either of the following version control systems:
 
-* **Git** — an open-source distributed version control system originally authored by Linus Torvalds. To connect TeamCity to Git repositories on Azure DevOps, set up [Azure DevOps OAuth connections](configuring-connections.md#azure-devops-connection). See this article for more information about features common to all [VCS roots](vcs-root.md) that target Git repositories: [Git](git.md).
+* **Git** — an open-source distributed version control system originally authored by Linus Torvalds. To connect TeamCity to Git repositories on Azure DevOps, set up [Azure DevOps OAuth connections](configuring-connections.md#azure-devops-connection). See this article for more information about features common to all [VCS roots](configuring-vcs-roots.md) that target Git repositories: [Git](git.md).
 
 * **Team Foundation Version Control (TFVC)** — a version control system exclusive to Azure DevOps, formerly known as Team Foundation Server (TFS) and Visual Studio Team System. TeamCity communications with TFVC repositories are carried out by [Azure DevOps PAT connections](configuring-connections.md#Azure+DevOps+PAT+Connection).
 

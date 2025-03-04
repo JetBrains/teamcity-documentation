@@ -5,7 +5,7 @@ A _revision_ refers to a specific state of a version control history; basically 
 
 When displaying [changes](change.md) included in a finished or queued build, TeamCity also displays the corresponding revision. This page explains how TeamCity chooses VCS revisions for a build.
 
-TeamCity remembers the current repository revision when you add a new [VCS root](vcs-root.md) for a [project](project.md) or [build configuration](managing-builds.md), or when you [modify settings](configuring-vcs-settings.md) of an existing VCS root.
+TeamCity remembers the current repository revision when you add a new [VCS root](configuring-vcs-roots.md) for a [project](creating-and-editing-projects.md) or [build configuration](creating-and-editing-build-configurations.md), or when you [modify settings](configuring-vcs-settings.md) of an existing VCS root.
 
 After that, TeamCity does not monitor the whole repository but only collects changes for the scope of the repository specified in TeamCity: the configured [VCS root settings](configuring-vcs-settings.md) with [checkout rules](vcs-checkout-rules.md).   
 The revision of the sources corresponding to the latest detected change affecting your build will be displayed as the VCS root revision on the [Changes page](viewing-user-changes-in-builds.md) accessible via the link on the __Projects__ page or on the [Changes tab](build-results-page.md#Changes+Tab) of __Build Results__.

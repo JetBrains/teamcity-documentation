@@ -237,6 +237,6 @@ The TeamCity agent will import the specified xml file in the background. Make su
 
 <seealso>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
         </category>
 </seealso>

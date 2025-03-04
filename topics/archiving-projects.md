@@ -23,7 +23,7 @@ If you need to dearchive a project, you can do it using the __Actions__ menu in 
 
 <seealso>
         <category ref="concepts">
-            <a href="project.md">Project</a>
+            <a href="creating-and-editing-projects.md">Project</a>
             <a href="managing-builds.md">Build Configuration</a>
         </category>
 </seealso>

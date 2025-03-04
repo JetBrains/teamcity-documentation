@@ -117,8 +117,8 @@ For the _Artifacts_ level you can also specify the patterns for the artifact nam
 
 #### Base Rule Behavior for Dependency Builds
 
-In the _Dependencies_ block of a base rule, you can also choose the clean-up behavior option for build artifacts in dependency build configurations. TeamCity always preserves builds that are used as [snapshot dependencies](dependent-build.md#Snapshot+Dependency) in other builds. These builds are not deleted from build history by the clean-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.   
-TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](dependent-build.md#Artifact+Dependency). The following options are available:
+In the _Dependencies_ block of a base rule, you can also choose the clean-up behavior option for build artifacts in dependency build configurations. TeamCity always preserves builds that are used as [snapshot dependencies](snapshot-dependencies.md) in other builds. These builds are not deleted from build history by the clean-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.   
+TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](artifact-dependencies.md). The following options are available:
 * _Use default_ uses the option configured in the default clean-up rule.
 * _Prevent clean-up_ protects builds (and their artifacts) which were used as a source of artifact or snapshot dependencies for the builds of the current build configuration.
 * _Do not prevent clean-up_ (default) makes cleanup-related processing of the dependency builds disregard the fact that they are used by the builds of the current build configuration. The dependency builds and artifacts will be cleaned up. Note that clean up does not delete a build history and logs of snapshot dependency builds, even if this option is selected.
@@ -190,9 +190,3 @@ After generating the report, TeamCity removes the `diagnostics:cleanup` tag from
 
 
 <!--[//]: # (Internal note. Do not delete. "Clean-Upd55e230.txt")-->    
-
-<seealso>
-        <category ref="concepts">
-            <a href="dependent-build.md">Dependent Build</a>
-        </category>
-</seealso>

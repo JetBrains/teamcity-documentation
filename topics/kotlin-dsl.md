@@ -44,7 +44,7 @@ To start working with Kotlin DSL in TeamCity, create an empty sandbox project on
 <note>
 
 Note: right after the Kotlin DSL settings are enabled in your project, the web UI for this project will become read-only until the TeamCity server detects its own commit and applies it back to the project.   
-Usually it takes a minute or two, depending on the _Changes Checking Interval_ defined for the [VCS root](vcs-root.md) where the DSL is located.
+Usually it takes a minute or two, depending on the _Changes Checking Interval_ defined for the [VCS root](configuring-vcs-roots.md) where the DSL is located.
 
 </note>
 

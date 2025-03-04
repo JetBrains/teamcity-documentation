@@ -54,7 +54,7 @@ Refer to the [XML Test Reporting](https://github.com/JetBrains/teamcity-xml-test
 
 <seealso>
         <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
+            <a href="configuring-build-steps.md">Build Step</a>
             <a href="testing-frameworks.md">Testing Frameworks</a>
         </category>
 </seealso>

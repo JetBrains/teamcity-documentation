@@ -25,138 +25,60 @@ To create a subproject, go to the [project settings](project-administrator-guide
 
 ### Creating project pointing to repository URL
 
-1\. On the __Create project__ page, click the "From a repository URL" tile.
-
-2\. Specify the [project settings](project-administrator-guide.md#Edit+and+View+Modes):
-
-<table><tr>
-
-<td>
-
-Setting
-
-
-</td>
-
-<td>
-
-Description
-
-
-</td></tr><tr>
-
-<td>
-
-Parent Project
-
-
-</td>
-
-<td>
-
-Select the parent project from the drop-down menu.
-
-
-</td></tr><tr>
-
-<td>
-
-Repository URL
-
-
-</td>
-
-<td>
-
-A VCS repository [URL](guess-settings-from-repository-url.md). TeamCity recognizes URLs for Subversion, Git, and Mercurial. TFS and Perforce are partially supported.
-
-Icons next to this field represent VCS hosting services supported by TeamCity. If you click an active (highlighted) icon, you will be able to select an existing connection specification. If you click an inactive icon, you will be redirected to the _Add Connection_ form.
-
-Depending on the URL format, the following authentication settings may vary.
-
-</td></tr><tr>
-
-<td>
-
-Authentication
-
-
-</td>
-
-<td>
-
-TeamCity automatically sets this field to either "Password / Access token" or "SSH key" depending on the URL format.
-
-</td></tr><tr>
-
-<td>
-
-Username
-
-
-</td>
-
-<td>
-
-Available if the **Authentication** is set to "Password / Access token". Specifies a username required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access. 
-
-</td></tr><tr>
-
-<td>
-
-Password
-
-
-</td>
-
-<td>
-
-Available if the **Authentication** is set to "Password / Access token". Specifies a password or token required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access.
-
-
-</td></tr><tr>
-
-<td>
-
-SSH key
-
-
-</td>
-
-<td>
-
-Available if the **Authentication** is set to "SSH key". Allows you to upload a new private SSH key or choose a [previously uploaded key](ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project).
-
-
-</td></tr><tr>
-
-<td>
-
-SSH passphrase
-
-
-</td>
-
-<td>
-
-Available if the **Authentication** is set to "SSH key". Allows you to specify a passphrase for encrypted SSH keys.
-
-
-</td></tr></table>
-
-3\. Click __Proceed__. TeamCity will configure the rest of settings for you.
- * it will determine the type of the VCS repository, autoconfigure VCS repository settings, and suggest the project and build configuration names.   
-   For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
- * the project, build configuration and VCS root will be created automatically.
- * TeamCity will add a VCS build trigger.
- * TeamCity will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
-
-4\. On the __Auto-detected Build Steps__ page select the detected step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
-
-5\. Your project and a build configuration are configured. Click the __Run__ button to start the build.   
+1. On the __Create project__ page, click the "From a repository URL" tile.
+
+2. Specify the [project settings](project-administrator-guide.md#Edit+and+View+Modes):
+
+    <table>
+        <tr>
+            <td>Setting</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Parent Project</td>
+            <td>Select the parent project from the drop-down menu.</td>
+        </tr>
+        <tr>
+            <td>Repository URL</td>
+            <td>A VCS repository <a href="guess-settings-from-repository-url.md">URL</a>. TeamCity recognizes URLs for Subversion, Git, and Mercurial. TFS and Perforce are partially supported.<br/>Icons next to this field represent VCS hosting services supported by TeamCity. If you click an active (highlighted) icon, you will be able to select an existing connection specification. If you click an inactive icon, you will be redirected to the _Add Connection_ form.<br/>Depending on the URL format, the following authentication settings may vary.</td>
+        </tr>
+        <tr>
+            <td>Authentication</td>
+            <td>TeamCity automatically sets this field to either "Password / Access token" or "SSH key" depending on the URL format.</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>Available if the <b>Authentication</b> is set to "Password / Access token". Specifies a username required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access.</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>Available if the <b>Authentication</b> is set to "Password / Access token". Specifies a password or token required to access the repository. Can be left empty if you want to access a public repository that allows anonymous access.</td>
+        </tr>
+        <tr>
+            <td>SSH key</td>
+            <td>Available if the <b>Authentication</b> is set to "SSH key". Allows you to upload a new private SSH key or choose a <a href="ssh-keys-management.md#Upload+New+SSH+Keys+to+a+Project">previously uploaded key</a>.</td>
+        </tr>
+        <tr>
+            <td>SSH passphrase</td>
+        <td>Available if the <b>Authentication</b> is set to "SSH key". Allows you to specify a passphrase for encrypted SSH keys.</td>
+        </tr>
+    </table>
+
+3. Click __Proceed__. TeamCity will configure the rest of settings for you.
+
+   * it will determine the type of the VCS repository, autoconfigure VCS repository settings, and suggest the project and build configuration names.   
+      For a Git repository, TeamCity will autodetect the default branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
+   * the project, build configuration and VCS root will be created automatically.
+   * TeamCity will add a VCS build trigger.
+   * TeamCity will attempt to autodetect build steps: Ant, NAnt, Gradle, Maven, MSBuild, Visual Studio solution files, PowerShell, Xcode project files, Rake, and IntelliJ IDEA projects.
+    
+4. On the __Auto-detected Build Steps__ page select the detected step(s) to use in your build configuration. Click __Use selected__. If no steps found, you will have to [configure build steps manually](configuring-build-steps.md).
+
+5. Your project and a build configuration are configured. Click the __Run__ button to start the build.   
 Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review Suggestions at the end of the settings list and configure required ones.
 
 ### Creating project pointing to GitHub.com repository
+
 1. On the __Create project__ page, click a "From GitHub" tile to create a project from an [existing connection](configuring-connections.md#GitHub)
 2. Select a repository. TeamCity will verify the repository connection. If the connection is verified, the new page opens.
 3. TeamCity will display the project and build configuration name. If required, modify the names and click __Proceed__. TeamCity will autodetect the default Git branch, but you have an option to change it and to add other branches to monitor by entering their [specification](working-with-feature-branches.md#Configuring+Branches).
@@ -209,9 +131,9 @@ Before creating a project from a JetBrains Space, you need to configure a [dedic
 5. Your project and a build configuration are configured. Click __Run__ to start the build. Depending on the build configuration settings, TeamCity can suggest some additional configuration options. Review _Suggestions_ at the end of the settings list and configure required ones.
 
 ### Creating project manually
-1\. Click the __Create project__ button and select __Manually__.
+1. Click the __Create project__ button and select __Manually__.
 
-2\. On the __Create New Project__ page, specify the [project settings](project-administrator-guide.md#Edit+and+View+Modes):
+2. On the __Create New Project__ page, specify the [project settings](project-administrator-guide.md#Edit+and+View+Modes):
 
 <table><tr>
 
@@ -288,16 +210,16 @@ Optional description for the project. You can add a link in the Markdown format 
 
 </td></tr></table>
 
-3\. Click __Create__. An empty project is created.
+3. Click __Create__. An empty project is created.
 
 <tip>
 
 To configure an existing project, select the desired project in the list and [open its settings](project-administrator-guide.md#Edit+and+View+Modes).
 </tip>
 
-4\. [Create build configurations](creating-and-editing-build-configurations.md) (select build settings, [configure VCS settings](configuring-vcs-settings.md), and choose [build runners](build-runner.md)) for the project.
+4. [Create build configurations](creating-and-editing-build-configurations.md) (select build settings, [configure VCS settings](configuring-vcs-settings.md), and choose [build steps](configuring-build-steps.md)) for the project.
 
-5\. [Assign build configurations to specific build agents](assigning-build-configurations-to-specific-build-agents.md).
+5. [Assign build configurations to specific build agents](assigning-build-configurations-to-specific-build-agents.md).
 
 ## Managing Project
 
@@ -313,7 +235,7 @@ Use the corresponding item from the __Actions__ menu in the upper right corner o
 
 Projects can be copied and moved to another project by project administrators.
 
-A copy duplicates all the settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-results-page.md#Build+History+in+Classic+UI) and no [statistics](statistic-charts.md).
+A copy duplicates all the settings, [subprojects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-results-page.md#Build+History+in+Classic+UI) and no [statistics](statistic-charts.md).
 
 You can copy a project into the same or another parent.
 
@@ -342,7 +264,7 @@ Before moving the project, consider the following:
 
 To move a project, use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
 
-When moving a project, TeamCity preserves all its settings, [subprojects](project.md#Project+Hierarchy), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-results-page.md#Build+History+in+Classic+UI).
+When moving a project, TeamCity preserves all its settings, [subprojects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-results-page.md#Build+History+in+Classic+UI).
 
 ### Archiving Project
 
@@ -381,7 +303,7 @@ The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ dir
 
 <tip>
 
-If you attempt to delete a project with [dependent build configurations](dependent-build.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
+If you attempt to delete a project with [dependent build configurations](configuring-dependencies.md) from other projects, TeamCity will warn you about it. If you proceed with the deletion, the dependencies will no longer function.
 
 </tip>
 

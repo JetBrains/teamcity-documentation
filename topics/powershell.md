@@ -1,7 +1,7 @@
 [//]: # (title: PowerShell)
 [//]: # (auxiliary-id: PowerShell)
 
-The _PowerShell_ [build runner](build-runner.md) is specifically designed to run PowerShell scripts. 
+The _PowerShell_ [build step](configuring-build-steps.md) is specifically designed to run PowerShell scripts. 
 
 The plugin responsible for PowerShell integration has been open-sourced [on GitHub](https://github.com/JetBrains/teamcity-powershell).
 

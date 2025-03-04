@@ -1,7 +1,7 @@
 [//]: # (title: Docker)
 [//]: # (auxiliary-id: Docker)
 
-The _Docker_ [build runner](build-runner.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
+The _Docker_ [build step](configuring-build-steps.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 
 >For the `run` command, use [](container-wrapper.md).
 

@@ -1,7 +1,7 @@
 [//]: # (title: Working with Meta-Runner)
 [//]: # (auxiliary-id: Working with Meta-Runner)
 
-A _meta-runner_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build runner](build-runner.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
+A _meta-runner_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build step](configuring-build-steps.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
 
 With meta-runners, you can:
 * Reuse existing runners

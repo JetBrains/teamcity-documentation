@@ -1,7 +1,7 @@
 [//]: # (title: Configuring Build Steps)
 [//]: # (auxiliary-id: Configuring Build Steps)
 
-Once you have a TeamCity project with a build configuration within it, you can configure **build steps**. A build step (also referred to as a "job") is a task to be executed by a [build runner](build-runner.md). One build configuration can include multiple steps, executed consecutively.
+Once you have a TeamCity project with a build configuration within it, you can configure **build steps**. One build configuration can include multiple steps, executed consecutively.
 
 Build steps are configured in the __Build Steps__ section of the __[Build Configuration Settings](creating-and-editing-build-configurations.md)__ page. This page allows you to:
 
@@ -10,11 +10,11 @@ Build steps are configured in the __Build Steps__ section of the __[Build Config
 * Copy and delete steps.
 * Temporarily enable/disable steps.
 
-## Choosing Build Runner for Your Task
+## Choosing Build Step for Your Task
 
-Each build step is represented by a [build runner](build-runner.md) and provides integration with a specific build or test tool. For example, calling a NAnt script before compiling VS solutions. You can add as many build steps to your build configuration as needed.
+Each build step provides integration with a specific build or test tool. For example, calling a NAnt script before compiling VS solutions. You can add as many build steps to your build configuration as needed.
 
-This video tutorial explains how to choose a build runner based on your project's needs:
+This video tutorial explains how to choose a build step based on your project's needs:
 
 <video src="https://youtu.be/wLmLgh5OK5o"
 title="TeamCity - How to use specific runners to supercharge your builds"/>
@@ -160,8 +160,3 @@ http://<SERVER_URL>/app/rest/builds/<BUILD_ID>/resulting-properties
 You can utilize these parameters to create custom [](build-step-execution-conditions.md).
 
 
- <seealso>
-        <category ref="concepts">
-            <a href="build-runner.md">Build Runner</a>
-        </category>
-</seealso>

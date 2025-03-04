@@ -3,7 +3,7 @@
 
 <anchor name="VCSRoots"/>
 
-<include from="vcs-root.md" element-id="VCSRoot"/>
+<include from="configuring-vcs-roots.md" element-id="VCSRoot"/>
 
 ## Common VCS Root Properties
 
@@ -122,7 +122,7 @@ Make sure to synchronize the system time at the VCS server, TeamCity server and 
 
 <seealso>
         <category ref="concepts">
-            <a href="vcs-root.md">VCS root</a>
+            <a href="configuring-vcs-roots.md">VCS root</a>
         </category>
 </seealso>
 

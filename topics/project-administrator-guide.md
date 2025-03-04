@@ -221,6 +221,8 @@ Related article: [](build-artifact.md)
 
 ## Set Up Cross-Configuration Dependencies
 
+<snippet id="configuration-dependencies">
+
 Real-life CI/CD pipelines often combine multiple standalone configurations. For example, "Build", "Test", and "Deploy to Staging" configurations (or Jobs) can run independently or in sequence.
 
 TeamCity offers multiple options to create relations between standalone configurations.
@@ -228,12 +230,13 @@ TeamCity offers multiple options to create relations between standalone configur
 <deflist>
 <def title="Build Chain">
 
-A build chain is a collection of classic TeamCity configurations interconnected using <a href="snapshot-dependencies.md">snapshot dependencies</a>.
+A <a href="build-chain.md">build chain</a> is a collection of classic TeamCity configurations interconnected using <a href="snapshot-dependencies.md">snapshot dependencies</a>.
 
 Snapshot dependencies are right-to-left relations. For example, in the "A -> B" chain where configuration "B" has a dependency on configuration "A", "B" cannot run until "A" produces a suitable build first. The criteria for "suitable" builds depends on your setup, see the <a href="snapshot-dependencies.md#Suitable+Builds">Suitable Builds</a> section for more information. At the same time, "A" can run independently without triggering new "B" builds.
 
 For mission-critical scenarios, you can set up dependent configurations to always force fresh upstream configuration builds, even if there were no recent changes to the project.
 </def>
+
 
 <def title="Finish Build Triggers">
 
@@ -250,15 +253,18 @@ Finish build triggers offer a simple but inflexible way to trigger downstream bu
 Artifact dependencies don’t create explicit links between configurations: both can run independently without triggering each other’s builds. If you use artifact dependencies without corresponding snapshot dependencies, a dependent build has no ability to ensure a suitable source of artifacts (an upstream configuration build) exists. For that reason, you may want to set up artifact dependencies to target pinned/tagged builds. This setup can exhibit more control on your building routine.
 </def>
 
+<!--
 <def title="Pipelines">
 
 In the lightweight TeamCity Pipelines mode, you create Pipelines instead of classic TeamCity projects, and Jobs instead of build configurations. By default, each Job of a pipeline is an separate entity that runs in parallel to other Jobs. To unite these Jobs in a sequence, use the Job settings panel or drag-and-drop Jobs in the visual editor. For each cross-Job dependency, you can additionally specify whether an upstream Job should share its artifacts to the downstream one.
 
 Pipeline dependencies substitute classic TeamCity artifact and snapshot dependencies, but have fewer options (for example, you cannot choose to reuse only pinned/tagged builds of an upstream Job).
 </def>
+-->
 
 </deflist>
 
+</snippet>
 
 ## Deployment
 
