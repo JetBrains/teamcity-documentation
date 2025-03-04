@@ -71,7 +71,9 @@ For more information on available project and configuration settings, refer to t
 
 ## VCS Roots
 
-A **VCS root** is a cornerstone of the TeamCity &larr;&rarr; VCS repository communication. This integral element implements repository access required to perform a wide range of operations: repository checkout, code sources tagging, communicating build statuses back to VCS, and so on.
+<snippet id="VCSRoots">
+
+A **VCS root** is a cornerstone of the TeamCity &larr;&rarr; VCS repository communication. This integral element defines a connection to a [VCS provider](configuring-vcs-settings.md) required to perform a wide range of operations: repository checkout, code sources tagging, communicating build statuses back to VCS, and so on.
 
 VCS roots store the following information:
 
@@ -93,6 +95,7 @@ However, configurations never own roots. You can "attach" a VCS root to a config
 
 Although a VCS root is an existential part of any build configuration that works with a remote repository, in many scenarios TeamCity generates roots automatically and does not require that you create them by hand for each new build configuration. See [this tutorial](configure-and-run-your-first-build.md) for an example.
 
+</snippet>
 
 ## Build Features
 

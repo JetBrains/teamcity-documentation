@@ -51,7 +51,7 @@ The complete list of supported platforms and environments is available [here](su
 
 ## Basic TeamCity concepts
 
-This section describes the main TeamCity concepts. You can find a more comprehensive explanation in the [Introduction to TeamCity terminology](introduction-to-teamcity-terminology.md).
+This section describes the main TeamCity concepts.
 
 The __TeamCity build system__ comprises a __server__ and __build agents__.
 

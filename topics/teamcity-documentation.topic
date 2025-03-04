@@ -25,7 +25,6 @@
 
         <secondary>
             <title>Learn the basics</title>
-            <!--<a href="introduction-to-teamcity-terminology.md" summary="Find out how (and if?) TeamCity builds are different from jobs and explore the main TeamCity concepts.">Terms and concepts</a>-->
             <a href="https://www.jetbrains.com/teamcity/ci-cd-guide/" summary="Read about the principles of continuous integration and delivery.">CI/CD Guide</a>
             <a href="supported-platforms-and-environments.md" summary="Explore a wide range of software supported by TeamCity.">Supported platforms and environments</a>
             <a href="https://www.jetbrains.com/teamcity/integrations/" summary="Integrate TeamCity with the tech stack that you already use for building great software.">Integrations</a>

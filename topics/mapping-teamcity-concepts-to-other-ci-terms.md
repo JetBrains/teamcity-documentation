@@ -18,7 +18,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Project</p></td>
-<td><p><a href="project.md">Project</a></p></td>
+<td><p><a href="creating-and-editing-projects.md">Project</a></p></td>
 </tr>
 
 <tr>
@@ -85,7 +85,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Project</p></td>
-<td><p><a href="project.md">Project</a></p></td>
+<td><p><a href="creating-and-editing-projects.md">Project</a></p></td>
 </tr>
 
 <tr>

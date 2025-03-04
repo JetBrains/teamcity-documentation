@@ -3,7 +3,8 @@
 
 <anchor name="VCSRoots"/>
 
-<include from="configuring-vcs-roots.md" element-id="VCSRoot"/>
+<include from="project-administrator-guide.md" element-id="VCSRoots"/>
+
 
 ## Common VCS Root Properties
 
@@ -119,12 +120,6 @@ Make sure to synchronize the system time at the VCS server, TeamCity server and 
 * VSS (all VSS [clients](http://support.microsoft.com/kb/248240) and TeamCity server should have synchronized clocks)
 
 </note>
-
-<seealso>
-        <category ref="concepts">
-            <a href="configuring-vcs-roots.md">VCS root</a>
-        </category>
-</seealso>
 
 
 <!--[//]: # (Internal note. Do not delete. "Configuring VCS Rootsd91e181.txt")    
