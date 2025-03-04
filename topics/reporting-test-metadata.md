@@ -15,6 +15,15 @@ Additional test data is reported using the `testMetadata` service message, with 
 
 If the format of the service message is incorrect, a corresponding note about it is written into build log.
 
+> The required test must exist by the time the `testMetadata` message is sent. Otherwise, TeamCity fails to locate it and prints "test not found" in the build log. In this case, you can create a dummy test and call `testMetadata` inside:
+> ```Shell
+> ##teamcity[testStarted name='...']
+> ##teamcity[testMetadata type='...' value='...']
+> ##teamcity[testFinished name='...']
+> ```
+{style="note"}
+
+
 The types of data which can be recognised by TeamCity are as follows:
 
 ### Numeric Values
