@@ -74,7 +74,7 @@ object CalculateDate : BuildType({
 })
 ```
 
-Now you can create an output parameter that references this input parameter.
+Now you can create an output parameter that shares the "Date" parameter value.
 
 ```Kotlin
 object CalculateDate : BuildType({
