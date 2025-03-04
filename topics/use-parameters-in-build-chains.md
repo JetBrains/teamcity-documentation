@@ -30,10 +30,17 @@ Output parameters can share existing parameters as is, modified parameters, and 
 
 ```Kotlin
 outputParams {
-    param("originConfName", "%system.teamcity.buildConfName%") // Expose predefined parameter as is
-    param("buildNumber", "Build %\system.build.number%" // Expose modified parameter value
-    param("name", "%existingInputParam%") // Expose input parameter as is
-    param("number", "54") // Expose static value
+    // Expose predefined parameter as is
+    param("originConfName", "%system.teamcity.buildConfName%")
+    
+    // Expose modified parameter value
+    param("buildNumber", "Build %\system.build.number%"
+    
+    // Expose input parameter as is
+    param("name", "%existingInputParam%")
+    
+    // Expose static value
+    param("number", "54")
 }
 ```
 
