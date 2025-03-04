@@ -118,7 +118,7 @@ object PrintDate : BuildType({
 })
 ```
 
-> For security reasons, input parameters of the _Password_ type cannot be exposed via output parameters.
+> For security reasons, input parameters of the [Password type](typed-parameters.md) cannot be exposed via output parameters.
 >
 {style="note"}
 
