@@ -77,6 +77,8 @@ Merge policy
 
 Select to create a merge commit or do a fast-forward merge.
 
+For configurations targeting Perforce depots, the Automatic Merge feature always uses merge (`p4 merge`), never copy (`p4 copy`). Stream `mergeany`/`mergedown` options are ignored.
+
 </td>
 </tr><tr>
 <td>
