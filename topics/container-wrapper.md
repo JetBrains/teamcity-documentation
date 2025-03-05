@@ -32,7 +32,7 @@ The extension is available for the following [build steps](configuring-build-ste
 
 ## Container Settings
 
-In the _Container Settings_ section of the build step settings, you can specify an image which will be used to run the build step. Once the image is specified, the following options become available.
+In the _Container Settings_ section of the build step settings, you can specify an image which will be used to run the build step. All options apart from the image name are initially hidden, and show up only after you specify this name.
 
 <var name="first_setting_name" value="Run step within container"/>
 <var name="docker_settings_type" value="build step"/>
@@ -41,7 +41,7 @@ In the _Container Settings_ section of the build step settings, you can specify 
 
 <deflist>
 <def title="%first_setting_name%">
-The image name as stated in <a href="https://hub.docker.com/">DockerHub</a> or other registry. TeamCity will start a container from the specified image and will try to run this %docker_settings_type% within this container. For example, `ruby:2.4` will run the %docker_settings_type% within the Ruby container, version 2.4.
+The image name as stated in <a href="https://hub.docker.com/">DockerHub</a> or other registry. TeamCity will start a container from the specified image and will try to run the required %docker_settings_type% within this container. For example, `ruby:2.4` will run the %docker_settings_type% within the Ruby container, version 2.4.
 
 If an agent that runs the build has Podman installed instead of Docker, use either full image names (for example, `docker.io/library/alpine:latest` instead of `alpine:latest`), or ensure the registry domain is specified in the [registries.conf](integrating-teamcity-with-container-managers.md#Environment+Requirements) file on your build agent machine. See also: [How to manage Linux container registries](https://www.redhat.com/sysadmin/manage-container-registries).
 </def>
@@ -81,7 +81,13 @@ If you need a parameter declared in this file, do the following:
 ## How Container Wrapper Works
 {id="how-it-works-1"}
 
-Technically, the command of the build runner is wrapped in a shell script, and this script is executed inside a container with the `docker run` or `podman run` command. To view the details about the started process, text of the script, and so on, check the build log in [Verbose mode](build-log.md#Viewing+Build+Log).
+TeamCity does the following to launch build steps in a container:
+
+1. Wraps the contents of a build step in a shell script
+2. Starts a container via `docker/podman run`
+3. Executes the shell script in this container via `docker/podman exec` 
+
+To view the details about the started process, text of the script, and so on, check the build log in [Verbose mode](build-log.md#Viewing+Build+Log).
 
 The Container Wrapper maps paths to the [build checkout directory](build-checkout-directory.md) and other agent directories like <path>[buildAgent/work](agent-work-directory.md)</path>, so that all these directories have the same location on a build agent and inside a wrapper.
 

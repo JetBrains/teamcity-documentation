@@ -6,7 +6,7 @@ TeamCity integrates with container managers (Docker, Podman) on multiple levels.
 * The [Docker](docker.md) _build runner_ launches Docker commands and creates Docker images during a build.
 * The [](docker-compose.md) _build runner_ starts services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
 * The [](container-wrapper.md) _extension_ executes build steps inside containers. Supports Docker and Podman. Available for multiple runners.
-* The [](run-in-docker.md) build feature allows you to skip setting up same [](container-wrapper.md) settings over and over for each step, and instead specify them once on the build configuration level. All build steps of this build configuration that run in a container will do so.
+* The [](run-in-docker.md) build feature allows you to run all build steps together in the same container.
 * The [](docker-support.md) _build feature_ automatically signs in to container registries using Docker or Podman before starting a build. This feature also adds the __Container Info__ tab of __Build Results__ with the information about the images published to a registry during the build.
 
     <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
