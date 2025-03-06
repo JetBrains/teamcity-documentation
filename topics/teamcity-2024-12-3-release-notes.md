@@ -1,0 +1,48 @@
+[//]: # (title: TeamCity 2024.12.3 Release Notes)
+[//]: # (auxiliary-id: TeamCity 2024.12.3 Release Notes)
+
+
+**Build 174541, 7 March 2025**
+
+
+<!-- project: TeamCity Fix versions: 2024.12.3 #Fixed #Testing visible to: {All Users} -{Trunk issue}  -->
+
+### Task
+
+**[TW-90668](https://youtrack.jetbrains.com/issue/TW-90668/Update-Plugin-for-.NET-Runtime-Detection-on-Ubuntu-22.04-24.04)** — Update Plugin for .NET Runtime Detection on Ubuntu 22.04/24.04
+
+
+### Bug
+
+**[TW-90714](https://youtrack.jetbrains.com/issue/TW-90714/externalStatus.html-requires-authenticated-session-to-show-the-information)** — externalStatus.html requires authenticated session to show the information
+
+**[TW-92394](https://youtrack.jetbrains.com/issue/TW-92394/S3-cleanup-cannot-delete-artifacts-Project-is-not-specified-to-get-correct-Connection)** — S3 cleanup cannot delete artifacts : "Project is not specified to get correct Connection"
+
+**[TW-74812](https://youtrack.jetbrains.com/issue/TW-74812/False-warning-on-unauthenticated-docker-pull)** — False warning on unauthenticated docker pull
+
+**[TW-86250](https://youtrack.jetbrains.com/issue/TW-86250/Mute-doesnt-work-for-Unit-5-TestFactory-generated-tests)** — Mute doesn't work for Unit 5 TestFactory generated tests
+
+**[TW-92199](https://youtrack.jetbrains.com/issue/TW-92199/Container-Deployer-runner-is-broken-since-2024.12.1)** — Container Deployer runner is broken since 2024.12.1
+
+**[TW-83825](https://youtrack.jetbrains.com/issue/TW-83825/Change-agent-requirement-for-cross-platform-ReSharper-CLT)** — Change agent requirement for cross-platform ReSharper CLT
+
+**[TW-91914](https://youtrack.jetbrains.com/issue/TW-91914/GitHub-App-always-times-out-when-loading-repositories)** — GitHub App always times out when loading repositories
+
+**[TW-91608](https://youtrack.jetbrains.com/issue/TW-91608/Unable-to-retrieve-build-info-for-build-which-was-approved-via-Build-Approval-feature-after-feature-removed-from-build-type)** — Unable to retrieve build info for build which was approved via Build Approval feature after feature removed from build type
+
+**[TW-91830](https://youtrack.jetbrains.com/issue/TW-91830/DSL-Context-parameters-are-removed-when-disabling-Versioned-Settings)** — DSL Context parameters are removed when disabling Versioned Settings
+
+
+### Performance Problem
+
+**[TW-92237](https://youtrack.jetbrains.com/issue/TW-92237/Inefficient-code-in-VcsSettingsBean.getPopularVcsRoots)** — Inefficient code in VcsSettingsBean.getPopularVcsRoots
+
+
+
+<!-- project: TeamCity Fix versions: 2024.12.3 #Testing #Fixed -{Trunk issue} #{Security Problem}  -->
+
+### Security
+
+2 security problems has been fixed. This number includes both native TeamCity issues and vulnerabilities found in 3rd-party libraries TeamCity depends on. Upstream library issues usually make up the majority of this total number, and are promptly resolved by updating these libraries to their newest versions.
+
+To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2024.12.1). Security bulletins for new versions are typically published within the next few days after the release date.

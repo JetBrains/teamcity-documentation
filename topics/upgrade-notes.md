@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
+## Changes from 2024.12.2 to 2024.12.3
+{id="2024.12.3"}
+
+No potential breaking changes.
+
 
 ## Changes from 2024.12 to 2025.03
 {id="2025.03"}
@@ -68,6 +73,10 @@ TBD
   * The Git LFS version was bumped to 3.0.2.
 * <include from="upgrading-dsl.md" element-id="kotllin-dsl202412"/>
 
+### Known Issues
+{id="known-issues-2024-12"}
+
+* If TeamCity [clean-up procedure](teamcity-data-clean-up.md) is set to remove builds along with artifacts, those uploaded to external S3 storage may not be deleted. See this YouTrack issue for more information: [TW-92394](https://youtrack.jetbrains.com/issue/TW-92394). This issue was resolved in [TeamCity 2024.12.3 bug-fix update](teamcity-2024-12-3-release-notes.md).
 
 ## Changes from 2024.07.2 to 2024.07.3
 {id="2024.07.3"}
