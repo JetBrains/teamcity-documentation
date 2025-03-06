@@ -3,18 +3,22 @@
 <instance-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.topic" status="eap">
 	<toc-element toc-title="TeamCity On-Premises Documentation Home" topic="teamcity-documentation.topic"/>
 	<toc-element topic="getting-started-with-teamcity.md">
-		<toc-element topic="glossary.md"/>
-		<toc-element topic="continuous-integration-with-teamcity.md"/>
-		<toc-element topic="server-administrator-guide.md"/>
-		<toc-element topic="project-administrator-guide.md"/>
-		<toc-element topic="user-guide.md"/>
-		<toc-element topic="quick-setup-guide.md"/>
-		<toc-element topic="configure-and-run-your-first-build.md"/>
-		<toc-element topic="create-build-chain.md"/>
-		<toc-element topic="deploy-build.md"/>
-		<toc-element topic="view-build-results.md"/>
-		<toc-element topic="solve-build-problems.md"/>
-		<toc-element topic="set-up-notifications.md"/>
+		<toc-element toc-title="Start Here">
+			<toc-element topic="glossary.md"/>
+			<toc-element topic="continuous-integration-with-teamcity.md"/>
+			<toc-element topic="server-administrator-guide.md"/>
+			<toc-element topic="project-administrator-guide.md"/>
+			<toc-element topic="user-guide.md"/>
+		</toc-element>
+		<toc-element toc-title="Tutorials">
+			<toc-element topic="quick-setup-guide.md"/>
+			<toc-element topic="configure-and-run-your-first-build.md"/>
+			<toc-element topic="create-build-chain.md"/>
+			<toc-element topic="deploy-build.md"/>
+			<toc-element topic="view-build-results.md"/>
+			<toc-element topic="solve-build-problems.md"/>
+			<toc-element topic="set-up-notifications.md"/>
+		</toc-element>
 		<toc-element toc-title="Migrating from Other CI/CD Tool">
 			<toc-element topic="mapping-teamcity-concepts-to-other-ci-terms.md"/>
 			<toc-element topic="jenkins-to-teamcity-migration-guidelines.md"/>
