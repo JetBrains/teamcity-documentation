@@ -1,7 +1,7 @@
-[//]: # (title: Docker Support)
-[//]: # (auxiliary-id: Docker Support)
+[//]: # (title: Docker Registry Connections)
 
-The _Docker Support_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
+The _Docker Registry Connections_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
+{help-id="Docker+Support"}
 
 Add this feature to:
 
@@ -17,9 +17,9 @@ Add this feature to:
 
 Logging in and out of repositories and cleaning up images require a configured [connection to a Docker registry](configuring-connections-to-docker.md):
 
-<img src="docker-support.png" width="750" alt="Docker Support build feature"/>
+<img src="docker-support.png" width="750" alt="Docker Registry Connectios build feature"/>
 
-<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Support"/></include>
+<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Registry Connections"/></include>
 
 ## Docker Images Clean-up
 
@@ -33,7 +33,7 @@ Cleaning-up images pushed via Podman is currently enabled only if images were pu
 
 ### Clean-up of Images on Build Agent
                                    
-As part of [Free disk space](free-disk-space.md) build feature, Docker Support cleans up images which were created by TeamCity builds on this build agent. The Docker Support assumes, that docker images are stored under
+As part of [Free disk space](free-disk-space.md) build feature, Docker Registry Connections cleans up images which were created by TeamCity builds on this build agent. The build feature assumes that docker images are stored under
 
  - `/var/lib/docker` on Linux
  - `%\ProgramData%` directory on Windows
@@ -44,14 +44,15 @@ The location is important, as the [Free disk space](free-disk-space.md) feature 
 
 ## Docker Registry Automatic Login/Logout
 
-If you need to log in to a registry requiring authentication before a build, select the corresponding option and a connection to Docker configured in the [project settings](project-administrator-guide.md#Edit+and+View+Modes). Automatic logout will be performed after the build finishes.
+The **Add registry connection** button allows you to select those [registry connections](configuring-connections-to-docker.md) that should be used to automatically authorize in corresponding registries when a build starts. After a build finishes, TeamCity logs out of those registries.
+
 
 >[See also](integrating-teamcity-with-container-managers.md#Conforming+with+Docker+Download+Rate+Limits) how to use this functionality to double the number of pulls allowed to a Free Docker Hub user profile.
 
 ## Amazon ECR
 
 A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/LXC
-images in private AWS registries. For this, such a connection needs to be selected when adding a Docker Support feature to a build configuration.
+images in private AWS registries. For this, such a connection needs to be selected when adding a Docker Registry Connections feature to a build configuration.
 
 Connection settings:
 
@@ -187,18 +188,17 @@ Enter an ID of your registry or AWS account.
 
 ## Kotlin DSL
 
-The following [](kotlin-dsl.md) snippet illustrates how to add a Docker Support build feature to your build configuration.
+The following [](kotlin-dsl.md) snippet illustrates how to add a Docker Registry Connections build feature to your build configuration.
 
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerSupport
 
 object MyBuildConfig : BuildType({
     name = "Deploy Web (Windows)"
     
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             cleanupPushedImages = true
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"

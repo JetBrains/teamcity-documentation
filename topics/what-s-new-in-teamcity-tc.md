@@ -70,7 +70,7 @@ You can now run all configuration steps within a single Docker/Linux container b
 
 ### Docker Support Rename
 
-We’ve renamed the [build feature](adding-build-features.md) that enables TeamCity to log in to private container registries and clean up images. Previously called **Docker Support**, it is now [Docker Registry Connections](docker-support.md) as of version 2025.03.
+We’ve renamed the [build feature](adding-build-features.md) that enables TeamCity to log in to private container registries and clean up images. Previously called **Docker Support**, it is now [**Docker Registry Connections**](docker-support.md) as of version 2025.03.
 
 The new name more accurately reflects the feature's functionality, aligns with the similar [NPM Registry Connection](nodejs.md#Accessing+Private+NPM+Registries), and prevents confusion with the new [Run in Docker](#Global+Configuration+Containers) feature.
 

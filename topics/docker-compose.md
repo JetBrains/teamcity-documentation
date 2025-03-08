@@ -5,7 +5,7 @@ The _Docker Compose_ [build step](configuring-build-steps.md) allows starting [D
 
 If you need to pull a base image from a private repository or push a newly built image to a registry, you can authorize to a Docker or Podman registry, as follows:
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
-2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
+2. In your build configuration settings, configure the [](docker-support.md) build feature, adding the connections created in the previous step.
 
 ## Common Settings
 
@@ -54,7 +54,7 @@ If the start of Docker Compose was successful, the TeamCity agent will register 
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-support.md">Docker Registry Connections feature</a>
             <a href="docker.md">Docker runner</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>

@@ -34,7 +34,7 @@ TeamCity ships with the following build features that can be added to your confi
 <dt>Commit Status Publisher</dt>
 <dd>Reports build stages and final results to an external system.&emsp;<a href="commit-status-publisher.md">Learn more...</a></dd>
 
-<dt>Docker Support</dt>
+<dt>Docker Registry Connections</dt>
 <dd>Allows build configurations to automatically sign in a DockerHub or other container registry before the build start.&emsp;<a href="docker-support.md">Learn more...</a></dd>
 
 <dt>File Content Replacer</dt>

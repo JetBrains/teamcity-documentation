@@ -45,7 +45,7 @@ To configure it, you need to specify locations of each agent's `.docker` directo
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="docker.md">Docker runner</a>
             <a href="docker-compose.md">Docker Compose runner</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-support.md">Docker Registry Connections feature</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>
 </seealso>

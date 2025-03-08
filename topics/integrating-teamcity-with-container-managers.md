@@ -23,7 +23,7 @@ To run a Docker- or Podman-related operation, a build agent must be able to use 
 
 Docker can be installed on Linux, Windows, and macOS build agents.
 
-* On Linux, the Docker Support integration will run if the installed Docker is detected.
+* On Linux, the Docker Registry Connections integration will run if the installed Docker is detected.
 * On Windows, the integration works for Linux and Windows container modes.
 * On macOS, the official [Docker support for Mac](https://docs.docker.com/docker-for-mac/install/) should be installed for the user running the build agent.
 

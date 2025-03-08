@@ -128,7 +128,7 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
   }
 
   features {
-    dockerSupport {
+    dockerRegistryConnections {
       loginToRegistry = on {
         dockerRegistryId = "PROJECT_EXT_5"
       }
@@ -274,7 +274,7 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -342,7 +342,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -411,7 +411,7 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -480,7 +480,7 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }

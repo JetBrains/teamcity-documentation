@@ -5,11 +5,11 @@ The _Docker_ [build step](configuring-build-steps.md) allows launching the `buil
 
 >For the `run` command, use [](container-wrapper.md).
 
-If you need to push the newly built image to a registry, you can authorize to a Docker or Podman registry by configuring the _Docker Support_ build feature, as follows:
+If you need to push the newly built image to a registry, you can authorize to a Docker or Podman registry by configuring the _Docker Registry Connections_ build feature, as follows:
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. Add a new [Docker or Podman connection](configuring-connections-to-docker.md) to your project.
-3. In your [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes), follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
+3. In your [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes), configure the [](docker-support.md) build feature using the connections created in the previous step.
 
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
@@ -255,7 +255,7 @@ The **other...** command option allows you to execute any custom `docker ...` co
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-support.md">Docker Registry Connections feature</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="container-wrapper.md">Container Wrapper extension</a>
         </category>

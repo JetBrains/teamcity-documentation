@@ -7,9 +7,10 @@ The _Container Wrapper_ extension allows running a build step inside the specifi
 >
 {style="note"}
 
-TeamCity can pull containers anonymously (if images are publicly available) or after logging into a registry (for private registries or to avoid DockerHub penalties for anonymous downloads). If you need TeamCity to authorize to a registry before pulling an image, configure the _Docker Support_ build feature, as follows:
+TeamCity can pull containers anonymously (if images are publicly available) or after logging into a registry (for private registries or to avoid DockerHub penalties for anonymous downloads). If you need TeamCity to authorize to a registry before pulling an image, configure the _Docker Registry Connections_ build feature, as follows:
+
 1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
-2. In your build configuration settings, follow the instructions in [](docker-support.md) to configure the **Docker Support** build feature, adding the connections created in the previous step.
+2. In your build configuration settings, configure the [](docker-support.md) build feature using the connections created in the previous step.
 
 The extension is available for the following [build steps](configuring-build-steps.md):
 
@@ -137,6 +138,6 @@ The host UID can be retrieved via the `env.UID` parameter (`--user=%\env.UID%`).
             <a href="configuring-connections-to-docker.md">Configuring Connections to Docker</a>
             <a href="docker-compose.md">Docker Compose runner</a>
             <a href="docker.md">Docker runner</a>
-            <a href="docker-support.md">Docker Support feature</a>
+            <a href="docker-support.md">Docker Registry Connections feature</a>
         </category>
 </seealso>
