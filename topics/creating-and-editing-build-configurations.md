@@ -182,7 +182,7 @@ Use the __Actions__ menu, located in the upper right corner of the settings scre
 * [Copy/move/delete a build configuration](copy-move-delete-build-configuration.md).
 * [Attach a build configuration to a template](build-configuration-template.md#Associating+build+configurations+with+templates).
 * [Extract a template from a build configuration](build-configuration-template.md#Creating+build+configuration+template).
-* [Extract a meta-runner from a build configuration](working-with-meta-runner.md#Extracting+and+Using+Meta-Runner).
+* [Extract a recipe from a build configuration](working-with-meta-runner.md).
 * [Attach a history to a build configuration](kotlin-dsl.md#Restore+Build+History+After+ID+Change).
 
  

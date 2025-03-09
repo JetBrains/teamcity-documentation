@@ -1,152 +1,183 @@
-[//]: # (title: Working with Meta-Runner)
+[//]: # (title: Working with Recipes)
 [//]: # (auxiliary-id: Working with Meta-Runner)
 
-A _meta-runner_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build step](configuring-build-steps.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
-
-With meta-runners, you can:
-* Reuse existing runners
-* Create new runners for typical tasks (for example, publish to FTP, delete a directory)
-* Simplify your build configuration and decrease a number of build steps
-
-Basically, a meta-runner is a set of build steps from one build configuration that you can reuse in another; it is an XML definition, containing build steps, requirements, and parameters, that you can utilize in XML definitions of other build configurations.
-
-> Note that [VCS roots](configuring-vcs-roots.md) are not baked into meta-runners. If build steps of your meta-runner perform operations on repository files and folders, root-less configurations that reuse these meta-runner steps will fail. You can reuse a VCS root the meta-runner's origin configuration utilizes to fix this issue.
-> 
+> Prior to TeamCity 2025.03, recipes were known as **meta-runners**. Your custom meta-runners from older versions as well as [TeamCity Meta-Runner Pack](https://github.com/jetbrains/meta-runner-power-pack) should remain functional under a new name.
+>
 {style="note"}
 
-TeamCity allows extracting meta-runners using the web UI.
+**Recipes** are custom build steps based on one or multiple standard TeamCity steps. If you often create configurations with the same step (or sequence of steps), you can turn these steps into a ready-to-use recipe.
 
-All meta-runners are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a meta-runner is stored on the Root project level, it is available globally (in all projects).
-
-You can use the existing meta-runners from the TeamCity Meta-Runners Power Pack or create your own meta-runner.
-
-## Using Meta-Runners Power Pack
-
-[Meta-runners Power Pack for TeamCity](https://github.com/jetbrains/meta-runner-power-pack), available on GitHub, is a collection of meta-runners for various tasks such as downloading a file, triggering a build, tagging a build, changing a build status, running PHP tasks, and so on.
-
-Each `*MRPP_*.xml*` file contains a definition of a single meta-runner. Download the required meta-runner (or copy its definition to a file) and install it as described in the section below.
-
-## Installing Meta-Runner
-
-You can install a meta-runner using the TeamCity web UI. Alternatively, you can do it directly via the file system.
-
-<deflist>
-<def title="Install a meta-runner via the Web UI">
+Recipes can also be shared on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity): you can browse community-made recipes and upload your own, or import recipes crafted by the TeamCity team.
 
 
-1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Meta-Runners"/></include>
-2. Click __Upload Meta-Runner__, and select the meta-runner definition file.
-3. Save your changes.
+## Extract a Recipe From a Build Configuration
 
-</def>
-
-<def title="Install a meta-runner directly to the file system">
-
-Put the meta-runner definition file into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory, where `<project_ID>` is the identifier of a project under which you want to place the meta-runner. If the `metaRunners` directory does not exist, create it manually.
-
-Once you place the file on the disk, TeamCity will detect it and load the meta-runner; no server restart is required.
-
-</def>
-</deflist>
+The most straightforward way to create a new recipe is to extract it from an existing configuration that uses a required step or sequence of steps. For example, the following configuration uses a cURL command to download a file, and calls the `ls` command to print the contents of a working directory.
 
 
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+
+    object SourceConfiguration : BuildType({
+        name = "Source Configuration"
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "curl -o %URL% %fileName%"
+        }
+        script {
+            id = "simpleRunner_1"
+            scriptContent = "ls"
+        }
+    }
+})
+```
+
+In [configuration settings](project-administrator-guide.md#Edit+and+View+Modes), invoke the **Actions** menu and click **Extract recipe**.
+
+<img src="dk-extract-recipe.png" width="706" alt="Extract recipe"/>
+
+In the dialog that pops up, choose the recipe configuration file format (XML or YAML), and enter the public name and description. Click **Extract** to create your new recipe.
 
 
-If the meta-runner is loaded successfully, you will see it listed on the __Meta-Runners__ page in the project settings; if you have appropriate permissions, you can modify the definition directly in the TeamCity UI.
+> Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
+>
+> To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Install+a+Recipe+From+a+File) section for more information.
 
-The runner is now available in the list of build runners on the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Build Steps__ page and is represented as a native TeamCity runner with a convenient UI.
 
-A meta-runner placed into a project will be available to all its subprojects and build configurations. To make a meta-runner available to all projects, place it in the Root project.
+## Use a Local or Public Recipe
 
-## Creating Meta-Runner
+Recipes are custom build steps, and as such, are added to build configurations in the same manner.
 
-You can create a build configuration via the TeamCity web UI and extract a meta-runner from it or use the XML definition of an existing build configuration as a meta-runner.
+1. <include from="common-templates.md" element-id="open-configuration-settings-tab"><var name="configuration-tab-name" value="Build steps"/></include>
+2. Click the **Add build step** button.
+3. Choose a recipe from the right column that shows:
 
-## Creating Your Own Meta-Runner from UI
+    * local (private) recipes owned by this project or its parent project;
+    * public recipes from JetBrains Marketplace.
 
-Let us consider an example of creating a meta-runner.
+    <img src="dk-add-recipe.png" width="706" alt="Add a recipe"/>
 
-To create a meta-runner, follow these steps (described below in more detail):
-1. [Prepare a build configuration](#Preparing+Build+Configuration) to test the build steps to be used in the meta-runner.
-2. [Make sure the build configuration is working](#Verifying+Build+Configuration+Works+Properly).
-3. [Extract a meta-runner to the desired project](#Extracting+and+Using+Meta-Runner).
+4. Set up required recipe settings in the same manner you do this for regular TeamCity steps.
 
-In this example, we will create a meta-runner to publish some artifacts to TeamCity with the help of the corresponding [service message](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
+If you do not see any Marketplace recipe options, verify they are enabled for your project:
 
-Usually artifacts configured in a build configuration are published when the build finishes. However, sometimes for long builds with multiple build steps we need artifacts faster. In this example, we will create a runner which can be inserted between any build steps and can be configured to publish artifacts produced by previous steps.
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+2. Switch the **Public JetBrains Marketplace recipes** setting to "Enabled". If this setting is grayed-out, edit the settings of a parent project that enforces this behavior or talk to a person who administers this project.
 
-### Preparing Build Configuration
 
-The first step is to prepare a build configuration which will work the same way as the meta-runner we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained — since meta-runners do not include VCS roots of their origin configurations, a target configuration cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
+## Install a Recipe From a File
 
-<img src="ant-build-step.png" width="750" alt="Adding Ant build step"/>
 
-where `artifact.paths` is a system property. We need to add it on the __Parameters__ tab of the build configuration settings:
+You can install a recipe from its configuration .xml/.yml file to do the following:
 
-<img src="paths-to-artifacts-parameter.png" width="750" alt="Paths to artifacts in Build Parameters"/>
+* move a recipe from one project to another (if you [extracted a recipe](#Extract+a+Recipe+From+a+Build+Configuration) from a build configuration and wish to reuse it in configurations owned by other unrelated projects);
+* install a recipe downloaded manually from JetBrains Marketplace (as opposed to adding this step in one the configuration's **Add build step** page);
+* install a recipe from a manually created configuration file.
 
-Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions.
 
-If your meta-runner contains steps that need to access files and folders of a remote repository, do the following:
+To install a recipe from a configuration file, use the TeamCity UI or place this file to the required directory.
 
-1. Go the settings of a build configuration that imports a meta-runner.
+<procedure title="In TeamCity UI">
+<step>
+<include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+</step>
+
+<step>Click the <b>Upload Recipe</b> button.</step>
+
+<step>Choose a configuration file and enter a unique recipe ID.</step>
+
+<step>Click <b>Save</b>. Your uploaded recipe is now available for all configuration of this project and its subprojects.</step>
+</procedure>
+
+<procedure title="Add File Manually">
+<step>
+Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Directory&gt;</code></a><code>\config\projects\</code> directory.
+</step>
+
+<step>Open a directory that corresponds to a project that shown own your new recipe. For example, open <code>_Root</code> if the recipe should be available for all configurations on this server.</step>
+
+<step>In the project folder, navigate to <code>\pluginData\metaRunners</code>.</step>
+
+<step>Paste the recipe .xml or .yml file in this folder. Once you place the file on the disk, TeamCity will detect it and load the recipe; no server restart is required.</step>
+</procedure>
+
+
+## Edit a Local Recipe
+
+Recipes extracted from a build configuration or uploaded from a file are stored locally on your server machine and can be edited in TeamCity UI.
+
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+2. Click a recipe from the **Local Recipes** table to view and edit its configuration file.
+
+For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
+
+Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior.
+
+
+* optionality — use the Boolean `required` (YAML) or `???` (XML) attribute to specify whether a recipe can run without the parameter value. For example, a recipe from the [](#Extract+a+Recipe+From+a+Build+Configuration) section has a mandatory `URL` parameter, but its `fileName` is optional.
+
+    <tabs>
+    <tab title="YAML">
+    <code-block lang="YAML">
+    inputs:
+      - URL:
+          type: text
+          required: true
+      - fileName:
+          type: text
+          required: false
+    </code-block>
+    </tab>
+    <tab title="XML">
+    <code-block lang="XML">
+    ???
+    </code-block>
+    </tab>
+    </tabs>
+
+
+* label and description — ???
+
+* editor type — ???
+
+* validation conditions — ???
+
+
+
+## Recipe Autonomy
+
+Recipes are designed to be reused throughout build configurations and as such, should be configuration-agnostic. This means your recipes should ideally perform actions that can be executed regardless of other configuration settings.
+
+### Example 1: VCS Roots
+
+[VCS Roots](configuring-vcs-roots.md) are not baked into a recipe configuration file. As such, if you create a recipe that performs operations on repository files and folders, configurations without suitable VCS Roots will fail. If you need such recipe, do the following:
+
+1. Go the [settings](project-administrator-guide.md#Edit+and+View+Modes) of a build configuration that imports a recipe.
 2. Switch to the **Version Control Settings** tab.
 3. Click the **Attach VCS root** button.
 4. In the **Attach existing VCS root** choose the same root your origin configuration uses.
 5. Click **Save** at the bottom of the page and run your build configuration. Since it now has a connection to a VCS repository, build steps can access required files and are able to finish successfully.
 
->Here the Ant build step is used just as an example. In the initial build configuration, you can use any of the available build runners (for example, MSBuild or .NET process), and configure the settings and define the parameters for this build step. When you extract a meta-runner from this build configuration, all the settings defined in the build step, and all the build parameters will be added to the meta-runner.
+### Example 2: Build Files
 
-### Verifying Build Configuration Works Properly
-
-Once the build steps and parameters are defined, we need to make sure our build configuration works by running a couple of builds through the custom build dialog:
-
-<img src="cutom-build-with-paths-to-artifacts.png" width="750" alt="Running a custom build with paths to artifacts"/>
-
-### Extracting and Using Meta-Runner
-
-If the build configuration works properly, we can create a meta-runner by clicking the __Actions__ button in the upper right corner of the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes)__ page and selecting the __Extract meta-runner__ option:
-
-<img src="extract-meta-runner.png" width="650" alt="Extract Meta-Runner"/>
-
-The __Extract Meta-Runner__ dialog requires specifying the project where the meta-runner will be created. A meta-runner created in a project will be available in this project and all its subprojects. In our case the Root project is selected, so the meta-runner will be available in all projects.
-
-We also need to provide the name, description, and an ID for the meta-runner: the name and description will be shown in the web interface, an ID is required to distinguish this meta-runner from others.
-
-Upon clicking the __Extract__ button, TeamCity will take definitions of all build steps and parameters in this build configuration and create a build runner out of them.
-
->Besides build steps and parameters, a meta-runner can also have requirements: if requirements are defined in the build configuration, they will be extracted to the meta-runner automatically. Requirements can be useful if the tools used by meta-runner are available on specific platforms only.
-
-Once the meta-runner is extracted, it becomes available in the build runners' selector, under the name of the project it belongs to, and can be used in any build step just like any other build runner:
-
-<img src="meta-runner-build-step.png" width="750" alt="Publish Artifacts build step"/>
-
-The current meta-runner usages can be seen at the project __Meta-Runners__ page:
-
-<img src="meta-runners.png" width="750" alt="Meta-Runners"/>
-
-When a meta-runner is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | Meta-Runners__ and use the __Edit__ option next to the meta-runner. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of meta-runners are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory.
-
-## Creating Meta-Runner from XML Definition of Build Configuration
-
-Alternatively, you can use the XML definition of an existing build configuration as a meta-runner. To do it, save the definition of this build configuration to a file named as `<runner_id>.xml` where `<runner_id>` is the [ID](identifier.md) of this build runner. Install the meta-runner as described [above](#Installing+Meta-Runner).
-
-Since a meta-runner looks and works like any other runner, it is also possible to create another meta-runner on the basis of an existing meta-runner.
-
-## Creating Build Configuration from Meta-Runner
-
-If you need to fix a meta-runner and test your fix, you can create a build configuration from a meta-runner, change its steps, adjust parameters and requirements, check how it works, and then use the __Extract meta-runner__ action to apply the changes to the existing meta-runner with the same ID.
+[](gradle.md), [](maven.md), [](ant.md), and other build steps process build files like `build.xml` or `pom.xml`. If your custom recipe includes such a step, ensure the importing build configuration can locate the required file to avoid failures.
 
 
-## Launch Meta-Runners in Containers
+Build steps that allow defining a build file directly rather than just specifying a path are particularly well-suited for use in recipes. For example, the [](ant.md) build step.
 
-Individual build steps comprise meta-runners have settings that allow TeamCity to run these steps inside [Docker/LXC containers](container-wrapper.md). Same settings are available for meta-runners themselves.
+<img src="dk-ant-step-embedded-config.png" width="706" alt="Build config file embedded in Ant step settings"/>
 
-<img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and meta-runners"/>
 
-If you want all of your steps to be executed inside a required container, set up the required image on the meta-runner level. Container settings of individual steps have a priority over these meta-runner settings and allow you to run each step in its unique container.
+## Launch Recipes in Containers
 
-[Kotlin sample](kotlin-dsl.md) of a meta-runner that runs its steps inside "ubuntu" Linux container:
+Individual build steps comprise recipes have settings that allow TeamCity to run these steps inside [Docker/LXC containers](container-wrapper.md). Same settings are available for recipes themselves.
+
+<img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and recipes"/>
+
+If you want all of your steps to be executed inside a required container, set up the required image on the recipe level. Container settings of individual steps have a priority over these recipe settings and allow you to run each step in its unique container.
+
+[Kotlin sample](kotlin-dsl.md) of a recipe that runs its steps inside "ubuntu" Linux container:
 
 ```Kotlin
 object Build : BuildType({
@@ -164,27 +195,167 @@ object Build : BuildType({
 })
 ```
 
-The XML markup for this meta-runner is shown below. Step #1 runs in the `python:3.9.20-bullseye` container. Step #2 has no personal container settings and runs inside the `ubuntu` container as defined in the Kotlin code above.
+The XML markup for this recipe is shown below. Step #1 runs in the `python:3.9.20-bullseye` container. Step #2 has no personal container settings and runs inside the `ubuntu` container as defined in the Kotlin code above.
 
 ```XML
 <meta-runner name="SimpleMetaRunner">
-  <description>A Py/CLI sample meta-runner</description>
-  <settings>
-    <parameters/>
-    <build-runners>
-      <runner name="Py" type="python-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="python:3.9.20-bullseye" />
-          <!-- Python step parameters -->
-        </parameters>
-      </runner>
-      <runner name="" type="simpleRunner">
-        <parameters>
-            <!-- CLI step parameters -->
-        </parameters>
-      </runner>
-    </build-runners>
-    <requirements />
-  </settings>
+    <description>A Py/CLI sample recipe</description>
+    <settings>
+        <parameters/>
+        <build-runners>
+            <runner name="Py" type="python-runner">
+                <parameters>
+                    <param name="plugin.docker.imageId" value="python:3.9.20-bullseye" />
+                    <!-- Python step parameters -->
+                </parameters>
+            </runner>
+            <runner name="" type="simpleRunner">
+                <parameters>
+                    <!-- CLI step parameters -->
+                </parameters>
+            </runner>
+        </build-runners>
+        <requirements />
+    </settings>
 </meta-runner>
 ```
+
+<!--
+A _recipe_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build step](configuring-build-steps.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
+
+With recipes, you can:
+* Reuse existing runners
+* Create new runners for typical tasks (for example, publish to FTP, delete a directory)
+* Simplify your build configuration and decrease a number of build steps
+
+Basically, a recipe is a set of build steps from one build configuration that you can reuse in another; it is an XML definition, containing build steps, requirements, and parameters, that you can utilize in XML definitions of other build configurations.
+
+> Note that [VCS roots](configuring-vcs-roots.md) are not baked into recipes. If build steps of your recipes perform operations on repository files and folders, root-less configurations that reuse these recipe steps will fail. You can reuse a VCS root the recipe's origin configuration utilizes to fix this issue.
+>
+{style="note"}
+
+TeamCity allows extracting recipe using the web UI.
+
+All recipe are stored on a project level, so they are available within this project and its subprojects only, and are not visible outside. If a recipe is stored on the Root project level, it is available globally (in all projects).
+
+You can use the existing recipe from the TeamCity Meta-Runners Power Pack or create your own recipe.
+
+## Using Meta-Runners Power Pack
+
+[Meta-runners Power Pack for TeamCity](https://github.com/jetbrains/meta-runner-power-pack), available on GitHub, is a collection of recipes for various tasks such as downloading a file, triggering a build, tagging a build, changing a build status, running PHP tasks, and so on.
+
+Each `*MRPP_*.xml*` file contains a definition of a single recipes. Download the required recipe (or copy its definition to a file) and install it as described in the section below.
+
+## Installing Recipe
+
+You can install a recipe using the TeamCity web UI. Alternatively, you can do it directly via the file system.
+
+<deflist>
+<def title="Install a recipe via the Web UI">
+
+
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+2. Click __Upload Recipe__, and select the recipe definition file.
+3. Save your changes.
+
+</def>
+
+<def title="Install a recipe directly to the file system">
+
+Put the recipe definition file into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory, where `<project_ID>` is the identifier of a project under which you want to place the recipe. If the `metaRunners` directory does not exist, create it manually.
+
+Once you place the file on the disk, TeamCity will detect it and load the recipe; no server restart is required.
+
+</def>
+</deflist>
+
+
+
+
+If the recipe is loaded successfully, you will see it listed on the __recipe__ page in the project settings; if you have appropriate permissions, you can modify the definition directly in the TeamCity UI.
+
+The runner is now available in the list of build runners on the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Build Steps__ page and is represented as a native TeamCity runner with a convenient UI.
+
+A recipe placed into a project will be available to all its subprojects and build configurations. To make a recipe available to all projects, place it in the Root project.
+
+## Creating a Recipe
+
+You can create a build configuration via the TeamCity web UI and extract a recipe from it or use the XML definition of an existing build configuration as a recipe.
+
+## Creating Your Own Recipe from UI
+
+Let us consider an example of creating a recipe.
+
+To create a recipe, follow these steps (described below in more detail):
+1. [Prepare a build configuration](#Preparing+Build+Configuration) to test the build steps to be used in the recipe.
+2. [Make sure the build configuration is working](#Verifying+Build+Configuration+Works+Properly).
+3. [Extract a recipe to the desired project](#Extracting+and+Using+Recipe).
+
+In this example, we will create a recipe to publish some artifacts to TeamCity with the help of the corresponding [service message](service-messages.md#Publishing+Artifacts+While+Build+is+in+Progress).
+
+Usually artifacts configured in a build configuration are published when the build finishes. However, sometimes for long builds with multiple build steps we need artifacts faster. In this example, we will create a runner which can be inserted between any build steps and can be configured to publish artifacts produced by previous steps.
+
+### Preparing Build Configuration
+
+The first step is to prepare a build configuration which will work the same way as the recipe we would like to produce. Let us use the configuration with a single Ant build step: Ant can be executed on any platform where the TeamCity agent runs; besides, Ant runner in TeamCity supports `build.xml` specified right in the runner settings. This is important because our build configuration must be self-contained — since recipes do not include VCS roots of their origin configurations, a target configuration cannot take `build.xml` from the version control repository. In our case, the Ant step settings will look like this:
+
+<img src="ant-build-step.png" width="750" alt="Adding Ant build step"/>
+
+where `artifact.paths` is a system property. We need to add it on the __Parameters__ tab of the build configuration settings:
+
+<img src="paths-to-artifacts-parameter.png" width="750" alt="Paths to artifacts in Build Parameters"/>
+
+Note that each parameter can have a specification where we can provide the label, description, type of control, and specify validation conditions.
+
+If your recipe contains steps that need to access files and folders of a remote repository, do the following:
+
+1. Go the settings of a build configuration that imports a recipe.
+2. Switch to the **Version Control Settings** tab.
+3. Click the **Attach VCS root** button.
+4. In the **Attach existing VCS root** choose the same root your origin configuration uses.
+5. Click **Save** at the bottom of the page and run your build configuration. Since it now has a connection to a VCS repository, build steps can access required files and are able to finish successfully.
+
+>Here the Ant build step is used just as an example. In the initial build configuration, you can use any of the available build runners (for example, MSBuild or .NET process), and configure the settings and define the parameters for this build step. When you extract a recipe from this build configuration, all the settings defined in the build step, and all the build parameters will be added to the recipe.
+
+### Verifying Build Configuration Works Properly
+
+Once the build steps and parameters are defined, we need to make sure our build configuration works by running a couple of builds through the custom build dialog:
+
+<img src="cutom-build-with-paths-to-artifacts.png" width="750" alt="Running a custom build with paths to artifacts"/>
+
+### Extracting and Using Recipe
+
+If the build configuration works properly, we can create a recipe by clicking the __Actions__ button in the upper right corner of the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes)__ page and selecting the __Extract recipe__ option:
+
+<img src="extract-meta-runner.png" width="650" alt="Extract recipe"/>
+
+The __Extract recipe__ dialog requires specifying the project where the recipe will be created. A recipe created in a project will be available in this project and all its subprojects. In our case the Root project is selected, so the recipe will be available in all projects.
+
+We also need to provide the name, description, and an ID for the recipe: the name and description will be shown in the web interface, an ID is required to distinguish this recipe from others.
+
+Upon clicking the __Extract__ button, TeamCity will take definitions of all build steps and parameters in this build configuration and create a build runner out of them.
+
+>Besides build steps and parameters, a recipe can also have requirements: if requirements are defined in the build configuration, they will be extracted to the recipe automatically. Requirements can be useful if the tools used by recipe are available on specific platforms only.
+
+Once the recipe is extracted, it becomes available in the build runners' selector, under the name of the project it belongs to, and can be used in any build step just like any other build runner:
+
+<img src="meta-runner-build-step.png" width="750" alt="Publish Artifacts build step"/>
+
+The current recipe usages can be seen at the project __recipe__ page:
+
+<img src="meta-runners.png" width="750" alt="recipes"/>
+
+When a recipe is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | recipe__ and use the __Edit__ option next to the recipe. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of recipe are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory.
+
+## Creating Recipe from XML Definition of Build Configuration
+
+Alternatively, you can use the XML definition of an existing build configuration as a recipe. To do it, save the definition of this build configuration to a file named as `<runner_id>.xml` where `<runner_id>` is the [ID](identifier.md) of this build runner. Install the recipe as described [above](#Installing+Recipe).
+
+Since a recipe looks and works like any other runner, it is also possible to create another recipe on the basis of an existing recipe.
+
+## Creating Build Configuration from Recipe
+
+If you need to fix a recipe and test your fix, you can create a build configuration from a recipe, change its steps, adjust parameters and requirements, check how it works, and then use the __Extract recipe__ action to apply the changes to the existing recipe with the same ID.
+
+
+-->

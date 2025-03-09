@@ -11,7 +11,7 @@
         System properties can be passed into build scripts of certain runners as variables specific to a build tool. Defined by the `system.` prefix.
     </term>
     <term name="configuration-parameter">
-        Configuration parameters are meant to share settings within a build configuration (widely used in templates and meta-runners).
+        Configuration parameters are meant to share settings within a build configuration (widely used in templates and recipes).
     </term>
     <term name="root-project">
         A default project at the top of the project hierarchy whose settings are available to all the other projects on the server.

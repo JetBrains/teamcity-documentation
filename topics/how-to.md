@@ -686,12 +686,12 @@ This functionality is provided by [REST API](https://www.jetbrains.com/help/team
 
 ## Set up Deployment for My Application in TeamCity
 
-TeamCity has multiple features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a meta-runner or write a custom plugin for that.
+TeamCity has multiple features to handle orchestration part of the deployments with the actual deployment logic configured in the build script / build runner. TeamCity supports a variety of generic build tools, so any specific tool can be run from within TeamCity. To ease specific tool usage, it is possible to wrap it into a recipe or write a custom plugin for that.
 
 See the following articles for more information: [](deploy-build.md), [](deployment-build-configuration.md).
 
 In general, setup steps for configuring deployments are:
-1. Write a build script that will perform the deployment task for the binary files available on the disk. (e.g. use Ant or MSBuild for this. For typical deployment transports use [Deployer](deployers.md) runners). See also [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools). You can use [Meta-Runner](working-with-meta-runner.md) to reuse a script with convenient UI.
+1. Write a build script that will perform the deployment task for the binary files available on the disk. (e.g. use Ant or MSBuild for this. For typical deployment transports use [Deployer](deployers.md) runners). See also [Integrate with Build and Reporting Tools](#Integrate+with+Build+and+Reporting+Tools). You can use [recipe](working-with-meta-runner.md) to reuse a script with convenient UI.
 2. Create a build configuration in TeamCity that will execute the build script and perform the actual deployment. If the deployment is to be visible or startable only by the limited set of users, place the build configuration in a separate TeamCity project and make sure the users have appropriate permissions in the project.
 3. In this build configuration configure [artifact dependency](artifact-dependencies.md) on a build configuration that produces binaries that need to be deployed.
 4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Deploy" action in the build that produced the binaries to be deployed.
@@ -741,7 +741,7 @@ The easiest way for a start is to modify your build scripts to make use of the s
 If you can run the tool from a command line console, then you can run it in TeamCity with a [command line runner](command-line.md). This will give you detection of the messages printed into standard error output. The build can be marked as failed is the exit code is not zero or there is output to standard error via [build failure condition](build-failure-conditions.md).    
 If the tool has launchers for any of the supported build scripting engines like Ant, Maven or MSBuild, then you can use corresponding runner in TeamCity to start the tool. See also [Use an External Tool that My Build Relies on](#Use+an+External+Tool+that+My+Build+Relies+on) for the recommendations on how to run an external tool.
 
-You can also consider creating a [Meta Runner](working-with-meta-runner.md) to let the tool have dedicated UI in TeamCity.
+You can also consider creating a [recipe](working-with-meta-runner.md) to let the tool have dedicated UI in TeamCity.
 
 For an advanced integration a custom [TeamCity plugin](https://plugins.jetbrains.com/docs/teamcity/build-runner-plugin.html) can be developed in Java to ease tool configuration and running.
 

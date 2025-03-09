@@ -76,7 +76,7 @@ To enable bootstrap steps, first add the `teamcity.internal.bootstrap.steps.enab
 
 You can create a build configuration with a bootstrap step and turn this configuration into a [template](build-configuration-template.md). Such template allows you to quickly create more configurations that perform required prerequisite actions before the actual building process starts.
 
-[Meta-Runners](working-with-meta-runner.md) are considered as a single step and thus cannot be split into parts performed before and after a checkout.
+[Recipes](working-with-meta-runner.md) are considered as a single step and thus cannot be split into parts performed before and after a checkout.
 
 To turn a regular step into a bootstrap one in [](kotlin-dsl.md), add a `teamcity.step.phase` parameter and set its value to "bootstrap".
 

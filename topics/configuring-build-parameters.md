@@ -6,7 +6,7 @@ Parameters are `name=value` pairs that can be referenced throughout TeamCity. Th
 
 <anchor name="Configuration+Parameters"/>
 
-* **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that was created from a [template](build-configuration-template.md) or uses a [meta-runner](working-with-meta-runner.md). TeamCity does not pass parameters of this type to a build process (that is, these parameters are not accessible by a build script engine).
+* **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that was created from a [template](build-configuration-template.md) or uses a [recipe](working-with-meta-runner.md). TeamCity does not pass parameters of this type to a build process (that is, these parameters are not accessible by a build script engine).
 
 <anchor name="Environment+Variables"/>
 
@@ -27,7 +27,7 @@ Storing values in parameters allows you to:
 
 * Quickly reuse frequently used values;
 
-* Create reusable [templates](build-configuration-template.md) and [meta-runners](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
+* Create reusable [templates](build-configuration-template.md) and [recipes](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
 
 * Add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
 
@@ -91,11 +91,11 @@ See the following section to learn more about step execution conditions: [](#Spe
 
 
 
-### Pass Values to Meta-Runners
+### Pass Values to Recipes
 
-A [meta-runner](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner.
+A [recipe](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner.
 
-See this article for the example of an Ant-based meta-runner that utilizes the custom `system.artifact.paths` parameter to publish artifacts via a corresponding [service message](service-messages.md): [](working-with-meta-runner.md#Preparing+Build+Configuration).
+See this article for the example: [](working-with-meta-runner.md#Preparing+Build+Configuration).
 
 
 

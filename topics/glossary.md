@@ -121,7 +121,7 @@ Composite build configuration
 : A special type of build configuration that aggregates results from several other builds combined by snapshot dependencies. A composite build can be viewed as a build which consists of several parts which can be executed in parallel on different agents. All these parts will have a synchronized snapshot of the source code, and the results can be seen in a single place.
 
 Configuration parameter
-: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is meant to share settings within a build configuration (widely used in templates and meta-runners).
+: In TeamCity, a type of [build parameter](configuring-build-parameters.md) that is meant to share settings within a build configuration (widely used in templates and recipes).
 
 Continuous integration
 : A software engineering term describing a process that frequently rebuilds and tests an application. Generally, it takes the form of a server process or daemon that
