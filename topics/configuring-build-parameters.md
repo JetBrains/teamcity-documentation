@@ -95,9 +95,7 @@ See the following section to learn more about step execution conditions: [](#Spe
 
 A [recipe](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner.
 
-See this article for the example: [](working-with-meta-runner.md#Preparing+Build+Configuration).
-
-
+See this article for more information: [](working-with-meta-runner.md).
 
 
 
