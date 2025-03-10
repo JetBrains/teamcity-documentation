@@ -1,7 +1,8 @@
 [//]: # (title: Docker Registry Connections)
+[//]: # (auxiliary-id: Docker Support)
 
 The _Docker Registry Connections_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
-{help-id="Docker Support"}
+{id="Docker+Support" help-id="Docker Support"}
 
 Add this feature to:
 
