@@ -1,6 +1,15 @@
 [//]: # (title: Working with Recipes)
 [//]: # (auxiliary-id: Working with Meta-Runner)
 
+**Recipes** are custom build steps based on one or multiple standard TeamCity steps. If you often create configurations with the same step (or sequence of steps), you can turn these steps into a ready-to-use recipe.
+
+
+> TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
+> * YAML recipe definitions
+> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
+>
+{style="note"}
+
 ## Key Takeaways
 
 **What are recipes?**<br/>
@@ -27,21 +36,6 @@ Find an existing or create a new build configuration that performs an action you
 **How to use a recipe?**<br/>
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuraion's "Build steps" list.
 
-
-## Common Information
-
-> Prior to TeamCity 2025.03, recipes were known as **meta-runners**. Your custom meta-runners from older versions as well as [TeamCity Meta-Runner Pack](https://github.com/jetbrains/meta-runner-power-pack) should remain functional under a new name.
->
-{style="note"}
-
-**Recipes** are custom build steps based on one or multiple standard TeamCity steps. If you often create configurations with the same step (or sequence of steps), you can turn these steps into a ready-to-use recipe.
-
-
-> TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
-> * YAML recipe definitions
-> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
->
-{style="note"}
 
 
 ## Extract a Recipe From a Build Configuration
