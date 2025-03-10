@@ -1,7 +1,7 @@
 [//]: # (title: Docker Registry Connections)
 [//]: # (auxiliary-id: Docker Support)
 
-The _Docker Registry Connections_ [build feature](adding-build-features.md) allows automatically signing in to a DockerHub or other container registry before the build start.
+The _Docker Registry Connections_ [build feature](adding-build-features.md) allows TeamCity to automatically sign in to DockerHub or other container registries before the build starts.
 {id="Docker+Support" help-id="Docker Support"}
 
 Add this feature to:
