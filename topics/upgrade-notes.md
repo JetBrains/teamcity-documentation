@@ -1,21 +1,26 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (auxiliary-id: Upgrade Notes)
 
-## Changes from 2024.12.2 to 2024.12.3
-{id="2024.12.3"}
-
-No potential breaking changes.
 
 
 ## Changes from 2024.12 to 2025.03
 {id="2025.03"}
 
-TBD
+* If you have the [SearchQL plugin](https://plugins.jetbrains.com/plugin/15051-searchql) installed, update it to the [latest version 95](https://plugins.jetbrains.com/plugin/15051-searchql/versions/stable/670152). Previous versions had the "metarunner" dependency which is incompatible with the newest TeamCity release due to the [meta-runner &rarr; recipe](working-with-meta-runner.md) rename.
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-03"}
 
-TBD
+* The bundled Tomcat was updated to version 9.0.102.
+* Amazon Corretto Java bundled with TeamCityDocker images was updated to version 21.0.6.7.1.
+* .NET SDK bundled with TeamCity agent Docker images was updated to version 8.0.13 (SDK 8.0.406)
+
+
+
+## Changes from 2024.12.2 to 2024.12.3
+{id="2024.12.3"}
+
+No potential breaking changes.
 
 
 ## Changes from 2024.12.1 to 2024.12.2

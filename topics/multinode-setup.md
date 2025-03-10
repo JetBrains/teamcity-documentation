@@ -149,7 +149,6 @@ frontend http-in
     stats enable
     stats uri /healthz
     
-    default_backend web_endpoint
     option httplog
     log /dev/log local0 info
 
@@ -208,10 +207,10 @@ backend clients_supporting_cookies
     default-server check fall 6 inter 10000 downinter 5000 on-marked-down shutdown-sessions
 
     server NODE1 {node1_hostname} cookie n1 weight 50
-    server NODE2 {node1_hostname} cookie n2 weight 50
+    server NODE2 {node2_hostname} cookie n2 weight 50
 
 backend clients_not_supporting_cookies
-    # for compatibiity reasons requests from non browser clients are always 
+    # for compatibility reasons requests from non browser clients are always 
     # routed to a single node (the first healthy) 
     balance first
     option redispatch

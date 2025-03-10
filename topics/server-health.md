@@ -36,7 +36,7 @@ A warning is displayed if any of the licenses are incompatible with this new ver
 
 ### Agent Configuration
 
-TeamCity displays a notification if agents are not running the recommended Java 8: this report shows all the agents running under Java earlier than version 1.8.
+TeamCity displays a notification if agents are not running the recommended Java version. Additionally, authorized but disconnected agents trigger a health report, ensuring all your agents are accounted for.
 
 ### Multinode Setup Misconfiguration
 {instance="tc"}

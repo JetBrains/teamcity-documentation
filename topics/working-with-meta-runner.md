@@ -1,6 +1,35 @@
 [//]: # (title: Working with Recipes)
 [//]: # (auxiliary-id: Working with Meta-Runner)
 
+## Key Takeaways
+
+**What are recipes?**<br/>
+Recipes are custom build steps made from default TeamCity build steps pre-set in the specific manner. Complex recipes can include other recipes as building blocks.
+
+**What's the point of a recipe?**<br/>
+The idea of a recipe is to have a specific action (or series of actions) as a build step that can be easily reused between configurations.
+
+**What's the difference between recipes and meta-runners?**<br/>
+Meta-runners were replaced with recipes in version 2025.03. They share the same concept idea, but recipes can be shared on JetBrains Marketplace and support YAML format.
+
+**Can I continue use my existing meta-runners and [TeamCity Meta-Runner Pack](https://github.com/jetbrains/meta-runner-power-pack)?**<br/>
+Yes, meta-runners are still functional under the new name and require no manual updates.
+
+**What are public recipes?**<br/>
+Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). Currently, they can be authored only by the TeamCity team. In future releases we expect to support recipes shared by the TeamCity community.
+
+**Are public recipes safe?**<br/>
+You can always inspect a recipe source code before adding it to your configuration.
+
+**I want to create a recipe, what should I do?**<br/>
+Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI.
+
+**How to use a recipe?**<br/>
+In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuraion's "Build steps" list.
+
+
+## Common Information
+
 > Prior to TeamCity 2025.03, recipes were known as **meta-runners**. Your custom meta-runners from older versions as well as [TeamCity Meta-Runner Pack](https://github.com/jetbrains/meta-runner-power-pack) should remain functional under a new name.
 >
 {style="note"}
@@ -9,8 +38,8 @@
 
 
 > TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
-> * YAML and Kotlin DSL support for recipes;
-> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity)
+> * YAML recipe definitions
+> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
 >
 {style="note"}
 
@@ -46,12 +75,46 @@ To extract a recipe from an existing configuration:
 
 2. In the dialog that pops up, enter the recipe internal ID and public description and name.
 
-3. Click **Extract** to create your new recipe.
+3. Click **Extract** to create your new recipe. You recipe should look like the following:
+
+    ```XML
+    <meta-runner name="cURL: File Download">
+        <description>A two-step recipe that utilizes the "curl -o %URL% %fileName%" command to download a file, and calls "ls" command to print the contents of a working directory afterwards</description>
+        <settings>
+            <parameters>
+                <param name="URL" value="" spec="text description='The URL of a file to be downloaded' display='normal' label='Download URL:'"/>
+                <param name="fileName" value="" spec="text description='Enter the saved file name or leave blank to keep the origin name' label='File name:'" />
+                <!--other parameters-->
+            </parameters>
+            <build-runners>
+                <runner name="" type="simpleRunner">
+                    <parameters>
+                        <param name="script.content" value="curl -o %URL% %fileName%" />
+                        <param name="teamcity.step.mode" value="default" />
+                        <param name="use.custom.script" value="true" />
+                    </parameters>
+                </runner>
+                <runner name="" type="simpleRunner">
+                    <parameters>
+                        <param name="script.content" value="ls" />
+                        <param name="teamcity.step.mode" value="default" />
+                        <param name="use.custom.script" value="true" />
+                    </parameters>
+                </runner>
+            </build-runners>
+            <requirements />
+        </settings>
+    </meta-runner>
+    ```
+
+    > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Local+Recipe).
+    >
+    {style="note"}
 
 
 Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
 
-To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Install+a+Recipe+From+a+File) section for more information.
+To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Upload+a+Recipe+From+a+File) section for more information.
 
 
 ## Use a Recipe
@@ -69,23 +132,20 @@ Recipes are custom build steps, and as such, are added to build configurations i
 
 4. Set up required recipe settings in the same manner you do this for regular TeamCity steps.
 
+You can explore public recipes by the TeamCity team at [https://plugins.jetbrains.com/teamcity_recipe](https://plugins.jetbrains.com/teamcity_recipe). We hope to expand our collection in future release cycles and welcome your ideas and feedback.
+
 If you do not see any Marketplace recipe options, verify they are enabled for your project:
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
-2. Switch the **Public JetBrains Marketplace recipes** setting to "Enabled". If this setting is grayed-out, edit the settings of a parent project that enforces this behavior or talk to a person who administers this project.
+2. Switch the **Public JetBrains Marketplace recipes** setting to "Enabled". If this setting is "Disabled" and grayed-out, edit the settings of a parent project that enforces this behavior or talk to a person who administers this project.
 
 
-## Install a Recipe From a File
+## Upload a Recipe From a File
+
+If you have a recipe .xml or .yml definition file, you can upload this file to a required project manually. For example, you may want to move a recipe from one project to another or downloaded a recipe manually from [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe).
 
 
-You can install a recipe from its configuration .xml file to do the following:
-
-* move a recipe from one project to another (if you [extracted a recipe](#Extract+a+Recipe+From+a+Build+Configuration) from a build configuration and wish to reuse it in configurations owned by other unrelated projects);
-* install a recipe downloaded manually from JetBrains Marketplace (as opposed to adding this step in one the configuration's **Add build step** page);
-* install a recipe from a manually created XML configuration file.
-
-
-To install a recipe from a configuration file, use the TeamCity UI or place this file to the required directory.
+To install a recipe from a file, use the TeamCity UI or place this file to the required directory.
 
 <procedure title="In TeamCity UI">
 <step>
@@ -117,7 +177,7 @@ Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Dir
 Recipes extracted from a build configuration or uploaded from a file are stored locally on your server machine and can be edited in TeamCity UI.
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
-   
+
 2. Click a recipe from the **Local Recipes** table to view and edit its configuration file.
 
 For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
@@ -180,10 +240,10 @@ Examples:
 # Checkbox parameter
 <param name="enabled" value="" spec="checkbox checkedValue='true' uncheckedValue='false' label='Enable debug' description='Tick this setting to run in debug mode'"/>
 
-# Select parameter
+        # Select parameter
 <param name="logBehavior" value="" spec="select data_1='All' data_2='Errors only' data_3='Errors and warnings' label='Logging verbosity:' description='Choose whether only critical or all messages should be logged'"/>
 
-# Prompt parameter that cannot have an empty value
+        # Prompt parameter that cannot have an empty value
 <param name="tag" value="default" spec="text description='This value cannot be empty' label='Tag: ' validationMode='not_empty' display='prompt'" />
 ```
 

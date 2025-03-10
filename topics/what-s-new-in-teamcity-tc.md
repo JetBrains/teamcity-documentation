@@ -102,5 +102,10 @@ features {
 }
 ```
 
+## Miscellaneous Changes
+
+* TeamCity now shows a [health report](server-health.md) that alerts you to disconnected but authorized agents, helping you identify issues and maintain a complete agent fleet.
+
+
 </snippet>
 
