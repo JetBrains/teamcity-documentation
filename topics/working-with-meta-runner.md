@@ -36,6 +36,9 @@ Find an existing or create a new build configuration that performs an action you
 **How to use a recipe?**<br/>
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuraion's "Build steps" list.
 
+**Are recipes editable?**<br/>
+Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Recipes can be [edited](#Edit+a+Local+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
+
 
 
 ## Extract a Recipe From a Build Configuration
