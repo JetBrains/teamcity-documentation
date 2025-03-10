@@ -7,7 +7,12 @@
 
 **Recipes** are custom build steps based on one or multiple standard TeamCity steps. If you often create configurations with the same step (or sequence of steps), you can turn these steps into a ready-to-use recipe.
 
-Recipes can also be shared on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity): you can browse community-made recipes and upload your own, or import recipes crafted by the TeamCity team.
+
+> TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
+> * YAML and Kotlin DSL support for recipes;
+> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity)
+>
+{style="note"}
 
 
 ## Extract a Recipe From a Build Configuration
@@ -33,19 +38,23 @@ import jetbrains.buildServer.configs.kotlin.*
 })
 ```
 
-In [configuration settings](project-administrator-guide.md#Edit+and+View+Modes), invoke the **Actions** menu and click **Extract recipe**.
+To extract a recipe from an existing configuration:
 
-<img src="dk-extract-recipe.png" width="706" alt="Extract recipe"/>
+1. In [configuration settings](project-administrator-guide.md#Edit+and+View+Modes), invoke the **Actions** menu and click **Extract recipe**.
 
-In the dialog that pops up, choose the recipe configuration file format (XML or YAML), and enter the public name and description. Click **Extract** to create your new recipe.
+    <img src="dk-extract-recipe.png" width="706" alt="Extract recipe"/>
+
+2. In the dialog that pops up, enter the recipe internal ID and public description and name.
+
+3. Click **Extract** to create your new recipe.
 
 
-> Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
->
-> To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Install+a+Recipe+From+a+File) section for more information.
+Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
+
+To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Install+a+Recipe+From+a+File) section for more information.
 
 
-## Use a Local or Public Recipe
+## Use a Recipe
 
 Recipes are custom build steps, and as such, are added to build configurations in the same manner.
 
@@ -53,7 +62,7 @@ Recipes are custom build steps, and as such, are added to build configurations i
 2. Click the **Add build step** button.
 3. Choose a recipe from the right column that shows:
 
-    * local (private) recipes owned by this project or its parent project;
+    * local recipes owned by this project or its parent project;
     * public recipes from JetBrains Marketplace.
 
     <img src="dk-add-recipe.png" width="706" alt="Add a recipe"/>
@@ -69,11 +78,11 @@ If you do not see any Marketplace recipe options, verify they are enabled for yo
 ## Install a Recipe From a File
 
 
-You can install a recipe from its configuration .xml/.yml file to do the following:
+You can install a recipe from its configuration .xml file to do the following:
 
 * move a recipe from one project to another (if you [extracted a recipe](#Extract+a+Recipe+From+a+Build+Configuration) from a build configuration and wish to reuse it in configurations owned by other unrelated projects);
 * install a recipe downloaded manually from JetBrains Marketplace (as opposed to adding this step in one the configuration's **Add build step** page);
-* install a recipe from a manually created configuration file.
+* install a recipe from a manually created XML configuration file.
 
 
 To install a recipe from a configuration file, use the TeamCity UI or place this file to the required directory.
@@ -99,7 +108,7 @@ Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Dir
 
 <step>In the project folder, navigate to <code>\pluginData\metaRunners</code>.</step>
 
-<step>Paste the recipe .xml or .yml file in this folder. Once you place the file on the disk, TeamCity will detect it and load the recipe; no server restart is required.</step>
+<step>Paste the recipe .xml file in this folder. Once you place the file on the disk, TeamCity will detect it and load the recipe; no server restart is required.</step>
 </procedure>
 
 
@@ -108,41 +117,75 @@ Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Dir
 Recipes extracted from a build configuration or uploaded from a file are stored locally on your server machine and can be edited in TeamCity UI.
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+   
 2. Click a recipe from the **Local Recipes** table to view and edit its configuration file.
 
 For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
 
-Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior.
+### Parameter Specification
 
+Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior. To add a parameter specification, add the `spec="type attribute='value'` format:
 
-* optionality — use the Boolean `required` (YAML) or `???` (XML) attribute to specify whether a recipe can run without the parameter value. For example, a recipe from the [](#Extract+a+Recipe+From+a+Build+Configuration) section has a mandatory `URL` parameter, but its `fileName` is optional.
+```XML
+<parameters>
+    <param name="internalName" value="" spec="type attribute1='value1' attribute2='value2'/>
+</parameters>
+```
 
-    <tabs>
-    <tab title="YAML">
-    <code-block lang="YAML">
-    inputs:
-      - URL:
-          type: text
-          required: true
-      - fileName:
-          type: text
-          required: false
-    </code-block>
-    </tab>
-    <tab title="XML">
-    <code-block lang="XML">
-    ???
-    </code-block>
-    </tab>
-    </tabs>
+The specification supports the following attributes:
 
+<deflist type="medium">
 
-* label and description — ???
+<def title="label">
+A public parameter name visible in TeamCity UI. If not set, the parameter <code>name</code> is shown instead.
+</def>
 
-* editor type — ???
+<def title="description">
+A public description displayed in TeamCity UI below the parameter's editor.
+</def>
 
-* validation conditions — ???
+<def title="type">
+Specifies the <a href="typed-parameters.md">editor type</a>:
+<ul>
+<li><code>text</code> — a regular textbox-based parameter. This is the default behavior.</li>
+<li><code>password</code> — a password parameter that uses password chars to mask its actual values.</li>
+<li><code>checkbox</code> — a two-state parameter that displays a checkbox in the TeamCity UI. Requires the <code>checkedValue='value1' uncheckedValue='value2'</code> attributes to specify actual parameter values for checked and unchecked states.
+</li>
+<li><code>select</code> — a drop-down menu that displays options specified in the <code>data_N='value'</code> format.</li>
+</ul>
+</def>
 
+<def title="display">
+Specifies the display options of an editor. Supported values:
+<ul>
+<li><code>normal</code> — a regular display mode. This is the default behavior.</li>
+<li><code>prompt</code> — forces the <b>Run custom build</b> dialog to pop up every time a build starts. The dialog highlights all "prompt" parameters to make sure users start a build with the required value.</li>
+<li><code>hidden</code> — prevents users from changing this parameter's value.</li>
+</ul>
+</def>
+
+<def title="validationMode">
+Allows you to validate parameter values. Supported values:
+<ul>
+<li><code>any</code> — a parameter can have any value. This is the default behavior.</li>
+<li><code>not_empty</code> — a parameter cannot be blank.</li>
+<li><code>regex</code> — validates the parameter value using a regular expression specified in the <code>regexp='...'</code> attribute.</li>
+</ul>
+</def>
+</deflist>
+
+Examples:
+
+```XML
+# Checkbox parameter
+<param name="enabled" value="" spec="checkbox checkedValue='true' uncheckedValue='false' label='Enable debug' description='Tick this setting to run in debug mode'"/>
+
+# Select parameter
+<param name="logBehavior" value="" spec="select data_1='All' data_2='Errors only' data_3='Errors and warnings' label='Logging verbosity:' description='Choose whether only critical or all messages should be logged'"/>
+
+# Prompt parameter that cannot have an empty value
+<param name="tag" value="default" spec="text description='This value cannot be empty' label='Tag: ' validationMode='not_empty' display='prompt'" />
+```
 
 
 ## Recipe Autonomy

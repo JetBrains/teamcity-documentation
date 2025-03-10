@@ -30,6 +30,10 @@ Starting with version 2025.03, **Meta-runners** are evolving into **Recipes**. W
 * Download community-made Recipes from JetBrains Marketplace and share your own
 * Use built-in Recipes crafted by the TeamCity team
 
+> Some of this functionality is still under development and will be available in future TeamCity releases.
+> 
+{style="note"}
+
 Your existing Meta-runners will continue to work and are accessible from the updated **Add Build Step** page.
 
 <img src="dk-add-build-step.png" width="706" alt="Recipes on the Add Build Step page"/>
