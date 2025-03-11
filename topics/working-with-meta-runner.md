@@ -1,12 +1,16 @@
 [//]: # (title: Working with Recipes)
 [//]: # (auxiliary-id: Working with Meta-Runner)
 
-**Recipes** are custom build steps based on one or multiple standard TeamCity steps. If you often create configurations with the same step (or sequence of steps), you can turn these steps into a ready-to-use recipe.
+**Recipes** are custom build steps based on one or multiple standard TeamCity steps. If TeamCity's built-in steps lack a needed option, and you frequently emulate it (for example, use a [CLI step](command-line.md) to upload artifacts via a cloud provider API), you can save this custom step as a reusable recipe.
+
+Creating a recipe is an easier alternative to writing a [TeamCity plugin](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) that implements a custom build step.
 
 
 > TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
 > * YAML recipe definitions
 > * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
+> 
+> We value your feedback and encourage you to [share](troubleshooting.md) ideas and public recipe suggestions.
 >
 {style="note"}
 
@@ -16,25 +20,26 @@
 Recipes are custom build steps made from default TeamCity build steps pre-set in the specific manner. Complex recipes can include other recipes as building blocks.
 
 **What's the point of a recipe?**<br/>
-The idea of a recipe is to have a specific action (or series of actions) as a build step that can be easily reused between configurations.
+Recipes allow you to wrap pre-customized TeamCity build steps into a new step that can be easily shared across build configurations.
 
 **What's the difference between recipes and meta-runners?**<br/>
-Meta-runners were replaced with recipes in version 2025.03. They share the same concept idea, but recipes can be shared on JetBrains Marketplace and support YAML format.
+In version 2025.03, "meta-runners" were renamed to "recipes". While based on the same concept, recipes offer added benefits like YAML support and easy sharing on JetBrains Marketplace.
 
 **Can I continue use my existing meta-runners and [TeamCity Meta-Runner Pack](https://github.com/jetbrains/meta-runner-power-pack)?**<br/>
 Yes, meta-runners are still functional under the new name and require no manual updates.
 
 **What are public recipes?**<br/>
-Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). Currently, they can be authored only by the TeamCity team. In future releases we expect to support recipes shared by the TeamCity community.
+Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). Currently, only recipes hand-crafted by JetBrains are available. Future releases will support community-shared recipes from TeamCity users.
 
 **Are public recipes safe?**<br/>
-You can always inspect a recipe source code before adding it to your configuration.
+You can manually download a recipe .yml definition file from JetBrains Marketplace to review it before adding this recipe to your configuration. Future releases will offer a more intuitive way to inspect recipe code.
+<img src="dk-download-recipe-manually.png" width="706" style="block" alt="Manually download recipe"/>
 
 **I want to create a recipe, what should I do?**<br/>
 Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI.
 
 **How to use a recipe?**<br/>
-In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuraion's "Build steps" list.
+In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuration's "Build steps" list.
 
 **Are recipes editable?**<br/>
 Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Recipes can be [edited](#Edit+a+Local+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
@@ -43,7 +48,7 @@ Yes, you do not need to re-configure a source configuration and re-extract a rec
 
 ## Extract a Recipe From a Build Configuration
 
-The most straightforward way to create a new recipe is to extract it from an existing configuration that uses a required step or sequence of steps. For example, the following configuration uses a cURL command to download a file, and calls the `ls` command to print the contents of a working directory.
+The most straightforward way to create a new recipe is to extract it from an existing configuration that uses a required step or sequence of steps. For example, the [Kotlin DSL](kotlin-dsl.md) example below shows a build configuration with two [CLI](command-line.md) build steps: one uses cURL to download a file, and the other runs `ls` to list the working directory contents.
 
 
 ```Kotlin
@@ -70,7 +75,7 @@ To extract a recipe from an existing configuration:
 
     <img src="dk-extract-recipe.png" width="706" alt="Extract recipe"/>
 
-2. In the dialog that pops up, enter the recipe internal ID and public description and name.
+2. In the popup dialog, enter the recipe's internal ID, public name, and description.
 
 3. Click **Extract** to create your new recipe. You recipe should look like the following:
 
