@@ -26,7 +26,7 @@ As part of the [previously announced TeamCity/Pipelines merge](what-s-new-in-tea
 
 Starting with version 2025.03, **Meta-runners** are evolving into **Recipes**. While the core concept remains — creating custom build steps for frequently used actions — this transition offers multiple key benefits:
 
-* Define Recipes in XML, YAML, or Kotlin DSL
+* Define recipes in XML or YAML
 * Download community-made Recipes from JetBrains Marketplace and share your own
 * Use built-in Recipes crafted by the TeamCity team
 
@@ -49,7 +49,7 @@ The **Parameters** tab of build configuration setting now features two tabs: inp
 * Input parameters are your regular build parameters that existed before version 2025.03.
 * Output parameters are build parameters with an explicit access permission. Values of these parameters can be read by any dependent configuration via the `dep.<config name>.<parameter name>` syntax.
 
-This update enhances security and grants you more control over parameters. Previously, dependent configurations could read any non-password parameter. Starting with version 2025.03, only explicitly exposed parameters can be shared.
+Previously, dependent configurations could access any non-password parameter. Starting with version 2025.03, only explicitly exposed parameters can be shared, enhancing security and project stability. Configuration developers can now adjust input parameters as needed without risking issues in external configurations that rely on these parameters.
 
 Learn more: [](use-parameters-in-build-chains.md)
 

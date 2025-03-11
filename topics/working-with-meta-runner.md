@@ -9,7 +9,7 @@ Creating a recipe is a simpler alternative to developing a [TeamCity plugin](htt
 > TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
 > * YAML recipe definitions
 > * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
-> 
+>
 > We value your feedback and encourage you to [share](troubleshooting.md) ideas and public recipe suggestions.
 >
 {style="note"}
@@ -54,8 +54,14 @@ The most straightforward way to create a new recipe is to extract it from an exi
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
 
-    object SourceConfiguration : BuildType({
-        name = "Source Configuration"
+object SourceConfiguration : BuildType({
+    name = "Source Configuration"
+    
+    params {
+        param("URL", "")
+        param("fileName", "")
+    }
+    
     steps {
         script {
             id = "simpleRunner"
@@ -109,9 +115,9 @@ To extract a recipe from an existing configuration:
     </meta-runner>
     ```
 
-    > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Local+Recipe).
-    >
-    {style="note"}
+   > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Local+Recipe).
+   >
+   {style="note"}
 
 
 Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
@@ -242,10 +248,10 @@ Examples:
 # Checkbox parameter
 <param name="enabled" value="" spec="checkbox checkedValue='true' uncheckedValue='false' label='Enable debug' description='Tick this setting to run in debug mode'"/>
 
-        # Select parameter
+# Select parameter
 <param name="logBehavior" value="" spec="select data_1='All' data_2='Errors only' data_3='Errors and warnings' label='Logging verbosity:' description='Choose whether only critical or all messages should be logged'"/>
 
-        # Prompt parameter that cannot have an empty value
+# Prompt parameter that cannot have an empty value
 <param name="tag" value="default" spec="text description='This value cannot be empty' label='Tag: ' validationMode='not_empty' display='prompt'" />
 ```
 
