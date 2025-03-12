@@ -1,5 +1,5 @@
-[//]: # (title: What's New in TeamCity 2024.07)
-[//]: # (auxiliary-id: What's New in TeamCity 2024.07)
+[//]: # (title: What's New in TeamCity 2024.12)
+[//]: # (auxiliary-id: What's New in TeamCity 2024.12)
 
 
 ## Pipelines Merge Announcement and Major UI Changes
