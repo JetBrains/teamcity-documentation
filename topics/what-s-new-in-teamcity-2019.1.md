@@ -256,7 +256,7 @@ Use the default Maven repository location. The repository is shared between all 
     "_A plugin was not found at path \<path\> if only dotnet version 3.0 is installed on an agent._"
     
     To fix any of these problems, we recommend installing .NET Core SDK 1.x and/or 2.1.400 or later additionally to your current SDK version.
-* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start. To work around the issue, use the `hyper-v` isolation for Docker/LXC containers:
+* If you use Docker images and Windows Server 2019 with process isolation, build agents may fail to start. To work around the issue, use the `hyper-v` isolation for Docker/Podman containers:
 
     ```Shell 
     

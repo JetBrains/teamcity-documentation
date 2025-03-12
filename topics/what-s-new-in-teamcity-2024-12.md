@@ -133,7 +133,7 @@ Learn more: [](kotlin-dsl.md#Add+Custom+Kotlin+Libraries)
 ## Execute Meta-Runners Inside Containers
 {instance="tc"}
 
-Starting with this version, [meta-runners](working-with-meta-runner.md) provide [container-related settings](container-wrapper.md). These settings are propagated to individual steps, meaning every individual step will be able to run inside the required Docker/Linux image.
+Starting with this version, [meta-runners](working-with-meta-runner.md) provide [container-related settings](container-wrapper.md). These settings are propagated to individual steps, meaning every individual step will be able to run inside the required Docker/Podman image.
 
 <img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and meta-runners"/>
 
@@ -308,7 +308,7 @@ Learn more: [](kotlin-dsl.md#Add+Custom+Kotlin+Libraries)
 ## Execute Meta-Runners Inside Containers
 {instance="tcc"}
 
-Starting with this version, [meta-runners](working-with-meta-runner.md) provide [container-related settings](container-wrapper.md). These settings are propagated to individual steps, meaning every individual step will be able to run inside the required Docker/Linux image.
+Starting with this version, [meta-runners](working-with-meta-runner.md) provide [container-related settings](container-wrapper.md). These settings are propagated to individual steps, meaning every individual step will be able to run inside the required Docker/Podman image.
 
 <img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and meta-runners"/>
 

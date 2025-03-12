@@ -25,7 +25,7 @@ To configure a Node.js build step, just enter a script with necessary Shell comm
 
 <img src="nodejs-step.png" width="706" alt="Node.js build step"/>
 
-Currently, all Node.js steps are run inside a Docker/LXC container, which means [Docker](https://www.docker.com/) or [Podman](https://podman.io) needs to be installed on build agents. TeamCity uses the `node:lts` version by default; but if there is an `.nvmrc` file inside your project, it will search for the image specification there.
+Currently, all Node.js steps are run inside a Docker/Podman container, which means [Docker](https://www.docker.com/) or [Podman](https://podman.io) needs to be installed on build agents. TeamCity uses the `node:lts` version by default; but if there is an `.nvmrc` file inside your project, it will search for the image specification there.
 
 [Read this article](nodejs.md) for more details.
 

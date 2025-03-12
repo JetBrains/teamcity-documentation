@@ -68,11 +68,11 @@ Learn more: [](automatic-merge.md) | [](working-with-feature-branches.md)
 
 ### Global Configuration Containers
 
-You can now run all configuration steps within a single Docker/Linux container by adding the [](run-in-docker.md) build feature to your build configuration. This feature enables familiar build step [Container Settings](container-wrapper.md) on a build configuration level, so you only need to set these settings once instead of repeating them for each individual step.
+You can now run all configuration steps within a single Docker/Podman container by adding the [](run-in-docker.md) build feature to your build configuration. This feature enables familiar build step [Container Settings](container-wrapper.md) on a build configuration level, so you only need to set these settings once instead of repeating them for each individual step.
 
 ### Kotlin Script Steps
 
-[](kotlin-script.md) build steps now support the [](container-wrapper.md), meaning you can now run these steps in Docker/Linux containers.
+[](kotlin-script.md) build steps now support the [](container-wrapper.md), meaning you can now run these steps in Docker/Podman containers.
 
 ### Docker Support Rename
 

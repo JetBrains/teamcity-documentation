@@ -75,7 +75,7 @@ TeamCity ships with the following build features that can be added to your confi
 
 
 <dt>Run in Docker</dt>
-<dd>Allows you to run all steps of a build configuration inside a Docker/Linux container. Steps that do not support containers run outside of it.&emsp;<a href="run-in-docker.md">Learn more...</a>
+<dd>Allows you to run all steps of a build configuration inside a Docker/Podman container. Steps that do not support containers run outside of it.&emsp;<a href="run-in-docker.md">Learn more...</a>
 
 <tip>You can also configure identical settings for <a href="container-wrapper.md">any individual build step</a> if you do not need all of them to run inside a container.</tip></dd>
 

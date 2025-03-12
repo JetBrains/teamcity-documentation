@@ -574,7 +574,7 @@ As a result, you now have a following setup:
 
 ## Amazon ECR
 
-An Amazon ECR (Elastic Container Registry) connection allows accessing private and public AWS registries. With its help, the [](docker-support.md) build feature can store Docker/LXC images produced by a build to AWS.
+An Amazon ECR (Elastic Container Registry) connection allows accessing private and public AWS registries. With its help, the [](docker-support.md) build feature can store Docker/Podman images produced by a build to AWS.
 
 Connection settings:
 

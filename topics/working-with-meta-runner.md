@@ -282,7 +282,7 @@ Build steps that allow defining a build file directly rather than just specifyin
 
 ## Launch Recipes in Containers
 
-Individual build steps comprise recipes have settings that allow TeamCity to run these steps inside [Docker/LXC containers](container-wrapper.md). Same settings are available for recipes themselves.
+Individual build steps comprise recipes have settings that allow TeamCity to run these steps inside [Docker/Podman containers](container-wrapper.md). Same settings are available for recipes themselves.
 
 <img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and recipes"/>
 

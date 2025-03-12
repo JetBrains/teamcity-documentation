@@ -52,7 +52,7 @@ The **Add registry connection** button allows you to select those [registry conn
 
 ## Amazon ECR
 
-A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/LXC
+A connection to Amazon Elastic Container Registry (ECR) allows storing Docker/Podman
 images in private AWS registries. For this, such a connection needs to be selected when adding a Docker Registry Connections feature to a build configuration.
 
 Connection settings:
