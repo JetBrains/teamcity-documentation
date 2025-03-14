@@ -14,15 +14,13 @@
 
 ### Bug
 
-**[TW-90714](https://youtrack.jetbrains.com/issue/TW-90714/externalStatus.html-requires-authenticated-session-to-show-the-information)** — externalStatus.html requires authenticated session to show the information
+**[TW-92199](https://youtrack.jetbrains.com/issue/TW-92199/Container-Deployer-runner-is-broken-since-2024.12.1)** — Container Deployer runner is broken since 2024.12.1
 
 **[TW-92394](https://youtrack.jetbrains.com/issue/TW-92394/S3-cleanup-cannot-delete-artifacts-Project-is-not-specified-to-get-correct-Connection)** — S3 cleanup cannot delete artifacts : "Project is not specified to get correct Connection"
 
 **[TW-74812](https://youtrack.jetbrains.com/issue/TW-74812/False-warning-on-unauthenticated-docker-pull)** — False warning on unauthenticated docker pull
 
 **[TW-86250](https://youtrack.jetbrains.com/issue/TW-86250/Mute-doesnt-work-for-Unit-5-TestFactory-generated-tests)** — Mute doesn't work for Unit 5 TestFactory generated tests
-
-**[TW-92199](https://youtrack.jetbrains.com/issue/TW-92199/Container-Deployer-runner-is-broken-since-2024.12.1)** — Container Deployer runner is broken since 2024.12.1
 
 **[TW-83825](https://youtrack.jetbrains.com/issue/TW-83825/Change-agent-requirement-for-cross-platform-ReSharper-CLT)** — Change agent requirement for cross-platform ReSharper CLT
 
@@ -34,6 +32,8 @@
 
 
 ### Performance Problem
+
+**[TW-92098](https://youtrack.jetbrains.com/issue/TW-92098/Poor-REST-API-builds-endpoint-performance)** — Poor REST API /builds endpoint performance
 
 **[TW-92237](https://youtrack.jetbrains.com/issue/TW-92237/Inefficient-code-in-VcsSettingsBean.getPopularVcsRoots)** — Inefficient code in VcsSettingsBean.getPopularVcsRoots
 
