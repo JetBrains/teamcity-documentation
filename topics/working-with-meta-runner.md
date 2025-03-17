@@ -8,7 +8,7 @@ Creating a recipe is a simpler alternative to developing a [TeamCity plugin](htt
 
 > TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
 > * YAML recipe definitions
-> * Ability to share your custom recipes as public or private on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
+> * Ability to share your custom recipes on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
 >
 > We value your feedback and encourage you to [share](troubleshooting.md) ideas and public recipe suggestions.
 >
@@ -42,7 +42,7 @@ Find an existing or create a new build configuration that performs an action you
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuration's "Build steps" list.
 
 **Are recipes editable?**<br/>
-Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Recipes can be [edited](#Edit+a+Local+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
+Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Local recipes can be [edited](#Edit+a+Local+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
 
 
 
@@ -81,7 +81,7 @@ To extract a recipe from an existing configuration:
 
     <img src="dk-extract-recipe.png" width="706" alt="Extract recipe"/>
 
-2. In the popup dialog, enter the recipe's internal ID, public name, and description.
+2. In the popup dialog, enter the recipe's internal ID, public name, and description. Recipes show these strings on the [Add build step](configuring-build-steps.md) page.
 
 3. Click **Extract** to create your new recipe. You recipe should look like the following:
 
@@ -122,7 +122,9 @@ To extract a recipe from an existing configuration:
 
 Recipes are saved to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory. They are owned by a project whose configuration was used as a source. As such, recipes are by default available only for their origin project and its subprojects.
 
-To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory. See the [](#Upload+a+Recipe+From+a+File) section for more information.
+> To make a recipe available for the entire TeamCity server, move its configuration file to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\_Root\pluginData\metaRunners` directory.
+>
+{style="tip"}
 
 
 ## Use a Recipe
@@ -153,9 +155,14 @@ If you do not see any Marketplace recipe options, verify they are enabled for yo
 If you have a recipe .xml or .yml definition file, you can upload this file to a required project manually. For example, you may want to move a recipe from one project to another or downloaded a recipe manually from [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe).
 
 
-To install a recipe from a file, use the TeamCity UI or place this file to the required directory.
+To install a recipe from a file, do the following:
 
-<procedure title="In TeamCity UI">
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
+2. Click the <b>Upload Recipe</b> button.
+3. Choose a configuration file and enter a unique recipe name.
+4. Click <b>Save</b>. Your uploaded recipe is now available for all configuration of this project and its subprojects.
+
+<!--<procedure title="In TeamCity UI">
 <step>
 <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
 </step>
@@ -178,6 +185,8 @@ Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Dir
 
 <step>Paste the recipe .xml file in this folder. Once you place the file on the disk, TeamCity will detect it and load the recipe; no server restart is required.</step>
 </procedure>
+
+-->
 
 
 ## Edit a Local Recipe
@@ -259,6 +268,8 @@ Examples:
 ## Recipe Autonomy
 
 Recipes are designed to be reused throughout build configurations and as such, should be configuration-agnostic. This means your recipes should ideally perform actions that can be executed regardless of other configuration settings.
+
+In addition, recipes have the same project requirements as their origin build steps. You may opt for cross-platform build steps (like [](command-line.md) or [](kotlin-script.md)) as a basis for your recipes to make them compatible with as many build agents as possible.
 
 ### Example 1: VCS Roots
 
