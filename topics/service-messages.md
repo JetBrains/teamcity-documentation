@@ -725,7 +725,7 @@ where
 
 ### Disabling Service Messages Processing
 
-If you need for some reason to disable searching for service messages in the output, you can disable the service messages search with the messages:
+If you need to disable searching for service messages in the output, you can disable the service messages search with the messages:
 
 ```Shell
 ##teamcity[enableServiceMessages]
@@ -734,6 +734,8 @@ If you need for some reason to disable searching for service messages in the out
 ```
 
 Any messages that appear between these two are not parsed as service messages and are effectively ignored. For server-side processing of service messages, enable/disable service messages also supports the `flowId` attribute and will ignore only the messages with the same `flowId`.
+
+The `disableServiceMessages` command stops service message processing only for the build step that issued it. Once that step finishes and a new one begins, TeamCity resumes processing service messages, even without the following `enableServiceMessages` command.
 
 <!--[//]: # (Internal note. Do not delete. "Build Script Interaction with TeamCityd44e1141.txt")-->    
 
