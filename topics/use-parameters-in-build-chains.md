@@ -5,7 +5,7 @@ This topic illustrates how you can use TeamCity [build parameters](configuring-b
 
 ## Input and Output Parameters
 
-The **Parameters** page of [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes) lets you switch between input and output parameters, both of which are name/value pairs functioning similarly. Their key difference lies in intended use cases and visibility settings.
+The **Parameters** page of [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes) lets you switch between input and output parameters. Both of them are manually created name/value pairs. The key difference lies in intended use cases and accessibility settings.
 
 > The input/output parameters toggle is available only in build configuration settings. For projects, you can create only input parameters.
 > 

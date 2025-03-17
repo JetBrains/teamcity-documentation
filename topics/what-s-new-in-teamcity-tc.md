@@ -49,7 +49,7 @@ The **Parameters** tab of build configuration setting now features two tabs: inp
 * Input parameters are your regular build parameters that existed before version 2025.03.
 * Output parameters are build parameters with an explicit access permission. Values of these parameters can be read by any dependent configuration via the `dep.<config name>.<parameter name>` syntax.
 
-Previously, dependent configurations could access any non-password parameter. Starting with version 2025.03, only explicitly exposed parameters can be shared, enhancing security and project stability. Configuration developers can now adjust input parameters as needed without risking issues in external configurations that rely on these parameters.
+Previously, dependent configurations could access any non-password parameter. Starting with version 2025.03, unless you choose to automatically expose all existing parameters, only newly created output parameters can be shared. This explicit input/output parameter separation allows configuration developers to adjust input parameters as needed without risking issues in external configurations that rely on these parameters.
 
 Learn more: [](use-parameters-in-build-chains.md)
 
