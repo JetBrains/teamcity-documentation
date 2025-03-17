@@ -15,6 +15,8 @@
 * Amazon Corretto Java bundled with TeamCityDocker images was updated to version 21.0.6.7.1.
 * .NET SDK bundled with TeamCity agent Docker images was updated to version 8.0.13 (SDK 8.0.406)
 * Mercurial bundled with TeamCity Windows-based Docker images was updated to version 6.1.1.
+* [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 27.5.1 in TeamCity Docker images.
+* The Perforce Helix Core client (p4) was updated to version 2024.2 in Agent and Server Docker images.
 
 
 

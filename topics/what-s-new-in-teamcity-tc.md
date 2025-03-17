@@ -4,6 +4,7 @@
 
 
 ## TeamCity UI Updates
+{instance="tc"}
 
 As part of the [previously announced TeamCity/Pipelines merge](what-s-new-in-teamcity-2024-12.md#Pipelines+Merge+Announcement+and+Major+UI+Changes),version 2025.03 introduces another major UI update. Key changes include:
 
@@ -23,6 +24,7 @@ As part of the [previously announced TeamCity/Pipelines merge](what-s-new-in-tea
 
 
 ## TeamCity Recipes and Deprecation of Meta-Runners
+{instance="tc"}
 
 Starting with version 2025.03, **Meta-runners** are evolving into **Recipes**. While the core concept remains — creating custom build steps for frequently used actions — this transition offers multiple key benefits:
 
@@ -41,6 +43,7 @@ Your existing Meta-runners will continue to work and are accessible from the upd
 Learn more: [](working-with-meta-runner.md)
 
 ## Output Parameters
+{instance="tc"}
 
 The **Parameters** tab of build configuration setting now features two tabs: input and output parameters.
 
@@ -55,6 +58,7 @@ Learn more: [](use-parameters-in-build-chains.md)
 
 
 ## Perforce Manual and Automatic Merge Support
+{instance="tc"}
 
 TeamCity now supports merging code changes from one Perforce stream to another. This enhancement enables two features:
 
@@ -65,16 +69,20 @@ Learn more: [](automatic-merge.md) | [](working-with-feature-branches.md)
 
 
 ## Docker and Podman Integration Enhancements
+{instance="tc"}
 
 ### Global Configuration Containers
+{instance="tc"}
 
 You can now run all configuration steps within a single Docker/Podman container by adding the [](run-in-docker.md) build feature to your build configuration. This feature enables familiar build step [Container Settings](container-wrapper.md) on a build configuration level, so you only need to set these settings once instead of repeating them for each individual step.
 
 ### Kotlin Script Steps
+{instance="tc"}
 
 [](kotlin-script.md) build steps now support the [](container-wrapper.md), meaning you can now run these steps in Docker/Podman containers.
 
 ### Docker Support Rename
+{instance="tc"}
 
 We’ve renamed the [build feature](adding-build-features.md) that enables TeamCity to log in to private container registries and clean up images. Previously called **Docker Support**, it is now [**Docker Registry Connections**](docker-support.md) as of version 2025.03.
 
@@ -103,8 +111,10 @@ features {
 ```
 
 ## Miscellaneous Changes
+{instance="tc"}
 
 * TeamCity now shows a [health report](server-health.md) that alerts you to disconnected but authorized agents, helping you identify issues and maintain a complete agent fleet.
+* The Perforce CLI tool is now available on ARM-based [TeamCity Agent Docker images](agent-docker-images.md).
 
 
 </snippet>
