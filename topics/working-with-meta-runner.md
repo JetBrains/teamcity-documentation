@@ -7,7 +7,7 @@ Creating a recipe is a simpler alternative to developing a [TeamCity plugin](htt
 
 
 > TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
-> * YAML recipe definitions
+> * Support for local recipes in YAML format
 > * Ability to share your custom recipes on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
 >
 > We value your feedback and encourage you to [share](troubleshooting.md) ideas and public recipe suggestions.
@@ -152,7 +152,7 @@ If you do not see any Marketplace recipe options, verify they are enabled for yo
 
 ## Upload a Recipe From a File
 
-If you have a recipe .xml or .yml definition file, you can upload this file to a required project manually. For example, you may want to move a recipe from one project to another or downloaded a recipe manually from [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe).
+If you have a recipe .xml definition file, you can upload this file to a required project manually. For example, you may want to move a recipe from one project to another or downloaded a recipe manually from [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe).
 
 
 To install a recipe from a file, do the following:
