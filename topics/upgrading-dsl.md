@@ -123,6 +123,34 @@ data class MyClass(
 ```
 -->
 
+## Update DSL from 2024.12.x to 2025.03.x
+{help-id="dsl202503"}
+
+Due to the **Docker Support** feature being renamed into [](docker-support.md), the corresponding entity in Kotlin DSL has also been renamed.
+
+```Kotlin
+// 2024.12 and older
+features {
+        dockerSupport {
+            cleanupPushedImages = true
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_5"
+            }
+        }
+    }
+
+// 2025.03 and newer
+features {
+        dockerRegistryConnections {
+            cleanupPushedImages = true
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_5"
+            }
+        }
+    }
+```
+
+Existing configurations using the older syntax will remain functioning, and will only be automatically updated if you modify build feature settings. You may want to manually update existing configuration files to reflect this change.
 
 ## Update DSL from 2023.11.x to 2024.12.x
 {help-id="dsl202412"}
