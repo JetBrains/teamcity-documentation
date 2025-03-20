@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE instance-profile SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
-<instance-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.topic" status="release">
+<instance-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.topic" status="deprecated">
 	<toc-element toc-title="TeamCity On-Premises Documentation Home" topic="teamcity-documentation.topic"/>
 	<toc-element topic="getting-started-with-teamcity.md">
 		<toc-element topic="continuous-integration-with-teamcity.md"/>
