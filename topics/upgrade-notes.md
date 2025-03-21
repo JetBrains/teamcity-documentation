@@ -17,7 +17,7 @@
 * Mercurial bundled with TeamCity Windows-based Docker images was updated to version 6.1.1.
 * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 27.5.1 in TeamCity Docker images.
 * The Perforce Helix Core client (p4) was updated to version 2024.2 in Agent and Server Docker images.
-
+* The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.1.10.
 
 
 ## Changes from 2024.12.2 to 2024.12.3
