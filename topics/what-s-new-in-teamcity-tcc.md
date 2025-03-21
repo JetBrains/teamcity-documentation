@@ -28,13 +28,8 @@ As part of the [previously announced TeamCity/Pipelines merge](what-s-new-in-tea
 
 Starting with version 2025.03, **Meta-runners** are evolving into **Recipes**. While the core concept remains — creating custom build steps for frequently used actions — this transition offers multiple key benefits:
 
-* Define recipes in XML or YAML
-* Download community-made Recipes from JetBrains Marketplace and share your own
+* Define recipes in XML or (in future releases) YAML
 * Use built-in Recipes crafted by the TeamCity team
-
-> Some of this functionality is still under development and will be available in future TeamCity releases.
->
-{style="note"}
 
 Your existing Meta-runners will continue to work and are accessible from the updated **Add Build Step** page.
 
