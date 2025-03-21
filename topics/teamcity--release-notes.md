@@ -2,7 +2,7 @@
 [//]: # (auxiliary-id: TeamCity 2025.07 Release Notes)
 
 
-**Build , 21 March 2025**
+**Build 0, 21 March 2025**
 
 ### Security
 
