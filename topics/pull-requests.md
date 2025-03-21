@@ -43,15 +43,49 @@ If your project targets a GitHub or GitLab repository, you can automate your set
 
 The Pull Requests feature extends the original branch specification of [VCS roots](configuring-vcs-roots.md) attached to the current build configuration. As such, branch specifications of a VCS root **must not** contain patterns that match pull request branches to avoid ambiguous and unexpected behavior.
 
-If you want to build **only** pull requests, clear the VCS root's branch specification.
-
+If a build configuration should be able to build **only** pull requests, clear the branch specification of its parent VCS root...
 
 ```Kotlin
 object MyRepoRoot : GitVcsRoot({
     name = "MyRoot"
     url = "https://github.com/username/reponame"
     branch = "refs/heads/main"
-    // the "branchSpec = ..." parameter is missing
+    // Note the "branchSpec = ..." parameter is missing
+})
+```
+
+...or (in case this VCS root is shared with other configurations), use configuration [branch filters](branch-filter.md) to leave only pull request branches available.
+
+```Kotlin
+project {
+    vcsRoot(SharedVcsRoot)
+    buildType(PullRequestsConfig)
+}
+
+// VCS root with a branch spec
+object SharedVcsRoot : GitVcsRoot({
+    name = "shared-vcs-root"
+    branch = "main"
+    branchSpec = """
+        refs/heads/main
+        refs/heads/sandbox
+        refs/heads/dev-*
+    """.trimIndent()
+})
+
+// Build configuration that nullifies root's branch spec
+object PullRequestsConfig : BuildType({
+    name = "Pull Requests Config"
+
+    vcs {
+        root(SharedVcsRoot)
+
+        branchFilter = """
+            -:*
+            +:refs/pull/*   
+        """.trimIndent()
+        /* exclude all branches and re-add pull request ones */
+    }
 })
 ```
 
