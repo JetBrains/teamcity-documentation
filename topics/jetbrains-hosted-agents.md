@@ -65,28 +65,28 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 </tr>
 
 <tr>
-<td>Windows-Server-2019-Small<br/>Windows-Server-2022-Small</td>
+<td>Windows-Server-2022-Small</td>
 <td>2</td>
 <td>8 GB</td>
 <td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Windows-Server-2019-Medium<br/>Windows-Server-2022-Medium</td>
+<td>Windows-Server-2022-Medium</td>
 <td>4</td>
 <td>8 GB</td>
 <td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Windows-Server-2019-Large<br/>Windows-Server-2022-Large</td>
+<td>Windows-Server-2022-Large</td>
 <td>8</td>
 <td>16 GB</td>
 <td>200 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Windows-Server-2019-XLarge<br/>Windows-Server-2022-XLarge</td>
+<td>Windows-Server-2022-XLarge</td>
 <td>16</td>
 <td>32 GB</td>
 <td>400 GB SSD for running builds<br/>100 GB root EBS volume</td>
