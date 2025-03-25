@@ -85,6 +85,7 @@
 		<toc-element accepts-web-file-names-ref="upgrade-dsl" topic="upgrading-dsl.md"/>
 		<toc-element topic="upgrade-notes.md"/>
 		<toc-element topic="what-s-new-in-teamcity.md">
+			<toc-element topic="teamcity-2025-07-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-1-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-2-release-notes.md"/>
