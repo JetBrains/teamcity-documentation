@@ -22,6 +22,16 @@ Build 186049
 [Release notes](teamcity-2025-03-release-notes.md)
 
 
+## TeamCity 2024.12.4
+
+Release date: 25 March 2025<br/>
+Build 0
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2024.12.4.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2024.12.4.tar.gz)
+
+[Release notes](teamcity-2024-12-4-release-notes.md)
+
 ## TeamCity 2024.12.3
 
 Release date: 7 March 2025<br/>
