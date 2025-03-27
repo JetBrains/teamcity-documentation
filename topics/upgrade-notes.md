@@ -7,6 +7,7 @@
 {id="2025.03"}
 
 * If you have the [SearchQL plugin](https://plugins.jetbrains.com/plugin/15051-searchql) installed, update it to the [latest version 95](https://plugins.jetbrains.com/plugin/15051-searchql/versions/stable/670152). Previous versions had the "metarunner" dependency which is incompatible with the newest TeamCity release due to the [meta-runner &rarr; recipe](working-with-meta-runner.md) rename.
+* Custom plugins dependent on the `org.jetbrains.teamcity.internal:plugins` library are no longer compatible with TeamCity 2025.03 and newer. Change the dependency to `org.jetbrains.teamcity:plugins` and rebuild your plugin to resolve the issue.
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-03"}
