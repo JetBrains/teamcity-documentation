@@ -7,7 +7,7 @@
 			<toc-element topic="glossary.md"/>
 			<toc-element topic="continuous-integration-with-teamcity.md"/>
 			<toc-element topic="server-administrator-guide.md"/>
-			<toc-element topic="project-administrator-guide.md"/>
+			<toc-element topic="project-administrator-guide.md" accepts-web-file-names="project.html"/>
 			<toc-element topic="user-guide.md"/>
 		</toc-element>
 		<toc-element toc-title="Tutorials">
@@ -40,14 +40,14 @@
 			</toc-element>
 			<toc-element topic="teamcity-maintenance-mode.md"/>
 		</toc-element>
-		<toc-element accepts-web-file-names-ref="install-and-start-agents" topic="install-and-start-teamcity-agents.md">
+		<toc-element accepts-web-file-names-ref="install-and-start-agents" topic="install-and-start-teamcity-agents.md" accepts-web-file-names="build-agent.html">
 			<toc-element topic="install-teamcity-agent.md"/>
 			<toc-element accepts-web-file-names-ref="configure-agent-installation" topic="configure-agent-installation.md"/>
 			<toc-element topic="start-teamcity-agent.md"/>
 			<toc-element topic="configure-java-for-agent.md"/>
 			<toc-element topic="install-multiple-agents-on-one-machine.md"/>
 			<toc-element topic="agent-docker-images.md"/>
-			<toc-element topic="teamcity-integration-with-cloud-solutions.md">
+			<toc-element topic="teamcity-integration-with-cloud-solutions.md" accepts-web-file-names="agent-cloud-profile.html">
 				<toc-element topic="setting-up-teamcity-for-amazon-ec2.md"/>
 				<toc-element topic="setting-up-teamcity-for-kubernetes.md"/>
 				<toc-element topic="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md"/>
@@ -165,7 +165,7 @@
 			<toc-element topic="security-actions.md"/>
 		</toc-element>
 		<toc-element topic="teamcity-configuration-and-maintenance.md">
-			<toc-element topic="configuring-authentication-settings.md">
+			<toc-element topic="configuring-authentication-settings.md" accepts-web-file-names="authentication-modules.html">
 				<toc-element topic="ldap-integration.md">
 					<toc-element topic="typical-ldap-configurations.md"/>
 					<toc-element topic="ldap-troubleshooting.md"/>
@@ -216,7 +216,7 @@
 			<toc-element topic="super-user.md"/>
 			<toc-element topic="guest-user.md"/>
 		</toc-element>
-		<toc-element topic="configuring-notifications.md">
+		<toc-element topic="configuring-notifications.md" accepts-web-file-names="notifier.html">
 			<toc-element accepts-web-file-names-ref="adding-notification-rules" topic="adding-notification-rules.md"/>
 			<toc-element accepts-web-file-names-ref="customizing-notification-templates" topic="customizing-notification-templates.md"/>
 			<toc-element topic="setting-up-google-mail-as-notification-server.md"/>
@@ -227,7 +227,7 @@
 		<toc-element topic="project-export.md"/>
 		<toc-element topic="projects-import.md"/>
 		<toc-element topic="configuring-vcs-settings.md">
-			<toc-element topic="configuring-vcs-roots.md">
+			<toc-element topic="configuring-vcs-roots.md" accepts-web-file-names="vcs-root.html">
 				<toc-element topic="guess-settings-from-repository-url.md"/>
 				<toc-element topic="cvs.md"/>
 				<toc-element topic="git.md">
@@ -273,7 +273,7 @@
 			<toc-element topic="nuget.md">
 				<toc-element topic="using-teamcity-as-nuget-feed.md"/>
 			</toc-element>
-			<toc-element topic="configuring-build-steps.md">
+			<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html">
 				<toc-element accepts-web-file-names-ref="build-step-conditions" topic="build-step-execution-conditions.md"/>
 				<toc-element topic="working-with-meta-runner.md"/>
 				<toc-element topic="ant.md"/>
@@ -374,10 +374,10 @@
 			<toc-element topic="configuring-dependencies.md">
 				<toc-element topic="build-chain.md"/>
 				<toc-element topic="artifact-dependencies.md"/>
-				<toc-element topic="snapshot-dependencies.md"/>
+				<toc-element topic="snapshot-dependencies.md" accepts-web-file-names="dependent-build.html"/>
 				<toc-element topic="build-dependencies-setup.md"/>
 			</toc-element>
-			<toc-element topic="configuring-agent-requirements.md"/>
+			<toc-element topic="configuring-agent-requirements.md" accepts-web-file-names="agent-requirements.html"/>
 			<toc-element topic="untrusted-builds.md"/>
 			<toc-element topic="clean-checkout.md"/>
 			<toc-element topic="build-configuration-template.md"/>
