@@ -16,7 +16,7 @@ TeamCity Server is a web application that runs within a capable J2EE servlet con
 
 Supported Java versions: __OpenJDK and Oracle Java 8 (8u16 or later) to 21 (32 or 64 bit)__. Using 64-bit Java is recommended.
 
-The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 17__.
+The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21__.
 
 For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
