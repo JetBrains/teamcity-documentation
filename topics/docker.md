@@ -14,7 +14,7 @@ If you need to push the newly built image to a registry, you can authorize to a 
 If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Autodetecting+Build+Steps) and offer creating a build step using this runner.
 
 
-<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker build step"/></include>
+<include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Docker build step"/></include>
 
 ## Common Settings
 

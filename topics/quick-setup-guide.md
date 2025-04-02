@@ -46,8 +46,9 @@ If you did not change the default port (`8111`) during the installation, the Tea
 
 ## Install and run on Linux and macOS
 
-1. Make sure you have Java 8 or 11 installed (for example, use the bundled [Amazon Corretto](https://aws.amazon.com/corretto/)).   
-   >Java 8 support will be discontinued in TeamCity Server 2023.04 (to be released in April 2023). If you use a non-bundled version of Java 8, we highly recommend that you migrate your server to Java 11.
+1. Make sure you have [Java 21](supported-platforms-and-environments.md) installed. You can use [Amazon Corretto](https://aws.amazon.com/corretto/) bundled with the TeamCity installer.
+
+   <include from="common-templates.md" element-id="java-deprecation-warning"/>
    
    Open a command-line terminal and run the following command:   
     ```Shell

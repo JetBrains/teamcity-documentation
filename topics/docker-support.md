@@ -20,7 +20,7 @@ Logging in and out of repositories and cleaning up images require a configured [
 
 <img src="docker-support.png" width="750" alt="Docker Registry Connectios build feature"/>
 
-<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Docker Registry Connections"/></include>
+<include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Docker Registry Connections"/></include>
 
 ## Docker Images Clean-up
 

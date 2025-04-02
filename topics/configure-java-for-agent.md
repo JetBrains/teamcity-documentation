@@ -24,7 +24,7 @@ The `.exe` TeamCity agent distribution comes bundled with 64-bit Amazon Corretto
 
 If you are trying to launch an agent, and it is not able to find the required Java version in any of the [default locations](#Path+to+Java+on+Agent+Machine), the agent will report an error on starting, the process will not launch, and the agent will be shown as disconnected in the TeamCity UI.
 
-If a build agent uses a Java version earlier than Java 8, you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the UI.
+If a build agent uses a Java version that is not supported or will be discontinued in future TeamCity versions, you will see the corresponding warning on the agent's page and a [health item](server-health.md) in the UI.
 
 Information on Java versions currently supported by TeamCity Agent is available [here](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent).
 

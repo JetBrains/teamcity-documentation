@@ -148,3 +148,4 @@ template:
 * The [](docker.md) build step is not supported.
 * The Docker inside Docker (DinD) setup is not supported.
 * Pod initialization can stall while cleaning the "/agent/temp/.old" directory.
+* Advanced [Container Wrapper](container-wrapper.md) are not available in build steps if the configuration's parent project has a configured Kubernetes Executor.

@@ -4,7 +4,7 @@
 
 
 
-<var name="tab-name" value="tab-name"/>
+<var name="tab-name" value="tab-name" xmlns="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"/>
 <snippet id="open-project-settings-tab">Open <a href="project-administrator-guide.md#Edit+and+View+Modes">project settings</a> and navigate to the <b>%tab-name%</b> settings tab.</snippet>
 
 
@@ -73,8 +73,20 @@ Select the required authentication strategy. Depending on the selected strategy,
 
 
 
-<snippet id="docker-integration-note>">
+<snippet id="docker-integration-note">
 <note>
 <b>%docker-feature-name%</b> is a part of the TeamCity-Docker/Podman integration toolset. Refer to this documentation article for information on software requirements, supported environments, and other common aspects of this integration: <a href="integrating-teamcity-with-container-managers.md"></a>.
 </note>
 </snippet>
+
+
+
+## Java
+
+<snippet id="java-deprecation-warning">
+<warning>
+TeamCity will drop support for Java versions older than 21 in one of the future versions. If you're using a non-bundled Java 21, we strongly recommend upgrading to a newer version.
+</warning>
+</snippet>
+
+

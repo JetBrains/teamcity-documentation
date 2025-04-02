@@ -29,7 +29,7 @@ The extension is available for the following [build steps](configuring-build-ste
 
 </snippet>
 
-<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Container Wrapper"/></include>
+<include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Container Wrapper"/></include>
 
 ## Container Settings
 

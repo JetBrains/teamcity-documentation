@@ -6,7 +6,7 @@ The **Run in Docker** build feature allows you to run all steps of a build confi
 
 Steps that are not included in this list will be run outside of the specified container.
 
-<include from="common-templates.md" element-id="docker-integration-note>"><var name="docker-feature-name" value="Run in Docker"/></include>
+<include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Run in Docker"/></include>
 
 ## Settings
 

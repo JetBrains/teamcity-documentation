@@ -183,7 +183,7 @@ If you run Perforce 2009.2 on Windows you may experience significant slow down. 
 ## Wrong times for build scheduled triggering (Timezone issues)
 {instance="tc"}
 
-Make sure you use the latest update for Java 8 installation available for your platform (e.g. OpenJDK 8 by [Amazon Corretto](https://aws.amazon.com/corretto/)).
+Make sure you use the latest update for Java installation available for your platform (e.g. OpenJDK by [Amazon Corretto](https://aws.amazon.com/corretto/)). See [](supported-platforms-and-environments.md) for the list of supported Java versions.
 
 
 ## Upgrading IntelliJ IDEA May Affect Active Pre-Tested Commits
