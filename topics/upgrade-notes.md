@@ -20,6 +20,11 @@
 * The Perforce Helix Core client (p4) was updated to version 2024.2 in Agent and Server Docker images.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.1.10.
 
+### Known Issues
+{id="known-issues-2025-03"}
+
+* Upgrading TeamCity macOS build agents to Java 21 significantly slows `msbuild` performance. See this issue for more information: [TW-92741](https://youtrack.jetbrains.com/issue/TW-92741).
+
 
 ## Changes from 2024.12.2 to 2024.12.3
 {id="2024.12.3"}
