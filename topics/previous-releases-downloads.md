@@ -11,12 +11,10 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
 
-
-
 ## Current version: TeamCity 2025.03.1
 
 Release date: 03 April 2025<br/>
-Build number: N/A
+Build number: 9999
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2025.03.1.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2025.03.1.tar.gz)

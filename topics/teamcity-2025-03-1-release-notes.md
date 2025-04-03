@@ -1,10 +1,11 @@
 [//]: # (title: TeamCity 2025.03.1 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2025.03.1 Release Notes)
 
-## Build N/A, 03 April 2025
+## Build 9999, 03 April 2025
 
 ### Bug
 
+* [TW-92200](https://youtrack.jetbrains.com/issue/TW-92200) — Expand/collapse test/build details scrolls the page up
 * [TW-92642](https://youtrack.jetbrains.com/issue/TW-92642) — Parallel tests and build chain optimizer race leads to more than one build of the same build type in the build chain
 * [TW-92667](https://youtrack.jetbrains.com/issue/TW-92667) — TeamCity artifact excluding rule no longer works in version 2025.03
 * [TW-71811](https://youtrack.jetbrains.com/issue/TW-71811) — Impossible to see inspection type description
@@ -33,7 +34,7 @@
 
 ### Security
 
-589 security problems have been fixed.
+Four security problems have been fixed.
 To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2025.03.1).
 
 Security bulletins are typically published few days after the release date.
