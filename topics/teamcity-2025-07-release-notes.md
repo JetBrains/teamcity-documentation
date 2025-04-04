@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2025.07 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2025.07 Release Notes)
 
-## Build 9999, 04 April 2025
+## Build 123414, 04 April 2025
 
 ### Bug
 
