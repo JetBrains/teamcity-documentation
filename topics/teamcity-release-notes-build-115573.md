@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Release Notes: Build 115573)
-[//]: # (auxiliary-id: TeamCity Release Notes: Build 115573;TeamCity 2022.08 Release Notes)
+[//]: # (help-id: TeamCity Release Notes: Build 115573;TeamCity 2022.08 Release Notes)
 
 __Build: 115573__
 

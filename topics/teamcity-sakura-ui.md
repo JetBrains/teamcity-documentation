@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Sakura UI)
-[//]: # (auxiliary-id: TeamCity Sakura UI)
+[//]: # (help-id: TeamCity Sakura UI)
 
 > The Sakura UI is now the default UI for new TeamCity users.
 

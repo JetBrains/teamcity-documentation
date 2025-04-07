@@ -1,5 +1,5 @@
 [//]: # (title: Change State)
-[//]: # (auxiliary-id: Change State)
+[//]: # (help-id: Change State)
 
 This article lists visual indicators that appear depending on a detected build change, or commit.
 

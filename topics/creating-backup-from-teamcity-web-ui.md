@@ -1,5 +1,5 @@
 [//]: # (title: Creating Backup from TeamCity Web UI)
-[//]: # (auxiliary-id: Creating Backup from TeamCity Web UI)
+[//]: # (help-id: Creating Backup from TeamCity Web UI)
 
 TeamCity allows creating a backup of TeamCity data via the Web UI. To create a backup file, navigate to the __Administration | Backup__ page, specify backup parameters as described below, and start the backup process.
 

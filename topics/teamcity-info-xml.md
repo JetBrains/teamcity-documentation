@@ -1,5 +1,5 @@
 [//]: # (title: teamcity-info.xml)
-[//]: # (auxiliary-id: teamcity-info.xml)
+[//]: # (help-id: teamcity-info.xml)
 
 As an obsolete approach to collect the build script collect information, you can generate an XML file called `teamcity-info.xml` in the root build directory. When the build finishes, this file will automatically be uploaded as a build artifact and processed by the TeamCity server.
 

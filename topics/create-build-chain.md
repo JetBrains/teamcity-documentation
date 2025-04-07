@@ -1,5 +1,5 @@
 [//]: # (title: Create Build Chain)
-[//]: # (auxiliary-id: Create Pipeline)
+[//]: # (help-id: Create Pipeline)
 
 > This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
 > 

@@ -1,5 +1,5 @@
 [//]: # (title: Docker Compose)
-[//]: # (auxiliary-id: Docker Compose)
+[//]: # (help-id: Docker Compose)
 
 The _Docker Compose_ [build step](configuring-build-steps.md) allows starting [Docker Compose](https://docs.docker.com/compose/) build services and shutting them down at the end of the build. With this runner, you can run multi-container Docker apps.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Extending TeamCity)
-[//]: # (auxiliary-id: Extending TeamCity)
+[//]: # (help-id: Extending TeamCity)
 
 TeamCity behavior can be extended in several ways. You can communicate with TeamCity from the build script and report tests, change build number or provide statistics data. Or you can write full-fledged plugin which will provide the custom UI, customized notifications and much more.
 

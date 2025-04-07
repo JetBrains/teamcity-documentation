@@ -1,5 +1,5 @@
 [//]: # (title: Creating and Managing User Groups)
-[//]: # (auxiliary-id: Creating and Managing User Groups)
+[//]: # (help-id: Creating and Managing User Groups)
 
 ## What is User Group in TeamCity
 {id="User+Group" help-id="User Group"}

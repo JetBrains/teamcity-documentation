@@ -1,5 +1,5 @@
 [//]: # (title: Manually Configuring Reporting Coverage)
-[//]: # (auxiliary-id: Manually Configuring Reporting Coverage)
+[//]: # (help-id: Manually Configuring Reporting Coverage)
 
 If you run .NET tests using [NUnit](nunit.md), [MSpec](mspec.md) or [.NET Process Runner](net-process-runner.md) runners or run NUnit tests via supported tasks of [MSBuild](msbuild.md) or [NAnt](nant.md) runners, you can turn on coverage collection in the TeamCity web UI for the specific runner.
 

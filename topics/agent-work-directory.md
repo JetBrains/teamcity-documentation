@@ -1,5 +1,5 @@
 [//]: # (title: Agent Work Directory)
-[//]: # (auxiliary-id: Agent Work Directory)
+[//]: # (help-id: Agent Work Directory)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >

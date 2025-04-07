@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with GitHub Issues)
-[//]: # (auxiliary-id: Integrating TeamCity with GitHub Issues;Integrating TeamCity with GitHub;GitHub)
+[//]: # (help-id: Integrating TeamCity with GitHub Issues;Integrating TeamCity with GitHub;GitHub)
 
 [GitHub issues](https://github.com/features/issues) allow your development team to prioritize the current problems, break them down into actionable tasks, and track their statuses.
 

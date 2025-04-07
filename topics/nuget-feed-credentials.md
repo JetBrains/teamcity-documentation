@@ -1,5 +1,5 @@
 [//]: # (title: NuGet Feed Credentials)
-[//]: # (auxiliary-id: NuGet Feed Credentials)
+[//]: # (help-id: NuGet Feed Credentials)
 
 When using NuGet packages from an external authenticated feed during a build on TeamCity, the credentials for connecting to that feed have to be specified.
 

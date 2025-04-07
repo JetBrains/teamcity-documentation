@@ -1,5 +1,5 @@
 [//]: # (title: Project Home Page)
-[//]: # (auxiliary-id: Project Home Page)
+[//]: # (help-id: Project Home Page)
 
 This article gives an overview of the __Project Home__ page of the new TeamCity UI. Most of its features are also available in the classic UI mode.
 

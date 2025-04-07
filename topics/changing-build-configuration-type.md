@@ -1,5 +1,5 @@
 [//]: # (title: Changing Build Configuration Type)
-[//]: # (auxiliary-id: Changing Build Configuration Type)
+[//]: # (help-id: Changing Build Configuration Type)
 
 A TeamCity <tooltip term="build-configuration">_build configuration_</tooltip> can have one of the following types:
 * Regular

@@ -1,5 +1,5 @@
 [//]: # (title: Disabling TeamCity Plugins)
-[//]: # (auxiliary-id: Disabling TeamCity Plugins)
+[//]: # (help-id: Disabling TeamCity Plugins)
 
 TeamCity plugins are parts of TeamCity used to provide integration with specific build tools / perform specific tasks.
 

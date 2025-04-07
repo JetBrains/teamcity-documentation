@@ -1,5 +1,5 @@
 [//]: # (title: Jenkins to TeamCity Migration Guidelines)
-[//]: # (auxiliary-id: Jenkins to TeamCity Migration Guidelines)
+[//]: # (help-id: Jenkins to TeamCity Migration Guidelines)
 
 ## Introduction
 {instance="tc"}

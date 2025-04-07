@@ -1,5 +1,5 @@
 [//]: # (title: Duplicates Finder \(Java\))
-[//]: # (auxiliary-id: viewpage.actionpageId113084078;Duplicates Finder \(Java\))
+[//]: # (help-id: viewpage.actionpageId113084078;Duplicates Finder \(Java\))
 
 The _Duplicates Finder (Java)_ build runner is intended for catching similar code fragments and providing a report on discovered repetitive blocks of Java code. This runner is based on IntelliJ IDEA capabilities, so an IntelliJ IDEA project file (`.ipr`) or directory (`.idea`) is required to configure the runner.
 

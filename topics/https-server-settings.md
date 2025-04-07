@@ -1,5 +1,5 @@
 [//]: # (title: Configuring HTTPS Access to TeamCity Server)
-[//]: # (auxiliary-id: Configuring HTTPS Access to TeamCity Server)
+[//]: # (help-id: Configuring HTTPS Access to TeamCity Server)
 
 The HTTPS protocol uses encryption for secure server-client communication over computer networks. If your TeamCity server is available by a public internet address, it is strongly recommended that you configure the HTTPS connection to significantly enhance the security.
 

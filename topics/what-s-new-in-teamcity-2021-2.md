@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2021.2)
-[//]: # (auxiliary-id: What's New in TeamCity 2021.2)
+[//]: # (help-id: What's New in TeamCity 2021.2)
 
 ## Two-factor authentication
 

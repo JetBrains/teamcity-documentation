@@ -1,5 +1,5 @@
 [//]: # (title: Manual Backup and Restore)
-[//]: # (auxiliary-id: Manual Backup and Restore)
+[//]: # (help-id: Manual Backup and Restore)
 
 ## Server Manual Backup
 

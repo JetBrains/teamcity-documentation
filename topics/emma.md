@@ -1,5 +1,5 @@
 [//]: # (title: EMMA)
-[//]: # (auxiliary-id: EMMA)
+[//]: # (help-id: EMMA)
 
 ## EMMA Integration Notes
 

@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2024.03)
-[//]: # (auxiliary-id: What's New in TeamCity 2024.03)
+[//]: # (help-id: What's New in TeamCity 2024.03)
 
 ## Semi-Automatic Security Updates
 {instance="tc"}

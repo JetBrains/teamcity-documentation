@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Notifications)
-[//]: # (auxiliary-id: Configuring Notifications)
+[//]: # (help-id: Configuring Notifications)
 
 TeamCity can notify users about various events:
 * in a web browser

@@ -1,5 +1,5 @@
 [//]: # (title: Build Dependencies Setup)
-[//]: # (auxiliary-id: Build Dependencies Setup)
+[//]: # (help-id: Build Dependencies Setup)
 
 This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [](configuring-dependencies.md).
 

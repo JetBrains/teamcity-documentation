@@ -1,5 +1,5 @@
 [//]: # (title: MSBuild)
-[//]: # (auxiliary-id: MSBuild)
+[//]: # (help-id: MSBuild)
 
 <note>
 

@@ -1,5 +1,5 @@
 [//]: # (title: Enabling Email Verification)
-[//]: # (auxiliary-id: Enabling Email Verification)
+[//]: # (help-id: Enabling Email Verification)
 
 TeamCity administrators can enable / disable email verification (off by default).
 

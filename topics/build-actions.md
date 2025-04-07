@@ -1,5 +1,5 @@
 [//]: # (title: Main Actions on Builds)
-[//]: # (auxiliary-id: Main Actions on Builds;Pinned Build;Build Tag;Changing Build Status Manually)
+[//]: # (help-id: Main Actions on Builds;Pinned Build;Build Tag;Changing Build Status Manually)
 
 This article describes what actions can be applied to <tooltip term="build">_builds_</tooltip> in TeamCity.
 

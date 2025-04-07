@@ -1,5 +1,5 @@
 [//]: # (title: Perforce Workspace Handling in TeamCity)
-[//]: # (auxiliary-id: Perforce Workspace Handling in TeamCity)
+[//]: # (help-id: Perforce Workspace Handling in TeamCity)
 
 To perform Perforce-related operations, TeamCity usually operates in a "no-workspace" mode, that is it executes Perforce commands without the workspace context. For instance, workspaces are not required for tracking changes or for most server-side operations.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Pull Requests)
-[//]: # (auxiliary-id: Pull Requests)
+[//]: # (help-id: Pull Requests)
 
 The _Pull Requests_ [build feature](adding-build-features.md) enhances TeamCity integration with pull (merge) requests in [GitHub](#GitHub+Pull+Requests), [Bitbucket Server](#Bitbucket+Server+Pull+Requests), [Bitbucket Cloud](#Bitbucket+Cloud+Pull+Requests), [GitLab](#GitLab+Merge+Requests), [Azure DevOps](#Azure+DevOps+Pull+Requests), and [JetBrains Space](#JetBrains+Space+Merge+Requests) repositories.
 

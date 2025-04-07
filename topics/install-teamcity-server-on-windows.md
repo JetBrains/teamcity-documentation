@@ -1,5 +1,5 @@
 [//]: # (title: Install TeamCity Server on Windows)
-[//]: # (auxiliary-id: Install TeamCity Server on Windows)
+[//]: # (help-id: Install TeamCity Server on Windows)
 
 >Before installing the TeamCity server, you might want to estimate your [system requirements](system-requirements.md) and read about [supported platforms](supported-platforms-and-environments.md).
 

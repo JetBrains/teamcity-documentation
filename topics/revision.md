@@ -1,5 +1,5 @@
 [//]: # (title: Revision)
-[//]: # (auxiliary-id: Revision)
+[//]: # (help-id: Revision)
 
 A _revision_ refers to a specific state of a version control history; basically it is a version of the source code. When changes occur, they are usually identified by a number or letter code, termed "revision".
 

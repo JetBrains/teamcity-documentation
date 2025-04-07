@@ -1,5 +1,5 @@
 [//]: # (title: Install Multiple Agents on One Machine)
-[//]: # (auxiliary-id: Install Multiple Agents on One Machine)
+[//]: # (help-id: Install Multiple Agents on One Machine)
 
 If a machine is capable of running several concurrent builds, you can install multiple TeamCity agents on it. However, __we recommend running a single agent per (virtual) machine__ to minimize builds cross-influence and make builds more predictable. 
 

@@ -1,5 +1,5 @@
 [//]: # (title: NAnt)
-[//]: # (auxiliary-id: NAnt)
+[//]: # (help-id: NAnt)
 
 
 <note>

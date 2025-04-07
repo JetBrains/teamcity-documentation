@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Your User Profile)
-[//]: # (auxiliary-id: Configuring Your User Profile;Managing your User Account)
+[//]: # (help-id: Configuring Your User Profile;Managing your User Account)
 
 To get to your user profile settings, click your avatar in the header and select __Profile__ from the drop-down menu.
 

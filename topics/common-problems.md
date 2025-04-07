@@ -1,5 +1,5 @@
 [//]: # (title: Common Problems)
-[//]: # (auxiliary-id: Common Problems)
+[//]: # (help-id: Common Problems)
 
 Most user issues are related to the following topics. Before reporting your problem, check if any of these Help pages contains the solution already:
 {instance="tc"}

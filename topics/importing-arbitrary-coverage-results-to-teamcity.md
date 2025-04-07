@@ -1,5 +1,5 @@
 [//]: # (title: Importing Arbitrary Coverage Results to TeamCity)
-[//]: # (auxiliary-id: Importing Arbitrary Coverage Results to TeamCity)
+[//]: # (help-id: Importing Arbitrary Coverage Results to TeamCity)
 
 TeamCity comes bundled with the following coverage engines: [IntelliJ IDEA, Emma, JaCoCo for Java](configuring-java-code-coverage.md) and [dotCover, NCover, PartCover for .NET](configuring-.net-code-coverage.md). If you use these platforms, TeamCity will provide a code coverage automatically.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Artifacts Migration Tool)
-[//]: # (auxiliary-id: Artifacts Migration Tool)
+[//]: # (help-id: Artifacts Migration Tool)
 
 The **artifacts migration tool** is a command-line tool that allows you to transfer [build artifacts](build-artifact.md) from one storage to another.
 

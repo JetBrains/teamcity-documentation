@@ -1,5 +1,5 @@
 [//]: # (title: Setting Up TeamCity for Amazon EC2)
-[//]: # (auxiliary-id: Setting Up TeamCity for Amazon EC2)
+[//]: # (help-id: Setting Up TeamCity for Amazon EC2)
 
 TeamCity Amazon EC2 integration allows TeamCity auto-scale its building resources by automatically starting and stopping cloud-hosted agents on-demand, depending on the current build queue workload.
 

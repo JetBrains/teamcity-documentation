@@ -1,5 +1,5 @@
 [//]: # (title: LDAP Troubleshooting)
-[//]: # (auxiliary-id: LDAP Troubleshooting)
+[//]: # (help-id: LDAP Troubleshooting)
 
 __General advice__: if you experience problems with LDAP configuration, turn on the debug logging (see [Reporting Issues](reporting-issues.md)).
 

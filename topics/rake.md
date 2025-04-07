@@ -1,5 +1,5 @@
 [//]: # (title: Rake)
-[//]: # (auxiliary-id: Rake)
+[//]: # (help-id: Rake)
 
 The _Rake_ build runner supports the Test::Unit, Test-Spec, [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or later.
 

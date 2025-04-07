@@ -1,5 +1,5 @@
 [//]: # (title: Setting Up TeamCity for Kubernetes)
-[//]: # (auxiliary-id: Setting Up TeamCity for Kubernetes)
+[//]: # (help-id: Setting Up TeamCity for Kubernetes)
 
 
 <snippet id="k8s-integration-types">

@@ -1,5 +1,5 @@
 [//]: # (title: Configure Server Installation)
-[//]: # (auxiliary-id: Configure Server Installation)
+[//]: # (help-id: Configure Server Installation)
 
 ## Changing Server Port
 

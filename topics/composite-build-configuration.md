@@ -1,5 +1,5 @@
 [//]: # (title: Composite Build Configuration)
-[//]: # (auxiliary-id: Composite Build Configuration)
+[//]: # (help-id: Composite Build Configuration)
 
 *Composite build configurations* are "step-less" configurations designed to trigger multiple regular build configurations and track the results in a single place.
 

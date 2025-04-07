@@ -1,5 +1,5 @@
 [//]: # (title: Branch Filter)
-[//]: # (auxiliary-id: Branch Filter)
+[//]: # (help-id: Branch Filter)
 
 If a [VCS root](configuring-vcs-roots.md) has [branches specified](working-with-feature-branches.md#Configuring+Branches), the _branch filter_ option becomes available for various operations in TeamCity.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Supported Platforms and Environments)
-[//]: # (auxiliary-id: Supported Platforms and Environments)
+[//]: # (help-id: Supported Platforms and Environments)
 
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](system-requirements.md#Estimating+External+Database+Capacity).
 {instance="tc"}

@@ -1,5 +1,5 @@
 [//]: # (title: Visual Studio 2003)
-[//]: # (auxiliary-id: Visual Studio 2003)
+[//]: # (help-id: Visual Studio 2003)
 
 <note>
 

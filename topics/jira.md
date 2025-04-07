@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Jira)
-[//]: # (auxiliary-id: Integrating TeamCity with Jira;JIRA)
+[//]: # (help-id: Integrating TeamCity with Jira;JIRA)
 
 TeamCity integration with [Jira](https://www.atlassian.com/software/jira) allows:
 * Displaying links to Jira issues in the TeamCity UI — applicable to self-managed Jira (Data Center and Server 4.4 or later) and Jira Cloud.

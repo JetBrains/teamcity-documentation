@@ -1,5 +1,5 @@
 [//]: # (title: Solve Build Problems)
-[//]: # (auxiliary-id: Solve Build Problems)
+[//]: # (help-id: Solve Build Problems)
 
 Whenever you see a failed test or another problem in __[Build Results](view-build-results.md)__, you can assign it to any member of your team for further investigation. This guide explains how to:
 * Assign and resolve investigations.

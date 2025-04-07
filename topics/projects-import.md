@@ -1,5 +1,5 @@
 [//]: # (title: Projects Import)
-[//]: # (auxiliary-id: Projects Import)
+[//]: # (help-id: Projects Import)
 
 You can import projects with all their data and user accounts from a backup file to an existing TeamCity server, that is to add projects from one server to the target server that is normally used.
 

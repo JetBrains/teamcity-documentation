@@ -1,5 +1,5 @@
 [//]: # (title: Gradle)
-[//]: # (auxiliary-id: Gradle)
+[//]: # (help-id: Gradle)
 
 The _Gradle_ build runner runs [Gradle](https://www.gradle.org) projects.
 

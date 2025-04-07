@@ -1,5 +1,5 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud Windows Agents)
-[//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud Windows Agents)
+[//]: # (help-id: Preinstalled Software on TeamCity Cloud Windows Agents)
 
 <snippet id="windows-jb-agents">
 

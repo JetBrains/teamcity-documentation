@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Maintenance Mode)
-[//]: # (auxiliary-id: TeamCity Maintenance Mode)
+[//]: # (help-id: TeamCity Maintenance Mode)
 
 If you see the TeamCity Maintenance page on the TeamCity startup, it means that this TeamCity instance requires technical maintenance before it can start. In most cases, this page appears if the data format expected by the TeamCity installation does not correspond to the data format in the [Data Directory](teamcity-data-directory.md) or the database. For example, during [upgrade](upgrading-teamcity-server-and-agents.md), TeamCity will display this page before converting the data to a newer format.
 

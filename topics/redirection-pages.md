@@ -1,2 +1,2 @@
 [//]: # (title: Redirection Pages)
-[//]: # (auxiliary-id: Redirection+Pages)
+[//]: # (help-id: Redirection+Pages)

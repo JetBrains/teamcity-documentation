@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2021.1.4 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2021.1.4 Release Notes)
+[//]: # (help-id: TeamCity 2021.1.4 Release Notes)
 
 __Build: 92954__  
 __08 October 2021__

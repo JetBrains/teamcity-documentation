@@ -1,5 +1,5 @@
 [//]: # (title: VCS Root)
-[//]: # (auxiliary-id: VCS Root)
+[//]: # (help-id: VCS Root)
 
 <snippet id="VCSRoot">
 

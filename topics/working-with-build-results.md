@@ -1,5 +1,5 @@
 [//]: # (title: Working with Build Results)
-[//]: # (auxiliary-id: Working with Build Results;Viewing Build Configuration Details)
+[//]: # (help-id: Working with Build Results;Viewing Build Configuration Details)
 
 TeamCity has two main modes: __Home__ and __Settings__. The __Home__ mode accumulates build results at a project and build configuration levels. If you are using the new TeamCity UI, you can navigate between this hierarchy via the _Projects_ sidebar.
 

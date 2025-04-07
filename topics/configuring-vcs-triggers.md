@@ -1,5 +1,5 @@
 [//]: # (title: Configuring VCS Triggers)
-[//]: # (auxiliary-id: Configuring VCS Triggers)
+[//]: # (help-id: Configuring VCS Triggers)
 
 VCS triggers automatically start a new build each time TeamCity detects new changes in the configured [VCS roots](configuring-vcs-roots.md) and displays the change in the pending changes. Multiple VCS triggers can be added to a build configuration.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Glossary)
-[//]: # (auxiliary-id: Glossary)
+[//]: # (help-id: Glossary)
 
 ## A
 

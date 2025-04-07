@@ -1,5 +1,5 @@
 [//]: # (title: Running Personal Build)
-[//]: # (auxiliary-id: Running Personal Build;Personal Build)
+[//]: # (help-id: Running Personal Build;Personal Build)
 [//]: # (help-id: Personal Build)
 
 <snippet id="personal-build-overview">

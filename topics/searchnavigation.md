@@ -1,2 +1,2 @@
 [//]: # (title: SearchNavigation)
-[//]: # (auxiliary-id: SearchNavigation)
+[//]: # (help-id: SearchNavigation)

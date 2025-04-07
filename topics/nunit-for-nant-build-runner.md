@@ -1,5 +1,5 @@
 [//]: # (title: NUnit for NAnt Build Runner)
-[//]: # (auxiliary-id: NUnit for NAnt Build Runner)
+[//]: # (help-id: NUnit for NAnt Build Runner)
 
 <tip>
 

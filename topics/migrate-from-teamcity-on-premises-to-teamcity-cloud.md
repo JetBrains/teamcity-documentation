@@ -1,5 +1,5 @@
 [//]: # (title: Migrate from TeamCity On-Premises to TeamCity Cloud)
-[//]: # (auxiliary-id: Migrate from TeamCity On-Premises to TeamCity Cloud)
+[//]: # (help-id: Migrate from TeamCity On-Premises to TeamCity Cloud)
 
 TeamCity offers two distribution models:
 * __On-Premises__: you decide where to install the server and agents and how to administer them. The [pricing](https://www.jetbrains.com/teamcity/buy/#on-premises) is based on the number of build agents.

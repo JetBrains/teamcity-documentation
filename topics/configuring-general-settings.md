@@ -1,5 +1,5 @@
 [//]: # (title: Configuring General Settings)
-[//]: # (auxiliary-id: Configuring General Settings)
+[//]: # (help-id: Configuring General Settings)
 
 ## General Build Configuration Settings
 

@@ -1,5 +1,5 @@
 [//]: # (title: Uploading SSL Certificates)
-[//]: # (auxiliary-id: Uploading SSL Certificates)
+[//]: # (help-id: Uploading SSL Certificates)
 
 It is possible to upload an SSL certificate which TeamCity considers trusted when establishing connection by HTTPS or SSL protocols. These can be self-signed certificates or certificates signed by a not well-known certificate authority (CA).
 

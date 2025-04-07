@@ -1,5 +1,5 @@
 [//]: # (title: Custom Chart)
-[//]: # (auxiliary-id: Custom Chart)
+[//]: # (help-id: Custom Chart)
 
 In addition to statistic charts generated automatically by TeamCity on the __Statistics__ tab, it is possible to configure your own statistical charts based on the set of [statistic values provided by TeamCity](#Default+Statistics+Values+Provided+by+TeamCity) or values reported from a build script. In the latter case you will need to configure your build script to report custom statistical data to TeamCity.
 

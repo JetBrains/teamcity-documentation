@@ -1,5 +1,5 @@
 [//]: # (title: Remote Debug)
-[//]: # (auxiliary-id: Remote Debug)
+[//]: # (help-id: Remote Debug)
 
 _Remote Debug_ is a feature allowing you to remotely debug your tests on the TeamCity agent machine from the IDE on the local developer machine. This feature is of use when the agent environment is unique in some aspect, which causes a test to fail, and it is difficult to reproduce the problem locally.
 

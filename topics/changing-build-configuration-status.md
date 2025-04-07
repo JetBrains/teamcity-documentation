@@ -1,5 +1,5 @@
 [//]: # (title: Changing Build Configuration Status)
-[//]: # (auxiliary-id: Changing Build Configuration Status)
+[//]: # (help-id: Changing Build Configuration Status)
 
 A build configuration is characterized by its state visible in the UI which can be _paused_ or _active_. By default, when created, all configurations are active and can be paused manually as described below or automatically if the project is [archived](archiving-projects.md).
 

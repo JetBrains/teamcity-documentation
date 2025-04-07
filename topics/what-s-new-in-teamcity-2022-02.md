@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.02)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.02)
+[//]: # (help-id: What's New in TeamCity 2022.02)
 
 ## Storing Docker images produced by build to public ECR registry
 

@@ -1,5 +1,5 @@
 [//]: # (title: Licensing Policy)
-[//]: # (auxiliary-id: Licensing Policy)
+[//]: # (help-id: Licensing Policy)
 
 Pricing and new licenses/upgrades are available via the __[official web site](https://www.jetbrains.com/teamcity/buy/)__. If you have any questions on the licensing terms, obtaining or upgrading license keys, or other related topics, please [contact](https://www.jetbrains.com/support/sales/) JetBrains sales department.   
 You can review the TeamCity [license agreement](https://www.jetbrains.com/teamcity/buy/license.html) on the official website or in the footer of the installed TeamCity server web UI.

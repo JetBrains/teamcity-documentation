@@ -1,5 +1,5 @@
 [//]: # (title: Agent Cloud Profile)
-[//]: # (auxiliary-id: Agent Cloud Profile)
+[//]: # (help-id: Agent Cloud Profile)
 
 A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. Profiles allow TeamCity to automatically scale the number of active build agents depending on the current workload.
 

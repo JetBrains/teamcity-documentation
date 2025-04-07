@@ -1,5 +1,5 @@
 [//]: # (title: NUnit Support in TeamCity)
-[//]: # (auxiliary-id: NUnit Support in TeamCity;NUnit Support;TeamCity NUnit Test Launcher;NUnit for NAnt Build Runner;NUnit for MSBuild;MSBuild Service Tasks;NUnit Addins Support;TeamCity Add-in for NUnit;TeamCity Addin for NUnit)
+[//]: # (help-id: NUnit Support in TeamCity;NUnit Support;TeamCity NUnit Test Launcher;NUnit for NAnt Build Runner;NUnit for MSBuild;MSBuild Service Tasks;NUnit Addins Support;TeamCity Add-in for NUnit;TeamCity Addin for NUnit)
 
 There are two most common methods to set up NUnit tests reporting in TeamCity:
 * Use the [.NET](net.md) build runner.

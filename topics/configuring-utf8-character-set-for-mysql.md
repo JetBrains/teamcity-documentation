@@ -1,5 +1,5 @@
 [//]: # (title: Configuring UTF8 Character Set for MySQL)
-[//]: # (auxiliary-id: Configuring UTF8 Character Set for MySQL)
+[//]: # (help-id: Configuring UTF8 Character Set for MySQL)
 
 <!--[//]: # (Internal note. Do not delete. "Configuring UTF8 Character Set for MySQLd89e3.txt")
 [//]: # (Internal note. Do not delete. "Configuring UTF8 Character Set for MySQLd89e8.txt")-->  

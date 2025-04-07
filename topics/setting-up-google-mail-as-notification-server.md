@@ -1,5 +1,5 @@
 [//]: # (title: Setting up Google Mail as Notification Server)
-[//]: # (auxiliary-id: Setting up Google Mail as Notification Server)
+[//]: # (help-id: Setting up Google Mail as Notification Server)
 
 To set Google Mail as a notification server for TeamCity, configure these options in __Administration | Email Notifier__ page, set the options as described below:
 

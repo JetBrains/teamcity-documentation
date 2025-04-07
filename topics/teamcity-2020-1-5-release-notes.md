@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2020.1.5 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2020.1.5 Release Notes)
+[//]: # (help-id: TeamCity 2020.1.5 Release Notes)
 
 
 __Build: 78938__

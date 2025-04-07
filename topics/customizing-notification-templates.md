@@ -1,5 +1,5 @@
 [//]: # (title: Customizing Notification Templates)
-[//]: # (auxiliary-id: Customizing Notification Templates;Customizing Notifications)
+[//]: # (help-id: Customizing Notification Templates;Customizing Notifications)
 
 TeamCity users can [select the events to be notified about](adding-notification-rules.md). The default notification messages can be customized globally on a per-server basis.
 

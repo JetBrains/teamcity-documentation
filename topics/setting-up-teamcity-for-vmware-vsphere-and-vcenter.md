@@ -1,5 +1,5 @@
 [//]: # (title: Setting Up TeamCity for VMware vSphere and vCenter)
-[//]: # (auxiliary-id: Setting Up TeamCity for VMware vSphere and vCenter)
+[//]: # (help-id: Setting Up TeamCity for VMware vSphere and vCenter)
 
 TeamCity vSphere integration allows using TeamCity [agent cloud features](teamcity-integration-with-cloud-solutions.md) with VMware __vSphere__ and __vCenter__ installation. It requires configuring TeamCity with your VMware vSphere/vCenter account and then handles automatic creation/starting/stopping/deleting of the virtual machines with TeamCity agents on-demand, based on the queued builds.
 

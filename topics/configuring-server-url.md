@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Server URL)
-[//]: # (auxiliary-id: Configuring Server URL)
+[//]: # (help-id: Configuring Server URL)
 
 The server URL configured in the Administration UI (on the __Administration | Global Settings__ page) is used by the server to generate links to the server  when the URL cannot be derived from any other parameter. These cases include notifications and some other actions performed not within a web request. All generated links will be prefixed by this URL. 
 

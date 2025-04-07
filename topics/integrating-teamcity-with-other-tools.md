@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Other Tools)
-[//]: # (auxiliary-id: Integrating TeamCity with Other Tools)
+[//]: # (help-id: Integrating TeamCity with Other Tools)
 
 One of the key features of TeamCity is straightforward integration with modern software technologies and platforms. To ensure our users are able to integrate every component of their CI/CD pipeline with TeamCity, we either:
 * provide smart detection and handy UI controls on the TeamCity side, or

@@ -1,5 +1,5 @@
 [//]: # (title: Creating and Managing Users)
-[//]: # (auxiliary-id: Creating and Managing Users;Managing Users and User Groups)
+[//]: # (help-id: Creating and Managing Users;Managing Users and User Groups)
 
 ## What is User Account in TeamCity
 {id="User+Account" help-id="User Account"}

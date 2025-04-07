@@ -1,5 +1,5 @@
 [//]: # (title: Server Health)
-[//]: # (auxiliary-id: Server Health)
+[//]: # (help-id: Server Health)
 
 The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so-called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Administration__ area.
 

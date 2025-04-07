@@ -1,5 +1,5 @@
 [//]: # (title: Content Security Policy in TeamCity)
-[//]: # (auxiliary-id: Content Security Policy in TeamCity)
+[//]: # (help-id: Content Security Policy in TeamCity)
 
 TeamCity implements additional HTTP security with the [Content-Security-Policy](https://content-security-policy.com/) (CSP) header. 
 

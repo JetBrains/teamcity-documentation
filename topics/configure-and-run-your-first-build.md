@@ -1,5 +1,5 @@
 [//]: # (title: Configure and Run Your First Build)
-[//]: # (auxiliary-id: Configure and Run Your First Build)
+[//]: # (help-id: Configure and Run Your First Build)
 
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 

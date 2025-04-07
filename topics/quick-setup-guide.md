@@ -1,5 +1,5 @@
 [//]: # (title: Quick Setup)
-[//]: # (auxiliary-id: Quick Setup)
+[//]: # (help-id: Quick Setup)
 
 This article describes the __evaluation setup__ of a TeamCity server and one build agent on the same machine, for the most popular operating systems.
 

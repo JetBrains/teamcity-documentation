@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2024.12.2 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2024.12.2 Release Notes)
+[//]: # (help-id: TeamCity 2024.12.2 Release Notes)
 
 
 **Build 174504, 3 February 2025**

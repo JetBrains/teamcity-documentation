@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2023.05.5 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2023.05.5 Release Notes)
+[//]: # (help-id: TeamCity 2023.05.5 Release Notes)
 
 __Build: 129472__
 

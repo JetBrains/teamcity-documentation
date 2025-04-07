@@ -1,5 +1,5 @@
 [//]: # (title: Preinstalled Software on TeamCity Cloud macOS Agents)
-[//]: # (auxiliary-id: Preinstalled Software on TeamCity Cloud macOS Agents)
+[//]: # (help-id: Preinstalled Software on TeamCity Cloud macOS Agents)
 
 <snippet id="macos-jb-agents">
 

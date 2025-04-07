@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.10)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.10)
+[//]: # (help-id: What's New in TeamCity 2022.10)
 
 ## Easy HTTPS access setup on TeamCity server
 {instance="tc"}

@@ -1,5 +1,5 @@
 [//]: # (title: Create and Set Up Custom Parameters)
-[//]: # (auxiliary-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
+[//]: # (help-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
 
 
 This topic explains how to create custom TeamCity parameters and configure their appearance and behavior.

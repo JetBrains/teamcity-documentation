@@ -1,5 +1,5 @@
 [//]: # (title: NuGet Installer)
-[//]: # (auxiliary-id: NuGet Installer)
+[//]: # (help-id: NuGet Installer)
 
 The _NuGet Installer_ build runner performs NuGet [Command-line package restore](http://docs.nuget.org/docs/reference/package-restore#Command-Line_Package_Restore). It can also (optionally) automatically update package dependencies to the most recent ones.
 

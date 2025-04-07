@@ -1,5 +1,5 @@
 [//]: # (title: C# Script)
-[//]: # (auxiliary-id: C# Script;csharp script)
+[//]: # (help-id: C# Script;csharp script)
 
 The _C# Script_ runner allows executing a [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) script on Windows, Linux, or macOS. It uses a custom TeamCity tool for running a C# Interactive shell across platforms.
 

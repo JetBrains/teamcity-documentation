@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Retry Build Triggers)
-[//]: # (auxiliary-id: Configuring Retry Build Triggers)
+[//]: # (help-id: Configuring Retry Build Triggers)
 
 The _retry build trigger_ automatically adds a new build to the queue if the previous build of the current build configuration has failed.
 

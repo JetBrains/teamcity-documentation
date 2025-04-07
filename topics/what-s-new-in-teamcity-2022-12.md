@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2022.12)
-[//]: # (auxiliary-id: What's New in TeamCity 2022.12)
+[//]: # (help-id: What's New in TeamCity 2022.12)
 
 ## Improved support for draft pull requests in the Pull Requests plugin
 

@@ -1,6 +1,6 @@
 
 [//]: # (title: Code Quality Tools)
-[//]: # (auxiliary-id: Code Quality Tools)
+[//]: # (help-id: Code Quality Tools)
 
 TeamCity comes bundled with a number of tools capable of analyzing the quality of your code and reporting the obtained data. If you are using the tools which are currently not supported, TeamCity can be configured to run them and display their report results.
 

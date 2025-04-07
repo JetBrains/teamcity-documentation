@@ -1,5 +1,5 @@
 [//]: # (title: Managing Users and Roles)
-[//]: # (auxiliary-id: Managing Users and Roles;Managing User Accounts, Groups and Permissions)
+[//]: # (help-id: Managing Users and Roles;Managing User Accounts, Groups and Permissions)
 
 This section contains articles concerning user management in TeamCity.
 

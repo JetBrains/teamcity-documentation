@@ -1,5 +1,5 @@
 [//]: # (title: Maven Server-Side Settings)
-[//]: # (auxiliary-id: Maven Server-Side Settings)
+[//]: # (help-id: Maven Server-Side Settings)
 
 ## Maven Settings Resolution on the Server Side
 

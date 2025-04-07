@@ -1,5 +1,5 @@
 [//]: # (title: StarTeam)
-[//]: # (auxiliary-id: StarTeam)
+[//]: # (help-id: StarTeam)
 
 This article describes the fields and options available when setting up VCS roots using StarTeam.
 

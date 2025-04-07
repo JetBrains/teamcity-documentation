@@ -1,5 +1,5 @@
 [//]: # (title: FTP Upload)
-[//]: # (auxiliary-id: FTP Upload)
+[//]: # (help-id: FTP Upload)
 
 The _FTP Upload_ build runner allows deploying files/directories to an FTP server.
  

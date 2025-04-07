@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with GitLab Issues)
-[//]: # (auxiliary-id: Integrating TeamCity with GitLab Issues)
+[//]: # (help-id: Integrating TeamCity with GitLab Issues)
 
 TeamCity integration with the GitLab issue tracker can be set up separately or as a part of TeamCity integration with the [GitLab source code hosting service](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+GitLab). 
 

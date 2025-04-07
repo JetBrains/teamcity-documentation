@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2019.1.5 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2019.1.5 Release Notes)
+[//]: # (help-id: TeamCity 2019.1.5 Release Notes)
 
 
 __Build: 66605__

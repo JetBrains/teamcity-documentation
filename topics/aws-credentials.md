@@ -1,5 +1,5 @@
 [//]: # (title: AWS Credentials)
-[//]: # (auxiliary-id: AWS Credentials;AWS credentials)
+[//]: # (help-id: AWS Credentials;AWS credentials)
 
 The AWS credentials [build feature](https://www.jetbrains.com/help/teamcity/adding-build-features.html) makes AWS connection credentials accessible from within a build on an agent. To use this feature, you need at least one [AWS connection](configuring-connections.md#AmazonWebServices) configured in your project.
 

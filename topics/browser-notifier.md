@@ -1,5 +1,5 @@
 [//]: # (title: Browser Notifier)
-[//]: # (auxiliary-id: Browser Notifier)
+[//]: # (help-id: Browser Notifier)
 
 The TeamCity _Browser Notifier_ extension allows receiving real-time notifications about build statuses and events.   
 The extension is available for Mozilla Firefox, Opera, and Google Chrome (including all Chromium-based browsers such as Microsoft Edge).

@@ -1,5 +1,5 @@
 [//]: # (title: Service Messages)
-[//]: # (auxiliary-id: Service Messages)
+[//]: # (help-id: Service Messages)
 
 _Service messages_ are specially constructed pieces of text that pass commands/information about the build from the build script to the TeamCity server.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Visual Studio Add-in)
-[//]: # (auxiliary-id: Visual Studio Add-in;Visual Studio Addin)
+[//]: # (help-id: Visual Studio Add-in;Visual Studio Addin)
 
 ## Visual Studio Add-in Features
 

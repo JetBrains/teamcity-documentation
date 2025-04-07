@@ -1,5 +1,5 @@
 [//]: # (title: Ordering Projects and Build Configurations)
-[//]: # (auxiliary-id: Ordering Projects and Build Configurations)
+[//]: # (help-id: Ordering Projects and Build Configurations)
 
 By default, TeamCity displays projects, their subprojects, build configurations, and templates in the alphabetical order.
 

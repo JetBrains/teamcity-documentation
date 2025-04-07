@@ -1,5 +1,5 @@
 [//]: # (title: Restoring TeamCity Data from Backup)
-[//]: # (auxiliary-id: Restoring TeamCity Data from Backup)
+[//]: # (help-id: Restoring TeamCity Data from Backup)
 
 TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) via the TeamCity UI or by manually using the `maintainDB` command-line utility.
 

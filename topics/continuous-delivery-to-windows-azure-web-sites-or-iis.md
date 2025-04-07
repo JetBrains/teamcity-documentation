@@ -1,5 +1,5 @@
 [//]: # (title: Continuous Delivery to Windows Azure Web Sites \(or IIS\))
-[//]: # (auxiliary-id: viewpage.actionpageId113084596;Continuous Delivery to Windows Azure Web Sites \(or IIS\))
+[//]: # (help-id: viewpage.actionpageId113084596;Continuous Delivery to Windows Azure Web Sites \(or IIS\))
 
 >The TeamCity Azure Resource Manager template is deprecated and will no longer receive support. The existing TeamCity installations, based on this template, will continue to work for some time. We recommend running TeamCity via a custom template instead.
 >

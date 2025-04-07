@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2023.11)
-[//]: # (auxiliary-id: What's New in TeamCity 2023.11)
+[//]: # (help-id: What's New in TeamCity 2023.11)
 
 <!-- #REGION TC -->
 

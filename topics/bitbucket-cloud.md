@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Bitbucket)
-[//]: # (auxiliary-id: Integrating TeamCity with Bitbucket;Bitbucket)
+[//]: # (help-id: Integrating TeamCity with Bitbucket;Bitbucket)
 
 The TeamCity integration with the Bitbucket issue tracker can be set up separately, or as a part of TeamCity integration with [Bitbucket](integrating-teamcity-with-vcs-hosting-services.md#Integrating+TeamCity+with+Bitbucket) as a source code hosting service.
 

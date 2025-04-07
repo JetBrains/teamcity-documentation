@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Issue Tracker)
-[//]: # (auxiliary-id: Integrating TeamCity with Issue Tracker)
+[//]: # (help-id: Integrating TeamCity with Issue Tracker)
 
 TeamCity can be integrated with your issue tracker to provide a comprehensive view of your development project. TeamCity detects issues mentioned in the comments to version control changes, turning them into links to your issue tracker in the TeamCity UI.
 

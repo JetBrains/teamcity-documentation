@@ -1,5 +1,5 @@
 [//]: # (title: Working with Build and Test Failures)
-[//]: # (auxiliary-id: Investigating and Muting Build Failures)
+[//]: # (help-id: Investigating and Muting Build Failures)
 
 During a build run, you can typically encounter one of the following failure types:
 

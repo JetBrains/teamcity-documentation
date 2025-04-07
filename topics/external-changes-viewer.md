@@ -1,5 +1,5 @@
 [//]: # (title: External Changes Viewer)
-[//]: # (auxiliary-id: External Changes Viewer)
+[//]: # (help-id: External Changes Viewer)
 
 TeamCity supports integration with external changes viewers like JetBrains Upsource or Atlassian Fisheye. 
 

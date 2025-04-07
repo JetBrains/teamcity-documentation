@@ -1,5 +1,5 @@
 [//]: # (title: Disk Usage)
-[//]: # (auxiliary-id: Disk Usage)
+[//]: # (help-id: Disk Usage)
 
 TeamCity analyses disk space and provides the __Disk Usage__ report. It detects all local and remote [artifact directories](configuring-artifacts-storage.md) configured on the server and analyses the disk space occupied by builds in these storages.
 {instance="tc"}

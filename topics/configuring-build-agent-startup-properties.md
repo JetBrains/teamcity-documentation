@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Build Agent Startup Properties)
-[//]: # (auxiliary-id: Configuring Build Agent Startup Properties)
+[//]: # (help-id: Configuring Build Agent Startup Properties)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >

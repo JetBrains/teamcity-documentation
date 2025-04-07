@@ -1,5 +1,5 @@
 [//]: # (title: Kotlin DSL)
-[//]: # (auxiliary-id: Kotlin DSL)
+[//]: # (help-id: Kotlin DSL)
 
 Besides [storing settings in version control](storing-project-settings-in-version-control.md) in XML format, TeamCity allows storing the settings in the DSL (based on the [Kotlin language](https://kotlinlang.org/)).
 

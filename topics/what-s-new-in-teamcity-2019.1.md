@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2019.1)
-[//]: # (auxiliary-id: What's New in TeamCity 2019.1)
+[//]: # (help-id: What's New in TeamCity 2019.1)
 
 ## New TeamCity documentation website
 

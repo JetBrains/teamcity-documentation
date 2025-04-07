@@ -1,5 +1,5 @@
 [//]: # (title: Typical LDAP Configurations)
-[//]: # (auxiliary-id: Typical LDAP Configurations)
+[//]: # (help-id: Typical LDAP Configurations)
 
 This page contains samples of the `ldap-config.properties` file for different configuration cases.
 

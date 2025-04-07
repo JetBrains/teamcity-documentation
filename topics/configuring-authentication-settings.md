@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Authentication Settings)
-[//]: # (auxiliary-id: Configuring Authentication Settings)
+[//]: # (help-id: Configuring Authentication Settings)
 
 TeamCity can authenticate users via an internal database, or can integrate into your system and use external authentication sources such as Windows Domain, LDAP, or Git hosting providers.
 

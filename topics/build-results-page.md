@@ -1,5 +1,5 @@
 [//]: # (title: Build Results Page)
-[//]: # (auxiliary-id: Build Results Page;Build History)
+[//]: # (help-id: Build Results Page;Build History)
 
 <snippet id="build-results-intro">
 

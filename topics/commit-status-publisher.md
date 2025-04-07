@@ -1,5 +1,5 @@
 [//]: # (title: Commit Status Publisher)
-[//]: # (auxiliary-id: Commit Status Publisher)
+[//]: # (help-id: Commit Status Publisher)
 
 Commit Status Publisher is a [build feature](adding-build-features.md) which allows TeamCity 
 to automatically send build statuses of your commits to an external system. 

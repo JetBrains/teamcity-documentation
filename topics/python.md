@@ -1,5 +1,5 @@
 [//]: # (title: Python)
-[//]: # (auxiliary-id: Python)
+[//]: # (help-id: Python)
 
 The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
 

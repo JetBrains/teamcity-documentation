@@ -1,5 +1,5 @@
 [//]: # (title: Continuous Integration with TeamCity)
-[//]: # (auxiliary-id: Continuous Integration with TeamCity)
+[//]: # (help-id: Continuous Integration with TeamCity)
 
 TeamCity is a continuous integration/continuous delivery (CI/CD) server.
 

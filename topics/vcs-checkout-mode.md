@@ -1,5 +1,5 @@
 [//]: # (title: VCS Checkout Mode)
-[//]: # (auxiliary-id: VCS Checkout Mode)
+[//]: # (help-id: VCS Checkout Mode)
 
 The __Version Control Settings__ page of a build configuration allows configuring how project source code is retrieved from VCS: you can [attach a VCS root](configuring-vcs-settings.md#Configuring+Checkout+Options+for+Build+Configuration) and configure checkout options.
 

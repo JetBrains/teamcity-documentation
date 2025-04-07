@@ -1,5 +1,5 @@
 [//]: # (title: Adding Build Features)
-[//]: # (auxiliary-id: Adding Build Features)
+[//]: # (help-id: Adding Build Features)
 
 <snippet id="intro">
 

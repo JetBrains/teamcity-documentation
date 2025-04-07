@@ -1,5 +1,5 @@
 [//]: # (title: Authentication Modules)
-[//]: # (auxiliary-id: Authentication Modules)
+[//]: # (help-id: Authentication Modules)
 
 There are two types of _authentication modules_ in TeamCity:
 * __Credentials Authentication Modules__ authenticate users with a login/password pair specified on the login page.

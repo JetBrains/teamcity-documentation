@@ -1,5 +1,5 @@
 [//]: # (title: Installing Additional Plugins)
-[//]: # (auxiliary-id: Installing Additional Plugins)
+[//]: # (help-id: Installing Additional Plugins)
 
 Plugins can add extra functionality to your TeamCity server. You can get them in the [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity).
 

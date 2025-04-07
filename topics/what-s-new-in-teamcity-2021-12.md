@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2021.12)
-[//]: # (auxiliary-id: What's New in TeamCity 2021.12)
+[//]: # (help-id: What's New in TeamCity 2021.12)
 
 ## Running builds in your own Cloud infrastructure
 {instance="tcc"}

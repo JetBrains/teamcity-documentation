@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Data Backup)
-[//]: # (auxiliary-id: TeamCity Data Backup)
+[//]: # (help-id: TeamCity Data Backup)
 
 The database of your TeamCity Cloud instance is backed up on a daily basis. The backed up files are usually store for 5 days. We constantly monitor active servers and can quickly restore the lost data in case the database gets corrupted due to any error.
 {instance="tcc"}

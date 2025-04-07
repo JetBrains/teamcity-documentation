@@ -1,5 +1,5 @@
 [//]: # (title: Azure Board Work Items)
-[//]: # (auxiliary-id: Azure Board Work Items;Integrating TeamCity with Team Foundation Work Items;Team Foundation Work Items)
+[//]: # (help-id: Azure Board Work Items;Integrating TeamCity with Team Foundation Work Items;Team Foundation Work Items)
 
 You can integrate TeamCity with Azure Board Work Items (or Team Foundation Work Items) to provide links to [work items](https://docs.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&tabs=agile-process) from the TeamCity UI. TeamCity supports Azure DevOps Server (previously named Team Foundation Server — versions 2012 or later) and Azure DevOps Services.
 

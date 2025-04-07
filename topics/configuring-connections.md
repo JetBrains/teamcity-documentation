@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Connections)
-[//]: # (auxiliary-id: Configuring Connections)
+[//]: # (help-id: Configuring Connections)
 
 TeamCity allows storing presets of connections to external services. You can reuse these presets in various places on the server: when creating projects, configuring notifications, integrating with issue trackers, and more. This article gives instructions on how to add each type of connection.
 

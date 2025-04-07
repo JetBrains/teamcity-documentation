@@ -1,5 +1,5 @@
 [//]: # (title: Configuring TeamCity Server Startup Properties)
-[//]: # (auxiliary-id: Server Startup Properties;Configuring TeamCity Server Startup Properties)
+[//]: # (help-id: Server Startup Properties;Configuring TeamCity Server Startup Properties)
 
 Various aspects of a TeamCity server behavior can be customized through options passed on its start:
 * Internal properties affecting TeamCity itself

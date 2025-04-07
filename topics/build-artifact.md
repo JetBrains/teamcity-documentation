@@ -1,5 +1,5 @@
 [//]: # (title: Build Artifacts)
-[//]: # (auxiliary-id: Build Artifact)
+[//]: # (help-id: Build Artifact)
 
 _Build artifacts_ are files produced by a build. Typically, these include distribution packages, WAR files, reports, log files, and so on. When creating a build configuration, you specify the paths to the artifacts of your build on the [Configuring General Settings](configuring-general-settings.md#Artifact+Paths) page.
 

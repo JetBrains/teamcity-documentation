@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Specific Directories)
-[//]: # (auxiliary-id: TeamCity Specific Directories)
+[//]: # (help-id: TeamCity Specific Directories)
 
 <table>
 <tr>

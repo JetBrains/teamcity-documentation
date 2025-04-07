@@ -1,5 +1,5 @@
 [//]: # (title: Deploy Build)
-[//]: # (auxiliary-id: Deploy Build)
+[//]: # (help-id: Deploy Build)
 
 This article gives an overview of the deployment instruments offered by TeamCity.
 

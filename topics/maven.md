@@ -1,5 +1,5 @@
 [//]: # (title: Maven)
-[//]: # (auxiliary-id: Maven)
+[//]: # (help-id: Maven)
 
 The _Maven_ build runner allows using [Apache Maven](https://maven.apache.org/) for automating builds.
 

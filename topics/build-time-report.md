@@ -1,5 +1,5 @@
 [//]: # (title: Build Time Report)
-[//]: # (auxiliary-id: Build Time Report)
+[//]: # (help-id: Build Time Report)
 
 The __Build Time__ report provides comparative statistics of the build time taken up by TeamCity projects and build configurations.
 

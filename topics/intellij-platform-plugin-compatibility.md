@@ -1,5 +1,5 @@
 [//]: # (title: IntelliJ Platform Plugin Compatibility)
-[//]: # (auxiliary-id: IntelliJ Platform Plugin Compatibility)
+[//]: # (help-id: IntelliJ Platform Plugin Compatibility)
 
 <table>
 

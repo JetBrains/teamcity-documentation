@@ -1,5 +1,5 @@
 [//]: # (title: Ant)
-[//]: # (auxiliary-id: Ant)
+[//]: # (help-id: Ant)
 
 The _Ant_ build runner can process Ant `build.xml` files.
 

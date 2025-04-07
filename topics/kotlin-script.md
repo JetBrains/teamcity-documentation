@@ -1,5 +1,5 @@
 [//]: # (title: Kotlin Script)
-[//]: # (auxiliary-id: Kotlin Script)
+[//]: # (help-id: Kotlin Script)
 
 The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) script on Windows, Linux, or macOS.
 

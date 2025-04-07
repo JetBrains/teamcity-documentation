@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
-[//]: # (auxiliary-id: TeamCity Configuration and Maintenance)
+[//]: # (help-id: TeamCity Configuration and Maintenance)
 
 > Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
 {instance="tc"}

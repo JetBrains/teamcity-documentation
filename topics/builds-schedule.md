@@ -1,5 +1,5 @@
 [//]: # (title: Builds Schedule)
-[//]: # (auxiliary-id: Builds Schedule)
+[//]: # (help-id: Builds Schedule)
 
 If you have configured any [schedule triggers](configuring-schedule-triggers.md) for the [build configurations](managing-builds.md) in the current project, you can see the builds schedule page by clicking **Builds Schedule** in the [project settings](project-administrator-guide.md#Edit+and+View+Modes) sidebar.
 

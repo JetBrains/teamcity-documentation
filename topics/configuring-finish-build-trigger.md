@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Finish Build Trigger)
-[//]: # (auxiliary-id: Configuring Finish Build Trigger)
+[//]: # (help-id: Configuring Finish Build Trigger)
 
 The _finish build trigger_ starts a build of the current build configuration when a build of the selected build configuration is finished.
 

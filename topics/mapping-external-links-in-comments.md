@@ -1,5 +1,5 @@
 [//]: # (title: Mapping External Links in Comments)
-[//]: # (auxiliary-id: Mapping External Links in Comments)
+[//]: # (help-id: Mapping External Links in Comments)
 
 TeamCity allows mapping patterns in VCS change comments to arbitrary HTML pieces using regular expression search and replace patterns. One of the most common usages is to map an issue ID mentioning into a hyperlink to the issue page in the issue tracking system.
 

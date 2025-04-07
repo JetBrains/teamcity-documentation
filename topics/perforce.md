@@ -1,5 +1,5 @@
 [//]: # (title: Perforce)
-[//]: # (auxiliary-id: Perforce)
+[//]: # (help-id: Perforce)
 
 TeamCity can integrate with Perforce to build source projects stored in Perforce Helix Core and ensure their continuous integration and delivery. Learn more about this integration [here](integrating-teamcity-with-perforce.md).
 

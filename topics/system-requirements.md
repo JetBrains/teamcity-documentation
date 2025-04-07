@@ -1,5 +1,5 @@
 [//]: # (title: System Requirements)
-[//]: # (auxiliary-id: System Requirements)
+[//]: # (help-id: System Requirements)
 
 This article contains general recommendations on choosing and configuring the environment for TeamCity Server and Agents, as well as the network connection between them and a dedicated external database. If you have specific questions that are not covered here, please contact our support via any convenient [feedback channel](troubleshooting.md).
 {instance="tc"}

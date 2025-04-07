@@ -1,5 +1,5 @@
 [//]: # (title: Security Notes)
-[//]: # (auxiliary-id: Security Notes)
+[//]: # (help-id: Security Notes)
 
 >The following notes are provided for reference only and are not guaranteed to be complete or entirely accurate. We suggest that you follow the best security practices when using TeamCity for production purposes. This document contains our recommendations and points to consider when configuring your CI/CD pipeline with TeamCity.
 >

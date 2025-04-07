@@ -1,5 +1,5 @@
 [//]: # (title: Xcode Project)
-[//]: # (auxiliary-id: Xcode Project)
+[//]: # (help-id: Xcode Project)
 
 The _Xcode Project_ build runner supports Xcode 3 (target-based build), Xcode 4 (scheme-based build), Xcode 5-13.
 

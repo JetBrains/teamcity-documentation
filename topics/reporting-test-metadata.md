@@ -1,5 +1,5 @@
 [//]: # (title: Reporting Test Metadata)
-[//]: # (auxiliary-id: Reporting Test Metadata)
+[//]: # (help-id: Reporting Test Metadata)
 
 A test run in TeamCity can be associated with some additional information (metadata), complementing test status, execution time, and output. This information can be used to provide extra logs, screenshots, numeric values, tags, and so on.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Working with Feature Branches)
-[//]: # (auxiliary-id: Working with Feature Branches)
+[//]: # (help-id: Working with Feature Branches)
 
 _Feature branches_ in distributed version control systems (DVCS) allow you to work on a feature independently of the main development and commit all the changes for the feature onto the branch, merging the changes into the main branch when your feature is complete. This approach brings a number of advantages to software development teams; however, in continuous integration servers that do not have dedicated support for it, it also causes a number of problems, like constant build configurations duplication, poor visibility, and, in the end, loss of control over the process.
 

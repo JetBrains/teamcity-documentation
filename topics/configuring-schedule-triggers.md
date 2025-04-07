@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Schedule Triggers)
-[//]: # (auxiliary-id: Configuring Schedule Triggers)
+[//]: # (help-id: Configuring Schedule Triggers)
 
 The _schedule trigger_ allows defining a schedule for automatically running builds in a given configuration. Multiple schedule triggers can be added to a single build configuration.
 

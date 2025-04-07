@@ -1,5 +1,5 @@
 [//]: # (title: .NET Process Runner)
-[//]: # (auxiliary-id: .NET Process Runner)
+[//]: # (help-id: .NET Process Runner)
 
 <note>
 

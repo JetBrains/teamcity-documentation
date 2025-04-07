@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Cloud Cost Optimization)
-[//]: # (auxiliary-id: TeamCity Cloud Cost Optimization)
+[//]: # (help-id: TeamCity Cloud Cost Optimization)
 
 TeamCity Cloud provides a quick way to get started with a fully managed CI solution that can be dynamically scaled as the number of builds increase or decrease. However, with this increased flexibility to scale-up comes the risk of additional costs through a higher consumption of build credits.
 

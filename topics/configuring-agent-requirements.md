@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Agent Requirements)
-[//]: # (auxiliary-id: Configuring Agent Requirements)
+[//]: # (help-id: Configuring Agent Requirements)
 
 **Agent requirements** are conditions that specify which agents can run your build configuration. To view all currently existing requirements and create new ones, as well as check which of your agents can run the specific configuration, go to **[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Agent Requirements**.
 

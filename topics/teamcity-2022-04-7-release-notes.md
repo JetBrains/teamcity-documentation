@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2022.04.7 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2022.04.7 Release Notes)
+[//]: # (help-id: TeamCity 2022.04.7 Release Notes)
 
 __Build: 109063__
 

@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2022.10.6 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2022.10.6 Release Notes)
+[//]: # (help-id: TeamCity 2022.10.6 Release Notes)
 
 __Build: 117311__
 

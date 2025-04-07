@@ -1,5 +1,5 @@
 [//]: # (title: Branch Remote Run Trigger)
-[//]: # (auxiliary-id: Branch Remote Run Trigger)
+[//]: # (help-id: Branch Remote Run Trigger)
 
 The _branch remote run trigger_ automatically starts a new [personal build](personal-build.md) each time TeamCity detects changes in particular branches of the VCS roots of the build configuration. Finished personal builds are listed in the [build history](build-results-page.md#Build+History+in+Classic+UI), but only for the users who initiated them.
 

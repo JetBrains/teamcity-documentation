@@ -1,5 +1,5 @@
 [//]: # (title: Configure Java for Agent)
-[//]: # (auxiliary-id: Configure Java for Agent)
+[//]: # (help-id: Configure Java for Agent)
 
 A TeamCity build agent is a Java application (see [supported Java versions](supported-platforms-and-environments.md#TeamCity+Agent)).
 

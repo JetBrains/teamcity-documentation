@@ -1,5 +1,5 @@
 [//]: # (title: Build Log)
-[//]: # (auxiliary-id: Build Log)
+[//]: # (help-id: Build Log)
 
 A _build log_ is an enhanced console output of a build. It is represented by a structured list of the events which took place during the build. Generally, it includes entries on TeamCity-performed actions and the output of the processes launched during the build. TeamCity captures the processes output and stores it in an internal format that allows for hierarchical display.
 

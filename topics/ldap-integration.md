@@ -1,5 +1,5 @@
 [//]: # (title: LDAP Integration)
-[//]: # (auxiliary-id: LDAP Integration)
+[//]: # (help-id: LDAP Integration)
 
 LDAP integration in TeamCity has two levels: authentication (login) and users synchronization:
 * __authentication__ allows you to login in to TeamCity using LDAP server credentials.

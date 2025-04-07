@@ -1,5 +1,5 @@
 [//]: # (title: CSRF Protection)
-[//]: # (auxiliary-id: CSRF Protection)
+[//]: # (help-id: CSRF Protection)
 
 Сross-Site Request Forgery (CSRF) protection in TeamCity implies a number of requirements on HTTP requests.
 

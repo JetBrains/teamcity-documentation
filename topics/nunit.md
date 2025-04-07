@@ -1,5 +1,5 @@
 [//]: # (title: NUnit)
-[//]: # (auxiliary-id: NUnit)
+[//]: # (help-id: NUnit)
 
 The _NUnit_ build runner is designed to run NUnit tests on the TeamCity server. However, you can also use the [](net.md) runner to launch NUnit tests and view test reports in TeamCity. Refer to the [](nunit-support.md) article for more information.
 

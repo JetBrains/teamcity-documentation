@@ -1,5 +1,5 @@
 [//]: # (title: Getting started with PHP)
-[//]: # (auxiliary-id: Getting started with PHP)
+[//]: # (help-id: Getting started with PHP)
 
 ## Introduction
 

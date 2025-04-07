@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Release Cycle)
-[//]: # (auxiliary-id: TeamCity Release Cycle)
+[//]: # (help-id: TeamCity Release Cycle)
 
 >The information on this page can be used for reference purposes only.
 > 

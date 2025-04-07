@@ -1,5 +1,5 @@
 [//]: # (title: Start TeamCity Agent)
-[//]: # (auxiliary-id: Start TeamCity Agent)
+[//]: # (help-id: Start TeamCity Agent)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >

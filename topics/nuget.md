@@ -1,5 +1,5 @@
 [//]: # (title: NuGet)
-[//]: # (auxiliary-id: NuGet)
+[//]: # (help-id: NuGet)
 
 ## Integration Capabilities
 

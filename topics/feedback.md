@@ -1,5 +1,5 @@
 [//]: # (title: Feedback)
-[//]: # (auxiliary-id: Feedback)
+[//]: # (help-id: Feedback)
 
 This section details our support services, contact information, and best practices for contacting JetBrains to get TeamCity support and send your feedback on the product.
 

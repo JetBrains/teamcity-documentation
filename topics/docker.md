@@ -1,5 +1,5 @@
 [//]: # (title: Docker)
-[//]: # (auxiliary-id: Docker)
+[//]: # (help-id: Docker)
 
 The _Docker_ [build step](configuring-build-steps.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 

@@ -1,5 +1,5 @@
 [//]: # (title: CI Tutorials)
-[//]: # (auxiliary-id: CI Tutorials)
+[//]: # (help-id: CI Tutorials)
 
 This section contains miscellaneous tutorials on how to configure continuous integration (CI) processes for different technologies.
 

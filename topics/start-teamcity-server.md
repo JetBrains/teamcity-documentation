@@ -1,5 +1,5 @@
 [//]: # (title: Start TeamCity Server)
-[//]: # (auxiliary-id: Start TeamCity Server)
+[//]: # (help-id: Start TeamCity Server)
 
 ## Start Server
 

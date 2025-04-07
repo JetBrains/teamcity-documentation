@@ -1,5 +1,5 @@
 [//]: # (title: View Build Results)
-[//]: # (auxiliary-id: View Build Results)
+[//]: # (help-id: View Build Results)
 
 TeamCity offers a comprehensive overview of build results:
 * Detailed build log

@@ -1,5 +1,5 @@
 [//]: # (title: Change)
-[//]: # (auxiliary-id: Change)
+[//]: # (help-id: Change)
 
 Any modification of the source code which you introduce. If a change has been committed to the version control system, but not yet included in a build, it is considered pending for a certain build configuration.
 

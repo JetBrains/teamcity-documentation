@@ -1,5 +1,5 @@
 [//]: # (title: Container Deployer)
-[//]: # (auxiliary-id: Container Deployer)
+[//]: # (help-id: Container Deployer)
 
 The _Container Deployer_ build runner allows deploying WAR application archives to different containers. The runner supports the following Tomcat versions: 5.x, 6.x, 7.x and 8.x.
 

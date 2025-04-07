@@ -1,5 +1,5 @@
 [//]: # (title: Including Third-Party Reports in the Build Results)
-[//]: # (auxiliary-id: Including Third-Party Reports in the Build Results)
+[//]: # (help-id: Including Third-Party Reports in the Build Results)
 
 If your reporting tool produces reports in HTML format, you can extend TeamCity with a custom tab to show the information provided by the third-party reporting tool. The report provided by your tool can be then displayed either on the __Build Results__ page, or on the __Project Home__ page.
 

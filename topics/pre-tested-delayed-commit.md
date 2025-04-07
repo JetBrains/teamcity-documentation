@@ -1,5 +1,5 @@
 [//]: # (title: Pre-Tested \(Delayed\) Commit)
-[//]: # (auxiliary-id: Pre-Tested \(Delayed\) Commit)
+[//]: # (help-id: Pre-Tested \(Delayed\) Commit)
 
 A pre-tested commit is an approach that prevents committing defective code into a build, so the entire team's process is not affected. [These diagrams](https://www.jetbrains.com/teamcity/features/delayed_commit.html) illustrate the TeamCity approach to pre-tested commits described below. 
 

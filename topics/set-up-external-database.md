@@ -1,5 +1,5 @@
 [//]: # (title: Set up External Database)
-[//]: # (auxiliary-id: Set up External Database;Setting up External Database;Setting up an External Database)
+[//]: # (help-id: Set up External Database;Setting up External Database;Setting up an External Database)
 
 <snippet id="intro">
 

@@ -1,5 +1,5 @@
 [//]: # (title: Parallel Tests)
-[//]: # (auxiliary-id: Parallel Tests)
+[//]: # (help-id: Parallel Tests)
 
 TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
 This feature addresses a popular use case when a build consequently runs many independent tests on the same agent while they could technically be running in parallel, utilizing resources of multiple agents.

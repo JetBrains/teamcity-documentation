@@ -1,5 +1,5 @@
 [//]: # (title: Ipr \(deprecated\))
-[//]: # (auxiliary-id: Ipr \(deprecated\))
+[//]: # (help-id: Ipr \(deprecated\))
 
 This runner provides ability to build [IntelliJ IDEA](https://www.jetbrains.com/idea/) projects in TeamCity.   
 It is superseded by [IntelliJ IDEA Project](intellij-idea-project.md) runner. 

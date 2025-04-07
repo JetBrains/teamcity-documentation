@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Build Triggers)
-[//]: # (auxiliary-id: Configuring Build Triggers)
+[//]: # (help-id: Configuring Build Triggers)
 
 Once a build configuration is created, builds can be triggered manually by clicking the [Run](running-custom-build.md) button or initiated automatically with the help of _triggers_.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Viewing Tests and Configuration Problems)
-[//]: # (auxiliary-id: Viewing Tests and Configuration Problems;Already Fixed In;First Failure)
+[//]: # (help-id: Viewing Tests and Configuration Problems;Already Fixed In;First Failure)
 
 ## Viewing Problems on Project Overview Page
 

@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Cross-Server Projects Pop-up Menu)
-[//]: # (auxiliary-id: Configuring Cross-Server Projects Pop-up Menu;Configuring Cross-Server Projects Popup)
+[//]: # (help-id: Configuring Cross-Server Projects Pop-up Menu;Configuring Cross-Server Projects Popup)
 
 The TeamCity _Projects_ pop-up menu allows browsing projects and build configurations on multiple servers, so that when a project or a build configuration is selected, the page is opened on the right server. This functionality works only for servers using HTTPS: if you try to enable it for an HTTP server, TeamCity won't be able to display its projects.
 

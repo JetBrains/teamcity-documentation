@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity REST API)
-[//]: # (auxiliary-id: TeamCity REST API;REST API;REST API Reference)
+[//]: # (help-id: TeamCity REST API;REST API;REST API Reference)
 
 TeamCity provides a REST API for integrating external applications and creating script interactions with the TeamCity server. It allows accessing resources via URL paths.
 

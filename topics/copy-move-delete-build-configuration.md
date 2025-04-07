@@ -1,5 +1,5 @@
 [//]: # (title: Copy, Move, Delete Build Configuration)
-[//]: # (auxiliary-id: Copy, Move, Delete Build Configuration)
+[//]: # (help-id: Copy, Move, Delete Build Configuration)
 
 To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Configuring+Settings)__, or the similar menu on the main Build Settings page.
 

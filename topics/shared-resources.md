@@ -1,5 +1,5 @@
 [//]: # (title: Shared Resources)
-[//]: # (auxiliary-id: Shared Resources)
+[//]: # (help-id: Shared Resources)
 
 The _Shared Resources_ [build feature](adding-build-features.md) allows limiting concurrently running builds using a shared resource, such as an external (to the CI server) resource, _for example, a test database, or a server with a limited number of connections._
 

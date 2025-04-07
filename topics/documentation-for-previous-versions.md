@@ -1,5 +1,5 @@
 [//]: # (title: Documentation for Previous Versions)
-[//]: # (auxiliary-id: Documentation for Previous Versions)
+[//]: # (help-id: Documentation for Previous Versions)
 
 [Permalink](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) to the latest version documentation.
 

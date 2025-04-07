@@ -1,5 +1,5 @@
 [//]: # (title: Mono Support)
-[//]: # (auxiliary-id: Mono Support)
+[//]: # (help-id: Mono Support)
 
 Mono framework is an alternative framework for running .NET applications on both Windows and Unix-based platforms.   
 For more information refer to the [Mono official site](https://www.mono-project.com/).

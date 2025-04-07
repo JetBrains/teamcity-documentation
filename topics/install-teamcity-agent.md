@@ -1,5 +1,5 @@
 [//]: # (title: Install TeamCity Agent)
-[//]: # (auxiliary-id: Install TeamCity Agent)
+[//]: # (help-id: Install TeamCity Agent)
 
 Before installing a TeamCity build agent, make sure to read the [system requirements](system-requirements.md#TeamCity+Agent+Requirements).
 

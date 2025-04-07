@@ -1,5 +1,5 @@
 [//]: # (title: Using Build Parameters)
-[//]: # (auxiliary-id: Using Build Parameters)
+[//]: # (help-id: Using Build Parameters)
 
 This topic illustrates simple use cases where you might opt for referencing parameters in TeamCity UI instead of specifying plain values. Refer to the [](configuring-build-parameters.md#Main+Use+Cases) section for the general overview of parameters' usage scenarios.
 

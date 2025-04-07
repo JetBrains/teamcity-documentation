@@ -1,5 +1,5 @@
 [//]: # (title: Support and Troubleshooting)
-[//]: # (auxiliary-id: Troubleshooting)
+[//]: # (help-id: Troubleshooting)
 
 
 When a problem occurs with TeamCity, we recommend first checking the [Common Problems](common-problems.md) and [Known Issues](known-issues.md) pages to see if there is existing guidance for the issue you are experiencing.

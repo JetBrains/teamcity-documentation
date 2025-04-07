@@ -1,5 +1,5 @@
 [//]: # (title: Visual SourceSafe)
-[//]: # (auxiliary-id: Visual SourceSafe)
+[//]: # (help-id: Visual SourceSafe)
 
 The Visual SourceSafe support is available via an [external plugin](https://plugins.jetbrains.com/plugin/10902-vcs-support-vss).
 

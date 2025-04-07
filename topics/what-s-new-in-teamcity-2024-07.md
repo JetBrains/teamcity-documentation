@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2024.07)
-[//]: # (auxiliary-id: What's New in TeamCity 2024.07)
+[//]: # (help-id: What's New in TeamCity 2024.07)
 
 
 ## New Licensing Mechanism

@@ -1,5 +1,5 @@
 [//]: # (title: Team Foundation Version Control (Azure DevOps))
-[//]: # (auxiliary-id: Team Foundation Version Control (Azure DevOps);Team Foundation Server;Azure DevOps;Team Foundation Server)
+[//]: # (help-id: Team Foundation Version Control (Azure DevOps);Team Foundation Server;Azure DevOps;Team Foundation Server)
 
 Project hosted on Azure DevOps can use either of the following version control systems:
 

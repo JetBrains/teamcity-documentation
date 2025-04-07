@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Server Logs)
-[//]: # (auxiliary-id: TeamCity Server Logs)
+[//]: # (help-id: TeamCity Server Logs)
 
 TeamCity Server keeps a log of internal activities that can be examined to investigate an issue with the server behavior or get internal error details.
 

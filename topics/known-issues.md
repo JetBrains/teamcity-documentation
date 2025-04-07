@@ -1,5 +1,5 @@
 [//]: # (title: Known Issues)
-[//]: # (auxiliary-id: Known Issues)
+[//]: # (help-id: Known Issues)
 
 This page contains a list of workarounds for known issues in TeamCity.
 

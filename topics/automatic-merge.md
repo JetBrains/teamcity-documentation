@@ -1,5 +1,5 @@
 [//]: # (title: Automatic Merge)
-[//]: # (auxiliary-id: Automatic Merge)
+[//]: # (help-id: Automatic Merge)
 
 The _Automatic Merge_ [build feature](adding-build-features.md) tracks builds in branches matched by the configured filter and merges them into a specified destination branch if the build satisfies the condition configured (for example, the build is successful).
 

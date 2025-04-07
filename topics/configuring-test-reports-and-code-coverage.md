@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Test Reports and Code Coverage)
-[//]: # (auxiliary-id: Configuring Test Reports and Code Coverage;Configuring Unit Testing and Code Coverage;Code Inspection;Code Coverage)
+[//]: # (help-id: Configuring Test Reports and Code Coverage;Configuring Unit Testing and Code Coverage;Code Inspection;Code Coverage)
 
 This section contains articles concerning support of test reports, code inspections, and code coverage in TeamCity.
 

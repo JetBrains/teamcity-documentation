@@ -1,5 +1,5 @@
 [//]: # (title: Set Up Notifications)
-[//]: # (auxiliary-id: Set Up Notifications)
+[//]: # (help-id: Set Up Notifications)
 
 You can integrate TeamCity with various external systems and be notified about the build events:
 * in a browser

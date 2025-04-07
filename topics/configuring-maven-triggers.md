@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Maven Triggers)
-[//]: # (auxiliary-id: Configuring Maven Triggers)
+[//]: # (help-id: Configuring Maven Triggers)
 <!--[//]: # (Internal note. Do not delete. "Configuring Maven Triggersd81e3.txt")-->   
 
 The __Triggers__ page of __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes)__ allows you to add the following Maven-related triggers:

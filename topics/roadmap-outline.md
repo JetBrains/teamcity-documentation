@@ -1,5 +1,5 @@
 [//]: # (title: Roadmap Outline)
-[//]: # (auxiliary-id: Roadmap Outline)
+[//]: # (help-id: Roadmap Outline)
 
 This page is meant to give rough estimates of the closest TeamCity release dates. Please note that our development plans and dates may change rapidly, and this page might be updated with delays. To see the detailed roadmap, please visit [our website](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap).
 

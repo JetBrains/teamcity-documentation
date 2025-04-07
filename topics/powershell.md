@@ -1,5 +1,5 @@
 [//]: # (title: PowerShell)
-[//]: # (auxiliary-id: PowerShell)
+[//]: # (help-id: PowerShell)
 
 The _PowerShell_ [build step](configuring-build-steps.md) is specifically designed to run PowerShell scripts. 
 

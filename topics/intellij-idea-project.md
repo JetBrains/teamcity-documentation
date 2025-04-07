@@ -1,5 +1,5 @@
 [//]: # (title: IntelliJ IDEA Project)
-[//]: # (auxiliary-id: IntelliJ IDEA Project)
+[//]: # (help-id: IntelliJ IDEA Project)
 
 The _IntelliJ IDEA Project_ build runner allows you to build a project created in IntelliJ IDEA.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Artifacts Storage)
-[//]: # (auxiliary-id: Configuring Artifacts Storage)
+[//]: # (help-id: Configuring Artifacts Storage)
 
 The __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Artifacts Storage__ tab displays artifact storages configured in this project as well as the storages inherited from parents. 
 

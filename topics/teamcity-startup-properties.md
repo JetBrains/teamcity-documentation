@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Startup Properties)
-[//]: # (auxiliary-id: TeamCity Startup Properties)
+[//]: # (help-id: TeamCity Startup Properties)
 
 See the following sections:
 * [Configuring TeamCity Server Startup Properties](server-startup-properties.md)

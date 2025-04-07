@@ -1,5 +1,5 @@
 [//]: # (title: SSH Agent)
-[//]: # (auxiliary-id: SSH Agent)
+[//]: # (help-id: SSH Agent)
 
 The _SSH Agent_ [build feature](adding-build-features.md) runs an SSH agent with the selected [uploaded SSH key](ssh-keys-management.md) during a build. When your build script runs an SSH client, it uses the SSH agent with the loaded key.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Changing Build Status Manually)
-[//]: # (auxiliary-id: Changing Build Status Manually)
+[//]: # (help-id: Changing Build Status Manually)
 
 A user with appropriate permissions can change the status of a build manually, that is make it either failed or successful.
 

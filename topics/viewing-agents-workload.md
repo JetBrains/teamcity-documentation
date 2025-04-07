@@ -1,5 +1,5 @@
 [//]: # (title: Viewing Agents Workload)
-[//]: # (auxiliary-id: Viewing Agents Workload)
+[//]: # (help-id: Viewing Agents Workload)
 
 TeamCity provides handy ways to estimate build agents efficiency and help you manage your system.
 

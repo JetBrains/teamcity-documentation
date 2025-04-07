@@ -1,5 +1,5 @@
 [//]: # (title: Guess Settings from Repository URL)
-[//]: # (auxiliary-id: Guess Settings from Repository URL)
+[//]: # (help-id: Guess Settings from Repository URL)
 
 TeamCity can automatically discover the VCS type and settings from the repository URL.
 

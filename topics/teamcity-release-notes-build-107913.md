@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Release Notes: Build 107913)
-[//]: # (auxiliary-id: TeamCity Release Notes: Build 107913;TeamCity 2022.02 Release Notes)
+[//]: # (help-id: TeamCity Release Notes: Build 107913;TeamCity 2022.02 Release Notes)
 
 __Build: 107913__  
 __15 March 2022__

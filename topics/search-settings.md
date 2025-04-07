@@ -1,5 +1,5 @@
 [//]: # (title: Search Settings)
-[//]: # (auxiliary-id: Search Settings)
+[//]: # (help-id: Search Settings)
 
 You can change the search mode used on the server in the __Builds Search__ section of the Root project's settings.
 

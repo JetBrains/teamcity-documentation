@@ -1,5 +1,5 @@
 [//]: # (title: How To...)
-[//]: # (auxiliary-id: viewpage.actionpageId113084582;How To...)
+[//]: # (help-id: viewpage.actionpageId113084582;How To...)
 
 ## Install Non-Bundled Version of Java
 {instance="tc"}

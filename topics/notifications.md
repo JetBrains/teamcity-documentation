@@ -1,5 +1,5 @@
 [//]: # (title: Notifications)
-[//]: # (auxiliary-id: Notifications)
+[//]: # (help-id: Notifications)
 
 The _Notifications_ [build feature](adding-build-features.md) is responsible for sending notifications about build statuses and events to external services. Currently, the feature provides __Email Notifier__ and __Slack Notifier__.
 

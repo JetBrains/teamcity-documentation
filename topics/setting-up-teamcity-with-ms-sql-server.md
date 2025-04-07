@@ -1,5 +1,5 @@
 [//]: # (title: Setting up TeamCity with MS SQL Server)
-[//]: # (auxiliary-id: Setting up TeamCity with MS SQL Server)
+[//]: # (help-id: Setting up TeamCity with MS SQL Server)
 
 This article provides step-by-step instructions on integrating TeamCity with a MS SQL Server. For a quick reference, see [this section](set-up-external-database.md#Microsoft+SQL+Server).
 

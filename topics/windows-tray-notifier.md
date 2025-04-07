@@ -1,5 +1,5 @@
 [//]: # (title: Windows Tray Notifier)
-[//]: # (auxiliary-id: Windows Tray Notifier)
+[//]: # (help-id: Windows Tray Notifier)
 
 <warning>
 

@@ -1,2 +1,2 @@
 [//]: # (title: Include Pages)
-[//]: # (auxiliary-id: Include+Pages)
+[//]: # (help-id: Include+Pages)

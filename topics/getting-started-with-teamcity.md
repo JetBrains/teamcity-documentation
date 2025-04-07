@@ -1,5 +1,5 @@
 [//]: # (title: Getting Started with TeamCity)
-[//]: # (auxiliary-id: Getting Started with TeamCity)
+[//]: # (help-id: Getting Started with TeamCity)
 
 [JetBrains TeamCity](https://www.jetbrains.com/teamcity/) is a powerful and user-friendly Continuous Integration and Deployment server that works out of the box.
 

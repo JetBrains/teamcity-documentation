@@ -1,5 +1,5 @@
 [//]: # (title: NuGet Packages Indexer)
-[//]: # (auxiliary-id: NuGet Packages Indexer)
+[//]: # (help-id: NuGet Packages Indexer)
 
 NuGet packages indexer is an internal TeamCity tool that can index NuGet packages and add them to TeamCity [remote private feeds](using-teamcity-as-nuget-feed.md), with no need for additional authorization.
 

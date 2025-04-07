@@ -1,5 +1,5 @@
 [//]: # (title: Mapping TeamCity Concepts to Other CI Terms)
-[//]: # (auxiliary-id: Mapping TeamCity Concepts to Other CI Terms)
+[//]: # (help-id: Mapping TeamCity Concepts to Other CI Terms)
 
 This information can be used when migrating to TeamCity from other Continuous Integration tools.
 

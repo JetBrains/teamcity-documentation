@@ -1,5 +1,5 @@
 [//]: # (title: VCS Checkout Rules)
-[//]: # (auxiliary-id: VCS Checkout Rules)
+[//]: # (help-id: VCS Checkout Rules)
 
 _VCS checkout rules_ allow you to check out a part of the configured VCS root and to map directories from the version control to subdirectories in the [build checkout directory](build-checkout-directory.md) on a build agent. Thus, you can define a VCS root for the entire repository and instruct each build configuration to check out only the relevant part of it.
 

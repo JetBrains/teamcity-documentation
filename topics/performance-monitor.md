@@ -1,5 +1,5 @@
 [//]: # (title: Performance Monitor)
-[//]: # (auxiliary-id: Performance Monitor)
+[//]: # (help-id: Performance Monitor)
 
 The _Performance Monitor_ [build feature](adding-build-features.md) allows you to get the statistics on the CPU, disk I/O, and memory usage during a build run on a build agent. The build feature is enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).  Performance Monitor supports Windows, Linux, macOS, Solaris, and FreeBSD operating systems.
 

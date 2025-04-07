@@ -1,5 +1,5 @@
 [//]: # (title: Getting Started with TeamCity Cloud)
-[//]: # (auxiliary-id: Getting Started with TeamCity Cloud)
+[//]: # (help-id: Getting Started with TeamCity Cloud)
 
 TeamCity is a CI/CD server which key features are a powerful toolset and universality. With our Cloud version, we address the user demand in the full-featured CI/CD solution and make it available to you in a couple of minutes, with no need to maintain a server on-premises.
 

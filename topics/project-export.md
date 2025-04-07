@@ -1,5 +1,5 @@
 [//]: # (title: Project Export)
-[//]: # (auxiliary-id: Project Export)
+[//]: # (help-id: Project Export)
 
 It is possible to export settings of a project with its children to an archive to later import it to a different TeamCity server. Export includes settings (basically everything configured in the project administration area), but does not include builds or any other data visible in the user area. To export a project with all the related data, use [server backup](teamcity-data-backup.md).
 

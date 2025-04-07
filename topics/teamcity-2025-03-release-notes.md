@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2025.03 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2025.03 Release Notes)
+[//]: # (help-id: TeamCity 2025.03 Release Notes)
 
 
 **Build 186049, 20 March 2025**

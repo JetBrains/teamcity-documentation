@@ -1,5 +1,5 @@
 [//]: # (title: Investigations Auto Assigner)
-[//]: # (auxiliary-id: Investigations Auto Assigner)
+[//]: # (help-id: Investigations Auto Assigner)
 
 TeamCity can analyze build problems (for example, compilation errors) and test failures, and try to identify users whose commits potentially led to these problems.
 

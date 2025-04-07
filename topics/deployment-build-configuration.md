@@ -1,5 +1,5 @@
 [//]: # (title: Deployment Build Configuration)
-[//]: # (auxiliary-id: Deployment Build Configuration)
+[//]: # (help-id: Deployment Build Configuration)
 
 When your project is built and tested, you often need to deploy it to its final infrastructure. For example, upload a package to the NuGet Gallery, deliver a container to a DockerHub repository, or update your documentation website sources. Different CI/CD solutions use different terms for this last step of a pipeline: "deploy" stage, delivery target, release, production, and so on.
 

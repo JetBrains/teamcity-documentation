@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Monitoring and Diagnostics)
-[//]: # (auxiliary-id: TeamCity Monitoring and Diagnostics)
+[//]: # (help-id: TeamCity Monitoring and Diagnostics)
 
 <snippet id="intro">
 

@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Cloud Subscription and Licensing)
-[//]: # (auxiliary-id: TeamCity Cloud Subscription and Licensing)
+[//]: # (help-id: TeamCity Cloud Subscription and Licensing)
 
 TeamCity Cloud services are provided by a monthly or annual subscription which includes a predefined set of resources. If you reach any of the subscription limits, you can get additional resources on demand.
 

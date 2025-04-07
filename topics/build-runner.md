@@ -1,5 +1,5 @@
 [//]: # (title: Build Runner)
-[//]: # (auxiliary-id: Build Runner)
+[//]: # (help-id: Build Runner)
 
 _Build runner_ is a part of TeamCity that allows integration with a specific build tool (Ant, MSBuild, Command Line, and so on). In a build configuration, a build runner defines how to run a build and report its results.
 

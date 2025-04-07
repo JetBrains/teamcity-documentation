@@ -1,5 +1,5 @@
 [//]: # (title: Customizing Statistics Charts)
-[//]: # (auxiliary-id: Customizing Statistics Charts)
+[//]: # (help-id: Customizing Statistics Charts)
 
 To help you track the condition of your projects and individual build configurations over time, TeamCity gathers statistical data across all their history and displays it as visual charts. This page describes how to modify the [predefined](statistic-charts.md) project-level charts.
 

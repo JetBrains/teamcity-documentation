@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Cloud Documentation)
-[//]: # (auxiliary-id: TeamCity Cloud Documentation)
+[//]: # (help-id: TeamCity Cloud Documentation)
 
 Welcome to the documentation for [TeamCity Cloud](https://www.jetbrains.com/teamcity/cloud/).
 

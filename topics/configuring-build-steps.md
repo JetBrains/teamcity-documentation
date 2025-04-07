@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Build Steps)
-[//]: # (auxiliary-id: Configuring Build Steps)
+[//]: # (help-id: Configuring Build Steps)
 
 Once you have a TeamCity project with a build configuration within it, you can configure **build steps**. One build configuration can include multiple steps, executed consecutively.
 

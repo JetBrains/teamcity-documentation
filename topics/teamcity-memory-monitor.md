@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Memory Monitor)
-[//]: # (auxiliary-id: TeamCity Memory Monitor)
+[//]: # (help-id: TeamCity Memory Monitor)
 
 TeamCity server checks available memory on a regular basis and warns you if the amount of the memory available is too low.
 

@@ -1,5 +1,5 @@
 [//]: # (title: SSH Keys Management)
-[//]: # (auxiliary-id: SSH Keys Management)
+[//]: # (help-id: SSH Keys Management)
 
 You can upload private SSH keys into TeamCity projects. Uploaded keys can be used when configuring VCS roots, and in the [SSH Agent](ssh-agent.md) build feature.
 

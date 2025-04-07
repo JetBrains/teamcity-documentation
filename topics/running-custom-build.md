@@ -1,5 +1,5 @@
 [//]: # (title: Running Custom Build)
-[//]: # (auxiliary-id: Running Custom Build;Triggering a Custom Build)
+[//]: # (help-id: Running Custom Build;Triggering a Custom Build)
 
 A build configuration typically uses [build triggers](configuring-build-triggers.md) to start new builds on a required schedule or whenever TeamCity detects a new change in a source code.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Tracking User Actions)
-[//]: # (auxiliary-id: Tracking User Actions)
+[//]: # (help-id: Tracking User Actions)
 
 TeamCity logs user actions into the Audit log, which is available on the __Administration | Audit__ page.
 

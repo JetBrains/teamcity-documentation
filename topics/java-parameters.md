@@ -1,5 +1,5 @@
 [//]: # (title: Java Parameters)
-[//]: # (auxiliary-id: Java Parameters)
+[//]: # (help-id: Java Parameters)
 
 This page describes general parameters for Java-based runners:
 

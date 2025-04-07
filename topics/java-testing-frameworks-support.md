@@ -1,5 +1,5 @@
 [//]: # (title: Java Testing Frameworks Support)
-[//]: # (auxiliary-id: Java Testing Frameworks Support)
+[//]: # (help-id: Java Testing Frameworks Support)
 
 TeamCity supports JUnit and TestNG by means of following build runners:
 

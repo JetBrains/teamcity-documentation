@@ -1,5 +1,5 @@
 [//]: # (title: MSTest Support)
-[//]: # (auxiliary-id: MSTest Support)
+[//]: # (help-id: MSTest Support)
 
 TeamCity can parse the MSTest results file (`.trx` file) and show test reports in the build overview. It supports the MSTest 2005-2015 framework and requires the respective Microsoft Visual Studio edition to be installed on the build agent.
 

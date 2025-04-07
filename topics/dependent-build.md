@@ -1,5 +1,5 @@
 [//]: # (title: Dependent Build)
-[//]: # (auxiliary-id: Dependent Build)
+[//]: # (help-id: Dependent Build)
 
 In TeamCity, one build configuration can depend on one or more configurations. Two types of dependencies can be specified:
 

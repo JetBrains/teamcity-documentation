@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity Data Directory)
-[//]: # (auxiliary-id: TeamCity Data Directory)
+[//]: # (help-id: TeamCity Data Directory)
 
 TeamCity Data Directory is the directory on the file system used by the TeamCity server to store configuration, build results, and current operation files. The directory is the primary storage for all the configuration settings and holds the data critical to the TeamCity installation.
 

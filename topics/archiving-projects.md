@@ -1,5 +1,5 @@
 [//]: # (title: Archiving Projects)
-[//]: # (auxiliary-id: Archiving Projects)
+[//]: # (help-id: Archiving Projects)
 
 If a project is not in an active development state, you can _archive_ it using the __Actions__ menu in the upper right corner of the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes)__ page. On the __Archive project__ screen, you can choose whether to cancel the builds which are already in the queue using the corresponding option (enabled by default).
 

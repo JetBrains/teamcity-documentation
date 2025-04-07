@@ -1,5 +1,5 @@
 [//]: # (title: MSpec)
-[//]: # (auxiliary-id: MSpec)
+[//]: # (help-id: MSpec)
 
 The _MSpec_ build runner is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
 

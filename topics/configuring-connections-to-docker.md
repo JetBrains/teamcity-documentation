@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Connections to Docker)
-[//]: # (auxiliary-id: Configuring Connections to Docker)
+[//]: # (help-id: Configuring Connections to Docker)
 
 A preconfigured Docker connection allows you to:
 * sign in to an authenticated Docker or Podman registry before running a build / sign out after the build;

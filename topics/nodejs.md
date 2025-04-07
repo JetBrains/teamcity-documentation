@@ -1,5 +1,5 @@
 [//]: # (title: Node.js)
-[//]: # (auxiliary-id: Node.js)
+[//]: # (help-id: Node.js)
 
 The Node.js build runner allows running Node.js tools like [`npm`](https://www.npmjs.com/), [`yarn`](https://yarnpkg.com/), and [`node`](https://github.com/nodejs/node).
 

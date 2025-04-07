@@ -1,5 +1,5 @@
 [//]: # (title: SSH Upload)
-[//]: # (auxiliary-id: SSH Upload)
+[//]: # (help-id: SSH Upload)
 
 The _SSH Upload_ build runner allows uploading files/directories via SSH (using SCP or SFTP protocols).
 

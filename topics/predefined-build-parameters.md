@@ -1,5 +1,5 @@
 [//]: # (title: List of Predefined Build Parameters)
-[//]: # (auxiliary-id: List of Predefined Build Parameters;Predefined Build Parameters)
+[//]: # (help-id: List of Predefined Build Parameters;Predefined Build Parameters)
 
 TeamCity provides dozens of predefined [build parameters](configuring-build-parameters.md) ready to be used in the settings of a build configuration or in build scripts.
 

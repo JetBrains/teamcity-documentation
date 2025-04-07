@@ -1,5 +1,5 @@
 [//]: # (title: Command Line)
-[//]: # (auxiliary-id: Command Line)
+[//]: # (help-id: Command Line)
 
 Using the _Command Line_ build runner, you can run any script supported by the OS.
 

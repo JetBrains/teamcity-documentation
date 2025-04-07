@@ -1,5 +1,5 @@
 [//]: # (title: Mercurial)
-[//]: # (auxiliary-id: Mercurial)
+[//]: # (help-id: Mercurial)
 
 TeamCity uses the typical Mercurial command line client: hg command. Mercurial 1.5.2\+ is supported.
 

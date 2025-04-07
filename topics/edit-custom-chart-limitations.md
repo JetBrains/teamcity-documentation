@@ -1,5 +1,5 @@
 [//]: # (title: Edit Custom Chart Limitations)
-[//]: # (auxiliary-id: Edit Custom Chart Limitations)
+[//]: # (help-id: Edit Custom Chart Limitations)
 
 Currently, editing a custom chart from the TeamCity UI is limited:
 	

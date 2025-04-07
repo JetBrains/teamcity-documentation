@@ -1,5 +1,5 @@
 [//]: # (title: Matrix Build)
-[//]: # (auxiliary-id: Matrix Build)
+[//]: # (help-id: Matrix Build)
 
 The _Matrix Build_ [build feature](adding-build-features.md) enables you to define a collection of builds by iterating over specified parameter values and generating a build for every combination.
 

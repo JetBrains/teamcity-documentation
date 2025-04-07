@@ -1,5 +1,5 @@
 [//]: # (title: Previous Releases Downloads)
-[//]: # (auxiliary-id: Previous Releases Downloads)
+[//]: # (help-id: Previous Releases Downloads)
 
 The latest TeamCity release is available on the [official download page](https://www.jetbrains.com/teamcity/download/). There, you can also find links to TeamCity Docker images.
 

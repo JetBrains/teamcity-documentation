@@ -1,5 +1,5 @@
 [//]: # (title: User's Guide)
-[//]: # (auxiliary-id: User's Guide)
+[//]: # (help-id: User's Guide)
 
 This guide is intended for anyone using TeamCity. Explore TeamCity and learn how you can
 

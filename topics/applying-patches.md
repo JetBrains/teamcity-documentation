@@ -1,5 +1,5 @@
 [//]: # (title: Applying Patches)
-[//]: # (auxiliary-id: Applying Patches)
+[//]: # (help-id: Applying Patches)
 
 ## Microsoft Visual Source Safe Integration
 

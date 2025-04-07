@@ -1,5 +1,5 @@
 [//]: # (title: Super User Access)
-[//]: # (auxiliary-id: Super User Access;Super User)
+[//]: # (help-id: Super User Access;Super User)
 
 The **Super User** login mode provides full System Administrator access to the server UI, ideal for cases like lost credentials or adjusting authentication settings. The Super User token is also required to access the server maintenance page at startup, which prompts for manual confirmation before certain actions (for example, database upgrades after a server update).
 

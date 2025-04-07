@@ -1,5 +1,5 @@
 [//]: # (title: XML Report Processing)
-[//]: # (auxiliary-id: XML Report Processing)
+[//]: # (help-id: XML Report Processing)
 
 The _XML Report Processing_ [build feature](adding-build-features.md) allows using report files produced by an external tool in TeamCity. TeamCity parses the specified files on the disk and reports the results as the _build results_.
 

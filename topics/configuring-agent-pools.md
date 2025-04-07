@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Agent Pools)
-[//]: # (auxiliary-id: Configuring Agent Pools;Agent Pools;Agent Pool)
+[//]: # (help-id: Configuring Agent Pools;Agent Pools;Agent Pool)
 
 Instead of having one common set of [build agents](install-and-start-teamcity-agents.md), you can break them into separate groups called _agent pools_. A pool is a named set of agents to which you can assign projects.
 * An agent can belong to _one pool only_.

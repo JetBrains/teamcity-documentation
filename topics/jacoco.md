@@ -1,5 +1,5 @@
 [//]: # (title: JaCoCo)
-[//]: # (auxiliary-id: JaCoCo)
+[//]: # (help-id: JaCoCo)
 
 TeamCity supports [JaCoCo](https://www.eclemma.org/jacoco/), a Java Code Coverage tool allowing you to measure a wide set of coverage metrics and code complexity.
 

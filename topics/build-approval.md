@@ -1,5 +1,5 @@
 [//]: # (title: Build Approval)
-[//]: # (auxiliary-id: Build Approval)
+[//]: # (help-id: Build Approval)
 
 The _Build Approval_ [build feature](adding-build-features.md) allows users to manually control the build start by using approvals.
 This build feature ensures that builds will not start

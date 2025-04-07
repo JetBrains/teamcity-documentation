@@ -1,5 +1,5 @@
 [//]: # (title: Build Agents Configuration and Maintenance)
-[//]: # (auxiliary-id: Build Agents Configuration and Maintenance)
+[//]: # (help-id: Build Agents Configuration and Maintenance)
 
 ## Viewing TeamCity Agents Details
 

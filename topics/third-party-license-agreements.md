@@ -1,5 +1,5 @@
 [//]: # (title: Third-Party License Agreements)
-[//]: # (auxiliary-id: Third-Party License Agreements)
+[//]: # (help-id: Third-Party License Agreements)
 
 >This document is obsolete. See the relevant list of third-party software used in TeamCity on our [website](https://www.jetbrains.com/legal/third-party-software/?product=TC).
 > 

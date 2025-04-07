@@ -1,5 +1,5 @@
 [//]: # (title: Build Checkout Directory)
-[//]: # (auxiliary-id: Build Checkout Directory)
+[//]: # (help-id: Build Checkout Directory)
 
 The _build checkout directory_ is a directory on the TeamCity agent machine where the build sources from a specific [VCS root](configuring-vcs-roots.md) are checked out. This directory can be shared between multiple build configurations, if the build configurations are configured with the same VCS root. For more details, see [](#Default+Checkout+Directory) and [](#Custom+Checkout+Directory).
 

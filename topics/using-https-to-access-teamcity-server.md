@@ -1,5 +1,5 @@
 [//]: # (title: Using HTTPS to access TeamCity server)
-[//]: # (auxiliary-id: Using HTTPS to access TeamCity server)
+[//]: # (help-id: Using HTTPS to access TeamCity server)
 
 This document describes how to configure Java applications to use HTTPS for communicating with the server.  
 If you need to connect the TeamCity server to a service behind a self-signed certificate (for example, Git) or if you need to connect a TeamCity agent to the TeamCity server using the self-signed certificate, use [trusted certificates configuration](uploading-ssl-certificates.md).

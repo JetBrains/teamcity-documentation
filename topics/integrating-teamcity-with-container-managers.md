@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with Container Managers)
-[//]: # (auxiliary-id: Integrating TeamCity with Docker and Podman)
+[//]: # (help-id: Integrating TeamCity with Docker and Podman)
 
 TeamCity integrates with container managers (Docker, Podman) on multiple levels.
 

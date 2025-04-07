@@ -1,5 +1,5 @@
 [//]: # (title: Build Failure Conditions)
-[//]: # (auxiliary-id: Build Failure Conditions)
+[//]: # (help-id: Build Failure Conditions)
 
 TeamCity allows changing the conditions under which a build is marked as _failed_. You can adjust these _build failure conditions_ in __[Build Configuration Settings](creating-and-editing-build-configurations.md) | Failure Conditions__
 

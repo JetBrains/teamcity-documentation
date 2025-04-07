@@ -1,5 +1,5 @@
 [//]: # (title: Viewing User Changes in Builds)
-[//]: # (auxiliary-id: Viewing User Changes in Builds;Viewing Your Changes)
+[//]: # (help-id: Viewing User Changes in Builds;Viewing Your Changes)
 
 Monitoring the quality of the codebase is essential for a development team: a project developer needs to see whether their commit brought a build failure or not. For a project leader, it is important to detect the code at fault for a build failure to be able to have the situation rectified early, so other members of the team are not inconvenienced.
 

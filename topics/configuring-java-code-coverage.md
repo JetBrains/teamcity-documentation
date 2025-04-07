@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Java Code Coverage)
-[//]: # (auxiliary-id: Configuring Java Code Coverage)
+[//]: # (help-id: Configuring Java Code Coverage)
 
 TeamCity supports Java code coverage via:
 

@@ -1,5 +1,5 @@
 [//]: # (title: Visual Studio Tests)
-[//]: # (auxiliary-id: Visual Studio Tests)
+[//]: # (help-id: Visual Studio Tests)
 
 <note>
 

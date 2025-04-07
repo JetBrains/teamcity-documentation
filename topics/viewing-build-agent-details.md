@@ -1,5 +1,5 @@
 [//]: # (title: Viewing Build Agent Details)
-[//]: # (auxiliary-id: Viewing Build Agent Details)
+[//]: # (help-id: Viewing Build Agent Details)
 
 To view the state and information about an agent, click its name or navigate to the __Agents__ page, find the agent in the list of connected, disconnected or authorized agents and click its name.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Host Build Agents in Cloud)
-[//]: # (auxiliary-id: Host Build Agents in Cloud;TeamCity Integration with Cloud Solutions;Run Build Agents in Cloud)
+[//]: # (help-id: Host Build Agents in Cloud;TeamCity Integration with Cloud Solutions;Run Build Agents in Cloud)
 
 TeamCity integration with cloud (IaaS) solutions allows TeamCity to provide virtual machines running TeamCity agents on-demand. This allows TeamCity to automatically scale the number of active build agents depending on the current workload.
 

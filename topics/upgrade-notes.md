@@ -1,5 +1,5 @@
 [//]: # (title: Upgrade Notes)
-[//]: # (auxiliary-id: Upgrade Notes)
+[//]: # (help-id: Upgrade Notes)
 
 
 

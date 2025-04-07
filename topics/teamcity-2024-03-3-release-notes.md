@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2024.03.3 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2024.03.3 Release Notes)
+[//]: # (help-id: TeamCity 2024.03.3 Release Notes)
 
 
 **Build 156364, 27 June 2024**

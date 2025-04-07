@@ -1,5 +1,5 @@
 [//]: # (title: Subversion)
-[//]: # (auxiliary-id: Subversion)
+[//]: # (help-id: Subversion)
 
 This article contains descriptions of Subversion-specific fields and options available when setting up a VCS root.
 

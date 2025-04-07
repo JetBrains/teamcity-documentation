@@ -1,5 +1,5 @@
 [//]: # (title: .NET Testing Frameworks Support)
-[//]: # (auxiliary-id: .NET Testing Frameworks Support)
+[//]: # (help-id: .NET Testing Frameworks Support)
 
 To support the real-time reporting of test results, TeamCity should either run tests using its own test runner or be able to interact with the testing frameworks to receive notifications on test events.
 

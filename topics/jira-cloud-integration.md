@@ -1,5 +1,5 @@
 [//]: # (title: Jira Cloud Integration)
-[//]: # (auxiliary-id: Jira Cloud Integration)
+[//]: # (help-id: Jira Cloud Integration)
 
 The _Jira Cloud Integration_ [build feature](adding-build-features.md) allows reporting build statuses directly to Jira Cloud in real time.
 

@@ -1,5 +1,5 @@
 [//]: # (title: Entity IDs)
-[//]: # (auxiliary-id: Entity IDs;Identifier)
+[//]: # (help-id: Entity IDs;Identifier)
 
 An _ID_ is an identifier given to TeamCity entities ([projects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md), [templates](build-configuration-template.md), [VCS roots](configuring-vcs-roots.md), and so on).
 

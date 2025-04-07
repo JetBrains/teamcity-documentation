@@ -1,5 +1,5 @@
 [//]: # (title: Viewing Build Agent Logs)
-[//]: # (auxiliary-id: Viewing Build Agent Logs)
+[//]: # (help-id: Viewing Build Agent Logs)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >

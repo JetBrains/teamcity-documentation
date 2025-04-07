@@ -1,5 +1,5 @@
 [//]: # (title: Running Risk Group Tests First)
-[//]: # (auxiliary-id: Running Risk Group Tests First)
+[//]: # (help-id: Running Risk Group Tests First)
 
 <anchor name="testReorderingJUnitAndTestNG"/>
 

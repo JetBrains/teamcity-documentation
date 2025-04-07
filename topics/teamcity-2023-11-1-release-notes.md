@@ -1,5 +1,5 @@
 [//]: # (title: TeamCity 2023.11.1 Release Notes)
-[//]: # (auxiliary-id: TeamCity 2023.11.1 Release Notes)
+[//]: # (help-id: TeamCity 2023.11.1 Release Notes)
 
 
 **Build 147412, 15 December 2023**

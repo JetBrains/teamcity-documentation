@@ -1,5 +1,5 @@
 [//]: # (title: Integrating TeamCity with VCS Hosting Services)
-[//]: # (auxiliary-id: Integrating TeamCity with VCS Hosting Services)
+[//]: # (help-id: Integrating TeamCity with VCS Hosting Services)
 
 You can create presets of connections to the following hosting services:
 * [GitHub.com](https://github.com/) and [GitHub Enterprise](https://enterprise.github.com/)

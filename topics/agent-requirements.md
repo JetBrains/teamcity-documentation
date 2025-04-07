@@ -1,5 +1,5 @@
 [//]: # (title: Agent Requirements)
-[//]: # (auxiliary-id: Agent Requirements)
+[//]: # (help-id: Agent Requirements)
 
 _Agent requirements_ are special conditions that define whether a [build configuration](managing-builds.md) can run on a particular [build agent](install-and-start-teamcity-agents.md). Together with grouping by [agent pools](configuring-agent-pools.md), they give you a flexible control over how builds are distributed to agents.
 

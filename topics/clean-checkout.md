@@ -1,5 +1,5 @@
 [//]: # (title: Clean Checkout)
-[//]: # (auxiliary-id: Clean Checkout)
+[//]: # (help-id: Clean Checkout)
 
 _Clean Checkout_ (also referred to as _Clean Sources_) is an operation that ensures that the next build will get a copy of the sources fetched all over from the VCS. All the content of the [Build Checkout Directory](build-checkout-directory.md) is deleted, and the sources are refetched from the version control.
 

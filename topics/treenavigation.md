@@ -1,2 +1,2 @@
 [//]: # (title: TreeNavigation)
-[//]: # (auxiliary-id: TreeNavigation)
+[//]: # (help-id: TreeNavigation)

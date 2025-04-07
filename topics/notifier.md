@@ -1,5 +1,5 @@
 [//]: # (title: Notifier)
-[//]: # (auxiliary-id: Notifier)
+[//]: # (help-id: Notifier)
 
 TeamCity supports the following notifiers:
 

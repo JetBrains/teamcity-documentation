@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2019.2)
-[//]: # (auxiliary-id: What's New in TeamCity 2019.2)
+[//]: # (help-id: What's New in TeamCity 2019.2)
 
 ## New flexible clean-up rules
 

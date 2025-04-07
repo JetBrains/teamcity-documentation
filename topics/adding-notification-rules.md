@@ -1,5 +1,5 @@
 [//]: # (title: Adding Notification Rules)
-[//]: # (auxiliary-id: Adding Notification Rules;Subscribing to Notifications)
+[//]: # (help-id: Adding Notification Rules;Subscribing to Notifications)
 
 This article explains how to set up notification rules. To learn how enable the notification functionality on your TeamCity server, follow [these instructions](configuring-notifications.md).
 

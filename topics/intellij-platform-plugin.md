@@ -1,5 +1,5 @@
 [//]: # (title: IntelliJ Platform Plugin)
-[//]: # (auxiliary-id: IntelliJ Platform Plugin)
+[//]: # (help-id: IntelliJ Platform Plugin)
 
 This plugin implements the TeamCity integration with IntelliJ Platform-based IDEs, including JetBrains IntelliJ IDEA, RubyMine, PyCharm, PhpStorm/WebStorm, AppCode, and Rider. Remote run / pretested commit functionality is only supported with the VCS integrations bundled with the IDEs by JetBrains. See the [plugin's page](https://plugins.jetbrains.com/plugin/1820-teamcity/versions) in the JetBrains marketplace for the list of supported versions.
 

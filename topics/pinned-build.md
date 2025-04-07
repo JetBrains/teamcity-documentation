@@ -1,5 +1,5 @@
 [//]: # (title: Pinned Build)
-[//]: # (auxiliary-id: Pinned Build)
+[//]: # (help-id: Pinned Build)
 
 A build can be _pinned_ to prevent it from being removed when a clean-up procedure is executed, as stipulated by the [clean-up policy](teamcity-data-clean-up.md).
 

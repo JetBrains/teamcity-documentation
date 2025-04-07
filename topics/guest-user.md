@@ -1,5 +1,5 @@
 [//]: # (title: Guest User Access)
-[//]: # (auxiliary-id: Guest User Access;Guest User)
+[//]: # (help-id: Guest User Access;Guest User)
 
 TeamCity provides the ability to turn on the guest login allowing anonymous access to the TeamCity UI.
 

@@ -1,5 +1,5 @@
 [//]: # (title: NuGet Publish)
-[//]: # (auxiliary-id: NuGet Publish)
+[//]: # (help-id: NuGet Publish)
 
 The _NuGet Publish_ build runner is intended to publish (`push`) your NuGet packages to a given feed (custom or default).
 

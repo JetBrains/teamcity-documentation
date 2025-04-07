@@ -1,5 +1,5 @@
 [//]: # (title: Scopes, Priority, and Lifecycle of Build Parameters)
-[//]: # (auxiliary-id: Scopes, Priority, and Lifecycle of Build Parameters;Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
+[//]: # (help-id: Scopes, Priority, and Lifecycle of Build Parameters;Levels and Priority of Build Parameters;Project and Agent Level Build Parameters)
 
 
 ## Initial Parameter Values

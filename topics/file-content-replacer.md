@@ -1,5 +1,5 @@
 [//]: # (title: File Content Replacer)
-[//]: # (auxiliary-id: File Content Replacer)
+[//]: # (help-id: File Content Replacer)
 
 _File Content Replacer_ is the [build feature](adding-build-features.md) which processes text files by performing regular expression replacements before a build. After the build, it restores the file content to the original state.
 

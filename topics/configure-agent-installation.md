@@ -1,5 +1,5 @@
 [//]: # (title: Configure Agent Installation)
-[//]: # (auxiliary-id: Configure Agent Installation;Build Agent Configuration)
+[//]: # (help-id: Configure Agent Installation;Build Agent Configuration)
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >

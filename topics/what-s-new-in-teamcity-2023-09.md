@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2023.09)
-[//]: # (auxiliary-id: What's New in TeamCity 2023.09;)
+[//]: # (help-id: What's New in TeamCity 2023.09;)
 
 <!--
 ## Agents with Bundled JDKs

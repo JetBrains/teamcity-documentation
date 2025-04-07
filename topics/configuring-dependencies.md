@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Dependencies)
-[//]: # (auxiliary-id: Configuring Dependencies)
+[//]: # (help-id: Configuring Dependencies)
 
 <include from="project-administrator-guide.md" element-id="configuration-dependencies"/>
 

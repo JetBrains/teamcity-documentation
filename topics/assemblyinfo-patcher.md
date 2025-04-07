@@ -1,5 +1,5 @@
 [//]: # (title: AssemblyInfo Patcher)
-[//]: # (auxiliary-id: AssemblyInfo Patcher)
+[//]: # (help-id: AssemblyInfo Patcher)
 
 The _AssemblyInfo Patcher_ [build feature](adding-build-features.md) allows setting a build number to an assembly automatically, without having to patch the `AssemblyInfo.cs` files manually. When adding this build feature, you only need to specify the version format. You can use TeamCity [parameter references](using-build-parameters.md).
 

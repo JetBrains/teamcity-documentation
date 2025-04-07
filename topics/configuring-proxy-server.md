@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Proxy Server)
-[//]: # (auxiliary-id: Configuring Proxy Server)
+[//]: # (help-id: Configuring Proxy Server)
 
 This article gives general recommendations on configuring the following proxy types: 
 * [Reverse proxy installed in front of the TeamCity Server web UI](#Set+Up+TeamCity+Server+Behind+Proxy)

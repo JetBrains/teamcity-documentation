@@ -1,5 +1,5 @@
 [//]: # (title: JetBrains dotCover)
-[//]: # (auxiliary-id: JetBrains dotCover)
+[//]: # (help-id: JetBrains dotCover)
 
 TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 {instance="tc"}

@@ -1,5 +1,5 @@
 [//]: # (title: Build Working Directory)
-[//]: # (auxiliary-id: Build Working Directory)
+[//]: # (help-id: Build Working Directory)
 
 The _build working directory_ is the directory set as current for the build process. By default, this is the same directory as the [build checkout directory](build-checkout-directory.md).
 

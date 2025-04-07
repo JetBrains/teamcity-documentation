@@ -1,5 +1,5 @@
 [//]: # (title: Wildcard Support)
-[//]: # (auxiliary-id: Wildcards)
+[//]: # (help-id: Wildcards)
 
 TeamCity supports wildcards in different configuration options.
 
