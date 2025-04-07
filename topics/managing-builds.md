@@ -1,5 +1,5 @@
 [//]: # (title: Managing Builds)
-[//]: # (help-id: Managing Builds;Build Configuration)
+[//]: # (help-id: Managing Builds)
 
 This section contains articles related to managing existing <tooltip term="build-configuration">_build configurations_</tooltip> in TeamCity. Refer to the sidebar to see its contents.
 

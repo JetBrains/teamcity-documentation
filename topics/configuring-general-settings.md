@@ -29,7 +29,7 @@ Name
 
 The build configuration name.
 
-</td></tr><tr help-id="BuildconfigurationID">
+</td></tr><tr id="build-configuration-id" help-id="BuildconfigurationID">
 
 <td>
 
