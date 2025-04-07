@@ -29,11 +29,9 @@ Name
 
 The build configuration name.
 
-</td></tr><tr>
+</td></tr><tr help-id="BuildconfigurationID">
 
-<td id="build-configuration-id">
-
-<anchor name="ConfiguringGeneralSettings-BuildconfigurationID"/>
+<td>
 
 Build Configuration ID
 

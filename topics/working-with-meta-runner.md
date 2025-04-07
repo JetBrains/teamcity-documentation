@@ -1,5 +1,5 @@
 [//]: # (title: Working with Recipes)
-[//]: # (help-id: Working with Meta-Runner)
+[//]: # (help-id: Working with Meta-Runner;Working with Recipes)
 
 **Recipes** are custom build steps based on one or multiple standard TeamCity steps. If TeamCity's built-in steps lack a needed option, and you frequently emulate it (for example, use a [CLI step](command-line.md) to upload artifacts via a cloud provider API), you can save this custom step as a reusable recipe.
 

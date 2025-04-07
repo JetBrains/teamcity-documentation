@@ -63,6 +63,8 @@ You can also add and modify build tags using [service messages](service-messages
 <!--[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")-->
 
 ### Add Build to Favorites
+{help-id="AddBuildToFavorites"}
+
 
 <!--[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")-->
 

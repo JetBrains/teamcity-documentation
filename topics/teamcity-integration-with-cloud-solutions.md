@@ -83,6 +83,7 @@ The disconnected agent will be removed from the authorized agents list and delet
 {instance="tcc"}
 
 ## Agent Cloud Profiles and Images
+{help-id="Agent Cloud Profiles and Images"}
 
 A _cloud profile_ is a collection of settings for TeamCity to start virtual machines with installed TeamCity agents on-demand while distributing a build queue. A cloud profile stores such general settings as:
 

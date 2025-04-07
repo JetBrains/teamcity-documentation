@@ -117,12 +117,12 @@ Notes on using this mode:
 * When this option is used with the [server-side checkout](vcs-checkout-mode.md#server-checkout), the internal TeamCity source caching on the server side is disabled. This may worsen the performance of [clean checkouts](clean-checkout.md).
 * If a build configuration has a [configuration parameter](configuring-build-parameters.md) `teamcity.perforce.agent.reuse.client=true` and uses default checkout rules, TeamCity won't create another Perforce workspace on agent and will try to reuse the existing Perforce client, with the name specified in the Perforce VCS root.
 
-<anchor name="Perforce-perforceClientMappingOptionDescription"/>
+
 
 ### Map Perforce Depot to Client
+{help-id="perforceClientMappingOptionDescription"}
 
 The _Client mapping_  option allows specifying the mapping of the depot to the client machine.
-{id="perforceClientMappingOptionDescription"}
 
 Notes on using this mode:
 * The _Client mapping_ field format:
@@ -162,12 +162,11 @@ When the [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is used, Tea
 
 <table><tr>
 
-<td>Setting</td><td>Description</td></tr><tr>
+<td>Setting</td><td>Description</td></tr><tr help-id="perforceWorkspaceOptions">
 
 <td>
 
 Workspace options
-{id="perforceWorkspaceOptions" help-id="Perforce-perforceWorkspaceOptions"}
 
 </td>
 
@@ -296,12 +295,11 @@ For the server, the p4 binary should be present in the `PATH` environment variab
 >In the past versions, TeamCity supported a semicolon-separated list of allowed p4 paths. To restore this obsolete behavior, you can set the `teamcity.perforce.p4PathOnServerWhitelist` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 {instance="tc"}
 
-</td></tr><tr>
+</td></tr><tr help-id="perforceLabelToCheckout">
 
 <td>
 
 Label/changelist to sync
-{id="perforceLabelToCheckout"}
 
 </td>
 

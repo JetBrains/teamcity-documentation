@@ -29,9 +29,10 @@ Follow these recommendations to get the maximum benefit from the Jira integratio
 
 TeamCity updates statuses of Jira issues displayed for builds every 10 minutes or when new commits are detected.
 
-<anchor name="jira-JIRA-Authentication"/>
+
 
 ### Configuring Connection to Jira
+{help-id="JiraAuthentication"}
 
 >Enabling TeamCity integration with Jira requires Project Administrator permissions as it is configured at a project level. Note that enabling integration for a project enables it for all its subprojects as well. If the settings are different in a subproject, they have priority over the parent project's settings.
 

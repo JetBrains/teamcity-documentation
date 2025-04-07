@@ -86,11 +86,9 @@ Checkout by Tag
 
 Define the way CVS will fill in and update the working directory
 
-</td></tr><tr>
+</td></tr><tr help-id="cvsQuietPeriodOptionDescription">
 
 <td>
-
-<anchor name="CVS-cvsQuietPeriodOptionDescription"/>
 
 Quiet period
 

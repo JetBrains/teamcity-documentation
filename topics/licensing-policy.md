@@ -116,9 +116,9 @@ A license key is required, [price options](https://www.jetbrains.com/teamcity/bu
 
 </td></tr></table>
 
-<anchor name="LicensingPolicy-editions"/>
-
 ## Editions
+{help-id="LicensingPolicy-editions"}
+
 
 There are two editions of TeamCity: __Professional__ and __Enterprise__.   
 The editions are equal in all the features except for the maximum number of build configurations allowed.   

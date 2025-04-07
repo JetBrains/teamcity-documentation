@@ -1,5 +1,5 @@
 [//]: # (title: Snapshot Dependencies)
-[//]: # (help-id: Snapshot Dependencies)
+[//]: # (help-id: Snapshot Dependencies;Dependent Build)
 
 By setting a [snapshot dependency](snapshot-dependencies.md) of a build (for example, build B) on another build's (build A) sources, you can ensure that build B will start only after build A is run and finished. We call build A a _dependency_ build, whereas build B is a _dependent_ build.
 

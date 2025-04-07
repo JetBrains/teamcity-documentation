@@ -110,10 +110,10 @@ If you want to get a preconfigured server right away, put the files from a previ
 * ensure it points to a new database (configured in `<Data Directory>\config\database.properties`);
 * change the `<Data Directory>\config\main-config.xml` file not to have the `uuid` attribute in the root XML element (so the new one can be generated); set the appropriate value for the `rootURL` attribute.
 
-<anchor name="HowTo-RetrieveAdministratorPassword"/>
+
 
 ## Retrieve Administrator Password
-{instance="tc"}
+{instance="tc" help-id="HowTo-RetrieveAdministratorPassword"}
 
 On the first start with the empty database, TeamCity displays the Administrator Setup page which allows creating a user with full administrative permissions (assigning the [System Administrator](managing-roles-and-permissions.md#Per-Project+Authorization+Mode) role).
 
@@ -325,10 +325,8 @@ checkpoint_segments=32
 checkpoint_completion_target=0.9
 ```
 
-<anchor name="HowTo-SetUpTeamCitybehindaProxyServer"/>
-
 ## Set Up TeamCity behind a Proxy Server
-{instance="tc"}
+{instance="tc" help-id="HowTo-SetUpTeamCitybehindaProxyServer"}
 
 The contents of this section have been moved to the [dedicated article](configuring-proxy-server.md).
 

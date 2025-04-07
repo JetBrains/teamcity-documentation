@@ -262,7 +262,6 @@ Note that this mode requires configuring a dedicated domain for TeamCity. To con
 <td>
 
 Artifacts' URL
-{id="artifacts-url"}
 
 </td>
 

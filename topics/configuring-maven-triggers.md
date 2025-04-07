@@ -37,9 +37,9 @@ __Simultaneous usage of snapshot dependency and dependency trigger for a build__
  Assume build A depends on build B by both snapshot and trigger dependency. Then, after the build B finishes, build A will be added into the queue, only if build B is not a part of the build chain containing A.
 </note>
 
-<anchor name="ConfiguringMavenTriggers-MavenArtifactDependencyTrigger"/>
 
 ## Maven Artifact Dependency Trigger
+{help-id="MavenArtifactDependencyTrigger"}
 
 Maven artifact dependency trigger adds build to the queue when there is a real modification of the dependency content which is detected by the checksum change.
 

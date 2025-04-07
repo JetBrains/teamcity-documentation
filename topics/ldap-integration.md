@@ -57,6 +57,7 @@ Note that in certain configurations (for example, with `java.naming.security.aut
 
 
 #### Active Directory
+{help-id="LdapActiveDirectory"}
 
 The following template enables authentication against active directory:
 

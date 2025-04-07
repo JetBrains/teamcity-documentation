@@ -1,5 +1,5 @@
 [//]: # (title: Creating and Editing Build Configurations)
-[//]: # (help-id: Creating and Editing Build Configurations)
+[//]: # (help-id: Creating and Editing Build Configurations;Build Configuration)
 
 This section contains articles on how to create and configure build configurations via the TeamCity UI.
 

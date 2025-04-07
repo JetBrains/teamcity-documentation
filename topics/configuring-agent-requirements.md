@@ -1,5 +1,5 @@
 [//]: # (title: Configuring Agent Requirements)
-[//]: # (help-id: Configuring Agent Requirements)
+[//]: # (help-id: Configuring Agent Requirements;Agent Requirements)
 
 **Agent requirements** are conditions that specify which agents can run your build configuration. To view all currently existing requirements and create new ones, as well as check which of your agents can run the specific configuration, go to **[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Agent Requirements**.
 
@@ -88,6 +88,7 @@ Project administrators can edit, disable, and remove inherited requirements unle
 For example, if one of your steps is configured to [run inside a container](container-wrapper.md), an agent assigned to process this build must have a container engine (Docker or Podman). For that reason, TeamCity automatically adds the `docker.server.osType exists` parameter. Agents that do not report this parameter will not be assigned to new builds of this configuration.
 
 ## Implicit Requirements
+{help-id="ImplicitAgentRequirements"}
 
 Similarly to build steps requirements, **implicit requirements** are added automatically by TeamCity based on build step configuration. However, these requirements focus exclusively on [parameter references](configuring-build-parameters.md#Parameter+References).
 

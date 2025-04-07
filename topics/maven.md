@@ -223,11 +223,12 @@ If Custom or Predefined settings are used, the path to the effective user settin
 <include from="java-parameters.md" element-id="java-param"/>
 
 ### Local Artifact Repository Settings
+{help-id="MavenLocalArtifactRepositorySettings"}
 
 
 Select one of the following options:
 
-<table id="Maven-LocalArtifactRepositorySettings">
+<table>
 
 <tr>
 <td>
