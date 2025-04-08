@@ -1,4 +1,5 @@
-# Executor Mode: Agentless Kubernetes Integration
+[//]: # (title: Executor Mode: External Kubernetes Integration)
+[//]: # (help-id: Executor Mode: External Kubernetes Integration;Executor Mode: Agentless Kubernetes Integration;Kubernetes Executor)
 
 
 <include from="setting-up-teamcity-for-kubernetes.md" element-id="k8s-integration-types"/>
@@ -116,10 +117,16 @@ template:
       linux: arm64
 ```
 
+## Licensing
+
+Although Kubernetes-based builds do not occupy native TeamCity agents, their number is still limited by your [agent license](licensing-policy.md). The combined total of "native" and executor builds cannot exceed this licensed limit. When the limit is reached, new builds will remain queueed with the "Maximum number of concurrent builds reached" message, waiting for a free agent slot.
+
+[Detached builds](detaching-build-from-agent.md) and those spawned by [composite build configurations](composite-build-configuration.md) do not occupy agent slots and can run without restrictions.
+
 ## Special Notes and Limitations
 
 * Currently, a project can use only one Kubernetes integration. We expect to support multiple executors per project (along with a mechanism to prioritize them) in future release cycles.
-* Executor mode is an agentless integration, so TeamCity is not aware of any "classic" build agents on the Kubernetes side. This leads to a "Build agent was disconnected while running a build" warning displayed when a build handled by an executor is running. As long as builds finish successfully, this warning does not indicate a misconfiguration or connectivity issue and can be disregarded. We expect to resolve this behavior in upcoming bug-fix releases.
+* A Kubernetes cluster acts as an external orchestrator that processes builds without using "classic" build agents connected to a TeamCity server. This leads to a "Build agent was disconnected while running a build" warning displayed when a build handled by an executor is running. As long as builds finish successfully, this warning does not indicate a misconfiguration or connectivity issue and can be disregarded. We expect to resolve this behavior in upcoming bug-fix releases.
 * [Pod templates](#YAML+Configuration) that specify custom container properties must have the "template-container" container names.
 
     ```yaml
