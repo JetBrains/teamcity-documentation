@@ -143,17 +143,17 @@ A connection to GitHub can be used to:
 * Provide access tokens for the [Commit Status Publiser](commit-status-publisher.md) and [Pull Requests](pull-requests.md) build features.
 * Connections via GitHub Apps can be used to configure [webhooks](https://docs.github.com/en/rest/apps/webhooks?apiVersion=2022-11-28) that notify the TeamCity server about changes.
 
-Depending on your needs, you can create connections to GitHub that operate via GitHub Apps or GitHub OAuth Applications.
+Depending on your needs, you can create connections to GitHub that operate via [GitHub Apps](#github-app) or [GitHub OAuth Applications](#github-oauth).
+
+> When your GitHub Enterprise server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
+>
+{style="note"}
+
+Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 
-
-<dl>
-
-
-
-<dt>GitHub App</dt>
-<dd>
-<anchor name="github-app"/>
+### GitHub App
+{id="github-app" help-id="github-app"}
 
 A <a href="https://docs.github.com/en/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps">GitHub App</a> is an integration that allows third-party services such as TeamCity to connect to GitHub repositories without the necessity to keep a "service" user account. Compared to GitHub OAuth applications, GitHub Apps boast fine-grained permissions and grant you more control over which repositories the app can access.See this article for more information: <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps">Differences between GitHub Apps and OAuth Apps</a>.
 
@@ -242,13 +242,9 @@ TeamCity currently issues single-repository access tokens for GitHub App connect
 
 </warning>
 
-</dd>
+### GitHub OAuth Application
+{id="github-oauth" help-id="github-oauth"}
 
-
-
-<dt>GitHub OAuth Application</dt>
-<dd>
-<anchor name="github-oauth"/>
    
 OAuth Applications generate user access tokens and allow third-party services like TeamCity to perform actions on behalf of a user who authorized these services.<br/>
 
@@ -277,16 +273,6 @@ To create a TeamCity connection that utilizes a GitHub OAuth Application:
 If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub.com authentication</a> module and want to restrict access to TeamCity to users of specific GitHub organizations, you need to ensure that your OAuth app is allowed by all these organizations. By default, GitHub does not allow OAuth apps to access the organizations. You can either disable this restriction for all apps or approve only the TeamCity app in each of the required organizations. Refer to the <a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions">GitHub documentation</a> for more details.
 
 </note>
-
-</dd>
-
-</dl>
-
-> When your GitHub Enterprise server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
-> 
-{style="note"}
-
-Once a connection is successfully configured, the GitHub icon will become active in several places where a repository URL can be specified. Click it to authorize TeamCity in your GitHub profile. TeamCity will be granted full control of your private repositories and get the _Write repository hooks_ permission. If you configure multiple GitHub integrations, the server URL will be displayed next to each icon, so it is easier to distinguish the server in use.
 
 </snippet>
 
