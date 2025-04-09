@@ -119,7 +119,11 @@ template:
 
 ## Licensing
 
-Although Kubernetes-based builds do not occupy native TeamCity agents, their number is still limited by your [agent license](licensing-policy.md). The combined number of "native" and executor builds cannot exceed this licensed limit. When the limit is reached, new builds will remain queueed with the "Maximum number of concurrent builds reached" message, waiting for a free agent slot.
+Although Kubernetes-based builds do not occupy native TeamCity agents, their number is still limited by your [agent license](licensing-policy.md). The combined number of "native" and executor builds cannot exceed this licensed limit. When the limit is reached, new builds will remain queued with the "Maximum number of concurrent builds reached" message, waiting for a free agent slot.
+{instance="tc"}
+
+Although Kubernetes-based builds do not occupy native TeamCity agents, regular [self-hosted agent licensing policies](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agent-licensing) apply. The combined number of executor builds and builds running on self-hosted agents cannot exceed the number of purchased monthly slots. When the limit is reached, new builds will remain queued, waiting for a free slot.
+{instance="tcc"}
 
 [Detached builds](detaching-build-from-agent.md) and those spawned by [composite build configurations](composite-build-configuration.md) do not occupy agent slots and can run without restrictions.
 
