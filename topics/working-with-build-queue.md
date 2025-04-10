@@ -106,7 +106,7 @@ its priority is increased by one.
 This helps the builds with low priority to start eventually.
 
 ## Pausing and Resuming Build Queue
-{id="Pausing+and+Resuming+Build+Queue" help-id="Pausing+and+Resuming+Build+Queue"}
+{id="Pausing+and+Resuming+Build+Queue" help-id="pause-and-resume-build-queue"}
 
 The build queue can be paused manually or automatically. In this case, the builds are still going to be added to the queue, but they will not be assigned to agents until the queue is unpaused.
 
