@@ -1087,6 +1087,7 @@ Send the following service message to start tracking the contents of a file and 
 TeamCity monitors the given file for as long as the parent runner is active. When the runner stops, the file is streamed to its end and closed. 
 
 ## Sending Custom Slack Messages
+{help-id="send-custom-slack-messages"}
 
 
 You can use TeamCity service messages to send Slack direct messages and post updates in Slack channels.

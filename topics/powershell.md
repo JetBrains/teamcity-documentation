@@ -57,12 +57,14 @@ PowerShell run mode
 Select the desired execution mode on a x64 machine:
 
 __Version__
+{help-id="powershell-version"}
 
 Specify a version (for example, 1.0 or 2.0). It will be compared to the version installed on the agent, and an appropriate requirement will be added. For Core editions, it will be used as the lower bound. On Desktop editions, the exact version will be used (`-Version` command line argument will be added).
 
 If the version field is left blank, no lower bound on the version requirement will be added, no `-Version` argument will be used on Desktop editions of PowerShell.
 
 __Platform__
+{help-id="powershell-platform"}
 
 Select the platform bitness:
 
@@ -71,6 +73,7 @@ Select the platform bitness:
 * `Auto` — when it is selected, no platform requirement will be added to the build configuration, and if both 32-bit and 64-bit PowerShells are installed, 64-bit will be preferred.
 
 __Edition__
+{help-id="powershell-edition"}
 
 Select a PowerShell edition to be used:
 

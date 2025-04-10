@@ -268,7 +268,7 @@ Contains [](commit-status-publisher.md)-related log. Apply the `debug-commit-sta
 
 (off by default) [StarTeam integration](starteam.md) log
 
-</td></tr><tr>
+</td></tr><tr help-id="ClearCase">
 
 <td>
 

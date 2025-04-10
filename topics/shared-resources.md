@@ -22,6 +22,7 @@ TeamCity will treat this resource as redefined in the subproject Child 1: that i
 The usage of a resource is calculated by scanning the subtree of the current project; thus, if several projects use the same resource, only the usages in the current one will be counted.
 
 ### Types of Shared Resources
+{help-id="sharedRes-types"}
 
 When you click __Add new resource__, three types of resources are available:
 * _Infinite resource_ is a shared resource with an unlimited number of read locks.
@@ -56,9 +57,8 @@ Resources with custom values support three types of locks:
 * Locks on __all__ values: a build will lock all the values of the resource. No other builds that use this resource will start until the current one is finished.
 * Locks on a __specific__ value: only a specific value of the resource will be passed to the build. If the value is already taken by a running build, the new build will wait in the [queue](working-with-build-queue.md) until the value becomes available.
 
-<anchor name="resource-locks"/>
-
 Each defined lock is represented inside a build with a configuration parameter `teamcity.locks.readLock.<lockName>` or `teamcity.locks.writeLock.<lockName>`, whose value is the resource string. An example of a parameter name: `teamcity.locks.readLock.databaseUrl`.
+{help-id="sharedRes-locks"}
 
 <note>
 
