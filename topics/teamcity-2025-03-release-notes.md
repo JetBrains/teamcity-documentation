@@ -27,9 +27,9 @@
 
 ### Bug
 
-* [**TW-91627**](https://youtrack.jetbrains.com/issue/TW-91627) — Unnecessary pending changes if \"show settings changes\" is enabled in versioned settings configuration
+* [**TW-91627**](https://youtrack.jetbrains.com/issue/TW-91627) — Unnecessary pending changes if "show settings changes" is enabled in versioned settings configuration
 * [**TW-82966**](https://youtrack.jetbrains.com/issue/TW-82966) — REST JSON not returning 400 errors
-* [**TW-92182**](https://youtrack.jetbrains.com/issue/TW-92182) — Artifact dependency change details cannot be displayed with eternal \"Loading...\"
+* [**TW-92182**](https://youtrack.jetbrains.com/issue/TW-92182) — Artifact dependency change details cannot be displayed with eternal "Loading..."
 * [**TW-92693**](https://youtrack.jetbrains.com/issue/TW-92693) — Deadlock when updating information about running builds intersects with periodical flush of custom data storage
 * [**TW-86451**](https://youtrack.jetbrains.com/issue/TW-86451) — Shared resource with distinct custom values sometimes doles out the same value to two same time running build configs
 * [**TW-87691**](https://youtrack.jetbrains.com/issue/TW-87691) — EC2 Cloud Profile: TC only attempts to use one instance type from the list configured in the Spot-based Image settings 
@@ -41,9 +41,9 @@
 * [**TW-92499**](https://youtrack.jetbrains.com/issue/TW-92499) — Agentless Kubernetes Executor: Parameters available in executor not working for auto-generated build configs (f.e. Matrix Build Feature) 
 * [**TW-68571**](https://youtrack.jetbrains.com/issue/TW-68571) — Add validation of Server URL field for GitLab CE/EE, GitHub Enterprise, Space connections
 * [**TW-86907**](https://youtrack.jetbrains.com/issue/TW-86907) — EC2 userdata script does not run for Windows AMI
-* [**TW-92364**](https://youtrack.jetbrains.com/issue/TW-92364) — Confusing \"cannot find previous revision\" message after settings changes commit failure
+* [**TW-92364**](https://youtrack.jetbrains.com/issue/TW-92364) — Confusing "cannot find previous revision" message after settings changes commit failure
 * [**TW-91499**](https://youtrack.jetbrains.com/issue/TW-91499) — Git changes in 2.48.x may lead to changing existing TeamCity functionality 
-* [**TW-87369**](https://youtrack.jetbrains.com/issue/TW-87369) — \"Promote the watched build\" in Schedule trigger can work incorrectly if artifact dependency has a different rule
+* [**TW-87369**](https://youtrack.jetbrains.com/issue/TW-87369) — "Promote the watched build" in Schedule trigger can work incorrectly if artifact dependency has a different rule
 * [**TW-90061**](https://youtrack.jetbrains.com/issue/TW-90061) — Unhandled error during Test Connect in Pull Request Build Feature when selected VCS hosting type does not match VCS root hosting type
 * [**TW-92424**](https://youtrack.jetbrains.com/issue/TW-92424) — Messages related to artifacts publishing do not appear under the curresponding block
 * [**TW-91685**](https://youtrack.jetbrains.com/issue/TW-91685) — Token management: improve display of token scope in the VCS Auth Tokens table
@@ -68,7 +68,7 @@
 * [**TW-92035**](https://youtrack.jetbrains.com/issue/TW-92035) — Get token endpoint on HashiCorp Vault fails on secondary nodes
 * [**TW-87135**](https://youtrack.jetbrains.com/issue/TW-87135) — Cloud Image changes trigger agents' termination
 * [**TW-91598**](https://youtrack.jetbrains.com/issue/TW-91598) — Settings toggle jumps when user navigates within the settings options
-* [**TW-91463**](https://youtrack.jetbrains.com/issue/TW-91463) — Token Management: Add a way to see the whole long project name in the \"Generate new token\" dialog
+* [**TW-91463**](https://youtrack.jetbrains.com/issue/TW-91463) — Token Management: Add a way to see the whole long project name in the "Generate new token" dialog
 * [**TW-90029**](https://youtrack.jetbrains.com/issue/TW-90029) — After login using Azure Active Directory, UI falls back to classic UI
 * [**TW-85282**](https://youtrack.jetbrains.com/issue/TW-85282) — Cloud profile errors are hardly visible
 * [**TW-91547**](https://youtrack.jetbrains.com/issue/TW-91547) — Unfriendly error on attempt to create a repository from URL without providing credentials
@@ -90,7 +90,7 @@
 ### Performance Problem
 
 * [**TW-92889**](https://youtrack.jetbrains.com/issue/TW-92889) — Slow calculation of versioned settings root usages
-* [**TW-90969**](https://youtrack.jetbrains.com/issue/TW-90969) — Builds triggered in a large project with versioned settings in \"use settings from VCS\" mode and Kotlin format can prevent start of unrelated builds
+* [**TW-90969**](https://youtrack.jetbrains.com/issue/TW-90969) — Builds triggered in a large project with versioned settings in "use settings from VCS" mode and Kotlin format can prevent start of unrelated builds
 * [**TW-92370**](https://youtrack.jetbrains.com/issue/TW-92370) — Lots of concurrent getCurrentStateCalls to the same VCS repository
 * [**TW-92147**](https://youtrack.jetbrains.com/issue/TW-92147) — Slow Artifacts tab of a composite build
 * [**TW-92237**](https://youtrack.jetbrains.com/issue/TW-92237) — Inefficient code in VcsSettingsBean.getPopularVcsRoots
