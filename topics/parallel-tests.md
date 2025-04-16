@@ -19,7 +19,7 @@ To enable this feature in an existing build configuration:
 2. Click **Add build feature** and choose the _Parallel tests_ type.
 3. Set the number of test batches, which also means the number of parallel agents to use in a build.
 
-> Note: Only tests methods from different classes (or test cases) can run in parallel on different agents.
+> The maximum number of batches TeamCity can produce from your test suite depends on how these tests are organized. TeamCity groups individual tests into batches depending on their parent classes or test cases. This means a test suite with 100 tests declared in one test class cannot be effectively split into N batches.
 
 Before TeamCity splits tests into batches to run in parallel, it needs to gather test statistics of at least one preceding build. This information helps subdivide tests in semi-equally sized batches (based on tests duration) so that the total build time is as short as possible.
 If you enable this feature in a freshly added build configuration, its first build will run in the normal mode; when it finishes and produces test reports, TeamCity will be able to split the second one.
