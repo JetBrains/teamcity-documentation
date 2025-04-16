@@ -251,6 +251,13 @@ The **other...** command option allows you to execute any custom `docker ...` co
 4. Repeat steps 1~3 to for each new command you want to execute. For example, you may want to add additional nodes (`docker buildx create --append --name mybuild <context_name>`) or call `docker buildx build <path> --platform linux/amd64,linux/arm64` to start building and image.
 
 
+## Building Custom TeamCity Images
+
+See the following articles for more information on using and building TeamCity server and agent images:
+
+* [TeamCity Docker images](https://github.com/JetBrains/teamcity-docker-images/tree/master?tab=readme-ov-file#-docker-images)
+* [Custom TeamCity Agent Images](https://github.com/JetBrains/teamcity-docker-images/blob/master/custom/README.md#custom-teamcity-agent-images)
+
 <seealso>
         <category ref="admin-guide">
             <a href="integrating-teamcity-with-container-managers.md">Integrating TeamCity with Docker</a>

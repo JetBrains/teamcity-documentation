@@ -14,7 +14,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 ## Current version: TeamCity 2025.03.1
 
 Release date: 16 April 2025<br/>
-Build 0
+Build 186125
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2025.03.1.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2025.03.1.tar.gz)
