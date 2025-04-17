@@ -141,6 +141,8 @@ Project administrators can assign roles and modify groups that correspond only t
 
 With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
 
+Regardless of the project they manage, every project administrator has the "View build configuration settings" permission for the Root project, allowing them to view its settings.
+
 </td></tr><tr>
 
 <td id="project-developer">
@@ -238,6 +240,8 @@ Has all the [Project Developer's](#project-developer) permissions.
 Project administrators can assign roles and modify groups that correspond only to projects they administer. For example, a project A administrator can neither grant users any roles for project B, nor add them to a group with project B-specific permissions; only a project B administrator (or system administrator) can do that.
 
 With the enabled "_Change user / group notification rules in project_" permission, can edit notification rules for users and user groups assigned to their projects.
+
+Regardless of the project they manage, every project administrator has the "View build configuration settings" permission for the Root project, allowing them to view its settings.
 
 </td></tr><tr>
 
