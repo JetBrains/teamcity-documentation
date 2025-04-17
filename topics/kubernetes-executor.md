@@ -7,10 +7,6 @@
 
 This article explains the native integration approach. To learn about the traditional integration instead, refer to the [](setting-up-teamcity-for-kubernetes.md) topic.
 
-> This feature is currently in experimental stage and may change in future release cycles.
-> 
-{style="warning"}
-
 ## How It Works
 
 1. Create a [Kubernetes connection](configuring-connections.md#Kubernetes) that will allow TeamCity to access your K8s cluster.
