@@ -42,6 +42,8 @@ TeamCity and Jenkins are both popular CI/CD tools used for automating builds, te
 
 ## Feature and Concept Comparison
 
+<snippet id="jenkins-mapping-to-teamcity">
+
 <procedure title="Configuration files" type="steps">
 
 * Jenkins uses a Jenkinsfile, written in Groovy. It defines the pipeline steps in code.
@@ -110,6 +112,8 @@ TeamCity and Jenkins are both popular CI/CD tools used for automating builds, te
 * TeamCity offers [real-time log streaming](build-log.md) with timestamps and highlighting, [server load metrics in Prometheus format](teamcity-monitoring-and-diagnostics.md), and archived history per build step. It’s possible to integrate TeamCIty with 3rd party observability solutions like Dynatrace, Grafana, etc.
 
 </procedure>
+
+</snippet>
 
 
 For a more detailed  feature comparison between TeamCity and Jenkins, please refer to [this document](https://resources.jetbrains.com/storage/products/teamcity/docs/TeamCity_vs_Jenkins_comparison_doc.pdf).
