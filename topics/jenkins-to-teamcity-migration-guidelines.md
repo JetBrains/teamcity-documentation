@@ -8,11 +8,18 @@ Migrating from Jenkins to TeamCity can enhance your CI/CD workflows with powerfu
 
 This guide provides a comprehensive overview of the migration process to help you transition smoothly.
 
+<snippet id="Jenkins-to-TC-migration-ad">
+
 > Considering migrating your CI/CD process from Jenkins to TeamCity?
 >
 > We offer professional services to help make your migration seamless. Reach out to us [using the form](https://www.jetbrains.com/teamcity/get-in-touch/), and we’ll be happy to discuss the best options for your needs.
 >
 {style="note"}
+
+</snippet>
+
+
+
 
 ## TeamCity vs Jenkins: Key Similarities and Differences
 
@@ -40,9 +47,189 @@ TeamCity and Jenkins are both popular CI/CD tools used for automating builds, te
 
 
 
-## Feature and Concept Comparison
+## Terminology Mapping and Feature Comparison
+
+Before we begin, let's review how key Jenkins terms correspond to those in TeamCity.
+
 
 <snippet id="jenkins-mapping-to-teamcity">
+
+<table><tr>
+
+<td>
+
+<b>Jenkins</b>
+
+</td>
+
+<td>
+
+<b>TeamCity</b>
+
+</td></tr><tr>
+
+<td>
+
+Jenkins Master/Node
+
+</td>
+
+<td>
+
+TeamCity server
+
+</td></tr><tr>
+
+<td>
+
+Dumb Slave / Permanent Agent
+
+</td>
+
+<td>
+
+[Agent Pool](configuring-agent-pools.md)
+
+</td></tr><tr>
+
+<td>
+
+Executor
+
+</td>
+
+<td>
+
+[TeamCity Agent](install-and-start-teamcity-agents.md)
+
+</td></tr><tr>
+
+<td>
+
+View or [Folder](https://plugins.jenkins.io/cloudbees-folder)
+
+</td>
+
+<td>
+
+[Project](project-administrator-guide.md#Steps%2C+Configurations+and+Projects)
+
+</td></tr><tr>
+
+<td>
+
+Job/Item/Project
+
+</td>
+
+<td>
+
+[Build configuration](managing-builds.md)
+
+</td></tr><tr>
+
+<td>
+
+Build
+
+</td>
+
+<td>
+
+[Build Steps](configuring-build-steps.md)
+
+</td></tr><tr>
+
+<td>
+
+Pre Step
+
+</td>
+
+<td>
+
+[Build Step](configuring-build-steps.md) (partially)<br/>
+[Bootstrap Step](configuring-build-steps.md#Bootstrap+Steps)
+
+</td></tr><tr>
+
+<td>
+
+Post\-build Action
+
+</td>
+
+<td>
+
+[Build step](configuring-build-steps.md) (partially)<br/>
+[](deployers.md)<br/>
+[](deployment-build-configuration.md)
+
+</td></tr><tr>
+
+<td>
+
+Build Triggers
+
+</td>
+
+<td>
+
+[Build Triggers](configuring-build-triggers.md)
+
+</td></tr><tr>
+
+<td>
+
+Source Control Management (SCM)
+
+</td>
+
+<td>
+
+[VCS root](configuring-vcs-roots.md)
+
+</td></tr><tr>
+
+<td>
+
+Workspace
+
+</td>
+
+<td>
+
+[Build Checkout Directory](build-checkout-directory.md)
+
+</td></tr><tr>
+
+<td>
+
+Pipeline
+
+</td>
+
+<td>
+
+[Build Chain](build-chain.md) (via snapshot dependencies)
+
+</td></tr><tr>
+
+<td>
+
+Label
+
+</td>
+
+<td>
+
+[Agent Requirements](configuring-agent-requirements.md)
+
+</td></tr></table>
+
+</snippet>
+
+The tiles below explain in greater detail how some of the key Jenkins concepts differ from their TeamCity counterparts.
 
 <procedure title="Configuration files" type="steps">
 
@@ -113,7 +300,7 @@ TeamCity and Jenkins are both popular CI/CD tools used for automating builds, te
 
 </procedure>
 
-</snippet>
+
 
 
 For a more detailed  feature comparison between TeamCity and Jenkins, please refer to [this document](https://resources.jetbrains.com/storage/products/teamcity/docs/TeamCity_vs_Jenkins_comparison_doc.pdf).
@@ -590,7 +777,7 @@ Before starting the actual migration, make sure your TeamCity setup is ready.
     * Templates – reusable build logic
     * Build сhains – visualize and control dependencies
     * Kotlin DSL – define build logic as code, versioned in Git
-    Please refer to the [](#Feature+and+Concept+Comparison) part of this guide.
+    Please refer to the [](#Terminology+Mapping+and+Feature+Comparison) part of this guide.
 
 * **Set up secrets and credentials**
 
@@ -599,6 +786,10 @@ Before starting the actual migration, make sure your TeamCity setup is ready.
 ## Conclusion
 
 Migrating from Jenkins to TeamCity offers greater efficiency, enhanced automation, and reduced dependency on plugins. We hope that this guide can serve as a good starting point in helping you to migrate from Jenkins to TeamCity.
+
+
+
+<include from="jenkins-to-teamcity-migration-guidelines.md" element-id="Jenkins-to-TC-migration-ad"/>
 
 
 
@@ -720,7 +911,7 @@ Pre Step
 
 <td>
 
-Post\-build Action
+Post-build Action
 
 </td>
 
