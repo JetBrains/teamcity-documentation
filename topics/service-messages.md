@@ -284,6 +284,7 @@ Adding the `flowId` attribute allows you to split the messages into two parallel
 <img src="dk-messages-FlowId.png" width="706" alt="Block with flowID"/>
 
 
+
 In most cases, `flowId` is the only attribute required to start a message flow. In [](#Nested+Test+Reporting), you may want to start a flow not inside the root flow but as a subflow inside an existing flow. To do this, add the `flowStarted` parameter and specify the parent flow ID as the `parent` parameter. Flows without the specified parent start inside the root flow of the current step.
 
 To end a subflow, use the `flowFinished` parameter. Ending a parent flow automatically closes all its subflows, but we recommend declaring the flow order explicitly:
@@ -299,6 +300,8 @@ To end a subflow, use the `flowFinished` parameter. Ending a parent flow automat
 ```
 
 Note that the `flowStarted` and `flowFinished` messages are in effect only when emitted between the `testStarted` and `testFinished` messages.
+
+
 
 ### Reporting Tests
 
@@ -352,6 +355,36 @@ All the individual test messages are to appear between `testSuiteStarted` and `t
 #### Nested Test Reporting
 
 Starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
+
+```Shell
+# TEST SUITE A
+##teamcity[testSuiteStarted name='Test Suite A']
+
+	# TEST_1_A
+	##teamcity[testStarted name='Test 1.A' captureStandardOutput='false']
+	##teamcity[flowStarted flowId='mainFlow-1a']
+
+		# Nested TEST_1_A_1
+		##teamcity[testStarted name='Test 1.A, Subtest 1' captureStandardOutput='false']
+		##teamcity[flowStarted flowId='subFlow1-1a' parent='mainFlow-1a']
+      	    # Testing
+		##teamcity[flowFinished flowId='subFlow1-1a']
+		##teamcity[testFinished name='Test 1.A, Subtest 1' duration='1000']
+    
+		# Nested TEST_1_A_2
+		##teamcity[testStarted name='Test 1.A, Subtest 2' captureStandardOutput='false']
+    	##teamcity[flowStarted flowId='subFlow2-1a' parent='mainFlow-1a']
+    	    # Testing
+		echo "##teamcity[flowFinished flowId='subFlow2-1a']"
+    	echo "##teamcity[testFinished name='Test 1.A, Subtest 2' duration='1000']"
+
+	##teamcity[flowFinished flowId='mainFlow-1a']
+	##teamcity[testFinished name='Test 1.A' duration='3000']
+
+##teamcity[testSuiteFinished name='Test Suite A']
+```
+
+See the [flowID](#Message+FlowId) section for more information on nesting flows.
 
 __Test start/stop messages:__
 
