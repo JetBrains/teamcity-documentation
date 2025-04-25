@@ -4,9 +4,7 @@
 
 ## Overview
 
-Migrating from Jenkins to TeamCity can enhance your CI/CD workflows with powerful build configuration options, robust [integrations](https://www.jetbrains.com/teamcity/integrations/), and intelligent [automation features](https://www.jetbrains.com/teamcity/features/build-automation/).
-
-This guide provides a comprehensive overview of the migration process to help you transition smoothly.
+TeamCity offers a wide range of robust [integrations](https://www.jetbrains.com/teamcity/integrations/) and smart [automation features](https://www.jetbrains.com/teamcity/features/build-automation/) to elevate your CI/CD workflows. However, migrating a complex, company-wide build farm is always a challenge. This guide outlines the migration process and highlights key similarities and differences between the two CI systems to support a smooth transition.
 
 <snippet id="Jenkins-to-TC-migration-ad">
 
@@ -17,8 +15,6 @@ This guide provides a comprehensive overview of the migration process to help yo
 {style="note"}
 
 </snippet>
-
-
 
 
 ## TeamCity vs Jenkins: Key Similarities and Differences
@@ -36,15 +32,80 @@ TeamCity and Jenkins are both popular CI/CD tools used for automating builds, te
 
 <procedure title="Differences" type="choices">
 
-* **Configuration format**. TeamCity build routines are configured using a combination of a web-based UI and Kotlin-based configuration scripts for version-controlled setups. Jenkins, on the other hand, uses declarative pipelines (Groovy-based files) or scripted pipelines (Jenkins DSL).
+* **Configuration format**. Jenkins uses declarative pipelines (Groovy-based files) or scripted pipelines (Jenkins DSL). With TeamCity, you always have a choice between configuring your build routines via UI, using Kotlin-based configuration scripts, or as a combination of both.
 * **Hosting options**. TeamCity offers both a self-hosted solution and a SaaS offering (through JetBrains-hosted cloud instances). Jenkins is exclusively self-hosted, requiring users to manage their own infrastructure.
-* **Ease of setup and maintenance**. TeamCity provides a more user-friendly setup process and a polished interface out of the box. Jenkins typically requires more manual setup and configuration and relies heavily on plugins, which may increase maintenance overhead.
+* **Ease of setup and maintenance**. TeamCity provides a more user-friendly setup process and a polished interface out of the box. Every configuration task — from setting up cloud agents to managing server nodes and clean-up rules — can be done directly through the TeamCity UI. You can also try [TeamCity Pipelines](https://www.jetbrains.com/teamcity/pipelines/) for even more user-centric solution that lets you set up a build routine in just a few clicks. Jenkins typically requires more manual setup and configuration, and relies heavily on plugins, which may increase maintenance overhead.
 * **Built-in features vs plugins**. TeamCity includes built-in support for managing build agents, testing frameworks, code quality checks, and reporting tools. Jenkins’s functionality is heavily reliant on third-party plugins, which need to be selected and configured separately to achieve similar capabilities.
 * **Integration with development tools**. Because TeamCity is developed by JetBrains, it tightly integrates with their ecosystem of developer tools, such as IntelliJ IDEA and other JetBrains IDEs. Jenkins provides integrations with many tools but typically requires plugins or custom configurations for setting up these connections.
 * **Cost**. TeamCity's free tier limits the number of build agents and configurations, with additional costs for scaling up. Jenkins, being open-source, has no upfront costs, but hosting and plugin maintenance must be considered as operational expenses.
 
 </procedure>
 
+
+## Planning the migration
+
+### Audit Your Jenkins Setup
+
+Start by understanding everything that's currently running in Jenkins. This will help you avoid surprises and ensure feature parity in TeamCity.
+
+* **Inventory all Jenkins jobs and pipelines**
+
+  Export a full list of pipelines, whether scripted or declarative. Pay attention to naming conventions, folder structures, triggers, and branching strategies.
+
+
+* **List all plugins in use**
+
+  Use [](#Matching+Jenkins+Plugins+to+TeamCity+Features) to generate a list. For each plugin, note its purpose and whether it has a counterpart in TeamCity (many features are built-in).
+
+* **Document external integrations**
+
+  Identify how Jenkins communicates with tools like artifact repositories (Artifactory, Nexus), container managers (Docker, Podman, Kubernetes), scret managers (Vault, AWS Secrets Manager), notification tools (Slack, email, MS Teams), infrastructure tools (Terraform, Ansible, etc.)
+
+
+* **Review authentication and access control**
+
+  Are you using SSO, LDAP, GitHub OAuth, or manual users? Document roles and permissions for migration to TeamCity’s user/group model.
+
+
+* **Measure performance and resource usage**
+
+  Collect metrics like build durations, queue times, and agent utilization. This gives you a baseline for comparing post-migration performance.
+
+### Prepare the TeamCity environment
+
+Before starting the actual migration, make sure your TeamCity setup is ready.
+
+* **Spin up a TeamCity instance**
+  Choose between TeamCity Cloud (fully managed by JetBrains) or TeamCity On-Premises (hosted and maintained by your team).
+
+* **Provision Build Agents**
+
+  TeamCity requires build agents to execute jobs. Decide whether you'll use:
+
+  * Self-hosted static agents (e.g., bare metal or VMs)
+  * Cloud-based agents (e.g., AWS, GCP, Azure)
+  * On-demand agents (with support for Docker/Kubernetes)
+
+
+* **Connect your Version Control Systems**
+
+  Add your repositories via VCS Roots. TeamCity supports GitHub / GitHub Enterprise, GitLab, Bitbucket Cloud, Server and Data Center, Bitbucket Cloud, Azure Repos, Perforce Helix, and other VCS providers via SSH/HTTP(S) protocols.
+
+
+* **Learn the basics of TeamCity structure**
+
+  TeamCity organizes work differently than Jenkins. Basic concepts include:
+
+  * Projects – the top-level container
+  * Build сonfigurations – similar to Jenkins jobs
+  * Templates – reusable build logic
+  * Build сhains – visualize and control dependencies
+  * Kotlin DSL – define build logic as code, versioned in Git
+    Please refer to the [](#Terminology+Mapping+and+Feature+Comparison) part of this guide.
+
+* **Set up secrets and credentials**
+
+  Define secure parameters in TeamCity for API keys, tokens, and passwords. Map any Jenkins credentials to these.
 
 
 ## Terminology Mapping and Feature Comparison
@@ -718,70 +779,7 @@ In TeamCity, similar functionality can be achieved using [Build Features](adding
 * [](notifications.md) are set up on the per-build configuration basis
 * Delivery tasks are performed by the [Deployment configurations](deployment-build-configuration.md) and [](deployers.md)
 
-## Planning the migration
 
-### Audit Your Jenkins Setup
-
-Start by understanding everything that's currently running in Jenkins. This will help you avoid surprises and ensure feature parity in TeamCity.
-
-* **Inventory all Jenkins jobs and pipelines**
-
-    Export a full list of pipelines, whether scripted or declarative. Pay attention to naming conventions, folder structures, triggers, and branching strategies.
-
-
-* **List all plugins in use**
-
-    Use [](#Matching+Jenkins+Plugins+to+TeamCity+Features) to generate a list. For each plugin, note its purpose and whether it has a counterpart in TeamCity (many features are built-in).
-
-* **Document external integrations**
-
-    Identify how Jenkins communicates with tools like artifact repositories (Artifactory, Nexus), container managers (Docker, Podman, Kubernetes), scret managers (Vault, AWS Secrets Manager), notification tools (Slack, email, MS Teams), infrastructure tools (Terraform, Ansible, etc.)
-
-
-* **Review authentication and access control**
-
-    Are you using SSO, LDAP, GitHub OAuth, or manual users? Document roles and permissions for migration to TeamCity’s user/group model.
-
-
-* **Measure performance and resource usage**
-
-    Collect metrics like build durations, queue times, and agent utilization. This gives you a baseline for comparing post-migration performance.
-
-### Prepare the TeamCity environment
-
-Before starting the actual migration, make sure your TeamCity setup is ready.
-
-* **Spin up a TeamCity instance**
-   Choose between TeamCity Cloud (fully managed by JetBrains) or TeamCity On-Premises (hosted and maintained by your team).
-
-* **Provision Build Agents**
-
-    TeamCity requires build agents to execute jobs. Decide whether you'll use:
-        
-    * Self-hosted static agents (e.g., bare metal or VMs)
-    * Cloud-based agents (e.g., AWS, GCP, Azure)
-    * On-demand agents (with support for Docker/Kubernetes)
-
-
-* **Connect your Version Control Systems**
-
-    Add your repositories via VCS Roots. TeamCity supports GitHub / GitHub Enterprise, GitLab, Bitbucket Cloud, Server and Data Center, Bitbucket Cloud, Azure Repos, Perforce Helix, and other VCS providers via SSH/HTTP(S) protocols.
-
-
-* **Learn the basics of TeamCity structure**
-
-    TeamCity organizes work differently than Jenkins. Basic concepts include:
-
-    * Projects – the top-level container
-    * Build сonfigurations – similar to Jenkins jobs
-    * Templates – reusable build logic
-    * Build сhains – visualize and control dependencies
-    * Kotlin DSL – define build logic as code, versioned in Git
-    Please refer to the [](#Terminology+Mapping+and+Feature+Comparison) part of this guide.
-
-* **Set up secrets and credentials**
-
-    Define secure parameters in TeamCity for API keys, tokens, and passwords. Map any Jenkins credentials to these.
 
 ## Conclusion
 
