@@ -356,7 +356,7 @@ All the individual test messages are to appear between `testSuiteStarted` and `t
 
 Starting another test finishes the currently started test in the same _flow_. To still report tests from within other tests, you will need to specify another [`flowId`](#Message+FlowId) in the nested test service messages.
 
-```Shell
+```Text
 # TEST SUITE A
 ##teamcity[testSuiteStarted name='Test Suite A']
 
@@ -375,8 +375,8 @@ Starting another test finishes the currently started test in the same _flow_. To
 		##teamcity[testStarted name='Test 1.A, Subtest 2' captureStandardOutput='false']
     	##teamcity[flowStarted flowId='subFlow2-1a' parent='mainFlow-1a']
     	    # Testing
-		echo "##teamcity[flowFinished flowId='subFlow2-1a']"
-    	echo "##teamcity[testFinished name='Test 1.A, Subtest 2' duration='1000']"
+		##teamcity[flowFinished flowId='subFlow2-1a']
+    	##teamcity[testFinished name='Test 1.A, Subtest 2' duration='1000']
 
 	##teamcity[flowFinished flowId='mainFlow-1a']
 	##teamcity[testFinished name='Test 1.A' duration='3000']
