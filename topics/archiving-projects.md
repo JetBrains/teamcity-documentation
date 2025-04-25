@@ -13,9 +13,14 @@ When _archived_:
 
 The settings of archived projects are stored in the same [Data Directory subfolder](teamcity-data-directory.md) as settings of active projects.
 
-By default, permissions to archive projects are given to project and system administrators.
+
 
 If the parent project of an archived subproject is displayed in the project list (for example, on the __[Projects](ordering-projects-and-build-configurations.md)__ page), the archived subprojects are displayed with the corresponding note.
+
+> * Projects that [store their settings in a remote VCS](storing-project-settings-in-version-control.md) with the **Allow editing in the UI** option off cannot be archived.
+> * By default, only project and system administrators have permissions to archive projects.
+>
+{style="note"}
 
 ### Dearchiving Projects
 
