@@ -29,5 +29,11 @@
 * [TW-79379](https://youtrack.jetbrains.com/issue/TW-79379) — Update bundled JaCoCo to latest version (0.8.8)
 
 
+### Security
+
+One security problem has been fixed.
+To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2025.03.2).
+
+Security bulletins are typically published few days after the release date.
 
 
