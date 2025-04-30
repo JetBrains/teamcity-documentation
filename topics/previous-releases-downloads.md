@@ -13,7 +13,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 
 ## Current version: TeamCity 2025.03.2
 
-Release date: 29 April 2025<br/>
+Release date: 30 April 2025<br/>
 Build number: 9999
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2025.03.2.exe)<br/>
