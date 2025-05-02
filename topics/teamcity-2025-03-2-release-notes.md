@@ -1,10 +1,13 @@
 [//]: # (title: TeamCity 2025.03.2 Release Notes)
 [//]: # (auxiliary-id: TeamCity 2025.03.2 Release Notes)
 
-## Build , 30 April 2025
+## Build 9995, 02 May 2025
 
 ### Bug
 
+* [TW-92653](https://youtrack.jetbrains.com/issue/TW-92653) — Cloud agents don't start if plugin with agent part is enabled or upgrade of TeamCity took place
+* [TW-92917](https://youtrack.jetbrains.com/issue/TW-92917) — Agent git mirror is cleaned if remote server hangs up
+* [TW-90677](https://youtrack.jetbrains.com/issue/TW-90677) — Kubernetes Executor: cross-platform msbuild is stuck 
 * [TW-89671](https://youtrack.jetbrains.com/issue/TW-89671) — No coverage results, "Failed to find dotCover"
 * [TW-92997](https://youtrack.jetbrains.com/issue/TW-92997) — Regression: cannot upgrade to 2025.03.1, enqueues thousands of builds
 * [TW-92586](https://youtrack.jetbrains.com/issue/TW-92586) — Unaligned buttons in Project Settings -> Untrusted builds
@@ -17,11 +20,8 @@
 * [TW-91323](https://youtrack.jetbrains.com/issue/TW-91323) — Update the description of the "Project Administrator" role by adding information about the visibility of the Root project
 * [TW-92895](https://youtrack.jetbrains.com/issue/TW-92895) — Error "Container wrapper is not supported" during usage of "Run in Docker" build feature if "Image platform" was chosen in the build steps
 * [TW-92939](https://youtrack.jetbrains.com/issue/TW-92939) — RequiredToolInstalledPrecondition pollutes logs when build type is removed
-* [TW-92653](https://youtrack.jetbrains.com/issue/TW-92653) — Cloud agents don't start if plugin with agent part is enabled or upgrade of TeamCity took place
-* [TW-92917](https://youtrack.jetbrains.com/issue/TW-92917) — Agent git mirror is cleaned if remote server hangs up
 * [TW-92878](https://youtrack.jetbrains.com/issue/TW-92878) — Artifacts Migration tool: a lot of messages like "failed to copy '34' artifacts" in migration tool output can be shown even if artifacts were copied
 * [TW-88707](https://youtrack.jetbrains.com/issue/TW-88707) — EC2 Cloud Profile: When there aren't enough addresses in one subnet, another should be tried
-* [TW-90677](https://youtrack.jetbrains.com/issue/TW-90677) — Kubernetes Executor: cross-platform msbuild is stuck 
 * [TW-91440](https://youtrack.jetbrains.com/issue/TW-91440) — Hide stacktraces from the default teamcity-cleanup.log if TeamCity can't delete the artifacts from Azure
 
 ### Task
