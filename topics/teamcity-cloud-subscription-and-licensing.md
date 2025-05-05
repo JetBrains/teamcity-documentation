@@ -42,7 +42,7 @@ TeamCity Cloud can run builds on two types of agents:
 * __Self-hosted__: In case with [self-hosted agents](#cloud-self-hosted-agents), build time is not counted. Instead, you need to purchase an extra slot for each concurrent build running on a self-hosted agent. For example, if you purchase 3 slots monthly, you would be able to run up to 3 builds on self-hosted agents, connected to your TeamCity server, at each moment of time during this month.
 {id="cloud-self-hosted-agent-licensing" help-id="cloud-self-hosted-agent-licensing"}
 
-TeamCity will always try to optimize costs spent on a build. If an idle self-hosted agent is available, TeamCity will assign the build to it. If only JetBrains-hosted agents are available and there is an idle prepaid one, it will assign the build to this agent.
+TeamCity always aims to minimize build costs. If a bare-metal or cloud self-hosted agent is idle, or a new one can be started within cloud profile/image limits, TeamCity will prefer these over JetBrains-hosted agents. If only JetBrains-hosted agents are available, it will choose an idle prepaid one when possible.
 
 ### Free Trial Subscription
 
