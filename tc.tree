@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE instance-profile SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 <instance-profile id="tc" name="TeamCity On-Premises" start-page="teamcity-documentation.topic" status="deprecated">
 	<toc-element toc-title="TeamCity On-Premises Documentation Home" topic="teamcity-documentation.topic"/>
@@ -88,6 +88,7 @@
 			<toc-element topic="teamcity-2024-12-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-1-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-2-release-notes.md"/>
+			<toc-element topic="teamcity-2024-12-4-release-notes.md"/>
 			<toc-element topic="teamcity-2024-12-3-release-notes.md"/>
 		</toc-element>
 		<toc-element hidden="true" topic="what-s-new-in-teamcity-2024-07.md">
