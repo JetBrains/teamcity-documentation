@@ -58,6 +58,9 @@ object CalculateDate : BuildType({
     params {
         param("DateFormat", "dd/MM/yyyy") // Input parameter
     }
+    outputParams {
+        // TODO
+    }
 
     steps {
         csharpScript {
@@ -78,12 +81,17 @@ Now you can create an output parameter that shares the "Date" parameter value.
 
 ```Kotlin
 object CalculateDate : BuildType({
+    name = "Calculate Date"
+    
     params {
-        param("DateFormat", "dd/MM/yyyy")
+        param("DateFormat", "dd/MM/yyyy") // Input parameter
     }
     outputParams {
         exposeAllParameters = false
-        param("OutputDate", "%Date%")
+        param("OutputDate", "%Date%") // Output parameter that exposes "Date"
+    }
+    steps {
+        // ...
     }
 })
 ```
@@ -104,7 +112,7 @@ The output parameter is now accessible by another configuration that [depends on
 object PrintDate : BuildType({
     name = "Print Date"
 
-    // Retrieve the 'OutputDate' value and print it
+    // Retrieve the date from the 'OutputDate' configuration and print it
     steps {
         script {
             id = "simpleRunner"
