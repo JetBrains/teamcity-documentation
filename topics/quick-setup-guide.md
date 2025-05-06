@@ -23,12 +23,11 @@ Run the downloaded `.exe` file and follow the instructions of the TeamCity Setup
 
 During the __installation__, you can:
 * set the [TeamCity Home Directory](teamcity-home-directory.md) where TeamCity will be installed.
-* choose whether the TeamCity server and agent will run as Windows services    
+* choose whether the TeamCity server and agent will run as Windows services   
+
    <img src="installAsWinServicepng.png" alt="TeamCity server and agent as Windows services"/>
-* configure ports:      
-   * Server port: `8111` is the default port. Note that it can be already occupied by other applications on your machine. If this port is already in use, you can change it during the installation. In the example below, we set the port to `7777`.
-   * Agent port: `9090` is the default for incoming connections from the server. If this port is already in use, you can set the `ownPort` property to a different value to change the port.   
-   <img src="configure-agent-port.png" alt="Configure a build agent port" width="450"/>
+  
+* configure the server port (`8111` by default). Note that it can be already occupied by other applications on your machine. If this port is already in use, you can change it during the installation.
      
 If you have installed TeamCity as a Windows service, follow the [usual procedure](https://bit.ly/2yJF87R) of starting and stopping services.  
 Otherwise, to start or stop the TeamCity server and one default agent at the same time, launch the `runAll` script via a command line. The script is located in the `<TeamCity Home>\bin` directory.
@@ -91,8 +90,10 @@ To change the server port, locate the `<TeamCity Home>/conf/server.xml` and modi
 When you launch TeamCity in a browser for the first time, it will prompt you to complete the installation:
 1. Review the [location of the TeamCity Data Directory](teamcity-data-directory.md#Configuring+Location), where all the configuration information is stored. Click __Proceed__.
 2. TeamCity stores the build history, users, build results, and some runtime data in an SQL database and allows you to select the database type.   
-   For now, keep the default internal database. Click __Proceed__.   
+   For now, keep the default internal database. Click __Proceed__.
+
    <img src="default-DB.png" dark-src="default-DB_dark.png" alt="Select the database type" width="460" border-effect="line"/>
+   
    It will take some time for TeamCity to configure the necessary components.
 3. On the next screen, accept the License Agreement to proceed with the launch. Click __Continue__.
 4. TeamCity displays the __Create Administrator Account__ page. Specify the administrator credentials and click __Create Account__.  

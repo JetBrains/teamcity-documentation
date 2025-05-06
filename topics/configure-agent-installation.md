@@ -63,14 +63,21 @@ The file can be edited while the agent is running: the agent detects the change 
 
 ### Build Agent Port
 
-The port where the TeamCity build agent starts and where it listens for the incoming data from the server is determined via the `ownPort` property (9090 by default). If the firewall is configured, make sure that the incoming connections for this port are allowed on the agent machine.
+TeamCity agents work in a unidirectional mode: they initiate all connections to the server, not the other way around. Once connected, agents periodically poll the server for new commands, such as processing queued builds. Since no incoming connections are made by the server, configuring agent machines does not involve setting up any open ports.
+
+In a few rare cases, agents run processes that share data with other build-related processes running on a same machine. This mostly applies to running older build steps and plugins. In these cases, agents use localhost port `9090` to share this data. You can redefine this port in the `buildAgent.properties` file:
 
 ```Shell
 ownPort=9090
 
 ```
 
-If more than one build agent is hosted on the same machine, different ports must be assigned to them via the `ownPort` property in the `buildAgent.properties` file of every agent.
+Since this port is open only on localhost, it is not available for any external incoming connections.
+
+<!--
+
+// This is an outdated property that previously allowed agents with multiple network cards to open the 9090 port on a correct IP address
+// Since the port itself is also deprecated and the address is simply data shared with the server, it makes little or no sense to have this in docs
 
 ### Build Agent IP Address
 
@@ -80,6 +87,8 @@ When an agent connects to the TeamCity server for the first time, the agent auto
 ownAddress=<own IP address or server-accessible domain name>
 
 ```
+
+-->
 
 ### Alternative Fetch URL
 
@@ -111,11 +120,9 @@ Supported properties:
 	* --agent-config-file=PATH - path to build agent properties file (<Agent Root>/conf/buildAgent.properties by default)
 	* All default properties that can be configured in buildAgent.properties file
 	  Also there are aliases for some of them:
-		address = ownAddress
 		auth-token = authorizationToken
 		logs-dir = logsDir
 		name = name
-		port = ownPort
 		server-url = serverUrl
 		system-dir = systemDir
 		temp-dir = tempDir
