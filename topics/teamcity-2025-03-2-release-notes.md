@@ -1,13 +1,11 @@
 [//]: # (title: TeamCity 2025.03.2 Release Notes)
 [//]: # (help-id: TeamCity 2025.03.2 Release Notes)
 
-
 **Build 186181, 8 May 2025**
 
 ### Bug
 
 * [**TW-92994**](https://youtrack.jetbrains.com/issue/TW-92994) — project-config.xml file not created for large project copy
-* [**TW-93187**](https://youtrack.jetbrains.com/issue/TW-93187) — Builds get stuck in the queue with "no idle compatible agents" due to an undiscoverable cloud profile error
 * [**TW-93101**](https://youtrack.jetbrains.com/issue/TW-93101) — Repeating attempts to stop the build are too fast (20 secs)
 * [**TW-92997**](https://youtrack.jetbrains.com/issue/TW-92997) — Regression: cannot upgrade to 2025.03.1, enqueues thousands of builds
 * [**TW-92878**](https://youtrack.jetbrains.com/issue/TW-92878) — Artifacts Migration tool: a lot of messages like "failed to copy '34' artifacts" in migration tool output can be shown even if artifacts were copied
@@ -25,8 +23,12 @@
 * [**TW-92939**](https://youtrack.jetbrains.com/issue/TW-92939) — RequiredToolInstalledPrecondition pollutes logs when build type is removed
 * [**TW-88707**](https://youtrack.jetbrains.com/issue/TW-88707) — EC2 Cloud Profile: When there aren't enough addresses in one subnet, another should be tried
 
+
 ### Security
 
-Four security problems have been fixed. This number includes both native TeamCity issues and vulnerabilities found in 3rd-party libraries TeamCity depends on. Upstream library issues usually make up the majority of this total number, and are promptly resolved by updating these libraries to their newest versions.
+Four security problems have been fixed.
+To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2025.03.2).
 
-To learn more about fixed vulnerabilities directly related to TeamCity, check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity&version=2025.03.2). Security bulletins for new versions are typically published within the next few days after the release date.
+Security bulletins are typically published few days after the release date.
+
+
