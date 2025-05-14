@@ -211,6 +211,10 @@ Pre Step
 
 [Build Step](configuring-build-steps.md) (partially)<br/>
 [Bootstrap Step](configuring-build-steps.md#Bootstrap+Steps)
+{instance="tc"}
+
+[Build Step](configuring-build-steps.md) (partially)
+{instance="tcc"}
 
 </td></tr><tr>
 
@@ -357,7 +361,10 @@ The tiles below explain in greater detail how some of the key Jenkins concepts d
 <procedure title="Build logs" type="steps">
 
 * Jenkins outputs build results to console by default. You can enhance logs with timestamps and colors using plugins. Search and navigation are limited.
-* TeamCity offers [real-time log streaming](build-log.md) with timestamps and highlighting, [server load metrics in Prometheus format](teamcity-monitoring-and-diagnostics.md), and archived history per build step. It’s possible to integrate TeamCIty with 3rd party observability solutions like Dynatrace, Grafana, etc.
+* TeamCity offers [real-time log streaming](build-log.md) with timestamps and highlighting, [server load metrics in Prometheus format](teamcity-monitoring-and-diagnostics.md), and archived history per build step. It’s possible to integrate TeamCity with 3rd party observability solutions like Dynatrace, Grafana, etc.
+{instance="tc"}
+* TeamCity offers [real-time log streaming](build-log.md) with timestamps and highlighting, and archived history per build step. It’s possible to integrate TeamCity with 3rd party observability solutions like Dynatrace, Grafana, etc.
+{instance="tcc"}
 
 </procedure>
 
