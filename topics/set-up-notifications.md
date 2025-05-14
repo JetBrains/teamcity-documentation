@@ -14,6 +14,7 @@ In this guide, we show how to quickly configure email, browser, and Slack notifi
 ### Email Notifier
 
 First, the TeamCity server administrator should integrate TeamCity with the email service provider used in your organization. This can be done in __Administration | Email Notifier__ and requires entering parameters like SMTP host and service email.
+{instance="tc"}
 
 The email notifier will send notifications to the addresses specified in each user's profile, according to their [preferences](#Subscribe+to+Notifications).
 
