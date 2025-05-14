@@ -173,7 +173,7 @@ docker run -d your.registry/%\dep.ConfigA.DockerImageName%
 
 Add a parameter with the `reverse.dep.<build_conf_ID>.<parameter_name>` name syntax to override the input `<parameter_name>` parameter defined in the target configuration that precedes the current configuration.
 
-For example, the following [Kotlin](kotlin-dsl.md) code defines a project with three build configurations united in a single build chain (ConfigA &rarr; ConfigB &rarr; ConfigC). Each build configuration has a `chain.ConfigX.param` parameter with its custom value. The last configuration has the additional `reverse.dep.ChainConfigA.chain.ConfigA.param` parameter.
+For example, the following [Kotlin](kotlin-dsl.md) code defines a project with three build configurations united in a single build chain (ConfigA &rarr; ConfigB &rarr; ConfigC). Each build configuration has a `chain.ConfigX.param` parameter with its custom value. The last configuration has the additional `reverse.dep.ProjectID_ChainConfigA.chain.ConfigA.param` parameter.
 
 ```Kotlin
 import jetbrains.buildServer.configs.kotlin.*
@@ -223,7 +223,7 @@ object ChainConfigC : BuildType({
 
     params {
         param("chain.ConfigC.param", "Config C")
-        param("reverse.dep.ChainConfigA.chain.ConfigA.param", "Value Overridden in ConfigC")
+        param("reverse.dep.${DslContext.projectId}_ChainConfigA.chain.ConfigA.param", "Value Overridden in ConfigC")
     }
 
     steps {
@@ -277,7 +277,7 @@ object ChainConfigB : BuildType({
 
 object ChainConfigC : BuildType({
     params {
-        param("reverse.dep.ChainConfig*.MyParam", "CustomValue_C")
+        param("reverse.dep.${DslContext.projectId}_ChainConfig*.MyParam", "CustomValue_C")
     }
 
     dependencies {
@@ -302,7 +302,7 @@ object ChainConfigA : BuildType({
 object ChainConfigB : BuildType({
     params {
         // Lower priority
-        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_B")
+        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_B")
     }
 
     // Depends on config A
@@ -316,7 +316,7 @@ object ChainConfigB : BuildType({
 object ChainConfigC : BuildType({
     params {
         // Higher priority
-        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_C")
+        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_C")
     }
 
     // Depends on config B
@@ -330,8 +330,8 @@ object ChainConfigC : BuildType({
 
 However, if ConfigB and ConfigC do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and prioritizing a parameter with the most specific build configuration ID.
 
-* Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.ChainConfigA.MyParam`).
-* Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Chain*A.MyParam`). The more specific the target configuration ID is, the higher the priority of this parameter. For instance, the `ChainConf*A` ID has a priority over the `Chain*A` ID since it is considered more specific.
+* Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.MyConfigID.MyParam`).
+* Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Build*.MyParam`). The more specific the target configuration ID is, the higher the priority of this parameter. For instance, the `ChainConf*A` ID has a priority over the `Chain*A` ID since it is considered more specific.
 * Lowest priority: parameters with the `*` wildcard instead of configuration IDs (for example, `reverse.dep.*.MyParam`).
 
 If all conflicting configurations have similar parameter names and neither of them is a clear winner, TeamCity reports a conflict and creates additional `conflict.<build_config_ID>.<parameter_name>=<value>` parameters (one for each conflicting configuration).
@@ -346,7 +346,7 @@ object ChainConfigA : BuildType({
 object ChainConfigB : BuildType({
     params {
         // Equal priority
-        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_B")
+        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_B")
     }
 
     // Depends on config A
@@ -360,7 +360,7 @@ object ChainConfigB : BuildType({
 object ChainConfigC : BuildType({
     params {
         // Equal priority
-        param("reverse.dep.ChainConfigA.MyParam", "CustomValue_C")
+        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_C")
     }
 
     // Depends on config A
