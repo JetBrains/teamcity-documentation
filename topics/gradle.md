@@ -37,6 +37,8 @@ Gradle tasks
 
 Specify Gradle task names separated by spaces. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
 
+Additional [task options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:disambiguate_task_options_from_built_in_options) should also be entered in this field. For example, `clean build -x test` or `:myproject:run --args="foo --bar"`. 
+
 </td></tr>
 
 <tr>
@@ -87,7 +89,7 @@ Additional Gradle command line parameters
 
 <td>
 
-Optionally, specify the space-separated list of command line parameters to be passed to Gradle.
+The optional space-separated list of [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). For example, `-Dorg.gradle.caching.debug=false` or `-Dorg.gradle.console=verbose`.
 
 </td></tr><tr>
 
