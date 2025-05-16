@@ -37,7 +37,7 @@ Gradle tasks
 
 Specify Gradle task names separated by spaces. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
 
-Additional [task options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:disambiguate_task_options_from_built_in_options) should also be entered in this field. For example, `clean build -x test` or `:myproject:run --args="foo --bar"`. 
+Additional [task options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:disambiguate_task_options_from_built_in_options) should also be entered in this field. For example, `:myproject:run --args="foo --bar"` or `clean test --tests MyTestClass.myTestMethod`. 
 
 </td></tr>
 
@@ -52,6 +52,10 @@ Gradle build file
 <td>
 
 A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory. If empty (default), Gradle uses own settings to determine it.
+
+> Gradle 9.0 and higher do not support this option. To specify a build file for these versions, add the `-p <path to build file relative to the checkout directory>` line to the **Additional Gradle command line parameters** field.
+> 
+{style="note"}
 
 </td></tr>
 
@@ -89,7 +93,7 @@ Additional Gradle command line parameters
 
 <td>
 
-The optional space-separated list of [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). For example, `-Dorg.gradle.caching.debug=false` or `-Dorg.gradle.console=verbose`.
+The optional space-separated list of [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). For example, `-x test` (or `--exclude-task test`), `--configuration-cache`, or `-PmyProjectProperty=foo`.
 
 </td></tr><tr>
 
