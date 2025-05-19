@@ -16,6 +16,7 @@ This feature extends the capabilities provided by [AssemblyInfo Patcher](assembl
 See how to [add a build feature](adding-build-features.md).
 
 ## File Content Replacer Settings
+{help-id="FileContentReplacerSettings"}
 
 You can specify the values manually or use value presets for replacement, which can be edited if needed.
 
@@ -81,7 +82,7 @@ Note that if the runner finds at least one file that matches the given pattern, 
 
 </tr>
 
-<tr>
+<tr help-id="FileContentReplacer-FileEncoding">
 
 <td>
 
@@ -177,11 +178,10 @@ $N sequence references N-th capturing group. All backslashes (`\`) and dollar si
 
 </td></tr></table>
 
-<anchor name="Pre-defined templates"/>
 
-<anchor name="FileContentReplacer-Predefinedtemplates"/>
 
 ### Templates
+{id="Templates" help-id="FileContentReplacer-Predefinedtemplates"}
 
 This section lists the available replacement templates.
 

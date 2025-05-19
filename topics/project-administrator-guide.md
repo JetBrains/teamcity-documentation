@@ -18,6 +18,7 @@ The following diagram illustrates the basic TeamCity workflow:
 7. After finishing the build, the agent sends [build artifacts](build-artifact.md) to the server.
 
 ## Steps, Configurations and Projects
+{help-id="adminGuide-StepsConfigurationsAndProjects"}
 
 In TeamCity, a building routine consists of the following blocks:
 

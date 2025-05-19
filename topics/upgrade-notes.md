@@ -1995,7 +1995,7 @@ NuGet settings page is removed. NuGet.exe can be installed using the new __Tools
 
 #### Tests-related UI
 
-The Problematic Tests tab is no longer available and the View all tests failed within the last 120 hours link is removed from the the  Current Problems tab.
+The Problematic Tests tab is no longer available and the View all tests failed within the last 120 hours link is removed from the the **Current Problems** tab.
 
 TeamCity now detects [Flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests) displayed on the dedicated tab for a given project.
 

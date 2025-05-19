@@ -44,7 +44,7 @@ Here are the main recommendations on setting up the shared Data Directory:
 * The typical Data Directory mounting options are SMB and NFS. TeamCity uses the Data Directory as a regular file system so all basic file system operations should be supported.
 * The I/O operations count or I/O volume limits should not be restricted by the storage or mounting option.
 * Make sure to review performance guidelines for your storage solution. For example, increasing MTU for the network connection between the server and the storage usually increases the artifact transfer speed.
-{id="Disable-Network-Client-Caches-on-Data-Directory-Mounts"}
+{help-id="Disable-Network-Client-Caches-on-Data-Directory-Mounts"}
 * **Disable Network Client Caches on Data Directory Mounts**
   * It is important that all the nodes see the current state of the shared Data Directory without delay. If this is not the case, it is likely to result in unstable behavior and frequent build log corruptions.
   * If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure all the registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.

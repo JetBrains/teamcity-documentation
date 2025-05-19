@@ -1,5 +1,5 @@
 [//]: # (title: Working with Build and Test Failures)
-[//]: # (help-id: Investigating and Muting Build Failures)
+[//]: # (help-id: Investigating and Muting Build Failures;Viewing Tests and Configuration Problems;Already Fixed In;First Failure)
 
 During a build run, you can typically encounter one of the following failure types:
 
@@ -146,7 +146,9 @@ Investigations and mutes are not branch-specific. If a problem is investigated o
 * If a failure occurs in multiple branches one of which is a default branch, the problem is considered fixed when it goes away in the default branch.
 * If a failure occurs in non-default active branches only, the problem is considered fixed when it goes away in all these branches.
 
+
 ## Flaky Tests
+{id="Flaky+Tests" help-id="Flaky Tests"}
 
 Flaky tests are unstable tests that can finish both successful or failed with seemingly no differences between the build runs. TeamCity consideres a test flaky if one of the following is true:
 

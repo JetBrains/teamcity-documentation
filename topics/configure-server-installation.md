@@ -32,9 +32,9 @@ By default, the TeamCity server is accessible under the root context of the serv
 > 
 {style="note"}
 
-<anchor name="InstallingandConfiguringtheTeamCityServer-SettingUpMemorysettingsforTeamCityServer"/>
 
 ## Configure Memory Settings for TeamCity Server
+{help-id="SettingUpMemorySettingsForTeamCityServer"}
 
 TeamCity Server has the main process which can also launch child processes. Child processes use available memory on the machine. This section covers the memory settings of the main TeamCity server process only, as it requires special configuration.
 

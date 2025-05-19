@@ -57,11 +57,9 @@ Description
 
 An optional description for the build configuration.
 
-</td></tr><tr>
+</td></tr><tr help-id="ConfiguringGeneralSettings-BuildNumberFormat">
 
 <td>
-
-<anchor name="ConfiguringGeneralSettings-BuildNumberFormat"/>
 
 Build Number Format
 
