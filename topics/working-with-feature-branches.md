@@ -139,9 +139,9 @@ TeamCity can identify and group branches, based on the commits of the current Te
 
 Select the _My Branches_ group in the branch filter to display all active branches whose last 100 changes include your commits, based on the defined VSC usernames.
 
- <anchor name="logicalBranchName"/>
 
 ## Logical Branch Name
+{help-id="logicalBranchName"}
 
 A logical branch name is a branch name shown in the user interface for the builds and on build configuration level. A logical branch name is regularly a part of the full VCS-specific branch name. It is calculated by applying a [branch specification](#Configuring+Branches) to the branch name from the version control.
 

@@ -496,12 +496,8 @@ If this option is disabled, the [security implications](#Implications+of+Storing
 
 
 
-
-
-<anchor name="tokensGen"/>
-
 ### Managing Tokens
-[//]: # (AltHead: tokensGen)
+{id="Managing+Tokens" help-id="Managing Tokens"}
 
 If you need to add a password (or other secure value) to the versioned settings not via the TeamCity UI (for example, via Kotlin DSL), you can generate a token to be used in the settings instead of this password.
 

@@ -12,7 +12,7 @@ Projects Import should be used only when some projects need to be added to an ex
 If you need to move all the server data to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine).
 
 ## Importing projects
-{instance="tc"}
+{instance="tc" help-id="ProjectImport-ImportingProjects"}
 
 On the source TeamCity server:
 * [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrading-teamcity-server-and-agents.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__).
@@ -55,6 +55,7 @@ The following files are imported:
 * Build Numbers files for the newly added build configurations.
 
 ### Importing users and groups
+{help-id="ProjectImport-ImportUsersAndGroups"}
 
 When users are selected for import, TeamCity will analyze the usernames to see if users will be __imported__ or __merged__.
 
@@ -77,6 +78,7 @@ If a [conflict](#Conflicts) occurs (the groups exists on both the source and the
 The __Project Import__ page | __Import scope__ section | __Groups__ will display how many conflicting groups are found. You can view all the groups that have the same group key and decide if you want to merge them. Note that ["All Users" group](creating-and-managing-user-groups.md#%22All+Users%22+Group) is always listed as a conflicting one because it is a default group on all TeamCity servers.
 
 ### Conflicts
+{help-id="Projects Import Conflicts"}
 
 TeamCity does not import entities from the backup file if they conflict with some entity on the target server. Before import, TeamCity analyzes the backup file and displays all detected conflicts on the __Import Scope__ configuration page.
 
@@ -118,7 +120,7 @@ Importing projects may take significant time. There can be only one import proce
 </note>
     
 ## Moving artifacts and logs
-{instance="tc"}
+{instance="tc" help-id="ProjectImport-MovingArtifactsAndLogs"}
 
 Although artifacts and logs are not imported right from the backup file, you can copy/move them from the source to the target server using the `.bat` and `.sh` scripts from the `projectsImport-<date>` directory under TeamCity logs. These scripts accept the source and target data directories via the command line; the scripts accept the source and target [artifact directories](build-artifact.md). The rest is done automatically. The scripts can be executed while the server is running.
 
@@ -126,9 +128,7 @@ It may take some time for TeamCity to display the imported build artifacts.
 
 
 ## Moving artifacts and logs
-{instance="tcc"}
-
-<anchor name="ProjectsImport-Movingartifactsandlogs"/>
+{instance="tcc" help-id="ProjectImport-MovingArtifactsAndLogs"}
 
 Restoring artifacts and logs of imported projects is available only on TeamCity On-Premises instances. See this article for more information: [Migrate from TeamCity On-Premises to TeamCity Cloud](migrate-from-teamcity-on-premises-to-teamcity-cloud.md#Migration+Process).
 

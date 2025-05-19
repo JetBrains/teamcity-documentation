@@ -19,7 +19,7 @@ We strongly urge you to make the backup of TeamCity data before upgrading. Note 
 </note>
 
 ## Backing up Data
-{instance="tc"}
+{instance="tc" help-id="DataBackup-BackingUpData"}
 
 You can choose what data is backed up either in the UI or by adding the respective parameters in maintainDB.
 

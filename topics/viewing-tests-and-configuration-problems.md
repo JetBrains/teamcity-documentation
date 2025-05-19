@@ -25,7 +25,6 @@ The links appearing in build configuration problems and build problems sections 
 
 The failed test and muted failures sections have grouping options and allow viewing the test stack trace available when clicking the test name link. You can also view the test history, open the test in the active IDE, start investigating a particular test failure, fix and unmute a test or start investigating a particular test failure.
 
-<anchor name="ViewingTestsandConfigurationProblems-FlakyTests"/>
 
 ## Flaky Tests
 

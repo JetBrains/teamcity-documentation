@@ -27,6 +27,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
    * **Text** — the default type that allows the parameter to have any string value. You can optionally choose a required option under **Show allowed value** to limit the allowed values to only those that match the specific RegEx pattern, or ensure a parameter is never empty.
 
    * **Checkbox** — limits the number of possible parameter values to two. Rendered as a checkbox in the [Run Custom Build](running-custom-build.md) dialog, allowing users to toggle between these values. The default values for checked and unchecked states are `true` and `null` respectively. You can set up your custom value pairs (yes/no, 1/0, debug/release, and so on) via the **Checked value** and **Unchecked value** fields.
+    {help-id="CheckboxParameter"}
 
    * **Password** — similar to the "Text" type, "Password" parameters can accept any string as a value. However, this value is never exposed outside a build: TeamCity hides this sensitive value from the UI, build logs, DSL code, and REST API response payloads.
 

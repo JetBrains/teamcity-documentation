@@ -1,5 +1,5 @@
 [//]: # (title: Configuring VCS Roots)
-[//]: # (help-id: Configuring VCS Roots)
+[//]: # (help-id: Configuring VCS Roots;VCS+Root)
 
 <anchor name="VCSRoots"/>
 
