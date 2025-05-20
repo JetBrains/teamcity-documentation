@@ -53,7 +53,7 @@ Gradle build file
 
 A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory. If empty (default), Gradle uses own settings to determine it.
 
-> Gradle 9.0 and higher do not support this option. To specify a build file for these versions, add the `-p <path to build file relative to the checkout directory>` line to the **Additional Gradle command line parameters** field.
+> To specify a build file for Gradle 9.0 and higher, add the `-p <path to build file relative to the checkout directory>` line to the **Additional Gradle command line parameters** field instead of using this setting.
 > 
 {style="note"}
 
