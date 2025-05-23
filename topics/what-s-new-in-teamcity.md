@@ -1,22 +1,22 @@
-[//]: # (title: What's New in TeamCity 2025.03)
-[//]: # (help-id: What's New in TeamCity 2025.03;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity 2025.07)
+[//]: # (help-id: What's New in TeamCity 2025.07;What's New in TeamCity)
 
 
-<include from="what-s-new-in-teamcity-tc.md" element-id="2025-03-tc"/>
+<include from="what-s-new-in-teamcity-tc.md" element-id="2025-07-tc"/>
 
-<include from="what-s-new-in-teamcity-tcc.md" element-id="2025-03-tcc"/>
+<include from="what-s-new-in-teamcity-tcc.md" element-id="2025-07-tcc"/>
 
 
 ## Upgrade Notes
 {instance="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version [2025.03 compared to 2024.12](upgrade-notes.md#2025.03).
+Before upgrading, we highly recommend reading about important changes in version [2025.07 compared to 2025.03](upgrade-notes.md#2025.07).
 
 
 ## Fixed Issues
 {instance="tc"}
 
-See the [TeamCity 2025.03 release notes](teamcity-2025-03-release-notes.md) article for the summary of implemented features and fixed issues.
+See the [TeamCity 2025.07 release notes](teamcity-2025-07-release-notes.md) article for the summary of implemented features and fixed issues.
 
 
 ## Roadmap
