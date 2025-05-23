@@ -1,5 +1,5 @@
 [//]: # (title: What's New in TeamCity 2025.03)
-[//]: # (help-id: What's New in TeamCity 2025.03;What's New in TeamCity)
+[//]: # (help-id: What's New in TeamCity 2025.03)
 
 
 ## TeamCity UI Updates
