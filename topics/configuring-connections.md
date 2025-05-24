@@ -50,7 +50,7 @@ To activate the Azure DevOps Services authentication on your server, proceed to 
 
 #### Azure DevOps PAT Connection
 
-This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), creating an [Azure DevOps VCS root](team-foundation-version-control.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
+This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#From+Repository+URL), creating an [Azure DevOps VCS root](team-foundation-version-control.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
 
 To configure an Azure DevOps PAT connection:
 
@@ -62,7 +62,7 @@ To configure an Azure DevOps PAT connection:
    * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
    * your personal access token
 6. <include from="common-templates.md" element-id="test-and-save-connection"/>
-7. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](team-foundation-version-control.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
+7. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#From+Repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](team-foundation-version-control.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
    When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.
@@ -78,7 +78,7 @@ To configure an Azure DevOps PAT connection:
 {instance="tcc"}
 
 A connection to Bitbucket Cloud can be used to:
-* Create a [project from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [project from Bitbucket URL](creating-and-editing-projects.md#From+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Mercurial VCS root](mercurial.md).
 * Integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md).
@@ -101,7 +101,7 @@ If you configure multiple Bitbucket connections, the server URL will be displaye
 
 Integration with Bitbucket Server and Data Center currently allows you to:
 
-* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 
 To allow TeamCity to access Bitbucket data, you need to create an incoming application link in Bitbucket to grant TeamCity required permissions.
@@ -135,7 +135,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 TeamCity allows you to create connections to both regular **GitHub.com** instances and **GitHub Enterprise**.
 
 A connection to GitHub can be used to:
-* Create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [project from GitHub URL](creating-and-editing-projects.md#From+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Git VCS root](git.md).
 * Integrate with a [GitHub issue tracker](github.md).
@@ -287,7 +287,7 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 There are two types of GitLab connections: *GitLab.com* for accounts hosted on the [](https://gitlab.com) site, and *GitLab CE/EE* for accounts on a self-hosted GitLab Community Edition (CE) or Enterprise Edition (EE) server.
 
 A connection to GitLab can be used to:
-* Create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL).
+* Create a [project from GitLab URL](creating-and-editing-projects.md#From+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Integrate with a [GitLab issue tracker](gitlab.md).
 * Enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).

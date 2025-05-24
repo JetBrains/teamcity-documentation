@@ -24,7 +24,7 @@ Connections are configured on the __Project Administration | Connections__ page.
 ## Integrating TeamCity with GitHub
 
 Integration with GitHub allows you to:
-* create a [project from GitHub URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project from GitHub URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * create a [Git VCS root](git.md)
 * integrate with a [GitHub issue tracker](github.md)
@@ -38,7 +38,7 @@ title="TeamCity tutorial — How to integrate TeamCity and GitHub"/>
 ## Integrating TeamCity with GitLab
 
 Integration with GitLab allows you to:
-* create a [project from GitLab URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project from GitLab URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * integrate with a [GitLab issue tracker](gitlab.md)
 * enable [GitLab authentication](configuring-authentication-settings.md#GitLab.com)
@@ -49,7 +49,7 @@ See how to configure a connection to GitLab.com or GitLab CE/EE [here](configuri
 
 Integration with hosted (Cloud) and self-hosted (Server and Data Center) Bitbucket products allows you to:
 
-* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 
 With Bitbucket Cloud you can also:
@@ -63,7 +63,7 @@ See the following documentation articles to learn how to configure connections t
 ## Integrating TeamCity with Azure DevOps
 
 Integration with Azure DevOps Services allows you to:
-* create a [project from a Git repository URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project from a Git repository URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * enable [user authentication via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services)
 
@@ -72,7 +72,7 @@ See how to configure a connection to Azure DevOps [here](configuring-connections
 ## Integrating TeamCity with JetBrains Space
 
 Integration with JetBrains Space allows you to:
-* create a [project from a Git Space URL](creating-and-editing-projects.md#Creating+project+pointing+to+repository+URL)
+* create a [project from a Git Space URL](creating-and-editing-projects.md#From+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 * enable [JetBrains Space authentication](configuring-authentication-settings.md#JetBrains+Space)
 

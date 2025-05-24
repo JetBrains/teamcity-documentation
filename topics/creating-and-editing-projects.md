@@ -189,7 +189,7 @@ This section details creating projects via the TeamCity web UI. Other options in
 To create a project, use the __Administration__ link in the upper right corner and click __Create project__. The __Create project__ page is displayed.
 
 There are several options to create a project from:
-* [from a repository URL](#Creating+project+pointing+to+repository+URL)
+* [from a repository URL](#From+Repository+URL)
 * [from GitHub.com](#Creating+project+pointing+to+GitHub.com+repository)
 * [from Bitbucket (Cloud, Server, Data Center)](#Creating+project+pointing+to+Bitbucket)
 * [from GitLab](#Creating+project+pointing+to+GitLab.com)
