@@ -102,7 +102,7 @@ TeamCity will display the list of Space repositories available to you:
 
 <img src="space-auth.png" alt="Creating a project from JetBrains Space" width="706"/>
 
-Choose a repository to create a project or build configuration from — and TeamCity will scan it and suggest the settings, as described [here](creating-and-editing-projects.md#Creating+project+pointing+to+JetBrains+Space).
+Choose a repository to create a project or build configuration from — and TeamCity will scan it and suggest the settings, as described [here](creating-and-editing-projects.md#From+a+Configured+Connection).
 
 >You can similarly add additional JetBrains Space [roots](configuring-vcs-roots.md) to an existing project.
 
