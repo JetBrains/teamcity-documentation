@@ -22,9 +22,14 @@ The following diagram illustrates the basic TeamCity workflow:
 
 In TeamCity, a building routine consists of the following blocks:
 
+
+<deflist>
+
+<def title="Classic TeamCity">
+
 <img src="dk-basic-tree-diagram3.png" alt="TeamCity elements" width="706"/>
 
-* <snippet id="build-step-overview">**Build step** — an essential building block that executes a predefined set of commands. This can be a single command (like `dotnet test` or `gradle clean build`) or a series of operations (such as a custom Python or Bash script). Build steps run fully, with no partial execution.</snippet>
+* <snippet id="build-step-overview">**Build step** — an essential building block that executes a predefined set of commands. This can be a single command (like `mvn test` or `gradle clean build`) or a series of operations (such as a custom Python or Bash script). Build steps run fully, with no partial execution.</snippet>
 
 * <snippet id="build-configuration-overview">**Build configuration** — a sequence of build steps executed in a specific order.</snippet> With a configuration, you can:
 
@@ -32,14 +37,45 @@ In TeamCity, a building routine consists of the following blocks:
     * temporarily disable individual steps.
     * set [conditions](build-step-execution-conditions.md) for when steps should be executed. If a condition is not met, the corresponding step is skipped. For instance, step #3 could be set to run only if step #2 fails, and step #4 might be configured to execute only on Windows agents.
 
-    Configurations can also be turned into [templates](build-configuration-template.md) making it easy to clone and reuse them without manually configuring each new setup. Once cloned, each copy can be customized independently.
+  Configurations can also be turned into [templates](build-configuration-template.md) making it easy to clone and reuse them without manually configuring each new setup. Once cloned, each copy can be customized independently.
 
-    You can also incorporate configurations from the same or different projects into one [unified workflow](build-chain.md).
+  You can also incorporate configurations from the same or different projects into one [unified workflow](build-chain.md).
+
+</def>
 
 
-* <snippet id="project-overview">**Project** — a collection of independent build configurations. These configurations can be run separately but are grouped under a single project to share common resources: [connections](configuring-connections.md), [parameters](configuring-build-parameters.md), artifact storages, [cloud agent profiles](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images), and so on.</snippet>
+<def title="TeamCity Pipelines">
 
-    Each project can be owned by another project for the same benefits: subprojects can access entities owned by their parent projects. The topmost project, called the **Root project**, is created automatically by TeamCity. This Root project cannot be removed and is ideal for setting up globally accessible parameters, connections, cloud profiles, and other shared resources.
+Available in TeamCity 2025.07 and newer, TeamCity Pipelines initiative aims to deliver the user-centric approach to designing CI/CD routines.
+
+* <include from="project-administrator-guide.md" element-id="build-step-overview"/> Pipelines currently have fewer build steps than classic build configurations, we expect to support more of them in future release cycles.
+
+* <snippet id="job-overview">**Job** — a sequence of steps executed linearly one by one. Unlike build configurations, jobs execute all of their steps, without any additional execute conditions.</snippet> 
+
+* <snippet id="pipeline-overview">**Pipeline** — a collection standalone or interconnected jobs. Running a pipeline launches all of its jobs that, depending on their relations, run in parallel or one after another.</snippet>
+
+</def>
+
+</deflist>
+
+Both classic build configurations and pipelines are owned by projects.
+
+* <snippet id="project-overview">**Project** — the largest TeamCity entity a user can create. Hosts child subprojects, standalone build configurations and pipelines.</snippet>
+
+    * You can add nested subprojects to organize configurations and pipelines into separate categories.
+    * The majority of TeamCity [user permissions](managing-roles-and-permissions.md) are project-based. This allows you to create projects for separate teams and define user groups for isolated projects.
+    * Projects can own [connections](configuring-connections.md), [parameters](configuring-build-parameters.md), artifact storages, [cloud agent profiles](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images) and other entities shared with all of its child subprojects, configurations, and pipelines. For example, you can create a connection to GitLab once on a project level, and any configuration or pipeline owned by this project will be able to utilize this connection to access remote repositories.
+
+* <snippet id="root-project-overview">**Root project** — the topmost project created automatically by TeamCity. This project cannot be removed and allows you to create server-wide connections, parameters, cloud agent profiles, and artifact storages.</snippet>
+
+
+
+
+
+
+
+
+
 
 
 ## Edit and View Modes
@@ -61,7 +97,7 @@ To switch between the two modes, use the **Settings** toggle in the top right co
 <img src="dk-view-edit-mode-toggle.png" width="706" alt="View/Edit mode toggle"/>
 
 > For TeamCity users with limited access permissions, the **Settings** toggle is either completely disabled or allows them to view project/configuration settings in read-only mode.
-> 
+>
 {style="note"}
 
 TeamCity sticks to the selected mode unless you manually toggle it. This means if you view/edit settings of one configuration, navigating to another one will show reveal its settings as well.
@@ -223,11 +259,11 @@ To choose which files should be available as build artifacts:
 Related article: [](build-artifact.md)
 
 
-## Set Up Cross-Configuration Dependencies
+## Set Up Dependencies
 
 <snippet id="configuration-dependencies">
 
-Real-life CI/CD pipelines often combine multiple standalone configurations. For example, "Build", "Test", and "Deploy to Staging" configurations (or Jobs) can run independently or in sequence.
+Real-life CI/CD pipelines often combine multiple standalone configurations. For example, "Build", "Test", and "Deploy to Staging" configurations (or jobs) can run independently or in sequence.
 
 TeamCity offers multiple options to create relations between standalone configurations.
 
@@ -257,14 +293,15 @@ Finish build triggers offer a simple but inflexible way to trigger downstream bu
 Artifact dependencies don’t create explicit links between configurations: both can run independently without triggering each other’s builds. If you use artifact dependencies without corresponding snapshot dependencies, a dependent build has no ability to ensure a suitable source of artifacts (an upstream configuration build) exists. For that reason, you may want to set up artifact dependencies to target pinned/tagged builds. This setup can exhibit more control on your building routine.
 </def>
 
-<!--
 <def title="Pipelines">
 
-In the lightweight TeamCity Pipelines mode, you create Pipelines instead of classic TeamCity projects, and Jobs instead of build configurations. By default, each Job of a pipeline is an separate entity that runs in parallel to other Jobs. To unite these Jobs in a sequence, use the Job settings panel or drag-and-drop Jobs in the visual editor. For each cross-Job dependency, you can additionally specify whether an upstream Job should share its artifacts to the downstream one.
+You can create dependencies between Jobs owned by a pipeline. Unlike linking build configurations in a build chain, pipelines showcase the following differences:
 
-Pipeline dependencies substitute classic TeamCity artifact and snapshot dependencies, but have fewer options (for example, you cannot choose to reuse only pinned/tagged builds of an upstream Job).
+* You can only link jobs that belong to the same pipeline. Build chains, in turn, allow you to link build configurations owned by completely separate TeamCity projects.
+* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](build-chain.md#Partial+Chain+Execution).
+* Build configurations support two types of dependencies: snapshot dependencies that allow you to specify configurations' order, and artifact dependencies that allow configurations to share produced artifacts. In pipelines, both types of dependencies are merged into one: you can instantly specify whether a dependent job needs files produced by an upstream job right when you create this dependency.
+
 </def>
--->
 
 </deflist>
 
@@ -272,7 +309,7 @@ Pipeline dependencies substitute classic TeamCity artifact and snapshot dependen
 
 ## Deployment
 
-Deployment is typically the final stage of a CI/CD routine that delivers artifacts produced by a build to an external location. Depending on your scenario and needs, you can perform this action as a final build step, or a standalone [deployment configuration](deployment-build-configuration.md). 
+Deployment is typically the final stage of a CI/CD routine that delivers artifacts produced by a build to an external location. Depending on your scenario and needs, you can perform this action as a final build step, or a standalone [deployment configuration](deployment-build-configuration.md).
 
 
 Ways to deploy artifacts in TeamCity:
@@ -284,8 +321,8 @@ Ways to deploy artifacts in TeamCity:
 * __Using the AWS CodeDeploy runner__ to deploy applications to AWS EC2 and on-premises instances. To use this runner, you need to download and install our [AWS CodeDeploy plugin](https://plugins.jetbrains.com/plugin/9018-aws-codedeploy) as described [here](installing-additional-plugins.md). See the related [blog posts](https://blog.jetbrains.com/teamcity/tag/codedeploy/).
   {instance="tc"}
 
->If you deploy products by means of third-party services, TeamCity allows [detaching builds from agents](detaching-build-from-agent.md) before starting the external deployment operations. This helps utilize agents more optimally.  
-> 
+>If you deploy products by means of third-party services, TeamCity allows [detaching builds from agents](detaching-build-from-agent.md) before starting the external deployment operations. This helps utilize agents more optimally.
+>
 >This method requires some advanced configuration, so we suggest trying it only after you feel comfortable configuring builds and agents in TeamCity.
 
 ## Investigations and Mutes

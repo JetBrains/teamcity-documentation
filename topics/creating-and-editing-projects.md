@@ -1,6 +1,187 @@
 [//]: # (title: Creating and Editing Projects)
 [//]: # (help-id: Creating and Editing Projects;Project)
 
+In TeamCity, actual building tasks are carried out by [build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md). However, both of them must be placed inside a project.
+
+This topic illustrates different ways to create projects.
+
+
+## Root Project and Settings Inheritance
+
+Before you begin, note that every TeamCity server includes a built-in, undeletable project called the **Root project**. All new projects are created as its children, but it cannot host build configurations and pipelines directly.
+
+In TeamCity, child projects inherit many settings and entities from their parent, such as [connections](configuring-connections.md) and [cloud agent profiles](teamcity-integration-with-cloud-solutions.md). The Root project lets you take advantage of this concept and define server-wide resources. For example, you can create [AWS cloud profile](setting-up-teamcity-for-amazon-ec2.md) that spawns cloud agents accessible to all projects on the server.
+
+You can navigate to the Root project settings by clicking the **&lt;Root project&gt;** breadcrumbs item in [edit mode](project-administrator-guide.md#Edit+and+View+Modes)...
+
+<img src="dk-navigate-to-root-project.png" width="706" alt="Navigate to Root project"/>
+
+...or by going to the `<your_server_URL>/admin/editProject.html?projectId=_Root` URL directly. Note that since [user permissions](managing-roles-and-permissions.md) are project-based, only Root project administrators can edit its settings.
+
+
+## Create New Projects in TeamCity UI
+
+New TeamCity projects can be added using corresponding sidebar buttons. The **Create** button next to the **Projects** menu item allows you to add top-level projects owned directly by the [Root project](#Root+Project+and+Settings+Inheritance).
+
+<img src="dk-crete-project-sidebar-1.png" alt="Create new project" width="706"/>
+
+To add a subproject of an existing project, click the identical button next to that project.
+
+<img src="dk-crete-project-sidebar-2.png" alt="Create new subproject" width="706"/>
+
+> When a TeamCity user creates a project, TeamCity automatically adds it to the **Favorites** list for that user. This allows you to quickly locate your own projects. You can click a star icon next to project names to add or remove them from Favorites.
+> 
+{style="tip"}
+
+For a brand-new TeamCity installations, only **From repository URL** and **Manually** project creation options are available. You can get more options after you configure connections to VCS hosting providers.
+
+<img src="dk-default-add-project-options.png" width="706" alt="Default New Project Options"/>
+
+
+
+### From Repository URL
+
+This option allows you to create a new project and a child build configuration in one go using a Git, Subversion, Mercurial, TFS, or Perforce repository (depot) URL. You can use any URL type:
+
+* A regular repository web link: `https://github.com/Johndoe/my-sample-app`
+* An HTTPS clone URL: `https://github.com/Johndoe/my-sample-app.git`
+* An SSH clone URL: `git@github.com:Johndoe/my-sample-app.git`
+
+To start building a remote repository, follow the steps below.
+
+<procedure type="steps">
+
+<step>
+
+On the new project page, click the **From a repository URL** tile.
+
+</step>
+
+<step>
+
+Choose the authentication type.
+
+   <deflist type="medium">
+   
+   <def title="Password / Access token">
+   
+   Enter a username and either a password or personal access token. For public repositories that do not require authentication to clone, you can leave both fields empty. If you later add features that need higher access (for example, `write` permissions for the [](commit-status-publisher.md) feature to display build statuses), you can configure authentication settings at that time.
+   
+   </def>
+   
+   <def title="SSH key">
+   
+   Available if the **Repository URL** is an SSH clone URL. Click **Upload SSH key** to add a private key, which will be saved in the parent project ([**parent project settings**](project-administrator-guide.md#Edit+and+View+Modes) **| SSH keys**) and appear in the drop-down menu when configuring additional projects.
+   
+   Learn more: [](ssh-keys-management.md)
+   
+   </def>
+   
+   </deflist>
+
+</step>
+
+
+<step>
+
+The next page contains mixed settings of both project and a build configuration owned by this project.
+
+   * **Parent project** — use this menu to change the project's parent.
+   * **Project name** and **Build configuration name** — public names visible in TeamCity.
+   * **Default branch** — the full name of a branch that will become a default one in TeamCity (for example, `refs/heads/main`). See the following article for more information: [](working-with-feature-branches.md#Default+Branch).
+   * **Branch specification** — the set of rules that specify which repository branches TeamCity should track. The default `refs/heads/*` rule adds all repo branches to the watchlist. See the following topic to learn more: [](working-with-feature-branches.md).
+   
+   > The VCS root whose name is shown on this page stores most of the settings you entered: authentication settings, branch specification, and default branch. To edit them, navigate to [**project settings**](project-administrator-guide.md#Edit+and+View+Modes) **| VCS Roots**.
+   > 
+   > * [What are VCS Roots](project-administrator-guide.md#VCS+Roots)
+   > * [](configuring-vcs-roots.md)
+   > 
+   {style="tip"}
+
+</step>
+
+<step>
+
+Click **Proceed**. At this stage you have already created a project and its child build configuration, and now edit configuration settings. TeamCity opens the [Add build step](configuring-build-steps.md) so you could add actual functionality to your configuration and start building or testing a remote repository. Refer to this article for more information on build steps.
+
+</step>
+
+</procedure>
+
+
+
+### Manually
+
+This option allows you to create a completely blank project.
+
+<procedure type="steps">
+
+<step>
+
+On the new project page, click the **Manually** tile.
+
+</step>
+
+
+<step>
+
+Specify initial settings for your new TeamCity project:
+
+* **Parent project** — use this menu to change the project's parent.
+* **Name** — the public project name.
+* **Project ID** — becomes a part of the project URL, and used to access this project in REST API calls, Kotlin DSL settings, and more. You can leave the default value which is assembled from parent project IDs and this project's truncated name.
+* **Description** — the optional project description.
+
+</step>
+
+
+<step>
+
+Click **Create**. You will end up with an empty project. Repeat the steps above to add subprojects to it, or start adding [build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md).
+
+</step>
+
+
+</procedure>
+
+
+### From a Configured Connection
+
+If a TeamCity project stores a configured [connection](configuring-connections.md) to a VCS provider, it can use this connection to quickly set up all authentication settings and retrieve a list of remote repositories. This is the most convenient way to create multiple projects targeting different repositories stored under the same hosting provider.
+
+First, you will require a connection. In this article, we will add a connection to GitHub and use it to add a project targeting a GitHub-hosted repository. See the [](configuring-connections.md) article for more information on connections to other VCS providers.
+
+
+<procedure type="steps" title="Add a connection">
+
+<step>
+
+Open [parent project settings](project-administrator-guide.md#Edit+and+View+Modes). If you want a future connection to be available for any project created on this server, modify [Root project](#Root+Project+and+Settings+Inheritance) settings. Otherwise, start with adding a [manually created blank project](#Manually).
+
+</step>
+
+<step>
+
+Navigate to the **Connections** tab and click **Add Connection**.
+
+<img src="dk-add-connection-tab.png" width="706" alt="Add new connection"/>
+
+</step>
+
+
+</procedure>
+
+
+
+
+
+
+
+
+
+
+<!--
+
 This section details creating projects via the TeamCity web UI. Other options include the [REST API](https://www.jetbrains.com/help/teamcity/rest/create-and-delete-projects.html) and using TeamCity project configuration in [DSL based on the Kotlin language](kotlin-dsl.md).
 
 ## Creating Project
@@ -221,6 +402,8 @@ To configure an existing project, select the desired project in the list and [op
 
 5. [Assign build configurations to specific build agents](assigning-build-configurations-to-specific-build-agents.md).
 
+-->
+
 ## Managing Project
 
 You can view all available projects and subprojects on the __Projects__ page listed in the alphabetical order by default. Administrators can [customize the default order](ordering-projects-and-build-configurations.md).
@@ -299,7 +482,7 @@ When you delete a project, TeamCity will remove its `.xml` configuration files. 
 >
 {instance="tc"}
 
-The \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
+The [TeamCity Data Directory](teamcity-data-directory.md)/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
 
 <tip>
 

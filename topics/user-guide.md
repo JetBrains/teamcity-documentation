@@ -16,6 +16,11 @@ Major TeamCity elements are:
 * <include from="project-administrator-guide.md" element-id="build-configuration-overview"/>
 * <include from="project-administrator-guide.md" element-id="project-overview"/>
 
+Unique elements available only for TeamCity Pipelines:
+
+* <include from="project-administrator-guide.md" element-id="job-overview"/>
+* <include from="project-administrator-guide.md" element-id="pipeline-overview"/>
+
 These elements are set up by [project admins](project-administrator-guide.md) and typically cannot be edited by regular developers.
 
 TeamCity user permissions are project-based. If you were assigned as a regular developer to a specific project, you can see only this project (with its subprojects). Other projects that exist on the same server are not shown to you. The figure below illustrates the list of the projects on a TeamCity server, as seen by a server administrator (left) and project developer assigned to three projects (right).

@@ -97,12 +97,12 @@
 			<toc-element accepts-web-file-names-ref="adding-notification-rules" topic="adding-notification-rules.md"/>
 		</toc-element>
 	</toc-element>
-	<toc-element toc-title="Managing Projects">
-		<toc-element topic="creating-and-editing-projects.md"/>
+	<toc-element toc-title="TeamCity Projects">
+		<toc-element topic="creating-and-editing-projects.md" toc-title="Create and Edit Projects"/>
 		<toc-element topic="project-export.md"/>
 		<toc-element topic="projects-import.md"/>
-		<toc-element topic="configuring-vcs-settings.md">
-			<toc-element topic="configuring-vcs-roots.md" accepts-web-file-names="vcs-root.html">
+		<toc-element topic="configuring-vcs-settings.md" toc-title="Configure VCS Settings">
+			<toc-element topic="configuring-vcs-roots.md" accepts-web-file-names="vcs-root.html" toc-title="VCS Roots">
 				<toc-element topic="guess-settings-from-repository-url.md"/>
 				<toc-element topic="git.md">
 					<toc-element topic="ssh-keys-management.md"/>
@@ -113,35 +113,35 @@
 				<toc-element accepts-web-file-names="azure-devops.html" topic="team-foundation-version-control.md"/>
 				<toc-element topic="configuring-vcs-post-commit-hooks-for-teamcity.md"/>
 			</toc-element>
-			<toc-element topic="working-with-feature-branches.md">
+			<toc-element topic="working-with-feature-branches.md" toc-title="Feature Branches">
 				<toc-element topic="branch-filter.md"/>
 			</toc-element>
 			<toc-element topic="vcs-checkout-rules.md"/>
 			<toc-element topic="vcs-checkout-mode.md"/>
 		</toc-element>
-		<toc-element topic="configuring-connections.md">
+		<toc-element topic="configuring-connections.md" toc-title="Connections">
 			<toc-element topic="manage-access-tokens.md"/>
 			<toc-element topic="configuring-connections-to-docker.md"/>
 		</toc-element>
-		<toc-element topic="storing-project-settings-in-version-control.md">
+		<toc-element topic="storing-project-settings-in-version-control.md" toc-title="Store Project Settings in a Repository">
 			<toc-element topic="kotlin-dsl.md">
 				<toc-element topic="upgrading-dsl.md"/>
 			</toc-element>
 		</toc-element>
-		<toc-element topic="ordering-projects-and-build-configurations.md"/>
-		<toc-element topic="archiving-projects.md"/>
-		<toc-element topic="customizing-statistics-charts.md"/>
+		<toc-element topic="ordering-projects-and-build-configurations.md" toc-title="Re-arrange Projects and Configurations"/>
+		<toc-element topic="archiving-projects.md" toc-title="Archive Projects"/>
+		<toc-element topic="customizing-statistics-charts.md" toc-title="Customize Statistics Charts"/>
 	</toc-element>
-	<toc-element toc-title="Managing Build Configurations">
-		<toc-element topic="creating-and-editing-build-configurations.md">
-			<toc-element topic="configuring-general-settings.md"/>
-			<toc-element topic="changing-build-configuration-type.md">
+	<toc-element toc-title="Build Configurations">
+		<toc-element topic="creating-and-editing-build-configurations.md" toc-title="Create and Edit Build Configurations">
+			<toc-element topic="configuring-general-settings.md" toc-title="General Configuration Settings"/>
+			<toc-element topic="changing-build-configuration-type.md" toc-title="Build Configuration Types">
 				<toc-element topic="composite-build-configuration.md"/>
 				<toc-element topic="deployment-build-configuration.md"/>
 			</toc-element>
-			<toc-element topic="changing-build-configuration-status.md"/>
+			<toc-element topic="changing-build-configuration-status.md" toc-title="Paused Build Configurations"/>
 			<toc-element topic="nuget.md"/>
-			<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html">
+			<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html" toc-title="Build Steps">
 				<toc-element accepts-web-file-names="build-step-conditions.html" topic="build-step-execution-conditions.md"/>
 				<toc-element topic="working-with-meta-runner.md"/>
 				<toc-element topic="ant.md"/>
@@ -195,8 +195,8 @@
 				<toc-element topic="simple-build-tool-scala.md"/>
 				<toc-element topic="xcode-project.md"/>
 			</toc-element>
-			<toc-element topic="build-artifact.md"/>
-			<toc-element topic="adding-build-features.md">
+			<toc-element topic="build-artifact.md" toc-title="Artifacts and Shared Files"/>
+			<toc-element topic="adding-build-features.md" toc-title="Build Features">
 				<toc-element topic="assemblyinfo-patcher.md"/>
 				<toc-element topic="automatic-merge.md"/>
 				<toc-element topic="aws-credentials.md"/>
@@ -224,8 +224,8 @@
 				<toc-element topic="vcs-labeling.md"/>
 				<toc-element topic="xml-report-processing.md"/>
 			</toc-element>
-			<toc-element topic="build-failure-conditions.md"/>
-			<toc-element topic="configuring-build-triggers.md">
+			<toc-element topic="build-failure-conditions.md" toc-title="Failure Conditions"/>
+			<toc-element topic="configuring-build-triggers.md" toc-title="Triggers">
 				<toc-element topic="configuring-vcs-triggers.md"/>
 				<toc-element topic="github-checks-trigger.md"/>
 				<toc-element topic="branch-remote-run-trigger.md"/>
@@ -238,13 +238,13 @@
 				<toc-element topic="configuring-retry-build-trigger.md"/>
 				<toc-element topic="perforce-shelve-trigger.md"/>
 			</toc-element>
-			<toc-element topic="configuring-dependencies.md">
+			<toc-element topic="configuring-dependencies.md" toc-title="Dependencies">
 				<toc-element topic="build-chain.md"/>
 				<toc-element topic="artifact-dependencies.md"/>
 				<toc-element topic="snapshot-dependencies.md" accepts-web-file-names="dependent-build.html"/>
 				<toc-element topic="build-dependencies-setup.md"/>
 			</toc-element>
-			<toc-element topic="configuring-agent-requirements.md" accepts-web-file-names="agent-requirements.html"/>
+			<toc-element topic="configuring-agent-requirements.md" accepts-web-file-names="agent-requirements.html" toc-title="Agent Requirements"/>
 			<toc-element topic="untrusted-builds.md"/>
 			<toc-element topic="clean-checkout.md"/>
 			<toc-element topic="build-configuration-template.md"/>
@@ -259,6 +259,10 @@
 		<toc-element topic="copy-move-delete-build-configuration.md"/>
 		<toc-element topic="assigning-build-configurations-to-specific-build-agents.md"/>
 		<toc-element topic="detaching-build-from-agent.md"/>
+	</toc-element>
+	<toc-element toc-title="Pipelines">
+		<toc-element topic="create-and-edit-pipelines.md"/>
+
 	</toc-element>
 	<toc-element topic="configuring-test-reports-and-code-coverage.md">
 		<toc-element topic="net-testing-frameworks-support.md"/>
