@@ -86,6 +86,8 @@ Choose the authentication type.
 
 The next page contains mixed settings of both project and a build configuration owned by this project.
 
+   <snippet id="project-from-url-settings">
+
    * **Parent project** — use this menu to change the project's parent.
    * **Project name** and **Build configuration name** — public names visible in TeamCity.
    * **Default branch** — the full name of a branch that will become a default one in TeamCity (for example, `refs/heads/main`). See the following article for more information: [](working-with-feature-branches.md#Default+Branch).
@@ -98,11 +100,17 @@ The next page contains mixed settings of both project and a build configuration 
    > 
    {style="tip"}
 
+   </snippet>
+
 </step>
 
 <step>
 
+<snippet id="project-from-url-final">
+
 Click **Proceed**. At this stage you have already created a project and its child build configuration, and now edit configuration settings. TeamCity opens the [Add build step](configuring-build-steps.md) so you could add actual functionality to your configuration and start building or testing a remote repository. Refer to this article for more information on build steps.
+
+</snippet>
 
 </step>
 
@@ -169,12 +177,110 @@ Navigate to the **Connections** tab and click **Add Connection**.
 </step>
 
 
+<step>
+
+TeamCity supports two GitHub authentication methods: OAuth 2.0 and [GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps). In this walkthrough, we will use an automatically configured GitHub App, which requires no customization and takes less than a minute to set up. To learn more about both connection types, refer to this article: [GitHub connections](configuring-connections.md#GitHub).
+
+Choose the **GitHub App** as the connection type and click **Create App**.
+
+<img src="dk-create-project-github-app-connection.png" width="706" alt="Create GitHub App connection"/>
+
+</step>
+
+<step>
+
+TeamCity will redirect you to GitHub to approve the App, choose its installation location (personal account or organization), and optionally restrict its repository access. You can review and edit the TeamCity-configured App anytime via **GitHub Settings | Developer Settings | GitHub Apps** or uninstall it on **GitHub Settings | Applications** page.
+
+</step>
+
+<step>
+
+After installing the App, you will return to TeamCity, where values for all connection settings (App ID, client ID, client secret, and others) will already be filled in. Click **Test connection** to verify the setup, then **Save** to complete it.
+
+</step>
+
+
+</procedure>
+
+Once the connection is configured, you will see a new option on the **Create project** page.
+
+<img src="dk-create-project-signin.png" width="706" alt="Sign in to new connection"/>
+
+
+<procedure title="Create a project" type="steps">
+
+<step>
+
+Click the **From GitHub App** tile. If you're using the new connection, TeamCity will ask you to sign in.
+
+</step>
+
+<step>
+
+TeamCity will show a list of repositories accessible via the underlying connection. Use the search panel to find the desired repository, then click it to continue.
+
+</step>
+
+<step>
+
+Creating projects using a VCS connection takes care of all authentication-related settings. You only need to complete steps 3 and 4 of the [](#From+Repository+URL) process.
+
+<include from="creating-and-editing-projects.md" element-id="project-from-url-settings"/>
+ 
+</step>
+
+<step>
+
+<include from="creating-and-editing-projects.md" element-id="project-from-url-final"/>
+
+</step>
+
 </procedure>
 
 
+## Create New Projects in Kotlin DSL
+
+The following Kotlin code creates a project with two subprojects.
+
+```Kotlin
+object MyProject: Project({
+   name = "Main"
+   description = "The main project"
+
+   subProject {
+      id("AllTests")
+      name = "Subproject for different kinds of tests"
+   }
+
+   subProject {
+      id("Packages")
+      name = "Subproject for packages"
+   }
+})
+```
+
+Learn more: [](storing-project-settings-in-version-control.md) | [Project (Kotlin DSL documentation)](https://teamcity.jetbrains.com/app/dsl-documentation/root/project/index.html)
 
 
+## Create New Projects From REST API
 
+The following request creates a new empty TeamCity project owned by the specific parent project.
+
+```Shell
+export TEAMCITY_SERVER_URL="<Your TeamCity Server URL>"
+
+curl --location $TEAMCITY_SERVER_URL'/app/rest/projects' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <Your TeamCity Access Token>' \
+--data '{
+    "name": "New Project from REST",
+    "parentProject": {
+        "locator": "id:Parent_Project_ID"
+    }
+```
+
+See the following REST API documentation article for more information: [Create and Delete Projects](https://www.jetbrains.com/help/teamcity/rest/create-and-delete-projects.html).
 
 
 
@@ -404,19 +510,21 @@ To configure an existing project, select the desired project in the list and [op
 
 -->
 
-## Managing Project
+## Manage Projects
 
 You can view all available projects and subprojects on the __Projects__ page listed in the alphabetical order by default. Administrators can [customize the default order](ordering-projects-and-build-configurations.md).
 
 When you select a project from the list, TeamCity displays the __Project Home__ page where you can preview its nested build configurations and recent build results. To access the project's settings, click the corresponding toggle in the top right corner to switch to the [edit mode](project-administrator-guide.md#Edit+and+View+Modes).
 
-To copy, move, delete or [archive](archiving-projects.md) a project, use the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page. These options are not available for the Root project.
+To copy, move, delete or [archive](archiving-projects.md) a project, use the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
 
-### Copying Project
+<img src="dk-project-actions-menu.png" width="706" alt="Project Actions menu"/>
 
-Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
+These options are not available for the Root project.
 
-Projects can be copied and moved to another project by project administrators.
+### Copy a Project
+
+Invoke the project **Actions** menu and click **Copy project...**. Projects can be copied and moved to another project by project administrators.
 
 A copy duplicates all the settings, [subprojects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md), and [templates](build-configuration-template.md) of the original project, but no data related to builds is preserved. The copy is created with the empty [build history](build-results-page.md#Build+History+in+Classic+UI) and no [statistics](statistic-charts.md).
 
@@ -435,7 +543,7 @@ When running TeamCity in the [Professional mode](licensing-policy.md), the __Cop
 
 <anchor name="CreatingandEditingProjects-MovingProject"/>
 
-### Moving Project
+### Move a Project
 
 <warning>
 
@@ -445,13 +553,13 @@ Before moving the project, consider the following:
 </warning>
 
 
-To move a project, use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
+Invoke the project **Actions** menu and click **Move project...**.
 
 When moving a project, TeamCity preserves all its settings, [subprojects](project-administrator-guide.md#Steps%2C+Configurations+and+Projects), [build configurations](managing-builds.md)/[templates](build-configuration-template.md), and associated data, as well as the [build history](build-results-page.md#Build+History+in+Classic+UI).
 
-### Archiving Project
+### Archive a Project
 
-Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page. Refer to the dedicated [page](archiving-projects.md).
+Invoke the project **Actions** menu and click **Archive project...**. Refer the following help article to learn more about archiving TeamCity projects: [](archiving-projects.md).
 
 ### Bulk Editing IDs
 
@@ -460,21 +568,24 @@ Use the corresponding item from the __Actions__ menu in the upper right corner o
 Care must be taken when performing this action. Modifying the ID will change all the URLs related to the project. It is highly recommended to update the ID in any of the URLs bookmarked or hard\-coded in the scripts. The corresponding configuration and artifacts directory names on the disk will change too and it can take time.
 </warning>
 
-1. Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
+1. Invoke the project **Actions** menu and click **Bulk edit IDs**.
 2. The current project and build configuration [IDs](identifier.md) are displayed. You can modify or reset the IDs for all subproject, VCS roots, build configurations and templates. Click __Regenerate__ to get new Ids automatically or edit them manually.
 3. Click __Submit__.
 
-### Pausing / Activating Triggers
 
-You can [pause triggers](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project) for all or selected build configurations of a project. Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
+### Pause / Activate Triggers
 
-### Exporting Project 
+Invoke the project **Actions** menu and click **Pause / Activate...** to [temporarily disable triggers](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project) configured for multiple build configurations owned by this project.
 
-You can [export configuration files](project-export.md) of a project with its children to move it to a different TeamCity server. Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
 
-### Deleting Project
+### Export a Project
 
-Use the corresponding item from the __Actions__ menu in the upper right corner of the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page or the _More_ button ![moreButton.PNG](moreButton.PNG) next to the project on the parent [project settings](project-administrator-guide.md#Edit+and+View+Modes) page.
+Invoke the project **Actions** menu and click **Export project...** to [move a project to a different TeamCity server](project-export.md).
+
+
+### Delete a Project
+
+Invoke the project **Actions** menu and click **Delete project...**.
 
 When you delete a project, TeamCity will remove its `.xml` configuration files. After the deletion, the project is moved to the \<[TeamCity Data Directory](teamcity-data-directory.md)\>/config/_trash/.ProjectID.projectN directory. There is a [configurable](teamcity-data-clean-up.md#Deleted+Build+Configurations+Clean-up) timeout (5 days by default) before all project-related data stored in the database (build history, artifacts, and so on) of the deleted project is completely removed during the next build history clean-up.
 
