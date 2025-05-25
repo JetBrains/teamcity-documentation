@@ -13,7 +13,7 @@ TeamCity supports keys in the PEM and OpenSSH formats. Keys that use different f
 
 To allow TeamCity projects to access remote repositories via SSH URLs, you first need to upload your private keys to these projects.
 
-1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
+1. In __[Project Settings](creating-and-editing-projects.md#Manage+Projects)__, click __SSH Keys__.
 2. On the __SSH Keys__ page, click __Upload SSH Key__.
    <img src="ssh-keys.png" width="706" alt="Add SSH Keys to TeamCity"/>
 3. In the "_Upload SSH Key_" dialog, browse for a private key file and specify a name for this key.
@@ -45,7 +45,7 @@ If a key was uploaded from the "Create Project" page, TeamCity assigns it to the
 
 If you use [GitHub Deploy Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys) or similar authentication workflows, you can let TeamCity generate SSH keys instead of generating them manually. This approach is more secure (since generated keys are not stored on your local machine) and significantly faster. The latter is especially helpful if you re-generate and rotate SSH keys every once in a while.
 
-1. In __[Project Settings](creating-and-editing-projects.md#Managing+Project)__, click __SSH Keys__.
+1. In __[Project Settings](creating-and-editing-projects.md#Manage+Projects)__, click __SSH Keys__.
 2. Click the **Generate SSH Key** button.
     
     <img src="dk-generateSshKeys.png" width="706" alt="Generate SSH Key"/>
