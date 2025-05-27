@@ -17,6 +17,8 @@ When [parameter references](using-build-parameters.md) are used in a VCS root, T
 
 ## Attach VCS Root
 
+<snippet id="attach-or-create-a-root">
+
 <procedure title="Attach or Create VCS Root">
 <step><p>Go to <b>Administration</b> and click the project you want to configure.</p></step>
 <step><p>From the project's <b>General Settings</b> page, click the relevant build under <b>Build Configurations</b></p></step>
@@ -32,6 +34,8 @@ When [parameter references](using-build-parameters.md) are used in a VCS root, T
 </note>
 </step>
 </procedure>
+
+</snippet>
 
 ### Configure Checkout Rules
 

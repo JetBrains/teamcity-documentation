@@ -259,7 +259,10 @@ object MyProject: Project({
 })
 ```
 
-Learn more: [](storing-project-settings-in-version-control.md) | [Project (Kotlin DSL documentation)](https://teamcity.jetbrains.com/app/dsl-documentation/root/project/index.html)
+See these articles for more information:
+
+* [](storing-project-settings-in-version-control.md)
+* [Project (Kotlin DSL documentation)](https://teamcity.jetbrains.com/app/dsl-documentation/root/project/index.html)
 
 
 ## Create New Projects From REST API

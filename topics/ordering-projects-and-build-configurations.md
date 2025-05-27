@@ -3,13 +3,16 @@
 
 By default, TeamCity displays projects, their subprojects, build configurations, and templates in the alphabetical order.
 
-Project administrators can apply custom ordering to subprojects and build configurations on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes)__ page for the parent project and use it as the default order. To enable reordering, click __Reorder__ above the list of subprojects or build configurations.
+Project administrators can change this default order:
 
-Individual users can reorder the projects and change their visibility in the __Configure Visible Projects__ pop-up menu on the __Projects__ page.
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="General"/></include>
+2. Click **Reorder** in the subprojects or build configurations section.
 
-To add an individual project to the __Projects__ page or remove it from this page, toggle the "eye" button on the __Project Home__ page:
+    <img src="dk-reorder-configs-and-subprojects.png" width="706" alt="Reorder projects and configurations"/>
 
-<img src="eye-button.png" width="750" alt="Disk usage in details"/>
+Users can customize their **Favorites** list to quickly access selected projects. Projects are added automatically for their creators. To edit the list or reorder projects, click the pencil icon next to **Favorites** in the TeamCity sidebar.
+
+<img src="dk-edit-favorites.png" width="706" alt="Edit Favorites"/>
 
 Note that if a project has [archived subprojects](archiving-projects.md) / [paused build configurations](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project), they will also be displayed on the __Overview__ page and will be marked correspondingly.
 
