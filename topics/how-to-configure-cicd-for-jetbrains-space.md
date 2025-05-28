@@ -92,7 +92,7 @@ There are three ways to integrate a VCS repository with TeamCity:
 * Create a _build configuration_ based on a repository in an existing TeamCity project.
 * Create a <tooltip term="vcs-root">_VCS root_</tooltip> based on a repository in an existing TeamCity project.
 
-We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL) to an existing project — the procedure is similar.
+We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md) to an existing project — the procedure is similar.
 
 Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <tooltip term="root-project">_Root project_</tooltip>, go to __Administration | Projects__ and click __Create project__ there.
 

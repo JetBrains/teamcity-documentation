@@ -829,7 +829,7 @@ When your Space connection is configured and installed, return to TeamCity and a
 * URL of the Space server
 * Client ID and secret of your Space application
 
-Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or [Pull Requests](pull-requests.md#JetBrains+Space+Merge+Requests) feature, [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#From+a+Configured+Connection) / [build configuration](creating-and-editing-build-configurations.md#Creating+Build+Configuration+Pointing+to+Specific+VCS) / [VCS root](configuring-vcs-roots.md).
+Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or [Pull Requests](pull-requests.md#JetBrains+Space+Merge+Requests) feature, [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#From+a+Configured+Connection) / [build configuration](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) / [VCS root](configuring-vcs-roots.md).
 
 
 ## Kubernetes

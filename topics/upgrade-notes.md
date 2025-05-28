@@ -602,7 +602,7 @@ After the upgrade, this option will be enabled for existing build configurations
 
 #### Performance Monitor
 
-The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md#Creating+Build+Configuration+from+URL).
+The [Performance Monitor](performance-monitor.md) build feature is now enabled by default for [build configurations created from a URL](creating-and-editing-build-configurations.md).
 
 ### Known issues
 {id="known-issues-202210"}

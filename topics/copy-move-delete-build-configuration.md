@@ -1,7 +1,7 @@
 [//]: # (title: Copy, Move, Delete Build Configuration)
 [//]: # (help-id: Copy, Move, Delete Build Configuration)
 
-To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Configuring+Settings)__, or the similar menu on the main Build Settings page.
+To copy, move or delete a build configuration, use the __Actions__ menu in the upper right corner of __[Build Configuration Settings](creating-and-editing-build-configurations.md#Build+Configuration+Settings)__, or the similar menu on the main Build Settings page.
 
 <img src="dk-buildConfActionsMenu.png" width="706" alt="Build Configuration Actions Menu"/>
 
