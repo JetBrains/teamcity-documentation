@@ -56,41 +56,60 @@ In classic TeamCity, files produced during a build and the parameters calculated
 
 Pipelines offer greater transparency by letting you manage both artifacts and parameters in a single, centralized interface. Click a job to open its settings, and expand the **Job Outputs** section. From here, you can mark any parameter or a file as an output.
 
-**!!!IMAGE!!!**
+
+***IMAGE***
+
 
 ### Parameters
 
-Parameters defined in the **Job Outputs** settings are same [output parameters](use-parameters-in-build-chains.md) supported in build configurations. For example, the following markup demonstrates a job with two parameters:
+Parameters defined in the **Job Outputs** settings are same [output parameters](use-parameters-in-build-chains.md) supported in build configurations. For example, the following markup demonstrates a job with three parameters:
 
-* `DATE_FORMAT` is used inside its parent job script and is not intented to be shared.
-* `J1_DATE` is an output parameter that shares the results of this job.
+* `FORMAT` is used inside its parent job script to set the `DATE` parameter. Neither of them are shared.
+* `DateOutput` is an output parameter that exposes the `DATE` parameter.
 
 ```yaml
 Job1:
   name: Calculate date
   parameters:
-    DATE_FORMAT: '%%-d %%B, %%Y'
+    env.FORMAT: '%%-d %%B, %%Y'
+    env.DATE: 'null'
   steps:
     - type: script
       script-content: |-
-        export DF="%DATE_FORMAT%"
-        formatted_date=$(date +"$DF")
-        echo "##teamcity[setParameter name='J1_DATE' value='$formatted_date']"
+        DF=$(date +"$FORMAT")
+        echo "Date is $DF"
+        echo "##teamcity[setParameter name='env.DATE' value='$DF']"
   output-parameters:
-    J1_DATE: ''
+    DateOutput: '%env.DATE%'
 ```
 
-The `DATE_FORMAT` is not available for downstream jobs, but `J1_DATE` is accessible via the `job.<source_job_ID>.<parameter_name>` syntax.
+Now any downstream job can use the `DateOutput` value via the `job.<source_job_ID>.<parameter_name>` syntax.
 
 ```yaml
-Job2:
-    name: Print date
-    dependencies:
-      - Job1
-    steps:
-      - type: script
-        script-content: 'echo "Today''s date is: %job.Job1.J1_DATE%"'
+ Job2:
+   name: Print date
+   dependencies:
+     - Job1
+   steps:
+     - type: script
+       script-content: 'echo "Today''s date is: %job.Job1.DateOutput%"'
 ```
 
 ### Shared Files
+
+**???**
+
+
+
+## Dependencies
+
+Another classic TeamCity concept reworked in Pipelines is dependencies. In Pipelines, [snapshot](snapshot-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
+
+***IMAGE***
+
+You can also choose whether to import files by clicking a job link in the visual editor.
+
+***IMAGE***
+
+
 
