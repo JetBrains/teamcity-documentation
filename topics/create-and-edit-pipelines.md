@@ -113,3 +113,36 @@ You can also choose whether to import files by clicking a job link in the visual
 
 
 
+## Webhooks
+
+Classic TeamCity supports two methods for detecting repository changes: periodic polling and webhooks. While webhooks offer near-instant updates and lower server load, they require manual setup. For more information, see the [](project-administrator-guide.md#Collecting+Changes) section.
+
+Pipelines use webhooks by default as a faster and more efficient alternative to the polling mechanism. When you create a pipeline from a connection, TeamCity automatically registers a webhook in your repository settings. Polling remains as a fallback if the webhook is removed or fails to deliver updates.
+
+> TeamCity Pipelines creates webhooks only for pipelines created via connections. Using existing VCS roots and the "Any Git URL" option is not supported.
+> 
+{style="warning"}
+
+
+## Commit Status Publisher
+
+[](commit-status-publisher.md) is one of the most popular TeamCity build features that communicates build statuses back to the VCS side. If you create a pipeline via a connection, this integration is available automatically.
+
+<img src="dk-pipelines-csp.png" width="706" alt="Create Pipeline with CSP"/>
+
+The figure below illustrates TeamCity run statuses reported to the repository page on GitHub.
+
+<img src="dk-pipelines-csp-github.png" width="706" alt="TeamCity run statuses on GitHub"/>
+
+You can click the status icon to open the detailed description. The **Details** link leads to the corresponding pipeline run on the TeamCity server.
+
+<img src="dk-pipelines-csp-statuses.png" width="706" alt="Detailed run info"/>
+
+To disable this integration, click a pipeline to edit corresponding repository settings and toggle **Publish status to repository** off.
+
+<img src="dk-edit-pipeline-repository.png" width="706" alt="Edit repository settings"/>
+
+
+> This integration is available only for pipelines created via connections. Using existing VCS roots and the "Any Git URL" option is not supported.
+>
+{style="warning"}
