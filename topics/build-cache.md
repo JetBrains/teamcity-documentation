@@ -25,8 +25,8 @@ Since caches are published as artifacts, they are affected by the **Maximum buil
 If a build configuration is configured to upload caches, it arranges its build stages in the following order:
 
 1. Resolve artifact dependencies
-2. Download caches
-3. Checkout the sources
+2. Checkout the sources
+3. Download caches
 4. Start the build
 
 
