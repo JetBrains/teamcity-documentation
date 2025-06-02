@@ -20,7 +20,7 @@ title="Improving your first build configuration"/>
 
 
 
-Before we dive into creating configurations, it’s important to understand the differences between build configurations and pipelines and when to use each.
+Before we dive into creating configurations, it’s important to understand the differences between build configurations and pipelines and when to use each. Note that once created, you cannot convert a build configuration into a pipeline or a job, and vice versa.
 
 
 <snippet id="configurations-vs-pipelines">
@@ -40,6 +40,15 @@ Both build configurations and pipelines are owned by [TeamCity projects](creatin
 * A pipeline owns jobs, which in turn own regular build steps.
 
 </def>
+
+
+<def title="Supported VCS types">
+
+* Classic TeamCity build configurations support Git, Subversion, Mercurial, TFS, and Perforce, with integrations for major VCS providers like GitHub, GitLab, Bitbucket, Azure, and others.
+* TeamCity Pipelines offer built-in integrations with GitHub, GitLab, and Bitbucket Cloud. Other Git repositories can be connected via direct URLs. Subversion, Mercurial, TFS, and Perforce are not currently supported.
+
+</def>
+
 
 <def title="Execution mode">
 

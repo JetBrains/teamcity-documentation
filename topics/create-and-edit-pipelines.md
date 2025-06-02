@@ -14,9 +14,9 @@ Pipelines are user-centric, simplified alternatives for traditional [build confi
 
 ## Pipelines vs Build Configurations
 
-Before we dive into creating pipelines, it’s important to understand the differences between build configurations and pipelines and when to use each.
+Before we dive into creating pipelines, it’s important to understand the differences between build configurations and pipelines and when to use each. Note that once created, you cannot convert a pipeline (or any of its jobs) into a build configuration, and vice versa. See the [](#Limitations+and+Special+Notes) section for more information.
 
-<include from="creating-and-editing-build-configurations.md" element-id="configurations-vs-pipelines"/>
+<include from="creating-and-editing-build-configurations.md" xmlns="" element-id="configurations-vs-pipelines"/>
 
 
 ## Create and Set Up Pipelines
@@ -124,7 +124,7 @@ Pipelines use webhooks by default as a faster and more efficient alternative to 
 {style="warning"}
 
 
-## Commit Status Publisher
+## Publish Run Statuses to VCS
 
 [](commit-status-publisher.md) is one of the most popular TeamCity build features that communicates build statuses back to the VCS side. If you create a pipeline via a connection, this integration is available automatically.
 
@@ -146,3 +146,68 @@ To disable this integration, click a pipeline to edit corresponding repository s
 > This integration is available only for pipelines created via connections. Using existing VCS roots and the "Any Git URL" option is not supported.
 >
 {style="warning"}
+
+
+## Limitations and Special Notes
+
+TeamCity Pipelines are in early access and, while built on core TeamCity functionality, currently lack some features available in classic build configurations. We plan to expand the Pipelines toolset and add the most requested features in future releases.
+
+
+<deflist type="full">
+
+<def title="Build steps">
+
+TeamCity pipeline jobs support three dedicated build steps for [](maven.md), [](gradle.md), and [](nodejs.md).
+
+While other step types from classic build configurations are not yet supported, the **Script** step (equivalent to [](command-line.md) in classic TeamCity) offers a flexible alternative. For example, instead of using a [](net.md) build step, you can add a Script step to run the `dotnet build` command.
+
+</def>
+
+<def title="Connections">
+
+TeamCity Pipelines currently support [GitHub OAuth](configuring-connections.md#github-oauth), [GitLab](configuring-connections.md#GitLab), and [](configuring-connections.md#Bitbucket+Cloud) connections.
+
+Note that you do not need configured connections to create pipelines, you can do so [from any Git repository URL](#Create+and+Set+Up+Pipelines).
+
+</def>
+
+
+<def title="VCS roots">
+
+Pipelines use VCS roots internally but present a simplified **Repositories** section instead of exposing VCS root settings directly. As a result, options like clean and checkout policies, custom polling intervals, and submodule handling are not configurable through the pipelines UI.
+
+However, you can still create and configure a VCS root in the classic TeamCity UI, then create a pipeline from this root.
+
+</def>
+
+
+<def title="Build features">
+
+Pipelines are designed to offer the simplest, most user-friendly way to set up CI/CD routines. To support this goal, we are working on integrating key functionality directly into pipelines, avoiding the need for separately configured  [build features](adding-build-features.md).
+
+For example, the [](commit-status-publisher.md) is [enabled automatically](#Publish+Run+Statuses+to+VCS) is enabled automatically when using connections, and registry connections are managed as **Integrations** within pipeline and job settings (rather than through separate [](docker-support.md) and [NPM Registry Connection](nodejs.md#Accessing+Private+NPM+Registries) build features).
+
+<img src="dk-pipelines-add-integration.png" width="706" alt="Add pipeline integrations"/>
+
+While traditional build features are not supported in pipelines, we are committed to bringing the most commonly used capabilities into the pipeline experience through more streamlined alternatives.
+
+</def>
+
+
+<def title="Triggers">
+
+TeamCity Pipelines currently support two types of [triggers](configuring-build-triggers.md) that allow CI routines to start automatically:
+
+* [Schedule trigger](configuring-schedule-triggers.md) that starts new runs on the given date and time.
+* [VCS trigger](configuring-vcs-triggers.md) that starts runs on new code changes.
+
+Both are configured in the **Auto-Run Pipeline** section of pipeline settings.
+
+<img src="dk-pipelines-configure-triggers.png" width="706" alt="Configure triggers in pipelines"/>
+
+Other trigger types (for example, the [Finish build trigger](configuring-finish-build-trigger.md) or [GitHub checks trigger](github-checks-trigger.md) are currently not supported).
+
+</def>
+
+
+</deflist>
