@@ -12,7 +12,7 @@ Pipelines are user-centric, simplified alternatives for traditional [build confi
 {style="tip"}
 
 
-## Pipelines vs Build Configurations
+## Pipelines vs Build Configurations and Chains
 
 Before we dive into creating pipelines, it’s important to understand the differences between build configurations and pipelines and when to use each. Note that once created, you cannot convert a pipeline (or any of its jobs) into a build configuration, and vice versa. See the [](#Limitations+and+Special+Notes) section for more information.
 

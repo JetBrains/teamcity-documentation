@@ -16,10 +16,9 @@ Major TeamCity elements are:
 * <include from="project-administrator-guide.md" element-id="build-configuration-overview"/>
 * <include from="project-administrator-guide.md" element-id="project-overview"/>
 
-Unique elements available only for TeamCity Pipelines:
+* <include from="project-administrator-guide.md" element-id="pipeline-overview"/>
 
 * <include from="project-administrator-guide.md" element-id="job-overview"/>
-* <include from="project-administrator-guide.md" element-id="pipeline-overview"/>
 
 These elements are set up by [project admins](project-administrator-guide.md) and typically cannot be edited by regular developers.
 

@@ -20,59 +20,84 @@ The following diagram illustrates the basic TeamCity workflow:
 ## Steps, Configurations and Projects
 {help-id="adminGuide-StepsConfigurationsAndProjects"}
 
-In TeamCity, a building routine consists of the following blocks:
+In TeamCity, a building routine can consist of the following blocks:
+
+<img src="dk-tc-elements-diagram.png" width="706" alt="Main TeamCity elements"/>
+
+<deflist type="full">
+
+<def title="Project">
+
+<snippet id="project-overview">A **project** is the largest TeamCity entity a user can create. A project child subprojects, standalone build configurations and pipelines.</snippet>
+
+* You can add nested subprojects to organize configurations and pipelines into separate categories.
+* The majority of TeamCity [user permissions](managing-roles-and-permissions.md) are project-based. This allows you to create projects for separate teams and define user groups for isolated projects.
+* Projects can own [connections](configuring-connections.md), [parameters](configuring-build-parameters.md), artifact storages, [cloud agent profiles](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images) and other entities shared with all of its child subprojects, configurations, and pipelines. For example, you can create a connection to GitLab once on a project level, and any configuration or pipeline owned by this project will be able to utilize this connection to access remote repositories.
+* Projects do not perform any building, testing, or delivery tasks. These are performed by project-owned build configurations and pipelines.
 
 
-<deflist>
+<snippet id="root-project-overview">The **Root project** is the topmost project created automatically by TeamCity. This project cannot be removed and allows you to create server-wide connections, parameters, cloud agent profiles, and artifact storages.</snippet>
 
-<def title="Classic TeamCity">
+</def>
 
-<img src="dk-basic-tree-diagram3.png" alt="TeamCity elements" width="706"/>
+<def title="Build configuration">
 
-* <snippet id="build-step-overview">**Build step** — an essential building block that executes a predefined set of commands. This can be a single command (like `mvn test` or `gradle clean build`) or a series of operations (such as a custom Python or Bash script). Build steps run fully, with no partial execution.</snippet>
+<snippet id="build-configuration-overview">A **build configuration** is a sequence of build steps executed in a specific order.</snippet> With a configuration, you can:
 
-* <snippet id="build-configuration-overview">**Build configuration** — a sequence of build steps executed in a specific order.</snippet> With a configuration, you can:
+* arrange steps in any order you need;
+* temporarily disable individual steps.
+* set [conditions](build-step-execution-conditions.md) for when steps should be executed. If a condition is not met, the corresponding step is skipped. For instance, step #3 could be set to run only if step #2 fails, and step #4 might be configured to execute only on Windows agents.
 
-    * arrange steps in any order you need;
-    * temporarily disable individual steps.
-    * set [conditions](build-step-execution-conditions.md) for when steps should be executed. If a condition is not met, the corresponding step is skipped. For instance, step #3 could be set to run only if step #2 fails, and step #4 might be configured to execute only on Windows agents.
+Configurations can also be turned into [templates](build-configuration-template.md) making it easy to clone and reuse them without manually configuring each new setup. Once cloned, each copy can be customized independently.
 
-  Configurations can also be turned into [templates](build-configuration-template.md) making it easy to clone and reuse them without manually configuring each new setup. Once cloned, each copy can be customized independently.
-
-  You can also incorporate configurations from the same or different projects into one [unified workflow](build-chain.md).
+You can also incorporate configurations from the same or different projects into one [unified workflow](build-chain.md).
 
 </def>
 
 
-<def title="TeamCity Pipelines">
+<def title="Build chain">
 
-Available in TeamCity 2025.07 and newer, TeamCity Pipelines initiative aims to deliver the user-centric approach to designing CI/CD routines.
+A **build chain** is a series of build configurations interconnected via [snapshot dependencies](snapshot-dependencies.md). You can link configurations of the same or separate projects in a single chain. A chain can be executed partially, up to the required build configuration. For example, you can skip the "Deploy" phase in the "Test &rarr; Build &rarr; Deploy" chain.
 
-* <include from="project-administrator-guide.md" element-id="build-step-overview"/> Pipelines currently have fewer build steps than classic build configurations, we expect to support more of them in future release cycles.
+See the following articles for more information: [](#Set+Up+Dependencies) | [](build-chain.md)
 
-* <snippet id="job-overview">**Job** — a sequence of steps executed linearly one by one. Unlike build configurations, jobs execute all of their steps, without any additional execute conditions.</snippet> 
+</def>
 
-* <snippet id="pipeline-overview">**Pipeline** — a collection standalone or interconnected jobs. Running a pipeline launches all of its jobs that, depending on their relations, run in parallel or one after another.</snippet>
+
+<def title="Pipeline">
+
+<snippet id="pipeline-overview">A **pipeline** is a lightweight, user-friendly alternative to a traditional [build chain](build-chain.md). Each pipeline contains one or more jobs, with each job running a sequence of build steps.</snippet>
+
+A pipeline lets you design a complete multi-stage workflow on a single screen, without creating separate build configurations and linking them via snapshot dependencies.
+
+<img src="dk-pipeline-overview.png" width="706" alt="Pipeline example"/>
+
+Unlike a build chain that can be run up to the required build configuration, pipelines always run all of their jobs.
+
+Both pipelines and build configurations are owned by projects.
+
+See the [](create-and-edit-pipelines.md#Pipelines+vs+Build+Configurations+and+Chains) section for more guidance.
+
+</def>
+
+
+<def title="Job">
+
+<snippet id="job-overview">A **job** is a single element of a pipeline that represents a sequence of build steps executed linearly one by one.</snippet> Unlike build configurations, jobs execute all of their steps, without any additional execute conditions.
+
+Jobs can be created only within a pipeline, and are similar to individual build configurations of a larger build chain.
+
+</def>
+
+<def title="Build step">
+
+<snippet id="build-step-overview">A **build step** is an essential building block that executes a predefined set of commands. This can be a single command (like `mvn test` or `gradle clean build`) or a series of operations (such as a custom Python or Bash script). Build steps run fully, with no partial execution.</snippet>
+
+Build steps are grouped into jobs or build configurations.
 
 </def>
 
 </deflist>
-
-Both classic build configurations and pipelines are owned by projects.
-
-* <snippet id="project-overview">**Project** — the largest TeamCity entity a user can create. Hosts child subprojects, standalone build configurations and pipelines.</snippet>
-
-    * You can add nested subprojects to organize configurations and pipelines into separate categories.
-    * The majority of TeamCity [user permissions](managing-roles-and-permissions.md) are project-based. This allows you to create projects for separate teams and define user groups for isolated projects.
-    * Projects can own [connections](configuring-connections.md), [parameters](configuring-build-parameters.md), artifact storages, [cloud agent profiles](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images) and other entities shared with all of its child subprojects, configurations, and pipelines. For example, you can create a connection to GitLab once on a project level, and any configuration or pipeline owned by this project will be able to utilize this connection to access remote repositories.
-
-* <snippet id="root-project-overview">**Root project** — the topmost project created automatically by TeamCity. This project cannot be removed and allows you to create server-wide connections, parameters, cloud agent profiles, and artifact storages.</snippet>
-
-
-
-
-
-
 
 
 
@@ -80,7 +105,7 @@ Both classic build configurations and pipelines are owned by projects.
 
 ## Edit and View Modes
 
-When viewing TeamCity configurations and projects, you can switch between two modes:
+When viewing TeamCity configurations, pipelines, and projects, you can switch between two modes:
 
 <deflist>
 <def title="View Mode">

@@ -87,13 +87,11 @@ Kotlin DSL support is planned for future pipeline versions. However, there are n
 </deflist>
 
 
-To sum up the points above, while both build configurations and pipelines are project-owned, they differ in scope and flexibility.
+In summary, while both pipelines and build configurations are owned by projects, they serve different needs. Pipelines are ideal for simpler CI/CD workflows in smaller projects (typically up to 10–15 builds). Choose build configurations instead if:
 
-* A build configuration is a powerful, customizable sequence of build steps. Each configuration runs independently and produces its own build result, which can be less convenient when combining multiple configurations into a single build chain.
-
-* Pipelines, on the other hand, resemble simplified build chains. Each stage (job) runs in sequence but cannot be executed independently.
-
-As a general guideline, use pipelines for straightforward CI/CD workflows in smaller projects, and build configurations to take full advantage of TeamCity’s capabilities, especially when you need flexible, modular routines.
+* Your project involves more complex workflows than 10–15 sequential builds.
+* You are an experienced user who needs advanced features (such as [](build-approval.md)) not yet available in pipelines.
+* You require fine-grained control over which build chain configurations run, when, and how.
 
 </snippet>
 
