@@ -214,7 +214,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 
 In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
 
-By default, TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings), used in project configuration files, in a scrambled form. The initial values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. To minimize the risk of potential malicious actions, TeamCity can encrypt secure values with your custom key.
+By default, TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings) used in project configuration files in a scrambled form. The initial values and [SSH keys](ssh-keys-management.md) are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. To minimize the risk of potential malicious actions, TeamCity can encrypt secure values with your custom key.
 
 To use the custom encryption, select the respective option and enter an encryption key. Click __Generate key__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
 
