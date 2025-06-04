@@ -3,6 +3,11 @@
 
 TeamCity administrators are able to restore [backed up data](creating-backup-via-maintaindb-command-line-tool.md) via the TeamCity UI or by manually using the `maintainDB` command-line utility.
 
+
+<include from="common-templates.md" element-id="env-imported-encryption-key-warning">
+<var name="operation-name-ev" value="restore data backups"/>
+</include>
+
 ## Before Restoring
 
 <note>

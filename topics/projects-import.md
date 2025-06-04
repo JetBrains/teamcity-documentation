@@ -3,6 +3,10 @@
 
 You can import projects with all their data and user accounts from a backup file to an existing TeamCity server, that is to add projects from one server to the target server that is normally used.
 
+<include from="common-templates.md" element-id="env-imported-encryption-key-warning">
+<var name="operation-name-ev" value="import projects exported"/>
+</include>
+
 <anchor name="ProjectsImport-ProjectsImportorServerMove"/>
 
 ## Projects Import or Server Move

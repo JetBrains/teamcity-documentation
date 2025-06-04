@@ -90,3 +90,11 @@ TeamCity will drop support for Java versions older than 21 in one of the future 
 </snippet>
 
 
+## Encryption
+
+<var name="operation-name-ev" value="operation-name-ev"/>
+<snippet id="env-imported-encryption-key-warning">
+<warning>
+Note that a TeamCity server cannot %operation-name-ev% from another server that <a href="teamcity-configuration-and-maintenance.md#custom-encryption-key-from-env-var">imports its custom encryption key</a> from the <code>TEAMCITY_ENCRYPTION_KEYS</code> environment variable, unless this server has its own variable set to the same value.
+</warning>
+</snippet>

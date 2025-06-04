@@ -212,21 +212,68 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-In this block, you can choose how TeamCity will process secure values: either using the default _scrambling strategy_ or by _encrypting them with a custom key_.
+TeamCity uses the following methods to secure sensitive data:
 
-By default, TeamCity [stores all secure values](storing-project-settings-in-version-control.md#Storing+Secure+Settings) used in project configuration files in a scrambled form. The initial values and [SSH keys](ssh-keys-management.md) are stored in the [TeamCity Data Directory](teamcity-data-directory.md), and their safety primarily depends on the security of your environment. To minimize the risk of potential malicious actions, TeamCity can encrypt secure values and SSH keys with your custom key.
+* All [SSH keys](ssh-keys-management.md) are encrypted using an internal encryption key.
+* All [remotely stored secrets](storing-project-settings-in-version-control.md#Storing+Secure+Settings) are scrambled. Secrets' original values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
 
-To use the custom encryption, select the respective option and enter an encryption key. Click __Generate key__ to randomly generate it, or enter your own key (128-bit keys encoded with Base64 are supported). After you save the settings, TeamCity will change the strategy from _scrambling secure values_ to _encrypting them with your custom key using the AES algorithm_.
 
-Any existing secure values will remain scrambled. Note that when you change any project parameters, all the project’s secure values are reencrypted automatically using the current key.
+The **Encryption Settings** section lets you define a custom encryption key for both tasks. Use a TeamCity-generated or a custom key to specify the **Custom encryption key** option. TeamCity supports 128-bit keys encoded with Base64.
 
-You can change the custom key or go back to using the default strategy anytime.
+The custom encryption key is stored in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file, so make sure you do not store this folder in a remote VCS repository that can be accessed by 3rd-party users.
 
-<note>
+When you generate or enter a new custom encryption key, it becomes the default for encrypting newly added secrets and SSH keys. Existing data remains encrypted with the previously used keys, which are stored in the `encryption-config.xml` file.
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<encryption-settings>
+  <key value="+ZdB5EyrxiV/yIqxNy3JAw==" />
+  <!--older keys-->  
+  <key value="nZTqwvL3cIef8Dp1qQJVMw==" default="true" />
+</encryption-settings>
+
+```
+
+<warning>
 
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
-</note>
+</warning>
+
+### Import Encryption Key from the Environment Variable
+{id="custom-encryption-key-from-env-var" help-id="custom-encryption-key-from-env-var"}
+
+To eliminate potential threats related with storing custom encryption keys in the `encryption-config.xml` file, you can store these keys in the `TEAMCITY_ENCRYPTION_KEYS` environment variable instead. This prevents you from changing custom encryption keys from TeamCity UI.
+
+To change a key, prepend it to the existing variable value using the colon as a separator:
+
+<tabs>
+
+<tab title="Linux/macOS">
+
+```shell
+export TEAMCITY_ENCRYPTION_KEYS="newKey:oldKey:oldKey2:oldKey3"
+```
+
+</tab>
+
+<tab title="Windows">
+
+```shell
+setx TEAMCITY_ENCRYPTION_KEYS "newKey:oldKey:oldKey2:oldKey3" /M
+```
+
+</tab>
+
+</tabs>
+
+
+<include from="common-templates.md" element-id="env-imported-encryption-key-warning">
+<var name="operation-name-ev" value="restore data backups and import projects"/>
+</include>
+
+
+
 
 ## Artifacts' Domain Isolation
 {id="artifacts-domain-isolation" help-id="Artifacts Domain Isolation" instance="tc"}
