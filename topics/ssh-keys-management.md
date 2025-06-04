@@ -36,7 +36,7 @@ If a key was uploaded from the "Create Project" page, TeamCity assigns it to the
 
 
 
-> [TeamCity Data Directory](teamcity-data-directory.md) stores SSH keys encrypted with the custom encryption key specified in the [general server settings](teamcity-configuration-and-maintenance.md#encryption-settings). If this key is not set, keys are stored in unmodified/unencrypted form on the file system.
+> [TeamCity Data Directory](teamcity-data-directory.md) stores SSH keys encrypted with the custom encryption key specified in the [general server settings](teamcity-configuration-and-maintenance.md#encryption-settings). If this custom key is not set, SSH keys are encrypted using the internal TeamCity key.
 >
 {style="note"}
 

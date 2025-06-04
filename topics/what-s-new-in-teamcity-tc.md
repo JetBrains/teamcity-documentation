@@ -16,6 +16,6 @@ TBD
 
 ## Miscellaneous Enhancements
 
-* If the [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) is set in the general server settings, TeamCity uses it to encrypt [SSH keys](ssh-keys-management.md) stored in [](teamcity-data-directory.md). Only newly uploaded or generated keys are encrypted, re-upload existing keys to apply encryption.
+* [SSH keys](ssh-keys-management.md) uploaded to or generated in TeamCity are now stored encrypted in the [](teamcity-data-directory.md) in encrypted form. TeamCity uses a [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) from the general server settings, or a built-in key if none is specified. Note that only newly uploaded or generated keys are encrypted, re-upload existing keys to apply encryption.
 
 </snippet>
