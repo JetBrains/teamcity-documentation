@@ -240,6 +240,7 @@ During backup, your custom keys will be exported along with their projects and a
 
 </warning>
 
+<!--
 ### Import Encryption Key from the Environment Variable
 {id="custom-encryption-key-from-env-var" help-id="custom-encryption-key-from-env-var"}
 
@@ -272,7 +273,7 @@ setx TEAMCITY_ENCRYPTION_KEYS "newKey:oldKey:oldKey2:oldKey3" /M
 <var name="operation-name-ev" value="restore data backups and import projects"/>
 </include>
 
-
+-->
 
 
 ## Artifacts' Domain Isolation
