@@ -209,6 +209,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
+<!--
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
@@ -227,11 +228,52 @@ When you generate or enter a new custom encryption key, it becomes the default f
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <encryption-settings>
-  <key value="+ZdB5EyrxiV/yIqxNy3JAw==" />
-  <!--older keys-->  
-  <key value="nZTqwvL3cIef8Dp1qQJVMw==" default="true" />
+  <key value="oldKey1" />
+  <key value="oldKey2" />
+  <key value="currentKey" default="true" />
 </encryption-settings>
 
+```
+
+<warning>
+
+* During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
+* TeamCity cannot import projects or restore data from a backup if those projects or backups originate from a server that uses encryption keys absent on this server. To successfully move data from an encrypted server, make sure all of its `encryption-config.xml` keys are added to the corresponding file of the target server.
+</warning>
+-->
+
+
+
+
+## Encryption Settings
+{id="encryption-settings" help-id="Encryption Settings" instance="tc"}
+
+TeamCity uses the following methods to secure sensitive data:
+
+* All [SSH keys](ssh-keys-management.md) are encrypted using an internal encryption key.
+* All [remotely stored secrets](storing-project-settings-in-version-control.md#Storing+Secure+Settings) are scrambled. Secrets' original values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
+
+
+The **Encryption Settings** section lets you define a custom encryption key for both tasks. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+
+<deflist type="full">
+
+<def title="In TeamCity UI" help-id="custom-encryption-key-from-ui">
+
+Enter a 128-bit key encoded with Base64 in the **Custom encryption key** field. You can click a corresponding action to let TeamCity generate a valid key.
+
+Keys specified in TeamCity UI are stored in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file. 
+
+Generating or entering a new encryption key forces TeamCity to use this key for newly encrypted objects. The previous keys are still in use for existing objects and are stored in the `encryption-config.xml` file.
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<encryption-settings>
+  <key value="oldKey1" />
+  <key value="oldKey2" />
+  <!--more keys-->  
+  <key value="currentKey" default="true" />
+</encryption-settings>
 ```
 
 <warning>
@@ -239,21 +281,33 @@ When you generate or enter a new custom encryption key, it becomes the default f
 During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 
 </warning>
+</def>
 
-<!--
-### Import Encryption Key from the Environment Variable
-{id="custom-encryption-key-from-env-var" help-id="custom-encryption-key-from-env-var"}
+<def title="Import from the environment variable" id="custom-encryption-key-from-env-var" help-id="custom-encryption-key-from-env-var">
 
-To eliminate potential threats related with storing custom encryption keys in the `encryption-config.xml` file, you can store these keys in the `TEAMCITY_ENCRYPTION_KEYS` environment variable instead. This prevents you from changing custom encryption keys from TeamCity UI.
+If a TeamCity server detects the non-empty `TEAMCITY_ENCRYPTION_KEYS` environment variable when starting, it imports encryption key(s) from this variable and locks the **Custom encryption key** field in the UI.
 
-To change a key, prepend it to the existing variable value using the colon as a separator:
+This is a more secure option since encryption keys are not stored in the `encryption-config.xml` file, making the `Data directory/config` folder more suitable for being stored in a remote VCS repository.
+
+The `TEAMCITY_ENCRYPTION_KEYS` variable stores the currently used and previous encryption keys using a colon as a separator, with the current key being the first:
+
+```Shell
+currentKey:oldKey1:oldKey2:oldKey3...
+```
+
+The **Generate key** option does not automatically write the generated key to the `TEAMCITY_ENCRYPTION_KEYS` variable, you need to do that manually.
+</def>
+
+</deflist>
+
+You can switch from one mode to another at any time. If your server stores keys in the `encryption-config.xml` file, export them to a variable as shown below.
 
 <tabs>
 
 <tab title="Linux/macOS">
 
 ```shell
-export TEAMCITY_ENCRYPTION_KEYS="newKey:oldKey:oldKey2:oldKey3"
+export TEAMCITY_ENCRYPTION_KEYS="currentKey:oldKey1:oldKey2:oldKey3"
 ```
 
 </tab>
@@ -261,19 +315,21 @@ export TEAMCITY_ENCRYPTION_KEYS="newKey:oldKey:oldKey2:oldKey3"
 <tab title="Windows">
 
 ```shell
-setx TEAMCITY_ENCRYPTION_KEYS "newKey:oldKey:oldKey2:oldKey3" /M
+setx TEAMCITY_ENCRYPTION_KEYS "newKey:oldKey1:oldKey2:oldKey3" /M
 ```
 
 </tab>
 
 </tabs>
 
+Similarly, if your server uses the `TEAMCITY_ENCRYPTION_KEYS` variable, move its key values as separate `<key value="key_value"/>` entries to the `encryption-config.xml` file, adding `default="true"` for the currently used key.
 
-<include from="common-templates.md" element-id="env-imported-encryption-key-warning">
-<var name="operation-name-ev" value="restore data backups and import projects"/>
-</include>
+<warning>
+TeamCity cannot import projects or restore data from a backup if those projects or backups originate from a server that uses encryption keys absent on this server. To successfully move data from an encrypted server, make sure all of its keys from either the <code>encryption-config.xml</code> file or the <code>TEAMCITY_ENCRYPTION_KEYS</code> variable are added to the target server.
+</warning>
 
--->
+
+
 
 
 ## Artifacts' Domain Isolation
