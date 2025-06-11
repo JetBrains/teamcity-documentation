@@ -15,7 +15,7 @@ We remain committed to delivering a modern, intuitive TeamCity experience for al
 
 * A redesigned navigation sidebar with a **+** button for quickly adding subprojects, configurations, and pipelines. You can also set the panel to auto-hide to maximize workspace.
 * A new **What’s New** widget to keep you informed about major updates in each release.
-* An ability to open [build logs](build-results-page.md#Build+Log+Tab) in full-screen mode.
+* An ability to open [build logs](build-log.md) in full-screen mode.
 
 
 ## Miscellaneous Enhancements
