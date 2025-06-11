@@ -8,10 +8,13 @@
 
 TBD
 
-## Feature 2
+## UI Improvements
 {instance="tc"}
 
-TBD
+We remain committed to delivering a modern, intuitive TeamCity experience for all users, whether you prefer pipelines or classic build chains for your CI/CD workflows. This update brings several UI improvements, including:
+
+* A redesigned navigation sidebar with a **+** button for quickly adding subprojects, configurations, and pipelines. You can also set the panel to auto-hide to maximize workspace.
+* A new **What’s New** widget to keep you informed about major updates in each release.
 
 
 ## Miscellaneous Enhancements
