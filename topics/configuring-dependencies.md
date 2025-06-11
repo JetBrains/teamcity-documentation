@@ -1,5 +1,5 @@
-[//]: # (title: Configuring Dependencies)
-[//]: # (help-id: Configuring Dependencies)
+[//]: # (title: Build Configuration Dependencies)
+[//]: # (help-id: Build Configuration Dependencies;Configuring Dependencies)
 
 <include from="project-administrator-guide.md" element-id="configuration-dependencies"/>
 
@@ -7,7 +7,13 @@
 > 
 {style="tip"}
 
-This section focuses on build chains and artifact dependencies. To learn more about finish build triggers, see this article instead: [](configuring-finish-build-trigger.md).
+This section focuses on build chains and artifact dependencies. To learn more about other options, see the following articles instead:
+
+* [](configuring-finish-build-trigger.md)
+* [](create-and-edit-pipelines.md)
+
+
+
 
 <seealso>
         <category ref="external">

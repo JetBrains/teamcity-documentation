@@ -288,9 +288,9 @@ Related article: [](build-artifact.md)
 
 <snippet id="configuration-dependencies">
 
-Real-life CI/CD pipelines often combine multiple standalone configurations. For example, "Build", "Test", and "Deploy to Staging" configurations (or jobs) can run independently or in sequence.
+Real-life CI/CD pipelines often combine multiple standalone stages. For example, "Build", "Test", and "Deploy to Staging" configurations (or jobs) can run independently or in sequence.
 
-TeamCity offers multiple options to create relations between standalone configurations.
+TeamCity offers multiple options to create relations between these standalone entities.
 
 <deflist>
 <def title="Build Chain">
@@ -302,6 +302,19 @@ Snapshot dependencies are right-to-left relations. For example, in the "A -> B" 
 For mission-critical scenarios, you can set up dependent configurations to always force fresh upstream configuration builds, even if there were no recent changes to the project.
 </def>
 
+
+<def title="Pipeline">
+
+A simplified alternative to build chains with jobs representing each phase of a process. This is a recommended option for smaller, less complicated workflows (around 10 to 15 phases in the entire routine).
+
+Compared to build configurations linked in a build chain, pipelines showcase the following differences:
+
+* You can only link jobs that belong to the same pipeline. Build chains, in turn, allow you to link build configurations owned by completely separate TeamCity projects.
+* Standalone artifact and snapshot dependencies that require manual configuration are not available. When you choose a job that should precede your current job, you can instantly select whether all of its artifacts should be imported.
+* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](build-chain.md#Partial+Chain+Execution).
+
+
+</def>
 
 <def title="Finish Build Triggers">
 
@@ -315,18 +328,10 @@ Finish build triggers offer a simple but inflexible way to trigger downstream bu
 
 <a href="artifact-dependencies.md">Artifact dependencies</a> allow configurations to import files produced during other configurations' builds. For example, a "Delivery" configuration can deploy files (Docker images, NuGet packages, HTML documentation pages, and so on) produced by a "Build" configuration to a designated resource.
 
-Artifact dependencies don’t create explicit links between configurations: both can run independently without triggering each other’s builds. If you use artifact dependencies without corresponding snapshot dependencies, a dependent build has no ability to ensure a suitable source of artifacts (an upstream configuration build) exists. For that reason, you may want to set up artifact dependencies to target pinned/tagged builds. This setup can exhibit more control on your building routine.
+Artifact dependencies do **not** create explicit links between configurations: both can run independently without triggering each other’s builds. If you use artifact dependencies without corresponding snapshot dependencies, a dependent build has no ability to ensure a suitable source of artifacts (an upstream configuration build) exists. For that reason, you may want to set up artifact dependencies to target pinned/tagged builds.
 </def>
 
-<def title="Pipelines">
 
-You can create dependencies between Jobs owned by a pipeline. Unlike linking build configurations in a build chain, pipelines showcase the following differences:
-
-* You can only link jobs that belong to the same pipeline. Build chains, in turn, allow you to link build configurations owned by completely separate TeamCity projects.
-* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](build-chain.md#Partial+Chain+Execution).
-* Build configurations support two types of dependencies: snapshot dependencies that allow you to specify configurations' order, and artifact dependencies that allow configurations to share produced artifacts. In pipelines, both types of dependencies are merged into one: you can instantly specify whether a dependent job needs files produced by an upstream job right when you create this dependency.
-
-</def>
 
 </deflist>
 

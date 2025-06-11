@@ -1,5 +1,5 @@
-[//]: # (title: Build Dependencies Setup)
-[//]: # (help-id: Build Dependencies Setup)
+[//]: # (title: Common Dependency Concepts)
+[//]: # (help-id: Common Dependency Concepts;Build Dependencies Setup)
 
 This page gives the general idea on how dependencies work in TeamCity based on an example. For the dependencies' description, see [](configuring-dependencies.md).
 
@@ -15,9 +15,9 @@ This can be easily achieved by configuring dependencies between your build confi
 
 Where _compile_, _tests (win)_, _tests (mac)_, and _pack setup_ are build configurations, and naturally the tests __depend on__ the compilation, which means they should wait till the compilation is ready.
 
-## Basics
+## Common Concepts
 
-Generally known as a _build pipeline_, in TeamCity a similar concept is referred to as a _[build chain](build-chain.md)_. Before getting into details on how this works in TeamCity, let's clarify the legend behind diagrams given here (including the one in the introduction):
+In TeamCity, a series of interconnected build configurations is called a [build chain](build-chain.md). Before getting into details on how it works, let's clarify the legend behind diagrams given here (including the one in the introduction):
 
 <table>
 
@@ -128,20 +128,20 @@ Let's assume we have the following [build chain](build-chain.md) with no extra o
 #### What Happens When Build A is Triggered
 
 1. TeamCity resolves the whole build chain and queues all builds - A, B, and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
-2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them \- all builds have to start with the same sources snapshot.   
+2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them — all builds have to start with the same sources snapshot.   
    Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
 3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
 
 #### What Happens When Build B is Triggered
 
-The same process will take place for build chain B\-&gt;C. Build A won't be affected and won't run.
+The same process will take place for build chain B &rarr; C. Build A won't be affected and won't run.
 
 ### Example 2
 
 <img src="B1-B2-A.png" width="126" alt="Example 2"/>
 
-When the final build A is triggered, TeamCity resolves the build chain and queues all builds \- A, B1 and B2. Build A won't start until both B1 and B2 are ready.   
-In this case it doesn't matter which build - B1 or B2 - starts first. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
+When the final build A is triggered, TeamCity resolves the build chain and queues three builds in total: A, B1, and B2. Build A won't start until both B1 and B2 are ready.   
+In this case it doesn't matter which build - B1 or B2 - starts first; if there are at least two idle compatible agents, these builds can run in parallel. As in the first example, when all builds are added to the queue, TeamCity checks for changes in the entire build chain and synchronizes them.
 
 ### Advanced Snapshot Dependencies Setup
 
@@ -149,7 +149,7 @@ In this case it doesn't matter which build - B1 or B2 - starts first. As in the 
 
 All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the [suitable builds](snapshot-dependencies.md#Suitable+Builds). To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
 
-Another option that allows you to control how builds are re\-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
+Another option that allows you to control how builds are re-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
 
 #### Turned off Enforced Revisions Synchronization
 
@@ -176,11 +176,11 @@ By enabling and disabling this option for dependencies of different build config
 To prevent conflicts between revisions, avoid configuring chains where the dependent build (A) must synchronize revisions with its several direct dependency builds (B) and (C), and these builds have different states of the "_Enforce Revisions Synchronization_" option in their snapshot dependencies on some other build (D).   
 Use the following valid chains instead:
 
-1\. Synchronization is enabled for the D-B-A build flow but disabled for D-C-A. 
+1. Synchronization is enabled for the D-B-A build flow but disabled for D-C-A. 
 
 <img src="valid-snap-flow1.png" width="211" alt="Valid flow 1"/>
 
-2\. Synchronization is enabled for D-B and D-C but disabled for B-A and C-A. 
+2. Synchronization is enabled for D-B and D-C but disabled for B-A and C-A. 
 
 <img src="valid-snap-flow2.png" width="211" alt="Valid flow 2"/>
 
@@ -213,13 +213,16 @@ With the VCS Trigger set up in the `pack setup` configuration, the whole build c
 
 __Changes from Dependencies__
  
-For a build configuration with snapshot dependencies, you can enable showing of changes from these dependencies transitively. The setting is called "_[Show changes from snapshot dependencies](configuring-vcs-settings.md#show-changes-from-snapshot-dependencies)_" and is available in the advanced options of the "Version Control Settings" step of the build configuration administration pages.
+For a build configuration with snapshot dependencies, you can toggle the [Show changes from snapshot dependencies](configuring-vcs-settings.md#show-changes-from-snapshot-dependencies) option in the **Version Control** section of [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes).
 
-Enabling this setting affects pending changes of a build configuration, builds changes in builds history, the change log and issue log. Changes from dependencies are marked with ![deps_changes_marker.gif](deps_changes_marker.gif). For example:
+<img src="dk-show-changes-from-dependencies.png" width="706" alt="Show changes from dependencies setting"/>
 
-<img src="changes_popup.png" width="350"/>
+Enabling this setting shows changes of upstream build configurations in **Change Log** and **Pending Changes** tabs, as well as in build history and issue log. This setting also allows build configuration triggers to automatically start new builds on changes committed to upstream configurations.
 
-With this setting enabled, the [Schedule Trigger](configuring-schedule-triggers.md) with a "Trigger build only if there are pending changes" option will consider changes from dependencies too.
+The **Show changes from shapshot dependencies** option specifies the default behavior. Regardless of this setting, users can toggle the corresponding checkbox when viewing the list of build changes to include or exclude changes that originate from other configurations/repositories.
+
+<img src="changes_popup.png" width="706" alt="Changes from dependencies"/>
+
 
 #### Parameters in Dependent Builds
 
@@ -231,6 +234,42 @@ For the details on how to use parameters of the previous build in chain, refer t
 A build chain can have an indefinite number of parallel and sequential connections. Builds will run in parallel to each other if:
 * Each of these builds has own snapshot dependency on the same dependency build. These builds will be able to start as soon as the dependency build finishes.
 * There are enough free build agents on the server. If the agents are busy, TeamCity will run these builds one after another, in accordance to the agents' load.
+
+
+## Project Isolation
+
+TeamCity supports linking configurations through snapshot and artifact dependencies, enabling complex multi-project build chains. However, this also means that developers from external projects can use dependencies to trigger builds and import artifacts from configurations owned by other teams.
+
+If your project includes sensitive or resource-intensive configurations, you can the following ways to protect them:
+
+* Set up strict [user permissions](managing-roles-and-permissions.md). Anyone with the **Project viewer** role for your project can create dependencies to this project in their own configurations. This allows external users to utilize your configurations even if they do not have permissions to run them directly.
+
+   > Limited user permissions do not guarantee your configurations are completely out of reach for external projects. In TeamCity UI, project administrators are unable to create dependencies to projects they cannot see. However, if they know target configuration IDs, they can do so via [versioned settings](storing-project-settings-in-version-control.md).
+   > 
+   > ```Kotlin
+   > import jetbrains.buildServer.configs.kotlin.*
+   > import jetbrains.buildServer.configs.kotlin.buildSteps.script
+   >
+   > object Build2 : BuildType({
+   > name = "External project configuration"
+   >
+   >     dependencies {
+   >         snapshot(AbsoluteId("TargetBuildConfigID")) {
+   >         }
+   >     }
+   > })
+   > ```
+   > 
+   {style="note"}
+
+* Use the [](build-approval.md) feature. This way other teams can still add dependencies to your configurations, but new builds will stay queued until approved by your designated team members.
+
+   > This option does not block external projects from importing artifacts if they use only artifact dependencies.
+   >
+   {style="note"}
+
+* Set up fine-grained access permissions in the **Project Isolation** tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes). You can allow artifact and snapshot dependencies from any project or restrict them to an allowlist. If a project is not on the list, its configuration builds will fail to start.
+
 
 ## Miscellaneous Notes on Using Dependencies
 
