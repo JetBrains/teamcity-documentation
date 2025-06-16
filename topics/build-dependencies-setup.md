@@ -127,9 +127,16 @@ Let's assume we have the following [build chain](build-chain.md) with no extra o
 
 #### What Happens When Build A is Triggered
 
-1. TeamCity resolves the whole build chain and queues all builds - A, B, and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is successfully finished, and it won't run build B until build C is successfully finished.   
-2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them — all builds have to start with the same sources snapshot.   
-   Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.    
+1. TeamCity resolves the whole build chain and queues all builds - A, B, and C. TeamCity knows that the builds are to run in a strict order, so it won't run build A until build B is finished, and it won't run build B until build C is finished.
+
+    > Dependency settings allow you to change this default behavior and allow downstream builds to run even if upstream ones fail or do not start at all.
+    >
+    {style="tip"}
+
+2. When the builds are added to the queue, TeamCity starts checking for changes in the entire build chain and synchronizes them — all builds have to start with the same sources snapshot.
+
+    Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
+
 3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
 
 #### What Happens When Build B is Triggered
@@ -236,7 +243,7 @@ A build chain can have an indefinite number of parallel and sequential connectio
 * There are enough free build agents on the server. If the agents are busy, TeamCity will run these builds one after another, in accordance to the agents' load.
 
 
-## Project Isolation
+## Securing Configurations
 
 TeamCity supports linking configurations through snapshot and artifact dependencies, enabling complex multi-project build chains. However, this also means that developers from external projects can use dependencies to trigger builds and import artifacts from configurations owned by other teams.
 
@@ -268,7 +275,72 @@ If your project includes sensitive or resource-intensive configurations, you can
    >
    {style="note"}
 
-* Set up fine-grained access permissions in the **Project Isolation** tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes). You can allow artifact and snapshot dependencies from any project or restrict them to an allowlist. If a project is not on the list, its configuration builds will fail to start.
+* Set up fine-grained access permissions in the **Project Isolation** tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes). You can allow artifact and snapshot dependencies from any project or restrict them to an allowlist. If a project is not on the list, its configuration builds will fail to start. See the [](#Project+Isolation) section below for more information about this option.
+
+
+
+### Project Isolation
+
+Project isolation options are available in the corresponding tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
+
+<img src="dk-isolation.png" width="706" alt="Project isolation"/>
+
+<deflist type="full">
+
+<def title="Default Isolation Policy">
+
+All new top-level projects (those directly under the **Root** project) default to the more secure **Only trusted projects** mode.
+
+For compatibility, projects created before the introduction of this feature in TeamCity 2025.07 remain in the less secure **All projects** mode after a server upgrade. However, we recommend switching to the more secure mode manually.
+
+</def>
+
+<def title="Automatically Trusted Projects">
+
+When a project is set to **Only trusted projects** mode, the following are automatically added to its allowlist:
+
+* The project itself and all its subprojects. Top-level projects display a "&lt;Self project&gt;" entry in the allowlist to indicate this.
+
+    <img src="dk-isolation-self-project.png" width="706" alt="Self project isolation"/>
+
+  This allows projects under the same top-level project to freely interact. For example, in the structure below, For example, in the following hierarchy, projects "A_1" and "B_1" are mutually trusted because they are both owned by "Project 1".
+
+    ```Text
+    Root Project
+    │
+    └── Project 1
+        │
+        ├── Project A
+        │   └── Project A_1
+        │
+        └── Project B
+            └── Project B_1
+    ```
+
+* Projects that store their [versioned settings](storing-project-settings-in-version-control.md) in the same repository.
+
+</def>
+
+
+<def title="Settings inheritance">
+
+Projects in **Only trusted projects** mode automatically apply this policy to their subprojects. The parent’s allowlist is also inherited.
+
+<img src="dk-isolation-disabled-settings.png" width="706" alt="Disabled isolation settings"/>
+
+Cloned projects do not inherit their parent allowlist, as they are effectively new projects that are not a part of any build chain.
+
+</def>
+
+<def title="Versioned Settings">
+
+For security, the trust policy and allowlist are not stored in [versioned settings](storing-project-settings-in-version-control.md). At the same time, using versioned settings with the disabled **Allow editing project settings via UI** option does not block **Project Isolation** settings in TeamCity UI. 
+
+This ensures that trust policies can only be modified by project administrators through the TeamCity UI, not through changes to remote configuration files.
+
+</def>
+
+</deflist>
 
 
 ## Miscellaneous Notes on Using Dependencies

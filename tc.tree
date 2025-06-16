@@ -229,6 +229,7 @@
 	</toc-element>
 	<toc-element toc-title="TeamCity Projects">
 		<toc-element topic="creating-and-editing-projects.md" toc-title="Create and Edit Projects"/>
+		<toc-element topic="project-settings.md"/>
 		<toc-element topic="project-export.md"/>
 		<toc-element topic="projects-import.md"/>
 		<toc-element topic="configuring-vcs-settings.md" toc-title="Configure VCS Settings">
