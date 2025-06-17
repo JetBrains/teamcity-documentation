@@ -87,7 +87,7 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
    > New EC2 profiles in version 2024.12 support only connection-based access.
    {style="note"}
     <!--
-    5. Choose between authentication via access key/secret pair or credentials stored locally on the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
+    5. Choose between authentication via the access key/secret pair, credentials stored locally on the server machine or IAM role attached to the server machine. Regardless of the selected mode, a user or IAM role used by TeamCity to access AWS resources must have all permissions listed in this section: [Required IAM Permissions](#Required+IAM+permissions).
     
         <table><tr><td>
     
@@ -107,9 +107,14 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
     
         </tab>
     
-        <tab title="Local Credentials">
+   <tab title="Local Credentials or IAM role">
     
-        The **Use default credential provider chain** option allows TeamCity to look for AWS credentials stored on the server machine. Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS, or at `C:\Users\USERNAME\.aws\config` on Windows. This approach is more stable and secure compared to using static access keys.
+   The **Use default credential provider chain** option allows TeamCity to look for 
+   AWS credentials stored on the server machine and/or 
+   IAM role attached to the service machine if the server is running in AWS EC2 instance.
+   Typically, the `config` file with your AWS credentials is located at `~/.aws/config` on Linux or macOS,
+   or at `C:\Users\USERNAME\.aws\config` on Windows.
+   This approach is more stable and secure compared to using static access keys.
     
         See the following article for more information about locally stored AWS credentials: [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
     
@@ -120,12 +125,12 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
     </td></tr></table>
     -->
 7. Choose an AWS region in which your instances are hosted.
-8. Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
-9. Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
+8. Optional: Set up the agent limit. This number specifies the overall limit for agents created from all cloud images of this profile.
+9. Optional: Specify the TeamCity server URL. This value will be automatically passed to agents' `buildAgent.properties` files. If not specified, agents will use the same value as on the __Administration | Global Settings__ page.
 10. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines. The agent will be terminated if any condition is met, but only after that agent finishes the current build.
    
    <img src="dk-ec2-terminateConditions.png" width="460" alt="Agents terminate conditions"/>
-11. Click **Apply changes** to save the profile and exit the profile settings page.
+11. Click **Create** or **Apply changes** to save the profile and exit the profile settings page.
 
 
 ### Add a Cloud Image
