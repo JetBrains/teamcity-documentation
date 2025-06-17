@@ -32,13 +32,23 @@ Amazon Elastic Container Registry (AWS ECR) is supported: specify the AWS region
 ## Connecting to Insecure Registry
 
 To connect to an insecure registry:
-1. Configure all TeamCity agents where Docker is installed to work with insecure repositories as stated in the [Docker documentation](https://docs.docker.com/registry/insecure/#deploying-a-plain-http-registry). This is sufficient to allow the connection to the private registry over HTTP.
+
+1. Create or edit the [Docker daemon configuration file](https://docs.docker.com/reference/cli/dockerd/#daemon-configuration-file) to include the `insecure-registries` array value. Example:
+
+  ```json
+  {
+    "insecure-registries" : ["http://my-registry:5000"]
+  }
+  ```
+  
+  This is sufficient to allow the connection to the private registry over HTTP.
+
 2. To connect to an insecure registry over HTTPS with a self-signed certificate, in addition to the step above, import the self-signed certificate to the JVM of the TeamCity server as described [here](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). You can consult the Docker documentation on [using self-signed certificates](https://docs.docker.com/registry/insecure/#using-self-signed-certificates).
 
 ## Running multiple agents with Docker on one machine
 
 TeamCity supports the case when multiple agents are running parallel builds on the same machine and connect to a Docker registry during these builds. This setup requires using different Docker environments: the `docker logout` command executed at the end of the one build should not affect the parallel build on another agent.  
-To configure it, you need to specify locations of each agent's `.docker` directory. For this, define the `env.DOCKER_CONFIG=%[teamcity.agent.home.dir](agent-home-directory.md)%/system/.docker` environment variable either as a [build configuration parameter](configuring-build-parameters.md) or in the [`buildAgent.properties`](configure-agent-installation.md) file of each agent.
+To configure it, you need to specify locations of each agent's `.docker` directory. For this, define the `env.DOCKER_CONFIG=%teamcity.agent.home.dir%/system/.docker` environment variable either as a [build configuration parameter](configuring-build-parameters.md) or in the [`buildAgent.properties`](configure-agent-installation.md) file of each agent.
 
 <seealso>
         <category ref="admin-guide">
