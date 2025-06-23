@@ -209,7 +209,7 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
-<!--
+
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
@@ -240,10 +240,10 @@ When you generate or enter a new custom encryption key, it becomes the default f
 * During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
 * TeamCity cannot import projects or restore data from a backup if those projects or backups originate from a server that uses encryption keys absent on this server. To successfully move data from an encrypted server, make sure all of its `encryption-config.xml` keys are added to the corresponding file of the target server.
 </warning>
--->
 
 
 
+<!--
 
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
@@ -271,7 +271,7 @@ Generating or entering a new encryption key forces TeamCity to use this key for 
 <encryption-settings>
   <key value="oldKey1" />
   <key value="oldKey2" />
-  <!--more keys-->  
+  ...
   <key value="currentKey" default="true" />
 </encryption-settings>
 ```
@@ -329,7 +329,7 @@ TeamCity cannot import projects or restore data from a backup if those projects 
 </warning>
 
 
-
+-->
 
 
 ## Artifacts' Domain Isolation
