@@ -3,10 +3,10 @@
 <snippet id="2025-07-tc">
 
 
-## Feature 1
+## Perforce Integration Enhancements
 {instance="tc"}
 
-TBD
+* You can now add multiple [Perforce Shelve triggers](perforce-shelve-trigger.md) to your configurations. to a configuration. Previously, adding one Shelve trigger locked you out of adding more via the TeamCity UI.
 
 ## UI Improvements
 {instance="tc"}
