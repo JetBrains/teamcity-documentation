@@ -57,10 +57,24 @@ group:QA:2
 ```
 
 You can specify multiple rules requiring approval from several users and/or groups. In this case, __all__ of the rules must be met for the build to start. 
+
 If a user matches several rules (e.g. a user is a part of multiple groups referenced in the rule), 
-the approval from that user will count towards each rule. 
-In the example above, if the `teamlead` user is a member of the `QA` group, 
+the approval from that user will count towards each rule. In the example above, if the `teamlead` user is a member of the `QA` group, 
 then, when a build is approved by `projectadmin` and `teamlead`, only one more approval from the `QA` group is needed for the build to start.
+
+
+You can use brackets to group individual users and user groups into a single voting authority with a shared vote count. Use the `groups` keyword for multiple groups and `users` for specific TeamCity users:
+
+```Text
+(groups:QA_TEST,DEVELOPERS,users:john.doe,jane.doe):3
+```
+
+This rule requires a total of three votes from any combination within the group. For example:
+
+* `jane.doe`, `john.doe`, and any `DEVELOPERS` member;
+* any three `QA_TEST` members;
+* two `DEVELOPERS` members and `john.doe`;
+* and so on.
 
 </td>
 </tr><tr>

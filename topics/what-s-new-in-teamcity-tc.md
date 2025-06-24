@@ -18,6 +18,16 @@ We remain committed to delivering a modern, intuitive TeamCity experience for al
 * An ability to open [build logs](build-log.md) in full-screen mode.
 
 
+## New Approval Rules
+
+In [](build-approval.md) and [](untrusted-builds.md) settings, you can now combine individual users with user groups in a single entity with a shared vote count. For example, the following rule expects three votes to start a build:
+
+```Text
+(users:john.doe,jane.doe,tcadmin,groups:PROJECT_ADMINS):3
+```
+
+These three votes can come from any combination of the specified users or groups.
+
 ## Miscellaneous Enhancements
 
 * [SSH keys](ssh-keys-management.md) uploaded to or generated in TeamCity are now stored encrypted in the [](teamcity-data-directory.md) in encrypted form. TeamCity uses a [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) from the general server settings, or a built-in key if none is specified. Note that only newly uploaded or generated keys are encrypted, re-upload existing keys to apply encryption.

@@ -76,6 +76,8 @@ Settings that correspond to untrusted builds are configured on the project level
 
 4. Use the **Approval rules** field to appoint users who should review incoming changes and either approve or block corresponding builds. Use the `user:<username>` syntax to appoint individual users or add all trusted reviewers to a dedicated [user group](creating-and-managing-user-groups.md) and use the `group:<group key>:<count>` syntax. The `count` is a number of votes required to allow a build.
 
+   You can also combine multiple user groups and individual users into a single authority with a shared vote count. For example: `(groups:QA,DEVS,ADMINS,users:john.doe,jane.doe):3`.
+
 5. Set up the **Timeout** (in minutes) to automatically cancel queued builds that remain unverified longer than this threshold.
 
 6. If the **Approve manually started builds** setting is on, builds initiated by a reviewer (a person added to **Approval rules**) automatically get the approval vote from that person. Note that in case new builds should be validated by a user group, other people should cast their remaining votes to start this build.
