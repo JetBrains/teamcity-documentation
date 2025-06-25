@@ -8,82 +8,46 @@
 
 ## Common VCS Root Properties
 
-<table><tr>
+<deflist type="full">
 
-<td>
+<def title="Type of VCS" id="vcs-type" help-id="vcs-type">
 
-Property
+The type of version control system supported by TeamCity. For example, Git, Perforce, Subversion, and more.
 
-</td>
+</def>
 
-<td>
+<def title="VCS root name">
 
-Description
+The unique name of VCS root across all VCS roots of the project. This is the public name shown in TeamCity UI (for example, in the build configuration's "Attach VCS root" menu).
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="VCS root ID" id="VCSRootID" help-id="VCSRootID">
 
-Type of VCS
-{id="vcs-type"}
+Unique [ID](identifier.md) of VCS root across all VCS roots in the system. By default, the root ID combines truncated names of its parent project and the root itself, divided with an underscore. For example, `MyProject_HttpsGitHubComJohndoeMyrepoRefsHeadsMain`. When changing the root name, you can click the **Regenerate ID** link to update this value.
 
-</td>
 
-<td>
+Root IDs are used in build parameters that allow you to read root properties, for example `vcsroot.ProjectName_RootName.branch` and `vcsroot.ProjectName_RootName.url`. In addition, IDs can be used in [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 
-Type of version control system supported by TeamCity: for example, Perforce or Subversion.
+</def>
 
-</td></tr><tr>
+<def title="Repository URL">
 
-<td>
+The URL of a VCS repository. Supports URLs in [different formats](guess-settings-from-repository-url.md#VCS+URL+Formats), like: `http(s)://`, `svn://`, `ssh://git@`, `git://` and others as well as URLs in Maven format.
 
-VCS root name
+> If using an SSH URL, you need to provide a private key so that TeamCity could access a repo. See the [](ssh-keys-management.md) article or watch our [video tutorial](https://www.youtube.com/watch?v=nUTb1BjMMoE) to learn more.
 
-</td>
+If a project (or its parent projects) has [connections to VCS providers](configuring-connections.md), TeamCity displays corresponding VCS icons next to this field. If you have multiple connections to the same provider (for example, GitHub OAuth and GitHub App), hover over an icon to see the connection name.
 
-<td>
+<img src="dk-connections-in-root-settings.png" width="706" alt="Connection icons in VCS Root settings"/>
 
-Unique name of VCS root across all VCS roots of the project.
+Click an icon to view the list of repositories TeamCity detected using this connection. Since a connection stores all necessary repo access data, not only does selecting a repository fill in the **Repository URL**, but it also fills authentication settings (**Username** and **Password / Access token**).
 
-</td></tr><tr>
+</def>
 
-<td>
 
-VCS root ID
-{id="VCSRootID"}
+<def title="Minimum polling interval" id="checkingInterval" help-id="checkingInterval">
 
-</td>
-
-<td>
-
-Unique [ID](identifier.md) of VCS root across all VCS roots in the system. VCS root ID can be used in parameter references to VCS root parameters and [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html). If not specified, will be generated automatically from VCS root parameters.
-
-</td></tr><tr>
-
-<td>
-
-Repository URL
-
-</td>
-
-<td>
-
-URL to VCS repository. Supports URLs in [different formats](guess-settings-from-repository-url.md#VCS+URL+Formats), like: `http(s)://`, `svn://`, `ssh://git@`, `git://` and others as well as URLs in Maven format.
-
->If you use an SSH repository, watch our **video tutorial** on [how to check out from SSH repositories](https://www.youtube.com/watch?v=nUTb1BjMMoE).
-
-</td></tr><tr>
-
-<td>
-
-Minimum polling interval
-
-<anchor name="checkingInterval"/>
-
-</td>
-
-<td>
-  
 Specifies how often TeamCity polls the VCS repository for VCS changes. By default, the global predefined server setting is used that can be modified on the __Administration | Global Settings__ page. The interval time starts as soon as the last poll is finished on the per-VCS root basis. Here you can specify a custom interval for the current VCS root.
 
 <note>
@@ -94,20 +58,18 @@ Some public servers may block access if polled too frequently.
 
 If TeamCity detects that a [VCS commit hook](configuring-vcs-post-commit-hooks-for-teamcity.md) is used to trigger checking for changes, this interval is automatically increased up to the predefined value (4 hours). If the periodical check finds changes undetected via the commit hook, the polling interval is reset to the specified minimum.
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="Belongs to project" id="svnRootSharing" help-id="svnRootSharing">
 
-Belongs to project
-{id="svnRootSharing"}
+Displays the project that owns this VCS root. You can move a VCS root to a parent project so that it becomes available for all build configurations inside this new owner and its subprojects.
 
-</td>
 
-<td>
+</def>
 
-Each VCS root belongs to some project, and in this section the name of this project is displayed. A VCS root can be moved to the common parent project of all subprojects, build configurations and templates where the root is currently used.
+</deflist>
 
-</td></tr></table>
+
 
 Refer to the pages inside this section for VCS-specific configuration details.
 
