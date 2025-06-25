@@ -182,18 +182,39 @@ You can prevent TeamCity from switching to this mode and force it to always run 
 
 ## Publish Artifacts Produced By Batch Builds
 
-Since parallel tests run inside independent batch builds, [artifacts](build-artifact.md) are produced by these batch builds that perform actual building routines, not by a parent configuration's builds.
-
-However, TeamCity aggregates artifacts produced by batch builds in parent configuration builds to make them easily accessible from a single place.
+Since parallel tests run inside independent batch builds, [artifacts](build-artifact.md) are produced by these batch builds that perform actual building routines, not by a parent configuration's builds. To make them easily accessible, TeamCity aggregates artifacts from individual batches into the main configuration build.
 
 <img src="dk-artifacts-parallelBuildAggregateDiagram.png" width="706" alt="Aggregated artifacts diagram"/>
 
-When batch builds produce identical artifacts, only the latest batch build's artifacts are shown in the **Artifacts** tab of a parent configuration. This behavior is suitable for configurations with artifacts produced by building steps, but not for parallel tasks generating similar file sets.
+When batch builds produce identical artifacts, only the latest batch build's artifacts are shown in the [Artifacts](build-results-page.md#Artifacts+Tab) tab of a parent configuration. If all of these files are relevant and should be visible from the main build, enable the **Artifacts** setting of the Parallel Test feature.
 
-To access all parallel task artifacts (for example, when each of your tests generates the "report.log" file), use the `teamcity.build.parallelTests.currentBatch` [parameter](configuring-build-parameters.md) when defining artifact paths for a parent build configuration. Since this parameter references the batch build number, it allows builds to organize their artifacts into subdirectories with unique names. For instance:
+```Kotlin
+object Build : BuildType({
+    name = "Build"
+    artifactRules = ".teamcity/Paralleltests/buildTypes => artifacts"
 
+    // ...
+
+    features {
+        parallelTests {
+            numberOfBatches = 2
+            separateArtifacts = true
+        }
+    }
+})
 ```
-bin => batch-build-%\teamcity.build.parallelTests.currentBatch%/bin
+
+Doing so allows TeamCity to place batch outputs into "Batch N" folders when aggregating them in a main configuration build.
+
+<img src="dk-auto-categorized-batch-artifacts.png" width="706" alt="Artifacts in separate batch folders"/>
+
+You can implement a custom grouping logic by adding [parameters](configuring-build-parameters.md) to artifact paths. A parameter should have a unique value for each batch. For example, adding the `teamcity.build.parallelTests.currentBatch` parameter produces the results similar to the aforementioned setting of the Parallel Tests feature.
+
+```Kotlin
+object Build : BuildType({
+    name = "Build"
+    artifactRules = "bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin"
+})
 ```
 
 <img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
