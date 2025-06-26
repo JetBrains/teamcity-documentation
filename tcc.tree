@@ -368,7 +368,7 @@
 		<toc-element topic="applying-patches.md"/>
 		<toc-element topic="visual-c-build-issues.md"/>
 	</toc-element>
-	<toc-element topic="troubleshooting.md" accepts-web-file-names="feedback.hml">
+	<toc-element topic="troubleshooting.md" accepts-web-file-names="feedback.html">
 		<toc-element topic="common-problems.md"/>
 		<toc-element topic="known-issues.md"/>
 		<toc-element topic="ticket-based-support.md"/>
