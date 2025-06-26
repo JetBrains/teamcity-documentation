@@ -21,7 +21,7 @@ In version 2025.03, "meta-runners" were renamed to "recipes". While based on the
 Yes, meta-runners are still functional under the new name and require no manual updates.
 
 **What are public recipes?**<br/>
-Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). Currently, only recipes hand-crafted by JetBrains are available. Future releases will support community-shared recipes from TeamCity users.
+Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). These include both recipes hand-crafted by JetBrains and those shared by other TeamCity users.
 
 **Are public recipes safe?**<br/>
 You can manually download a recipe .yml definition file from JetBrains Marketplace to review it before adding this recipe to your configuration. Future releases will offer a more intuitive way to inspect recipe code.
