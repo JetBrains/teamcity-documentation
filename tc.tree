@@ -171,7 +171,7 @@
 			<toc-element topic="configuring-authentication-settings.md" accepts-web-file-names="authentication-modules.html">
 				<toc-element topic="ldap-integration.md">
 					<toc-element topic="typical-ldap-configurations.md"/>
-					<toc-element topic="ldap-troubleshooting.md"/>
+					<toc-element topic="ldap-troubleshooting.md" />
 				</toc-element>
 				<toc-element topic="ntlm-http-authentication.md"/>
 				<toc-element topic="enabling-guest-login.md"/>
@@ -514,7 +514,7 @@
 		<toc-element topic="teamcity-release-cycle.md"/>
 		<toc-element topic="roadmap-outline.md"/>
 	</toc-element>
-	<toc-element topic="troubleshooting.md">
+	<toc-element topic="troubleshooting.md" accepts-web-file-names="feedback.hml">
 		<toc-element topic="common-problems.md"/>
 		<toc-element topic="known-issues.md"/>
 		<toc-element topic="ticket-based-support.md"/>
