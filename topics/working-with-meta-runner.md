@@ -6,14 +6,6 @@
 Creating a recipe is a simpler alternative to developing a [TeamCity plugin](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) that implements a custom build step.
 
 
-> TeamCity Recipes are still under active development. In the future releases, we expect to release the following features:
-> * Support for local recipes in YAML format
-> * Ability to share your custom recipes on [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe)
->
-> We value your feedback and encourage you to [share](troubleshooting.md) ideas and public recipe suggestions.
->
-{style="note"}
-
 ## Key Takeaways
 
 **What are recipes?**<br/>
@@ -42,7 +34,7 @@ Find an existing or create a new build configuration that performs an action you
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuration's "Build steps" list.
 
 **Are recipes editable?**<br/>
-Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Local recipes can be [edited](#Edit+a+Local+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
+Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Private recipes can be [edited](#Edit+a+Private+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
 
 
 
@@ -115,7 +107,7 @@ To extract a recipe from an existing configuration:
     </meta-runner>
     ```
 
-   > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Local+Recipe).
+   > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Private+Recipe).
    >
    {style="note"}
 
@@ -135,7 +127,7 @@ Recipes are custom build steps, and as such, are added to build configurations i
 2. Click the **Add build step** button.
 3. Choose a recipe from the right column that shows:
 
-    * local recipes owned by this project or its parent project;
+    * private recipes owned by this project or its parent project;
     * public recipes from JetBrains Marketplace.
 
     <img src="dk-add-recipe.png" width="706" alt="Add a recipe"/>
@@ -189,13 +181,30 @@ Navigate to the <a href="teamcity-data-directory.md"><code>&lt;TeamCity Data Dir
 -->
 
 
-## Edit a Local Recipe
+## Manage Existing Recipes
+
+The **Recipes** page of project settings allows you to:
+
+* enable or disable public (Marketplace-based) recipes for this project and all of its subprojects;
+* inspect all public and private recipes used in this project: view their usages and spot any issues.
+
+<img src="dk-recipes-in-root-project.png" width="706" alt="Recipes page in Root project"/>
+
+You can open this page for the Root project to view a server-wide usage report. Recipe tags notify you when a newer recipe version is available, or it was taken down from the Marketplace.
+
+## Share Recipes on Marketplace
+
+You can share your YAML-based recipes with TeamCity community on JetBrains Marketplace. See this article for more information: [Uploading TeamCity Recipes](https://plugins.jetbrains.com/docs/marketplace/uploading-a-new-plugin.html#upload-teamcity-recipes).
+
+
+
+## Edit a Private Recipe
 
 Recipes extracted from a build configuration or uploaded from a file are stored locally on your server machine and can be edited in TeamCity UI.
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
 
-2. Click a recipe from the **Local Recipes** table to view and edit its configuration file.
+2. Click a recipe from the **Private Recipes** table to view and edit its configuration file.
 
 For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
 
