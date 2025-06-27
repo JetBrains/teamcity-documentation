@@ -28,10 +28,16 @@ To enable the integration, do the following:
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Issue Trackers"/></include>
 2. Create a new connection of the **Team Foundation Work Items** type with the following settings:
+
     * **Display Name** — Specify the connection name to distinguish it from the other connections.
     * **Server URL** — Enter Azure DevOps Server URL in either `https://dev.azure.com/<organization>/<project>` (Azure DevOps Services) or `http[s]://<host>:<port>/tfs/<collection>/<project>` (Azure DevOps Server) format.
-    * **Username** — Specify a user to access the Azure DevOps Server. This can be a username or `DOMAIN\UserName` string. Leave empty to let Azure DevOps select a user account that is used to run the TeamCity Server.
-    * **Password** — Enter the password for the user entered above. To authenticate via access token instead of password, leave the _Username_ field empty and enter your access token as _Password_. You can create a [personal access token](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) in your Azure DevOps account. Set the _Code_ access scope to _Work Items (read, write, and manage)_ in the repositories you are about to access from TeamCity.
+    * **Username** — Leave this field empty to let Azure DevOps select a user account that is used to run the TeamCity Server, or enter a `DOMAIN\UserName` string manually.
+    * **Password** — Enter a user [personal access token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows). The token scope should include _Work Items (read, write, and manage)_ permissions in the repositories you are about to access from TeamCity.
+    
+        > Azure DevOps [no longer supports](https://devblogs.microsoft.com/devops/azure-devops-will-no-longer-support-alternate-credentials-authentication/) regular username/password credentials.
+        > 
+        {style="note"}
+
     * **Pattern** — Specify a [Java Regular Expression](https://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html) pattern to recognize a work item ID in the comment text. The matched text (or the first group if there are groups defined) is used as the work item number. The most common case is `#(\d+)` — this will extract `1234` as the work item ID from the text `Fix for #1234`.
 
 
