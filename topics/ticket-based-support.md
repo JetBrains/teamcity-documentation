@@ -1,12 +1,17 @@
 # Ticket-Based Support
 
 Customers who own a TeamCity Enterprise server license with active maintenance can submit a ticket directly to our support team. Each ticket is assigned to one of our support engineers, who will respond to your question or issue, and assist with diagnosing the problem.
+{instance="tc"}
 
 If you are using a free Professional Server license, you can explore other ways to raise issues or engage with the community by visiting our [](troubleshooting.md) page.
+{instance="tc"}
+
+All TeamCity Cloud customers can submit tickets directly to our support team. Each ticket is assigned to one of our support engineers, who will respond to your question or issue, and assist with diagnosing the problem.
+{instance="tcc"}
 
 ## Support Tiers
 
-JetBrains offers three tiers of support: Standard support (included with all active Enterprise server licenses), Business support, and Enterprise support. The Business and Enterprise support plans are optional paid plans that provide additional benefits, such as 24/7 availability, a private Slack channel, and varying service-level agreements (SLAs) for response times. For more details, visit the [Support plans](https://www.jetbrains.com/teamcity/support/#plans) page.
+JetBrains offers three tiers of support: Standard support (included with all active Enterprise server and TeamCity Cloud licenses), Business support, and Enterprise support. The Business and Enterprise support plans are optional paid plans that provide additional benefits, such as 24/7 availability, a private Slack channel, and varying service-level agreements (SLAs) for response times. For more details, visit the [Support plans](https://www.jetbrains.com/teamcity/support/#plans) page.
 
 ## Availability
 

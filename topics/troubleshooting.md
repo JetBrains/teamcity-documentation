@@ -32,6 +32,10 @@ Feature requests can also be logged through our issue tracker.
 ### Support Ticket
 
 Customers who own a TeamCity Enterprise server license with active maintenance can submit a ticket directly to our support team. We use Zendesk for our ticketing system, and tickets can be submitted through the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or by [email](mailto:teamcity-support@jetbrains.com).
+{instance="tc"}
+
+We use Zendesk for our ticketing system, and tickets can be submitted through the [online support form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621) or by [email](mailto:teamcity-support@jetbrains.com).
+{instance="tcc"}
 
 For additional details, such as our support team’s availability, optional support plans with defined SLAs, and handling of production outage situations, please refer to the [Ticket-Based Support](ticket-based-support.md) page.
 
