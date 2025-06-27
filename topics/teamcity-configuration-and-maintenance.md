@@ -213,13 +213,9 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity uses the following methods to secure sensitive data:
+TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. These scrambled values are stored in [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
 
-* All [SSH keys](ssh-keys-management.md) are encrypted using an internal encryption key.
-* All [remotely stored secrets](storing-project-settings-in-version-control.md#Storing+Secure+Settings) are scrambled. Secrets' original values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
-
-
-The **Encryption Settings** section lets you define a custom encryption key for both tasks. Use a TeamCity-generated or a custom key to specify the **Custom encryption key** option. TeamCity supports 128-bit keys encoded with Base64.
+You can set the **Custom encryption key** option in **Encryption Settings** section of TeamCity server settings. In this case both secrets and SSH keys will get encrypted by this 128-bit key encoded with Base64.
 
 The custom encryption key is stored in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file, so make sure you do not store this folder in a remote VCS repository that can be accessed by 3rd-party users.
 
@@ -248,13 +244,7 @@ When you generate or enter a new custom encryption key, it becomes the default f
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity uses the following methods to secure sensitive data:
-
-* All [SSH keys](ssh-keys-management.md) are encrypted using an internal encryption key.
-* All [remotely stored secrets](storing-project-settings-in-version-control.md#Storing+Secure+Settings) are scrambled. Secrets' original values are stored in the [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
-
-
-The **Encryption Settings** section lets you define a custom encryption key for both tasks. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead of this internal mechanism. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
 
 <deflist type="full">
 

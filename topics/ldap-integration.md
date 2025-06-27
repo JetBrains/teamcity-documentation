@@ -212,18 +212,24 @@ When you add the LDAP authentication module on a TeamCity server which already h
 
 ### Scrambling credentials in ldap-config.properties file
 
-The `java.naming.security.credentials` property can store the password either in the plain-text or scrambled form. TeamCity needs the raw password value when authenticating in a LDAP server, so the password should be stored in a reversible form.   
-You can get the scrambled value using the HTTP request below and then set the property to the scrambled value. When adding the scrambled value to the `java.naming.security.credentials` property, it is necessary to include the complete response of the request below. The scrambled entry should look like: `java.naming.security.credentials=scrambled:1234567890abcdef`.
+The `java.naming.security.credentials` property can store the password either in the plain-text or scrambled/encrypted form. TeamCity needs the raw password value when authenticating in an LDAP server, so if `java.naming.security.credentials` stores a scrambled value, TeamCity should be able to restore its original value.
 
->Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value.
+To ensure this, you should process values using TeamCity as well. TeamCity uses an internal mechanism to scramble sensitive data, or (if set) the [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) to encrypt them. In both cases, you can send a `POST` REST API request to the `/app/rest/debug/values/password/scrambled?value=<text to scramble>` endpoint to get a secure value.
+
+
+```Shell
+curl --request POST 'http:my-tc-server.gg:8111/app/rest/debug/values/password/scrambled?value=value-to-scramble' \
+--header 'Content-Type: text/plain' \
+--header 'Accept: text/plain' \
+--header 'Authorization: Bearer your-teamcity-access-token'
+```
+
+You can then assign the server response to the required property: `java.naming.security.credentials=1234567890abcdef`.
+
+>Scrambling is not encryption: it protects the password from being easily remembered when seen occasionally, but it does not protect against getting the real password value when someone gets the scrambled password value. Specify the [custom encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) for a better protection.
 > 
 {style="warning"}
 
-To get the scrambled password value, execute the following HTTP request under a user who have the System Administrator role granted (i.e. you can just open the URL in the same browser that you use to access TeamCity):
-
-```
-GET {teamcity_url}/app/rest/debug/values/password/scrambled?value=<text to scramble>
-```
 
 >Note that this approach is relevant only for LDAP configurations. To get a scrambled value in other configurations, you can use the [`addSecureToken`](https://www.jetbrains.com/help/teamcity/rest/projectapi.html#addSecureToken) REST API method. When used for a project with disabled versioned settings, this method returns a string with the encrypted password. When used for a project with enabled versioned settings, it creates a new secure token and returns the token ID.
 
