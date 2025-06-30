@@ -736,7 +736,10 @@ When specifying a build parameter's name, mind the prefix:
 
 [Read more](configuring-build-parameters.md) about build parameters and their prefixes.
 
->Since the `setParameter` mechanism does not publish anything to the server until the build is finished, it is not possible to get updated parameters during the build via the REST API.
+> You can use the [`/app/rest/builds/{buildLocator}>/resulting-properties`](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Parameters+of+Finished+Build) REST API endpoint to get modified parameter values.
+> * This endpoint allows you to retrieve actual values while the build is still running.
+> * For builds running on build agents, send the `setParameter` service message from build steps to modify parameter values. If you utilize the [`app/rest/builds/{buildLocator}/log`](https://www.jetbrains.com/help/teamcity/rest/buildapi.html#addLogMessageToBuild) endpoint to do so, the `resulting-properties` endpoint response will not include these modified values.
+> * If a parameter value is modified via the [`app/rest/builds/{buildLocator}/log`](https://www.jetbrains.com/help/teamcity/rest/buildapi.html#addLogMessageToBuild) endpoint, the `resulting-properties` endpoint response includes modified parameter values only for [builds detached from an agent](configuring-build-steps.md#Agentless+Build+Steps).
 >
 {style="note"}
 
