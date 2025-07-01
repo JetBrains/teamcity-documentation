@@ -7,6 +7,7 @@
 
 
 ## Common VCS Root Properties
+{help-id="ConfiguringVCSRoots-CommonVCSRootProps"}
 
 <deflist type="full">
 
