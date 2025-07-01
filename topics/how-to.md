@@ -836,6 +836,27 @@ JetBrains.TrayNotifier.exe /allowMultiple /server:http://myTeamCityServer
 
 See also [details](https://youtrack.jetbrains.com/issue/TW-4230#comment=27-14194) in the issue tracker.
 
+
+## Set Up a Custom Callback URL for Git OAuth Flow
+{instance="tc"}
+
+TeamCity [OAuth-like connections to VCS providers](configuring-connections.md) utilize a callback URL. After a user confirms they grant TeamCity access to their repositories, the VCS provider redirects them back to this URL.
+
+Normally, this callback URL is based on the regular TeamCity server URL. For example, for the server hosted at `https://foo.bar.gg:8111` the callback URL would be something like `https://foo.bar.gg:8111/oauth/githubapp/accessToken.html`. In a rare case you want to use a different domain for redirect URLs, a system administrator can specify the `teamcity.oauth.redirectRootUrlOverride` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+
+```Text
+teamcity.oauth.redirectRootUrlOverride=https://teamcity.local.example.com/smth
+```
+
+> * Altering the authorization flow can pose security risks. Only override the callback URL if you fully understand the need.
+> * Any OAuth flow must start from the custom URL. This means you should open TeamCity on your new `https://teamcity.local.example.com/smth` URL to configure OAuth-like connections and [acquire new access tokens](manage-access-tokens.md). Otherwise, the server will reject the custom URL as invalid.
+> * Setting up a custom redirect URL affects the following TeamCity functionality:
+>   * All types of Git connections that utilize OAuth-like flows: GitHub [OAuth](configuring-connections.md#github-oauth) and [App](configuring-connections.md#github-app), [GitLab](configuring-connections.md#GitLab), Bitbucket [Cloud](configuring-connections.md#Bitbucket+Cloud) and [Server](configuring-connections.md#Bitbucket+Server+and+Data+Center), [Azure DevOps](configuring-connections.md#Azure+DevOps). If you already have some of these configured, modify a callback URL setting on a VCS hosting side. Depending on the provider, you can either modify an existing URL or add a new one.
+>   * Login to TeamCity using [VCS provider accounts](configuring-authentication-settings.md)
+>   * Issuing new [access tokens](manage-access-tokens.md)
+> 
+{style="warning"}
+
 ## Personal User Data Processing
 {instance="tc"}
 
