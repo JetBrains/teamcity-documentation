@@ -25,7 +25,7 @@ This section explains how to use runner settings. Refer to the sections below fo
   
    Leave this setting unchecked if you do not need a report published on the Build Results page. For example, if you intend to publish produced .html and .dcvr files [as build artifacts](build-artifact.md) and use them elsewhere.
 
-* **Include additional dotCover snapshots to the report** — paths to .dcvr snapshots that the runner should use to generate a final coverage report.
+* **Include additional dotCover snapshots to the report** — paths to .dcvr snapshots that the runner should use to generate a final coverage report. You can list multiple .dcvr files and leave the **Executable** setting empty. In this case, dotCover will produce a report merged from these snapshots.
 
    Note that since dotCover automatically gathers snapshots from preceding dotCover and [](net.md) steps, you do not need to define these rules as long as all required snapshots are produced in the same configuration. This setting allows you to include snapshots from stand-alone configurations imported via [artifact dependencies](artifact-dependencies.md).
 

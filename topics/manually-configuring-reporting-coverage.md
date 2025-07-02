@@ -1,6 +1,14 @@
 [//]: # (title: Manually Configuring Reporting Coverage)
 [//]: # (help-id: Manually Configuring Reporting Coverage)
 
+> This article utilizes NUnit Legacy, NAnt, .NET Process Runner, MSpec, Visual Studio (sln), and Visual Studio 2003 runners that are deprecated starting with TeamCity 2024.12. As such, these are no longer bundled with newer TeamCity versions.
+> 
+> DotCover users can use the newer [dotCover build step](dotcover-runner.md) as an alternative. Its **Include additional dotCover snapshots to the report** setting allows you to merge multiple snapshots in a single report (or merge them with a new report if the **Executable** setting is not empty).
+> 
+> Other test runners can be re-enabled by installing the [Deprecated .NET build runners support](https://plugins.jetbrains.com/plugin/26350-deprecated-net-build-runners-support) plugin.
+> 
+{style="note"}
+
 If you run .NET tests using [NUnit](nunit.md), [MSpec](mspec.md) or [.NET Process Runner](net-process-runner.md) runners or run NUnit tests via supported tasks of [MSBuild](msbuild.md) or [NAnt](nant.md) runners, you can turn on coverage collection in the TeamCity web UI for the specific runner.
 
 For other cases, when the .NET code coverage is collected by the build script and needs to be reported inside TeamCity (for example, [Rake](rake.md), or if you run NUnit tests via a test launcher other than TeamCity NUnit Test Launcher), there is a way to let TeamCity know about the coverage data.
