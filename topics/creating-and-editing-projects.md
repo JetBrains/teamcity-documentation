@@ -540,7 +540,7 @@ You can also opt to copy build configurations build numbers.
 
 <note instance="tc">
 
-When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit (100 build configurations, unless you purchased additional build agent licenses).
+When running TeamCity in the [Professional mode](licensing-policy.md), the __Copy__ option will not be displayed for a project if the number of build configurations on the server after copying will exceed the limit. This limit is 100 build configurations and 10 pipelines, where the maximum build configurations number can be raised by purchasing additional build agent licenses (10 configurations per agent key).
 </note>
 
 
