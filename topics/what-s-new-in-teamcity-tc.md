@@ -27,6 +27,18 @@ Starting with this release, third-party recipes are also supported. Browse commu
 * You can now add multiple [Perforce Shelve triggers](perforce-shelve-trigger.md) to your configurations. to a configuration. Previously, adding one Shelve trigger locked you out of adding more via the TeamCity UI.
 
 
+## Kubernetes Executor Updates
+
+Introduced a few releases ago, [Kubernetes executor](kubernetes-executor.md) leverages your existing Kubernetes clusters by turning them into independent orchestrators for TeamCity builds. Unlike with regular cloud agents that are fully managed by TeamCity, this integration allows the server to offload the build queue to a k8s cluster, granting the later full control over pod lifecycle.
+
+TeamCity 2025.07 introduces a range of Kubernetes executor updates:
+
+* Executors are now natively integrated into TeamCity default prioritization mechanism. When a build is queued, TeamCity first checks for a free self-hosted agent, then for cloud profiles that can launch a compatible agent. If none are available, the build is offloaded to an executor.
+* [Implicit agent requirements](configuring-agent-requirements.md#Implicit+Requirements) are now correctly recognized. Build steps can impose implicit tooling requirements on agents, like requiring [Docker or Podman](integrating-teamcity-with-container-managers.md) for containerized steps, or the .NET 8 SDK for .NET builds. As of 2025.07, TeamCity can correctly match these requirements with pod specifications, ensuring builds are never offloaded to executors that cannot run them.
+* Numerous bug fixes, such as resolving the ignored maximum build limit, PowerShell steps failing to run, excessive build log errors, and more.
+
+
+
 
 
 ## New Approval Rules

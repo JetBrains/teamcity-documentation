@@ -186,6 +186,12 @@ Note that TeamCity recognizes agent properties only after the agent is fully boo
 
 TeamCity employs an advanced agent selection logic, considering factors like CPU count, past building performance, agent sources (cloud or local), and more, to match your builds with the most suitable agents for the job.
 
+The list below shows available agent options in descending order of priority (the higher an option appears, the more likely it is to handle a queued build):
+
+* Self-hosted agents
+* Agents spawned from [cloud profiles and images](teamcity-integration-with-cloud-solutions.md)
+* [Kubernetes executor pods](kubernetes-executor.md)
+
 You can manually lower or raise the priority of a any agent by modifying its integer `teamcity.agent.priority` property. This property accepts values in the `-10000` ~ `10000` range with the default value of `0`. For [AWS-hosted cloud agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
 
 <img src="dk-agentpriority.png" width="706" alt="Set the image priority for a EC2 Cloud Image"/>

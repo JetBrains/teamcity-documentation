@@ -113,6 +113,17 @@ template:
       linux: arm64
 ```
 
+
+## Agent Priority
+
+If your build configuration has a mix of different agent options, TeamCity uses the following logic to delegate queued builds:
+
+* Self-hosted agents have the highest priority
+* If there is no free self-hosted agent compatible with a build, TeamCity looks for a suitable [cloud agent](teamcity-integration-with-cloud-solutions.md)
+* If neither of these options are available, a build is offloaded to an external executor
+
+See the following article to learn more about agent priorities: [](install-and-start-teamcity-agents.md#Agent+Priority).
+
 ## Licensing
 
 Although Kubernetes-based builds do not occupy native TeamCity agents, their number is still limited by your [agent license](licensing-policy.md). The combined number of "native" and executor builds cannot exceed this licensed limit. When the limit is reached, new builds will remain queued with the "Maximum number of concurrent builds reached" message, waiting for a free agent slot.
