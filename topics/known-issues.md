@@ -593,3 +593,45 @@ If tools that you utilize to unzip TeamCity build artifacts do not support ZIP64
 teamcity.internal.artifacts.useZip64=Never
 teamcity.internal.artifacts.useByteChannelForZip=false
 ```
+
+## Incorrectly Reported Free Disk Space on macOS Agents
+
+In certain cases, the `teamcity.agent.work.dir.freeSpaceMb` parameter on macOS agents reports significantly less free space than what macOS system tools show. If this value falls below the minimum required for a build, TeamCity tries to clear temporary files (and fails the build if unable to do so).
+
+We are currently investigating this issue and working on a fix. In the meantime, as a workaround, you can set up a daily maintenance configuration that runs the following script on all macOS agents:
+
+```Shell
+dd if=/dev/zero of=dummy status=none bs=64m 2>/dev/null; rm dummy
+```
+
+This command fills the remaining disk space with a dummy file, then deletes it, prompting a more accurate free space reading.
+
+> To run a build on all available compatible agents, add the [Schedule trigger](configuring-schedule-triggers.md) with the **Trigger build on all enabled and compatible agents** option enabled.
+> 
+{style="tip"}
+
+```Kotlin
+object MacOSDiskSpace : BuildType({
+    name = "macOS disk space workaround"
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "dd if=/dev/zero of=dummy status=none bs=64m 2>/dev/null; rm dummy"
+        }
+    }
+    triggers {
+        schedule {
+            schedulingPolicy = daily { hour = 3 }
+            branchFilter = ""
+            triggerBuild = always()
+            triggerBuildOnAllCompatibleAgents = true
+        }
+    }
+    requirements {
+        contains("teamcity.agent.jvm.os.name", "Mac OS")
+    }
+})
+```
+
+See this YouTrack ticket for more information: [TW-93698](https://youtrack.jetbrains.com/issue/TW-93698/TeamCity-agent-measures-available-free-space-on-drive-incorrectly-on-Mac#focus=Comments-27-12294826.0-0).

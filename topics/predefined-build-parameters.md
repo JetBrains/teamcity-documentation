@@ -73,7 +73,7 @@ To check all existing parameters and their current values for a given build agen
 <def instance="tcc" title="teamcity.agent.name">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</def>
 
 <def title="teamcity.agent.work.dir">The path to the <a href="agent-work-directory.md">agent work directory</a>.</def>
-<def title="teamcity.agent.work.dir.freeSpaceMb">Free space available in the <a href="agent-work-directory.md">agent work directory</a>.</def>
+<def title="teamcity.agent.work.dir.freeSpaceMb">Free space available in the <a href="agent-work-directory.md">agent work directory</a>. <note>See the <a href="known-issues.md#Incorrectly+Reported+Free+Disk+Space+on+macOS+Agents">Known Issues</a> article if you're experiencing issues with macOS agents reporting incorrect free storage values.</note></def>
 <def title="teamcity.agent.home.dir">The path to the <a href="agent-home-directory.md">agent home directory</a></def>
 
 <def instance="tc" title="teamcity.agent.tools.dir">The path to the <a href="installing-agent-tools.md">Tools</a> directory on the agent.</def>
