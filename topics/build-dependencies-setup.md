@@ -376,7 +376,6 @@ Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D 
     })
     ```
 
-* Projects that store their [versioned settings](storing-project-settings-in-version-control.md) in the same repository are mutually trusted.
 
 </def>
 
