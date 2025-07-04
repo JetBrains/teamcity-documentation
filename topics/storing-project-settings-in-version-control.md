@@ -19,7 +19,7 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 * By default, versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md). You can [change this default path](#Choosing+the+Settings+Location) to any custom location within a remote repository.
 * Project settings can be saved to the same repo that hosts application sources, or a [completely separate repository](#Separate+VCS+Root).
 * You can choose whether a project [can be edited](#SynchronizingSettingswithVCS) via TeamCity UI (in this case TeamCity synchronizes edits made in the UI with remotely stored settings) or only by modifying settings files on the VCS side.
-* Different repository branches can store [different project settings](#Example%3A+Branch-Specific+Settings).
+* Different repository branches can store [different project settings](#branch-specific-settings).
 * Global server-wide settings can be stored and managed via HashiCorp Terraform using the [dedicated TeamCity Provider](#Storing+and+Managing+Global+Server+Settings).
 
 <anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
@@ -171,6 +171,7 @@ To specify which settings TeamCity should apply when a build starts, choose a re
 {style="tip"}
 
 ### Example: Branch-Specific Settings
+{id="branch-specific-settings" help-id="branch-specific-settings"}
 
 1. Create and init an empty repository in your VCS of choice. In this example, a repository on GitHub.com is used.
 2. Create a new TeamCity project from this repository.
@@ -263,7 +264,7 @@ If the corresponding option is disabled on the project's **Versioned Settings** 
 
 This applies to both editing existing and creating new dependencies, checkout rules, and roots.
 
-For example, the following Kotlin sample illustrates two [versions of settings](#Example%3A+Branch-Specific+Settings) for the same project.
+For example, the following Kotlin sample illustrates two [versions of settings](#branch-specific-settings) for the same project.
 
 * The main (default) branch defines three build configurations linked in a single BC0 &rarr; BC3 &rarr; BC5 [build chain](build-chain.md). Each configuration edits the "output.txt" file and passes it to the next configuration.
     

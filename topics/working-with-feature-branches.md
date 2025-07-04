@@ -119,7 +119,7 @@ Branch specifications also support expressions starting with the `#` character. 
 
 ## Branch-Specific Build Configuration Settings
 
-With the help of [versioned settings](storing-project-settings-in-version-control.md), you can create build configurations with variable settings for every repository branch. See the following article for an example: [Branch-Specific Settings](storing-project-settings-in-version-control.md#Example%3A+Branch-Specific+Settings).
+With the help of [versioned settings](storing-project-settings-in-version-control.md), you can create build configurations with variable settings for every repository branch. See the following article for an example: [Branch-Specific Settings](storing-project-settings-in-version-control.md#branch-specific-settings).
 
 
 ## Default Branch

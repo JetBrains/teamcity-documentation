@@ -285,62 +285,130 @@ Project isolation options are available in the corresponding tab of [project set
 
 <img src="dk-isolation.png" width="706" alt="Project isolation"/>
 
+The **Only trusted projects** mode isolates the target project along with its subprojects, preventing build configurations owned by other (external) projects from accessing this isolated branch via snapshot and artifact dependencies.
+
+> For security reasons, all new top-level projects (projects owned directly by the **Root** project) created after TeamCity 2025.07 server update operate in this secure **Only trusted projects** mode.
+>
+{style="note"}
+
 <deflist type="full">
 
-<def title="Default Isolation Policy">
+<def title="Default trust relations">
 
-All new top-level projects (those directly under the **Root** project) default to the more secure **Only trusted projects** mode.
+Switching a project to **Only trusted projects** mode produces an isolated project branch where all subprojects are mutually trusted.
 
-For compatibility, projects created before the introduction of this feature in TeamCity 2025.07 remain in the less secure **All projects** mode after a server upgrade. However, we recommend switching to the more secure mode manually.
+For example, consider the following project hierarchy:
 
-</def>
+```Text
+Root Project
+   │
+   ├── Project A
+   │     │
+   │     ├── Project A1
+   │     └── Project A2
+   │
+   └── Project B ("Only trusted projects" enabled)
+         │
+         ├── Project C
+         └── Project D
+               │
+               ├── Project D1
+               └── Project D2
+```
 
-<def title="Automatically Trusted Projects">
+Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D &rarr; D1, D2" branch. If all other projects are in less restrictive "Inherit..." mode, this setup means the following:
 
-When a project is set to **Only trusted projects** mode, the following are automatically added to its allowlist:
+* All configurations from the "B &rarr; C, D &rarr; D1, D2" chain can freely depend on each other. This includes both top-down and bottom-up dependencies.
 
-* The project itself and all its subprojects. Top-level projects display a "&lt;Self project&gt;" entry in the allowlist to indicate this.
+    ```Kotlin
+    // Horizontal dependency
+    object C_BuildConfig : BuildType({
+        name = "Configuration from Project C"
+        dependencies {
+            // Configurations from sibling projects C and D
+            snapshot(D_BuildConfig) {}
+        }
+    })
+  
+    // Top-down dependency
+    object C_BuildConfig : BuildType({
+        name = "Configuration from Project C"
+        dependencies {
+            // Projects trust their direct and indirect parents
+            snapshot(D1BuildConfig) {}
+        }
+    })
+  
+    // Bottom-up dependency
+    object D1BuildConfig : BuildType({
+        name = "Configuration from Project D1"
+        dependencies {
+            // Projects trust their direct and indirect children
+            snapshot(B_BuildConfig) {}
+        }
+    })
+    ```
+  
+    You can limit top-down dependencies by switching subprojects to the "Only trusted projects" mode. For example, if Project D is in this mode, the "D &rarr; D1, D2" chain is further isolated, preventing "B &rarr; D" dependencies.
 
-    <img src="dk-isolation-self-project.png" width="706" alt="Self project isolation"/>
+* Dependencies from projects A, A1, and A2 to any of the isolated projects will fail. You can fix this by adding external projects to the allowlist.
 
-  This allows projects under the same top-level project to freely interact. For example, in the structure below, For example, in the following hierarchy, projects "A_1" and "B_1" are mutually trusted because they are both owned by "Project 1".
-
-    ```Text
-    Root Project
-    │
-    └── Project 1
-        │
-        ├── Project A
-        │   └── Project A_1
-        │
-        └── Project B
-            └── Project B_1
+    ```Kotlin
+    object A2BuildConfig : BuildType({
+        name = "Configuration from Project A2"
+        dependencies {
+            // A2 cannot trigger isolated D1, the build will fail
+            snapshot(D1BuildConfig) {}
+        }
+    })
     ```
 
-* Projects that store their [versioned settings](storing-project-settings-in-version-control.md) in the same repository.
+* The opposite is not true: since A is not isolated, configurations of projects B, C, D, D1 and D2 projects can depend on A, A1 and A2.
+
+    ```Kotlin
+    object D1BuildConfig : BuildType({
+        name = "Configuration from Project D1"
+        dependencies {
+            // D1 can trigger non-isolated A2
+            snapshot(A2BuildConfig) {}
+        }
+    })
+    ```
+
+* Projects that store their [versioned settings](storing-project-settings-in-version-control.md) in the same repository are mutually trusted.
+
+</def>
+
+<def title="Trusted projects list">
+
+To allow projects outside the isolated branch to have dependencies to these isolated projects, click **Add new trusted project** and add required projects to the list. Projects propagate their allowlists to all their direct and indirect children. In the example above, if Project D trusts Project A, the latter can have snapshot and artifact dependencies to configurations owned by projects D, D1, and D2.
+
+The **Project Isolation** page splits trusted dependencies in two tables: those explicitly declared on this project level, and those inherited from parent projects.
+
+<img src="dk-inherited-trusted-dependencies.png" width="706" alt="Inherited trusted dependencies"/>
+
+Since children inherit trusted project lists from their parents, we recommend adding trusted projects to the topmost project of an isolated branch (Project B in the example above). Doing so allows you to keep a clean and easily maintainable setup.
+
+When you switch a project to **Only trusted projects** mode, TeamCity warns you that builds dependent on this project (and its subprojects) will fail unless you add their projects to the allowlist. Tick the **Add currently dependent projects to trusted** checkbox to let TeamCity scan the current project hierarchy and pre-fill this list.
+
+> Note that TeamCity can detect only static snapshot and artifact dependencies. In case of more dynamic setups (for example, if dependencies are declared in [specific branches of versioned settings](storing-project-settings-in-version-control.md#branch-specific-settings) or build steps [use TeamCity REST API to import artifacts from other project builds](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts)), add dependent projects manually.
+> 
+{style="tip"}
 
 </def>
 
 
-<def title="Settings inheritance">
+<def title="Project isolation and versioned settings">
 
-Projects in **Only trusted projects** mode automatically apply this policy to their subprojects. The parent’s allowlist is also inherited.
+The trust mode setting and the list of trusted projects are not stored in [versioned settings](storing-project-settings-in-version-control.md). At the same time, using versioned settings with the disabled **Allow editing project settings via UI** option does not block **Project Isolation** settings in TeamCity UI.
 
-<img src="dk-isolation-disabled-settings.png" width="706" alt="Disabled isolation settings"/>
-
-Cloned projects do not inherit their parent allowlist, as they are effectively new projects that are not a part of any build chain.
-
-</def>
-
-<def title="Versioned Settings">
-
-For security, the trust policy and allowlist are not stored in [versioned settings](storing-project-settings-in-version-control.md). At the same time, using versioned settings with the disabled **Allow editing project settings via UI** option does not block **Project Isolation** settings in TeamCity UI. 
-
-This ensures that trust policies can only be modified by project administrators through the TeamCity UI, not through changes to remote configuration files.
+This ensures that trust policies can only be modified by project administrators via the TeamCity UI, not through changes to remote configuration files (which can be accessible to regular project developers).
 
 </def>
 
 </deflist>
+  
+
 
 
 ## Miscellaneous Notes on Using Dependencies
