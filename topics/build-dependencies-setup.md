@@ -280,6 +280,7 @@ If your project includes sensitive or resource-intensive configurations, you can
 
 
 ### Project Isolation
+{help-id="project-isolation"}
 
 Project isolation options are available in the corresponding tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
 
@@ -293,7 +294,7 @@ The **Only trusted projects** mode isolates the target project along with its su
 
 <deflist type="full">
 
-<def title="Default trust relations">
+<def title="Default trust relations" help-id="project-isolation-default-relations">
 
 Switching a project to **Only trusted projects** mode produces an isolated project branch where all subprojects are mutually trusted.
 
@@ -379,7 +380,7 @@ Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D 
 
 </def>
 
-<def title="Trusted projects list">
+<def title="Trusted projects list" help-id="project-isolation-trust-list">
 
 To allow projects outside the isolated branch to have dependencies to these isolated projects, click **Add new trusted project** and add required projects to the list. Projects propagate their allowlists to all their direct and indirect children. In the example above, if Project D trusts Project A, the latter can have snapshot and artifact dependencies to configurations owned by projects D, D1, and D2.
 
@@ -398,7 +399,7 @@ When you switch a project to **Only trusted projects** mode, TeamCity warns you 
 </def>
 
 
-<def title="Project isolation and versioned settings">
+<def title="Project isolation and versioned settings" help-id="project-isolation-versioned-settings">
 
 The trust mode setting and the list of trusted projects are not stored in [versioned settings](storing-project-settings-in-version-control.md). At the same time, using versioned settings with the disabled **Allow editing project settings via UI** option does not block **Project Isolation** settings in TeamCity UI.
 
