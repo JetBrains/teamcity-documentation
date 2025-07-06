@@ -63,8 +63,9 @@ To add an artifact dependency in _TodoImage_:
 1. Open the __Dependencies__ settings tab and click __Add new artifact dependency__.
 2. Select _TodoApp_ as a build configuration to depend on.
 3. Choose to get artifacts from the build from the same chain.
-4. In _Artifacts rules_, specify that we want to import the specific artifact as `todo.jar` — enter `todo.jar => build/libs/todo.jar`.  
+4. In _Artifacts rules_, specify that we want to import the specific artifact as `todo.jar` — enter `todo.jar => build/libs/`.  
    You can read about patterns of artifact rules and other details related to artifact dependencies [here](artifact-dependencies.md).
+
    <img src="chaindemo1.png" width="539" alt="Simple build chain in TeamCity"/>
 
 >To simplify step 4 in the future, you can use the artifact browser (![popup-artifacts-tree.png](popup-artifacts-tree.png)). When there is at least one finished dependent build that already produced some artifacts, TeamCity can show them in a tree, so you can choose them in a handy way.
