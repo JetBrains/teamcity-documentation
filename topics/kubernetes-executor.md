@@ -18,9 +18,9 @@ This article explains the native integration approach. To learn about the tradit
     {instance="tc"}
     * **Server URL** — enter your TeamCity server URL or leave empty to use the default server URL.
     {instance="tcc"}
-    * **YAML Config** — choose a required pod configuration. See the [](#YAML+Configuration) section for more information.
+    * **Pod template** — choose a required pod configuration. See the [](#Pod+Templates) section for more information.
     * **Maximum number of builds** — enter the cluster capacity. When this capacity is reached, new builds will remain queued unless currently ongoing builds are finished.
-    * **Parameters** — enter the list of [parameters](configuring-build-parameters.md) (in the `name=value` format) that should be present on K8s containers. These parameters will be matched to [explicit agent requirements](configuring-agent-requirements.md) of queued builds. As a result, you can specify which builds can be run in your K8s cluster.
+    <!--* **Parameters** — enter the list of [parameters](configuring-build-parameters.md) (in the `name=value` format) that should be present on K8s containers. These parameters will be matched to [explicit agent requirements](configuring-agent-requirements.md) of queued builds. As a result, you can specify which builds can be run in your K8s cluster.
         
         For example, add the `k8s=yes` value to this field in order to offload builds with the `equals("k8s", "yes")` agent requirement.
         
@@ -29,6 +29,7 @@ This article explains the native integration approach. To learn about the tradit
         > These parameters are used solely to match executors with configuration requirements.
         > 
         {style="note"}
+   -->
    
 5. In your build configuration settings, specify [agent requirements](configuring-agent-requirements.md) and [step containers](container-wrapper.md) if needed.
 6. Trigger a new build.
@@ -83,11 +84,11 @@ subjects:
     name: teamcity
 ```
 
-## YAML Configuration
+## Pod Templates
 
-The `podtemplates list` [permission](#Cluster+Permissions) enables TeamCity to access the list of [pod templates](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) stored in your cluster (under the same namespace as specified in the selected [Kubernetes connection](configuring-connections.md#Kubernetes). The retrieved templates are displayed in the **YAML Configuration** drop-down menu.
+The `podtemplates list` [permission](#Cluster+Permissions) enables TeamCity to access the list of [pod templates](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates) stored in your cluster (under the same namespace as specified in the selected [Kubernetes connection](configuring-connections.md#Kubernetes). The retrieved templates are displayed in the **Pod Templates** drop-down menu.
 
-The sample template below launches pods that have 2GB of memory and 25Gb of storage, and use a custom build agent image (see the [](#Special+Notes+and+Limitations) section).
+The sample template below launches pods that have 2GB of memory and 25Gb of storage, and use a custom build agent image (see the [](#Special+Notes+and+Limitations) section). You can also explicitly declare [build parameters](configuring-build-parameters.md) in YAML markup. These parameters and their values are matched against explicit agent requirements to match compatible executors with queued builds.
 
 ```yaml
 apiVersion: v1
@@ -138,7 +139,7 @@ Although Kubernetes-based builds do not occupy native TeamCity agents, regular [
 
 * Currently, a project can use only one Kubernetes integration. We expect to support multiple executors per project (along with a mechanism to prioritize them) in future release cycles.
 * A Kubernetes cluster acts as an external orchestrator that processes builds without using "classic" build agents connected to a TeamCity server. This leads to a "Build agent was disconnected while running a build" warning displayed when a build handled by an executor is running. As long as builds finish successfully, this warning does not indicate a misconfiguration or connectivity issue and can be disregarded. We expect to resolve this behavior in upcoming bug-fix releases.
-* [Pod templates](#YAML+Configuration) that specify custom container properties must have the "template-container" container names.
+* [Pod templates](#Pod+Templates) that specify custom container properties must have the "template-container" container names.
 
     ```yaml
     # ...
@@ -153,7 +154,7 @@ Although Kubernetes-based builds do not occupy native TeamCity agents, regular [
     Otherwise, the container will use default settings. For example, it will override the `image` property in favor of the standard "jetbrains/teamcity-agent:latest" image.
 * Currently, the Kubernetes executor does not support Windows nodes. Builds handled by these nodes are stuck in the "Setting up resources" phase with pods displaying the `MountVolume.SetUp failed for volume "kube-api-access-sfhbc"` error. For that reason, builds designed to run under Windows cannot be delegated to Kubernetes executor.
 
-    To avoid this issue for mixed clusters (with both Windows and Linux nodes), specify the required node in [pod templates](#YAML+Configuration):
+    To avoid this issue for mixed clusters (with both Windows and Linux nodes), specify the required node in [pod templates](#Pod+Templates):
 
     ```yaml
     spec:
