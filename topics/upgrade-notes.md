@@ -8,6 +8,11 @@
 
 TBD
 
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-07"}
+
+* The `1:2.49.0-0ubuntu1~ubuntu22.04.1` component in TeamCity server and agent Docker images for Ubuntu was replaced with `1:2.49.0-2~ppa1~ubuntu22.04.1`.
+
 
 ## Changes from 2024.12 to 2025.03
 {id="2025.03"}
