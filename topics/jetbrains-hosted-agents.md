@@ -21,28 +21,28 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Small<br/>Ubuntu-22.04-Small</td>
+<td>Ubuntu-22.04-Small<br/>Ubuntu-24.04-Small</td>
 <td>2</td>
 <td>4 GB</td>
 <td>50 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Medium<br/>Ubuntu-22.04-Medium</td>
+<td>Ubuntu-22.04-Medium<br/>Ubuntu-24.04-Medium</td>
 <td>4</td>
 <td>8 GB</td>
 <td>100 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Large<br/>Ubuntu-22.04-Large</td>
+<td>Ubuntu-22.04-Large<br/>Ubuntu-24.04-Large</td>
 <td>8</td>
 <td>16 GB</td>
 <td>200 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-XLarge<br/>Ubuntu-22.04-XLarge</td>
+<td>Ubuntu-22.04-XLarge<br/>Ubuntu-24.04-XLarge</td>
 <td>16</td>
 <td>32 GB</td>
 <td>400 GB SSD for running builds<br/>100 GB root EBS volume</td>
@@ -135,28 +135,28 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Small-Arm64<br/>Ubuntu-22.04-Small-Arm64</td>
+<td>Ubuntu-22.04-Small-Arm64<br/>Ubuntu-24.04-Small-Arm64</td>
 <td>2</td>
 <td>4 GB</td>
 <td>118 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Medium-Arm64<br/>Ubuntu-22.04-Medium-Arm64</td>
+<td>Ubuntu-22.04-Medium-Arm64<br/>Ubuntu-24.04-Medium-Arm64</td>
 <td>4</td>
 <td>8 GB</td>
 <td>237 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-Large-Arm64<br/>Ubuntu-22.04-Large-Arm64</td>
+<td>Ubuntu-22.04-Large-Arm64<br/>Ubuntu-24.04-Large-Arm64</td>
 <td>8</td>
 <td>16 GB</td>
 <td>474 GB SSD for running builds<br/>100 GB root EBS volume</td>
 </tr>
 
 <tr>
-<td>Ubuntu-20.04-XLarge-Arm64<br/>Ubuntu-22.04-XLarge-Arm64</td>
+<td>Ubuntu-22.04-XLarge-Arm64<br/>Ubuntu-24.04-XLarge-Arm64</td>
 <td>16</td>
 <td>32 GB</td>
 <td>950 GB SSD for running builds<br/>100 GB root EBS volume</td>
