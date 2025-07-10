@@ -317,7 +317,7 @@ Root Project
                └── Project D2
 ```
 
-Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D &rarr; D1, D2" branch. If all other projects are in less restrictive "Inherit..." mode, this setup means the following:
+Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D &rarr; D1, D2" branch. If all other projects are in less restrictive "All projects" mode, this setup means the following:
 
 * All configurations from the "B &rarr; C, D &rarr; D1, D2" chain can freely depend on each other. This includes both top-down and bottom-up dependencies.
 
@@ -379,7 +379,7 @@ Project B is in "Only trusted projects" mode, which isolates the "B &rarr; C, D 
 
 </def>
 
-<def title="Trusted projects list" help-id="project-isolation-trust-list">
+<def title="Trusted projects list" help-id="project-isolation-trust-list" id="project-isolation-trust-list">
 
 To allow projects outside the isolated branch to have dependencies to these isolated projects, click **Add new trusted project** and add required projects to the list. Projects propagate their allowlists to all their direct and indirect children. In the example above, if Project D trusts Project A, the latter can have snapshot and artifact dependencies to configurations owned by projects D, D1, and D2.
 
@@ -394,6 +394,23 @@ When you switch a project to **Only trusted projects** mode, TeamCity warns you 
 > Note that TeamCity can detect only static snapshot and artifact dependencies. In case of more dynamic setups (for example, if dependencies are declared in [specific branches of versioned settings](storing-project-settings-in-version-control.md#branch-specific-settings) or build steps [use TeamCity REST API to import artifacts from other project builds](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Get+Build+Artifacts)), add dependent projects manually.
 > 
 {style="tip"}
+
+</def>
+
+
+<def title="Settings inheritance">
+
+If a project has no parent enforcing isolation, the **Project Isolation** page offers two modes: **All projects** and **Only trusted projects**.
+
+Otherwise, if any direct or indirect parent uses the second mode, the **All projects** option is replaced with **Inherit settings from a parent project**.
+
+<img src="dk-isolated-project-inherit.png" width="706" alt="Inherit project isolation settings"/>
+
+In this inherited mode, a project trusts:
+
+* Its direct and indirect child projects;
+* Its direct and indirect parent projects (up to the parent it inherits isolation from);
+* Projects in the parents' allowlists. Each subproject can additionally define its own list of trusted projects (see [Trusted projects list](#project-isolation-trust-list) for more information).
 
 </def>
 
