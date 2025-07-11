@@ -82,6 +82,7 @@ Related articles: [](teamcity-integration-with-cloud-solutions.md) | [](kubernet
 
 
 ## Artifacts Storage
+{instance="tc"}
 
 The **Artifacts Storage** section allows you to configure an external storage (for example, an S3 bucket) for artifacts produced by your builds.
 
@@ -167,6 +168,7 @@ The Shared Resources feature allows limiting concurrently running builds using a
 Related article: [](shared-resources.md)
 
 ## NuGet Feed
+{instance="tc"}
 
 If you want to publish your NuGet packages to a limited audience (for example, to use them internally), you can use TeamCity as a NuGet feed. You can configure multiple NuGet feeds for a TeamCity project.
 
