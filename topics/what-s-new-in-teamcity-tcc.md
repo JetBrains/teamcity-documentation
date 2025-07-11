@@ -5,7 +5,7 @@
 
 
 ## UI Improvements
-{instance="tсc"}
+{instance="tcc"}
 
 We remain committed to delivering a modern, intuitive TeamCity experience for all users, whether you prefer pipelines or classic build chains for your CI/CD workflows. This update brings several UI improvements, including:
 
@@ -15,7 +15,7 @@ We remain committed to delivering a modern, intuitive TeamCity experience for al
 
 
 ## Public Marketplace Recipes
-{instance="tсc"}
+{instance="tcc"}
 
 In 2025.03, we announced a shift from meta-runners to recipes: lightweight, YAML-based custom steps [available on JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). At the moment, the Marketplace offers more over a dozen of JetBrains-made recipes that automate tasks like pinning builds, downloading artifacts, and updating build statuses.
 
@@ -24,13 +24,13 @@ Starting with this release, third-party recipes are also supported. Browse commu
 
 
 ## Perforce Integration Enhancements
-{instance="tсc"}
+{instance="tcc"}
 
 * You can now add multiple [Perforce Shelve triggers](perforce-shelve-trigger.md) to your configurations. to a configuration. Previously, adding one Shelve trigger locked you out of adding more via the TeamCity UI.
 
 
 ## Kubernetes Executor Updates
-{instance="tсc"}
+{instance="tcc"}
 
 Introduced a few releases ago, [Kubernetes executor](kubernetes-executor.md) leverages your existing Kubernetes clusters by turning them into independent orchestrators for TeamCity builds. Unlike with regular cloud agents that are fully managed by TeamCity, this integration allows the server to offload the build queue to a k8s cluster, granting the later full control over pod lifecycle.
 
@@ -45,7 +45,7 @@ TeamCity 2025.07 introduces a range of Kubernetes executor updates:
 
 
 ## New Approval Rules
-{instance="tсc"}
+{instance="tcc"}
 
 In [](build-approval.md) and [](untrusted-builds.md) settings, you can now combine individual users with user groups in a single entity with a shared vote count. For example, the following rule expects three votes to start a build:
 
@@ -56,7 +56,7 @@ In [](build-approval.md) and [](untrusted-builds.md) settings, you can now combi
 These three votes can come from any combination of the specified users or groups.
 
 ## Miscellaneous Enhancements
-{instance="tсc"}
+{instance="tcc"}
 
 
 * The [](parallel-tests.md) build feature now includes the **Artifacts** setting that allows TeamCity to categorize artifacts into "Batch N" folders on the main build results page. Previously, you had to implement this behavior manually by adding the `teamcity.build.parallelTests.currentBatch` parameter reference to artifact paths.
