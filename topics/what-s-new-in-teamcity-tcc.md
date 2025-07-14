@@ -41,6 +41,18 @@ TeamCity 2025.07 introduces a range of Kubernetes executor updates:
 * Numerous bug fixes, such as resolving the ignored maximum build limit, PowerShell steps failing to run, excessive build log errors, and more.
 
 
+## Pipelines EAP
+{instance="tcc"}
+
+TeamCity 2025.07 introduces the first iteration of [TeamCity Pipelines](https://www.jetbrains.com/teamcity/pipelines/) integrated directly into standard TeamCity On-Premises and Cloud servers.
+
+<img src="dk-create-button-project.png" width="706" alt="Create button in project header"/>
+
+Pipelines are designed for easy setup and include unique features like YAML support and an advanced visual editor.
+
+<img src="dk-main-pipeline-view.png" width="706" alt="Main pipeline view"/>
+
+Currently in Early Access, pipelines may lack some features needed for production CI/CD workflows. We recommend using them for relatively simple CI/CD routines with no more than 10 to 15 separate jobs linked in a single pipeline.
 
 
 

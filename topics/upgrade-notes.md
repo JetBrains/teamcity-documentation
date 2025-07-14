@@ -6,8 +6,6 @@
 ## Changes from 2025.03 to 2025.07
 {id="2025.07"}
 
-TBD
-
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-07"}
 

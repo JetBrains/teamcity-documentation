@@ -41,7 +41,18 @@ TeamCity 2025.07 introduces a range of Kubernetes executor updates:
 
 
 
+## Pipelines EAP
+{instance="tc"}
 
+TeamCity 2025.07 introduces the first iteration of [TeamCity Pipelines](https://www.jetbrains.com/teamcity/pipelines/) integrated directly into standard TeamCity On-Premises and Cloud servers.
+
+<img src="dk-create-button-project.png" width="706" alt="Create button in project header"/>
+
+Pipelines are designed for easy setup and include unique features like YAML support and an advanced visual editor.
+
+<img src="dk-main-pipeline-view.png" width="706" alt="Main pipeline view"/>
+
+Currently in Early Access, pipelines may lack some features needed for production CI/CD workflows. As such, they are hidden by default in the UI. Enable them by clicking **Join Early Access program** on the welcome screen or What’s New widget, or go directly to [???]() link.
 
 ## New Approval Rules
 {instance="tc"}

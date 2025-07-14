@@ -2,7 +2,7 @@
 [//]: # (help-id: TeamCity 2025.07 Release Notes)
 
 
-**Build ???, ??? November 2025**
+**Build ???, ??? July 2025**
 
 TBD
 
