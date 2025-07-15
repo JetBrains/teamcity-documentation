@@ -63,7 +63,7 @@ By default, TeamCity deletes **agent** Perforce workspaces in the following case
 
 </def>
 
-<def title="Perforce connection settings" help-id="P4AdminAccessConnection">
+<def title="Perforce connection settings" help-id="P4AdminAccessConnection" id="P4AdminAccessConnection">
 
 Enable the **Automatically remove Perforce workspaces** option in the [Perforce Administrator Access](configuring-connections.md#Perforce+Administrator+Access) connection settings to automatically clean TeamCity-generated workspaces that remain inactive for 7 days or more. Workspaces are removed on periodic [data clean-ups](teamcity-data-clean-up.md).
 
