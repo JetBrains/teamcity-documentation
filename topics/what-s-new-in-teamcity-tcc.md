@@ -21,6 +21,11 @@ In 2025.03, we announced a shift from meta-runners to recipes: lightweight, YAML
 
 Starting with this release, third-party recipes are also supported. Browse community-made options, inspect their source code to view implementation details, [upload your own recipes to Marketplace](https://plugins.jetbrains.com/docs/marketplace/uploading-a-new-plugin.html#upload-teamcity-recipes), and expand TeamCity’s extensive arsenal of build steps with custom tools.
 
+The **Recipes** project settings page now displays a comprehensive summary of both private and public recipes available for this project and its children. For public recipes, TeamCity collects recipe data from the Marketplace and shows warnings when a recipe is outdated or taken down.
+
+<img src="dk-recipes-in-root-project.png" width="706" alt="Recipes page in Root project"/>
+
+Learn more: [](working-with-meta-runner.md)
 
 
 ## Perforce Integration Enhancements

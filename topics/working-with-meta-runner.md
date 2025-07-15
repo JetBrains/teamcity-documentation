@@ -24,21 +24,24 @@ Yes, meta-runners are still functional under the new name and require no manual 
 Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). These include both recipes hand-crafted by JetBrains and those shared by other TeamCity users.
 
 **Are public recipes safe?**<br/>
-You can manually download a recipe .yml definition file from JetBrains Marketplace to review it before adding this recipe to your configuration. Future releases will offer a more intuitive way to inspect recipe code.
-<img src="dk-download-recipe-manually.png" width="706" style="block" alt="Manually download recipe"/>
+Yes, all recipes published on JetBrains Marketplace are verified by our employees. You can click the **Source code** link on a recipe Marketplace page to inspect it before installation.
 
 **I want to create a recipe, what should I do?**<br/>
-Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI.
+Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI. Doing so allows you to save an XML recipe. To create a YAML recipe, you need to write its definition from scratch: inspect the source code for public Marketplace recipes to learn more about the supported syntax.
 
 **How to use a recipe?**<br/>
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuration's "Build steps" list.
 
 **Are recipes editable?**<br/>
-Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Private recipes can be [edited](#Edit+a+Private+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
+Yes, you do not need to re-configure a source configuration and re-extract a recipe every time you need to make a change. Private recipes can be [edited](#Edit+a+Private+Recipe) on the **Recipes** page of [project settings](project-administrator-guide.md#Edit+and+View+Modes). Public recipes are authored by external parties and cannot be edited directly.
 
 
 
 ## Extract a Recipe From a Build Configuration
+
+> This section explains how to extract an XML recipe from a configuration. Currently, YAML recipes cannot be extracted: to create a YAML recipe you need to create an .yml definition file from scratch.
+> 
+{style="note"}
 
 The most straightforward way to create a new recipe is to extract it from an existing configuration that uses a required step or sequence of steps. For example, the [Kotlin DSL](kotlin-dsl.md) example below shows a build configuration with two [CLI](command-line.md) build steps: one uses cURL to download a file, and the other runs `ls` to list the working directory contents.
 
@@ -134,7 +137,7 @@ Recipes are custom build steps, and as such, are added to build configurations i
 
 4. Set up required recipe settings in the same manner you do this for regular TeamCity steps.
 
-You can explore public recipes by the TeamCity team at [https://plugins.jetbrains.com/teamcity_recipe](https://plugins.jetbrains.com/teamcity_recipe). We hope to expand our collection in future release cycles and welcome your ideas and feedback.
+You can explore public recipes authored by the TeamCity developers and other TeamCity users at [https://plugins.jetbrains.com/teamcity_recipe](https://plugins.jetbrains.com/teamcity_recipe). We hope to expand our collection in future release cycles and welcome your ideas and feedback.
 
 If you do not see any Marketplace recipe options, verify they are enabled for your project:
 
@@ -190,7 +193,7 @@ The **Recipes** page of project settings allows you to:
 
 <img src="dk-recipes-in-root-project.png" width="706" alt="Recipes page in Root project"/>
 
-You can open this page for the Root project to view a server-wide usage report. Recipe tags notify you when a newer recipe version is available, or it was taken down from the Marketplace.
+You can open this page for the Root project to view a server-wide usage report. Recipe tags notify you when a newer recipe version is available, the current version or the entire recipe is no longer available on Marketplace, or TeamCity cannot contact JetBrains Marketplace and retrieve recipe data.
 
 ## Share Recipes on Marketplace
 
@@ -204,13 +207,19 @@ Recipes extracted from a build configuration or uploaded from a file are stored 
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Recipes"/></include>
 
-2. Click a recipe from the **Private Recipes** table to view and edit its configuration file.
+2. A private recipe to view and edit its configuration file.
 
 For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
 
 ### Parameter Specification
 
-Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior. To add a parameter specification, add the `spec="type attribute='value'` format:
+Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior.
+
+XML recipe specification has the `spec="type attribute='value'` format, and YAML recipes list additional parameter attributes directly under their names.
+
+<tabs>
+
+<tab title="XML">
 
 ```XML
 <parameters>
@@ -218,19 +227,54 @@ Parameters defined in a recipe configuration file can have additional attributes
 </parameters>
 ```
 
+</tab>
+
+<tab title="YAML">
+
+```yaml
+inputs:
+  - my-param:
+      type: type
+      attribute1: value2
+      attribute2: value1
+```
+
+</tab>
+
+</tabs>
+
+
 The specification supports the following attributes:
 
 <deflist type="medium">
 
 <def title="label">
+
+> **Supported in XML recipes:** Yes  
+> **Supported in YAML recipes:** Yes
+> 
+{style="note"}
+
 A public parameter name visible in TeamCity UI. If not set, the parameter <code>name</code> is shown instead.
 </def>
 
 <def title="description">
+
+> **Supported in XML recipes:** Yes  
+> **Supported in YAML recipes:** Yes
+>
+{style="note"}
+
 A public description displayed in TeamCity UI below the parameter's editor.
 </def>
 
 <def title="type">
+
+> **Supported in XML recipes:** Yes  
+> **Supported in YAML recipes:** Yes
+>
+{style="note"}
+
 Specifies the <a href="typed-parameters.md">editor type</a>:
 <ul>
 <li><code>text</code> — a regular textbox-based parameter. This is the default behavior.</li>
@@ -242,6 +286,12 @@ Specifies the <a href="typed-parameters.md">editor type</a>:
 </def>
 
 <def title="display">
+
+> **Supported in XML recipes:** Yes  
+> **Supported in YAML recipes:** No
+>
+{style="note"}
+
 Specifies the display options of an editor. Supported values:
 <ul>
 <li><code>normal</code> — a regular display mode. This is the default behavior.</li>
@@ -251,16 +301,48 @@ Specifies the display options of an editor. Supported values:
 </def>
 
 <def title="validationMode">
+
+> **Supported in XML recipes:** Yes  
+> **Supported in YAML recipes:** No
+>
+{style="note"}
+
 Allows you to validate parameter values. Supported values:
 <ul>
 <li><code>any</code> — a parameter can have any value. This is the default behavior.</li>
-<li><code>not_empty</code> — a parameter cannot be blank.</li>
+<li><code>not_empty</code> — a parameter cannot be blank. For a YAML recipe, set the parameter <code>required</code> property to <b>true</b> to do the same.</li>
 <li><code>regex</code> — validates the parameter value using a regular expression specified in the <code>regexp='...'</code> attribute.</li>
 </ul>
+</def>
+
+<def title="required">
+
+> **Supported in XML recipes:** No  
+> **Supported in YAML recipes:** Yes
+>
+{style="note"}
+
+Set to **true** if this parameter value cannot be empty. For an XML recipe, set the parameter `validationMode` to **not_empty** to create a mandatory parameter.
+
+</def>
+
+<def title="value/default">
+
+> **Supported in XML recipes:** Yes (`value`)  
+> **Supported in YAML recipes:** Yes (`default`)
+>
+{style="note"}
+
+Allows you to set up the initial parameter value.
+
 </def>
 </deflist>
 
 Examples:
+
+<tabs>
+
+<tab title="XML">
 
 ```XML
 # Checkbox parameter
@@ -272,6 +354,43 @@ Examples:
 # Prompt parameter that cannot have an empty value
 <param name="tag" value="default" spec="text description='This value cannot be empty' label='Tag: ' validationMode='not_empty' display='prompt'" />
 ```
+
+</tab>
+
+<tab title="YAML">
+
+```yaml
+inputs:
+  - password-parameter:
+      type: password
+      label: User password
+      required: true
+  - selector-parameter:
+      type: select
+      label: Retry attempts
+      required: false
+      default: 1
+      options:
+        - 1
+        - 2
+        - 3
+  - text-parameter:
+      type: text
+      label: Password
+      description: Enter a regular user password or a personal access token
+      required: true
+  - checkbox:
+      type: boolean
+      label: Retry failed connections
+      required: false
+      default: false
+```
+
+</tab>
+
+</tabs>
+
+
 
 
 ## Recipe Autonomy
@@ -350,6 +469,10 @@ The XML markup for this recipe is shown below. Step #1 runs in the `python:3.9.2
     </settings>
 </meta-runner>
 ```
+
+> To run all build steps inside the same Docker or Podman container (except for steps that do not support this mode), add the [](run-in-docker.md) build feature.
+> 
+{type="tip"}
 
 <!--
 A _recipe_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build step](configuring-build-steps.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
