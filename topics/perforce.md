@@ -241,7 +241,23 @@ To specify options that should be declared both before and after the `sync` comm
 
 See the [`command reference`](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_sync.html) for more information.
 
-</td></tr></table>
+</td></tr>
+
+<tr>
+
+<td>Automatically remove Perforce workspaces</td>
+
+<td>
+
+If this setting is on, TeamCity removes inactive agent workspaces on each [clean-up](teamcity-data-clean-up.md).
+
+See this article for more information: [](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion)
+
+</td>
+
+</tr>
+
+</table>
 
 ### Perforce Workspace Parameters
 

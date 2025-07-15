@@ -26,6 +26,7 @@ Starting with this release, third-party recipes are also supported. Browse commu
 {instance="tc"}
 
 * You can now add multiple [Perforce Shelve triggers](perforce-shelve-trigger.md) to your configurations. to a configuration. Previously, adding one Shelve trigger locked you out of adding more via the TeamCity UI.
+* We have implemented multiple new options that allow you to set up periodic workspace clean-ups. See the [](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion) article for more information.
 
 
 ## Kubernetes Executor Updates

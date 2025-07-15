@@ -37,25 +37,82 @@ These variables can be used to perform custom Perforce commands after the checko
 
 ## Workspace Deletion
 
-### Deleting Workspace on Build Agent
+[Perforce workspaces](https://help.perforce.com/helix-core/server-apps/p4v/current/Content/P4V/using.workspaces.html) is a set of files on a user’s machine that mirrors a subset of the files in the depot. TeamCity automatically creates workspaces on agent machines and Perforce server. Over time, these workspaces might consume a considerable amount of resources on a server/agent machine, so you might want to periodically clear them.
 
-TeamCity deletes the Perforce workspaces in the following scenarios:
+> Clearing workspaces on a server is completely safe and causes no noticeable side effects. Removing agent workspaces forces a [clean checkout](clean-checkout.md) for the next build.
+> 
+{style="tip"}
+
+<deflist type="full">
+
+<def title="Default deletion mechanism">
+
+By default, TeamCity deletes **agent** Perforce workspaces in the following cases:
+
 * Immediately after a versioned settings commit (a workspace is created for each commit).
+
 * For the agent-side checkout — when a [clean checkout](clean-checkout.md) is performed (TeamCity will also run `p4 sync -f` in this case, see details [below](#Perforce+Sync+-f+and+Workspace+Reuse)).
+
 * In the background of the agent process (between builds), when it detects a non-existing workspace directory for a workspace associated with the current agent. A TeamCity agent performs a clean-up of unused [checkout directories](build-checkout-directory.md) (the default timeout is 8 days, can be changed with the `system.teamcity.build.checkoutDir.expireHours` [system property](configuring-build-parameters.md)). When a checkout directory is deleted, and this directory is associated with a Perforce workspace, this workspace is deleted as well. Cleaning Perforce workspaces can be disabled via the `teamcity.perforce.workspace.cleanup=false` setting, either in the [`buildAgent.properties`](configure-agent-installation.md) file or globally at the server level as a Root project [configuration parameter](configuring-build-parameters.md).
 
-When deleting a Perforce workspace which contains pending changes or opened files, TeamCity tries to revert the changes and remove pending changelists, and after that repeats the operation. If the second attempt fails as well, TeamCity tries to run the `p4 client -d -f`operation (forced). All those actions are logged to `teamcity-vcs.log`.
+> When deleting a Perforce workspace which contains pending changes or opened files, TeamCity tries to revert the changes and remove pending changelists, and after that repeats the operation. If the second attempt fails as well, TeamCity tries to run the `p4 client -d -f`operation (forced). All those actions are logged to `teamcity-vcs.log`.
+> 
+> TeamCity does not force workspace deletion when a Perforce edge/replica server is used.
+> 
+{style="note"}
 
-TeamCity does not force workspace deletion when a Perforce edge/replica server is used.
+</def>
+
+<def title="Perforce connection settings" help-id="P4AdminAccessConnection">
+
+Enable the **Automatically remove Perforce workspaces** option in the [Perforce Administrator Access](configuring-connections.md#Perforce+Administrator+Access) connection settings to automatically clean TeamCity-generated workspaces that remain inactive for 7 days or more. Workspaces are removed on periodic [data clean-ups](teamcity-data-clean-up.md).
+
+* Affects all build configurations inside the project that owns this connection, as well as its subprojects.
+* Only removes agent workspaces created by cloud TeamCity agents. These workspaces have the `TC_p4` name prefix.
+* The user whose credentials are entered in connection settings must have the ["admin" permission](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels).
+* You can [add](configure-agent-installation.md) the `teamcity.perforce.keepWorkspaces=true` property to cloud agent properties to keep automatic workspaces for this agent and exclude it from periodic clean-ups.
+
+</def>
+
+<def title="VCS root settings">
+
+Enable the **Automatically remove Perforce workspaces** option in [Perforce VCS root](perforce.md) settings to automatically clean TeamCity-generated workspaces after a build finishes.
+
+* Affects only those build configurations to which this VCS root is attached.
+* Removes agent workspaces on both bare-metal and cloud TeamCity agents.
+* Workspaces are removed after a build finishes, which forces a clean checkout for every new build.
+* The `teamcity.perforce.keepWorkspaces=true` property does not prevent agent workspaces from being removed if this VCS root option is enabled.
+
+</def>
+
+<def title="Remove workspaces manually">
+
+Click **Delete Perforce workspaces...** item in the configuration **Actions** menu to perform a one-time clean-up.
+
+<img src="dk-clear-workspaces-manually.png" width="706" alt="Manually clear TeamCity-generated workspaces"/>
+
+* This action allows you to clear both agent and server workspaces.
+* To clear server workspaces, you need to enter a path to a Perforce stream.
+* Clearing agent workspaces allows you to set the inactivity threshold (in days). Workspaces older than this limit will be removed.
+
+</def>
+
+</deflist>
+
+### Deleting Workspace on Build Agent
+
+
+
+
 
 ### Cleaning Workspaces on Perforce Server
 
 If you enable the [feature branches support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. You can clean no longer necessary workspaces directly from the TeamCity UI.
 
-<anchor name="perforce-admin-access"/>
 
-To establish direct access to your Perforce server, go to __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Connections__ in TeamCity and add a _Perforce Administrator Access_ connection. In its settings, enter the host and user credentials for accessing the Perforce server (the user must have the [`admin` permission](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels)), and TeamCity will connect to it.
-{id="P4AdminAccessConnection" help-id="P4AdminAccessConnection"}
+
+To establish direct access to your Perforce server, go to __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Connections__ in TeamCity and add a _Perforce Administrator Access_ connection. In its settings, enter the host and user credentials for accessing the Perforce server (), and TeamCity will connect to it.
+
 
 During every [clean-up](teamcity-data-clean-up.md), TeamCity will detect and delete workspaces that have been inactive for more than 7 days. You can also delete them anytime by clicking _Delete workspaces_ right in the connection settings. Note that workspaces are deleted only on the server — not on build agents — and only if they were created by TeamCity.
 
