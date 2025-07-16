@@ -144,7 +144,9 @@
 			<toc-element topic="nuget.md"/>
 			<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html" toc-title="Build Steps">
 				<toc-element accepts-web-file-names="build-step-conditions.html" topic="build-step-execution-conditions.md"/>
-				<toc-element topic="working-with-meta-runner.md"/>
+				<toc-element topic="working-with-meta-runner.md">
+					<toc-element topic="recipe-yaml-syntax.md"/>
+				</toc-element>
 				<toc-element topic="ant.md"/>
 				<toc-element topic="command-line.md"/>
 				<toc-element topic="c-script.md"/>

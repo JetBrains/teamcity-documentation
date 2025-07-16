@@ -27,7 +27,7 @@ Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbr
 Yes, all recipes published on JetBrains Marketplace are verified by our employees. You can always inspect the source recipe code on the Marketplace or directly in TeamCity UI before installing it.
 
 **I want to create a recipe, what should I do?**<br/>
-Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI. Doing so allows you to save an XML recipe. To create a YAML recipe, you need to write its definition from scratch: inspect the source code for public Marketplace recipes to learn more about the supported syntax.
+Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI. Doing so allows you to save an XML recipe. To create a YAML recipe, you need to write its definition from scratch. Inspect the source code for public Marketplace recipes and check out the [](recipe-yaml-syntax.md) article to learn more.
 
 **How to use a recipe?**<br/>
 In the same way you utilize regular build steps: [add them](#Use+a+Recipe) to the configuration's "Build steps" list.
@@ -211,15 +211,9 @@ Recipes extracted from a build configuration or uploaded from a file are stored 
 
 For example, a recipe extracted from an existing configuration copies all parameters from this configuration. You can remove parameters unrelated to actual build steps performed by a recipe.
 
-### Parameter Specification
+### XML Parameter Specification
 
-Parameters defined in a recipe configuration file can have additional attributes that specify their appearance and behavior.
-
-XML recipe specification has the `spec="type attribute='value'` format, and YAML recipes list additional parameter attributes directly under their names.
-
-<tabs>
-
-<tab title="XML">
+XML recipe parameter specification has the `spec="type attribute='value'` format. You can edit this specifications to modify parameter/editor appearance and behavior settings.
 
 ```XML
 <parameters>
@@ -227,122 +221,8 @@ XML recipe specification has the `spec="type attribute='value'` format, and YAML
 </parameters>
 ```
 
-</tab>
+For example:
 
-<tab title="YAML">
-
-```yaml
-inputs:
-  - my-param:
-      type: type
-      attribute1: value2
-      attribute2: value1
-```
-
-</tab>
-
-</tabs>
-
-
-The specification supports the following attributes:
-
-<deflist type="medium">
-
-<def title="label">
-
-> **Supported in XML recipes:** Yes  
-> **Supported in YAML recipes:** Yes
-> 
-{style="note"}
-
-A public parameter name visible in TeamCity UI. If not set, the parameter <code>name</code> is shown instead.
-</def>
-
-<def title="description">
-
-> **Supported in XML recipes:** Yes  
-> **Supported in YAML recipes:** Yes
->
-{style="note"}
-
-A public description displayed in TeamCity UI below the parameter's editor.
-</def>
-
-<def title="type">
-
-> **Supported in XML recipes:** Yes  
-> **Supported in YAML recipes:** Yes
->
-{style="note"}
-
-Specifies the <a href="typed-parameters.md">editor type</a>:
-<ul>
-<li><code>text</code> — a regular textbox-based parameter. This is the default behavior.</li>
-<li><code>password</code> — a password parameter that uses password chars to mask its actual values.</li>
-<li><code>checkbox</code> — a two-state parameter that displays a checkbox in the TeamCity UI. Requires the <code>checkedValue='value1' uncheckedValue='value2'</code> attributes to specify actual parameter values for checked and unchecked states.
-</li>
-<li><code>select</code> — a drop-down menu that displays options specified in the <code>data_N='value'</code> format.</li>
-</ul>
-</def>
-
-<def title="display">
-
-> **Supported in XML recipes:** Yes  
-> **Supported in YAML recipes:** No
->
-{style="note"}
-
-Specifies the display options of an editor. Supported values:
-<ul>
-<li><code>normal</code> — a regular display mode. This is the default behavior.</li>
-<li><code>prompt</code> — forces the <b>Run custom build</b> dialog to pop up every time a build starts. The dialog highlights all "prompt" parameters to make sure users start a build with the required value.</li>
-<li><code>hidden</code> — prevents users from changing this parameter's value.</li>
-</ul>
-</def>
-
-<def title="validationMode">
-
-> **Supported in XML recipes:** Yes  
-> **Supported in YAML recipes:** No
->
-{style="note"}
-
-Allows you to validate parameter values. Supported values:
-<ul>
-<li><code>any</code> — a parameter can have any value. This is the default behavior.</li>
-<li><code>not_empty</code> — a parameter cannot be blank. For a YAML recipe, set the parameter <code>required</code> property to <b>true</b> to do the same.</li>
-<li><code>regex</code> — validates the parameter value using a regular expression specified in the <code>regexp='...'</code> attribute.</li>
-</ul>
-</def>
-
-<def title="required">
-
-> **Supported in XML recipes:** No  
-> **Supported in YAML recipes:** Yes
->
-{style="note"}
-
-Set to **true** if this parameter value cannot be empty. For an XML recipe, set the parameter `validationMode` to **not_empty** to create a mandatory parameter.
-
-</def>
-
-<def title="value/default">
-
-> **Supported in XML recipes:** Yes (`value`)  
-> **Supported in YAML recipes:** Yes (`default`)
->
-{style="note"}
-
-Allows you to set up the initial parameter value.
-
-</def>
-</deflist>
-
-Examples:
-
-<tabs>
-
-<tab title="XML">
 
 ```XML
 # Checkbox parameter
@@ -355,41 +235,10 @@ Examples:
 <param name="tag" value="default" spec="text description='This value cannot be empty' label='Tag: ' validationMode='not_empty' display='prompt'" />
 ```
 
-</tab>
 
-<tab title="YAML">
-
-```yaml
-inputs:
-  - password-parameter:
-      type: password
-      label: User password
-      required: true
-  - selector-parameter:
-      type: select
-      label: Retry attempts
-      required: false
-      default: 1
-      options:
-        - 1
-        - 2
-        - 3
-  - text-parameter:
-      type: text
-      label: Password
-      description: Enter a regular user password or a personal access token
-      required: true
-  - checkbox:
-      type: boolean
-      label: Retry failed connections
-      required: false
-      default: false
-```
-
-</tab>
-
-</tabs>
-
+> YAML recipes have different specification syntax. See the [](recipe-yaml-syntax.md) article to learn more.
+> 
+{style="note"}
 
 
 
