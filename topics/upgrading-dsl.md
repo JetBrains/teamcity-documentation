@@ -123,6 +123,13 @@ data class MyClass(
 ```
 -->
 
+
+## Update DSL from 2025.03.x to 2025.07.x
+{help-id="dsl202507"}
+
+No potential breaking changes.
+
+
 ## Update DSL from 2024.12.x to 2025.03.x
 {help-id="dsl202503"}
 
