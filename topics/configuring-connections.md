@@ -907,7 +907,7 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 
 ## Perforce Administrator Access
 
-This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
 
  <seealso>
         <category ref="admin-guide">

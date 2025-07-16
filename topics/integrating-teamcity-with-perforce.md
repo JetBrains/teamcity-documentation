@@ -52,7 +52,7 @@ For instance, if a file path in the working copy starts with `//depot/stream1/so
 
 ### Cleaning Stream Workspaces
 
-To properly process task streams, TeamCity needs to create dedicated workspaces on the Perforce server. To save the server resources, you can [clean inactive workspaces](perforce-workspace-handling-in-teamcity.md#Cleaning+Workspaces+on+Perforce+Server) created by TeamCity directly from the TeamCity UI.
+To properly process task streams, TeamCity needs to create dedicated workspaces on the Perforce server. To save the server resources, you can [clean inactive workspaces](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion) created by TeamCity directly from the TeamCity UI.
 
 ## Running Personal Builds from IntelliJ IDE
 
