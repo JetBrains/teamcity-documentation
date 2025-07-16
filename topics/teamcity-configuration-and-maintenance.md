@@ -64,7 +64,7 @@ Artifact directories
 
 <td>
 
-The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `/system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
+The list of the root directories used by the TeamCity server to store [Build Artifact](build-artifact.md), build logs and other build data. The default location is `system/artifacts`. Note that artifacts can also be stored on [external storage](configuring-artifacts-storage.md).
 
 The list can be changed by specifying a new-line delimited list of paths. Absolute and relative (to TeamCity Data Directory) paths are supported. All the specified directories use the same [structure](teamcity-data-directory.md#artifacts).
 
