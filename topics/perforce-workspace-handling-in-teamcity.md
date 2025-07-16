@@ -68,7 +68,8 @@ By default, TeamCity deletes **agent** Perforce workspaces in the following case
 Enable the **Automatically remove Perforce workspaces** option in the [Perforce Administrator Access](configuring-connections.md#Perforce+Administrator+Access) connection settings to automatically clean TeamCity-generated workspaces that remain inactive for 7 days or more. Workspaces are removed on periodic [data clean-ups](teamcity-data-clean-up.md).
 
 * Affects all build configurations inside the project that owns this connection, as well as its subprojects.
-* Only removes agent workspaces created by cloud TeamCity agents. These workspaces have the `TC_p4` name prefix.
+* Server workspaces are automatically removed regardless of the **Automatically remove Perforce workspaces** option state.
+* Agent workspaces created by TeamCity cloud agents (start with the `TC_p4` name prefix) are removed if the corresponding setting is enabled. Workspaces created by bare-metal agents are not affected.
 * The user whose credentials are entered in connection settings must have the ["admin" permission](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels).
 * You can [add](configure-agent-installation.md) the `teamcity.perforce.keepWorkspaces=true` property to cloud agent properties to keep automatic workspaces for this agent and exclude it from periodic clean-ups.
 
@@ -85,7 +86,7 @@ Enable the **Automatically remove Perforce workspaces** option in [Perforce VCS 
 
 </def>
 
-<def title="Remove workspaces manually">
+<def title="Remove workspaces manually" id="DeleteP4StreamWorkspaces" help-id="DeleteP4StreamWorkspaces">
 
 Click **Delete Perforce workspaces...** item in the configuration **Actions** menu to perform a one-time clean-up.
 
@@ -99,26 +100,7 @@ Click **Delete Perforce workspaces...** item in the configuration **Actions** me
 
 </deflist>
 
-### Deleting Workspace on Build Agent
 
-
-
-
-
-### Cleaning Workspaces on Perforce Server
-
-If you enable the [feature branches support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) in a Perforce VCS root, TeamCity will start processing your Perforce task streams. To do this correctly, it needs to create dedicated workspaces on the Perforce server. Over time, these workspaces might consume a significant amount of resources on this server's machine. You can clean no longer necessary workspaces directly from the TeamCity UI.
-
-
-
-To establish direct access to your Perforce server, go to __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Connections__ in TeamCity and add a _Perforce Administrator Access_ connection. In its settings, enter the host and user credentials for accessing the Perforce server (), and TeamCity will connect to it.
-
-
-During every [clean-up](teamcity-data-clean-up.md), TeamCity will detect and delete workspaces that have been inactive for more than 7 days. You can also delete them anytime by clicking _Delete workspaces_ right in the connection settings. Note that workspaces are deleted only on the server — not on build agents — and only if they were created by TeamCity.
-
-It is also possible to delete only workspaces associated with a specific stream. To do this, go to __Build Configuration Home__, open the __Actions__ menu, and click _Delete Perforce stream workspaces_. By default, this action is available to all users with the Project Developer role.  
-In the opened dialog, specify a path to a stream, and TeamCity will delete the related workspaces on the Perforce server. To connect to the server, TeamCity will use the settings from the project's Perforce Administrator Access connection. If it is not available, it will use the [Perforce VCS root](perforce.md) settings instead.
-{id="DeleteP4StreamWorkspaces" help-id="DeleteP4StreamWorkspaces"}
 
 ## Perforce Sync -f and Workspace Reuse
 
