@@ -42,7 +42,7 @@ If you do not plan to upload a recipe to JetBrains Marketplace and only intend i
 **Mandatory:** yes (only for recipes uploaded to the Marketplace)<br/>
 **Type:** string
 
-A public recipe name shown in TeamCity UI on the [Add Build Step](configuring-build-steps.md) page.
+A public recipe name shown in TeamCity UI (on the [Add Build Step](configuring-build-steps.md) page, in the build log, and so on).
 
 </def>
 
@@ -51,7 +51,7 @@ A public recipe name shown in TeamCity UI on the [Add Build Step](configuring-bu
 **Mandatory:** yes (only for recipes uploaded to the Marketplace)<br/>
 **Type:** string
 
-The numerical recipe version in the `major.minor.patch` format. `Minor` and `patch` portions are optional.
+The numerical recipe version in the `major.minor.patch` format. `Minor` and `patch` portions are optional for private recipes and mandatory for public ones.
 
 </def>
 
@@ -61,7 +61,7 @@ The numerical recipe version in the `major.minor.patch` format. `Minor` and `pat
 **Mandatory:** yes<br/>
 **Type:** string
 
-The recipe public description (250 characters max).
+The recipe public description. Unlimited for private recipes and maximum 1000 characters for public ones.
 
 </def>
 
@@ -135,7 +135,7 @@ The name of Docker/Podman image from which a container is spawned.
 <def title="platform">
 
 **Mandatory:** no<br/>
-**Type:** enum<br/>
+**Type:** string<br/>
 **Supported values**: `linux` | `windows`
 
 Specifies the container image platform.
@@ -159,7 +159,12 @@ The list of additional container run parameters.
 
 ## Input
 
-An input is an individual editor displayed in recipe settings when a TeamCity user configures this recipe for their build configuration. The input object declares a property that should store the input value (this value is later processed by one of the [steps](#Step)), and the editor appearance and behavior options.
+An input is a variable used by recipe steps and customizable by the user. When a standalone recipe is added directly to a build configuration, inputs can be configured through UI editors based on their type (text box for text inputs, combo box for select, and so on).
+
+<img src="dk-recipe-customization.png" width="706" alt="Inputs customization for recipes"/>
+
+Recipes can also reference other recipes via the [uses](#recipe-type-uses) field. In that case, input values are provided in YAML instead of the TeamCity UI.
+
 
 Each input has the following format:
 
@@ -195,11 +200,11 @@ The name of a [build parameter](configuring-build-parameters.md) that stores the
 
 You can use both environment variables and regular build parameters as input names.
 
-<procedure title="Environment variable (recommended)">
+<procedure title="Environment variables (recommended)">
 
 * Declared with the `env.` prefix. For example, `env.my-input`.
 * Steps can retrieve environment variable values without using parameter references. For example,`INPUT_VAR="$my-input"` in Bash script, `System.getenv("my-input")` in Kotlin script, and so on.
-* Recommended for any input except for those asking for user credentials or other sensitive data. Sensitive values should not be stored in environment variables as they expose these values to all child processes, which presents a security concern.
+* Recommended for any input except for those asking for user credentials or other sensitive data. Sensitive values should not be stored in environment variables as they expose these values to all child processes and system tools, which presents a security concern.
 
 </procedure>
 
@@ -207,8 +212,7 @@ You can use both environment variables and regular build parameters as input nam
 <procedure title="Regular build parameters">
 
 * Declared without any prefix. For example, `my-input`.
-* Steps must use parameter references to retrieve their values (for example, `string myVal = "%\my-input%";`). This syntax can be abused to inject malicious code.
-* Should only be used to store trusted user inputs.
+* Steps must use parameter references to retrieve their values (for example, `string myVal = "%\my-input%";`). This syntax can be abused to inject malicious code disguised as an input value. For that reason, regular build parameters are recommended for trusted user inputs only.
 
 </procedure>
 
@@ -219,7 +223,7 @@ You can use both environment variables and regular build parameters as input nam
 
 
 **Mandatory:** yes<br/>
-**Type:** enum<br/>
+**Type:** string<br/>
 **Supported values**: `text` | `boolean` | `select` | `password`
 
 The input type. Specifies what value this input can have, as well as appearance and behavior options for the corresponding editor in TeamCity UI.
@@ -317,7 +321,7 @@ steps:
 **Mandatory:** no<br/>
 **Type:** string
 
-The public step name that should not exceed 100 characters.
+The public step name. Unlimited for private recipes and maximum 100 characters for public ones.
 
 </def>
 
@@ -352,12 +356,17 @@ kotlin-script: print("Hello world")
 </def>
 
 
-<def title="uses">
+<def title="uses" id="recipe-type-uses">
 
 **Mandatory:** no<br/>
 **Type:** string<br/>
 
-References another recipe installed on this TeamCity server and available for the same project where the current recipe is used. The field value explicitly identify a recipe by its name and version: `namespace/recipe-name@major.minor.patch`. If the referenced recipe has required inputs, you can specify their values in the `inputs` block.
+References another recipe installed on this TeamCity server and available for the same project where the current recipe is used. The field value depends on whether a referenced recipe is a public or a private one:
+
+* Public recipe: `uses: namespace/recipe-name@major.minor.patch`.
+* Private recipes: `uses: private/recipe-name`. 
+
+If the referenced recipe has required inputs, you can specify their values in the `inputs` block.
 
 The following recipe step executes the `jetbrains/some_recipe` recipe of version "1.2.3", and passes **foo** and **bar** values to `some_recipe` inputs "input1" and "input2" respectively.
 
@@ -389,6 +398,14 @@ container:
 script: echo "Hello world"
 ```
 
+You can use a short format that specifies only image name:
+
+```yaml
+name: Container script step
+container: alpine
+script: echo "Hello world"
+```
+
 </def>
 
 
@@ -399,7 +416,7 @@ script: echo "Hello world"
 
 ## Example
 
-The following YAML markup declares a single-step recipe with two inputs. The recipe step executes a Kotlin script uses the `input_name` and `input_value` input values craft a [setParameter service message](service-messages.md#set-parameter). When this service message prints to a build log, TeamCity finds the `name` parameter and assigns `value` as its value.
+The following YAML markup declares a single-step recipe with two inputs. The recipe step executes a Kotlin script uses the `input_name` and `input_value` input values to craft a [setParameter service message](service-messages.md#set-parameter). When this service message prints to a build log, TeamCity finds the `name` parameter and assigns `value` to it.
 
 This recipe is created by the TeamCity team and is available on the JetBrains Marketplace: [jetbrains/set-environment-variable](https://plugins.jetbrains.com/plugin/26673-jetbrains-set-environment-variable).
 
