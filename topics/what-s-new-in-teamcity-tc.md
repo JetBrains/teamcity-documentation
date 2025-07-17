@@ -58,7 +58,7 @@ Pipelines are designed for easy setup and include unique features like YAML supp
 
 <img src="dk-main-pipeline-view.png" width="706" alt="Main pipeline view"/>
 
-Currently in Early Access, pipelines may lack some features needed for production CI/CD workflows. As such, they are hidden by default in the UI. Enable them by clicking **Join Early Access program** on the welcome screen or What’s New widget, or go directly to [???]() link.
+Currently in Early Access, pipelines may lack some features needed for production CI/CD workflows. As such, they are hidden by default in the UI. Enable them by clicking **Join Early Access program** on the welcome screen or What’s New widget, or go directly to the [Request Access](https://lp.jetbrains.com/teamcity-pipelines-in-enterprise-eap-4708/) page.
 
 ## New Approval Rules
 {instance="tc"}
