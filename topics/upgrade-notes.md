@@ -6,10 +6,32 @@
 ## Changes from 2025.03 to 2025.07
 {id="2025.07"}
 
+
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-07"}
 
 * The bundled Git was updated to version 2.50.1 in both server and agent Docker images.
+
+
+### Known Issues
+{id="known-issues-2025-07"}
+
+#### Pipeline issues
+
+We’re committed to continuing investment in pipelines across future releases. Our long-term vision is for pipelines to become the primary solution for the vast majority of CI/CD workflows, with only the most complex or specialized setups relying on classic build chains.
+
+As of now, pipelines are available under the Early Access Program and come with some limitations and known issues, such as:
+
+* Copying a project that includes a pipeline produces a broken pipeline ([TW-94668](https://youtrack.jetbrains.com/issue/TW-94668/), [TW-93726](https://youtrack.jetbrains.com/issue/TW-93726/)).
+* A certain AWS connection setup causes pipelines to be unable to publish artifacts to S3 artifact storages ([TW-94586](https://youtrack.jetbrains.com/issue/TW-94586/)).
+* Misbehaving pipelines generated from VCS roots that use build parameters to specify credentials or branches ([TW-94624](https://youtrack.jetbrains.com/issue/TW-94624/)).
+
+If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-enterprise-eap-4708/), we encourage you to report issues and share your suggestions or requirements. Your feedback is highly valued as we aim to deliver a reliable, intuitive, and truly user-focused solution.
+
+#### Other issues
+
+Large TeamCity instances with a huge number of projects may take longer than usual to process the 2025.07 update. Please avoid restarting your server until the upgrade is complete.
+
 
 
 ## Changes from 2024.12 to 2025.03
