@@ -11,6 +11,10 @@
 {id="bundled-tools-updates-2025-07"}
 
 * The bundled Git was updated to version 2.50.1 in both server and agent Docker images.
+* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+    * MySQL to 9.3.0
+    * PSQL to 42.7.7
+    * MSSQL to 12.10.1
 
 
 ### Known Issues
