@@ -35,7 +35,7 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 #### Other issues
 
 {instance="tc"}
-* When loading a TeamCity page, you might see 404 (Network Error) errors on multiple pages for a TeamCity instance running on IIS server. If this happens, check the values of the IIS `maxQueryStringLength` and/or `maxQueryString`. See also: [Content Missing from TeamCity UI](https://www.jetbrains.com/help/teamcity/known-issues.html#Content+Missing+from+TeamCity+UI). ([TW-94891](https://youtrack.jetbrains.com/issue/TW-94891))
+* When loading a TeamCity page, you might see 404 (Network Error) errors on multiple pages for a TeamCity instance running on IIS server. If this happens, check the values of the IIS `maxQueryStringLength` and/or `maxQueryString`. As a general recommendation, set this limit to 4000 characters and gradually raise it if the issue persists. See also: [Content Missing from TeamCity UI](https://www.jetbrains.com/help/teamcity/known-issues.html#Content+Missing+from+TeamCity+UI). ([TW-94891](https://youtrack.jetbrains.com/issue/TW-94891))
 
 * Large TeamCity instances with a huge number of projects may take longer than usual to process the 2025.07 update. Please avoid restarting your server until the upgrade is complete.
 
