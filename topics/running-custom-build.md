@@ -9,7 +9,7 @@ TeamCity provides multiple options to run custom builds:
 
 * Click the ellipsis button next to the __Run__ button and specify optional settings in the __Run Custom Build__  dialog (see [this section](#General+Options) for more information).
 * To run a custom build with specific changes, open the build results page and switch to the __[Changes](build-results-page.md#Changes+Tab)__ tab. Expand the required change, click the __Run build with this change__ button, and specify required [options](#General+Options).
-* Send an [HTTP](accessing-server-by-http.md) or [REST API](https://www.jetbrains.com/help/teamcity/rest/edit-build-configuration-settings.html#Manage+Build+Triggers) request to the TeamCity server.
+* Send an [HTTP](accessing-server-by-http.md) or [REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Start+Custom+Build) request to the TeamCity server.
 * [Promote a build](#Promoting+Build).
 * Set up [build triggers](configuring-build-triggers.md) to launch builds with custom parameters.
 
