@@ -40,8 +40,8 @@ TeamCity ships with the following build features that can be added to your confi
 <dt>File Content Replacer</dt>
 <dd>Uses regular expressions to replace contents of text files before the build starts, and rolls back all changes after the build finishes.&emsp;<a href="file-content-replacer.md">Learn more...</a></dd>
 
-<dt>Free Disc Space</dt>
-<dd>Checks whether a build agent has enough free disc space before it runs a build, and cleans up old build data in case it does not. &emsp;<a href="free-disk-space.md">Learn more...</a></dd>
+<dt>Free Disk Space</dt>
+<dd>Checks whether a build agent has enough free disk space before it runs a build, and cleans up old build data in case it does not. &emsp;<a href="free-disk-space.md">Learn more...</a></dd>
 
 <dt>Golang</dt>
 <dd>Enables the real-time reporting and history of Go test results in TeamCity.&emsp;<a href="golang.md">Learn more...</a></dd>
