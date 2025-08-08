@@ -39,8 +39,11 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 * TeamCity instances running on IIS servers can return 404 (Network Error) when loading a page. As a workaround, set the `maxQueryStringLength` and/or `maxQueryString` properties of your IIS server to **4000** characters and gradually raise them if the issue still persists. See these links for more information: [Content Missing from TeamCity UI](https://www.jetbrains.com/help/teamcity/known-issues.html#Content+Missing+from+TeamCity+UI) | [TW-94891](https://youtrack.jetbrains.com/issue/TW-94891).
  {instance="tc"}
 
-
 * Large TeamCity instances with a huge number of projects may take longer than usual to process the 2025.07 update. Please avoid restarting your server until the upgrade is complete.
+
+* Using [parameters](configuring-build-parameters.md) in the [](commit-status-publisher.md) settings causes the build feature to fail. We expect to resolve this issue in the next bug-fix update. In the meantime, you may want to explicitly specify status publisher's auth settings without relying on parameters, or install a patched plugin linked to this comment: [TW-94893](https://youtrack.jetbrains.com/issue/TW-94893/Commit-status-publisher-with-parameter-references-fails-after-upgrade-to-2025.07#focus=Comments-27-12455518.0-0).
+
+* [VCS Triggers](configuring-vcs-triggers.md) targeting pull request branches throw the `jetbrains.buildServer.buildTriggers.BuildTriggerException`. See this ticket for more information: [TW-94999](https://youtrack.jetbrains.com/issue/TW-94999).
 
 
 
