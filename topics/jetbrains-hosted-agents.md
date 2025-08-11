@@ -108,8 +108,8 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 
 <tr>
 <td>macOS (Medium)</td>
-<td>6</td>
-<td>15 GB</td>
+<td>4</td>
+<td>10 GB</td>
 <td>150 GB storage for preinstalled software and running builds</td>
 </tr>
 
@@ -120,7 +120,7 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 </tabs>
 
 <sup>*</sup> — Intel Xeon Cascade Lake vCPUs<br/>
-<sup>**</sup> — Intel i7 vCPUs
+<sup>**</sup> — Apple M2 vCPU
 
 ### ARM Agents
 
