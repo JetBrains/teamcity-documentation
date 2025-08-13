@@ -2,6 +2,11 @@
 [//]: # (help-id: Upgrade Notes)
 
 
+## Changes from 2025.07 to 2025.07.1
+{id="2025.07.1"}
+
+No potential breaking changes.
+
 
 ## Changes from 2025.03 to 2025.07
 {id="2025.07"}
