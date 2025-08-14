@@ -57,8 +57,6 @@ In classic TeamCity, files produced during a build and the parameters calculated
 Pipelines offer greater transparency by letting you manage both artifacts and parameters in a single, centralized interface. Click a job to open its settings, and expand the **Job Outputs** section. From here, you can mark any parameter or a file as an output.
 
 
-***IMAGE***
-
 
 ### Parameters
 
@@ -97,7 +95,48 @@ Now any downstream job can use the `DateOutput` value via the `job.<source_job_I
 
 ### Shared Files
 
-**???**
+Jobs can share files produced during a run. These files can be shared with either downstream jobs or TeamCity users (or both).
+
+* Files shared with downstream jobs. In this case, jobs that follow the current one can import shared files and use them in their own scripts.
+
+    The sample below illustrates a three-job pipeline whose jobs work with a file created and shared by the first job. 
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Create file
+        steps:
+          - type: script
+            script-content: touch output.txt
+        files-publication:
+          - path: output.txt
+            share-with-jobs: true
+            publish-artifact: false
+      Job2:
+        name: Modify file
+        dependencies:
+          - Job1:
+              files:
+                - output.txt
+        steps:
+          - type: script
+            script-content: 'echo "Modified by Job #2" >> output.txt'
+      Job1_2:
+        name: Print file
+        dependencies:
+          - Job2
+        steps:
+          - type: script
+            script-content: cat output.txt
+    ```
+  
+    Shared files are displayed as [hidden artifacts](build-artifact.md#Hidden+Artifacts) in the ".shared_files.zip" archive.
+
+* Files shared with users (artifacts). These are identical to [build artifacts](build-artifact.md) produced by classic build configurations. TeamCity shows artifacts in the **Artifacts** tab of a run results page.
+
+To choose who a job should share a file with, tick related checkboxes under the job's **Outputs** section entry.
+
+<img src="dk-pipelines-sharedFiles.png" width="706" alt="Shared files"/>
 
 
 
@@ -105,11 +144,10 @@ Now any downstream job can use the `DateOutput` value via the `job.<source_job_I
 
 Another classic TeamCity concept reworked in Pipelines is dependencies. In Pipelines, [snapshot](snapshot-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
 
-***IMAGE***
+<img src="dk-choose-dependency.png" width="706" alt="Choose import type"/>
 
-You can also choose whether to import files by clicking a job link in the visual editor.
+You can also choose whether to import files by clicking a dependency line in the visual editor.
 
-***IMAGE***
 
 
 
