@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2025.07.1 Release Notes)
 [//]: # (help-id: TeamCity 2025.07.1 Release Notes)
 
-**Build 000000, 14 August 2025**
+**Build 197325, 14 August 2025**
 
 ### Task
 
@@ -9,7 +9,10 @@
 
 ### Bug
 
+* [**TW-94822**](https://youtrack.jetbrains.com/issue/TW-94822) — Can't disable public recipes if they are a part of a private one
+* [**TW-94481**](https://youtrack.jetbrains.com/issue/TW-94481) — "Could not start new instances. Quota exceeded" warning message on cloud image - AWS
 * [**TW-94893**](https://youtrack.jetbrains.com/issue/TW-94893) — Commit status publisher with parameter references fails after upgrade to 2025.07
+* [**TW-95131**](https://youtrack.jetbrains.com/issue/TW-95131) — Wrong test results are reported and test count varies from build to build without any changes
 * [**TW-94999**](https://youtrack.jetbrains.com/issue/TW-94999) — Problem with VCS Trigger -jetbrains.buildServer.buildTriggers.BuildTriggerException (this.myVisitedAndNewerThanLowerBoundsCommits is null)
 * [**TW-94163**](https://youtrack.jetbrains.com/issue/TW-94163) — Azure Board Work Items Documentation Mentions Deprecated Password Auth
 * [**TW-94493**](https://youtrack.jetbrains.com/issue/TW-94493) — [Project isolation] Show in the UI, that list of trusted projects is ignored with the "All project" setting
@@ -62,10 +65,10 @@
 
 ### Performance Problem
 
+* [**TW-94401**](https://youtrack.jetbrains.com/issue/TW-94401) — Slow test metadata processing for large number of tests
 * [**TW-95070**](https://youtrack.jetbrains.com/issue/TW-95070) — Slow artifacts download because of constant build update
 * [**TW-94992**](https://youtrack.jetbrains.com/issue/TW-94992) — TeamCity running slow due to "Heavy GC Overhead" critical warning
 * [**TW-93915**](https://youtrack.jetbrains.com/issue/TW-93915) — Sharing of SSH keys takes a lot of time on big installations with several nodes
-* [**TW-94401**](https://youtrack.jetbrains.com/issue/TW-94401) — Slow test metadata processing for large number of tests
 
 
 ### Security
