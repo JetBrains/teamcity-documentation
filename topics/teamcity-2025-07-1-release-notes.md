@@ -5,10 +5,12 @@
 
 ### Task
 
+
 * [**TW-95280**](https://youtrack.jetbrains.com/issue/TW-95280) — CSAT Collection in TeamCity
 * [**TW-78565**](https://youtrack.jetbrains.com/issue/TW-78565) — SetParameter service message called via Rest API log method does not work
 
 ### Bug
+
 
 * [**TW-94891**](https://youtrack.jetbrains.com/issue/TW-94891) — 404 error on build page (too long request via IIS proxy)
 * [**TW-94822**](https://youtrack.jetbrains.com/issue/TW-94822) — Can't disable public recipes if they are a part of a private one
@@ -22,6 +24,7 @@
 * [**TW-67478**](https://youtrack.jetbrains.com/issue/TW-67478) — Perforce stream builds may take revision from wrong stream (case of REST triggering with specified revision)
 * [**TW-94472**](https://youtrack.jetbrains.com/issue/TW-94472) — Kubernetes Executor: Pod remains running for Failed to start build
 * [**TW-95147**](https://youtrack.jetbrains.com/issue/TW-95147) — Internal properties with .days suffix can't be parsed
+* [**TW-94891**](https://youtrack.jetbrains.com/issue/TW-94891) — 404 error on build page (too long request via IIS proxy)
 * [**TW-94740**](https://youtrack.jetbrains.com/issue/TW-94740) — TCP Merge: Edit used VCS root: Changes are applied to parent project with VCS root, and not applied to Pipeline itself 
 * [**TW-93795**](https://youtrack.jetbrains.com/issue/TW-93795) — TeamCity screens are recursively opened on the Agents page in case of insufficient permissions
 * [**TW-94410**](https://youtrack.jetbrains.com/issue/TW-94410) — TCP Merge: CSP and PR features are not deleted, if were added for secondary repo and the main repo is from external VCS root
