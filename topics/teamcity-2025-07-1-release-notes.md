@@ -5,10 +5,14 @@
 
 ### Task
 
+
+* [**TW-95280**](https://youtrack.jetbrains.com/issue/TW-95280) — CSAT Collection in TeamCity
 * [**TW-78565**](https://youtrack.jetbrains.com/issue/TW-78565) — SetParameter service message called via Rest API log method does not work
 
 ### Bug
 
+
+* [**TW-94891**](https://youtrack.jetbrains.com/issue/TW-94891) — 404 error on build page (too long request via IIS proxy)
 * [**TW-94822**](https://youtrack.jetbrains.com/issue/TW-94822) — Can't disable public recipes if they are a part of a private one
 * [**TW-94481**](https://youtrack.jetbrains.com/issue/TW-94481) — "Could not start new instances. Quota exceeded" warning message on cloud image - AWS
 * [**TW-94893**](https://youtrack.jetbrains.com/issue/TW-94893) — Commit status publisher with parameter references fails after upgrade to 2025.07
