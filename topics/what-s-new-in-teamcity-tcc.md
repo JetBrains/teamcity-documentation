@@ -77,9 +77,10 @@ These three votes can come from any combination of the specified users or groups
 {instance="tcc"}
 
 
-* The [](parallel-tests.md) build feature now includes the **Artifacts** setting that allows TeamCity to categorize artifacts into "Batch N" folders on the main build results page. Previously, you had to implement this behavior manually by adding the `teamcity.build.parallelTests.currentBatch` parameter reference to artifact paths.
+<!--* The [](parallel-tests.md) build feature now includes the **Artifacts** setting that allows TeamCity to categorize artifacts into "Batch N" folders on the main build results page. Previously, you had to implement this behavior manually by adding the `teamcity.build.parallelTests.currentBatch` parameter reference to artifact paths.
 
     <img src="dk-auto-categorized-batch-artifacts.png" width="706" alt="Artifacts in separate batch folders"/>
+-->
 * If the [](kotlin-dsl.md) "pom.xml" file includes the `<kotlin.compiler.incremental>true</kotlin.compiler.incremental>` line, TeamCity Maven plugin will now switch to the [incremental compilation mode](https://kotlinlang.org/docs/maven.html#enable-incremental-compilation). Previously, this setting was ignored.
 
 
