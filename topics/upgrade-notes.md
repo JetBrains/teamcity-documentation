@@ -8,8 +8,17 @@
 No potential breaking changes.
 
 
+
+
 ## Changes from 2025.03 to 2025.07
 {id="2025.07"}
+
+
+### devPackage Removal
+
+The `devPackage` directory is no longer shipped with the TeamCity distribution.
+
+While this change has no effect on standard TeamCity operations, it affects custom plugins that utilize files located in this directory. To resolve related issues, we recommend switching your plugin development projects to Maven/Gradle (see [Getting Started with Plugin Development](https://plugins.jetbrains.com/docs/teamcity/getting-started-with-plugin-development.html)). Alternatively, you can [download an older TeamCity installation](previous-releases-downloads.md) that ships the required `devPackage`.
 
 
 ### Bundled Tools Updates
@@ -39,8 +48,6 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 
 #### Other issues
 
-
-
 * TeamCity instances running on IIS servers can return 404 (Network Error) when loading a page. As a workaround, set the `maxQueryStringLength` and/or `maxQueryString` properties of your IIS server to **4000** characters and gradually raise them if the issue still persists. See these links for more information: [Content Missing from TeamCity UI](https://www.jetbrains.com/help/teamcity/known-issues.html#Content+Missing+from+TeamCity+UI) | [TW-94891](https://youtrack.jetbrains.com/issue/TW-94891).
  {instance="tc"}
 
@@ -49,6 +56,8 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 * Using [parameters](configuring-build-parameters.md) in the [](commit-status-publisher.md) settings causes the build feature to fail. We expect to resolve this issue in the next bug-fix update. In the meantime, you may want to explicitly specify status publisher's auth settings without relying on parameters, or install a patched plugin linked to this comment: [TW-94893](https://youtrack.jetbrains.com/issue/TW-94893/Commit-status-publisher-with-parameter-references-fails-after-upgrade-to-2025.07#focus=Comments-27-12455518.0-0).
 
 * [VCS Triggers](configuring-vcs-triggers.md) targeting pull request branches throw the `jetbrains.buildServer.buildTriggers.BuildTriggerException`. See this ticket for more information: [TW-94999](https://youtrack.jetbrains.com/issue/TW-94999).
+
+
 
 
 
