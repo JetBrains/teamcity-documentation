@@ -66,13 +66,6 @@ Product news, announcements, release notes, and related discussions.
 </def>
 
 
-<def title="#pipelines">
-
-Discussions related to the introduction of [pipelines](create-and-edit-pipelines.md).
-
-</def>
-
-
 <def title="#help">
 
 Ask TeamCity community and team members for assistance. If you are new to our product, it is better to ask your questions here than in the `#general` channel.
