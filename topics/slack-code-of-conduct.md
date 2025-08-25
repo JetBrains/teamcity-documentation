@@ -1,6 +1,6 @@
 # TeamCity Slack Code of Conduct
 
-[JetBrains TeamCity Slack](https://jetbrains-teamcity.slack.com/) aims to be an inclusive space that is committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+[JetBrains TeamCity Slack](https://jb.gg/TeamCitySlack) aims to be an inclusive space that is committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
 For this to be the case, it is vital that we all follow a basic set of guidelines and most importantly adhere to the code of conduct. As such, please make sure you read this Code of Conduct and Basic Usage Guidelines in its entirety. This isn’t your regular License Agreement that you should scroll through and agree blindly. It’s here for a reason and also contains practical information.
 
