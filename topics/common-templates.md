@@ -12,7 +12,6 @@
 <snippet id="open-configuration-settings-tab">Open <a href="project-administrator-guide.md#Edit+and+View+Modes">configuration settings</a> and navigate to the <b>%configuration-tab-name%</b> settings tab.</snippet>
 
 
-
 ## Project Features
 
 <var name="tab-name" value="tab-name"/><var name="button-name" value="button-name"/>
@@ -95,6 +94,6 @@ TeamCity will drop support for Java versions older than 21 in one of the future 
 <var name="operation-name-ev" value="operation-name-ev"/>
 <snippet id="env-imported-encryption-key-warning">
 <warning>
-Note that a TeamCity server cannot %operation-name-ev% from another server that uses custom encryption keys missing from this server. In this case you need to add all encryption keys from the source server to the target one. See the following article to learn more: <a href="teamcity-configuration-and-maintenance.md#encryption-settings">Encryption Settings</a>.
+Note that a TeamCity server cannot %operation-name-ev% from another server that uses custom encryption keys missing from this server. In this case you need to add all encryption keys from the source server to the target one. See the following article to learn more: <a href="teamcity-configuration-and-maintenance.md#encryption-settings" instance="tc">Encryption Settings</a>.
 </warning>
 </snippet>
