@@ -30,7 +30,10 @@ If someone is acting inappropriately or violating this Code of Conduct in any sh
 The influx of messages per day and the numerous channels can lead to a lot of noise and little value in the long run. If we all follow a set of guidelines, it can help make things more useful and bearable for everyone.
 
 * Remember this is a Slack team for JetBrains TeamCity. If you have generic questions that are about a technology (which may or may not be used with JetBrains TeamCity), maybe it’s better to use another forum, such as [StackOverflow](https://stackoverflow.com/).
-* For bug reports, we recommend submitting an issue in [YouTrack](https://youtrack.jetbrains.com/issues). Questions about using TeamCity and its configuration are welcome both in Slack and YouTrack. You can ask and share whatever bothers you, and we'll see if something can be done about it.
+* For bug reports, we recommend submitting an issue in [YouTrack](https://youtrack.jetbrains.com/issues?q=project:%20TeamCity). Questions about using TeamCity and its configuration are welcome both in Slack and YouTrack. You can ask and share whatever bothers you, and we'll see if something can be done about it.
+{instance="tc"}
+* For bug reports, we recommend submitting an issue in [YouTrack](https://youtrack.jetbrains.com/issues?q=project:%20%7BTeamCity%20Cloud%7D). Questions about using TeamCity and its configuration are welcome both in Slack and YouTrack. You can ask and share whatever bothers you, and we'll see if something can be done about it.
+{instance="tcc"}
 * Find the right channel to ask your question. There are channels for pretty much every topic. For a list of several primary channels, see [below](#Common+Channels).
 * When you ask a question, be patient. Don’t repeat it. Or at least not immediately.
 * Use English whenever you ask or answer a question.
