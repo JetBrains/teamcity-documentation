@@ -39,7 +39,6 @@
 * [**TW-93958**](https://youtrack.jetbrains.com/issue/TW-93958/Docker-handle-Git-2.49.0-package-removal-from-the-Ubuntu-registry) — Docker: handle Git 2.49.0 package removal from the Ubuntu registry
 * [**TW-92484**](https://youtrack.jetbrains.com/issue/TW-92484/Public-Recipes-Add-a-way-to-choose-the-recipe-version-in-the-Add-recipe-popup) — Public Recipes: Add a way to choose the recipe version in the "Add recipe" popup
 * [**TW-87916**](https://youtrack.jetbrains.com/issue/TW-87916/Allow-creating-a-pipeline-in-a-project) — Allow creating a pipeline in a project
-* [**TW-88448**](https://youtrack.jetbrains.com/issue/TW-88448/gradle-integrations-supports-either-daemon-or-configuration-cache-but-not-both) — gradle integrations supports either --daemon or --configuration-cache, but not both
 * [**TW-90918**](https://youtrack.jetbrains.com/issue/TW-90918/Specifying-a-custom-build-file-location-is-deprecated) — Specifying a custom build file location is deprecated
 * [**TW-89113**](https://youtrack.jetbrains.com/issue/TW-89113/HTTPS-Support-custom-maxHttpHeaderSize-for-connector) — HTTPS: Support custom maxHttpHeaderSize for connector
 
