@@ -20,6 +20,36 @@ The `devPackage` directory is no longer shipped with the TeamCity distribution.
 
 While this change has no effect on standard TeamCity operations, it affects custom plugins that utilize files located in this directory. To resolve related issues, we recommend switching your plugin development projects to Maven/Gradle (see [Getting Started with Plugin Development](https://plugins.jetbrains.com/docs/teamcity/getting-started-with-plugin-development.html)). Alternatively, you can [download an older TeamCity installation](previous-releases-downloads.md) that ships the required `devPackage`.
 
+### Deprecation of Kubernetes Parameters
+
+In earlier TeamCity versions, the [Kubernetes executor](kubernetes-executor.md) settings page included an option to add build parameters. These explicitly added `name=value` parameters would then be matched against [explicit agent requirements](configuring-agent-requirements.md) of queued builds so that you could control which builds run on your K8s cluster.
+
+Starting with version 2025.07, Kubernetes executor natively supports agent requirements, matching queued builds against pod specifications. As a result, we deprecated the ability to declare build parameters in executor settings.
+
+If you need to explicitly add a parameter, add it as an environment variable directly to the [pod template](kubernetes-executor.md#Pod+Templates).
+
+```yaml
+apiVersion: v1
+kind: PodTemplate
+metadata:
+  name: my-template
+  namespace: default
+template:
+  spec:
+    containers:
+      - name: template-container # see the limitations section
+        image: johndoe/custom_agent_image:latest
+        resources:
+          # ...
+        env:
+          - name: foo
+            value: bar
+    nodeSelector:
+      linux: arm64
+```
+
+
+
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-07"}
