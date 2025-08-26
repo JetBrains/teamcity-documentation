@@ -57,6 +57,8 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 
 * [VCS Triggers](configuring-vcs-triggers.md) targeting pull request branches throw the `jetbrains.buildServer.buildTriggers.BuildTriggerException`. See this ticket for more information: [TW-94999](https://youtrack.jetbrains.com/issue/TW-94999).
 
+* After the Jackson library update, TeamCity may fail to read Kubernetes YAML definitions. We expect to resolve this issue in the 2025.07.2 bug-fix update. If this issue affects your production, install an [updated Kubernetes plugin](https://youtrack.jetbrains.com/issue/TW-95421/Jackson-Upgrade-Broke-Kubernetes-Plugins#focus=Comments-27-12574512.0-0).
+
 
 
 
