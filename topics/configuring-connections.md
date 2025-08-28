@@ -44,7 +44,7 @@ To configure an Azure DevOps OAuth 2.0 connection:
     Go to the [Register Application](https://app.vsaex.visualstudio.com/app/register) page in Azure and create a new app using the provided parameters. When created, copy the app's ID and client secret.
 6. Go back to the connection form in TeamCity and enter the Azure DevOps Services URL, the new application ID, and client secret.
 7. Specify the application scope that must be the same as the scope of the created Azure DevOps OAuth App.
-8. <include from="common-templates.md" element-id="test-and-save-connection"/>
+8. Click **Save** to exit the setup.
 
 To activate the Azure DevOps Services authentication on your server, proceed to enabling the respective [authentication module](configuring-authentication-settings.md#Azure+DevOps+Services).
 
