@@ -39,7 +39,27 @@ You can choose only those connections whose **Available for builds** setting is 
 <img src="dk-shareAwsConnections.png" width="706" alt="Share AWS connections"/>
 
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>AWS Profile Name</td>
+
+<td>
+
+Allows you to specify which of the credentials stored in the `AWS_SHARED_CREDENTIALS_FILE` file on the agent machine a build step should use.
+
+> You may ignore this setting if you want builds to use the `default` profile. However, if you add multiple AWS Credentials build features to the same build configuration, this property becomes mandatory. Otherwise, builds will fail with the "Failed to inject AWS Connection to a build: There are duplicated AWS Profile names: default" error in the build log.
+> 
+{style="note"}
+
+</td>
+
+</tr>
+
+
+<tr>
 
 <td>
 
