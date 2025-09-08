@@ -1,13 +1,21 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.07.1 to 2025.07.2
+{id="2025.07.2"}
+
+No potential breaking changes.
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-07-2"}
+
+* The bundled Git was updated to version 2.51 in both server and agent Docker images.
+
 
 ## Changes from 2025.07 to 2025.07.1
 {id="2025.07.1"}
 
 No potential breaking changes.
-
-
 
 
 ## Changes from 2025.03 to 2025.07
