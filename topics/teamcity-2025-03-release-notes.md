@@ -85,7 +85,8 @@
 * [**TW-65491**](https://youtrack.jetbrains.com/issue/TW-65491) — The internal id is displayed as a build number in Jira Cloud
 * [**TW-75030**](https://youtrack.jetbrains.com/issue/TW-75030) — Build triggers unexpectedly after unpausing job from Kotlin
 * [**TW-90456**](https://youtrack.jetbrains.com/issue/TW-90456) — Maven archetype tc-sdk reload task does not work because of missing common-api.jar in new TeamCity versions
-* [**TW-90739**](https://youtrack.jetbrains.com/issue/TW-90739) — NullPointerException in REST API when processing webhook in GitHub Webhooks plugin. 
+* [**TW-90739**](https://youtrack.jetbrains.com/issue/TW-90739) — NullPointerException in REST API when processing webhook in GitHub Webhooks plugin.
+* [**TW-67084**](https://youtrack.jetbrains.com/issue/TW-67084/) — Kubernetes Cloud profile with correct Server URL is unavailable with Profile error even if the URL already become reachable
 
 ### Performance Problem
 
@@ -97,7 +98,6 @@
 * [**TW-91377**](https://youtrack.jetbrains.com/issue/TW-91377) — Hanging REST API call (dependencies loop?)
 * [**TW-91272**](https://youtrack.jetbrains.com/issue/TW-91272) — Lots of interlocking in BuildChainModifier during the versioned settings freeze if there are several similar build chains in the queue
 * [**TW-89853**](https://youtrack.jetbrains.com/issue/TW-89853) — DirectoryScanner consumes a lot of memory on the agent side
-* [**TW-67084**](https://youtrack.jetbrains.com/issue/TW-67084/) — Kubernetes Cloud profile with correct Server URL is unavailable with Profile error even if the URL already become reachable
 
 ### Security
 
