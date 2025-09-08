@@ -97,6 +97,7 @@
 * [**TW-91377**](https://youtrack.jetbrains.com/issue/TW-91377) — Hanging REST API call (dependencies loop?)
 * [**TW-91272**](https://youtrack.jetbrains.com/issue/TW-91272) — Lots of interlocking in BuildChainModifier during the versioned settings freeze if there are several similar build chains in the queue
 * [**TW-89853**](https://youtrack.jetbrains.com/issue/TW-89853) — DirectoryScanner consumes a lot of memory on the agent side
+* [**TW-67084**](https://youtrack.jetbrains.com/issue/TW-67084/) — Kubernetes Cloud profile with correct Server URL is unavailable with Profile error even if the URL already become reachable
 
 ### Security
 
