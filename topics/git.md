@@ -427,474 +427,244 @@ teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 
 For Git VCS, it is possible to configure the following [internal properties](server-startup-properties.md#TeamCity+Internal+Properties):
 
-<table><tr>
 
-<td>
+<deflist>
 
-Property
+<def title="teamcity.git.idle.timeout.seconds">
 
-
-</td>
-
-<td width="20%">
-
-Default
-
-
-</td>
-
-<td>
-
-Description
-
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.idle.timeout.seconds
-
-</td>
-
-<td>
-
-1800
-
-</td>
-
-<td>
+<b>Default value:</b> `1800`
 
 The idle timeout for communication with the remote repository. If no data were sent or received during this timeout, the plugin throws a timeout error to prevent hanging of the process forever.
 
->The idle timeout can also be set [on the agent side](#git-agent-config).
+> The idle timeout can also be set [on the agent side](#git-agent-config).
+> 
+{style="tip"}
 
-</td></tr><tr>
-
-<td>
-
-teamcity.git.fetch.timeout
-
-</td>
-
-<td>
-
-1800
+</def>
 
 
-</td>
+<def title="teamcity.git.fetch.timeout">
 
-<td>
+<b>Default value:</b> `1800`
 
-(deprecated) Override of `teamcity.git.idle.timeout.seconds` for the `git fetch` operation
+This property is deprecated. Override of `teamcity.git.idle.timeout.seconds` for the `git fetch` operation
+</def>
 
-</td></tr><tr>
+<def title="teamcity.git.fetch.separate.process">
 
-<td>
+<b>Default value:</b> `true`
 
-teamcity.git.fetch.separate.process
+Specifies whether TeamCity runs `git fetch` in a separate process
 
-</td>
+</def>
 
-<td>
+<def title="teamcity.git.fetch.process.max.memory" id="max-memory">
 
-true
-
-</td>
-
-<td>
-
-Defines whether TeamCity runs `git fetch` in a separate process
-
-</td></tr><tr>
-
-<td id="max-memory">
-
-teamcity.git.fetch.process.max.memory
-
-</td>
-
-<td>
-
-</td>
-
-<td>
+<b>Default value:</b> N/A
 
 <note>
-  
+
 Starting from TeamCity 2019.2, it is recommended to disable this property.   
 By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
 </note>
- 
+
 This property provides the explicit `-Xmx` and disables the automatic `-Xmx` setup.
 
 Ensure the server machine has enough memory as the memory configured will be used in addition to the main server process and there can be several child processes doing `git fetch` and `git patch`, each using the configured amount of the memory. For large repositories requiring heap memory greater than `-Xmx1024m` for Git fetch, [switching to 64-bit Java](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server) may be needed.
 {instance="tc"}
+</def>
 
-</td></tr>
 
-<tr>
+<def title="teamcity.git.fetch.process.max.memory.limit" id="max-memory-limit">
 
-<td id="max-memory-limit">
-
-teamcity.git.fetch.process.max.memory.limit
-
-</td>
-
-<td>
-
-</td>
-<td>
+<b>Default value:</b> N/A
 
 By default, TeamCity starts nested Java processes for `git fetch` and `git patch` and automatically selects `-Xmx` for these processes.
 
 This property specifies the maximum possible `-Xmx` value for `git fetch` or `git patch` that TeamCity can set automatically.
 
-</td>
+</def>
 
 
-</tr>
+<def title="teamcity.git.monitoring.expiration.timeout.hours">
 
-<tr>
+<b>Default value:</b> `24`
 
-<td>
+When `fetch` is used in a separate process, it makes thread-dumps of itself and stores them under `TEAMCITY_DATA_DIR/system/caches/git/<git-XXX>/monitoring` (directory mapping can be found in `TEAMCITY_DATA_DIR/system/caches/git/map`). Thread dumps can be useful for investigating problems with cloning from remote repository. This parameter specifies how long (in hours) thread-dumps are stored.
 
-teamcity.git.monitoring.expiration.timeout.hours
+</def>
 
-</td>
+<def title="teamcity.server.git.gc.enabled">
 
-<td>
+<b>Default value:</b> `false`
 
-24
+Specifies whether TeamCity should run `git gc` during the server clean-up (native git is used).
 
-</td>
+</def>
 
-<td>
+<def title="teamcity.server.git.executable.path" id="git-executable-path">
 
-</td></tr><tr>
+<b>Default value:</b> `git`
 
-<td>
+The path to the native git executable on the server.
 
-teamcity.server.git.gc.enabled
+<tip>Remember to use double backslashes when specifying path on Windows machines.</tip>
 
-</td>
+</def>
 
-<td>
 
-false
+<def title="teamcity.server.git.gc.quota.minutes">
 
-</td>
+<b>Default value:</b> `60`
 
-<td>
+The maximum amount of time (in minutes) to run `git gc`.
 
-Whether TeamCity should run `git gc` during the server clean-up (native git is used)
+</def>
 
-</td></tr><tr>
 
-<td>
-<anchor name="git-executable-path"/>
 
-teamcity.server.git.executable.path
+<def title="teamcity.git.cleanupCron">
 
-</td>
+<b>Default value:</b> `0 0 2 \* \* ? \*`
 
-<td>
+The [Cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin. The default expression launches the clean-up at 2AM daily.
 
-git
+</def>
 
-</td>
 
-<td>
+<def title="teamcity.git.stream.file.threshold.mb">
 
-The path to the native git executable on the server. On Windows, remember to use double backslashes in the path.
 
-</td></tr><tr>
+<b>Default value:</b> `128`
 
-<td>
+The threshold (in megabytes) after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](https://youtrack.jetbrains.com/issue/TW-14947)
 
-teamcity.server.git.gc.quota.minutes
+</def>
 
-</td>
 
-<td>
+<def title="teamcity.git.buildPatchInSeparateProcess">
 
-60
-
-</td>
-
-<td>
-
-Maximum amount of time to run `git gc`
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.cleanupCron
-
-</td>
-
-<td>
-
-0 0 2 \* \* ? \*
-
-</td>
-
-<td>
-
-[Cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for the time of a clean-up in git-plugin, by default — daily at 2AM.
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.stream.file.threshold.mb
-
-</td>
-
-<td>
-
-128
-
-</td>
-
-<td>
-
-Threshold in megabytes after which JGit uses streams to inflate objects. Increase it if you have large binary files in the repository and see symptoms described in [TW-14947](https://youtrack.jetbrains.com/issue/TW-14947)
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.buildPatchInSeparateProcess
-
-</td>
-
-<td>
-
-true
-
-</td>
-
-<td>
+<b>Default value:</b> `true`
 
 Git-plugin builds patches in a separate process, set it to false to build patch in the server process. To build patch, git-plugin has to read repository files into memory. To not run out of memory git-plugin reads only objects of size smaller than the threshold, for larger objects streams are used and they can be slow ([TW-14947](https://youtrack.jetbrains.com/issue/TW-14947)). With patch building in a separate process all objects are read into memory. Patch process uses the memory settings of the separate fetch process.
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="teamcity.git.mirror.expiration.timeout.days">
 
-teamcity.git.mirror.expiration.timeout.days
-
-</td>
-
-<td>
-
-7
-
-</td>
-
-<td>
+<b>Default value:</b> `7`
 
 The number of days after which an unused clone of the repository will be removed from the server machine. The repository is considered unused if there were no TeamCity operations on this repository, like checking for changes or getting the current version. These operations are quite frequent, so 7 days is a reasonably high value.
 
-</td></tr><tr>
+</def>
 
-<td>
 
-teamcity.git.commit.debug.info
+<def title="teamcity.git.commit.debug.info">
 
-</td>
+<b>Default value:</b> `false`
 
-<td>
+Specifies whether to log additional debug info on each found commit.
 
-false
+</def>
 
-</td>
 
-<td>
+<def title="teamcity.git.repackIdleTimeoutSeconds">
 
-Defines whether to log additional debug info on each found commit.
-
-</td></tr>
-
-<tr>
-
-<td>
-
-teamcity.git.repackIdleTimeoutSeconds
-
-</td>
-
-<td>
-
-1800
-
-</td>
-
-<td>
+<b>Default value:</b> `1800`
 
 Defines the idle timeout of `git-repack` operations, in seconds. You might need to increase this timeout for large repositories as repacking objects in them takes a lot of time.
 
-</td></tr>
-
-<tr>
-
-<td>
-
-teamcity.git.sshProxyType
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-Type of SSH proxy, supported values: `http`, `socks4`, `socks5`. Keep in mind that socks4 proxy cannot resolve remote host names, so if you get an UnknownHostException, either switch to socks5 or add an entry for your git server into the hosts file on the TeamCity server machine.
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.sshProxyHost
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-SSH proxy host
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.sshProxyPort
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-SSH proxy port
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.connectionRetryAttempts
-
-</td>
-
-<td>
-
-3
-
-</td>
-
-<td>
-
-Number of attempts to establish connection to the remote host for testing connection and getting a current repository state before admitting a failure
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.connectionRetryIntervalSeconds
-
-</td>
-
-<td>
-
-4
-
-</td>
-
-<td>
-
-Interval in seconds between connection attempts
+</def>
 
 
-</td></tr>
+<def title="teamcity.git.sshProxyType">
 
-<tr>
-</tr>
+<b>Default value:</b> N/A
 
-</table>
+The of SSH proxy. Supported values: `http`, `socks4`, `socks5`. Keep in mind that socks4 proxy cannot resolve remote host names, so if you get an UnknownHostException, either switch to socks5 or add an entry for your git server into the hosts file on the TeamCity server machine.
 
-<anchor name="git-agent-config"/>
+</def>
+
+
+<def title="teamcity.git.sshProxyHost">
+
+<b>Default value:</b> N/A
+
+The SSH proxy host.
+
+</def>
+
+<def title="teamcity.git.sshProxyPort">
+
+<b>Default value:</b> N/A
+
+The SSH proxy port
+
+</def>
+
+
+<def title="teamcity.git.native.sshProxyCmd">
+
+<b>Default value:</b> N/A
+
+Specify this property for TeamCity servers running on Linux machines without `netcat-openbsd`. In this case Git VCS roots that authenticate via SSH may exhibit the `exit code: 128 stderr: nc: invalid option -- 'X'` error. See the note at the end of the [Use Proxy for Outgoing TeamCity Server Connections](configuring-proxy-server.md#Use+Proxy+for+Outgoing+TeamCity+Server+Connections) section for more information.
+
+```Bash
+teamcity.git.native.sshProxyCmd=ncat --proxy %host:%port --proxy-type http
+```
+
+</def>
+
+
+<def title="teamcity.git.connectionRetryAttempts">
+
+<b>Default value:</b> `3`
+
+The number of attempts to establish connection to the remote host for testing connection and getting a current repository state before admitting a failure.
+
+</def>
+
+
+<def title="teamcity.git.connectionRetryIntervalSeconds">
+
+<b>Default value:</b> `4`
+
+The delay (in seconds) between consecutive connection attempts.
+
+</def>
+
+</deflist>
+
+
 
 [Build parameters](configuring-build-parameters.md) for Git:
+{id="git-agent-config" help-id="git-agent-config"}
 
-<table><tr>
+<deflist>
 
-<td width="300">
+<def title="teamcity.git.use.native.ssh">
 
-Property
+<b>Default value:</b> `false`
 
-</td>
+Specifies whether TeamCity should use native SSH implementation. This property is in effect only for "checkout on agent" mode.
 
-<td>
+</def>
 
-Default
 
-</td>
+<def title="teamcity.git.idle.timeout.seconds">
 
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.use.native.ssh
-
-</td>
-
-<td>
-
-false
-
-</td>
-
-<td>
-
-When checkout on agent: whether TeamCity should use native SSH implementation.
-
-</td>
-
-<td>
-
-<!--[//]: # (Internal note. Do not delete. "Gitd153e964.txt")    -->
-
-</td></tr><tr>
-
-<td>
-
-teamcity.git.idle.timeout.seconds
-
-</td>
-
-<td>
-
-3600
-
-</td>
-
-<td>
+<b>Default value:</b> `3600`
 
 The idle timeout for the `git fetch` operation when the agent-side checkout is used. The fetch is terminated if there is no output from the fetch process during this time.
 
-</td></tr></table>
+</def>
+
+</deflist>
+
+
+
+
 
 ## Agent-side checkout rules limitations
 {id="Limitations"}

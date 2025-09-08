@@ -335,6 +335,14 @@ teamcity.https.proxyAuthentication=NT_credentials
 > 
 > [SSH-related properties](git.md#internalProperties) (`teamcity.git.sshProxyType`, `teamcity.git.sshProxyHost` and `teamcity.git.sshProxyPort`) are propagated to native Git only for the server machine.
 {style="tip"}
+> 
+> For TeamCity servers on Linux, we recommend installing the `netcat-openbsd` package. Otherwise, if you encounter the `exit code: 128 stderr: nc: invalid option -- 'X'` error for [VCS roots](git.md) with SSH URLs, set a custom command via the `teamcity.git.native.sshProxyCmd` internal property.
+> 
+> The example below shows how to configure this for `nmap-netcat` and an HTTP proxy, using `%host` and `%port` as placeholders for the `teamcity.git.sshProxyHost` and `teamcity.git.sshProxyPort` internal properties.
+> 
+> ```Bash
+> teamcity.git.native.sshProxyCmd=ncat --proxy %host:%port --proxy-type http
+> ```
 
 <anchor name="Use+Proxy+to+Connect+Agents+to+TeamCity+Server"/>
 
