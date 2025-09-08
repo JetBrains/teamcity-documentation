@@ -29,9 +29,13 @@ There are two types of Azure DevOps connections in TeamCity:
 #### Azure DevOps OAuth 2.0 Connection
 {id="Connecting+to+Azure+DevOps" help-id="Connecting to Azure DevOps"}
 
-This type of connection supports only Azure DevOps Services. It uses the [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops) based on JWT tokens and requires creating a dedicated app in your Azure profile.
+Configure this connection to allow TeamCity to access Azure DevOps resources. In addition, it allows TeamCity users to use their Azure DevOps credentials [to access TeamCity](configuring-authentication-settings.md#Azure+DevOps+Services).
 
-This connection can be used for [authenticating users via Azure DevOps](configuring-authentication-settings.md#Azure+DevOps+Services) as well as creating projects and build configurations.
+> Starting September 30, 2025, Microsoft deprecates legacy multifactor authentication and self-service password reset (SSPR) policies and recommends migrating to the [modern authentication policy in Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage) instead.
+> 
+> In response to this change, we updated the Azure DevOps OAuth 2.0 connection settings. If your connection was configured prior to TeamCity 2025.07.2, update it using the instructions below. Otherwise, TeamCity may be unable to access Azure DevOps using OAuth tokens issued via existing connection(s).
+> 
+{style="note"}
 
 To configure an Azure DevOps OAuth 2.0 connection:
 
@@ -39,14 +43,17 @@ To configure an Azure DevOps OAuth 2.0 connection:
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. <include from="common-templates.md" element-id="choose-connection-type"><var name="connection-type" value="Azure DevOps OAuth 2.0"/></include>
 4. <include from="common-templates.md" element-id="connections-unique-callback-URL"><var name="unique-url-sample" value="/oauth/azuredevops/rid:your-unique-id/accessToken.html"/></include>
-5. TeamCity will display the _Callback URL_ and _scopes_ required for registering an OAuth application in Azure DevOps.
 
-    Go to the [Register Application](https://app.vsaex.visualstudio.com/app/register) page in Azure and create a new app using the provided parameters. When created, copy the app's ID and client secret.
-6. Go back to the connection form in TeamCity and enter the Azure DevOps Services URL, the new application ID, and client secret.
-7. Specify the application scope that must be the same as the scope of the created Azure DevOps OAuth App.
-8. Click **Save** to exit the setup.
+5. Enter the **Server URL** in the `https://login.microsoftonline.com/{tenantId}` format.
+6. Follow TeamCity instructions to register an application in Microsoft Entra ID:
+    * Copy the **Application website** value from TeamCity and paste it to the corresponding field of the app registration page.
+    * Copy the **Authorization callback URL** and paste it to the **Redirect URI** field of your Azure app.
+    * Specify the app authorization scopes to control TeamCity permissions. The minimal required scopes are "Identity (read)", "Project and team (read)", and "Code (read)". You might need to include additional scopes if you plan to use TeamCity features that require write access (for example, the [](commit-status-publisher.md)).
+7. Once your app is ready, navigate back to TeamCity **Add connection** dialog and paste the application **App ID** and **Client secret** values to corresponding fields.
+8. Edit the **Authorized scopes** value to limit connection's access permissions, or leave this field empty.
+9. Click **Save** to exit the setup.
 
-To activate the Azure DevOps Services authentication on your server, proceed to enabling the respective [authentication module](configuring-authentication-settings.md#Azure+DevOps+Services).
+
 
 #### Azure DevOps PAT Connection
 
