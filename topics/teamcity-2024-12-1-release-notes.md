@@ -161,6 +161,8 @@
 
 **[TW-70202](https://youtrack.jetbrains.com/issue/TW-70202/Do-not-disable-clean-up-of-the-deleted-entities-if-the-problematic-project-build-configuration-is-known)** — Do not disable clean-up of the deleted entities if the problematic project / build configuration is known
 
+**[TW-89069](https://youtrack.jetbrains.com/issue/89069)** — S3 migrated artifacts are not cleaned up
+
 
 ### Performance Problem
 
