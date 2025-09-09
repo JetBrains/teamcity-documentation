@@ -846,6 +846,8 @@ The .NET CLI build step can be run in a specified [Docker container](container-w
 
 [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool for `msbuild`, `test`, `vstest`, and a number of custom commands. To merge snapshots produced by multiple individual .NET runners into one consolidated report, add the [](dotcover-runner.md) to your configuration.
 
+<include from="installing-agent-tools.md" element-id="dotcover-2025.2-warning"/>
+
 ## Authentication in Private NuGet Feeds
 
 TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuGet](nuget.md#Authentication+in+private+NuGet+Feeds).
