@@ -41,7 +41,7 @@
 * [**TW-95175**](https://youtrack.jetbrains.com/issue/TW-95175) — CSAT: secondary node responsibilities affect the user roles collected (read-only)
 * [**TW-94382**](https://youtrack.jetbrains.com/issue/TW-94382) — TCP Merge: Misaligned "Reorder" button in Edit project settings
 * [**TW-94321**](https://youtrack.jetbrains.com/issue/TW-94321) — TCP Merge: 'Job reused' label is not added to all the reused jobs in the pipeline
-* [**TW-93213**](https://youtrack.jetbrains.com/issue/TW-93213) — Can't download JDBC driver as <datadir> not writable
+* [**TW-93213**](https://youtrack.jetbrains.com/issue/TW-93213) — Can't download JDBC driver as &lt;datadir&gt; not writable
 * [**TW-93403**](https://youtrack.jetbrains.com/issue/TW-93403) — TCP Merge: VCS root usages report leads to Versioned settings of virtual project created for Pipelines
 * [**TW-94636**](https://youtrack.jetbrains.com/issue/TW-94636) — TCP Merge: YAML/Visual view is not preserved between pipelines
 
