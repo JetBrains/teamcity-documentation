@@ -422,6 +422,8 @@ Use this option to instruct TeamCity to run some tests before others.
 To learn about configuring code coverage options, refer to the [this article](configuring-.net-code-coverage.md).
 
 For NUnit 3.x, only [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool.
+
+<include from="installing-agent-tools.md" element-id="dotcover-2025.2-warning"/>
  
 <seealso>
         <category ref="admin-guide">

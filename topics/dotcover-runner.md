@@ -14,6 +14,8 @@ This section explains how to use runner settings. Refer to the sections below fo
 * **dotCover tool** — select a pre-installed or a [custom](installing-agent-tools.md) version of dotCover.
 {instance="tc"}
 
+  <include from="installing-agent-tools.md" element-id="dotcover-2025.2-warning"/>
+
 * **dotCover tool** — select a dotCover version .
 {instance="tcc"}
 

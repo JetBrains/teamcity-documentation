@@ -15,7 +15,19 @@ The following types of tools can be managed up via the __Administration | Tools_
   3. Scroll to the **IntelliJ Inspections and Duplicates Engine** section and click **Install Version...**.
   4. Select the **Upload** mode and click **Choose File** to upload your tool.
 
-* __JetBrains dotCover Command Line Tools__ with the bundled version set as default. Used to collect code coverage for your .NET project.
+* __JetBrains dotCover Command Line Tools__ with the bundled version set as default. Used to collect code coverage for your .NET project. The list of dotCover versions available via the **Download** dialog is retrieved from NuGet and does not depend on your current TeamCity server version.
+
+    <snippet id="dotcover-2025.2-warning" instance="tc">
+
+    > dotCover 2025.2 introduces new syntax that is not yet compatible with any current TeamCity version. We plan to update the TeamCity runners that utilize this tool ([](dotcover-runner.md), [](net.md), and [](nunit.md)) in future releases.
+    >
+    > Until then, avoid installing dotCover 2025.2 on your agents and selecting it via the
+**&lt;Custom&gt;** option of "dotCover version" runner settings. Instead, use version 2025.1.7 Cross-Platform, or any of the versions bundled with your TeamCity installation.
+    > 
+    {style="warning"}
+
+    </snippet>
+
 * __JetBrains ReSharper Command Line Tools__: by default the tools are bundled with TeamCity and are used by Inspections (.NET), Duplicates Finder (.NET) build runners to run code analysis.
 * __Maven__: several bundled versions are displayed, with 3.6.3 set as default.
 * __NuGet.exe__ used in NuGet specific build steps and NuGet Dependency Trigger. NuGet packages (`.nupkg` files) with the `tools/NuGet.exe` file inside are supported.
