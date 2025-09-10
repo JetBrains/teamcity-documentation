@@ -20,10 +20,10 @@ To issue a token that valid for accessing a limited set of repositories, send `P
 
 <def title="Body">
 
-A string in the `projectId=111&connectionId=222&repositoryName=333&repositoryName=444...` format, where:
+An x-www-form-urlencoded string with the following keys:
 
 
-* `projectId` is the internal ID of a project that will own a newly issued auth token.
+* `projectId` — the internal ID of a project that will own a newly issued auth token.
 
     <tip>
 
@@ -32,7 +32,7 @@ A string in the `projectId=111&connectionId=222&repositoryName=333&repositoryNam
     </tip>
 
 
-* `connectionId` is the internal ID of a GitHub App connection that will be used to issue a new token. By default, has the `PROJECT_EXT_INT32` format.
+* `connectionId` — the internal ID of a GitHub App connection that will be used to issue a new token. By default, has the `PROJECT_EXT_INT32` format.
 
     <tip>
 
@@ -40,7 +40,7 @@ A string in the `projectId=111&connectionId=222&repositoryName=333&repositoryNam
 
     </tip>
 
-* `repositoryName` is the name of a repository that the newly issued token will be able to access. The username should be omitted ("my-repo-name" instead of "johndoe/my-repo-name"). Allows you to list multiple repositories in the `repositoryName=name1&repositoryName=name2&..." format.
+* `repositoryName` — the name of a repository that the newly issued token will be able to access. The username should be omitted ("my-repo-name" instead of "johndoe/my-repo-name"). Allows you to list multiple repositories in the `repositoryName=name1&repositoryName=name2&..." format.
 
   Only accepts names of repositories owned by organizations or users that installed the corresponding GitHub App.
 
