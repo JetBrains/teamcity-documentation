@@ -48,12 +48,14 @@ An x-www-form-urlencoded string with the following keys:
 
 <def title="Response">
 
-If the request finishes with HTTP code 200 "OK", the response includes a JSON object with the following fields:
+Successful requests return an HTTP 200 "OK" response with a JSON payload containing the following fields:
 
 * `tokenId` — the full ID of the newly issued token. 
 * `permissions` — the list of permission-value pairs that describe access permissions of the issued token.
 * `repositories` — the array of repository names that can be accessed using this token.
 * `personalAccessTokenSource` — returns either "USER_PROVIDED" or "TOKEN_STORAGE_LOOKUP" depending on whether the user's personal access token was explicitly provided via the `X-TC-GitHub-PAT` header, or retrieved by TeamCity.
+
+Failed requests return code 400 "Bad request".
 
 </def>
 
