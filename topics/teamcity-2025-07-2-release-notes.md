@@ -20,12 +20,9 @@
 * [**TW-95415**](https://youtrack.jetbrains.com/issue/TW-95415) — Resolution of nested parameters in build feature settings doesn't work for finished builds
 * [**TW-95225**](https://youtrack.jetbrains.com/issue/TW-95225) — Cannot get rid of auto-generated project: they should not be available in health reports
 * [**TW-95590**](https://youtrack.jetbrains.com/issue/TW-95590) — VCS trigger may start a build when there are no relevant changes
-* [**TW-95474**](https://youtrack.jetbrains.com/issue/TW-95474) — Cannot disable pull requests in repository settings
 * [**TW-95368**](https://youtrack.jetbrains.com/issue/TW-95368) — Build Queue Priority Menu missing
 * [**TW-93146**](https://youtrack.jetbrains.com/issue/TW-93146) — Builds got stuck for 2+ hours (more than timeout)
-* [**TW-95398**](https://youtrack.jetbrains.com/issue/TW-95398) — Job is executed in a pipeline even when an upstream job is failed
 * [**TW-94707**](https://youtrack.jetbrains.com/issue/TW-94707) — Broken layout in the info popup on the build dependencies timeline view
-* [**TW-95100**](https://youtrack.jetbrains.com/issue/TW-95100) — Build on Pull Request runs in default branch (secondary VCS root in Pipeline)
 * [**TW-47593**](https://youtrack.jetbrains.com/issue/TW-47593) — Build without own VCS roots is marked as "History" after removal of a snapshot dependency
 * [**TW-91440**](https://youtrack.jetbrains.com/issue/TW-91440) — Hide stacktraces from the default teamcity-cleanup.log if TeamCity can't delete the artifacts from Azure
 * [**TW-95350**](https://youtrack.jetbrains.com/issue/TW-95350) — Schedule trigger with "self dependency" adjusts build revisions based on the watched build
@@ -52,6 +49,9 @@ The list below contains resolved issues related to the introduction of [pipeline
 * [**TW-94687**](https://youtrack.jetbrains.com/issue/TW-94687) — Can't access step edit action (the pen is hiding when cursor reaches the point)
 * [**TW-94444**](https://youtrack.jetbrains.com/issue/TW-94444) — Hide Pull requests control from triggers form, if it can't be used
 * [**TW-94613**](https://youtrack.jetbrains.com/issue/TW-94613) — Link to the project in breadcrumbs in Pipeline Settings redirects to Project Overview instead of Project Settings
+* [**TW-95398**](https://youtrack.jetbrains.com/issue/TW-95398) — Job is executed in a pipeline even when an upstream job is failed
+* [**TW-95100**](https://youtrack.jetbrains.com/issue/TW-95100) — Build on Pull Request runs in default branch (secondary VCS root in Pipeline)
+* [**TW-95474**](https://youtrack.jetbrains.com/issue/TW-95474) — Cannot disable pull requests in repository settings
 
 ### Security
 
