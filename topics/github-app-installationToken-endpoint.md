@@ -1,8 +1,10 @@
-# InstallationToken Endpoint: How to Issue Multi-Repository Auth Tokens via Existing GitHub App Connections
+# InstallationToken Endpoint: How to Issue GitHub Auth Tokens Programmatically
 
-TeamCity [GitHub App](configuring-connections.md#github-app) connections can issue auth tokens that allow TeamCity to access a single repository. While it covers the majority of cases where a build configuration targets a specific repository, some scenarios require tokens with a multi-repository access scope.
+TeamCity [GitHub App](configuring-connections.md#github-app) connections can issue authentication tokens that let TeamCity access GitHub repositories. This usually happens automatically when you create projects in the UI or manually issue tokens on the [VCS Auth Tokens](manage-access-tokens.md) page.
 
-To issue a token that valid for accessing a limited set of repositories, send `POST` requests to the `<TeamCity_Server_URL/app/oauth/githubapp/installationToken` endpoint.
+The `<TeamCity_Server_URL/app/oauth/githubapp/installationToken` endpoint provides an alternative way to generate these tokens without using the UI. This is especially useful when configuring build configurations and VCS roots via the [REST API](teamcity-rest-api.md), as it allows you to programmatically obtain the token IDs needed for those roots.
+
+## Main Properties
 
 <deflist type="narrow">
 
