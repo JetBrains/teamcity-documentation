@@ -109,3 +109,10 @@ On the <b>VCS Auth Tokens</b> page, locate a token you wish to use and click the
 <step>Return back to the edited object and paste the token ID.</step>
 <step>Click <b>Save</b> to exit the setup.</step>
 </procedure>
+
+
+## Issue Multi-Repository Tokens via GitHub App Connections
+
+TeamCity [GitHub App](configuring-connections.md#github-app) connections can issue auth tokens that allow TeamCity to access a single repository. While it covers the majority of cases where a build configuration targets a specific repository, some scenarios require tokens with a multi-repository access scope.
+
+To issue such auth tokens, send a request to the `/app/oauth/githubapp/installationToken` as demonstrated in [this article](github-app-installationToken-endpoint.md).

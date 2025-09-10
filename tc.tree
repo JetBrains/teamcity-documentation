@@ -510,6 +510,7 @@
 		<toc-element topic="patterns-for-accessing-build-artifacts.md"/>
 		<toc-element topic="requirement-conditions.md"/>
 		<toc-element topic="search.md"/>
+		<toc-element topic="github-app-installationToken-endpoint.md" toc-title="InstallationToken Endpoint"/>
 		<toc-element topic="teamcity-specific-directories.md"/>
 		<toc-element topic="wildcards.md"/>
 		<toc-element accepts-web-file-names="teamcity-experimental-ui.html" topic="teamcity-sakura-ui.md"/>

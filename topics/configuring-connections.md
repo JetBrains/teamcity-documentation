@@ -247,6 +247,7 @@ For example, if your GitHub user has no write permissions, the access token will
 
 TeamCity currently issues single-repository access tokens for GitHub App connections. As a result, if your GitHub repository contains [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), TeamCity is unable to access these external repositories.
 
+It is possible to manually issue a multi-repository auth token by accessing the `/app/oauth/githubapp/installationToken` endpoint. See [this article](github-app-installationToken-endpoint.md) for more information.
 </warning>
 
 ### GitHub OAuth Application
