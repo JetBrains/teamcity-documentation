@@ -230,13 +230,13 @@ To specify which settings TeamCity should apply when a build starts, choose a re
             csharpScript {
                 id = "csharpScript"
                 content = """Console.WriteLine("Running a CSharp script...");"""
-                tool = "%\teamcity.tool.TeamCity.csi.DEFAULT%"
+                tool = "%teamcity.tool.TeamCity.csi.DEFAULT%"
             }
         }
         // ...
     })
-    
     ```
+   {ignore-vars="true"}
 
 10. Push your new branch to the remote repository.
 

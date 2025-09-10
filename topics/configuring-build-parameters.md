@@ -233,6 +233,7 @@ The script below prints the [checkout directory](build-checkout-directory.md) pa
 echo "Checkout directory: %teamcity.build.checkoutDir%"
 echo "Server version: '$TEAMCITY_VERSION'"
 ```
+{ignore-vars="true"}
 
 The script below uses a reference to the build branch to obtain a file that should be copied to the target directory.<br/><br/>
 
@@ -265,6 +266,7 @@ print(f'TeamCity version is: %\env.TEAMCITY_VERSION%')
 # or
 print(f"TeamCity version is: {os.environ['TEAMCITY_VERSION']}")
 ```
+{ignore-vars="true"}
 
 </tab>
 
@@ -276,6 +278,7 @@ The following script obtains the [checkout directory](build-checkout-directory.m
 string fullPath = Path.Combine("%teamcity.build.checkoutDir%", "myFolder/bin");
 Console.WriteLine(fullPath);
 ```
+{ignore-vars="true"}
 
 To get values of environment variables, use the [Environment.GetEnvironmentVariable](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable?view=net-7.0) method:<br/><br/>
 

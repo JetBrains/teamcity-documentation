@@ -224,6 +224,7 @@ object Build : BuildType({
     artifactRules = "bin => batch-build-%teamcity.build.parallelTests.currentBatch%/bin"
 })
 ```
+{ignore-vars="true"}
 
 <img src="dk-artifacts-parallelBuildAggregate.png" width="706" alt="Aggregated artifacts"/>
 

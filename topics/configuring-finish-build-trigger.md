@@ -54,11 +54,12 @@ object UpdateReleaseDate : BuildType({
                 var serviceMessage = "##teamcity[setParameter name='product.release.date' value='" + date + "']";
                 Console.WriteLine(serviceMessage);
             """.trimIndent()
-            tool = "%\teamcity.tool.TeamCity.csi.DEFAULT%"
+            tool = "%teamcity.tool.TeamCity.csi.DEFAULT%"
         }
     }
 })
 ```
+{ignore-vars="true"}
 
 </tab>
 

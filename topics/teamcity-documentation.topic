@@ -12,8 +12,8 @@
         </description>
 
         <spotlight>
-            <a href="quick-setup-guide.md" summary="Set up a TeamCity server and one build agent on the same machine for evaluation purposes.">Set up TeamCity for evaluation</a>
-            <a href="install-and-start-teamcity-server.md" summary="When you are ready to use TeamCity for production purposes, learn how to install the server, build agents, and database.">Set up TeamCity for production</a>
+            <a type="experiment" href="quick-setup-guide.md" summary="Set up a TeamCity server and one build agent on the same machine for evaluation purposes.">Set up TeamCity for evaluation</a>
+            <a type="development" href="install-and-start-teamcity-server.md" summary="When you are ready to use TeamCity for production purposes, learn how to install the server, build agents, and database.">Set up TeamCity for production</a>
         </spotlight>
 
         <primary>

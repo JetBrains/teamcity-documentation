@@ -80,6 +80,7 @@ Job1:
   output-parameters:
     DateOutput: '%env.DATE%'
 ```
+{ignore-vars="true"}
 
 Now any downstream job can use the `DateOutput` value via the `job.<source_job_ID>.<parameter_name>` syntax.
 
@@ -92,6 +93,7 @@ Now any downstream job can use the `DateOutput` value via the `job.<source_job_I
      - type: script
        script-content: 'echo "Today''s date is: %job.Job1.DateOutput%"'
 ```
+{ignore-vars="true"}
 
 ### Shared Files
 

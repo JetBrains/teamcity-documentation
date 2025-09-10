@@ -43,6 +43,7 @@ outputParams {
     param("number", "54")
 }
 ```
+{ignore-vars="true"}
 
 The `%\parameterName%` in output parameter value can refer to an existing input parameter, or a dynamically created parameter. For example, the following configuration uses an [input](typed-parameters.md) "DateFormat" parameter to calculate a value of the "Date" parameter created via the [setParameter service message](service-messages.md#set-parameter):
 
@@ -76,6 +77,7 @@ object CalculateDate : BuildType({
     }
 })
 ```
+{ignore-vars="true"}
 
 Now you can create an output parameter that shares the "Date" parameter value.
 
@@ -95,6 +97,7 @@ object CalculateDate : BuildType({
     }
 })
 ```
+{ignore-vars="true"}
 
 > In TeamCity UI, the **Add new output parameter** dialog has two options: enter the value manually, or choose an existing input parameter. Since our "Date" parameter does not exist until the build step executes, we need to enter the `%\Date%` value by hand.
 > 
@@ -239,6 +242,7 @@ object ChainConfigC : BuildType({
     }
 })
 ```
+{ignore-vars="true"}
 
 If you run the ConfigA or the ConfigA &rarr; ConfigB sub-chain, the first configuration will report its original parameter value.
 

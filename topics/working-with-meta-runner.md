@@ -69,6 +69,7 @@ object SourceConfiguration : BuildType({
     }
 })
 ```
+{ignore-vars="true"}
 
 To extract a recipe from an existing configuration:
 
@@ -109,6 +110,7 @@ To extract a recipe from an existing configuration:
         </settings>
     </meta-runner>
     ```
+   {ignore-vars="true"}
 
    > By default, a recipe includes all parameters from the source configuration. You can remove unnecessary ones and edit parameter `spec` attributes to adjust appearance and behavior on the Recipes page: [](#Edit+a+Private+Recipe).
    >

@@ -762,11 +762,12 @@ object UseApiKey : BuildType({
     steps {
         script {
             name = "Echo API Key"
-            scriptContent = "echo \"Using API Key: %API_KEY%\""
+            scriptContent = "echo 'Using API Key: %API_KEY%'"
         }
     }
 })
 ```
+{ignore-vars="true"}
 
 Equivalent in the TeamCity UI:
 
