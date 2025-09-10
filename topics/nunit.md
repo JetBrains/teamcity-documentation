@@ -423,7 +423,7 @@ To learn about configuring code coverage options, refer to the [this article](co
 
 For NUnit 3.x, only [JetBrains dotCover](jetbrains-dotcover.md) is supported as a coverage tool.
 
-<include from="installing-agent-tools.md" element-id="dotcover-2025.2-warning"/>
+<include from="installing-agent-tools.md" element-id="dotcover-2025.2-warning" instance="tc"/>
  
 <seealso>
         <category ref="admin-guide">
