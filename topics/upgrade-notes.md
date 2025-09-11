@@ -10,6 +10,7 @@ No potential breaking changes.
 {id="bundled-tools-updates-2025-07-2"}
 
 * The bundled Git was updated to version 2.51 in both server and agent Docker images.
+* Python and libxml2 in TeamCity Docker images were updated to versions 3.10.12 and 2.9.13 respectively.
 
 
 ## Changes from 2025.07 to 2025.07.1
