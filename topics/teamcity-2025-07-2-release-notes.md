@@ -13,6 +13,7 @@
 
 ### Bug
 
+* [**TW-95468**](https://youtrack.jetbrains.com/issue/TW-95468) — Error connecting to Elastic Search
 * [**TW-92660**](https://youtrack.jetbrains.com/issue/TW-92660) — Misleading statement in the documentation 
 * [**TW-95588**](https://youtrack.jetbrains.com/issue/TW-95588) — VCS Roots are not ordered in the Run Custom Build dialog
 
