@@ -41,7 +41,7 @@ To arrange pipeline jobs in the required order, select a job and check its upstr
 
 <img src="dk-pipeline-dependencies.png" width="706" alt="Create job dependencies"/>
 
-See [TeamCity Pipelines](https://www.jetbrains.com/help/teamcity/pipelines/teamcity-pipelines.html) for more information on basic operations.
+See [](pipeline-settings.md) and [](job-settings.md) for more information on basic operations.
 
 
 ## Job Outputs
