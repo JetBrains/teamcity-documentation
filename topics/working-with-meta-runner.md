@@ -24,7 +24,7 @@ Yes, meta-runners are still functional under the new name and require no manual 
 Public recipes are those shared at [JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). These include both recipes hand-crafted by JetBrains and those shared by other TeamCity users.
 
 **Are public recipes safe?**<br/>
-Yes, all recipes published on JetBrains Marketplace are verified by our employees. You can always inspect the source recipe code on the Marketplace or directly in TeamCity UI before installing it.
+All recipes published on JetBrains Marketplace are subjected to a manual verification by our employees. We [recommend](https://www.jetbrains.com/legal/docs/plugins_site/plugin_marketplace/1.2/) reviewing the recipe’s source code before installing it on your server. To access the source code, click the **Source Code** link on the recipe’s Marketplace page.
 
 **I want to create a recipe, what should I do?**<br/>
 Find an existing or create a new build configuration that performs an action you want to save as a custom build step, and [extract a recipe](#Extract+a+Recipe+From+a+Build+Configuration) using the configuration **Actions** menu in TeamCity UI. Doing so allows you to save an XML recipe. To create a YAML recipe, you need to write its definition from scratch. Inspect the source code for public Marketplace recipes and check out the [](recipe-yaml-syntax.md) article to learn more.
