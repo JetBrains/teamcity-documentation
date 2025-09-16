@@ -9,7 +9,7 @@ To view and edit core pipelines settings, click the [Settings toggle](project-ad
 
 <img src="pipelines-open-pipeline-settings.png" width="706" alt="Open pipeline settings"/>
 
-You can also switch the editor to the configuration-as-code mode, and edit the markup directly.
+You can also switch from the visual editor to the code and edit the markup directly.
 
 
 ## Parameters
