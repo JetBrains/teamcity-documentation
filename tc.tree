@@ -407,7 +407,7 @@
 	<toc-element toc-title="Pipelines">
 		<toc-element topic="create-and-edit-pipelines.md"/>
 		<toc-element topic="pipeline-settings.md"/>
-		<toc-element topic="job-settings.md"/>
+		<toc-element topic="job-settings.md" hidden="true"/>
 	</toc-element>
 	<toc-element accepts-web-file-names-ref="configuring-test-reports-and-code-coverage" topic="configuring-test-reports-and-code-coverage.md">
 		<toc-element topic="net-testing-frameworks-support.md"/>
