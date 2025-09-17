@@ -41,12 +41,66 @@ jobs:
           --header 'Content-Type: application/zip' \
           --header 'Accept: application/zip' \
           --header 'Authorization: Bearer %bearer-token%' \
+          --output output.zip \
           --data ''
     files-publication:
-      - path: ''
+      - path: output.zip
         share-with-jobs: true
-        publish-artifact: false
+        publish-artifact: true
 secrets:
   bearer-token: credentialsJSON:12e5c38b-16a1-4201-a913-5b5411bd7bfe
 ```
 
+### Gradle
+
+Tailored for interacting with the [Gradle build tool](https://gradle.org), this step can build, test, and package Java, Kotlin, Groovy, Scala, Swift, and other projects.
+
+
+> This step is also available in classic TeamCity build configurations: [](gradle.md). See this document for more information about step options.
+>
+{style="tip"}
+
+
+```yaml
+name: Gradle Project
+jobs:
+  Job1:
+    name: 'Job 1: Gradle Build'
+    steps:
+      - type: gradle
+        tasks: clean build -x test
+        use-gradle-wrapper: 'true'
+  Job1_2:
+    name: 'Job 2: Test Suite 1'
+    runs-on: Linux-Medium
+    steps:
+      - type: gradle
+        working-directory: test1
+        tasks: clean test
+        build-file: build.gradle
+        use-gradle-wrapper: 'true'
+    dependencies:
+      - Job1
+```
+
+
+### Maven
+
+The Maven build step is designed to process Java, Kotlin, Groovy, and other projects using [Apache Maven](https://maven.apache.org).
+
+
+> This step is also available in classic TeamCity build configurations: [](maven.md). See this document for more information about step options.
+>
+{style="tip"}
+
+```yaml
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: maven
+        maven-version: bundled_3_6
+        pom-location: pom.xml
+        goals: '-B -DskipTests clean package'
+        jdk-home: '%env.JDK_21_0%'
+```
