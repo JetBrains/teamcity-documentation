@@ -104,3 +104,36 @@ jobs:
         goals: '-B -DskipTests clean package'
         jdk-home: '%env.JDK_21_0%'
 ```
+
+
+
+## Optimizations
+
+This section covers settings to significantly speed up pipeline runs, saving time, resources, and, for cloud agents, infrastructure costs.
+
+* **Parallel Tests** — Allows Maven and Gradle steps to split test suites into batches, spawning N virtual builds running in parallel on separate build agents.
+
+    > TeamCity groups tests into batches based on their parent classes or test cases, so the actual number of batches may be lower than specified. For example, tests in a single large test class cannot be effectively split. See this build configuration article for details on how TeamCity selects and runs test batches: [](parallel-tests.md).
+    >
+    {style="tip"}
+
+* **Reuse Job Results** — If no enabled [repositories](#Repository) contain new changes, TeamCity skips re-running the job and reuses artifacts, status, and results from a previous run. This ensures only jobs affected by recent changes are executed.
+
+    > See this article to learn how TeamCity identifies builds that can be reused: [](snapshot-dependencies.md#Suitable+Builds).
+    >
+    {style="tip"}
+
+    Reused jobs are explicitly marked in the UI to avoid any confusion.
+
+    <img src="pipelines-job-reuse.png" width="706" alt="Pipeline run reuse"/>
+
+    Note the "Optimization" tile on the top of the page: TeamCity was able to finish this run nearly five times faster than the previous run, with the amount of time saved due to reusing runs attributed to nearly 80% of the last known run duration.
+
+
+## Agent Requirements
+
+Agent requirements allow you to specify explicit requirements for build agent machines eligible to run this job.
+
+## Repository
+
+TBD
