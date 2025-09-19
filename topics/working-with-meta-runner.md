@@ -272,58 +272,123 @@ Build steps that allow defining a build file directly rather than just specifyin
 
 ## Launch Recipes in Containers
 
-Individual build steps comprise recipes have settings that allow TeamCity to run these steps inside [Docker/Podman containers](container-wrapper.md). Same settings are available for recipes themselves.
+Build steps that can [run inside Docker/Podman containers](container-wrapper.md) also retain this feature when used inside recipes. The following sample recipe markup defines two steps: the [Kotlin script](kotlin-script.md) step running inside the `zenika/kotlin` image, and the [](command-line.md) step without any container-related settings.
 
-<img src="dk-docker-container-settings.png" width="706" alt="Container settings in steps and recipes"/>
 
-If you want all of your steps to be executed inside a required container, set up the required image on the recipe level. Container settings of individual steps have a priority over these recipe settings and allow you to run each step in its unique container.
+<tabs>
 
-[Kotlin sample](kotlin-dsl.md) of a recipe that runs its steps inside "ubuntu" Linux container:
+<tab title="XML recipe specification">
+
+```XML
+<meta-runner name="Kotlin-CLI-XML">
+   <description>Sample 2-step recipe</description>
+   <settings>
+      <parameters>
+         <!-- TeamCity build parameters -->
+      </parameters>
+      <build-runners>
+         <runner name="Kotlin step" type="kotlinScript">
+            <parameters>
+               <param name="scriptType" value="customScript" />
+               <param name="scriptContent" value="// TODO" />
+               <!-- Docker image parameter -->
+               <param name="plugin.docker.imageId" value="zenika/kotlin:1.1.61-alpine" />
+            </parameters>
+         </runner>
+         <runner name="CLI step" type="simpleRunner">
+            <parameters>
+               <param name="script.content" value="# TODO" />
+               <param name="teamcity.step.mode" value="default" />
+               <param name="use.custom.script" value="true" />
+            </parameters>
+         </runner>
+      </build-runners>
+      <requirements />
+   </settings>
+</meta-runner>
+```
+
+
+</tab>
+
+<tab title="YAML recipe specification">
+
+```yaml
+name: RecipeDemo_KotlinCliYaml
+title: Kotlin-CLI-YAML
+description: Sample 2-step recipe
+inputs:
+   ...
+steps:
+   - name: Kotlin step
+     container: zenika/kotlin:1.1.61-alpine
+     kotlin-script: // TODO
+   - name: CLI step
+     script: "# TODO"
+```
+
+</tab>
+
+</tabs>
+
+
+When you add a recipe to a build configuration, you can define a recipe-wide image in the Container Settings section. This image applies to all steps unless a step specifies its own container settings, which take priority.
+
+For example, the following [versioned settings](storing-project-settings-in-version-control.md) show the same sample recipe within a build configuration. The configuration runs the recipe in the `ubuntu:rolling` image. The command-line step uses this image, while the Kotlin step overrides this global setting and runs in `zenika/kotlin`.
+
+
+<tabs>
+
+<tab title="XML build configuration settings">
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd" 
+            uuid="12345">
+  <name>MyBuildConfig</name>
+  <description />
+  <settings>
+    <build-runners>
+      <runner id="RecipeDemo_KotlinCliYaml" name="" type="RecipeDemo_KotlinCliYaml">
+        <parameters>
+          <param name="plugin.docker.imageId" value="ubuntu:rolling" />
+          <!-- Other recipe parameters -->
+        </parameters>
+      </runner>
+    </build-runners>
+  </settings>
+</build-type>
+```
+
+
+</tab>
+
+
+<tab title="Kotlin build configuration settings">
+
 
 ```Kotlin
-object Build : BuildType({
+object MyBuildConfig : BuildType({
+    name = "Sample configuration"
     steps {
         step {
-            id = "SimpleMetaRunner"
-            type = "idSimpleMetaRunner"
+            id = "RecipeDemo_KotlinCliYaml"
+            type = "RecipeDemo_KotlinCliYaml"
             executionMode = BuildStep.ExecutionMode.DEFAULT
-            param("plugin.docker.imageId", "ubuntu")
-            param("plugin.docker.imagePlatform", "linux")
-            param("plugin.docker.pull.enabled", "true")
-            param("plugin.docker.run.parameters", "")
+            param("plugin.docker.imageId", "ubuntu:rolling")
+            // Other recipe parameters
         }
     }
 })
 ```
 
-The XML markup for this recipe is shown below. Step #1 runs in the `python:3.9.20-bullseye` container. Step #2 has no personal container settings and runs inside the `ubuntu` container as defined in the Kotlin code above.
+</tab>
 
-```XML
-<meta-runner name="SimpleMetaRunner">
-    <description>A Py/CLI sample recipe</description>
-    <settings>
-        <parameters/>
-        <build-runners>
-            <runner name="Py" type="python-runner">
-                <parameters>
-                    <param name="plugin.docker.imageId" value="python:3.9.20-bullseye" />
-                    <!-- Python step parameters -->
-                </parameters>
-            </runner>
-            <runner name="" type="simpleRunner">
-                <parameters>
-                    <!-- CLI step parameters -->
-                </parameters>
-            </runner>
-        </build-runners>
-        <requirements />
-    </settings>
-</meta-runner>
-```
+</tabs>
 
-> To run all build steps inside the same Docker or Podman container (except for steps that do not support this mode), add the [](run-in-docker.md) build feature.
-> 
-{type="tip"}
+
+The same priority rules apply to the [](run-in-docker.md) build feature, which sets a global Docker/Podman image for the entire build configuration. This image is used only if neither the recipe nor its steps define their own container settings.
 
 <!--
 A _recipe_ allows you to extract build steps, requirements, and parameters from a build configuration and create a [build step](configuring-build-steps.md) out of them. This build runner can then be used as any other build runner in a build step of any other build configuration or template.
