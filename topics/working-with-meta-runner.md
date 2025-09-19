@@ -277,7 +277,7 @@ Build steps that can [run inside Docker/Podman containers](container-wrapper.md)
 
 <tabs>
 
-<tab title="XML recipe specification">
+<tab title="XML recipe">
 
 ```XML
 <meta-runner name="Kotlin-CLI-XML">
@@ -311,7 +311,7 @@ Build steps that can [run inside Docker/Podman containers](container-wrapper.md)
 
 </tab>
 
-<tab title="YAML recipe specification">
+<tab title="YAML recipe">
 
 ```yaml
 name: RecipeDemo_KotlinCliYaml
