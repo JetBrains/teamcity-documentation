@@ -4,7 +4,10 @@
 ## Changes from 2025.07.1 to 2025.07.2
 {id="2025.07.2"}
 
-No potential breaking changes.
+### Known Issues
+{id="known-issues-2025-07-2"}
+
+* The "From any Git URL" [pipeline creation option](create-and-edit-pipelines.md) does not accept SSH URLs in the `git@hosting:username/repository_name.git` format. See this ticket for more information: [TW-95952](https://youtrack.jetbrains.com/issue/TW-95952).
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-07-2"}
