@@ -14,6 +14,8 @@ You can also switch from the visual editor to the code and edit the markup direc
 
 ## Parameters
 
+<snippet id="pipeline-parameters-common">
+
 Parameters are name-value pairs designed to substitute raw values with references. When TeamCity encounters a parameter reference (`%\param-name%`), it substitutes it with the actual parameter value.
 
 TeamCity supports two layers of parameters: pipeline parameters and job parameters.
@@ -41,7 +43,35 @@ TeamCity supports two layers of parameters: pipeline parameters and job paramete
 
     Typically, these are [configuration parameters](configuring-build-parameters.md) (without the `env.` name prefix) most commonly used to store values used by multiple jobs, or quickly alter global pipeline settings.
 
-* **Job parameters** or **input parameters** are typically environment variables (with the `env.` name prefix) available only for this specific job. To pass this value to another job, you need to reference them inside an output parameter. See [](create-and-edit-pipelines.md#Parameters) and [](job-settings.md) for more information.
+* **Job input parameters** are typically environment variables (with the `env.` name prefix) available only for this specific job. To pass this value to another job, you need to reference them inside an [output parameter](job-settings.md#Outputs).
+
+The sample below shows a pipeline-level [secret](pipeline-settings.md#Secrets) parameter `bearer_token` and a job-level environment variable `env.SERVER_URL` used inside a command-line step. Note that parameters with the `env.` prefix can be referenced via the regular TeamCity `%\param_name%` syntax or accessed in scripts like native agent variables (`$param_name`).
+
+
+```yaml
+jobs:
+  Job1:
+    name: Get all TeamCity builds
+    steps:
+      - type: script
+        script-content: |-
+          echo "Server URL is: %env.SERVER_URL%"
+          curl -X GET "$SERVER_URL/builds" \
+            -H "Accept: application/json" \
+            -H "Authorization: Bearer %bearer-token%"
+    parameters:
+      env.SERVER_URL: https://example.com/app/rest
+secrets:
+  bearer-token: credentialsJSON:12e5c38b-16a1-4201-a913-5b5411bd7bfe
+```
+
+
+> If a job uses a parameter that is not defined on either pipeline or job level, this parameter becomes an [agent requirement](job-settings.md#Agent+Requirements) (see [example](job-settings.md#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
+>
+{style="note"}
+
+</snippet>
+
 
 ## Secrets
 

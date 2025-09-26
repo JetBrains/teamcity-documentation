@@ -213,9 +213,17 @@ jobs:
 
 ## Parameters
 
-> If a job uses a parameter that is not defined on either pipeline or job level, this parameter becomes an [agent requirement](#Agent+Requirements) (see [example](#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
+<include from="pipeline-settings.md" element-id="pipeline-parameters-common"/>
+
+> Jobs can modify parameter values from inside build steps. See the [](#Outputs) section for more information.
 > 
-{style="note"}
+{style="tip"}
+
+## Outputs
+
+
+
+
 
 ## Repository
 
