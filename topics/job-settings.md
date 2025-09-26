@@ -159,7 +159,7 @@ A parameter reported by the agent machine whose value must match the required cr
 * `teamcity.agent.jvm.user.timezone` — stores the timezone of the agent machine. For example, `Etc/UTC`.
 * `MonoVersion` — returns the version of the Mono platform. For example, `6.12.0.200`.
 
-Navigate to **&lt;TeamCity_Agent&gt; | Agent Parameters** tab to check what parameters agents report and find those that store agent hardware and software data.
+Navigate to **Agents | <TeamCity_Agent> | Agent Parameters** tab to check what parameters agents report and find those that store agent hardware and software data.
 
 <img src="tc-agent-parameters.png" width="706" alt="TeamCity agent parameters"/>
 
