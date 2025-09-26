@@ -132,7 +132,90 @@ This section covers settings to significantly speed up pipeline runs, saving tim
 
 ## Agent Requirements
 
-Agent requirements allow you to specify explicit requirements for build agent machines eligible to run this job.
+TeamCity automatically tracks agent software to ensure queued runs are assigned only to compatible agents. For example, if a Maven step must run in a container, agents without Docker or Podman are marked incompatible.
+
+Similarly, if a command-line step runs `echo %\myParam%` and "myParam" is not defined in pipeline or job [parameters](#Parameters) sections, TeamCity checks the agent machine as the last remaining potential source of this parameter value. Only agents with a non-empty "myParam" parameter can run the job.
+{id="pipeline-implicit-requirement"}
+
+<img src="pipeline-implicit-requirement.png" width="706" alt="Implicit requirement in pipelines"/>
+
+The **Agent requirements** section allows you to define extra conditions for eligible agents, such as names, hardware specs, or installed tools.
+
+
+TeamCity displays ready-to-use options for most basic agent hardware requirements: the number of CPU cores, the total amount of agent memory, and the CPU architecture.
+
+<img src="pipelines-agent-requirements.png" width="706" alt="pipelines agent requirements"/>
+
+Click **Add custom requirement** to define your own requirements. Each requirement is an `<agent.parameter> <operator> [value]` expression. TeamCity evaluates these expressions for each authorized agent, marking agents that return "true" as eligible to run the job and labeling the rest as incompatible.
+
+<deflist>
+
+<def title="Agent parameter">
+
+A parameter reported by the agent machine whose value must match the required criteria. Below are a few examples of various agent parameters:
+
+* `teamcity.agent.jvm.os.arch` — reports the agent machine architecture. For example, `aarch64` for macOS agents running on Apple ARM devices.
+* `env.ANDROID_SDK_HOME` — returns the path to the Android SDK installed on the agent machine. For example, `/home/builduser/android-sdk-linux`.
+* `teamcity.agent.jvm.user.timezone` — stores the timezone of the agent machine. For example, `Etc/UTC`.
+* `MonoVersion` — returns the version of the Mono platform. For example, `6.12.0.200`.
+
+Navigate to **&lt;TeamCity_Agent&gt; | Parameters** tab to check what parameters agents report and find those that store agent hardware and software data.
+
+<img src="tc-agent-parameters.png" width="706" alt="TeamCity agent parameters"/>
+
+See also: [](predefined-build-parameters.md).
+
+</def>
+
+
+<def title="Operator">
+
+The logical operator used to compare the actual agent parameter value with the given one. For example, "less than", "starts with", "contains", and so on.
+
+See also: [](requirement-conditions.md)
+
+</def>
+
+
+<def title="Value">
+
+A custom value to compare against the agent's parameter value. The only operator that does not require a value is `exists`, which checks whether the agent reports the required parameter, no matter what actual value it has.
+
+</def>
+
+</deflist>
+
+The following YAML sample defines three requirements: 16 GB of RAM, at least 10 GB of free disk space, and Python 3 installed. Standard TeamCity requirements use the shorter alias: value syntax, while custom ones use full `<parameter> <operator> [value]` expressions (with an extra `name` parameter for the public title).
+
+```yaml
+jobs:
+  Job1:
+    name: Sample job
+    steps:
+      - type: script
+        script-content: cat artifact.txt
+    runs-on:
+      self-hosted:
+        - ram: 16GB
+        - requirement: more-than
+          name: Free disk space
+          parameter: teamcity.agent.work.dir.freeSpaceMb
+          value: '10240'
+        - requirement: exists
+          name: Python
+          parameter: python3.executable
+```
+
+> See the following article to learn about agent requirements in classic TeamCity build configurations: [](configuring-agent-requirements.md).
+> 
+{style="note"}
+
+
+## Parameters
+
+> If a job uses a parameter that is not defined on either pipeline or job level, this parameter becomes an [agent requirement](#Agent+Requirements) (see [example](#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
+> 
+{style="note"}
 
 ## Repository
 
