@@ -103,3 +103,8 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
     ```
 
  9. Navigate to `<ip address>:8111` in a web browser to complete the installation (see [TeamCity First Start](quick-setup-guide.md#TeamCity+First+Start)).
+
+
+## Automatic Server Startup
+
+See this article for the instructions: [Start TeamCity Server](start-teamcity-server.md#Automatic+Server+Startup).

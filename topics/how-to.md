@@ -50,54 +50,7 @@ When upgrading the version of Tomcat to be used by TeamCity, we suggest that you
 ## Autostart TeamCity Server on macOS
 {instance="tc"}
 
-Starting up the TeamCity server on macOS is quite similar to starting Tomcat on macOS.
-1. Install TeamCity and make sure it works if started from the command line with `bin/teamcity-server.sh start`. This instruction assumes that TeamCity is installed to `/Library/TeamCity`.
-2. Create the `/Library/LaunchDaemons/jetbrains.teamcity.server.plist` file with the following content:
-    ```XML
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-        <key>WorkingDirectory</key>
-        <string>/Library/TeamCity</string>
-        <key>Debug</key>
-        <false/>
-        <key>Label</key>
-        <string>jetbrains.teamcity.server</string>
-        <key>OnDemand</key>
-        <false/>
-        <key>KeepAlive</key>
-        <true/>
-        <key>ProgramArguments</key>
-        <array>
-            <string>/bin/bash</string>
-            <string>--login</string>
-            <string>-c</string>
-            <string>bin/teamcity-server.sh run</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>StandardErrorPath</key>
-        <string>logs/launchd.err.log</string>
-        <key>StandardOutPath</key>
-        <string>logs/launchd.out.log</string>
-    </dict>
-    </plist>
-    
-    ```
-3. Test your file by running:
-    ```Shell
-    launchctl load /Library/LaunchDaemons/jetbrains.teamcity.server.plist
-    
-    ```
-   This command should start the TeamCity server (you can see this from `logs/teamcity-server.log` and in your browser).
-4. If you don't want TeamCity to start under the root permissions, specify the `UserName` key in the `.plist` file, for example:
-    ```XML
-    <key>UserName</key>
-    <string>teamcity_user</string>
-    
-    ```
-The TeamCity server will now start automatically when the machine starts. To configure automatic start of a TeamCity build agent, see the [dedicated section](start-teamcity-agent.md#Automatic+Start).
+This content was moved to the [Start TeamCity Server article](start-teamcity-server.md#Automatic+Server+Startup).
 
 ## Automate TeamCity Server Installation
 {instance="tc"}

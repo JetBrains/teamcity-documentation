@@ -49,3 +49,7 @@ To install the TeamCity server, unpack the `TeamCity<version number>.tar.gz` arc
 >\* We advise using GNU tar or the `gtar xfz` command for unpacking. For example, Solaris 10 tar is reported to truncate long file names and may cause `ClassNotFoundException` when using the server after unpacking.
 
 Make sure that JRE or JDK are installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory (see [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server)).
+
+## Automatic Server Startup
+
+See this article for the instructions: [Start TeamCity Server](start-teamcity-server.md#Automatic+Server+Startup).
