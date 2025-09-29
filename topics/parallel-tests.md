@@ -246,5 +246,6 @@ object Build : BuildType({
 ### Known bugs
  
 * The [Enforce Clean Checkout action](clean-checkout.md#Enforcing+Clean+Checkout) does not work for build configurations with parallel tests configured. Related YouTrack ticket: [TW-75337](https://youtrack.jetbrains.com/issue/TW-75337/Parallel-tests-Enforce-clean-checkout-Action-does-not-affect-auto-generated-configurations).
-* Batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) run all tests instead of a specified subset of tests. Related YouTrack ticket: [TW-75849](https://youtrack.jetbrains.com/issue/TW-75849/Parallel-tests-All-batches-run-all-tests-from-TestNG-xml-suite).
+* In Gradle, batch builds spawned to run [TestNG](https://testng.org/doc/) tests from an [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) run all tests instead of a specified subset of tests. Related YouTrack ticket: [TW-75849](https://youtrack.jetbrains.com/issue/TW-75849).
+* In Maven with [TestNG](https://testng.org/doc/), [XML suite](https://testng.org/doc/documentation-main.html#testng-xml) files are ignored. Related YouTrack ticket: [TW-95644](https://youtrack.jetbrains.com/issue/TW-95644).
 
