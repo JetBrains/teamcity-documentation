@@ -480,14 +480,42 @@ Amazon [key management guidelines](https://docs.aws.amazon.com/accounts/latest/r
 TeamCity allows your project to access required AWS resources using connections that assume IAM Roles and do not rely on locally stored credentials.
 
 1. In AWS Management Console, go to the [IAM dashboard](https://console.aws.amazon.com/iam/) and navigate to the **Roles** tab.
-2. Create a new IAM Role <i>without any permissions</i>. We will reference this role as "Role A".
+2. Create a new empty IAM Role. We will reference this role as "Role A". The only permission this role needs is a permission to assume other roles.
+
+    Role A with permissions to assume any role:
+
+    ```JSON
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "sts:AssumeRole",
+                "Resource": "*"
+            }]
+    }
+    ```
+   
+    Role A with permissions to assume a specific role B (see step #6):
+
+    ```JSON
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "sts:AssumeRole",
+                "Resource": "arn:aws:iam::ACCOUNT_ID:role/ROLE_B"
+            }]
+    }
+    ```
+
 3. Configure your TeamCity server machine to access AWS using this role instead of locally stored credentials. Required steps may vary depending on the exact type of your machine.
    * [Server running on an EC2 instance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)
    * [Server running in an ECS container](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
    * Other configurations: [Web Identity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html), [SAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)
     
 4. In TeamCity, create a new AWS connection of the **Default Credentials Provider Chain** type. Press **Test Connection** to ensure TeamCity uses your empty "Role A".
-
 
 5. If you want subprojects to have access to this new connection, check the **Available for sub-projects** option. Otherwise, only the same project that owns this connection will be able to use it.
         
