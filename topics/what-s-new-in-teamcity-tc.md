@@ -16,7 +16,7 @@ We remain committed to delivering a modern, intuitive TeamCity experience for al
 ## Public Marketplace Recipes
 {instance="tc"}
 
-In 2025.03, we announced a shift from meta-runners to recipes: lightweight, YAML-based custom steps [available on JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). At the moment, the Marketplace offers more over a dozen of JetBrains-made recipes that automate tasks like pinning builds, downloading artifacts, and updating build statuses.
+In 2025.03, we announced a shift from meta-runners to recipes: lightweight, YAML-based custom steps [available on JetBrains Marketplace](https://plugins.jetbrains.com/teamcity_recipe). At the moment, the Marketplace offers more than a dozen of JetBrains-made recipes that automate tasks like pinning builds, downloading artifacts, and updating build statuses.
 
 Starting with this release, third-party recipes are also supported. Browse community-made options, inspect their source code to view implementation details, [upload your own recipes to Marketplace](https://plugins.jetbrains.com/docs/marketplace/uploading-a-new-plugin.html#upload-teamcity-recipes), and expand TeamCity’s extensive arsenal of build steps with custom tools.
 
