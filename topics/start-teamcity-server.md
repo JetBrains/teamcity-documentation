@@ -57,7 +57,11 @@ See this Microsoft article for more information: [Automatically Starting Service
 2. Create a systemd service configuration file.
 
     ```Shell
-    sudo tee -a /etc/systemd/system/teamcity-server.service > /dev/null <<EOF
+    TEAMCITY_HOME="/opt/teamcity"  # Replace with the actual TeamCity Server installation directory
+    LINUX_USERNAME="my_username"   # Replace with the Linux user account that should run the service
+    LINUX_USERGROUP="my_groupname" # Replace with the primary group of that user
+    
+    sudo tee /etc/systemd/system/teamcity-server.service > /dev/null <<EOF
     [Unit]
     Description=TeamCity Server
     After=network.target
