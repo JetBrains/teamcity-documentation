@@ -23,7 +23,7 @@ Currently, pipelines support four types of steps you can add. All of them are li
 This is a universal step that executes commands directly in the agent machine terminal. As a result, you can interact with any tool installed on the agent: cURL, Python, MSBuild, Homebrew, and so on.
 
 > This step is also available in classic TeamCity build configurations: [](command-line.md).
-> 
+>
 {style="tip"}
 
 For example, the following step downloads artifacts produced by a target build configuration:
@@ -122,12 +122,12 @@ This section covers settings to significantly speed up pipeline runs, saving tim
     > See this article to learn how TeamCity identifies builds that can be reused: [](snapshot-dependencies.md#Suitable+Builds).
     >
     {style="tip"}
-
+    
     Reused jobs are explicitly marked in the UI to avoid any confusion.
-
+    
     <img src="pipelines-job-reuse.png" width="706" alt="Pipeline run reuse"/>
-
-    Note the "Optimization" tile on the top of the page: TeamCity was able to finish this run nearly five times faster than the previous run, with the amount of time saved due to reusing runs attributed to nearly 80% of the last known run duration.
+    
+    Notice the "Optimization" tile at the top: TeamCity completed this run nearly five times faster than the previous one, with reused runs saving almost 80% of the last run’s duration.
 
 
 ## Agent Requirements
@@ -185,7 +185,7 @@ A custom value to compare against the agent's parameter value. The only operator
 
 </deflist>
 
-The following YAML sample defines three requirements: 16 GB of RAM, at least 10 GB of free disk space, and Python 3 installed. Standard TeamCity requirements use the shorter alias: value syntax, while custom ones use full `<parameter> <operator> [value]` expressions (with an extra `name` parameter for the public title).
+The following YAML sample defines three requirements: 16 GB of RAM, at least 10 GB of free disk space, and Python 3 installed. Standard TeamCity requirements use the shorter `alias: value` syntax, while custom ones use the complete `<parameter> <operator> [value]` expressions (with an extra `name` parameter for the public title).
 
 ```yaml
 jobs:
@@ -207,7 +207,7 @@ jobs:
 ```
 
 > See the following article to learn about agent requirements in classic TeamCity build configurations: [](configuring-agent-requirements.md).
-> 
+>
 {style="note"}
 
 
@@ -216,13 +216,145 @@ jobs:
 <include from="pipeline-settings.md" element-id="pipeline-parameters-common"/>
 
 > Jobs can modify parameter values from inside build steps. See the [](#Outputs) section for more information.
-> 
+>
 {style="tip"}
 
 ## Outputs
 
+This section explains how jobs can share the results of their runs, including calculated values and generated files.
+
+### Files
+
+Files shared by a job can serve as artifacts, internal files for downstream jobs, or both.
+
+<deflist type="full">
+
+<def title="Artifacts">
+
+Artifacts are files displayed on the **Artifacts** tab of the run results page. Users with permission to view the project can download these files to local storage.
+
+<img src="dk-pipeline-artifact.png" width="706" alt="Job artifacts tab"/>
+
+</def>
+
+<def title="Shared files">
+
+Shared files are passed down the pipeline to subsequent jobs. These are typically internal files or files that are not yet finalized. In either case, they are not meant to appear on the **Artifacts** tab.
+
+> For debugging, TeamCity still displays shared files on the **Artifacts** tab, packed into a hidden .shared_files.zip archive.
+> 
+> <img src="dk-pipelines-shared-files.png" width="706" alt="Shared files visible in the artifacts tab"/>
+> 
+{style="tip"}
+
+The YAML example below shows one job that creates and modifies a file, and a second job that imports the file and prints its contents. "Job 2" then publishes the file as an artifact.
+
+```yaml
+jobs:
+  Job1:
+    name: Create file
+    steps:
+      - type: script
+        script-content: |-
+          touch sample.txt
+          echo "File created by Job 1, build #%tc.build.number%" >> sample.txt
+    files-publication:
+      - path: sample.txt
+        share-with-jobs: true
+        publish-artifact: false
+  Job2:
+    name: Print file contents
+    dependencies:
+      - Job1
+    steps:
+      - type: script
+        script-content: cat sample.txt
+    files-publication:
+      - path: sample.txt
+        share-with-jobs: false
+        publish-artifact: true
+```
+
+> If both jobs run on the same build agent, this sequence works even if "Job 1" does not define any outputs, because the jobs share the [working directory](build-working-directory.md).
+> 
+{style="tip"}
+
+</def>
+
+</deflist>
+
+These two types are not mutually exclusive: when adding an output file, you can tick both **Shared file** and **Artifact** checkboxes.
+
+<img src="dk-shared-artifact-file.png" width="706" alt="Published artifact"/>
 
 
+> In classic TeamCity build configurations, any file that needs to be shared with other configurations must be published as an [artifact](build-artifact.md). In addition, configurations need [artifact dependencies](artifact-dependencies.md) to do this.
+{style="note"}
+
+
+### Output parameters
+
+Jobs can work with two types of parameters: **input** and **output**.
+
+* **Input parameters** are name–value pairs that a job uses during its run. See the [](#Parameters) section for more information.
+* **Output parameters** store values that a job passes down the pipeline to other jobs.
+
+Output parameters are designed as a separate entity to prevent surprise breakages across pipelines. For example, changing (or removing) a parameter in "Job A" might unexpectedly break "Job B" if it depends on it. By marking a parameter as output, TeamCity signals that it may be used elsewhere, so before changing it, check for dependencies to avoid surprises.
+
+The YAML example below defines a pipeline with two jobs that illustrate this concept:
+
+1. **Job 1** uses the `env.INPUT` parameter to calculate a value.
+2. The job’s script sends the `setParameter` [service message](service-messages.md#set-parameter) to write this value to the `result_param` input parameter.  .
+3. That parameter is then mapped to the `output_param` output parameter.
+4. **Job 2** retrieves this output parameter using the `job.<source_job_ID>.<output-parameter-name>` syntax.
+
+
+```yaml
+jobs:
+  Job1:
+    name: Calculate value
+    steps:
+      - type: script
+        script-content: |-
+          RESULT=$((%env.INPUT% * 2))
+          echo $RESULT
+          echo "##teamcity[setParameter name='result_param' value='$RESULT']"
+    parameters:
+      env.INPUT: '5'
+      result_param: ''
+    output-parameters:
+      output_param: The calculated value is %result_param%
+  Job2:
+    name: Use calculated value
+    dependencies:
+      - Job1
+    steps:
+      - type: script
+        script-content: echo %job.Job1.output_param%
+```
+
+By following this pattern, you can separate parameters used only within a job from those explicitly shared across the pipeline.
+
+> In the example above, `setParameter` service message to change the initial `input_param` value. the `setParameter` service message updates the `result_param` value. Note that changes made by this message are **not** applied until the next step starts — the current step still sees the old value.
+>
+> ```yaml
+>   Job1_3:
+>     name: Input param
+>     steps:
+>       - type: script
+>         script-content: |-
+>           RESULT=$((%env.INPUT% * 2))
+>           echo $RESULT
+>           echo "##teamcity[setParameter name='result_param' value='$RESULT']"
+>           echo %result_param% # prints the old 'N/A' value
+>       - type: script
+>         script-content: echo %result_param% # prints the updated value set by the service message
+>     parameters:
+>       env.INPUT: '5'
+>       result_param: N/A
+> ```
+>
+{style="warning"}
 
 
 ## Repository
