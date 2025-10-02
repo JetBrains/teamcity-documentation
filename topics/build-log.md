@@ -79,7 +79,7 @@ http://localhost:8111/downloadRawMessageFile.html?buildId=4102
 
 #### Modify the DateTime Pattern
 
-By default, timestamps in a build log are written in the "HH:mm:ss" format. You can add the `dateFormat=<value>` parameter to the URL to modify the DateTime pattern. Custom patterns must follow the [Java SimpleDateFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html) specification.
+By default, timestamps in a build log are written in the `HH:mm:ss` format. You can add the `dateFormat=<value>` parameter to the URL to modify the DateTime pattern. Custom patterns must follow the [Java SimpleDateFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html) specification.
 
 For example:
 

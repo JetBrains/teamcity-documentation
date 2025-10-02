@@ -71,7 +71,7 @@ Each individual artifact rule should start from a new line and have the followin
 [+:|-:|?:]SourcePath[!ArchivePath][=>DestinationPath]
 ```
 
-The order of a rules is irrelevant. For each artifact the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied.
+The order of a rules is irrelevant. A single artifact can be downloaded to multiple locations via separate rules. If multiple rules target the same artifact file and specify the same download directory, the most specific rule (the one with the longest prefix before the first wildcard symbol) is applied.
 
 > Click the ![ArtifactsBrowserIcon.png](ArtifactsBrowserIcon.png) icon to invoke the Artifact Browser. TeamCity will try to locate artifacts according to the specified settings and show them in a tree. Select the required artifacts from the tree and TeamCity will place the paths to them into the input field.
 >

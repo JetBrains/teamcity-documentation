@@ -7,7 +7,7 @@ Jobs contain individual build steps that run sequentially. This article covers c
 
 To view and edit job settings, click the [Settings toggle](project-administrator-guide.md#Edit+and+View+Modes) in the top right corner, then click any job tile (or the "Add" tile to create a new job).
 
-<img src="pipelines-open-job-settings.png" width="706" alt="Open job settings"/>
+<img src="pipelines-open-job-settings.png" xmlns="" width="706" alt="Open job settings"/>
 
 You can also switch from the visual editor to the code and edit the markup directly.
 
@@ -134,7 +134,7 @@ This section covers settings to significantly speed up pipeline runs, saving tim
 
 TeamCity automatically tracks agent software to ensure queued runs are assigned only to compatible agents. For example, if a Maven step must run in a container, agents without Docker or Podman are marked incompatible.
 
-Similarly, if a command-line step runs `echo %\myParam%` and "myParam" is not defined in pipeline or job [parameters](#Parameters) sections, TeamCity checks the agent machine as the last remaining potential source of this parameter value. Only agents with a non-empty "myParam" parameter can run the job.
+Similarly, if a job uses a parameter that is not defined in either [pipeline](pipeline-settings.md#Parameters) or [job](#Parameters) **Parameters** sections, TeamCity checks the agent machine as the last remaining potential source of this parameter value. For example, if the command-line step runs `echo %\myParam%` with an unknown parameter reference, only agents with a non-empty "myParam" parameter can run the job.
 {id="pipeline-implicit-requirement"}
 
 <img src="pipeline-implicit-requirement.png" width="706" alt="Implicit requirement in pipelines"/>
@@ -359,4 +359,36 @@ By following this pattern, you can separate parameters used only within a job fr
 
 ## Repository
 
-TBD
+This section allows you to select which remote repositories this job should check out. To add a repository, create a new entry in the **Repositories** section of [pipeline settings](pipeline-settings.md#Repository).
+
+By default, sources are checked into a sub-folder of the agent work directory. To ensure agents do not constantly lose sources of one job when running another, this subfolder has an auto-generated name unique for each job (for example, `/mnt/agent/work/6fa95896c6cadf54`).
+
+You can specify a custom directory for checked out sources via the corresponding option of a **Repository** section item. The path to the checkout directory can be absolute, however it is highly recommended to use either relative paths (`MyCustomFolder`) or paths that reference pre-defined TeamCity parameters (`%\teamcity.agent.work.dir%/MyCustomFolder`).
+
+```yaml
+ Job1:
+    name: Job 1
+    repositories:
+      - main:
+          path: MainRepo # Custom checkout directory (relative path)
+          enabled: true
+      - https://github.com/Johndoe/MySampleApp:
+          path: ''' # Default value, will use a directory that matches the repository name
+          enabled: true
+```
+
+The diagram below outlines the relations between core directories involved in a building process.
+
+<img src="agent-directories.png" width="1680" alt="Agent and build directories" thumbnail="true"/>
+
+Refer to the following articles to learn more:
+
+* [](agent-home-directory.md) — the installation directory of a build agent.
+* [](agent-work-directory.md) — the subfolder of agent home directory that stores build-related files.
+* [](build-checkout-directory.md) — the subfolder of agent work directory where all checked out sources are downloaded.
+* [](build-working-directory.md) — the directory where a build step starts (equals to "build checkout directory" by default).
+
+
+## Integrations
+
+<include from="pipeline-settings.md" element-id="pipeline-job-integrations"/>

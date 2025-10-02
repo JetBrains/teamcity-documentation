@@ -186,13 +186,20 @@ For classic build configurations, this functionality is available as the [](comm
 
 </deflist>
 
-
+Each individual job can choose which of the pipeline repositories it will check out. See the following article for more information: [Job Settings](job-settings.md#Repository).
 
 ## Integrations
 
-Set up authorization for NPM or Docker registries here. After adding the required integration, open the job that needs repository access, scroll to its **Integration** section, and ensure the toggle for the required entry is enabled.
+<snippet id="pipeline-job-integrations">
+
+Both pipeline and job settings panels include an **Integrations** section for connecting to private Docker and NPM registries.
+
+* In the pipeline settings, you manage the full list of available integrations for jobs.
+* In job settings, toggles let you select which registries the job should log in to automatically, ensuring build steps can access the required data.
 
 Classic TeamCity build configurations support this functionality via the "connection + build feature" combinations:
 
 * [Docker Registry](configuring-connections.md#Docker+Registry) connection and [](docker-support.md) build feature for Docker.
-* [NPM Registry](configuring-connections.md#npm-registry-settings) connection and the [related build feature](nodejs.md#Accessing+Private+NPM+Registries) for Node.js registries. 
+* [NPM Registry](configuring-connections.md#npm-registry-settings) connection and the [related build feature](nodejs.md#Accessing+Private+NPM+Registries) for Node.js registries.
+
+</snippet>
