@@ -1,4 +1,4 @@
-# Common Job Settings
+# Job Settings
 
 Jobs contain individual build steps that run sequentially. This article covers common settings that control how the sequence is executed.
 

@@ -1,4 +1,4 @@
-# Main Pipeline Settings
+# Pipeline Settings
 
 This article explains settings available for the entire pipeline that specify common pipeline behavior.
 
