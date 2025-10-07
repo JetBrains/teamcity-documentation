@@ -127,3 +127,9 @@ TeamCity uses own [credential provider](https://docs.microsoft.com/en-us/nuget/r
 Internet Explorer settings may need to be set to trust the TeamCity server when working in a mixed authentication environment.
 
 <!--[//]: # (Internal note. Do not delete. "Using TeamCity as NuGet Feedd342e197.txt")-->
+
+## Current Limitations
+
+* The automatic authentication might fail when using mixed .NET SDK and .NET Framework tooling at one build step. An example of such mixing can be running .NET CLI commands
+  as [Exec tasks](https://learn.microsoft.com/en-us/visualstudio/msbuild/exec-task) when building a project via MSBuild.exe.
+  See [TW-93344](https://youtrack.jetbrains.com/issue/TW-93344) for details.
