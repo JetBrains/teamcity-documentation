@@ -117,7 +117,6 @@ The `config` subdirectory of TeamCity Data Directory contains the configuration 
   * `ldap-config.properties` — [LDAP authentication](ldap-integration.md) configuration properties.
   * `ntlm-config.properties` — [Windows domain authentication](configuring-authentication-settings.md#Windows+Domain+Authentication) configuration properties.
   * `issue-tracker.xml` — issue tracker integration settings.
-  * `cloud-profiles.xml` — Cloud (for example, Amazon EC2) integration settings.
   * `backup-config.xml` — web UI backup configuration settings.
   * `roles-config.xml` — roles-permissions assignment file.
   * `database.*.properties` — default template connection settings files for different external databases.
