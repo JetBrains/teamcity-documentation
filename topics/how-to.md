@@ -286,7 +286,7 @@ The contents of this section have been moved to the [dedicated article](configur
 ## Enforce hiding stacktrace
 {instance="tc"}
 
-If a user with access to your TeamCity server submits an invalid cross-site scripting (XSS) payload, the server will display the "Unexpected error" page containing a related stacktrace. To prevent exposing any sensible information about your environment via this stacktrace, you might want to disable its display. For this, set the `teamcity.web.runtimeError.showStacktrace` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false`.
+If a user with access to your TeamCity server submits an invalid cross-site scripting (XSS) payload, the server will display the "Unexpected error" page containing a related stacktrace. To prevent exposing any sensitive information about your environment via this stacktrace, you might want to disable its display. For this, set the `teamcity.web.runtimeError.showStacktrace` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `false`.
 
 ## Configure HTTPS for TeamCity Web UI
 {instance="tc"}
