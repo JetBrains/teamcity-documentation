@@ -1,5 +1,5 @@
-[//]: # (title: What's New in TeamCity 2025.07)
-[//]: # (help-id: What's New in TeamCity 2025.07;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity 2025.11)
+[//]: # (help-id: What's New in TeamCity 2025.11;What's New in TeamCity)
 
 
 <include from="what-s-new-in-teamcity-tc.md" element-id="2025-07-tc"/>
