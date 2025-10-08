@@ -11,3 +11,13 @@ You can add this build feature to any build configuration, one for every feed th
 
 When using TeamCity as the [internal NuGet server](using-teamcity-as-nuget-feed.md), the credentials specified via this build feature are ignored; the internal TeamCity authentication is used.
 {instance="tc"}
+
+## Current Limitations
+
+<snippet id="nuget-mixing-dotnet-limitation">
+
+* The authentication can fail when using mixed .NET SDK and .NET Framework tooling inside a single build step. For example, this can be the case if you run .NET CLI commands
+  as [Exec tasks](https://learn.microsoft.com/en-us/visualstudio/msbuild/exec-task) when building a project via MSBuild.exe.
+  See [TW-93344](https://youtrack.jetbrains.com/issue/TW-93344) for details.
+
+</snippet>
