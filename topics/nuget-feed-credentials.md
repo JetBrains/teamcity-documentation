@@ -14,6 +14,6 @@ When using TeamCity as the [internal NuGet server](using-teamcity-as-nuget-feed.
 
 ## Current Limitations
 
-* The authentication might fail when using mixed .NET SDK and .NET Framework tooling at one build step. An example of such mixing can be running .NET CLI commands
+* The authentication can fail when using mixed .NET SDK and .NET Framework tooling inside a single build step. For example, this can be the case if you run .NET CLI commands
   as [Exec tasks](https://learn.microsoft.com/en-us/visualstudio/msbuild/exec-task) when building a project via MSBuild.exe.
   See [TW-93344](https://youtrack.jetbrains.com/issue/TW-93344) for details.
