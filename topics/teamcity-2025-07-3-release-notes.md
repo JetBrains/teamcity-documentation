@@ -5,13 +5,18 @@
 
 ### Bug
 
-* [**TW-93701**](https://youtrack.jetbrains.com/issue/TW-93701) — TCP Merge: "Reusing Jobs" is reported ON on the Pipeline page when it's turned off in settings 
 * [**TW-95429**](https://youtrack.jetbrains.com/issue/TW-95429) — Broken Tests tab in case of large total tests duration
 * [**TW-95433**](https://youtrack.jetbrains.com/issue/TW-95433) — CSAT: remove focus from the optional field
-* [**TW-95102**](https://youtrack.jetbrains.com/issue/TW-95102) — Build on new Pull Request branch in Pipeline is not triggered, if there are no other new commits
-* [**TW-95952**](https://youtrack.jetbrains.com/issue/TW-95952) — Pipelines: Cannot create pipeline from "any Git URL" with SSH authentication 
-* [**TW-95353**](https://youtrack.jetbrains.com/issue/TW-95353) — Job outputs: "shared file" is always re-selected whenever a user types a new character. 
 * [**TW-94174**](https://youtrack.jetbrains.com/issue/TW-94174) — Public Recipes: Add link to documentation and/or some hint/label to the Recipe tab for the Enabling/Disabling integration with Marketplace
+
+### Pipeline Issues
+
+The list below contains resolved issues related to the introduction of [pipelines](create-and-edit-pipelines.md).
+
+* [**TW-93701**](https://youtrack.jetbrains.com/issue/TW-93701) — "Reusing Jobs" is reported ON on the Pipeline page when it's turned off in settings
+* [**TW-95102**](https://youtrack.jetbrains.com/issue/TW-95102) — Build on new Pull Request branch in Pipeline is not triggered, if there are no other new commits
+* [**TW-95952**](https://youtrack.jetbrains.com/issue/TW-95952) — Pipelines: Cannot create pipeline from "any Git URL" with SSH authentication
+* [**TW-95353**](https://youtrack.jetbrains.com/issue/TW-95353) — Job outputs: "shared file" is always re-selected whenever a user types a new character.
 * [**TW-94838**](https://youtrack.jetbrains.com/issue/TW-94838) — TCP Merge: Create Pipeline button on Edit project page is shown to a user without "Create subproject" permission
 
 ### Performance Problem
