@@ -130,6 +130,4 @@ Internet Explorer settings may need to be set to trust the TeamCity server when 
 
 ## Current Limitations
 
-* The automatic authentication might fail when using mixed .NET SDK and .NET Framework tooling at one build step. An example of such mixing can be running .NET CLI commands
-  as [Exec tasks](https://learn.microsoft.com/en-us/visualstudio/msbuild/exec-task) when building a project via MSBuild.exe.
-  See [TW-93344](https://youtrack.jetbrains.com/issue/TW-93344) for details.
+<include from="nuget-feed-credentials" element-id="nuget-mixing-dotnet-limitation"/>
