@@ -130,4 +130,4 @@ Internet Explorer settings may need to be set to trust the TeamCity server when 
 
 ## Current Limitations
 
-<include from="nuget-feed-credentials" element-id="nuget-mixing-dotnet-limitation"/>
+<include from="nuget-feed-credentials.md" element-id="nuget-mixing-dotnet-limitation"/>
