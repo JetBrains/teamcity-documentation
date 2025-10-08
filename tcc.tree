@@ -48,8 +48,8 @@
 		</toc-element>
 		<toc-element toc-title="What's New in TeamCity Cloud">
 			<toc-element topic="what-s-new-in-teamcity.md"/>
+			<toc-element topic="what-s-new-in-teamcity-2025-07.md"/>
 			<toc-element topic="what-s-new-in-teamcity-2025-03.md"/>
-			<toc-element topic="what-s-new-in-teamcity-2024-12.md"/>
 		</toc-element>
 	</toc-element>
 	<toc-element toc-title="System Administration">
