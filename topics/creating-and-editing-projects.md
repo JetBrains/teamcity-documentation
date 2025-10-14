@@ -33,6 +33,30 @@ To add a subproject of an existing project, click the identical button next to t
 > 
 {style="tip"}
 
+The **New Project** page asks you to enter a name and (optionally) a description of your project.
+
+> The **Project ID** is generated automatically based on the public project name and the ID of a parent project. Project IDs are unique identifiers used in dependencies and REST API. Leave this auto-generated value unless you know you'll need a shorter, more readable ID.
+> 
+{style="tip"}
+
+<img src="create-page-new-design.png" width="706" alt="Main create project page"/>
+
+After you click **Create**, the project is created and TeamCity brings you to the **Set up your build** page. This page allows you to add a child element for your new projects:
+
+
+* [Build configuration](creating-and-editing-build-configurations.md) — A sequence of build steps that run on the same agent. It can include various build features and link to other configurations in a build chain. This classic TeamCity entity offers the most control and supports advanced scenarios, though it may be more challenging to set up for new users.
+
+* [Pipeline](create-and-edit-pipelines.md) — A collection of jobs containing build steps. Features an intuitive UI with an advanced visual editor and YAML support. This newer entity is under active development; while it may not yet have all the features of build configurations, it is easier to use and well-suited for simpler workloads and beginners. 
+
+You can choose any of these options or click **Close** in the top-right corner of the page. The latter option creates a blank new project, which you can use to set up a project hierarchy: create a top-level project and add subprojects later. You can add build configurations or pipelines at any time from the **General** tab in [project settings](project-administrator-guide.md#Edit+and+View+Modes) or by clicking the "+" icon in the navigation sidebar.
+
+
+<!--
+
+
+
+
+
 For a brand-new TeamCity installations, only **From repository URL** and **Manually** project creation options are available. You can get more options after you configure connections to VCS hosting providers.
 
 <img src="dk-default-add-project-options.png" width="706" alt="Default New Project Options"/>
@@ -237,6 +261,7 @@ Creating projects using a VCS connection takes care of all authentication-relate
 
 </procedure>
 
+-->
 
 ## Create New Projects in Kotlin DSL
 

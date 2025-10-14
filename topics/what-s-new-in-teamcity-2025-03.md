@@ -118,7 +118,7 @@ features {
 ## TeamCity UI Updates
 {instance="tcc"}
 
-As part of the [previously announced TeamCity/Pipelines merge](what-s-new-in-teamcity-2024-12.md#Pipelines+Merge+Announcement+and+Major+UI+Changes),version 2025.03 introduces another major UI update. Key changes include:
+As part of the previously announced TeamCity/Pipelines merge,version 2025.03 introduces another major UI update. Key changes include:
 
 * The **Edit Project/Configuration** button is replaced with the **Settings** toggle. The View and Edit modes toggled by this UI element use different accent colors for distinguishing between the two at a glance. In addition, TeamCity stays in the selected mode unless you explicitly switch it. This means once you've switched to project/configuration settings, you can navigate to another configuration and project without exiting the Edit mode.
 
