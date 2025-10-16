@@ -1,6 +1,8 @@
 [//]: # (title: Creating and Editing Build Configurations)
 [//]: # (help-id: Creating and Editing Build Configurations;Build Configuration)
 
+<show-structure for="chapter,procedure" depth="2"/>
+
 Build configurations and [pipelines](create-and-edit-pipelines.md) represent actual CI/CD routines. A build configuration stores a sequence of build steps (basic operations to be performed during a build run), and settings required to execute these steps. These settings include:
 
 * [parameters](configuring-build-parameters.md) that allow you to quickly alter the configuration behavior;
@@ -121,7 +123,7 @@ All available options are displayed in the corresponding drop-down on the **Set 
 
 TeamCity [connections](configuring-connections.md) store all information required to access an external resource: a VCS hosting, a cloud data storage, a Docker registry, a secrets vault, and so on. Using connections is the most convenient way to build your sources: configure it once and just choose a required repository from the list whenever you add new build configuration or pipeline.
 
-The figure above illustrates a list of existing connections: a GitLab connection, a GitHub connection, few Azure connections, and more. If no project among build configuration parents owns a VCS connection, your only option here will be to create a new one.
+The figure above illustrates a list of existing connections: a GitLab connection, a GitHub connection, few Azure connections, and more. If no project among build configuration parents owns a VCS connection, your only option here will be to create a new one via the **Connect new repository** menu item.
 
 
 ### Use a Repository URL
@@ -217,7 +219,7 @@ If you already have a build configuration or a pipeline that builds, tests, or d
 
 * Edit existing configuration — navigate to **Build Configuration Settings | Version Control** and click **Attach VCS root**.
 
-    <img src="" width="706" alt="Attach root to configuration"/>
+    <img src="attach-and-detatch-vcs-roots.png" width="706" alt="Attach and detach VCS roots"/>
 
 Reusing existing VCS roots allows you to save time on setting up required authorization and branch settings, and avoid creating duplicate roots.
 
@@ -238,6 +240,21 @@ Reusing existing VCS roots allows you to save time on setting up required author
 
 
 ### Configuration Without a Repository
+
+This configuration type doesn’t check out any remote repositories when it runs. Its steps, for example, only execute predefined scripts and send HTTP requests.
+
+You can create a new "unbound: configuration in two ways:
+
+* On the **Set up your build** page, select **Without repository**.
+* In the classic UI, open the **New build configuration** page and click the **Manually** tile.
+
+A [VCS root](#Use+a+VCS+Root) controls the VCS provider connection and repository checkout. Therefore, you can make any build configuration unbound by detaching its VCS root(s). Conversely, attaching a VCS root to a configuration without repositories enables it to check out remote sources. Both actions can be performed in the **Version Control** section of build configuration settings.
+
+<img src="attach-and-detatch-vcs-roots.png" width="706" alt="Attach and detach VCS roots"/>
+
+
+
+### Configuration With Multiple Repositories
 
 
 
