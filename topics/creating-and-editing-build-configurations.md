@@ -256,6 +256,33 @@ A [VCS root](#Use+a+VCS+Root) controls the VCS provider connection and repositor
 
 ### Configuration With Multiple Repositories
 
+Configurations determine which repositories to check out and which branches to track through their attached VCS roots. A configuration can have any number of roots, from [none](#Configuration+Without+a+Repository) to many.
+
+Typically, a configuration uses a single repository and thus has one VCS root. If you need to build completely separate projects, it’s best to create individual configurations and link them in a [build chain](build-chain.md) if necessary. However, when multiple repositories are related (such as a core product and its plugins), you can attach several VCS roots to the same configuration to build them together. To do this, create a configuration using any of the methods mentioned in this article, then go to the **Version Control** section of its settings. Here you can [create more VCS roots](configuring-vcs-roots.md) that target required repositories.
+
+The Kotlin DSL snippet below illustrates a configuration with two attached roots.
+
+```Kotlin
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+
+object MultiRepoBuild : BuildType({
+    name = "Multi-repo build"
+
+    vcs {
+        root(MavenRepoRoot, "+:. => MavenRepo")
+        root(GradleRepoRoot, "+:. => GradleRepo")
+    }
+})
+```
+
+All VCS roots download sources into the same [checkout directory](build-checkout-directory.md). To avoid file conflicts and keep the folder organized, it’s best to download each repository’s sources into separate subdirectories using [root checkout rules](vcs-checkout-rules.md). For example, the snippet above places sources in the "MavenRepo" and "GradleRepo" folders within the default checkout directory.
+
+> When using custom checkout paths, specify build steps' **Working directory** options to help them find files they need to process.
+> 
+{style="tip"}
+
 
 
 
