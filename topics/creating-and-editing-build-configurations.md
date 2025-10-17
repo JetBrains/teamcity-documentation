@@ -128,6 +128,7 @@ The figure above illustrates a list of existing connections: a GitLab connection
 
 ### Use a Repository URL
 
+
 This option allows you to build configuration in one go using a Git, Subversion, Mercurial, TFS, or Perforce repository (depot) URL. You can use any URL type:
 
 * A regular repository web link: `https://github.com/Johndoe/my-sample-app`

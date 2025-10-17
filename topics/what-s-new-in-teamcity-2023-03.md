@@ -63,7 +63,7 @@ In addition to Bitbucket Cloud, TeamCity now supports Bitbucket Server and Data 
 
 <img src="dk-whatsnew202303-bbserver.png" width="708" alt="TeamCity integration with Bitbucket Server and Data Center"/>
 
-See the following articles for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Projects](creating-and-editing-projects.md#From+a+Configured+Connection)
+See the following articles for more information: [Configuring Connections](configuring-connections.md#Bitbucket+Server+and+Data+Center) | [Creating and Editing Build Configurations](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 
 # Commit Status Publisher: Access Token Authentication to Bitbucket Server
 

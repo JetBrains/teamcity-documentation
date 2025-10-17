@@ -19,7 +19,7 @@ To allow TeamCity projects to access remote repositories via SSH URLs, you first
 3. In the "_Upload SSH Key_" dialog, browse for a private key file and specify a name for this key.
 4. Click **Save** to save the uploaded key.
 
-You can also upload private keys when creating new projects [from repository URLs](creating-and-editing-projects.md#From+Repository+URL). If you use an SSH URL, TeamCity switches the **Authentication** mode to "SSH Keys" and shows a list of the previously uploaded private keys. If you did not upload a required key before, click **Upload SSH key** and point TeamCity to the required file.
+You can also upload private keys when creating new build configurations and pipelines [from repository URLs](creating-and-editing-build-configurations.md#Use+a+Repository+URL). If you use an SSH URL, TeamCity switches the **Authentication** mode to "SSH Keys" and shows a list of the previously uploaded private keys. If you did not upload a required key before, click **Upload SSH key** and point TeamCity to the required file.
 
 <img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
 

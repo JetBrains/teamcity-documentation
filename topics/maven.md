@@ -3,7 +3,7 @@
 
 The _Maven_ build runner allows using [Apache Maven](https://maven.apache.org/) for automating builds.
 
-Note that you can create a new Maven-based build configuration [automatically from URL](creating-and-editing-projects.md#From+Repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
+Note that you can create a new Maven-based build configuration [automatically from URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
 
 >This build runner has some [Remote Run limitations](#Remote+Run+limitations).
 > 
