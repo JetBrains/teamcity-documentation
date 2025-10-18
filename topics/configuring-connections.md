@@ -1,20 +1,46 @@
 [//]: # (title: Configuring Connections)
 [//]: # (help-id: Configuring Connections)
 
-TeamCity allows storing presets of connections to external services. You can reuse these presets in various places on the server: when creating projects, configuring notifications, integrating with issue trackers, and more. This article gives instructions on how to add each type of connection.
+TeamCity connections store credentials required to access external services. Based on a type of this 3rd-party service, are two major connection categories.
 
-To add a connection, do the following:
+<deflist type="full">
+
+
+<def title="VCS Connections">
+
+These connections store the information needed to access VCS providers such as [](#GitHub), [](#GitLab), [](#Bitbucket+Cloud), and so on. They offer the fastest way to create projects, build configurations, and pipelines — handling authentication automatically so you can simply choose a repository and start configuring your build steps.
+
+<img src="connection-repo-list.png" width="706" alt="Repository list retrieved from a connection"/>
+
+Without a configured connection, you would require to provide credentials for every new pipeline, build configuration, or [root](configuring-vcs-roots.md).
+
+</def>
+
+<def title="Non-VCS Connections">
+
+Connections in this category store information needed to access services other than VCS providers and are used for purposes unrelated to retrieving remote repository sources. For example:
+
+* [Amazon Web Services](#AmazonWebServices) connection allows TeamCity to manage AWS [cloud agents](teamcity-integration-with-cloud-solutions.md) and store build artifacts in [S3 buckets](storing-build-artifacts-in-amazon-s3.md).
+* [Google](#Google) connection is used by the [corresponding authentication module](configuring-authentication-settings.md#Google) to allow users log into TeamCity using their Google accounts.
+* [Slack](#Slack) connection is utilized to set up Slack notifications and [send custom Slack messages from build steps](service-messages.md#Sending+Custom+Slack+Messages).
+* [HashiCorp Vault](hashicorp-vault.md) connection allows you to create remote parameters that retrieve their values from a secrets vault.
+
+
+</def>
+
+</deflist>
+
+To create a new connection, do the following:
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. Select the connection type, set its _Display name_ to distinguish it from the others, and configure it as described below.
 
-
 <img src="dk-bbconnection-createConnection.png" alt="Create a new TeamCity connection" width="706"/>
 
-If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
-After configuring the proxy, remember to also set the new address as the _Server URL_ in __Global Settings__ of TeamCity.
-{instance="tc"}
+You can also create new VCS connections from the **Set up your build** page when adding new configurations or pipelines. Choose the **Connect new repository** option in the drop-down menu to view available options.
+
+<img src="" width="706" alt="Add new VCS connection"/>
 
 ## Azure DevOps
 
@@ -942,6 +968,12 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+
+## HashiCorp Vault
+
+This connection allows you to set up integration with a secrets vault where TeamCity remote parameters retrieve their values from. See [](hashicorp-vault.md) to learn more.
+
 
  <seealso>
         <category ref="admin-guide">
