@@ -186,7 +186,8 @@ Cloud profiles specify global settings, such as authorization credentials and in
 
       TeamCity can automatically choose Regions or Availability Zones in which your spot requests are most likely to succeed based on their [spot placement scores](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html#sps-example-configs). To allow TeamCity to request and utilize these scores, add the `ec2:GetSpotPlacementScores` [IAM permission](#Required+IAM+permissions).
    
-      > It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem and re-add this build to the build queue.
+      > * It is not recommended to use spot instances for production-critical builds due to the possibility of an [unexpected spot instance termination by Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#using-spot-instances-managing-interruptions). If a spot instance is terminated, TeamCity will fail the build with a corresponding build problem and re-add this build to the build queue.
+      > * This setting overrides launch template settings. That is, if launch template has spot instances enabled but this image setting is off, TeamCity will only spawn on-demand agents.
       >
       {style="note"}
    3.6.&ensp;Specify networking settings for your EC2 instances.
