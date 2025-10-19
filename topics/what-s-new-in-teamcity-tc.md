@@ -1,6 +1,6 @@
-[//]: # (title: What's New in TeamCity On-Premises 2025.07)
+[//]: # (title: What's New in TeamCity On-Premises 2025.11)
 
-<snippet id="2025-07-tc">
+<snippet id="2025-11-tc">
 
 
 ## Server Encryption Enhancements
