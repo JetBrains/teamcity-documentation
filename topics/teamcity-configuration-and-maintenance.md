@@ -210,6 +210,8 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
 
+<!--
+
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
@@ -237,14 +239,15 @@ When you generate or enter a new custom encryption key, it becomes the default f
 * TeamCity cannot import projects or restore data from a backup if those projects or backups originate from a server that uses encryption keys absent on this server. To successfully move data from an encrypted server, make sure all of its `encryption-config.xml` keys are added to the corresponding file of the target server.
 </warning>
 
+-->
 
 
-<!--
+
 
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead of this internal mechanism. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
 
 <deflist type="full">
 
@@ -319,7 +322,9 @@ TeamCity cannot import projects or restore data from a backup if those projects 
 </warning>
 
 
--->
+For compatibility reasons, switching the active encryption key does not automatically re-encrypt existing SSH keys or secrets. To re-encrypt them, click **Re-encrypt with current key** in the global server settings. This process may take several hours, depending on the number of encrypted entities. If the server is restarted during re-encryption, TeamCity will automatically continue from the last processed item once it’s back online.
+
+<img src="start-reencryption.png" width="706" alt="Start reencryption"/>
 
 
 ## Artifacts' Domain Isolation
