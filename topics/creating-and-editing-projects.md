@@ -1,6 +1,8 @@
 [//]: # (title: Creating and Editing Projects)
 [//]: # (help-id: Creating and Editing Projects;Project)
 
+<show-structure for="chapter,procedure" depth="2"/>
+
 In TeamCity, actual building tasks are carried out by [build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md). However, both of them must be placed inside a project.
 
 This topic illustrates different ways to create projects.
@@ -30,13 +32,13 @@ To add a subproject of an existing project, click the identical button next to t
 <img src="dk-crete-project-sidebar-2.png" alt="Create new subproject" width="706"/>
 
 > When a TeamCity user creates a project, TeamCity automatically adds it to the **Favorites** list for that user. This allows you to quickly locate your own projects. You can click a star icon next to project names to add or remove them from Favorites.
-> 
+>
 {style="tip"}
 
 The **New Project** page asks you to enter a name and (optionally) a description of your project.
 
 > The **Project ID** is generated automatically based on the public project name and the ID of a parent project. Project IDs are unique identifiers used in dependencies and REST API. Leave this auto-generated value unless you know you'll need a shorter, more readable ID.
-> 
+>
 {style="tip"}
 
 <img src="create-page-new-design.png" width="706" alt="Main create project page"/>
@@ -46,7 +48,7 @@ After you click **Create**, the project is created and TeamCity brings you to th
 
 * [Build configuration](creating-and-editing-build-configurations.md) — A sequence of build steps that run on the same agent. It can include various build features and link to other configurations in a build chain. This classic TeamCity entity offers the most control and supports advanced scenarios, though it may be more challenging to set up for new users.
 
-* [Pipeline](create-and-edit-pipelines.md) — A collection of jobs containing build steps. Features an intuitive UI with an advanced visual editor and YAML support. This newer entity is under active development; while it may not yet have all the features of build configurations, it is easier to use and well-suited for simpler workloads and beginners. 
+* [Pipeline](create-and-edit-pipelines.md) — A collection of jobs containing build steps. Features an intuitive UI with an advanced visual editor and YAML support. This newer entity is under active development; while it may not yet have all the features of build configurations, it is easier to use and well-suited for simpler workloads and beginners.
 
 You can choose any of these options or click **Close** in the top-right corner of the page. The latter option creates a blank new project, which you can use to set up a project hierarchy: create a top-level project and add subprojects later. You can add build configurations or pipelines at any time from the **General** tab in [project settings](project-administrator-guide.md#Edit+and+View+Modes) or by clicking the "+" icon in the navigation sidebar.
 
@@ -269,20 +271,46 @@ The following Kotlin code creates a project with two subprojects.
 
 ```Kotlin
 object MyProject: Project({
-   name = "Main"
-   description = "The main project"
+    name = "Main"
+    description = "The main project"
 
-   subProject {
-      id("AllTests")
-      name = "Subproject for different kinds of tests"
-   }
+    subProject {
+        id("AllTests")
+        name = "Subproject for different kinds of tests"
+    }
 
-   subProject {
-      id("Packages")
-      name = "Subproject for packages"
-   }
+    subProject {
+        id("Packages")
+        name = "Subproject for packages"
+    }
 })
 ```
+
+To create a TeamCity project that imports settings stored in a remote repository:
+
+1. On the **New Project** page, click **Import project DSL (classic UI)** (see the image above).
+2. Select the **Manually** tile to create an empty project and enter its name.
+3. In project settings, navigate to the **Versioned Settings** tab.
+4. Check **Synchronization enabled** and click **Create VCS root**.
+
+    <img src="import-project-dsl-new-root.png" width="706" alt="New settings VCS root"/>
+
+5. Configure the root to connect to a remote repository that stores DSL settings. See the [](configuring-vcs-roots.md) article to learn more.
+
+    > A TeamCity configuration can use separate VCS roots for importing DSL settings and downloading sources.
+    > 
+    > If your build project and DSL settings are stored in the same repository (not recommended for public repos accepting external contributions), you can reuse the same root.
+    >
+    {style="tip"}
+
+6. Click **Apply**. Once TeamCity connects to the repository, select **Load project settings from VCS...**.
+
+7. By default, TeamCity uses two-way synchronization for project settings:
+
+    * Edits made in the TeamCity UI are committed back to the VCS.
+    * Changes in the versioned settings are reflected in the UI.
+
+   To make the configuration file the only editable source, clear the **Allow editing project settings via UI** checkbox.
 
 See these articles for more information:
 
@@ -621,7 +649,7 @@ When you delete a project, TeamCity will remove its `.xml` configuration files. 
 >
 {instance="tc"}
 
-The [TeamCity Data Directory](teamcity-data-directory.md)/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects. 
+The [TeamCity Data Directory](teamcity-data-directory.md)/config/_trash/ directory is not cleaned automatically and can be emptied manually if you are sure you do not need the deleted projects.
 
 <tip>
 

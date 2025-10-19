@@ -1,6 +1,8 @@
 [//]: # (title: Storing Project Settings in Version Control)
 [//]: # (help-id: Storing Project Settings in Version Control)
 
+<show-structure for="chapter,procedure" depth="2"/>
+
 TeamCity allows synchronizing project settings with the version control repository (VCS). Supported VCSs are Git, Mercurial, Perforce, Subversion, and Azure DevOps Server (formerly TFS).
 
 You can store project settings in the XML format or in the [Kotlin language](https://kotlinlang.org/) and define settings programmatically using the [Kotlin-based DSL](kotlin-dsl.md).
@@ -15,12 +17,27 @@ You can store project settings in the XML format or in the [Kotlin language](htt
 
 ## Key Takeways
 
-* You can store settings of individual projects in an XML or Kotlin formats in remote repositories.
-* By default, versioned settings are stored in the `.teamcity` directory in the root of the VCS repository, in the same format as in the [TeamCity Data Directory](teamcity-data-directory.md). You can [change this default path](#Choosing+the+Settings+Location) to any custom location within a remote repository.
-* Project settings can be saved to the same repo that hosts application sources, or a [completely separate repository](#Separate+VCS+Root).
-* You can choose whether a project [can be edited](#SynchronizingSettingswithVCS) via TeamCity UI (in this case TeamCity synchronizes edits made in the UI with remotely stored settings) or only by modifying settings files on the VCS side.
-* Different repository branches can store [different project settings](#branch-specific-settings).
-* Global server-wide settings can be stored and managed via HashiCorp Terraform using the [dedicated TeamCity Provider](#Storing+and+Managing+Global+Server+Settings).
+**What does this feature do?**<br/>
+You can store settings of individual projects in an XML or Kotlin formats in remote repositories.
+
+**What's inlcuded in versioned settings?**<br/>
+Versioned settings store all properties related to project and build configurations. Global server-wide settings can be stored and managed via HashiCorp Terraform using the [dedicated TeamCity Provider](#Storing+and+Managing+Global+Server+Settings).
+
+**Are project settings stored in the same repository with source files?**<br/>
+Project settings can be saved to the same repo that hosts application sources, or a [completely separate repository](#Separate+VCS+Root).
+
+**Does the project with enabled versioned settings remain editable?**<br/>
+You can choose whether a project [can be edited](#SynchronizingSettingswithVCS) via TeamCity UI (in this case TeamCity synchronizes edits made in the UI with remotely stored settings) or only by modifying settings files on the VCS side.
+
+**Can I apply different settings for separate project branches?**<br/>
+Yes, different repository branches can store [different project settings](#branch-specific-settings).
+
+**Why is there a delay before a build is run after I changed to the settings in the UI?**<br/>
+When the settings are changed via the UI, TeamCity waits for the changes to be completed with a commit to the VCS before running a build with the latest changes.
+
+**Who are the changes authored by?**<br/>
+If the settings are changed via the user interface, in Git and Mercurial a commit in the VCS will be performed on behalf of the user who actually made the change via the UI. For Perforce as well as Azure DevOps Server (formerly TFS), the name of the user specified in the VCS root is used, and in Subversion the commit message will also contain the username of the TeamCity user who actually made the change via the UI.
+
 
 <anchor name="StoringProjectSettingsinVersionControl-SynchronizingSettingswithVCS"/>
 
@@ -79,6 +96,7 @@ For example, teams working with monorepos where stand-alone microservices and ex
 Another scenario you might want to implement is moving TeamCity-specific files away from the sources. This approach obscures the specifics of your CI/CD ecosystem, hiding them from external parties. In addition, having a dedicated VCS repository that stores settings of your entire TeamCity server (each project has its own repository folder to store its settings) can also prove beneficial for settings maintenance and testing.
 
 To implement these or similar tasks, use the **Project settings VCS root** and **Settings path in VCS** settings.
+
 
 ### Separate VCS Root
 
@@ -547,6 +565,21 @@ It is recommended to store passwords, API tokens, and other secure settings outs
 
 Note that SSH keys will not be stored in the VCS repository.
 
+
+## Create a Project From Project Settings
+
+In addition to saving project settings to a remote repository, you can do the reverse: write a project or configuration in Kotlin DSL, upload it to a repository, and use it to create a new TeamCity project.
+
+The steps below outline the process:
+
+1. Create a blank TeamCity project.
+2. Create a VCS root connected to the repository that stores a configuration file.
+3. Select this root in project **Versioned Settings**.
+4. Start the import process.
+
+See the following article for more detailed instructions: [](creating-and-editing-projects.md#Create+New+Projects+in+Kotlin+DSL).
+
+
 ## Storing and Managing Global Server Settings
 
 <snippet id="iac-terraform">
@@ -625,19 +658,8 @@ The format of the XML settings files changes from one TeamCity version to anothe
 
 It is a common practice to upgrade a TeamCity test server with production data before upgrading the production server. In order to avoid accidentally changing the format of the settings which are used on a production server of an older version, versioned settings are disabled after a TeamCity upgrade and the corresponding health item is displayed. System administrators have permissions to enable versioned settings (__Administration | Server Health | Versioned settings disabled__, click __Enable__). When enabled, the converted settings in the format of the current TeamCity version will be checked in the version control. Note that the new settings will be committed to the default branch of the VCS root; the settings stored in other branches will have to be updated manually.
 
-## FAQs
 
-**Q.** Can I apply the settings from a TeamCity server of a different version?<br/>  
-**A.** No, because just like with the TeamCity Data Directory, the format of the settings differs from one TeamCity version to another.
 
-**Q.** Where are the settings stored?<br/>
-**A.** You can manually [configure a directory](#Custom+Settings+Path) where project settings should be stored. The default directory is `.teamcity` directory in the root of the VCS root-configured repository. The default branch configured in the VCS root is used with [Git](git.md) and [Mercurial](mercurial.md). You can create a dedicated VCS root to change the repository or a branch (or a repository path in case of Perforce, Subversion, or Azure DevOps — formerly TFS).
-
-**Q.** Why is there a delay before a build is run after I changed to the settings in the UI?<br/>
-**A.** When the settings are changed via the UI, TeamCity waits for the changes to be completed with a commit to the VCS before running a build with the latest changes.
-
-**Q.** Who are the changes authored by?<br/>
-**A.** If the settings are changed via the user interface, in Git and Mercurial a commit in the VCS will be performed on behalf of the user who actually made the change via the UI. For Perforce as well as Azure DevOps Server (formerly TFS), the name of the user specified in the VCS root is used, and in Subversion the commit message will also contain the username of the TeamCity user who actually made the change via the UI.
 
 <seealso>
         <category ref="admin-guide">
