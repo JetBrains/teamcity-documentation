@@ -327,6 +327,11 @@ For compatibility reasons, switching the active encryption key does not automati
 <img src="start-reencryption.png" width="706" alt="Start reencryption"/>
 
 
+> TeamCity remembers all encryption keys that were used before the server was shut down, and reports an error if you attempt to start a server with some of these keys missing. 
+> 
+{style="note"}
+
+
 ## Artifacts' Domain Isolation
 {id="artifacts-domain-isolation" help-id="Artifacts Domain Isolation" instance="tc"}
 
