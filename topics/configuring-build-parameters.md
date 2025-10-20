@@ -342,7 +342,7 @@ object MyBuildConf : BuildType({
 
 ### Pass Values to Builders' Configuration Files
 
-[](net.md), [Maven](maven.md), [](gradle.md), [](ant.md) and [](nant.md) runners allow you to reference TeamCity parameters in build configuration files. This technique allows you to pass the required values to build processes.
+[.NET](net.md), [Maven](maven.md), [Gradle](gradle.md), [Ant](ant.md) and [NAnt](nant.md) runners allow you to reference TeamCity parameters in build configuration files. This technique allows you to pass the required values to build processes.
 
 > Parameters used in this scenario should start with either `env.` or `system.` prefixes but referenced without these prefixes. For example, use `${build.number}` in Maven configuration files to reference the predefined `system.build.number` parameter.
 > 

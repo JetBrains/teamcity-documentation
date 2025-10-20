@@ -1,6 +1,8 @@
 [//]: # (title: TeamCity Configuration and Maintenance)
 [//]: # (help-id: TeamCity Configuration and Maintenance)
 
+<show-structure for="chapter" depth="2"/>
+
 > Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Per-Project+Authorization+Mode).
 {instance="tc"}
 
@@ -247,7 +249,7 @@ When you generate or enter a new custom encryption key, it becomes the default f
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+TeamCity protects all sensitive data ([secret values](typed-parameters.md#Create+a+Secret), [SSH keys](ssh-keys-management.md), licence product keys, and more) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
 
 <deflist type="full">
 
@@ -322,14 +324,22 @@ TeamCity cannot import projects or restore data from a backup if those projects 
 </warning>
 
 
-For compatibility reasons, switching the active encryption key does not automatically re-encrypt existing SSH keys or secrets. To re-encrypt them, click **Re-encrypt with current key** in the global server settings. This process may take several hours, depending on the number of encrypted entities. If the server is restarted during re-encryption, TeamCity will automatically continue from the last processed item once it’s back online.
+Switching the active encryption key does not automatically re-encrypt existing encrypted values. To re-encrypt them, click **Re-encrypt with current key** in the global server settings. This process may take several hours, depending on the number of encrypted entities. If the server is restarted during re-encryption, TeamCity will automatically continue from the last processed item once it’s back online.
 
 <img src="start-reencryption.png" width="706" alt="Start reencryption"/>
 
 
-> TeamCity remembers all encryption keys that were used before the server was shut down, and reports an error if you attempt to start a server with some of these keys missing. 
-> 
-{style="note"}
+### Missing Encryption Keys
+{id="MissingEncryptionKeys" help-id="MissingEncryptionKeys"}
+
+TeamCity encrypts many types of sensitive data, from product license keys to SSH keys used in individual projects. If any encryption key is lost, TeamCity can no longer decrypt the associated data, making those values permanently inaccessible.
+
+To prevent this, TeamCity tracks all active encryption keys and detects when any are missing. It stores key hash codes in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file. When the server starts, TeamCity compares the hashes of available keys with those stored in this file. If they do not match, a startup error screen appears, blocking the server from loading.
+
+To resolve this issue and start the server:
+
+* (Recommended) Restore the missing encryption keys either in the `encryption-config.xml` file or the `TEAMCITY_ENCRYPTION_KEYS` environment variable.
+* Alternatively, remove the `EnvironmentVariableKeysHashes` attribute from `encryption-config.xml` to clear the list of known keys. Note that any data encrypted with the missing keys will become unavailable, and users will need to re-enter related values (such as SSH keys or parameter-based passwords).
 
 
 ## Artifacts' Domain Isolation
