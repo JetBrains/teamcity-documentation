@@ -19,6 +19,6 @@ Version 2025.11 adds two key improvements:
 
 ## Miscellaneous Enhancements
 
-* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.
+<!--* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.-->
 
 </snippet>
