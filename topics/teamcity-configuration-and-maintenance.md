@@ -341,7 +341,7 @@ To prevent this, TeamCity tracks all active encryption keys and detects when any
 To resolve this issue and start the server:
 
 * (Recommended) Restore the missing encryption keys either in the `encryption-config.xml` file or the `TEAMCITY_ENCRYPTION_KEYS` environment variable.
-* Alternatively, remove the `EnvironmentVariableKeysHashes` attribute from `encryption-config.xml` to clear the list of known keys. Note that any data encrypted with the missing keys will become unavailable, and users will need to re-enter related values (such as SSH keys or parameter-based passwords).
+* Alternatively, remove the `encryptionKeysHashes` attribute from `encryption-config.xml` to clear the list of known keys. Note that any data encrypted with the missing keys will become unavailable, and users will need to re-enter related values (such as SSH keys or parameter-based passwords).
 
 
 ## Artifacts' Domain Isolation
