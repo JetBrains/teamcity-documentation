@@ -81,7 +81,7 @@ To set up a repository that should store your server's configuration files:
 1. Go to **Administration | Configs Repository**.
 2. Tick **Commit changes in configuration files to the configs repository**.
 3. Enter the path to your repository in the SSH format.
-    > Configuration files contain scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
+    > Configuration files [may contain](teamcity-configuration-and-maintenance.md#encryption-settings) scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
     > 
     {style="warning"}
 4. Enter a fully specified name (`heads/refs/<name>`) of the repository branch that should store configuration files.

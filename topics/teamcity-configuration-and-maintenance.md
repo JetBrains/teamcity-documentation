@@ -336,6 +336,8 @@ TeamCity encrypts many types of sensitive data, from product license keys to SSH
 
 To prevent this, TeamCity tracks all active encryption keys and detects when any are missing. It stores key hash codes in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file. When the server starts, TeamCity compares the hashes of available keys with those stored in this file. If they do not match, a startup error screen appears, blocking the server from loading.
 
+<img src="missing-encryption-keys.png" width="706" alt="Server startup error"/>
+
 To resolve this issue and start the server:
 
 * (Recommended) Restore the missing encryption keys either in the `encryption-config.xml` file or the `TEAMCITY_ENCRYPTION_KEYS` environment variable.
