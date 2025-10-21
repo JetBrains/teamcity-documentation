@@ -3,6 +3,20 @@
 <snippet id="2025-11-tc">
 
 
+## UI Enhancements
+
+We strongly believe that simplicity leads to greater power: an intuitive, easy-to-use product reduces configuration errors and helps you find the right setup faster. The recent [introduction of Pipelines](https://www.jetbrains.com/help/teamcity/2025.07/what-s-new-in-teamcity.html#Pipelines+EAP) has given fresh momentum to our ongoing effort to make TeamCity simpler and more enjoyable to use. Building on that progress, we’re excited to share another round of UI updates aimed at making your daily work in TeamCity smoother and more efficient.
+
+### Updated "New Project" and "New Build Configuration" Pages
+
+### New Pipeline and Build Chain Viewer
+
+Real-world CI/CD workloads often include dozens of build configurations and jobs that combine building, testing, and deployment tasks into a single flow. To make it easier to explore these complex workflows, TeamCity now offers an enhanced visualization that displays [pipelines](create-and-edit-pipelines.md) and [build chains](build-chain.md) in a dedicated, zoomable client area with a minimap for easy navigation.
+
+<img src="chains-minimap.png" width="706" alt="Build chains viewer"/>
+
+
+
 ## Server Encryption Enhancements
 {product="tc"}
 
