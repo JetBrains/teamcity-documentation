@@ -42,12 +42,18 @@ To configure an Azure DevOps OAuth 2.0 connection:
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. <include from="common-templates.md" element-id="choose-connection-type"><var name="connection-type" value="Azure DevOps OAuth 2.0"/></include>
-4. <include from="common-templates.md" element-id="connections-unique-callback-URL"><var name="unique-url-sample" value="/oauth/azuredevops/rid:your-unique-id/accessToken.html"/></include>
-
+4. Ensure the <b>Enable unique redirect URI</b> setting is enabled to generate a unique ID added to your redirect link. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the <code>%unique-url-sample%</code> URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+    
+    <note>
+        <ul>
+            <li>Whenever you toggle this setting on or off, the redirect URL changes. Update OAuth settings on the VCS side accordingly.</li>
+            <li>IDs are unique for every connection, including copies of existing connections. If you clone a connection with this setting enabled, remember to update your VCS OAuth settings.</li>
+        </ul>
+    </note>
+    
 5. Enter the **Server URL** in the `https://login.microsoftonline.com/{tenantId}` format.
 6. Follow TeamCity instructions to register an application in Microsoft Entra ID:
-    * Copy the **Application website** value from TeamCity and paste it to the corresponding field of the app registration page.
-    * Copy the **Authorization callback URL** and paste it to the **Redirect URI** field of your Azure app.
+    * Copy the **Redirect URI** value from TeamCity tooltip to of your Azure app.
     * Specify the app authorization scopes to control TeamCity permissions. The minimal required scopes are "Identity (read)", "Project and team (read)", and "Code (read)". You might need to include additional scopes if you plan to use TeamCity features that require write access (for example, the [](commit-status-publisher.md)).
 7. Once your app is ready, navigate back to TeamCity **Add connection** dialog and paste the application **App ID** and **Client secret** values to corresponding fields.
 8. Edit the **Authorized scopes** value to limit connection's access permissions, or leave this field empty.

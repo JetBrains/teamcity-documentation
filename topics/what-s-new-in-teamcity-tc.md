@@ -17,4 +17,8 @@ Version 2025.11 adds two key improvements:
 * TeamCity can now import encryption keys from the `TEAMCITY_ENCRYPTION_KEYS` environment variable. This method is more secure than setting keys manually in the UI, as the keys are not stored in [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml`, making it safer to [keep the data directory in a remote repository](teamcity-data-directory.md#TeamCityDataDirectory-centralRepository).
 
 
+## Miscellaneous Enhancements
+
+* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.
+
 </snippet>
