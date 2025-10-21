@@ -42,7 +42,7 @@ To configure an Azure DevOps OAuth 2.0 connection:
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. <include from="common-templates.md" element-id="choose-connection-type"><var name="connection-type" value="Azure DevOps OAuth 2.0"/></include>
-4. Ensure the <b>Enable unique redirect URI</b> setting is enabled to generate a unique ID added to your redirect link. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the <code>%unique-url-sample%</code> URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
+4. Ensure the <b>Enable unique redirect URI</b> setting is enabled to generate a unique ID added to your redirect link. This setting bolsters the security of your setup by mitigating the risk of mix-up attacks: attacks utilizing malicious authorization servers that impersonate real auth servers to trick a victim client into leaking an authorization code (token). Using the <code>%\unique-url-sample%</code> URL format ensures an attacker cannot hand-craft an address acknowledged by TeamCity.
     
     <note>
         <ul>
