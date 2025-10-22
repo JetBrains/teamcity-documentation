@@ -269,6 +269,7 @@
 		<toc-element topic="job-settings.md"/>
 		<toc-element topic="pipelines-yaml-syntax.md"/>
 	</toc-element>
+	<toc-element topic="ai-assistant.md"/>
 	<toc-element topic="configuring-test-reports-and-code-coverage.md">
 		<toc-element topic="net-testing-frameworks-support.md"/>
 		<toc-element topic="java-testing-frameworks-support.md"/>

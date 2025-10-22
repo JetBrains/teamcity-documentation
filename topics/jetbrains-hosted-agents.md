@@ -170,6 +170,37 @@ TeamCity Cloud offers a wide selection of ready-to-use build agents that can be 
 
 Each JetBrains-hosted agent comes with a set of preinstalled software. If none of the agents have a required software installed, you can [set up your own agents](install-and-start-teamcity-agents.md) or contact TeamCity support to file a request for this software to be installed on your JetBrains-hosted agents.
 
+<tabs>
+
+<tab title="Windows Agents">
+
+<include from="preinstalled-software-on-teamcity-cloud-windows-agents.md"
+element-id="windows-jb-agents"/>
+
+</tab>
+
+<tab title="Ubuntu Agents">
+
+<include from="preinstalled-software-on-teamcity-cloud-ubuntu-agents.md"
+element-id="ubuntu-jb-agents"/>
+
+</tab>
+
+
+<tab title="macOS Agents">
+
+<include from="preinstalled-software-on-teamcity-cloud-macos-agents.md"
+element-id="macos-jb-agents"/>
+
+</tab>
+
+
+
+</tabs>
+
+
+<!--
+
 ### Windows Agents
 
 <include from="preinstalled-software-on-teamcity-cloud-windows-agents.md"
@@ -184,3 +215,5 @@ element-id="ubuntu-jb-agents"/>
 
 <include from="preinstalled-software-on-teamcity-cloud-macos-agents.md"
 element-id="macos-jb-agents"/>
+
+-->
