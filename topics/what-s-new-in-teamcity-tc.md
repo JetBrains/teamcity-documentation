@@ -13,7 +13,7 @@ We strongly believe that simplicity leads to greater power: an intuitive, easy-t
 
 Real-world CI/CD workloads often include dozens of build configurations and jobs that combine building, testing, and deployment tasks into a single flow. To make it easier to explore these complex workflows, TeamCity now offers an enhanced visualization that displays [pipelines](create-and-edit-pipelines.md) and [build chains](build-chain.md) in a dedicated, zoomable client area with a minimap for easy navigation.
 
-<img src="chains-minimap.png" width="706" alt="Build chains viewer"/>
+<img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
 
 
 
