@@ -11,9 +11,9 @@ TeamCity AI Assistant offers general guidance (for example, “How do I configur
 This feature may become a paid option in future releases but will remain free throughout the Early Access Program.
 
 **Are there any additional requirements?**<br/>
-AI Assistant requires internet access to send user prompts and receive responses, obtain license keys, share usage statistics, and more.
+AI Assistant requires access to `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources to send user prompts and receive responses, obtain license keys, share usage statistics, and more.
 
-**Hold on, what data does the Assistant collect and share?**<br/>
+**What data does the Assistant collect and share?**<br/>
 See the [](#Privacy+Policy) section.
 
 
@@ -29,7 +29,7 @@ AI Assistant ships with all TeamCity 2025.11 installations in a disabled state. 
 
 Server administrators can turn it completely off in the **Admin | AI Assistant** section.
 
-<img src="" width="706" alt="Server AI Assistant settings"/>
+<img src="ai-assistant-admin-settings.png" width="706" alt="Server AI Assistant settings"/>
 
 
 ## Limitations and Special Notes

@@ -16,6 +16,18 @@ Real-world CI/CD workloads often include dozens of build configurations and jobs
 <img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
 
 
+## AI Assistant
+
+TeamCity is a powerhouse packed with advanced features that let you shape CI/CD workflows to your exact needs. But this flexibility comes with a challenge: to get the most out of TeamCity, you need to be aware of its features and understand their inner workings. Concepts like [reverse parameter dependencies](use-parameters-in-build-chains.md#Override+Input+Parameters+of+Preceding+Configurations) and [agentless "Executor" setups](kubernetes-executor.md) can be complex to configure and manage.
+
+To make TeamCity more approachable for every DevOps engineer, we’ve launched the [pipelines](create-and-edit-pipelines.md) initiative and are investing heavily in a redesigned UI. Complementing these efforts, we are excited to introduce the **TeamCity AI Assistant**.
+
+<img src="aia-whats-new.png" width="706" thumbnail="true" alt="AI Assistant"/>
+
+TeamCity AI Assistant aims to help both beginners and experts, from offering general guidance on TeamCity concepts to delivering troubleshooting insights for misconfigured or failing builds.
+
+Learn more: [](ai-assistant.md).
+
 
 ## Server Encryption Enhancements
 {product="tc"}
@@ -29,6 +41,8 @@ Version 2025.11 adds two key improvements:
     <img src="start-reencryption.png" width="706" alt="Start reencryption"/>
 
 * TeamCity can now import encryption keys from the `TEAMCITY_ENCRYPTION_KEYS` environment variable. This method is more secure than setting keys manually in the UI, as the keys are not stored in [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml`, making it safer to [keep the data directory in a remote repository](teamcity-data-directory.md#TeamCityDataDirectory-centralRepository).
+
+Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 
 
 ## Miscellaneous Enhancements
