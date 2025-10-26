@@ -379,6 +379,7 @@
 		<toc-element topic="known-issues.md"/>
 		<toc-element topic="ticket-based-support.md"/>
 		<toc-element topic="reporting-issues.md"/>
+		<toc-element topic="feedback-collection-and-data-sharing.md"/>
 	</toc-element>
 	<toc-element topic="ci-tutorials.md">
 		<toc-element toc-title="CI/CD Guide" href="https://www.jetbrains.com/teamcity/ci-cd-guide/"/>
