@@ -1,6 +1,10 @@
 [//]: # (title: Docker Compose)
 [//]: # (help-id: Docker Compose)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Docker Compose_ [build step](configuring-build-steps.md) allows starting [Docker Compose](https://docs.docker.com/compose/) build services and shutting them down at the end of the build. With this runner, you can run multi-container Docker apps.
 
 If you need to pull a base image from a private repository or push a newly built image to a registry, you can authorize to a Docker or Podman registry, as follows:

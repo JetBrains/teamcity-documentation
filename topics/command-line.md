@@ -1,122 +1,122 @@
-[//]: # (title: Command Line)
+[//]: # (title: Command Line (Script))
 [//]: # (help-id: Command Line)
 
-Using the _Command Line_ build runner, you can run any script supported by the OS.
+<primary-label ref="primary-step-pipeline"/>
 
-> To configure the _Command Line_ build runner in Kotlin DSL, see [ScriptBuildStep](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/buildSteps/script-build-step/index.html).
-> 
-{style="note"}
+<show-structure for="chapter" depth="2"/>
 
->See our **video guide** on how to [run command-line scripts in TeamCity](https://www.youtube.com/watch?v=oKNdLRrO3mA).
+**Command Line** (in [build configurations](creating-and-editing-build-configurations.md)) or **Script** (in [pipelines](create-and-edit-pipelines.md)) is the most flexible build step in TeamCity. It runs commands directly on the agent machine, allowing interaction with any installed tool (for example, cURL, Homebrew, Python, or Unreal Engine).
 
-## General Settings
+You can also use it as an alternative to tool-specific TeamCity steps. For instance, run `mvn package` script instead of using the [Maven](maven.md) step with the `package` goal.
 
-<table><tr>
+## Step Settings
 
-<td>
+The list of Script step settings and their corresponding UI labels slightly differ depending on whether you configure a build configuration or a pipeline.
 
-Option
+### Main Settings
 
-</td>
+<deflist type="medium">
 
-<td>
+<def title="Run">
 
-Description
+Allows you to choose between running a custom script entered to the corresponding step settings field or (currently available only in build configurations) launching any executable with required parameters.
 
-</td></tr><tr>
-
-<td>
-
-Working directory
-
-</td>
-
-<td>
-
-Specify the [working directory](build-working-directory.md) where the command is to be run (if it differs from the [build checkout directory](build-checkout-directory.md)).
-
-</td></tr><tr>
-
-<td>
-
-Run
-
-</td>
-
-<td>
-
-Specify the mode: run an executable with parameters or run custom shell/batch script (see below).
-
-</td></tr><tr>
-
-<td>
-
-Command executable
-
-</td>
-
-<td>
-
-_The option is available if "Executable with parameters" is selected in the __Run__ drop-down menu._
-
-Specify the path to an executable to be started.
-
-</td></tr><tr>
-
-<td>
-
-Command parameters
-
-</td>
-
-<td>
-
-_The option is available if "Executable with parameters" is selected in the __Run__ drop-down menu._
-
-Specify space-separated parameters to pass to the executable. If a parameter contains a space, it can be enclosed in double quotes. For non-trivial parameters it is recommended to use "Custom script" option instead.
-
-</td></tr><tr>
-
-<td>
-
-Custom script
-
-</td>
-
-<td>
-
-_The option is available if "Custom script" is selected in the __Run__ drop-down menu._
-
-A platform-specific script which will be executed as an executable script in Unix-like environments and as a `*.cmd` batch file on Windows. Under Unix-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to `/bin/sh` interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (for example, `#!/bin/bash`) as the first line of the script.
-
-</td></tr><tr>
-
-<td>
-
-Format stderr output as:
-
-</td>
-
-<td>
-
-Specify how the error output is handled by the runner:
-
-* __error__: any output to `stderr` is handled as an error
-* __warning__: default; any output to `stderr` is handled as a warning
-
-</td></tr></table>
+Scripts are executed as executable scripts in Unix-like environments and as `*.cmd` batch files on Windows. Under Unix-like OS the script is saved with the executable bit set and is then executed by OS. This defaults to `/bin/sh` interpreter on the most systems. If you need a specific interpreter to be used, specify shebang (for example, `#!/bin/bash`) as the first line of the script.
 
 >TeamCity treats a string surrounded by percentage signs (`%`) in the script as a [parameter reference](predefined-build-parameters.md). To prevent TeamCity from treating the text in the percentage signs as a property reference, use double percentage signs to escape them: for example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
 >
 {style="note"}
 
-## Docker Settings
+> When running an executable, space characters in parameters can be enclosed in double quotes. For non-trivial parameters it is recommended to use "Custom script" option instead.
+> 
+{style="tip"}
 
-In this section, you can specify a Docker image which will be [used to run this build step](container-wrapper.md).
+</def>
 
-## Code Coverage
+<def title="Working directory">
 
-To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
+<include from="common-templates.md" element-id="step-settings-working-dir"/>
+
+</def>
+
+
+</deflist>
+
+### Advanced Settings
+
+<deflist type="medium">
+
+<def title="Format stderr output as">
+
+Allows you to choose how the error output should be handled by the step. Available options:
+
+* __error__ — Any output to `stderr` is handled as an error.
+* __warning__ (default) — Any output to `stderr` is handled as a warning.
+
+</def>
+
+</deflist>
+
+
+### Container Settings
+
+<include from="common-templates.md" element-id="build-step-run-in-docker"/>
+
+### Configuration as Code
+
+<include from="common-templates.md" element-id="step-settings-config-as-code"/>
+
+<tabs>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+object YTApi : BuildType({
+    name = "Sample Build Configuration"
+    steps {
+        script {
+            name = "Extract the list of issues from YT"
+            id = "simpleRunner"
+            scriptContent = """
+            curl -X GET "https://youtrack.mycompany.com/api/issues?fields=idReadable,summary,customFields(value(name),name)&query=Project:%20MyProject" \
+              -H "Authorization: Bearer ${'$'}YT_TOKEN" \
+              -H "Accept: application/json" \
+              -o response.txt
+            """.trimIndent()
+        }
+    }
+})
+```
+
+
+See also: [ScriptBuildStep Kotlin DSL documentation](https://teamcity.jetbrains.com/app/dsl-documentation/buildSteps/script-build-step/index.html?query=ScriptBuildStep)
+
+</tab>
+
+<tab title="YAML">
+
+```yaml
+jobs:
+  Job1:
+    name: Sample Job
+    steps:
+      - type: script
+        script-content: >-
+          curl -X GET
+          "https://youtrack.mycompany.com/api/issues?fields=idReadable,summary,customFields(value(name),name)&query=Project:%20MyProject" \
+              -H "Authorization: Bearer $YT_TOKEN" \
+              -H "Accept: application/json" \
+              -o response.txt
+```
+
+</tab>
+
+</tabs>
+
+
 
 <seealso>
         <category ref="concepts">

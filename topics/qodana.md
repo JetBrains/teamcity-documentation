@@ -1,6 +1,10 @@
 [//]: # (title: Qodana)
 [//]: # (help-id: Qodana)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Qodana_ build runner lets you add static analysis to your build chain. 
 It is based on the [Qodana](https://www.jetbrains.com/help/qodana/teamcity.html) code quality platform.
 

@@ -1,6 +1,10 @@
 [//]: # (title: PowerShell)
 [//]: # (help-id: PowerShell)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _PowerShell_ [build step](configuring-build-steps.md) is specifically designed to run PowerShell scripts. 
 
 The plugin responsible for PowerShell integration has been open-sourced [on GitHub](https://github.com/JetBrains/teamcity-powershell).

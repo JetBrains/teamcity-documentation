@@ -1,6 +1,10 @@
 [//]: # (title: Rake)
 [//]: # (help-id: Rake)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Rake_ build runner supports the Test::Unit, Test-Spec, [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info/) test frameworks. It is compatible with Ruby interpreters installed using Ruby Version Manager (MRI Ruby, JRuby, IronRuby, REE, MacRuby, and so on) with Rake 0.7.3 gem or later.
 
 ## Prerequisites

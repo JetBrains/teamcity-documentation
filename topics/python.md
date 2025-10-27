@@ -1,6 +1,10 @@
 [//]: # (title: Python)
 [//]: # (help-id: Python)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
 
 >Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, Kotlin DSL, and provides extra features like full test coverage.

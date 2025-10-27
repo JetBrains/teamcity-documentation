@@ -1,6 +1,10 @@
 [//]: # (title: Simple Build Tool \(Scala\))
 [//]: # (help-id: viewpage.actionpageId113084133;Simple Build Tool \(Scala\))
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Simple Build Tool (Scala)_ build runner natively supports [SBT](https://www.scala-sbt.org/) builds: you can build your code, run tests, and see the results in a handy way in TeamCity.
 
 TeamCity supports SBT versions up to 1.5.5.

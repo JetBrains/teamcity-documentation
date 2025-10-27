@@ -1,6 +1,10 @@
 [//]: # (title: Xcode Project)
 [//]: # (help-id: Xcode Project)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Xcode Project_ build runner supports Xcode 3 (target-based build), Xcode 4 (scheme-based build), Xcode 5-13.
 
 The runner provides structured build log based on Xcode build stages, detects compilation errors, reports tests from the `xcodebuild` utility, adds automatic agent requirements for the appropriate version of tools installed (Xcode, SDKs, and so on) and reporting tools via agent properties.

@@ -1,6 +1,10 @@
 [//]: # (title: Working with Recipes)
 [//]: # (help-id: Working with Meta-Runner;Working with Recipes)
 
+<primary-label ref="primary-functionality-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 **Recipes** are custom build steps based on one or multiple standard TeamCity steps. If TeamCity's built-in steps lack a needed option, and you frequently emulate it (for example, use a [CLI step](command-line.md) to upload artifacts via a cloud provider API), you can save this custom step as a reusable recipe.
 
 Creating a recipe is a simpler alternative to developing a [TeamCity plugin](https://plugins.jetbrains.com/docs/teamcity/developing-teamcity-plugins.html) that implements a custom build step.

@@ -1,6 +1,10 @@
 [//]: # (title: Kotlin Script)
 [//]: # (help-id: Kotlin Script)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) script on Windows, Linux, or macOS.
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.

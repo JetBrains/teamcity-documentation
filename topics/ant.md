@@ -1,6 +1,10 @@
 [//]: # (title: Ant)
 [//]: # (help-id: Ant)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Ant_ build runner can process Ant `build.xml` files.
 
 ## Testing Frameworks Support

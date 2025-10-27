@@ -1,6 +1,10 @@
 [//]: # (title: NuGet Pack)
 [//]: # (help-id: NuGet Pack)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _NuGet Pack_ build runner allows building a NuGet package from a given specification file. If you want to publish this package, add a [NuGet Publish](nuget-publish.md) build step.
 
 <include from="nuget.md" element-id="nuget-OS"/>

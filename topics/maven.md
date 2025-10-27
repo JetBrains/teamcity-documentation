@@ -1,94 +1,71 @@
 [//]: # (title: Maven)
 [//]: # (help-id: Maven)
 
-The _Maven_ build runner allows using [Apache Maven](https://maven.apache.org/) for automating builds.
+<primary-label ref="primary-step-pipeline"/>
 
-Note that you can create a new Maven-based build configuration [automatically from URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), and set up a [dependency build trigger](configuring-maven-triggers.md#Maven+Artifact+Dependency+Trigger), if a specific Maven artifact has changed.
+<show-structure for="chapter" depth="2"/>
 
->This build runner has some [Remote Run limitations](#Remote+Run+limitations).
-> 
-{style="note"}
+The _Maven_ build step allows using [Apache Maven](https://maven.apache.org/) for automating builds.
+
 
 >Note that TeamCity Cloud currently doesn't support automatic delivery of tools to [build agents](install-and-start-teamcity-agents.md). To be able to use this runner, you need to download and install the required version of NuGet on the agent. You can do this manually (only on self-hosted agents) or via any convenient utility step at the beginning of the build (for example, [Command Line](command-line.md)). When configuring a NuGet build step, you will need to specify the path to NuGet relatively to the [build checkout directory](build-checkout-directory.md).
 >
 {type="warning" instance="tcc"}
 
-This **video guide** explains [how to get the best from platform-specific build runners](https://www.youtube.com/watch?v=wLmLgh5OK5o): it uses Maven as an example.
 
-## Maven runner settings
+## Step Settings
 
-<table><tr>
+The list of Maven step settings and their corresponding UI labels slightly differ depending on whether you configure a build configuration or a pipeline.
 
-<td>
+### Main Settings
 
-Option
+<deflist type="medium">
 
-</td>
+<def title="Goals">
 
-<td>
+The list of space-separated Maven goals that you want TeamCity to execute. Some Maven goals can use version control systems, thus they may become incompatible with some [VCS checkout modes](configuring-vcs-settings.md#Checkout+Settings).  
 
-Description
-
-</td></tr><tr>
-
-<td>
-
-Goals
-
-</td>
-
-<td>
-
-Specify the sequence of space-separated Maven goals that you want TeamCity to execute. Some Maven goals can use version control systems, thus they may become incompatible with some [VCS checkout modes](configuring-vcs-settings.md#Checkout+Settings).  
 To execute such a goal, select "_Automatically on agent_" in the __[VCS Checkout Mode](vcs-checkout-mode.md)__ drop-down menu on the __Version Control Settings__ page. This makes the version control system available to the goal execution software. On how to use the `release:prepare` goal with Perforce Helix Core, see [this section](#Using+Maven+Release+with+Perforce).
 
-</td></tr><tr>
-
-<td>
-
-Path to POM file
-
-</td>
-
-<td>
-
-Specify the path to the POM file relative to the [build working directory](build-working-directory.md).   
-By default, the property contains a `pom.xml` file. If you leave this field empty, the same value is put in this field. The path may also point to a subdirectory, and as such `<subdirectory>/pom.xml` is used.
-
-</td></tr><tr>
-
-<td>
-
-Additional Maven command line parameters
-
-</td>
-
-<td>
-
-Specify the list of command-line parameters.
-
->The following parameters are ignored: `-q`, `-f`, `-s` (if __User settings path__ is provided).
+> When TeamCity discovers a Maven build step automatically, it sets the goal automatically to `clean test` and an additional Maven command-line parameter `-Dmaven.test.failure.ignore` to `true` to ignore failed tests. This parameter is helpful when the `test` goal is used for a Maven project with multiple modules. With this property set to `true`, even if the tests fail in some module, all the following modules will be tested as well.   
+> 
+> If you change the goal from `test` to `deploy` (or any other sequential goal from the Maven build lifecycle: `package`, `verify`, or `install`), make sure to set `-Dmaven.test.failure.ignore` to `false` so the failed tests are not ignored.
 > 
 {style="note"}
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="Working directory">
 
-Working directory
+<include from="common-templates.md" element-id="step-settings-working-dir"/>
 
-</td>
+</def>
 
-<td>
+</deflist>
 
-Specify the [build working directory](build-working-directory.md) if it differs from the [build checkout directory](build-checkout-directory.md).
+### Advanced Settings
 
-</td></tr></table>
+<deflist type="medium">
 
->When TeamCity discovers a Maven build step automatically, it sets the goal automatically to `clean test` and an additional Maven command-line parameter `-Dmaven.test.failure.ignore` to `true` to ignore failed tests. This parameter is helpful when the `test` goal is used for a Maven project with multiple modules. With this property set to `true`, even if the tests fail in some module, all the following modules will be tested as well.   
-If you change the goal from `test` to `deploy` (or any other sequential goal from the Maven build lifecycle: `package`, `verify`, or `install`), make sure to set `-Dmaven.test.failure.ignore` to `false` so the failed tests are not ignored.
+<def title="POM location">
 
-### Maven Settings
+
+The path to the POM file relative to the [build working directory](build-working-directory.md). By default, equals to `pom.xml`.
+
+
+</def>
+
+<def title="Runner arguments">
+
+The list of command-line parameters.
+
+>The following parameters are ignored: `-q`, `-f`, `-s` (if __User settings path__ is provided).
+>
+{style="note"}
+
+</def>
+
+<def title="Maven version">
 
 Choose the Maven version you want to use. You can also [manage the installed versions](installing-agent-tools.md).
 {instance="tc"}
@@ -96,199 +73,58 @@ Choose the Maven version you want to use. You can also [manage the installed ver
 Choose the Maven version you want to use.
 {instance="tcc"}
 
-<table>
+* &lt;Auto&gt; — The path to the Maven installation is taken from the `M2_HOME` environment variable, otherwise the current default version is used.
 
-<tr>
-
-<td>
-
-Setting
-
-</td>
-
-<td>
-
-Description
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-&lt;Auto&gt;
-
-</td>
-
-<td>
-
-The path to the Maven installation is taken from the `M2_HOME` environment variable, otherwise the current default version is used.
-
-</td></tr><tr>
-
-<td>
-
-&lt;Default&gt;
-
-</td>
-
-<td>
-
-The bundled version is used as default. See how to [change the defaults](installing-agent-tools.md).
+* &lt;Default&gt; — The bundled version is used as default. See how to [change the defaults](installing-agent-tools.md).
 {instance="tc"}
 
-The bundled version is used as default.
+* &lt;Default&gt; — The bundled version is used as default.
 {instance="tcc"}
 
-</td></tr><tr>
+* &lt;Custom&gt; — Provide a path to a custom Maven version.
 
-<td>
+</def>
 
-&lt;Custom&gt;
-
-</td>
-
-<td>
-
-Provide a path to a custom Maven version.
-
-</td></tr></table>
-
-### User Settings
-
-Specify what kind of user settings to use here. This is equivalent to the Maven command-line option `-s` or `--settings`. The available options are:
-
-<table>
-
-<tr>
-
-<td>
-
-Option
-
-</td>
-
-<td>
-
-Description
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-&lt;Default&gt;
-
-</td>
-
-<td>
-
-Settings are taken from the default Maven locations on the agent. For the server logic, see [Maven Server-Side Settings](maven-server-side-settings.md).
-
-</td></tr><tr>
-
-<td>
-
-&lt;Custom&gt;
+</deflist>
 
 
-</td>
+### Build Configuration Settings
 
-<td>
+These settings are only available for Maven steps used inside [build configurations](creating-and-editing-build-configurations.md).
 
-Enter the path to an alternative user settings file. The path should be valid on the agent and also on the server, see [Maven Server-Side Settings](maven-server-side-settings.md).
 
-</td></tr><tr>
+<deflist type="medium">
 
-<td>
+<def title="User settings selection">
 
-Predefined settings
+Allows you to choose different types of user settings. This setting is equivalent to adding the `-s` or `--settings` command-line argument. The available options are:
 
-</td>
+* &lt;Default&gt; — Import user settings from the default Maven locations on the agent. See also: [Maven server-side settings](maven-server-side-settings.md).
 
-<td>
+* &lt;Custom&gt; — Allows you to specify the path to an alternative user settings file. The path should be valid on both the agent and [server](maven-server-side-settings.md).
 
-If there are settings files uploaded to the TeamCity server via the administration UI, you can select one of the available options here. To upload settings file to TeamCity, click _Manage settings files_.  Maven settings are defined on the project level. You can see the settings files defined in the current project or upload files on the [project settings](project-administrator-guide.md#Edit+and+View+Modes) page using __Maven Settings__. The files will be available in the project and its subprojects. The uploaded files are stored in the `<TeamCity Data Directory>/config/projects/%\projectID%/pluginData/mavenSettings` directory. If necessary, they can be edited right there. The uploaded files are used both for the agent and server-side Maven functionality.   
+* Predefined settings — Allows you to choose one of settings files uploaded to the TeamCity server on the **Project settings | Maven Settings** page. Uploaded files are available for both the current project and all of its subprojects, and stored in the `<TeamCity Data Directory>/config/projects/%\projectID%/pluginData/mavenSettings` directory. The uploaded files are used both for the agent and server-side Maven functionality.
+
 If Custom or Predefined settings are used, the path to the effective user settings file is available inside the maven process as the `teamcity.maven.userSettings.path` system property.
 
-</td></tr></table>
+</def>
 
-### Java Parameters
+<def title="Artifact repository" help-id="MavenLocalArtifactRepositorySettings">
 
-<include from="java-parameters.md" element-id="java-param"/>
+Allows you to choose one of the following local artifact repository options:
 
-### Local Artifact Repository Settings
-{help-id="MavenLocalArtifactRepositorySettings"}
+* Per agent (default) — Use a separate repository to store artifacts, produced by all builds run by an agent, under the agent system directory.
 
+* Per build configuration  — Use a separate repository to store artifacts, produced by all builds of the current build configuration.
 
-Select one of the following options:
+* Maven default — Use the default Maven repository location. The repository is shared between all build configurations and all agents on the machine.
 
-<table>
+    In this mode, Maven step uses the location specified in the additional command-line parameter `-Dmaven.repo.local`. If the parameter is not specified, it will search for values set in `settings.xml`.
 
-<tr>
-<td>
+</def>
 
-Option
+<def title="Incremental building">
 
-</td>
-<td>
-
-Description
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-Per agent (default)
-
-</td>
-<td>
-
-Use a separate repository to store artifacts, produced by all builds run by an agent, under the agent system directory.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-Per build configuration
-
-</td>
-<td>
-
-Use a separate repository to store artifacts, produced by all builds of the current build configuration.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-Maven default
-
-</td>
-<td>
-
-Use the default Maven repository location. The repository is shared between all build configurations and all agents on the machine.
-
-The runner will use the location specified in the additional command-line parameter `-Dmaven.repo.local`. If the parameter is not specified, it will search for values set in `settings.xml`.
-
-</td>
-</tr>
-
-</table>
-
-### Incremental Building
-
-Select the _Build only modules affected by changes_ checkbox to enable incremental building of Maven modules.   
 The general idea of incremental building is to process only changed modules without spending time on reprocessing unchanged modules they are connected with. TeamCity utilizes this method to run tests only for changed Maven modules thus saving time when rerunning a build or a build chain.
 
 Since Maven itself has very limited support for incremental builds, TeamCity uses its own change impact analysis algorithm for determining the set of affected modules and uses a special preliminary phase for making dependencies of the affected modules.
@@ -301,11 +137,23 @@ The second Maven execution called main phase executes the main goal (for example
 
 Also, check the related [blog post](https://blog.jetbrains.com/teamcity/2012/03/incremental-building-with-maven-and-teamcity/) on the topic.
 
-### Docker Settings
+</def>
 
-In this section, you can specify a Docker image which will be [used to run the build step](container-wrapper.md).
+</deflist>
+
+
+### Container Settings
+
+<include from="common-templates.md" element-id="build-step-run-in-docker"/>
+
+### Java Parameters
+
+<include from="java-parameters.md" element-id="java-param"/>
+
 
 ### Code Coverage
+
+<secondary-label ref="secondary-config"/>
 
 The Maven build runner supports code coverage based on the IDEA coverage engine. To learn about configuring code coverage options, refer to the [Configuring Java Code Coverage](configuring-java-code-coverage.md) page.
 
@@ -321,9 +169,11 @@ If you have several build agents installed on the same machine, by default they 
     system.maven.repo.local=%\system.agent.work.dir%/<subdirectory_name>
     
     ```   
-    For instance, `%\system.agent.work.dir%/m2-repository`.
+  For instance, `%\system.agent.work.dir%/m2-repository`.
 
 * Run each build agent under different user account.
+
+
 
 ## Maven Release with Different VCSs
 
@@ -369,6 +219,56 @@ As a rule, a personal build in TeamCity doesn't affect any "regular" builds run 
 TeamCity doesn't interfere anyhow with the Maven dependencies model. Hence, if your Maven configuration deploys artifacts to a remote repository, __they will be deployed there even if you run a personal build__. Thereby, a personal build may affect builds that depend on your configuration.   
 For example, you have a configuration A that deploys artifacts to a remote repository, and these artifacts are used by configuration B. When a personal build for A has finished, your personal artifacts will appear in B. This can be especially injurious, if configuration A is to produce release-version artifacts, because proper artifacts will be replaced with developer's ones, which will be hard to investigate because of Maven versioning model. Plus, these artifacts will become available to all dependent builds, not only to those managed by TeamCity.  
 To avoid this, we recommend not using remote run for build configurations which perform deployment of artifacts.
+
+
+## Configuration as Code
+
+<include from="common-templates.md" element-id="step-settings-config-as-code"/>
+
+<tabs>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object Build : BuildType({
+    name = "Build"
+    
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = bundled_3_8()
+            jdkHome = "%env.JDK_21_0%"
+            jvmArgs = "-verbose:gc -Xdiag -Xcomp -Xmn54m"
+        }
+    }
+})
+```
+
+See also: [MavenBuildStep Kotlin DSL documentation](https://teamcity.jetbrains.com/app/dsl-documentation/buildSteps/maven-build-step/index.html?query=MavenBuildStep).
+
+</tab>
+
+
+<tab title="YAML">
+
+```yaml
+jobs:
+  Job1:
+    name: Maven Project
+    steps:
+      - type: maven
+        maven-version: bundled_3_6
+        pom-location: pom.xml
+        goals: '-B -DskipTests clean package'
+        jdk-home: '%env.JDK_21_0%'
+        name: MavenCleanPackage
+        runner-arguments: '-Dmaven.test.failure.ignore=true'
+```
+
+</tab>
+
+</tabs>
 
 <seealso>
         <category ref="concepts">

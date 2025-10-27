@@ -117,7 +117,7 @@ Adds the `-s` Gradle command-line parameter.
 
 
 
-### Run in Docker
+### Container Settings
 
 <include from="common-templates.md" element-id="build-step-run-in-docker"/>
 
@@ -195,8 +195,6 @@ tasks.register("printProperty") {
 
 
 
-
-
 ## Configuration Cache
 
 Starting with version 2024.03, TeamCity Gradle runner supports [configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html). This feature significantly improves build performance by caching the result of the configuration phase and reusing this cache in subsequent builds.
@@ -228,6 +226,60 @@ Gradle configuration caches may not work as expected in the following cases:
 
 Note that this workaround prevents your build configuration from reusing the configuration cache, so you may also want to disable it.
 
+
+## Configuration as Code
+
+<include from="common-templates.md" element-id="step-settings-config-as-code"/>
+
+
+<tabs>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object Build : BuildType({
+    name = "Build"
+    steps {
+        gradle {
+            name = "Gradle clean build"
+            tasks = "clean build"
+            buildFile = "build.gradle"
+            workingDir = "%teamcity.build.checkoutDir%"
+            gradleParams = "--tests MyTestClass.myTestMethod"
+            gradleWrapperPath = "gradlew"
+            enableDebug = true
+            dockerImage = "ubuntu:latest"
+            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
+        }
+    }
+})
+```
+
+See also: [GradleBuildStep Kotlin DSL documentation](https://teamcity.jetbrains.com/app/dsl-documentation/buildSteps/gradle-build-step/index.html?query=GradleBuildStep)
+
+</tab>
+
+<tab title="YAML">
+
+```YAML
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: gradle
+        use-gradle-wrapper: 'true'
+        name: GradleCleanBuild
+        working-directory: '%teamcity.build.checkoutDir%'
+        tasks: clean build
+        build-file: build.gradle
+        gradle-params: '--tests MyTestClass.myTestMethod'
+        gradle-wrapper-path: gradlew
+        enable-debug: 'true'
+```
+
+</tab>
+
+</tabs>
 
 
 <seealso>

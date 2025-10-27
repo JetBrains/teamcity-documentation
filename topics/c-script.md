@@ -1,6 +1,10 @@
 [//]: # (title: C# Script)
 [//]: # (help-id: C# Script;csharp script)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _C# Script_ runner allows executing a [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) script on Windows, Linux, or macOS. It uses a custom TeamCity tool for running a C# Interactive shell across platforms.
 
 With this runner, you can perform various service tasks, such as preparing a build environment, creating an OS user, or reporting to different messengers.

@@ -1,6 +1,10 @@
 [//]: # (title: MSpec)
 [//]: # (help-id: MSpec)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _MSpec_ build runner is designed specifically to run [MSpec](https://github.com/machine/machine.specifications) tests. 
 
 <note>

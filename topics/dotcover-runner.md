@@ -1,5 +1,9 @@
 [//]: # (title: dotCover)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The **dotCover** runner uses the [JetBrains dotCover](https://www.jetbrains.com/dotcover/) to produce coverage reports for .NET processes. Generated reports are published to the [Code Coverage tab](build-results-page.md#Code+Coverage+Tab) of the Build Results page.
 
 This runner can also be placed after multiple preceding [](net.md) steps to merge their individual code coverages and publish a consolidated report.

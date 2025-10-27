@@ -1,6 +1,10 @@
 [//]: # (title: NUnit)
 [//]: # (help-id: NUnit)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _NUnit_ build runner is designed to run NUnit tests on the TeamCity server. However, you can also use the [](net.md) runner to launch NUnit tests and view test reports in TeamCity. Refer to the [](nunit-support.md) article for more information.
 
 <anchor name="NUnit3Extensions"/>

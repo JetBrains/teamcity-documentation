@@ -1,6 +1,10 @@
 [//]: # (title: .NET)
 [//]: # (help-id: .NET;viewpage.actionpageId113084145;.NET CLI \(dotnet\))
 
+<primary-label ref="primary-step-pipeline"/>
+
+<show-structure for="chapter" depth="2"/>
+
 TeamCity comes with the built-in support of the .NET toolchain providing the .NET build step, .NET detection on the build agents, and autodiscovery of build steps in your repository.
 
 This page gives details on configuring the _.NET_ runner. For a tutorial and demo, see this [blog post series](https://blog.jetbrains.com/teamcity/2020/12/teamcity-integration-with-net-part-1-new-approach-and-demo/).

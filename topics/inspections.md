@@ -1,6 +1,10 @@
 [//]: # (title: Inspections)
 [//]: # (help-id: Inspections)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Inspections (IntelliJ IDEA)_ build runner is intended to run code analysis based on [IntelliJ IDEA inspections](https://www.jetbrains.com/help/idea/code-inspection.html) for your project. In addition to the version that TeamCity automatically downloads and installs on its first startup, it is possible to install another version of JetBrains IntelliJ Inspections and Duplicates Engine and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
 {instance="tc"}
 

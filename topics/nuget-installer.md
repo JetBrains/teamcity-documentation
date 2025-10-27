@@ -1,6 +1,10 @@
 [//]: # (title: NuGet Installer)
 [//]: # (help-id: NuGet Installer)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _NuGet Installer_ build runner performs NuGet [Command-line package restore](http://docs.nuget.org/docs/reference/package-restore#Command-Line_Package_Restore). It can also (optionally) automatically update package dependencies to the most recent ones.
 
 <include from="nuget.md" element-id="nuget-OS"/>

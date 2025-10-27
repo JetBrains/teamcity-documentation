@@ -1,6 +1,10 @@
 [//]: # (title: NuGet Publish)
 [//]: # (help-id: NuGet Publish)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _NuGet Publish_ build runner is intended to publish (`push`) your NuGet packages to a given feed (custom or default).
 
 When using TeamCity as a NuGet server, there are three ways to publish packages to the feed:

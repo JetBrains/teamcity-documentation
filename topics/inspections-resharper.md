@@ -1,6 +1,10 @@
 [//]: # (title: Inspections \(ReSharper\))
 [//]: # (help-id: viewpage.actionpageId113084113;Inspections \(ReSharper\))
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Inspections (ReSharper)_ build runner allows you to use the benefits of the [JetBrains ReSharper code quality analysis](https://www.jetbrains.com/resharper/webhelp/Code_Analysis__Index.html) feature right in TeamCity, with the help of the bundled JetBrains ReSharper Command Line Tools. You can use the tools within TeamCity without any additional ReSharper license.   
 [ReSharper](https://www.jetbrains.com/resharper) analyzes your C#, VB.NET, XAML, XML, ASP.NET, ASP.NET MVC, JavaScript, HTML, CSS code, and allows you to:
 * Find probable bugs

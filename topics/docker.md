@@ -1,6 +1,10 @@
 [//]: # (title: Docker)
 [//]: # (help-id: Docker)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _Docker_ [build step](configuring-build-steps.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
 
 >For the `run` command, use [](container-wrapper.md).

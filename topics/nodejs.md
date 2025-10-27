@@ -1,6 +1,10 @@
 [//]: # (title: Node.js)
 [//]: # (help-id: Node.js)
 
+<primary-label ref="primary-step-pipeline"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The Node.js build runner allows running Node.js tools like [`npm`](https://www.npmjs.com/), [`yarn`](https://yarnpkg.com/), and [`node`](https://github.com/nodejs/node).
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.

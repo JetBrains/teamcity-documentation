@@ -2,6 +2,11 @@
 [//]: # (help-id: NAnt)
 
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
+
 <note>
 
 Starting with TeamCity 2024.07, the NAnt runner is deprecated. It remains bundled for compatibility but will be removed in future releases. We recommend switching to the  [](net.md) runner for testing .NET and .NET Framework applications.

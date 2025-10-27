@@ -131,3 +131,8 @@ Note that a TeamCity server cannot %operation-name-ev% from another server that 
 </snippet>
 
 <snippet id="step-settings-working-dir">The directory where the build step starts. By default, this is the same root directory where the agent checks out remote sources. See this topic for more information: <a href="build-working-directory.md">Build Working Directory</a>.</snippet>
+
+
+<snippet id="step-settings-config-as-code">
+The following snippets illustrate a customized build step in both [YAML](pipelines-yaml-syntax.md) (only pipelines) and [Kotlin DSL](kotlin-dsl.md) formats.
+</snippet>

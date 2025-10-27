@@ -13,51 +13,22 @@ This page describes general parameters for Java-based runners:
 
 <snippet id="java-param">
 
-<table><tr>
+<deflist type="medium">
 
-<td>
-
-Option
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-JDK
-
-</td>
-
-<td>
+<def title="JDK">
 
 Select a JDK. [This section](predefined-build-parameters.md#Defining+Java-Related+Environment+Variables) details the available options. The default is `JAVA_HOME` environment variable or the agent's own Java.
 
-</td></tr><tr>
+</def>
 
-<td>
 
-JDK home path
-
-</td>
-
-<td>
+<def title="JDK home path">
 
 _The option is available when &lt;Custom&gt; is selected above._ Use this field to specify the path to your custom JDK used to run the build. If the field is left blank, the path to JDK Home is read either from the `JAVA_HOME` environment variable on the agent machine, or from the `env.JAVA_HOME` property specified in the [build agent configuration](configure-agent-installation.md) file (`buildAgent.properties`). If these values are not specified, TeamCity uses the Java home of the build agent process itself.
 
-</td></tr><tr>
+</def>
 
-<td>
-
-JVM command line parameters
-
-</td>
-
-<td>
+<def title="JVM command line parameters">
 
 Additional JVM command line parameters allow you to set initial and maximum heap sizes, enable additional logging, select the required bytecode verifier mode, and more.
 
@@ -69,6 +40,8 @@ To specify multiple command line parameters, use space as a separator. For examp
 -verbose:gc -Xdiag -Xcomp -Xmx512m -Xms256m
 ```
 
-</td></tr></table>
+</def>
+
+</deflist>
 
 </snippet>

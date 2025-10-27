@@ -1,6 +1,10 @@
 [//]: # (title: IntelliJ IDEA Project)
 [//]: # (help-id: IntelliJ IDEA Project)
 
+<primary-label ref="primary-step-config"/>
+
+<show-structure for="chapter" depth="2"/>
+
 The _IntelliJ IDEA Project_ build runner allows you to build a project created in IntelliJ IDEA.
 
 ## Supported IntelliJ IDEA features
