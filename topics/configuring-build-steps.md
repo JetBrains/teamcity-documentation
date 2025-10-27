@@ -60,7 +60,7 @@ Access to public recipes from JetBrains Marketplace depends on your project sett
 <secondary-label ref="secondary-config"/>
 <secondary-label ref="secondary-pipeline"/>
 
-TeamCity supports [configuration-as-code](storing-project-settings-in-version-control.md) in [Kotlin DSL](kotlin-dsl.md) and [YAML](recipe-yaml-syntax.md) (currently only for pipelines) formats.
+TeamCity supports [configuration-as-code](storing-project-settings-in-version-control.md) in [Kotlin DSL](kotlin-dsl.md) and [YAML](pipelines-yaml-syntax.md) (currently only for pipelines) formats.
 
 
 <tabs>

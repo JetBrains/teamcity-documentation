@@ -1,168 +1,141 @@
 [//]: # (title: Gradle)
 [//]: # (help-id: Gradle)
 
-The _Gradle_ build runner runs [Gradle](https://www.gradle.org) projects.
+<primary-label ref="primary-step-pipeline"/>
+
+<show-structure for="chapter" depth="2"/>
+
+
+This build step is tailored to build [Gradle](https://www.gradle.org) projects and supports all Gradle build configurations, including `build.gradle` and `build.gradle.kts`.
+
+> TeamCity can also serve as an external dependency repository for Gradle builds. Try the external [TeamCity-Gradle plugin](https://github.com/jk1/TeamCity-dependencies-gradle-plugin) to enable this functionality.
+
+
+## Prerequisites
+
 
 To run builds with Gradle, Gradle 0.9-rc-1 or later must be installed on all the agent machines. Alternatively, if you use the [Gradle wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html), you need to have properly configured Gradle Wrapper scripts checked in to your Version Control.
 
-The runner supports all Gradle build configurations, including `build.gradle` and `build.gradle.kts`.
 
->To use the TeamCity server as an external dependency repository for Gradle builds, try the external [TeamCity-Gradle plugin](https://github.com/jk1/TeamCity-dependencies-gradle-plugin).
+## Step Settings
 
-<anchor name="Gradle-GradleParameters"/>
+The list of Gradle step settings and their corresponding UI labels slightly differ depending on whether you configure a build configuration or a pipeline.
 
-## Gradle Parameters
+### Main Settings
 
-<table><tr>
+<deflist type="medium">
 
-<td>
+<def title="Tasks">
 
-Option
+The list of space-separated Gradle tasks this step should perform. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the `default` task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
 
-</td>
+Additional [task options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:disambiguate_task_options_from_built_in_options) should also be entered in this field. For example, `:myproject:run --args="foo --bar"` or `clean test --tests MyTestClass.myTestMethod`.
 
-<td>
+</def>
 
-Description
+<def title="Working directory">
 
-</td></tr><tr>
+<include from="common-templates.md" element-id="step-settings-working-dir"/>
 
-<td>
+</def>
 
-Gradle tasks
+<def title="Use Gradle wrapper">
 
-</td>
+If enabled, TeamCity will look for Gradle Wrapper scripts in the checkout directory, and launch the appropriate script with Gradle tasks and additional command line parameters specified in corresponding step settings. In this case, Gradle specified in **Gradle home** path and Gradle installed on the agent are ignored.
 
-<td>
+</def>
 
-Specify Gradle task names separated by spaces. For example, `:myproject:clean :myproject:build` or `clean build`. If this field is left blank, the 'default' task is used. Note that TeamCity currently supports building Java projects with Gradle. Building Groovy, Scala, and other projects has not been tested.
+</deflist>
 
-Additional [task options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:disambiguate_task_options_from_built_in_options) should also be entered in this field. For example, `:myproject:run --args="foo --bar"` or `clean test --tests MyTestClass.myTestMethod`. 
+### Additional Settings
 
-</td></tr>
+<deflist type="medium">
 
-<tr>
+<def title="Gradle home">
 
-<td>
+The path to the Gradle home directory (the parent of the `bin` directory). If not specified, TeamCity will use Gradle specified in the agent's `GRADLE_HOME` environment variable. If you don't have Gradle installed on agents, you can use a Gradle wrapper instead.
 
-Gradle build file
+</def>
 
-</td>
-
-<td>
+<def title="Build file">
 
 A path to the [Gradle build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), relative to the working directory. If empty (default), Gradle uses own settings to determine it.
 
 > To specify a build file for Gradle 9.0 and higher, add the `-p <path to build file relative to the checkout directory>` line to the **Additional Gradle command line parameters** field instead of using this setting.
-> 
+>
 {style="note"}
 
-</td></tr>
+</def>
 
-<tr>
-
-<td>
-
-Incremental building
-
-</td>
-
-<td>
-
-TeamCity can make use of the Gradle `:buildDependents` [feature](https://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ option is enabled, TeamCity will detect Gradle modules affected by changes in the build and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
-
-</td></tr><tr>
-
-<td>
-
-Gradle home path
-
-</td>
-
-<td>
-
-Specify here the path to the Gradle home directory (the parent of the `bin` directory). If not specified, TeamCity will use Gradle specified in the agent's `GRADLE_HOME` environment variable. If you don't have Gradle installed on agents, you can use a Gradle wrapper instead.
-
-</td></tr><tr>
-
-<td>
-
-Additional Gradle command line parameters
-
-</td>
-
-<td>
+<def title="Additional Gradle command line parameters">
 
 The optional space-separated list of [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). For example, `-x test` (or `--exclude-task test`), `--configuration-cache`, or `-PmyProjectProperty=foo`.
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="Gradle wrapper path">
 
-Gradle Wrapper
+Optional path to the Gradle wrapper script relative to the working directory.
 
-</td>
+</def>
 
-<td>
+<def title="Incremental building">
 
-If enabled, TeamCity will look for Gradle Wrapper scripts in the checkout directory, and launch the appropriate script with Gradle tasks and additional command line parameters specified in the fields above. In this case, Gradle specified in _Gradle home path_ and Gradle installed on the agent are ignored.
+<tip>Available only for classic build configuration steps.</tip>
 
-</td></tr></table>
 
-<anchor name="LaunchingParameters"/>
+TeamCity can make use of the Gradle `:buildDependents` [feature](https://www.gradle.org/docs/current/userguide/userguide_single.html#sec:multiproject_build_and_test). If the _Incremental building_ option is enabled, TeamCity will detect Gradle modules affected by changes in the build and start the `:buildDependents` command for them only. This will cause Gradle to fully build and test only the modules affected by changes.
 
-<anchor name="Gradle-LaunchingParameters"/>
+
+</def>
+
+</deflist>
+
 
 ### Run Parameters
-[//]: # (AltHead: LaunchingParameters cbr) 
 
-<table><tr>
 
-<td>
+<deflist type="medium">
 
-Option
+<def title="Debug">
 
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Debug
-
-</td>
-
-<td>
-
-Selecting the _Log debug messages_ checkbox is equivalent to adding the `-d` Gradle command-line parameter.
+Adds the `-d` Gradle command-line parameter.
 
 >Running Gradle with the `DEBUG` log level can potentially expose sensitive information in the build log (learn more in the [Gradle documentation](https://docs.gradle.org/current/userguide/logging.html#sec:debug_security)). Before enabling this mode, make sure that the log can be viewed only by trusted users.
-> 
+>
 {style="warning"}
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="Stacktrace">
 
-Stacktrace
+Adds the `-s` Gradle command-line parameter.
 
-</td>
+</def>
 
-<td>
+</deflist>
 
-Selecting the _Print stacktrace_ checkbox is equivalent to adding the `-s` Gradle command-line parameter.
 
-</td></tr></table>
+
+### Run in Docker
+
+<include from="common-templates.md" element-id="build-step-run-in-docker"/>
+
+
+### Code Coverage
+
+<secondary-label ref="secondary-config"/>
+
+The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
+
 
 ### Java Parameters
 
 <include from="java-parameters.md" element-id="java-param"/>
 
-### Build properties
+
+
+## Build properties
 
 In Gradle builds, TeamCity system properties are different from Java system properties.
 
@@ -220,16 +193,8 @@ tasks.register("printProperty") {
 
 </tabs>
 
-### Docker Settings
 
-In this section, you can specify a Docker image which will be [used to run the build step](container-wrapper.md).
 
-<anchor name="coverage"/>
-
-### Code Coverage
-[//]: # (AltHead: coverage)
-
-The Gradle build runner supports code coverage with based on the [IDEA code coverage engine](intellij-idea.md) and [JaCoCo](jacoco.md).
 
 
 ## Configuration Cache

@@ -2,11 +2,11 @@
 <!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
-    <primary-label id="primary-config" short-name="BC" name="Build configurations">
-        This functionality is available for classic build configurations
+    <primary-label id="primary-step-config" color="tangerine" short-name="BC" name="Build configurations">
+        This step is available only in classic build configurations
     </primary-label>
-    <primary-label id="primary-pipeline" short-name="Pipeline" name="Pipeline">
-        This functionality is available for pipelines
+    <primary-label id="primary-step-pipeline" color="purple" short-name="P" name="Configurations and pipelines">
+        This step is available in both classic build configurations and pipelines
     </primary-label>
 
 

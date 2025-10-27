@@ -97,3 +97,37 @@ TeamCity will drop support for Java versions older than 21 in one of the future 
 Note that a TeamCity server cannot %operation-name-ev% from another server that uses custom encryption keys missing from this server. In this case you need to add all encryption keys from the source server to the target one. See the following article to learn more: <a href="teamcity-configuration-and-maintenance.md#encryption-settings" instance="tc">Encryption Settings</a>.
 </warning>
 </snippet>
+
+
+## Steps
+
+<snippet id="build-step-run-in-docker">
+<p>This build step can run inside a container deployed by Docker or Podman.</p>
+
+<procedure>
+<tabs>
+
+<tab title="Classic build configurations">
+<p>Classic build configuration steps display a set of properties that allow you to specify the image name, platform, and additional run arguments. The <b>Pull image explicitly</b> ensures TeamCity pulls an image from the target container every time this step runs.</p>
+<p><img src="dk-docker-container-settings.png"/></p>
+<p>To point TeamCity to a registry where it should look for the specified image, add <a href="configuring-connections-to-docker.md">Docker/Podman connection</a> to your project. By default, this connection allows TeamCity to pull images from <a href="https://hub.docker.com">Docker Hub</a> in anonymous mode, but you can set it up for any container registry.</p>
+<p>See the following article for more information: <a href="container-wrapper.md">Container Wrapper</a>.</p>
+</tab>
+
+<tab title="Pipelines">
+<p>Toggle <b>Run in Docker</b> on to run a step inside a container. When enabled, this element displays two options.</p>
+<p><img src="dk-run-in-docker-pipeline.png" width="706" thumbnail="true" alt="Run pipeline step in a container"/></p>
+<ul>
+
+<li><b>Docker image</b> — allows you to pull an image from a Docker or Podman registry. By default, TeamCity can pull Docker Hub images in anonymous mode. For other cases (private images, custom image registries, non-anonymous mode that ensures you do not violate Docker Hub rate limits), configure a <a href="pipeline-settings.md#Integrations">Docker integration</a> on a pipeline or job level.</li>
+
+<li><b>Dockerfile</b> — allows you to build a custom image from a Dockerfile.</li>
+
+</ul>
+
+</tab>
+</tabs>
+</procedure>
+</snippet>
+
+<snippet id="step-settings-working-dir">The directory where the build step starts. By default, this is the same root directory where the agent checks out remote sources. See this topic for more information: <a href="build-working-directory.md">Build Working Directory</a>.</snippet>
