@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
+    <primary-label id="primary-config" short-name="BC" name="Build configurations">
+        This functionality is available for classic build configurations
+    </primary-label>
+    <primary-label id="primary-pipeline" short-name="Pipeline" name="Pipeline">
+        This functionality is available for pipelines
+    </primary-label>
+
+
+
+    <secondary-label id="secondary-config" name="Build configurations" color="tangerine">This functionality is available for classic build configurations</secondary-label>
+    <secondary-label id="secondary-pipeline" name="Pipelines" color="purple">This functionality is available for pipelines</secondary-label>
+
+    <secondary-label id="experimental" name="Experimental" color="strawberry">This is an experimental feature</secondary-label>
+    <secondary-label id="2023.3" name="2023.3" color="blue">New in version 2023.3</secondary-label>
+</labels>

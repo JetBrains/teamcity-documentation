@@ -286,62 +286,6 @@
 			<toc-element topic="nuget.md">
 				<toc-element topic="using-teamcity-as-nuget-feed.md"/>
 			</toc-element>
-			<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html" toc-title="Build Steps">
-				<toc-element accepts-web-file-names-ref="build-step-conditions" topic="build-step-execution-conditions.md"/>
-				<toc-element topic="working-with-meta-runner.md">
-					<toc-element topic="recipe-yaml-syntax.md"/>
-				</toc-element>
-				<toc-element topic="ant.md"/>
-				<toc-element topic="command-line.md"/>
-				<toc-element topic="c-script.md"/>
-				<toc-element topic="deployers.md">
-					<toc-element topic="smb-upload.md"/>
-					<toc-element topic="ftp-upload.md"/>
-					<toc-element topic="ssh-upload.md"/>
-					<toc-element topic="container-deployer.md"/>
-					<toc-element topic="ssh-exec.md"/>
-				</toc-element>
-				<toc-element topic="docker.md"/>
-				<toc-element topic="docker-compose.md"/>
-				<toc-element topic="dotcover-runner.md"/>
-				<toc-element topic="duplicates-finder-java.md"/>
-				<toc-element topic="duplicates-finder-resharper.md"/>
-				<toc-element topic="fxcop.md"/>
-				<toc-element topic="gradle.md"/>
-				<toc-element topic="qodana.md"/>
-				<toc-element topic="inspections.md"/>
-				<toc-element topic="inspections-resharper.md"/>
-				<toc-element topic="intellij-idea-project.md"/>
-				<toc-element hidden="true" topic="ipr-deprecated.md"/>
-				<toc-element topic="kotlin-script.md"/>
-				<toc-element topic="maven.md"/>
-				<toc-element topic="mspec.md"/>
-				<toc-element topic="nant.md"/>
-				<toc-element topic="net.md">
-					<toc-element topic="mono-support.md"/>
-					<toc-element toc-title="Deprecated .NET Runners">
-						<toc-element topic="msbuild.md"/>
-						<toc-element topic="net-process-runner.md"/>
-						<toc-element topic="visual-studio-2003.md"/>
-						<toc-element topic="visual-studio-sln.md"/>
-						<toc-element topic="visual-studio-tests.md">
-							<toc-element topic="mstest-support.md"/>
-						</toc-element>
-					</toc-element>
-				</toc-element>
-				<toc-element topic="nodejs.md"/>
-				<toc-element topic="nuget-installer.md"/>
-				<toc-element topic="nuget-pack.md"/>
-				<toc-element topic="nuget-publish.md"/>
-				<toc-element topic="nunit.md">
-					<toc-element accepts-web-file-names-ref="nunit-support" topic="nunit-support.md"/>
-				</toc-element>
-				<toc-element topic="powershell.md"/>
-				<toc-element topic="python.md"/>
-				<toc-element topic="rake.md"/>
-				<toc-element topic="simple-build-tool-scala.md"/>
-				<toc-element topic="xcode-project.md"/>
-			</toc-element>
 			<toc-element topic="build-artifact.md" toc-title="Artifacts and Shared Files"/>
 			<toc-element topic="adding-build-features.md" toc-title="Build Features">
 				<toc-element topic="assemblyinfo-patcher.md"/>
@@ -413,6 +357,62 @@
 		<toc-element topic="pipeline-settings.md"/>
 		<toc-element topic="job-settings.md"/>
 		<toc-element topic="pipelines-yaml-syntax.md"/>
+	</toc-element>
+	<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html" toc-title="Build Steps">
+		<toc-element accepts-web-file-names-ref="build-step-conditions" topic="build-step-execution-conditions.md"/>
+		<toc-element topic="working-with-meta-runner.md">
+			<toc-element topic="recipe-yaml-syntax.md"/>
+		</toc-element>
+		<toc-element topic="ant.md"/>
+		<toc-element topic="command-line.md"/>
+		<toc-element topic="c-script.md"/>
+		<toc-element topic="deployers.md">
+			<toc-element topic="smb-upload.md"/>
+			<toc-element topic="ftp-upload.md"/>
+			<toc-element topic="ssh-upload.md"/>
+			<toc-element topic="container-deployer.md"/>
+			<toc-element topic="ssh-exec.md"/>
+		</toc-element>
+		<toc-element topic="docker.md"/>
+		<toc-element topic="docker-compose.md"/>
+		<toc-element topic="dotcover-runner.md"/>
+		<toc-element topic="duplicates-finder-java.md"/>
+		<toc-element topic="duplicates-finder-resharper.md"/>
+		<toc-element topic="fxcop.md"/>
+		<toc-element topic="gradle.md"/>
+		<toc-element topic="qodana.md"/>
+		<toc-element topic="inspections.md"/>
+		<toc-element topic="inspections-resharper.md"/>
+		<toc-element topic="intellij-idea-project.md"/>
+		<toc-element hidden="true" topic="ipr-deprecated.md"/>
+		<toc-element topic="kotlin-script.md"/>
+		<toc-element topic="maven.md"/>
+		<toc-element topic="mspec.md"/>
+		<toc-element topic="nant.md"/>
+		<toc-element topic="net.md">
+			<toc-element topic="mono-support.md"/>
+			<toc-element toc-title="Deprecated .NET Runners">
+				<toc-element topic="msbuild.md"/>
+				<toc-element topic="net-process-runner.md"/>
+				<toc-element topic="visual-studio-2003.md"/>
+				<toc-element topic="visual-studio-sln.md"/>
+				<toc-element topic="visual-studio-tests.md">
+					<toc-element topic="mstest-support.md"/>
+				</toc-element>
+			</toc-element>
+		</toc-element>
+		<toc-element topic="nodejs.md"/>
+		<toc-element topic="nuget-installer.md"/>
+		<toc-element topic="nuget-pack.md"/>
+		<toc-element topic="nuget-publish.md"/>
+		<toc-element topic="nunit.md">
+			<toc-element accepts-web-file-names-ref="nunit-support" topic="nunit-support.md"/>
+		</toc-element>
+		<toc-element topic="powershell.md"/>
+		<toc-element topic="python.md"/>
+		<toc-element topic="rake.md"/>
+		<toc-element topic="simple-build-tool-scala.md"/>
+		<toc-element topic="xcode-project.md"/>
 	</toc-element>
 	<toc-element topic="ai-assistant.md"/>
 	<toc-element accepts-web-file-names-ref="configuring-test-reports-and-code-coverage" topic="configuring-test-reports-and-code-coverage.md">
