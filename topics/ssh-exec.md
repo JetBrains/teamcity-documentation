@@ -51,7 +51,7 @@ When strong cryptography is required by the server that receives the deployment,
 </td>
 <td>
 
-<p>Enables you to modify the default build condition, and optionally add more <a href="configuring-build-steps.md#Execution+Policy">build conditions</a>.</p>
+<p>Enables you to modify the default build condition, and optionally add more <a href="configuring-build-steps.md#Step+Execution+Conditions">build conditions</a>.</p>
 
 </td>
 </tr>

@@ -114,7 +114,7 @@ The tables below are updated in accordance with the newly introduced integration
   * [Apache Maven](maven.md), using [special build triggers for Maven](configuring-maven-triggers.md)
   * [Gradle](gradle.md)
   * [Ant](ant.md)
-* [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
+* [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Add+Steps+via+TeamCity+UI)
 * Autodetection of [Maven](maven.md#Maven+runner+settings) and Gradle installations on a build agent
 * [Running a Maven, Gradle, or Ant build step inside a Docker container](container-wrapper.md)
 * [Reporting Java code inspection results for a build](inspections.md)
@@ -146,7 +146,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Autodiscovery of .NET build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
+* [Autodiscovery of .NET build steps in a source project](configuring-build-steps.md#Add+Steps+via+TeamCity+UI)
 * [Autodetection of a .NET installation on a build agent](net.md#.NET+Version+Detection+Algorithm)
 * Cross-platform .NET builds
 * [Running .NET CLI commands](net.md#Build+Runner+Options)
@@ -211,7 +211,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Autodiscovery of Python build steps in a source project](configuring-build-steps.md#Autodetecting+Build+Steps)
+* [Autodiscovery of Python build steps in a source project](configuring-build-steps.md#Add+Steps+via+TeamCity+UI)
 * [Autodetection of a Python installation on a build agent](python.md#pythonVersion)
 * [Cross-platform execution of Python scripts](python.md)
 * Support for Pipenv, Poetry, Venv, and Virtualenv

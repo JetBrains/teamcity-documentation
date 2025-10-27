@@ -11,7 +11,7 @@ If you need to pull a base image from a private repository or push a newly built
 
 <include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Docker Compose build step"/></include>
 
-Available step execution policies are described [here](configuring-build-steps.md#Execution+Policy).
+Available step execution policies are described [here](configuring-build-steps.md#Step+Execution+Conditions).
 
 ## Docker Compose Installation Options
 
