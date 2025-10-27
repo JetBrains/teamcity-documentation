@@ -1,20 +1,46 @@
 [//]: # (title: Configuring Connections)
 [//]: # (help-id: Configuring Connections)
 
-TeamCity allows storing presets of connections to external services. You can reuse these presets in various places on the server: when creating projects, configuring notifications, integrating with issue trackers, and more. This article gives instructions on how to add each type of connection.
+TeamCity connections store credentials required to access external services. Based on a type of this 3rd-party service, are two major connection categories.
 
-To add a connection, do the following:
+<deflist type="full">
+
+
+<def title="VCS Connections">
+
+These connections store the information needed to access VCS providers such as [](#GitHub), [](#GitLab), [](#Bitbucket+Cloud), and so on. They offer the fastest way to create projects, build configurations, and pipelines — handling authentication automatically so you can simply choose a repository and start configuring your build steps.
+
+<img src="connection-repo-list.png" width="706" alt="Repository list retrieved from a connection"/>
+
+Without a configured connection, you would require to provide credentials for every new pipeline, build configuration, or [root](configuring-vcs-roots.md).
+
+</def>
+
+<def title="Non-VCS Connections">
+
+Connections in this category store information needed to access services other than VCS providers and are used for purposes unrelated to retrieving remote repository sources. For example:
+
+* [Amazon Web Services](#AmazonWebServices) connection allows TeamCity to manage AWS [cloud agents](teamcity-integration-with-cloud-solutions.md) and store build artifacts in [S3 buckets](storing-build-artifacts-in-amazon-s3.md).
+* [Google](#Google) connection is used by the [corresponding authentication module](configuring-authentication-settings.md#Google) to allow users log into TeamCity using their Google accounts.
+* [Slack](#Slack) connection is utilized to set up Slack notifications and [send custom Slack messages from build steps](service-messages.md#Sending+Custom+Slack+Messages).
+* [HashiCorp Vault](hashicorp-vault.md) connection allows you to create remote parameters that retrieve their values from a secrets vault.
+
+
+</def>
+
+</deflist>
+
+To create a new connection, do the following:
 
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. Select the connection type, set its _Display name_ to distinguish it from the others, and configure it as described below.
 
-
 <img src="dk-bbconnection-createConnection.png" alt="Create a new TeamCity connection" width="706"/>
 
-If your TeamCity server is [installed behind a proxy](configuring-proxy-server.md), it is important to ensure that this is reflected in the connection settings, if applicable. When configuring a callback URL for a connection, you need to specify all URLs by which the current server can be accessed.  
-After configuring the proxy, remember to also set the new address as the _Server URL_ in __Global Settings__ of TeamCity.
-{instance="tc"}
+You can also create new VCS connections from the **Set up your build** page when adding new configurations or pipelines. Choose the **Connect new repository** option in the drop-down menu to view available options.
+
+<img src="" width="706" alt="Add new VCS connection"/>
 
 ## Azure DevOps
 
@@ -63,7 +89,7 @@ To configure an Azure DevOps OAuth 2.0 connection:
 
 #### Azure DevOps PAT Connection
 
-This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-projects.md#From+Repository+URL), creating an [Azure DevOps VCS root](team-foundation-version-control.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
+This type of connection uses personal access tokens. It allows creating a [project from a Git or TFVC repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), creating an [Azure DevOps VCS root](team-foundation-version-control.md), or integrating with the [Azure Board Work Items](azure-board-work-items.md) tracker.
 
 To configure an Azure DevOps PAT connection:
 
@@ -75,7 +101,7 @@ To configure an Azure DevOps PAT connection:
    * the server URL in the `https://{account}.visualstudio.com` format or your Azure DevOps Server as `https://{server}:8080/tfs/`
    * your personal access token
 6. <include from="common-templates.md" element-id="test-and-save-connection"/>
-7. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create project from URL](creating-and-editing-projects.md#From+Repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](team-foundation-version-control.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
+7. The connection is configured, and now a small Azure DevOps Services icon becomes active in several places where a repository URL can be specified: [create build configuration from URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), [create VCS root from URL](guess-settings-from-repository-url.md), create [Azure DevOps Server](team-foundation-version-control.md) VCS root, create [Azure Board Work Items](azure-board-work-items.md) tracker. Click the icon, log in to Azure DevOps Services and authorize TeamCity. TeamCity will be granted full access to all the resources that are available to you.   
    When configuring Commit Status Publisher for Git repositories hosted in TFS/VSTS, the personal access token can be filled out automatically if a VSTS project connection is configured.
 
 >It is possible to configure several VSTS connections. In this case, the server URL will be displayed next to the VSTS icon to distinguish the server in use.
@@ -91,7 +117,7 @@ To configure an Azure DevOps PAT connection:
 {instance="tcc"}
 
 A connection to Bitbucket Cloud can be used to:
-* Create a [project from Bitbucket URL](creating-and-editing-projects.md#From+Repository+URL).
+* Create a [project from Bitbucket URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Mercurial VCS root](mercurial.md).
 * Integrate with a [Bitbucket Cloud issue tracker](bitbucket-cloud.md).
@@ -114,7 +140,7 @@ If you configure multiple Bitbucket connections, the server URL will be displaye
 
 Integration with Bitbucket Server and Data Center currently allows you to:
 
-* create a [project and build configuration from Bitbucket URL](creating-and-editing-projects.md#From+Repository+URL)
+* create a [project and build configuration from Bitbucket URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 * create a [VCS root from URL](guess-settings-from-repository-url.md)
 
 To allow TeamCity to access Bitbucket data, you need to create an incoming application link in Bitbucket to grant TeamCity required permissions.
@@ -148,7 +174,7 @@ To allow TeamCity to access Bitbucket data, you need to create an incoming appli
 TeamCity allows you to create connections to both regular **GitHub.com** instances and **GitHub Enterprise**.
 
 A connection to GitHub can be used to:
-* Create a [project from GitHub URL](creating-and-editing-projects.md#From+Repository+URL).
+* Create a [project from GitHub URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Create a [Git VCS root](git.md).
 * Integrate with a [GitHub issue tracker](github.md).
@@ -299,7 +325,7 @@ If you enable the <a href="configuring-authentication-settings.md#GitHub">GitHub
 There are two types of GitLab connections: *GitLab.com* for accounts hosted on the [](https://gitlab.com) site, and *GitLab CE/EE* for accounts on a self-hosted GitLab Community Edition (CE) or Enterprise Edition (EE) server.
 
 A connection to GitLab can be used to:
-* Create a [project from GitLab URL](creating-and-editing-projects.md#From+Repository+URL).
+* Create a [project from GitLab URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL).
 * Create a [VCS root from URL](guess-settings-from-repository-url.md).
 * Integrate with a [GitLab issue tracker](gitlab.md).
 * Enable [GitLab.com authentication](configuring-authentication-settings.md#GitLab.com).
@@ -869,7 +895,7 @@ When your Space connection is configured and installed, return to TeamCity and a
 * URL of the Space server
 * Client ID and secret of your Space application
 
-Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or [Pull Requests](pull-requests.md#JetBrains+Space+Merge+Requests) feature, [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [project](creating-and-editing-projects.md#From+a+Configured+Connection) / [build configuration](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) / [VCS root](configuring-vcs-roots.md).
+Save the connection and proceed with adding a [Commit Status Publisher](commit-status-publisher.md) or [Pull Requests](pull-requests.md#JetBrains+Space+Merge+Requests) feature, [enabling Space authentication](configuring-authentication-settings.md#JetBrains+Space), or creating a [build configuration or pipeline](creating-and-editing-build-configurations.md#Use+a+Repository+URL) / [build configuration](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) / [VCS root](configuring-vcs-roots.md).
 
 
 ## Kubernetes
@@ -948,6 +974,12 @@ Save the connection and proceed with adding an [NPM Registry Connection](nodejs.
 ## Perforce Administrator Access
 
 This type of connection allows [processing task streams on your Perforce server](perforce-workspace-handling-in-teamcity.md#Workspace+Deletion). In the connection settings, enter the host and user credentials for accessing the Perforce server (the user must have the [admin](https://www.perforce.com/manuals/p4sag/Content/P4SAG/protections.set.html#protections.set.access_levels) permission).
+
+
+## HashiCorp Vault
+
+This connection allows you to set up integration with a secrets vault where TeamCity remote parameters retrieve their values from. See [](hashicorp-vault.md) to learn more.
+
 
  <seealso>
         <category ref="admin-guide">

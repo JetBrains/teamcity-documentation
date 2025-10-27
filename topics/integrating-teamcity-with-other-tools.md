@@ -644,7 +644,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a GitHub repository URL](creating-and-editing-projects.md#From+Repository+URL)
+* [Creating a project or build configuration from a GitHub repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 * [Guessing VCS root settings from a GitHub repository URL](guess-settings-from-repository-url.md)
 * [Creating a Git VCS root from a GitHub repository URL](git.md)
 * [Inserting links to GitHub issues when detecting their IDs in commit messages](github.md)
@@ -667,7 +667,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-projects.md#From+Repository+URL)
+* [Creating a project or build configuration from a GitLab repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 * [Guessing VCS root settings from a GitLab repository URL](guess-settings-from-repository-url.md)
 * [Inserting links to GitLab issues when detecting their IDs in commit messages](gitlab.md)
 * [Building sources of GitLab merge requests](pull-requests.md#GitLab+Merge+Requests)
@@ -686,7 +686,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a Bitbucket repository URL](creating-and-editing-projects.md#From+Repository+URL)
+* [Creating a project or build configuration from a Bitbucket repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 * [Guessing VCS root settings from a Bitbucket repository URL](guess-settings-from-repository-url.md)
 * [Creating a Mercurial VCS root from a Bitbucket repository URL](mercurial.md)
 * [Building sources of Bitbucket pull requests](pull-requests.md#Bitbucket+Cloud+Pull+Requests)
@@ -707,7 +707,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from an Azure DevOps repository URL](creating-and-editing-projects.md#From+Repository+URL)
+* [Creating a project or build configuration from an Azure DevOps repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL)
 * [Guessing VCS root settings from an Azure DevOps repository URL](guess-settings-from-repository-url.md)
 * [Building sources of Azure DevOps pull requests](pull-requests.md#Azure+DevOps+Pull+Requests)
 * [Inserting links to Azure Board Work Items issues when detecting their IDs in commit messages](azure-board-work-items.md).
@@ -725,7 +725,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Creating a project or build configuration from a JetBrains Space repository URL](creating-and-editing-projects.md#From+Repository+URL).
+* [Creating a project or build configuration from a JetBrains Space repository URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL).
 * [Guessing VCS root settings from a JetBrains Space repository URL](guess-settings-from-repository-url.md).
 * [Authenticating with a JetBrains Space account in TeamCity](configuring-authentication-settings.md#JetBrains+Space).
 

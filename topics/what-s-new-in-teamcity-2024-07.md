@@ -86,7 +86,7 @@ Learn more: [Configuring Connections](configuring-connections.md)
 ## Upload SSH Keys from the Create Project Page
 {instance="tc"}
 
-When you create a new project [from an SSH URL](creating-and-editing-projects.md#From+Repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
+When you create a new build configuration [from an SSH URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
 <img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
 
@@ -229,7 +229,7 @@ Learn more: [Configuring Connections](configuring-connections.md)
 ## Upload SSH Keys from the Create Project Page
 {instance="tcc"}
 
-When you create a new project [from an SSH URL](creating-and-editing-projects.md#From+Repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
+When you create a new build configuration [from an SSH URL](creating-and-editing-build-configurations.md#Use+a+Repository+URL), TeamCity shows a list of available SSH keys. Starting from this version, you can upload new keys directly from this page.
 
 <img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
 

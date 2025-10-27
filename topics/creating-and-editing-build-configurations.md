@@ -1,6 +1,8 @@
 [//]: # (title: Creating and Editing Build Configurations)
 [//]: # (help-id: Creating and Editing Build Configurations;Build Configuration)
 
+<show-structure for="chapter,procedure" depth="2"/>
+
 Build configurations and [pipelines](create-and-edit-pipelines.md) represent actual CI/CD routines. A build configuration stores a sequence of build steps (basic operations to be performed during a build run), and settings required to execute these steps. These settings include:
 
 * [parameters](configuring-build-parameters.md) that allow you to quickly alter the configuration behavior;
@@ -98,42 +100,333 @@ In summary, while both pipelines and build configurations are owned by projects,
 
 ## Create Build Configurations in TeamCity UI
 
-Creating new build configurations shares a lot of similarities with [creating projects](creating-and-editing-projects.md): both can utilize [connections](configuring-connections.md) and rely on [VCS roots](configuring-vcs-roots.md) to access remote repositories.
+To add a build configuration to a TeamCity project, use the **+** button in the sidebar...
+
+<img src="dk-new-configuration-sidebar.png" width="706" alt="Create new build configuration via sidebar"/>
+
+...or click **Create build configuration** from the **General** tab of project settings.
+
+<img src="dk-new-configuration-button.png" width="706" alt="Create new build configuration via button"/>
 
 
-### New Projects
+### Available Options
 
-When you create a new TeamCity project [from a repository URL](creating-and-editing-projects.md#From+Repository+URL) or [via a configured connection](creating-and-editing-projects.md#From+a+Configured+Connection), TeamCity guides you through setting up both the project and its build configuration. See the links above for more details.
+A build configuration can be one of two major types: a configuration that builds, tests, or deploys a project stored in a VCS, or one that does not require a remote repository (for example, it may employ a 3rd-party REST API to download and process data).
 
-### Add Configurations to an Existing Project
+Configurations that check our remote repositories can in turn be created using TeamCity connections or VCS roots.
 
-If a parent project already exists, you can add its child configurations as follows:
+All available options are displayed in the corresponding drop-down on the **Set up your build** page.
 
-1. Use the **+** button in the sidebar...
+<img src="build-configuraiton-creation-options.png" width="706" alt="All build config creation options"/>
 
-    <img src="dk-new-configuration-sidebar.png" width="706" alt="Create new build configuration via sidebar"/>
+### Use a TeamCity Connection
 
-    ...or click **Create build configuration** from the **General** tab of project settings.
+TeamCity [connections](configuring-connections.md) store all information required to access an external resource: a VCS hosting, a cloud data storage, a Docker registry, a secrets vault, and so on. Using connections is the most convenient way to build your sources: configure it once and just choose a required repository from the list whenever you add new build configuration or pipeline.
 
-    <img src="dk-new-configuration-button.png" width="706" alt="Create new build configuration via button"/>
-
-2. You will be presented with the same set of options as for [creating projects](creating-and-editing-projects.md):
-
-   * [From a repository URL](creating-and-editing-projects.md#From+Repository+URL) — adds a new configuration using a repository link. See this link for more information.
-   * [From a configured connection](creating-and-editing-projects.md#From+a+Configured+Connection) — available if this project or any of its parent projects has a VCS provider connection. Faster than the first option since authentication settings are inherited from the underlying connection. See this link for more information.
-   * **Manually** — creates a completely blank build configuration that does not target any remote repository. This option allows you to choose a [template](#Build+Configuration+Templates) attached to the configuration.
-
-3. If you created an empty build configuration (using the **Manually** option), you will need to attach an existing [VCS root](configuring-vcs-roots.md) or create a new one to check out remote repositories. A configuration can include multiple VCS roots to handle repositories from the same or different providers.
-
-    <include from="configuring-vcs-settings.md" element-id="attach-or-create-a-root"/>
-
-    See the following articles for more information:
-
-    * [](configuring-vcs-settings.md)
-    * [](configuring-vcs-roots.md)
+The figure above illustrates a list of existing connections: a GitLab connection, a GitHub connection, few Azure connections, and more. If no project among build configuration parents owns a VCS connection, your only option here will be to create a new one via the **Connect new repository** menu item.
 
 
-## Create New Projects in Kotlin DSL
+### Use a Repository URL
+
+
+This option allows you to build configuration in one go using a Git, Subversion, Mercurial, TFS, or Perforce repository (depot) URL. You can use any URL type:
+
+* A regular repository web link: `https://github.com/Johndoe/my-sample-app`
+* An HTTPS clone URL: `https://github.com/Johndoe/my-sample-app.git`
+* An SSH clone URL: `git@github.com:Johndoe/my-sample-app.git`
+
+To start building a remote repository, follow the steps below.
+
+<procedure type="steps">
+
+<step>
+
+On the **Set up your build** page, choose the **From any Git URL** option.
+
+</step>
+
+
+<step>
+
+Choose the authentication type.
+
+<deflist type="medium">
+
+<def title="SSH key">
+
+Available if the **Repository URL** is an SSH clone URL. Click **Upload SSH key** to add a private key, which will be saved in the parent project ([**parent project settings**](project-administrator-guide.md#Edit+and+View+Modes) **| SSH keys**) and appear in the drop-down menu when configuring additional projects.
+
+Learn more: [](ssh-keys-management.md)
+
+</def>
+
+<def title="HTTPS">
+
+Available for HTTP(s) clone URLs, this option provides three authentication options:
+
+* Token — issue a personal access token (PAT) on a VCS side and paste it here. You can also use TeamCity [](manage-access-tokens.md) page to issue tokens.
+* Password — enter a regular username/password credentials.
+* Anonymous — available for public repositories. This option should only be used if you do not intend to leverage write access permissions (for example, to [post TeamCity build statuses](commit-status-publisher.md) back to the VCS).
+
+</def>
+
+</deflist>
+
+</step>
+
+
+<step>
+
+Set up basic configuration options.
+
+* **Name** and (optionally) **description** — public texts displayed in TeamCity UI.
+* **Default branch** — the full name of a branch that will become a default one in TeamCity (for example, `refs/heads/main`). See the following article for more information: [](working-with-feature-branches.md#Default+Branch).
+
+   > By default, TeamCity tracks all branches (`refs/heads/*`). You can change this behavior later by editing the **branch specification** of a VCS root attached to this configuration. See the following topic to learn more: [](working-with-feature-branches.md).
+
+The next page contains mixed settings of both project and a build configuration owned by this project.
+
+* **Start builds on new changes in** — if enabled, adds a [VCS trigger](configuring-vcs-triggers.md) that launches new builds whenever TeamCity detects new commits.
+
+* **Build configuration type** — allows you to select the configuration type depending on its purpose. See [this article](changing-build-configuration-type.md) to learn more about unique features of composite and deployment configurations.
+
+
+</step>
+
+<step>
+
+Click **Create**. TeamCity will bring you to detailed configuration settings, where you can add build steps, edit the list of monitored branches, enable additional build features, and so on.
+
+</step>
+
+</procedure>
+
+
+### Use a VCS Root
+
+Every build configuration that processes sources stored in a remote repository does so by leveraging a **VCS root**. This object stores connection settings required to access a single repository, along with advanced settings: the list of monitored branches, the automatic polling interval, the submodule checkout policy, and more.
+
+> See these articles for more information:
+> * [What are VCS roots](project-administrator-guide.md#VCS+Roots)
+> * [Configuring VCS roots](configuring-vcs-roots.md).
+>
+{style="tip"}
+
+If you already have a build configuration or a pipeline that builds, tests, or deploys a required repository, you can reuse a VCS root of that configuration/pipeline. To do this, use either of the following methods:
+
+* Create new configuration — select **From an existing root** option on the **Set up your build** page.
+
+    <img src="" width="706" alt="Create configuration from existing root"/>
+
+* Edit existing configuration — navigate to **Build Configuration Settings | Version Control** and click **Attach VCS root**.
+
+    <img src="attach-and-detatch-vcs-roots.png" width="706" alt="Attach and detach VCS roots"/>
+
+Reusing existing VCS roots allows you to save time on setting up required authorization and branch settings, and avoid creating duplicate roots.
+
+> You can only reuse roots owned by current configuration's parent projects.
+> 
+> A single VCS root can be attached to numerous build configurations. Vice versa, a single build configuration can have multiple VCS roots attached (if you want to check out multiple repositories when a build starts).
+> 
+{style="note"}
+
+
+> Since a VCS root can be attached to any number of pipelines, build configurations, and templates, editing its properties will alter the behavior of all of these entities. As a precaution, all root-related settings on the **Set up your build** page are disabled.
+> 
+> You can edit root settings from **Project Settings | VCS Roots** or **Build Configuration Settings | Version Control** pages. In this case, TeamCity prompts you whether the changes should be applied to all related entities, or it should create a copy of this root with updated settings.
+> 
+> <img src="edit-used-vcs-root-prompt.png" width="706" alt="Edit or clone VCS root"/>
+> 
+{style="tip"}
+
+
+### Configuration Without a Repository
+
+This configuration type doesn’t check out any remote repositories when it runs. Its steps, for example, only execute predefined scripts and send HTTP requests.
+
+You can create a new "unbound: configuration in two ways:
+
+* On the **Set up your build** page, select **Without repository**.
+* In the classic UI, open the **New build configuration** page and click the **Manually** tile.
+
+A [VCS root](#Use+a+VCS+Root) controls the VCS provider connection and repository checkout. Therefore, you can make any build configuration unbound by detaching its VCS root(s). Conversely, attaching a VCS root to a configuration without repositories enables it to check out remote sources. Both actions can be performed in the **Version Control** section of build configuration settings.
+
+<img src="attach-and-detatch-vcs-roots.png" width="706" alt="Attach and detach VCS roots"/>
+
+
+
+### Configuration With Multiple Repositories
+
+Configurations determine which repositories to check out and which branches to track through their attached VCS roots. A configuration can have any number of roots, from [none](#Configuration+Without+a+Repository) to many.
+
+Typically, a configuration uses a single repository and thus has one VCS root. If you need to build completely separate projects, it’s best to create individual configurations and link them in a [build chain](build-chain.md) if necessary. However, when multiple repositories are related (such as a core product and its plugins), you can attach several VCS roots to the same configuration to build them together. To do this, create a configuration using any of the methods mentioned in this article, then go to the **Version Control** section of its settings. Here you can [create more VCS roots](configuring-vcs-roots.md) that target required repositories.
+
+The Kotlin DSL snippet below illustrates a configuration with two attached roots.
+
+```Kotlin
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+
+object MultiRepoBuild : BuildType({
+    name = "Multi-repo build"
+
+    vcs {
+        root(MavenRepoRoot, "+:. => MavenRepo")
+        root(GradleRepoRoot, "+:. => GradleRepo")
+    }
+})
+```
+
+All VCS roots download sources into the same [checkout directory](build-checkout-directory.md). To avoid file conflicts and keep the folder organized, it’s best to download each repository’s sources into separate subdirectories using [root checkout rules](vcs-checkout-rules.md). For example, the snippet above places sources in the "MavenRepo" and "GradleRepo" folders within the default checkout directory.
+
+> When using custom checkout paths, specify build steps' **Working directory** options to help them find files they need to process.
+> 
+{style="tip"}
+
+
+
+
+### Example: Create a Connection-Based Configuration
+
+In this example, we will add a connection to GitHub and use it to create a new build configuration.
+
+TeamCity supports two GitHub authentication methods: OAuth 2.0 and [GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps). In this walkthrough, we will use an automatically configured GitHub App, which requires no customization and takes less than a minute to set up. To learn more about both connection types and other VCS provider connections, refer to this article: [](configuring-connections.md).
+
+You can create a connection-based configuration in two ways: create a connection under project settings and select it on the **Set up your build** page, or do everything from this single page.
+
+<tabs>
+
+<tab title="From the 'Set up your build' page">
+
+
+<procedure type="steps">
+
+<step>
+
+Use TeamCity UI to [add a build configuration](#Create+Build+Configurations+in+TeamCity+UI) to the required project.
+
+</step>
+
+<step>
+
+Select **Add new VCS connection** from the drop-down menu.
+
+</step>
+
+<step>
+
+Click the **GitHub** tile and choose **GitHub App**.
+
+<img src="new-github-app-redesigned-flow.png" width="706" alt="New GitHub App"/>
+
+</step>
+
+<step>
+
+Click the **Create App** button above connection settings.
+
+</step>
+
+<include from="creating-and-editing-build-configurations.md" element-id="github-app-settings-steps"/>
+
+<step>
+
+Back in TeamCity, specify the connection name and click **Add** to save your new connection.
+
+</step>
+
+<step>
+
+When your new connection is ready, you will navigate back to the **Set up your build** page. Make sure the repository origin menu points to your new connection. You might need to sign in to your GitHub account when you use this new App-based connection for the first time.
+
+</step>
+
+<include from="creating-and-editing-build-configurations.md" element-id="existing-connection-repo-list"/>
+
+</procedure>
+
+</tab>
+
+<tab title="As separate steps">
+
+<procedure title="Step 1: Create a connection" type="steps">
+
+<step>
+
+Open [settings](project-administrator-guide.md#Edit+and+View+Modes) of a project that should own your new GitHub connection. If you want a future connection to be available for any project created on this server, modify the **Root** project.
+
+</step>
+
+<step>
+
+Navigate to the **Connections** tab and click **Add Connection**.
+
+<img src="dk-add-connection-tab.png" width="706" alt="Add new connection"/>
+
+</step>
+
+<step>
+
+Choose the **GitHub App** as the connection type and click **Create App**.
+
+<img src="dk-create-project-github-app-connection.png" width="706" alt="Create GitHub App connection"/>
+
+</step>
+
+<snippet id="github-app-settings-steps">
+
+<step>
+
+TeamCity will redirect you to GitHub to approve the App, choose its installation location (personal account or organization), and optionally restrict its repository access. You can review and edit the TeamCity-configured App anytime via **GitHub Settings | Developer Settings | GitHub Apps** or uninstall it on **GitHub Settings | Applications** page.
+
+</step>
+
+</snippet>
+
+<step>
+
+After installing the App, you will return to TeamCity, where values for all connection settings (App ID, client ID, client secret, and others) will already be filled in. Click **Test connection** to verify the setup, then **Save** to complete it.
+
+</step>
+
+</procedure>
+
+<procedure title="Step 2: Create a build configuration" type="steps">
+
+<step>
+
+Use TeamCity UI to [add a build configuration](#Create+Build+Configurations+in+TeamCity+UI) to the required project.
+
+</step>
+
+<step>
+
+Choose your new connection from the list. If this connection is used for the very first time, you might need to sign in.
+
+</step>
+
+<snippet id="existing-connection-repo-list">
+
+<step>
+
+TeamCity will show a list of repositories accessible via the underlying connection. Use the search panel to find the desired repository, then click it to continue.
+
+<img src="repo-list-from-connection.png" width="706" alt="The list of connection repositories"/>
+
+</step>
+
+</snippet>
+
+</procedure>
+
+</tab>
+
+</tabs>
+
+
+
+## Create Build Configurations in Kotlin DSL
 
 The following Kotlin code creates a new build configuration that utilizes the target VCS root to interact with a VCS hosting provider:
 
@@ -164,7 +457,7 @@ See these articles for more information:
 * [BuildType (Kotlin DSL documentation)](https://teamcity.jetbrains.com/app/dsl-documentation/root/build-type/index.html)
 
 
-## Create Build Configuration in REST API
+## Create Build Configurations in REST API
 
 The following request creates a new empty TeamCity build configuration owned by the specific parent project.
 
