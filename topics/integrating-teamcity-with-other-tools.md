@@ -149,7 +149,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Autodiscovery of .NET build steps in a source project](configuring-build-steps.md#Add+Steps+via+TeamCity+UI)
 * [Autodetection of a .NET installation on a build agent](net.md#.NET+Version+Detection+Algorithm)
 * Cross-platform .NET builds
-* [Running .NET CLI commands](net.md#Build+Runner+Options)
+* [Running .NET CLI commands](net.md#Main+Settings)
 * [Running MSBuild commands](net.md#msbuild)
 * [Running devenv](net.md#devenv-build-action)
 * [Running any custom .NET commands](net.md#Custom+Commands)

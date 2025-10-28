@@ -209,7 +209,7 @@ The TeamCity web interface is mostly W3C-compliant, so any modern browser should
 
 ### .NET Runners
 
-We recommend that you use the __unified [.NET](net.md) runner__ to run .NET projects in TeamCity. See its requirements [here](net.md#Requirements).
+We recommend that you use the __unified [.NET](net.md) runner__ to run .NET projects in TeamCity. See its requirements [here](net.md#Agent+Requirements).
 
 Other .NET runners:
 
