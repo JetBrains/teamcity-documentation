@@ -95,7 +95,7 @@ These settings are only available for Maven steps used inside [build configurati
 
 <deflist type="medium">
 
-<def title="User settings selection">
+<def title="User settings selection" help-id="MavenUserSettings" id="MavenUserSettings">
 
 Allows you to choose different types of user settings. This setting is equivalent to adding the `-s` or `--settings` command-line argument. The available options are:
 
@@ -109,7 +109,7 @@ If Custom or Predefined settings are used, the path to the effective user settin
 
 </def>
 
-<def title="Artifact repository" help-id="MavenLocalArtifactRepositorySettings">
+<def title="Artifact repository" help-id="MavenLocalArtifactRepositorySettings" id="MavenLocalArtifactRepositorySettings">
 
 Allows you to choose one of the following local artifact repository options:
 

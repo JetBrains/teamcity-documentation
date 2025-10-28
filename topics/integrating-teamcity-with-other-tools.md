@@ -115,7 +115,7 @@ The tables below are updated in accordance with the newly introduced integration
   * [Gradle](gradle.md)
   * [Ant](ant.md)
 * [Autodiscovery of Maven, Gradle, and Ant build steps in a source project](configuring-build-steps.md#Add+Steps+via+TeamCity+UI)
-* Autodetection of [Maven](maven.md#Maven+runner+settings) and Gradle installations on a build agent
+* Autodetection of [Maven](maven.md#Step+Settings) and Gradle installations on a build agent
 * [Running a Maven, Gradle, or Ant build step inside a Docker container](container-wrapper.md)
 * [Reporting Java code inspection results for a build](inspections.md)
 * [Detecting Java code duplicates in a build's source](duplicates-finder-java.md)

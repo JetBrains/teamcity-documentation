@@ -18,7 +18,7 @@ All "... Cache" build features operate in a similar manner. Caches undergo ident
     <def title="Caching">
         The initial cache is formed during the first build run. To do this, a build feature caches the contents of the following tracked directories:
         <list type="bullet">
-            <li><b>Maven:</b> <a href="https://maven.apache.org/guides/introduction/introduction-to-repositories.html">local Maven repositories</a>. The default path depends on step <a href="maven.md#Local+Artifact+Repository+Settings">local artifact repository settings</a>.</li>
+            <li><b>Maven:</b> <a href="https://maven.apache.org/guides/introduction/introduction-to-repositories.html">local Maven repositories</a>. The default path depends on step <a href="maven.md#MavenLocalArtifactRepositorySettings">local artifact repository settings</a>.</li>
             <li><b>NuGet:</b> <a href="https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders">global package folder</a>. The default path is <code>${user.home}/.nuget/packages</code>.</li>
             <li><b>Gradle:</b> <a href="https://docs.gradle.org/current/userguide/dependency_resolution.html#sub:cache_copy">Gradle cache directory</a>. The default path is <code>${user.home}/.gradle/caches/modules-&lt;version&gt;</code>.</li>
         </list>
@@ -70,7 +70,7 @@ All "... Cache" build features operate in a similar manner. Caches undergo ident
 ### Maven Cache
 
 * The build feature supports all three local Maven repo types: per-agent, per-build, and Maven default.
-* If builds that produce and consume caches run inside Linux Docker containers, set the [Artifact repository](maven.md#Local+Artifact+Repository+Settings) Maven setting to either "Per agent" (default value) or "Per build configuration". Otherwise, a TeamCity server running as a regular user may lack sufficient permissions to access caches published by steps executed in Docker containers under the "root" user.
+* If builds that produce and consume caches run inside Linux Docker containers, set the [Artifact repository](maven.md#MavenLocalArtifactRepositorySettings) Maven setting to either "Per agent" (default value) or "Per build configuration". Otherwise, a TeamCity server running as a regular user may lack sufficient permissions to access caches published by steps executed in Docker containers under the "root" user.
 
 ### NuGet Cache
 

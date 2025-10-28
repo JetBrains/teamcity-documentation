@@ -161,7 +161,7 @@ Previously, build agents downloaded all available tools from the server right af
 
 ## Separate Maven artifact repository for all builds on agent
 
-We have changed the [local artifact repository settings](maven.md#Local+Artifact+Repository+Settings) selection for Maven and added an option to create a separate repository for all builds run by an agent.
+We have changed the [local artifact repository settings](maven.md#MavenLocalArtifactRepositorySettings) selection for Maven and added an option to create a separate repository for all builds run by an agent.
 
 Here is what changed:
 

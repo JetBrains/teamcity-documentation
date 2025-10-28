@@ -189,7 +189,7 @@ User settings selection
 
 <td>
 
-Allows selecting effective settings. The same as [User Settings](maven.md#User+Settings) of the Maven runner.
+Allows selecting effective settings. The same as [User Settings](maven.md#MavenUserSettings) of the Maven runner.
 
 </td></tr></table>
 
