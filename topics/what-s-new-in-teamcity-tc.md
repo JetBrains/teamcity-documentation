@@ -3,6 +3,19 @@
 <snippet id="2025-11-tc">
 
 
+## New Pipelines Features
+
+### New Build Steps
+
+In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
+
+<img src="dk-dotnet-pipelines.png" width="706" thumbnail="true" alt=".NET steps in pipelines"/>
+
+In addition to .NET, we are testing other build steps available in classic build configurations: Python, Xcode, Unity, and more. While not yet included in the official 2025.11 release, these build steps can be enabled on your TeamCity servers. Join our [Slack channel](slack-code-of-conduct.md) or [contact our support](ticket-based-support.md) to request these currently hidden steps!
+
+Learn more: [](net.md).
+
+
 ## UI Enhancements
 
 We strongly believe that simplicity leads to greater power: an intuitive, easy-to-use product reduces configuration errors and helps you find the right setup faster. The recent [introduction of Pipelines](https://www.jetbrains.com/help/teamcity/2025.07/what-s-new-in-teamcity.html#Pipelines+EAP) has given fresh momentum to our ongoing effort to make TeamCity simpler and more enjoyable to use. Building on that progress, we’re excited to share another round of UI updates aimed at making your daily work in TeamCity smoother and more efficient.
