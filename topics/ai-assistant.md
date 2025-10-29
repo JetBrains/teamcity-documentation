@@ -8,7 +8,7 @@ The TeamCity AI Assistant is your 24/7 companion for debugging failed workflows,
 TeamCity AI Assistant offers general guidance (for example, “How do I configure the TeamCity NuGet feed?” or “How do I set up pull requests?”) and troubleshooting help for specific configurations and builds (for instance, “Why did build #17 in my SampleApp configuration fail?”). It can also query the [](teamcity-rest-api.md) to retrieve detailed information about builds and build chains.
 
 **Is it free?**<br/>
-This feature may become a paid option in future releases but will remain free throughout the Early Access Program.
+This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant is also not available with free TeamCity Professional licenses.
 
 **Are there any additional requirements?**<br/>
 AI Assistant requires access to `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources to send user prompts and receive responses, obtain license keys, share usage statistics, and more.
