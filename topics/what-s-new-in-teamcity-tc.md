@@ -15,6 +15,13 @@ In addition to .NET, we are testing other build steps available in classic build
 
 Learn more: [](net.md).
 
+### Project Registry Connections Support
+
+Starting with version 2025.11, [Docker](configuring-connections.md#Docker+Registry) and [NPM](configuring-connections.md#npm-registry-settings) connections owned by projects are available as [integrations](pipeline-settings.md#Integrations) in pipeline and job settings.
+
+<img src="pipelines-inherited-registry-connections.png" width="706" alt="Inherited integrations"/>
+
+Learn more: [](pipeline-settings.md).
 
 ## UI Enhancements
 

@@ -202,4 +202,10 @@ Classic TeamCity build configurations support this functionality via the "connec
 * [Docker Registry](configuring-connections.md#Docker+Registry) connection and [](docker-support.md) build feature for Docker.
 * [NPM Registry](configuring-connections.md#npm-registry-settings) connection and the [related build feature](nodejs.md#Accessing+Private+NPM+Registries) for Node.js registries.
 
+If you already have a Docker or NPM connection in a project, a pipeline shows it under its "Integrations" section.
+
+<img src="pipelines-inherited-registry-connections.png" width="706" alt="Inherited integrations"/>
+
+These inherited integrations cannot be edited directly via the pipelines settings panel, you need to modify the origin connection in project settings to do so.
+
 </snippet>
