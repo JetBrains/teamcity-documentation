@@ -23,15 +23,21 @@ Starting with version 2025.11, [Docker](configuring-connections.md#Docker+Regist
 
 Learn more: [](pipeline-settings.md).
 
-## UI Enhancements
+## UX Improvements
 
 We strongly believe that simplicity leads to greater power: an intuitive, easy-to-use product reduces configuration errors and helps you find the right setup faster. The recent [introduction of Pipelines](https://www.jetbrains.com/help/teamcity/2025.07/what-s-new-in-teamcity.html#Pipelines+EAP) has given fresh momentum to our ongoing effort to make TeamCity simpler and more enjoyable to use. Building on that progress, we’re excited to share another round of UI updates aimed at making your daily work in TeamCity smoother and more efficient.
 
-### Updated "New Project" and "New Build Configuration" Pages
+### Reimagined Creation Flows
+
+Every new TeamCity journey starts with "New Project", "New Build Configuration", and "New Connection" pages (unless you are a [Kotlin DSL](kotlin-dsl.md) or [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) expert!). In version 2025.11, we are rethinking these pages for a faster, more intuitive creation process. Whether you are reusing an existing connection, sharing a VCS root, or creating a build configuration without a repository, everything you need is right at your fingertips.
+
+<img src="build-configuraiton-creation-options.png" width="706" alt="All build config creation options"/>
+
+Learn more: [Creating projects](creating-and-editing-projects.md), [Creating build configurations](creating-and-editing-build-configurations.md).
 
 ### New Pipeline and Build Chain Viewer
 
-Real-world CI/CD workloads often include dozens of build configurations and jobs that combine building, testing, and deployment tasks into a single flow. To make it easier to explore these complex workflows, TeamCity now offers an enhanced visualization that displays [pipelines](create-and-edit-pipelines.md) and [build chains](build-chain.md) in a dedicated, zoomable client area with a minimap for easy navigation.
+Real-world CI/CD workloads often include dozens of build configurations and jobs that combine building, testing, and deployment tasks into a single flow. To make it easier to explore these complex workflows, TeamCity now offers an enhanced visualization that displays [pipelines](create-and-edit-pipelines.md) and [build chains](build-chain.md) in a dedicated client that supports zoom and drag-and-drop, and features a minimap for easy navigation.
 
 <img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
 
@@ -40,9 +46,9 @@ Real-world CI/CD workloads often include dozens of build configurations and jobs
 
 <secondary-label ref="secondary-eap"/>
 
-TeamCity is a powerhouse packed with advanced features that let you shape CI/CD workflows to your exact needs. But this flexibility comes with a challenge: to get the most out of TeamCity, you need to be aware of its features and understand their inner workings. Concepts like [reverse parameter dependencies](use-parameters-in-build-chains.md#Override+Input+Parameters+of+Preceding+Configurations) and [agentless "Executor" setups](kubernetes-executor.md) can be complex to configure and manage.
+TeamCity is a powerhouse packed with advanced features that let you shape CI/CD workflows to your exact needs. But this flexibility comes with a challenge: to get the most out of TeamCity, you need to be aware of its features and understand their inner workings. Concepts like [reverse parameter dependencies](use-parameters-in-build-chains.md#Override+Input+Parameters+of+Preceding+Configurations) or [checkout rules](vcs-checkout-rules.md) can prove challenging to grasp.
 
-To make TeamCity more approachable for every DevOps engineer, we’ve launched the [pipelines](create-and-edit-pipelines.md) initiative and are investing heavily in a redesigned UI. Complementing these efforts, we are excited to introduce the **TeamCity AI Assistant**.
+To make TeamCity more approachable for every DevOps engineer, we’ve launched the [pipelines](create-and-edit-pipelines.md) initiative and are investing heavily in a reimagining the familiar UX. Complementing these efforts, we are excited to introduce the **TeamCity AI Assistant**.
 
 <img src="aia-whats-new.png" width="706" thumbnail="true" alt="AI Assistant"/>
 
@@ -70,5 +76,8 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 ## Miscellaneous Enhancements
 
 <!--* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.-->
+* We have updated TeamCity License Agreement. A corresponding page will pop up when you start a 2025.11 server. A TeamCity server administrator must accept the updated terms before TeamCity can proceed with a [data upgrade](teamcity-maintenance-mode.md#TeamCity+Data+Upgrade).
+{instance="tc"}
+
 
 </snippet>
