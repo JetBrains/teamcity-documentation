@@ -89,11 +89,17 @@ To set up a repository that should store your server's configuration files:
 
 If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugin/9057-autoincrementer), we recommend that you update it to the latest version.
 
+> Set up a custom [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) to protect sensitive data committed to a remote repository.
+> 
+> TeamCity does not encrypt the contents of the `config/database.properties` file. To conceal sensitive data that can be stored in `connectionUrl`, `connectionProperties.user`, and `connectionProperties.password` configuration properties, replace them with [related environment variables](set-up-external-database.md#Environment+Variables) when setting up a database connection.
+> 
+{type="warning" id="DataDirRemoteRepo-Encryption-Notes"}
 
- {id="data_directory_structure"}
+
+
 
 ## Structure of TeamCity Data Directory
-{instance="tc"}
+{instance="tc" id="data_directory_structure"}
 
 The `config` subdirectory of TeamCity Data Directory contains the configuration of your TeamCity projects, and the `system` subdirectory contains build logs, artifacts, and database files (if internal database (HSQLDB) is used which is default). You can also review information on [Manual Backup and Restore](manual-backup-and-restore.md) to understand better which data is stored in the database, and which is on the file system.
 * __`BuildServer/config`__ — a directory where projects, build configurations and general server settings are stored.
