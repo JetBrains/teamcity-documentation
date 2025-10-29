@@ -93,7 +93,7 @@ If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugi
 > 
 > TeamCity does not encrypt the contents of the `config/database.properties` file. To conceal sensitive data that can be stored in `connectionUrl`, `connectionProperties.user`, and `connectionProperties.password` configuration properties, replace them with [related environment variables](set-up-external-database.md#Environment+Variables) when setting up a database connection.
 > 
-{type="warning" id="DataDirRemoteRepo-Encryption-Notes"}
+{type="warning"}
 
 
 
