@@ -31,6 +31,8 @@ Real-world CI/CD workloads often include dozens of build configurations and jobs
 
 ## AI Assistant
 
+<secondary-label ref="secondary-eap"/>
+
 TeamCity is a powerhouse packed with advanced features that let you shape CI/CD workflows to your exact needs. But this flexibility comes with a challenge: to get the most out of TeamCity, you need to be aware of its features and understand their inner workings. Concepts like [reverse parameter dependencies](use-parameters-in-build-chains.md#Override+Input+Parameters+of+Preceding+Configurations) and [agentless "Executor" setups](kubernetes-executor.md) can be complex to configure and manage.
 
 To make TeamCity more approachable for every DevOps engineer, we’ve launched the [pipelines](create-and-edit-pipelines.md) initiative and are investing heavily in a redesigned UI. Complementing these efforts, we are excited to introduce the **TeamCity AI Assistant**.

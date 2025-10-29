@@ -1,5 +1,7 @@
 # AI Assistant
 
+<primary-label ref="eap"/>
+
 The TeamCity AI Assistant is your 24/7 companion for debugging failed workflows, suggesting optimal configurations, and guiding you through TeamCity’s capabilities.
 
 ## Key Takeaways
@@ -23,11 +25,11 @@ TeamCity AI Assistant uses `gpt4o` to communicate with users.
 
 ## Initial Setup
 
-AI Assistant ships with all TeamCity 2025.11 installations in a disabled state. However, a corresponding menu element in the TeamCity header is shown to promote this feature.
+AI Assistant ships with all TeamCity 2025.11 installations in a disabled state. To make sure you do not miss this exciting addition to TeamCity, AI Assistant keeps showing its menu item in TeamCity header even when disabled.
 
 <img src="ai-assistant-promo-disabled.png" width="706" alt="Disabled AI Assistant"/>
 
-Server administrators can turn it completely off in the **Admin | AI Assistant** section.
+Server administrators can completely hide this element in the **Admin | AI Assistant** section.
 
 <img src="ai-assistant-admin-settings.png" width="706" alt="Server AI Assistant settings"/>
 

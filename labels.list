@@ -15,11 +15,16 @@
         This step is available in both classic build configurations and pipelines
     </primary-label>
 
+    <primary-label id="eap" name="Early Access Preview" color="strawberry" short-name="EAP">
+        This functionality is available through the Early Access Preview and may be modified in future releases.
+    </primary-label>
+
 
 
     <secondary-label id="secondary-config" name="Build configurations" color="tangerine">This functionality is available for classic build configurations</secondary-label>
     <secondary-label id="secondary-pipeline" name="Pipelines" color="purple">This functionality is available for pipelines</secondary-label>
 
-    <secondary-label id="experimental" name="Experimental" color="strawberry">This is an experimental feature</secondary-label>
-    <secondary-label id="2023.3" name="2023.3" color="blue">New in version 2023.3</secondary-label>
+    <secondary-label id="secondary-eap" name="Early Access Preview" color="strawberry">
+        This functionality is available through the Early Access Preview and may be modified in future releases.
+    </secondary-label>
 </labels>
