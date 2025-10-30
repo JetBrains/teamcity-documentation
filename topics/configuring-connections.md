@@ -40,7 +40,7 @@ To create a new connection, do the following:
 
 You can also create new VCS connections from the **Set up your build** page when adding new configurations or pipelines. Choose the **Connect new repository** option in the drop-down menu to view available options.
 
-<img src="" width="706" alt="Add new VCS connection"/>
+<img src="dk-new-connection-from-connect-repo.png" width="706" alt="All build config creation options" thumbnail="true"/>
 
 ## Azure DevOps
 

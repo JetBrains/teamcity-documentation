@@ -175,7 +175,7 @@ Available for HTTP(s) clone URLs, this option provides three authentication opti
 </step>
 
 
-<step>
+<step id="basic-config-options">
 
 Set up basic configuration options.
 
@@ -183,8 +183,6 @@ Set up basic configuration options.
 * **Default branch** — the full name of a branch that will become a default one in TeamCity (for example, `refs/heads/main`). See the following article for more information: [](working-with-feature-branches.md#Default+Branch).
 
    > By default, TeamCity tracks all branches (`refs/heads/*`). You can change this behavior later by editing the **branch specification** of a VCS root attached to this configuration. See the following topic to learn more: [](working-with-feature-branches.md).
-
-The next page contains mixed settings of both project and a build configuration owned by this project.
 
 * **Start builds on new changes in** — if enabled, adds a [VCS trigger](configuring-vcs-triggers.md) that launches new builds whenever TeamCity detects new commits.
 
@@ -215,8 +213,6 @@ Every build configuration that processes sources stored in a remote repository d
 If you already have a build configuration or a pipeline that builds, tests, or deploys a required repository, you can reuse a VCS root of that configuration/pipeline. To do this, use either of the following methods:
 
 * Create new configuration — select **From an existing root** option on the **Set up your build** page.
-
-    <img src="" width="706" alt="Create configuration from existing root"/>
 
 * Edit existing configuration — navigate to **Build Configuration Settings | Version Control** and click **Attach VCS root**.
 
@@ -291,9 +287,9 @@ All VCS roots download sources into the same [checkout directory](build-checkout
 
 In this example, we will add a connection to GitHub and use it to create a new build configuration.
 
-TeamCity supports two GitHub authentication methods: OAuth 2.0 and [GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps). In this walkthrough, we will use an automatically configured GitHub App, which requires no customization and takes less than a minute to set up. To learn more about both connection types and other VCS provider connections, refer to this article: [](configuring-connections.md).
+TeamCity supports two GitHub authentication methods: OAuth 2.0 and [GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps). Both types require minimal customization and take less than a minute to set up. To learn more about both connection types and other VCS provider connections, refer to this article: [](configuring-connections.md).
 
-You can create a connection-based configuration in two ways: create a connection under project settings and select it on the **Set up your build** page, or do everything from this single page.
+You can create a connection-based configuration in two ways: create a connection under project settings and select it on the **Set up your build** page, or do everything from this single page. The tabs below illustrate both approaches.
 
 <tabs>
 
@@ -310,39 +306,50 @@ Use TeamCity UI to [add a build configuration](#Create+Build+Configurations+in+T
 
 <step>
 
-Select **Add new VCS connection** from the drop-down menu.
+Select **Connect new repository** from the drop-down menu.
 
 </step>
 
 <step>
 
-Click the **GitHub** tile and choose **GitHub App**.
+Expand the **GitHub** tile and choose **GitHub.com**.
 
-<img src="new-github-app-redesigned-flow.png" width="706" alt="New GitHub App"/>
-
-</step>
-
-<step>
-
-Click the **Create App** button above connection settings.
-
-</step>
-
-<include from="creating-and-editing-build-configurations.md" element-id="github-app-settings-steps"/>
-
-<step>
-
-Back in TeamCity, specify the connection name and click **Add** to save your new connection.
+<img src="dk-new-connection-from-connect-repo.png" width="706" thumbnail="true" alt="New GitHub App"/>
 
 </step>
 
 <step>
 
-When your new connection is ready, you will navigate back to the **Set up your build** page. Make sure the repository origin menu points to your new connection. You might need to sign in to your GitHub account when you use this new App-based connection for the first time.
+Follow TeamCity instructions to navigate to your GitHub "Developer Settings" page and create a new application.
+
+<img src="dk-new-flow-github-connection.png" width="706" alt="New GitHub.com connection"/>
 
 </step>
+
+<step>
+
+On the GitHub application page, click **Generate a new client secret** and paste both this secret and client ID to corresponding TeamCity connection properties.
+
+</step>
+
+<step>
+
+Once the application is installed on GitHub, you can select your new connection in the **Set up your build** page drop-down menu. Note that upon the first usage, you will need to click **Authorize &lt;Username&gt;** to log in GitHub using your new connection.
 
 <include from="creating-and-editing-build-configurations.md" element-id="existing-connection-repo-list"/>
+
+</step>
+
+<step>
+
+<snippet id="create-config-final-steps">
+
+Set up [basic configuration options](#basic-config-options) and click **Create** to finish.
+
+</snippet>
+
+
+</step>
 
 </procedure>
 
@@ -406,17 +413,25 @@ Choose your new connection from the list. If this connection is used for the ver
 
 </step>
 
+<step>
+
 <snippet id="existing-connection-repo-list">
 
-<step>
 
 TeamCity will show a list of repositories accessible via the underlying connection. Use the search panel to find the desired repository, then click it to continue.
 
 <img src="repo-list-from-connection.png" width="706" alt="The list of connection repositories"/>
 
+</snippet>
+
 </step>
 
-</snippet>
+<step>
+
+<include from="creating-and-editing-build-configurations.md" element-id="create-config-final-steps"/>
+
+</step>
+
 
 </procedure>
 
