@@ -1,6 +1,8 @@
 [//]: # (title: What's New in TeamCity 2025.11)
 [//]: # (help-id: What's New in TeamCity 2025.11;What's New in TeamCity)
 
+<show-structure for="chapter" depth="2"/>
+
 
 <include from="what-s-new-in-teamcity-tc.md" element-id="2025-11-tc"/>
 

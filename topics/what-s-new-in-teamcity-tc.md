@@ -23,6 +23,19 @@ Starting with version 2025.11, [Docker](configuring-connections.md#Docker+Regist
 
 Learn more: [](pipeline-settings.md).
 
+### Advanced Build and Test Actions
+
+Starting with version 2025.11, pipelines support some of advanced features that was previously available in build configurations. Administrators can now process build and test failures: [assign investigations](investigating-and-muting-build-failures.md#Investigations), [mute irrelevant failures](investigating-and-muting-build-failures.md#Mutes), and manually label as fixed issues that are expected to be resolved in future builds.
+
+<img src="dk-pipelines-investigations.png" width="706" alt="Investigations and mutes in pipelines"/>
+
+In addition, the run actions menu now includes options to [pin, tag, and comment](build-actions.md) individual pipeline runs.
+
+<img src="dk-build-actions-pipelines.png" width="706" alt="Pin, tag, and comment actions in pipelines"/>
+
+Learn more: [](investigating-and-muting-build-failures.md), [](build-actions.md)
+
+
 ## UX Improvements
 
 We strongly believe that simplicity leads to greater power: an intuitive, easy-to-use product reduces configuration errors and helps you find the right setup faster. The recent [introduction of Pipelines](https://www.jetbrains.com/help/teamcity/2025.07/what-s-new-in-teamcity.html#Pipelines+EAP) has given fresh momentum to our ongoing effort to make TeamCity simpler and more enjoyable to use. Building on that progress, we’re excited to share another round of UI updates aimed at making your daily work in TeamCity smoother and more efficient.
