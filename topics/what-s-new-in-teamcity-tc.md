@@ -90,7 +90,12 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 
 <!--* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.-->
 * We have updated TeamCity License Agreement. A corresponding page will pop up when you start a 2025.11 server. A TeamCity server administrator must accept the updated terms before TeamCity can proceed with a [data upgrade](teamcity-maintenance-mode.md#TeamCity+Data+Upgrade).
-{instance="tc"}
+  {instance="tc"}
+* [](commit-status-publisher.md) no longer posts intermediate failure statuses in the following cases:
+    * [](build-failure-conditions.md) include the **support test retry** option.
+    * Tests are run by the [](gradle.md) build step with the [Gradle test retry](https://github.com/gradle/test-retry-gradle-plugin) plugin.
+
+    Instead, TeamCity only posts a final test status determined after all required re-runs.
 
 
 </snippet>
