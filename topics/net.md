@@ -328,7 +328,7 @@ See also: [Run selected unit tests](https://learn.microsoft.com/en-us/dotnet/cor
 </def>
 
 
-<def title="Test retry count" id="test-retry">
+<def title="Test retry count" id="test-retry" help-id="net-test-retry">
 
 
 In the event of a test failure, TeamCity can seamlessly initiate automated re-runs of said test during the same build run. Failed tests are re-launched until they either achieve success or exhaust the maximum number of attempts. This technique allows you to identify [flaky tests](investigating-and-muting-build-failures.md#Flaky+Tests) and distinguish them from genuinely problematic tests that consistently fail regardless of the number of launch attempts.
