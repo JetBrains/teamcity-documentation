@@ -1,6 +1,8 @@
 [//]: # (title: Build Agents Configuration and Maintenance)
 [//]: # (help-id: Build Agents Configuration and Maintenance)
 
+<primary-label ref="java-update" instance="tc"/>
+
 ## Viewing TeamCity Agents Details
 
 The __Agents__ page of the TeamCity web UI provides the comprehensive information on the TeamCity agents. The number of tabs on the page may differ depending on your agent setup.
