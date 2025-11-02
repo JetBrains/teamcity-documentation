@@ -6,6 +6,11 @@
 
 * Linux and macOS agents no longer seek for a x86 version of Java if the `TEAMCITY_JRE` environment variable or `<Agent home>/jre` directory store a suitable Java version.
 
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11"}
+
+* The bundled Git was updated to version 2.51.1 in both server and agent Docker images.
+
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
 
