@@ -3,7 +3,7 @@
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
     <primary-label id="primary-step-config" color="tangerine" short-name="BC" name="Available in build configurations">
-        This step is available only in classic build configurations
+        This step is available only in classic build configurations, and is initially hidden for pipelines. Contact our support or join TeamCity Slack to request this step for pipelines on your current server.
     </primary-label>
     <primary-label id="primary-functionality-config" color="tangerine" short-name="BC" name="Available in build configurations">
         This functionality is available only in classic build configurations
