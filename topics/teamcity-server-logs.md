@@ -129,7 +129,11 @@ Contains [](commit-status-publisher.md)-related log. Apply the `debug-commit-sta
 
 <tr>
 
-<td>`teamcity-ai.log`</td>
+<td>
+
+`teamcity-ai.log`
+
+</td>
 
 <td>
 
