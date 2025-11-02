@@ -4,6 +4,8 @@
 ## Changes from 2025.07.3 to 2025.11
 {id="2025.11"}
 
+* Linux and macOS agents no longer seek for a x86 version of Java if the `TEAMCITY_JRE` environment variable or `<Agent home>/jre` directory store a suitable Java version.
+
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
 
