@@ -83,6 +83,10 @@ Choose the Maven version you want to use.
 
 * &lt;Custom&gt; — Provide a path to a custom Maven version.
 
+> <include from="common-templates.md" element-id="maven-2-deprecation"/>
+>
+{style="note"}
+
 </def>
 
 </deflist>

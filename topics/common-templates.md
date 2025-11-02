@@ -89,6 +89,10 @@ Starting with version 2026.1, TeamCity servers and agents will not be able to st
 </snippet>
 
 
+## Maven
+
+<snippet id="maven-2-deprecation">Maven 2.x has reached end of life and is no longer supported by Apache (see the official [EOL announcement](https://maven.apache.org/maven-2.x-eol.html)). Accordingly, TeamCity 2026.11 and later will also drop support for Maven 2. Builds using this version may still run, but advanced features such as test reporting and incremental building will no longer be available.<br/><br/>Please switch your Maven build steps to any custom or bundled Maven 3.x version to use a fully supported Maven version.</snippet>
+
 ## Encryption
 
 <var name="operation-name-ev" value="operation-name-ev"/>

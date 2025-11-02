@@ -6,6 +6,7 @@
 
 * Linux and macOS agents no longer seek for a x86 version of Java if the `TEAMCITY_JRE` environment variable or `<Agent home>/jre` directory store a suitable Java version.
 * The migration date for Java 21 is now finalized: starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
+* <include from="common-templates.md" element-id="maven-2-deprecation"/>
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-11"}
