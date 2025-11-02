@@ -19,6 +19,10 @@
         This functionality is available through the Early Access Preview and may be modified in future releases.
     </primary-label>
 
+    <primary-label id="java-update" color="red" name="Update server and agent Java" short-name="J21">
+        Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
+    </primary-label>
+
 
 
     <secondary-label id="secondary-config" name="Build configurations" color="tangerine">This functionality is available for classic build configurations</secondary-label>

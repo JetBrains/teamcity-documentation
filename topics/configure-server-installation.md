@@ -1,6 +1,8 @@
 [//]: # (title: Configure Server Installation)
 [//]: # (help-id: Configure Server Installation)
 
+<primary-label ref="java-update" instance="tc"/>
+
 ## Changing Server Port
 
 If another application uses the same port as the TeamCity server, the server won't be able to start. This will result in "_Address already in use_" errors in the server logs or server console.

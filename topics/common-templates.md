@@ -84,7 +84,7 @@ Select the required authentication strategy. Depending on the selected strategy,
 
 <snippet id="java-deprecation-warning">
 <warning>
-TeamCity will drop support for Java versions older than 21 in one of the future versions. If you're using a non-bundled Java 21, we strongly recommend upgrading to a newer version.
+Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
 </warning>
 </snippet>
 
