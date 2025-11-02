@@ -124,7 +124,23 @@ Contains [](commit-status-publisher.md)-related log. Apply the `debug-commit-sta
 
 [](pull-requests.md)-related log. Apply the `debug-pull-requests` preset to include DEBUG-level messages to this log.
 
-</td></tr><tr>
+</td></tr>
+
+
+<tr>
+
+<td>`teamcity-ai.log`</td>
+
+<td>
+
+Logs information related to the [](ai-assistant.md). By default, all [presets](#Changing+Logging+Configuration) write AI-related events in the `INFO` mode. Apply the `debug-all` preset to switch to the `DEBUG` log level.
+
+</td>
+
+</tr>
+
+
+<tr>
 
 <td>
 
