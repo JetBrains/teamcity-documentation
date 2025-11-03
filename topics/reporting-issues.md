@@ -112,9 +112,11 @@ For this the following [internal properties](server-startup-properties.md#TeamCi
 
 Once the properties are added, the server will start taking the thread dumps. All the thread dumps will be stored under the [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directory.
 
-### Agent Thread Dump
+### Agent Thread and Memory Dumps
 
-It is recommended that you take an agent thread dump from the Web UI: go to the Agent page, __Agent Summary__ tab, and use the __Dump threads on agent__ action.
+It is recommended that you take an agent thread dump from the Web UI: go to the Agent page, __Agent Summary__ tab, and use the __Dump threads on agent__ and/or **Dump memory snapshot on agent** actions.
+
+<img src="agent-dumps.png" width="706" alt="Agent dump actions"/>
 
 If the UI is not accessible, you can take the dump thread manually using the approaches described [below](#Taking+Thread+Dump).
 
