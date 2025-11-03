@@ -11,7 +11,15 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-11"}
 
-* The bundled Git was updated to version 2.51.2 in both server and agent Docker images.
+* We have updated a number of tools shipped with TeamCity [Docker server and agent images](agent-docker-images.md):
+    * Git: v2.51.2
+    * Git LFS: v3.7.1
+    * Amazon Corretto JDK: 21
+    * .NET 8.0: v8.0.415 (.NET Runtime v8.0.21)
+    * Docker Engine: v28.5.1
+    * Perforce CLI: r25.4
+    * Containerd: v1.7.28
+    * Mercurial SCM Client (Windows images only): v6.2.2
 
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
