@@ -167,6 +167,7 @@ For all supported databases there are [template files](teamcity-data-directory.m
 TeamCity uses Apache DBCP for database connection pooling. Refer to [Apache Commons documentation](https://commons.apache.org/dbcp/configuration.html) for detailed description of configuration properties.
 
 ### Environment Variables
+{help-id="ExternalDatabaseEnvVars"}
 
 The main database connection settings can be defined by setting environment variables in the TeamCity server's environment. Environment variables can be used instead of (or in addition to) the properties in the `database.properties` file.
 
