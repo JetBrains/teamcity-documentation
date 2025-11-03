@@ -96,6 +96,7 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
     * Tests are run by the [](gradle.md) build step with the [Gradle test retry](https://github.com/gradle/test-retry-gradle-plugin) plugin.
 
     Instead, TeamCity only posts a final test status determined after all required re-runs.
+* The **Miscellaneous** section of the [agent details page](viewing-build-agent-details.md) now includes the **Dump memory snapshot on agent** link that allows you to download an `.hprof` memory dump file.
 
 
 </snippet>

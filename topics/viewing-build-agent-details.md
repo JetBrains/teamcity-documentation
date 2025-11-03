@@ -24,7 +24,7 @@ For each connected agent TeamCity provides the following information:
   * Open Remote Desktop: available for agents running on the Windows operating system if the RDP client is installed and registered on the agent.
   * Reboot Agent Machine: available to users with _Reboot build agent machines_ permissions. Click the link and confirm the reboot action. By default, the TeamCity agent will wait until the current build finishes. Deselect the checkbox and click Reboot to restart the agent immediately.    
   Additional configuration of the reboot command is possible. See [Agent Reboot](#Agent+Reboot).
-  * Dump threads on agent
+  * Dump threads and memory snapshots on the agent machine
 
 
 ### Agent Reboot
