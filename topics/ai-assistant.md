@@ -20,7 +20,7 @@ See the [](#Privacy+Policy) section.
 
 
 **What model does TeamCity AI Assistant use?**<br/>
-TeamCity AI Assistant uses `gpt4o` to communicate with users.
+At the 2025.11 version launch, the AI Assistant uses `gpt-4.1` to process user requests. As we evaluate its accuracy and performance, and carefully study your feedback, we may switch to another model available through [JetBrains AI](https://www.jetbrains.com/ai/). We also plan to add an option to manually select a model via the TeamCity UI in the next release cycles.
 
 
 ## Initial Setup
@@ -39,6 +39,8 @@ Server administrators can completely hide this element in the **Admin | AI Assis
 * The Assistant does not currently support [pipelines](create-and-edit-pipelines.md) and can only analyze and troubleshoot classic [build configurations](creating-and-editing-build-configurations.md).
 
 * Past conversations with the AI Assistant are not saved. When you start a new chat (via the "**+**" button in the chat window's top-right corner), you will lose access to the previous one.
+
+* The AI Assistant chat history is stored locally in your browser. Conversations are not restored when you access TeamCity from a different browser.
 
 
 ## Privacy Policy
