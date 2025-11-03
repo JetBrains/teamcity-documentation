@@ -3,6 +3,10 @@
 
 TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows storing build artifacts in Amazon S3 buckets, as well as S3-compatible buckets such as [MinIO](https://min.io/product/s3-compatibility), [Backblaze B2](https://www.backblaze.com/cloud-storage), and others. S3-compatible storages can be hosted in both AWS and non-AWS environments.
 
+> Working with Backblaze B2 buckets may result in the `Unsupported value for canned acl bucket` error. To resolve this issue, add the `storage.s3.acl` [parameter](configuring-build-parameters.md) to your project and set its value to either `private` or `public-read` depending on your bucket type. See this YouTrack ticket for more information: [TW-76119](https://youtrack.jetbrains.com/issue/TW-76119).
+> 
+{style="note"}
+
 
 ## Create and Set Up a New AWS S3 Storage
 
@@ -155,6 +159,7 @@ There are two ways to enable the required storage class:
     5. Enable additional rules for stored artifacts. For example, you can check **Expire current versions of objects** to label previously uploaded artifacts as expired, and **Permanently delete noncurrent versions of objects** to periodically clean your storage.
     6. Specify the rule scope to choose whether it should apply to the entire storage or only those artifacts that match the required filter.
     7. Review your rule at the bottom of the page. It may look like the following:
+  
         <img src="dk-s3-lifecycle-rule.png" width="706" alt="S3 lifecycle rule"/>
     8. Click **Create rule** to save your lifecycle rule.
 
