@@ -46,7 +46,7 @@ To add an artifact dependency to a build configuration:
 
     * **Build number** — the exact [build number](configuring-general-settings.md#Build+Number+Format) of the artifact. This field is available if you have selected build with specific build number in the_ __Get artifacts from__ list.   
 
-    * **Build tag** — the tag of the build whose artifacts are to be used. When resolving the dependency, TeamCity will look for the last successful build with the given tag and use its artifacts. This field appears if you have selected last finished build with specified tag in the __Get artifacts from__ list.
+    * **Build tag** — the tag of the build whose artifacts to use. TeamCity retrieves artifacts from the latest finished build (successful or failed) with this tag. This field appears when "Last finished build with specified tag" is selected in the **Get artifacts from list**.
 
     * **Build branch filter** — allows setting a [branch filter](branch-filter.md) to limit source builds only to those in the matching branches. If not specified, the default branch is used. This field appears if the dependency has a [branch specified](working-with-feature-branches.md#Configuring+Branches) in the VCS root settings.
 
