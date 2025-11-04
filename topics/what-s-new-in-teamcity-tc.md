@@ -97,6 +97,7 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 
     Instead, TeamCity only posts a final test status determined after all required re-runs.
 * The **Miscellaneous** section of the [agent details page](viewing-build-agent-details.md) now includes the **Dump memory snapshot on agent** link that allows you to download an `.hprof` memory dump file.
+* [](parallel-tests.md) and [](matrix-build.md) features now include the option to automatically place artifacts produced by virtual builds into "batchN" folders. This prevents newer virtual builds from overriding artifacts with identical names produced by older batches.
 
 
 </snippet>
