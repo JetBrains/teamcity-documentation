@@ -25,7 +25,7 @@ Learn more: [](pipeline-settings.md).
 
 ### Advanced Build and Test Actions
 
-Starting with version 2025.11, pipelines support some of advanced features that was previously available in build configurations. Administrators can now process build and test failures: [assign investigations](investigating-and-muting-build-failures.md#Investigations), [mute irrelevant failures](investigating-and-muting-build-failures.md#Mutes), and manually label as fixed issues that are expected to be resolved in future builds.
+Starting with version 2025.11, pipelines support some of advanced features that was previously available only in build configurations. Users can now process build and test failures: [assign investigations](investigating-and-muting-build-failures.md#Investigations), [mute irrelevant failures](investigating-and-muting-build-failures.md#Mutes), and manually label as fixed issues that are expected to be resolved in future builds.
 
 <img src="dk-pipelines-investigations.png" width="706" alt="Investigations and mutes in pipelines"/>
 
