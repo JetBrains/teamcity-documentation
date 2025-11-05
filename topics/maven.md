@@ -25,7 +25,7 @@ The list of Maven step settings and their corresponding UI labels slightly diffe
 
 The list of space-separated Maven goals that you want TeamCity to execute. Some Maven goals can use version control systems, thus they may become incompatible with some [VCS checkout modes](configuring-vcs-settings.md#Checkout+Settings).  
 
-To execute such a goal, select "_Automatically on agent_" in the __[VCS Checkout Mode](vcs-checkout-mode.md)__ drop-down menu on the __Version Control Settings__ page. This makes the version control system available to the goal execution software. On how to use the `release:prepare` goal with Perforce Helix Core, see [this section](#Using+Maven+Release+with+Perforce).
+To execute such a goal, select "_Automatically on agent_" in the __[VCS Checkout Mode](vcs-checkout-mode.md)__ drop-down menu on the __Version Control Settings__ page. This makes the version control system available to the goal execution software. On how to use the `release:prepare` goal with Perforce P4, see [this section](#Using+Maven+Release+with+Perforce).
 
 > When TeamCity discovers a Maven build step automatically, it sets the goal automatically to `clean test` and an additional Maven command-line parameter `-Dmaven.test.failure.ignore` to `true` to ignore failed tests. This parameter is helpful when the `test` goal is used for a Maven project with multiple modules. With this property set to `true`, even if the tests fail in some module, all the following modules will be tested as well.   
 > 

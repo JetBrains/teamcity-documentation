@@ -35,7 +35,7 @@ To configure a C# Script build step, you just need to enter the script code (or 
 
 ## Perforce integration: run builds on shelved files, report statuses to Helix Swarm, and more
 
-TeamCity 2021.2 brings plenty of enhancements for projects that rely on the [Perforce Helix Core](https://www.perforce.com/) VCS.
+TeamCity 2021.2 brings plenty of enhancements for projects that rely on the [Perforce P4](https://www.perforce.com/) VCS.
 
 ### Run builds on shelved files
 

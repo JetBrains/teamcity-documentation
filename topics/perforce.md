@@ -1,9 +1,9 @@
 [//]: # (title: Perforce)
 [//]: # (help-id: Perforce)
 
-TeamCity can integrate with Perforce to build source projects stored in Perforce Helix Core and ensure their continuous integration and delivery. Learn more about this integration [here](integrating-teamcity-with-perforce.md).
+TeamCity can integrate with Perforce to build source projects stored in Perforce P4 and ensure their continuous integration and delivery. Learn more about this integration [here](integrating-teamcity-with-perforce.md).
 
-This article describes the settings specific to a [Perforce Helix Core](https://www.perforce.com/products/helix-core) VCS root. Common VCS root settings are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
+This article describes the settings specific to a [Perforce P4](https://www.perforce.com/products/helix-core) VCS root. Common VCS root settings are described [here](configuring-vcs-roots.md#Common+VCS+Root+Properties).
 
 ## P4 Connection Settings
 

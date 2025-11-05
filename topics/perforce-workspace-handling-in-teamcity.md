@@ -5,7 +5,7 @@ To perform Perforce-related operations, TeamCity usually operates in a "no-works
 
 The cases when a workspace is created are:
 * If [agent-side checkout](vcs-checkout-mode.md#agent-checkout) is enabled (it is the default checkout mode). In this case, TeamCity creates a Perforce workspace to check out the build sources.
-* Using [versioned project settings](storing-project-settings-in-version-control.md) with Perforce Helix Core.
+* Using [versioned project settings](storing-project-settings-in-version-control.md) with Perforce P4.
 * Using [Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams). In this case, TeamCity creates workspaces on the Perforce server to correctly process task streams.
 
 ## Perforce Workspace Name

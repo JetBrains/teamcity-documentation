@@ -1,7 +1,7 @@
 [//]: # (title: Integration with Perforce Helix Swarm)
 
 
-[Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) is a code review tool for Helix Core. When a developer shelves a file and asks for a review, TeamCity can run a build for this change and post the result as a [Swarm tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_tests.html)  as well as in the comments section of a Helix Swarm review.
+[Perforce Helix Swarm](https://www.perforce.com/products/helix-swarm) is a code review tool for P4. When a developer shelves a file and asks for a review, TeamCity can run a build for this change and post the result as a [Swarm tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_tests.html)  as well as in the comments section of a Helix Swarm review.
 
 
 ## Prerequisites
@@ -90,7 +90,7 @@ Helix Swarm [Workflows](https://www.perforce.com/manuals/swarm/Content/Swarm/wor
 
 ### Set Up a Project
 
-Helix Swarm [Project](https://www.perforce.com/manuals/swarm/Content/Swarm/chapter.projects.html) is a group of Helix Core Server users who are working together on a specific codebase.
+Helix Swarm [Project](https://www.perforce.com/manuals/swarm/Content/Swarm/chapter.projects.html) is a group of P4 Server users who are working together on a specific codebase.
 
 1. Click **Projects** in the side navigation pane.
 2. Create a new project or edit an existing one.

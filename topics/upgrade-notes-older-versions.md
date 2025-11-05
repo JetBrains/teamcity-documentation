@@ -188,7 +188,7 @@ If you have been using any of these versions in your scripts, consider switching
 ### Bundled tools updates
 {id="bundled-tools-updates-202121"}
 
-* The Perforce Helix Core client (p4) is updated to version 2021.2/2201121.
+* The Perforce P4 client is updated to version 2021.2/2201121.
 
 ## Changes from 2021.1 to 2021.2
 
@@ -276,7 +276,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 * Updates in [TeamCity Agent Docker images](https://hub.docker.com/r/jetbrains/teamcity-agent/) for Linux:
   * Git is updated to version 2.25.1.
-  * The Perforce Helix Core client (p4) is updated to version 2021.1/2179737.
+  * The Perforce P4 (Helix Core) client is updated to version 2021.1/2179737.
 
 ## Changes from 2021.1.2 to 2021.1.3
 

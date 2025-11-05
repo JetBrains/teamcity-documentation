@@ -1,8 +1,8 @@
 [//]: # (title: Integrating TeamCity with Perforce)
 [//]: # (help-id: Integrating TeamCity with Perforce;Perforce Streams as feature branches)
 
-This article describes how to integrate TeamCity with [Perforce Helix Core](https://www.perforce.com/products/helix-core) to:
-* Build sources of projects stored in a Helix Core repository.
+This article describes how to integrate TeamCity with [Perforce P4](https://www.perforce.com/products/helix-core) to:
+* Build sources of projects stored in a P4 repository.
 * Use Perforce streams as feature branches and build their sources independently of each other.
 * Pre-test and pre-build files in shelved changelists.
 * Apply automatic labels to sources.
@@ -10,18 +10,18 @@ This article describes how to integrate TeamCity with [Perforce Helix Core](http
 
 ## Prerequisites
 
-* TeamCity supports Perforce Helix Core servers/clients starting from Helix Core 2017.1
-* A Perforce Helix Core client must be installed on the TeamCity server machine.
+* TeamCity supports Perforce P4 servers/clients starting from P4 2017.1
+* A Perforce P4 client must be installed on the TeamCity server machine.
 {instance="tc"}
 * The path to the Perforce client must be added to the `PATH` environment variable.  
   Alternatively, a full path to `p4` could be set via the [internal property](server-startup-properties.md#TeamCity+Internal+Properties) `teamcity.perforce.customP4Path`. The property value must include the `p4` filename.
 {instance="tc"}
-* If you plan to use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), you need to install a Perforce Helix Core client and add it to `PATH` on build agent machines as well.
+* If you plan to use the [agent-side checkout mode](vcs-checkout-mode.md#agent-checkout), you need to install a Perforce P4 client and add it to `PATH` on build agent machines as well.
 {instance="tcc"}
 
-## Running Builds on Perforce Helix Core Sources
+## Running Builds on Perforce P4 Sources
 
-To be able to run builds on project sources stored in Perforce Helix Core and to use all the features described in this article, you need to perform two procedures:
+To be able to run builds on project sources stored in Perforce P4 and to use all the features described in this article, you need to perform two procedures:
 1. Create a dedicated project in TeamCity:
    1. Go to __Administration | Projects__ and click __Create project__.  
       Note that this will add the project right under the _Root project_. Alternatively, you can add it under any other existing project.
@@ -30,7 +30,7 @@ To be able to run builds on project sources stored in Perforce Helix Core and to
 2. Create a Perforce VCS root:
    1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="VCS Roots"/></include>
    2. Click __Create VCS root__.
-   3. Choose _Perforce Helix Core_ as a VCS type.
+   3. Choose _Perforce P4_ as a VCS type.
    4. Configure the root's settings as described in [this article](perforce.md).
 
 After the project and Perforce root are configured, you can proceed with [adding build configurations](creating-and-editing-build-configurations.md) and running builds.

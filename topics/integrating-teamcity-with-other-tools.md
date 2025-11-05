@@ -517,7 +517,7 @@ The tables below are updated in accordance with the newly introduced integration
 
 </td><td>
 
-* [Building projects based on Perforce Helix Core repositories](perforce.md)
+* [Building projects based on Perforce P4 repositories](perforce.md)
 * [Using Perforce streams as feature branches](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) and building their sources independently of each other
 * [Pre-testing and pre-building files in shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files)
 * [Reporting build statuses to code reviews in Perforce Helix Swarm](integrating-teamcity-with-perforce.md#Publishing+Build+Statuses+to+Perforce+Helix+Swarm)

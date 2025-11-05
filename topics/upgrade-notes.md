@@ -144,7 +144,7 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 * .NET SDK bundled with TeamCity agent Docker images was updated to version 8.0.13 (SDK 8.0.406)
 * Mercurial bundled with TeamCity Windows-based Docker images was updated to version 6.1.1.
 * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 27.5.1 in TeamCity Docker images.
-* The Perforce Helix Core client (p4) was updated to version 2024.2 in Agent and Server Docker images.
+* The Perforce P4 (Helix Core) client was updated to version 2024.2 in Agent and Server Docker images.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.1.10.
 
 ### Known Issues
@@ -174,7 +174,7 @@ No potential breaking changes.
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2024-12-1"}
 
-* The Perforce Helix Core client (p4) was updated to version 2022.2-2693782 in Agent and Server Docker images. 
+* The Perforce P4 (Helix Core) client was updated to version 2022.2-2693782 in Agent and Server Docker images. 
 * The Git LFS version was bumped to 3.6.1 in Agent and Server Docker images.
 * The bundled Tomcat was updated to version 9.0.98.
 
@@ -231,7 +231,7 @@ No potential breaking changes.
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2024-07-2"}
 
-* The Perforce Helix Core client (p4) was updated to version 2022.2-2637361 in Agent and Server Docker images.
+* The Perforce P4 (Helix Core) client was updated to version 2022.2-2637361 in Agent and Server Docker images.
 
 ### Known Issues
 {id="known-issues-2024-07-2"}
@@ -621,7 +621,7 @@ No potential breaking changes.
 
 * The bundled Git was updated to version 2.40 in both Server and Agent Docker images.
 * The bundled Tomcat was updated to version 9.0.71.
-* The Perforce Helix Core client (p4) was updated to version 2022.2-2407422 in Agent and Server Docker images.
+* The Perforce P4 (Helix Core) client was updated to version 2022.2-2407422 in Agent and Server Docker images.
 
 ### Known Issues
 {id="known-issues-2022-10-3"}
@@ -634,7 +634,7 @@ Using the "Default Credentials Provider" as a principal AWS connection may cause
 {id="bundled-tools-updates-2022-10-2"}
 
 * The bundled Git was updated to version 2.39.1 in both Server and Agent Docker images.
-* The Perforce Helix Core client (p4) was updated to version 2022.2-2369846 in Agent Docker images.
+* The Perforce P4 (Helix Core) client was updated to version 2022.2-2369846 in Agent Docker images.
 * The bundled Apache Tomcat was updated to version 8.5.84.
 
 
@@ -865,7 +865,7 @@ Download newer versions of these plugins from JetBrains Marketplace:
 ### Bundled tools updates
 {id="bundled-tools-updates-202121"}
 
-* The Perforce Helix Core client (p4) is updated to version 2021.2/2201121.
+* The Perforce P4 (Helix Core) client is updated to version 2021.2/2201121.
 
 ## Changes from 2021.1 to 2021.2
 
@@ -953,7 +953,7 @@ Note that TeamCity is not compatible with Java 17, which makes Java 11 the only 
 
 * Updates in [TeamCity Agent Docker images](https://hub.docker.com/r/jetbrains/teamcity-agent/) for Linux:
     * Git is updated to version 2.25.1.
-    * The Perforce Helix Core client (p4) is updated to version 2021.1/2179737.
+    * The Perforce P4 (Helix Core) client is updated to version 2021.1/2179737.
 
 ## Changes from 2021.1.2 to 2021.1.3
 
