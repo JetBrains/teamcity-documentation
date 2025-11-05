@@ -34,6 +34,16 @@ Server administrators can completely hide this element in the **Admin | AI Assis
 <img src="ai-assistant-admin-settings.png" width="706" alt="Server AI Assistant settings"/>
 
 
+## 'Analyze it' Button
+
+For AI queries to deliver relevant results, you need to provide context. A question like “Why did this build fail?” may be unclear without specifying which build you mean.
+
+To save you from typing long queries with project and configuration details, TeamCity adds the **Analyze it** button in the top-right corner of build configuration and failed build pages. Clicking it automatically supplies the necessary context, allowing the AI Assistant to analyze failing or misbehaving workflows immediately.
+
+<img src="aia-whats-new.png" width="706" thumbnail="true" alt="AI Assistant"/>
+
+
+
 ## Limitations and Special Notes
 
 * The Assistant does not currently support [pipelines](create-and-edit-pipelines.md) and can only analyze and troubleshoot classic [build configurations](creating-and-editing-build-configurations.md).
@@ -45,7 +55,7 @@ Server administrators can completely hide this element in the **Admin | AI Assis
 
 ## Privacy Policy
 
-TeamCity AI Assistant shares user prompts and code snippets with 3rd-party LLM providers (the currently used LLM is OpenAI's `gpt4o`) to process questions and generate helpful responses. 
+TeamCity AI Assistant shares user prompts and code snippets with 3rd-party LLM providers to process questions and generate helpful responses. 
 
 We may also collect non-anonymous usage data and system information to help us improve the feature. This data is used solely by TeamCity team and is not shared with any external party.
 
