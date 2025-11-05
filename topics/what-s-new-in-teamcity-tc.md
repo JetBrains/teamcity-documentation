@@ -92,10 +92,13 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 * We have updated TeamCity License Agreement. A corresponding page will pop up when you start a 2025.11 server. A TeamCity server administrator must accept the updated terms before TeamCity can proceed with a [data upgrade](teamcity-maintenance-mode.md#TeamCity+Data+Upgrade).
   {instance="tc"}
 * [](commit-status-publisher.md) no longer posts intermediate failure statuses in the following cases:
+
     * [](build-failure-conditions.md) include the **support test retry** option.
     * Tests are run by the [](gradle.md) build step with the [Gradle test retry](https://github.com/gradle/test-retry-gradle-plugin) plugin.
+    * Tests are run by the `test` or `vstest` command of the [.NET](net.md#vstest) build step with a **Test retry count** greater than zero.
 
-    Instead, TeamCity only posts a final test status determined after all required re-runs.
+    TeamCity now posts only the final test status, determined after all required re-runs. This prevents VCS statuses from displaying false alarms for failures that are automatically resolved on retries.
+
 * The **Miscellaneous** section of the [agent details page](viewing-build-agent-details.md) now includes the **Dump memory snapshot on agent** link that allows you to download an `.hprof` memory dump file.
 * [](parallel-tests.md) and [](matrix-build.md) features now include the option to automatically place artifacts produced by virtual builds into "batchN" folders. This prevents newer virtual builds from overriding artifacts with identical names produced by older batches.
 
