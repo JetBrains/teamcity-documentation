@@ -180,6 +180,9 @@ Cloud profiles specify global settings, such as authorization credentials and in
       * **IAM Role** — The IAM role that all launched instances will assume. This role specifies the permissions [granted to applications](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) running on your EC2 instances. The AWS account used by TeamCity must have `iam:ListInstanceProfiles` and `iam:PassRole` permissions to utilize IAM roles.
       * **Key pair** — Required if you may need to connect to your EC2 instances [using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
       * **User data** — Allows you to specify a script that will be run when an instance launches. Learn more: [Windows](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html), [Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html).
+      > Windows EC2 agents currently support only `<script>... </script>` and `<powershell>...</powershell>` tags in their user data scripts. Unrecognized elements will cause the "The provided value is not a valid Windows script" error.
+      > 
+      {style="warning"}
       * **Tags** — The list of comma-separated instance tags. For example `LaunchedBy=TeamCity,TeamCityCloudProfileName=MyProfile1`. Tagging requires the `ec2:*Tags` permission. See the following section for more information: [](#Tagging).
 
    3.5.&ensp;Check **Use spot instances** if you prefer cheaper [spot instances](https://aws.amazon.com/ec2/spot/) to On-Demand ones. The **Max price** field lets you to specify your maximum bid price for spot instances (in US dollars). The default On-Demand price will be used if the bid price is not specified.
