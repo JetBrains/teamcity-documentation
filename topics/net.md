@@ -22,6 +22,8 @@ In [pipelines](create-and-edit-pipelines.md), each of these commands is availabl
 
 <img src="dk-dotnet-pipelines.png" width="706" thumbnail="true" alt=".NET steps in pipelines"/>
 
+> The `dotnet nuget push` and `dotnet nuget delete` pipeline build steps are initially disabled. Join our [Slack channel](slack-code-of-conduct.md) or [contact our support](ticket-based-support.md) to request these steps.
+
 
 ## Agent Requirements
 
@@ -608,6 +610,8 @@ Uses `/bin/sh` to run both specified `.sh` scripts with the same parameters `-c 
 
 ## Authentication in Private NuGet Feeds
 
+<secondary-label ref="secondary-config"/>
+
 TeamCity allows you to authenticate using private NuGet feeds. Read more in [NuGet](nuget.md#Authentication+in+private+NuGet+Feeds).
 
 ## Parameters Reported by Agent
@@ -682,6 +686,8 @@ Consider the following notes before migrating:
 
 
 ## Parallel Testing
+
+<secondary-label ref="secondary-config"/>
 
 If the .NET runner executes `test` or `vstest` commands, TeamCity can split the workload into several batches. In this case testing is carried out in separate automatically generated builds (on separate build agents). To enable this behavior, add the [](parallel-tests.md) build feature to the TeamCity build configuration.
 

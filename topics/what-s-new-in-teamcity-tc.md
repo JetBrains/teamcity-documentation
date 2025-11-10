@@ -26,6 +26,10 @@ In version 2025.11, we're bringing the familiar [](net.md) build step to pipelin
 
 In addition to .NET, we are testing other build steps available in classic build configurations: Python, Xcode, Unity, and more. While not yet included in the official 2025.11 release, these build steps can be enabled on your TeamCity servers. Join our [Slack channel](slack-code-of-conduct.md) or [contact our support](ticket-based-support.md) to request these currently hidden steps!
 
+> We have also enabled build steps shipped with external plugins to allow plugin developers to test their custom build steps in pipelines.
+> 
+{style="tip"}
+
 Learn more: [](net.md).
 
 ### Project Registry Connections Support

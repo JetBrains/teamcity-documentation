@@ -14,6 +14,10 @@ TeamCity provides a wide range of build steps designed for specific build tools,
 
 The full set of steps is currently available for [build configurations](creating-and-editing-build-configurations.md). [Pipelines](create-and-edit-pipelines.md),  introduced in version 2025.07, support a limited subset. However, you can use the [script step](command-line.md) to build any project type, as it can run commands with any tools installed on an agent machine.
 
+> We plan to add more popular build steps in upcoming TeamCity versions. In 2025.11, we introduced [.NET steps](net.md) and support for custom build steps via external plugins. Other steps (including Python, Unity, Xcode, and more) are already compatible but not yet fully tested, so they remain hidden by default. To try them out, [join our Slack channel](slack-code-of-conduct.md) or [contact our support](ticket-based-support.md) for instructions on how to enable them.
+> 
+{style="tip"}
+
 
 ## Add Steps via TeamCity UI
 
