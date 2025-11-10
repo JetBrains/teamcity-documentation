@@ -807,6 +807,9 @@ There are two ways to configure Space connections:
 To configure a TeamCity project that builds and deploys a repository stored in JetBrains Space, you need two separate connections:
 
 * Organization connection — an entry point that stores common connection settings, which allow TeamCity to access your Space instance.
+    > Due to [sunsetting of JetBrains Space](https://space-support.jetbrains.com/hc/en-us/sections/19136489435282-Space-Sunset), this connection type is no longer supported in TeamCity 2025.11 and newer versions. If you continue using Space On-Premises, use the [manual Space connection](#Manual+Connections) with permissions to create applications as a replacement for Organization connections.
+    > 
+    {style="warning"}
 * Project connection — allows TeamCity to access one specific project and its repositories.
 
 You only need a single organization connection configured in a parent TeamCity project. However, to access separate Space projects, you will require separate project connections.
