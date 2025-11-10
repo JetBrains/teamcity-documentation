@@ -1,6 +1,6 @@
 [//]: # (title: What's New in TeamCity On-Premises 2025.11)
 
-<snippet id="2025-11-tc">
+<snippet id="2025-11-tc" instance="tc">
 
 
 ## New Pipelines Features
@@ -34,6 +34,16 @@ In addition, the run actions menu now includes options to [pin, tag, and comment
 <img src="dk-build-actions-pipelines.png" width="706" alt="Pin, tag, and comment actions in pipelines"/>
 
 Learn more: [](investigating-and-muting-build-failures.md), [](build-actions.md)
+
+### Parameter Import
+
+Previously, a parameter owned by a project could not be used inside pipelines. Referencing such parameters would result in an implicit agent requirement: only agents that provide a value for this parameter were eligible to run this pipeline.
+
+Starting with version 2025.11, you can import any parameter from a direct or indirect project and use it as any other native pipeline parameter.
+
+<img src="pipelines-import-params.png" width="706" alt="Import parameters"/>
+
+Learn more: [Pipeline parameters](pipeline-settings.md#Parameters), [](configuring-build-parameters.md)
 
 
 ## UX Improvements
@@ -89,8 +99,9 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 ## Miscellaneous Enhancements
 
 <!--* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.-->
-* We have updated TeamCity License Agreement. A corresponding page will pop up when you start a 2025.11 server. A TeamCity server administrator must accept the updated terms before TeamCity can proceed with a [data upgrade](teamcity-maintenance-mode.md#TeamCity+Data+Upgrade).
-  {instance="tc"}
+* We have updated our TeamCity License Agreement to align it with JetBrains’ standards (such as definitions, structure, etc.); it has been fully restructured to make it clearer, more user-friendly, and easier to navigate. There are no changes to TeamCity's business model or users’ rights to how to use TeamCity.
+
+The only material change is an adjustment of our liability clause, which now follows JetBrains’ standard approach used across other JetBrains products.
 * [](commit-status-publisher.md) no longer posts intermediate failure statuses in the following cases:
 
     * [](build-failure-conditions.md) include the **support test retry** option.

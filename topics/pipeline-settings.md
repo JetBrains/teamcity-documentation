@@ -67,7 +67,10 @@ secrets:
 
 
 > If a job uses a parameter that is not defined on either pipeline or job level, this parameter becomes an [agent requirement](job-settings.md#Agent+Requirements) (see [example](job-settings.md#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
->
+> 
+> To use a parameter owned by a direct or indirect parent project, click the corresponding link when editing the parameter collection. Note that imported parameters cannot be edited directly in a pipeline, you need to modify the source project parameter instead.
+> 
+> <img src="pipelines-import-params.png" width="706" alt="Import parameters"/>
 {style="note"}
 
 </snippet>

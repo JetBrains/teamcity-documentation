@@ -4,9 +4,9 @@
 <show-structure for="chapter" depth="2"/>
 
 
-<include from="what-s-new-in-teamcity-tc.md" element-id="2025-11-tc"/>
+<include from="what-s-new-in-teamcity-tc.md" element-id="2025-11-tc" instance="tc"/>
 
-<include from="what-s-new-in-teamcity-tcc.md" element-id="2025-11-tcc"/>
+<include from="what-s-new-in-teamcity-tcc.md" element-id="2025-11-tcc" instance="tcc"/>
 
 
 ## Upgrade Notes
