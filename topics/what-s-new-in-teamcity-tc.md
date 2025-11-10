@@ -101,7 +101,8 @@ Learn more: [](teamcity-configuration-and-maintenance.md#encryption-settings).
 <!--* [Azure DevOps OAuth 2.0 connection](configuring-connections.md#Azure+DevOps) settings were updated to support the Entra ID authentication policy.-->
 * We have updated our TeamCity License Agreement to align it with JetBrains’ standards (such as definitions, structure, etc.); it has been fully restructured to make it clearer, more user-friendly, and easier to navigate. There are no changes to TeamCity's business model or users’ rights to how to use TeamCity.
 
-The only material change is an adjustment of our liability clause, which now follows JetBrains’ standard approach used across other JetBrains products.
+    The only material change is an adjustment of our liability clause, which now follows JetBrains’ standard approach used across other JetBrains products.
+
 * [](commit-status-publisher.md) no longer posts intermediate failure statuses in the following cases:
 
     * [](build-failure-conditions.md) include the **support test retry** option.
