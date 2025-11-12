@@ -248,18 +248,19 @@ There are many different contexts where it can be useful to reference the matrix
 
 When you run a matrix build, artifacts from all of the generated builds are aggregated to the same location in the parent build. This can result in artifact files being overwritten.
 
-To avoid overwriting artifact files, it is better to sort the generated artifacts using a directory name defined by the combination of matrix parameter values, for example:
-```
-%\Browser%-%\Java%
+To avoid overwriting artifact files, make sure the **Group artifacts from matrix builds in separate directories within the main build** toggle in the build feature settings is enabled. In this case, TeamCity places artifacts produced by virtual builds into separate `parameter=value` directories.
+
+<img src="matrix-batch-artifacts.png" width="706" alt="Matrix builds batch artifacts"/>
+
+You can also use parameter references in [artifact paths](configuring-general-settings.md#Artifact+Paths) to implement a custom artifact grouping. For example, the following path places all .jar files into directories named after "Browser" and "Java" parameter values:
+
+```Text
+ch-simple/simple/target/*.jar => %Browser%-%Java%
 ```
 
-You can then define the artifact path as:
-```
-ch-simple/simple/target/*.jar => %\Browser%-%\Java%
-```
+As a result, the artifacts will be stored in directories with names like the following:
 
-The artifacts from the generated builds are then written to separate directories:
-```
+```Text
 Chrome-JDK_17/
 Chrome-JDK_21/
 Firefox-JDK_17/
