@@ -124,6 +124,13 @@ data class MyClass(
 -->
 
 
+## Update DSL from 2025.07.x to 2025.11.x
+{help-id="dsl202511"}
+
+The `separateArtifacts` for matrix builds was renamed to `groupArtifactsByBuild`. See this YouTrack ticket for the details: [TW-84334](https://youtrack.jetbrains.com/issue/TW-84334).
+
+
+
 ## Update DSL from 2025.03.x to 2025.07.x
 {help-id="dsl202507"}
 
