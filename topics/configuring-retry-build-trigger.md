@@ -3,6 +3,8 @@
 
 The _retry build trigger_ automatically adds a new build to the queue if the previous build of the current build configuration has failed.
 
+Note that if a build fails because of infrastructure issues (for example, a build agent unexpectedly shut down when a build was starting), TeamCity restarts it even without this trigger configured. This behavior is controlled by the `teamcity.buildQueue.restartBuildAttempts` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) that defaults to three consecutive attempts.
+
 > To configure the _retry build trigger_ in Kotlin DSL, see [RetryBuildTrigger](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/triggers/retry-build-trigger/index.html).
 >
 {style="note"}
