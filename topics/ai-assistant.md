@@ -10,7 +10,7 @@ The TeamCity AI Assistant is your 24/7 companion for debugging failed workflows,
 TeamCity AI Assistant offers general guidance (for example, “How do I configure the TeamCity NuGet feed?” or “How do I set up pull requests?”) and troubleshooting help for specific configurations and builds (for instance, “Why did build #17 in my SampleApp configuration fail?”). It can also query the [](teamcity-rest-api.md) to retrieve detailed information about builds and build chains.
 
 **Is it free?**<br/>
-This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license. It is not available for Professional licenses or Enterprise licenses with expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions).<br/>
+This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license. It is not available for Professional licenses or Enterprise licenses with the expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions). See the [](#Limitations+and+Special+Notes) section for more information.<br/>
 
 **Are there any additional requirements?**<br/>
 AI Assistant requires access to `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources to send user prompts and receive responses, obtain license keys, share usage statistics, and more.
@@ -33,6 +33,7 @@ Server administrators can completely hide this element in the **Admin | AI Assis
 
 <img src="ai-assistant-admin-settings.png" width="706" alt="Server AI Assistant settings"/>
 
+The **Allow detailed data collection** checkbox allows TeamCity to privately share AI Assistant chat history with JetBrains. We never share this data with anyone and use it solely to improve the quality of the Assistant's responses.
 
 ## 'Analyze it' Button
 
@@ -50,13 +51,25 @@ To save you from typing long queries with project and configuration details, Tea
 
 * Past conversations with the AI Assistant are not saved. When you start a new chat (via the "**+**" button in the chat window's top-right corner), you will lose access to the previous one.
 
-* The AI Assistant chat history is stored locally in your browser. Conversations are not restored when you access TeamCity from a different browser.
+* The AI Assistant chat history is stored locally in your browser. Conversations are not restored when you access TeamCity from a different browser or after you log out.
+
+* The AI Assistant is disabled in the following cases:
+
+    * You are running a TeamCity Professional server (including those that have active additional agent licenses).
+    * The [maintenance period](licensing-policy.md#Valid+TeamCity+Versions) for your Enterprise license has expired.
+    * Your Enterprise server was activated via the [legacy licensing mechanism](manage-teamcity-license.md#Activate+Existing+Legacy+Licenses) (as opposed to linking your [JetBrains Account](manage-teamcity-license.md#Activate+a+License)).
+    * Your server runs on a Java version older than Java 17.
+    * You are using the classic TeamCity UI instead of [Sakura UI](teamcity-sakura-ui.md).
+
+* The AI Assistant currently incorrectly processes questions about queued and virtual (spawned by [](parallel-tests.md) and [](matrix-build.md) features) builds.
+
+* The Assistant is designed to provide guidance on existing TeamCity entities. It cannot create new ones, add dependencies, modify server settings, start and stop builds, and so on.
 
 
 ## Privacy Policy
 
 TeamCity AI Assistant shares user prompts and code snippets with 3rd-party LLM providers to process questions and generate helpful responses. 
 
-We may also collect non-anonymous usage data and system information to help us improve the feature. This data is used solely by TeamCity team and is not shared with any external party.
+We may also collect non-anonymous usage data and system information to help us improve the feature. This data is used solely by the TeamCity team and is not shared with any external party.
 
 Data collection complies with [general JetBrains Privacy Notice](https://www.jetbrains.com/legal/docs/privacy/privacy/) and [JetBrains AI Data Collection and Usage Notice](https://www.jetbrains.com/help/ai/data-collection-and-use-policy.html).
