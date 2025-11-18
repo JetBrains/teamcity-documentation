@@ -128,7 +128,7 @@ object StepExecutionConditions : BuildType({
                 startsWith("teamcity.agent.jvm.os.name", "Windows")
             }
             scriptMode = script {
-                content = """Copy-Item "%\system.teamcity.build.workingDir%/result.xml" -Destination %\win.destination.path%"""
+                content = """Copy-Item "%system.teamcity.build.workingDir%/result.xml" -Destination %win.destination.path%"""
             }
         }
         // Command Line runner for non-Windows agents
@@ -139,7 +139,7 @@ object StepExecutionConditions : BuildType({
             conditions {
                 doesNotContain("teamcity.agent.jvm.os.name", "Windows")
             }
-            scriptContent = """cp "%\system.teamcity.build.workingDir%/result.xml" %\unix.destination.path%"""
+            scriptContent = """cp "%system.teamcity.build.workingDir%/result.xml" %unix.destination.path%"""
         }
     }
 })
@@ -240,7 +240,7 @@ The script below uses a reference to the build branch to obtain a file that shou
 ```Shell
 set -e -x
 
-FILE=%\teamcity.build.branch%/fileToCopy.xml
+FILE=%teamcity.build.branch%/fileToCopy.xml
 if test -f "$FILE"; then
     cp "$FILE" folderA/folderB
 fi
@@ -249,7 +249,7 @@ fi
 This sample script sends the REST API request to download the "libraries.tar.gz" archive from the server (whose URL is stored as the `serverURL` config parameter), add a build number to its name, and save it to the checkout directory. For example, the name of the archive from build #54 will be "libraries_54.tar.gz".<br/><br/>
 
 ```Shell
-curl -o libraries_%\build.number%.tar.gz %\serverUrlBase%libraries.tar.gz
+curl -o libraries_%build.number%.tar.gz %serverUrlBase%libraries.tar.gz
 ```
 
 </tab>
@@ -262,7 +262,7 @@ The following script prints the [checkout directory](build-checkout-directory.md
 
 ```Python
 print(f'Current checkout directory is: %teamcity.build.checkoutDir%')
-print(f'TeamCity version is: %\env.TEAMCITY_VERSION%')
+print(f'TeamCity version is: %env.TEAMCITY_VERSION%')
 # or
 print(f"TeamCity version is: {os.environ['TEAMCITY_VERSION']}")
 ```
@@ -302,7 +302,7 @@ See this blog post for an example of using parameters in C# scripts and .NET run
 You can use parameters to pass simple data from one step/script to another. To do this, send the `setParameter` [service message](service-messages.md) from a script that calculates new parameter values.
 
 ```Shell
-echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
+echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %teamcity.agent.name%']"
 ```
 
 <snippet id="change-parameter-from-build">
@@ -318,7 +318,7 @@ object MyBuildConf : BuildType({
         csharpScript {
             name = "Check the current day"
             content = """
-            if ("%\day.of.week%" != DateTime.Today.DayOfWeek.ToString()) {
+            if ("%day.of.week%" != DateTime.Today.DayOfWeek.ToString()) {
               string today = DateTime.Today.DayOfWeek.ToString();
               string TCServiceMessage = "##teamcity[setParameter name='day.of.week' value='" + today + "']";
               Console.WriteLine(TCServiceMessage);
@@ -328,7 +328,7 @@ object MyBuildConf : BuildType({
         python {
             name = "Welcome message"
             command = script {
-                content = "print('Hello %\teamcity.build.triggeredBy.username%, today is %\day.of.week%!')"
+                content = "print('Hello %teamcity.build.triggeredBy.username%, today is %day.of.week%!')"
             }
         }
     }
