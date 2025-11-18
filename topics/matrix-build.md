@@ -245,12 +245,17 @@ There are many different contexts where it can be useful to reference the matrix
 
 
 ### Publishing Artifacts
+{help-id="matrix-build-artifacts"}
 
 When you run a matrix build, artifacts from all of the generated builds are aggregated to the same location in the parent build. This can result in artifact files being overwritten.
 
 To avoid overwriting artifact files, make sure the **Group artifacts from matrix builds in separate directories within the main build** toggle in the build feature settings is enabled. In this case, TeamCity places artifacts produced by virtual builds into separate `parameter=value` directories.
 
 <img src="matrix-batch-artifacts.png" width="706" alt="Matrix builds batch artifacts"/>
+
+> The default directory naming format is `parameter=value`. Because values can include `%\references%` to other parameters, this can cause issues when specifying paths (for example, in [](artifact-dependencies.md)). To prevent this, TeamCity uses [labels](#Configuring+the+Matrix+Parameters) instead of raw values. If a value does not have a label, TeamCity automatically replaces `%` characters with underscores (`_`) to avoid these potential problems.
+> 
+{style="tip"}
 
 You can also use parameter references in [artifact paths](configuring-general-settings.md#Artifact+Paths) to implement a custom artifact grouping. For example, the following path places all .jar files into directories named after "Browser" and "Java" parameter values:
 
