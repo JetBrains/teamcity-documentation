@@ -18,6 +18,8 @@ Learn more: [](ai-assistant.md)
 
 ## New Pipelines Features
 
+See the [](pipelines-roadmap.md) article for more information our pipeline-specific development plans.
+
 ### New Build Steps
 
 In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
