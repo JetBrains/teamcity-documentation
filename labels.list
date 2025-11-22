@@ -31,4 +31,10 @@
     <secondary-label id="secondary-eap" name="Early Access Preview" color="strawberry">
         This functionality is available through the Early Access Preview and may be modified in future releases.
     </secondary-label>
+
+
+    <secondary-label id="secondary-roadmap-planned-2026q1" name="Q1 2026" color="tangerine">We expect to implement this feature in the first quarter of 2026</secondary-label>
+    <secondary-label id="secondary-roadmap-planned-priority" name="High priority" color="purple">We’re prioritizing this idea, but your input can help shape our plans. Feel free to reach out via Slack or Zendesk/YouTrack to share your feedback.</secondary-label>
+
+    <secondary-label id="secondary-roadmap-implemented-202511" name="2025.11" color="blue">This feature was implemented in TeamCity 2025.11.</secondary-label>
 </labels>

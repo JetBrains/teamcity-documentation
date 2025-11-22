@@ -14,3 +14,7 @@ We expect to release the next major TeamCity version (TeamCity 2026.1) in the fi
 No specific dates. Bugfix updates are released as soon as we address critical issues discovered in existing releases (typically, once a month). Bugfix updates for TeamCity 2025.11 will be released as versions 2025.11.x.
 
 See also: [TeamCity Release Cycle](teamcity-release-cycle.md).
+
+### Pipelines Roadmap
+
+See the [](pipelines-roadmap.md) article for more information on pipeline-specific development plans.
