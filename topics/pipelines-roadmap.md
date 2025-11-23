@@ -4,7 +4,7 @@
 
 Pipelines reimagine the familiar TeamCity experience by combining its full capabilities with a more intuitive, user-centric interface. While they are powered by the same reliable backend, we have intentionally moved away from certain legacy approaches to address long-standing pain points, often redesigning even simple concepts from the ground up.
 
-This approach will pay off as the initiative evolves, but it also means pipelines currently offer less customization and fewer features than classic build configurations. As we determine which areas to prioritize next, your feedback is especially valuable. Our goal is to build a CI/CD solution that truly fits your needs, and your input is essential in helping us shape it.
+This approach will pay off as the initiative evolves, but it also means pipelines currently offer less customization and fewer features than classic build configurations. As we determine which areas to prioritize next, your feedback is especially valuable. Our goal is to build a CI/CD solution that truly fits your needs, and your input is essential in helping us shape it. Contact us via [Slack](https://jb.gg/TeamCitySlack) or [Zendesk/YouTrack](troubleshooting.md) to share your thoughts.
 
 > The information contained within this article details our projected development plans. Please note that this information is being shared for informational purposes only and does not represent a binding commitment on the part of JetBrains. This roadmap and features listed within it are subject to change.
 > 
@@ -36,7 +36,7 @@ Each approach has its strengths. YAML is widely used and familiar, while Kotlin 
 
 As we work toward making pipelines a complete solution for any CI/CD task, our goal is to give you the best of both worlds. Bringing Kotlin DSL to pipelines will make it easier to use versioned settings and choose the approach that best fits your workflow.
 
-### Run Custom Build Support
+### Custom Runs
 <secondary-label ref="secondary-roadmap-planned-2026q1"/>
 
 [Running custom builds](running-custom-build.md) is a great way to trigger a tailored build sequence without changing configuration settings. You can schedule a build, pick a specific agent, override parameters, skip dependencies, and more.
@@ -49,7 +49,7 @@ We expect to support a similar functionality in pipelines.
 ### Job-level Build Features
 <secondary-label ref="secondary-roadmap-planned-2026q1"/>
 
-[Build features](adding-build-features.md) enhance build configurations with advanced capabilities: from simple cleanup with [Swabra](build-files-cleaner-swabra.md) to [Matrix builds](matrix-build.md) that spawn dozens of virtual builds cycling through the predefined set of parameters. Our plan is to bring the most widely used features to pipelines as native functionality rather than plug-in add-ons.
+[Build features](adding-build-features.md) enhance build configurations with advanced capabilities: from simple cleanup with [Swabra](build-files-cleaner-swabra.md) to [Matrix builds](matrix-build.md) that spawn dozens of virtual builds cycling through the predefined set of parameters. Our plan is to bring the most widely used features to pipelines.
 
 As with other configuration-only features, we aim to support what matters without cluttering pipelines with rarely used options. Your feedback is essential here: reach out via [Slack](https://jb.gg/TeamCitySlack) or our [issue tracker](troubleshooting.md) to help us prioritize the features that matter most.
 
@@ -70,7 +70,7 @@ Let us know which steps you’d like to see next — [](python.md), [](powershel
 
 This section lists planned features that were implemented in previous versions.
 
-### New Build Steps
+### .NET Build Steps
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
 
 In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
@@ -118,7 +118,7 @@ Learn more: [Pipeline parameters](pipeline-settings.md#Parameters), [](configuri
 
 
 
-## Backlog
+## Planned Features
 
 Below are the features we’re considering for future pipeline releases. Join our [Slack Workspace](https://jb.gg/TeamCitySlack) or contact us through our [usual support channels](troubleshooting.md) to help us identify the most important items and refine our priorities.
 
