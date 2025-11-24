@@ -2,9 +2,12 @@
 
 <show-structure for="chapter" depth="2"/>
 
-Pipelines reimagine the familiar TeamCity experience by combining its full capabilities with a more intuitive, user-centric interface. While they are powered by the same reliable backend, we have intentionally moved away from certain legacy approaches to address long-standing pain points, often redesigning even simple concepts from the ground up.
+Pipelines reimagine the familiar TeamCity experience with a more intuitive visual interface.
+While pipelines are powered by the same reliable backend, we have intentionally moved away from our traditional approaches, simplified core concepts and redesigned them from the ground up.
 
-This approach will pay off as the initiative evolves, but it also means pipelines currently offer less customization and fewer features than classic build configurations. As we determine which areas to prioritize next, your feedback is especially valuable. Our goal is to build a CI/CD solution that truly fits your needs, and your input is essential in helping us shape it. Contact us via [Slack](https://jb.gg/TeamCitySlack) or [Zendesk/YouTrack](troubleshooting.md) to share your thoughts.
+We expect this approach to pay off as the initiative evolves, but it also means pipelines currently offer less customization and fewer features than classic build configurations. As we determine which areas to prioritize next, your feedback is especially valuable. Our goal is to build a CI/CD solution that truly fits your needs, and your input is essential in helping us shape it.
+
+[Join our Slack](https://jb.gg/TeamCitySlack) to share and discuss your ideas, or send bug reports to [Zendesk / YouTrack](troubleshooting.md).
 
 > The information contained within this article details our projected development plans. Please note that this information is being shared for informational purposes only and does not represent a binding commitment on the part of JetBrains. This roadmap and features listed within it are subject to change.
 > 
