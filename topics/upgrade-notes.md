@@ -12,7 +12,7 @@
 {id="bundled-tools-updates-2025-11"}
 
 * We have updated a number of tools shipped with TeamCity [Docker server and agent images](agent-docker-images.md):
-    * Git: v2.51.2
+    * Git: v2.52.0
     * Git LFS: v3.7.1
     * Amazon Corretto JDK: 21
     * .NET 8.0: v8.0.415 (.NET Runtime v8.0.21)
@@ -20,6 +20,8 @@
     * Perforce CLI: r25.4
     * Containerd: v1.7.28
     * Mercurial SCM Client (Windows images only): v6.2.2
+    * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS.
+* The default JaCoCo version is now 0.8.8. In addition, version 0.8.13 is now bundled.
 
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
