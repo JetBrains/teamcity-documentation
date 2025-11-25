@@ -6,7 +6,6 @@ Starting with version 2026.1, neither TeamCity server nor agents will be able to
 > 
 {style="note"}
 
-
 ## Upgrade Instructions
 
 The upgrade process boils down to two essential steps:
@@ -74,3 +73,8 @@ To update agent machines, follow the same procedure. Alternatively, you can inst
 </tab>
 
 </tabs>
+
+See the following articles for more information:
+
+* [](how-to.md#Install+Non-Bundled+Version+of+Java)
+* [](configure-java-for-agent.md)
