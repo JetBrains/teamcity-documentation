@@ -23,6 +23,12 @@
     * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS.
 * The default JaCoCo version is now 0.8.8. In addition, version 0.8.13 is now bundled.
 
+### Known Issues
+{id="known-issues-2025-11"}
+
+* Build configurations created via the [updated flow](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) no longer include the [](performance-monitor.md) build feature by default. Add this feature manually if you wish to track the agent CPU, disk, and memory usage during builds.
+
+
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
 
