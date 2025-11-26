@@ -1,6 +1,15 @@
-# Java 21 Upgrade Procedures
+# Cheatsheet: Updating Java on Server and Agent Machines
 
-Starting with version 2026.1, neither TeamCity server nor agents will be able to start without Java 21 installed on the machine. If TeamCity 2025.11 runs on an older Java version, it shows a corresponding warning asking you to upgrade Java.
+This article briefly outlines the Java update procedure for agent and server machines. Refer to these articles for more detailed information.
+
+* [](how-to.md#Install+Non-Bundled+Version+of+Java)
+* [](configure-java-for-agent.md)
+* [](upgrading-teamcity-server-and-agents.md)
+
+
+## Migration to Java 21
+
+Starting with version 2026.1, both the TeamCity server and agents will require Java 21 to start. Some features (for example, [](ai-assistant.md)) are already unavailable in TeamCity 2025.11 when running on older Java versions. For this reason, we recommend upgrading to Java 21 ahead of the 2026.1 release.
 
 > We plan to support Java 21~25 in version 2026.1. However, version 2025.11 currently supports only Java 21.
 > 
@@ -11,9 +20,11 @@ Starting with version 2026.1, neither TeamCity server nor agents will be able to
 The upgrade process boils down to two essential steps:
 
 1. Install Java 21 on the machine.
-2. Make sure TeamCity correctly locates your newly installed version.
+2. Ensure TeamCity detects and uses the new installation.
 
-The specifics vary depending on the machine OS.
+The exact procedure depends on your operating system.
+
+### Update Server
 
 <tabs>
 
@@ -21,22 +32,7 @@ The specifics vary depending on the machine OS.
 
 <procedure>
 
-The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21__, so you do not need to install Java 21 manually.
-
-Before upgrading an agent machine, we recommend uninstalling the current agent version to avoid potential issues:
-
-1. Uninstall the current agent version. To do this, navigate to the [agent home directory](agent-home-directory.md), invoke `Uninstall.exe`, clear all the "Remove ..." checkboxes, and click **Uninstall**.
-2. Open TeamCity UI in a browser and log in.
-3. Use the side navigation bar to switch to the **Agents** page.
-4. Click **Install agent** and download the .exe agent installer with a bundled JDK.
-5. Run this installer on each of your agent machines that requires an update.
-
-> To check which Java the specific agent is using, open the [agent summary](viewing-build-agent-details.md), switch to the **Parameters** tab, and check the following parameter values:
-> * `teamcity.agent.jvm.java.home`
-> * `teamcity.agent.jvm.version`
-> * `teamcity.agent.jvm.vendor`
->
-{style="tip"}
+The TeamCity Windows installer and server Docker images include [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21, so you do not need to install it manually. Simply run the TeamCity 2025.11 installer and it will provide the required JDK.
 
 </procedure>
 
@@ -55,9 +51,52 @@ Once you install Java 21, assign the corresponding installation path to the `JAV
 * The `JAVA_HOME` is a global variable that specifies the default JDK on your machine. When set, the `java -version` terminal command should point to the corresponding version.
 * The `TEAMCITY_JRE` variable is used only by TeamCity and allows you to keep using a different Java version as a default one for other applications.
 
-To update agent machines, follow the same procedure. Alternatively, you can install an [agent archive that already bundles the required JDK](install-teamcity-agent.md#Available+Agent+Distributions). To do so:
 
-1. Navigate to **Admin | Agent JDKs** in TeamCity UI. 
+</procedure>
+
+</tab>
+
+</tabs>
+
+### Update Agents
+
+<tabs>
+
+<tab title="Windows">
+
+<procedure>
+
+Before upgrading an agent machine, we recommend uninstalling the existing agent to avoid potential issues:
+
+1. Go to the [agent home directory](agent-home-directory.md), run `Uninstall.exe`, leave all "Remove ..." checkboxes unchecked, and complete the uninstall.
+2. Open the TeamCity UI in your browser and log in.
+3. In the side navigation bar, open **Agents**.
+4. Click **Install agent** and download the .exe agent installer bundled with a JDK.
+5. Run this installer on every agent machine that needs an update.
+
+> To verify which Java version an agent is using, open the [agent summary](viewing-build-agent-details.md), switch to the **Parameters** tab, and check the following parameter values:
+> * `teamcity.agent.jvm.java.home`
+> * `teamcity.agent.jvm.version`
+> * `teamcity.agent.jvm.vendor`
+>
+{style="tip"}
+
+If a build agent runs as a service, make sure the `wrapper.java.command` property in the `<agent_home>/launcher/conf/wrapper.conf` file points to the required Java version. See the following article for the details: [](upgrading-teamcity-server-and-agents.md#Upgrading+the+Build+Agent+Windows+Service+Wrapper).
+
+</procedure>
+
+
+</tab>
+
+
+<tab title="Linux and macOS">
+
+<procedure>
+
+
+To update agent machines, follow the same procedure as you do for the server. Alternatively, you can install an [agent archive that already bundles the required JDK](install-teamcity-agent.md#Available+Agent+Distributions). To do so:
+
+1. Navigate to **Admin | Agent JDKs** in TeamCity UI.
 2. Click **Add JDK** to upload a required Java version.
 3. Once TeamCity downloads the target JDK, a corresponding option will appear under **Agents | Install agent | Agent Distributions with JDK**. Full agent installations include the `/jre` directory. When launched, the agent prioritizes Java from this directory over versions returned by `JAVA_HOME` and `TEAMCITY_JRE` environment variables.
 
@@ -65,7 +104,7 @@ To update agent machines, follow the same procedure. Alternatively, you can inst
 > * `teamcity.agent.jvm.java.home`
 > * `teamcity.agent.jvm.version`
 > * `teamcity.agent.jvm.vendor`
-> 
+>
 {style="tip"}
 
 </procedure>
@@ -74,7 +113,3 @@ To update agent machines, follow the same procedure. Alternatively, you can inst
 
 </tabs>
 
-See the following articles for more information:
-
-* [](how-to.md#Install+Non-Bundled+Version+of+Java)
-* [](configure-java-for-agent.md)

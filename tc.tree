@@ -26,7 +26,6 @@
 	</toc-element>
 	<toc-element toc-title="Installation and Upgrade">
 		<toc-element topic="system-requirements.md"/>
-		<toc-element topic="java-21.md"/>
 		<toc-element topic="supported-platforms-and-environments.md">
 			<toc-element topic="testing-frameworks.md"/>
 			<toc-element topic="code-quality-tools.md"/>
@@ -510,6 +509,7 @@
 			<toc-element topic="build-checkout-directory.md"/>
 		</toc-element>
 		<toc-element topic="how-to.md"/>
+		<toc-element topic="java-21.md"/>
 		<toc-element topic="change.md"/>
 		<toc-element topic="revision.md"/>
 		<toc-element topic="change-state.md"/>

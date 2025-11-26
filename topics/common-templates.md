@@ -84,7 +84,7 @@ Select the required authentication strategy. Depending on the selected strategy,
 
 <snippet id="java-deprecation-warning">
 <warning>
-Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
+Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21. See <a href="java-21.md">this documentation article</a> for upgrade instructions.
 </warning>
 </snippet>
 
