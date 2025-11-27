@@ -60,6 +60,7 @@ To save you from typing long queries with project and configuration details, Tea
     * Your Enterprise server was activated via the [legacy licensing mechanism](manage-teamcity-license.md#Activate+Existing+Legacy+Licenses) (as opposed to linking your [JetBrains Account](manage-teamcity-license.md#Activate+a+License)).
     * Your server runs on a Java version older than Java 17.
     * You are using the classic TeamCity UI instead of [Sakura UI](teamcity-sakura-ui.md).
+    * Your server is deployed in a location that does not permit the usage of JetBrains AI services. See the complete list of supported locations here: [JetBrains AI Service Territory Limitations](https://www.jetbrains.com/legal/docs/terms/jetbrains-ai/service-territory/).
 
 * The AI Assistant currently incorrectly processes questions about queued and virtual (spawned by [](parallel-tests.md) and [](matrix-build.md) features) builds.
 
