@@ -22,6 +22,7 @@
     * Mercurial SCM Client (Windows images only): v6.2.2
     * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS.
 * The default JaCoCo version is now 0.8.8. In addition, version 0.8.13 is now bundled.
+* The bundled Kubernetes plugin was migrated to AWS SDK v2.
 
 ### Known Issues
 {id="known-issues-2025-11"}
