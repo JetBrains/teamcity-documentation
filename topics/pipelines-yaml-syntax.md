@@ -13,64 +13,6 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
 
   "definitions": {
 
-      "dependencies": {
-        "type": "array",
-        "description": "A collection of dependencies that represent pipeline relations with external objects (classic build configurations or other pipelines).",
-        "items": {
-          "anyOf": [
-            {
-              "type": "string",
-              "description": "A simple dependency that references a linked object via its external ID.",
-              "pattern": "^[A-Za-z0-9_]+$"
-            },
-            {
-              "type": "object",
-              "description": "A dependency with additional properties that specify the behavior of linked objects.",
-              "patternProperties": {
-                "^[A-Za-z0-9_]+$": {
-                  "properties": {
-                    "reuse": {
-                      "type": "string",
-                      "enum": [
-                        "none",
-                        "successful",
-                        "successful-or-failed"
-                      ],
-                      "description": "Specifies which of upstream dependency builds (runs) can be reused."
-                    },
-                    "enforce-revisions-synchronisation": {
-                      "type": "boolean",
-                      "description": "Specifies whether the code revisions should be explicitly synchronized."
-                    },
-                    "on-failed-dependency": {
-                      "type": "string",
-                      "enum": [
-                        "run-add-problem",
-                        "run-ignore-problem",
-                        "mark-as-failed-to-start",
-                        "cancel"
-                      ],
-                      "description": "Specifies the default action in case an upstream dependency fails."
-                    },
-                    "on-incomplete-dependency": {
-                      "type": "string",
-                      "enum": [
-                        "run-add-problem",
-                        "run-ignore-problem",
-                        "mark-as-failed-to-start",
-                        "cancel"
-                      ],
-                      "description": "Specifies the default action in case an upstream dependency fails to start."
-                    }
-                  },
-                  "additionalProperties": false
-                }
-              }
-            }
-          ]
-        }
-    },
-
     "files": {
       "title": "Files publication",
       "description": "The collection of job file outputs, including both files published as artifacts and files shared to downstream jobs.",
