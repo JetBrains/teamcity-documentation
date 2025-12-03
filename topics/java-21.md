@@ -15,6 +15,7 @@ Starting with version 2026.1, both the TeamCity server and agents will require J
 > 
 {style="note"}
 
+
 ## Upgrade Instructions
 
 The upgrade process boils down to two essential steps:
@@ -26,7 +27,7 @@ The exact procedure depends on your operating system.
 
 ### Update Server
 
-<tabs>
+<tabs xmlns="">
 
 <tab title="Windows">
 
@@ -113,3 +114,6 @@ To update agent machines, follow the same procedure as you do for the server. Al
 
 </tabs>
 
+## Unattended Java Upgrades
+
+<include from="configure-java-for-agent.md" element-id="unattended-java-upgrades"/>

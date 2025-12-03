@@ -45,3 +45,27 @@ See this article for more information: [How to Install Non-Bundled Version of Ja
 
 
 >In a rare case of updating Java for the process that launches the TeamCity agent, use one of the options for the agent Java upgrade. Another way for an agent started as a Windows service, is to stop the service, change the `wrapper.java.command` variable in `buildAgent\launcher\conf\wrapper.conf` to point to the new `java.exe` binary, and restart the service.
+
+
+
+## Unattended Java Upgrades
+
+<snippet id="unattended-java-upgrades">
+
+If Java was installed via a package manager (`apt-get` on Linux, `Homebrew` or `SDKMAN` on macOS, and so on), it may silently update your Java to the newest available version. Even if this version is supported by TeamCity, it may lead to certain issues. For example, build agents that are already running need to restart; otherwise, they are unable to locate the correct JDK and fail to run their tasks.
+
+To avoid these potential issues, we recommend installing Java and configuring the `JAVA_HOME`and `TEAMCITY_JRE` environment variables manually. For example, you might want to disable [Ubuntu unattended upgrades](https://askubuntu.com/questions/1186492/terminate-unattended-upgrades-or-whatever-is-using-apt-in-ubuntu-18-04-or-later) by running the following commands:
+
+```Bash
+# Check the unattended upgrade status
+systemctl status unattended-upgrades
+# Stop the service
+sudo systemctl stop unattended-upgrades
+# Disable the service
+sudo systemctl disable --now unattended-upgrades
+# Edit the configuration file
+sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+# TODO: Insert or edit the 'APT::Periodic::Unattended-Upgrade "0";' line in the config file
+```
+
+</snippet>

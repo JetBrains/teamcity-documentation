@@ -20,6 +20,10 @@ If you also run a TeamCity agent from the [`<TeamCity Home>`](teamcity-home-dire
 
 >If you use a different Java version, specified via an environment variable (`TEAMCITY_JRE`, `JRE_HOME`, or `JAVA_HOME`), make sure it is available for the process launching the TeamCity server (it is recommended to set a global OS environment variable). The variable should point to the home directory of the installed JRE or JVM (Java SDK) respectively.
 
+### Unattended Java Upgrades
+
+<include from="configure-java-for-agent.md" element-id="unattended-java-upgrades"/>
+
 ## Update from 32-bit to 64-bit Java
 {instance="tc"}
 
