@@ -52,7 +52,7 @@ See this article for more information: [How to Install Non-Bundled Version of Ja
 
 <snippet id="unattended-java-upgrades">
 
-If Java was installed via a package manager (`apt-get` on Linux, `Homebrew` or `SDKMAN` on macOS, and so on), it may silently update your Java to the newest available version. Even if this version is supported by TeamCity, it may lead to certain issues. For example, build agents that are already running need to restart; otherwise, they are unable to locate the correct JDK and fail to run their tasks.
+If Java was installed via a package manager (for example, the `apt-get` on Linux), it may silently update your Java to the newest available version. Even if this version is supported by TeamCity, it may lead to certain issues. For example, build agents that are already running need to restart; otherwise, they are unable to locate the correct JDK and fail to run their tasks.
 
 To avoid these potential issues, we recommend installing Java and configuring the `JAVA_HOME`and `TEAMCITY_JRE` environment variables manually. For example, you might want to disable [Ubuntu unattended upgrades](https://askubuntu.com/questions/1186492/terminate-unattended-upgrades-or-whatever-is-using-apt-in-ubuntu-18-04-or-later) by running the following commands:
 
