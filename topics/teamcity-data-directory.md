@@ -78,22 +78,22 @@ To set up a repository that should store your server's configuration files:
 
 <img src="dk-settings-repo.png" width="706" alt="Settings repository"/>
 
-1. Go to **Administration | Configs Repository**.
-2. Tick **Commit changes in configuration files to the configs repository**.
-3. Enter the path to your repository in the SSH format.
-    > Configuration files [may contain](teamcity-configuration-and-maintenance.md#encryption-settings) scrambled passwords, database parameters, and other sensitive data that must be stored securely. Therefore, use a local Git repository on the same machine as your TeamCity server, or an external Git repository accessible only to your TeamCity server administrators.
-    > 
-    {style="warning"}
-4. Enter a fully specified name (`heads/refs/<name>`) of the repository branch that should store configuration files.
-5. Upload a private key to allow TeamCity to access your repository via SSH.
+1. Secure your data directory so that configuration files do not expose any sensitive data.
+    * Set up a custom [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) to protect passwords, secrets, SSH keys, and other sensitive data. We recommend using the `TEAMCITY_ENCRYPTION_KEY` environment variable for this.
+    * Launch the re-encryption process from the **Administration | Global Settings** page. This action ensures your new custom encryption key is applied to all existing sensitive values.
+    * Move external database credentials from the `config/database.properties` file to [corresponding environment variables](set-up-external-database.md#Environment+Variables). TeamCity does not encrypt this file since it needs database connection before it fully launches, so it's best to conceal these valeus by moving them to env vars.
+
+    In addition, make sure the Git repository where the config files are stored is accessible only by trusted users.
+
+2. Go to **Administration | Configs Repository**.
+3. Tick **Commit changes in configuration files to the configs repository**.
+4. Enter the path to your repository in the SSH format.
+5. Enter a full name (`heads/refs/<name>`) of the repository branch that should store configuration files.
+6. Upload a private key to allow TeamCity to access your repository via SSH.
 
 If you're using the [Autoincrementer plugin](https://plugins.jetbrains.com/plugin/9057-autoincrementer), we recommend that you update it to the latest version.
 
-> Set up a custom [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) to protect sensitive data committed to a remote repository.
-> 
-> TeamCity does not encrypt the contents of the `config/database.properties` file. To conceal sensitive data that can be stored in `connectionUrl`, `connectionProperties.user`, and `connectionProperties.password` configuration properties, replace them with [related environment variables](set-up-external-database.md#Environment+Variables) when setting up a database connection.
-> 
-{type="warning"}
+
 
 
 
