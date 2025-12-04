@@ -4,14 +4,6 @@
 The _Qodana_ build runner lets you add static analysis to your build chain. 
 It is based on the [Qodana](https://www.jetbrains.com/help/qodana/teamcity.html) code quality platform.
 
-<warning>
-
-*Current limitations*
-
-The Qodana runner requires a TeamCity agent to be deployed on a non-Windows OS with a Docker server installed.
-
-</warning>
-
 > See the following Qodana help article for the detailed setup instructions: [Integration with TeamCity](https://www.jetbrains.com/help/qodana/teamcity.html).
 > 
 {style="note"}
