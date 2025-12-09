@@ -47,6 +47,9 @@ To save you from typing long queries with project and configuration details, Tea
 
 ## Limitations and Special Notes
 
+* We continually work to improve the AI Assistant’s response quality and provide the most accurate context for its underlying model. Still, the inherent limitations of today’s generative AI models mean that occasional inaccuracies or information hallucinations are possible. If a response seems uncertain or inconsistent, consider rephrasing your question or checking it against a reliable source. Please treat the AI Assistant as a helpful aid, not a sole source of truth, and verify its suggestions when handling mission-critical tasks.
+{help-id="ai-errors-warning"}
+
 * The Assistant does not currently support [pipelines](create-and-edit-pipelines.md) and can only analyze and troubleshoot classic [build configurations](creating-and-editing-build-configurations.md).
 
 * Past conversations with the AI Assistant are not saved. When you start a new chat (via the "**+**" button in the chat window's top-right corner), you will lose access to the previous one.
