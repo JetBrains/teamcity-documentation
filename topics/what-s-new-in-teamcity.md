@@ -23,7 +23,7 @@ See the [TeamCity 2025.11 release notes](teamcity-2025-11-release-notes.md) arti
 
 ## Roadmap
 
-See the [TeamCity roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) to learn about future updates.
+See the [TeamCity Roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) abd [](pipelines-roadmap.md) articles to learn about future updates.
 
 
 ## Update TeamCity On-Premises
