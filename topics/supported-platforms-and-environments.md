@@ -601,7 +601,7 @@ Compatible with IntelliJ IDEA 2019.3 - 2021.2.3 (Ultimate and Community editions
 
 [Microsoft Visual Studio](visual-studio-addin.md)
 
-</td><td>2010, 2012, 2013, 2015, 2017, 2019</td><td>.NET Framework</td></tr>
+</td><td>2010, 2012, 2013, 2015, 2017, 2019, 2022</td><td>.NET Framework</td></tr>
 
 </table>
 
