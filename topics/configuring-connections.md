@@ -21,6 +21,9 @@ Without a configured connection, you would require to provide credentials for ev
 Connections in this category store information needed to access services other than VCS providers and are used for purposes unrelated to retrieving remote repository sources. For example:
 
 * [Amazon Web Services](#AmazonWebServices) connection allows TeamCity to manage AWS [cloud agents](teamcity-integration-with-cloud-solutions.md) and store build artifacts in [S3 buckets](storing-build-artifacts-in-amazon-s3.md).
+{instance="tc"}
+* [Amazon Web Services](#AmazonWebServices) connection allows TeamCity to manage AWS [cloud agents](teamcity-integration-with-cloud-solutions.md).
+  {instance="tcc"}
 * [Google](#Google) connection is used by the [corresponding authentication module](configuring-authentication-settings.md#Google) to allow users log into TeamCity using their Google accounts.
 * [Slack](#Slack) connection is utilized to set up Slack notifications and [send custom Slack messages from build steps](service-messages.md#Sending+Custom+Slack+Messages).
 * [HashiCorp Vault](hashicorp-vault.md) connection allows you to create remote parameters that retrieve their values from a secrets vault.

@@ -10,7 +10,14 @@ The TeamCity AI Assistant is your 24/7 companion for debugging failed workflows,
 AI Assistant is equipped with a set of tools for retrieving information about the current TeamCity installation and its builds. It offers general guidance (for example, “How do I configure the TeamCity NuGet feed?” or “How do I set up pull requests?”) and troubleshooting help for specific configurations and builds (for instance, “Why did build #17 in my SampleApp configuration fail?”).
 
 **Is it free?**<br/>
-This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license. It is not available for Professional licenses or Enterprise licenses with the expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions). See the [](#Limitations+and+Special+Notes) section for more information.<br/>
+This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license. It is not available for Professional licenses or Enterprise licenses with the expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions). See the [](#Limitations+and+Special+Notes) section for more information.
+{instance="tc"}
+<br/>
+
+**Is it free?**<br/>
+This feature may become a paid option in future releases but will remain free throughout the Early Access Program.
+{instance="tcc"}
+<br/>
 
 **Are there any additional requirements?**<br/>
 AI Assistant requires access to `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources to obtain authorization tokens, send user prompts and receive responses, publish usage statistics (if enabled), and more.
@@ -60,7 +67,9 @@ To save you from typing long queries with project and configuration details, Tea
 
     * You are running a TeamCity Professional server (including those that have active additional agent licenses).
     * The [maintenance period](licensing-policy.md#Valid+TeamCity+Versions) for your Enterprise license has expired.
+    {instance="tc"}
     * Your server runs on a Java version older than Java 17.
+    {instance="tc"}
     * You are using the classic TeamCity UI instead of [Sakura UI](teamcity-sakura-ui.md).
     * Your server is deployed in a location that does not permit the usage of JetBrains AI services. See the complete list of supported locations here: [JetBrains AI Service Territory Limitations](https://www.jetbrains.com/legal/docs/terms/jetbrains-ai/service-territory/). We expect to enable AI Assistant for China-based servers in future releases. 
 
