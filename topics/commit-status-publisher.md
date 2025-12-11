@@ -30,13 +30,39 @@ Commit Status Publisher supports the GitHub URL in the following format:
 * For GitHub Enterprise: `http[s]://<host>[:<port>]/api/v3`
 
 For connection, select one of the available authentication types:
-* **Access Token** — use a personal access token or obtain a token through an OAuth connection. The token must have the following scopes:
+* **Access Token** — use a personal access token or obtain a token through an OAuth connection. 
+  
+    If you have a [configured OAuth connection](configuring-connections.md#GitHub) to GitHub, you can click the magic wand button to let TeamCity automatically retrieve the corresponding access token.
+
+    <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
+
+    Otherwise, if you insert a token manually issued on the GitHub side, make sure it has the following permissions or scopes:
+
+    <deflist type="full">
+    
+    <def title="Classic GitHub tokens">
+    
     * for public repositories: `public_repo` and `repo:status`
     * for private repositories: `repo`
+    
+    See also: [Scopes for OAuth apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps)
+    
+    </def>
+    
+    <def title="Fine-grained tokens">
+    
+    Add the `Commit Statuses` permission with the "Read and write" access type.
+    
+    This permission can only be added for tokens with the "All repositories" or "Only select repositories" access type.
+    
+    See also: [Permissions required for fine-grained personal access tokens](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens).
+    
+    </def>
+    
+    </deflist>
+
+
   
-  If you have a [configured OAuth connection](configuring-connections.md#GitHub) to GitHub, you can click the magic wand button to let TeamCity automatically retrieve the corresponding access token.
-  
-  <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
   
 * **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can refreshable access tokens. <include from="common-templates.md" element-id="rat-single"/>
 
