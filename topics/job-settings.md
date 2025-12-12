@@ -229,7 +229,7 @@ jobs:
 This section explains how jobs can share the results of their runs, including calculated values and generated files.
 
 ### Files
-{help-id file="pipeline-file-outputs"}
+{help-id="pipeline-file-outputs"}
 
 Files shared by a job can serve as artifacts, internal files for downstream jobs, or both.
 
@@ -339,7 +339,7 @@ Despite the almost identical step scripts and `files-publication` rules, the res
 
 
 ### Output parameters
-{help-id file="pipeline-parameter-outputs"}
+{help-id="pipeline-parameter-outputs"}
 
 Jobs can work with two types of parameters: **input** and **output**.
 
