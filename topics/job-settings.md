@@ -1,3 +1,8 @@
+[//]: # (title: Job Settings)
+[//]: # (help-id: Job Settings)
+
+<show-structure for="chapter" depth="2"/>
+
 # Job Settings
 
 Jobs contain individual build steps that run sequentially. This article covers common settings that control how the sequence is executed.
@@ -224,6 +229,7 @@ jobs:
 This section explains how jobs can share the results of their runs, including calculated values and generated files.
 
 ### Files
+{help-id file="pipeline-file-outputs"}
 
 Files shared by a job can serve as artifacts, internal files for downstream jobs, or both.
 
@@ -233,18 +239,26 @@ Files shared by a job can serve as artifacts, internal files for downstream jobs
 
 Artifacts are files displayed on the **Artifacts** tab of the run results page. Users with permission to view the project can download these files to local storage.
 
+You can view artifacts in two ways:
+
+* On the run results page, open the **Artifacts** tab to see all artifacts published by jobs in the pipeline.
+
+* From the same page, select a job to open its side panel, then switch to the **Artifacts** tab to view artifacts produced by that specific job.
+
+
 <img src="dk-pipeline-artifact.png" width="706" alt="Job artifacts tab"/>
+
 
 </def>
 
 <def title="Shared files">
 
-Shared files are passed down the pipeline to subsequent jobs. These are typically internal files or files that are not yet finalized. In either case, they are not meant to appear on the **Artifacts** tab.
+Shared files are passed down the pipeline to subsequent jobs. These are typically internal files or files that are not yet finalized.
 
-> For debugging, TeamCity still displays shared files on the **Artifacts** tab, packed into a hidden .shared_files.zip archive.
-> 
-> <img src="dk-pipelines-shared-files.png" width="706" alt="Shared files visible in the artifacts tab"/>
-> 
+Unlike artifacts, shared files are not displayed in the main **Artifacts** tab of the build results page. However, they show up on the **Artifacts** tab of the job side panel, packed into a hidden .shared_files.zip archive.
+
+<img src="dk-pipelines-shared-files.png" width="706" alt="Shared files visible in the artifacts tab"/>
+
 {style="tip"}
 
 The YAML example below shows one job that creates and modifies a file, and a second job that imports the file and prints its contents. "Job 2" then publishes the file as an artifact.
@@ -288,11 +302,44 @@ These two types are not mutually exclusive: when adding an output file, you can 
 <img src="dk-shared-artifact-file.png" width="706" alt="Published artifact"/>
 
 
+Note that shared files retain their parent directory hierarchy, whereas artifacts do not. The following sample illustrates a job that produces two files, both in their related folders.
+
+```yaml
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        script-content: |-
+          mkdir ./artifacts
+          cd artifacts
+          touch artifact.txt
+          echo "This file is published as artifact" >> artifact.txt
+      - type: script
+        script-content: |-
+          mkdir ./sharedfiles
+          cd sharedfiles
+          touch shared.txt
+          echo "This is a shared file" >> shared.txt
+    files-publication:
+      - path: sharedfiles/shared.txt
+        share-with-jobs: true
+        publish-artifact: false
+      - path: artifacts/artifact.txt
+        share-with-jobs: false
+        publish-artifact: true
+```
+
+Despite the almost identical step scripts and `files-publication` rules, the results slightly differ. Shared files are placed into the hidden ".shared_files.zip" archive along with their parent folders, whereas artifacts are grouped under the "publish" directory as is.
+
+<img src="dk-pipelines-aritfacts-folder-retention.png" width="706" alt="Folder retention for artifacts and shared files"/>
+
 > In classic TeamCity build configurations, any file that needs to be shared with other configurations must be published as an [artifact](build-artifact.md). In addition, configurations need [artifact dependencies](artifact-dependencies.md) to do this.
 {style="note"}
 
 
 ### Output parameters
+{help-id file="pipeline-parameter-outputs"}
 
 Jobs can work with two types of parameters: **input** and **output**.
 
