@@ -6,7 +6,7 @@
 
 * Linux and macOS agents no longer seek for a x86 version of Java if the `TEAMCITY_JRE` environment variable or `<Agent home>/jre` directory store a suitable Java version.
 * The migration date for Java 21 is now finalized: starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
-* TeamCity no longer tracks file changes in the [`DataDirectory`](teamcity-data-directory.md)`/config/projects/_Root/plugins/metarunners` folder. This means means dynamically created and edited [Recipes](working-with-meta-runner.md) are no longer supported, and you should use TeamCity UI for these operations. See the [TW-97816](https://youtrack.jetbrains.com/issue/TW-97816) YouTrack ticket for more information and a suggested workaround.
+* TeamCity no longer tracks file changes in the [`DataDirectory`](teamcity-data-directory.md)`/config/projects/_Root/plugins/metarunners` folder. This means you can no longer update existing and create new [Recipes](working-with-meta-runner.md) by editing their configuration files directly in the file system. See the [TW-97816](https://youtrack.jetbrains.com/issue/TW-97816) YouTrack ticket for more information and a suggested workaround.
 * <include from="common-templates.md" element-id="maven-2-deprecation"/>
 
 ### Bundled Tools Updates
