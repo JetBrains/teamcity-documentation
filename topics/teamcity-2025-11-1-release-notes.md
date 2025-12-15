@@ -37,6 +37,7 @@
 * [**TW-94903**](https://youtrack.jetbrains.com/issue/TW-94903) — Cancelling a build during a checkout may cause 'Cannot read file `C:\Users\builduser\.config\jgit\config` failures and corrupted Git mirrors
 * [**TW-93643**](https://youtrack.jetbrains.com/issue/TW-93643) — Microsoft SQL Server Management Studio (SSMS) MSBuild is picked over Visual Studios Build Tools MSBuild
 * [**TW-97590**](https://youtrack.jetbrains.com/issue/TW-97590) — Quick switch build configuration settings not working when pipelines are enabled
+* [**TW-97749**](https://youtrack.jetbrains.com/issue/TW-97749) — Restore inline visibility of build comments without requiring an extra click
 
 ### Pipeline Enhancements
 
