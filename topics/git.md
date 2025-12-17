@@ -416,7 +416,7 @@ teamcity.git.https.credentials.<ALIAS>.password = 081ef11uh
 
 * We recommend using Git LFS version 2.12.1 or later as earlier versions come with a [vulnerability exploit](https://github.com/git-lfs/git-lfs/security/advisories/GHSA-4g4p-42wc-9f3m).
 * TeamCity supports Git LFS only for the [agent-side checkout](vcs-checkout-mode.md).
-* SSH protocol is not supported for accessing submodule repositories and LFS files.
+* When using a true LFS architecture with separate LFS object storages, TeamCity VCS roots must use HTTPS authentication; SSH is not supported. This limitation does not apply to co-located LFS storages, where LFS objects reside on the same filesystem or storage backend as Git repositories.
 
 ## Internal Properties
 {id="internalProperties" help-id="Internal Properties" instance="tc"}
