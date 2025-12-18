@@ -45,7 +45,7 @@
 * [**TW-96109**](https://youtrack.jetbrains.com/issue/TW-96109) — Trends view cannot be opened with error 404, if there are pipelines on the server
 * [**TW-96939**](https://youtrack.jetbrains.com/issue/TW-96939) — Original imported transitive parameter is used in jobs for overriden parameters
 * [**TW-97003**](https://youtrack.jetbrains.com/issue/TW-97003) — Pipeline that has failed to start cannot show an error
-* [**TW-97124**](https://youtrack.jetbrains.com/issue/TW-97124) — New Pull Request doesn't trigger the run for a last PR (builds and pipelines)
+* [**TW-97124**](https://youtrack.jetbrains.com/issue/TW-97124) — Webhooks with pull requests: New pull request doesn't trigger the run for the last PR (builds and pipelines)
 * [**TW-96659**](https://youtrack.jetbrains.com/issue/TW-96659) — Autocomplete pop-up is not scrollable with more than N elements
 * [**TW-97354**](https://youtrack.jetbrains.com/issue/TW-97354) — Health report about PR branches in the VCS trigger for pipelines, part 2
 * [**TW-97026**](https://youtrack.jetbrains.com/issue/TW-97026) — Imported Parameters: Suggestions in steps show all parameters from parent, not the imported ones
