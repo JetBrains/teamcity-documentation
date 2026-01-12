@@ -1,6 +1,8 @@
 [//]: # (title: Upgrading TeamCity Server and Agents)
 [//]: # (help-id: Upgrading TeamCity Server and Agents;Upgrade)
 
+<show-structure for="chapter" depth="2"/>
+
 Your TeamCity Cloud instance is kept to date automatically. We upgrade all Cloud instances during the week following each major and minor release. The upgrade occurs in the least loaded server time. The duration of upgrade depends on the size of your instance.
 {instance="tcc"}
 
@@ -129,6 +131,7 @@ Other limitations of the automatic update:
 * The Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all the TeamCity installation files might be deleted.
 
 ### Manual Update
+{id="Manual+Update" help-id="Upgrade-ManualUpdate"}
 
 <anchor name="winUpgrading"/>
 
