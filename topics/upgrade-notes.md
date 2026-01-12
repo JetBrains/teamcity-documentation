@@ -1,6 +1,25 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11 to 2025.11.1
+{id="2025.11.1"}
+
+### Known Issues
+{id="known-issues-2025-11-1"}
+
+* If a TeamCity agent runs a Docker container in a background, builds that publish artifacts via [service messages](service-messages.md) launched on this agent may freeze.
+
+    Related YouTrack ticket: [TW-98084](https://youtrack.jetbrains.com/issue/TW-98084/A-build-hangs-on-FlushArtifactsStage-stage).
+
+* Builds running test suites that mix Java-style test names (for example, `suite.package.class.method`) with non-Java names (`myTest`) may run as a single batch, ignoring the [](parallel-tests.md) build feature and firing the `IllegalArgumentException: Comparison method violates its general contract` error.
+
+    Related YouTrack ticket: [TW-98073](https://youtrack.jetbrains.com/issue/TW-98073).
+
+* If a build configuration explicitly defines the `teamcity.pullRequest.source.branch` and `teamcity.pullRequest.target.branch` parameters, they report empty or incorrect values.
+
+    Related YouTrack ticket: [TW-98089](https://youtrack.jetbrains.com/issue/TW-98089).
+
+
 ## Changes from 2025.07.3 to 2025.11
 {id="2025.11"}
 
@@ -8,6 +27,7 @@
 * The migration date for Java 21 is now finalized: starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
 * TeamCity no longer tracks file changes in the [`DataDirectory`](teamcity-data-directory.md)`/config/projects/_Root/plugins/metarunners` folder. This means you can no longer update existing and create new [Recipes](working-with-meta-runner.md) by editing their configuration files directly in the file system. See the [TW-97816](https://youtrack.jetbrains.com/issue/TW-97816) YouTrack ticket for more information and a suggested workaround.
 * <include from="common-templates.md" element-id="maven-2-deprecation"/>
+
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-11"}
@@ -89,7 +109,7 @@ template:
       - name: template-container # see the limitations section
         image: johndoe/custom_agent_image:latest
         resources:
-          # ...
+        # ...
         env:
           - name: foo
             value: bar
@@ -128,7 +148,7 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 #### Other issues
 
 * TeamCity instances running on IIS servers can return 404 (Network Error) when loading a page. As a workaround, set the `maxQueryStringLength` and/or `maxQueryString` properties of your IIS server to **4000** characters and gradually raise them if the issue still persists. See these links for more information: [Content Missing from TeamCity UI](https://www.jetbrains.com/help/teamcity/known-issues.html#Content+Missing+from+TeamCity+UI) | [TW-94891](https://youtrack.jetbrains.com/issue/TW-94891).
- {instance="tc"}
+  {instance="tc"}
 
 * Large TeamCity instances with a huge number of projects may take longer than usual to process the 2025.07 update. Please avoid restarting your server until the upgrade is complete.
 
@@ -186,7 +206,7 @@ No potential breaking changes.
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2024-12-1"}
 
-* The Perforce P4 (Helix Core) client was updated to version 2022.2-2693782 in Agent and Server Docker images. 
+* The Perforce P4 (Helix Core) client was updated to version 2022.2-2693782 in Agent and Server Docker images.
 * The Git LFS version was bumped to 3.6.1 in Agent and Server Docker images.
 * The bundled Tomcat was updated to version 9.0.98.
 
@@ -204,26 +224,26 @@ No potential breaking changes.
 
 * The default **Project Developer** [role](managing-users-and-roles.md) now includes the **View project agents details** permission instead of **View agent details**. This update ensures permissions align with roles, preventing project developers from accessing agent details outside their project pools.
 * The **.NET build runners support** plugin (`/plugins/dotNetRunners.zip`) is no longer bundled with TeamCity. The following build steps will continue working on existing TeamCity servers, but will be unavailable for newly installed instances:
-  * NUnit Legacy
-  * NAnt
-  * .NET Process Runner
-  * MSpec
-  * Visual Studio (sln)
-  * Visual Studio 2003
+    * NUnit Legacy
+    * NAnt
+    * .NET Process Runner
+    * MSpec
+    * Visual Studio (sln)
+    * Visual Studio 2003
 <!--* TeamCity now uses the updated K2 compiler to compile Kotlin scripts. See the [K2 migration guide](https://kotlinlang.org/docs/k2-compiler-migration-guide.html) and the [Upgrading DSL](upgrading-dsl.md#dsl202411) article for more information.-->
 * The [](artifacts-migration-tool.md) now supports Azure cloud storages in addition to AWS S3 buckets. To keep up with the actual list of supported storages, certain configuration properties were renamed.
-  * `teamcity.storage.migration.s3.threadCount` was renamed to `teamcity.storage.migration.copying.threadCount`
-  * `property teamcity.storage.migration.s3.upload.numberOfRetries` was renamed to `teamcity.storage.migration.upload.numberOfRetries`
-  * `teamcity.storage.migration.s3.upload.retryDelayMs` was renamed to `teamcity.storage.migration.upload.retryDelayMs`
+    * `teamcity.storage.migration.s3.threadCount` was renamed to `teamcity.storage.migration.copying.threadCount`
+    * `property teamcity.storage.migration.s3.upload.numberOfRetries` was renamed to `teamcity.storage.migration.upload.numberOfRetries`
+    * `teamcity.storage.migration.s3.upload.retryDelayMs` was renamed to `teamcity.storage.migration.upload.retryDelayMs`
 
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2024-12"}
 
 * Agent and server Docker image updates:
-  * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 27.3.1 in all [Linux agent images](agent-docker-images.md).
-  * The Linux image in TeamCity server Docker containers was updated to version 22.04 (LTS).
-  * The bundled Git was updated to version 2.47.1 in both Server and Agent Docker images.
-  * The Git LFS version was bumped to 3.0.2.
+    * [Docker Engine](https://endoflife.date/docker-engine) (Docker CE and Docker CE CLI) were updated to version 27.3.1 in all [Linux agent images](agent-docker-images.md).
+    * The Linux image in TeamCity server Docker containers was updated to version 22.04 (LTS).
+    * The bundled Git was updated to version 2.47.1 in both Server and Agent Docker images.
+    * The Git LFS version was bumped to 3.0.2.
 * <include from="upgrading-dsl.md" element-id="kotllin-dsl202412"/>
 
 ### Known Issues
@@ -300,10 +320,10 @@ No potential breaking changes.
 
 * The [](commit-status-publisher.md) build feature configured for [Perforce Helix Swarm](integrating-with-helix-swarm.md) no longer posts intermediate build statuses (queued, started, canceled) to the Swarm review's **Comments** tab. Instead, the feature announces only the final build status (successful or failed). You can additionally uncheck the **Code Review Comments** option in the build feature's settings dialog to disable these remaining status notifications as well (in this case, the Commit Status Publisher will only update the review's **Tests** tab).
 * Starting with version 2023.03, versions of dotCover Command Line Tools that are no longer supported by the JetBrains dotCover team are explicitly marked as "deprecated".
-    
+
     <img src="dk-deprecated-dotnetcli.png" width="706" alt="Deprecated dotNet Cli versions"/>
-    
-    Although these versions will remain functional, we encourage you to migrate to non-deprecated versions instead. Note that you should also install .NET Framework 4.7.2+ or .NET Core 3.1+ on agent machines for the non-deprecated versions to operate.
+
+  Although these versions will remain functional, we encourage you to migrate to non-deprecated versions instead. Note that you should also install .NET Framework 4.7.2+ or .NET Core 3.1+ on agent machines for the non-deprecated versions to operate.
 
 * When [installing custom agent tools](installing-agent-tools.md), editing the `teamcity-plugin.xml` file to [set executable bits](https://plugins.jetbrains.com/docs/teamcity/plugins-packaging.html#Making+File+Executable) is no longer required. Instead, make sure that the archived files already contain all required file permissions. In this case, files remain executable when the tool archive is unpacked on the agent machine.
 
@@ -318,9 +338,9 @@ These changes and their potential effects on your existing projects include the 
 
 * All Maven versions that are not in use by Maven [steps](maven.md) and [triggers](configuring-maven-triggers.md) are removed. Maven versions required by existing configurations will be downloaded and installed when your TeamCity server first starts. If the server cannot establish connection with [https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven), you will need to manually [install the missing tools](installing-agent-tools.md). If no existing configurations are using Maven, only the latest version 3.9.6 will be installed.
 
-    > You can add the `teamcity.tools.bundled.maven.installOnStartup=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to prevent TeamCity from lazy-loading Maven tools.
-    > 
-    {style="tip"}
+  > You can add the `teamcity.tools.bundled.maven.installOnStartup=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to prevent TeamCity from lazy-loading Maven tools.
+  >
+  {style="tip"}
 
 * If there are no existing configurations that utilize the "Default" version of Maven, version 3.9.6 becomes the new "Default". Otherwise, the "Default" option will keep pointing to the same Maven tool as before (for example, 3.6.3).
 * If an existing build configuration utilizes manually installed Maven 3.9.6 and [stores its settings in VCS](storing-project-settings-in-version-control.md), editing this configuration generates a [patch](kotlin-dsl.md#Edit+Project+Settings+via+Web+UI) that changes the value of the `mavenVersion` parameter from `custom` to `bundled_3_9_6`.
@@ -415,7 +435,7 @@ See this article for the complete list of fixed issues: [](teamcity-2023-11-2-re
 * Starting with this release, the .NET SDK version bundled with the TeamCity Agent Docker images is aligned with the Microsoft LTS version current at the time of the TeamCity release.
   > If you need an earlier version of .NET SDK (for example, .NET Core 3.1 or .NET SDK 5.0) or a later version (for example, .NET SDK 7.0), we recommend that you build your own Docker image using the provided TeamCity Minimal Agent Docker base image (`jetbrains/teamcity-minimal-agent`).
   > See the [README](https://github.com/JetBrains/teamcity-docker-images/tree/master/custom#readme) for custom agent images in the [`teamcity-docker-images`](https://github.com/JetBrains/teamcity-docker-images) repository for more details.
-  > 
+  >
   {style="note"}
 
 * The bundled Tomcat was updated to version 9.0.80.
@@ -461,9 +481,9 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 * At TeamCity, we are fully dedicated to bolstering the comprehensive security of our platform, and we consistently enhance our product to realize this commitment.
 
-    In version 2023.11, we have fixed certain issues related to the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) feature. As a side effect of these changes, some users can experience infinite redirect loops (`ERR_TOO_MANY_REDIRECTS`) when attempting to access build artifacts. To fix this issue, make sure your proxy server provides valid `X-Forwarded-Host` headers (see the [](configuring-proxy-server.md) article for the configuration examples).
+  In version 2023.11, we have fixed certain issues related to the [artifacts' domain isolation](teamcity-configuration-and-maintenance.md#artifacts-domain-isolation) feature. As a side effect of these changes, some users can experience infinite redirect loops (`ERR_TOO_MANY_REDIRECTS`) when attempting to access build artifacts. To fix this issue, make sure your proxy server provides valid `X-Forwarded-Host` headers (see the [](configuring-proxy-server.md) article for the configuration examples).
 
-    You can also roll back these changes by adding the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
+  You can also roll back these changes by adding the `teamcity.internal.domainIsolation.serveArtifactsOnlyFromArtifactsUrl=false` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). Be advised that the internal property disables the aforementioned security update, thus lowers the TeamCity server security.
 
 * If your TeamCity username includes encoded special symbols (for example, emoji), you may be unable to log in to TeamCity via the [](intellij-platform-plugin.md). See the following ticket for more information: [TW-85284](https://youtrack.jetbrains.com/issue/TW-85284/Unable-to-log-in-from-the-IntelliJ-IDEA-TeamCity-plugin).
 
@@ -471,7 +491,7 @@ The following updates have been made to the Azure DevOps OAuth 2.0, Bitbucket Cl
 
 * *(fixed in the 2023.11.1 bugfix update)* LDAP synchronization currently fetches first 1000 users. As a workaround, set the `teamcity.ldap.search.pageSize` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to a larger value. See this YouTrack ticket for the resolution progress: [TW-85444](https://youtrack.jetbrains.com/issue/TW-85444/LDAP-sync-retrieves-only-1000-users).
 
-* *(fixed in the 2023.11.1 bugfix update)* [](commit-status-publisher.md) cannot publish build statuses to Bitbucket Cloud if the parent TeamCity build configuration has an ID longer than 40 characters. See this issue for more information: [TW-85393](https://youtrack.jetbrains.com/issue/TW-85393). 
+* *(fixed in the 2023.11.1 bugfix update)* [](commit-status-publisher.md) cannot publish build statuses to Bitbucket Cloud if the parent TeamCity build configuration has an ID longer than 40 characters. See this issue for more information: [TW-85393](https://youtrack.jetbrains.com/issue/TW-85393).
 
 
 
