@@ -131,9 +131,6 @@ Other limitations of the automatic update:
 * The Windows uninstaller is not updated during the upgrade, so after several updates, old TeamCity version will still be noted in Windows lists. During the uninstallation, not all the TeamCity installation files might be deleted.
 
 ### Manual Update
-{id="Manual+Update" help-id="Upgrade-ManualUpdate"}
-
-<anchor name="winUpgrading"/>
 
 #### Using Windows Installer
 
