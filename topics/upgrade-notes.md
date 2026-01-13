@@ -72,6 +72,10 @@
 
     Related YouTrack ticket: [TW-97967](https://youtrack.jetbrains.com/issue/TW-97967).
 
+* Pipelines triggers added after the initially created schedule trigger reset its branch filter settings.
+
+    Related YouTrack ticket: [TW-98013](https://youtrack.jetbrains.com/issue/TW-98013).
+
 
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
