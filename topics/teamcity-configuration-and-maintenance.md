@@ -249,7 +249,7 @@ When you generate or enter a new custom encryption key, it becomes the default f
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity protects all sensitive data ([secret values](typed-parameters.md#Create+a+Secret), [SSH keys](ssh-keys-management.md), licence product keys, and more) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+TeamCity protects all sensitive data stored in configuration files ([secret values](typed-parameters.md#Create+a+Secret), [SSH keys](ssh-keys-management.md), licence product keys, and more) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
 
 <deflist type="full">
 
@@ -342,6 +342,12 @@ To resolve this issue and start the server:
 
 * (Recommended) Restore the missing encryption keys either in the `encryption-config.xml` file or the `TEAMCITY_ENCRYPTION_KEYS` environment variable.
 * Alternatively, remove the `encryptionKeysHashes` attribute from `encryption-config.xml` to clear the list of known keys. Note that any data encrypted with the missing keys will become unavailable, and users will need to re-enter related values (such as SSH keys or parameter-based passwords).
+
+
+### Special Notes
+
+* TeamCity encrypts only configuration files. Other sensitive data (for example, [database credentials](set-up-external-database.md#Environment+Variables)) should be secured separately.
+* If your encryption key was leaked, changing the TeamCity encryption key alone may be insufficient, as the attacker could use the compromised key to decrypt sensitive data. We recommend rotating all credentials in addition to updating the encryption key.
 
 
 ## Artifacts' Domain Isolation
