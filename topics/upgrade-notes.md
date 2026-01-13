@@ -9,15 +9,19 @@
 
 * If a TeamCity agent runs a Docker container in a background, builds that publish artifacts via [service messages](service-messages.md) launched on this agent may freeze.
 
-    Related YouTrack ticket: [TW-98084](https://youtrack.jetbrains.com/issue/TW-98084/A-build-hangs-on-FlushArtifactsStage-stage).
+  Related YouTrack ticket: [TW-98084](https://youtrack.jetbrains.com/issue/TW-98084/A-build-hangs-on-FlushArtifactsStage-stage).
 
-* Builds running test suites that mix Java-style test names (for example, `suite.package.class.method`) with non-Java names (`myTest`) may run as a single batch, ignoring the [](parallel-tests.md) build feature and firing the `IllegalArgumentException: Comparison method violates its general contract` error.
+* Builds running test suites that mix Java-style test names (for example, `suite:package.class.method`) with non-Java names (`myTest`) may run as a single batch, ignoring the [](parallel-tests.md) build feature and firing the `IllegalArgumentException: Comparison method violates its general contract` error.
 
-    Related YouTrack ticket: [TW-98073](https://youtrack.jetbrains.com/issue/TW-98073).
+  Related YouTrack ticket: [TW-98073](https://youtrack.jetbrains.com/issue/TW-98073).
 
 * If a build configuration explicitly defines the `teamcity.pullRequest.source.branch` and `teamcity.pullRequest.target.branch` parameters, they report empty or incorrect values.
 
-    Related YouTrack ticket: [TW-98089](https://youtrack.jetbrains.com/issue/TW-98089).
+  Related YouTrack ticket: [TW-98089](https://youtrack.jetbrains.com/issue/TW-98089).
+
+* Pipelines fail to collect new changes from non-primary repositories added via a GitHub App connection due to the incorrect auth token scope.
+
+    Related YouTrack ticket: [TW-97945](https://youtrack.jetbrains.com/issue/TW-97945).
 
 
 ## Changes from 2025.07.3 to 2025.11
@@ -51,12 +55,21 @@
 * If TeamCity server is using [native Git](git.md#Native+Git+for+VCS-related+operations+on+the+server), background Git VCS root operations consume significantly more CPU resources than in previous versions. We expect to resolve this issue in the 2025.11.1 bug-fix release. In the meantime, you can switch back to [JGit](git.md#Native+Git+for+VCS-related+operations+on+the+server) or download the updated Git plugin from this YouTrack ticket: [TW-97726](https://youtrack.jetbrains.com/issue/TW-97726/).
 * Build configurations created via the [updated flow](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) no longer include the [](performance-monitor.md) build feature by default. Add this feature manually if you wish to track the agent CPU, disk, and memory usage during builds.
 * Build configurations created via the [updated flow](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) utilize the "Do not use mirrors" [checkout policy](git.md#git-checkout-policy), as opposed to the "Auto" policy used in the classic UI. See this ticket for more details: [TW-97576](https://youtrack.jetbrains.com/issue/TW-97576).
+* The **Import from DSL (classic UI)** link on the updated new project page does not open the expected page if the project name field is blank. See [TW-97529](https://youtrack.jetbrains.com/issue/TW-97529) for more information.
+* [Kubernetes Executor](kubernetes-executor.md) incorrecly resolves environment variables defined in pod templates.
+
+    Related YouTrack ticket: [TW-97967](https://youtrack.jetbrains.com/issue/TW-97967).
 
 
 ## Changes from 2025.07.2 to 2025.07.3
 {id="2025.07.3"}
 
-No potential breaking changes.
+### Known Issues
+{id="known-issues-2025-07-3"}
+
+* The **Favorites | Overview | Trends** page is inaccessible when projects include pipelines.
+
+    Related YouTrack ticket: [TW-96109](https://youtrack.jetbrains.com/issue/TW-96109).
 
 ## Changes from 2025.07.1 to 2025.07.2
 {id="2025.07.2"}
@@ -158,7 +171,7 @@ If you [join the pipelines EAP](https://lp.jetbrains.com/teamcity-pipelines-in-e
 
 * After the Jackson library update, TeamCity may fail to read Kubernetes YAML definitions. We expect to resolve this issue in the 2025.07.2 bug-fix update. If this issue affects your production, install an [updated Kubernetes plugin](https://youtrack.jetbrains.com/issue/TW-95421/Jackson-Upgrade-Broke-Kubernetes-Plugins#focus=Comments-27-12574512.0-0).
 
-
+* The `jetbrains.buildServer.metrics.MetricId` objects cause a significant G1 memory usage increase. See this ticket for more details: [TW-96540](https://youtrack.jetbrains.com/issue/TW-96540/).
 
 
 
