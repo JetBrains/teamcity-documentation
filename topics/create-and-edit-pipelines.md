@@ -3,9 +3,6 @@
 
 Pipelines are user-centric, simplified alternatives for traditional [build configurations](creating-and-editing-build-configurations.md) and [build chains](build-chain.md) available in TeamCity 2025.07 and newer. While still in early access and not recommended for complex setups due to potential issues, they are not marked as experimental and can be safely used in production for smaller, less demanding projects.
 
-> TeamCity pipelines share most of its concepts (triggers, step settings, parameters, and more) with regular [build configurations](creating-and-editing-build-configurations.md). This article focuses largely on unique pipeline features. For more information on basic pipelines setup, see the dedicated documentation: [TeamCity Pipelines](https://www.jetbrains.com/help/teamcity/pipelines/teamcity-pipelines.html).
-> 
-{style="note"}
 
 > For TeamCity Professional servers, pipelines have a separate limit of 10 per server and do not count toward the build configuration limit.
 > 
