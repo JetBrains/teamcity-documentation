@@ -466,8 +466,21 @@ To help us investigate issues with inspections, do the following:
 Files under 10 MB in size can be attached right into the [tracker issue](https://youtrack.jetbrains.com/issues/TW) (if you do not want the attachments to be publicly accessible, limit the attachment visibility to "teamcity-developers" user group only).  
 You can also send small files (up to 2 MB) via email: [teamcity-support@jetbrains.com](mailto:teamcity-support@jetbrains.com) or via [online form](https://teamcity-support.jetbrains.com/hc/en-us/requests/new?ticket_form_id=66621){nullable="true"} (up to 20 MB). Please do not forget to mention your TeamCity version and environment and archive the files before attaching.
 
-<!--[//]: # (Internal note. Do not delete. "Reporting Issuesd267e1305.txt")-->    
+[//]: # (Internal record d267e1305.txt)
+
 
 Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploads.jetbrains.com/). Please let us know the exact filename after the upload.
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
+
+## Support Plugin for data collection
+
+If you want to automate data collection for support cases, we provide a [Plugin](https://TODO) that allows you to collect logs and configuration data from TeamCity automatically and send it to us without requiring manual log collection and upload.
+The plugin is only visible and available for TeamCity administrators. The plugin collects:
+* Available [TeamCity server logs](https://www.jetbrains.com/help/teamcity/teamcity-server-logs.html#General+Logging+Description);
+* Server information (such as OS details, Database & Java version, Node responsabilities,etc.);
+* Project/build configuration XML files and build log if the user is on the build details page.
+
+The collected data is uploaded to JetBrains via our [secure upload service](https://uploads.jetbrains.com/) and it is kept for 30 days and then deleted, as per our [Terms of Use](https://www.jetbrains.com/legal/docs/company/useterms/).
+The plugin is available for free for TeamCity Professional and TeamCity Enterprise users. 
+
