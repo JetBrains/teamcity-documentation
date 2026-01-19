@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+
+### Changes from 2025.11 to 2025.11.1
+{id="2025.11.2"}
+
+* The default `ubuntu` user was removed from TeamCity Linux agent images to restore the UID of the `buildagent` user. This user changed its UID from **1000** to **1001** in version 2025.11, which may have required updating custom user scripts that relied on this UID value. See this section for more information: [2025.11 bundled tool updates](#bundled-tools-updates-2025-11)
+
 ## Changes from 2025.11 to 2025.11.1
 {id="2025.11.1"}
 
@@ -45,7 +51,9 @@
     * Perforce CLI: r25.4
     * Containerd: v1.7.28
     * Mercurial SCM Client (Windows images only): v6.2.2
-    * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS.
+    * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS. This image includes the default `ubuntu` user with UID equal to **1000**, which was removed in TeamCity Server images. TeamCity Agent images still ship with this default user, which causes our `buildagent` user to change its UID from **1000** to **1001** (and its group ID from **999** to **994**). While this change does not affect TeamCity operations, custom user scripts that reference the `buildagent` user by its UID will require a manual update.
+
+        2025.11.2 update: The default `ubuntu` user was removed from TeamCity Agent images to restore the pre-2025.11 behavior. The `buildagent` user now returns **1000** for its UID once again.
 * The default JaCoCo version is now 0.8.8. In addition, version 0.8.13 is now bundled.
 * The bundled Kubernetes plugin was migrated to AWS SDK v2.
 
