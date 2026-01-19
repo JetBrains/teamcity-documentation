@@ -27,7 +27,7 @@
 
 * [**TW-98030**](https://youtrack.jetbrains.com/issue/TW-98030) — Suddenly appearing secret field in the yaml to navigate to the YAML editor section
 * [**TW-98013**](https://youtrack.jetbrains.com/issue/TW-98013) — Null branch filter in the schedule pipeline trigger
-* * [**TW-96734**](https://youtrack.jetbrains.com/issue/TW-96734) — Custom agent requirement is shown vertically
+* [**TW-96734**](https://youtrack.jetbrains.com/issue/TW-96734) — Custom agent requirement is shown vertically
 
 ### Security
 
