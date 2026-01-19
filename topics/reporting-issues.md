@@ -473,9 +473,12 @@ Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploa
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
 
-## Support Plugin for data collection
+## Support Plugin for automatic data collection on request
 
-If you want to automate data collection for support cases, we provide a [Plugin](https://TODO) that allows you to collect logs and configuration data from TeamCity automatically and send it to us without requiring manual log collection and upload.
+As TeamCity offers many features and integrations, it has dozens of different logs to track down its activities. When TeamCity users report issues, precious time might be wasted on collecting different logs and configuration data manually, often through multiple message iterations, before our support team has all the necessary information to investigate the issue.
+As such, we provide an external plugin that collects all relevant data automatically on request and sends it to us on request, allowing us to significantly improve the efficiency of support cases and reduce the time and effort spent in exchanging information and troubleshooting.
+
+The plugin can be installed from JetBrains Marketplace: [Plugin](https://TODO) 
 The plugin is only visible and available for TeamCity administrators. The plugin collects:
 * Available [TeamCity server logs](https://www.jetbrains.com/help/teamcity/teamcity-server-logs.html#General+Logging+Description);
 * Server information (such as OS details, Database & Java version, Node responsabilities,etc.);
@@ -484,3 +487,7 @@ The plugin is only visible and available for TeamCity administrators. The plugin
 The collected data is uploaded to JetBrains via our [secure upload service](https://uploads.jetbrains.com/) and it is kept for 30 days and then deleted, as per our [Terms of Use](https://www.jetbrains.com/legal/docs/company/useterms/).
 The plugin is available for free for TeamCity Professional and TeamCity Enterprise users. 
 
+<note>
+The plugin only sends data when the user explicitly sends it. This allows users to control when and what data is shared with JetBrains, ensuring that sensitive information is not unnecessarily exposed.
+It is also possible to disable/enable the plugin at any time.
+</note>
