@@ -473,6 +473,39 @@ Large files can be uploaded via [`https://uploads.jetbrains.com/`](https://uploa
 
 If you cannot upload a large file in one go, try splitting the file into parts and upload them separately.
 
+
+## Collect and Upload Diagnostic Data Automatically
+
+When reporting an issue, you can have TeamCity automatically collect diagnostic data to help our team investigate the problem. This can save significant time by eliminating the need to manually collect data from dozens of logs and configuration files TeamCity uses to track its activity.
+
+1. Install the [support plugin](https://TODO). For detailed instructions, see the [](installing-additional-plugins.md) article.
+2. Open the build or configuration where the issue occurs and click **Submit support request** in the TeamCity sidebar. For global issues (for example, server performance problems), you can access this option from any TeamCity page.
+
+	TODO: Image
+    
+3. Enter the issue details and enable **Include diagnostic data**.
+4. Click **Submit**. TeamCity will collect and upload the following information:
+
+	* Common server details (OS, database and Java versions, node responsibilities, and more)
+	* [TeamCity server logs](https://www.jetbrains.com/help/teamcity/teamcity-server-logs.html#General+Logging+Description)
+    * Server thread dumps;
+    * Build logs and project or build configuration XML files (if you invoked the dialog from a specific project, configuration, or build)
+
+	Once TeamCity finishes collecting this data, it will upload it to the internal [JetBrains uploads service](https://uploads.jetbrains.com), where it will be [securely stored for 30 days](https://www.jetbrains.com/legal/docs/company/useterms/).
+
+    TODO: Image with "upload complete" toast
+
+5. Click **Proceed to Zendesk** to open the final ticket submission page. TeamCity automatically adds the upload ID to your issue description. Do not remove this ID, as our team will use it to download and analyze the diagnostic data.
+6. Review the ticket for any missing details that may help reproduce the issue, then click **Submit**.
+
+> This functionality is only available for TeamCity Enterprise servers. In addition, only system administrators (users with the `CHANGE_SERVER_SETTINGS` [permission](managing-roles-and-permissions.md)) can authorize diagnostic data collection.
+>
+{style="note"}
+
+
+
+<!--previous version
+
 ## Support Plugin for automatic data collection on request
 
 As TeamCity offers many features and integrations, it has dozens of different logs to track down its activities. When TeamCity users report issues, precious time might be wasted on collecting different logs and configuration data manually, often through multiple message iterations, before our support team has all the necessary information to investigate the issue.
@@ -491,3 +524,5 @@ The plugin is available for free for TeamCity Professional and TeamCity Enterpri
 The plugin only sends data when the user explicitly sends it. This allows users to control when and what data is shared with JetBrains, ensuring that sensitive information is not unnecessarily exposed.
 It is also possible to disable/enable the plugin at any time.
 </note>
+
+-->
