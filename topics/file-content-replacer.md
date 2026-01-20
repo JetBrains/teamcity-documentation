@@ -150,12 +150,12 @@ See a sample _File Content Replacer_ configuration for settings in [Kotlin](kotl
 
 ```Shell
 features {
-    replaceContent {
-        fileRules = "**/*"
-        pattern = "(?iu)the\h+pattern\h+to\h+search\h+for"
-        regexMode = FileContentReplacer.RegexMode.REGEX_MIXED
-        replacement = """%\teamcity.agent.work.dir%\nd_r\bin\isf"""
-    }
+    replaceContent {
+        fileRules = "**/*"
+        pattern = "(?iu)the\h+pattern\h+to\h+search\h+for"
+        regexMode = FileContentReplacer.RegexMode.REGEX_MIXED
+        replacement = """%\teamcity.agent.work.dir%\nd_r\bin\isf"""
+    }
 }
 ```
 
@@ -174,7 +174,7 @@ Replace with
 
 Type the text to be used for replacing the characters in the __Find what__ box. To delete the characters in the __Find what__ box from your file, leave this box blank.
 
-$N sequence references N-th capturing group. All backslashes (`\`) and dollar signs (`$`) without a special meaning should be quoted (as `\\` and `\$`, respectively).
+`$N` sequence references N-th capturing group. All backslashes (`\`) and dollar signs (`$`) without a special meaning should be quoted (as `\\` and `\$`, respectively).
 
 </td></tr></table>
 
