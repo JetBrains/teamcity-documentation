@@ -34,34 +34,35 @@ When there are several idle agents that can run a queued build, TeamCity tries t
 
 ## Ordering Build Queue
 
-You can:
-* Reorder the builds in the queue manually.
-* Remove build configurations or personal builds from the queue.
+TeamCity users can manage queued builds as follows:
+
+* Users with the "Reorder builds in queue" [permission](managing-roles-and-permissions.md) (included in the default "Project developer" role) can drag-and-drop queued builds to reorder them, as well as move their builds to the top of the queue.
+* Stop regular and personal builds to remove them from the queue. Project administrators can additionally stop personal builds triggered by other users due to the "Stop / remove from queue any personal build" [permission](managing-roles-and-permissions.md).
 * [System administrators](managing-roles-and-permissions.md) can [assign different priorities to build configurations](#Managing+Build+Priorities) to promote or demote their builds.
-{instance="tc"}
+  {instance="tc"}
 
-### Manually Reordering Builds in Queue
+### Reordering Queued Builds
 
-To reorder builds in the build queue, you need to drag them to the desired position.
+To reorder builds in the build queue, drag them to the desired position on the **Queue** page. To promote a specific build to the top spot in the queue, do one of the following:
+
+* Click the arrow button next to the build order number on the **Queue** page.
+
+    <img src="dk-movetotop.png" width="706" alt="Move to top"/>
+
+* Click **Actions | Move to top** on the queued build's Overview page.
+
+    <img src="dk-move-to-top-action.png" width="706" alt="Move to top action"/>
+
+Moving a [composite build](composite-build-configuration.md) to the top of the queue promotes the entire build chain. If a running composite build has dependency builds that have not yet started, you can explicitly move them to the queue top by clicking __Move queued dependencies to top__ item in the composite build's **Actions** menu.
 
 ### Removing Builds from Build Queue
 
-To remove build(s) from the queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the respective message below the comment field. Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) article for details.
+To remove build(s) from the queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the corresponding message below the comment field. Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) article for details.
 
 Additionally, you can:
 * Remove all your personal builds from the queue at once from the __Actions__ menu.
 * Remove several builds of [paused build configurations](changing-build-configuration-status.md#Pausing+Several+Build+Configurations+in+Project) from the queue.
 
-### Moving Builds to Top
-
-To move a build to the top spot in the queue, do one of the following:
-* On the **Queue** page, click the arrow button next to the build sequence number.
-
-  <img src="dk-movetotop.png" width="706" alt="Move to top"/>
-
-* Click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the queued build, click the __Actions__ menu in the upper right corner. Select the __Move to top__ action.
-
-For a [composite build](composite-build-configuration.md), the whole build chain will be moved to the top of the queue. If a running composite build has dependency builds that have not yet started, click the build number or build status link anywhere in the UI, and, on the **[Build Results](working-with-build-results.md)** page of the running build, click the __Actions__ menu in the upper right corner. Select the __Move queued dependencies to top__ action. All queued dependencies of this build will be moved to the top of the queue.
 
 ## Managing Build Priorities
 {instance="tc" help-id="BuildQueue-ManagingBuildPriorities"}
@@ -85,11 +86,11 @@ To create a new priority class:
 
 <img src="dk-add-configs-to-priority-class.png" width="706" alt="Configure custom priority class"/>
 
-This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue. 
-This allows running a build that has been waiting a long time with a lower priority before the recently added builds with higher priority. 
+This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue.
+This allows running a build that has been waiting a long time with a lower priority before the recently added builds with higher priority.
 See the detailed explanation of the algorithm below.
 
-### Build priority algorithm 
+### Build priority algorithm
 
 Every time a new build is added to the queue, the priorities of all the builds are recalculated,
 and the new build is placed in the position `i`, such that
@@ -106,8 +107,8 @@ with the default values of `1.0`. Changing internal properties requires the serv
 
 `buildPriority = (timeSpentInTheQueue / estimatedBuildDuration) + buildConfigurationPriority`
 
-So when the build waits in the queue for the amount of time that equals to the estimated build duration, 
-its priority is increased by one. 
+So when the build waits in the queue for the amount of time that equals to the estimated build duration,
+its priority is increased by one.
 This helps the builds with low priority to start eventually.
 
 ## Pausing and Resuming Build Queue
