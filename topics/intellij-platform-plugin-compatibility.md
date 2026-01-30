@@ -7,13 +7,14 @@
 
 <td>IntelliJ IDEA version</td>
 <td>IntelliJ Platform version</td>
-<td colspan="18">TeamCity versions</td>
+<td colspan="19">TeamCity versions</td>
 </tr>
 
 <tr>
 <td></td>
 <td></td>
-<td>2024.03 — current</td>
+<td>2025.11.3 — current</td>
+<td>2024.03 — 2025.11.2</td>
 <td>2022.10 — 2023.11</td>
 <td>2021.1 — 2022.4</td>
 <td>2020.2</td>
@@ -35,8 +36,33 @@
 
 
 <tr>
-<td>2022.3 — current</td>
-<td>223 — current</td>
+<td>2024.3 — current</td>
+<td>243 — current</td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td><b>+</b></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>2022.3 — 2024.2</td>
+<td>223 — 242</td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -61,6 +87,7 @@
 <td>2021.2.3 — 2022.2</td>
 <td>212 — 222</td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -83,6 +110,7 @@
 <tr>
 <td>2019.3 — 2021.1</td>
 <td>193 — 211</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -110,6 +138,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -129,6 +158,7 @@
 <tr>
 <td>2016.3</td>
 <td>163</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -160,6 +190,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -179,6 +210,7 @@
 
 <td>2016.2</td>
 <td>162</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -210,6 +242,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -229,6 +262,7 @@
 
 <td>15.0</td>
 <td>143</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -264,6 +298,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -279,6 +314,7 @@
 
 <td>14.0</td>
 <td>139</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -314,6 +350,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -329,6 +366,7 @@
 
 <td>13.0</td>
 <td>133</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -366,6 +404,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -379,6 +418,7 @@
 
 <td>12.0</td>
 <td>123</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -416,6 +456,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
 <td><b>+</b></td>
@@ -429,6 +470,7 @@
 
 <td>11.0</td>
 <td>111</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
