@@ -37,7 +37,8 @@ When there are several idle agents that can run a queued build, TeamCity tries t
 You can:
 * Reorder the builds in the queue manually.
 * Remove build configurations or personal builds from the queue.
-* With System Administrator permissions, assign different priorities to build configurations, which will affect their position in the queue.
+* [System administrators](managing-roles-and-permissions.md) can [assign different priorities to build configurations](#Managing+Build+Priorities) to promote or demote their builds.
+{instance="tc"}
 
 ### Manually Reordering Builds in Queue
 
@@ -71,6 +72,8 @@ You can control build priorities by creating _Priority Classes_. A priority clas
 
 To access these settings, click __Priorities__ in the upper right corner on the __Queue__ page. Note that this action is only available to system administrators.
 
+<img src="dk-config-priorities.png" width="706" alt="Configuration Priorities"/>
+
 There are two predefined priority classes: _Personal_ and _Default_, both with `priority=0`:
 * All personal builds (launched via [Remote Run](remote-run.md) or [Pre-tested Commit](pre-tested-delayed-commit.md)) are assigned to the _Personal_ priority class once they are added to the build queue. You can change the priority for personal builds.
 * The _Default_ class includes all the builds not associated with any other class. This allows creating a class with priority lower than default and place some builds to the bottom of the queue.
@@ -79,6 +82,8 @@ To create a new priority class:
 1. Click __Create new priority class__.
 2. Specify its name, priority (in the range `-100..100`), and additional description. Click __Create__.
 3. Click __Add configurations__ and specify which build configurations should have priority defined in this class.
+
+<img src="dk-add-configs-to-priority-class.png" width="706" alt="Configure custom priority class"/>
 
 This setting is taken into account only when a build is added to the queue. To ensure that builds with lower priority always have a chance to run, TeamCity also considers how long each build is staying in the queue. 
 This allows running a build that has been waiting a long time with a lower priority before the recently added builds with higher priority. 

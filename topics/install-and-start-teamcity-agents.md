@@ -186,23 +186,17 @@ Note that TeamCity recognizes agent properties only after the agent is fully boo
 ## Agent Priority
 {instance="tc"}
 
-TeamCity employs an advanced agent selection logic, considering factors like CPU count, past building performance, agent sources (cloud or local), and more, to match your builds with the most suitable agents for the job.
+TeamCity selects agents using multiple criteria, including CPU count, past performance, and agent source (local self-hosted agents have the highest priority, followed by [cloud agents](teamcity-integration-with-cloud-solutions.md), and [Kubernetes executor pods](kubernetes-executor.md) ranked lowest). You can override this logic by setting the integer `teamcity.agent.priority` property (`–10,000` to `10,000`; default: `0`).
 
-The list below shows available agent options in descending order of priority (the higher an option appears, the more likely it is to handle a queued build):
+* For [AWS-hosted cloud agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
 
-* Self-hosted agents
-* Agents spawned from [cloud profiles and images](teamcity-integration-with-cloud-solutions.md)
-* [Kubernetes executor pods](kubernetes-executor.md)
+    <img src="dk-agentpriority.png" width="706" alt="Set the image priority for a EC2 Cloud Image"/>
 
-You can manually lower or raise the priority of a any agent by modifying its integer `teamcity.agent.priority` property. This property accepts values in the `-10000` ~ `10000` range with the default value of `0`. For [AWS-hosted cloud agents](setting-up-teamcity-for-amazon-ec2.md), you can set this property on the Cloud Image settings page:
+* For other agent types, add the following line to the [&lt;TeamCity_Agent_Home&gt;/conf/buildAgent.properties](configure-agent-installation.md) file:
 
-<img src="dk-agentpriority.png" width="706" alt="Set the image priority for a EC2 Cloud Image"/>
-
-For other agent types, add the following line to the [&lt;TeamCity_Agent_Home&gt;/conf/buildAgent.properties](configure-agent-installation.md) file:
-
-```XML
-teamcity.agent.priority=54
-```
+    ```XML
+    teamcity.agent.priority=54
+    ```
 
 Note that TeamCity recognizes agent properties only after the agent is fully booted and connected to the server. For that reason, priorities for non-EC2 cloud agents apply only to active/running instances. Currently, only EC2 cloud images relay agent priorities before instances start.
 
