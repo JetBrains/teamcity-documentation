@@ -56,7 +56,7 @@ As a JVM application, the TeamCity main server process utilizes only memory avai
 </tab>
 
 
-<tab title="On Linux and macOS">
+<tab title="On Linux">
 
 1. Stop the TeamCity server.
 2. Open the `/etc/environment` file.
