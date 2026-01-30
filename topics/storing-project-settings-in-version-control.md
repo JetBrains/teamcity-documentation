@@ -557,8 +557,13 @@ Alternatively, you can add a [password parameter](typed-parameters.md) with the 
 If you disable the default **Store passwords and API tokens outside of VCS** setting, consider the following implications:
 
 * Passwords and tokens will be [encrypted](teamcity-configuration-and-maintenance.md#encryption-settings), but still available in the VCS.
+    {instance="tc"}
    * If the project settings are stored in __the same repository as the source code__, anyone with access to the repository will be able to see these scrambled passwords.
    * If the project settings are stored __separately from the source code in a dedicated repository__ and the "_Show settings changes in builds_" option is enabled, any user with the "_View VCS file content_" permission will be able to see all the changes in the TeamCity UI using the [changes difference viewer](difference-viewer.md).
+* Passwords and tokens will be encrypted, but still available in the VCS.
+  {instance="tcc"}
+    * If the project settings are stored in __the same repository as the source code__, anyone with access to the repository will be able to see these scrambled passwords.
+    * If the project settings are stored __separately from the source code in a dedicated repository__ and the "_Show settings changes in builds_" option is enabled, any user with the "_View VCS file content_" permission will be able to see all the changes in the TeamCity UI using the [changes difference viewer](difference-viewer.md).
 * Being able to change the settings in an arbitrary manner via a VCS, it is possible to trigger builds of any build configurations and obtain settings of any build configurations irrespective of the build configurations permissions configured in TeamCity.
 * By committing wrong or malicious settings, a user can affect the entire server performance or server presentation to other users.
 
