@@ -33,6 +33,7 @@
 		<toc-element accepts-web-file-names-ref="installation" topic="install-and-start-teamcity-server.md">
 			<toc-element topic="install-teamcity-server-on-windows.md"/>
 			<toc-element topic="install-teamcity-server-on-linux-or-macos.md"/>
+			<toc-element topic="teamcity-kubernetes-operator.md" toc-title="Deploy TeamCity in a Kubernetes Cluster" hidden="true"/>
 			<toc-element hidden="true" topic="running-teamcity-stack-in-aws.md"/>
 			<toc-element topic="start-teamcity-server.md"/>
 			<toc-element topic="configure-server-installation.md">
