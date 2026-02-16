@@ -465,5 +465,6 @@ ReSharper Version
 </table>
 
 You can view the installed versions of ReSharper on the __Server Administration | Tools__ page. The bundled version is set as default; you can install other versions and change the default settings.
+{instance="tc"}
 
 <!--[//]: # (Internal note. Do not delete. "Inspections ReSharper d165e293.txt")-->    

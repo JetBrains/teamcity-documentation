@@ -191,6 +191,7 @@ dotCover Version
 </table>
 
 You can view the installed versions of dotCover on the __Server Administration | Tools__ page. The bundled version is set as default, you can install other versions and change the default settings.
+{instance="tc"}
 
 <note>
 
