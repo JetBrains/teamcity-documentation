@@ -769,7 +769,7 @@ You can also perform [remote debugging](remote-debug.md) of tests on an agent vi
 If a build containing several steps fails at a certain step, it is possible to debug the step that breaks. Do the following:
 1. Go to the build configuration and disable the build steps up to the one you want to debug.
 2. [Select the build](working-with-build-results.md) to debug.
-3. Open the [Custom Run](running-custom-build.md) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Moving+Builds+to+Top)__ to give you build the priority.
+3. Open the [Custom Run](running-custom-build.md) dialog and select the __put the build to the [queue top](working-with-build-queue.md#Reordering+Queued+Builds)__ to give you build the priority.
 4. When debugging is complete, reenable the build steps.
 
 ## Watch Several TeamCity Servers with Windows Tray Notifier
