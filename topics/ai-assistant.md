@@ -52,6 +52,7 @@ To save you from typing long queries with project and configuration details, Tea
 
 
 ## AI Build Analyzer
+{instance="tcc"}
 
 <include from="ai-build-analyzer.md" element-id="ai-build-analyzer"/>
 
