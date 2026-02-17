@@ -789,7 +789,7 @@ To create a secondary node in a manner that is suitable for automation, follow t
    * `<node_URL>` is the secondary node root URL, which should be accessible from the main node.
    * `<Node-specific Data Directory>` is the path to the node-specific TeamCity Data Directory.
    * `<responsibilities_list>` is the comma-separated [list of responsibilities](#Setting+Responsibilities+on+the+Command+Line) to enable on this node.
-   > In the case of automated creation, all of the secondary nodes should be configured with the same responsiblities.
+   > In the case of automated creation, all of the secondary nodes should be configured with the same responsibilities.
    > The `MAIN_NODE` responsibility must not be included for a secondary node.
    >
    {style="tip"}
@@ -806,9 +806,9 @@ When __upgrading to a minor version__ (a bugfix release), the main and the secon
 When __upgrading the main node to a major version__, its TeamCity data format changes. Because of that, as soon as the main node of a new version starts, the secondary nodes detect the main node has a different data format and switch to the read-only mode. It may take some time for the secondary nodes to become read-only. During this time the main node will wait until it ensures that all the other nodes do not change data anymore. 
 
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
-1. [Upgrade](upgrading-teamcity-server-and-agents.md) the main TeamCity node. The procedure of ugrading notes is identical to updating standalone servers.
+1. [Upgrade](upgrading-teamcity-server-and-agents.md) the main TeamCity node. The procedure of upgrading notes is identical to updating standalone servers.
 2. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
-3. Perform upgrade of TeamCity on the secondary nodes to the same version.
+3. Perform upgrade of TeamCity on the secondary nodes to the same version. Please note that if a secondary node is restarted after upgrading the main node to a different major version, that node will need a manual upgrade. Automatic upgrade will become unavailable (see [TW-98862](https://youtrack.jetbrains.com/issue/TW-98862)).
 
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main node and the secondary nodes.
