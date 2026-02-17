@@ -144,7 +144,6 @@
 			<toc-element topic="nuget.md"/>
 			<toc-element topic="build-artifact.md" toc-title="Artifacts and Shared Files"/>
 			<toc-element topic="adding-build-features.md" toc-title="Build Features">
-				<toc-element topic="ai-build-analyzer.md" hidden="true"/>
 				<toc-element topic="assemblyinfo-patcher.md"/>
 				<toc-element topic="automatic-merge.md"/>
 				<toc-element topic="aws-credentials.md"/>

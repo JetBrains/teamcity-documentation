@@ -50,11 +50,16 @@ To save you from typing long queries with project and configuration details, Tea
 
 <img src="aia-whats-new.png" width="706" thumbnail="true" alt="AI Assistant"/>
 
+<!--
 
 ## AI Build Analyzer
 {instance="tcc"}
 
 <include from="ai-build-analyzer.md" element-id="ai-build-analyzer"/>
+
+See the following article for more information: [](ai-build-analyzer.md).
+
+-->
 
 
 ## Limitations and Special Notes
