@@ -51,6 +51,10 @@ To save you from typing long queries with project and configuration details, Tea
 <img src="aia-whats-new.png" width="706" thumbnail="true" alt="AI Assistant"/>
 
 
+## AI Build Analyzer
+
+<include from="ai-build-analyzer.md" element-id="ai-build-analyzer"/>
+
 
 ## Limitations and Special Notes
 
