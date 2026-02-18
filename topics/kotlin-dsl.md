@@ -654,6 +654,49 @@ params {
 >
 {style="tip"}
 
+
+### Storing Multiple Settings Files in One Repository
+
+If a remote repository where the project version settings are stored has another submodule with identically called files...
+
+```Text
+MainModule:
+    - pom.xml
+    - settings.kts
+    - SubModule:
+        - pom.xml
+        - settings.kts
+```
+
+...TeamCity recognizes it as a conflict and fires the "Mix of multiple settings.kts files" and "JVM duplicate class name Settings" exceptions. To resolve this issue, specify a custom package name via the `teamcity.internal.dsl.settingsKts.packageName` parameter. You should set this parameter in multiple places:
+
+* In the `pom.xml` file of the main module.
+
+```XML
+<internalProperties>
+    <teamcity.internal.dsl.settingsKts.packageName>
+        MainModule
+    </teamcity.internal.dsl.settingsKts.packageName>
+</internalProperties>
+```
+
+* In the `settings.kts` file of this same module.
+
+```Kotlin
+package MainModule
+// ...
+project {
+   params {
+      param("teamcity.internal.dsl.settingsKts.packageName", "MainModule")
+// ...
+```
+
+* Add the [configuration parameter](configuring-build-parameters.md) via TeamCity UI to match your updated `settings.kts` file.
+
+See the following ticket for more information: [TW-93903](https://youtrack.jetbrains.com/issue/TW-93903).
+
+
+
 ## FAQ and Common Problems
 
 <anchor name="KotlinDSL-nonUniformIDs"/>
