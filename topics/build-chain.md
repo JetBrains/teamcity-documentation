@@ -138,7 +138,7 @@ Both parameters accept comma-separated tags and configuration IDs as values.
 
 #### Parameter Priority
 
-When a chain (or its portion) is triggered, TeamCity reads `skipTags` and `onlyTags` parameters from the topmost configuration only. Parameters from upstream builds are ignored.
+When a chain (or its portion) is triggered, TeamCity reads `skipTags` and `onlyTags` exclusively from the configuration used to start the chain. These parameters are ignored in dependency builds.
 
 The following build chain illustrates three sample configurations linked in a single "BuildA &rarr; BuildB &rarr; BuildC" chain.
 
