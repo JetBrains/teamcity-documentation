@@ -320,8 +320,7 @@ You can utilize this approach in Bitbucket Cloud, Bitbucket Server, and Bitbucke
 
 The latest Azure DevOps Server (formerly Team Foundation Server) and Azure DevOps Services provide service hooks for code-commit events. To create a hook, perform the following steps:
 
-1. Open the admin page for a team project in web access.
-2. Create a subscription by running the wizard.
+1. [Create a subscription](https://learn.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops#create-a-subscription) under the Azure DevOps project's Service Hooks.
 3. Select the "Web Hooks" service to integrate with.
 4. Select the "Code checked in" event and specify a filter.
 5. Fill in the TeamCity username, password, and server URL in the format:
