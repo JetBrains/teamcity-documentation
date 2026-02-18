@@ -9,6 +9,7 @@
 
 ### Task
 
+* [**TW-98885**](https://youtrack.jetbrains.com/issue/TW-98885/) — In the case of multiple Kotlin DSL settings.kts files under the .teamcity directory it should be possible to select the one which should be executed
 * [**TW-98512**](https://youtrack.jetbrains.com/issue/TW-98512) — Docker Images, DinD support: make Docker GID fixed to align accross the releases
 * [**TW-96441**](https://youtrack.jetbrains.com/issue/TW-96441) — Add retries for PowerShell detection command
 * [**TW-98780**](https://youtrack.jetbrains.com/issue/TW-98780) — Docker: update bundled Git version: 2.52.0 -> 2.53.0
