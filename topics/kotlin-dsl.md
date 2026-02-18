@@ -655,9 +655,9 @@ params {
 {style="tip"}
 
 
-### Storing Multiple Settings Files in One Repository
+### Resolving Multiple Settings File Conflicts
 
-If a remote repository where the project version settings are stored has another submodule with identically called files...
+If a path where the project stores its settings files includes a submodule with identically called files...
 
 ```Text
 MainModule:
