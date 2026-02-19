@@ -6,6 +6,7 @@
 ### Feature
 
 * [**TW-68556**](https://youtrack.jetbrains.com/issue/TW-68556) — Support quick search in remote builds in My Changes tab
+* [**TW-71175**](https://youtrack.jetbrains.com/issue/TW-71175) — Organize build configurations in a Projects hierarchy on "My changes" tab
 
 ### Task
 
