@@ -9,12 +9,11 @@ This article briefly outlines the Java update procedure for agent and server mac
 
 ## Migration to Java 21
 
-Starting with version 2026.1, both the TeamCity server and agents will require Java 21 to start. Some features (for example, [](ai-assistant.md)) are already unavailable in TeamCity 2025.11 when running on older Java versions. For this reason, we recommend upgrading to Java 21 ahead of the 2026.1 release.
+Starting with version 2026.1, both the TeamCity server and agents will require Java 21 to start. Some of our latest features (for example, [](ai-assistant.md)) are already unavailable in TeamCity 2025.11 when running on older Java versions. For this reason, we recommend upgrading to Java 21 ahead of the 2026.1 release.
 
-> We plan to support Java 21~25 in version 2026.1. However, version 2025.11 currently supports only Java 21.
-> 
-{style="note"}
-
+<!--
+Do not run TeamCity 2025.11 and 2026.1 **servers** on newest Java versions, as they only support Java 21. You can use later versions (for instance, Java 25) for TeamCity 2026.1 **agents**, but not the server. We expect to fully support the latest Java versions in future releases.
+-->
 
 ## Upgrade Instructions
 
