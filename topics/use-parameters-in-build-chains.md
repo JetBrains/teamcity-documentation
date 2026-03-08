@@ -394,4 +394,4 @@ object ChainABC : BuildType({
 
 * Pushing a new parameter into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
 
-* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md#Parameter+References). `%`-references, if any, will be resolved in the destination (target) build's scope.
+* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md). `%`-references, if any, will be resolved in the destination (target) build's scope.

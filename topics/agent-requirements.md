@@ -39,7 +39,7 @@ You can add multiple agent requirements for a single parameter. The agent will b
 
 ## Implicit Requirements
 
-Any [reference](configuring-build-parameters.md#Parameter+References) (a name enclosed in `%` characters) to an unknown parameter within a build is considered an _implicit requirement_. The build will only run on an agent if:
+Any [reference](configuring-build-parameters.md#) (a name enclosed in `%` characters) to an unknown parameter within a build is considered an _implicit requirement_. The build will only run on an agent if:
 * The agent provides this parameter, or
 * The parameter is defined on the build configuration (or project) level.
 

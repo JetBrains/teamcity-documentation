@@ -305,6 +305,5 @@ where `<VCS_root_ID>` is the [VCS root ID](configuring-vcs-roots.md).
  <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
-            <a href="using-build-parameters.md">Using Build Parameters</a>
         </category>
 </seealso>

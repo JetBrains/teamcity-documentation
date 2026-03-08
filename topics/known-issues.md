@@ -461,7 +461,7 @@ To work around this problem, you can upgrade Visual Studio 2017 to the latest bu
 
 ### Parsing .rsp files (Error MSB1006: Property is not valid)
 
-Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. To ensure this issue does not occur, enclose values of [system properties](configuring-build-parameters.md#System+Properties) in quotes. If this solution is not applicable to your project, add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter and set its value to _"true"_. With this setting enabled, TeamCity automatically wraps values of user-defined properties in quotes.
+Due to the [breaking change](https://github.com/dotnet/command-line-api/pull/1714) introduced by Microsoft in the core `System.CommandLine` library, .rsp files with commas and (or) semicolons in property values are parsed incorrectly. To ensure this issue does not occur, enclose values of [system properties](configuring-build-parameters.md#Parameter+Types) in quotes. If this solution is not applicable to your project, add the `teamcity.internal.dotnet.msbuild.parameters.escape` configuration parameter and set its value to _"true"_. With this setting enabled, TeamCity automatically wraps values of user-defined properties in quotes.
 
 ## NuGet known issues
 

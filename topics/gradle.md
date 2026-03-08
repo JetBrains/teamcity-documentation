@@ -141,7 +141,7 @@ In Gradle builds, TeamCity system properties are different from Java system prop
 
 * Regular Java system properties can be accessed globally. Use the `System.getProperty("my.property")` or `providers.systemProperty("my.property").get()` methods to obtain these properties' values.
 
-* TeamCity [system properties](configuring-build-parameters.md#System+Properties) are written to the [Project](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html) object when a build initializes. Therefore, TeamCity system properties can be accessed anywhere the `Project` is available (use `project.hasProperty("property.name")` to check whether the required property is available).
+* TeamCity [system properties](configuring-build-parameters.md#Parameter+Types) are written to the [Project](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html) object when a build initializes. Therefore, TeamCity system properties can be accessed anywhere the `Project` is available (use `project.hasProperty("property.name")` to check whether the required property is available).
 
 The recommended way to reference TeamCity system properties is as follows:
 

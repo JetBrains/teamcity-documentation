@@ -33,7 +33,7 @@ If multiple Perforce VCS roots are used for the checkout, the variables are crea
 * `P4PORT` — same as `vcsroot.<VCS_root_ID>.port` [parameter](predefined-build-parameters.md#VCS+Parameters).
 * `P4CLIENT` — same as `vcsroot.<VCS_root_ID>.p4client` [parameter](predefined-build-parameters.md#VCS+Parameters), the name of the generated P4 workspace on the agent.
 
-These variables can be used to perform custom Perforce commands after the checkout. For example, to be able to access the port of the `PerforceTest` VCS root, define the `env.P4PORT=%\vcsRoot.PerforceTest.port%` [environment variable](configuring-build-parameters.md#Environment+Variables) in the project or build configuration settings.
+These variables can be used to perform custom Perforce commands after the checkout. For example, to be able to access the port of the `PerforceTest` VCS root, define the `env.P4PORT=%\vcsRoot.PerforceTest.port%` [environment variable](configuring-build-parameters.md#Parameter+Types) in the project or build configuration settings.
 
 ## Workspace Deletion
 

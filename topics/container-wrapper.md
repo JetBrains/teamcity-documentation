@@ -62,7 +62,7 @@ Allows specifying additional options for the <code>docker/podman run</code> comm
 
 <note>
 
-If you need to utilize <a href="configuring-build-parameters.md#Environment+Variables">environment variables</a> in this field (for example, <code>%\env.FOO%</code>), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific environment variables declared in the <a href="configure-agent-installation.md">buildAgent.properties</a> file are not passed to containers.
+If you need to utilize <a href="configuring-build-parameters.md#Parameter+Types">environment variables</a> in this field (for example, <code>%\env.FOO%</code>), note that TeamCity passes to containers only those variables that are declared in build configurations and projects. Agent-specific environment variables declared in the <a href="configure-agent-installation.md">buildAgent.properties</a> file are not passed to containers.
 
 If you need a parameter declared in this file, do the following:
 

@@ -164,7 +164,7 @@ To use this authentication method, check that your machine includes Kerberos lib
 
 ## Azure DevOps Proxy Configuration
 
-To enable usage of [Azure DevOps Proxy](https://www.visualstudio.com/en-us/docs/setup-admin/tfs/install/install-proxy-setup-remote), define the `TFSPROXY` [environment variable](configuring-build-parameters.md#Environment+Variables) for the user account which runs the TeamCity server or agent and restart them to apply changes.
+To enable usage of [Azure DevOps Proxy](https://www.visualstudio.com/en-us/docs/setup-admin/tfs/install/install-proxy-setup-remote), define the `TFSPROXY` [environment variable](configuring-build-parameters.md#Parameter+Types) for the user account which runs the TeamCity server or agent and restart them to apply changes.
 
 Example:
 

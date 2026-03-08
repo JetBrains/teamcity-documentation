@@ -127,7 +127,7 @@ Script parameters
 
 Enter parameters of the script. Parameters are passed as the `Args` array. View [supported arguments](#Commands+and+Arguments+Supported+in+Scripts).
 
-[Parameter references](configuring-build-parameters.md#Pass+Values+to+Simple+Script+Runners) are supported.
+[Parameter references](configuring-build-parameters.md) are supported.
 
 >__Passing secure values__   
 >For security reasons, we highly recommend that you avoid using parameter references directly inside scripts if these parameters represent secure values. You can pass such values via script parameters instead. For example, to pass a token value, [add a new build parameter](configuring-build-parameters.md) with the "Password" type, refer it in the runner’s _Script parameters_ field:

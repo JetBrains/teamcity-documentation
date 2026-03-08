@@ -58,7 +58,7 @@ object MyBuildConfig : BuildType({
 
 > You can achieve the same result even faster by creating the `system.dotnet.output.type` parameter and setting its value to `OutputType=WinExe`. TeamCity will write this value to the response (.rsp) file with .NET settings, so you do not need to set the **Command line parameters** field in TeamCity UI.
 >
-> This approach is based on the mechanism that passes all parameters with the `system.` prefix to a build engine. See this section for more information: [](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
+> This approach is based on the mechanism that passes all parameters with the `system.` prefix to a build engine.
 >
 {style="tip"}
 

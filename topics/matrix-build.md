@@ -43,7 +43,7 @@ Java: jdk-17, jdk-21
                         <li><p>Enter the associated parameter values: <code>Chrome</code>, <code>Firefox</code></p>
                     <tip>
                     <p>Parameter values are specified in the format, <code>[OptionalDisplayLabel=>]Value</code>.</p>
-                    <p>Where <code>Value</code> consists of a single line of text and (optionally) some <a href="configuring-build-parameters.md#Parameter+References"/>. If specified, <code>OptionalDisplayLabel</code> is shown instead of the raw parameter value in the matrix build overview.</p>
+                    <p>Where <code>Value</code> consists of a single line of text and (optionally) some <a href="configuring-build-parameters.md"/>. If specified, <code>OptionalDisplayLabel</code> is shown instead of the raw parameter value in the matrix build overview.</p>
                     </tip>
                     <note><p>If you need to add more than two parameter values, click <b>Add another value</b>.</p></note>
                         </li>
@@ -103,7 +103,7 @@ object Build : BuildType({
                             <li>A predefined matrix parameter (see <a href="#Predefined+Matrix+Parameters"/>)</li>
                         </list>
                         </li>
-                        <li><p>A parameter value consists of a single line of text and (optionally) some <a href="configuring-build-parameters.md#Parameter+References">parameter references</a>. If a value is long or hard to read, you can specify a label, which is shown instead of the raw parameter value in the matrix build overview.</p></li>
+                        <li><p>A parameter value consists of a single line of text and (optionally) some <a href="configuring-build-parameters.md">parameter references</a>. If a value is long or hard to read, you can specify a label, which is shown instead of the raw parameter value in the matrix build overview.</p></li>
                     </list>
             </step>
         </procedure>
