@@ -1,6 +1,7 @@
 [//]: # (title: Create and Set Up Custom Parameters)
 [//]: # (help-id: Changing Build Parameter Type and UI Appearance;Typed Parameters)
 
+<show-structure for="chapter" depth="2"/>
 
 This topic explains how to create custom TeamCity parameters and configure their appearance and behavior.
 
@@ -12,7 +13,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
 ### In TeamCity UI
 
-1. Go to [Project or Configuration settings](project-administrator-guide.md#Edit+and+View+Modes) and switch to the **Parameters** tab. See this article for information on parameter priority and inheritance rules: [](levels-and-priority-of-build-parameters.md).
+1. Go to [Project or Configuration settings](project-administrator-guide.md#Edit+and+View+Modes) and switch to the **Parameters** tab. See this article for information on parameter priority and inheritance rules: [](configuring-build-parameters.md#Parameter+Values).
 
 2. Switch to the **Input Parameters** tab. Output parameters are used in [build chains](build-chain.md) exclusively, see this article for more information: [](use-parameters-in-build-chains.md).
 
@@ -58,7 +59,7 @@ The names of configuration parameters must contain only the `[a-zA-Z0-9._-*]` ch
 
    * **Read-only** parameters display disabled editors in the [Run Custom Build](running-custom-build.md) dialog, which prevents users from changing parameter values. If along with locking the value you also want to hide this parameter from users, set the **Display** option to **Hidden**.
    
-7. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](levels-and-priority-of-build-parameters.md).
+7. Optional: If your custom parameter should have a default value, enter it in the corresponding field. You can also leave this field empty if the final parameter value should be set in child projects or configurations, calculated during a build, or if you need different agents to report different values for this parameter. See the following article to learn more about available value sources: [](configuring-build-parameters.md#Parameter+Values).
 
 
 
@@ -559,7 +560,6 @@ object Test : BuildType({
  <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
-            <a href="using-build-parameters.md">Using Build Parameters</a>
             <a href="predefined-build-parameters.md">List of Predefined Build Parameters</a>
         </category>
 </seealso>

@@ -2,46 +2,131 @@
 [//]: # (help-id: Configuring Build Parameters)
 <!--[//]: # (Internal note. Do not delete. "Configuring Build Parametersd72e3.txt")-->
 
-Parameters are `name=value` pairs that can be referenced throughout TeamCity. There are three major parameter types in TeamCity:
+<show-structure for="chapter,procedure" depth="2"/>
 
-<anchor name="Configuration+Parameters"/>
+Parameters are `name=value` pairs that you reference via the `%\parameterName%` syntax in TeamCity settings and build scripts.
+
+The parameter `value` part can be a raw value (`release.number=2026.1`) or include a reference to another parameter (`system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
+
+## Parameter Types
+
+TeamCity supports paramters of three types:
 
 * **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that was created from a [template](build-configuration-template.md) or uses a [recipe](working-with-meta-runner.md). TeamCity does not pass parameters of this type to a build process (that is, these parameters are not accessible by a build script engine).
-
-<anchor name="Environment+Variables"/>
 
 
 * **Environment Variables** — parameters that start with the `env.` prefix. These parameters are passed to the process of a build runner similarly to the default env variables of a system.
 
-<anchor name="System+Properties"/>
 
-* **System Properties** — parameters that start with the `system.` prefix. TeamCity can pass parameters of this type to configuration files of [certain runners](#Pass+Values+to+Builders%27+Configuration+Files) as variables specific to a build tool.
-
-<anchor name="Parameter+References"/>
-
-## Common Information
-
-Parameters allow you to avoid using plain values in TeamCity UI and build scripts. Instead, you can reference a parameter by its name using the `%\parameter_name%` syntax. In addition, parameters can reference other parameters in their values (for example, `system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
-
-Storing values in parameters allows you to:
-
-* Quickly reuse frequently used values;
-
-* Create reusable [templates](build-configuration-template.md) and [recipes](working-with-meta-runner.md) whose parameter values are overridden in target configurations;
-
-* Add flexibility to your build configurations: parameter values can be quickly altered in TeamCity UI, via the [service message](service-messages.md) sent during a build, or in the [Run Custom Build dialog](running-custom-build.md);
-
-* [Hide sensitive information](typed-parameters.md) that should not be visible to regular TeamCity developers;
-
-* Improve the readability of your configurations by using shorter parameter references instead of lengthy plain values, and so on.
-
-See the following article for simple use cases where you can store values in parameters: [](using-build-parameters.md).
+* **System Properties** — parameters that start with the `system.` prefix. TeamCity can pass parameters of this type to configuration files of certain runners as variables specific to a build tool.
 
 ## Main Use Cases
 
-### Customize Template-Based Configurations
+<procedure title="Parameterize a build script" collapsible="true">
 
-**Configuration parameters** allow you to create a base build configuration with parameters, extract it to the template, and override these parameters in configurations based on this template. Using this technique you can quickly duplicate your build configurations that have slight variations depending on your current task.
+If occasionally you need to run custom script variations, you can replace raw values with parameters. For example, the following [](kotlin-dsl.md) sample illustrates a [](gradle.md) step that runs the `clean build` command by default.
+
+```Kotlin
+object GradleStepParameters : BuildType({
+    params { param("gradle.task", "clean build") }
+    steps {
+        gradle {
+            id = "gradle_runner"
+            // runs "clean build" by default
+            tasks = "%gradle.task%"
+        }
+    }
+})
+```
+
+Users can trigger a [custom build](running-custom-build.md) to override this parameter and run a different Gradle task.
+
+<img src="dk-override-build-parameter.png" width="706" alt="Override build parameter"/>
+
+You can also pre-fill this parameter with supported values. Then, instead of typing, users will be able to select an option via a combo-box...
+
+<img src="dk-build-param-select.png" width="706" alt="Select build parameter"/>
+
+```Kotlin
+params {
+    select("gradle.task", "clean build",
+            options = listOf("clean build", "test build", "build assemble"))
+}
+```
+
+...or checkboxes.
+
+<img src="dk-build-param-checkboxes.png" width="706" alt="Check build parameter values"/>
+
+```Kotlin
+params {
+    select("gradle.task", "clean build",
+            allowMultiple = true, valueSeparator = "%space.separator%",
+            options = listOf("clean", "test", "build", "assemble", "package"))
+    param("space.separator", " ")
+}
+```
+
+See [](typed-parameters.md) for more information on parameter customization.
+
+</procedure>
+
+
+<procedure title="Share common settings" collapsible="true">
+
+Project-owned parameters can store settings common for multiple build configurations or pipelines. For example, if your organization follows strict branch-naming guidelines for all repositories, you can avoid entering identical [branch specifications](working-with-feature-branches.md) and other settings for each VCS root.
+
+```Kotlin
+// Project level
+
+params {
+    param("default.branch.spec", """
+            refs/heads/dev-*
+            -:refs/heads/sandbox
+            -:refs/heads/testing-*
+        """.trimIndent())
+    param("default.branch", "refs/heads/dev-2024.1")
+}
+
+// VCS Root
+
+object GitHubRepoRoot : GitVcsRoot({
+    name = "My Root"
+    url = "..."
+    branch = "%default.branch%"
+    branchSpec = "%default.branch.spec%"
+    authMethod = password {
+        userName = "..."
+        password = "..."
+    }
+})
+```
+
+</procedure>
+
+
+<procedure title="Avoid raw values" collapsible="true">
+
+TeamCity agents report a number of parameters that store tool installation paths. You can use these parameters in build scripts and TeamCity settings. Doing so allows you to create agent-agnostic conditions and minimize potential errors.
+
+```Kotlin
+steps {
+    gradle {
+        name = "Gradle step"
+        tasks = "build-dist"
+        jdkHome = "%\env.JDK_19_0_ARM64%"
+    }
+}
+```
+
+In other cases, you might want avoid raw values because this data is sensitive (for example, authentication credentials used inside a build script). To hide these sensitive values from both TeamCity UI and build logs, create a [password parameter](typed-parameters.md#Create+a+Secret).
+
+</procedure>
+
+
+<procedure title="Customize templates and recipes" collapsible="true">
+
+[Templates](build-configuration-template.md) allow you to quickly create similar build configurations and pipelines. You can parameterize certain template settings to implement unique behavior for each object that derives from this template.
 
 For example, the following build configuration has two steps and the Boolean `skip.optional.step` parameter. Step #2 will or will not be executed depending on this parameter value.
 
@@ -86,26 +171,45 @@ object ConfigFromTemplate : BuildType({
 })
 ```
 
-See the following section to learn more about step execution conditions: [](#Specify+Step+Execution+Conditions).
+[Recipes](working-with-meta-runner.md) are generalized steps that encapsulate frequently used actions. These objects also use parameters to customize their behavior.
+
+```XML
+<meta-runner name="cURL: File Download">
+    <description>A two-step recipe that utilizes the "curl -o %URL% %fileName%" command to download a file, and calls "ls" command to print the contents of a working directory afterwards</description>
+    <settings>
+        <parameters>
+            <param name="URL" value="" spec="text description='The URL of a file to be downloaded' display='normal' label='Download URL:'"/>
+            <param name="fileName" value="" spec="text description='Enter the saved file name or leave blank to keep the origin name' label='File name:'" />
+            <!--other parameters-->
+        </parameters>
+        <build-runners>
+            <runner name="" type="simpleRunner">
+                <parameters>
+                    <param name="script.content" value="curl -o %URL% %fileName%" />
+                    <param name="teamcity.step.mode" value="default" />
+                    <param name="use.custom.script" value="true" />
+                </parameters>
+            </runner>
+            <runner name="" type="simpleRunner">
+                <parameters>
+                    <param name="script.content" value="ls" />
+                    <param name="teamcity.step.mode" value="default" />
+                    <param name="use.custom.script" value="true" />
+                </parameters>
+            </runner>
+        </build-runners>
+        <requirements />
+    </settings>
+</meta-runner>
+```
+
+</procedure>
 
 
+<procedure title="Specify step execution conditions" collapsible="true">
 
-
-### Pass Values to Recipes
-
-A [recipe](working-with-meta-runner.md) allows you to extract build steps, requirements, and parameters from a build configuration and create a custom build runner.
-
-See this article for more information: [](working-with-meta-runner.md).
-
-
-
-### Specify Step Execution Conditions
 
 You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should run. You can craft these conditions using [custom](typed-parameters.md) and [predefined](predefined-build-parameters.md) configuration parameters and environment variables.
-
-To set up step execution conditions in TeamCity UI, go to step settings and click **Add condition | Other condition...**
-
-<img src="dk-params-StepExecutionCondition.png" width="706" alt="Step execution condition"/>
 
 For example, you can run different shell scripts depending on the build agent's operating system.
 
@@ -128,7 +232,9 @@ object StepExecutionConditions : BuildType({
                 startsWith("teamcity.agent.jvm.os.name", "Windows")
             }
             scriptMode = script {
-                content = """Copy-Item "%system.teamcity.build.workingDir%/result.xml" -Destination %win.destination.path%"""
+                content = """
+                    Copy-Item "%system.teamcity.build.workingDir%/result.xml" 
+                    -Destination %win.destination.path%"""
             }
         }
         // Command Line runner for non-Windows agents
@@ -139,15 +245,22 @@ object StepExecutionConditions : BuildType({
             conditions {
                 doesNotContain("teamcity.agent.jvm.os.name", "Windows")
             }
-            scriptContent = """cp "%system.teamcity.build.workingDir%/result.xml" %unix.destination.path%"""
+            scriptContent = """
+                cp "%system.teamcity.build.workingDir%/result.xml" 
+                %unix.destination.path%"""
         }
     }
 })
 ```
 
 
+</procedure>
 
-### Specify Agent Requirements
+
+
+
+<procedure title="Specify agent requirements" collapsible="true">
+
 
 [Agent requirements](configuring-agent-requirements.md) allow you to specify `parameter-operator-value` conditions. Only those agents that meet these conditions are allowed to build this build configuration.
 
@@ -159,59 +272,28 @@ You can define agent requirements using only those parameters whose values agent
 
 * Custom configuration parameters that are present in agents' [buildAgent.properties](configure-agent-installation.md) files (for example, create a `custom.agent.parameter` in TeamCity UI and add the `custom.agent.parameter=MyValue` line to agents' properties files).
 
-TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on a Linux machine.
+> TeamCity automatically adds agent requirements depending on the configured build steps. For example, if a build step should be executed inside a Linux container, TeamCity adds requirements that specify an agent must have [either Docker or Podman](integrating-teamcity-with-container-managers.md) running on a Linux machine.
 
-To define custom agent requirements in TeamCity UI, navigate to the **[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Agent Requirements** tab.
 
-<img src="dk-params-AgentRequirements.png" width="706" alt="Set agent requirements in TeamCity UI"/>
-
-In [](kotlin-dsl.md), use the `requirements` block of your build configuration to define a requirement.
+In [](kotlin-dsl.md), use the [`requirements`](https://www.jetbrains.com/help/teamcity/kotlin-dsl-documentation/root/requirements/index.html) collection to define new requirements.
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.*
-
-object BuildConfig : BuildType({
-    name = "Build Config"
-    steps { 
-        // Build steps
-    }
-
+object MyBuildConfig : BuildType({
     requirements {
-        // Requirements in the following format:
-        // Operator("ParameterName", "ParameterValue")
+        // Only agents with .NET SDK 5.0
+        exists("DotNetCoreSDK5.0_Path")
+        // Only Windows agents
+        startsWith("teamcity.agent.jvm.os.name", "Windows")
+        // Only agents with "Android" workload for .NET 7 SDK
+        contains("DotNetWorkloads_7.0", "android")
     }
 })
 ```
 
-For example, the following condition allows only Mac agents to run builds for the parent build configuration.
-
-```Kotlin
-matches("teamcity.agent.jvm.os.family", "Mac OS")
-```
-{instance="tcc"}
-
-```Kotlin
-startsWith("teamcity.agent.jvm.os.name", "Mac")
-```
-{instance="tc"}
-
-The sample condition below allows builds to run only on machines with "Android" workload installed for .NET 7 SDK:
-
-```Kotlin
-contains("DotNetWorkloads_7.0", "android")
-```
-
-The following condition requires that an agent running builds has either Docker or Podman:
-
-```Kotlin
-exists("container.engine")
-```
+</procedure>
 
 
-
-
-
-
+<!--
 ### Pass Values to Simple Script Runners
 
 You can insert references to parameters as `%\parameter_name%` when writing scripts for [](command-line.md), [](c-script.md), and [](python.md) runners.
@@ -297,6 +379,10 @@ See this blog post for an example of using parameters in C# scripts and .NET run
 
 </td></tr></table>
 
+-->
+
+<!--
+
 #### Share Values Between Steps
 
 You can use parameters to pass simple data from one step/script to another. To do this, send the `setParameter` [service message](service-messages.md) from a script that calculates new parameter values.
@@ -337,8 +423,12 @@ object MyBuildConf : BuildType({
 
 </snippet>
 
+-->
+
 
 <anchor id="Using+Build+Parameters+in+Build+Scripts"/>
+
+<!--
 
 ### Pass Values to Builders' Configuration Files
 
@@ -391,7 +481,6 @@ The following sample `.csproj` file defines two custom MSBuild [targets](https:/
 To reference a parameter value in Maven and Ant, use the `${parameterName}` syntax.
 
 ```XML
-<!--pom.xml file-->
 <configuration>
     <tasks>
         <property environment="env"/>
@@ -433,29 +522,168 @@ Otherwise, if the property has dots in its name (for example, `build.vcs.number.
 
 </tabs>
 
+-->
 
 
+## Parameter Sources
+
+All TeamCity parameters can be categorized in two main groups: predefined and custom (created by TeamCity users). Custom parameters can be declared on multiple levels, including individual projects, build configurations, and agent machines.
 
 
-### Share Values Between Chain Builds
+<deflist type="full">
 
-TeamCity parameters allow you to exchange values between configurations of a [build chain](build-chain.md). See this documentation article for more information: [](use-parameters-in-build-chains.md).
+<def title="Predefined parameters">
 
+TeamCity exposes multiple predefined parameters that you can reference in your build workflows. For example, the `teamcity.agent.work.dir.freeSpaceMb` parameter reports the total free space on this particular build agent, and `DotNetCLI_Path` parameter returns the .NET CLI installation path.
 
+See this article for more information: [](predefined-build-parameters.md).
 
-
-
-
-
-
+</def>
 
 
+<def title="Custom template, project, configuration, and pipeline parameters">
+
+These parameters are created by users inside project, configuration, and pipeline settings. In certain cases, TeamCity creates them automatically. For example, if your [CLI step](command-line.md) runs the `echo %\MyParam%` command but `MyParam` does not exist, every build will fail. TeamCity recognizes this as a misconfiguration and does not run new builds unless you provide a value for this missing parameter. In other words, the presence of a missing parameter becomes an **implicit requirement** for new builds.
+
+See [](typed-parameters.md) and [](configuring-agent-requirements.md#Implicit+Requirements) for more information.
+
+</def>
+
+
+<def title="Custom agent parameters">
+
+You can manually declare parameters inside [agent configuration files](configure-agent-installation.md) (`<AGENT_HOME>/conf/buildAgent.properties`). For example, the following sample demonstrates how to implement a custom build agents' ranking system:
+
+```
+# An agent's "buildAgent.properties" files
+
+######################################
+#   Default Build Properties         #
+######################################
+# ...
+agent.tier=Platinum
+# ...
+```
+
+This custom agent rank can then be employed in [agent requirements](configuring-agent-requirements.md):
+
+
+```Kotlin
+object Build : BuildType({
+    name = "My build config"
+    requirements {
+        equals("agent.tier", "Platinum")
+    }heрур
+})
+```
+
+</def>
+
+
+<def title="Custom build parameters">
+
+Users who trigger [custom builds](running-custom-build.md) can override existing parameter values and add new parameters on a corresponding dialog tab.
+
+<img src="dk-custom-run-new-parameter.png" width="706" alt="Add new parameters in custom run dialog"/>
+
+</def>
+
+
+<def title="Dynamically created custom parameters">
+
+Print the `##teamcity[setParameter name='foo' value='bar']` [service message](service-messages.md#set-parameter) to the build log to update an existing or add a new parameter.
+
+</def>
+
+</deflist>
+
+
+## Parameter Values
+
+TeamCity parameters can obtain their values from one or multiple sources listed below.
+
+* Values from a template selected as the [enforced settings template](build-configuration-template.md#Enforcing+settings+inherited+from+template). These values cannot be disabled or overridden by users.
+
+* The **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog.
+
+* Custom values assigned to a parameter in build configuration or pipeline settings.
+
+* Custom values assigned to a parameter parent project settings. Parameters defined within a project are inherited by all its child entities.
+
+* Values specified in a regular [build configuration template](build-configuration-template.md).
+
+* Values specified in a build agent's [configuration file](configure-agent-installation.md) (the `<AGENT_HOME>/conf/buildAgent.properties` file).
+
+* Values reported by an agent when it connects to the TeamCity server. These values are passed to parameters that describe the agent environment. For example, the `DotNetCoreSDK7.0_Path` parameter that stores the path to .NET 7 SDK on this specific agent.
+
+* Values of predefined build parameters. These parameters can collect their values on a server side in the scope of a specific build (for example, the `build.number` parameter), or on the agent side right before a build starts (for example, the `teamcity.agent.work.dir.freeSpaceMb` parameter).
+
+
+The list above also ranges parameter value sources by priority, from highest to lowest. That is, if the same parameter retrieves different values from different sources, a value from the topmost source in this list is applied. For example, if the `my.parameter` is defined inside an agent configuration file and inside a build configuration, the value from the configuration settings page wins.
+
+### Override Parameter Values During a Build
+
+Initial parameter values can be overridden by sending the `##teamcity[setParameter name='foo' value='bar']` [service message](service-messages.md#set-parameter). Note that parameters modified in such manner update their values only in the scope of the current build or build chain. To **permanently** override a parameter value, send the REST API request from your build step like shown below:
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+object UpdateBuildVersion : BuildType({
+name = "Update Build Version"
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = """
+                version=%\build.version%
+                ((version=version+1))
+                
+                curl --location --request PUT 'http://<server_URL>/app/rest/projects/<project_name>/parameters/build.version' \
+                --header 'Accept: */*' \
+                --header 'Content-Type: text/plain' \
+                --header 'Authorization: Bearer your_token' \
+                --data ${'$'}version
+            """.trimIndent()
+        }
+    }
+})
+```
+
+
+### Get Parameter Value From a Remote Source
+
+To hide sensitive data from both TeamCity UI and build logs (for example, login credentials and access tokens), use [password parameters](typed-parameters.md#Create+a+Secret) that mask their values. To secure critical values even further, store them in a third-party vault and create a TeamCity parameter of the **remote secret** type. These parameters have no explicit "value" part. Instead, they store a query that TeamCity runs whenever it needs to resolve the parameter reference.
+
+Currently, only HashiCorp Vault is supported as a remote secret storage. See this article for more information: [](hashicorp-vault.md).
+
+
+### Track Parameter Values
+
+When a build finishes, you can check out all parameters that were present during this build on the **Parameters** tab of the [Build Results page](build-results-page.md). TeamCity highlights new parameters and those whose values changed during the build.
+
+<img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
+
+To check initial and actual parameter values of the specific build via [REST API](teamcity-rest-api.md), send GET requests to the `/app/rest/builds/[{buildLocator}](https://www.jetbrains.com/help/teamcity/rest/buildlocator.html)` endpoint and specify required payload fields according to the [Build schema](https://www.jetbrains.com/help/teamcity/rest/build.html).
+
+
+* `/app/rest/builds/{buildLocator}?fields=originalProperties(*)` — returns user-defined parameters from the build configuration and their default values.
+* `/app/rest/builds/{buildLocator}?fields=startProperties(*)` — returns all parameters reported by an agent and their values at the time the build started.
+* `/app/rest/builds/{buildLocator}?fields=resultingProperties(*)` — returns all parameters reported by an agent and their values by the time the build finished.
+
+You can also check initial and final values of the specific parameter. To do this, specify the name of the target parameter:
+
+```Shell
+curl -L \
+  https:<SERVER_URL>/app/rest/builds/<BUILD_LOCATOR>?fields=\
+    originalProperties($locator(name:(value:(myParam),matchType:matches)),property),\
+    startProperties($locator(name:(value:(myParam),matchType:matches)),property),\
+    resultingProperties($locator(name:(value:(myParam),matchType:matches)),property)
+```
 
 
 <seealso>
         <category ref="admin-guide">
-        <a href="using-build-parameters.md">Using Build Parameters</a>
-            <a href="levels-and-priority-of-build-parameters.md">Project- and Agent-Level Build Parameters</a>
             <a href="predefined-build-parameters.md">Predefined Build Parameters</a>
             <a href="typed-parameters.md">Typed Parameters</a>
             <a href="configuring-agent-requirements.md">Configuring Agent Requirements</a>

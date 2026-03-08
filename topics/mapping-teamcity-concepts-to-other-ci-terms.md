@@ -68,7 +68,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Capability</p></td>
-<td><p>(Agent) <a href="using-build-parameters.md">Build Parameter</a></p></td>
+<td><p>(Agent) <a href="configuring-build-parameters.md">Build Parameter</a></p></td>
 </tr>
 
 </table>
@@ -178,7 +178,7 @@ This information can be used when migrating to TeamCity from other Continuous In
 
 <tr>
 <td><p>Vars</p></td>
-<td><p><a href="using-build-parameters.md">Build Parameter</a></p></td>
+<td><p><a href="configuring-build-parameters.md">Build Parameter</a></p></td>
 </tr>
 
 </table>

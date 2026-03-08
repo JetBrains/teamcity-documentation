@@ -81,7 +81,13 @@ Provides access to [downloadable files](build-artifact.md) produced by the build
 
 The **Parameters** tab allows you to track standard and user-defined <a href="configuring-build-parameters.md">build parameters</a> associated with this build. Highlights parameters whose values changed during the build.
 
-<include from="levels-and-priority-of-build-parameters.md" element-id="build-results-parameters-tab"/>
+<img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
+
+This page has two tabs:
+
+* **Parameters** — lists values for all configuration parameters, system properties, and environment variables. You can tick a related checkbox to view only those parameters that changed their values during this build.
+
+* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
 
 
 ## Dependencies Tab

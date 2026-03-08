@@ -90,7 +90,7 @@ For example, if one of your steps is configured to [run inside a container](cont
 ## Implicit Requirements
 {help-id="ImplicitAgentRequirements"}
 
-Similarly to build steps requirements, **implicit requirements** are added automatically by TeamCity based on build step configuration. However, these requirements focus exclusively on [parameter references](configuring-build-parameters.md#Parameter+References).
+Similarly to build steps requirements, **implicit requirements** are added automatically by TeamCity based on build step configuration. However, these requirements focus exclusively on [parameter references](configuring-build-parameters.md).
 
 For example, if a configuration has the `echo "%\myParam%"` [command-line build step](command-line.md), it is implied the `myParam` parameter exists and has value. Otherwise, if a parameter is missing or empty, there is nothing to print out. In this case, TeamCity shows a corresponding warning on the **Parameters** tab...
 

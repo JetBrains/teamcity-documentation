@@ -96,8 +96,6 @@ If you need to manually change a TeamCity parameter from inside a build step, se
 echo "##teamcity[setParameter name='myParam1' value='TeamCity Agent %\teamcity.agent.name%']"
 ```
 
-<include from="configuring-build-parameters.md" element-id="change-parameter-from-build"/>
-
 
 > Note that using the `setParameter` service message overrides the parameter value only in the scope of the current build or build chain. To **permanently** override a parameter value, send the REST API request from your build step like shown below:
 > 
@@ -147,13 +145,7 @@ To view which values parameters had during a specific build, open this build's [
 
 <snippet id="build-results-parameters-tab">
 
-<img src="dk-params-newAndUpdated.png" width="706" alt="Build parameters report"/>
 
-This page has two tabs:
-
-* **Parameters** — lists values for all configuration parameters, system properties, and environment variables. You can tick a related checkbox to view only those parameters that changed their values during this build.
-
-* **Statistic values** — lists all [statistics values](custom-chart.md#Default+Statistics+Values+Provided+by+TeamCity) reported for the build (for example, build success rate or time required to check out a remote repository). The *View Chart* button (<img src="dk-viewChart.png" width="12" alt="View Chart"/>) allows you to check how these values trend throughout build runs.
 
 </snippet>
 
@@ -196,7 +188,6 @@ If this build runs on Wednesday and you pass Sunday as the `day.of.week` paramet
 <seealso>
         <category ref="admin-guide">
             <a href="configuring-build-parameters.md">Configuring Build Parameters</a>
-            <a href="using-build-parameters.md">Using Build Parameters</a>
             <a href="predefined-build-parameters.md">List of Predefined Build Parameters</a>
         </category>
 </seealso>

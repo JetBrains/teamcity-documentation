@@ -126,7 +126,7 @@ Script
 Select whether you want to enter the script right in TeamCity, or specify a path to the script:
 
 * __File__: Enter the path to a PowerShell file. The path has to be relative to the checkout directory.
-* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](using-build-parameters.md) will be replaced in the code.
+* __Source__: Enter the PowerShell script source. Note that TeamCity [parameter references](configuring-build-parameters.md) will be replaced in the code.
 
 <note>
 

@@ -62,15 +62,15 @@ These agent-specific parameters are defined on each build agent and vary dependi
 
 If an agent machine has additional software installed, system administrators can modify the `<Agent Home>/conf/buildAgent.properties` file to override values of corresponding parameters. 
 
-Agent environment parameters can be used to set build configuration options, define [agent requirements](configuring-build-parameters.md#Specify+Agent+Requirements), and [inside build scripts](configuring-build-parameters.md#Pass+Values+to+Builders%27+Configuration+Files).
+Agent environment parameters can be used to set build configuration options, define [agent requirements](configuring-agent-requirements.md), and [inside build scripts](configuring-build-parameters.md#Main+Use+Cases).
 
-To check all existing parameters and their current values for a given build agent, open the agent details page and switch to the **Parameters** tab. See this link for more information: [](levels-and-priority-of-build-parameters.md#Checking+Parameter+Values).
+To check all existing parameters and their current values for a given build agent, open the agent details page and switch to the **Parameters** tab. See this link for more information: [](configuring-build-parameters.md#Track+Parameter+Values).
 
 
 <deflist>
 
-<def instance="tc" title="teamcity.agent.name">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</def>
-<def instance="tcc" title="teamcity.agent.name">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Specify+Agent+Requirements">agent requirements</a> and limit the number of agents a target configuration can use.</def>
+<def instance="tc" title="teamcity.agent.name">The name of the agent as specified in the <code>buildAgent.properties</code> <a href="configure-agent-installation.md">agent configuration file</a>. You can use agent names to specify <a href="configuring-build-parameters.md#Main+Use+Cases">agent requirements</a> and limit the number of agents a target configuration can use.</def>
+<def instance="tcc" title="teamcity.agent.name">The agent's name. You can use agent names to specify <a href="configuring-build-parameters.md#Main+Use+Cases">agent requirements</a> and limit the number of agents a target configuration can use.</def>
 
 <def title="teamcity.agent.work.dir">The path to the <a href="agent-work-directory.md">agent work directory</a>.</def>
 <def title="teamcity.agent.work.dir.freeSpaceMb">Free space available in the <a href="agent-work-directory.md">agent work directory</a>. <note>See the <a href="known-issues.md#Incorrectly+Reported+Free+Disk+Space+on+macOS+Agents">Known Issues</a> article if you're experiencing issues with macOS agents reporting incorrect free storage values.</note></def>
@@ -267,7 +267,7 @@ vcsroot.<VCS_root_ID>.<VCS_root_parameter_name>
 
 If there is only one VCS root in a build configuration, the `<VCS_root_ID>.` part can be omitted.
 
-Parameters marked by the VCS as `secure` (for example, passwords) are not available for [referencing](configuring-build-parameters.md#Parameter+References).
+Parameters marked by the VCS as `secure` (for example, passwords) are not available for referencing.
 
 ### Build Branch Parameters
 
