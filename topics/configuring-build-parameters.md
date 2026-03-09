@@ -8,6 +8,8 @@ Parameters are `name=value` pairs that you reference via the `%\parameterName%` 
 
 The parameter `value` part can be a raw value (`release.number=2026.1`) or include a reference to another parameter (`system.tomcat.libs=%\env.CATALINA_HOME%/lib/*.jar`).
 
+> TeamCity interprets any text enclosed in percentage characters as a parameter reference (and potentially adds an [implicit agent requirement](configuring-agent-requirements.md#Implicit+Requirements) if no such parameter exists). To avoid this behavior, double percentage characters. For example, if you want to pass `%\Y%m%\d%H%\M%S` into the build, change it to `%\%Y%\%m%\%d%\%H%\%M%\%S`.
+
 ## Parameter Types
 
 TeamCity supports paramters of three types:
@@ -22,7 +24,7 @@ TeamCity supports paramters of three types:
 
 ## Main Use Cases
 
-<procedure title="Parameterize a build script" collapsible="true">
+<procedure title="Parameterize a build script" collapsible="true" id="parameter-use-cases-parameterize-scripts" help-id="parameter-use-cases-parameterize-scripts">
 
 If occasionally you need to run custom script variations, you can replace raw values with parameters. For example, the following [](kotlin-dsl.md) sample illustrates a [](gradle.md) step that runs the `clean build` command by default.
 
@@ -72,7 +74,7 @@ See [](typed-parameters.md) for more information on parameter customization.
 </procedure>
 
 
-<procedure title="Share common settings" collapsible="true">
+<procedure title="Share common settings" collapsible="true" id="parameter-use-cases-share-settings" help-id="parameter-use-cases-share-settings">
 
 Project-owned parameters can store settings common for multiple build configurations or pipelines. For example, if your organization follows strict branch-naming guidelines for all repositories, you can avoid entering identical [branch specifications](working-with-feature-branches.md) and other settings for each VCS root.
 
@@ -105,7 +107,7 @@ object GitHubRepoRoot : GitVcsRoot({
 </procedure>
 
 
-<procedure title="Avoid raw values" collapsible="true">
+<procedure title="Avoid raw values" collapsible="true" id="parameter-use-cases-replace-values" help-id="parameter-use-cases-replace-values">
 
 TeamCity agents report a number of parameters that store tool installation paths. You can use these parameters in build scripts and TeamCity settings. Doing so allows you to create agent-agnostic conditions and minimize potential errors.
 
@@ -124,7 +126,7 @@ In other cases, you might want avoid raw values because this data is sensitive (
 </procedure>
 
 
-<procedure title="Customize templates and recipes" collapsible="true">
+<procedure title="Customize templates and recipes" collapsible="true" id="parameter-use-cases-templates-and-recipes" help-id="parameter-use-cases-templates-and-recipes">
 
 [Templates](build-configuration-template.md) allow you to quickly create similar build configurations and pipelines. You can parameterize certain template settings to implement unique behavior for each object that derives from this template.
 
@@ -206,7 +208,7 @@ object ConfigFromTemplate : BuildType({
 </procedure>
 
 
-<procedure title="Specify step execution conditions" collapsible="true">
+<procedure title="Specify step execution conditions" collapsible="true" id="parameter-use-cases-step-conditions" help-id="parameter-use-cases-step-conditions">
 
 
 You can define [step execution conditions](build-step-execution-conditions.md) to specify whether individual steps should run. You can craft these conditions using [custom](typed-parameters.md) and [predefined](predefined-build-parameters.md) configuration parameters and environment variables.
@@ -259,7 +261,7 @@ object StepExecutionConditions : BuildType({
 
 
 
-<procedure title="Specify agent requirements" collapsible="true">
+<procedure title="Specify agent requirements" collapsible="true" id="parameter-use-cases-agent-requirements" help-id="parameter-use-cases-agent-requirements">
 
 
 [Agent requirements](configuring-agent-requirements.md) allow you to specify `parameter-operator-value` conditions. Only those agents that meet these conditions are allowed to build this build configuration.
@@ -289,6 +291,102 @@ object MyBuildConfig : BuildType({
     }
 })
 ```
+
+</procedure>
+
+
+<procedure title="Parameterize builder configurations" collapsible="true" id="parameter-use-cases-builder-configs" help-id="parameter-use-cases-builder-configs">
+
+[.NET](net.md), [Maven](maven.md), [Gradle](gradle.md), [Ant](ant.md) and [NAnt](nant.md) runners allow you to reference TeamCity parameters in build configuration files. This technique allows you to pass the required values to build processes.
+
+> Parameters used in this scenario should start with either `env.` or `system.` prefixes but referenced without these prefixes. For example, use `${build.number}` in Maven configuration files to reference the predefined `system.build.number` parameter.
+>
+{style="warning"}
+
+<tabs>
+
+
+<tab title=".NET">
+
+In .NET, pass parameter values using the `$(<parameter_name>)` syntax.
+
+> * MSBuild does not support names with dots (.), so you need to replace dots with underscores ("_") when using the parameter inside a build script.
+> * The `nuget push` and `nuget delete` commands do not support parameters.
+>
+{style="note"}
+
+The following sample `.csproj` file defines two custom MSBuild [targets](https://learn.microsoft.com/en-us/visualstudio/msbuild/target-element-msbuild?view=vs-2022):
+
+```XML
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <OutputZipFile>project.zip</OutputZipFile>
+        <OutputUnzipDir>unzipped</OutputUnzipDir>
+    </PropertyGroup>
+
+    <Target Name="Zip">
+        <ItemGroup>
+            <FilesToZip Include="project.proj*" />
+        </ItemGroup>
+        <Exec Command="dir" />
+        <Microsoft.Build.Tasks.Message Text="##teamcity[progressMessage 'Archiving files to $(OutputZipFile) file...']"/>
+        <Exec Command="PowerShell -command Compress-Archive @(FilesToZip, ',') $(OutputZipFile) -Force" />
+    </Target>
+    <Target Name="Unzip">
+        <Microsoft.Build.Tasks.Message Text="##teamcity[progressMessage 'Unzipping files to $(OutputUnzipDir) folder...']"/>
+        <Exec Command="PowerShell -command Expand-Archive $(OutputZipFile) -DestinationPath $(OutputUnzipDir) -Force" />
+    </Target>
+</Project>
+```
+
+</tab>
+
+<tab title="Maven">
+
+To reference a parameter value in Maven and Ant, use the `${parameterName}` syntax.
+
+```XML
+<configuration>
+    <tasks>
+        <property environment="env"/>
+        <echo message="TEMP = ${env.TEMP}"/>
+        <echo message="TMP = ${env.TMP}"/>
+        <echo message="java.io.tmpdir = ${java.io.tmpdir}"/>
+        <echo message="build.number = ${build.number}"/>
+    </tasks>
+</configuration>
+```
+
+</tab>
+
+
+<tab title="Ant">
+
+To reference a parameter value in Maven and Ant, use the `${parameterName}` syntax.
+
+```XML
+<target name="buildmain">
+    <ant dir="${teamcity.build.checkoutDir}" antfile="${teamcity.build.checkoutDir}/build-test.xml" target="masterbuild_main"/>
+</target>
+```
+
+</tab>
+
+
+<tab title="Gradle">
+
+For [Gradle](gradle.md) runner, TeamCity system properties can be accessed as native Gradle properties (those defined in the `gradle.properties` file). If the property name is allowed as a Groovy identifier (does not contain dots), use the following syntax:
+
+```Shell
+println "Custom user property value is ${customUserProperty}"
+```
+
+Otherwise, if the property has dots in its name (for example, `build.vcs.number.1`), use the `project.ext["build.vcs.number.1"]` syntax instead.
+
+</tab>
+
+</tabs>
+
 
 </procedure>
 
@@ -573,7 +671,7 @@ object Build : BuildType({
     name = "My build config"
     requirements {
         equals("agent.tier", "Platinum")
-    }heрур
+    }
 })
 ```
 
@@ -680,6 +778,10 @@ curl -L \
     startProperties($locator(name:(value:(myParam),matchType:matches)),property),\
     resultingProperties($locator(name:(value:(myParam),matchType:matches)),property)
 ```
+
+
+
+
 
 
 <seealso>
