@@ -684,6 +684,12 @@ Users who trigger [custom builds](running-custom-build.md) can override existing
 
 <img src="dk-custom-run-new-parameter.png" width="706" alt="Add new parameters in custom run dialog"/>
 
+For example, if you do not [specify the Java version](maven.md#Java+Parameters) for a [Maven build step](maven.md), it uses the agent’s default Java defined by the `JAVA_HOME` environment variable. To override it, add the `env.JAVA_HOME` parameter in the Custom Build Run dialog and set it to an existing agent parameter such as `%\env.JDK_21_0_ARM64%`.
+
+> This scenario should be relatively rare. If you need to switch Java versions (or other agent tools) frequently, consider creating a build configuration parameter and [pre-filling it with supported values](#parameter-use-cases-parameterize-scripts).
+> 
+{style="tip"}
+
 </def>
 
 
