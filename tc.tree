@@ -588,6 +588,7 @@
 		<toc-element toc-title="TeamCity Roadmap" href="https://www.jetbrains.com/teamcity/roadmap/"/>
 		<toc-element toc-title="TeamCity Blog" href="https://blog.jetbrains.com/teamcity/"/>
 	</toc-element>
-	<toc-element topic="slack-code-of-conduct.md"/>
+    <toc-element topic="teamcity-kmp.md"/>
+    <toc-element topic="slack-code-of-conduct.md"/>
 	<toc-element hidden="true" topic="common-templates.md"/>
 </instance-profile>
