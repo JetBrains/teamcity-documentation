@@ -50,7 +50,7 @@ To execute such a goal, select "_Automatically on agent_" in the __[VCS Checkout
 <def title="POM location">
 
 
-The path to the POM file relative to the [build working directory](build-working-directory.md). By default, equals to `pom.xml`.
+The path to the POM file relative to the [build checkout directory](build-checkout-directory.md). By default, equals to `pom.xml`.
 
 
 </def>
