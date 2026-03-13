@@ -83,7 +83,7 @@ Building tasks are processed by build agents installed on bare metal or cloud ma
 
 In this tutorial, jobs specify agent requirements to ensure these jobs are assigned only to agents that have required tools installed.
 
-### Job 1: Run shared tests
+### Run shared tests
 
 Switch to the YAML pipeline editor and paste the following markup to set up the first job.
 
@@ -98,7 +98,7 @@ jobs:
         jdk-home: '%env.JDK_17_0%'
         tasks: jvmTest
     files-publication:
-      - path: '**/build/reports/tests/**/* => test-reports'
+      - path: '**/build/reports/tests/**/*'
         share-with-jobs: false
         publish-artifact: true
     allow-reuse: false
@@ -119,7 +119,7 @@ The **Allow reuse** optimization option specifies whether TeamCity should skip r
 See these topics for more information: [Job settings](https://www.jetbrains.com/help/teamcity/job-settings.html) | [Gradle build step](https://www.jetbrains.com/help/teamcity/gradle.html).
 
 
-### Job 2: Build the Android debug package
+### Build the Android debug package
 
 Modify the pipeline YAML as follows:
 
@@ -151,7 +151,7 @@ jobs:
 
 The `requirement` block ensures this job is never assigned to agents that have Android SDK installed, and `dependencies` section specifies that this job should start after "Job 1" finishes.
 
-### Job 3: Build the iOS simulator application
+### Build the iOS simulator application
 
 For the final step, add the following markup to the pipeline YAML:
 
@@ -181,9 +181,9 @@ jobs:
       - Job1
 ```
 
-Unlike first two jobs, this one utilizes the universal [command-line build step](https://www.jetbrains.com/help/teamcity/command-line.html) that you can use to interact with any tool installed on the agent machine.
+Unlike the first two jobs, "Build iOS" utilizes the universal [command-line build step](https://www.jetbrains.com/help/teamcity/command-line.html) that you can use to interact with any tool installed on the agent machine.
 
-The `dependencies` section also sets this job as dependent on "Job1", meaning both "Build ..." jobs can run in parallel but only after the testing routine finishes.
+The `dependencies` section also sets the dependency on "Job1", meaning both "Build ..." jobs can run in parallel but only after the testing routine finishes.
 
 > When working with build configurations, you can replace the Script build step with the specialized [Xcode Project step](https://www.jetbrains.com/help/teamcity/xcode-project.html).
 >
