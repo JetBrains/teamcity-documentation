@@ -4,6 +4,15 @@
 <show-structure for="chapter" depth="2"/>
 
 
+## Release Cycle Update
+
+Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the "YYYY.N" format, where "N" indicates the release number rather than the month of release. We expect this change to support a more balanced and predictable development cycle, while reducing the pressure to release a major version within a fixed calendar month.
+
+* **TeamCity Cloud** servers will receive multiple minor updates throughout each release cycle, enabling faster delivery and quicker access to new features.
+* **TeamCity On-Premises** releases will bundle several Cloud updates into a single major release, with new versions expected at least twice a year.
+
+
+
 <include from="what-s-new-in-teamcity-tc.md" element-id="2026-1-tc" instance="tc"/>
 
 <include from="what-s-new-in-teamcity-tcc.md" element-id="2026-1-tcc" instance="tcc"/>
