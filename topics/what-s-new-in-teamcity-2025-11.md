@@ -98,7 +98,7 @@ Real-world CI/CD workloads often include dozens of build configurations and jobs
 
 
 ## Server Encryption Enhancements
-{product="tc"}
+{instance="tc"}
 
 TeamCity lets you configure a custom 128-bit AES key to [encrypt all SSH keys and secrets](teamcity-configuration-and-maintenance.md#encryption-settings) to encrypt sensitive data, replacing the default key and enhancing overall server security.
 
