@@ -1,12 +1,12 @@
-[//]: # (title: What's New in TeamCity 2025.11)
-[//]: # (help-id: What's New in TeamCity 2025.11;What's New in TeamCity)
+[//]: # (title: What's New in TeamCity 2026.1)
+[//]: # (help-id: What's New in TeamCity 2026.1;What's New in TeamCity)
 
 <show-structure for="chapter" depth="2"/>
 
 
-<include from="what-s-new-in-teamcity-tc.md" element-id="2025-11-tc" instance="tc"/>
+<include from="what-s-new-in-teamcity-tc.md" element-id="2026-1-tc" instance="tc"/>
 
-<include from="what-s-new-in-teamcity-tcc.md" element-id="2025-11-tcc" instance="tcc"/>
+<include from="what-s-new-in-teamcity-tcc.md" element-id="2026-1-tcc" instance="tcc"/>
 
 
 ## Upgrade Notes

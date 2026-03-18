@@ -20,9 +20,9 @@ Major updates are released twice a year, and each major release is followed by m
 ## Version Numbers
 {instance="tc"}
 
-A major release is represented by the `YYYY.MM` number, where `YYYY` is the release year and `MM` is the number of the release month. For example, `2022.04` and `2022.10` are two major versions released in year 2022, in April and October.
+A major release is represented by the `YYYY.N` number, where `YYYY` is the release year and `N` is the number of the release. For example, `2026.1` and `2026.2` are two major versions released in 2026.
 
-A minor release is represented by the `YYYY.MM.B` number, where `YYYY.MM.B` corresponds to its preceding major release and `B` is the serial number of the minor (bugfix) release. For example, `2022.04.1` is the first bugfix update released for major version `2022.04`.
+A minor release is represented by the `YYYY.N.B` number, where `YYYY.N` corresponds to its preceding major release and `B` is the serial number of the minor (bugfix) release. For example, `2026.1.3` is the third bugfix update released for major version `2026.1`.
 
 The dates of all previous releases and the sequence of TeamCity versions are listed [here](previous-releases-downloads.md).
 {instance="tc"}
