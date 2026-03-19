@@ -4,12 +4,12 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Release Cycle Update
+## Release Cycle Updates
 
-Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the "YYYY.N" format, where "N" indicates the release number rather than the month of release. We expect this change to support a more balanced and predictable development cycle, while reducing the pressure to release a major version within a fixed calendar month.
+Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.
 
-* **TeamCity Cloud** servers will receive multiple minor updates throughout each release cycle, enabling faster delivery and quicker access to new features.
-* **TeamCity On-Premises** releases will bundle several Cloud updates into a single major release, with new versions expected at least twice a year.
+This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
+
 
 
 
