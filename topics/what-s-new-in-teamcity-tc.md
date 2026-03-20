@@ -4,4 +4,11 @@
 
 TBD
 
+## Miscellaneous Enhancements
+
+* The [HashiCorp Vault Connection](hashicorp-vault.md#Set+Up+a+Vault+Connection) now supports authentication via [Google Cloud Platform authentication](https://developer.hashicorp.com/vault/docs/auth/gcp).
+
+
+
+
 </snippet>

@@ -56,12 +56,11 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
     </td></tr></table>
 
     </tab>-->
-   
-   
-    
+
+
     <tab title="Vault AppRole">
 
-    <table><tr><td>
+    <procedure>
     
     This authentication method requires that you enable the AppRole auth method in your Vault instance and create an **AppRole**. AppRoles are sets of Vault policies that specify which secrets a user (in this case, TeamCity) can access.<br/><br/>
     
@@ -80,19 +79,36 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
 
     Refer to these Vault documentation articles to learn how to create and set up AppRoles: [Getting Started: Policies](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-policies), [AppRole auth method](https://developer.hashicorp.com/vault/docs/auth/approle).
 
-    </td></tr></table>
+    </procedure>
 
     </tab>
     
     <tab title="LDAP Auth">
 
-   <table><tr><td>
+    <procedure>
 
     This method can be used for Vault instances with enabled [LDAP auth method](https://developer.hashicorp.com/vault/docs/auth/ldap). This authentication option requires username and password. The **Path** setting stores the path to the LDAP authentication endpoint (for example, `ldap` for the default `auth/ldap/users/userA` and `auth/ldap/groups/groupB` endpoints).<br/><br/>
 
     Refer to this article for more information about setting up this authentication method in Vault: [LDAP auth method](https://developer.hashicorp.com/vault/docs/auth/ldap). 
     
-    </td></tr></table>
+    </procedure>
+
+    </tab>
+
+    <tab title = "Google Cloud Platform">
+
+    The **GCP IAM Auth** option allows TeamCity to use the [Google Cloud auth method](https://developer.hashicorp.com/vault/docs/auth/gcp) to access secrets.
+
+    * **Vault GCP Role** — the Vault access role for the 
+        ```Shell
+        $ vault write auth/gcp/role/role_name \
+            type="iam" \
+            policies="ACL_policy_name" \
+            bound_service_accounts="GCP_service_email_of_a_service_account>" \
+            max_jwt_exp="60m"
+        ```
+    * **GCP Service Account ID** — the ID of a [Google service account](https://docs.cloud.google.com/compute/docs/access/service-accounts) with the `Service Account Token Creator` permission. If not set, retrieves its value from [default credentials](https://docs.cloud.google.com/docs/authentication/application-default-credentials).
+    * **GCP Endpoint Path** — the Vault's authentication method name (`gcp` by default).
 
     </tab>
    
