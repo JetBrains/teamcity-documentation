@@ -99,7 +99,7 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
 
     The **GCP IAM Auth** option allows TeamCity to use the [Google Cloud auth method](https://developer.hashicorp.com/vault/docs/auth/gcp) to access secrets.
 
-    * **Vault GCP Role** — the Vault access role for the 
+    * **Vault GCP Role** — the Vault access role for the selected GCP Service Account.
         ```Shell
         $ vault write auth/gcp/role/role_name \
             type="iam" \
