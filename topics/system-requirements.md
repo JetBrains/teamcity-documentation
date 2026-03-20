@@ -94,7 +94,7 @@ The following hardware configuration is capable of handling up to 100 concurrent
 __Case 1__
 
 Based on our experience, hardware like _Intel 3.2 GHz dual-core CPU, 8 GB memory under Windows, 1 GB network adapter, and single HDD_ can provide acceptable performance for the following setup:
-* 60 projects and 300 build configurations (with one forth being active and running regularly)
+* 60 projects and 300 build configurations (with one fourth being active and running regularly)
 * more than 300 builds a day
 * about 2 MB log per build
 * 50 build agents
