@@ -14,85 +14,87 @@ TeamCity ships with the following build features that can be added to your confi
 <dl>
 
 <dt>AssemblyInfo Patcher</dt>
-<dd>Allows you to set a build number to an assembly automatically, without having to patch the AssemblyInfo.cs files manually.&emsp;<a href="assemblyinfo-patcher.md">Learn more...</a></dd>
+<dd>Allows you to set a build number to an assembly automatically, without having to patch the AssemblyInfo.cs files manually.<br/><br/><a href="assemblyinfo-patcher.md">Learn more</a></dd>
 
 <dt>Automatic Merge</dt>
-<dd>Tracks builds in required branches and merges them into a target branch if a build satisfies the configured condition (for example, the build is successful).&emsp;<a href="automatic-merge.md">Learn more...</a></dd>
+<dd>Tracks builds in required branches and merges them into a target branch if a build satisfies the configured condition (for example, the build is successful).<br/><br/><a href="automatic-merge.md">Learn more</a></dd>
 
 <dt>AWS Credentials</dt>
-<dd>Shares an AWS connection configured in a TeamCity project to build steps.&emsp;<a href="aws-credentials.md">Learn more...</a></dd>
+<dd>Shares an AWS connection configured in a TeamCity project to build steps.<br/><br/><a href="aws-credentials.md">Learn more</a></dd>
 
 <dt>Build Approval</dt>
-<dd>Allows you to specify TeamCity users whose approval is required to start a new build.&emsp;<a href="build-approval.md">Learn more...</a></dd>
+<dd>Allows you to specify TeamCity users whose approval is required to start a new build.<br/><br/><a href="build-approval.md">Learn more</a></dd>
 
 <dt>Build Files Cleaner (Swabra)</dt>
-<dd>Cleans files produced during a build.&emsp;<a href="build-files-cleaner-swabra.md">Learn more...</a></dd>
+<dd>Cleans files produced during a build.<br/><br/><a href="build-files-cleaner-swabra.md">Learn more</a></dd>
 
 <dt>Build Cache</dt>
-<dd>Allows builds to obtain files acquired by previously finished builds (for example, downloaded <code>npm</code> packages.&emsp;<a href="build-cache.md">Learn more...</a></dd>
+<dd>Allows builds to obtain files acquired by previously finished builds (for example, downloaded <code>npm</code> packages.<br/><br/><a href="build-cache.md">Learn more</a></dd>
 
 <dt>Commit Status Publisher</dt>
-<dd>Reports build stages and final results to an external system.&emsp;<a href="commit-status-publisher.md">Learn more...</a></dd>
+<dd>Reports build stages and final results to an external system.<br/><br/><a href="commit-status-publisher.md">Learn more</a></dd>
 
 <dt>Docker Registry Connections</dt>
-<dd>Allows build configurations to automatically sign in a DockerHub or other container registry before the build start.&emsp;<a href="docker-support.md">Learn more...</a></dd>
+<dd>Allows build configurations to automatically sign in a DockerHub or other container registry before the build start.<br/><br/><a href="docker-support.md">Learn more</a></dd>
 
 <dt>File Content Replacer</dt>
-<dd>Uses regular expressions to replace contents of text files before the build starts, and rolls back all changes after the build finishes.&emsp;<a href="file-content-replacer.md">Learn more...</a></dd>
+<dd>Uses regular expressions to replace contents of text files before the build starts, and rolls back all changes after the build finishes.<br/><br/><a href="file-content-replacer.md">Learn more</a></dd>
 
 <dt>Free Disk Space</dt>
-<dd>Checks whether a build agent has enough free disk space before it runs a build, and cleans up old build data in case it does not. &emsp;<a href="free-disk-space.md">Learn more...</a></dd>
+<dd>Checks whether a build agent has enough free disk space before it runs a build, and cleans up old build data in case it does not.<br/><br/><a href="free-disk-space.md">Learn more</a></dd>
 
 <dt>Golang</dt>
-<dd>Enables the real-time reporting and history of Go test results in TeamCity.&emsp;<a href="golang.md">Learn more...</a></dd>
+<dd>Enables the real-time reporting and history of Go test results in TeamCity.<br/><br/><a href="golang.md">Learn more</a></dd>
 
 <dt>Investigations Auto Assigner</dt>
-<dd>Analyzes build problems and test failures, and identifies users whose commits potentially led to these problems.&emsp;<a href="investigations-auto-assigner.md">Learn more...</a></dd>
+<dd>Analyzes build problems and test failures, and identifies users whose commits potentially led to these problems.<br/><br/><a href="investigations-auto-assigner.md">Learn more</a></dd>
 
 <dt>Jira Cloud Integration</dt>
-<dd>Allows reporting build statuses directly to Jira Cloud in real time.&emsp;<a href="jira-cloud-integration.md">Learn more...</a></dd>
+<dd>Allows reporting build statuses directly to Jira Cloud in real time.<br/><br/><a href="jira-cloud-integration.md">Learn more</a></dd>
 
 <dt>Matrix Build</dt>
-<dd>Allows you to set up a matrix where multiple parameters have several potential values each. Running such build configurations spawns N separate builds that test each individual parameter/value combination.&emsp;<a href="matrix-build.md">Learn more...</a></dd>
+<dd>Allows you to set up a matrix where multiple parameters have several potential values each. Running such build configurations spawns N separate builds that test each individual parameter/value combination.<br/><br/><a href="matrix-build.md">Learn more</a></dd>
 
 <dt>Notifications</dt>
-<dd>Notifies required users about build statuses and events via e-mails or Slack messages.&emsp;<a href="notifications.md">Learn more...</a></dd>
+<dd>Notifies required users about build statuses and events via e-mails or Slack messages.<br/><br/><a href="notifications.md">Learn more</a></dd>
 
 <dt>NuGet Feed Credentials</dt>
-<dd>Allows builds to interact with NuGet feeds that require authentication.&emsp;<a href="nuget-feed-credentials.md">Learn more...</a></dd>
+<dd>Allows builds to interact with NuGet feeds that require authentication.<br/><br/><a href="nuget-feed-credentials.md">Learn more</a></dd>
 
 <dt instance="tc">NuGet Packages Indexer</dt>
-<dd instance="tc">Indexes NuGet packages and adds them to TeamCity remote private feeds, with no need for additional authorization.&emsp;<a href="nuget-packages-indexer.md">Learn more...</a></dd>
+<dd instance="tc">Indexes NuGet packages and adds them to TeamCity remote private feeds, with no need for additional authorization.<br/><br/><a href="nuget-packages-indexer.md">Learn more</a></dd>
 
-<dt>Performance Monitor</dt>
-<dd>Allows you to get the statistics on the CPU, disk I/O, and memory usage during a build run on a build agent. &emsp;<a href="performance-monitor.md">Learn more...</a></dd>
+<dt>Performance Monitor (Legacy)</dt>
+<dd>The legacy build feature that was designed to collect agent hardware usage statistics during a build. This functionality is now automatically enabled for all build configurations.<br/><br/><a href="performance-monitor.md">Learn more</a></dd>
 
 <dt>Pull Requests</dt>
-<dd>Allows you to build changes that have not yet been merged to a target repository branch.&emsp;<a href="pull-requests.md">Learn more...</a></dd>
+<dd>Allows you to build changes that have not yet been merged to a target repository branch.<br/><br/><a href="pull-requests.md">Learn more</a></dd>
 
 <dt>Ruby Environment Configurator</dt>
-<dd>Adds the selected Ruby interpreter and gems bin directories to the system <code>PATH</code> environment variable and configures other necessary environment variables in case of the RVM interpreter.&emsp;<a href="ruby-environment-configurator.md">Learn more...</a></dd>
+<dd>Adds the selected Ruby interpreter and gems bin directories to the system <code>PATH</code> environment variable and configures other necessary environment variables in case of the RVM interpreter.<br/><br/><a href="ruby-environment-configurator.md">Learn more</a></dd>
 
 
 <dt>Run in Docker</dt>
-<dd>Allows you to run all steps of a build configuration inside a Docker/Podman container. Steps that do not support containers run outside of it.&emsp;<a href="run-in-docker.md">Learn more...</a>
+<dd>Allows you to run all steps of a build configuration inside a Docker/Podman container. Steps that do not support containers run outside of it.
 
-<tip>You can also configure identical settings for <a href="container-wrapper.md">any individual build step</a> if you do not need all of them to run inside a container.</tip></dd>
+<tip>You can also configure identical settings for <a href="container-wrapper.md">any individual build step</a> if you do not need all of them to run inside a container.</tip>
+
+<a href="run-in-docker.md">Learn more</a></dd>
 
 <dt>Parallel Tests</dt>
-<dd>Breaks down a huge number of tests into smaller batches, and employs multiple TeamCity agents to run each batch.&emsp;<a href="parallel-tests.md">Learn more...</a></dd>
+<dd>Breaks down a huge number of tests into smaller batches, and employs multiple TeamCity agents to run each batch.<br/><br/><a href="parallel-tests.md">Learn more</a></dd>
 
 <dt>Shared Resources</dt>
-<dd>Allows limiting concurrently running builds using a shared external (to the CI server) resource (for example, a test database or a server with a limited number of connections).&emsp;<a href="shared-resources.md">Learn more...</a></dd>
+<dd>Allows limiting concurrently running builds using a shared external (to the CI server) resource (for example, a test database or a server with a limited number of connections).<br/><br/><a href="shared-resources.md">Learn more</a></dd>
 
 <dt>SSH Agent</dt>
-<dd>Runs an SSH agent with the selected uploaded SSH key during a build. &emsp;<a href="ssh-agent.md">Learn more...</a></dd>
+<dd>Runs an SSH agent with the selected uploaded SSH key during a build.<br/><br/><a href="ssh-agent.md">Learn more</a></dd>
 
 <dt>VCS Labeling</dt>
-<dd>Enables automatic and manual labelling (tagging) build sources in your Version Control System.&emsp;<a href="vcs-labeling.md">Learn more...</a></dd>
+<dd>Enables automatic and manual labelling (tagging) build sources in your Version Control System.<br/><br/><a href="vcs-labeling.md">Learn more</a></dd>
 
 <dt>XML Report Processing</dt>
-<dd>Parses XML reports produced by external tools and displays results on build pages.&emsp;<a href="xml-report-processing.md">Learn more...</a></dd>
+<dd>Parses XML reports produced by external tools and displays results on build pages.<br/><br/><a href="xml-report-processing.md">Learn more</a></dd>
 </dl>
 
 

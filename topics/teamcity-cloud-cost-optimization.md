@@ -11,7 +11,7 @@ In this article, we will review tips and suggestions that could help optimize yo
 
 Here is a high-level summary of the suggestions:
 * Ensure each user provides a full list of their [VCS usernames](configuring-your-user-profile.md#Managing+Version+Control+Username+Settings).
-* Use the [Performance Monitor](performance-monitor.md) build feature to show statistics and spot bottlenecks.
+* Use the [Performance Monitor](build-results-page.md#Performance+Monitor+Tab) to show statistics and spot bottlenecks.
 * Check build agent size suitability.
 * Use the [Matrix](viewing-agents-workload.md#Load+Statistics+Matrix) view to get insights on the most intensive projects and build configurations.
 * Define a [quiet period](configuring-vcs-triggers.md#Quiet+Period+Settings) for VCS triggers.
@@ -40,9 +40,7 @@ This measure not only ensures you use the minimum number of committer slots, but
 
 ## Use Performance Monitor to show statistics and spot bottlenecks
 
-To ensure your builds are running on suitably sized hardware, you can add the [Performance Monitor](performance-monitor.md) build feature to your build configurations. Various usage statistics will then be captured while the build is running: including CPU, disk I/O, and memory consumption.
-
-This allows detecting potential bottlenecks by analyzing build results. An example of this is shown below, where the build agent's CPU usage peaks at 95% midway through the build. This could indicate a larger build agent may be required.
+Check the [](build-results-page.md#Performance+Monitor+Tab) detecting potential bottlenecks by analyzing build results. An example of this is shown below, where the build agent's CPU usage peaks at 95% midway through the build. This could indicate a larger build agent may be required.
 
 <img src="performance-monitor.png" width="750" alt="Performance monitor"/>
 

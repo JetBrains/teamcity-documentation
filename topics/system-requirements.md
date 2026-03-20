@@ -183,7 +183,7 @@ The Windows user who runs an agent process must:
 * be able to start/stop service (to run as Windows service, necessary for the agent upgrade to work, see also [this article](https://support.microsoft.com/en-us/help/325349/how-to-grant-users-rights-to-manage-services-in-windows-server-2003)).
 * be able to debug programs (required for taking process dump functionality).
 * be able to reboot the machine (required for agent reboot functionality).
-* be a member of the _Performance Monitor Users_ group (to be able to [monitor the performance](performance-monitor.md) of a build agent running as a [Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service)).
+* be a member of the _Performance Monitor Users_ group (to be able to [monitor the performance](build-results-page.md#Performance+Monitor+Tab) of a build agent running as a [Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service)).
 * be able to run as a Windows service, only if the agent runs as a service (see also [this article](https://support.microsoft.com/en-us/help/325349/how-to-grant-users-rights-to-manage-services-in-windows-server-2003)).
 
 Note on granting rights:
@@ -213,7 +213,7 @@ Every build process is launched by a TeamCity agent. It shares the environment a
 
 The agents’ hardware requirements are determined by the builds they run. Running a TeamCity agent software introduces a requirement for additional CPU time (but it can usually be neglected compared to the build process CPU requirements) and additional memory: about 500 MB. The disk space required corresponds to the disk usage by the builds running on the agent (sources checkout, downloaded artifacts, the disk space consumed during the build; all that combined for the regularly occurring builds).
 
-Although you can run a build agent on the same machine as the TeamCity server, the recommended approach is to use a separate machine (it can be virtual) for each build agent. If you chose to install several agents on the [same machine](install-multiple-agents-on-one-machine.md), consider the potential CPU, disk, memory, or network bottlenecks that might occur. The [Performance Monitor](performance-monitor.md) build feature can help analyze live data.
+Although you can run a build agent on the same machine as the TeamCity server, the recommended approach is to use a separate machine (it can be virtual) for each build agent. If you chose to install several agents on the [same machine](install-multiple-agents-on-one-machine.md), consider the potential CPU, disk, memory, or network bottlenecks that might occur. Use data from the [](build-results-page.md#Performance+Monitor+Tab) to spot potential issues.
 
 If you consider cloud deployment for TeamCity agents (for example, on Amazon EC2), also see [this article](setting-up-teamcity-for-amazon-ec2.md).
 {instance="tc"}

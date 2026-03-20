@@ -163,9 +163,24 @@ You can perform the following actions on the Test Duration Graph:
 
 For each Maven build, a build agent gathers Maven-specific build details to be displayed on the __Maven Build Info__ tab after the build finish. This tab can be useful for build engineers when adjusting build configurations.
 
-## PerfMon Tab
+## Performance Monitor Tab
 
-Shows hardware data related to this build: CPU usage statistics, memory consumption, and others. This page is available for build configuration with the <a href="performance-monitor.md">Performance Monitor</a> feature (included by default for all new configurations created via existing VCS connections).
+Shows hardware data related to this build: CPU usage statistics, memory consumption, and others. 
+
+<img src="dk-perfmon.png" width="706" alt="Performance Monitor tab"/>
+
+Add the `teamcity.perfmon.feature.enabled=false` [parameter](configuring-build-parameters.md) to a build configuration or a project to disable this automatic data collection.
+
+Note that the collected data reflects the load of the entire agent machine. Values may be misleading or inaccurate if other resource-intensive processes are running on the same machine (for example, multiple agents or a TeamCity server).
+
+
+<note>
+
+If the build agent runs [as a Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service), it must be launched by a member of the _Performance Monitor Users_ group to monitor performance metrics. Users can be added to the group via the `lusrmgr.msc` command.
+
+</note>
+
+Performance monitor uses `vmstat`, `/proc/diskstats`, and `/proc/meminfo` to obtain hardware usage data on Linux/macOS agents, and Windows Management Instrumentation (WMI) on Windows agents. It requires [Perl](https://learn.perl.org/installing/) on all platforms except Windows. If [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) is installed on an agent machine, TeamCity will use it, and the "% of free disk space" metric becomes available.
 
 
 ## Classic UI Tabs
