@@ -9,6 +9,14 @@ Starting with this release, we return to the pre-2022 versioning scheme: major T
 This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
 
 
+## Dynamic Build Step Credentials
+
+The new [](build-scoped-token.md) feature lets your builds securely generate short-lived GitHub access tokens (up to 60 minutes) on the fly. Pass them to build steps as parameters to enable seamless access to repositories.
+
+<img src="dk-build-scoped-token-settings.png" width="706" alt="Main settings"/>
+
+[Learn more...](build-scoped-token.md)
+
 
 
 ## Miscellaneous Enhancements

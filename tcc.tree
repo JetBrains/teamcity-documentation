@@ -150,6 +150,7 @@
 				<toc-element topic="build-approval.md"/>
 				<toc-element topic="build-files-cleaner-swabra.md"/>
 				<toc-element topic="build-cache.md"/>
+				<toc-element topic="build-scoped-token.md"/>
 				<toc-element topic="commit-status-publisher.md"/>
 				<!--<toc-element topic="dependency-caches.md" hidden="true"/>-->
 				<toc-element topic="docker-support.md"/>

@@ -31,6 +31,9 @@ TeamCity ships with the following build features that can be added to your confi
 <dt>Build Cache</dt>
 <dd>Allows builds to obtain files acquired by previously finished builds (for example, downloaded <code>npm</code> packages.<br/><br/><a href="build-cache.md">Learn more</a></dd>
 
+<dt>Build-scoped Token</dt>
+<dd>Issues a short-lived VCS access token that can be used inside build steps to access resources on the VCS side.<br/><br/><a href="build-scoped-token.md">Learn more</a></dd>
+
 <dt>Commit Status Publisher</dt>
 <dd>Reports build stages and final results to an external system.<br/><br/><a href="commit-status-publisher.md">Learn more</a></dd>
 

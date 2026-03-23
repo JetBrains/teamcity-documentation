@@ -228,6 +228,8 @@ Select the <b>Automatic</b> creation mode to allow TeamCity to <a href="https://
 
 <li>Specify the URL of your GitHub server (without "/username") and choose whether you want this app to send <a href="configuring-vcs-post-commit-hooks-for-teamcity.md">post-commit hooks</a> and/or have access to your organization.</li>
 
+<li>Tick the <b>Enable build-scoped tokens</b> checkbox if you plan to add the <a href="build-scoped-token.md">Build-scoped token</a> feature that can dynamically issue short-lived tokens available inside build steps.</li>
+
 <li>If the new GitHub App should provide access to organization repos, switch the <b>Owner</b> setting to <b>Organization</b> and enter the organization name in the corresponding field.</li>
 
 <li>
@@ -250,6 +252,8 @@ To manually create a new GitHub App and configure a TeamCity connection that use
 <var name="unique-url-sample" value="/oauth/githubapp/rid:your-unique-id/accessToken.html"/><include from="common-templates.md" element-id="connections-unique-callback-URL"/>
 
 </li>
+
+<li>Tick the <b>Enable build-scoped tokens</b> checkbox if you plan to add the <a href="build-scoped-token.md">Build-scoped token</a> feature that can dynamically issue short-lived tokens available inside build steps.</li>
 
 
 <li>In a separate browser tab, navigate to your GitHub account and follow instructions from the TeamCity connection description to create a new app. Note that GitHub will generate a private key in the process — save this <code>.private-key.pem</code> file in the secure location.</li>

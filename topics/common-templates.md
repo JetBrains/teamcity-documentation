@@ -4,7 +4,7 @@
 
 
 
-<var name="tab-name" value="tab-name" xmlns="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"/>
+<var name="tab-name" value="tab-name"/>
 <snippet id="open-project-settings-tab">Open <a href="project-administrator-guide.md#Edit+and+View+Modes">project settings</a> and navigate to the <b>%tab-name%</b> settings tab.</snippet>
 
 
