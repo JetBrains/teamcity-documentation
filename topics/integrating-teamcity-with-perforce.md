@@ -66,6 +66,8 @@ The remote run/debug functionality is common for all types of VCS, but there are
 
 TeamCity allows you to run personal builds on Perforce [shelved files](https://www.perforce.com/manuals/v17.1/p4v/files.shelve.html). This way, you can try building changed source files before checking them into a common depot.
 
+<include from="perforce-shelve-trigger.md" element-id="p4-shelve-build-steps"/>
+
 To **manually run** a custom build on Perforce shelved files:
 1. Open the [custom run](running-custom-build.md) dialog by clicking the context menu next to the __Run__ button.
 2. Enable _run as a personal build_ option.

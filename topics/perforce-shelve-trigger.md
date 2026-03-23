@@ -23,6 +23,26 @@ If the current build is [composite](composite-build-configuration.md), the whole
 
 If [stream support](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Streams) is enabled in the Perforce VCS root settings, this trigger will detect the target stream from the changed files and run the personal build in this stream even if the default stream is specified.
 
+<snippet id="p4-shelve-build-steps">
+
+TeamCity processes shelved files as follows:
+
+1. Remote sources are checked out (on the agent side, see the note below).
+2. The `p4 unshelve -s <specified-changelist>` command is called.
+3. `p4 sync` runs again to restore the latest revisions of any files affected by the `unshelve` step.
+4. `p4 resolve -am` automatically merges changes and resolves conflicts. If any conflicts remain unresolved, the build fails.
+5. The [personal build](personal-build.md) starts.
+6. After the build completes, the `p4 revert` and `p4 clean` restore the workspace to its original state and remove files introduced from the shelf.
+
+> If the [](vcs-checkout-mode.md) is set to **Always checkout files on server** (or if agent-side checkout fails), TeamCity cannot unshelve files or perform conflict resolution with p4. In this case, the build fails.
+> 
+> To bypass this limitation, you can set the `teamcity.internal.perforce.useUnshelve=false` parameter to the parent configuration or project to skip these steps. However, this switches TeamCity to a simpler approach that replaces existing source files with shelved ones, ignoring potential conflicts.
+> 
+{style="note"}
+
+</snippet>
+
+
 ## Parametrized Shelved Changelist ID
 
 TeamCity provides a [configuration parameter](predefined-build-parameters.md) `vcsRoot.rootExternalId.shelvedChangelist` with the ID of the changelist whose changes triggered this build. 

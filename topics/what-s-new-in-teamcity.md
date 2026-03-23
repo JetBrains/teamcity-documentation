@@ -20,7 +20,7 @@ Before upgrading, we highly recommend reading about important changes in version
 ## Fixed Issues
 {instance="tc"}
 
-See the [TeamCity 2025.11 release notes](teamcity-2025-11-release-notes.md) article for the summary of implemented features and fixed issues.
+See the [TeamCity 2026.1 release notes](teamcity-2026-1-release-notes.md) article for the summary of implemented features and fixed issues.
 
 
 ## Roadmap
