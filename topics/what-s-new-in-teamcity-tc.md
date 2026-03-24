@@ -24,7 +24,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 <img src="ssh-known-hosts.png" width="706" alt="SSH Known hosts"/>
 
-[Learn more...](ssh-keys-management.md)
+[Learn more...](ssh-keys-management.md#Known+SSH+Hosts)
 
 ## Miscellaneous Enhancements
 
