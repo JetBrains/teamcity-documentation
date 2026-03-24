@@ -18,6 +18,13 @@ The new [](build-scoped-token.md) feature lets your builds securely generate sho
 [Learn more...](build-scoped-token.md)
 
 
+## SSH Known Hosts
+
+The [SSH Keys](ssh-keys-management.md) page now includes additional options that allow TeamCity to verify VCS providers it connects to, and abort any additional operations if the host's public key does not match any of the known entries.
+
+<img src="ssh-known-hosts.png" width="706" alt="SSH Known hosts"/>
+
+[Learn more...](ssh-keys-management.md)
 
 ## Miscellaneous Enhancements
 

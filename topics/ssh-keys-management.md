@@ -97,6 +97,27 @@ To transfer the key from the server to the agent, TeamCity encrypts it with a DE
 In addition to VCS roots, uploaded SSH keys can be used in **SSH Agent** build features. See this link for more information: [SSH Agent](ssh-agent.md).
 
 
+## Known SSH Hosts
+
+SSH keys allow TeamCity to access remote resources securely. When connecting to a remote host (for example, a VCS provider like GitHub), the host verifies TeamCity by validating its private key.
+
+For additional security, you can enable the opposite process: host verification. In this mode, TeamCity checks the host’s public key before establishing a connection. If the key does not match a known value, the connection is rejected. This helps prevent connections to malicious hosts impersonating trusted services.
+
+To enable this feature, go to **&lt;Root&gt; project settings | SSH Keys** and select **Only allow server and agent SSH connections to known hosts** in the **SSH Known Hosts** section.
+
+<img src="ssh-known-hosts.png" width="706" alt="SSH Known hosts"/>
+
+You can populate the list of known hosts in two ways:
+
+* **Automatically** — enable **Automatically add new hosts on the first connection**.
+* **Manually** — click **Add known host**. For public hosts, you can specify just the hostname (for example, `gitlab.com`) and click **Auto-fill**. TeamCity will connect and retrieve the required details.
+
+> When retrieving [](subversion.md) resources, TeamCity uses [SVNKit](https://svnkit.com/), a Java-based SVN client. SVNKit maintains its own cache of known hosts, allowing repository operations to succeed even if the TeamCity list is empty. Because of this, TeamCity does not automatically populate its known hosts list.
+>
+> After enabling **Only allow server and agent SSH connections to known hosts**, builds may fail on agents that have not previously connected to the required hosts (and therefore lack cached entries). To avoid this, add the required hosts manually.
+>
+{style="warning"}
+
 
 ## REST API
 
