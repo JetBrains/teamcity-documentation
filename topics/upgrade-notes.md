@@ -9,6 +9,7 @@
 
 * The bundled dotCover tool has been updated to version 2025.1.7 Cross-Platform.
 * The bundled ReSharper CLT was updated to version 2025.2.3.
+* The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.2.20.
 
 
 ## Changes from 2025.11.2 to 2025.11.3
