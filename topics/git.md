@@ -2,6 +2,8 @@
 [//]: # (help-id: Git)
 <!--[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")-->  
 
+<show-structure for="chapter" depth="2"/>
+
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
 This page contains description of the Git-specific fields of the VCS root settings.  
