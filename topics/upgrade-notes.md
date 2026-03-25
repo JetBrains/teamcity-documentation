@@ -8,6 +8,7 @@
 {id="bundled-tools-updates-2026-1"}
 
 * The bundled dotCover tool has been updated to version 2025.1.7 Cross-Platform.
+* The bundled ReSharper CLT was updated to version 2025.2.3.
 
 
 ## Changes from 2025.11.2 to 2025.11.3
