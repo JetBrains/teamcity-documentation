@@ -183,8 +183,14 @@ dotCover Version
 </tr>
 
 <tr>
-<td>2024.03 and newer</td>
+<td>2024.03 ~ 2025.11</td>
 <td>2023.3.3
+</td>
+</tr>
+
+<tr>
+<td>2026.1 and newer</td>
+<td>2025.1.7
 </td>
 </tr>
 

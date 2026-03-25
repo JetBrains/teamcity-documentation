@@ -1,6 +1,15 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11.3 to 2026.1
+{id="2026.1"}
+
+### Bundled Tools Update
+{id="bundled-tools-updates-2026-1"}
+
+* The bundled dotCover tool has been updated to version 2025.1.7 Cross-Platform.
+
+
 ## Changes from 2025.11.2 to 2025.11.3
 {id="2025.11.3"}
 
