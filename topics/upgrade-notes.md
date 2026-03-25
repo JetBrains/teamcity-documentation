@@ -10,7 +10,7 @@
 * The bundled dotCover tool was updated to version 2025.1.7 Cross-Platform.
 * The bundled ReSharper CLT was updated to version 2025.2.3.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.2.20.
-* The default bundled Maven version is now 3.9.11.
+* The default bundled Maven version is now 3.9.11. In addition, Maven 2 is no longer fully supported due to the official EoL (see the [version 2025.11 announcement](#2025.11)).
 
 
 ## Changes from 2025.11.2 to 2025.11.3
