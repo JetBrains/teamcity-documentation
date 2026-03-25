@@ -1,7 +1,7 @@
 [//]: # (title: Git)
 [//]: # (help-id: Git)
 <!--[//]: # (Internal note. Do not delete. "Gitd153e3.txt" "Git \(JetBrains\)d152e3.txt")-->  
- 
+
 TeamCity supports Git out of the box. Git source control with Azure DevOps Services is supported (see authentication notes [below](#Authenticating+to+Azure+DevOps+Services)).
 
 This page contains description of the Git-specific fields of the VCS root settings.  
@@ -40,8 +40,8 @@ This measure helps ensure that none of your pipelines will break after switching
 If the connection test is successful, you can enable the native Git support on your server(s).
 
 >See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the current native Git implementation in TeamCity.
-> 
-{style="warning"} 
+>
+{style="warning"}
 
 ## Native Git for VCS-related operations on the server
 {id="Native+Git" instance="tcc"}
@@ -54,21 +54,21 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 
 ## General Settings
 
-* **Fetch URL** — the URL of the remote Git repository used for fetching data from the repository.
+* **Fetch URL** — the URL of the remote Git repository used for fetching data from the repository. See the [](#Supported+Git+Protocols) section for more information about supported formats.
 
-   You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
-   
+  You can override the fetch URL for individual agents to allow them to use a closer proxy instead of the original VCS hosting. To do so, open a required agent's [conf/buildAgent.properties file](configure-agent-installation.md) and add the redirection rule as follows: `teamcity.git.fetchUrlMapping.<name> = <source URL> => <target URL>`. For example:
+
    ```
    teamcity.git.fetchUrlMapping.firstrule = https://example.com/org/test.git => http://proxy.com/test.git
    ```
-   
-   You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
-   
+
+  You can use partial addresses and the asterisk (`*`) wildcard to set up proxies for all fetch URLs that match the pattern. For example, the following rule allows an agent to use the `http://proxy.com/test/test.git` URL instead of the original `https://example.com/org/test/test.git`:
+
    ```
    teamcity.git.fetchUrlMapping.secondrule = https://example.com/org/* => http://proxy.com/
    ```
-   
-   Note that along with a fetch URL a VCS root also stores authentication settings required to access a repository. As such, replacing fetch URL is in effect only for VCS roots that use **Anonymous** or **Private key** authentication modes. Other modes do not guarantee an agent will be able to access a repository (for example, a refreshable token issued for a source VCS will not be accepted by a proxy hosting).
+
+  Note that along with a fetch URL a VCS root also stores authentication settings required to access a repository. As such, replacing fetch URL is in effect only for VCS roots that use **Anonymous** or **Private key** authentication modes. Other modes do not guarantee an agent will be able to access a repository (for example, a refreshable token issued for a source VCS will not be accepted by a proxy hosting).
 
 
 * **Push URL** — the URL of the target remote Git repository used for pushing annotated tags created via [VCS labeling](vcs-labeling.md) build feature to the remote repository. If blank, the fetch URL is used.
@@ -78,9 +78,9 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 * **Default branch** - the [default branch](working-with-feature-branches.md#Default+Branch). Parameter references are supported here. Default value is `refs/heads/master`.
 
    <note>
-   
-   You can configure Git-plugin to fetch all heads by adding the `teamcity.git.fetchAllHeads=true` [custom parameter](typed-parameters.md).
-   
+
+  You can configure Git-plugin to fetch all heads by adding the `teamcity.git.fetchAllHeads=true` [custom parameter](typed-parameters.md).
+
    </note>
 
 
@@ -118,31 +118,25 @@ See [known issues](known-issues.md#Known+issues+of+native+Git+checkout) of the c
 * If the branch matches a line without patterns, the line is used.
 * If the branch matches several lines with patterns, the best matching line is used.
 * If there are several lines with equal matching, the one below takes precedence.    
-Everything that is matched by the wildcard will be shown as a branch name in the TeamCity interface. For example, `+:refs/heads/*` will match `refs/heads/feature1` branch, but in the TeamCity interface you'll see only `feature1` as a branch name.    
-The short name of the branch is determined as follows:
+  Everything that is matched by the wildcard will be shown as a branch name in the TeamCity interface. For example, `+:refs/heads/*` will match `refs/heads/feature1` branch, but in the TeamCity interface you'll see only `feature1` as a branch name.    
+  The short name of the branch is determined as follows:
 * if the line contains no brackets, then full line is used, if there are no patterns or part of line starting with the first pattern-matched character to the last pattern-matched character.
 * if the line contains brackets, then part of the line within brackets is used. When branches are specified here, and if your build configuration has a VCS trigger and a change is found in some branch, TeamCity will trigger a build in this branch.
 
 ### Supported Git Protocols
 
 The following protocols are supported for Git repository URL:
-* ssh: (for example, `ssh://git.somwhere.org/repos/test.git`, `ssh://git@git.somwhereElse.org/repos/test.git`, SCP-like syntax: `git@git.somwhere.org:repos/test.git`)
+* SSH (for example, `ssh://git.somwhere.org/repos/test.git`, `ssh://git@git.somwhereElse.org/repos/test.git`, SCP-like syntax: `git@git.somwhere.org:repos/test.git`)
 
-<note>
+    <note>The SCP-like syntax requires a colon after the hostname, while a usual SSH URL does not. This is a common source of errors.</note>
 
-The SCP-like syntax requires a colon after the hostname, while a usual SSH URL does not. This is a common source of errors.
+* Git (for example, `git://git.kernel.org/pub/scm/git/git.git`)
+* HTTP (for example, `http://git.somewhere.org/projects/test.git`)
+* file (for example, `file://c:/projects/myproject/.git` or `\\servername\projects\myproject\.git`)
 
-</note>
+    <warning>Using local and network (UNC) paths can introduce security risks, including potential exposure of server files and credentials. For this reason, the file protocol is disabled by default in TeamCity 2026.1 and later. New and existing VCS roots that use such URLs show the "The URL must not be a local file URL" error.<br/><br/>If you still need to use this format despite the risks, enable it by setting the <code>teamcity.git.allowFileUrl=true</code> <a href="server-startup-properties.md#TeamCity+Internal+Properties">internal property</a>.</warning>
 
-* Git: (for example, [`git://git.kernel.org/pub/scm/git/git.git`](git://git.kernel.org/pub/scm/git/git.git))
-* HTTP: (for example, [`http://git.somewhere.org/projects/test.git`](http://git.somewhere.org/projects/test.git){nullable="true"})
-* file: (for example, [`file:///c:/projects/myproject/.git`](file:///c:/projects/myproject/.git))
-
-<note>
-
-When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.
-
-</note>
+    <note>When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.</note>
 
 ## Authentication Settings
 
@@ -151,18 +145,18 @@ When you run TeamCity as a Windows service, it cannot access mapped network driv
 <anchor name="passwordAuth"/>
 
 * **Password / personal access token** — specify a valid __username__ (if there is no username in the clone URL, the username specified in this field overrides the username from the URL) and a __password__ to be used to clone the repository.    
-For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](https://youtrack.jetbrains.com/issue/TW-18711).    
-For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
-   
-   You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
+  For the [agent-side checkout](vcs-checkout-mode.md), it is supported __only if Git 1.7.3\+ client__ is installed on the agent. See [TW-18711](https://youtrack.jetbrains.com/issue/TW-18711).    
+  For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
-   >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
-   >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
-   >
-   {style="warning"}
+  You can use a personal access token instead of a password to authenticate in GitHub, Azure DevOps Services, GitLab, JetBrains Space, and Bitbucket. When connecting to Azure DevOps, remember to set the _Code_ access scope to _Code (read) / Code (read and write) for versioned settings_ in the repositories you are about to access from TeamCity.
 
-   When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root, 
-   TeamCity will use a refreshable token instead of the password.
+  >Beginning August 13, 2021, GitHub [will no longer accept passwords](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) when authenticating Git operations on GitHub.com.   
+  >We highly recommend that you use an access token or SSH key instead of password when configuring a VCS root for a GitHub.com repository.
+  >
+  {style="warning"}
+
+  When using an existing Bitbucket Cloud, Bitbucket Server, GitLab or Azure DevOps Services connection to create a VCS Root,
+  TeamCity will use a refreshable token instead of the password.
 
 <anchor name="refresh-token"/>
 
@@ -170,20 +164,20 @@ For Git hosted from Team Foundation Server 2013, specify NTLM credentials here.
 
     <include from="common-templates.md" element-id="rat-single"/>
 
-    You can specify a username if the clone (fetch) URL does not have it. The username specified here overrides the username from the URL.
+  You can specify a username if the clone (fetch) URL does not have it. The username specified here overrides the username from the URL.
 
 
 * **Private Key** — valid only for SSH protocol. A private key must be in the __OpenSSH format__.
 
-   Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
-   Available __Private Key__ options:
-   
+  Select one of the options from the __Private Key__ list and specify a valid username (if there is no username in the clone URL; the username specified here overrides the username from the URL).    
+  Available __Private Key__ options:
+
    <snippet id="ssh-key-options">
 
-  * __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
-  * __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
-  * __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. Fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If the key is encrypted, specify the passphrase in the corresponding field.
-   
+    * __Uploaded Key__ — select this option to utilize the [key(s) uploaded to the project](ssh-keys-management.md).
+    * __Default Private Key__ — select this option to utilize the keys available on the file system in the default locations used by common ssh tools: the mapping specified in `<USER_HOME>/.ssh/config` if the file exists or the private key file `<USER_HOME>/.ssh/id_rsa` (the files are required to be present on the server and also on the agent if the [agent-side checkout](vcs-checkout-mode.md) is used).
+    * __Custom Private Key__ — supported __only for [server-side checkout](vcs-checkout-mode.md)__. Fill the __Private Key Path__ field with an absolute path to the private key file on the server machine. If the key is encrypted, specify the passphrase in the corresponding field.
+
    </snippet>
 
 
@@ -319,14 +313,14 @@ Instead of adding Git to the agent's PATH, you can set the `TEAMCITY_GIT_PATH` e
 
 If `TEAMCITY_GIT_PATH` is not defined, the Git agent plugin tries to detect the installed git on the launch of the agent. It first tries to run git from the following locations:
 * for Windows — it tries to run `git.exe` at:
-   * `C:\Program Files\Git\bin`
-   * `C:\Program Files (x86)\Git\bin`
-   * `C:\cygwin\bin`
+    * `C:\Program Files\Git\bin`
+    * `C:\Program Files (x86)\Git\bin`
+    * `C:\cygwin\bin`
 * for \*nix — it tries to run `git` at:
-   * `/usr/local/bin`
-   * `/usr/bin`
-   * `/opt/local/bin`
-   * `/opt/bin`
+    * `/usr/local/bin`
+    * `/usr/bin`
+    * `/opt/local/bin`
+    * `/opt/bin`
 
 If Git is not found in any of these locations, it tries to run the git accessible via the `PATH` environment variable.   
 If a compatible git (1.6.4\+) is found, it is reported in the `TEAMCITY_GIT_PATH` environment variable. This variable can be used in the __Path to git__ field in the [VCS root](configuring-vcs-roots.md) settings. As a result, the configuration with such a VCS root will run only on the agents where Git was detected or specified in the agent properties.
@@ -339,7 +333,7 @@ By default, TeamCity creates a [mirror](https://help.github.com/en/github/creati
 Comparing to self-hosted TeamCity agents, cloud agents require extra steps to add a Git mirror:
 
 1. When [preparing a cloud image](teamcity-integration-with-cloud-solutions.md#Preparing+Virtual+Machine), clone the repository under the agent image's `system/git` directory. If necessary, you can store multiple `*.git` directories side by side.
-2. Create a `map` file under the `system/git` directory and describe the mapping between the original repository and its mirror. For example,   
+2. Create a `map` file under the `system/git` directory and describe the mapping between the original repository and its mirror. For example,
    ```Text
 
    ssh://git@<host>/<git_folder>.git = <git_folder>.git
@@ -361,9 +355,9 @@ TeamCity can automatically run `git gc` periodically when the native Git client 
 To fix the warning / meet automatic git gc requirements, perform the following:
 1. Install a native Git client manually on the TeamCity server.
 2. Specify the path to the Git executable:
-   * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
-   * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) without the server restart. On Windows, remember to use double backslashes in the path.
-   
+    * Add the directory with the executable to the `PATH` environment variable and restart the server, _or_
+    * Set the full path to the executable in the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) without the server restart. On Windows, remember to use double backslashes in the path.
+
 When TeamCity runs Git garbage collection, the details are logged into the [`teamcity-cleanup.log`](teamcity-server-logs.md). If git garbage collection fails, a corresponding warning is displayed.
 
 TeamCity executes Git garbage collection until the total time doesn't exceed 5 hours quota; the quota can be changed using the `teamcity.server.git.gc.quota.minutes` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).   
@@ -433,7 +427,7 @@ For Git VCS, it is possible to configure the following [internal properties](ser
 The idle timeout for communication with the remote repository. If no data were sent or received during this timeout, the plugin throws a timeout error to prevent hanging of the process forever.
 
 > The idle timeout can also be set [on the agent side](#git-agent-config).
-> 
+>
 {style="tip"}
 
 </def>
@@ -667,7 +661,7 @@ The idle timeout for the `git fetch` operation when the agent-side checkout is u
 
 <snippet id="git-checkout-rules-limitations">
 
-The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent. 
+The Git plugin uses [`git sparse-checkout`](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) to check out Git files on an agent.
 The plugin is able to perform only simple file mapping operations which limits the set of supported [VCS checkout rules](vcs-checkout-rules.md) for Git.
 
 The following rules are supported:
