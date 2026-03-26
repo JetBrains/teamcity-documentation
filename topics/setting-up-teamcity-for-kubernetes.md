@@ -149,6 +149,12 @@ Authentication strategy
 
 </table>
 
+If your TeamCity server needs to use a [proxy server](configuring-proxy-server.md) to access a k8s cluster, configure the following additional settings to allow outgoing connections:
+
+* <include from="common-templates.md" element-id="kubernetes-settings-proxy-url"/>
+* <include from="common-templates.md" element-id="kubernetes-settings-proxy-credentials"/>
+* <include from="common-templates.md" element-id="kubernetes-settings-proxy-noproxy"/>
+
 ## Adding Kubernetes Cloud Image
 
 After configuring the general Kubernetes settings, you can proceed with adding a new build agent image.

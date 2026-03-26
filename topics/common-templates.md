@@ -64,7 +64,23 @@ Select the required authentication strategy. Depending on the selected strategy,
 
 </snippet>
 
+<snippet id="kubernetes-settings-proxy-url">
 
+Specify the URL of your proxy server in the `protocol://address:port` format.
+
+</snippet>
+
+<snippet id="kubernetes-settings-proxy-credentials">
+
+Enter the proxy server credentials.
+
+</snippet>
+
+<snippet id="kubernetes-settings-proxy-noproxy">
+
+Specify the hosts that should be available directly, without routing through the proxy server. Typically, these are internal resources from your local network. Use comma to separate multiple entries; for example: `http://localhost,*.mydomain.com`.
+
+</snippet>
 
 ## Docker
 

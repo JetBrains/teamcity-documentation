@@ -10,7 +10,7 @@ The TeamCity AI Assistant is your 24/7 companion for debugging failed workflows,
 AI Assistant is equipped with a set of tools for retrieving information about the current TeamCity installation and its builds. It offers general guidance (for example, “How do I configure the TeamCity NuGet feed?” or “How do I set up pull requests?”) and troubleshooting help for specific configurations and builds (for instance, “Why did build #17 in my SampleApp configuration fail?”).
 
 **Is it free?**<br/>
-This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license. It is not available for Professional licenses or Enterprise licenses with the expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions). See the [](#Limitations+and+Special+Notes) section for more information.
+This feature may become a paid option in future releases but will remain free throughout the Early Access Program. The AI Assistant requires an active TeamCity Enterprise license (including those in active trial period). It is not available for Professional licenses or Enterprise licenses with the expired [maintenance period](licensing-policy.md#Valid+TeamCity+Versions). See the [](#Limitations+and+Special+Notes) section for more information.
 {instance="tc"}
 <br/>
 

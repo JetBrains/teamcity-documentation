@@ -41,4 +41,8 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
+* Users with trial TeamCity Enterprise licenses can now use the [](ai-assistant.md).
+
+* Kubernetes [cloud profiles](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration) and [connections](configuring-connections.md#Kubernetes) now include settings that allow you to configure outgoing connections 
+
 </snippet>

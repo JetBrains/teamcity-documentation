@@ -285,7 +285,12 @@ If a TeamCity server is configured behind an IIS reverse proxy:
 
 ## Use Proxy for Outgoing TeamCity Server Connections
 
-This section describes configuring TeamCity to use a proxy server for outgoing HTTP connections. To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
+This section describes configuring TeamCity to use a proxy server for outgoing HTTP connections.
+
+> * To connect TeamCity behind a proxy to Amazon EC2 cloud agents, see [this section](setting-up-teamcity-for-amazon-ec2.md#Proxy+settings).
+> * For Kubernetes-specific configuration, use related Kubernetes [cloud profile](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration) and [connection](configuring-connections.md#Kubernetes) settings.
+> 
+{style="note"}
 
 A TeamCity server can use a proxy server for certain outgoing HTTP connections to other services like issues trackers.
 
