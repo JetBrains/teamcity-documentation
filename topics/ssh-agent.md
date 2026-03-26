@@ -27,7 +27,18 @@ To avoid such prompts during a build, you need to configure the known hosts data
 
 * or __for an individual command__ by running an SSH client with the `-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no` options.
 
+> Instead of completely disabling the host verification, you can use the `TEAMCITY_SSH_KNOWN_HOSTS` environment variable as a database of known hosts:
+> 
+> ```
+> ssh -o UserKnownHostsFile=$TEAMCITY_SSH_KNOWN_HOSTS
+> ```
+>
+>
+>   This variable stores the path to a file that keeps all known host entries added from the [SSH Keys](ssh-keys-management.md#Known+SSH+Hosts) page.
+{style="note"}
+
 See more information in the man pages for [`ssh`](http://linux.die.net/man/1/ssh), [`ssh-agent`](http://linux.die.net/man/1/ssh-agent) and [`ssh-add`](http://linux.die.net/man/1/ssh-add) commands.
+
 
 ## Using Multiple Keys in One Build
 
