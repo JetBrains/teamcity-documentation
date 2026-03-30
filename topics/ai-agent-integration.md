@@ -1,0 +1,148 @@
+# Integration with AI Agents
+
+<show-structure for="chapter" depth="2"/>
+
+While [](ai-assistant.md) is a great tool to debug and analyze existing TeamCity workflows, its availability is limited to TeamCity UI. However, you may also require interacting with TeamCity from an external AI-powered tool. For example, when using an agentic IDE like [Air](https://air.dev/) or [Cursor](https://cursor.com/), you may want to run your CI/CD tasks along with editing the source code. To do this, you need to equip the agent with tools to work with TeamCity.
+
+There are two major approaches to doing this: CLI tools and MCP servers. TeamCity supports both, so before let's first dive into the basics of each one.
+
+<deflist type="narrow">
+
+<def title="MCP">
+
+[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) is an open-source standard for connecting AI applications to external systems. Your external AI solution uses an authorized request to the specific endpoint and retrieves a list of ready-to-use tools for working with this resource.
+
+</def>
+
+<def title="CLI">
+
+If a product comes with CLI support, you can "teach" the AI agent to work with supported commands. To do so, an agent needs a [skill](https://agentskills.io/home) — folders with instructions, scripts, and resources that the agent can load when relevant to improve its performance in specialized tasks. At its bare minimum, a skill is a simple `SKILL.md` with detailed instructions that tell an agent how to perform a specific task. 
+
+</def>
+
+</deflist>
+
+The choice between MCP and CLI integration depends on the nature of your AI tool and its environment.
+
+* **Environment requirements**. Using agent skills demands an environment where you can install the related CLI tool. For example, locally running code agents like Codex, Claude Code, and Junie CLI can use skills to run commands and work with files. Unlike them, chat tools like ChatGPT or Claude cannot use CLI tools directly.
+
+* **Nature of instructions**. When the primary goal is to run specific actions, CLI might be a more natural choice. For example, a code agent can call terminal commands to report the latest build status or run a specific test suite. At the same time, chat agents that rely on MCP excel at smart problem investigation and analytics.
+
+* **Safety concerns** Safety depends heavily on permissions and sandboxing. When compared to an agent using MCP tools, a typical CLI-capable agent can do more damage if permissions are too broad.
+
+* **Implementation costs**. If the software already has a good CLI and the vendor gives you a ready-made skill, you can often drop it into the repo and start immediately, without configuring a server connection. TeamCity CLI comes with a [ready-to-use skill](teamcity-cli-ai-agent-integration.md) that allows you to do exactly that.
+
+* **Scalability**. A large number of tools connected upfront may create a significant overhead and drastically reduce the available context window of an LLM. Various solutions designed to mitigate this issue (for example, Anthropic [Tool search tool](https://www.anthropic.com/engineering/advanced-tool-use)) may deal with MCP tools better than skills.
+
+For TeamCity specifically, integration via the [CLI tool](teamcity-cli.md) allows for a wider range of operations. For example, the agent can call CLI commands to [disable agents](teamcity-cli-managing-agents.md#Enabling+and+disabling+agents) or [edit project parameters](teamcity-cli-managing-projects.md#Managing+project+parameters), whereas the range of "developer-level" operations available via the TeamCity MCP tools is currently limited to starting new personal builds. We expect to expand the range of supported operations in future releases.
+
+## TeamCity MCP
+
+TeamCity servers expose the `<server-url>/app/mcp` endpoint that exposes three AI tools:
+
+<deflist type="medium">
+
+<def title="teamcity_build_log">
+
+Retrieves the full build log for the target build. Supports pagination and filtering by message types (all lines or only warnings and errors). Used to investigate failed builds.
+
+</def>
+
+
+<def title="teamcity_rest_get">
+
+Sends `GET` requests using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html): return the list of projects and build configurations, find the last successful build, display currently muted problems, and so on. The list of available operations depends on the auth token permissions scope.
+
+</def>
+
+
+<def title="teamcity_rest_post">
+
+Sends `POST` requests using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html). Currently, supports only `POST` requests to the `/app/rest/buildQueue` endpoint to trigger new builds with default or custom settings. All builds triggered by AI agents are marked with the [`personal=true`](https://www.jetbrains.com/help/teamcity/rest/build.html#personal) attribute.
+
+</def>
+
+</deflist>
+
+To retrieve and use these tools, an AI agent needs to pass token-based authorization in TeamCity. You can issue access tokens on the [user profile page](configuring-your-user-profile.md#Managing+Access+Tokens). TeamCity allows you to choose whether you want the agent to have same permissions as the user who issued the token, or fine-grained per-project permissions.
+
+<img src="create-access-token.png" width="706" alt="Create an access token"/>
+
+### Examples
+
+This section illustrates how to connect most popular AI tools with TeamCity using the MCP server.
+
+<procedure title="Air, Cursor">
+
+Open IDE settings and paste the following JSON snippet to add a global/project/workspace server:
+
+```JSON
+{
+  "mcpServers": {
+        "TeamCity nightly": {
+            "type": "http",
+            "url": "<TeamCity-server-URL>/app/mcp",
+            "headers": {
+                "Authorization": "Bearer <TeamCity access token>"
+            }
+        }
+  }
+}
+```
+
+</procedure>
+
+<procedure title="Claude">
+
+Modify the **Settings | Developer | Edit config** file as follows:
+
+```JSON
+{
+  "mcpServers": {
+    "my-mcp-server": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "<TeamCity-server-URL>/app/mcp",
+        "--header",
+        "Authorization: Bearer ${TEAMCITY_TOKEN}"
+      ],
+      "env": {
+        "TEAMCITY_TOKEN": "<TeamCity access token>"
+      }
+    }
+  }
+}
+```
+
+</procedure>
+
+<procedure title="Codex">
+
+Add the following snippet to the `~/.codex/config.toml` file...
+
+```TOML
+[mcp_servers.buildserver]
+url = "<TeamCity-server-URL>/app/mcp"
+[mcp_servers.buildserver.http_headers]
+Authorization = "Bearer <TeamCity access token>"
+```
+
+...or run the following terminal command.
+
+```Shell
+codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env-var TEAMCITY_SERVER_TOKEN
+```
+</procedure>
+
+<procedure title="Claude Code">
+
+Run the following terminal command:
+
+```Shell
+claude mcp add --transport http buildserver <TeamCity-server-URL>/app/mcp --header "Authorization: Bearer <TeamCity access token>"
+```
+
+</procedure>
+
+

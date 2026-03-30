@@ -280,6 +280,7 @@ Environment variables take precedence over the configuration file and keyring.
 >
 {style="warning"}
 
+<!--
 
 ## Mutual TLS (mTLS) {id="mtls"}
 
@@ -341,6 +342,8 @@ Environment variables take precedence over per-server config file settings.
 > Both `TEAMCITY_CLIENT_CERT` and `TEAMCITY_CLIENT_KEY` must be provided together. Specifying only one will result in an error.
 >
 {style="warning"}
+
+-->
 
 ## Advanced authentication scenarios
 

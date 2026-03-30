@@ -62,7 +62,11 @@ The server URL used when no `TEAMCITY_URL` environment variable is set. Updated 
 </td>
 <td>
 
+<!--
 A map of server URLs to their settings. Each entry stores the `user` field (username on that server) and optionally `guest: true` for guest access, `ro: true` for read-only mode, or TLS certificate paths for mTLS (`client_cert`, `client_key`, `ca_cert`). Tokens are stored in the system keyring, not in this file, unless `--insecure-storage` was used during login.
+-->
+
+A map of server URLs to their settings. Each entry stores the `user` field (username on that server) and optionally `guest: true` for guest access, `ro: true` for read-only mode. Tokens are stored in the system keyring, not in this file, unless `--insecure-storage` was used during login.
 
 </td>
 </tr>
@@ -157,6 +161,8 @@ Path to the Kotlin DSL directory. Overrides automatic detection of `.teamcity/` 
 
 </td>
 </tr>
+
+<!--
 <tr>
 <td>
 
@@ -193,6 +199,7 @@ Path to a PEM-encoded CA certificate file. Use this when the TeamCity server use
 
 </td>
 </tr>
+-->
 <tr>
 <td>
 
