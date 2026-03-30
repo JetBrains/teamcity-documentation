@@ -207,6 +207,7 @@ teamcity auth login --insecure-storage
 {style="warning"}
 
 ## Environment variables
+{id="auth-env-vars" help-id="auth-env-vars"}
 
 For CI/CD pipelines and scripted environments, use environment variables instead of interactive login:
 
@@ -298,6 +299,7 @@ servers:
 The `ca_cert` field is only needed when the server uses a certificate signed by a private or internal CA that is not in the system trust store.
 
 ### Environment variables
+{id="mtls-env-vars" help-id="mtls-env-vars"}
 
 For CI/CD pipelines, use environment variables instead:
 
