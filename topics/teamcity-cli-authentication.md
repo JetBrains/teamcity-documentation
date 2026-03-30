@@ -207,6 +207,7 @@ teamcity auth login --insecure-storage
 {style="warning"}
 
 ## Environment variables
+{id="auth-env-vars" help-id="auth-env-vars"}
 
 For CI/CD pipelines and scripted environments, use environment variables instead of interactive login:
 
@@ -310,7 +311,6 @@ teamcity auth login --server https://teamcity-staging.example.com
 There are several ways to target a specific server:
 
 **Environment variable (recommended for scripts):**
-{id="auth-env-vars" help-id="auth-env-vars"}
 
 <tabs>
 <tab title="macOS and Linux">
