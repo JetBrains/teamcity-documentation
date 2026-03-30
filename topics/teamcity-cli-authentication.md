@@ -19,8 +19,8 @@ teamcity auth login
 This starts an interactive flow:
 
 1. Enter your TeamCity server URL (for example, `https://teamcity.example.com`).
-2. The CLI opens your browser to the TeamCity __Access Tokens__ page.
-3. Create a new access token and paste it into the terminal.
+2. If the server supports PKCE authentication, the CLI opens your browser to approve access directly — no token copying needed.
+3. Otherwise, the CLI opens the TeamCity __Access Tokens__ page for you to create and paste a token manually.
 4. The CLI validates the token and stores it securely.
 
 To authenticate with a specific server URL:
@@ -29,11 +29,42 @@ To authenticate with a specific server URL:
 teamcity auth login --server https://teamcity.example.com
 ```
 
+To skip browser-based authentication and enter a token manually:
+
+```Shell
+teamcity auth login --no-browser
+```
+
 To pass the token directly (for example, from a password manager):
 
 ```Shell
 teamcity auth login --server https://teamcity.example.com --token <token>
 ```
+
+### Browser-based login (PKCE)
+{id="pkce"}
+
+When PKCE is enabled on the TeamCity server, `teamcity auth login` authenticates via the browser automatically:
+
+1. The CLI starts a temporary local server on your machine.
+2. Your browser opens a TeamCity authorization page.
+3. After you approve, the browser redirects back to the CLI with an authorization code.
+4. The CLI exchanges the code for an access token.
+
+This flow follows the [OAuth 2.0 PKCE standard (RFC 7636)](https://datatracker.ietf.org/doc/html/rfc7636) and does not require you to copy or paste any tokens.
+
+PKCE tokens have an expiry date. The CLI tracks this and shows a warning when the token is about to expire or has expired:
+
+```Shell
+$ teamcity auth status
+✓ Logged in to https://teamcity.example.com
+  User: John Doe (john.doe) · system keyring
+  ! Token expires 2 hours from now (on Mar 25, 2026)
+```
+
+> PKCE must be enabled on the TeamCity server. If it is not available, the CLI falls back to manual token entry automatically.
+>
+{style="note"}
 
 ### Check authentication status
 
@@ -177,6 +208,7 @@ teamcity auth login --insecure-storage
 {style="warning"}
 
 ## Environment variables
+{id="auth-env-vars" help-id="auth-env-vars"}
 
 For CI/CD pipelines and scripted environments, use environment variables instead of interactive login:
 
@@ -245,6 +277,68 @@ Environment variables take precedence over the configuration file and keyring.
 {style="tip"}
 
 > Do not pass tokens as command-line flags in scripts — they may appear in process listings and shell history. Use environment variables instead.
+>
+{style="warning"}
+
+
+## Mutual TLS (mTLS) {id="mtls"}
+
+If your TeamCity server requires client certificate authentication (mutual TLS), configure certificate paths in the config file or via environment variables. mTLS works with all authentication modes (token, basic, guest).
+
+### Per-server configuration
+
+Add `client_cert`, `client_key`, and optionally `ca_cert` to the server entry in `~/.config/tc/config.yml`:
+
+```yaml
+servers:
+    https://teamcity.example.com:
+        user: alice
+        client_cert: /path/to/client.crt
+        client_key: /path/to/client.key
+        ca_cert: /path/to/ca.crt
+```
+
+The `ca_cert` field is only needed when the server uses a certificate signed by a private or internal CA that is not in the system trust store.
+
+### Environment variables
+{id="mtls-env-vars" help-id="mtls-env-vars"}
+
+For CI/CD pipelines, use environment variables instead:
+
+<tabs>
+<tab title="macOS and Linux">
+
+```Shell
+export TEAMCITY_CLIENT_CERT="/path/to/client.crt"
+export TEAMCITY_CLIENT_KEY="/path/to/client.key"
+export TEAMCITY_CA_CERT="/path/to/ca.crt"
+```
+
+</tab>
+<tab title="Windows">
+
+PowerShell:
+
+```PowerShell
+$env:TEAMCITY_CLIENT_CERT = "C:\path\to\client.crt"
+$env:TEAMCITY_CLIENT_KEY = "C:\path\to\client.key"
+$env:TEAMCITY_CA_CERT = "C:\path\to\ca.crt"
+```
+
+CMD:
+
+```Shell
+set TEAMCITY_CLIENT_CERT=C:\path\to\client.crt
+set TEAMCITY_CLIENT_KEY=C:\path\to\client.key
+set TEAMCITY_CA_CERT=C:\path\to\ca.crt
+```
+
+</tab>
+</tabs>
+
+Environment variables take precedence over per-server config file settings.
+
+> Both `TEAMCITY_CLIENT_CERT` and `TEAMCITY_CLIENT_KEY` must be provided together. Specifying only one will result in an error.
 >
 {style="warning"}
 
