@@ -26,7 +26,7 @@ Apart from these major license types, there are two special TeamCity editions: E
 
 The free tier of TeamCity that does not require a license key, includes 3 build agents (with an option to purchase more), and has the full range of Enterprise features except for the following limitations:
 
-* Supports the maximum of 100 build configurations and 10 pipelines to exist at the same time (including archived ones). If you exceed this number, new builds will not run until you remove some of the older configurations/pipelines.
+* Supports the maximum of 100 build configurations and 10 pipelines to exist at the same time (including archived ones). If you exceed this number, new builds will not run until you remove some of the older configurations/pipelines. The default build configurations limit raises by 10 for each additional [agent license](#TeamCity+Agent+Licenses) purchased.
 * Enterprise features implemented via paid integrations (for example, [](ai-assistant.md) that runs OpenAI models) are not available.
 * Support is limited to the [community forum](https://jb.gg/teamcity-forum) and [public issue tracker](https://youtrack.jetbrains.com/issues/TW).
 
@@ -78,7 +78,7 @@ The special type of license granted for open source projects. This license is ti
 
 ## TeamCity Agent Licenses
 
-The number of simultaneously running builds is limited by the maximum number of [build agents](install-and-start-teamcity-agents.md). Both TeamCity Professional and TeamCity Enterprise include 3 build agents by default. You can purchase additional agent slots on the [product page](https://www.jetbrains.com/teamcity/buy/).
+The number of simultaneously running builds is limited by the maximum number of [build agents](install-and-start-teamcity-agents.md). Both TeamCity Professional and TeamCity Enterprise include 3 build agents by default. You can purchase additional agent slots on the [product page](https://www.jetbrains.com/teamcity/buy/). Each additional agent raises the default TeamCity Professional limit of 100 build configurations by 10.
 
 Agent licenses are not bound to specific agents. Instead, they limit the number of [authorized](install-and-start-teamcity-agents.md#Build+Agent+Statuses) agents regardless of their origin (local or remote, bare-metal or cloud). If you exceed the maximum number of authorized agents, TeamCity displays a warning message in the UI and prevents new builds from starting.
 
