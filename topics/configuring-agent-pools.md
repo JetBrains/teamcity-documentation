@@ -5,7 +5,7 @@ Instead of having one common set of [build agents](install-and-start-teamcity-ag
 * An agent can belong to _one pool only_.
 * A project can use _multiple pools_ for its builds.
 
-The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#Number+of+Agents). By default, all newly authorized agents are included into the _Default pool_.
+The number of agents authorized by the TeamCity server is limited by the number of [agent licenses](licensing-policy.md#TeamCity+Agent+Licenses). By default, all newly authorized agents are included into the _Default pool_.
 {instance="tc"}
 
 The number of agents authorized by the TeamCity server is limited by the number of agent licenses. By default, all newly authorized agents are included into the _Default pool_.
