@@ -151,7 +151,11 @@ claude mcp add --transport http buildserver <TeamCity-server-URL>/app/mcp --head
 
 ## TeamCity CLI
 
-To enable an AI agent to work with TeamCity CLI, run `teamcity skill install`. You can optionally specify the target agent and project.
+[TeamCity CLI](teamcity-cli.md) is a standalone tool that you can install on any machine to run builds, inspect build logs, manage agents, and perform other operations via terminal commands.
+
+<include from="teamcity-cli.md" element-id="install-cli"/>
+
+To enable an AI agent to work with this tool, run `teamcity skill install`. You can optionally specify the target agent and project.
 
 ```Shell
 teamcity skill install

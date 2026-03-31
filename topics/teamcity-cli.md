@@ -23,6 +23,8 @@ TeamCity CLI is the official command-line interface for TeamCity. Type `teamcity
 
 ## Installing TeamCity CLI {id="installing"}
 
+<snippet id="install-cli">
+
 <tabs>
 <tab title="macOS and Linux">
 
@@ -55,6 +57,8 @@ irm https://jb.gg/tc/install.ps1 | iex
 
 </tab>
 </tabs>
+
+</snippet>
 
 For other methods (Scoop, Chocolatey, deb/rpm packages, building from source), see the [getting started guide](teamcity-cli-get-started.md).
 
