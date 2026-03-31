@@ -2,6 +2,27 @@
 
 <snippet id="2026-1-tc" instance="tc">
 
+
+## TeamCity CLI
+
+TeamCity 2026.1 adds a new way to work with your TeamCity instances: TeamCity CLI. Alongside the browser-based UI and the extensive [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), you can now use a command-line tool to interact with TeamCity directly from the terminal.
+
+Install the CLI on any machine to check build statuses, start new builds, investigate failures, and handle many other routine tasks without leaving the command line.
+
+<img src="showcase.gif" alt="TeamCity CLI in action" border-effect="rounded"/>
+
+[Learn more...](teamcity-cli.md)
+
+
+## Integration with AI Agents
+
+Version 2026.1 also makes it easier to connect AI tools such as chatbots and agentic IDEs to TeamCity. You can choose between two integration options:
+
+* The TeamCity `<server-url>/app/mcp` endpoint provides [MCP tools](ai-agent-integration.md#TeamCity+MCP) that let AI agents interact with TeamCity.
+* The TeamCity CLI includes an [agent skill](ai-agent-integration.md#TeamCity+CLI) that helps agents work with TeamCity through terminal commands.
+
+[Learn more...](ai-agent-integration.md)
+
 ## Release Cycle Updates
 
 Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.
