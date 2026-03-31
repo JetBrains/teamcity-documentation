@@ -7,160 +7,83 @@ You can review the TeamCity [license agreement](https://www.jetbrains.com/teamci
 ## Licensing Overview
 
 JetBrains offers several licensing options that allow you to scale TeamCity to your needs.  
-This section illustrates the main differences between the TeamCity server [editions](#Editions) and provides general information on the TeamCity [Build Agent](install-and-start-teamcity-agents.md) license.
+This section illustrates the main differences between the TeamCity server [editions](#TeamCity+Server+Editions) and provides general information on the TeamCity [Build Agent](install-and-start-teamcity-agents.md) license.
 
 _In general, to use TeamCity for production (Enterprise edition), you need to own one **server license**. In addition, you can acquire an indefinite number of **build agent licenses**, depending on how many builds you want to run in parallel._
 
 For detailed information, refer to the sections below.
 
-<table><tr>
-
-<td>
-
-Professional Server
-
-</td>
-
-<td>
-
-Enterprise Server
-
-</td></tr><tr>
-
-<td>
-
-No license key is required,  __free__
-
-</td>
-
-<td>
-
-A license key is required, [price options](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise)
-
-
-</td></tr><tr>
-
-<td>
-
-100 build configurations and 10 pipelines
-
-</td>
-
-<td>
-
-Unlimited number of build configurations and pipelines
-
-</td></tr><tr>
-
-<td>
-
-Full access to all product features
-
-</td>
-
-<td>
-
-Free 1-year subscription to upgrades
-
-</td></tr><tr>
-
-<td>
-
-Support via [community forum](https://jb.gg/teamcity-forum)
-
-</td>
-
-<td>
-
-Priority [support](troubleshooting.md) for the [supported releases](teamcity-release-cycle.md)
-
-</td></tr><tr>
-
-<td>
-
-3 build agents included, buy more as necessary
-
-</td>
-
-<td>
-
-3 build agents included, buy more as necessary
-
-</td></tr></table>
-
-If you need more build agents than are included with your TeamCity server edition, you can purchase additional build agent licenses.
-
-<table><tr>
-
-<td>
-
-Build Agent License
-
-</td></tr><tr>
-
-<td>
-
-Connects 1 additional build agent
-
-</td></tr><tr>
-
-<td>
-
-If using Professional edition, adds 10 additional build configurations
-
-</td></tr><tr>
-
-<td>
-
-A license key is required, [price options](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=ADDITIONAL)
-
-</td></tr></table>
-
-## Editions
+## TeamCity Server Editions
 {help-id="LicensingPolicy-editions"}
 
+TeamCity server comes in two major editions: Professional and Enterprise. Both editions are installed using the same distribution. You can switch to the Enterprise edition by [entering the appropriate license key](manage-teamcity-license.md). All the data is preserved when the edition is switched.
 
-There are two editions of TeamCity: __Professional__ and __Enterprise__.   
-The editions are equal in all the features except for the maximum number of build configurations allowed.   
-The same TeamCity distribution and installation are used for both editions. You can switch to the Enterprise edition by entering the appropriate license key. All the data is preserved when the edition is switched.
+Apart from these major license types, there are two special TeamCity editions: Enterprise Plus and Open Source.
 
-The current edition in use is noted in the footer of every TeamCity web UI page and on the __Administration__ &gt; __Licenses__ page as well as in `teamcity-server.log` on the server startup.
+<deflist type="medium">
 
-The __Professional edition__ does not require any license key and can be used free of charge. The only functional difference from the Enterprise edition is a limitation of the maximum number of [build configurations](managing-builds.md). The limit is 100 build configurations. It can be extended by 10 with each agent license key added. [Pipelines](create-and-edit-pipelines.md) have a separate limit of 10 per server and do not count toward the build configuration limit. You can install several servers with the Professional license.
+<def title="Professional" id="edition-professional">
 
-The __Enterprise edition__ requires a license key, has no limit on the number of build configurations and pipelines, and entitles you to TeamCity [support](troubleshooting.md) from JetBrains for the maintenance period of the license, provided you use a [recent TeamCity version](teamcity-release-cycle.md).
+The free tier of TeamCity that does not require a license key, includes 3 build agents (with an option to purchase more), and has the full range of Enterprise features except for the following limitations:
+
+* Supports the maximum of 100 build configurations and 10 pipelines to exist at the same time (including archived ones). If you exceed this number, new builds will not run until you remove some of the older configurations/pipelines.
+* Enterprise features implemented via paid integrations (for example, [](ai-assistant.md) that runs OpenAI models) are not available.
+* Support is limited to the [community forum](https://jb.gg/teamcity-forum) and [public issue tracker](https://youtrack.jetbrains.com/issues/TW).
 
 <note>
 
-An additional server in a [high availability set-up](multinode-setup.md) uses the license from the main server and does not require a separate license at this time.
+We recommend that you [activate a TeamCity license](manage-teamcity-license.md) even when using TeamCity Professional. Doing so ensures your system administrators receive timely email notifications about critical TeamCity server security updates.
+
 </note>
 
-Each TeamCity edition comes bundled with 3 or more [build agents](install-and-start-teamcity-agents.md). To use more agents than the bundled number, separate build agent license keys can be entered. Additional agents can be added to both editions.
+</def>
 
-<anchor name="evaluation-license"/>
+<def title="Enterprise" id="edition-enterprise">
 
-Besides the Professional and Enterprise licenses, there are two more license types:
-* __Trial__ — has an expiration date and provides an unlimited number of agents and build configurations. To obtain the trial license, use the link on [TeamCity download page](https://www.jetbrains.com/teamcity/download/). The trial license can be obtained only once for each major TeamCity version. A second trial license key from the site is not accepted by the same major version of TeamCity server. If you need to extend/repeat the trial, please [contact](https://www.jetbrains.com/support/sales/) our sales department.
-* __Open Source__ — this is a special type of license granted for open source projects, it is time-based, and provides an unlimited number of agents. Refer to the details on [this page](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=OPEN_SOURCE).
+The [paid](https://www.jetbrains.com/teamcity/buy/#on-premises?licence=enterprise) TeamCity edition that requires a valid license key. TeamCity Enterprise enables the full range of TeamCity features, unlocks the unlimited number of build configurations and pipelines, and offers 1-year subscription to upgrades and [priority support](troubleshooting.md) via a private Zendesk instance. 
 
-The TeamCity Licensing Policy does not impose any limitations on the number of instances for any of the IDE plugins or Notifiers.
+<note>
 
-### Number of Build Configurations
+In the [high-availability setup](multinode-setup.md), secondary TeamCity nodes do not require additional licenses and share one with the main server.
 
-The Enterprise edition has no limit on the number of build configurations.
+</note>
 
-The Professional edition allows 100 [build configurations](managing-builds.md) per server. Each build agent license key gives you 10 more build configurations in Professional edition in addition to one more agent. All build configurations are counted (i.e. including those in archived projects).
+TeamCity Enterprise includes 3 build agents with the ability to purchase additional agent slots. TeamCity Enterprise Plus (see below) allows you to exceed the maximum number of build agents for the true-up agent flexibility.
 
-Starting with version 2025.07, TeamCity supports [pipelines](create-and-edit-pipelines.md) as an alternative to traditional build configurations and build chains. Pipelines have a separate limit of 10 per server and do not count toward the build configuration limit.
+You can try TeamCity Enterprise in [trial mode](https://www.jetbrains.com/teamcity/download/). The trial license can be obtained only once for each major TeamCity version. A second trial license key is not accepted by the same major version of TeamCity server. If you need to extend or repeat the trial, please [contact](https://www.jetbrains.com/support/sales/) our sales department.
 
-### Number of Agents
+</def>
 
-TeamCity Professional edition comes bundled with 3 [build agents](install-and-start-teamcity-agents.md). More build agents can be added by purchasing additional agent license keys.
 
-A server license key might include more agent licenses than the default 3. The number of agents stated for the server license on jetbrains.com site notes the total number of agents which will be available. Separate agent license keys can be used with either TeamCity edition (Enterprise and Professional). For more information about purchasing agent licenses, refer to the [product page](https://www.jetbrains.com/teamcity/buy/).
+<def title="Enterprise Plus" id="edition-enterprise-plus">
 
-The number of agent licenses limits the number of agents which can be [authorized](install-and-start-teamcity-agents.md#Build+Agent+Statuses) in TeamCity. The license keys are not bound to specific agents, they just limit the maximum number of functional agents. The licensing makes no difference between local (installed on the TeamCity server machine) and remote agents.   
-When there are more authorized agents than the valid agent licenses available, the server fails to start any builds and displays a warning message to all users in the web browser.
+The premium TeamCity license that offers all TeamCity Enterprise benefits plus the following:
+
+* The ability to **exceed the maximum number of build agents** dictated by the currently active agent licenses. Each additional agent slot costs a fixed amount. At the end of each quarter, you are charged based on the peak overuse in each month. This gives you elastic capacity during busy periods without procurement delays or long-term commitments.
+
+* The **additional staging server license** for testing upgrades and configuration changes before rolling out to production. The staging TeamCity server has a fixed number of agents and does not impose any restrictions on build configurations or pipelines.
+
+* The **assigned customer success engineer** who provides proactive guidance about best practices, along with personalized support to help you address challenges efficiently and align your CI/CD strategy with business goals, maximizing your investment.
+</def>
+
+
+<def title="Open Source" id="edition-open-source">
+
+The special type of license granted for open source projects. This license is time-based and provides an unlimited number of agents. Refer to the details on [this page](https://www.jetbrains.com/teamcity/buy/choose_edition.jsp?license=OPEN_SOURCE).
+
+</def>
+
+</deflist>
+
+
+## TeamCity Agent Licenses
+
+The number of simultaneously running builds is limited by the maximum number of [build agents](install-and-start-teamcity-agents.md). Both TeamCity Professional and TeamCity Enterprise include 3 build agents by default. You can purchase additional agent slots on the [product page](https://www.jetbrains.com/teamcity/buy/).
+
+Agent licenses are not bound to specific agents. Instead, they limit the number of [authorized](install-and-start-teamcity-agents.md#Build+Agent+Statuses) agents regardless of their origin (local or remote, bare-metal or cloud). If you exceed the maximum number of authorized agents, TeamCity displays a warning message in the UI and prevents new builds from starting.
+
+The [Enterprise Plus](#edition-enterprise-plus) server license allows you to exceed the agents threshold for the additional cost charged quarterly.
+
 
 ## Managing Licenses
 
@@ -209,7 +132,7 @@ Once sufficient valid license keys are entered which cover the server configurat
 
 The following ways to switch your server into the Enterprise mode exist:
 * [buy](https://www.jetbrains.com/teamcity/buy/) an Enterprise Server license;
-* request a 30-day trial license on the [download page](https://www.jetbrains.com/teamcity/download/) (see details [above](#Editions));
+* request a 30-day trial license on the [download page](https://www.jetbrains.com/teamcity/download/) (see details [above](#TeamCity+Server+Editions));
 * use TeamCity for open-source projects only and [request an open-source license](https://www.jetbrains.com/buy/opensource/?product=teamcity).
 
 ## Upgrading From Previous Versions
