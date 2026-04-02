@@ -205,7 +205,7 @@ You can now set a specific date and time when a build should run. To do this, in
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
-Learn more: [Run Custom Build](running-custom-build.md#Date+%26+Time).
+Learn more: [Run Custom Build](running-custom-build.md).
 
 
 ## Build Cache

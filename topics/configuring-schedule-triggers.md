@@ -57,7 +57,7 @@ If the trigger detects a new build that satisfies the selected characteristic in
  
 The trigger watches only regular (not [personal](personal-build.md) or [history](history-build.md)) builds in the target branch. If the watched configuration has finished builds in multiple branches, the trigger settings also include the **Build branch filter** field that allows you to watch builds in the specific branch only. This setting is initially set to `+:<default>`, which means the trigger will monitor builds only in the default branch of the watched configuration.
  
-If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](running-custom-build.md#Promoting+Build) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
+If the triggered build depends on the watched build via a snapshot or artifact dependency, select the "_Promote watched build_" option so TeamCity can automatically [promote](running-custom-build.md#Other+Ways+to+Start+Custom+Builds) the detected build to the triggered build. Otherwise, the build will be triggered as usual and will have no relation to the detected build.
 
 ## Additional Options
 

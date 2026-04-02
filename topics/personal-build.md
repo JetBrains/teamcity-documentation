@@ -77,7 +77,7 @@ To upload a patch and run a personal build via REST API:
 
 ## Promoting Personal Build
 
-You can promote a personal build in the [same way as a non-personal build](running-custom-build.md#Promoting+Build). After promotion, the dependent build will be run as a personal one and use the same patch.
+You can promote a personal build in the [same way as a non-personal build](running-custom-build.md#Other+Ways+to+Start+Custom+Builds). After promotion, the dependent build will be run as a personal one and use the same patch.
 
 ## Triggering Personal Build Chain
 

@@ -56,7 +56,7 @@ To add an artifact dependency to a build configuration:
 
 3. Click **Save** to add your new dependency.
 
-At any point you can launch a build with [custom artifact dependencies](running-custom-build.md#Promoting+Build).
+At any point you can launch a build with [custom artifact dependencies](running-custom-build.md#Other+Ways+to+Start+Custom+Builds).
 
 ## Artifacts Rules
 

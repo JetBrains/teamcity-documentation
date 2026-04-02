@@ -95,7 +95,7 @@ The permission will be present for this role in the new TeamCity installations; 
 
 ## Promoting personal build
 
-You can now [promote](running-custom-build.md#Promoting+Build) a personal build. 
+You can now [promote](running-custom-build.md#Other+Ways+to+Start+Custom+Builds) a personal build. 
 After promotion, TeamCity will try to run the promoted build and all its dependencies as [personal builds](personal-build.md#Triggering+Personal+Build+Chain) unless the check out settings for any of the dependencies differ.
 
 ## New REST API Requests to monitor and manage server nodes
