@@ -1,25 +1,33 @@
 [//]: # (title: Running Custom Build)
 [//]: # (help-id: Running Custom Build;Triggering a Custom Build)
 
-A build configuration typically uses [build triggers](configuring-build-triggers.md) to start new builds on a required schedule or whenever TeamCity detects a new change in a source code.
+<show-structure for="chapter" depth="2"/>
 
-In addition to these automatically triggered builds, TeamCity allows you to run builds manually and, if needed, customize their settings: add new or modify existing properties, choose specific changes, schedule a build, choose which agent should run it, and so on.
+The top right corner of build configurations and pipelines displays two buttons that trigger new builds:
 
-TeamCity provides multiple options to run custom builds:
+<img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
 
-* Click the ellipsis button next to the __Run__ button and specify optional settings in the __Run Custom Build__  dialog (see [this section](#General+Options) for more information).
-* To run a custom build with specific changes, open the build results page and switch to the __[Changes](build-results-page.md#Changes+Tab)__ tab. Expand the required change, click the __Run build with this change__ button, and specify required [options](#General+Options).
-* Send an [HTTP](accessing-server-by-http.md) or [REST API](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Start+Custom+Build) request to the TeamCity server.
-* [Promote a build](#Promoting+Build).
-* Set up [build triggers](configuring-build-triggers.md) to launch builds with custom parameters.
+* **Run** — starts a new build with default settings.
+* **Run custom build** — invokes the dialog that allows you to modify build settings before it starts.
 
-## General Options
+This article explains available customization options, as well as mentions other ways to trigger custom builds.
 
-The **General** tab displays the most basic and frequently used settings.
+## Run Custom Build Dialog
+
+This dialog pops up in TeamCity UI in either of the following cases:
+
+* You clicked the **Run custom build** button.
+* You started a normal build for a configuration or pipeline with the [prompt parameter](typed-parameters.md). These parameters are designed to ask for a new value whenever a build starts.
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
-### Agent
+Available customization options are grouped into several tabs.
+
+### General Options
+
+<deflist type="full">
+
+<def title="Agent">
 
 This setting allows you to choose an agent that should run your build. The following options are available:
 
@@ -33,77 +41,88 @@ This setting allows you to choose an agent that should run your build. The follo
   {instance="tc"}
 
 * __&lt;All enabled compatible agents&gt;__ — run a build simultaneously on all agents that are enabled and compatible with the build configuration. Use this option to:
-  * Run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function correctly after an environment upgrade/update).
-  * Run a build on different platforms (for example, you can set up a configuration and specify a number of compatible build agents with different environments installed.
+    * Run a build for agent maintenance purposes (for example, you can create a configuration to check whether agents function correctly after an environment upgrade/update).
+    * Run a build on different platforms (for example, you can set up a configuration and specify a number of compatible build agents with different environments installed.
+
+</def>
 
 
-### Date &amp; Time
+<def title="Build Options">
+
+Includes most common build customization options.
+
+* **run as a personal build** — allows you to run [personal builds](personal-build.md). Allows you to pass a patch file to test changes that were not yet committed.
+
+    <note>
+
+  If the parent build configuration has a [Perforce VCS root](perforce.md) attached, enabling the personal build option reveals additional settings related to building shelved files. Note that if this root has Perforce stream support enabled, TeamCity automatically detects the target stream from the changed files even if the default stream is specified.
+
+  See these articles to learn more:
+
+    * [](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files)
+    * [](perforce-shelve-trigger.md)
+
+    </note>
+
+* **put the build to the queue top** — places this new build to the top of the current [build queue](working-with-build-queue.md).
+
+* **delete all files in the checkout directory before the build** — specifies whether TeamCity should clear the [build checkout directory](build-checkout-directory.md). If snapshot dependencies are configured, this option can be applied to snapshot dependencies as well. In this case, all the builds of the build chain will use a clean checkout.
+
+</def>
+
+<def title="Date &amp; Time">
 
 Leave the **As soon as possible** option to place a new build to a regular queue immediately after you click **Run Build**.
 
 To schedule a build to the specific date &amp; time, switch to the **At specific date and time** option. Scheduled builds remain at the end of a [build queue](working-with-build-queue.md) until their scheduled date and time.
 
-<img src="dk-scheduledBuild.png" width="706" alt="Scheduled build and time"/>
+</def>
 
-### Build Options
-
-
-* **run as a personal build** — allows you to run [personal builds](personal-build.md).
-
-* **put the build to the queue top** — places this new build to the top of the current [build queue](working-with-build-queue.md). Since your newly started build can have no immediately ready compatible agents, it can move down the queue as it waits for one. If this happens, click the **Move to top** icon on the build configuration page, or navigate to the [](build-results-page.md) page and click **Actions | Move to top**.
-
-  <img src="dk-moveBuildToTop.png" width="706" alt="Move queued build to top"/>
-
-* **delete all files in the checkout directory before the build** — specifies whether TeamCity should clear the [build checkout directory](build-checkout-directory.md).
-  * If snapshot dependencies are configured, this option can be applied to snapshot dependencies. In this case, all the builds of the build chain will use a clean checkout.
+</deflist>
 
 
-<anchor name="P4-shelved-files-custom-run"/>
+### Dependencies
 
-### Perforce-Specific Settings
+This tab is only available if the build's parent configuration or pipeline is a part of a bigger workflow and has upstream builds. In this case, you can specify which of these upstream builds should be rebuilt anew. By default, TeamCity attempts to rebuild all of them, including those that previously failed.
 
-If the current build configuration uses a [Perforce](perforce.md) VCS root, you can also run a custom build on [shelved files](https://www.perforce.com/manuals/v17.1/p4guide/Content/CmdRef/p4_shelve.html). To do this:
-1. Tick _Run as a personal build_ option.
-2. Enter the ID of the changelist that contains the shelved files.
-3. Choose the target Perforce root.
+<tip instance="tc">
 
-> If stream support is enabled in a Perforce VCS Root, TeamCity will automatically detect the target stream from the changed files even if the default stream is specified.
-> 
-{style="note"}
+The maximum number of upstream builds displayed in this dialog is 20. To increase it, add the `teamcity.runCustomBuild.buildsLimit=<your value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
-
-> Learn how to automate running builds on shelved files with [Perforce Shelve Trigger](perforce-shelve-trigger.md).
->
-{style="tip"}
-
-## Dependencies
-
-_This tab is available only for builds that have dependencies on other builds_.
-
-The **Dependencies** tab allows you to rebuild all dependencies and select a particular build whose artifacts this new build should use. By default, TeamCity shows the last 20 builds. To increase the number of available recent builds, add the `teamcity.runCustomBuild.buildsLimit=<your value>` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-{instance="tc"}
-
-The **Dependencies** tab allows you to rebuild all dependencies and select a particular build whose artifacts this new build should use.
-{instance="tcc"}
-
-If you re-run a dependent build, TeamCity will try to rebuild all dependency builds, including those that previously failed.
+</tip>
 
 Dependency builds in the list are initially grouped by their alphabetically sorted branches. Builds of the same branch are sorted by the build date. To discard branch-based sorting and sort all dependency builds only by their dates, click __Sort dependencies by date__. This allows you to view the most recent builds first. To restore the default sorting, click __Reset all__.
 
-## Changes
+### Changes
 
-_This tab is available only if your TeamCity user has permission to access VCS roots for the build configuration._
+<note>
 
-The **Changes** tab allows you to select a change to be included to the build. TeamCity will use the change's revision to check out the sources and include all changes up to the selected one in this new build.
+This tab is available only if your TeamCity user has permission to access VCS roots for the build configuration or pipeline.
 
-Note that if a corresponding VCS root was detached from the build configuration, TeamCity is unable to retrieve newest commits and displays only a limited number of changes. To run a build with an older chage, locate the required commit in the Change Log and use the __Run build with this change__ action.
+</note>
 
-## Include Changes
+The **Changes** tab allows you to fine-tune which exactly changes this build should process.
 
-The __Include changes__ drop-down menu allows you to choose which changes in the VCS roots attached to the configuration should be included in this new build.
+<deflist type="full">
 
-* __Latest changes at the moment the build is started__: TeamCity will automatically include all latest changes available at the moment.
-* __Last change to include__: Choose a required change to ignore all later commits. TeamCity marks builds that ignore newest changes as [history builds](history-build.md).
+<def title="Build branch">
+
+This option allows you to choose a branch for the custom build.
+
+</def>
+
+
+<def title="Include changes">
+
+Allows you to choose which changes in the VCS roots should be included in this new build. Includes the following options:
+
+* __Latest changes at the moment the build is started__ — TeamCity will automatically include all latest changes available at the moment.
+
+* **[Date] (revision number) (Change name)** — The list of individual commits. Select any commit to build the project up to this change. Note that TeamCity automatically marks builds that ignore newest changes as [history builds](history-build.md).
+
+  If TeamCity does not show a required older commit (for example, when a corresponding VCS root is detached from a configuration or pipeline), locate it in the Change Log and use the __Run build with this change__ action.
+
+* **Manually specified revisions** — Allows you to manually enter the revision number of a change to build.
 
 <note>
 
@@ -111,13 +130,9 @@ Build numbers and the build history list reflect the time these builds started. 
 
 </note>
 
-## Build Branch
+</def>
 
-The __Build branch__ drop-down menu is available if this build configuration (or its snapshot dependency configuration) has branches. Allows you to choose a branch for the custom build.
-
-<anchor name="TriggeringCustomBuild-UsesettingsfromVCS"/>
-
-## Use Settings
+<def title="Use Settings">
 
 If a project [stores its settings in a VCS](storing-project-settings-in-version-control.md), this tab allows you to choose which settings should be used for this new build:
 
@@ -125,41 +140,71 @@ If a project [stores its settings in a VCS](storing-project-settings-in-version-
 * Settings currently defined on the TeamCity server
 * Settings loaded from the VCS revision calculated for this build.
 
-The default behavior depends on the currently selected **Project Settings | Versioned Settings** page setting (see this section for more information: [](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)).
+The default behavior depends on the currently selected **Project Settings | Versioned Settings** page setting (see this section for more information: [](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)). If you selected [specific changes revision](#Changes), TeamCity will also load a corresponding revision of the project settings.
 
-If you selected [specific changes revision](#Include+Changes), TeamCity will also load a corresponding revision of the project settings.
+Since pipelines always have a settings file (by default, a YAML file stored on the server side), this option is always present regardless of parent project settings.
 
-## Parameters
+</def>
+
+</deflist>
+
+
+
+### Parameters
 
 <note>
- 
-These settings are available only if your TeamCity user has permissions to change system properties and environment variables for this build configuration.
+
+These settings are available only if your TeamCity user has permissions to change system properties and environment variables for this build configuration or pipeline.
 
 </note>
 
-This tab allows you to adding, edit, and delete parameters/properties/variables, as well as override initial values of [predefined parameters](predefined-build-parameters.md).   
-
-The following limitations apply:
+This tab allows you to add, edit, and delete [parameters](configuring-build-parameters.md). The following limitations apply:
 
 * Predefined properties and variables do not allow you to edit their names (only values are editable).
 * You can delete only newly added properties and variables. Predefined properties cannot be removed.
 * Parameter values must not exceed 16,000 characters.
 
-## Comment and Tags
+### Comment and Tags
 
-This tab allows you to add optional comments and [tags](build-actions.md#Add+Tags+to+Build) to your custom builds. You can also add a custom build to [favorites](build-actions.md#Add+Build+to+Favorites) by checking the corresponding option in this section.
+This tab allows you to comment and [tag](build-actions.md#Add+Tags+to+Build) custom builds. You can also add a custom build to [favorites](build-actions.md#Add+Build+to+Favorites) by checking the corresponding option in this section.
 
 
+## Other Ways to Start Custom Builds
 
-## Promoting Build
+Along with hitting the corresponding **Run...** button, you can also start custom builds as follows.
 
-Promoted builds are custom builds with an overridden [artifact or snapshot dependencies](configuring-dependencies.md). Such builds utilize different dependency builds compared to those they would use by default.
+* From the [**Changes**](build-results-page.md#Changes+Tab) tab of any finished build. Click the ellipsis button next to a required change and choose __Run build with this change__.
 
-For example, a build configuration A retrieves artifacts from a build configuration B. Normally, running a new A build utilizes the last successful B build. If you want A to use an older B build, this earlier B build needs to be promoted.
+    <img src="run-build-with-this-change.png" width="706" alt="Run build with this change"/>
 
-To promote a build, open the build results page of the dependency build and click __Actions | Promote__. Promotion has a one-time effect: after the current run, build configurations revert back to their default dependency logic (last successful or last pinned build).
+* In REST API, send new `POST` request to the `/app/rest/buildQueue` endpoint and specify required `Build` object settings in the request body. See this article for more information: [Start custom build](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html#Start+Custom+Build).
 
-See the [following blog post](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/) for more information.
+    ```Shell
+    curl --location '<server-url>/app/rest/buildQueue' \
+    --header 'Accept: application/json' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: <access-token>' \
+    --data '{
+        "buildType": {
+            "id": "Config-no-2"
+        },
+        "triggeringOptions": {
+            "cleanSources": true,
+            "rebuildAllDependencies": false,
+            "rebuildFailedOrIncompleteDependencies": false,
+            "queueAtTop": true,
+            "rebuildDependencies":  {
+                "buildType": [
+                    { "id": "Config-no-1" }
+                ]
+            }
+        }
+    }'
+    ```
+  
+* By clicking __Actions | Promote__ from build page. Doing so triggers the chain to which this build belongs, which allows you to run a chain with older upstream builds or run downstream builds that do not start automatically (for instance, deployment). Promotion has a one-time effect: after the current run, build configurations and pipelines revert to their default dependency logic (last successful or last pinned build). See the [following blog post](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/) for more information.
+
+
 
  <seealso>
         <category ref="installation">

@@ -23,6 +23,13 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 [Learn more...](ai-agent-integration.md)
 
+
+## Pipeline Enhancements
+
+* You can now run pipelines [with one-time custom settings](running-custom-build.md).
+
+    <img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
+
 ## Release Cycle Updates
 
 Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.

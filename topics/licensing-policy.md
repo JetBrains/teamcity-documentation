@@ -59,11 +59,11 @@ You can try TeamCity Enterprise in [trial mode](https://www.jetbrains.com/teamci
 
 The premium TeamCity license that offers all TeamCity Enterprise benefits plus the following:
 
-* The ability to **exceed the maximum number of build agents** dictated by the currently active agent licenses. Each additional agent slot costs a fixed amount. At the end of each quarter, you are charged based on the peak overuse in each month. This gives you elastic capacity during busy periods without procurement delays or long-term commitments.
+* A true-up license that provides the ability to **exceed the maximum number of build agents** dictated by the currently active agent licenses. Each additional agent slot using the true-up license costs a fixed amount per month, billed quarterly based on the peak overuse in each month. This gives you elastic capacity during busy periods without procurement delays or long-term commitments.
 
-* The **additional staging server license** for testing upgrades and configuration changes before rolling out to production. The staging TeamCity server has a fixed number of agents and does not impose any restrictions on build configurations or pipelines.
+* An **additional staging server license** for testing upgrades and configuration changes before rolling out to production. The staging TeamCity server has a fixed number of agents and does not impose any restrictions on build configurations or pipelines.
 
-* The **assigned customer success engineer** who provides proactive guidance about best practices, along with personalized support to help you address challenges efficiently and align your CI/CD strategy with business goals, maximizing your investment.
+* An **assigned customer success engineer** who provides proactive guidance about best practices, along with personalized support to help you address challenges efficiently and align your CI/CD strategy with business goals, maximizing your investment.
 </def>
 
 

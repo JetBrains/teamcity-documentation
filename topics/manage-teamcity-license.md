@@ -9,9 +9,13 @@ For users with paid licenses, activating a license grants the "set it and forget
 If you can access the <a href="https://account.jetbrains.com">JetBrains Account</a> and your TeamCity server's machine is connected to the internet and can regularly communicate with <a href="https://account.jetbrains.com">account.jetbrains.com</a> via HTTPS, do the following to activate a license:
 
 1. Navigate to **Administration | Licenses** page.
+
 2. Click **Get License Key** and log into your JetBrains Account. Note that TeamCity does not display this button if the server already has an active license. If your server uses a trial license, [deactivate it](#Deactivate+a+License) before you can switch to a paid version.
+
 3. Choose a server license you want to activate. This page shows licenses owned by all organizations and teams for which you have administrator permissions. See this page for information on permissions required to activate a license: [Required permissions to activate your on-premises team tool license](https://www.google.com/url?q=https://sales.jetbrains.com/hc/en-gb/articles/20070316403090&sa=D&source=docs&ust=1720640931638823&usg=AOvVaw1UTiHZ6e45kndMi-CoDhWL).
+
    <img src="dk-choose-license.png" width="706" alt="Choose a license"/>
+   
 4. Click **Get license key** to confirm. The activation key will be transferred to your TeamCity server automatically. You can also manually copy a key and paste it to the **I already have a key** field on the TeamCity **Licenses** page.
 
 
@@ -170,8 +174,9 @@ A single license can only be used on a single running TeamCity server at any giv
 
 If you create a copy of the server and run two servers at the same time, you should ensure each license key is used on a single server only. You can use the Trial (limited time) license to run a server for testing/non-production purposes. The licenses are not bound to a specific server instance, machine, and so on. The only limitation is that a license cannot be used on several servers at the same time.
 
-When you already own license(s) and buy more licenses, you can [request](https://www.jetbrains.com/support/sales/) JetBrains sales to make the new licenses co\-termed with those already purchased, so that all the licenses have equal maintenance expiration date. The cost of the licenses is then lowered proportionally.   
-When buying many licenses, you are welcome to [contact](https://www.jetbrains.com/support/sales/) our sales for available volume discounts.
+When you already own license(s) and buy more licenses, you can [request](https://www.jetbrains.com/support/sales/) JetBrains sales to make the new licenses co-termed with those already purchased, so that all the licenses have equal maintenance expiration date. The cost of the licenses is then lowered proportionally.   
+
+When buying multiple licenses, [contact our sales team](https://www.jetbrains.com/support/sales/) for available volume discounts.
 
 
 </snippet>

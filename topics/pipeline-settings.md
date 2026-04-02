@@ -96,6 +96,10 @@ secrets:
   registry-password: credentialsJSON:c57c2732-1d8c-4c11-8724-f275085f4320
 ```
 
+## Pipeline Dependencies
+
+TBD
+
 ## Auto-Run Pipeline
 
 This section includes settings that allow TeamCity to automatically run your pipeline on certain conditions. This functionality is available as [triggers](configuring-build-triggers.md).
