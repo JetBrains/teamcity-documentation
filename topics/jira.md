@@ -36,100 +36,70 @@ TeamCity updates statuses of Jira issues displayed for builds every 10 minutes o
 
 >Enabling TeamCity integration with Jira requires Project Administrator permissions as it is configured at a project level. Note that enabling integration for a project enables it for all its subprojects as well. If the settings are different in a subproject, they have priority over the parent project's settings.
 
-To enable the integration, create a connection to Jira on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Issue Trackers__ page and specify the following settings:
+To enable the integration, create a connection to Jira on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Issue Trackers__ page and specify the following settings.
 
-<table>
 
-<tr>
+<deflist type="medium">
 
-<td>
 
-Setting
+<def title="Display Name">
 
-</td>
+The external connection name visible in TeamCity UI.
 
-<td>
+</def>
 
-Description
+<def title="Server URL">
 
-</td></tr>
+The URL of your Jira instance or server. For example, `https://myinstance.atlassian.net` for Jira Cloud.
 
-<tr>
+</def>
 
-<td>
+<def title="Login">
 
-Connection Type
+Self-hosted Jira instances support authentication via access tokens or regular username/password credentials.
 
-</td>
+* Token authentication: leave this field empty.
+* Basic authentication: enter the username.
 
-<td>
+For Jira Cloud connections, enter the user email.
 
-Select __Jira__ from the list.
+</def>
 
-</td></tr><tr>
 
-<td>
+<def title="Password or token">
 
-Display Name
+* Self-hosted Jira (token-based auth): enter the access token.
+* Self-hosted Jira (basic auth): enter the user password.
+* Cloud Jira: enter the [API token](https://developer.atlassian.com/cloud/jira/platform/jira-rest-api-basic-authentication/).
 
-</td>
+</def>
 
-<td>
-
-Specify the connection name to distinguish it from the other connections.
-
-</td></tr><tr>
-
-<td>
-
-Server URL
-
-</td>
-
-<td>
-
-Enter the base URL of your Jira instance or server. For Jira Cloud, it is a URL like `https://XXX.atlassian.net`.
-
-</td></tr><tr>
-
-<td>
-
-Login
-
-</td>
-
-<td>
-
-A username for self-managed Jira (specified in the Jira user profile) or email for Jira Cloud.
-
-</td></tr><tr>
-
-<td>
-
-Password / API Token
-
-</td>
-
-<td>
-
-A password for self-managed Jira or [API token](https://developer.atlassian.com/cloud/jira/platform/jira-rest-api-basic-authentication/) for Jira Cloud.
-
-</td></tr><tr>
-
-<td>
-
-Project Keys
-
-</td>
-
-<td>
+<def title="Project Keys">
 
 Enter a space-separated list of _project keys_ to specify which strings should be recognized as references to issues in Jira. For example, if a project key is `WEB`, an issue key like `WEB-101`, mentioned in a VCS comment, will be turned into a link to the corresponding issue.
 
 You can also load all project keys automatically: enable _Use all Jira projects automatically_ and test the connection to your Jira server. If the connection is successful, the __Project Keys__ field will be automatically populated. TeamCity will detect newly created projects in Jira and automatically synchronize the list of project keys.
 
+</def>
 
-</td></tr></table>
+<def title="Jira Cloud Client ID">
+
+Specified to allow TeamCity report build statuses back to Jira. Supports only Jira Cloud instances. See the [](#Reporting+TeamCity+Build+Statuses+to+Jira+Cloud) section for more information.
+
+</def>
+
+<def title="Jira Cloud Server secret">
+
+Specified to allow TeamCity report build statuses back to Jira. Supports only Jira Cloud instances. See the [](#Reporting+TeamCity+Build+Statuses+to+Jira+Cloud) section for more information.
+
+</def>
+
+</deflist>
+
+
+
+
+
 
 Note that a user specified in the connection to Jira should have sufficient permissions to view Jira issues. This will allow TeamCity to retrieve the information about issues and display it in the UI.
 

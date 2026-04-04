@@ -77,4 +77,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * The list of available [Get artifacts from...](artifact-dependencies.md#artifact-dep-get-from) options now includes **Build from the same chain** that fails the build if both target and source configuration/pipeline do not belong to the same build chain. Previously, only the **Build from the same chain or last finished** option was available.
 
+* When configuring [connections to on-premises Jira instances](jira.md), you can now choose between authentication via regular username/password credentials or a personal access tokens issued on the issue tracker side.
+
 </snippet>

@@ -27,6 +27,7 @@ Connections in this category store information needed to access services other t
 * [Google](#Google) connection is used by the [corresponding authentication module](configuring-authentication-settings.md#Google) to allow users log into TeamCity using their Google accounts.
 * [Slack](#Slack) connection is utilized to set up Slack notifications and [send custom Slack messages from build steps](service-messages.md#Sending+Custom+Slack+Messages).
 * [HashiCorp Vault](hashicorp-vault.md) connection allows you to create remote parameters that retrieve their values from a secrets vault.
+* [Jira](jira.md) connection allows TeamCity builds to show links to Jira issues in their **Changes** tabs, and post build statuses back to these issues.
 
 
 </def>
