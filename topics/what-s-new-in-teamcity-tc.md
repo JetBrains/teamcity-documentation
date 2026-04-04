@@ -75,4 +75,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * When choosing the **Shallow clone** [Git checkout policy](git.md#git-checkout-policy), you can now add the `teamcity.git.agent.shallowCloneDepth` and `teamcity.git.agent.submodules.shallowCloneDepth` parameters to set the [`--depth`](https://git-scm.com/docs/git-clone) attribute.
 
+* The list of available [Get artifacts from...](artifact-dependencies.md#artifact-dep-get-from) options now includes **Build from the same chain** that fails the build if both target and source configuration/pipeline do not belong to the same build chain. Previously, only the **Build from the same chain or last finished** option was available.
+
 </snippet>

@@ -31,13 +31,14 @@ To add an artifact dependency to a build configuration:
   
     * **Get artifacts from** — the type of build whose artifacts are to be taken:
         {id="artifact-dep-get-from" help-id="artifact-dep-get-from"}
-  
-        * Latest successful build — artifacts will be taken from the successful dependency build with the most recent revision (the latest change ID)
-        * Latest [pinned build](build-actions.md#Pin+Build) — artifacts will be taken from the pinned dependency build with the most recent revision (the latest change ID)
-        * Latest finished build: if a snapshot dependency is also configured in a build configuration, artifacts will be taken from the build with the same sources as the current build
-        * Build from the same chain — this option is useful when you have a [snapshot dependency](snapshot-dependencies.md) and want to obtain artifacts from a build with the same sources
-        * Build with specified build number
-        * Latest finished build with specified tag
+
+        * **Latest successful build** — Imports artifacts from the most recent successful dependency build revision (the latest change ID).
+        * **Latest [pinned build](build-actions.md#Pin+Build)** — Imports artifacts from the pinned dependency build with the most recent revision (the latest change ID).
+        * **Latest finished build** — Imports artifacts from the most recent build, regardless of whether it succeeded or failed.
+        * **Build from the same chain** — Imports artifacts from the most recent successful build of a configuration or pipeline only if it belongs to the same [build chain](build-chain.md) as the target build. If the artifact source is outside that chain, the build fails.
+        * **Build from the same chain or last finished** — Imports artifacts from the most recent successful build of the same-chain configuration or pipeline. If the source and target do not belong to the same build chain, artifacts are taken from the latest finished build instead.
+        * **Build with specified build number**
+        * **Latest finished build with specified tag**
         
         > When selecting the build configuration, take your [clean-up policy settings](teamcity-data-clean-up.md) into account.
         > Builds are cleaned and deleted on a regular basis, thus the build configuration could become dependent on a non-existent build. When artifacts are taken from a build with a specific number, then the specific build will not be deleted during clean-up.

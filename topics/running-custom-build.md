@@ -16,8 +16,8 @@ This article explains available customization options, as well as mentions other
 
 This dialog pops up in TeamCity UI in either of the following cases:
 
-* You clicked the **Run custom build** button.
-* You started a normal build for a configuration or pipeline with the [prompt parameter](typed-parameters.md). These parameters are designed to ask for a new value whenever a build starts.
+* When you click the **Run custom build** button.
+* When you start a normal build for a configuration or pipeline with one or multiple [prompt parameters](typed-parameters.md). These parameters are designed to ask for a new value whenever a build starts.
 
 <img src="dk-customRun-general.png" width="706" alt="Run custom build dialog, General Settings tab"/>
 
