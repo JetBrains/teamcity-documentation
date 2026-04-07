@@ -1,6 +1,8 @@
 [//]: # (title: Build Files Cleaner \(Swabra\))
 [//]: # (help-id: viewpage.actionpageId113084151;Build Files Cleaner \(Swabra\))
 
+<primary-label ref="primary-functionality-pipeline"/>
+
 _Swabra_ is a bundled TeamCity plugin that allows you to add the Swabra [build feature](adding-build-features.md) to your build configurations. This build feature allows you to do the following:
 
 * Remove files generated during a build. The feature creates a list of all files in the checkout directory after the sources checkout is complete. After a build finishes (or before the next build starts), files that are not on this list are automatically removed.

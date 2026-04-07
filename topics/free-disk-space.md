@@ -1,6 +1,8 @@
 [//]: # (title: Free Disk Space)
 [//]: # (help-id: Free Disk Space;Free disk Space)
 
+<primary-label ref="primary-functionality-pipeline"/>
+
 >This page is about the _Free disk space_ build feature. If you want to learn how to automatically clean up the TeamCity data, see [this section](teamcity-data-clean-up.md). To learn where and how TeamCity stores its configuration settings, see [this section](teamcity-data-directory.md).
 
 TeamCity needs disk space on agents for builds and allocates 3 GB for it by default. 

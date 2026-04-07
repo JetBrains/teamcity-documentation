@@ -2,6 +2,12 @@
 
 <snippet id="2026-1-tc" instance="tc">
 
+## Release Cycle Updates
+
+Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.
+
+This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
+
 
 ## TeamCity CLI
 
@@ -26,15 +32,20 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 ## Pipeline Enhancements
 
-* You can now run pipelines [with one-time custom settings](running-custom-build.md).
+* You can now use the [Custom build dialog](running-custom-build.md) that allows you to run pipelines with one-time custom settings.
 
     <img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
 
-## Release Cycle Updates
+* Jobs can now use the following build features, previously available only for [build configurations](adding-build-features.md):
 
-Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.
+    <img src="pipelines-build-features.png" width="706" alt="Build features in pipelines"/>
 
-This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
+    * [](build-files-cleaner-swabra.md)
+    * [](free-disk-space.md)
+    * [](build-cache.md)
+    * [](xml-report-processing.md)
+
+
 
 
 ## Dynamic Build Step Credentials
