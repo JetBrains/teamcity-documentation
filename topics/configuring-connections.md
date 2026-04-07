@@ -345,7 +345,7 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
 1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
 2. <include from="common-templates.md" element-id="create-new-connection"/>
 3. <include from="common-templates.md" element-id="choose-connection-type"><var name="connection-type" value="GitLab.com or GitLab CE/EE"/></include>
-4. <b>GitLab CE/EE</b> connections only: <include from="common-templates.md" element-id="connections-unique-callback-URL"><var name="unique-url-sample" value="/oauth/gitlab/rid:your_unique_id/accessToken.html"/></include>
+4. *GitLab CE/EE connections only:* <include from="common-templates.md" element-id="connections-unique-callback-URL"><var name="unique-url-sample" value="/oauth/gitlab/rid:your_unique_id/accessToken.html"/></include>
 5. If you do not already have a GitLab OAuth Application, follow the GitLab instructions to create an OAuth Application in one of the following scopes:
    - [User owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-user-owned-application)
    - [Group owned applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#create-a-group-owned-application)
@@ -360,8 +360,9 @@ To create a TeamCity connection that uses a GitLab OAuth Application:
     {style="note"}
 
 7. Copy the *Application ID* and *Secret* from the GitLab Application settings and paste them into the TeamCity dialog.
-8. For a *GitLab CE/EE* connection, you must also enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
-9. <include from="common-templates.md" element-id="test-and-save-connection"/>
+8. *GitLab CE/EE connections only:* enter the base URL of the GitLab CE/EE server (for example, `https://gitlab.mydomain.com`) into the *Server URL* field. Note that this field is not needed in the case of a GitLab.com connection, because the base URL is always `https://gitlab.com`.
+9. *GitLab CE/EE connections only:* Optionally, create a system webhook in the GitLab admin area and use the same **Secret token** in TeamCity. This lets TeamCity receive near-instant notifications about new repository changes. Otherwise, TeamCity will periodically [poll the repository](project-administrator-guide.md#Collecting+Changes) to check for updates (by default, once per minute).
+10. <include from="common-templates.md" element-id="test-and-save-connection"/>
 
 > When your GitLab CE/EE server is configured with a HTTPS endpoint, the connection might fail if the endpoint's certificate is not issued by a well-known commercial certification authority. In this case, you should update TeamCity server’s trusted certificates, following [these instructions](uploading-ssl-certificates.md).
 >

@@ -257,6 +257,12 @@ The alternative approach is to utilize [GitHub Checks Webhook triggers](github-c
 
 ### GitLab
 
+The quickest and most straightforward way to configure GitLab webhooks is via corresponding [GitLab CE/EE connection](configuring-connections.md#GitLab) settings. Follow the connection hint to create a webhook on the GitLab side, and use the same **Secret token** in TeamCity. Note that you can only do so for connections to self-managed (on-premises) GitLab instances.
+
+<img src="gitlab-webhook-connection.png" width="706" alt="Connection settings"/>
+
+To configure a webhook manually, do the following:
+
 1. Navigate to the required remote repository on your GitLab server.
 2. Click **Settings | Webhooks** in the GitLab sidebar.
     
