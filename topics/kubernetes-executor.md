@@ -108,8 +108,8 @@ template:
           requests:
             ephemeral-storage: 25Gi
         env:
-          - name: JDK_1_8
-            value: /usr/local/openjdk-8
+          - name: JAVA_HOME # defaults to "opt/java/openjdk" if not set
+            value: /usr/local/openjdk-21
     nodeSelector:
       linux: arm64
 ```
@@ -168,3 +168,4 @@ Although Kubernetes-based builds do not occupy native TeamCity agents, regular [
 * The Docker inside Docker (DinD) setup is not supported.
 * Pod initialization can stall while cleaning the "/agent/temp/.old" directory.
 * Advanced [Container Wrapper](container-wrapper.md) are not available in build steps if the configuration's parent project has a configured Kubernetes Executor.
+* Kubernetes executor utilizes Java referenced by the `JAVA_HOME` environment variable. If this variable is empty or missing, the default `opt/java/openjdk` is used instead.
