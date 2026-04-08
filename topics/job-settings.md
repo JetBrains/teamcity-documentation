@@ -471,15 +471,20 @@ By default, sources are checked into a sub-folder of the agent work directory. T
 You can specify a custom directory for checked out sources via the corresponding option of a **Repository** section item. The path to the checkout directory can be absolute, however it is highly recommended to use either relative paths (`MyCustomFolder`) or paths that reference pre-defined TeamCity parameters (`%\teamcity.agent.work.dir%/MyCustomFolder`).
 
 ```yaml
- Job1:
+jobs:
+  Job1:
     name: Job 1
+    steps: []
     repositories:
-      - main:
-          path: MainRepo # Custom checkout directory (relative path)
-          enabled: true
-      - https://github.com/Johndoe/MySampleApp:
+      - https://github.com/Johndoe/MySampleApp: # Repository from URL
           path: ''' # Default value, will use a directory that matches the repository name
           enabled: true
+      - Root_MyRoot: # Repository from an existing VCS root
+          path: sample-java-app-maven.git 
+          enabled: true
+      - main: # Main repository
+          path: Athanor # Custom checkout directory (relative path)
+          enabled: false
 ```
 
 The diagram below outlines the relations between core directories involved in a building process.

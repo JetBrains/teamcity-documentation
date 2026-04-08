@@ -45,7 +45,7 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
     * [](build-cache.md)
     * [](xml-report-processing.md)
 
-
+* When editing pipeline [**Repositories**](pipeline-settings.md#Repository) settings, you can now add repositories from existing VCS roots owned by this parent project. Previously, the option to reuse a root was only available when you create a new pipeline.
 
 
 ## Dynamic Build Step Credentials
