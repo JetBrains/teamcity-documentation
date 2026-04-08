@@ -193,7 +193,7 @@ For classic build configurations, this functionality is available as the [](comm
 
 </deflist>
 
-When adding more repositories, you can choose choose to reuse an existing connection or VCS root, or enter the repository URL manually.
+When adding more repositories, you can choose to reuse an existing connection or VCS root, or enter the repository URL manually.
 
 <img src="pipelines-add-repo-from-root.png" width="706" alt="Add repo from root"/>
 
