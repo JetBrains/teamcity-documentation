@@ -92,4 +92,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * The [GitLab CE/EE connection](configuring-connections.md#GitLab) now allows you to configure integration with system webhooks. This enhancement allows TeamCity to receive near-instant notifications about new repository changes, as opposed to periodically [polling the repository](project-administrator-guide.md#Collecting+Changes).
 
+* In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
+
 </snippet>

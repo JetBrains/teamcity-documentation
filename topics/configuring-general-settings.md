@@ -5,98 +5,43 @@
 
 When creating a build configuration, specify the following settings:
 
-<table><tr>
 
-<td>
+<deflist type="full">
 
-Setting
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-Name
-
-</td>
-
-<td>
+<def title="Name">
 
 The build configuration name.
 
-</td></tr><tr id="build-configuration-id" help-id="BuildconfigurationID">
+</def>
 
-<td>
-
-Build Configuration ID
-
-</td>
-
-<td>
+<def title="Build configuration ID" id="build-configuration-id" help-id="BuildconfigurationID">
 
 A unique [ID](identifier.md) of the configuration across all build configurations and templates in the system automatically generated from the build configuration name, but can also be set manually.    
 Make sure you give a globally unique id to the build configuration and prefix it with the project ID.   
 After a build configuration is created, its ID can be changed, and it is highly recommended to make corresponding changes to the bookmarked links to the web UI and calls to [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html) using the ID.
 
-</td></tr><tr>
+</def>
 
-<td>
-
-<anchor name="build-config-description"/>
-
-Description
-
-</td>
-
-<td>
+<def title="Description" help-id="build-config-description">
 
 An optional description for the build configuration.
 
-</td></tr><tr help-id="ConfiguringGeneralSettings-BuildNumberFormat">
+</def>
 
-<td>
 
-Build Number Format
-
-</td>
-
-<td>
+<def title="Build number format" help-id="ConfiguringGeneralSettings-BuildNumberFormat">
 
 A pattern which is resolved and assigned to the [build number](#Build+Number+Format) on the build start.
 
-</td></tr><tr>
+</def>
 
-<td id="build-counter">
-
-<anchor name="ConfiguringGeneralSettings-buildCounter"/>
-
-Build Counter
-
-</td>
-
-<td>
+<def title="Build counter" id="build-counter">
 
 Specify the counter to be used in build numbering. Each build increases the build counter by 1. Use the _Reset_ link to restore the counter value to 1.
 
-</td></tr>
+</def>
 
-
-<tr>
-
-<td id="publish-artifacts">
-
-<anchor name="ConfiguringGeneralSettings-PublishArtifacts"/>
-
-Publish Artifacts
-
-</td>
-
-<td>
+<def title="Publish artifacts" id="publish-artifacts">
 
 Select when to publish artifacts:
 
@@ -112,45 +57,35 @@ If the `stop` command is issued during the artifacts publishing, the publishing 
 
 </note>
 
-</td>
+</def>
 
-</tr>
-
-<tr>
-
-<td>
-
-<anchor name="ConfiguringGeneralSettings-ArtifactPaths"/>
-
-[Artifact Paths](#Artifact+Paths)
-
-</td>
-
-<td>
+<def title="Artifact paths">
 
 Patterns to define artifacts of a build. After the first build is run, you can browse the agent [checkout directory](build-checkout-directory.md) to configure artifacts paths.
 
-</td></tr><tr>
+See [](#Artifact+Paths) for more information.
 
-<td>
+</def>
 
-<anchor name="ConfiguringGeneralSettings-buildOptions"/>
+<def title="Build options">
 
-[Build Options](#Build+Options)
+Additional [options](#Build+Options) that related to individual builds:
 
-</td>
+* [Hanging build detection](#Hanging+Build+Detection)
+* [Allow triggering personal builds](#Allow+Triggering+Personal+Builds)
+* [Enable status widget](#Enable+Status+Widget)
+  * [HTML status widget](#HTML+Status+Widget)
+* [Running builds limit](#Limit+Number+of+Simultaneously+Running+Builds)
 
-<td>
+</def>
 
-Specify additional options for the builds of this build configuration.   
 
-* [Hanging Build Detection](#Hanging+Build+Detection)
-* [Allow Triggering Personal Builds](#Allow+Triggering+Personal+Builds)
-* [Enable Status Widget](#Enable+Status+Widget)
-    * [HTML Status Widget](#HTML+Status+Widget)
-* [Limit Number of Simultaneously Running Builds](#Limit+Number+of+Simultaneously+Running+Builds)
 
-</td></tr></table>
+</deflist>
+
+
+
+
 
 ### Build Number Format
 
@@ -160,55 +95,30 @@ In the _Build number format_ field you can specify a pattern which is resolved a
 
 The following substitutions are supported in the pattern:
 
-<table><tr>
+<deflist type="medium">
 
-<td>
-
-Pattern
-
-</td>
-
-<td>
-
-Description
-
-</td></tr><tr>
-
-<td>
-
-`%\build.counter%`
-
-</td>
-
-<td>
+<def title="%\build.counter%">
 
 The build counter unique for each build configuration. It is maintained by TeamCity and will resolve to a next integer value on each new build start. The current value of the counter can be edited in the _[Build counter](#build-counter)_ field.
 
-</td></tr><tr>
+</def>
 
-<td>
 
-`%build.vcs.number.<VCS_root_name>%`
-
-</td>
-
-<td>
+<def title="%build.vcs.number.<VCS_root_name>%">
 
 The revision used for the build of the VCS root with `<VCS_root_name>` name. [Read more](predefined-build-parameters.md) on the property.
 
-</td></tr><tr>
+</def>
 
-<td>
 
-`%\property.name%`
-
-</td>
-
-<td>
+<def title="%\property.name%">
 
 A value of the build property with the corresponding name. All the [Predefined Build Parameters](predefined-build-parameters.md) are supported (including [Reference-only server properties](predefined-build-parameters.md#Predefined+Configuration+Parameters)).
 
-</td></tr></table>
+</def>
+
+</deflist>
+
 
 >A build number format example: `1.0.%\build.counter%.%\build.vcs.number.My_Project_svn%`.
 
@@ -371,20 +281,23 @@ It is also possible to show the status of all projects build configurations by r
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
-<anchor name="ConfiguringGeneralSettings-runningBuildsLimit"/>
+
 ### Limit Number of Simultaneously Running Builds
+{help-id="ConfiguringGeneralSettings-runningBuildsLimit"}
 
-You can limit the number of builds that can run simultaneously on all agents. 
-This option helps improve allocating resources for your builds and avoid the situation 
-when all agents are busy with the builds of a single project. 
+The **Maximum concurrent builds for this build configuration** setting defines how many builds of this configuration can run at the same time. It helps prevent a single configuration from occupying all available agents. You can specify either:
 
-You can limit the total number of builds for a build configuration and configure granular limits per branch using the related fields:
-- for a build configuration, enter the total maximum number of builds. The number is set to 0 by default allowing an unlimited number of builds to run simultaneously.
-- for a build limit per branch, enter the new-line separated list of rules. 
-Each rule must follow the `branch:number` pattern, where `branch` is either a [logical branch name](working-with-feature-branches.md#Logical+Branch+Name) or a pattern containing an * 
-and `number` specifies the maximum number of builds which can run simultaneously in each branch matching the pattern. 
-0 allows an unlimited number of builds in the specified branch.
+* a numeric value, where `0` means unlimited
+* newline-separated `branch:number` rules to set different limits for different branches
 
+The `branch` value can be either a [logical branch name](working-with-feature-branches.md#Logical+Branch+Name) or a pattern that uses an asterisk (`*`) as a wildcard.
+
+```Text
+<default>:0 # no limit for the builds running on default branch
+pull/*:1    # no more than one build for each pull request
+```
+
+The **If the limit is reached** option controls what happens when the maximum number of concurrent builds is already running. TeamCity can either keep new builds in the queue until a running build finishes, or cancel the oldest running build to make room for a new one.
 
 
 <seealso>
