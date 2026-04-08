@@ -428,9 +428,9 @@ To configure an AWS connection in TeamCity:
           * **Access key ID**. Enter the access key ID.
           * **Secret access Key**. Enter the secret access key.
 
-        It is [recommended](https://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/) to change access keys regularly for security reasons. You will be able to do this after the connection is created via the **Rotate key** button.
+        It is [recommended](https://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/) to change access keys regularly for security reasons. You will be able to do this after the connection is created via the **Rotate keys** button.
 
-        TeamCity will not revoke old keys immediately. After a new key is generated, TeamCity will preserve the old inactive key for 24 hours and then remove it. The lifetime of old keys can be changed via the following properties: `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.min` or `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.days`.
+        TeamCity will not revoke old keys immediately. After a new key is generated, TeamCity will preserve the old inactive key for 5 minutes and then remove it. The lifetime of old keys can be changed via the following properties: `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.min` or `teamcity.internal.cloud.aws.keyRotation.old.key.preserve.time.days`.
         
         To be able to successfully rotate access keys, TeamCity requires the `iam:GetUser`, `iam:CreateAccessKey`, and `iam:DeleteAccessKey` permissions. 
      
@@ -512,6 +512,7 @@ A configured AWS connection can supply credentials to the [AWS Credentials build
 
 A configured AWS connection can supply credentials to the [AWS Credentials build feature](aws-credentials.md) and other AWS connections that use IAM Roles.
 {instance="tcc"}
+
 
 ### Recommended Setup
 {instance="tc"}

@@ -4,6 +4,8 @@
 ## Changes from 2025.11.3 to 2026.1
 {id="2026.1"}
 
+* When you press **Rotate keys** in [AWS connections](configuring-connections.md#AmazonWebServices), previously used keys are removed after five minutes. Previously, the old keys were kept for 24 hours.
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
 
