@@ -47,11 +47,11 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 * When editing pipeline [**Repositories**](pipeline-settings.md#Repository) settings, you can now add repositories from existing VCS roots owned by this parent project. Previously, the option to reuse a root was only available when you create a new pipeline.
 
-* The implementation of pipeline parameters was overhauled to support pipeline dependencies and introduce a more well-rounded and intuitive solution.
+* Pipeline parameters were redesigned to better support pipeline dependencies and provide a more consistent, intuitive model.
 
-    * Individual jobs no longer have input and output parameters. Instead, any job parameter is automatically available to downstream jobs of the same pipeline.
-    * The choice between input and output parameters is now available for pipeline parameters, granting you a better control which parameters can be accessible by donwstream configurations and pipelines.
-    * You can no longer import parameters from parent projects: all of them are now automatically available for pipelines and jobs.
+    * Jobs no longer define separate input and output parameters. Instead, all job parameters are automatically available to downstream jobs in the same pipeline.
+    * Pipeline parameters can now be explicitly marked as input or output, giving you finer control over which values are exposed to downstream configurations and pipelines.
+    * Parameters from parent projects no longer need to be imported as they are now automatically available to child pipelines and jobs.
 
 ## Dynamic Build Step Credentials
 
