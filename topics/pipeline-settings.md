@@ -69,8 +69,10 @@ TeamCity supports two layers of parameters: pipeline parameters and job paramete
         steps:
           - type: script
             script-content: |-
-              echo "Input param: %PipelineInputParam%"    # prints 'foo'
-              echo "Output param: %PipelineOutputParam%"  # unresolved reference, no compatible agents
+                # Prints 'foo'
+              echo "Input param: %PipelineInputParam%"
+                # Unresolved reference: no compatible agents 
+              echo "Output param: %PipelineOutputParam%"
     ```
   
     </snippet>

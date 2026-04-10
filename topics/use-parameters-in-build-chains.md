@@ -83,7 +83,7 @@ jobs:
           echo "Print modified parameter: %env.ParamJobB%"    # prints 'foo bar'
 ```
 
-Other pipelines and configurations from the same chain have no access to job parameters of upstream pipelines. If needed, you can wrap assign a job parameter to a pipeline output parameter.
+Other pipelines and configurations from the same chain have no access to job parameters of upstream pipelines. If needed, you can assign a job parameter to a pipeline output parameter.
 
 ```yaml
 jobs:
@@ -109,7 +109,8 @@ object Upstream : BuildType({
 
     outputParams {
         // Output parameter, accessible via the 'dep.' prefix
-        param("outputParam", "%inputParam% bar")    // Modified value of an input parameter
+        // Modified value of an input parameter
+        param("outputParam", "%inputParam% bar")
     }
 })
 
@@ -119,7 +120,8 @@ object Downstream : BuildType({
     steps {
         script {
             id = "simpleRunner"
-            scriptContent = "echo ${Upstream.depParamRefs["outputParam"]}"    // Prints 'foo bar'
+            // Prints 'foo bar'
+            scriptContent = "echo ${Upstream.depParamRefs["outputParam"]}"
         }
     }
 
@@ -243,7 +245,7 @@ Doing so ensures configurations remain easily maintainable: you can edit and rem
 
 ## Override parameters of upstream objects
 
-A downstream configuration/pipeline can read parameters from an upstream configuration/pipeline via `dep.<source-object-ID>.<parameter-name>`. The `override.dep.` prefix (`override.dep.<source-object-ID>.<parameter-name>`) allows you to do the opposite: override a value of an upstream parameter from a directly or indirectly dependent entity.
+A downstream configuration/pipeline can read parameters from an upstream configuration/pipeline via `dep.<source-object-ID>.<parameter-name>`. Add the `override.dep.` prefix to do the opposite: override a value of an upstream parameter from a directly or indirectly dependent entity.
 
 The following example illustrates two objects exchanging parameter values:
 
@@ -265,21 +267,23 @@ jobs:
     name: Job 1
     steps:
       - type: script
-        # Prints "foo" if the pipeline runs alone, or "bar" if runs in a chain
+        # Prints "foo" if the pipeline runs alone
+        ## Or "bar" if runs in a chain
         script-content: 'echo "Input param: %PipelineInputParam%"'
 parameters:
   PipelineInputParam: foo
 output-parameters:
-  PipelineOutputParam: '%PipelineInputParam%'    # Output parameter shares input parameter as is
+  # Output parameter shares input parameter as is
+  PipelineOutputParam: '%PipelineInputParam%'
 
 ```
 
 ```Kotlin
-// Downstram configuration
+// Downstream configuration
 object DownstreamConfig : BuildType({
     name = "Downstream build configuration"
     params {
-        // Overrides the value of the parameter owned by an upstream entity
+        // Overrides the pipeline input parameter
         param("override.dep.MyProject_UpstreamPipeline.PipelineInputParam", "bar")
     }
 
@@ -298,11 +302,11 @@ The types of the sender and receiver do not matter. In this example, a build con
 
 ### Wildcards
 
-Unlike `dep.` parameters, which require the exact ID of the source object, `override.dep.` parameters can replace part or all of this ID with an asterisk (`*`). This lets you override input parameters in multiple matching objects at once.
+Unlike `dep.` parameters, which require the exact source object ID, `override.dep.` parameters can replace part or all of the ID with an asterisk (`*`). This allows you to override input parameters in multiple matching objects at once.
 
-For example, consider a build chain with three configurations that build and test a .NET project and a top-level [composite](composite-build-configuration.md) configuration named "Build All". Each build configuration has a `build.mode` parameter that [sets the compiler mode](https://www.kenmuse.com/blog/understanding-dotnet-debug-vs-release/) to either `Debug` or `Release`.
+For example, consider a build chain with three configurations that build a .NET project, topped by a [composite](composite-build-configuration.md) configuration named "Build All". Each build configuration has a `build.mode` parameter that [sets the compiler mode](https://www.kenmuse.com/blog/understanding-dotnet-debug-vs-release/) to either `Debug` or `Release`.
 
-When you run the entire chain from "Build All", you can either keep the current mode or change it for all three configurations at once. To do this, use a single `override.dep.*.build.mode` parameter instead of defining three separate `override.dep.<config-ID>.build.mode` parameters.
+When you run the full chain from "Build All", you can keep the current mode or change it for all three configurations at once. To do this, use a single `override.dep.*.build.mode` parameter instead of three separate `override.dep.<config-ID>.build.mode` parameters.
 
 > See [](typed-parameters.md#Single-Select+Parameter) for more information on parameter appearance settings.
 > 
@@ -318,15 +322,15 @@ object OverrideWildcard_BuildAll : BuildType({
 
     params {
         // The "select" parameter with an extra "Default" value
-        // Writes the selected value to all upstream "build.mode" parameters found
+        // Writes the same value to all upstream "build.mode" parameters
         select("override.dep.*.build.mode", "Default",
             options = listOf("<current setting>" to "Default", "Release", "Debug"))
     }
 
     dependencies {
-        snapshot(BuildDmg) { reuseBuilds = ReuseBuilds.NO }
-        snapshot(BuildExe) { reuseBuilds = ReuseBuilds.NO }
-        snapshot(UnitTests) { reuseBuilds = ReuseBuilds.NO }
+        snapshot(BuildDmg) {}
+        snapshot(BuildExe) {}
+        snapshot(UnitTests) {}
     }
 })
 
@@ -338,19 +342,20 @@ object BuildDmg : BuildType({
     params {
         // The default mode is "Release"
         // Other configurations can have this set to "Debug"
+        // Note there's no "Default" option
         select("build.mode", "Release",
-            options = listOf("Debug", "Release")) // No "Default" option
+            options = listOf("Debug", "Release"))
     }
     
     steps {
         csharpScript {
             name = "Set default debug mode"
             id = "Set_default_debug_mode"
-            // If "Build All" used 'override.dep.' to set the parameter to "Default..."
+            // If "Build All" set the parameter to "Default"...
             conditions {
                 equals("build.mode", "Default")
             }
-            // ...then this extra step reverts the parameter back to "Release" via a service message
+            // ...then send a service message to revert it back to "Release"
             content = """
             Console.WriteLine("The build.mode parameter was set to 'Default'.");
             Console.WriteLine("Setting the build mode to 'Release'...");
@@ -368,7 +373,7 @@ object BuildDmg : BuildType({
 
 ### Conflict resolution
 
-If a parameter is edited by multiple `override.dep.` parameters owned by different configurations or pipelines, TeamCity applies the edit made by an entity closest to the chain head (the one that runs last).
+If a parameter is edited by multiple `override.dep.` parameters owned by different configurations or pipelines, TeamCity applies the most recent edit made by the entity that runs last.
 
 
 ```Text
@@ -405,7 +410,7 @@ Otherwise, if the edits are made by multiple same-level entities, the target par
 ### Special notes
 
 * Output parameters cannot be edited via `override.dep.` parameters.
-* `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters.
+* The `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters. In addition, upstream parameters that already have the same value are not forcibly updated, which allows TeamCity to [reuse previous builds](snapshot-dependencies.md#Suitable+Builds).
 
     <!--To force propagation and create a parameter in upstream entities that do not already have it, use the `*!` wildcard instead of a source object ID. For example, use this syntax to propagate a composite configuration's build number to all upstream configurations.
 
@@ -432,11 +437,13 @@ Otherwise, if the edits are made by multiple same-level entities, the target par
       Job1:
         name: Job 1
         parameters:
-          override.dep.TargetID.myParam: foo    # Ignored
+            # Ignored
+          override.dep.TargetID.myParam: foo
     dependencies:
       - TargetID
     parameters:
-      override.dep.TargetID.myParam: bar    # Applied
+        # Applied
+      override.dep.TargetID.myParam: bar
     ```
   
 * When overriding pipeline parameters, `override.dep.*.paramName` updates any `paramName` regardless of its scope: both pipeline inputs and job parameters are affected.
@@ -472,22 +479,22 @@ Otherwise, if the edits are made by multiple same-level entities, the target par
         dependencies { snapshot(UpstreamConfig) { } }
     })
     ```
-    Note that parameter references are resolved on queuing a build. Referenced parameters must have values right from the start, assigned in pipeline/configuration settings or passed via the [Run custom build dialog](running-custom-build.md). If you reference a parameter calculated during a build, no value will be passed.
+    Note that parameter references are resolved before an upstream build actually starts. By that time, all parameters must have their values assigned in pipeline/configuration settings or passed via the [Run custom build dialog](running-custom-build.md). If you reference a parameter calculated during a build, no value will be passed.
 
 
 
 
 ## 'reverse.dep.' parameters
 
-The `override.dep.<target-ID>.<parameter-name>` syntax was introduced in TeamCity 2026.1. Prior to this version, editing upstream parameters was carried out via the similar `reverse.dep.<target-ID>.<parameter-name>` syntax.
+The `override.dep.<target-ID>.<parameter-name>` syntax was introduced in TeamCity 2026.1. In earlier versions, upstream parameters were modified with the similar `reverse.dep.<target-ID>.<parameter-name>` syntax.
 
-This older syntax is still available, but we recommend using `override.dep.` instead. Older `reverse.dep.` parameters showcase a few behavioral differences that make them less straightforward.
+`reverse.dep.` is still supported, but we recommend `override.dep.` because its behavior is simpler and more predictable.
 
-* Unlike `override.dep.`, `reverse.dep.` parameters do not resolve parameter references and pass them as is, often making upstream configurations/pipelines incompatible with all build agents.
+* Unlike `override.dep.`, `reverse.dep.` does not resolve parameter references and passes them as is, which can make upstream configurations or pipelines incompatible with some build agents.
 
-* `reverse.dep.` parameters are more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and does not affect entities without a matching parameter. Pushing new parameters into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency mode and triggers a new build if the parameter is set to a non-default value.
+* `reverse.dep.` is also more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and ignores entities without a matching parameter. This is also worth noting since adding new parameters nullifies the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency policy, so upstream builds will never be reused.
 
-* `reverse.dep.` parameters have more complex conflict resolution mechanisms. If the edits are made by multiple entities, TeamCity prioritizes configurations/pipelines that run last (same to `override.dep.`. If editors are on the same level, TeamCity checks the specificity of the target IDs: a parameter with the most specific ID wins.
+* `reverse.dep.` uses more complex conflict resolution. When multiple entities modify the same parameter, TeamCity first gives priority to the configuration or pipeline that runs last, just as it does for `override.dep.`. If the conflicting editors are on the same level, TeamCity compares target ID specificity: the parameter with the most specific ID wins.
 
     ```Text
     Config A
@@ -516,7 +523,7 @@ This older syntax is still available, but we recommend using `override.dep.` ins
     Final value in ConfigA: "John" (Config B)
     ```
 
-    Finally, if conflicting edits originate from same-level entities with equally specific IDs, TeamCity leaves the target parameter unchanged and adds new `conflict.<sender_config_ID>.paramName` parameters.
+    Finally, if the conflicting edits come from same-level entities with equally specific IDs, TeamCity leaves the target parameter unchanged and adds a `conflict.<sender_config_ID>.paramName` parameter for each unique conflicting value.
 
     <img src="dk-params-overrideConflict.png" width="706" alt="Conflicting Overrides"/>
 
