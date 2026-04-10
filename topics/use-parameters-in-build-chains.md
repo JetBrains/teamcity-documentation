@@ -1,30 +1,30 @@
 [//]: # (title: Use Parameters in Build Chains)
 
-This topic illustrates how you can use TeamCity [build parameters](configuring-build-parameters.md) to exchange simple data between configurations of a [build chain](build-chain.md).
+This topic illustrates how you can use TeamCity [build parameters](configuring-build-parameters.md) to exchange simple data between configurations and pipelines of a [build chain](build-chain.md), as well as separate jobs of single pipeline.
 
+<show-structure for="chapter" depth="2"/>
 
-## Input and Output Parameters
+## Input and output parameters
 
-The **Parameters** page of [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes) lets you switch between input and output parameters. Both of them are manually created name/value pairs. The key difference lies in intended use cases and accessibility settings.
+Build configurations and pipelines allow you to create parameters of two types: input and output.
 
-> The input/output parameters toggle is available only in build configuration settings. For projects, you can create only input parameters.
+<img src="input-output-config.png" width="706" alt="Inputs and outputs in configurations"/>
+
+<img src="input-output-pipeline.png" width="706" alt="Inputs and outputs in pipelines"/>
+
+Both of them are manually created name/value pairs. The key difference lies in intended use cases and accessibility settings.
+
+> The input/output parameters selection is available only in build configuration and pipeline settings. For projects and jobs, you can create only input parameters.
 > 
 {style="note"}
 
 <deflist>
 <def title="Input parameters">
-Input parameters are designed to be consumed by the same configuration that defines them. For example, an input parameter that stores a default branch name and referenced in <a href="configuring-vcs-roots.md">VCS root settings</a>. This value is of no use for other configurations and thus, should not be visible to them.
+Input parameters are designed to be consumed by the same configuration/pipeline that defines them. For example, an input parameter that stores a default branch name and referenced in <a href="configuring-vcs-roots.md">VCS root settings</a>. This value is of no use for other configurations and thus, should not be visible to them.
 </def>
 
 <def title="Output parameters">
-Output parameters are configured in one build configuration, but can be accessed by another configuration via a <a href="snapshot-dependencies.md">snapshot</a> or <a href="artifact-dependencies.md">artifact</a> dependency. For example, a build configuration that builds a Docker image can write this image name to its parameter. The parameter is later used by a downstream configuration that deploys this image to a registry.
-
-See the sections below for more information on how to create and use output parameters.
-</def>
-</deflist>
-
-
-## Create an Output Parameter
+Output parameters are configured in one build configuration/pipeline, but can be accessed by another via a <a href="snapshot-dependencies.md">snapshot</a> or <a href="artifact-dependencies.md">artifact</a> dependency. For example, a build configuration that builds a Docker image can write this image name to its parameter. The parameter is later used by a downstream configuration that deploys this image to a registry.
 
 Output parameters can share existing parameters as is, modified parameters, and constants.
 
@@ -37,7 +37,7 @@ outputParams {
     param("buildNumber", "Build %\system.build.number%")
     
     // Expose input parameter as is
-    param("name", "%existingInputParam%")
+    param("name", "%customInputParam%")
     
     // Expose static value
     param("number", "54")
@@ -45,8 +45,96 @@ outputParams {
 ```
 {ignore-vars="true"}
 
-The `%\parameterName%` in output parameter value can refer to an existing input parameter, or a dynamically created parameter. For example, the following configuration uses an [input](typed-parameters.md) "DateFormat" parameter to calculate a value of the "Date" parameter created via the [setParameter service message](service-messages.md#set-parameter):
+> For security reasons, input parameters of the ["Password" type](typed-parameters.md) cannot be exposed via output parameters.
+>
+{style="note"}
+</def>
+</deflist>
 
+
+## Read parameters of upstream objects
+
+Jobs can share their parameters with other jobs of the same pipeline only if they are linked in a sequence. Similarly, pipelines and configurations can access each other's parameters only when linked in a build chain.
+
+### Access job parameters
+
+Pipeline jobs can [retrieve values of preceding job parameters](job-settings.md#Parameters) via the `job.<job_ID>.<param-name>` syntax. 
+
+```yaml
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        script-content: |-
+          echo "Print Job1 parameter: %env.ParamJobA%"    # prints 'foo'
+    parameters:
+      env.ParamJobA: foo
+  Job2:
+    name: Job 2
+    dependencies:
+      - Job1
+    parameters:
+      env.ParamJobB: '%job.Job1.env.ParamJobA% bar'
+    steps:
+      - type: script
+        script-content: |-
+          echo "Print parameter from upstream Job: %job.Job1.env.ParamJobA%"     # prints 'foo'
+          echo "Print modified parameter: %env.ParamJobB%"    # prints 'foo bar'
+```
+
+Other pipelines and configurations from the same chain have no access to job parameters of upstream pipelines. If needed, you can wrap assign a job parameter to a pipeline output parameter.
+
+```yaml
+jobs:
+  Job1:
+    name: Job 1
+    parameters:
+      jobParam: foo
+output-parameters:
+  PipelineOutputParam: %job.Job1.jobParam%
+```
+
+### Access configuration and pipeline parameters
+
+To share a configuration/pipeline parameter with a downstream configuration or pipeline, this parameter must be an output one. In this case, any downstream configuration or pipeline can read its value via the `dep.<config-or-pipeline-ID>.<parameter-name>` syntax.
+
+```Kotlin
+object Upstream : BuildType({
+    name = "Upstream config"
+
+    params {
+        param("inputParam", "foo")    // Input parameter, cannot be shared
+    }
+
+    outputParams {
+        // Output parameter, accessible via the 'dep.' prefix
+        param("outputParam", "%inputParam% bar")    // Modified value of an input parameter
+    }
+})
+
+object Downstream : BuildType({
+    name = "Downstream config"
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "echo ${Upstream.depParamRefs["outputParam"]}"    // Prints 'foo bar'
+        }
+    }
+
+    dependencies { snapshot(Upstream) { }}
+})
+```
+
+Output parameters are visible to downstream objects but cannot be used in their own parent configurations or pipelines.
+
+<include from="pipeline-settings.md" element-id="output-param-in-self"/>
+
+
+<!--
+
+For example, the following configuration uses an [input](typed-parameters.md) "DateFormat" parameter to calculate a value of the "Date" parameter created via the [setParameter service message](service-messages.md#set-parameter):
 
 
 ```Kotlin
@@ -79,7 +167,7 @@ object CalculateDate : BuildType({
 ```
 {ignore-vars="true"}
 
-Now you can create an output parameter that shares the "Date" parameter value.
+To share the "Date" parameter value down the chain, wrap it in an output parameter.
 
 ```Kotlin
 object CalculateDate : BuildType({
@@ -129,18 +217,21 @@ object PrintDate : BuildType({
 })
 ```
 
-> For security reasons, input parameters of the [Password type](typed-parameters.md) cannot be exposed via output parameters.
->
-{style="note"}
+-->
 
 
-## Expose All Input Parameters
 
-The **Output Parameters** tab displays the **All parameters are available to other build configurations** setting.
+### Expose all input parameters of a configuration
+
+In build configurations, the **Add new output parameter** dialog has two options: enter the value manually or share an existing input parameter as is. Select a required input parameter, and TeamCity will create an output parameter with the `%\inputParameter%` value.
+
+<img src="dk-add-output-param.png" width="706" alt="Add output parameter"/>
+
+If the **All parameters are available to other build configurations** setting is checked, you do not need to share each input parameter individually. All of them are automatically exposed and can be referenced via the `dep.<config-ID>.<parameterName>` syntax.
 
 <img src="dk-expose-all-input-params.png" width="706" alt="Expose all output parameters"/>
 
-If this setting is enabled, all input parameters are accessible by dependent configurations via the `dep.<config ID>.<parameter name>` syntax. This setting is enabled by default for backward compatibility. However, we strongly recommend you to do the following:
+This setting is enabled by default for backward compatibility. However, we strongly recommend you to do the following:
 
 1. Check all cases of input parameters being used by other configurations.
 2. Expose input parameters you wish to keep sharing by referencing them in new output parameters.
@@ -149,249 +240,285 @@ If this setting is enabled, all input parameters are accessible by dependent con
 Doing so ensures configurations remain easily maintainable: you can edit and remove input parameters as needed, without accidentally breaking downstream configurations that used these parameters via the `dep...` syntax. In addition, it enhances security by keeping hidden parameters that were never designed to be shared.
 
 
-## Access Output Parameters From Dependent Configurations
 
-Dependent builds can access output parameters of the previous chain builds as `dep.<bcID>.<parameter_name>`, where `bcID` is the ID of a source build configuration whose parameter value you need to access.
+## Override parameters of upstream objects
 
-<img src="dk-params-in-chains.png" width="706" alt="Parameters in dependent builds"/>
+A downstream configuration/pipeline can read parameters from an upstream configuration/pipeline via `dep.<source-object-ID>.<parameter-name>`. The `override.dep.` prefix (`override.dep.<source-object-ID>.<parameter-name>`) allows you to do the opposite: override a value of an upstream parameter from a directly or indirectly dependent entity.
 
-You can use `dep...` parameters to access parameters from a configuration even if the current configration has only indirect dependencies. For example, in the A &rarr; B &rarr; C chain where C depends on B and B depends on A, configuration C can access A's parameters.
+The following example illustrates two objects exchanging parameter values:
 
-The following build configuration builds and pushes a Docker image. The name of this image is written to the `DockerImageName` parameter.
+* The build chain contains two objects: an upstream pipeline and a downstream build configuration.
 
-```Shell
-TAG=v1
-docker build -f Dockerfile --tag your.registry/MyApp:${TAG}
-docker push your.registry/MyApp:v1
-echo "##teamcity[setParameter name='DockerImageName' value='MyApp:${TAG}']"
+* The pipeline declares an input parameter with the default value `foo`. When the pipeline runs on its own, this value is used in the build script.
+
+* When the pipeline runs as part of a build chain (triggered by the configuration's [snapshot dependency](snapshot-dependencies.md)), the downstream configuration overrides this parameter and sets it to `bar`.
+
+* The pipeline output parameter references the input parameter, so it reports the updated value as well.
+
+In other words, the downstream configuration writes `bar` to the pipeline input via `override.dep.`, the pipeline exposes it through its output parameter, and the downstream configuration can then read it back via `dep.`.
+
+
+```yaml
+# Upstream pipeline
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        # Prints "foo" if the pipeline runs alone, or "bar" if runs in a chain
+        script-content: 'echo "Input param: %PipelineInputParam%"'
+parameters:
+  PipelineInputParam: foo
+output-parameters:
+  PipelineOutputParam: '%PipelineInputParam%'    # Output parameter shares input parameter as is
+
 ```
-
-If this configuration's ID is "ConfigA", builds executed further down the build chain can access the image name as `dep.ConfigA.DockerImageName`:
-
-```Shell
-docker run -d your.registry/%\dep.ConfigA.DockerImageName%
-```
-
-## Override Input Parameters of Preceding Configurations
-
-Add a parameter with the `reverse.dep.<build_conf_ID>.<parameter_name>` name syntax to override the input `<parameter_name>` parameter defined in the target configuration that precedes the current configuration.
-
-For example, the following [Kotlin](kotlin-dsl.md) code defines a project with three build configurations united in a single build chain (ConfigA &rarr; ConfigB &rarr; ConfigC). Each build configuration has a `chain.ConfigX.param` parameter with its custom value. The last configuration has the additional `reverse.dep.ProjectID_ChainConfigA.chain.ConfigA.param` parameter.
 
 ```Kotlin
-import jetbrains.buildServer.configs.kotlin.*
-
-project {
-    buildType(ChainConfigA)
-    buildType(ChainConfigB)
-    buildType(ChainConfigC)
-}
-
-object ChainConfigA : BuildType({
-    name = "ChainConfigA"
-
+// Downstram configuration
+object DownstreamConfig : BuildType({
+    name = "Downstream build configuration"
     params {
-        param("chain.ConfigA.param", "Config A")
+        // Overrides the value of the parameter owned by an upstream entity
+        param("override.dep.MyProject_UpstreamPipeline.PipelineInputParam", "bar")
     }
 
     steps {
         script {
-            scriptContent = """echo "Parameter value is: %chain.ConfigA.param%""""
+            id = "simpleRunner"
+            // Prints "bar"
+            scriptContent = """echo "${UpstreamPipeline.depParamRefs["PipelineOutputParam"]}""""
         }
     }
-})
-
-object ChainConfigB : BuildType({
-    name = "ChainConfigB"
-
-    params {
-        param("chain.ConfigB.param", "Config B")
-    }
-
-    steps {
-        script {
-            scriptContent = """echo "Parameter value is: %chain.ConfigB.param%""""
-        }
-    }
-
-    dependencies {
-        snapshot(ChainConfigA) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-
-object ChainConfigC : BuildType({
-    name = "ChainConfigC"
-
-    params {
-        param("chain.ConfigC.param", "Config C")
-        param("reverse.dep.${DslContext.projectId}_ChainConfigA.chain.ConfigA.param", "Value Overridden in ConfigC")
-    }
-
-    steps {
-        script {
-            scriptContent = """echo "Parameter value is: %chain.ConfigC.param%""""
-        }
-    }
-
-    dependencies {
-        snapshot(ChainConfigB) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
+    dependencies { snapshot(UpstreamPipeline) { }}
 })
 ```
-{ignore-vars="true"}
 
-If you run the ConfigA or the ConfigA &rarr; ConfigB sub-chain, the first configuration will report its original parameter value.
+The types of the sender and receiver do not matter. In this example, a build configuration overrides a pipeline parameter, but the same syntax and behavior apply to any combination: pipeline to build configuration, pipeline to pipeline, or build configuration to build configuration.
 
-```
-# ConfigA build log
-Parameter value is: Config A
-```
+### Wildcards
 
-However, if you run a full build chain that ends with ConfigC, this last configuration will feed ConfigA a custom parameter value.
+Unlike `dep.` parameters, which require the exact ID of the source object, `override.dep.` parameters can replace part or all of this ID with an asterisk (`*`). This lets you override input parameters in multiple matching objects at once.
 
-```
-# ConfigA build log
-Parameter value is: Value Overridden in ConfigC
-```
+For example, consider a build chain with three configurations that build and test a .NET project and a top-level [composite](composite-build-configuration.md) configuration named "Build All". Each build configuration has a `build.mode` parameter that [sets the compiler mode](https://www.kenmuse.com/blog/understanding-dotnet-debug-vs-release/) to either `Debug` or `Release`.
 
-You can use `*` wildcards in parameter names to the same parameters in multiple preceding configurations. For example, the ConfigC in the following sample has the `reverse.dep.ChainConfig*.MyParam` parameter, which overrides `MyParam` in both ConfigA and ConfigB.
+When you run the entire chain from "Build All", you can either keep the current mode or change it for all three configurations at once. To do this, use a single `override.dep.*.build.mode` parameter instead of defining three separate `override.dep.<config-ID>.build.mode` parameters.
+
+> See [](typed-parameters.md#Single-Select+Parameter) for more information on parameter appearance settings.
+> 
+{style="tip"}
+
 
 ```Kotlin
-object ChainConfigA : BuildType({
-    params {
-        param("MyParam", "OriginalValue_A")
-    }
-})
-
-object ChainConfigB : BuildType({
-    params {
-        param("MyParam", "OriginalValue_B")
-    }
-
-    dependencies {
-        snapshot(ChainConfigA) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-
-object ChainConfigC : BuildType({
-    params {
-        param("reverse.dep.${DslContext.projectId}_ChainConfig*.MyParam", "CustomValue_C")
-    }
-
-    dependencies {
-        snapshot(ChainConfigB) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-```
-
-### Conflicting Parameter Overrides
-
-If in the ConfigA &rarr; ... &rarr; ConfigB &rarr; ... &rarr; ConfigC chain both ConfigB and ConfigC configurations try to override ConfigA's parameter ConfigC has a higher priority since it depends on ConfigB (either directly or through intermediate configurations).
-
-```Kotlin
-object ChainConfigA : BuildType({
-    params {
-        param("MyParam", "OriginalValue_A")
-    }
-})
-
-object ChainConfigB : BuildType({
-    params {
-        // Lower priority
-        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_B")
-    }
-
-    // Depends on config A
-    dependencies {
-        snapshot(ChainConfigA) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-
-object ChainConfigC : BuildType({
-    params {
-        // Higher priority
-        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_C")
-    }
-
-    // Depends on config B
-    dependencies {
-        snapshot(ChainConfigB) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-```
-
-However, if ConfigB and ConfigC do not depend on each other, an ambiguity regarding which configuration should have a priority emerges. TeamCity tries to resolve this ambiguity by comparing parameter names and prioritizing a parameter with the most specific build configuration ID.
-
-* Highest priority: parameters with no wildcards in build configuration IDs (for example, `reverse.dep.MyConfigID.MyParam`).
-* Medium priority: parameters with partial configuration IDs (for example, `reverse.dep.Build*.MyParam`). The more specific the target configuration ID is, the higher the priority of this parameter. For instance, the `ChainConf*A` ID has a priority over the `Chain*A` ID since it is considered more specific.
-* Lowest priority: parameters with the `*` wildcard instead of configuration IDs (for example, `reverse.dep.*.MyParam`).
-
-If all conflicting configurations have similar parameter names and neither of them is a clear winner, TeamCity reports a conflict and creates additional `conflict.<build_config_ID>.<parameter_name>=<value>` parameters (one for each conflicting configuration).
-
-```Kotlin
-object ChainConfigA : BuildType({
-    params {
-        param("MyParam", "OriginalValue_A")
-    }
-})
-
-object ChainConfigB : BuildType({
-    params {
-        // Equal priority
-        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_B")
-    }
-
-    // Depends on config A
-    dependencies {
-        snapshot(ChainConfigA) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-
-object ChainConfigC : BuildType({
-    params {
-        // Equal priority
-        param("reverse.dep.${DslContext.projectId}_ChainConfigA.MyParam", "CustomValue_C")
-    }
-
-    // Depends on config A
-    dependencies {
-        snapshot(ChainConfigA) {
-            reuseBuilds = ReuseBuilds.NO
-        }
-    }
-})
-
-// Composite build configuration that runs the entire chain
-object ChainABC : BuildType({
+// "Build All" composite configuration
+object OverrideWildcard_BuildAll : BuildType({
+    id("BuildAll")
+    name = "Build All"
     type = BuildTypeSettings.Type.COMPOSITE
+
+    params {
+        // The "select" parameter with an extra "Default" value
+        // Writes the selected value to all upstream "build.mode" parameters found
+        select("override.dep.*.build.mode", "Default",
+            options = listOf("<current setting>" to "Default", "Release", "Debug"))
+    }
+
     dependencies {
-        snapshot(ChainConfigB) {}
-        snapshot(ChainConfigC) {}
+        snapshot(BuildDmg) { reuseBuilds = ReuseBuilds.NO }
+        snapshot(BuildExe) { reuseBuilds = ReuseBuilds.NO }
+        snapshot(UnitTests) { reuseBuilds = ReuseBuilds.NO }
+    }
+})
+
+// Regular build/test configurations
+object BuildDmg : BuildType({
+    id = AbsoluteId("BuildDmg")
+    name = "Build dmg"
+
+    params {
+        // The default mode is "Release"
+        // Other configurations can have this set to "Debug"
+        select("build.mode", "Release",
+            options = listOf("Debug", "Release")) // No "Default" option
+    }
+    
+    steps {
+        csharpScript {
+            name = "Set default debug mode"
+            id = "Set_default_debug_mode"
+            // If "Build All" used 'override.dep.' to set the parameter to "Default..."
+            conditions {
+                equals("build.mode", "Default")
+            }
+            // ...then this extra step reverts the parameter back to "Release" via a service message
+            content = """
+            Console.WriteLine("The build.mode parameter was set to 'Default'.");
+            Console.WriteLine("Setting the build mode to 'Release'...");
+            Console.WriteLine("##teamcity[setParameter name='build.mode' value='Release']");
+        """.trimIndent()
+            tool = "%teamcity.tool.TeamCity.csi.DEFAULT%"
+        }
+
+        dotnetBuild {
+            // TODO
+        }
     }
 })
 ```
 
-<img src="dk-params-overrideConflict.png" width="706" alt="Conflicting Overrides"/>
+### Conflict resolution
 
-### Other Considerations
+If a parameter is edited by multiple `override.dep.` parameters owned by different configurations or pipelines, TeamCity applies the edit made by an entity closest to the chain head (the one that runs last).
 
 
-* The `reverse.dep.*` parameters are processed on queuing a build where these parameters are defined. Since parameter values should be already known at this stage, these values must be assigned either in the build configuration or in the [custom build dialog](running-custom-build.md). Setting the parameter to a value calculated during a build has no effect.
+```Text
+ConfigD (runs last, triggers the chain)
++------------------------------------------+
+| override.dep.ConfigA.Fruit = "pear"      |
++------------------------------------------+
+                 │
+                 ▼
+ConfigC (runs third)
++------------------------------------------+
+| override.dep.ConfigA.Fruit = "orange"    |
++------------------------------------------+
+                 │
+                 ▼
+ConfigB (runs second)
++------------------------------------------+
+| override.dep.ConfigA.Fruit = "banana"    |
++------------------------------------------+
+                 │
+                 ▼
+ConfigA (runs first)
++------------------------------------------+
+| Fruit = "apple"                          |
++------------------------------------------+
 
-* Pushing a new parameter into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency option and may trigger a new build if the parameter is set to a non-default value.
+Final value in ConfigA: "pear"
+```
 
-* Values of the `reverse.dep.` parameters are pushed to the dependency builds "as is", without [reference resolution](configuring-build-parameters.md). `%`-references, if any, will be resolved in the destination (target) build's scope.
+Otherwise, if the edits are made by multiple same-level entities, the target parameter retains its original value.
+
+
+
+### Special notes
+
+* Output parameters cannot be edited via `override.dep.` parameters.
+* `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters.
+
+    <!--To force propagation and create a parameter in upstream entities that do not already have it, use the `*!` wildcard instead of a source object ID. For example, use this syntax to propagate a composite configuration's build number to all upstream configurations.
+
+    ```Kotlin
+    object BuildAll : BuildType({
+        name = "Build All"
+        type = BuildTypeSettings.Type.COMPOSITE
+        params {
+            param("override.dep.*!.build.counter", "%build.counter%")
+        }
+        dependencies {
+            snapshot(BuildDmg) {}
+            snapshot(BuildExe) {}
+            snapshot(UnitTests) {}
+        }
+    })
+    ```
+    -->
+
+* In pipelines, only pipeline-level parameters can have the `override.dep.` prefix. Job parameters cannot modify remote parameters.
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Job 1
+        parameters:
+          override.dep.TargetID.myParam: foo    # Ignored
+    dependencies:
+      - TargetID
+    parameters:
+      override.dep.TargetID.myParam: bar    # Applied
+    ```
+  
+* When overriding pipeline parameters, `override.dep.*.paramName` updates any `paramName` regardless of its scope: both pipeline inputs and job parameters are affected.
+
+* If you pass a parameter reference, it will be resolved inside the entity that owns this `override.dep.`, rather than the entity whose parameter value is edited. If it cannot be resolved, the reference will be passed as plain text and the "Parameter is not fully resolved" warning will be shown in a build log.
+
+    ```Kotlin
+    object UpstreamConfig : BuildType({
+        name = "Upstream config"
+        params {
+            param("bar", "default")
+            param("foo", "default")
+        }
+    
+        steps {
+            script {
+                id = "simpleRunner"
+                scriptContent = """
+                    echo "%foo%"    // Prints "Downstream config"
+                    echo "%bar%"    // Prints "%invalid%"
+                """.trimIndent()
+            }
+        }
+    })
+    
+    object DownstreamConfig : BuildType({
+        name = "Downstream config"
+        params {
+            param("override.dep.UpstreamConfig.foo", "%system.teamcity.buildConfName%") // The name of THIS configuration
+            param("override.dep.UpstreamConfig.bar", "%invalid%") // Unresolved
+        }
+    
+        dependencies { snapshot(UpstreamConfig) { } }
+    })
+    ```
+    Note that parameter references are resolved on queuing a build. Referenced parameters must have values right from the start, assigned in pipeline/configuration settings or passed via the [Run custom build dialog](running-custom-build.md). If you reference a parameter calculated during a build, no value will be passed.
+
+
+
+
+## 'reverse.dep.' parameters
+
+The `override.dep.<target-ID>.<parameter-name>` syntax was introduced in TeamCity 2026.1. Prior to this version, editing upstream parameters was carried out via the similar `reverse.dep.<target-ID>.<parameter-name>` syntax.
+
+This older syntax is still available, but we recommend using `override.dep.` instead. Older `reverse.dep.` parameters showcase a few behavioral differences that make them less straightforward.
+
+* Unlike `override.dep.`, `reverse.dep.` parameters do not resolve parameter references and pass them as is, often making upstream configurations/pipelines incompatible with all build agents.
+
+* `reverse.dep.` parameters are more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and does not affect entities without a matching parameter. Pushing new parameters into a build overrides the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency mode and triggers a new build if the parameter is set to a non-default value.
+
+* `reverse.dep.` parameters have more complex conflict resolution mechanisms. If the edits are made by multiple entities, TeamCity prioritizes configurations/pipelines that run last (same to `override.dep.`. If editors are on the same level, TeamCity checks the specificity of the target IDs: a parameter with the most specific ID wins.
+
+    ```Text
+    Config A
+    +-----------------------------------------------------------+
+    | person = "Mary"                                           |
+    +-----------------------------------------------------------+
+           ┌────────────────────├───────────────────────┐
+           ▼                    ▼                       ▼
+        Config B             Config C               Config D
+    +----------------+   +----------------+    +----------------+
+    | reverse.dep.   |   | reverse.dep.   |    | reverse.dep.   |
+    | ConfigA.person |   | Conf*.person   |    | *.person       |
+    | = John         |   | = Mike         |    | = Jane         |
+    +----------------+   +----------------+    +----------------+
+           └─────────────────────├───────────────────────┘
+    Run all                      ▼
+    +-----------------------------------------------------------+
+    | composite configuration                                   |
+    | depends on: ConfigB, ConfigC, ConfigD                     |
+    +-----------------------------------------------------------+
+    
+    Config B: fully clarified target ID
+    Config C: ID partially replaced with a wildcard
+    Config D: wildcard instead of target ID
+    
+    Final value in ConfigA: "John" (Config B)
+    ```
+
+    Finally, if conflicting edits originate from same-level entities with equally specific IDs, TeamCity leaves the target parameter unchanged and adds new `conflict.<sender_config_ID>.paramName` parameters.
+
+    <img src="dk-params-overrideConflict.png" width="706" alt="Conflicting Overrides"/>
+
+
+

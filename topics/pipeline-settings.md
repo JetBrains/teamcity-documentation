@@ -18,59 +18,70 @@ You can also switch from the visual editor to the code and edit the markup direc
 
 Parameters are name-value pairs designed to substitute raw values with references. When TeamCity encounters a parameter reference (`%\param-name%`), it substitutes it with the actual parameter value.
 
-TeamCity supports two layers of parameters: pipeline parameters and job parameters.
+TeamCity supports two layers of parameters: pipeline parameters and job parameters. Pipeline parameters in their turn are available as input and output parameters.
 
-* **Pipeline parameters** are designed to be accessible from any individual job owned by this pipeline.
+</snippet>
+
+
+
+* **Job parameters** are designed to be used in these very jobs, and jobs that depend on it (via the `job.<source-job-ID>.<param-name>` syntax). See [Job paramters](job-settings.md#Parameters) to learn more.
+
+
+* **Pipeline input parameters** are shared across all jobs within a pipeline. The sample below illustrates a pipeline parameter propagated to two jobs.
 
     ```yaml
+    parameters:
+      PipelineParam: foo
     jobs:
       Job1:
         name: Job 1
         steps:
           - type: script
-            script-content: echo %pipeline-param1%
+            script-content: 'echo "Pipeline parameter: %PipelineParam%"'    # prints 'foo'
       Job2:
         name: Job 2
         dependencies:
           - Job1
+        parameters:
+          env.Job2Param: '%PipelineParam% bar'    # job parameter references pipeline input param
         steps:
           - type: script
-            script-content: echo %pipeline-param2%
-    parameters:
-      pipeline-param1: foo
-      pipeline-param2: bar
+            script-content: |-
+              echo "Original pipeline parameter: %PipelineParam%"    # prints 'foo'
+              echo "Modified pipeline parameter: %env.Job2Param%"    # prints 'foo bar'
     ```
 
-    Typically, these are [configuration parameters](configuring-build-parameters.md) (without the `env.` name prefix) most commonly used to store values used by multiple jobs, or quickly alter global pipeline settings.
 
-* **Job input parameters** are typically environment variables (with the `env.` name prefix) available only for this specific job. To pass this value to another job, you need to reference them inside an [output parameter](job-settings.md#Outputs).
+* **Pipeline output parameters** are shared to downstream pipelines and build configurations when this pipeline is a part of a [build chain](pipeline-settings.md#Pipeline+Dependencies). Having this separate type grants you more control over which parameters can be exposed and which should stay private.
 
-The sample below shows a pipeline-level [secret](pipeline-settings.md#Secrets) parameter `bearer_token` and a job-level environment variable `env.SERVER_URL` used inside a command-line step. Note that parameters with the `env.` prefix can be referenced via the regular TeamCity `%\param_name%` syntax or accessed in scripts like native agent variables (`$param_name`).
+    Note that output parameters cannot be used inside the same pipeline.
 
+    <snippet id="output-param-in-self">
 
-```yaml
-jobs:
-  Job1:
-    name: Get all TeamCity builds
-    steps:
-      - type: script
-        script-content: |-
-          echo "Server URL is: %env.SERVER_URL%"
-          curl -X GET "$SERVER_URL/builds" \
-            -H "Accept: application/json" \
-            -H "Authorization: Bearer %bearer-token%"
+    ```yaml
     parameters:
-      env.SERVER_URL: https://example.com/app/rest
-secrets:
-  bearer-token: credentialsJSON:12e5c38b-16a1-4201-a913-5b5411bd7bfe
-```
+      PipelineInputParam: foo
+    output-parameters:
+      PipelineOutputParam: bar
+    jobs:
+      Job1:
+        name: Job 1
+        steps:
+          - type: script
+            script-content: |-
+              echo "Input param: %PipelineInputParam%"    # prints 'foo'
+              echo "Output param: %PipelineOutputParam%"  # unresolved reference, no compatible agents
+    ```
+  
+    </snippet>
+
+    See this section to learn more about parameters in build chains: [](pipeline-settings.md#Pipeline+Dependencies).
 
 
-> If a job uses a parameter that is not defined on either pipeline or job level, this parameter becomes an [agent requirement](job-settings.md#Agent+Requirements) (see [example](job-settings.md#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
+<snippet id="pipeline-param-missing">
+
+> If a job uses a parameter that is not defined on either project, pipeline or job level, this parameter becomes an [agent requirement](job-settings.md#Agent+Requirements) (see [example](job-settings.md#pipeline-implicit-requirement)). These automatically generated requirements are also called [implicit](configuring-agent-requirements.md#Implicit+Requirements), as opposed to user-defined [explicit](configuring-agent-requirements.md#Explicit+Requirements) ones.
 > 
-> To use a parameter owned by a direct or indirect parent project, click the corresponding link when editing the parameter collection. Note that imported parameters cannot be edited directly in a pipeline, you need to modify the source project parameter instead.
-> 
-> <img src="pipelines-import-params.png" width="706" alt="Import parameters"/>
 {style="note"}
 
 </snippet>

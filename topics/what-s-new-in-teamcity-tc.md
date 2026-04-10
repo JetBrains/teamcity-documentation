@@ -47,6 +47,11 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 * When editing pipeline [**Repositories**](pipeline-settings.md#Repository) settings, you can now add repositories from existing VCS roots owned by this parent project. Previously, the option to reuse a root was only available when you create a new pipeline.
 
+* The implementation of pipeline parameters was overhauled to support pipeline dependencies and introduce a more well-rounded and intuitive solution.
+
+    * Individual jobs no longer have input and output parameters. Instead, any job parameter is automatically available to downstream jobs of the same pipeline.
+    * The choice between input and output parameters is now available for pipeline parameters, granting you a better control which parameters can be accessible by donwstream configurations and pipelines.
+    * You can no longer import parameters from parent projects: all of them are now automatically available for pipelines and jobs.
 
 ## Dynamic Build Step Credentials
 
@@ -93,5 +98,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 * The [GitLab CE/EE connection](configuring-connections.md#GitLab) now allows you to configure integration with system webhooks. This enhancement allows TeamCity to receive near-instant notifications about new repository changes, as opposed to periodically [polling the repository](project-administrator-guide.md#Collecting+Changes).
 
 * In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
+
+* We have implemented the [`override.dep.`](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) parameter prefix that may completely replace the older `reverse.dep.` syntax in future TeamCity versions. New parameters can resolve parameter references, and do not forcibly push edits to configurations/pipelines that do not have matching parameters.
 
 </snippet>

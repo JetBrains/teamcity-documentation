@@ -197,7 +197,7 @@ This section covers settings to significantly speed up pipeline runs, saving tim
 
 TeamCity automatically tracks agent software to ensure queued runs are assigned only to compatible agents. For example, if a Maven step must run in a container, agents without Docker or Podman are marked incompatible.
 
-Similarly, if a job uses a parameter that is not defined in either [pipeline](pipeline-settings.md#Parameters) or [job](#Parameters) **Parameters** sections, TeamCity checks the agent machine as the last remaining potential source of this parameter value. For example, if the command-line step runs `echo %\myParam%` with an unknown parameter reference, only agents with a non-empty "myParam" parameter can run the job.
+Similarly, if a job uses a parameter that is not defined in either project, [pipeline](pipeline-settings.md#Parameters) or [job](#Parameters) **Parameters** sections, TeamCity checks the agent machine as the last remaining potential source of this parameter value. For example, if the command-line step runs `echo %\myParam%` with an unknown parameter reference, only agents with a non-empty "myParam" parameter can run the job.
 {id="pipeline-implicit-requirement"}
 
 <img src="pipeline-implicit-requirement.png" width="706" alt="Implicit requirement in pipelines"/>
@@ -278,15 +278,66 @@ jobs:
 
 <include from="pipeline-settings.md" element-id="pipeline-parameters-common"/>
 
-> Jobs can modify parameter values from inside build steps. See the [](#Outputs) section for more information.
->
-{style="tip"}
+* **Job parameters** are typically available only in their own parent jobs. By default, they include the `env.` prefix. To access a job parameter from a **downstream** job, use the `job.<source_job_ID>.<parameter_name>` syntax. The sample below illustrates a job with a single parameter. The downstream job uses a reference to this parameter to specify its own `ParamJobB`.
 
-## Outputs
+    ```yaml
+    jobs:
+      Job1:
+        name: Job 1
+        steps:
+          - type: script
+            script-content: |-
+              echo "Print Job1 parameter: %env.ParamJobA%"    # prints 'foo'
+        parameters:
+          env.ParamJobA: foo
+      Job2:
+        name: Job 2
+        dependencies:
+          - Job1
+        parameters:
+          env.ParamJobB: '%job.Job1.env.ParamJobA% bar'
+        steps:
+          - type: script
+            script-content: |-
+              echo "Print parameter from upstream Job: %job.Job1.env.ParamJobA%"     # prints 'foo'
+              echo "Print modified parameter: %env.ParamJobB%"    # prints 'foo bar'
+    ```
 
-This section explains how jobs can share the results of their runs, including calculated values and generated files.
+  > If you want to reuse a job parameter in multiple jobs, consider adding a pipeline input parameter instead. These parameters are common to all pipeline jobs and do not require any prefixes.
+  >
+  {style="tip"}
 
-### Files
+  > A job cannot access a parameter of another job if it's arranged ahead of the target job or not linked to the target job at all.
+  >
+  {style="note"}
+
+
+* **Pipeline input parameters** are shared across all jobs of this pipeline. See [Pipeline parameters](pipeline-settings.md#Parameters) to learn more.
+* **Pipeline output parameters** cannot be used in the very same pipeline. Instead, they are passed to downstream pipelines and configurations that belong to the same chain. See [](pipeline-settings.md#Pipeline+Dependencies) to learn more.
+
+Job steps can also send the [`setParameter` service message](service-messages.md#set-parameter) to dynamically edit parameter values (or create new parameters). Note that the modified value will be available only after the step that sent this message finishes.
+
+```yaml
+parameters:
+  env.JobParam: foo
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        name: Print original value
+        script-content: echo %env.JobParam%    # prints 'foo'
+      - type: script
+        name: Change param value
+        script-content: |-
+          echo "##teamcity[setParameter name='env.JobParam' value='bar']"
+          echo %env.JobParam%    # prints 'foo', the step is still running
+      - type: script
+        name: Print modified value
+        script-content: echo %env.JobParam%    # prints 'bar'
+```
+
+## Output Files
 {help-id="pipeline-file-outputs"}
 
 Files shared by a job can serve as artifacts, internal files for downstream jobs, or both.
@@ -396,6 +447,7 @@ Despite the almost identical step scripts and `files-publication` rules, the res
 {style="note"}
 
 
+<!--
 ### Output parameters
 {help-id="pipeline-parameter-outputs"}
 
@@ -461,6 +513,7 @@ By following this pattern, you can separate parameters used only within a job fr
 >
 {style="warning"}
 
+-->
 
 ## Repository
 
