@@ -23,7 +23,7 @@ Related article: [](configuring-vcs-roots.md)
 
 The **Parameters** tab allows you to create name-value pairs that are available to all configurations owned by this project and its subprojects.
 
-Related articles: [](configuring-build-parameters.md) | [](use-parameters-in-build-chains.md#Input+and+Output+Parameters)
+Related articles: [](configuring-build-parameters.md) | [](use-parameters-in-build-chains.md#Input+and+output+parameters)
 
 
 ## Recipes
