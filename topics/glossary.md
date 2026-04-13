@@ -132,7 +132,7 @@ Continuous integration is also associated with _Extreme Programming_ and other _
 Following the principles of _Continuous Integration_, TeamCity allows users to monitor the software development process of the company, while improving communication and facilitating the integration of changes without breaking any established practices.
 
 Custom build run
-* A standalone build whose settings have been adjusted compared to its build configuration. Such a build can be initiated from a context menu next to the __Run__ button.
+: A standalone build whose settings have been adjusted compared to its build configuration. Such a build can be initiated from a context menu next to the __Run__ button.
 
 ## D
 
