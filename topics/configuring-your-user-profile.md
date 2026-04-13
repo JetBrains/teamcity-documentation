@@ -48,6 +48,11 @@ and select particular permissions for it. The list of available projects and the
 
 Note that some operations allowed by enabled permissions might be blocked by the absence of other permissions. Please make sure to thoroughly manage the token's scope to get predictable results of your requests. In case of any issues, you can contact us via any convenient [feedback channel](troubleshooting.md).
 
+### Access Token Rate Limits
+{instance="tc"}
+
+<include from="ai-agent-integration.md" element-id="http-rate-limit"/>
+
 ## Managing Version Control Username Settings
 
 In __Your Profile | General__, you can see the list of your version control usernames in the __Version Control Username Settings__ area.   

@@ -194,3 +194,20 @@ user 'johndoe'.”
 {style="tip"}
 
 See the following article for more information: [TeamCity CLI AI Agent Skill](teamcity-cli-ai-agent-integration.md).
+
+## Access token rate limits
+{instance="tc"}
+
+<snippet id="http-rate-limit">
+
+TeamCity is a CI/CD solution designed to handle parallel access from hundreds of users across multiple server nodes. In rare cases, integrations with external tools can cause sudden request spikes that degrade UI performance. This usually happens because of a misconfiguration, when an external tool such as an AI agent sends dozens of requests at the same time.
+
+To prevent or resolve this issue, use the `teamcity.http.limiter.maxParralelRequestPerUser` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to limit the number of simultaneous HTTP requests allowed per access token. For example, the following setting limits token-based tools to 20 concurrent requests:
+
+```Kotlin
+teamcity.http.limiter.maxParralelRequestPerUser=20
+```
+
+For troubleshooting, set the limit to a desired value and enable the `teamcity.http.limiter.dryRun=true` property. In this mode, TeamCity does not block excessive requests, but it records them in the [audit log](tracking-user-actions.md).
+
+</snippet>
