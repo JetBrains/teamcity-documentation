@@ -14,7 +14,7 @@
 ## Changes from 2025.11.1 to 2025.11.2
 {id="2025.11.2"}
 
-* The default `ubuntu` user was removed from TeamCity Linux agent images to restore the UID of the `buildagent` user. This user changed its UID from **1000** to **1001** in version 2025.11, which may have required updating custom user scripts that relied on this UID value. See this section for more information: [2025.11 bundled tool updates](#bundled-tools-updates-2025-11)
+* In the official TeamCity Linux Docker images, the `buildagent` user's UID has been restored to its standard value of **1000** (by removing the default `ubuntu` user). This resolves an issue strictly in versions **2025.11** and **2025.11.1** where the UID temporarily shifted to **1001**. If you modified custom scripts to accommodate UID 1001 for those two specific releases, you can now revert those changes. See this section for more information: [2025.11 bundled tool updates](#bundled-tools-updates-2025-11)
 
 ## Changes from 2025.11 to 2025.11.1
 {id="2025.11.1"}
