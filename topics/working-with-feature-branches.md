@@ -194,34 +194,39 @@ With the __Show graph__ option enabled by default TeamCity displays build marker
 
 In a build configuration with configured branches, most UI pages show active branches by default.
 
-An _active branch_ is a branch with the recent activity: it has recent builds or exists in the repository with recent commits.    
+An _active branch_ is a branch with the recent activity: it has recent builds or exists in the repository with recent commits.
 
 The threshold for activity can be configured via build configuration parameters. The parameters can be changed either in a build configuration (this will affect one build configuration only), project, or in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties) (this defines defaults for the entire server). A parameter in the configuration overrides a parameter in the [internal properties](server-startup-properties.md#TeamCity+Internal+Properties).
 {instance="tc"}
 
-The threshold for activity can be configured via build configuration parameters. The parameters can be changed in a build configuration (this will affect one build configuration only) or project.
+The threshold for activity can be configured via build configuration parameters. The parameters can be changed in a build configuration (affecting only that configuration) or in a project.
 {instance="tcc"}
 
 A branch is considered active if:
-* it is present in the VCS repository and has recent commits (i.e. commits with the age less than the value of the integer parameter `teamcity.activeVcsBranch.age.days`, 7 days by default).
-* or it has recent builds (i.e. builds with the age less than the value of the integer parameter `teamcity.activeBuildBranch.age.hours`, 24 hours by default).   
-A closed VCS branch with builds will still be displayed as active during 24 hours after last build. To remove closed branches from display, set `teamcity.activeBuildBranch.age.hours=0`.
+* it is present in the VCS repository and has recent commits (i.e., commits with an age less than the value of the integer parameter `teamcity.activeVcsBranch.age.days`, 7 days by default).
+* or it has recent builds (i.e., builds with the age less than the value of the integer parameter `teamcity.activeBuildBranch.age.hours`, 24 hours by default).   
+  A closed VCS branch with builds will still be displayed as active for 24 hours after the last build. To remove closed branches from display, set `teamcity.activeBuildBranch.age.hours=0`.
+
+> The [default branch](#Default+Branch) is always considered active, regardless of the commit or build age.
+>
+{style="note"}
 
 ## Tests
 
-TeamCity tries to detect new failing tests in a build, and for those tests which are not new, you can see in which build the test started to fail. This functionality is aware of branches too, i.e. when the first build is calculated, TeamCity traverses builds from the same branch.
+TeamCity tries to detect new failing tests in a build, and for those tests that are not new, you can see in which build the test started to fail. This functionality is aware of branches too, i.e., when the first build is calculated, TeamCity traverses builds from the same branch.
 
-Additionally, a [branch filter](branch-filter.md) is available on the test details page and you can see a history of test passes or failures in a single branch.
+Additionally, a [branch filter](branch-filter.md) is available on the test details page, and you can see a history of test passes or failures in a single branch.
 
 ## Failure Conditions
 
-If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed comparing to a last successful/finished/pinned build_, TeamCity will try to compare the current build with the build from the same branch. If there is no suitable build in the same branch, it will use the build from the default branch and add the respective message to the build log. Note that currently, if the default branch is disabled by the [branch filter](branch-filter.md), TeamCity will not be able to process the build failure condition properly (see the related issue [TW-74884](https://youtrack.jetbrains.com/issue/TW-74884)).
+If a [build failure condition](build-failure-conditions.md) is configured as follows: _build metric has changed compared to the last successful/finished/pinned build_, TeamCity will try to compare the current build with the build from the same branch. If there is no suitable build in the same branch, it will use the build from the default branch and add the respective message to the build log. Note that currently, if the default branch is disabled by the [branch filter](branch-filter.md), TeamCity will not be able to process the build failure condition properly (see the related issue [TW-74884](https://youtrack.jetbrains.com/issue/TW-74884)).
 
 ## Triggers
 
-The VCS trigger is fully aware of branches and will trigger a build once a check-in is detected in a branch. All VCS trigger options like per-checkin triggering, quiet period, and triggering rules are directly available for builds from branches. By default, the Schedule and Finish build trigger will watch for builds in the default branch only.
+The VCS trigger is fully aware of branches and will trigger a build once a check-in is detected in a branch. All VCS trigger options, like per-checkin triggering, quiet period, and triggering rules, are directly available for builds from branches. By default, the Schedule and Finish build trigger will watch for builds in the default branch only.
 
 Additionally, a [branch filter](branch-filter.md) can be specified for the VCS, Schedule, and Finish build triggers.
+
 
 ## Dependencies
 
