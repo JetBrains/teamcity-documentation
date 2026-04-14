@@ -32,6 +32,10 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 ## Pipeline Enhancements
 
+* We redesigned the build details side panel to include all familiar [Build Results](build-results-page.md) tabs (such as Overview, Build Log, Parameters, and more), giving you a complete view of each build. It now also includes a pipeline/job switch, so you can quickly filter these tabs by job, making pipelines easier to inspect, debug, and troubleshoot.
+
+    <img src="pipelines-job-switch.png" width="706" alt="Pipeline-Job switch in the side panel"/>
+
 * You can now use the [Custom build dialog](running-custom-build.md) that allows you to run pipelines with one-time custom settings.
 
     <img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
