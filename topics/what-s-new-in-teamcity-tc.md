@@ -57,7 +57,7 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
     * Pipeline parameters can now be explicitly marked as input or output, giving you finer control over which values are exposed to downstream configurations and pipelines.
     * Parameters from parent projects no longer need to be imported as they are now automatically available to child pipelines and jobs.
 
-*  The [SAML Authentication](configuring-authentication-settings.md#HTTP+SAML+2.0) plugin is now bundled with TeamCity, so you no longer need to install it separately to enable authentication through external SSO providers.
+
 
 ## Dynamic Build Step Credentials
 
@@ -106,5 +106,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 * In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
 
 * We have implemented the [`override.dep.`](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) parameter prefix that may completely replace the older `reverse.dep.` syntax in future TeamCity versions. New parameters can resolve parameter references, and do not forcibly push edits to configurations/pipelines that do not have matching parameters.
+
+*  The [SAML Authentication](configuring-authentication-settings.md#HTTP+SAML+2.0) plugin is now bundled with TeamCity, so you no longer need to install it separately to enable authentication through external SSO providers.
 
 </snippet>
