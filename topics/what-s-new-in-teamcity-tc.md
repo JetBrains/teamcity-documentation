@@ -91,7 +91,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
-* Users with trial TeamCity Enterprise licenses can now use the [](ai-assistant.md).
+* Users with trial TeamCity Enterprise licenses can now use [](ai-assistant.md).
 
 * Kubernetes [cloud profiles](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration) and [connections](configuring-connections.md#Kubernetes) now include settings that allow you to configure outgoing connections behind a proxy.
 
@@ -105,7 +105,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
 
-* We have implemented the [`override.dep.`](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) parameter prefix that may completely replace the older `reverse.dep.` syntax in future TeamCity versions. New parameters can resolve parameter references, and do not forcibly push edits to configurations/pipelines that do not have matching parameters.
+* We have implemented the [`override.dep.`](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) parameter prefix that may completely replace the older `reverse.dep.` syntax in future TeamCity versions. New parameters can resolve parameter references and do not forcibly push edits to configurations/pipelines that do not have matching parameters.
 
 *  The [SAML Authentication](configuring-authentication-settings.md#HTTP+SAML+2.0) plugin is now bundled with TeamCity, so you no longer need to install it separately to enable authentication through external SSO providers.
 
