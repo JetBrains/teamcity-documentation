@@ -136,7 +136,15 @@ The following protocols are supported for Git repository URL:
 * HTTP (for example, `http://git.somewhere.org/projects/test.git`)
 * file (for example, `file://c:/projects/myproject/.git` or `\\servername\projects\myproject\.git`)
 
-    <warning>Using local and network (UNC) paths can introduce security risks, including potential exposure of server files and credentials. For this reason, the file protocol is disabled by default in TeamCity 2026.1 and later. New and existing VCS roots that use such URLs show the "The URL must not be a local file URL" error.<br/><br/>If you still need to use this format despite the risks, enable it by setting the <code>teamcity.git.allowFileUrl=true</code> <a href="server-startup-properties.md#TeamCity+Internal+Properties">internal property</a>.</warning>
+    > Using local and network (UNC) paths can introduce security risks, including potential exposure of server files and credentials. For this reason, the file protocol is disabled by default in TeamCity 2026.1 and later. New and existing VCS roots that use such URLs show the "The URL must not be a local file URL" error.
+    > 
+    > If you still need to use this format despite the risks, enable it by setting the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+    >
+    {style="warning" instance="tc"}
+
+    > Using local and network (UNC) paths can introduce security risks, including potential exposure of server files and credentials. For this reason, the file protocol is disabled by default in TeamCity 2026.1 and later. New and existing VCS roots that use such URLs show the "The URL must not be a local file URL" error.
+    >
+    {style="warning" instance="tcc"}
 
     <note>When you run TeamCity as a Windows service, it cannot access mapped network drives and repositories located on them.</note>
 

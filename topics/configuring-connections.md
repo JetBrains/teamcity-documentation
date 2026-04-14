@@ -929,7 +929,7 @@ Kubernetes connections allow TeamCity to access your Kubernetes resources. These
 
 7. <include from="common-templates.md" element-id="kubernetes-settings-auth-strategy"/>
 
-8. If your TeamCity server needs to use a [proxy server](configuring-proxy-server.md) to access a k8s cluster, configure the following settings to allow outgoing connections:
+8. If your TeamCity server needs to use a proxy server to access a k8s cluster, configure the following settings to allow outgoing connections:
 
     * <include from="common-templates.md" element-id="kubernetes-settings-proxy-url"/>
     * <include from="common-templates.md" element-id="kubernetes-settings-proxy-credentials"/>
