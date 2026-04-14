@@ -142,7 +142,7 @@ If a project [stores its settings in a VCS](storing-project-settings-in-version-
 
 The default behavior depends on the currently selected **Project Settings | Versioned Settings** page setting (see this section for more information: [](storing-project-settings-in-version-control.md#Defining+Settings+to+Apply+to+Builds)). If you selected [specific changes revision](#Changes), TeamCity will also load a corresponding revision of the project settings.
 
-Since pipelines always have a settings file (by default, a YAML file stored on the server side), this option is always present regardless of parent project settings.
+Pipelines that [store their settings](pipeline-settings.md#Repository) in a server-based YAML do not show this option.
 
 </def>
 
@@ -160,8 +160,14 @@ These settings are available only if your TeamCity user has permissions to chang
 
 This tab allows you to add, edit, and delete [parameters](configuring-build-parameters.md). The following limitations apply:
 
-* Predefined properties and variables do not allow you to edit their names (only values are editable).
-* You can delete only newly added properties and variables. Predefined properties cannot be removed.
+* You can only change parameter values; names are not editable.
+* The **Delete** action only appears for parameters added via the previous custom run. Other parameters cannot be removed.
+
+    <img src="delete-param-from-custom-run.png" width="706" alt="Remove parameter from custom run"/>
+
+    Note that previously added parameters keep showing on this tab only for your convenience, in case you need to run another custom run with same parameters. They are not silently added to normal runs.
+
+* For pipelines, you can only override [pipeline input parameters](pipeline-settings.md#Parameters). [Job parameters](job-settings.md#Parameters) are not accessible from this dialog.
 * Parameter values must not exceed 16,000 characters.
 
 ### Comment and Tags
