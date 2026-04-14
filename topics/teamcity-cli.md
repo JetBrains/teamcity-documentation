@@ -19,7 +19,7 @@ TeamCity CLI is the official command-line interface for TeamCity. Type `teamcity
 - **Real-time logs** — Stream build output as it happens with `teamcity run watch --logs`.
 - **Scriptable** — `--json` and `--plain` output for pipelines, plus direct REST API access via `teamcity api`.
 - **Multi-server support** — Authenticate with and switch between multiple TeamCity instances.
-- **AI agent ready** — Run `teamcity skill install` to install a built-in [skill](https://agentskills.io) for Claude Code, Cursor, and other AI coding agents.
+- **AI agent ready** — Built-in [skill](https://agentskills.io) for Claude Code, Cursor, and other AI coding agents — just run `teamcity skill install`.
 
 ## Installing TeamCity CLI {id="installing"}
 
@@ -60,8 +60,13 @@ irm https://jb.gg/tc/install.ps1 | iex
 
 </snippet>
 
-For other methods (Scoop, Chocolatey, deb/rpm packages, building from source), see the [getting started guide](teamcity-cli-get-started.md).
+**npm (cross-platform):**
 
+```bash
+npm install -g @jetbrains/teamcity-cli
+```
+
+For other methods (Scoop, Chocolatey, deb/rpm packages, building from source), see the [getting started guide](teamcity-cli-get-started.md).
 
 ## Quick start
 
@@ -167,7 +172,7 @@ View and configure build configurations
 </td>
 <td>
 
-Browse projects, manage parameters and versioned settings
+Browse projects, manage VCS roots, parameters, and versioned settings
 
 </td>
 </tr>
@@ -204,6 +209,30 @@ Monitor, control, and access build agents remotely
 <td>
 
 Assign projects and agents to pools
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Managing cloud agents](teamcity-cli-managing-cloud-agents.md)
+
+</td>
+<td>
+
+View cloud profiles, images, and running instances
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Managing pipelines](teamcity-cli-managing-pipelines.md)
+
+</td>
+<td>
+
+Create, validate, and sync YAML pipeline configurations
 
 </td>
 </tr>

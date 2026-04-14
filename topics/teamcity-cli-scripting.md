@@ -48,11 +48,14 @@ teamcity run list --json=id,status,buildType.name,triggered.user.username
 
 ```Shell
 teamcity run view 12345 --json
+teamcity run log 12345 --json
+teamcity run log 12345 --json --failed
 teamcity run changes 12345 --json
 teamcity run tests 12345 --json
 teamcity run artifacts 12345 --json
 teamcity agent view Agent-Linux-01 --json
 teamcity project settings status MyProject --json
+teamcity auth status --json
 ```
 
 ### Available fields by command
@@ -146,16 +149,20 @@ Example fields
 
 ## Plain text output
 
-Use `--plain` for tab-separated output that is easy to parse with standard Unix tools:
+Use `--plain` for tab-separated output that is easy to parse with standard Unix tools. This flag is available on all list commands and on `agent jobs` and `param list`:
 
 ```Shell
 teamcity run list --plain
+teamcity agent list --plain
+teamcity agent jobs 1 --plain
+teamcity project param list MyProject --plain
 ```
 
 Omit the header row for cleaner piping:
 
 ```Shell
 teamcity run list --plain --no-header
+teamcity agent list --plain --no-header | awk '{print $1}'
 ```
 
 ## Scripting examples
@@ -187,13 +194,20 @@ teamcity run list --since 24h --json=status | jq 'group_by(.status) | map({statu
 ### Wait for a build to finish
 
 ```Shell
-teamcity run start MyProject_Build --json | jq -r '.id' | xargs teamcity run watch --quiet
+teamcity run start MyProject_Build --watch --json
+```
+
+Or start and watch separately:
+
+```Shell
+BUILD_ID=$(teamcity run start MyProject_Build --json | jq -r '.id')
+teamcity run watch "$BUILD_ID" --json
 ```
 
 ### Cancel all queued builds for a job
 
 ```Shell
-teamcity queue list --job MyProject_Build --json=id | jq -r '.[].id' | xargs -I {} teamcity run cancel {} --force
+teamcity queue list --job MyProject_Build --json=id | jq -r '.[].id' | xargs -I {} teamcity run cancel {} --yes
 ```
 
 ## CI/CD integration
@@ -240,10 +254,10 @@ Use `--no-input` to disable interactive prompts in automated environments. The C
 teamcity run cancel 12345 --no-input
 ```
 
-Alternatively, use `--force` on commands that support it:
+Alternatively, use `--yes` on commands that support it:
 
 ```Shell
-teamcity queue remove 12345 --force
+teamcity queue remove 12345 --yes
 ```
 
 ### Read-only mode
@@ -276,7 +290,7 @@ Most commands return exit code `0` on success and `1` on failure. The `teamcity 
 - `124` on timeout
 
 ```Shell
-teamcity run start MyProject_Build --watch --quiet
+teamcity run start MyProject_Build --watch --quiet --timeout 30m
 case $? in
   0) echo "Build succeeded" ;;
   1) echo "Build failed" ;;
@@ -286,13 +300,52 @@ case $? in
 esac
 ```
 
+## Structured errors
+
+When `--json` is active and a command fails, the error is written to stderr as structured JSON instead of plain text:
+
+```json
+{
+  "error": {
+    "code": "auth_expired",
+    "message": "Authentication failed: invalid or expired token",
+    "suggestion": "teamcity auth login"
+  }
+}
+```
+
+Error codes:
+
+| Code | Meaning |
+|------|---------|
+| `auth_expired` | Token is invalid or expired |
+| `permission_denied` | Insufficient permissions |
+| `not_found` | Requested resource does not exist |
+| `network_error` | Cannot reach the server |
+| `read_only` | Write operation blocked by `TEAMCITY_RO` |
+| `validation_error` | Invalid input (flags, arguments) |
+| `internal_error` | Unexpected error |
+
+The `suggestion` field is omitted when there is no actionable fix. The `code` field is always present and is safe for programmatic matching.
+
+## JSON compatibility policy
+
+The `--json` output is a machine-readable contract. The following rules apply:
+
+- **No field removals or renames** without a deprecation period in a prior release.
+- **Additive fields are always allowed** — new keys may appear in any release.
+- **Error codes are stable** — existing codes will not change meaning.
+- **Envelope structure is fixed** — success output is the resource data; error output uses the `{"error": {...}}` envelope on stderr.
+
+Consumers should ignore unknown fields and avoid relying on field ordering.
+
 ## Raw API access
 
 For operations not covered by dedicated commands, use `teamcity api` to make direct REST API requests:
 
 ```Shell
-teamcity api /app/rest/server
-teamcity api /app/rest/builds --paginate --slurp
+teamcity api '/app/rest/server'
+teamcity api '/app/rest/builds' --paginate --slurp
 ```
 
 See [REST API access](teamcity-cli-rest-api-access.md) for details.

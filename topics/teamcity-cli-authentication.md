@@ -19,8 +19,8 @@ teamcity auth login
 This starts an interactive flow:
 
 1. Enter your TeamCity server URL (for example, `https://teamcity.example.com`).
-2. If the server supports PKCE authentication, the CLI opens your browser to approve access directly — no token copying needed.
-3. Otherwise, the CLI opens the TeamCity __Access Tokens__ page for you to create and paste a token manually.
+2. If browser-based login (PKCE) is available on the server, the CLI opens your browser to approve access directly — no token copying needed.
+3. Otherwise, the CLI guides you to the TeamCity __Access Tokens__ page so you can create and paste a token manually.
 4. The CLI validates the token and stores it securely.
 
 To authenticate with a specific server URL:
@@ -44,7 +44,7 @@ teamcity auth login --server https://teamcity.example.com --token <token>
 ### Browser-based login (PKCE)
 {id="pkce"}
 
-When PKCE is enabled on the TeamCity server, `teamcity auth login` authenticates via the browser automatically:
+When browser-based login is available on the server, `teamcity auth login` authenticates via the browser automatically with PKCE:
 
 1. The CLI starts a temporary local server on your machine.
 2. Your browser opens a TeamCity authorization page.
@@ -62,9 +62,25 @@ $ teamcity auth status
   ! Token expires 2 hours from now (on Mar 25, 2026)
 ```
 
-> PKCE must be enabled on the TeamCity server. If it is not available, the CLI falls back to manual token entry automatically.
+> If browser-based login is unavailable, the CLI falls back to manual access token login automatically.
 >
 {style="note"}
+
+### Access token login
+
+If you prefer the traditional access token flow, skip browser-based login and enter a token manually:
+
+```Shell
+teamcity auth login --server https://teamcity.example.com --no-browser
+```
+
+The CLI shows the TeamCity __Access Tokens__ URL, offers to open it in your browser, and then prompts you to paste the token into the CLI.
+
+If you already have a token, pass it directly:
+
+```Shell
+teamcity auth login --server https://teamcity.example.com --token <token>
+```
 
 ### Check authentication status
 
@@ -279,71 +295,6 @@ Environment variables take precedence over the configuration file and keyring.
 > Do not pass tokens as command-line flags in scripts — they may appear in process listings and shell history. Use environment variables instead.
 >
 {style="warning"}
-
-<!--
-
-## Mutual TLS (mTLS) {id="mtls"}
-
-If your TeamCity server requires client certificate authentication (mutual TLS), configure certificate paths in the config file or via environment variables. mTLS works with all authentication modes (token, basic, guest).
-
-### Per-server configuration
-
-Add `client_cert`, `client_key`, and optionally `ca_cert` to the server entry in `~/.config/tc/config.yml`:
-
-```yaml
-servers:
-    https://teamcity.example.com:
-        user: alice
-        client_cert: /path/to/client.crt
-        client_key: /path/to/client.key
-        ca_cert: /path/to/ca.crt
-```
-
-The `ca_cert` field is only needed when the server uses a certificate signed by a private or internal CA that is not in the system trust store.
-
-### Environment variables
-{id="mtls-env-vars" help-id="mtls-env-vars"}
-
-For CI/CD pipelines, use environment variables instead:
-
-<tabs>
-<tab title="macOS and Linux">
-
-```Shell
-export TEAMCITY_CLIENT_CERT="/path/to/client.crt"
-export TEAMCITY_CLIENT_KEY="/path/to/client.key"
-export TEAMCITY_CA_CERT="/path/to/ca.crt"
-```
-
-</tab>
-<tab title="Windows">
-
-PowerShell:
-
-```PowerShell
-$env:TEAMCITY_CLIENT_CERT = "C:\path\to\client.crt"
-$env:TEAMCITY_CLIENT_KEY = "C:\path\to\client.key"
-$env:TEAMCITY_CA_CERT = "C:\path\to\ca.crt"
-```
-
-CMD:
-
-```Shell
-set TEAMCITY_CLIENT_CERT=C:\path\to\client.crt
-set TEAMCITY_CLIENT_KEY=C:\path\to\client.key
-set TEAMCITY_CA_CERT=C:\path\to\ca.crt
-```
-
-</tab>
-</tabs>
-
-Environment variables take precedence over per-server config file settings.
-
-> Both `TEAMCITY_CLIENT_CERT` and `TEAMCITY_CLIENT_KEY` must be provided together. Specifying only one will result in an error.
->
-{style="warning"}
-
--->
 
 ## Advanced authentication scenarios
 

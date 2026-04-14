@@ -262,7 +262,7 @@ teamcity agent reboot Agent-Linux-01
 Wait for the current build to finish before rebooting:
 
 ```Shell
-teamcity agent reboot Agent-Linux-01 --after-build
+teamcity agent reboot Agent-Linux-01 --graceful
 ```
 
 Skip the confirmation prompt:
