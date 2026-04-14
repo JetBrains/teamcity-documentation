@@ -57,6 +57,8 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
     * Pipeline parameters can now be explicitly marked as input or output, giving you finer control over which values are exposed to downstream configurations and pipelines.
     * Parameters from parent projects no longer need to be imported as they are now automatically available to child pipelines and jobs.
 
+*  The [SAML Authentication](configuring-authentication-settings.md#HTTP+SAML+2.0) plugin is now bundled with TeamCity, so you no longer need to install it separately to enable authentication through external SSO providers.
+
 ## Dynamic Build Step Credentials
 
 The new [](build-scoped-token.md) feature lets your builds securely generate short-lived GitHub access tokens (up to 60 minutes) on the fly. Pass them to build steps as parameters to enable seamless access to repositories.
