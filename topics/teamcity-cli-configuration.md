@@ -2,7 +2,130 @@
 
 <show-structure for="chapter" depth="2"/>
 
-This page describes the configuration file format, environment variables, and shell completion setup for TeamCity CLI.
+This page describes the `config` command, configuration file format, environment variables, and shell completion setup for TeamCity CLI.
+
+## Managing configuration with `teamcity config`
+
+The `config` command lets you view and modify CLI settings without editing the YAML file directly.
+
+### List all settings
+
+```Shell
+teamcity config list
+teamcity config list --json
+```
+
+### Get a setting
+
+```Shell
+teamcity config get default_server
+teamcity config get ro --server tc.example.com
+```
+
+### Set a setting
+
+```Shell
+# Switch default server
+teamcity config set default_server tc.example.com
+
+# Enable read-only mode for a specific server
+teamcity config set ro true --server tc.example.com
+
+# Enable guest auth for the default server
+teamcity config set guest true
+```
+
+### Available keys
+
+<table>
+<tr>
+<td>
+
+Key
+
+</td>
+<td>
+
+Scope
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`default_server`
+
+</td>
+<td>
+
+Global
+
+</td>
+<td>
+
+The default TeamCity server URL.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`guest`
+
+</td>
+<td>
+
+Per-server
+
+</td>
+<td>
+
+Enable guest authentication (no token needed). Use `--server` to target a specific server.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`ro`
+
+</td>
+<td>
+
+Per-server
+
+</td>
+<td>
+
+Enable read-only mode (blocks all write operations). Use `--server` to target a specific server.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`token_expiry`
+
+</td>
+<td>
+
+Per-server
+
+</td>
+<td>
+
+Token expiry timestamp (RFC 3339). Normally set by `auth login`.
+
+</td>
+</tr>
+</table>
+
+Authentication fields (`token`, `user`) are managed by `teamcity auth login` / `teamcity auth logout` and cannot be set via `config set`.
 
 ## Configuration file
 
@@ -61,10 +184,6 @@ The server URL used when no `TEAMCITY_URL` environment variable is set. Updated 
 
 </td>
 <td>
-
-<!--
-A map of server URLs to their settings. Each entry stores the `user` field (username on that server) and optionally `guest: true` for guest access, `ro: true` for read-only mode, or TLS certificate paths for mTLS (`client_cert`, `client_key`, `ca_cert`). Tokens are stored in the system keyring, not in this file, unless `--insecure-storage` was used during login.
--->
 
 A map of server URLs to their settings. Each entry stores the `user` field (username on that server) and optionally `guest: true` for guest access, `ro: true` for read-only mode. Tokens are stored in the system keyring, not in this file, unless `--insecure-storage` was used during login.
 
@@ -161,45 +280,6 @@ Path to the Kotlin DSL directory. Overrides automatic detection of `.teamcity/` 
 
 </td>
 </tr>
-
-<!--
-<tr>
-<td>
-
-`TEAMCITY_CLIENT_CERT`
-
-</td>
-<td>
-
-Path to a PEM-encoded client certificate file for mutual TLS (mTLS). Must be used together with `TEAMCITY_CLIENT_KEY`. See [Mutual TLS (mTLS)](teamcity-cli-authentication.md#mtls).
-
-</td>
-</tr>
-<tr>
-<td>
-
-`TEAMCITY_CLIENT_KEY`
-
-</td>
-<td>
-
-Path to a PEM-encoded client private key file for mutual TLS (mTLS). Must be used together with `TEAMCITY_CLIENT_CERT`.
-
-</td>
-</tr>
-<tr>
-<td>
-
-`TEAMCITY_CA_CERT`
-
-</td>
-<td>
-
-Path to a PEM-encoded CA certificate file. Use this when the TeamCity server uses a certificate signed by a private or internal CA that is not in the system trust store. Can be used with or without client certificate settings.
-
-</td>
-</tr>
--->
 <tr>
 <td>
 
@@ -209,6 +289,30 @@ Path to a PEM-encoded CA certificate file. Use this when the TeamCity server use
 <td>
 
 Disable colored output. Follows the [NO_COLOR standard](https://no-color.org/).
+
+</td>
+</tr>
+<tr>
+<td>
+
+`TEAMCITY_NO_COLOR`
+
+</td>
+<td>
+
+App-specific alternative to `NO_COLOR` for disabling colored output.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`TEAMCITY_NO_UPDATE`
+
+</td>
+<td>
+
+Set to `1`, `true`, or `yes` to disable automatic update checks. Update checks are also disabled automatically in CI environments and non-interactive terminals.
 
 </td>
 </tr>

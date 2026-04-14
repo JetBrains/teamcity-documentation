@@ -86,7 +86,7 @@ Description
 </td>
 <td>
 
-List run artifacts
+List artifacts
 
 </td>
 </tr>
@@ -98,7 +98,7 @@ List run artifacts
 </td>
 <td>
 
-Cancel a running build
+Cancel a run
 
 </td>
 </tr>
@@ -110,7 +110,7 @@ Cancel a running build
 </td>
 <td>
 
-Show VCS changes in a run
+Show VCS changes
 
 </td>
 </tr>
@@ -122,7 +122,19 @@ Show VCS changes in a run
 </td>
 <td>
 
-Set or view run comment
+Set or view comment
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity run diff`
+
+</td>
+<td>
+
+[experimental] Compare two runs and show differences
 
 </td>
 </tr>
@@ -134,7 +146,7 @@ Set or view run comment
 </td>
 <td>
 
-Download run artifacts
+Download artifacts
 
 </td>
 </tr>
@@ -158,7 +170,7 @@ List recent runs
 </td>
 <td>
 
-View run log
+View log
 
 </td>
 </tr>
@@ -170,7 +182,7 @@ View run log
 </td>
 <td>
 
-Pin a run to prevent cleanup
+Pin to prevent cleanup
 
 </td>
 </tr>
@@ -206,7 +218,7 @@ Start a new run
 </td>
 <td>
 
-Add tags to a run
+Add tags
 
 </td>
 </tr>
@@ -218,7 +230,19 @@ Add tags to a run
 </td>
 <td>
 
-Show test results for a run
+Show test results
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity run tree`
+
+</td>
+<td>
+
+Display snapshot dependency tree
 
 </td>
 </tr>
@@ -242,7 +266,7 @@ Unpin a run
 </td>
 <td>
 
-Remove tags from a run
+Remove tags
 
 </td>
 </tr>
@@ -254,7 +278,7 @@ Remove tags from a run
 </td>
 <td>
 
-View run details
+View details
 
 </td>
 </tr>
@@ -419,6 +443,54 @@ Description
 <tr>
 <td>
 
+`teamcity project cloud image`
+
+</td>
+<td>
+
+Manage cloud images
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project cloud instance`
+
+</td>
+<td>
+
+Manage cloud instances
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project cloud profile`
+
+</td>
+<td>
+
+Manage cloud profiles
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project connection list`
+
+</td>
+<td>
+
+List project connections
+
+</td>
+</tr>
+<tr>
+<td>
+
 `teamcity project list`
 
 </td>
@@ -515,6 +587,54 @@ Validate Kotlin DSL configuration locally
 <tr>
 <td>
 
+`teamcity project ssh delete`
+
+</td>
+<td>
+
+Delete an SSH key
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project ssh generate`
+
+</td>
+<td>
+
+Generate an SSH key pair
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project ssh list`
+
+</td>
+<td>
+
+List SSH keys
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project ssh upload`
+
+</td>
+<td>
+
+Upload an SSH private key
+
+</td>
+</tr>
+<tr>
+<td>
+
 `teamcity project token get`
 
 </td>
@@ -545,6 +665,66 @@ Store a secret and get a secure token
 <td>
 
 Display project hierarchy as a tree
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project vcs create`
+
+</td>
+<td>
+
+Create a VCS root
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project vcs delete`
+
+</td>
+<td>
+
+Delete a VCS root
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project vcs list`
+
+</td>
+<td>
+
+List VCS roots
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project vcs test`
+
+</td>
+<td>
+
+Test a VCS root connection
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project vcs view`
+
+</td>
+<td>
+
+View VCS root details
 
 </td>
 </tr>
@@ -933,6 +1113,160 @@ Create a command alias
 </tr>
 </table>
 
+## Configs
+
+<table>
+<tr>
+<td>
+
+Command
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity config get`
+
+</td>
+<td>
+
+Get a configuration value
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity config list`
+
+</td>
+<td>
+
+List configuration settings
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity config set`
+
+</td>
+<td>
+
+Set a configuration value
+
+</td>
+</tr>
+</table>
+
+## Pipelines
+
+<table>
+<tr>
+<td>
+
+Command
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline create`
+
+</td>
+<td>
+
+Create a new pipeline from YAML
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline delete`
+
+</td>
+<td>
+
+Delete a pipeline
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline list`
+
+</td>
+<td>
+
+List pipelines
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline pull`
+
+</td>
+<td>
+
+Download pipeline YAML
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline push`
+
+</td>
+<td>
+
+Upload pipeline YAML
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline validate`
+
+</td>
+<td>
+
+Validate pipeline YAML against server schema
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline view`
+
+</td>
+<td>
+
+View pipeline details
+
+</td>
+</tr>
+</table>
+
 ## Skills
 
 Manage AI agent integration. See [AI agent integration](teamcity-cli-ai-agent-integration.md) for details.
@@ -958,7 +1292,19 @@ Description
 </td>
 <td>
 
-Install the teamcity-cli skill for AI coding agents
+Install skills for AI coding agents
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity skill list`
+
+</td>
+<td>
+
+List available skills bundled with this release
 
 </td>
 </tr>
@@ -970,7 +1316,7 @@ Install the teamcity-cli skill for AI coding agents
 </td>
 <td>
 
-Remove the teamcity-cli skill from AI coding agents
+Remove skills from AI coding agents
 
 </td>
 </tr>
@@ -982,7 +1328,36 @@ Remove the teamcity-cli skill from AI coding agents
 </td>
 <td>
 
-Update the teamcity-cli skill for AI coding agents
+Update skills for AI coding agents
+
+</td>
+</tr>
+</table>
+
+## Updates
+
+<table>
+<tr>
+<td>
+
+Command
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity update`
+
+</td>
+<td>
+
+Check for CLI updates and show how to upgrade
 
 </td>
 </tr>

@@ -16,6 +16,17 @@ teamcity run list
 
 <img src="run-list.gif" alt="Listing and filtering runs" border-effect="rounded"/>
 
+### Favorite runs
+
+Use `teamcity run list --favorites` to show the current user's favorite builds, including manually starred builds and builds TeamCity marked as important for you:
+
+```Shell
+teamcity run list --favorites
+teamcity run list --favorites --status failure --limit 10
+```
+
+`--favorites` works with the existing `run list` filters and output modes.
+
 ### Filtering
 
 Use flags to narrow results:
@@ -30,8 +41,20 @@ teamcity run list --project MyProject
 # Filter by branch
 teamcity run list --branch main
 
+# Auto-detect the current git branch
+teamcity run list --branch @this
+
 # Filter by status
 teamcity run list --status failure
+
+# Show only your favorite builds
+teamcity run list --favorites
+
+# Show only your own recent builds
+teamcity run list --user @me
+
+# Show only the latest matching run
+teamcity run list --user @me --branch @this --limit 1
 
 # Filter by user who triggered the build
 teamcity run list --user alice
@@ -42,6 +65,23 @@ teamcity run list --job MyProject_Build --status failure --branch main
 ```
 
 > The `@me` shortcut substitutes the currently authenticated username.
+
+### Filtering by revision
+
+Use `--revision` to find all builds that include a specific VCS commit:
+
+```Shell
+# All builds for a commit
+teamcity run list --revision abc1234
+
+# Scoped to a specific job
+teamcity run list --revision abc1234 --job MyProject_Build
+
+# Auto-detect the current HEAD commit
+teamcity run list --revision @head
+```
+
+> The `@head` shortcut resolves to the current `HEAD` commit SHA via `git rev-parse`.
 
 ### Time-based filtering
 
@@ -123,7 +163,7 @@ Filter by project ID
 </td>
 <td>
 
-Filter by branch name
+Filter by branch name. Use `@this` to resolve the current git branch.
 
 </td>
 </tr>
@@ -135,7 +175,19 @@ Filter by branch name
 </td>
 <td>
 
-Filter by status: `success`, `failure`, `running`, `error`, or `unknown`
+Filter by status: `success`, `failure`, `running`, `queued`, `error`, or `unknown`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--favorites`
+
+</td>
+<td>
+
+Show favorite builds for the current user.
 
 </td>
 </tr>
@@ -148,6 +200,18 @@ Filter by status: `success`, `failure`, `running`, `error`, or `unknown`
 <td>
 
 Filter by the user who triggered the build. Use `@me` for the current user.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--revision`
+
+</td>
+<td>
+
+Filter by VCS revision (commit SHA). Use `@head` to resolve the current git HEAD.
 
 </td>
 </tr>
@@ -278,6 +342,9 @@ teamcity run start MyProject_Build --rebuild-deps
 # Rebuild only failed dependencies
 teamcity run start MyProject_Build --rebuild-failed-deps
 
+# Reuse existing builds as snapshot dependencies (pin by build ID)
+teamcity run start MyProject_Build --reuse-deps 6946,6917
+
 # Add to the top of the queue
 teamcity run start MyProject_Build --top
 
@@ -300,6 +367,13 @@ teamcity run start MyProject_Build --branch main --watch
 ```
 
 <img src="run-start-watch.gif" alt="Starting a build with --watch" border-effect="rounded"/>
+
+You can also set a timeout or adjust the polling interval:
+
+```Shell
+teamcity run start MyProject_Build --watch --timeout 30m
+teamcity run start MyProject_Build --watch --interval 10
+```
 
 ### Personal builds
 
@@ -504,6 +578,18 @@ Rebuild failed or incomplete dependencies only
 <tr>
 <td>
 
+`--reuse-deps`
+
+</td>
+<td>
+
+Reuse existing builds as snapshot dependencies. Accepts a comma-separated list of build IDs or can be repeated. TeamCity resolves which dependency slot each build fills by its build configuration.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `--top`
 
 </td>
@@ -540,7 +626,31 @@ Watch the build after starting it
 <tr>
 <td>
 
-`-n`, `--dry-run`
+`-i`, `--interval`
+
+</td>
+<td>
+
+Refresh interval in seconds when watching (default: 3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--timeout`
+
+</td>
+<td>
+
+Timeout when watching (for example, `30m`, `1h`); implies `--watch`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--dry-run`
 
 </td>
 <td>
@@ -583,6 +693,69 @@ teamcity run view 12345 --web
 teamcity run view 12345 --json
 ```
 
+## Snapshot dependency tree
+
+Visualize the snapshot dependency chain for a run with `teamcity run tree`:
+
+```Shell
+teamcity run tree 12345
+```
+
+<img src="run-tree.gif" alt="Viewing run snapshot dependency tree" border-effect="rounded"/>
+
+Limit the depth of the tree:
+
+```Shell
+teamcity run tree 12345 --depth 2
+```
+
+Output as JSON:
+
+```Shell
+teamcity run tree 12345 --json
+```
+
+### run tree flags
+
+<table>
+<tr>
+<td>
+
+Flag
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`-d`, `--depth`
+
+</td>
+<td>
+
+Limit tree depth (0 = unlimited)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--json`
+
+</td>
+<td>
+
+Output as JSON
+
+</td>
+</tr>
+</table>
+
 ## Watching a run
 
 Monitor a running build with live updates:
@@ -610,6 +783,12 @@ Use `--quiet` for minimal output that shows only state changes and the final res
 
 ```Shell
 teamcity run watch 12345 --quiet
+```
+
+Use `--json` to wait for the build to complete and output the final result as JSON (useful for scripting):
+
+```Shell
+teamcity run watch 12345 --json
 ```
 
 ### run watch flags
@@ -654,12 +833,24 @@ Stream build logs while watching
 <tr>
 <td>
 
-`-Q`, `--quiet`
+`--quiet`
 
 </td>
 <td>
 
 Minimal output — only state changes and result
+
+</td>
+</tr>
+<tr>
+<td>
+
+`--json`
+
+</td>
+<td>
+
+Wait for completion and output result as JSON
 
 </td>
 </tr>
@@ -705,6 +896,30 @@ Bypass the pager and output raw text:
 teamcity run log 12345 --raw
 ```
 
+Stream the log in real-time until the build finishes:
+
+```Shell
+teamcity run log 12345 --follow
+```
+
+Show the last 50 log messages:
+
+```Shell
+teamcity run log 12345 --tail 50
+```
+
+Output the log as JSON:
+
+```Shell
+teamcity run log 12345 --json
+```
+
+Open the build log in your browser:
+
+```Shell
+teamcity run log 12345 --web
+```
+
 > The log viewer uses a pager by default. Use `/` to search, `n`/`N` to navigate matches, `g`/`G` to jump to the top or bottom, and `q` to quit.
 >
 {style="tip"}
@@ -718,10 +933,10 @@ teamcity run cancel 12345
 teamcity run cancel 12345 --comment "Canceling for hotfix"
 ```
 
-Use `--force` to skip the confirmation prompt:
+Use `--yes` to skip the confirmation prompt:
 
 ```Shell
-teamcity run cancel 12345 --force
+teamcity run cancel 12345 --yes
 ```
 
 ## Restarting a run
@@ -731,6 +946,7 @@ Restart a run with the same configuration:
 ```Shell
 teamcity run restart 12345
 teamcity run restart 12345 --watch
+teamcity run restart 12345 --timeout 30m
 teamcity run restart 12345 --web
 ```
 
@@ -761,7 +977,6 @@ teamcity run download 12345 --timeout 30m
 ```
 
 The `--timeout` flag sets the maximum time for the entire download operation (default: `10m`). Use longer values for large artifact sets, for example `--timeout 1h`.
-
 
 ## Test results
 
