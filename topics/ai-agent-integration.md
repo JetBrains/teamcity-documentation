@@ -68,7 +68,13 @@ Sends `POST` requests using [TeamCity REST API](https://www.jetbrains.com/help/t
 
 To retrieve and use these tools, an AI agent needs to pass token-based authorization in TeamCity. You can issue access tokens on the [user profile page](configuring-your-user-profile.md#Managing+Access+Tokens). TeamCity allows you to choose whether you want the agent to have same permissions as the user who issued the token, or fine-grained per-project permissions.
 
-<img src="create-access-token.png" width="706" alt="Create an access token"/>
+> By default, a token has the same permissions as the user who issues it. This means your AI agent might be able to edit or delete configurations, pipelines, or entire projects. To avoid any incidents, you may want to change the scope to **Limit per project** and use the **Read-only** preset.
+> 
+> <img src="create-access-token.png" width="706" alt="Create an access token"/>
+>
+{style="note"}
+
+
 
 ### Examples
 
