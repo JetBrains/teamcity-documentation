@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11.3 to 2025.11.4
+{id="2025.11.3"}
+
+No potential breaking changes.
+
 ## Changes from 2025.11.2 to 2025.11.3
 {id="2025.11.3"}
 
