@@ -1,7 +1,7 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
-## Changes from 2025.11.3 to 2026.1
+## Changes from 2025.11.4 to 2026.1
 {id="2026.1"}
 
 * When you press **Rotate keys** in [AWS connections](configuring-connections.md#AmazonWebServices), previously used keys are removed after five minutes. Previously, the old keys were kept for 24 hours.
@@ -17,6 +17,12 @@
   * MySQL to 9.6.0
   * PSQL to 42.7.10
   * MSSQL to 13.4.0
+
+
+## Changes from 2025.11.3 to 2025.11.4
+{id="2025.11.4"}
+
+No potential breaking changes.
 
 
 ## Changes from 2025.11.2 to 2025.11.3
