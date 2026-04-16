@@ -1,6 +1,21 @@
 [//]: # (title: What's New in TeamCity Cloud 2026.1)
 
 
+## Build 1408, 2 June 2027
+
+If you use [Bitbucket Cloud connections](configuring-connections.md#Bitbucket+Cloud), this update has your name on it. Atlassian recently [shuffled a few endpoints](https://developer.atlassian.com/cloud/bitbucket/changelog/#CHANGE-3139), which stirred up authorization and repository retrieval on the TeamCity side. The good news: this build clears it all up, so you can get back to building and shipping great products.
+
+
+<deflist collapsible="true">
+    <def title="Performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99747"><b>TW-99747</b></a> — Potentially unnecessary Git ls-remote operation is performed for every checking for changes</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99549"><b>TW-99549</b></a> — Too much memory is consumed by overview controller if VCS problem is reported</li>
+        </ul>
+    </def>
+
+</deflist>
+
 ## Build 1337, 28 May 2027
 
 TeamCity 2026.1 adds a new way to work with your TeamCity instances: TeamCity CLI. Alongside the browser-based UI and the extensive [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), you can now use a command-line tool to interact with TeamCity directly from the terminal.
@@ -15,7 +30,7 @@ Install the CLI on any machine to check build statuses, start new builds, invest
 
 
 <deflist collapsible="true">
-    <def title="Fixes" default-state="collapsed">
+    <def title="Bug fixes" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -24,14 +39,14 @@ Install the CLI on any machine to check build statuses, start new builds, invest
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98876"><b>TW-98876</b></a> — Don't hide loader after end of the streaming request</li>
         </ul>
     </def>
-    <def title="Improvements" default-state="collapsed">
+    <def title="Minor improvements" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96789"><b>TW-96789</b></a> — Agent can refuse running a new command from the server because of incorrect command id assumptions</li>
         </ul>
     </def>
-    <def title="Performance" default-state="collapsed">
+    <def title="Performance issues" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -55,7 +70,7 @@ It's like a duck on a pond: under the water it paddles furiously, but on the top
 
 
 <deflist collapsible="true">
-    <def title="Fixes" default-state="collapsed">
+    <def title="Bug fixes" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -64,7 +79,7 @@ It's like a duck on a pond: under the water it paddles furiously, but on the top
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98876"><b>TW-98876</b></a> — Don't hide loader after end of the streaming request</li>
         </ul>
     </def>
-    <def title="Performance" default-state="collapsed">
+    <def title="Performance issues" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -80,7 +95,7 @@ This update is not a huge one, but let that not convince you it’s unimportant.
 
 
 <deflist collapsible="true">
-    <def title="Fixes" default-state="collapsed">
+    <def title="Bug fixes" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -118,7 +133,7 @@ Learn more: [Creating projects](creating-and-editing-projects.md), [Creating bui
 
 
 <deflist collapsible="true">
-    <def title="Fixes" default-state="collapsed">
+    <def title="Bug fixes" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
@@ -127,7 +142,7 @@ Learn more: [Creating projects](creating-and-editing-projects.md), [Creating bui
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98876"><b>TW-98876</b></a> — Don't hide loader after end of the streaming request</li>
         </ul>
     </def>
-    <def title="Performance" default-state="collapsed">
+    <def title="Performance issues" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99956"><b>TW-99956</b></a> — Unable to log into TeamCity and list repositories using BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
