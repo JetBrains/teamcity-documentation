@@ -15,7 +15,7 @@ Using 64-bit JDK (not JRE) is recommended. JDK is required for some build runner
 
 ## Path to Java on Agent Machine
 
-The `.exe` TeamCity agent distribution comes bundled with 64-bit Amazon Corretto 17. For the `.zip` agent installation, you need to install the appropriate Java version. Make it available via `PATH` or in one of the following places:
+The `.exe` TeamCity agent distribution comes bundled with 64-bit Amazon Corretto 21. For the `.zip` agent installation, you need to install the appropriate Java version. Make it available via `PATH` or in one of the following places:
 * the `<Agent home>/jre` directory
 * the directory pointed to by the `TEAMCITY_JRE`, `JAVA_HOME`, or `JRE_HOME` environment variables (check that you only have one of the variables defined)
 * if you plan to run the agent as a Windows service, make sure to set the `wrapper.java.command` property in the `<agent home>\launcher\conf\wrapper.conf` file to a valid path to the Java executable

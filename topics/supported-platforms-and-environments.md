@@ -16,11 +16,9 @@ TeamCity Server is a web application that runs within a capable J2EE servlet con
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Server" help-id="Supported+Java+Versions+for+TeamCity+Server"}
 
-Supported Java versions: __OpenJDK and Oracle Java 11 (8u16 or later) to 21 (32 or 64 bit)__. Using 64-bit Java is recommended.
+Supported Java versions: __Java 21 (32 or 64 bit)__. Using 64-bit Java is recommended.
 
-The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21__.
-
-For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+The TeamCity server Windows installer and server Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21__. For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
 <include from="common-templates.md" element-id="java-deprecation-warning"/>
 
@@ -67,11 +65,9 @@ TeamCity Agent is a standalone Java application. It requires a Java SE JRE insta
 #### Supported Java Versions
 {id="Supported+Java+Versions+for+TeamCity+Agent" help-id="Supported+Java+Versions+for+TeamCity+Agent"}
 
-Supported Java versions: __OpenJDK and Oracle Java 11 (8u16 or later) to 21 (32 or 64 bit)__. Using 64-bit Java is recommended.
+Supported Java versions: __OpenJDK and Oracle Java 21 to 25 (32 or 64 bit)__. Using 64-bit Java is recommended.
 
-The TeamCity agent Windows installer and agent Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 17__.
-
-For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
+The TeamCity agent Windows installer and agent Docker images come __bundled with [Amazon Corretto](https://aws.amazon.com/corretto/) 64-bit Java 21__. For Apple ARM systems (for example, Apple M1 or M2), consider using a different version of Java, like [Azul OpenJDK](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 
 > Note that Java versions specified in this section are requirements to run the agent itself. Builds can utilize [other versions](predefined-build-parameters.md#Detecting+Java+on+Agent) installed on agent machines (for example, JDK 19).
 > 
