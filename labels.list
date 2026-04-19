@@ -20,7 +20,7 @@
     </primary-label>
 
     <primary-label id="java-update" color="red" name="Update server and agent Java" short-name="J21">
-        Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
+        Starting with version 2026.1, TeamCity servers and agents are not able to start under Java versions older than 21. TeamCity build agents support Java 21 and newer versions, while TeamCity server supports only Java 21.
     </primary-label>
 
 

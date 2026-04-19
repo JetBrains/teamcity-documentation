@@ -100,7 +100,7 @@ Specify the hosts that should be available directly, without routing through the
 
 <snippet id="java-deprecation-warning">
 <warning>
-Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21.
+Starting with version 2026.1, TeamCity servers and agents will not be able to start under Java versions older than 21. TeamCity build agents support Java 21 and newer, while the server supports only Java 21.
 
 See <a href="java-21.md">this documentation article</a> for upgrade instructions.
 {instance="tc"}
