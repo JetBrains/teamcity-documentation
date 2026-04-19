@@ -109,4 +109,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 *  The [SAML Authentication](configuring-authentication-settings.md#HTTP+SAML+2.0) plugin is now bundled with TeamCity, so you no longer need to install it separately to enable authentication through external SSO providers.
 
+* We have [improved](https://youtrack.jetbrains.com/issue/TW-98507/) the Gradle version selection logic in our Gradle plugin. This change only adds a few info-level entries to the build logs and introduces no visible behavior changes, but it should improve the plugin’s overall stability.
+
 </snippet>
