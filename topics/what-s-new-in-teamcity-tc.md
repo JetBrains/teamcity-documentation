@@ -51,6 +51,10 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 * When editing pipeline [**Repositories**](pipeline-settings.md#Repository) settings, you can now add repositories from existing VCS roots owned by this parent project. Previously, the option to reuse a root was only available when you create a new pipeline.
 
+* All pipelines that connect to Git repositories using HTTP credentials support repository options that [allow these pipelines to track pull requests and publish run statuses](pipeline-settings.md#Repository). Previously, these options were available only to pipelines created via a configured TeamCity OAuth connection.
+
+    <img src="pipelines-csp-and-pr.png" width="706" alt="CSP and PR in pipelines"/>
+
 * Pipeline parameters were redesigned to better support pipeline dependencies and provide a more consistent, intuitive model.
 
     * Jobs no longer define separate input and output parameters. Instead, all job parameters are automatically available to downstream jobs in the same pipeline.
