@@ -61,6 +61,9 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
     * Pipeline parameters can now be explicitly marked as input or output, giving you finer control over which values are exposed to downstream configurations and pipelines.
     * Parameters from parent projects no longer need to be imported as they are now automatically available to child pipelines and jobs.
 
+* If a parent project enables its [versioned settings](storing-project-settings-in-version-control.md), pipeline YAML is automatically converted to DSL. Currently, the DSL support in pipelines is limited: changes made via TeamCity UI are displayed on a new **Kotlin DSL** tab, but are not committed automatically and prevent you from running the pipeline. Commit these changes manually to a remote `.kts` file to restore the pipeline's ability to run.
+
+    <img src="pipelines-dsl.png" width="706" alt="DSL in pipelines"/>
 
 
 ## Dynamic Build Step Credentials

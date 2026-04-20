@@ -40,6 +40,7 @@ To arrange pipeline jobs in the required order, select a job and check its upstr
 
 See [](pipeline-settings.md) and [](job-settings.md) for more information on basic operations.
 
+<!--
 
 ## Job Outputs
 
@@ -92,7 +93,9 @@ Now any downstream job can use the `DateOutput` value via the `job.<source_job_I
 ```
 {ignore-vars="true"}
 
-### Shared Files
+-->
+
+## Shared Files
 
 Jobs can share files produced during a run. These files can be shared with either downstream jobs or TeamCity users (or both).
 
@@ -133,7 +136,7 @@ Jobs can share files produced during a run. These files can be shared with eithe
 
 * Files shared with users (artifacts). These are identical to [build artifacts](build-artifact.md) produced by classic build configurations. TeamCity shows artifacts in the **Artifacts** tab of a run results page.
 
-To choose who a job should share a file with, tick related checkboxes under the job's **Outputs** section entry.
+To choose who a job should share a file with, tick related checkboxes under the job's **Output files** section entry.
 
 <img src="dk-pipelines-sharedFiles.png" width="706" alt="Shared files"/>
 
@@ -163,7 +166,7 @@ Pipelines use webhooks by default as a faster and more efficient alternative to 
 
 ## Publish Run Statuses to VCS
 
-[](commit-status-publisher.md) is one of the most popular TeamCity build features that communicates build statuses back to the VCS side. If you create a pipeline via a connection, this integration is available automatically.
+[](commit-status-publisher.md) is one of the most popular TeamCity build features that communicates build statuses back to the VCS side. If you create a pipeline using HTTP authentication, this integration is available automatically.
 
 <img src="dk-pipelines-csp.png" width="706" alt="Create Pipeline with CSP"/>
 
@@ -226,7 +229,16 @@ For example, the [](commit-status-publisher.md) is [enabled automatically](#Publ
 
 <img src="dk-pipelines-add-integration.png" width="706" alt="Add pipeline integrations"/>
 
-While traditional build features are not supported in pipelines, we are committed to bringing the most commonly used capabilities into the pipeline experience through more streamlined alternatives.
+Some of the classic build features are also available for jobs, with little or no difference from build configurations. You can add them in **Job settings | Build features**.
+
+<img src="pipelines-build-features.png" width="706" alt="Build features in pipelines"/>
+
+* [](build-files-cleaner-swabra.md)
+* [](free-disk-space.md)
+* [](build-cache.md)
+* [](xml-report-processing.md)
+
+Some build features, such as [](build-approval.md), are not yet available in pipelines, either as reworked functionality or as standalone build features. We are reviewing your feedback to prioritize next steps and deliver the most requested features in a clear and consistent way.
 
 </def>
 
