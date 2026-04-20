@@ -8,13 +8,12 @@ This allows you to have a complete project DSL without any pipeline "gaps".
 
 ## DSL compatibility mode
 
-Enabling versioned settings for a project that includes a pipeline imposes the following restrictions:
+Enabling versioned settings for a project that includes a pipeline imposes a few restrictions, depending on where your pipeline stores its settings.
 
-* If the [main pipeline repostirory](pipeline-settings.md#Repository) stored its YAML on a server, it switches to the **in VCS repository** mode.
-* Edits made in the **Visual** or **YAML** tab are automatically converted to DSL, but cannot be committed automatically. You need to copy the generated DSL and manually commit it to the project `.kts` file.
-* In addition, editing pipelines via TeamCity UI locks out the **Save and Run** button. A pipeline cannot run for as long as its current configuration differs from the remotely stored version. To make the pipeline fully funtional again, commit the changes manually as described above and hit **Cancel**: when TeamCity loads versioned settings from a VCS, a pipeline will apply the latest changes and the **Run** button will be available.
+* If the [main pipeline repository](pipeline-settings.md#Repository) stored its YAML on a server when you enabled project versioned settings, it switches to the **in VCS repository** mode and becomes partly editable via TeamCity UI. Edits made in the **Visual** or **YAML** tab are automatically converted to DSL, but cannot be saved or committed automatically. Copy the generated DSL and manually commit it to the project `.kts` file. Until you do so, a pipeline cannot run because its current configuration mismatches the one stored in a remote file.
 
-This behavior corresponds to the similar behavior of classic build configurations when the [**Allow editing in the UI**](storing-project-settings-in-version-control.md) checkbox is off. 
+* If the main repository already stores its configuration file as a remote YAML file, the pipeline remains fully editable via TeamCity UI. However, the project `.kts` file will not include this pipeline's Kotlin DSL, so the project configuration file will remain incomplete.
+
 
 ## Pipeline DSL entities
 
