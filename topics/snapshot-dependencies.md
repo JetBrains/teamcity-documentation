@@ -76,6 +76,10 @@ If this option is enabled, TeamCity will not run a new dependency build, if anot
 
 In this case, when a dependent (downstream) build is triggered, the dependency (upstream) build is also put into the queue. Then, when the changes for the build chain are collected, this dependency build is removed from the queue and the dependency is set to a suitable finished build.
 
+> For upstream pipelines, you might also want to disable the **Reuse Job Results** toggle in [job settings](job-settings.md#Optimizations). Otherwise, jobs can reuse their previous results even if the dependency setting calls for new runs.
+> 
+{style="tip"}
+
 </snippet>
 
 <!--[//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e62.txt")-->    
