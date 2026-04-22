@@ -210,6 +210,7 @@
 		<toc-element topic="pipeline-settings.md"/>
 		<toc-element topic="job-settings.md"/>
 		<toc-element topic="pipelines-yaml-syntax.md"/>
+		<toc-element topic="pipelines-dsl.md"/>
 		<toc-element topic="pipelines-roadmap.md"/>
 	</toc-element>
 	<toc-element topic="configuring-build-steps.md" accepts-web-file-names="agentless-build-step.html,build-runner.html" toc-title="Build Steps">
