@@ -1,9 +1,25 @@
 [//]: # (title: Build Chain)
 [//]: # (help-id: Build Chain)
 
-A _build chain_ is a sequence of builds interconnected by [snapshot dependencies](snapshot-dependencies.md). Sometimes the build chain is called a "pipeline". Parts of a build chain linked with snapshot dependencies with enabled revisions synchronization use the same snapshot of the sources.
+A _build chain_ is a sequence of interconnected [build configurations](creating-and-editing-build-configurations.md) and [](create-and-edit-pipelines.md).
 
->See our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs).
+<img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
+
+A chain can be executed either fully or [partially](#Partial+Chain+Execution). In either case, any triggered configuration or pipeline causes its upstream dependency objects to run first. For example, the diagram below illustrates a sample build chain:
+
+```Text
++------------+     +----------------+     +--------+
+| Build core |---->| Build plugin A |---->|        |
++------------+     +----------------+     |        |
+                                          | Deploy |
+                   +----------------+     |        |
+                   | Build plugin B |---->|        |
+                   +----------------+     +--------+
+```
+
+"Build plugin A" depends on "Build core" so it cannot run alone (although it can automatically reuse previous "Build core" builds if there were no new changes). "Build plugin B" in turn has no dependencies and can run solo.
+
+For pipeline-specific information, see the [](pipeline-settings.md#Pipeline+Dependencies) section.
 
 ## Common Use Case
 
@@ -16,12 +32,34 @@ Let's see how the build chain mechanism works in details. On triggering a depend
 
 ## Configuring Build Chains
 
+In TeamCity, chains are configured by adding dependencies to **downstream** objects. In other words, you add a dependency to "Build" in "Deploy" settings to get the "Build &rarr; Deploy" chain. The exact method varies depending on the type of your downstream object (a build configuration or a pipeline).
+
+<deflist type="full">
+
+<def title="Build configurations">
+
 To specify dependencies in your build configuration:
 
 1. <include from="common-templates.md" element-id="open-configuration-settings-tab"><var name="configuration-tab-name" value="Dependencies"/></include>
 2. Click the __Add new snapshot dependency__ button.
 
 See also [Build Dependencies Setup](build-dependencies-setup.md) for details and an example.
+
+</def>
+
+<def title="Pipelines">
+
+To specify dependencies in a pipeline:
+
+1. Open pipeline settings in the side panel.
+2. Expand the [](pipeline-settings.md#Pipeline+Dependencies) section and add a new dependency.
+
+
+</def>
+
+</deflist>
+
+
 
 ## Stopping/Removing From Queue Builds from Build Chain
 
@@ -43,11 +81,10 @@ If there are no running or queued builds for the build chain (i.e. all other par
 
 ## Disabling Revisions Synchronization Between Chain Parts
 
-You can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build.   
-This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization).
+You can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build. This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization).
 
-This is useful when you need to run a dependent build without synchronizing its code revision with its dependencies (preceding builds in a chain).   
-For example, you can promote an older build to a [deployment build configuration](deployment-build-configuration.md), and this build will be run using the latest deployment scripts.  
+This is useful when you need to run a dependent build without synchronizing its code revision with its dependencies (preceding builds in a chain). For example, you can promote an older build to a [deployment build configuration](deployment-build-configuration.md), and this build will be run using the latest deployment scripts.
+
 In load/acceptance testing, when you store tests in a version control system and often change them to test your system, you do not need to rebuild your application entirely; instead, you can pick up the chain directly from the testing phase.
 
 

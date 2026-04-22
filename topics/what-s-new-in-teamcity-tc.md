@@ -32,6 +32,10 @@ Version 2026.1 also makes it easier to connect AI tools such as chatbots and age
 
 ## Pipeline Enhancements
 
+* Version 2026.1 introduces a major enhancement for fully integrating pipelines into your CI/CD workflows: you can now [include them in build chains](pipeline-settings.md#Pipeline+Dependencies). This lets you create fine-grained setups with pipeline-to-pipeline, pipeline-to-configuration, and configuration-to-pipeline dependencies.
+
+    <img src="dk-pipeline-dependency.png" width="706" alt="Pipeline dependency"/>
+
 * We redesigned the build details side panel to include all familiar [Build Results](build-results-page.md) tabs (such as Overview, Build Log, Parameters, and more), giving you a complete view of each build. It now also includes a pipeline/job switch, so you can quickly filter these tabs by job, making pipelines easier to inspect, debug, and troubleshoot.
 
     <img src="pipelines-job-switch.png" width="706" alt="Pipeline-Job switch in the side panel"/>

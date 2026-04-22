@@ -37,4 +37,5 @@
     <secondary-label id="secondary-roadmap-planned-priority" name="High priority" color="purple">We’re prioritizing this idea, but your input can help shape our plans. Feel free to reach out via Slack or Zendesk/YouTrack to share your feedback.</secondary-label>
 
     <secondary-label id="secondary-roadmap-implemented-202511" name="2025.11" color="blue">This feature was implemented in TeamCity 2025.11.</secondary-label>
+    <secondary-label id="secondary-roadmap-implemented-20261" name="2026.1" color="marine">This feature was implemented in TeamCity 2026.1.</secondary-label>
 </labels>

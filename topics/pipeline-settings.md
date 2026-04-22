@@ -111,7 +111,99 @@ secrets:
 
 ## Pipeline Dependencies
 
-TBD
+This section allows you to link pipelines and build configurations in a single [build chain](build-chain.md).
+
+<img src="dk-pipeline-dependency.png" width="706" alt="Pipeline dependency"/>
+
+When you add a dependency to object "A" in pipeline "B" settings, you create the "A &rarr; B" chain where:
+
+* object A can run solo;
+* pipeline B automatically triggers object A when launched.
+
+"A" can be both a classic build configuration or another pipeline.
+
+> If you need to set up the "upstream pipeline &rarr; downstream build configuration" relation, add a [snapshot dependency](snapshot-dependencies.md) in this configuration's settings.
+> 
+{style="tip"}
+
+Pipeline dependencies have the following settings:
+
+<img src="dk-pipeline-dependency-settings.png" width="706" alt="Pipeline dependency settings"/>
+
+<deflist type="full">
+
+<def title="Depend on">
+
+Choose an upstream configuration or pipeline that should finish before your currently edited pipeline can start.
+
+</def>
+
+
+<def title="Enforce revisions synchronization">
+
+<include from="snapshot-dependencies.md" element-id="enforce-rev-sync-description"/>
+
+</def>
+
+
+<def title="Do not run new build if there is a suitable one">
+
+<include from="snapshot-dependencies.md" element-id="do-not-run-new-build-if-there-is-a-suitable-one-description"/>
+
+</def>
+
+
+<def title="Only use successful builds from suitable ones">
+
+<include from="snapshot-dependencies.md" element-id="reuse-only-successful"/>
+
+</def>
+
+
+<def title="On failed dependency, On failed to start/canceled dependency">
+
+<include from="snapshot-dependencies.md" element-id="on-failed-dependency-description"/>
+
+</def>
+
+
+</deflist>
+
+The snippets below illustrate how to set up dependencies in code.
+
+<tabs>
+
+<tab title="YAML">
+
+<code-block lang="yaml">
+jobs:
+  ...
+dependencies:
+- ReverseAndOverrideDep_JobParams_UpstreamPipeline:
+  reuse: none
+</code-block>
+
+</tab>
+
+<tab title="Kotlin DSL">
+
+<code-block lang="Kotlin">
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.pipelines.*
+
+object DownsteamPipeline : Pipeline({
+    name = "Downsteam pipeline"
+        dependencies {
+            snapshot(UpstreamPipeline) {
+                reuseBuilds = ReuseBuilds.NO
+            }
+        }
+})
+</code-block>
+</tab>
+
+</tabs>
+
 
 ## Auto-Run Pipeline
 

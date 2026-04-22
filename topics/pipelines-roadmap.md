@@ -14,75 +14,91 @@ We expect this approach to pay off as the initiative evolves, but it also means 
 {style="note"}
 
 
-## Features In Development
+## Features in development
 
 This section shares features that are already in active development. We expect to deliver them in the nearest release cycles.
 
-### Integration with build chains
-<secondary-label ref="secondary-roadmap-planned-2026q1"/>
-
-[Build chains](build-chain.md) allow you to link [build configurations](creating-and-editing-build-configurations.md) in a single workflow.
-
-<img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
-
-We expect to integrate build chains in the pipeline experience in two ways:
-
-* Provide the ability to link pipelines with build configurations. This will allow you to keep using existing building routines in tandem with lightweight pipelines.
-* Support linking multiple pipelines in a single build chain.
-
-### Kotlin DSL Support
-<secondary-label ref="secondary-roadmap-planned-2026q1"/>
-
-Both pipelines and build configurations support configuration-as-code, but they use different formats: pipelines use [YAML](pipelines-yaml-syntax.md), while build configurations rely on [](kotlin-dsl.md).
-
-Each approach has its strengths. YAML is widely used and familiar, while Kotlin DSL offers the flexibility of a full programming language, including [extending standard types with custom functionality](https://blog.jetbrains.com/teamcity/2019/04/configuration-as-code-part-4-extending-the-teamcity-dsl/), [creating objects at runtime](https://blog.jetbrains.com/teamcity/2019/04/configuration-as-code-part-3-creating-build-configurations-dynamically/).
-
-As we work toward making pipelines a complete solution for any CI/CD task, our goal is to give you the best of both worlds. Bringing Kotlin DSL to pipelines will make it easier to use versioned settings and choose the approach that best fits your workflow.
-
-### Custom Runs
-<secondary-label ref="secondary-roadmap-planned-2026q1"/>
-
-[Running custom builds](running-custom-build.md) is a great way to trigger a tailored build sequence without changing configuration settings. You can schedule a build, pick a specific agent, override parameters, skip dependencies, and more.
-
-<img src="dk-customRun-general.png" alt="Run custom build" width="706"/>
-
-We expect to support a similar functionality in pipelines.
 
 
-### Job-level Build Features
-<secondary-label ref="secondary-roadmap-planned-2026q1"/>
-
-[Build features](adding-build-features.md) enhance build configurations with advanced capabilities: from simple cleanup with [Swabra](build-files-cleaner-swabra.md) to [Matrix builds](matrix-build.md) that spawn dozens of virtual builds cycling through the predefined set of parameters. Our plan is to bring the most widely used features to pipelines.
-
-As with other configuration-only features, we aim to support what matters without cluttering pipelines with rarely used options. Your feedback is essential here: reach out via [Slack](https://jb.gg/TeamCitySlack) or our [issue tracker](troubleshooting.md) to help us prioritize the features that matter most.
-
-
-### More Build Steps
+### More build steps
 <secondary-label ref="secondary-roadmap-planned-2026q1"/>
 
 TeamCity 2025.11 introduces [.NET](net.md) build steps: one of many step types previously available only in classic build configurations.
 
 <img src="dk-dotnet-pipelines.png" width="706" thumbnail="true" alt=".NET steps in pipelines"/>
 
-More steps are on the way, but as with [build features](#Job-level+Build+Features), we want to focus on what users truly need. Our research shows that while many appreciate specialized steps, the universal [](command-line.md) step remains the most commonly used. To keep pipelines simple and approachable, we aim for quality over quantity and would greatly appreciate your feedback.
+More steps are on the way, but as with [build features](#Job-level+build+features), we want to focus on what users truly need. Our research shows that while many appreciate specialized steps, the universal [](command-line.md) step remains the most commonly used. To keep pipelines simple and approachable, we aim for quality over quantity and would greatly appreciate your feedback.
 
 Let us know which steps you’d like to see next — [](python.md), [](powershell.md), [](xcode-project.md), or anything else — so we can prioritize them for future releases.
 
 
-## Implemented Features
+## Implemented features
 
 This section lists planned features that were implemented in previous versions.
 
-### .NET Build Steps
+### Integration with build chains
+<secondary-label ref="secondary-roadmap-implemented-20261"/>
+
+[Build chains](build-chain.md) can now consist of both build configurations and pipelines.
+
+<img src="dk-pipeline-dependency.png" width="706" alt="Pipeline dependency"/>
+
+When configuring pipeline dependencies, you have the same familiar options as for build configuration [snapshot dependencies](snapshot-dependencies.md): revision synchronization mode, execution policy for failed dependencies, and more.
+
+Learn more: [](pipeline-settings.md#Pipeline+Dependencies).
+
+
+### Kotlin DSL support
+<secondary-label ref="secondary-roadmap-implemented-20261"/>
+
+If a parent project [stores its settings in Kotlin DSL](kotlin-dsl.md), you now have the option to continue storing pipeline settings in a remote YAML, or include its settings in Kotlin format to the project's `.kts` file.
+
+<img src="pipelines-dsl.png" width="706" alt="DSL in pipelines"/>
+
+This change benefits teams that prefer Kotlin DSL for their configuration-as-code workflows, and do not wish to have "gaps" in their configuration files.
+
+Learn more: [](pipelines-dsl.md).
+
+
+### Custom runs
+<secondary-label ref="secondary-roadmap-implemented-20261"/>
+
+[Running custom builds](running-custom-build.md) is a great way to trigger a tailored build sequence without changing configuration settings. You can schedule a build, pick a specific agent, override parameters, skip dependencies, and more. Starting from version 2026.1, this functionality is available for both classic build configurations and pipelines.
+
+<img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
+
+Learn more: [](running-custom-build.md).
+
+
+### Job-level build features
+<secondary-label ref="secondary-roadmap-implemented-20261"/>
+
+Version 2026.1 adds support for [build features](adding-build-features.md) that were previously available only in build configurations. In pipelines, you can now add these features to jobs just as you add build steps.
+
+<img src="pipelines-build-features.png" width="706" alt="Build features in pipelines"/>
+
+At the moment, pipelines support four such features, not including natively integrated ones like the [commit status publisher](create-and-edit-pipelines.md#Publish+Run+Statuses+to+VCS):
+
+* [](build-files-cleaner-swabra.md)
+* [](free-disk-space.md)
+* [](build-cache.md)
+* [](xml-report-processing.md)
+
+We expect to support more features based on your feedback.
+
+Learn more: [](job-settings.md#Build+Features).
+
+
+### .NET build steps
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
 
 In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
 
-See the [](#More+Build+Steps) section for more information on other steps currently available only in build configurations.
+See the [](#More+build+steps) section for more information on other steps currently available only in build configurations.
 
 Learn more: [](net.md).
 
-### Project Registry Connections Support
+### Project registry connections support
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
 
 Starting with version 2025.11, [Docker](configuring-connections.md#Docker+Registry) and [NPM](configuring-connections.md#npm-registry-settings) connections owned by projects are available as [integrations](pipeline-settings.md#Integrations) in pipeline and job settings.
@@ -92,7 +108,7 @@ Starting with version 2025.11, [Docker](configuring-connections.md#Docker+Regist
 Learn more: [](pipeline-settings.md).
 
 
-### Advanced Build and Test Actions
+### Advanced build and test actions
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
 
 Starting with version 2025.11, pipelines support some of advanced features that was previously available only in build configurations. Users can now process build and test failures: [assign investigations](investigating-and-muting-build-failures.md#Investigations), [mute irrelevant failures](investigating-and-muting-build-failures.md#Mutes), and manually label as fixed issues that are expected to be resolved in future builds.
@@ -106,7 +122,7 @@ In addition, the run actions menu now includes options to [pin, tag, and comment
 Learn more: [](investigating-and-muting-build-failures.md), [](build-actions.md)
 
 
-### Parameter Import
+### Parameter import
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
 
 Previously, a parameter owned by a project could not be used inside pipelines. Referencing such parameters would result in an implicit agent requirement: only agents that provide a value for this parameter were eligible to run this pipeline.
@@ -121,29 +137,29 @@ Learn more: [Pipeline parameters](pipeline-settings.md#Parameters), [](configuri
 
 
 
-## Planned Features
+## Planned features
 
 Below are the features we’re considering for future pipeline releases. Join our [Slack Workspace](https://jb.gg/TeamCitySlack) or contact us through our [usual support channels](troubleshooting.md) to help us identify the most important items and refine our priorities.
 
-### Job Failure Conditions
+### Job failure conditions
 <secondary-label ref="secondary-roadmap-planned-priority"/>
 
 We plan to introduce failure conditions similar to [those in build configurations](build-failure-conditions.md). This will give you finer control over when a job is marked as failed and allow downstream jobs to run even if earlier ones fail.
 
-### Execution Timeouts
+### Execution timeouts
 <secondary-label ref="secondary-roadmap-planned-priority"/>
 
 We’re exploring timeout settings that let you define maximum run durations. Jobs or pipelines that exceed the threshold would be automatically canceled and marked as failed.
 
-### Recipes Support
+### Recipes support
 
 [Recipes](working-with-meta-runner.md) complement custom build steps by letting you package commonly used logic into reusable assets and download community-created steps from JetBrains Marketplace. Adding recipe support would greatly expand what pipelines can do.
 
-### Build Step Conditions
+### Build step conditions
 
 Classic build configurations support [step execution conditions](build-step-execution-conditions.md) that specify criteria for when a step should run. We plan to add a similar feature for steps inside pipeline jobs.
 
-### Typed Parameters
+### Typed parameters
 
 Pipelines currently support only single-value text parameters (including masked [secret](pipeline-settings.md#Secrets) parameters for sensitive values). We aim to implement more parameter types [available in classic build configurations](typed-parameters.md), such as checkboxes, multi-selects, and values pulled from external sources.
 
@@ -151,6 +167,6 @@ Pipelines currently support only single-value text parameters (including masked 
 
 [Templates](build-configuration-template.md) help configure multiple build configurations that share similar settings. We plan to bring an equivalent concept to pipelines, enabling you to define reusable YAML templates.
 
-### VCS YAML Recognition
+### VCS YAML recognition
 
 You can already save pipeline settings to a repository. Next, we want TeamCity to do the opposite: detect pipeline YAML files in supported VCS hosts (GitHub, GitLab, Bitbucket, and so on) and automatically create pipelines from them.

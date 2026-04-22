@@ -48,36 +48,35 @@ Enforce revisions synchronization
 
 <td>
 
-For all builds in a chain, which are linked by snapshot dependencies with this option __enabled__ (by default), TeamCity will use the same sources' snapshot (for example, the same revision of the same VCS root). This is a recommended setting for configurations that need to use the same state of the sources to build successfully.
+<snippet id="enforce-rev-sync-description">
 
-If you __disable__ this option for a snapshot dependency, then, when the [dependency build](#dependency-build) is promoted to the current build configuration, the build of the current build configuration will use the most recent revision of the sources instead of the revision corresponding to the promoted dependency. This is useful when the builds do not have strict sources' dependencies (for example, as with package and deploy steps).
+Specifies whether TeamCity should ensure both objects linked by a dependency use the same revision of code sources.
 
-_In our example, if the snapshot dependency of build B has this option disabled, the behavior is following: Build A launches on revision 1.2 and, after finishing, is promoted to build B. TeamCity will find the latest revision for build B (let's say 1.3) at the moment of starting B._  
-_Otherwise, if this option is enabled, TeamCity will start build B on the same 1.2 revision as A_.
+* **Revision synchronization enabled**: recommended for setups that need to use the same state of the sources. For example, in the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B" when finished. Build "B" will run on the same 1.2 revision even if its latest revision is 1.4.
 
-Note that the sources' snapshot rule is only applied to the [parts of the builds chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)) linked via the snapshot dependencies with the option enabled.
+* **Revision synchronization disabled**: use this setup when builds do not have strict sources' dependencies (for example, as with package and deploy steps). In this case, a downstream build will use the latest available revision. For example, in the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B" when finished. Build "B" will run on its latest 1.4 revision that does not match "A".
+
+See the [](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization) section for more information on effects this setting has on a build chain.
+
+</snippet>
 
 </td></tr><tr>
 
-<td>
+<td id="do-not-run-new-build-if-there-is-a-suitable-one">
 
-<anchor name="do-not-run-new-build-if-there-is-a-suitable-one"/>
- 
 Do not run new build if there is a suitable one
-
 
 </td>
 
 <td>
 
-If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See also [Suitable Builds](#Suitable+Builds).  
-In this case, when a dependent build is triggered, the dependency build will also be put into the queue. Then, when the changes for the build chain are collected, this dependency build will be removed from the queue and the dependency will be set to a suitable finished build.
+<snippet id="do-not-run-new-build-if-there-is-a-suitable-one-description">
 
-<note>
+If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See [Suitable builds](snapshot-dependencies.md#Suitable+Builds) for more information on criteria TeamCity uses to determine a reusable build.
 
-If there is more than one snapshot dependency on some build configuration, all of them must have the "_Do not run new build if there is a suitable one_" option enabled if you want to ensure that the build reusage works properly for all of them.
+In this case, when a dependent (downstream) build is triggered, the dependency (upstream) build is also put into the queue. Then, when the changes for the build chain are collected, this dependency build is removed from the queue and the dependency is set to a suitable finished build.
 
-</note>
+</snippet>
 
 <!--[//]: # (Internal note. Do not delete. "Snapshot Dependenciesd292e62.txt")-->    
 
@@ -92,7 +91,11 @@ Only use successful builds from suitable ones
 
 <td>
 
-A new triggered build will only use successfully finished [suitable builds](#Suitable+Builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
+<snippet id="reuse-only-successful">
+
+A new triggered build will only use successfully finished [suitable builds](snapshot-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
+
+</snippet>
 
 </td></tr><tr>
 
@@ -124,13 +127,16 @@ On failed dependency/ On failed to start/canceled dependency
 
 <td>
 
+<snippet id="on-failed-dependency-description">
 
-If a dependency fails, you can manage the status of the dependent build by selecting one of the following options:
+These settings let you control whether a dependent (downstream) build should run if its dependency (upstream) build fails, and, if it should, whether the same build problem should appear in its results.
+
 * __Run build, but add problem__: the dependent build will be run and the problem will be added to it, changing its status to failed (if the problem was not muted earlier).
 * __Run build, but do not add problem__: the dependent build will be run and no problem will be added.
 * __Mark build as failed to start__: the dependent build will not run and will be marked as "_Failed to start_".
 * __Cancel build__: the dependent build will not run and will be marked as "_Canceled_".
 
+</snippet>
 
 </td></tr></table>
 
