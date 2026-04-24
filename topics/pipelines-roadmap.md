@@ -18,19 +18,21 @@ We expect this approach to pay off as the initiative evolves, but it also means 
 
 This section shares features that are already in active development. We expect to deliver them in the nearest release cycles.
 
-
-
-### More build steps
+### More build steps and build features
 <secondary-label ref="secondary-roadmap-planned-2026q1"/>
 
-TeamCity 2025.11 introduces [.NET](net.md) build steps: one of many step types previously available only in classic build configurations.
+With support for [.NET](net.md) build steps in version 2025.11 and [four job-level build features](job-settings.md#Build+Features) in 2026.1, pipelines have closed one of the larger functionality gaps with classic build configurations.
 
-<img src="dk-dotnet-pipelines.png" width="706" thumbnail="true" alt=".NET steps in pipelines"/>
+<img src="pipelines-build-features.png" width="706" alt="Build features in pipelines"/>
 
-More steps are on the way, but as with [build features](#Job-level+build+features), we want to focus on what users truly need. Our research shows that while many appreciate specialized steps, the universal [](command-line.md) step remains the most commonly used. To keep pipelines simple and approachable, we aim for quality over quantity and would greatly appreciate your feedback.
+We plan to add more steps and features based on your feedback. If you need the [Python step](python.md), the [Build approval feature](build-approval.md), or anything else, [let us know](slack-code-of-conduct.md) so we can prioritize accordingly.
 
-Let us know which steps you’d like to see next — [](python.md), [](powershell.md), [](xcode-project.md), or anything else — so we can prioritize them for future releases.
 
+### Checkout rules for partial checkout
+
+Sometimes a job does not need the entire repository to do its job (pun very much intended). This is especially true for large monorepositories, where checkout can add a serious delay to your workflows.
+
+To help with this, we plan to support [checkout rules](vcs-checkout-rules.md), which are already available in build configurations. The value this feature brings to the table is especially meaningful in TeamCity, which is smart enough to ignore commits to files excluded from checkout. This means more [build reuses](job-settings.md#Optimizations) and less manual tinkering to keep your runs fast.
 
 ## Implemented features
 
@@ -94,7 +96,7 @@ Learn more: [](job-settings.md#Build+Features).
 
 In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
 
-See the [](#More+build+steps) section for more information on other steps currently available only in build configurations.
+See the [](#More+build+steps+and+build+features) section for more information on other steps currently available only in build configurations.
 
 Learn more: [](net.md).
 
@@ -124,6 +126,8 @@ Learn more: [](investigating-and-muting-build-failures.md), [](build-actions.md)
 
 ### Parameter import
 <secondary-label ref="secondary-roadmap-implemented-202511"/>
+
+> Starting with version 2026.1, you no longer need to manually import project-level parameters as they are instantly available in pipelines and their jobs.
 
 Previously, a parameter owned by a project could not be used inside pipelines. Referencing such parameters would result in an implicit agent requirement: only agents that provide a value for this parameter were eligible to run this pipeline.
 
