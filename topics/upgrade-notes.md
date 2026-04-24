@@ -19,6 +19,10 @@
   * PSQL to 42.7.10
   * MSSQL to 13.4.0
 
+### Known Issues
+{id="known-issues-2026-1"}
+
+* If your previous TeamCity version did not support Java 21, automatic agent upgrade to 2026.1 may fail. TeamCity 2026.1 build agents require Java 21, while agents from earlier versions, such as 2024.07, do not support it. To avoid this issue, upgrade TeamCity to 2025.11 first. Alternatively, set the `FJ_MIN_UNSUPPORTED_JAVA_VERSION` parameter in your [agent.bat or agent.sh](start-teamcity-agent.md) files to `22`.
 
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}
