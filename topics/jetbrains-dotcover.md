@@ -14,6 +14,8 @@ If you have a license for dotCover and have it installed on a developer machine,
 >.NET Framework 3.5 or newer must be installed on the agent machine. This is necessary for the bundled dotCover to work. Your project can depend on another .NET Framework version.   
 dotCover 2018.2 or newer requires .NET Framework 4.6.1 or newer.
 
+> dotCover does not support .NET SDK 10.0.101 and newer.
+
 ## dotCover Settings
 
 <table>
