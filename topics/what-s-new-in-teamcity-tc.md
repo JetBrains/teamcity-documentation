@@ -87,9 +87,35 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 [Learn more...](ssh-keys-management.md#Known+SSH+Hosts)
 
-## Miscellaneous Enhancements
+## Third-party Integration Enhancements
+
+### Git
+
+* For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+
+* When choosing the **Shallow clone** [Git checkout policy](git.md#git-checkout-policy), you can now add the `teamcity.git.agent.shallowCloneDepth` and `teamcity.git.agent.submodules.shallowCloneDepth` parameters to set the [`--depth`](https://git-scm.com/docs/git-clone) attribute.
+
+* The [GitLab CE/EE connection](configuring-connections.md#GitLab) now allows you to configure integration with system webhooks. This enhancement allows TeamCity to receive near-instant notifications about new repository changes, as opposed to periodically [polling the repository](project-administrator-guide.md#Collecting+Changes).
+
+### Perforce
+
+* When building [Perforce shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files), earlier versions of TeamCity replaced checked-out files with corresponding shelved ones. Starting with version 2026.1, TeamCity uses a more sophisticated approach by running `p4 resolve` after unshelving, allowing it to detect and resolve conflicting changes.
+
+* You can now specify multiple [shelved changelist IDs](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files) when triggering a custom build for Perforce build configurations.
+
+### Kubernetes
+
+* Kubernetes [cloud profiles](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration) and [connections](configuring-connections.md#Kubernetes) now include settings that allow you to configure outgoing connections behind a proxy.
+
+### HashiCorp Vault
 
 * The [HashiCorp Vault Connection](hashicorp-vault.md#Set+Up+a+Vault+Connection) now supports authentication via [Google Cloud Platform authentication](https://developer.hashicorp.com/vault/docs/auth/gcp).
+
+### Jira
+
+* When configuring [connections to on-premises Jira instances](jira.md), you can now choose between authentication via regular username/password credentials or a personal access tokens issued on the issue tracker side.
+
+## Miscellaneous Enhancements
 
 * All TeamCity build configurations now automatically record agent hardware usage during builds. This change introduces the following updates:
 
@@ -98,23 +124,9 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
     * A new `teamcity.perfmon.feature.enabled` parameter allows you to disable CPU, disk, and memory usage collection for specific build configurations or projects.
 
 
-* When building [Perforce shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files), earlier versions of TeamCity replaced checked-out files with corresponding shelved ones. Starting with version 2026.1, TeamCity uses a more sophisticated approach by running `p4 resolve` after unshelving, allowing it to detect and resolve conflicting changes.
-
-* You can now specify multiple [shelved changelist IDs](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files) when triggering a custom build for Perforce build configurations.
-
-* For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-
 * Users with trial TeamCity Enterprise licenses can now use [](ai-assistant.md).
 
-* Kubernetes [cloud profiles](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration) and [connections](configuring-connections.md#Kubernetes) now include settings that allow you to configure outgoing connections behind a proxy.
-
-* When choosing the **Shallow clone** [Git checkout policy](git.md#git-checkout-policy), you can now add the `teamcity.git.agent.shallowCloneDepth` and `teamcity.git.agent.submodules.shallowCloneDepth` parameters to set the [`--depth`](https://git-scm.com/docs/git-clone) attribute.
-
 * The list of available [Get artifacts from...](artifact-dependencies.md#artifact-dep-get-from) options now includes **Build from the same chain** that fails the build if both target and source configuration/pipeline do not belong to the same build chain. Previously, only the **Build from the same chain or last finished** option was available.
-
-* When configuring [connections to on-premises Jira instances](jira.md), you can now choose between authentication via regular username/password credentials or a personal access tokens issued on the issue tracker side.
-
-* The [GitLab CE/EE connection](configuring-connections.md#GitLab) now allows you to configure integration with system webhooks. This enhancement allows TeamCity to receive near-instant notifications about new repository changes, as opposed to periodically [polling the repository](project-administrator-guide.md#Collecting+Changes).
 
 * In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
 
