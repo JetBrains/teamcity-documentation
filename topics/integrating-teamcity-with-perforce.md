@@ -72,7 +72,11 @@ To **manually run** a custom build on Perforce shelved files:
 1. Open the [custom run](running-custom-build.md) dialog by clicking the context menu next to the __Run__ button.
 2. Enable _run as a personal build_ option.
 3. Enter the ID of the changelist that contains the shelved files.
-   <img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files" width="460"/>
+
+    <img src="p4-custom-run-shelved.png" alt="Run custom build on P4 shelved files" width="460"/>
+
+    You can enter multiple comma-separated IDs to process several changelists in a single build. In this case, TeamCity does not show the final file content when viewing diffs. This is expected and does not indicate a misconfiguration or error: all changes are processed and applied on the agent once the build starts.
+
 4. Choose the target Perforce root.
 
 To **configure automatic triggering** for a Perforce shelved changelist:

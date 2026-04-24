@@ -100,6 +100,8 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * When building [Perforce shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files), earlier versions of TeamCity replaced checked-out files with corresponding shelved ones. Starting with version 2026.1, TeamCity uses a more sophisticated approach by running `p4 resolve` after unshelving, allowing it to detect and resolve conflicting changes.
 
+* You can now specify multiple [shelved changelist IDs](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files) when triggering a custom build for Perforce build configurations.
+
 * For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
 * Users with trial TeamCity Enterprise licenses can now use [](ai-assistant.md).
