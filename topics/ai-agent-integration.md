@@ -78,7 +78,13 @@ To retrieve and use these tools, an AI agent needs to pass token-based authoriza
 
 ### Examples
 
-This section illustrates how to connect most popular AI tools with TeamCity using the MCP server.
+This section illustrates how to connect most popular AI tools with TeamCity using the MCP server. For better security, we recommend exporting your [TeamCity access token](configuring-your-user-profile.md#Managing+Access+Tokens) into an environment variable:
+
+```Bash
+export TC_AUTH_TOKEN="your token here"
+```
+
+Then, you will be able to use the `$TC_AUTH_TOKEN` reference instead of a raw value.
 
 <procedure title="Air, Cursor">
 
@@ -91,7 +97,7 @@ Open IDE settings and paste the following JSON snippet to add a global/project/w
             "type": "http",
             "url": "<TeamCity-server-URL>/app/mcp",
             "headers": {
-                "Authorization": "Bearer <TeamCity access token>"
+                "Authorization": "Bearer $TC_AUTH_TOKEN"
             }
         }
   }
@@ -113,11 +119,8 @@ Modify the **Settings | Developer | Edit config** file as follows:
         "mcp-remote",
         "<TeamCity-server-URL>/app/mcp",
         "--header",
-        "Authorization: Bearer ${TEAMCITY_TOKEN}"
-      ],
-      "env": {
-        "TEAMCITY_TOKEN": "<TeamCity access token>"
-      }
+        "Authorization: Bearer $TC_AUTH_TOKEN"
+      ]
     }
   }
 }
@@ -133,13 +136,13 @@ Add the following snippet to the `~/.codex/config.toml` file...
 [mcp_servers.buildserver]
 url = "<TeamCity-server-URL>/app/mcp"
 [mcp_servers.buildserver.http_headers]
-Authorization = "Bearer <TeamCity access token>"
+Authorization = "Bearer $TC_AUTH_TOKEN"
 ```
 
 ...or run the following terminal command.
 
 ```Shell
-codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env-var TEAMCITY_SERVER_TOKEN
+codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env-var $TC_AUTH_TOKEN
 ```
 </procedure>
 
@@ -148,7 +151,7 @@ codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env
 Run the following terminal command:
 
 ```Shell
-claude mcp add --transport http buildserver <TeamCity-server-URL>/app/mcp --header "Authorization: Bearer <TeamCity access token>"
+claude mcp add --transport http buildserver <TeamCity-server-URL>/app/mcp --header "Authorization: Bearer $TC_AUTH_TOKEN"
 ```
 
 </procedure>
