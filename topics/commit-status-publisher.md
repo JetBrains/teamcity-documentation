@@ -1,11 +1,14 @@
 [//]: # (title: Commit Status Publisher)
 [//]: # (help-id: Commit Status Publisher)
 
-Commit Status Publisher is a [build feature](adding-build-features.md) which allows TeamCity 
-to automatically send build statuses of your commits to an external system. 
-The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
+<show-structure for="chapter" depth="2"/>
 
-Supported systems:
+Commit Status Publisher is a [build feature](adding-build-features.md) that posts build statuses to the VCS provider. This allows you to track the code health from the repository page, and quickly navigate to related TeamCity builds to inspect detailed build logs.
+
+<img src="csp-custom-build-name.png" width="706" alt="CSP statuses in GitHub"/>
+
+Supported VCS providers:
+
 * [GitHub](https://docs.github.com/en/rest/commits/statuses) (the build statuses for pull requests are supported as well)
 * [GitLab](https://docs.gitlab.com/ee/api/commits.html#commit-status)
 * [Azure DevOps](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses) (supported statuses: Pending, Succeeded, Failed, Error)
@@ -15,88 +18,95 @@ Supported systems:
 * Gerrit Code Review tool 2.6+
 * Perforce Helix Swarm
 
-Starting from version 2022.04, Commit Status Publisher updates the commit status in the version control system as soon as 
-the build is added to the queue, providing you with the most up-to-date information.
-GitHub, GitLab, Space, Bitbucket Server and Bitbucket Cloud, Perforce Helix Swarm, and Azure DevOps are supported.
+For GitHub, GitLab, Space, Bitbucket Server and Bitbucket Cloud, Perforce Helix Swarm, and Azure DevOps, Commit Status Publisher updates the commit status in the version control system as soon as the build is added to the queue, providing you with the most up-to-date information.
 
->See our **video guide** on how to [send build information to external systems](https://www.youtube.com/watch?v=o0oj7mOcNvc).
+> The feature is implemented as an [open-source plugin](https://github.com/JetBrains/commit-status-publisher) bundled with TeamCity.
+
+
+## Common Settings
+
+<deflist type="medium">
+
+<def title="VCS root">
+
+The [VCS root](configuring-vcs-roots.md) that carries out all TeamCity-to-VCS communication operations. This can be a separate VCS root, or the one that your build configuration/pipeline already uses to check out repository files.
+
+</def>
+
+<def title="Publisher">
+
+The type of your VCS. Other Commit Status Publisher settings vary depending on this setting.
+
+</def>
+
+
+<def title="Server URL">
+
+The URL of your VCS server. Use the default value for public services and enter a custom URL for on-premises solutions. For example, `https://api.github.com` for GitHub.com and `http[s]://<host>[:<port>]/api/v3` for GitHub Enterprise.
+
+</def>
+
+
+<def title="Auth settings">
+
+These settings specify how Commit Status Publisher should authenticate to your VCS before it can post build statuses. You can click the **Test connection** button at the dialog's bottom to verify your current settings are valid.
+
+For most of the VCS providers, you have the following options:
+
+* **Password** — the classic username/password credentials pair. Note that most of the providers gradually deprecate this auth mode as least secure.
+
+* **Access token** — authenticate using the personal access token that you should manually issue on the VCS side. For certain providers (for example, GitHub), you can click the magic wand button to let TeamCity automatically retrieve the access token using a pre-configured [OAuth connection](configuring-connections.md#GitHub):
+
+    <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
+
+    Otherwise, issue with correct permissions manually. For example, for GitHub:
+
+    * Classic GitHub tokens: `public_repo` and `repo:status` for public repositories; `repo` for private repositories. See also: [Scopes for OAuth apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps).
+    * Fine-grained tokens: Add the `Commit Statuses` permission with the "Read and write" access type. This permission can only be added for tokens with the "All repositories" or "Only select repositories" access type. See also: [Permissions required for fine-grained personal access tokens](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens).
+
+* **Refreshable access tokens** — use short-lived tokens acquired by TeamCity from a required VCS provider via existing OAuth/App connections (as opposed to static PAT tokens issued manually by users on a VCS hosting side). See the following article for more information on generating and using refreshable tokens: [](manage-access-tokens.md).
+
+* **Use VCS root credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
+
+</def>
+
+
+<def title="Build name">
+
+The custom build name displayed in the status message. Allows you to include `%\parameter_name%` [parameter references](configuring-build-parameters.md). For example, overview section image shows statuses generated with the following custom build name:
+
+`Integration tests (build #%\build.number%, %\teamcity.agent.jvm.os.name%)`
+
+This setting is available for all Git-based providers: Azure DevOps, Bitbucket Cloud, Bitbucket Server and Data Center, GitHub (the "Status check name" setting), GitLab ("External job name"), and JetBrains Space ("Display name").
+
+</def>
+
+</deflist>
+
+
 
 ## Provider-specific Configuration
 
 ### GitHub
 
-Commit Status Publisher supports the GitHub URL in the following format:
-* For GitHub.com: `https://api.github.com`
-* For GitHub Enterprise: `http[s]://<host>[:<port>]/api/v3`
+When using manually issued access tokens, make sure to provide sufficient permissions:
 
-For connection, select one of the available authentication types:
-* **Access Token** — use a personal access token or obtain a token through an OAuth connection. 
-  
-    If you have a [configured OAuth connection](configuring-connections.md#GitHub) to GitHub, you can click the magic wand button to let TeamCity automatically retrieve the corresponding access token.
+* Classic GitHub tokens: `public_repo` and `repo:status` for public repositories; `repo` for private repositories. See also: [Scopes for OAuth apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps).
+* Fine-grained tokens: Add the `Commit Statuses` permission with the "Read and write" access type. This permission can only be added for tokens with the "All repositories" or "Only select repositories" access type. See also: [Permissions required for fine-grained personal access tokens](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens).
 
-    <img src="dk-CSP-GitHubToken.png" width="708" alt="Acquire access token for GitHub"/>
+To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
-    Otherwise, if you insert a token manually issued on the GitHub side, make sure it has the following permissions or scopes:
-
-    <deflist type="full">
-    
-    <def title="Classic GitHub tokens">
-    
-    * for public repositories: `public_repo` and `repo:status`
-    * for private repositories: `repo`
-    
-    See also: [Scopes for OAuth apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps)
-    
-    </def>
-    
-    <def title="Fine-grained tokens">
-    
-    Add the `Commit Statuses` permission with the "Read and write" access type.
-    
-    This permission can only be added for tokens with the "All repositories" or "Only select repositories" access type.
-    
-    See also: [Permissions required for fine-grained personal access tokens](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens).
-    
-    </def>
-    
-    </deflist>
-
-
-  
-  
-* **GitHub App access token** — if this project or any of the parent projects have a valid [GitHub App connection](configuring-connections.md#GitHub), the Commit Status Publisher can refreshable access tokens. <include from="common-templates.md" element-id="rat-single"/>
-
-* **Use VCS root(s) credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
-
-* **Password** — Provide the GitHub username and password. Note that the password authentication will not work if connecting to a GitHub Enterprise repository or if the user's GitHub account is protected with a two-factor authentication. In these cases, use an access token instead.
-
->To protect a branch and ensure that only verified pull requests are merged into it, you can create a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) in your GitHub repository settings. If you set a TeamCity build as a required status check, GitHub will not allow a pull request to be merged until the build on requested changes finishes successfully.
-> 
-{style="note"}
-
-
-> If your VCS root connects to a GitHub using the App Token, you can leverage the [GitHub Checks API](https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-checks?apiVersion=2022-11-28) to automatically post Markdown-formatted build statuses without setting up the Commit Status Publisher feature. See this article for more information: [](github-checks-trigger.md).
-> 
-{style="tip"}
+If your VCS root connects to a GitHub using the App Token, you can leverage the [GitHub Checks API](https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-checks?apiVersion=2022-11-28) to automatically post Markdown-formatted build statuses without setting up the Commit Status Publisher feature. See this article for more information: [](github-checks-trigger.md).
 
 
 ### GitLab
 
-The **Authentication Type** option allows you to choose which authentication method the build feature should use to access GitLab repositories.
 
-* **Personal access tokens** or PATs are static authentication tokens that you can [issue in your GitLab profile page](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
+The GitLab credentials and the GitLab project must be set up as follows:
 
-* <include from="common-templates.md" element-id="rat-single"/>
-
-* **Use VCS root credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
-
-> The GitLab credentials and the GitLab project must be set up as follows:
->
-> * The credentials must belong to a user with a Developer, Maintainer, or Owner role for the project.
-> * The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
-> * In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
-> 
-{style="note"}
+* The credentials must belong to a user with a Developer, Maintainer, or Owner role for the project.
+* The GitLab user must be included in the **Allowed to push** list, to make it possible to change a commit status on a protected branch.
+* In the GitLab [project visibility](https://docs.gitlab.com/ee/user/public_access.html#change-project-visibility) settings for the project, make sure that the *CI/CD* option (or the *Pipelines* option in older GitLab versions) is enabled.
 
 The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/api/v4` format. This field is optional: if left blank, TeamCity uses a value that corresponds to the fetch URL specified in VCS root settings.
 
@@ -106,62 +116,8 @@ The **GitLab API URL** field accepts URLs in the `http[s]://<hostname>[:<port>]/
 To be able to connect to Bitbucket Cloud, make sure the [TeamCity server URL](configuring-server-url.md) is a fully qualified domain name (FQDN): for example, [`http://myteamcity.domain.com:8111`](http://myteamcity.domain.com:8111){nullable="true"}. Short names, such as [`http://myteamcity:8111`](http://myteamcity:8111){nullable="true"}, are rejected by the Bitbucket API.
 {instance="tc"}
 
-For the **Authentication Type**, you have the following options:
-
-* **Use VCS root credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
-
-* **Username/password** — Specify a username and password for connection to Bitbucket Cloud. For Bitbucket Cloud team accounts, it is possible to use the team name as the username and the API key as the password. We recommend using an [app password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/) with the _Pull Requests | Read_ scope.
-
-* <include from="common-templates.md" element-id="rat-single"/>
-
 
 ### Bitbucket Server
-
-The following parameters are available for the [Bitbucket Server/Data Center](https://www.atlassian.com/software/bitbucket/enterprise/data-center) hosting type:
-
-<table>
-<tr>
-<td width="150">
-
-Parameter
-
-</td>
-<td>
-
-Description
-
-</td>
-</tr>
-<tr>
-<td>
-
-Bitbucket Server Base URL
-
-</td>
-<td>
-
-Specifies the Bitbucket server base URL in the following format: `http[s]://<hostname>:<port>`.
-
-If left empty, the URL will be extracted from the VCS root fetch URL.
-
-</td>
-</tr>
-
-<tr>
-
-<td>Authentication Type</td>
-<td>
-
-* **Username / Password** — Specify a username and password for connection to Bitbucket Server/Data Center. You can submit an access token instead of the password. The token should have _Read_ permissions for projects and repositories.
-
-* **Use VCS root(s) credentials** — TeamCity will try to extract credentials from the VCS root settings. This option is designed for VCS roots that use tokens (either static/personal or refreshable/OAuth) to pass authentication and obtain repositories using HTTP(S) fetch URLs. Choose other options if a related VCS root employs anonymous or standard username-password authentication or uses an SSH fetch URL.
-
-* <include from="common-templates.md" element-id="rat-single"/>
-
-</td>
-</tr>
-
-</table>
 
 To protect a branch and ensure that only verified pull requests are merged into it, you can specify [required builds](https://confluence.atlassian.com/bitbucketserver/checks-for-merging-pull-requests-776640039.html#Checksformergingpullrequests-Requiredbuildsmergecheck) in your Bitbucket repository settings. To set a TeamCity build as a _required build_, open the __Add required builds__ page in Bitbucket and specify a build configuration ID as a build key in the __Add builds__ field. In this case, Bitbucket will not allow a pull request to be merged until the build on requested changes finishes successfully.
 
@@ -169,13 +125,6 @@ To protect a branch and ensure that only verified pull requests are merged into 
 > 
 {style="note"}
 
-### Azure DevOps
-
-To set up the Commit Status Publisher for Azure DevOps, specify your Azure server URL and choose a preferred authentication method.
-
-* **Personal access tokens** or PATs are static authentication tokens that you can [issue in your Azure DevOps account settings](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate). Your issued token should have the `Code (status)` and `Code (read)` scopes to allow Commit Status Publisher to post status updates. For [VSTS connections](configuring-connections.md#Azure+DevOps+PAT+Connection), a token can be retrieved from connection settings automatically.
-
-* <include from="common-templates.md" element-id="rat-single"/>
 
 ### JetBrains Space
 
@@ -216,33 +165,13 @@ See this help article for more information: [](integrating-with-helix-swarm.md).
 
 Commit Status Publisher supports Gerrit versions 2.6+. For configuring integration with earlier Gerrit versions, contact our [support](troubleshooting.md).
 
-## Using Commit Status Publisher
 
-1. [Add the build feature](adding-build-features.md) to your build configuration.
-2. Use the default _All attached VCS roots_ option if you want Commit Status Publisher to attempt publishing statuses for commits in all attached VCS roots or select a single repository for publishing build statuses.
-3. Select your system as the publisher and specify its connection details and credentials.
-4. Test the connection
-5. Save your settings.
+## Publish Pipeline Run Statuses
 
-__Example: Configuring Pull Requests Status Publishing to GitHub__
+Commit Status Publisher is one of the most frequently used build configuration features, as it is easy to configure and provides a clear benefit of improving the overall observability. For that reason, we have natively integrated this functionality in [pipelines](create-and-edit-pipelines.md): enable the **Publish status to repository** toggle in the [repository settings](pipeline-settings.md#Repository) and TeamCity will do the rest.
 
-The example below demonstrates how to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
+<img src="pipelines-main-repo-settings.png" width="706" alt="Individual pipeline repository settings"/>
 
-1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also a related [blog post](https://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
-2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
-   * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
-   * Select GitHub as the publisher and specify its connection details and credentials and test the connection: <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>
-3. Save your settings.
-4. Commit changes to your source code and create a pull request in GitHub, then run a build with your changes in TeamCity. The Commit Status Publisher will inform you on the status of the build with your pull request changes:
-   * It will show you whether the check is:
-     * in progress ![progress.png](progress.png)
-     * failed ![Failed.png](Failed.png)
-     * successful ![Successful.png](Successful.png)
-   * hovering over the commit status will display the build summary
-   * clicking the build status icon or the _Details_ link will open the [build results](working-with-build-results.md) page in TeamCity. This information is also available on the __Commits__ tab of your pull request details.   
-   Similarly to the previous page, clicking the build status icon opens the [build results](working-with-build-results.md) page in the TeamCity UI: 
-   
-    <img src="BuildResults.PNG" width="1054" alt="Build results"/>
     
 ## Using Commit Status Publisher with VCS checkout rules
 
@@ -256,7 +185,54 @@ If you need to display the build status next to the last commit of the build (fo
 In the scope of such a chain, Commit Status Publisher will not be bound by the checkout rules and the build status will be displayed next to the very last commit.
 
 
+## Kotlin DSL
+
+In [Kotlin DSL](kotlin-dsl.md), configure the `jetbrains.buildServer.configs.kotlin.buildFeatures.CommitStatusPublisher` object inside the `features` block of a `buildType` instance to set up your commit status publisher.
+
+```Kotlin
+buildType {
+    // Other Build Type settings ...
+    features {
+        // Other Build Features ...
+        commitStatusPublisher {
+            vcsRootExtId = "${<VCS root object>.id}" // optional, publishes to all attached git VCS roots if omitted
+            publisher = space {
+                authType = connection {
+                    connectionId = "<JetBrains Space connection id>"
+                }
+                displayName = "<Display name>" // optional, "TeamCity" by default
+            }
+        }
+    }
+}
+```
+
+See this link for more information: [CommitStatusPublisher | Kotlin DSL docs](https://teamcity.jetbrains.com/app/dsl-documentation/buildFeatures/commit-status-publisher/index.html).
+
+
 ## Troubleshooting
 {instance="tc"}
 
 TeamCity [writes events](teamcity-server-logs.md) related to the Commit Status Publisher build feature to the `teamcity-commit-status.log` file. Apply the "debug-commit-status" preset to include DEBUG-level events to this log.
+
+
+## Example
+
+The example below demonstrates how to configure sending the status of builds with changes included in your pull request from TeamCity to GitHub.
+
+1. Use [pull requests build feature](pull-requests.md) to configure pull requests branches. Alternatively you can make the branches available by configuring the [branch specification](working-with-feature-branches.md) in your VCS Root while ensuring that it includes pull requests branches (see also a related [blog post](https://blog.jetbrains.com/teamcity/2013/02/automatically-building-pull-requests-from-github-with-teamcity/)).
+2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
+    * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
+    * Select GitHub as the publisher and specify its connection details and credentials and test the connection:
+        <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>
+3. Save your settings.
+4. Commit changes to your source code and create a pull request in GitHub, then run a build with your changes in TeamCity. The Commit Status Publisher will inform you on the status of the build with your pull request changes:
+    * It will show you whether the check is:
+        * in progress ![progress.png](progress.png)
+        * failed ![Failed.png](Failed.png)
+        * successful ![Successful.png](Successful.png)
+    * hovering over the commit status will display the build summary
+    * clicking the build status icon or the _Details_ link will open the [build results](working-with-build-results.md) page in TeamCity. This information is also available on the __Commits__ tab of your pull request details.   
+      Similarly to the previous page, clicking the build status icon opens the [build results](working-with-build-results.md) page in the TeamCity UI:
+
+    <img src="BuildResults.PNG" width="1054" alt="Build results"/>

@@ -97,6 +97,10 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * The [GitLab CE/EE connection](configuring-connections.md#GitLab) now allows you to configure integration with system webhooks. This enhancement allows TeamCity to receive near-instant notifications about new repository changes, as opposed to periodically [polling the repository](project-administrator-guide.md#Collecting+Changes).
 
+* The [](commit-status-publisher.md) build feature now includes the option to set up a custom build configuration name when posting statuses to Git VCS providers (GitHub, GitLab, Bitbucket, and more).
+
+    <img src="csp-custom-build-name.png" width="706" alt="CSP statuses in GitHub"/>
+
 ### Perforce
 
 * When building [Perforce shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files), earlier versions of TeamCity replaced checked-out files with corresponding shelved ones. Starting with version 2026.1, TeamCity uses a more sophisticated approach by running `p4 resolve` after unshelving, allowing it to detect and resolve conflicting changes.
