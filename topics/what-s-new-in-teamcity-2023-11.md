@@ -176,11 +176,11 @@ Learn more: [](pull-requests.md#Bitbucket+Server+Pull+Requests).
 ### Azure DevOps
 {instance="tc"}
 
-The [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
+The [Commit Status Publisher](commit-status-publisher.md) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) build features can now pass authentication using refreshable tokens obtained from [configured TeamCity connections](configuring-connections.md#azure-devops-connection).
 
 <img src="dk-azureOauth-token.png" width="706" alt="Azure OAuth in CSP"/>
 
-Learn more: [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) | [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests).
+Learn more: [Commit Status Publisher](commit-status-publisher.md) | [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests).
 
 
 
