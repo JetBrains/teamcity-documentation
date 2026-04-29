@@ -10,7 +10,13 @@
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
 
-* The bundled Git was updated to version 2.54 in both server and agent Docker images.
+* We have updated a number of tools shipped with TeamCity [Docker server and agent images](agent-docker-images.md):
+  * Git: 2.54
+  * .NET SDK: 10.0.202
+  * Docker CE: 29.4.0
+  * Perforce client: r25.2
+  * Containerd: 2.2.3
+
 * In previous versions, the `latest-linux-sudo` Docker image tag used the AMD64 manifest. Starting from version 2026.1, this tag uses a multi-architecture manifest combining AMD64 and ARM64 images. Platform-specific images are available under the `{version}-linux-amd64-sudo` and `{version}-linux-arm64-sudo` tags.
 * The bundled dotCover tool was updated to version 2025.1.7 Cross-Platform.
 * The bundled ReSharper CLT was updated to version 2025.2.3.
