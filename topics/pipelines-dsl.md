@@ -17,7 +17,7 @@ Enabling versioned settings for a project that includes a pipeline imposes a few
 
 ## Pipeline DSL entities
 
-Pipeline-specific objects are declared in the `jetbrains.buildServer.configs.kotlin.pipelines` namespace.
+Pipeline-specific classes are declared in the [`jetbrains.buildServer.configs.kotlin.pipelines`](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/pipeline/index.html) namespace. Key objects in this namespace are:
 
 
 <deflist type="medium">
@@ -26,7 +26,7 @@ Pipeline-specific objects are declared in the `jetbrains.buildServer.configs.kot
 
 Represents a pipeline.
 
-???LINK???
+DSL documentation: [Pipeline](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/pipeline/index.html)
 
 </def>
 
@@ -34,15 +34,23 @@ Represents a pipeline.
 
 Represents a job.
 
-???LINK???
+DSL documentation: [Job](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/job/index.html)
 
 </def>
 
 <def title="Repository">
 
-Represents a repository that pipeline jobs can process. Each of **Pipeline settings | Repositories** entries correspond to a separate object of this type.
+Represents a repository that pipeline jobs can process. Each of **Pipeline settings | Repositories** entries correspond a `PipelineRepositoryEntry` instance, whereas jobs work with `JobRepositoryEntry` objects.
 
-???LINK???
+DSL documentation: [PipelineRepositoryEntry](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/pipeline-repository-entry/index.html) | [JobRepositoryEntry](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/job-repository-entry/index.html)
+
+</def>
+
+<def title="File publication">
+
+Specifies the file that should be published as an artifact, as a shared (with downstream jobs) file, or as both.
+
+DSL documentation: [FilePublication](https://teamcity.jetbrains.com/app/dsl-documentation/pipelines/file-publication/index.html)
 
 </def>
 

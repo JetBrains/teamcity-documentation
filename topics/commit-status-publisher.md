@@ -224,6 +224,7 @@ The example below demonstrates how to configure sending the status of builds wit
 2. [Add](adding-build-features.md) the Commit Status Publisher build feature:
     * Use the default __All attached VCS roots__ option to publish statuses for commits in all attached VCS roots
     * Select GitHub as the publisher and specify its connection details and credentials and test the connection:
+
         <img src="CommitStatusPublisher.png" width="556" alt="Testing connection to GitHub"/>
 3. Save your settings.
 4. Commit changes to your source code and create a pull request in GitHub, then run a build with your changes in TeamCity. The Commit Status Publisher will inform you on the status of the build with your pull request changes:
