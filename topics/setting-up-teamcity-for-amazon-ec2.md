@@ -333,12 +333,26 @@ Example: <code>t2.2xlarge</code>
 The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">private hostname</a> of the agent instance.
 
 Example: <code>ip-10-128-93-39.eu-west-1.compute.internal</code>
+
+<note>
+
+If you want the `system.ec2.local-hostname` and `system.ec2.local-ipv4` properties to report actual public or private addresses rather than AWS gateway IPs, set the `TEAMCITY_AGENT_EC2_PUBLIC_IP_AS_ADDRESS` environment variable or `teamcity.agent.ec2.setPublicIPAsHostname` property inside the ['buildAgent.properties' file](configure-agent-installation.md) to **true**.
+
+</note>
+
 </def>
 
 <def title="system.ec2.local-ipv4">
 The private IPv4 address of the instance. 
 
 Example: <code>10.128.93.39</code>
+
+<note>
+
+If you want the `system.ec2.local-hostname` and `system.ec2.local-ipv4` properties to report actual public or private addresses rather than AWS gateway IPs, set the `TEAMCITY_AGENT_EC2_PUBLIC_IP_AS_ADDRESS` environment variable or `teamcity.agent.ec2.setPublicIPAsHostname` property inside the ['buildAgent.properties' file](configure-agent-installation.md) to **true**.
+
+</note>
+
 </def>
 
 <def title="proposed-agent-name">
