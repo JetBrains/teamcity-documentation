@@ -7,6 +7,8 @@
 * When you press **Rotate keys** in [AWS connections](configuring-connections.md#AmazonWebServices), previously used keys are removed after five minutes. Previously, the old keys were kept for 24 hours.
 * TeamCity server and build agents no longer support Java versions older than Java 21. The server supports only this version, while build agents can start on newer versions.
 
+    > This requirement only defines the Java version needed for the server and agents to start successfully; it does not restrict the Java versions your TeamCity projects can build, test, or deploy against.
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
 
@@ -75,6 +77,8 @@ No potential breaking changes.
 * Pipelines fail to collect new changes from non-primary repositories added via a GitHub App connection due to the incorrect auth token scope.
 
   Related YouTrack ticket: [TW-97945](https://youtrack.jetbrains.com/issue/TW-97945).
+
+* If agents spawned via a K8S cloud profile with Windows pods need to upgrade, agent K8S pod stop and a replacement pod spawns. This issue is addressed in version 2026.1. For previous versions, use a workaround provided in the following ticket: [TW-93396](https://youtrack.jetbrains.com/issue/TW-93396).
 
 
 ## Changes from 2025.07.3 to 2025.11
