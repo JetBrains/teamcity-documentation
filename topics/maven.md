@@ -83,6 +83,13 @@ Choose the Maven version you want to use.
 
 * &lt;Custom&gt; — Provide a path to a custom Maven version.
 
+<note>
+
+Maven 2.x has reached end of life and is no longer supported by Apache. Accordingly, TeamCity 2026.1 and newer no longer officially support Maven 2. Builds using this version may still run, but advanced features such as test reporting and incremental building will no longer be available.
+
+Please switch your Maven build steps to any custom or bundled Maven 3.x version to use a fully supported Maven version.
+
+</note>
 
 </def>
 
