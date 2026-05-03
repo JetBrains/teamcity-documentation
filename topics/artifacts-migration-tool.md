@@ -22,7 +22,11 @@ Before you can run the artifacts migration tool, you need to specify the followi
 
 * `teamcity.storage.migration.host` — the TeamCity server's address (protocol, host, and port).
 
-* `teamcity.storage.migration.artifact.directories` — the absolute path to the local TeamCity artifact storage. If your TeamCity server uses multiple directories as artifacts storages, use a semicolon character (;) as a separator.
+<!--
+
+* `teamcity.storage.migration.artifact.directories` — the absolute path to the local TeamCity artifact storage. If your TeamCity server uses multiple directories as artifacts storages, use a semicolon character (;) as a separator. 
+
+-->
 
 * `teamcity.storage.migration.access.token` — the TeamCity [authentication token](configuring-your-user-profile.md#Managing+Access+Tokens). Tokens must have permissions sufficient to access artifact storages. Navigate to **Your Profile | Access Tokens** to create a new token.
 
@@ -34,7 +38,6 @@ The snippet below demonstrates the contents of a sample `application.properties`
 
 ```
 teamcity.storage.migration.access.token=aBcEfgHIjkLMnoPQRsTUVwxyz
-teamcity.storage.migration.artifact.directories=C:\\ProgramData\\JetBrains\\TeamCity\\system\\artifacts
 teamcity.storage.migration.host=http://localhost:8111
 ```
 
