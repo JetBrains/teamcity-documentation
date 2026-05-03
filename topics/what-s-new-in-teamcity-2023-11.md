@@ -534,7 +534,7 @@ Version 2023.11 allows your [Pull Request](pull-requests.md) features to utilize
 
 * For Bitbucket Cloud, you can specify permanent access tokens issued for a specific repository, project, or workspace.
 
-* For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md#Azure+DevOps) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) features can now utilize refreshable tokens obtained via configured OAuth connections.
+* For Azure DevOps projects, the [Commit Status Publisher](commit-status-publisher.md) and [Pull Requests](pull-requests.md#Azure+DevOps+Pull+Requests) features can now utilize refreshable tokens obtained via configured OAuth connections.
 
 
 
