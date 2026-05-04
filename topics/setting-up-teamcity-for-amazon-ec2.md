@@ -130,6 +130,7 @@ A **cloud profile** is a collection of general settings for TeamCity to start vi
 10. Specify the set of criteria for winding down active cloud agents. You can choose how long agents can remain idle and (or) how long they can perform actual building routines. The agent will be terminated if any condition is met, but only after that agent finishes the current build.
    
    <img src="dk-ec2-terminateConditions.png" width="460" alt="Agents terminate conditions"/>
+
 11. Click **Create** or **Apply changes** to save the profile and exit the profile settings page.
 
 
@@ -334,11 +335,13 @@ The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-na
 
 Example: <code>ip-10-128-93-39.eu-west-1.compute.internal</code>
 
+<!--
 <note>
 
 If you want the `system.ec2.local-hostname` and `system.ec2.local-ipv4` properties to report actual public or private addresses rather than AWS gateway IPs, set the `TEAMCITY_AGENT_EC2_PUBLIC_IP_AS_ADDRESS` environment variable or `teamcity.agent.ec2.setPublicIPAsHostname` property inside the ['buildAgent.properties' file](configure-agent-installation.md) to **true**.
 
 </note>
+-->
 
 </def>
 
@@ -347,11 +350,13 @@ The private IPv4 address of the instance.
 
 Example: <code>10.128.93.39</code>
 
+<!--
 <note>
 
 If you want the `system.ec2.local-hostname` and `system.ec2.local-ipv4` properties to report actual public or private addresses rather than AWS gateway IPs, set the `TEAMCITY_AGENT_EC2_PUBLIC_IP_AS_ADDRESS` environment variable or `teamcity.agent.ec2.setPublicIPAsHostname` property inside the ['buildAgent.properties' file](configure-agent-installation.md) to **true**.
 
 </note>
+-->
 
 </def>
 
