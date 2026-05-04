@@ -10,7 +10,10 @@
     > This requirement only defines the Java version needed for the server and agents to start successfully; it does not restrict the Java versions your TeamCity projects can build, test, or deploy against.
 
 * When you press **Rotate keys** in [AWS connections](configuring-connections.md#AmazonWebServices), previously used keys are removed after five minutes. Previously, the old keys were kept for 24 hours.
+
+<!--
 * TeamCity no longer allows `.7z`, `.zipstream`, and `.tar` archives to extract files with directory traversal sequences (for example, `../`). These sequences could've potentially allowed a threat actor to craft a malicious archive that extracts files outside the intended directory, overwriting sensitive system files or placing malicious payloads in critical system locations.
+-->
 
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
