@@ -15,6 +15,8 @@
 * TeamCity no longer allows `.7z`, `.zipstream`, and `.tar` archives to extract files with directory traversal sequences (for example, `../`). These sequences could've potentially allowed a threat actor to craft a malicious archive that extracts files outside the intended directory, overwriting sensitive system files or placing malicious payloads in critical system locations.
 -->
 
+* [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md) now enable [virtual host addressing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html) by default. This behavior applies to all S3 storages, whether they were created before or after 2026.1 server update. See [](#known-issues-2026-1) for the related issue.
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
 
@@ -39,6 +41,10 @@
 {id="known-issues-2026-1"}
 
 * If your previous TeamCity version did not support Java 21, automatic agent upgrade to 2026.1 may fail. TeamCity 2026.1 build agents require Java 21, while agents from earlier versions, such as 2024.07, do not support it. To avoid this issue, upgrade TeamCity to 2025.11 first. Alternatively, set the `FJ_MIN_UNSUPPORTED_JAVA_VERSION` parameter in your [agent.bat or agent.sh](start-teamcity-agent.md) files to `22`.
+
+* Starting with version 2026.1, all S3 storages use virtual-hosted-style addressing. However, the **Force virtual host addressing** checkbox is still shown in TeamCity S3 artifact storage settings.
+
+    This checkbox no longer affects behavior and may be confusing. We plan to remove it in the upcoming 2026.1.1 bug-fix update. See the [TW-100620](https://youtrack.jetbrains.com/issue/TW-100620) YouTrack ticket for a temporary workaround.
 
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}

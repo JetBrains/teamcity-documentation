@@ -66,10 +66,9 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
     > Using Transfer Acceleration applies the following restrictions:
     >
-    > * The [virtual host addressing](#forceVirtualHostAddressing) is always on. Path-style requests are not supported.
     > * Transfer Acceleration must be enabled on your S3 bucket.
     > * Buckets [cannot have dots (.) in their names](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
-   > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
+    > * User credentials or IAM role the AWS Connection uses to access your bucket must include the `GetAccelerateConfiguration` permission.
     >
     {style="note"}
 
@@ -82,15 +81,10 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 {id="forceVirtualHostAddressing"}
 
-10. <snippet id="settings_virtual_host">Uncheck the <b>Force virtual host addressing</b> option to turn off the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html">corresponding feature</a> (enabled by default). Currently, both hosted-style and path-style requests are supported by TeamCity. Note that <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access">Amazon stopped supporting path-style access</a> for new buckets since September 2020.</snippet>
 
-    > This setting cannot be disabled if your storage uses [Transfer Acceleration](#TransferAcceleration).
-    >
-    {style="note"}
+10. <snippet id="settings_verify_integrity">Tick <b>Verify file integrity after upload</b> to allow TeamCity to perform an additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5">check-up on uploaded files</a>. If the integrity verification fails, TeamCity writes a corresponding message to the build log.</snippet>
 
-11. <snippet id="settings_verify_integrity">Tick <b>Verify file integrity after upload</b> to allow TeamCity to perform an additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#checking-object-integrity-md5">check-up on uploaded files</a>. If the integrity verification fails, TeamCity writes a corresponding message to the build log.</snippet>
-
-12. <snippet id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</snippet>
+11. <snippet id="settings_save_and_exit">Click <b>Save</b> to save your new storage and return to the list of available storages.</snippet>
 
 <snippet id="make_storage_active">
 
