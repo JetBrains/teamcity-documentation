@@ -23,7 +23,7 @@
 {id="bundled-tools-updates-2026-1"}
 
 * We have updated a number of tools shipped with TeamCity [Docker server and agent images](agent-docker-images.md):
-  * Git: 2.54
+  * Git: 2.54 (see the [](#known-issues-2026-1) section for a related issue)
   * .NET SDK: 10.0.202
   * Docker CE: 29.4.0
   * Perforce client: r25.2
@@ -47,6 +47,15 @@
 * Starting with version 2026.1, all S3 storages use virtual-hosted-style addressing. However, the **Force virtual host addressing** checkbox is still shown in TeamCity S3 artifact storage settings.
 
     This checkbox no longer affects behavior and may be confusing. We plan to remove it in the upcoming 2026.1.1 bug-fix update. See the [TW-100620](https://youtrack.jetbrains.com/issue/TW-100620) YouTrack ticket for a temporary workaround.
+
+* In some cases, newly bundled Git 2.54 may fail to check out sources with the "Unable to find all commit-graph files" error. This issue is most likely to occur in large repositories with frequent checkouts.
+
+    We plan to fix it in the next bug-fix update. As a temporary workaround, disable automatic Git maintenance by adding one of the following properties:
+
+    * `teamcity.server.git.maintenance.auto.enable=false` added as a [TeamCity internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+    * `teamcity.internal.git.maintenance.auto.enable=false` added to the [buildAgent.properties file](configure-agent-installation.md).
+
+    See the following ticket for more information: [TW-100479](https://youtrack.jetbrains.com/issue/TW-100479).
 
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}
