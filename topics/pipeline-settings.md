@@ -24,7 +24,7 @@ TeamCity supports two layers of parameters: pipeline parameters and job paramete
 
 
 
-* **Job parameters** are designed to be used in these very jobs, and jobs that depend on it (via the `job.<source-job-ID>.<param-name>` syntax). See [Job paramters](job-settings.md#Parameters) to learn more.
+* **Job parameters** are designed to be used in these very jobs, and jobs that depend on it (via the `job.<source-job-ID>.<param-name>` syntax). See [Job parameters](job-settings.md#Parameters) to learn more.
 
 
 * **Pipeline input parameters** are shared across all jobs within a pipeline. The sample below illustrates a pipeline parameter propagated to two jobs.

@@ -12,7 +12,7 @@ The parameter `value` part can be a raw value (`release.number=2026.1`) or inclu
 
 ## Parameter Types
 
-TeamCity supports paramters of three types:
+TeamCity supports parameters of three types:
 
 * **Configuration Parameters** — parameters whose primary objective is to share settings within a build configuration. You can also use these parameters to customize a configuration that was created from a [template](build-configuration-template.md) or uses a [recipe](working-with-meta-runner.md). TeamCity does not pass parameters of this type to a build process (that is, these parameters are not accessible by a build script engine).
 

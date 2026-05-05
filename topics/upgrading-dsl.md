@@ -124,6 +124,17 @@ data class MyClass(
 -->
 
 
+## Update DSL from 2025.11.x to 2026.1.x
+{help-id="dsl20261"}
+
+<snippet id="2026-1-acl-names">
+
+In version 2026.1, all TeamCity plugins that integrate with Amazon Web Services were updated to support AWS SDK v2. This change should not affect existing integrations or require major manual updates.
+
+One notable update is that access control list (ACL) names now match the corresponding AWS values, such as `public-read` and `bucket-owner-full-control` instead of previously used `PublicRead` and `BucketOwnerFullControl`. These values are typically used in the additional `storage.s3.acl` parameter, which lets you change the access policy.
+
+</snippet>
+
 ## Update DSL from 2025.07.x to 2025.11.x
 {help-id="dsl202511"}
 

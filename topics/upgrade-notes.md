@@ -17,6 +17,8 @@
 
 * [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md) now enable [virtual host addressing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html) by default. This behavior applies to all S3 storages, whether they were created before or after 2026.1 server update. See [](#known-issues-2026-1) for the related issue.
 
+* <include from="upgrading-dsl.md" element-id="2026-1-acl-names"/>
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}
 
