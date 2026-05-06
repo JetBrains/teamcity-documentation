@@ -121,11 +121,10 @@ When viewing a list of storages available for a project, click <b>Make Active</b
 
 8. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_mulipart_upload"/>
 
-9. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_virtual_host"/>
 
-10. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_verify_integrity"/>
+9. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_verify_integrity"/>
 
-11. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_save_and_exit"/>
+10. <include from="storing-build-artifacts-in-amazon-s3.md" element-id="settings_save_and_exit"/>
 
 
 <include from="storing-build-artifacts-in-amazon-s3.md" element-id="make_storage_active"/>
