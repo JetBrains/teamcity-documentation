@@ -85,11 +85,16 @@ teamcity run list --revision @head
 
 ### Time-based filtering
 
-Use `--since` and `--until` to filter by time:
+Use `--since` and `--until` to filter by time. Accepts duration offsets
+(`24h`, `7d`, `2w`, `1mo`, `4w2d5h`) or ISO dates (`2026-01-15`,
+`2026-01-15T12:00:00Z`):
 
 ```Shell
 # Builds from the last 24 hours
 teamcity run list --since 24h
+
+# Builds from the last week
+teamcity run list --since 7d
 
 # Builds from a specific date onward
 teamcity run list --since 2026-01-15
@@ -223,7 +228,7 @@ Filter by VCS revision (commit SHA). Use `@head` to resolve the current git HEAD
 </td>
 <td>
 
-Show builds finished after this time (for example, `24h`, `2026-01-21`)
+Show builds finished after this time (for example, `24h`, `7d`, `2026-01-21`)
 
 </td>
 </tr>
@@ -315,8 +320,14 @@ teamcity run start MyProject_Build
 # Build a specific branch
 teamcity run start MyProject_Build --branch feature/login
 
+# Build the branch you are currently on
+teamcity run start MyProject_Build --branch @this
+
 # Pin to a specific Git commit
 teamcity run start MyProject_Build --branch main --revision abc123def
+
+# Pin to the current HEAD
+teamcity run start MyProject_Build --branch @this --revision @head
 ```
 
 ### Build parameters
@@ -427,7 +438,7 @@ Description
 </td>
 <td>
 
-Branch to build
+Branch to build. Use `@this` to resolve the current git branch.
 
 </td>
 </tr>
@@ -439,7 +450,7 @@ Branch to build
 </td>
 <td>
 
-Pin build to a specific Git commit SHA
+Pin build to a specific Git commit SHA. Use `@head` to resolve the current HEAD; short SHAs are expanded from the local repo.
 
 </td>
 </tr>
@@ -987,10 +998,16 @@ teamcity run tests 12345
 teamcity run tests --job MyProject_Build
 ```
 
-Show only failed tests:
+Show only failed tests, excluding muted failures:
 
 ```Shell
 teamcity run tests 12345 --failed
+```
+
+Show only muted failed tests:
+
+```Shell
+teamcity run tests 12345 --muted
 ```
 
 <img src="run-tests.gif" alt="Viewing test results" border-effect="rounded"/>
@@ -1015,6 +1032,52 @@ Show commits only (without file listings):
 ```Shell
 teamcity run changes 12345 --no-files
 teamcity run changes 12345 --json
+```
+
+## Comparing runs
+
+Compare two runs side-by-side and highlight what changed between them — status, duration, agent, parameters, test results, problems, and VCS changes:
+
+```Shell
+teamcity run diff 12345 12346
+```
+
+<img src="run-diff.gif" alt="Comparing two runs" border-effect="rounded"/>
+
+If only one run ID is given, the CLI compares it against the previous finished run of the same job — handy for "what changed since last time?":
+
+```Shell
+teamcity run diff 12345
+```
+
+### Diffing build logs
+
+Pass `--log` to compare the two build logs as a colored unified diff. Timestamps, temp paths, and noisy git progress lines are normalized so the diff focuses on real content:
+
+```Shell
+teamcity run diff 12345 12346 --log
+teamcity run diff 12345 12346 --log -U5            # 5 lines of context
+```
+
+The output is piped through your pager (`$PAGER`, defaults to `less`). Strip colors and pipe to an external diff viewer for richer rendering:
+
+```Shell
+teamcity run diff 12345 12346 --log --no-color | delta
+teamcity run diff 12345 12346 --log --no-color | diff-so-fancy
+```
+
+### Other forms
+
+Open both runs in the browser:
+
+```Shell
+teamcity run diff 12345 12346 --web
+```
+
+Machine-readable output for scripts:
+
+```Shell
+teamcity run diff 12345 12346 --json
 ```
 
 ## Pinning runs

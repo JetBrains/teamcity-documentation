@@ -514,6 +514,7 @@
 		<toc-element topic="teamcity-cli-get-started.md"/>
 		<toc-element topic="teamcity-cli-authentication.md"/>
 		<toc-element topic="teamcity-cli-configuration.md"/>
+		<toc-element topic="teamcity-cli-linking.md"/>
 		<toc-element toc-title="User guide">
 			<toc-element topic="teamcity-cli-managing-runs.md"/>
 			<toc-element topic="teamcity-cli-managing-jobs.md"/>
@@ -533,6 +534,7 @@
 		<toc-element toc-title="Reference">
 			<toc-element topic="teamcity-cli-commands.md"/>
 			<toc-element topic="teamcity-cli-glossary.md"/>
+			<toc-element topic="teamcity-cli-analytics.md"/>
 		</toc-element>
 	</toc-element>
 	<toc-element toc-title="Reference">
