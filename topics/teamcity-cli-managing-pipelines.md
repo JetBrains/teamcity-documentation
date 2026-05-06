@@ -139,6 +139,24 @@ Force re-fetch schema from server
 </tr>
 </table>
 
+## Inspecting the pipeline schema
+
+Print the per-instance JSON schema TeamCity uses to validate `.teamcity.yml`:
+
+```Shell
+teamcity pipeline schema
+```
+
+<img src="pipeline-schema.gif" alt="Inspecting and saving the pipeline JSON schema" border-effect="rounded"/>
+
+The schema reflects the runners, parameters, and constructs available on the connected server, so it can drift between TeamCity versions. The CLI caches it locally for 24 hours; pass `--refresh` to bypass the cache and re-fetch from the server:
+
+```Shell
+teamcity pipeline schema --refresh
+```
+
+If the server predates TeamCity 2026.1 (no schema endpoint), the command prints an embedded fallback schema and writes a warning to stderr.
+
 ## Creating a pipeline
 
 Create a new pipeline from a YAML file:
@@ -265,7 +283,7 @@ Then push:
 teamcity pipeline push CLI_MyPipeline
 ```
 
-> Create tokens in the **pipeline's own project** (e.g., `CLI_MyPipeline`), not the parent. Use `teamcity pipeline list` to find the pipeline project ID.
+> Create tokens in the **pipeline's own project** (for example, `CLI_MyPipeline`), not the parent. Use `teamcity pipeline list` to find the pipeline project ID.
 >
 {style="tip"}
 

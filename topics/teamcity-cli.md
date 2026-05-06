@@ -5,10 +5,10 @@ TeamCity CLI is the official command-line interface for TeamCity. Type `teamcity
 <img src="showcase.gif" alt="TeamCity CLI in action" border-effect="rounded"/>
 
 > TeamCity CLI is an open-source tool developed and maintained by TeamCity developers. It is not bundled with TeamCity server installers or Docker images. The project is [available on GitHub](https://github.com/JetBrains/teamcity-cli) under the Apache-2.0 license.
-> 
+>
 {style="note"}
 
-> TeamCity CLI supports TeamCity server versions 2020.1 and later and is distributed as a standalone binary with no additional runtime dependencies.
+> TeamCity CLI supports TeamCity server versions 2020.1 and later and is distributed as a standalone binary with no additional runtime dependencies. Some features may require newer TeamCity versions (for example, 2024.04 or later).
 >
 {style="tip"}
 
@@ -143,12 +143,36 @@ Configuration file, environment variables, and shell completion
 <tr>
 <td>
 
+[Linking a repository](teamcity-cli-linking.md)
+
+</td>
+<td>
+
+Bind a repo (or monorepo subdirectories) to TeamCity projects via `teamcity.toml`
+
+</td>
+</tr>
+<tr>
+<td>
+
 [Managing runs](teamcity-cli-managing-runs.md)
 
 </td>
 <td>
 
 Start, monitor, and manage builds
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Managing pipelines](teamcity-cli-managing-pipelines.md)
+
+</td>
+<td>
+
+Author, validate, and sync `.teamcity.yml` pipelines
 
 </td>
 </tr>
@@ -220,19 +244,7 @@ Assign projects and agents to pools
 </td>
 <td>
 
-View cloud profiles, images, and running instances
-
-</td>
-</tr>
-<tr>
-<td>
-
-[Managing pipelines](teamcity-cli-managing-pipelines.md)
-
-</td>
-<td>
-
-Create, validate, and sync YAML pipeline configurations
+Manage cloud profiles, images, and ephemeral agent instances
 
 </td>
 </tr>
@@ -293,6 +305,30 @@ Quick reference for all available commands and flags
 <td>
 
 Install the TeamCity skill for AI coding agents
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Glossary](teamcity-cli-glossary.md)
+
+</td>
+<td>
+
+Definitions of CLI terms and how they map to TeamCity concepts
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Anonymous usage statistics](teamcity-cli-analytics.md)
+
+</td>
+<td>
+
+What the CLI sends to JetBrains and how to opt out
 
 </td>
 </tr>

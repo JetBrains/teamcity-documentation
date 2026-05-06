@@ -134,7 +134,7 @@ Set or view comment
 </td>
 <td>
 
-[experimental] Compare two runs and show differences
+Compare two runs and show differences
 
 </td>
 </tr>
@@ -479,12 +479,60 @@ Manage cloud profiles
 <tr>
 <td>
 
+`teamcity project connection authorize`
+
+</td>
+<td>
+
+Open a browser to authorize the current TeamCity user against a connection
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project connection create`
+
+</td>
+<td>
+
+Create a project connection
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project connection delete`
+
+</td>
+<td>
+
+Delete a project connection
+
+</td>
+</tr>
+<tr>
+<td>
+
 `teamcity project connection list`
 
 </td>
 <td>
 
 List project connections
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project create`
+
+</td>
+<td>
+
+Create a project
 
 </td>
 </tr>
@@ -1166,6 +1214,35 @@ Set a configuration value
 </tr>
 </table>
 
+## Link
+
+<table>
+<tr>
+<td>
+
+Command
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity link`
+
+</td>
+<td>
+
+Bind this repository to a TeamCity project
+
+</td>
+</tr>
+</table>
+
 ## Pipelines
 
 <table>
@@ -1238,6 +1315,18 @@ Download pipeline YAML
 <td>
 
 Upload pipeline YAML
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity pipeline schema`
+
+</td>
+<td>
+
+Print the pipeline JSON schema for the current server
 
 </td>
 </tr>
@@ -1357,7 +1446,7 @@ Description
 </td>
 <td>
 
-Check for CLI updates and show how to upgrade
+Check for CLI updates
 
 </td>
 </tr>
