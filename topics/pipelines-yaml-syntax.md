@@ -12,6 +12,65 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
   ],
 
   "definitions": {
+
+    "dependencies": {
+      "type": "array",
+      "description": "A collection of dependencies that represent pipeline relations with external objects (classic build configurations or other pipelines).",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "A simple dependency that references a linked object via its external ID.",
+            "pattern": "^[A-Za-z0-9_]+$"
+          },
+          {
+            "type": "object",
+            "description": "A dependency with additional properties that specify the behavior of linked objects.",
+            "patternProperties": {
+              "^[A-Za-z0-9_]+$": {
+                "properties": {
+                  "reuse": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "successful",
+                      "successful-or-failed"
+                    ],
+                    "description": "Specifies which of upstream dependency builds (runs) can be reused."
+                  },
+                  "enforce-revisions-synchronisation": {
+                    "type": "boolean",
+                    "description": "Specifies whether the code revisions should be explicitly synchronized."
+                  },
+                  "on-failed-dependency": {
+                    "type": "string",
+                    "enum": [
+                      "run-add-problem",
+                      "run-ignore-problem",
+                      "mark-as-failed-to-start",
+                      "cancel"
+                    ],
+                    "description": "Specifies the default action in case an upstream dependency fails."
+                  },
+                  "on-incomplete-dependency": {
+                    "type": "string",
+                    "enum": [
+                      "run-add-problem",
+                      "run-ignore-problem",
+                      "mark-as-failed-to-start",
+                      "cancel"
+                    ],
+                    "description": "Specifies the default action in case an upstream dependency fails to start."
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        ]
+      }
+    },
+
     "files": {
       "title": "Files publication",
       "description": "The collection of job file outputs, including both files published as artifacts and files shared to downstream jobs.",
@@ -69,13 +128,21 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
                 "exists",
                 "not-exists",
                 "contains",
+                "starts-with",
+                "ends-with",
+                "not-contains",
                 "matches",
+                "not-matches",
                 "equals",
                 "not-equals",
                 "more-than",
                 "less-than",
-                "more-than-or-equals",
-                "less-than-or-equals"
+                "more-or-equals-than",
+                "less-or-equals-than",
+                "version-more-than",
+                "version-less-or-equals-than",
+                "version-less-than",
+                "version-more-or-equals-than"
               ]
             },
             "parameter": {
@@ -186,14 +253,24 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
           },
           "additionalProperties": false
         }
-      }
+      },
+      "patternProperties": {
+        "^[A-Za-z0-9_]+$": {
+          "$ref": "#/definitions/repositories/properties/main"
+        },
+        "^https?://.+$": {
+          "$ref": "#/definitions/repositories/properties/main"
+        }
+      },
+      "additionalProperties": false
     },
     "job": {
       "type": "object",
-      "description": "An individual job that specifies the sequence of basic build steps, defines its own input and output parameters, and has its own build agent requirements.",
+      "description": "An individual job that specifies the sequence of basic build steps, defines its own input parameters, and has its own build agent requirements.",
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 255
         },
         "parameters": {
           "type": "object",
@@ -206,7 +283,8 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
         "output-parameters": {
           "type": "object",
           "title": "Job output parameters",
-          "description": "The list of name/value pairs designed to share values with dependent downstream jobs. Can be referenced via the '%job.jobId.parameterName%' syntax.",
+          "description": "Deprecated: All job parameters are now automatically available to dependent jobs within the same pipeline via '%job.jobId.parameterName%' syntax.",
+          "deprecated": true,
           "additionalProperties": {
             "type": "string"
           }
@@ -224,44 +302,19 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
                   "script",
                   "maven",
                   "gradle",
-                  "node-js",
-                  "unity"
+                  "node-js"
                 ]
-              },
-              "working-directory": { "type": "string" },
-              "goals": { "type": "string" },
-              "pom-location": { "type": "string" },
-              "runner-arguments": { "type": "string" },
-              "local-repo-scope": { "type": "string" },
-              "jdk-home": { "type": "string" },
-              "jvm-args": { "type": "string" },
-              "tasks": { "type": "string" },
-              "gradle-home": { "type": "string" },
-              "use-gradle-wrapper": { "type": "string" },
-              "gradle-wrapper-path": { "type": "string" },
-              "gradle-params": { "type": "string" },
-              "enable-debug": { "type": "string" },
-              "enable-stacktrace": { "type": "string" },
-              "build-file": { "type": "string" },
-              "execute-method": { "type": "string" },
-              "run-editor-tests": { "type": "string" },
-              "project-path": { "type": "string" },
-              "build-target": { "type": "string" },
-              "build-player": { "type": "string" },
-              "no-graphics": { "type": "string" },
-              "silent-crashes": { "type": "string" },
-              "no-quit": { "type": "string" },
-              "arguments": { "type": "string" },
-              "build-player-path": { "type": "string" },
-              "detection-mode": { "type": "string" },
-              "is-incremental": { "type": "string" },
-              "unity-root": { "type": "string" },
-              "script-content": { "type": "string" },
-              "shell-script": { "type": "string" },
-              "docker-image": { "type": "string" },
-              "dockerfile-source": { "type": "string" },
-              "dockerfile-path": { "type": "string" }
+              }
             }
+          }
+        },
+        "features": {
+          "title": "Features",
+          "description": "The collection of build features.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": { }
           }
         },
         "files-publication": {
@@ -349,6 +402,85 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
         "allow-reuse": {
           "type": "boolean",
           "description": "true, if TeamCity should reuse the previous run if neither the job nor a remote repository has any new changes; false, if a job should run anew every time it's triggered."
+        },
+        "download-artifacts": {
+          "type": "array",
+          "title": "Downloaded non-pipeline artifacts",
+          "description": "A collection of artifact dependencies from external build configurations outside the pipeline's direct dependency chain.",
+          "items": {
+            "type": "object",
+            "patternProperties": {
+              "^[A-Za-z0-9_]+$": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "description": "Specifies which build to retrieve artifacts from.",
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "last-finished",
+                          "last-successful",
+                          "last-pinned",
+                          "dependency",
+                          "dependency-or-last-finished"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "tagged": {
+                            "type": "string",
+                            "description": "Build with a specific tag."
+                          },
+                          "build-number": {
+                            "type": "string",
+                            "description": "Specific build number."
+                          },
+                          "last-pinned": {
+                            "type": "boolean",
+                            "description": "Most recently pinned build."
+                          },
+                          "dependency": {
+                            "type": "boolean",
+                            "description": "Build from the same chain."
+                          },
+                          "dependency-or-last-finished": {
+                            "type": "boolean",
+                            "description": "Build from the same chain or most recently finished build."
+                          },
+                          "last-finished": {
+                            "type": "boolean",
+                            "description": "Most recently finished build."
+                          },
+                          "last-successful": {
+                            "type": "boolean",
+                            "description": "Most recently successful build."
+                          },
+                          "branch": {
+                            "type": "string",
+                            "description": "Filter by branch pattern."
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "artifact-rules": {
+                    "type": "string",
+                    "description": "Defines which artifacts to download."
+                  },
+                  "clean-destination": {
+                    "type": "boolean",
+                    "description": "When true, clears the destination directory before downloading artifacts."
+                  }
+                },
+                "required": ["from", "artifact-rules"],
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": false
@@ -376,10 +508,22 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
         "pattern": "^credentialsJSON:.+"
       }
     },
+    "output-parameters": {
+      "type": "object",
+      "title": "Pipeline output parameters",
+      "description": "The list of name/value pairs that expose parameters to downstream pipelines and build configurations. Values can reference job parameters (%job.jobId.paramName%) and pipeline parameters (%paramName%), including parameters inherited from parent projects.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
     "jobs": {
       "type": "object",
       "description": "The list of jobs owned by this pipeline",
       "properties": {},
+      "propertyNames": {
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*$",
+        "maxLength": 225
+      },
       "patternProperties": {
         "^[^\\s]+$": {
           "$ref": "#/definitions/job"
@@ -392,13 +536,21 @@ Below is the full YAML specification for TeamCity pipelines. Since pipelines are
     "dependencies": {
       "$ref": "#/definitions/dependencies"
     },
-    "importParameters": {
+    "import-parameters": {
       "type": "array",
       "title": "Import Parameters",
       "description": "The list of parameters that should be imported from parent TeamCity projects.",
       "items": {
         "type": "string"
       }
+    },
+    "version": {
+      "type": "integer",
+      "title": "YAML API Version",
+      "description": "The version of YAML API",
+      "enum": [
+        1
+      ]
     }
   },
   "additionalProperties": false
