@@ -935,6 +935,14 @@ Kubernetes connections allow TeamCity to access your Kubernetes resources. These
     * <include from="common-templates.md" element-id="kubernetes-settings-proxy-credentials"/>
     * <include from="common-templates.md" element-id="kubernetes-settings-proxy-noproxy"/>
 
+    > To enable these settings for a specific project, add the `teamcity.internal.kubernetes.enableProxySettings=true` parameter to the project settings.
+    >
+    {style="note" instance="tcc"}
+    
+    > To enable these settings for a specific project, add the `teamcity.internal.kubernetes.enableProxySettings=true` parameter to the project settings. To enable them globally, add the same parameter to the [internal server settings](server-startup-properties.md#TeamCity+Internal+Properties) instead.
+    >
+    {style="note" instance="tc"}
+
 9. <include from="common-templates.md" element-id="test-and-save-connection"></include>
 
 

@@ -155,6 +155,14 @@ If your TeamCity server needs to use a proxy server to access a k8s cluster, con
 * <include from="common-templates.md" element-id="kubernetes-settings-proxy-credentials"/>
 * <include from="common-templates.md" element-id="kubernetes-settings-proxy-noproxy"/>
 
+  > To enable these settings for a specific project, add the `teamcity.internal.kubernetes.enableProxySettings=true` parameter to the project settings.
+  >
+  {style="note" instance="tcc"}
+
+  > To enable these settings for a specific project, add the `teamcity.internal.kubernetes.enableProxySettings=true` parameter to the project settings. To enable them globally, add the same parameter to the [internal server settings](server-startup-properties.md#TeamCity+Internal+Properties) instead.
+  >
+  {style="note" instance="tc"}
+
 ## Adding Kubernetes Cloud Image
 
 After configuring the general Kubernetes settings, you can proceed with adding a new build agent image.
