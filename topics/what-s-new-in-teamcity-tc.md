@@ -9,6 +9,12 @@ Starting with this release, we return to the pre-2022 versioning scheme: major T
 This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
 
 
+## Java 21 Migration
+
+TeamCity server and build agents no longer support Java versions older than Java 21. See this article for upgrade instructions: [](java-21.md).
+
+> This requirement only defines the Java version needed for the server and agents to start successfully; it does not restrict the Java versions your TeamCity projects can build, test, or deploy against.
+
 ## TeamCity CLI
 
 TeamCity 2026.1 adds a new way to work with your TeamCity instances: TeamCity CLI. Alongside the browser-based UI and the extensive [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), you can now use a command-line tool to interact with TeamCity directly from the terminal.

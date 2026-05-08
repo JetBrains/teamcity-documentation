@@ -57,6 +57,31 @@ Once you install Java 21, assign the corresponding installation path to the `JAV
 
 ### Update Agents
 
+To locate all agents that require an update (including both local and [cloud](teamcity-integration-with-cloud-solutions.md) ones), navigate to **Agents | Overview | Parameters report** and filter agents by the `teamcity.agent.jvm.specification` property value.
+
+<img src="agents-java-report.png" width="706" alt="Outdated agents report"/>
+
+To find all oudated agents using [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html):
+
+```Shell
+# Find outdated local agents
+
+curl --location --request GET 'http://$SERVER_URL/app/rest/agents?locator=parameter:(name:teamcity.agent.jvm.specification,value:21,matchType:does-not-match)&fields=count,agent(id,name,connected,authorized,properties($locator(name:teamcity.agent.jvm.specification),property(name,value)))' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer $TC_ACCESS_TOKEN'
+
+# Find outdated cloud profiles
+# Requires profiles to have at least one running agent
+
+curl --location --request GET 'http://$SERVER_URL/app/rest/cloud/profiles&fields=cloudProfile(id,name,images(cloudImage(id,name))&locator=image:(agent:(parameter:(name:teamcity.agent.jvm.specification,value:21,matchType:does-not-match))) \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer $TC_ACCESS_TOKEN'
+```
+
+#### Update Local Agents
+
 <tabs>
 
 <tab title="Windows">
@@ -75,6 +100,7 @@ Before upgrading an agent machine, we recommend uninstalling the existing agent 
 > * `teamcity.agent.jvm.java.home`
 > * `teamcity.agent.jvm.version`
 > * `teamcity.agent.jvm.vendor`
+> * `teamcity.agent.jvm.specification`
 >
 {style="tip"}
 
@@ -101,6 +127,7 @@ To update agent machines, follow the same procedure as you do for the server. Al
 > * `teamcity.agent.jvm.java.home`
 > * `teamcity.agent.jvm.version`
 > * `teamcity.agent.jvm.vendor`
+> * `teamcity.agent.jvm.specification`
 >
 {style="tip"}
 
@@ -110,6 +137,16 @@ To update agent machines, follow the same procedure as you do for the server. Al
 
 </tabs>
 
+
+#### Update Cloud Agents
+
+Cloud agents can reside on persistent cloud-hosted instances or ephemeral virtual machines spawned from an image. Depending on the VM type and cloud hosting provider, the update instructions may vary. For example, for TeamCity cloud profiles that target [EC2 AMIs](setting-up-teamcity-for-amazon-ec2.md), you need to:
+
+1. Update the base image as described in the [Update Local Agents](#Update+Local+Agents) section and make sure this agent successfully connects to TeamCity.
+2. Build a new AMI from this base image.
+3. Update your TeamCity cloud profiles and images to target the new AMI.
+
+   
 ## Unattended Java Upgrades
 
 <include from="configure-java-for-agent.md" element-id="unattended-java-upgrades"/>
