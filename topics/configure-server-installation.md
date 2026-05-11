@@ -1,7 +1,7 @@
 [//]: # (title: Configure Server Installation)
 [//]: # (help-id: Configure Server Installation)
 
-<primary-label ref="java-update" instance="tc"/>
+<primary-label ref="java-update"/>
 
 ## Changing Server Port
 

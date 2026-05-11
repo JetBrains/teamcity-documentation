@@ -1,7 +1,7 @@
 [//]: # (title: Install and Start TeamCity Agents)
 [//]: # (help-id: Install and Start TeamCity Agents;Setting up and Running Additional Build Agents)
 
-<primary-label ref="java-update" instance="tc"/>
+<primary-label ref="java-update"/>
 
 >This section is about [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) are maintained by the TeamCity Cloud team and require no actions from users.
 >

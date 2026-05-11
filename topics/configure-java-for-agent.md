@@ -1,7 +1,7 @@
 [//]: # (title: Configure Java for Agent)
 [//]: # (help-id: Configure Java for Agent)
 
-<primary-label ref="java-update" instance="tc"/>
+<primary-label ref="java-update"/>
 
 A TeamCity build agent is a Java application (see [supported Java versions](supported-platforms-and-environments.md#TeamCity+Agent)).
 

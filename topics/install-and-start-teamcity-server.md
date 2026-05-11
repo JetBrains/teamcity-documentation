@@ -1,7 +1,7 @@
 [//]: # (title: Install and Start TeamCity Server)
 [//]: # (help-id: Install and Start TeamCity Server;Installation;Installing and Configuring the TeamCity Server)
 
-<primary-label ref="java-update" instance="tc"/>
+<primary-label ref="java-update"/>
 
 TeamCity Server is a web application responsible for the core functionality of TeamCity. It provides a user interface, distributes the jobs (builds) to TeamCity agents, and aggregates their results. This section contains articles related to installing and starting your own instance of TeamCity Server.
 {instance="tc"}
