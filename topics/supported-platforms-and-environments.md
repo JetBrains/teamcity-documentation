@@ -1,7 +1,7 @@
 [//]: # (title: Supported Platforms and Environments)
 [//]: # (help-id: Supported Platforms and Environments)
 
-<primary-label ref="java-update" instance="tc"/>
+<primary-label ref="java-update"/>
 
 This page covers software-related environments TeamCity works with. For hardware-related notes, see [this section](system-requirements.md#Estimating+External+Database+Capacity).
 {instance="tc"}
