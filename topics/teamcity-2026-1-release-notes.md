@@ -108,6 +108,7 @@
 
 ### Bug
 
+* [**TW-99861**](https://youtrack.jetbrains.com/issue/TW-99861) — Limit Job Id and Job name length
 * [**TW-80432**](https://youtrack.jetbrains.com/issue/TW-80432) — Kubernetes Plugin does not allow to configure proxy to cluster
 * [**TW-85749**](https://youtrack.jetbrains.com/issue/TW-85749) — Personal patch is not applied for Parallel Tests and Matrix builds virtual dependencies
 * [**TW-100717**](https://youtrack.jetbrains.com/issue/TW-100717) — Add a link to the update doc for "agent can't be upgraded" warning
