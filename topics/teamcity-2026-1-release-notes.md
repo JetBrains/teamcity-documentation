@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2026.1 Release Notes)
 [//]: # (help-id: TeamCity 2026.1 Release Notes)
 
-**Build 012345, 11 May 2026**
+**Build 222521, 11 May 2026**
 
 ### Feature
 
