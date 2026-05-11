@@ -3,7 +3,7 @@
 
 This page is meant to give rough estimates of the closest TeamCity release dates. Please note that our development plans and dates may change rapidly, and this page might be updated with delays. To see the detailed roadmap, please visit [our website](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap).
 
-__Current TeamCity Version is 2025.11__
+__Current TeamCity Version is 2026.1__
 
 ### Next Major Release
 
