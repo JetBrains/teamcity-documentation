@@ -63,17 +63,17 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
     root@ubuntu:/opt# echo $JAVA_HOME
     ```
     
-    If no compatible Java is installed, install it like follows (the following example installs the [Amazon Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html) Java):
+    If no compatible Java is installed, install it like follows (the following example installs the [Amazon Corretto 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html) Java):
 
     ```Shell
     root@ubuntu:/opt# apt install java-common -y
-    root@ubuntu:/opt# wget https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.deb
-    root@ubuntu:/opt# dpkg --install amazon-corretto-11-x64-linux-jdk.deb
+    root@ubuntu:/opt# wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.deb
+    root@ubuntu:/opt# dpkg --install amazon-corretto-21-x64-linux-jdk.deb
     # verify the installation
     root@ubuntu:/opt# java -version
-    openjdk version "11.0.18" 2023-01-17 LTS
-    OpenJDK Runtime Environment Corretto-11.0.18.10.1 (build 11.0.18+10-LTS)
-    OpenJDK 64-Bit Server VM Corretto-11.0.18.10.1 (build 11.0.18+10-LTS, mixed mode)
+    openjdk version "21.0.18" 2025-01-17 LTS
+    OpenJDK Runtime Environment Corretto-21.0.18.10.1 (build 21.0.18+10-LTS)
+    OpenJDK 64-Bit Server VM Corretto-21.0.18.10.1 (build 21.0.18+10-LTS, mixed mode)
      ```
 
  6. Change the owner of the /opt/TeamCity directory to the `teamcity` user created in step 1.
@@ -96,7 +96,7 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
     Spawning TeamCity restarter in separate process
     TeamCity restarter running with PID 2817
     Starting TeamCity build agent...
-    Java executable is found: '/usr/lib/jvm/java-11-amazon-corretto/bin/java'
+    Java executable is found: '/usr/lib/jvm/java-21-amazon-corretto/bin/java'
     Starting TeamCity Build Agent Launcher...
     Agent home directory is /opt/TeamCity/buildAgent
     Done [3230], see log at /opt/TeamCity/buildAgent/logs/teamcity-agent.log
