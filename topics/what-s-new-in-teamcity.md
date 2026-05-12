@@ -14,7 +14,7 @@
 ## Upgrade Notes
 {instance="tc"}
 
-Before upgrading, we highly recommend reading about important changes in version [2025.11 compared to 2025.07](upgrade-notes.md#2025.11).
+Before upgrading, we highly recommend reading about important changes in version [2026.1 compared to 2025.11](upgrade-notes.md#2026.1).
 
 
 ## Fixed Issues
