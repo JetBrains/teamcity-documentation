@@ -65,7 +65,7 @@
 
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
 
-* 
+
 
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}
