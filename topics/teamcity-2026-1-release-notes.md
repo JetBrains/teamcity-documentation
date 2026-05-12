@@ -5,22 +5,15 @@
 
 ### Feature
 
-* [**TW-92582**](https://youtrack.jetbrains.com/issue/TW-92582) — Multi-repo support for pipelines using VCS roots from parent project
 * [**TW-92756**](https://youtrack.jetbrains.com/issue/TW-92756) — Support of MCP protocol to enable 3rd party integrations
-* [**TW-98715**](https://youtrack.jetbrains.com/issue/TW-98715) — Add swabra, free disk space, build cache, xml report processing features to pipeline jobs
-* [**TW-96208**](https://youtrack.jetbrains.com/issue/TW-96208) — Pipeline overview
-* [**TW-99230**](https://youtrack.jetbrains.com/issue/TW-99230) — Support VCS hosting build features configuration in Pipelines
 * [**TW-82657**](https://youtrack.jetbrains.com/issue/TW-82657) — GitHub App connection: provide dynamic credentials to build steps.
 * [**TW-96595**](https://youtrack.jetbrains.com/issue/TW-96595) — Allow to configure system webhooks for self-managed GitLab 
 * [**TW-42994**](https://youtrack.jetbrains.com/issue/TW-42994) — It should be possible to resolve value of reverse.dep.*** parameter in context of the head build
 * [**TW-99633**](https://youtrack.jetbrains.com/issue/TW-99633) — Add preset to create read-only token
-* [**TW-95286**](https://youtrack.jetbrains.com/issue/TW-95286) — Snapshot dependencies for Pipelines
 * [**TW-87288**](https://youtrack.jetbrains.com/issue/TW-87288) — Make the 'Build Name' value in the Parameters description of the Commit Status Publisher configurable
 * [**TW-77495**](https://youtrack.jetbrains.com/issue/TW-77495) — Perforce Shelve Trigger / Personal Build should run "p4 resolve"
-* [**TW-94763**](https://youtrack.jetbrains.com/issue/TW-94763) — Support Pipelines as Kotlin object in DSL
 * [**TW-79126**](https://youtrack.jetbrains.com/issue/TW-79126) — TeamCity Hashicorp Vault Google Cloud auth method
 * [**TW-77514**](https://youtrack.jetbrains.com/issue/TW-77514) — support unshelving multiple perforce shelves with rest API
-* [**TW-100134**](https://youtrack.jetbrains.com/issue/TW-100134) — Run custom build for pipelines
 * [**TW-34709**](https://youtrack.jetbrains.com/issue/TW-34709) — Support for SAML Authentication
 * [**TW-1858**](https://youtrack.jetbrains.com/issue/TW-1858) — Cancel an obsolete running build if there are more recent changes/queued builds
 * [**TW-43295**](https://youtrack.jetbrains.com/issue/TW-43295) — Ability to pause build queue via REST api call
@@ -28,12 +21,10 @@
 
 ### Task
 
-* [**TW-95544**](https://youtrack.jetbrains.com/issue/TW-95544) — Merge Pipeline runners: group dotnet commands in UI
 * [**TW-93722**](https://youtrack.jetbrains.com/issue/TW-93722) — Discontinue support for Java versions earlier than 21 on both the server and agent
-* [**TW-99770**](https://youtrack.jetbrains.com/issue/TW-99770) — Provide better instructions for MCP for finding build configurations/pipelines related to repository
 * [**TW-93287**](https://youtrack.jetbrains.com/issue/TW-93287) — SLNX Solution support
 * [**TW-65203**](https://youtrack.jetbrains.com/issue/TW-65203) — Enable virtual host addressing in S3 by default
-* [**TW-93979**](https://youtrack.jetbrains.com/issue/TW-93979) — [AWS] Migrate bundled AWS-related plugins to SDK v2 
+* [**TW-93979**](https://youtrack.jetbrains.com/issue/TW-93979) — Migrate bundled AWS-related plugins to SDK v2 
 * [**TW-86630**](https://youtrack.jetbrains.com/issue/TW-86630) — Log the Token Name of the User Access Token when used in requests
 * [**TW-96506**](https://youtrack.jetbrains.com/issue/TW-96506) — Update bundled version of the dotCover Command Line Tools to 2025.1.7 version
 * [**TW-96509**](https://youtrack.jetbrains.com/issue/TW-96509) — Update ReSharper Command Line Tool to 2025.2.3 version
@@ -55,6 +46,61 @@
 * [**TW-96384**](https://youtrack.jetbrains.com/issue/TW-96384) — Support configurable Git shallow clone depth (e.g. --depth=2)
 * [**TW-96513**](https://youtrack.jetbrains.com/issue/TW-96513) — Update Maven tool to 3.9.11 version
 
+### Pipelines Enchancements
+
+* [**TW-92582**](https://youtrack.jetbrains.com/issue/TW-92582) — Multi-repo support for pipelines using VCS roots from parent project
+* [**TW-96208**](https://youtrack.jetbrains.com/issue/TW-96208) — Pipeline overview
+* [**TW-98715**](https://youtrack.jetbrains.com/issue/TW-98715) — Add Swabra, free disk space, build cache, xml report processing features to pipeline jobs
+* [**TW-99230**](https://youtrack.jetbrains.com/issue/TW-99230) — Support VCS hosting build features configuration in Pipelines
+* [**TW-95286**](https://youtrack.jetbrains.com/issue/TW-95286) — Snapshot dependencies for Pipelines
+* [**TW-94763**](https://youtrack.jetbrains.com/issue/TW-94763) — Support Pipelines as Kotlin object in DSL
+* [**TW-100134**](https://youtrack.jetbrains.com/issue/TW-100134) — Run custom build for pipelines
+* [**TW-95544**](https://youtrack.jetbrains.com/issue/TW-95544) — Merge Pipeline runners: group dotnet commands in UI
+* [**TW-99770**](https://youtrack.jetbrains.com/issue/TW-99770) — Provide better instructions for MCP for finding build configurations/pipelines related to repository
+* [**TW-99308**](https://youtrack.jetbrains.com/issue/TW-99308) — Pipeline fails to start with "Cannot locate Maven" if bundled maven version was chosen in pipeline (version that exists on server)
+* [**TW-97361**](https://youtrack.jetbrains.com/issue/TW-97361) — It's unclear from the UI and docs, where job artifacts will be published
+* [**TW-98149**](https://youtrack.jetbrains.com/issue/TW-98149) — Running a personal pipeline with a broken yaml results in 500 error and a broken pipeline run page
+* [**TW-97481**](https://youtrack.jetbrains.com/issue/TW-97481) — The tooltip on the 'Save' button is hard to read (Pipeline Editing page)
+* [**TW-98480**](https://youtrack.jetbrains.com/issue/TW-98480) — Pipeline build runners auto-generate YAML with quotes in boolean values
+* [**TW-97647**](https://youtrack.jetbrains.com/issue/TW-97647) — The popup with actions is not shown for pipeline dependencies
+* [**TW-97010**](https://youtrack.jetbrains.com/issue/TW-97010) — Parameters: Show UI error when trying to override imported parameter on the pipeline level
+* [**TW-96907**](https://youtrack.jetbrains.com/issue/TW-96907) — Import Parameters: Expand name and value text fields in case of multiline input
+* [**TW-96436**](https://youtrack.jetbrains.com/issue/TW-96436) — No confirmation for the 'Cancel run' action
+* [**TW-96280**](https://youtrack.jetbrains.com/issue/TW-96280) — Pipelines investigations: Show in build log opens Problem tab instead
+* [**TW-96162**](https://youtrack.jetbrains.com/issue/TW-96162) — Misplaced VCS root name on Edit repository page for existing VCS root
+* [**TW-95598**](https://youtrack.jetbrains.com/issue/TW-95598) — Order of pipelines steps resets in Editing Job page in UI after saving the changes (the pipeline runs steps in the changed order)
+* [**TW-95437**](https://youtrack.jetbrains.com/issue/TW-95437) — TCP Merge: modification of a job output breaks the pipeline with dependencies
+* [**TW-97524**](https://youtrack.jetbrains.com/issue/TW-97524) — Muting test in the selected pipeline doesn't work
+* [**TW-97389**](https://youtrack.jetbrains.com/issue/TW-97389) — No errors about incompatible agents in pipeline settings, if parameter references can't be resolved on the Pipeline level
+* [**TW-98826**](https://youtrack.jetbrains.com/issue/TW-98826) — Problems tree on should correctly display problems from pipeline run
+* [**TW-99146**](https://youtrack.jetbrains.com/issue/TW-99146) — Pipeline editing is broken with no clear reason if there are problems with inherited connections
+* [**TW-99104**](https://youtrack.jetbrains.com/issue/TW-99104) — Pipeline status badge shows "Failed" status and icon instead of "Failed to start"
+* [**TW-99105**](https://youtrack.jetbrains.com/issue/TW-99105) — Pipeline cancelation reason is not shown in Pipeline run status badge
+* [**TW-99008**](https://youtrack.jetbrains.com/issue/TW-99008) — Secondary node REST API returns finished build with status FAILURE but empty build problems
+* [**TW-99466**](https://youtrack.jetbrains.com/issue/TW-99466) — "Provide missing secure values" from pipeline-related server health errors should lead to parent project "Tokens"
+* [**TW-99249**](https://youtrack.jetbrains.com/issue/TW-99249) — The 'Agent Terminal' button is not displayed on the pipeline run page when parallel tests are used
+* [**TW-98922**](https://youtrack.jetbrains.com/issue/TW-98922) — Click at banner closes the settings panel in Pipelines
+* [**TW-99096**](https://youtrack.jetbrains.com/issue/TW-99096) — "Changes since last successful build" is available in pipelines but returns error 400
+* [**TW-98935**](https://youtrack.jetbrains.com/issue/TW-98935) — Edit pipeline indicator is hidden behind the pipeline name
+* [**TW-99383**](https://youtrack.jetbrains.com/issue/TW-99383) — Steps are not disabled in Pipeline Jobs
+* [**TW-94636**](https://youtrack.jetbrains.com/issue/TW-94636) — YAML/Visual view is not preserved between pipelines
+* [**TW-98827**](https://youtrack.jetbrains.com/issue/TW-98827) — Tests tree on should correctly display problems from pipeline run
+* [**TW-98974**](https://youtrack.jetbrains.com/issue/TW-98974) — Update the colour of the selected pipeline error state
+* [**TW-97704**](https://youtrack.jetbrains.com/issue/TW-97704) — Jump to the pipeline name in the create pipeline form
+* [**TW-98864**](https://youtrack.jetbrains.com/issue/TW-98864) — Misaligned parameter names in Pipeline settings in Safari
+* [**TW-98769**](https://youtrack.jetbrains.com/issue/TW-98769) — Display dependencies for pipeline runs in the build details
+* [**TW-97367**](https://youtrack.jetbrains.com/issue/TW-97367) — Pipelines use html url for creating new VCS roots from connections
+* [**TW-98237**](https://youtrack.jetbrains.com/issue/TW-98237) — Disabled and disconnected agents are shown as compatible for queued Pipeline Jobs
+* [**TW-95622**](https://youtrack.jetbrains.com/issue/TW-95622) — Better handling of cases of incorrect pipelines url openings
+* [**TW-97146**](https://youtrack.jetbrains.com/issue/TW-97146) — Show the dotnet devenv action in the pipeline Editor
+* [**TW-97424**](https://youtrack.jetbrains.com/issue/TW-97424) — 'VCS root not accessible from configuration' error message should be adjusted to take pipelines into account
+* [**TW-97292**](https://youtrack.jetbrains.com/issue/TW-97292) — Collapsed "Outputs" sections for Pipeline jobs shows "Shared files: object Object"
+* [**TW-96674**](https://youtrack.jetbrains.com/issue/TW-96674) — Docker/NPM Integration allows saving with empty URL, causing error during job execution
+* [**TW-100111**](https://youtrack.jetbrains.com/issue/TW-100111) — Constant high CPU usage when trying to save pipeline with cyclic dependency in it
+* [**TW-95431**](https://youtrack.jetbrains.com/issue/TW-95431) — Job-level artifacts: impossible to download via the button
+
+
+
 ### Bug
 
 * [**TW-97326**](https://youtrack.jetbrains.com/issue/TW-97326) — Perforce virtual streams: only latest change is detected from two separate submissions
@@ -69,31 +115,16 @@
 * [**TW-80432**](https://youtrack.jetbrains.com/issue/TW-80432) — Kubernetes Plugin does not allow to configure proxy to cluster
 * [**TW-85749**](https://youtrack.jetbrains.com/issue/TW-85749) — Personal patch is not applied for Parallel Tests and Matrix builds virtual dependencies
 * [**TW-99775**](https://youtrack.jetbrains.com/issue/TW-99775) — Adding build type to favorites fails
-* [**TW-99308**](https://youtrack.jetbrains.com/issue/TW-99308) — Pipeline fails to start with "Cannot locate Maven" if bundled maven version was chosen in pipeline (version that exists on server)
-* [**TW-97361**](https://youtrack.jetbrains.com/issue/TW-97361) — Pipelines: It's unclear from the UI and docs, where job artifacts will be published
 * [**TW-95112**](https://youtrack.jetbrains.com/issue/TW-95112) — Rename Docker Repository -> Docker Registry
 * [**TW-94020**](https://youtrack.jetbrains.com/issue/TW-94020) — TCP Merge: cloud images are not listed in incompatible agents when the agent is starting 
 * [**TW-99275**](https://youtrack.jetbrains.com/issue/TW-99275) — Parameter name disappears when configuring custom agent requirement in Firefox
-* [**TW-98149**](https://youtrack.jetbrains.com/issue/TW-98149) — Running a personal pipeline with a broken yaml results in 500 error and a broken pipeline run page
 * [**TW-99022**](https://youtrack.jetbrains.com/issue/TW-99022) — The bars on the optimization chart are stuck to the top edge
-* [**TW-97481**](https://youtrack.jetbrains.com/issue/TW-97481) — The tooltip on the 'Save' button is hard to read (Pipeline Editing page)
-* [**TW-98480**](https://youtrack.jetbrains.com/issue/TW-98480) — Pipeline build runners auto-generate YAML with quotes in boolean values
-* [**TW-97647**](https://youtrack.jetbrains.com/issue/TW-97647) — The popup with actions is not shown for pipeline dependencies
-* [**TW-97010**](https://youtrack.jetbrains.com/issue/TW-97010) — Pipelines: Parameters: Show UI error when trying to override imported parameter on the pipeline level
-* [**TW-96907**](https://youtrack.jetbrains.com/issue/TW-96907) — Pipelines: Import Parameters: Expand name and value text fields in case of multiline input
-* [**TW-96436**](https://youtrack.jetbrains.com/issue/TW-96436) — Pipelines: No confirmation for the 'Cancel run' action
-* [**TW-96280**](https://youtrack.jetbrains.com/issue/TW-96280) — Pipelines investigations: Show in build log opens Problem tab instead
-* [**TW-96162**](https://youtrack.jetbrains.com/issue/TW-96162) — Pipelines: Misplaced VCS root name on Edit repository page for existing VCS root
-* [**TW-95598**](https://youtrack.jetbrains.com/issue/TW-95598) — Order of pipelines steps resets in Editing Job page in UI after saving the changes (the pipeline runs steps in the changed order)
-* [**TW-95437**](https://youtrack.jetbrains.com/issue/TW-95437) — TCP Merge: modification of a job output breaks the pipeline with dependencies
 * [**TW-94106**](https://youtrack.jetbrains.com/issue/TW-94106) — "Save on TeamCity server" button has no feedback
-* [**TW-97524**](https://youtrack.jetbrains.com/issue/TW-97524) — Muting test in the selected pipeline doesn't work
-* [**TW-97389**](https://youtrack.jetbrains.com/issue/TW-97389) — No errors about incompatible agents in pipeline settings, if parameter references can't be resolved on the Pipeline level
 * [**TW-95358**](https://youtrack.jetbrains.com/issue/TW-95358) — TCP Merge: text area for multi-line script step is too narrow
 * [**TW-97451**](https://youtrack.jetbrains.com/issue/TW-97451) — Change of the value type key case can lead to missing statistic values in the database
 * [**TW-96950**](https://youtrack.jetbrains.com/issue/TW-96950) — VCS root uses SSH keys specified in .ssh/config on the server machine, if "Uploaded key" is selected, but the key is not valid
 * [**TW-98038**](https://youtrack.jetbrains.com/issue/TW-98038) — Inherited S3 storage is inaccessible in subprojects when “Limit build access permissions” is enabled and AWS connection uses IAM Role
-* [**TW-96881**](https://youtrack.jetbrains.com/issue/TW-96881) — [Feature Parity] Last run deletion leads to empty table with non-functioning links
+* [**TW-96881**](https://youtrack.jetbrains.com/issue/TW-96881) — Last run deletion leads to empty table with non-functioning links
 * [**TW-77853**](https://youtrack.jetbrains.com/issue/TW-77853) — Versioned Settings Change Log tab is empty for a user with "View build configuration settings" and without "Edit project" permission
 * [**TW-97745**](https://youtrack.jetbrains.com/issue/TW-97745) — Old artifacts Cleaner cache files remain in data directory, if keepArtifactsNewCache is enabled
 * [**TW-97791**](https://youtrack.jetbrains.com/issue/TW-97791) — Do not show parameter as unresolved when it's used only in step which requires existence of that parameter
@@ -116,12 +147,7 @@
 * [**TW-98160**](https://youtrack.jetbrains.com/issue/TW-98160) — K8S executor: executor requires a template image to have java installed in /opt/java
 * [**TW-97967**](https://youtrack.jetbrains.com/issue/TW-97967) — K8s executor: requirements via env. variables are incorrectly resolved
 * [**TW-99639**](https://youtrack.jetbrains.com/issue/TW-99639) — Update AI disable feedback
-* [**TW-98826**](https://youtrack.jetbrains.com/issue/TW-98826) — Problems tree on should correctly display problems from pipeline run
 * [**TW-99267**](https://youtrack.jetbrains.com/issue/TW-99267) — Incorrect parameter resolution for a not yet started build
-* [**TW-97570**](https://youtrack.jetbrains.com/issue/TW-97570) — AI Assistant in TeamCity Cloud can suggest on-prem or incorrect description if feature is setup differently in Cloud (comparing to on-prem)
-* [**TW-97566**](https://youtrack.jetbrains.com/issue/TW-97566) — AI Assistant in TeamCity Cloud can suggest on-prem description if feature doesn't exist in Cloud
-* [**TW-99146**](https://youtrack.jetbrains.com/issue/TW-99146) — Pipeline editing is broken with no clear reason if there are problems with inherited connections
-* [**TW-99104**](https://youtrack.jetbrains.com/issue/TW-99104) — Pipeline status badge shows "Failed" status and icon instead of "Failed to start"
 * [**TW-99137**](https://youtrack.jetbrains.com/issue/TW-99137) — It's unclear why server was not started, if teamcity-server.sh couldn't find minimal Java
 * [**TW-99604**](https://youtrack.jetbrains.com/issue/TW-99604) — Sakura Agent Page: Miscellaneous section is missing
 * [**TW-95473**](https://youtrack.jetbrains.com/issue/TW-95473) — Unrelated projects in the projects popup of the test history page
@@ -129,50 +155,37 @@
 * [**TW-99922**](https://youtrack.jetbrains.com/issue/TW-99922) — Azure TFS VCS Root can't connect to repository
 * [**TW-100061**](https://youtrack.jetbrains.com/issue/TW-100061) — Windows Docker images: the dotCover { … } step fails due to non-canonical ACLs
 * [**TW-82689**](https://youtrack.jetbrains.com/issue/TW-82689) — Personal Access Tokens for Jira Server in Jira Integration are not supported
-* [**TW-99105**](https://youtrack.jetbrains.com/issue/TW-99105) — Pipeline cancelation reason is not shown in Pipeline run status badge
-* [**TW-99008**](https://youtrack.jetbrains.com/issue/TW-99008) — Secondary node REST API returns finished build with status FAILURE but empty build problems
+
 * [**TW-97024**](https://youtrack.jetbrains.com/issue/TW-97024) — Automatically interrupt long running HTTP requests
 * [**TW-67712**](https://youtrack.jetbrains.com/issue/TW-67712) — Changing AMI in Amazon Cloud Profile terminates the instances running from old AMI even if they are running the builds
 * [**TW-98671**](https://youtrack.jetbrains.com/issue/TW-98671) — Commit status publisher Build Feature description doesn't show the correct and sufficient information 
 * [**TW-93456**](https://youtrack.jetbrains.com/issue/TW-93456) — Matrix builds: Reverse dependencies not resolved in matrix builds
-* [**TW-99466**](https://youtrack.jetbrains.com/issue/TW-99466) — "Provide missing secure values" from pipeline-related server health errors should lead to parent project "Tokens"
 * [**TW-99640**](https://youtrack.jetbrains.com/issue/TW-99640) — Feedback form is not shown after admin chose the "Keep AI Assistant disabled"
 * [**TW-95465**](https://youtrack.jetbrains.com/issue/TW-95465) — Incorrect link in snapshot dependency in Sakura UI
 * [**TW-96694**](https://youtrack.jetbrains.com/issue/TW-96694) — Pause Build Queue/Resume Build Queue is missing from classic UI
-* [**TW-99249**](https://youtrack.jetbrains.com/issue/TW-99249) — The 'Agent Terminal' button is not displayed on the pipeline run page when parallel tests are used
 * [**TW-99757**](https://youtrack.jetbrains.com/issue/TW-99757) — Remove the vertical scrollbar
-* [**TW-93396**](https://youtrack.jetbrains.com/issue/TW-93396) — [K8S Cloud Profile] Windows Pod Template can break
+* [**TW-93396**](https://youtrack.jetbrains.com/issue/TW-93396) — K8S Cloud Profile Windows Pod Template can break
 * [**TW-99478**](https://youtrack.jetbrains.com/issue/TW-99478) — Constant warnings "Failed to find telegraf executable in PATH" in teamcity-agent.log
 * [**TW-95283**](https://youtrack.jetbrains.com/issue/TW-95283) — Perforce: `forceTrust` option from build parameters is ignored in some cases
-* [**TW-99383**](https://youtrack.jetbrains.com/issue/TW-99383) — Steps are not disabled in Pipeline Jobs 
 * [**TW-97821**](https://youtrack.jetbrains.com/issue/TW-97821) — S3 retry mechanism for error code 0: check all possible scenarios are covered
 * [**TW-96602**](https://youtrack.jetbrains.com/issue/TW-96602) — "Stop build" button partially obscured in classic UI
-* [**TW-98922**](https://youtrack.jetbrains.com/issue/TW-98922) — Click at banner closes the settings panel in Pipelines
-* [**TW-99096**](https://youtrack.jetbrains.com/issue/TW-99096) — "Changes since last successful build" is available in pipelines but returns error 400
-* [**TW-98935**](https://youtrack.jetbrains.com/issue/TW-98935) — Edit pipeline indicator is hidden behind the pipeline name
+
 * [**TW-98442**](https://youtrack.jetbrains.com/issue/TW-98442) — Prompt password parameter is provided in encrypted form if a custom value is specified
 * [**TW-95561**](https://youtrack.jetbrains.com/issue/TW-95561) — TCP Steps: "(and 0 more line)" can be shown in the step settings if all the script is visible
 * [**TW-99128**](https://youtrack.jetbrains.com/issue/TW-99128) — Virtual configuration can inherit triggers from the default template
-* [**TW-97951**](https://youtrack.jetbrains.com/issue/TW-97951) — [Design] Review the empty states of the main navigation
+* [**TW-97951**](https://youtrack.jetbrains.com/issue/TW-97951) — Review the empty states of the main navigation
 * [**TW-98197**](https://youtrack.jetbrains.com/issue/TW-98197) — Don’t show CSAT after major update for users who rarely visit the server
 * [**TW-99203**](https://youtrack.jetbrains.com/issue/TW-99203) — Free disk space UI: prefill the default 3gb value for the feature
 * [**TW-91601**](https://youtrack.jetbrains.com/issue/TW-91601) — Node.js Runner: Build Step Auto-detection suggest a deprecated package for eslint which ends up as a build problem 
 * [**TW-98865**](https://youtrack.jetbrains.com/issue/TW-98865) — Remove "Copy link to test" from dropdown for HTTP servers
-* [**TW-94636**](https://youtrack.jetbrains.com/issue/TW-94636) — TCP Merge: YAML/Visual view is not preserved between pipelines
 * [**TW-52584**](https://youtrack.jetbrains.com/issue/TW-52584) — Order of SBuild.getFailureReasons() (add timestamp to build problem to allow their sorting)
 * [**TW-99023**](https://youtrack.jetbrains.com/issue/TW-99023) — The Log In button is stuck to the left edge
-* [**TW-98827**](https://youtrack.jetbrains.com/issue/TW-98827) — Tests tree on should correctly display problems from pipeline run
 * [**TW-93063**](https://youtrack.jetbrains.com/issue/TW-93063) — Versioned Settings ignore "custom path" when TeamCity automatically adds ID to requirements set without ID in XML-files.
-* [**TW-95431**](https://youtrack.jetbrains.com/issue/TW-95431) — Job-level artifacts: impossible to download via the button
 * [**TW-99075**](https://youtrack.jetbrains.com/issue/TW-99075) — NullPointerException inside assignRolesDialogContent_jsp
 * [**TW-99021**](https://youtrack.jetbrains.com/issue/TW-99021) — Long branch names extend beyond the block
 * [**TW-98176**](https://youtrack.jetbrains.com/issue/TW-98176) — Delete the hardcode of specific version of Node in Node.js runner
 * [**TW-98967**](https://youtrack.jetbrains.com/issue/TW-98967) — Dependency preview state remains when user navigates away
-* [**TW-98974**](https://youtrack.jetbrains.com/issue/TW-98974) — Update the colour of the selected pipeline error state
-* [**TW-97704**](https://youtrack.jetbrains.com/issue/TW-97704) — Jump to the pipeline name in the create pipeline form 
-* [**TW-98864**](https://youtrack.jetbrains.com/issue/TW-98864) — Misaligned parameter names in Pipeline settings in Safari
 * [**TW-97394**](https://youtrack.jetbrains.com/issue/TW-97394) — "Copy answer" button is hidden if CSAT is disabled
-* [**TW-98769**](https://youtrack.jetbrains.com/issue/TW-98769) — [Design] Display dependencies for pipeline runs in the build details
 * [**TW-97351**](https://youtrack.jetbrains.com/issue/TW-97351) — FUS events can be lost if users click too fast
 * [**TW-96093**](https://youtrack.jetbrains.com/issue/TW-96093) — Benchmark plugin: the benchmark is stuck because the connectivity between created agents and the server cannot be verified
 * [**TW-98092**](https://youtrack.jetbrains.com/issue/TW-98092) — "Repository not found" errors during token refresh
@@ -180,8 +193,8 @@
 * [**TW-98101**](https://youtrack.jetbrains.com/issue/TW-98101) — Show the reaction on copying the code snippets from AI Assistant
 * [**TW-93646**](https://youtrack.jetbrains.com/issue/TW-93646) — "Invalid target pool for image" must not fail whole cloud profile
 * [**TW-98746**](https://youtrack.jetbrains.com/issue/TW-98746) — Create the Kotlin DSL setting for the 'Build Name' value in the Parameters description of the Commit Status Publisher
-* [**TW-97668**](https://youtrack.jetbrains.com/issue/TW-97668) — [EC2] Some Launch Templates are missing from the Cloud Image settings
-* [**TW-91965**](https://youtrack.jetbrains.com/issue/TW-91965) — Reintroduce the <Project Pool> option on EC2 UI
+* [**TW-97668**](https://youtrack.jetbrains.com/issue/TW-97668) — Some EC2 Launch Templates are missing from the Cloud Image settings
+* [**TW-91965**](https://youtrack.jetbrains.com/issue/TW-91965) — Reintroduce the Project Pool option on EC2 UI
 * [**TW-97753**](https://youtrack.jetbrains.com/issue/TW-97753) — Project Change Log shows only 2 pages in Sakura
 * [**TW-95537**](https://youtrack.jetbrains.com/issue/TW-95537) — Broken documentation link for GitHub Enterprise API in GitHub Release build step and commit status publisher settings
 * [**TW-98123**](https://youtrack.jetbrains.com/issue/TW-98123) — Agent temp directories may not be correctly set when running an agent on Java 21
@@ -191,8 +204,7 @@
 * [**TW-97344**](https://youtrack.jetbrains.com/issue/TW-97344) — Kubernetes Cloud images: Cannot view image settings for read-only projects
 * [**TW-97337**](https://youtrack.jetbrains.com/issue/TW-97337) — Delete image dialog is empty in K8s cloud profile
 * [**TW-97343**](https://youtrack.jetbrains.com/issue/TW-97343) — Kubernetes cloud images: Do not show "Delete image" link for read-only projects
-* [**TW-97367**](https://youtrack.jetbrains.com/issue/TW-97367) — Pipelines use html url for creating new VCS roots from connections
-* [**TW-97630**](https://youtrack.jetbrains.com/issue/TW-97630) — [S3] 400 Status with connection reset
+* [**TW-97630**](https://youtrack.jetbrains.com/issue/TW-97630) — 400 Status with connection reset
 * [**TW-98113**](https://youtrack.jetbrains.com/issue/TW-98113) — Incorrect link to the queued build page
 * [**TW-97729**](https://youtrack.jetbrains.com/issue/TW-97729) — Builds suitable for reuse are only checked when a shared resource is available
 * [**TW-97259**](https://youtrack.jetbrains.com/issue/TW-97259) — A lot of "Error occurred while parsing frontend analytics events" warning on secondary node logs
@@ -201,7 +213,6 @@
 * [**TW-98252**](https://youtrack.jetbrains.com/issue/TW-98252) — Allow to run re-encryption with the same key, if previous reencryption is marked as successful
 * [**TW-97854**](https://youtrack.jetbrains.com/issue/TW-97854) — Sporadic build-scoped tokens related message in logs 
 * [**TW-96844**](https://youtrack.jetbrains.com/issue/TW-96844) — Read-only secondary node cannot generate new encryption key
-* [**TW-98237**](https://youtrack.jetbrains.com/issue/TW-98237) — Disabled and disconnected agents are shown as compatible for queued Pipeline Jobs
 * [**TW-78885**](https://youtrack.jetbrains.com/issue/TW-78885) — "Expand all" tests button on Build Overview does not expand them all
 * [**TW-97731**](https://youtrack.jetbrains.com/issue/TW-97731) — Acquire VCS auth token: Unclear error 'Parameter "state" is missing', if browser URL doesn't match server URL
 * [**TW-97874**](https://youtrack.jetbrains.com/issue/TW-97874) — Clicking the link to issues in changes popup does nothing
@@ -218,24 +229,19 @@
 * [**TW-80951**](https://youtrack.jetbrains.com/issue/TW-80951) — Incorrect order of build problems in the new UI
 * [**TW-66822**](https://youtrack.jetbrains.com/issue/TW-66822) — Create cloud profile. Unable to set Kubernetes namespace using Magic Wand.
 * [**TW-97582**](https://youtrack.jetbrains.com/issue/TW-97582) — Build Statistics are published in build_data_storage with a delay
-* [**TW-95622**](https://youtrack.jetbrains.com/issue/TW-95622) — TCP Merge: better handling of cases of incorrect pipelines url openings
 * [**TW-97612**](https://youtrack.jetbrains.com/issue/TW-97612) — Wait time reason displayed as "Other" instead of showing detailed resource/agent info
 * [**TW-90524**](https://youtrack.jetbrains.com/issue/TW-90524) — Protocol.ResponseProcessCookies - Invalid cookie header
 * [**TW-96021**](https://youtrack.jetbrains.com/issue/TW-96021) — Auto-completion and resolving by hover doesn't work for branch specifications
 * [**TW-95973**](https://youtrack.jetbrains.com/issue/TW-95973) — TCP Run in Docker: Autocomplete hangs on search
 * [**TW-86142**](https://youtrack.jetbrains.com/issue/TW-86142) — Sakura UI: cannot select text on the Change Log tab on records with merge requests
-* [**TW-97146**](https://youtrack.jetbrains.com/issue/TW-97146) — Show the dotnet devenv action in the pipeline Editor
-* [**TW-97424**](https://youtrack.jetbrains.com/issue/TW-97424) — 'VCS root not accessible from configuration' error message should be adjusted to take pipelines into account
-* [**TW-97292**](https://youtrack.jetbrains.com/issue/TW-97292) — Collapsed "Outputs" sections for Pipeline jobs shows "Shared files: object Object"
 * [**TW-96057**](https://youtrack.jetbrains.com/issue/TW-96057) — Run in Docker (Dockerfile): after switching to Path, execution still uses Command-line content
-* [**TW-96674**](https://youtrack.jetbrains.com/issue/TW-96674) — Pipelines: Docker/NPM Integration allows saving with empty URL, causing error during job execution
 * [**TW-95188**](https://youtrack.jetbrains.com/issue/TW-95188) — Do not skip update to revision from VCS if project settings can't be changed via UI
 * [**TW-96954**](https://youtrack.jetbrains.com/issue/TW-96954) — Failed to load build settings from VCS for perforce sparse streams
 * [**TW-96402**](https://youtrack.jetbrains.com/issue/TW-96402) — Blocked output due to artifact preprocessing
 * [**TW-2209**](https://youtrack.jetbrains.com/issue/TW-2209) — Agent can be outdated with "Some plugins are out of date" message
 * [**TW-97449**](https://youtrack.jetbrains.com/issue/TW-97449) — Wait reasons values with long description value can be lost because of description truncation
-* [**TW-79391**](https://youtrack.jetbrains.com/issue/TW-79391) — Versioned Settings status is updated on secondary nodes with delay
-* [**TW-96916**](https://youtrack.jetbrains.com/issue/TW-96916) — [Docker] Plugin build failed with java.lang.ClassNotFoundException
+* [**TW-79391**](https://youtrack.jetbrains.com/issue/TW-79391) — Versioned Settings status is updated on secondary nodes with delay
+* [**TW-96916**](https://youtrack.jetbrains.com/issue/TW-96916) — Plugin build failed with java.lang.ClassNotFoundException
 * [**TW-96926**](https://youtrack.jetbrains.com/issue/TW-96926) — Do not auto-assign mutes/investigations on timed out builds
 * [**TW-94936**](https://youtrack.jetbrains.com/issue/TW-94936) — Changes in settings are not detached from a build configuration without builds in default branch
 * [**TW-97274**](https://youtrack.jetbrains.com/issue/TW-97274) — Slow opening of a custom build dialog in case of a re-run of a build chain with auto-generated builds
@@ -250,7 +256,6 @@
 ### Performance Problem
 
 * [**TW-96974**](https://youtrack.jetbrains.com/issue/TW-96974) — Removal of an agent is too slow and holds multiple locks
-* [**TW-100111**](https://youtrack.jetbrains.com/issue/TW-100111) — Pipelines: Constant high CPU usage when trying to save pipeline with cyclic dependency in it
 * [**TW-98373**](https://youtrack.jetbrains.com/issue/TW-98373) — Copy build step action is hanging (no slow requests on the backend)
 * [**TW-100420**](https://youtrack.jetbrains.com/issue/TW-100420) — VCS modifications cleaner produces slow running queries while removing unreachable commits
 * [**TW-99549**](https://youtrack.jetbrains.com/issue/TW-99549) — Too much memory is consumed by overview controller if VCS problem is reported

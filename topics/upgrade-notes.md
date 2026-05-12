@@ -48,6 +48,8 @@
 
     This checkbox no longer affects behavior and may be confusing. We plan to remove it in the upcoming 2026.1.1 bug-fix update. See the [TW-100620](https://youtrack.jetbrains.com/issue/TW-100620) YouTrack ticket for a temporary workaround.
 
+* [](rake.md) build steps are failing to run the build. Please install the updated Rake plugin from [the following attachment](https://youtrack.jetbrains.com/issue/TW-100760/Rake-build-steps-are-broken-plugin-is-damaged#focus=Change-27-13754580.0-0).
+
 * In some cases, newly bundled Git 2.54 may fail to check out sources with the "Unable to find all commit-graph files" error. This issue is most likely to occur in large repositories with frequent checkouts.
 
     We plan to fix it in the next bug-fix update. As a temporary workaround, disable automatic Git maintenance by adding one of the following properties:
