@@ -111,6 +111,8 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * When building [Perforce shelved changelists](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files), earlier versions of TeamCity replaced checked-out files with corresponding shelved ones. Starting with version 2026.1, TeamCity uses a more sophisticated approach by running `p4 resolve` after unshelving, allowing it to detect and resolve conflicting changes.
 
+    > Due to exclusive UAsset file checkout, this change can negatively affect Unreal Engine projects built in parallel. You can restore the previous behavior by adding the `teamcity.internal.perforce.useUnshelve=false` property to your project or server internal properties. 
+
 * You can now specify multiple [shelved changelist IDs](integrating-teamcity-with-perforce.md#Running+Builds+on+Perforce+Shelved+Files) when triggering a custom build for Perforce build configurations.
 
 ### Kubernetes

@@ -130,7 +130,7 @@ To build the target shelved changelist with [TeamCity REST API](https://www.jetb
 
 </tabs>
 
-<deflist style="medium">
+<deflist type="medium">
 <def title="swarmUpdateUrl">
 <p>
 A URL for the Perforce Helix Swarm test updates. This property is optional and used only by builds triggered by Helix Swarm.
