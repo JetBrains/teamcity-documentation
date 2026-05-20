@@ -1,6 +1,97 @@
 [//]: # (title: Configure and Run Your First Build)
 [//]: # (help-id: Configure and Run Your First Build)
 
+
+This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
+
+
+
+## Main TeamCity elements
+
+A well-functioning and easy-to-maintain CI/CD workflow starts with breaking down the process into these smaller blocks and deciding which TeamCity element suits your needs best. These elements are described more thoroughly in the [project administrator guide](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) article.
+
+For example, the "Build &rarr; Test &rarr; Deploy" workflow includes three distinctive stages. Each of these stages can have its own elements. For instance, the "Test" stage can include separate tasks for running Windows and Linux tests. 
+
+<deflist type="medium">
+
+<def title="Build step">
+
+The smallest TeamCity element that encapsulates one action (or a sequence of actions). For example:
+
+* The `./buildAll.sh` command that launches your custom build script.
+* The `mvn clean build` command that uses Maven to build a project.
+* A series of consecutive cURL commands that upload your project to an FTP server.
+
+Two distinctive features of a build step are that it cannot be executed partially, and runs on a same machine with its neighboring steps.
+
+</def>
+
+<def title="Build configuration / Pipeline">
+
+[Build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md) are parents for build steps. Their main objectives are to manage in which order and on which machines (build agents) these steps should run.
+
+* Pipelines offer a more user-friendly UX and feature the UI/YAML toggle. In pipelines, build steps are grouped into **jobs** that can run in parallel on different build agents.
+* Build configurations have much more advanced customization options, but are more challenging to configure for novice users. Configurations directly own build steps, without any intermediate entities, and run from start to finish on one build agent.
+
+</def>
+
+
+<def title="Project">
+
+TeamCity projects own other projects (subprojects), along with pipelines and build configurations. Projects do not define any executable actions; their main objective is to categorize your build configurations and pipelines in an easy-to-navigate hierarchy.
+
+In addition, TeamCity users have [roles and permissions](managing-roles-and-permissions.md) that specify which actions they are allowed to perform. These roles and permissions are project-scoped, meaning your organization administrators can configure separate top-level projects for each team where each member can access only their related subprojects, configurations, and pipelines.
+
+</def>
+
+<def title="Build chain">
+
+A sequence of build configurations and/or pipelines with right-to-left dependencies. For example, if "Build" and "Test" are two stand-alone pipelines, you can configure the "Build &rarr; Test" chain where:
+
+* "Build" can be triggered independently;
+* "Test" has a dependency on "Build";
+* Because of this dependency, triggering "Test" automatically starts "Build" first. "Test" can begin only after "Build" finishes.
+
+    > TeamCity includes multiple smart features that optimize your workflows. For example, downstream elements of build chains can reuse upstream builds. This means in the example above, "Test" does not necessarily trigger a fresh "Build" run whenever it starts. If there were no new code changes, it can reuse the previous "Build" run and start immediately.
+
+Parts of a build chain can belong to one or multiple projects.
+
+</def>
+
+</deflist>
+
+
+## Step 1: Create a sample pipeline
+
+1. Fork the [Maven configuration (TeamCity Samples)](https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples) repository. You can configure your first project that will process this public repo directly, but you will have more options with a forked one. For example, you will be able to create and build pull requests, and publish TeamCity statuses back to GitHub.
+
+2. On a new TeamCity installation, you need to first [create a project](creating-and-editing-projects.md) that will house our sample pipeline. You can add further configurations and pipelines to this same project, or create new projects and subprojects to create a neat build server hierarchy.
+
+    Click the plus icon in the TeamCity sidebar to add a new project, then enter the project name and optional description.
+
+    <img src="dk-crete-project-sidebar-1.png" alt="Create new project" width="706"/>
+
+    > See this article for more information about projects and various ways to create them: [](creating-and-editing-projects.md).
+
+3. A project does not directly own any CI/CD actions and serves as a shell for build configurations and pipelines. As such, once you configure basic project settings, TeamCity asks you to choose the child element type.
+
+    Click the **Pipeline** tile and open the dropdown menu that lists all available options to create a pipeline.
+
+    <img src="build-configuraiton-creation-options.png" width="706" alt="All build config creation options"/>
+
+    > This menu is automatically populated with new options as you keep adding more TeamCity projects. See the following articles for more information about each option and differences between adding configurations and pipelines:
+    > * [](create-and-edit-pipelines.md)
+    > * [](creating-and-editing-build-configurations.md)
+
+4. In the drop-down menu, click **Connect new repository** and choose any of the following options to connect to your new forked repository:
+
+    * Create a pipeline using a direct repository URL. If you choose this option, you will require manually specifying auth options (SSH key, user/password credentials, access token, or anonymous). In the end, TeamCity will have access only to this repository.
+    * Click the GitHub icon to configure a permanent [OAuth or App connection](configuring-connections.md#GitHub) to GitHub. Since this option involves installing and authorizing the application on GitHub side, it takes a few more clicks to configure. However, it is much more beneficial in the long run. Having a connection to a VCS provider makes the process of adding new configurations and pipelines as easy as choosing a required repository from the list — the connection will take care of all auth settings automatically.
+
+        <img src="connection-repo-list.png" width="706" alt="Repository list retrieved from a connection"/>
+    
+
+
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 
 > To configure and run your first build, complete the [](#Create+a+TeamCity+Project) and [](#Set+Up+a+Build+Configuration) sections. The remaining sections are optional but worth reviewing to familiarize yourself with key TeamCity concepts and features.

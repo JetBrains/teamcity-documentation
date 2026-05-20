@@ -62,8 +62,7 @@ Both build configurations and pipelines are owned by [TeamCity projects](creatin
 
 <def title="Dependencies">
 
-* Currently, pipelines support dependencies only between jobs within the same pipeline and cannot be linked into a larger sequence.
-* Build configurations can form [build chains](build-chain.md) across different TeamCity projects.
+Both build configurations and pipelines can be linked into large [build chains](build-chain.md) across different TeamCity projects.
 
 </def>
 
@@ -73,16 +72,14 @@ Both build configurations and pipelines are owned by [TeamCity projects](creatin
 Both pipelines and build configurations can store their settings as code, right next to your project source code. Both entities support branched settings, meaning each repository branch can have its own configuration file.
 
 * Build configurations store their settings in XML or [](kotlin-dsl.md) format. You cannot edit these files from the TeamCity UI.
-* Pipelines store their settings in YAML which can be edited directly in TeamCity.
-
-Kotlin DSL support is planned for future pipeline versions. However, there are no current plans to add YAML support for build configurations.
+* Pipelines store their settings in YAML which can be edited directly in TeamCity, and [auto-generated Kotlin](kotlin-dsl.md#Kotlin+DSL+in+Pipelines).
 
 </def>
 
 <def title="Limitations">
 
 * Build configurations are core TeamCity components, offering extensive features and customization options.
-* Introduced in TeamCity 2025.07, Pipelines focus on providing the most intuitive way to design CI/CD workflows. However, they currently lack some of the functionality available in build configurations. For example, they do not support the majority of [build steps](configuring-build-steps.md) and have no additional [build features](adding-build-features.md).
+* Introduced in TeamCity 2025.07, Pipelines focus on providing the most intuitive way to design CI/CD workflows. However, they may lack some of the functionality available in build configurations. For example, by default they do not include the majority of [build steps](configuring-build-steps.md) and [build features](adding-build-features.md) (although they can be enabled manually).
 
 </def>
 
