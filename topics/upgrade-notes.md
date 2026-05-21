@@ -69,6 +69,12 @@
 
 
 
+## Changes from 2025.11.4 to 2025.11.5
+{id="2025.11.5"}
+
+No potential breaking changes.
+
+
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}
 

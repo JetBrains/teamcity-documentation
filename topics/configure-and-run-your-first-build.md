@@ -193,7 +193,7 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
    
         > You can override this behavior for failing elements of a [build chain](pipeline-settings.md#Pipeline+Dependencies) and for [build configuration steps](configuring-build-steps.md#Step+Execution+Conditions). We plan to introduce similar functionality for individual jobs in future releases. Follow the [pipelines roadmap](pipelines-roadmap.md) to stay up to date with our development plans.
 
-4. Fixing a build problem can take time. To keep it from failing subsequent builds, you can **mute** it. A muted failure does not block later stages or cause the entire workflow to be reported as failed.
+4. Fixing a build problem can take time. To keep it from failing subsequent builds, you can **mute** it. A muted failure doesn’t block later stages or cause the entire workflow to be reported as failed.
 
     Select failing tests in the **Tests** tab and click **Mute**.
 
@@ -201,7 +201,7 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
 
 5. In the **Investigate / Mute** dialog, specify the following settings:
 
-    * Investigated by — assign the investigation to a TeamCity user so that your teammates know someone is working on it.
+    * Investigated by — assign the investigation to a TeamCity user so that your teammates know someone’s working on it.
     * Mute in — allows you to choose the mute scope. Your only available option at the moment will be "Project-wide", since you only have one pipeline.
     * Unmute — set the unmute policy. The default "Automatically when fixed" option means TeamCity should stop ignoring this problem once you invoke this dialog again and select "Mark as fixed" under investigation options.
    
@@ -213,8 +213,29 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
 
     <img src="gs-muted-failures.png" width="706" alt="Muted failures"/>
 
-    * Previous issues still occur but are marked as muted failures. The police officer icon corresponds to the ongoing investigation.
-    * The o
+    * Previous issues still occur but are marked as muted failures and display the police officer icon to signal the ongoing investigation.
+    * The final building job no longer automatically fails.
+    * TeamCity adds the muted issue summary to job tiles.
+
+
+## Step 4: Triggers and pull requests
+
+1. Modify any file in the forked repository (for example, the README.md). A few moments later, your pipeline will trigger a fresh run to process these changes. This happens because the "On new changes" setting is on under the **Auto-Run Pipeline** section of pipeline settings.
+
+    <img src="gs-autorun.png" width="706" alt="Auto-run pipeline"/>
+
+    > By default, TeamCity [build configurations](creating-and-editing-build-configurations.md) periodically poll new repositories to detect new changes. Pipelines employ more robust behavior: when a new change is committed, the VCS sends a webhook to notify TeamCity about this change. In this setup, TeamCity starts new runs faster and doesn’t spend excessive resources on constant repository polling. See this section for more information: [](create-and-edit-pipelines.md#Webhooks).
+
+2. Click the plus icon in the **Auto-Run Pipeline** section to add more trigger conditions. For example, you can schedule automatic nightly runs that occur each Sunday.
+
+    <img src="gs-schedule-trigger.png" width="706" alt="Schedule trigger"/>
+
+3. Commit another change, but this time send it as a pull request. Doing so will also trigger a new run. You can edit the "On new changes" trigger to disable this behavior.
+
+    > Automatically building pull (merge) requests can be risky for public repositories. An attacker could submit malicious changes that TeamCity would process. To prevent this, open the parent project settings and go to **Untrusted builds**. There, you can assign TeamCity users as reviewers who decide whether pull requests from external collaborators are safe to run. Potentially unsafe builds remain queued until the assigned reviewers approve them.
+    >
+    > <img src="gs-approval.png" width="706" alt="Build approvals"/> 
+
 
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 
@@ -398,6 +419,10 @@ Further reading: ??? VCS ROOT ADVANCED SETTINGS LINKS
 
 
 
+<!--
+
+OLD
+
 In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
 
 After you’ve installed and started TeamCity as described [here](quick-setup-guide.md), you’re ready to configure and run your first build.
@@ -543,3 +568,5 @@ To configure a certain CI/CD job in TeamCity:
 4. Set up other configurations settings. For example, add handy build features and automatic triggers.
 
 After that, you can run a build based on the created configuration manually, or wait until it is triggered automatically, if any triggers are configured.
+
+-->
