@@ -728,7 +728,7 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 
 <tr>
    <td>Oracle</td>
-   <td>10g or later (tested with the [driver](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) version 12.1.0.1</td>
+   <td>10g or later (tested with the <a href="https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html">driver</a> version 12.1.0.1)</td>
 </tr>
 
 <tr>

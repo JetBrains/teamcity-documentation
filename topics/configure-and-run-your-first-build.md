@@ -209,9 +209,12 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
 
     <img src="gs-my-investigations.png" width="706" alt="My investigations"/>
 
-7. Mute the related build problem in the **Problems** tab similarly to how you muted the failing tests in the **Tests** tab, then re-run your pipeline. It should behave as follows:
+7. Mute the related build problem in the **Problems** tab similarly to how you muted the failing tests in the **Tests** tab, then re-run your pipeline. Compared to the previous run, it should exhibit the following differences:
 
-    * 
+    <img src="gs-muted-failures.png" width="706" alt="Muted failures"/>
+
+    * Previous issues still occur but are marked as muted failures. The police officer icon corresponds to the ongoing investigation.
+    * The o
 
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 
