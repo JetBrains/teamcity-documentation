@@ -8,9 +8,7 @@ This tutorial guides you through the basic features of TeamCity and shows you ho
 
 ## Main TeamCity elements
 
-A well-functioning and easy-to-maintain CI/CD workflow starts with breaking down the process into these smaller blocks and deciding which TeamCity element suits your needs best. These elements are described more thoroughly in the [project administrator guide](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) article.
-
-For example, the "Build &rarr; Test &rarr; Deploy" workflow includes three distinctive stages. Each of these stages can have its own elements. For instance, the "Test" stage can include separate tasks for running Windows and Linux tests. 
+Before we jump to configuring a real project, let's have a quick look at core elements from which any TeamCity CI/CD workflow consists. These elements are described more thoroughly in the [project administrator guide](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) article.
 
 <deflist type="medium">
 
@@ -22,7 +20,7 @@ The smallest TeamCity element that encapsulates one action (or a sequence of act
 * The `mvn clean build` command that uses Maven to build a project.
 * A series of consecutive cURL commands that upload your project to an FTP server.
 
-Two distinctive features of a build step are that it cannot be executed partially, and runs on a same machine with its neighboring steps.
+Two distinctive features of a build step are that it can’t be executed partially, and runs on a same machine with its neighboring steps.
 
 </def>
 
@@ -38,9 +36,9 @@ Two distinctive features of a build step are that it cannot be executed partiall
 
 <def title="Project">
 
-TeamCity projects own other projects (subprojects), along with pipelines and build configurations. Projects do not define any executable actions; their main objective is to categorize your build configurations and pipelines in an easy-to-navigate hierarchy.
+TeamCity projects own other projects (subprojects), along with pipelines and build configurations. Projects don’t define any executable actions; their main objective is to categorize your build configurations and pipelines in an easy-to-navigate hierarchy.
 
-In addition, TeamCity users have [roles and permissions](managing-roles-and-permissions.md) that specify which actions they are allowed to perform. These roles and permissions are project-scoped, meaning your organization administrators can configure separate top-level projects for each team where each member can access only their related subprojects, configurations, and pipelines.
+In addition, TeamCity users have [roles and permissions](managing-roles-and-permissions.md) that specify which actions they’re allowed to perform. These roles and permissions are project-scoped, meaning your organization administrators can configure separate top-level projects for each team where each member can access only their related subprojects, configurations, and pipelines.
 
 </def>
 
@@ -61,11 +59,11 @@ Parts of a build chain can belong to one or multiple projects.
 </deflist>
 
 
-## Step 1: Create a sample pipeline
+## Step 1: Create a pipeline
 
-1. Fork the [Maven configuration (TeamCity Samples)](https://github.com/JetBrains/Maven-Configuration-TeamCity-Samples) repository. You can configure your first project that will process this public repo directly, but you will have more options with a forked one. For example, you will be able to create and build pull requests, and publish TeamCity statuses back to GitHub.
+1. Fork the [Gradle & Docker Pipeline (TeamCity Samples)](https://github.com/JetBrains/Gradle-Docker-Pipeline-TeamCity-Samples/) repository. You can configure your first project that’ll process this public repo directly, but you’ll have more options with a forked one. For example, you’ll be able to create and build pull requests, and publish TeamCity statuses back to GitHub.
 
-2. On a new TeamCity installation, you need to first [create a project](creating-and-editing-projects.md) that will house our sample pipeline. You can add further configurations and pipelines to this same project, or create new projects and subprojects to create a neat build server hierarchy.
+2. On a new TeamCity installation, you need to first [create a project](creating-and-editing-projects.md) that’ll house our sample pipeline. You can add further configurations and pipelines to this same project, or create new projects and subprojects to create a neat build server hierarchy.
 
     Click the plus icon in the TeamCity sidebar to add a new project, then enter the project name and optional description.
 
@@ -73,7 +71,7 @@ Parts of a build chain can belong to one or multiple projects.
 
     > See this article for more information about projects and various ways to create them: [](creating-and-editing-projects.md).
 
-3. A project does not directly own any CI/CD actions and serves as a shell for build configurations and pipelines. As such, once you configure basic project settings, TeamCity asks you to choose the child element type.
+3. A project doesn’t directly own any CI/CD actions and serves as a shell for build configurations and pipelines. As such, once you configure basic project settings, TeamCity asks you to choose the child element type.
 
     Click the **Pipeline** tile and open the dropdown menu that lists all available options to create a pipeline.
 
@@ -85,12 +83,135 @@ Parts of a build chain can belong to one or multiple projects.
 
 4. In the drop-down menu, click **Connect new repository** and choose any of the following options to connect to your new forked repository:
 
-    * Create a pipeline using a direct repository URL. If you choose this option, you will require manually specifying auth options (SSH key, user/password credentials, access token, or anonymous). In the end, TeamCity will have access only to this repository.
-    * Click the GitHub icon to configure a permanent [OAuth or App connection](configuring-connections.md#GitHub) to GitHub. Since this option involves installing and authorizing the application on GitHub side, it takes a few more clicks to configure. However, it is much more beneficial in the long run. Having a connection to a VCS provider makes the process of adding new configurations and pipelines as easy as choosing a required repository from the list — the connection will take care of all auth settings automatically.
+    * Create a pipeline using a direct repository URL. If you choose this option, you’ll require manually specifying auth options (SSH key, user/password credentials, access token, or anonymous). In the end, TeamCity will have access only to this repository.
+    * Click the GitHub icon to configure a permanent [OAuth or App connection](configuring-connections.md#GitHub) to GitHub. Since this option involves installing and authorizing the application on GitHub side, it takes a few more clicks to configure. However, it’s much more beneficial in the long run. Having a connection to a VCS provider makes the process of adding new configurations and pipelines as easy as choosing a required repository from the list — the connection will take care of all auth settings automatically.
 
         <img src="connection-repo-list.png" width="706" alt="Repository list retrieved from a connection"/>
     
+5. Leave all settings in their default states. We’ll change some of them later.
 
+    <img src="gs-default-pipeline-settings.png" width="706" alt="Default settings"/>
+
+    * Default branch — the repository branch that TeamCity should consider a [default one](working-with-feature-branches.md#Default+Branch).
+    * Start new builds on new changes — the list of branches in which new commits [automatically trigger new TeamCity builds](pipeline-settings.md#Auto-Run+Pipeline).
+    * Pull requests — allows TeamCity to [track pull requests](pipeline-settings.md#Repository) in addition to regular changes in stable branches.
+    * Publish statuses to repository — if enabled, TeamCity reports build statuses (started, running, successful, and failed) back to GitHub. These statuses are visible on the main repository page.
+
+6. Click **Create** to save your new project with pipeline. You can now add jobs with build steps that perform required actions.
+
+7. Select the job tile and add a "Gradle" step in its [Steps section](job-settings.md#Steps).
+
+8. Set the following step settings, then click **Save** to finish the setup.
+
+    * Step name — "Build app".
+    * Tasks — `clean build`.
+    * JDK — Choose JDK 11 with the architecture that matches your build agent.
+   
+    For example, on ARM macOS machines you should end with something like the following (switch the top left toggle from **Visual** to **YAML** to view and edit settings in yml format):
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Job 1
+        steps:
+          - type: gradle
+            name: Build app
+            tasks: clean build
+            jdk-home: '%env.JDK_11_0_ARM64%'
+    ```
+   
+## Step 2: Run your first build
+
+Now that your first pipeline is ready, let's run it and make sure everything works as expected.
+
+1. Click **Run** in the top right corner to build the app. You can track the progress in the **Build Log** tab.
+
+    <img src="gs-first-run.png" width="706" alt="First run"/>
+
+2. Try toggling the **Settings** button on and off. You can do so to switch between the edit and view modes of the current project, build configuration, or pipeline.
+
+3. Click on your pipeline in the breadcrumbs panel or side navigation bar to go to the overview page. Here you can see the history of all runs for this pipeline.
+
+    <img src="gs-overview-page.png" width="706" alt="Pipeline overview page"/>
+
+    From this page, click on any build number to zoom into this specific run for additional info: run time, build log, test results, published artifacts, and so on.
+
+4. Try running the same pipeline again. You will notice that it finishes instantly, and TeamCity displays "0 seconds" for the duration. This happens thanks to one of TeamCity optimization features, **build reuse**: if your previous run was successful and neither the remote repository nor the job itself changed, TeamCity will simply "clone" previous results for a fresh run and add the "Job reused" label to a job tile. You can read more about job optimizations in TeamCity [here](job-settings.md#Optimizations).
+
+
+## Step 3: Add testing jobs
+
+A pipeline can include multiple jobs running consecutively or in parallel on different build agents. In this step, you’ll add two upstream jobs and learn how to deal with build problems.
+
+1. Click **Settings** to enter the edit mode for your pipeline and edit its YAML configuration as follows:
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Job 1
+        steps:
+          - type: gradle
+            name: Build app
+            tasks: clean build
+            jdk-home: '%env.JDK_11_0_ARM64%'
+        dependencies:
+          - Job2
+          - Job3
+      Job2:
+        name: Test suite A
+        steps:
+          - type: gradle
+            name: Run test suite A
+            tasks: test
+            jdk-home: '%env.JDK_11_0_ARM64%'
+            working-directory: test1
+      Job3:
+        name: Test suite B
+        steps:
+          - type: gradle
+            name: Run test suite B
+            working-directory: test2
+            tasks: test
+            jdk-home: '%env.JDK_11_0_ARM64%'
+        allow-reuse: false
+    ```
+
+2. Switch to the **Visual** editor and take a minute to check out your new pipeline configuration.
+
+    <img src="gs-parallel-jobs.png" width="706" alt="Parallel testing jobs"/>
+
+   * Select your initial build job and expand its **Dependencies** settings section. Both testing jobs are checked, which means the build job depends on them. The new jobs have no dependencies. As a result, the build job waits for the testing jobs to finish, while the testing jobs have equal priority and can run simultaneously on different build agents.
+   * Inspect the settings of a Gradle build step in any of the testing jobs. Unlike in the building job, these steps have a custom [working directory](build-working-directory.md) set. This means that `gradle test` tasks will start in respective directories rather than the repository root.
+
+3. Save and run your updated pipeline. Since both new jobs are running tests, you can use the **Tests** tab of the run results page in addition to **Build log** to track the results.
+
+    <img src="gs-failed-tests.png" width="706" alt="Failed tests"/>
+
+    * "Test suite A" finishes its tests successfully.
+    * Tests from the "SecondTestCase" suite run with mixed results: five finish successfully while two fail. As a result, the entire job is labeled as failed.
+    * Because of "Test suite B" job failing, the main building job fails without running. This is the default TeamCity logic: if some downstream stage of a workflow is unsuccessful, there’s no point in running the upstream operations that depend on it.
+   
+        > You can override this behavior for failing elements of a [build chain](pipeline-settings.md#Pipeline+Dependencies) and for [build configuration steps](configuring-build-steps.md#Step+Execution+Conditions). We plan to introduce similar functionality for individual jobs in future releases. Follow the [pipelines roadmap](pipelines-roadmap.md) to stay up to date with our development plans.
+
+4. Fixing a build problem can take time. To keep it from failing subsequent builds, you can **mute** it. A muted failure does not block later stages or cause the entire workflow to be reported as failed.
+
+    Select failing tests in the **Tests** tab and click **Mute**.
+
+    <img src="gs-mute-problems.png" width="706" alt="Mute test problems"/>
+
+5. In the **Investigate / Mute** dialog, specify the following settings:
+
+    * Investigated by — assign the investigation to a TeamCity user so that your teammates know someone is working on it.
+    * Mute in — allows you to choose the mute scope. Your only available option at the moment will be "Project-wide", since you only have one pipeline.
+    * Unmute — set the unmute policy. The default "Automatically when fixed" option means TeamCity should stop ignoring this problem once you invoke this dialog again and select "Mark as fixed" under investigation options.
+   
+6. If you assigned the investigation to yourself, you can quickly access them from the **My investigations** page.
+
+    <img src="gs-my-investigations.png" width="706" alt="My investigations"/>
+
+7. Mute the related build problem in the **Problems** tab similarly to how you muted the failing tests in the **Tests** tab, then re-run your pipeline. It should behave as follows:
+
+    * 
 
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 
@@ -276,10 +397,10 @@ Further reading: ??? VCS ROOT ADVANCED SETTINGS LINKS
 
 In TeamCity terms, a _build_ is a process that consists of one or more steps and performs a certain CI/CD job.
 
-After you have installed and started TeamCity as described [here](quick-setup-guide.md), you are ready to configure and run your first build.
+After you’ve installed and started TeamCity as described [here](quick-setup-guide.md), you’re ready to configure and run your first build.
 {instance="tc"}
 
-After you have started TeamCity as described [here](getting-started-with-teamcity-cloud.md), you are ready to configure and run your first build.
+After you’ve started TeamCity as described [here](getting-started-with-teamcity-cloud.md), you’re ready to configure and run your first build.
 {instance="tcc"}
 
 <img src="run-first-build.png" width="611" alt="Run your first build"/>
@@ -336,7 +457,7 @@ Each TeamCity installation includes a default **Root** project, which contains a
 
 8. In configuration settings, open the **Build Steps** tab. Here you define the actions your configuration performs when triggered.
 
-   Click **Auto-detect build steps** to let TeamCity scan your repository. For the sample project, it will suggest two [Maven](maven.md) steps. Select the one that runs `clean test` for the `ch-simple/pom.xml` file and click **Use selected**.
+   Click **Auto-detect build steps** to let TeamCity scan your repository. For the sample project, it’ll suggest two [Maven](maven.md) steps. Select the one that runs `clean test` for the `ch-simple/pom.xml` file and click **Use selected**.
     
     > Build steps execute sequentially by default, but you can customize their behavior:
     >
@@ -362,7 +483,7 @@ On the __[Build Configuration Settings](project-administrator-guide.md#Edit+and+
 
 TeamCity will always assign a build to the first available and [suitable](configuring-agent-requirements.md) build agent.
 
-You will be automatically redirected to the __Build Results__ page, where you can watch the build progress and review its results upon the build finish. You can also access your build configuration settings from this page and edit them as necessary:
+You’ll be automatically redirected to the __Build Results__ page, where you can watch the build progress and review its results upon the build finish. You can also access your build configuration settings from this page and edit them as necessary:
 
 <img src="BuildResults.PNG" alt="Build results" width="706" border-effect="line"/>
 
@@ -408,14 +529,14 @@ Automatic build triggering on a change in the repository is essential to any CI.
 
 ### Build Number Format
 
-Each build in TeamCity has a build number, that is a string identifier. It is composed according to the pattern defined in __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | General Settings__ (click _Show advanced options_ to display it). If you leave the default value, the build number format will be maintained by TeamCity; the number will be resolved into a next integer value on each new build start. Or, you can customize the pattern as described [here](configuring-general-settings.md#Build+Number+Format).
+Each build in TeamCity has a build number, that’s a string identifier. It is composed according to the pattern defined in __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | General Settings__ (click _Show advanced options_ to display it). If you leave the default value, the build number format will be maintained by TeamCity; the number will be resolved into a next integer value on each new build start. Or, you can customize the pattern as described [here](configuring-general-settings.md#Build+Number+Format).
 
 ## Takeaway
 
 To configure a certain CI/CD job in TeamCity:
 1. Create a project from your source repository and adjust its main settings.
 2. Create a build configuration inside this project.
-3. In the build configuration settings, add build steps that will represent stages of the build.
+3. In the build configuration settings, add build steps that’ll represent stages of the build.
 4. Set up other configurations settings. For example, add handy build features and automatic triggers.
 
 After that, you can run a build based on the created configuration manually, or wait until it is triggered automatically, if any triggers are configured.
