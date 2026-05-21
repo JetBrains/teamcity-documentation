@@ -1,6 +1,14 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11.4 to 2025.11.5
+{id="2025.11.5"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11-5"}
+
+* The bundled Git was updated to version 2.54 in both server and agent Docker images.
+
 ## Changes from 2025.11.3 to 2025.11.4
 {id="2025.11.4"}
 
