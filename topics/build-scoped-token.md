@@ -1,3 +1,6 @@
+[//]: # (title: Build-scoped Token)
+[//]: # (help-id: Build Scoped Token)
+
 # Build-scoped Token
 
 The **Build-scoped Token** feature lets builds automatically obtain a short-lived VCS access token. This token is issued through an existing [VCS connection](configuring-connections.md) and stored in a specified parameter. Build steps can then use this token to access and modify resources in the VCS.
