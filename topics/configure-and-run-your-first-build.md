@@ -2,13 +2,25 @@
 [//]: # (help-id: Configure and Run Your First Build)
 
 
-This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
+This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project. At the end of this guide you will create a workflow that builds and tests a sample Java application using Gradle.
+
+<img src="gs-overview.png" width="706" alt="Overview"/>
+
+Topic covered in this tutorial:
+
+* Getting familiar with basic TeamCity entities
+* Accessing remote repositories
+* Working with pipelines, jobs, and build steps
+* Running TeamCity workflows and inspecting their results
+* Working with failures
+* Building and testing pull requests
+* Tweaking auto-run policies and branch filters
 
 
 
 ## Main TeamCity elements
 
-Before we jump to configuring a real project, let's have a quick look at core elements from which any TeamCity CI/CD workflow consists. These elements are described more thoroughly in the [project administrator guide](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) article.
+Before we jump to configuring a project, let's have a quick look at core elements from which any TeamCity CI/CD workflow consists. These elements are described more thoroughly in the [project administrator guide](project-administrator-guide.md#Steps%2C+Configurations+and+Projects) article.
 
 <deflist type="medium">
 
@@ -20,7 +32,7 @@ The smallest TeamCity element that encapsulates one action (or a sequence of act
 * The `mvn clean build` command that uses Maven to build a project.
 * A series of consecutive cURL commands that upload your project to an FTP server.
 
-Two distinctive features of a build step are that it can’t be executed partially, and runs on a same machine with its neighboring steps.
+A build step has two key characteristics: it cannot be executed partially, and it runs on the same machine as its neighboring steps.
 
 </def>
 
@@ -218,7 +230,7 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
     * TeamCity adds the muted issue summary to job tiles.
 
 
-## Step 4: Triggers and pull requests
+## Step 4: Triggers, branches, and pull requests
 
 1. Modify any file in the forked repository (for example, the README.md). A few moments later, your pipeline will trigger a fresh run to process these changes. This happens because the "On new changes" setting is on under the **Auto-Run Pipeline** section of pipeline settings.
 
@@ -235,7 +247,18 @@ A pipeline can include multiple jobs running consecutively or in parallel on dif
     > Automatically building pull (merge) requests can be risky for public repositories. An attacker could submit malicious changes that TeamCity would process. To prevent this, open the parent project settings and go to **Untrusted builds**. There, you can assign TeamCity users as reviewers who decide whether pull requests from external collaborators are safe to run. Potentially unsafe builds remain queued until the assigned reviewers approve them.
     >
     > <img src="gs-approval.png" width="706" alt="Build approvals"/> 
+   
+4. You might have noticed that TeamCity triggers your pipeline twice whenever you create a pull request. This happens because you configured TeamCity to watch all stable branches (and your changes are stored in a branch like `johndoe-patch-1` before committed to the main one) and pull requests (that come from `refs/pull/N` branches).
 
+    You can change this behavior by editing the [branch specification](pipeline-settings.md#Repository) in the pipeline **Repositories** section. For example, you can disable tracking all branches as the baseline rule and manually add the branches to watch. The following ruleset allows TeamCity to watch only two branches, plus all `refs/pull/N` branches if the corresponding toggle is enabled:
+
+    ```text
+    -:refs/heads/*
+    +:refs/heads/master
+    +:refs/heads/sandbox
+    ```
+
+    In this setup, TeamCity ignores the source branches of incoming pull requests, such as `johndoe-patch-N`, and triggers your pipeline only when a `refs/pull/N` branch is created or modified.
 
 <!--This tutorial guides you through the basic features of TeamCity and shows you how to set up a typical project.
 

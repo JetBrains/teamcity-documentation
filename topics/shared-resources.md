@@ -48,7 +48,7 @@ A build with a resource quota set to zero will not run.
 
 #### Lock Fairness
 
-While read locks enable multiple builds to concurrently access a shared resource with a quota \> 1, lock fairness ensures that the build queue is not violated. It means, that if there is a shared resource with a quota \> 1, and there are several queued builds with read locks and a build with a write lock in between the readers, the build with the write lock will wait until all builds with read locks __earlier__ in the queue finish and release the lock. Then the build requiring a write lock will be executed, and only after that the other readers can acquire the lock. Lock fairness does not allow builds with read locks interfere with build queue ordering and "slip" past the build that is waiting for a write lock to become available.
+While read locks enable multiple builds to concurrently access a shared resource with a quota greater than one, lock fairness ensures that the build queue is not violated. It means, that if there is a shared resource with a quota &gt; 1, and there are several queued builds with read locks and a build with a write lock in between the readers, the build with the write lock will wait until all builds with read locks __earlier__ in the queue finish and release the lock. Then the build requiring a write lock will be executed, and only after that the other readers can acquire the lock. Lock fairness does not allow builds with read locks interfere with build queue ordering and "slip" past the build that is waiting for a write lock to become available.
 
 ### Locks for Resources with Custom Values
 

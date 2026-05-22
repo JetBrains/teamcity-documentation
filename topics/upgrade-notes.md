@@ -1,7 +1,7 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
-## Changes from 2025.11.4 to 2026.1
+## Changes from 2025.11.5 to 2026.1
 {id="2026.1"}
 
 
@@ -18,6 +18,8 @@
 * [S3 artifact storages](storing-build-artifacts-in-amazon-s3.md) now enable [virtual host addressing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html) by default. This behavior applies to all S3 storages, whether they were created before or after 2026.1 server update. See [](#known-issues-2026-1) for the related issue.
 
 * <include from="upgrading-dsl.md" element-id="2026-1-acl-names"/>
+
+* You can no longer specify additional repositories in pipelines via repository URLs. See this YouTrack ticket for more information: [TW-100762](https://youtrack.jetbrains.com/issue/TW-100762).
 
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-1"}

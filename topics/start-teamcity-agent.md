@@ -25,6 +25,8 @@ Run the following script:
 
 ## Automatic Start
 
+The sections below illustrate how to autostart TeamCity build agents under different OS types.
+
 ### Automatic Agent Start Under Windows
 
 To run an agent automatically on a Windows machine launch, you can either set up the agent to run as a Windows service or use another method. Using the Windows service approach is the easiest way, but Windows applies [some constraints](known-issues.md#Agent+running+as+Windows+Service+Limitations) to the processes run this way.   
