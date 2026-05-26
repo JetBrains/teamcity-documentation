@@ -119,7 +119,7 @@ Modify the **Settings | Developer | Edit config** file as follows:
         "mcp-remote",
         "<TeamCity-server-URL>/app/mcp",
         "--header",
-        "Authorization: Bearer $TC_AUTH_TOKEN"
+        "Authorization: Bearer ${TC_AUTH_TOKEN}"
       ]
     }
   }
