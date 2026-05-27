@@ -61,6 +61,8 @@ The premium TeamCity license that offers all TeamCity Enterprise benefits plus t
 
 * A true-up license that provides the ability to **exceed the maximum number of build agents** dictated by the currently active agent licenses. Each additional agent slot using the true-up license costs a fixed amount per month, billed quarterly based on the peak overuse in each month. This gives you elastic capacity during busy periods without procurement delays or long-term commitments.
 
+> To control costs and avoid massive unexpected spikes, you can set the maximum number of simultaneously authorized agents on the TeamCity **Admin | Licenses** page.
+
 * An **additional staging server license** for testing upgrades and configuration changes before rolling out to production. The staging TeamCity server has a fixed number of agents and does not impose any restrictions on build configurations or pipelines.
 
 * An **assigned customer success engineer** who provides proactive guidance about best practices, along with personalized support to help you address challenges efficiently and align your CI/CD strategy with business goals, maximizing your investment.
