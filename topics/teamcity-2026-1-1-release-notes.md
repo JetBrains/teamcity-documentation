@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2026.1.1 Release Notes)
 [//]: # (help-id: TeamCity 2026.1.1 Release Notes)
 
-**Build 000000, 28 May 2026**
+**Build 222577, 28 May 2026**
 
 ### Bug
 
