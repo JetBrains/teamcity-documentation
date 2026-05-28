@@ -389,6 +389,7 @@
 			<toc-element topic="build-checkout-directory.md"/>
 		</toc-element>
 		<toc-element topic="how-to.md"/>
+		<toc-element topic="java-21.md"/>
 		<toc-element topic="change.md"/>
 		<toc-element topic="change-state.md"/>
 		<toc-element topic="revision.md"/>

@@ -1,11 +1,17 @@
 # Cheatsheet: Updating Java on Server and Agent Machines
 
 This article briefly outlines the Java update procedure for agent and server machines. Refer to these articles for more detailed information.
+{instance="tc"}
 
-* [](how-to.md#Install+Non-Bundled+Version+of+Java)
-* [](configure-java-for-agent.md)
-* [](upgrading-teamcity-server-and-agents.md)
+<ul instance="tc">
 
+<li><a href="how-to.md#Install+Non-Bundled+Version+of+Java">How to install unbundled version of Java</a></li>
+<li><a href="configure-java-for-agent.md">Configure Java for build agents</a></li>
+<li><a href="upgrading-teamcity-server-and-agents.md">Upgrading TeamCity server and build agents</a></li>
+</ul>
+
+This article briefly outlines the Java update procedure for agent and server machines. For TeamCity Cloud users, you should only update self-hosted build agents, since both your server and JetBrains-hosted agents are managed by our team and do not require any additional actions from your side.
+{instance="tcc"}
 
 ## Migration to Java 21
 
@@ -105,6 +111,10 @@ Before upgrading an agent machine, we recommend uninstalling the existing agent 
 {style="tip"}
 
 If a build agent runs as a service, make sure the `wrapper.java.command` property in the `<agent_home>/launcher/conf/wrapper.conf` file points to the required Java version. See the following article for the details: [](upgrading-teamcity-server-and-agents.md#Upgrading+the+Build+Agent+Windows+Service+Wrapper).
+{instance="tc"}
+
+If a build agent runs as a service, make sure the `wrapper.java.command` property in the `<agent_home>/launcher/conf/wrapper.conf` file points to the required Java version.
+{instance="tcc"}
 
 </procedure>
 
