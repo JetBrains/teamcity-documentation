@@ -22,6 +22,7 @@
 		<toc-element toc-title="Migrating from Other CI/CD Tool">
 			<toc-element topic="mapping-teamcity-concepts-to-other-ci-terms.md"/>
 			<toc-element topic="jenkins-to-teamcity-migration-guidelines.md"/>
+			<toc-element topic="bamboo-to-teamcity-migration-guidelines.md"/>
 		</toc-element>
 	</toc-element>
 	<toc-element toc-title="Installation and Upgrade">
