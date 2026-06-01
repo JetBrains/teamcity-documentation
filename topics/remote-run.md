@@ -7,6 +7,14 @@ Unlike [Pre-tested (delayed) commit](pre-tested-delayed-commit.md), no code is c
 
 For a list of version control systems supported by each IDE, see [Supported Platforms and Environments](supported-platforms-and-environments.md#IDE+Integration).
 
+> You can also trigger remote runs from the terminal using [TeamCity CLI](teamcity-cli-managing-runs.md).
+> 
+> ```Shell
+> teamcity run start MyProject_Build --local-changes
+> ```
+> 
+{style="tip"}
+
 
 <seealso>
         <category ref="inst_tools">

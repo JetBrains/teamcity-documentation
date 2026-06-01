@@ -7,3 +7,9 @@ You can start working with the REST API by opening the `http://<TeamCity Server 
 
 **To learn more, proceed to the dedicated [TeamCity REST API Help](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).**
 
+> You can also send REST API requests from [TeamCity CLI](teamcity-cli-rest-api-access.md).
+> ```Shell
+> teamcity api '/app/rest/server'
+> ```
+>
+{style="tip"}
