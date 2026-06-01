@@ -46,7 +46,7 @@
 			</toc-element>
 			<toc-element topic="kubernetes-executor.md"/>
 		</toc-element>
-		<toc-element toc-title="What's New in TeamCity Cloud" topic="what-s-new-in-teamcity-cloud.md"/>
+		<toc-element topic="what-s-new-in-teamcity-cloud.md"/>
 	</toc-element>
 	<toc-element toc-title="System Administration">
 		<toc-element toc-title="Secure TeamCity">

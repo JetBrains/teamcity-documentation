@@ -155,7 +155,6 @@
 * [**TW-99922**](https://youtrack.jetbrains.com/issue/TW-99922) — Azure TFS VCS Root can't connect to repository
 * [**TW-100061**](https://youtrack.jetbrains.com/issue/TW-100061) — Windows Docker images: the dotCover { … } step fails due to non-canonical ACLs
 * [**TW-82689**](https://youtrack.jetbrains.com/issue/TW-82689) — Personal Access Tokens for Jira Server in Jira Integration are not supported
-
 * [**TW-97024**](https://youtrack.jetbrains.com/issue/TW-97024) — Automatically interrupt long running HTTP requests
 * [**TW-67712**](https://youtrack.jetbrains.com/issue/TW-67712) — Changing AMI in Amazon Cloud Profile terminates the instances running from old AMI even if they are running the builds
 * [**TW-98671**](https://youtrack.jetbrains.com/issue/TW-98671) — Commit status publisher Build Feature description doesn't show the correct and sufficient information 
