@@ -1,14 +1,7 @@
-[//]: # (title: What's New in TeamCity 2026.1)
-[//]: # (help-id: What's New in TeamCity 2026.1;What's New in TeamCity)
-
-<show-structure for="chapter" depth="2"/>
+[//]: # (title: What's New in TeamCity Cloud)
 
 
-## Release Cycle Updates
 
-Starting with this release, we return to the pre-2022 versioning scheme: major TeamCity versions will use the “YYYY.N” format, where “N” indicates the release number rather than the month. This change makes the release cycle more predictable and better aligned with other JetBrains products.
-
-This year, we also expect to separate the release cadence for TeamCity On-Premises and Cloud. On-Premises will continue to receive two major releases per year. Cloud, on the other hand, will be updated more frequently, so new features and improvements become available sooner without waiting for a major On-Premises release.
 
 
 ## Java 21 Migration
@@ -99,7 +92,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 ### Git
 
-* For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default. To re-enable them, set the `teamcity.git.allowFileUrl=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+* For security reasons, Git VCS roots no longer support [local and UNC file URLs](git.md#Supported+Git+Protocols) by default.
 
 * When choosing the **Shallow clone** [Git checkout policy](git.md#git-checkout-policy), you can now add the `teamcity.git.agent.shallowCloneDepth` and `teamcity.git.agent.submodules.shallowCloneDepth` parameters to set the [`--depth`](https://git-scm.com/docs/git-clone) attribute.
 
@@ -151,43 +144,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 * We have [improved](https://youtrack.jetbrains.com/issue/TW-98507/) the Gradle version selection logic in our Gradle plugin. This change only adds a few info-level entries to the build logs and introduces no visible behavior changes, but it should improve the plugin’s overall stability.
 
 
-## Upgrade Notes
-{instance="tc"}
-
-Before upgrading, we highly recommend reading about important changes in version [2026.1 compared to 2025.11](upgrade-notes.md#2026.1).
 
 
-## Fixed Issues
-{instance="tc"}
-
-See the [TeamCity 2026.1 release notes](teamcity-2026-1-release-notes.md) article for the summary of implemented features and fixed issues.
-
-
-## Roadmap
-
-See the [TeamCity Roadmap](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap) and [](pipelines-roadmap.md) articles to learn about future updates.
-
-
-## Update TeamCity On-Premises
-{instance="tc"}
-
-We recommend using the [](upgrading-teamcity-server-and-agents.md#Automatic+Update) for the easiest and most reliable upgrade. For more information on the upgrade process and available options, see [](upgrading-teamcity-server-and-agents.md).
-
-To download a `.tar.gz` or `.exe` installer for any TeamCity major or bug-fix version, visit the [](previous-releases-downloads.md) article.
-
-For TeamCity servers running in Docker containers, see [this article](upgrading-teamcity-server-and-agents.md#manual-update-of-docker-image).
-
-
-## Update TeamCity Cloud
-{instance="tcc"}
-
-JetBrains maintains TeamCity Cloud servers, so no action is needed on your part. During an update, your instance is briefly unavailable. We will notify you beforehand via email.
-
-If you do not see the latest features described here, your instance may not be upgraded yet. [Contact our support team](troubleshooting.md) for assistance.
-
-
-## Your Feedback Matters
-
-We place a high value on your feedback and encourage you to share your thoughts and suggestions. See this link for more information: [](troubleshooting.md).
 
 
