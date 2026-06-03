@@ -1,150 +1,268 @@
 [//]: # (title: Create Build Chain)
 [//]: # (help-id: Create Pipeline)
 
-> This tutorial assumes that you have already installed and started your trial TeamCity instance as described [here](quick-setup-guide.md). We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
-> 
-{type= "note" instance="tc"}
 
-This tutorial assumes that you have already started your TeamCity instance. We also suggest that you learn how to [run a simple build](configure-and-run-your-first-build.md).
-{type= "note" instance="tcc"}
-
-A _build chain_ or a _pipeline_ is a sequence of consecutively run [build configurations](creating-and-editing-build-configurations.md). In TeamCity, these configurations can belong to different projects, and pass files (artifacts) from one build to another.
-
-This tutorial walks you through setting up the following project:
-
-<img src="buildChainSimple.png" width="674" alt="Simple build chain in TeamCity"/>
-
-The pipeline above cycles through the following stages:
-
-1 — Building the sample Spring Boot application
-2 — Creating a Docker image for this app
-3 and 4 — Running two sets of parallel tests
+This tutorial explains how to create a separate pipeline that works in tandem with the one created in the previous [](configure-and-run-your-first-build.md) walkthrough.
 
 
->You can also watch our **video guide** on how to [compose a pipeline in TeamCity](https://www.youtube.com/watch?v=p4kCMOehrqs). It shows a different example than the one described in this article.
-
-## Import Sample Project
-
-This tutorial uses a sample project with five separate build configurations which we are about to connect. To follow the tutorial, you can use the [sample repository](https://github.com/JetBrains/Gradle-Docker-Pipeline-TeamCity-Samples) and repeat the steps below on your TeamCity server.
-
-To import the sample project:
-1. Go to __Administration | Projects__ and click __Create project__.
-2. In the _Repository URL_ field, enter the [sample repo URL](https://github.com/JetBrains/Gradle-Docker-Pipeline-TeamCity-Samples) and click __Proceed__.
-3. TeamCity will detect the `.teamcity/settings.kts` file, which corresponds to a TeamCity project's settings saved in [Kotlin format](kotlin-dsl.md). Leave the default settings and proceed.
-
-   > Choose import without synchronization when prompted. Otherwise, your project can become [non-editable via TeamCity UI](storing-project-settings-in-version-control.md#SynchronizingSettingswithVCS).
-   > 
-   > <img src="dk-import-wo-sync.png" width="706" alt="Import with no sync"/>
-   >
-   {style="note"}
-
-4. TeamCity will import the sample project's settings and redirect you to its __General Settings__ page. Here, you can scroll a bit and see the _TodoBackend_ subproject. Click it to view all the created build configurations.
-
-Now we can start chaining them!
-
-## Configure Snapshot Dependency
-
-The _TodoApp_ build configuration compiles a `.jar` application and publishes it to the `build/libs/` directory. The _TodoImage_ configuration has to build a Docker image out of this `.jar`.
-
-To create a synchronized pipeline, or chain, you need to connect these builds with a _snapshot dependency_. We use the word _snapshot_ to describe a specific state of the project's sources, or basically a specific commit. If you connect multiple builds with snapshot dependencies, they are guaranteed to process the same sources.
-
->In special cases, you can create a chain where revision synchronization is disabled. Read more about advanced features of snapshot dependencies [here](snapshot-dependencies.md).
-
-A dependency determines how one build depends on another, and thus is created in the settings of the dependent build. In our case, it's _TodoImage_. Let's go to its settings and add a snapshot dependency:
-1. Open the __Dependencies__ settings tab (you might need to click __Show more__ to display this item) and click __Add new snapshot dependency__.
-2. Select _TodoApp_ as a build config to depend on.
-3. Leave the default settings and save the dependency.
-
-## Configure Artifact Dependency
-
-To pass the `.jar` from one configuration to another, we need to create an _artifact dependency_ between them. This way, when each new _TodoApp_ build finishes and produces an artifact, TeamCity will use this artifact in the following _TodoImage_ build.
-
-To add an artifact dependency in _TodoImage_:
-1. Open the __Dependencies__ settings tab and click __Add new artifact dependency__.
-2. Select _TodoApp_ as a build configuration to depend on.
-3. Choose to get artifacts from the build from the same chain.
-4. In _Artifacts rules_, specify that we want to import the specific artifact as `todo.jar` — enter `todo.jar => build/libs/`.  
-   You can read about patterns of artifact rules and other details related to artifact dependencies [here](artifact-dependencies.md).
-
-   <img src="chaindemo1.png" width="539" alt="Simple build chain in TeamCity"/>
-
->To simplify step 4 in the future, you can use the artifact browser (![popup-artifacts-tree.png](popup-artifacts-tree.png)). When there is at least one finished dependent build that already produced some artifacts, TeamCity can show them in a tree, so you can choose them in a handy way.
-
-It is important to remember that a _build chain is a sequence of builds connected with snapshot dependencies_. Some of the builds may also be connected with artifact dependencies, but this is not a mandatory condition.
-
-## Run Simple Chain
-
-At this point, the first two builds are already chained together, and you can run your first chain. Note that to compose a Docker image, a [TeamCity agent](install-and-start-teamcity-agents.md) needs to have [Docker](https://www.docker.com/) installed and running on its machine, so make sure to install it in advance.
-
-When you run any build from a chain, whether it's the last one or medium one, TeamCity gathers all the other chained builds into a sequence, according to their dependencies. As you saw on our sample chain's scheme, _TodoImage_ always runs after _TodoApp_; _Test1_ and _Test2_ start only after _TodoImage_ finishes and run in parallel to each other.
-
-Let's run the _TodoImage_ build with the __Run__ button. Go to __Project Home__ to see how TeamCity automatically runs a new _TodoApp_ build first and, after its finish, launches the following _TodoImage_ build. As a result of this chain, TeamCity will produce a Docker image according to the `Dockerfile`.
-
->To speed up a chain, TeamCity can reuse already finished builds instead of running new ones. Read about this optimization mechanism [here](snapshot-dependencies.md#Suitable+Builds).
-
-To view the statuses of all chained builds, go to __Build Configuration Home__ of any chained build and open the __Dependencies__ tab of __Build Results__:
-
-<img src="simpleBuildChain.png" width="1217" alt="Simple build chain in TeamCity"/>
-
-The Sakura UI offers three modes of representing dependencies: _timeline_, _list_, and _chain_. When you create more advanced chains, try monitoring them with each of these modes and choose the most convenient one for your tasks.
-
-## Configure Trigger and Checkout Rules
-
-You already know the basics of creating chains, or pipelines, in TeamCity. However, to become effective and production-ready, a chain needs to be automated further.
-
-### Add VCS Trigger
-
-As we explained in the [first build guide](configure-and-run-your-first-build.md), TeamCity offers a variety of build triggers. Triggers run builds automatically if certain conditions are satisfied. The most popular type of trigger is a [VCS trigger](configuring-vcs-triggers.md), and that's the trigger we will use in this tutorial.
-
-A VCS trigger starts a new build whenever it detects changes in the project's sources. You can define what repository and even the exact files it will monitor. Let's add a trigger in the _TodoImage_ settings:
-
-1. Open the __Triggers__ page and click __Add new trigger__.
-2. Open advanced options and then enable the option to _trigger a build on changes in snapshot dependencies_. This way, this trigger will also react to the changes relevant to the _TodoApp_ config.  
-   It's often convenient to add a single trigger at the end of the chain and enable this option to consider the previous builds. Whenever you want to change the triggering settings, you will be able to do this in one place.
-3. Leave other settings default and save the trigger.
-
-<img src="vcs-trigger-settings.png" width="778" alt="Simple build chain in TeamCity"/>
-
-Now, if you change the sample project's code, TeamCity will detect it and run the chain.
-
-### Restrict Checkout Scope
-
-Every chain stage is responsible for its own task. And in some cases, different build configurations need to monitor different parts of the source project. You can configure custom _checkout rules_ for a configuration, and its builds will only be triggered by changes that satisfy these rules.
-
-For example, let's exclude `Dockerfile` from the checkout scope of _TodoApp_. This way, when you change the Docker settings, only _TodoImage_ will be triggered. Without such restrictions, TeamCity would start both of these builds per any change in the source repo, which will waste resources and could cause a mess.
-
-You can define the scope of monitored sources in a build configuration's __Version Control Settings__:
-1. Opposite our only VCS root, click __Edit checkout rules__.
-2. Enter the `-:docker` rule to exclude the `docker` directory from the checkout scope. In the future, use [this syntax](vcs-checkout-rules.md) to specify these rules.
-3. Save the rules.
-
-## Complete Chain with Tests
-
-Builds in a chain can run in parallel. Let's explore this on the example of tests.
-
-The project's __General Settings__ list three other build configurations: _Test1_, _Test2_, and _TestReport_. According to our target scheme, _Test1_ and _Test2_ should depend on _TodoImage_, which means you need to create a snapshot dependency on it in both of these builds. If there are at least two suitable build agents on your server, TeamCity will be able to run these builds in parallel to each other; otherwise, it will start one after another.
-
-As you might remember, our VCS trigger in _TodoImage_ considers only preceding builds (that is _TodoApp_) and won't be able to launch tests. We can add triggers in both test builds, but TeamCity provides a more straightforward option — creating an extra [composite build](composite-build-configuration.md), that is _TestReport_. A composite build can run without an agent and accumulate results of the preceding builds in a chain. Moreover, it will aggregate and report the results of _Test1_ and _Test2_ in one place. Just what we need.
-
-So, to complete this tutorial:
-1. Add snapshot dependencies from _Test1_ and _Test2_ on _TodoImage_ and from _TestReport_ on _Test1_ and _Test2_.
-2. Add a VCS trigger in _TestReport_, similarly to [how we did it](#Configure+Trigger+and+Checkout+Rules) for _TodoImage_. After that, you can safely remove the trigger from _TodoImage_, as the new one will trigger the whole chain.
-
-As _Test2_ contains a failing test, you will see that _TestReport_ will fail as well. Expand any test or build problem to quickly preview the related part of the build log.
-
-<img src="chaindemo_failedtest.png" alt="Failed composite build"/>
-
-The build chain mechanism in TeamCity is very flexible and designed to satisfy the needs of every project. You will also notice that build chains are much easier to monitor than scattered builds. Detailed statuses of all chained builds are displayed in the __Dependencies__ tab of __Build Results__.
-
-Proceed with our getting started tutorials to learn about the other type of build configuration — _[deployment](deploy-build.md)_.
-
-## Takeaway
-
-* A build chain is a sequence of builds connected with snapshot dependencies. A snapshot corresponds to a certain commit in the source code.
-* Builds in a chain can pass artifacts to each other if you configure artifact dependencies between them.
-* Builds in a chain can run sequentially or in parallel. You can create chains with dozens of builds, and only the number of available build agents limits how many of them can run simultaneously.
-* When any chained build is triggered, TeamCity composes and runs the whole chain from start to finish. As triggers can only consider preceding builds, it is convenient to add one VCS trigger in the very last build of a chain.
-* You can limit what scopes of the source projects are relevant to each build configuration. This prevents excessive build runs.
-* You can create a logical _composite_ configuration to gather the results of multiple dependency builds. Such a configuration doesn't require a build agent and only serves as an aggregator.
+<img src="gs-chains-overview.png" width="706" alt="Chain overview"/>
 
 
+Topic covered in this tutorial:
+
+* Pipeline dependencies and build chains
+* Building Docker images
+* Job agent requirements
+* Build agent terminal
+* Reusing upstream chain builds
+* Publishing and exchanging artifacts
+
+
+## Basic concepts
+
+In TeamCity, there are two main methods of linking standalone entities into a single workflow.
+
+<deflist type="medium">
+
+<def title="Build chain">
+
+A [](build-chain.md) is a sequence of interconnected build configurations and pipelines.
+
+Relationships between these standalone objects are configured from right to left, or downstream to upstream. For example, to run two pipelines in the sequence "Pipeline A → Pipeline B", add a dependency on "Pipeline A" to "Pipeline B". In other words, you tell TeamCity that "B" depends on "A".
+
+This has two effects:
+
+* "Pipeline A" has no dependencies and can run solo. Running it will not trigger "Pipeline B".
+
+* "Pipeline B" depends on "Pipeline A", so it cannot run independently. When you trigger "B", it requires a completed "A" run. Depending on your chain settings, TeamCity will either start a new "Pipeline A" run and wait for it to finish, or reuse the results of a previous successful "Pipeline A" run and start "B" immediately.
+
+</def>
+
+<def title="Finish build trigger">
+
+[Finish build triggers](configuring-finish-build-trigger.md) are the opposite of build chain dependencies. They allow you to create left-to-right relations between build configurations (pipelines are not currently supported). In this case, the "Config A → Config B" sequence runs when you trigger an upstream "Config A". When it finishes, it automatically triggers the downsteram "Config B". In this setup, "Config B" can run solo without triggering any external builds.
+
+Finish build triggers are mostly used in conjunction with regular build chains.
+
+</def>
+
+</deflist>
+
+See this section for more information about different ways to create relations between TeamCity entities: [](project-administrator-guide.md#Set+Up+Dependencies).
+
+
+
+## Step 1: Create a pipeline
+
+1. Go to the **General** settings of a project that owns the pipelines created in the [previous tutorial](configure-and-run-your-first-build.md).
+
+2. Click **Create pipeline**.
+
+3. Since you already have a pipeline that checks out the required project from GitHub, you can select the **From an existing VCS root** option. This way you can instantly reuse all settings required to access the repo.
+
+    <img src="gs-second-pipeline.png" width="706" alt="Create the second pipeline"/>
+
+4. Add a [Script](command-line.md) build step that uses `./docker/Dockerfile` to build the Docker image. If you are unsure how to configure build steps or utilize the YAML editor, see the [previous part](configure-and-run-your-first-build.md).
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Docker build
+        steps:
+          - type: script
+            script-content: docker build -f ./docker/Dockerfile -t johndoe/myapp:%build.number% .
+    ```
+   
+    > In the build step above, we use the `build.number` parameter reference to assign a build number as an image tag. See this article to learn more about default TeamCity parameters: [](predefined-build-parameters.md).
+    > 
+    {style="tip"}
+
+5. Since this job builds an image, you want it to run on build agents that have either [Docker or Podman](integrating-teamcity-with-container-managers.md) installed. To it being assigned to a build agent that has no required tooling, add an [agent requirement](job-settings.md#Agent+Requirements) using yet another [predefined TeamCity parameter](predefined-build-parameters.md), `container.engine`.
+
+    ```yaml
+    jobs:
+      Job1:
+        ...
+        runs-on:
+          self-hosted:
+            - requirement: exists
+              name: ImageBuilderTool
+              parameter: container.engine
+    ```
+
+    > TeamCity automatically adds this condition when you add the [](docker.md) build step (available by default in classic build configurations). In this tutorial, we use the generic Script step instead, so we need to add this condition manually.
+    > 
+    {style="tip"}
+
+6. Run the pipeline and ensure it finishes successfully. You can verify the image was built by running `docker image ls` in the agent terminal.
+
+    <img src="gs-docker-images.png" width="706" alt="Image names in terminal"/>
+
+    > Use the **Open terminal** link in the build results sidebar to open the terminal on a machine that hosts the corresponding build agent. This action allows you to [debug build agents](install-and-start-teamcity-agents.md#Debug+Agents+Remotely): verify installed tools, check SDK versions and paths, and so on.
+    >   
+    > <img src="gs-open-terminal.png" width="706" alt="Open agent terminal"/>
+
+    > If this pipeline runs on an agent that has not run the upstream pipeline before, you may see the `file '/build/libs/todo.jar' not found` error. This is expected and will be addressed in the next steps.
+    >
+    > For now, add agent requirements to both pipelines so they run on the same agent.
+    >
+    > ```yaml
+    > jobs:
+    >   Job1:
+    >     ...
+    >     runs-on:
+    >       self-hosted:
+    >         ...
+    >         - requirement: equals
+    >           name: Agent name
+    >           parameter: system.agent.name
+    >           value: DefaultAgent1
+    > ```
+    > 
+    {style="note"}
+
+
+## Step 2: Configure a build chain   
+
+You now have two separate pipelines: one that builds and tests your app, and another that produces a Docker image. To connect them, create a build chain.
+
+The Docker pipeline should be downstream because the image should be produced only after the app has been built and tested. Since chain dependencies are [configured from right to left](#Basic+concepts) (owned by downstream objects and pointing to upstream ones), you need to add the dependency in the Docker pipeline.
+
+1. Open Docker pipeline settings and select the pipeline to view [its settings](pipeline-settings.md) instead of individual job settings.
+
+2. Click **Add** next to the [**Pipeline dependencies**](pipeline-settings.md#Pipeline+Dependencies) section.
+
+3. Choose your another pipeline from the **Depend on** list and click **Done**.
+
+    <img src="gs-add-chain-dependency.png" width="706" alt="Add pipeline dependency"/>
+
+    > We will adjust some of these dependency settings later in this tutorial. To learn more about each setting, see [](pipeline-settings.md#Pipeline+Dependencies).
+    > 
+    {style="tip"}
+
+4. Disable all **Job settings | Optimizations | Reuse Job Results** options in both pipelines. In real-world workflows, you would likely keep some of these optimizations enabled, but for now we’ll turn them off to focus on dependency settings without adding another layer of reuse logic.
+
+5. Run your Docker build configuration. You should see both of your pipelines running. Switch to the **Chain** tab of Docker pipeline's run results page to view detailed information about each section of the chain: build number, run duration, and so on.
+
+    <img src="gs-view-chain-run-results.png" width="706" alt="View chain run results"/>
+
+    > Note that the **Triggered by** block of upstream pipeline builds lists two sources: your TeamCity user and "Snapshot dependency". This is because you triggered the chain, while the upstream pipeline itself was triggered by the dependent Docker pipeline.
+    >
+    {style="tip"}
+
+6. Re-run the Docker pipeline. Because the pipeline dependency configured in step #3 has **Do not run new build if there is a suitable one** enabled, TeamCity will reuse the previous run of the upstream pipeline and run only the Docker pipeline again.
+
+    You can confirm this on the **Chain** tab: the upstream pipeline build number should stay the same.
+
+7. Run your first build/test pipeline. Notice that it runs alone and does not trigger the Docker pipeline.
+
+8. Open Docker pipeline settings and edit your existing dependency. Disable the **Do not run new build...** setting.
+
+    <img src="gs-disable-dependency-reuse.png" width="706" alt="Disable dependency reuse"/>
+
+9. Run the Docker pipeline a few times. Now that the reuse setting is off, you should see both pipelines starting anew every time.
+
+    <img src="gs-run-chain-no-reuse.png" width="706" alt="Run chain with no reuse"/>
+
+   
+
+## Step 3: Publish and exchange artifacts
+
+In [step 1](#Step+1%3A+Create+a+pipeline), you may have encountered the `file '/build/libs/todo.jar' not found` error. To reproduce it, run the two pipelines on separate agents with both `{agent_home}/work` directories cleared to ensure a clean environment.
+
+
+```yaml
+#Build/test pipeline
+jobs:
+  Job1:
+    name: Build app
+    ...
+    runs-on:
+      self-hosted:
+        - requirement: equals
+          name: Agent name
+          parameter: system.agent.name
+          value: Agent1
+
+# Docker pipeline
+jobs:
+  Job1:
+    name: Docker build
+    ...
+    runs-on:
+      self-hosted:
+        - requirement: exists
+          name: ImageBuilderTool
+          parameter: container.engine
+        - requirement: equals
+          name: Agent name
+          parameter: system.agent.name
+          value: Agent2
+    ...
+```
+
+This error occurs because:
+
+* The Dockerfile copies `./build/libs/todo.jar` into the image.
+* This file, along with its parent directory, is generated during the build phase and is not stored in the repository.
+* The agent that runs the Docker pipeline checks out the remote sources and runs `docker build`. Since it has not run `gradle clean build` first, the expected `todo.jar` file is missing.
+
+To resolve this issue, you need to pass the `./build/libs/todo.jar` generated by the build/test pipeline down the chain.
+
+
+1. Open the settings of your upstream build/test pipeline and select the building job.
+2. In the [Output files](job-settings.md#Output+Files) settings section, add the `./build/libs/todo.jar` file with both **Shared file** and **Artifact** checkboxes selected.
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Job 1
+        steps:
+          - type: gradle
+            name: Build app
+            tasks: clean build
+            jdk-home: '%env.JDK_11_0_ARM64%'
+        dependencies:
+          - Job2
+          - Job3
+        allow-reuse: false
+        runs-on:
+          self-hosted:
+            - requirement: equals
+              name: Agent name
+              parameter: system.agent.name
+              value: macOS J21
+        files-publication:
+          - path: ./build/libs/todo.jar
+            share-with-jobs: true
+            publish-artifact: true
+      ...
+    ```
+
+3. Run this build and ensure the target file is published on the **Artifacts** tab. Any TeamCity user with sufficient permissions can download published artifacts from build result pages.
+
+    <img src="gs-publish-artifact.png" width="706" alt="Published artifact"/>
+
+4. The **Shared file** checkbox makes the file available to downstream jobs, but only within the same pipeline. External pipelines and configurations further down the chain do not import shared files automatically, so you need to import them manually.
+
+    In classic build configurations, you can do this by declaring [artifact dependencies](artifact-dependencies.md), which work similarly to the pipeline dependencies you used to link the two pipelines. In pipelines, artifact dependencies are not fully supported yet and can only be added by editing the YAML configuration file.
+
+    ```yaml
+    jobs:
+      Job1:
+        name: Docker build
+        steps:
+          - type: script
+            script-content: docker build -f ./docker/Dockerfile -t johndoe/myapp:%build.number% .
+        ...
+        download-artifacts:
+        - GSFirstBuild_GradleDockerPipelineTeamCitySamples: # same ID as in 'dependencies' block
+            from: dependency
+            artifact-rules: todo.jar=>./build/libs
+            clean-destination: true
+    dependencies:
+      - GSFirstBuild_GradleDockerPipelineTeamCitySamples:
+          reuse: none
+    ```
+
+5. Run the build chain and ensure it now finishes successfully, even when each pipeline is processed on a separate agent.
