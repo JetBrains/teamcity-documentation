@@ -1,6 +1,12 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2026.1 to 2026.2
+{id="2026.2"}
+
+TBD
+
+
 ## Changes from 2025.11.5 to 2026.1
 {id="2026.1"}
 

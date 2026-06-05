@@ -3,15 +3,15 @@
 
 This page is meant to give rough estimates of the closest TeamCity release dates. Please note that our development plans and dates may change rapidly, and this page might be updated with delays. To see the detailed roadmap, please visit [our website](https://www.jetbrains.com/teamcity/roadmap/#teamcity-roadmap).
 
-__Current TeamCity Version is 2026.1__
+__Current TeamCity Version is 2026.2__
 
 ### Next Major Release
 
-We expect to release the next major TeamCity version (TeamCity 2026.2) in the second quarter of 2026.
+We expect to release the next major TeamCity version (TeamCity 2026.3) at the end of 2026.
 
 ### Next BugFix Release
 
-No specific dates. Bugfix updates are released as soon as we address critical issues discovered in existing releases (typically, once a month). Bugfix updates for TeamCity 2026.1 will be released as versions 2026.1.x.
+No specific dates. Bugfix updates are released as soon as we address critical issues discovered in existing releases (typically, once a month). Bugfix updates for TeamCity 2026.2 will be released as versions 2026.2.x.
 
 See also: [TeamCity Release Cycle](teamcity-release-cycle.md).
 

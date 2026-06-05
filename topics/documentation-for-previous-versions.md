@@ -3,8 +3,8 @@
 
 [Permalink](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) to the latest version documentation.
 
-
-* [TeamCity 2026.1 documentation](https://www.jetbrains.com/help/teamcity/2026.1/teamcity-documentation.html) (you are here)
+* [TeamCity 2026.2 documentation](https://www.jetbrains.com/help/teamcity/2026.2/teamcity-documentation.html) (you are here)
+* [TeamCity 2026.1 documentation](https://www.jetbrains.com/help/teamcity/2026.1/teamcity-documentation.html)
 * [TeamCity 2025.11 documentation](https://www.jetbrains.com/help/teamcity/2025.11/teamcity-documentation.html)
 * [TeamCity 2025.07 documentation](https://www.jetbrains.com/help/teamcity/2025.07/teamcity-documentation.html)
 * [TeamCity 2025.03 documentation](https://www.jetbrains.com/help/teamcity/2025.03/teamcity-documentation.html)
