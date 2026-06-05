@@ -4,7 +4,10 @@
 ## Changes from 2026.1 to 2026.2
 {id="2026.2"}
 
-TBD
+* TeamCity no longer supports outdated [databases and their drivers](set-up-external-database.md):
+    * The legacy HSQLDB1 database and its correspondent HSQLDB1 JDBC drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101186). Switch to HSQLDB2 drivers instead.
+    * The legacy MSSQL jTDS drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101180). Switch to standard MSSQL JDBC drivers instead.
+    
 
 
 ## Changes from 2025.11.5 to 2026.1
