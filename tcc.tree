@@ -13,8 +13,8 @@
 			<toc-element topic="configure-and-run-your-first-build.md"/>
 			<toc-element topic="create-build-chain.md"/>
 			<toc-element topic="deploy-build.md"/>
-			<toc-element topic="view-build-results.md"/>
-			<toc-element topic="solve-build-problems.md"/>
+			<!--<toc-element topic="view-build-results.md"/>
+			<toc-element topic="solve-build-problems.md"/>-->
 			<toc-element topic="set-up-notifications.md"/>
 		</toc-element>
 		<toc-element toc-title="Migrating from Other CI/CD Tool">
