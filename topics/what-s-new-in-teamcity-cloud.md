@@ -152,7 +152,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
             <li><a href="https://youtrack.jetbrains.com/issue/TW-92756"><b>TW-92756</b></a> — Support of MCP protocol to enable 3rd party integrations</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-82657"><b>TW-82657</b></a> — GitHub App connection: provide dynamic credentials to build steps.</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96595"><b>TW-96595</b></a> — Allow to configure system webhooks for self-managed GitLab</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-42994"><b>TW-42994</b></a> — It should be possible to resolve value of reverse.dep. parameter in context of the head build</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-42994"><b>TW-42994</b></a> — It should be possible to resolve value of reverse.dep.*** parameter in context of the head build</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99633"><b>TW-99633</b></a> — Add preset to create read-only token</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-87288"><b>TW-87288</b></a> — Make the 'Build Name' value in the Parameters description of the Commit Status Publisher configurable</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-77495"><b>TW-77495</b></a> — Perforce Shelve Trigger / Personal Build should run "p4 resolve"</li>
@@ -244,12 +244,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96674"><b>TW-96674</b></a> — Docker/NPM Integration allows saving with empty URL, causing error during job execution</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100111"><b>TW-100111</b></a> — Constant high CPU usage when trying to save pipeline with cyclic dependency in it</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-95431"><b>TW-95431</b></a> — Job-level artifacts: impossible to download via the button</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-94668"><b>TW-94668</b></a> — Pipeline is broken after project copying</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99898"><b>TW-99898</b></a> — Pipeline steps description is not aligned with steps if Dockerfile is used in some of these steps</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100063"><b>TW-100063</b></a> — `/app/pipeline` MCP requests do not work when user has active 2FA</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99861"><b>TW-99861</b></a> — Limit Job ID and name lengths</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-95617"><b>TW-95617</b></a> — Pipeline YAML parse error should contain location in the YAML</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97441"><b>TW-97441</b></a> — RAM Amount condition for pipeline agent requirements doesn't work</li>
         </ul>
     </def>
     <def title="Fixed bugs" default-state="collapsed">
@@ -266,7 +260,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
             <li><a href="https://youtrack.jetbrains.com/issue/TW-80432"><b>TW-80432</b></a> — Kubernetes Plugin does not allow to configure proxy to cluster</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-85749"><b>TW-85749</b></a> — Personal patch is not applied for Parallel Tests and Matrix builds virtual dependencies</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99775"><b>TW-99775</b></a> — Adding build type to favorites fails</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-95112"><b>TW-95112</b></a> — Rename Docker Repository into Docker Registry</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95112"><b>TW-95112</b></a> — Rename Docker Repository to Docker Registry</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94020"><b>TW-94020</b></a> — TCP Merge: cloud images are not listed in incompatible agents when the agent is starting</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99275"><b>TW-99275</b></a> — Parameter name disappears when configuring custom agent requirement in Firefox</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99022"><b>TW-99022</b></a> — The bars on the optimization chart are stuck to the top edge</li>
@@ -401,31 +395,6 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96781"><b>TW-96781</b></a> — Webhook + Pull Request: strange warning in VCS logs</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96065"><b>TW-96065</b></a> — Hide field "Gradle wrapper path" if "Use gradle wrapper" is disabled</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96833"><b>TW-96833</b></a> — Trigger may trigger builds in branches coming from DSL repository</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100620"><b>TW-100620</b></a> — "Force virtual host addressing" checkbox doesn't work</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100946"><b>TW-100946</b></a> — .NET builds with qualifier agent requirements starting with "Exists" cannot find compatible agents if there are incompatible agents in the same pool</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100761"><b>TW-100761</b></a> — Perforce failing on newlines in changelist description</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-78597"><b>TW-78597</b></a> — Agent alternate IP address ignored by TeamCity</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99613"><b>TW-99613</b></a> — Working better with non-default branches using MCP</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100760"><b>TW-100760</b></a> — Rake build steps are broken (plugin is damaged)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100744"><b>TW-100744</b></a> — Authorize virtual agents action should validate agent pool for cloud agents</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100212"><b>TW-100212</b></a> — S3 Uploads fail with 403 status code</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100985"><b>TW-100985</b></a> — Build-scoped tokens UX: add descriptions and docs lin</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100573"><b>TW-100573</b></a> — Properties for key preserving on rotation (time.min and time.days) are not working</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100962"><b>TW-100962</b></a> — TeamCity cleanup does not remove cancelled multi-node tasks</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97236"><b>TW-97236</b></a> — Creation flow: handle Unauthorized exception in the UI</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-96205"><b>TW-96205</b></a> — AWS SDK2: remove "(SDK Attempt Count: 1)" from the errors, return back the error code and service name</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100707"><b>TW-100707</b></a> — CONNECT: 401 on access to K8s via proxy with login and password</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-87045"><b>TW-87045</b></a> — No reaction after activation of the security patch (it is unclear whether the installation has actually started)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100713"><b>TW-100713</b></a> — Build cannot resolve dep. parameters, if it has an optional artifact dependency on another skipped conditional dependency</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-92752"><b>TW-92752</b></a> — “Store password and API tokens outside of VCS” gets hidden when you disable UI-managed project settings.</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99122"><b>TW-99122</b></a> — Perforce shelve trigger starts a build on excluded stream if feature branches support is disabled</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100650"><b>TW-100650</b></a> — VCS trigger doesn't trigger build on empty branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98678"><b>TW-98678</b></a> — Failed DSL compilation due to invalid cache after moving a Perforce label</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100234"><b>TW-100234</b></a> — Failed to resolve artifact dependency in multinode setup with external artifact storage</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99808"><b>TW-99808</b></a> — Build features UI: placeholder in the search field refers to non-existing items</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100476"><b>TW-100476</b></a> — All compatible agents are outdated and cannot be upgraded” is shown even though some agents are currently undergoing the upgrade process</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-95156"><b>TW-95156</b></a> — Deadlock on attempt to save data to test_metadata table</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100377"><b>TW-100377</b></a> — Excessive `/user` calls during repository listing in BitBucket Cloud connection</li>
         </ul>
     </def>
     <def title="Resolved performance issues" default-state="collapsed">
@@ -452,16 +421,10 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97300"><b>TW-97300</b></a> — Big traffic from custom_data table produced by performUptodateCheck method</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96958"><b>TW-96958</b></a> — Slow app/metrics request (takes minutes) on the secondary nodes because of VirtualAgentsManagerImpl.getStartingAgentsNum</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-93850"><b>TW-93850</b></a> — Remove read lock on Git mirror directory in getCurrentState API</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100970"><b>TW-100970</b></a> — Too big thread name with lots of "commit" strings</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97583"><b>TW-97583</b></a> — Duplicated IDs in the where clause of the SQL query can cause the PostgreSQL planner to switch to a full table scan</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100629"><b>TW-100629</b></a> — Saving settings on Windows can be slow</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100864"><b>TW-100864</b></a> — Repeating changes collection operations holds a reference to a previous operation via this$0</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98141"><b>TW-98141</b></a> — PageExtensionsInterceptor is called for non-WEB POST requests</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100626"><b>TW-100626</b></a> — Slow loading of VCS leads to UI slowness</li>
         </ul>
     </def>
     <def title="Security" default-state="collapsed">
-        23 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        21 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
         <note>Security bulletins are typically published a few days after the release date.</note>
     </def>
 </deflist>
