@@ -6,7 +6,7 @@
 
 TeamCity Cloud is entering a new phase with smaller, more frequent updates. Rather than following the TeamCity On-Premises release schedule, it will now ship improvements on a faster cadence. This means you will get fixes, performance enhancements, and requested changes sooner.
 
-While this release does not introduce major new features, it delivers more than 100 fixes and minor improvements. See the Full changelog section for the complete list of changes.
+While this release does not introduce major new features, it delivers more than 70 fixes and minor improvements. See the Full changelog section for the complete list of changes.
 
 
 ### Full changelog
@@ -15,135 +15,99 @@ While this release does not introduce major new features, it delivers more than 
 <deflist collapsible="true">
     <def title="Minor improvements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100473"><b>TW-100473</b></a> — Make the branch spec match all branches by default</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101082"><b>TW-101082</b></a> — Design and implement an error response for a case when commit failed</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100964"><b>TW-100964</b></a> — Update Performance Monitor plugin UI to match Ring UI design system</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100136"><b>TW-100136</b></a> — Re-enable parameter inheritance and update UI</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98347"><b>TW-98347</b></a> — Add users the way to provide the feedback about AI Build Analyzer Report</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99540"><b>TW-99540</b></a> — Refactor Storybook for BuildParametersTab</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100605"><b>TW-100605</b></a> — Implement a feature flag to hide incremental loading</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100163"><b>TW-100163</b></a> — Show a notification and scroll to the new item</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100162"><b>TW-100162</b></a> — Add a reusable 'Show more' list to show the whole list of settings</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100727"><b>TW-100727</b></a> — [REST] Refactor locator dimension definitions</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97950"><b>TW-97950</b></a> — Improve safe merge checks in RunM2Web configuration</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99917"><b>TW-99917</b></a> — Investigation: TeamCity build chain improvement points</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100202"><b>TW-100202</b></a> — Add a metric about the number of builds assigned to the node</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100524"><b>TW-100524</b></a> — Create user flow of protected-branch+yaml scenarios</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100168"><b>TW-100168</b></a> — Hide EAP Labels via feature flag</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100159"><b>TW-100159</b></a> — Remove selective inheritance UI</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100160"><b>TW-100160</b></a> — Update parameters UI behavior</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100552"><b>TW-100552</b></a> — Create the cache of OAuth Connections</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100066"><b>TW-100066</b></a> — Support OAuth for TeamCity endpoints (AKA authorization server metadata discovery)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99765"><b>TW-99765</b></a> — Implement Organisations API in the Core</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100224"><b>TW-100224</b></a> — Custom Data Storage: scope ROOT-level data (auth tokens) per organization</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100328"><b>TW-100328</b></a> — Backend: Implement committing in a branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97249"><b>TW-97249</b></a> — Gradle integration: replace TeamcityRerunTestsListener with a configuration-cache-compatible implementation in the new init script</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97250"><b>TW-97250</b></a> — Gradle integration: replace TeamcityTaskListener with a configuration-cache-compatible implementation in the new init script</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97248"><b>TW-97248</b></a> — Gradle integration: replace TeamcityExceptionsListener with a configuration-cache-compatible implementation in the new init script</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100176"><b>TW-100176</b></a> — Gradle integration: add a new launch mode with a new init script that does not use the Gradle Tooling API</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99764"><b>TW-99764</b></a> — Manage User to Organisation mapping</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100880"><b>TW-100880</b></a> — ExternalStatusController: use ProjectAwareRootUrlResolver for the links generation</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100882"><b>TW-100882</b></a> — DomainNameFinderImpl: use ProjectAwareRootUrlResolver instead of ServerRootUrlHolder</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100934"><b>TW-100934</b></a> — ProjectAwareRootUrlResolver: add ability to set/retrieve organization URL</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101060"><b>TW-101060</b></a> — Encryption keys are required to migrate multi-account client to single account</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-55009"><b>TW-55009</b></a> — Projects import: preserve ids on importing to empty server, make a clear warn that ids are changed when they do</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100883"><b>TW-100883</b></a> — TemplateMessageBuilder - generate the link in the project scope</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99860"><b>TW-99860</b></a> — Refactor Storybook for App.stories.tsx</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100179"><b>TW-100179</b></a> — Gradle integration: add Gradle 9 to tested Gradle versions</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98990"><b>TW-98990</b></a> — Show the warning in Build Analyzer Report if user doesn't have enough permissions to see it</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97798"><b>TW-97798</b></a> — Remove argN annotations</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-94500"><b>TW-94500</b></a> — Ability to pull metrics controller on the separate port</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100931"><b>TW-100931</b></a> — Projects import: preserve user ids on importing to empty server</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100530"><b>TW-100530</b></a> — API to check if there is a yaml in the specified branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100612"><b>TW-100612</b></a> — Make hanging builds detection heuristic work in multi node environment</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101211"><b>TW-101211</b></a> — Upgrade HSQLDB2 JDBC drivers from JDK8 to JDK11 version</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100886"><b>TW-100886</b></a> — DslLauncher: use project URL instead of server URL(ProjectAwareRootUrlResolver)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100527"><b>TW-100527</b></a> — Design "yaml settings in the selected branch" pages</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-55009"><b>TW-55009</b></a> — Projects import: preserve IDs on importing to empty server, make a clear warning that IDs are changed when they do</li>
         </ul>
     </def>
     <def title="Pipeline enhancements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100299"><b>TW-100299</b></a> — Show the Performance Monitor tab for jobs</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101038"><b>TW-101038</b></a> — Enable teamcity.pipelines.customTabs.enabled feature flag by default</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101037"><b>TW-101037</b></a> — Pipeline Full Screen View: Unable to switch to another job in pipeline while in Full Screen mode</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100427"><b>TW-100427</b></a> — Edit Repository: CSP and PR toggles are available for Any Git Repo with auth type - Anonymous</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100373"><b>TW-100373</b></a> — Pipelines repository description: show "Branches to monitor: default" in case of empty branch specification</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100427"><b>TW-100427</b></a> — Pipelines: Edit Repository: CSP and PR toggles are available for Any Git Repo with auth type - Anonymous</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96418"><b>TW-96418</b></a> — Pipeline integrations: bring the "Test connection" back</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101111"><b>TW-101111</b></a> — Switching between jobs in the full screen mode stops changing content after the first switch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99369"><b>TW-99369</b></a> — Pipeline YAML Editor: incorrect error count + misaligned error view</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100405"><b>TW-100405</b></a> — Unable to attach an existing VCS Root to Pipeline</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99093"><b>TW-99093</b></a> — SVG element code is visible after hovering on Copy button on Build/Pipeline Overview pages</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95617"><b>TW-95617</b></a> — Pipeline yaml parse error should contain location in the yaml</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97441"><b>TW-97441</b></a> — Pipelines: Agent Requirement: RAM Amount condition doesn't work</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100917"><b>TW-100917</b></a> — Adding tags to a pipeline leads to "Error while loading data", the pipeline is inaccessible</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100374"><b>TW-100374</b></a> — Pipelines: Edit Repository: Missing CSP status in the repository component description</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-94668"><b>TW-94668</b></a> — Pipeline is broken after project copying</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99711"><b>TW-99711</b></a> — An empty Repository entity is created if the user switches from the pipeline setting to the Admin area</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-93400"><b>TW-93400</b></a> — Pipelines: highlight repository names by exact match, not by symbols</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99898"><b>TW-99898</b></a> — Pipeline steps description isn't aligned with steps if docker file is used in some of the steps</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100226"><b>TW-100226</b></a> — Do not show the text about DSL inconsistency from the DSL tab of pipelines stored in YAML</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99293"><b>TW-99293</b></a> — POM location is in the Advanced Maven settings for pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96700"><b>TW-96700</b></a> — Cannot create Pipeline, if there is a Build configuration with the same name on the same project level</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101175"><b>TW-101175</b></a> — Support logical branch names in save in branch Pipelines API</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97643"><b>TW-97643</b></a> — Add "Promote" action for Pipelines</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99686"><b>TW-99686</b></a> — Add agent info for cloud agents to the pipeline run</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98508"><b>TW-98508</b></a> — Progressive disclosure in the Pipeline settings (Show more pattern)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100164"><b>TW-100164</b></a> — Add the 'Show more' list to the pipeline and job settings</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100499"><b>TW-100499</b></a> — Remove Pipelines sidebar (Standalone Pipelines)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100346"><b>TW-100346</b></a> — Hide the Chains tab from the Pipeline History page</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100386"><b>TW-100386</b></a> — Create the pattern for the custom tabs in Pipeline</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100326"><b>TW-100326</b></a> — API: Ability to save pipeline in the given branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100529"><b>TW-100529</b></a> — API to retrieve pipeline settings in a specified branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100497"><b>TW-100497</b></a> — Checkout rules for pipeline jobs: core backend changes</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100063"><b>TW-100063</b></a> — /app/pipeline MCP requests do not work when user has active 2FA</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99693"><b>TW-99693</b></a> — Broken build if reusing a pipeline with failed jobs in a build chain</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99861"><b>TW-99861</b></a> — Limit Job Id and Job name length</li>
         </ul>
     </def>
     <def title="Fixed bugs" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-62293"><b>TW-62293</b></a> — Users with view-settings permission are not able to see DSL</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100711"><b>TW-100711</b></a> — project import: don't import useless data</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100545"><b>TW-100545</b></a> — Do not shutdown docker compose right on build interruption, as it prevents 'always running' steps from proper execution</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-43738"><b>TW-43738</b></a> — Allow Run Custom Build dialog to be resized (to show long values in drop-downs)</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101206"><b>TW-101206</b></a> — Changes in non-YAML settings can be lost after commit to a branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100713"><b>TW-100713</b></a> — Build cannot resolve dep. parameters, if it has optional artifact dependency on another skipped conditional dependency</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94605"><b>TW-94605</b></a> — "Unmet requirements: exists:" for incompatible agents instead of clear description</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96778"><b>TW-96778</b></a> — No "Log in" next to the newly created connection in the dropdown</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99890"><b>TW-99890</b></a> — Horizontal sidebar behaviour is unclear and unstable</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100881"><b>TW-100881</b></a> — "+:/refs/heads/*" is a default branch spec for Perforce roots</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96205"><b>TW-96205</b></a> — AWS SDK2: remove "(SDK Attempt Count: 1)" from the errors, return back the error code and service name</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100707"><b>TW-100707</b></a> — CONNECT: 401 on access to K8s via proxy with login and password</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94724"><b>TW-94724</b></a> — Creation flow: repository description is always absent for the connections</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98233"><b>TW-98233</b></a> — NPM integration has unnesasary text and jumps</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100492"><b>TW-100492</b></a> — changes in the main-config.xml aren't committed after converter</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-87045"><b>TW-87045</b></a> — No reaction after activation of the security patch (it is unclear whether the installation has actually started)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-92752"><b>TW-92752</b></a> — “Store password and API tokens outside of VCS” gets hidden when you disable UI-managed project settings.</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99648"><b>TW-99648</b></a> — Using the Filter button on Change Log tab of Versioned Settings leads to 403 CRSF error</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99902"><b>TW-99902</b></a> — Fix [ant-runner] tests</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99122"><b>TW-99122</b></a> — Perforce shelve trigger starts a build on excluded stream if feature branches support is disabled</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100650"><b>TW-100650</b></a> — VCS trigger doesn't trigger build on empty branch</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-92837"><b>TW-92837</b></a> — Free Disk Space should be able to delete volumes of docker builder</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100507"><b>TW-100507</b></a> — Snapshot dependency build is not reused when the chain head falls back to an older revision</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98678"><b>TW-98678</b></a> — Failed DSL compilation due to invalid cache after moving a Perforce label</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100234"><b>TW-100234</b></a> — Failed to resolve artifact dependency in multinode setup with external artifact storage</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99808"><b>TW-99808</b></a> — Build features UI: placeholder in the search field refers to non-existing items</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100476"><b>TW-100476</b></a> — All compatible agents are outdated and cannot be upgraded” is shown even though some agents are currently undergoing the upgrade process</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95156"><b>TW-95156</b></a> — Deadlock on attempt to save data to test_metadata table</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100169"><b>TW-100169</b></a> — Artifact is missing from the TeamCity web UI while existing in the external storage</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-95958"><b>TW-95958</b></a> — TCP Run in Docker: Docker Image autocomplete prioritizes loose substring matches over prefix</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100305"><b>TW-100305</b></a> — The Add Step dialog is not switched automatically to "All" when searching</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100620"><b>TW-100620</b></a> — "Force virtual host addressing" checkbox doesn't work</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100745"><b>TW-100745</b></a> — Cloud Image can't be moved to a pool not containing the project that contains this image.</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100891"><b>TW-100891</b></a> — Dorm: Canceled build without agent cannot be displayed: "You do not have enough permissions to view requested agent pool"</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-96420"><b>TW-96420</b></a> — New creation flow: "Create build configuration from this template" action leads to the old flow</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99767"><b>TW-99767</b></a> — The additional repo isn't deleted if the user switched to YAML during setting edition</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100946"><b>TW-100946</b></a> — .NET builds with qualifier agent requirements starting with "Exists=&gt;" cannot find compatible agents if there are incompatible agents in the same pool</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101089"><b>TW-101089</b></a> — Lots of duplicate entry errors on attempt to store a metric id to the dictionary table</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100761"><b>TW-100761</b></a> — Perforce failing on newlines in changelist description</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-78597"><b>TW-78597</b></a> — Agent alternate IP address ignored by TeamCity</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100890"><b>TW-100890</b></a> — Dorm tenant cannot see its own agent pool with error "You do not have enough permissions to view requested agent pool"</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100142"><b>TW-100142</b></a> — Debug job doesn't perform checkout</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99613"><b>TW-99613</b></a> — Working better with non-default branches using MCP</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101033"><b>TW-101033</b></a> — Cleanup of build type groups can fail with an unknown error</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-96489"><b>TW-96489</b></a> — Failed to publish artifacts: java.lang.OutOfMemoryError: Java heap space</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100760"><b>TW-100760</b></a> — Rake build steps are broken (plugin is damaged)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100744"><b>TW-100744</b></a> — Authorize virtual agents action should validate agent pool for cloud agents</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100212"><b>TW-100212</b></a> — [S3] Uploads fail with 403 status code</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100985"><b>TW-100985</b></a> — Build-scoped tokens UX: add descriptions and docs link</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100573"><b>TW-100573</b></a> — Properties for key preserving on rotation (time.min and time.days) are not working</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100962"><b>TW-100962</b></a> — TeamCity cleanup does not remove cancelled multi-node tasks</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97236"><b>TW-97236</b></a> — Creation flow: handle Unauthorized exception in the UI</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100377"><b>TW-100377</b></a> — Excessive `/user` calls during repository listing in BitBucket Cloud connection</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96422"><b>TW-96422</b></a> — Provide more information about the origin of the TeamCity server workspaces</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99991"><b>TW-99991</b></a> — SAML plugin: 500 server error while login</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99396"><b>TW-99396</b></a> — IndexOutOfBoundsException in org.jetbrains.teamcity.fus.client.events.TeamCityListener</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99974"><b>TW-99974</b></a> — Mark test ignored if it was interrupted and parent block gets closed</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98733"><b>TW-98733</b></a> — Infinitive loading or no AI Build Analyzer Report if user don't have access to some failed dependency builds</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98784"><b>TW-98784</b></a> — AI Build Analyzer Report is not available for users with Project Viewer role</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97638"><b>TW-97638</b></a> — Stop build command from the server may cancel the step set to be always executed</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99340"><b>TW-99340</b></a> — Messages "Agent will upgrade" and "Agent can't be upgraded automatically" can be shown at the same time</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101176"><b>TW-101176</b></a> — Incorrect "mcpClientToolName" sent to FUS during connection to MCP with Gemini, Copilot and some other tools</li>
         </ul>
     </def>
     <def title="Resolved performance issues" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100646"><b>TW-100646</b></a> — Project import loads the whole custom_data_body table</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100629"><b>TW-100629</b></a> — Saving settings on Windows can be slow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100864"><b>TW-100864</b></a> — Repeating changes collection operations holds a reference to a previous operation</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97758"><b>TW-97758</b></a> — Add a primary key to the ignored_tests table to help improve performance of DB replication</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-77267"><b>TW-77267</b></a> — BuildPTRIndexer$BuildTask.beforeExecute consumes CPU in case of a large queue</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98141"><b>TW-98141</b></a> — PageExtensionsInterceptor is called for non-WEB POST requests</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100723"><b>TW-100723</b></a> — Calculation of unprocessed node events takes a lot of time</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100562"><b>TW-100562</b></a> — Processing of the events blocks on VCS commits cache initialization</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100626"><b>TW-100626</b></a> — Slow loading of VCS leads to UI slowness</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100647"><b>TW-100647</b></a> — Server cleanup duration ~3x regression on SQL Server after 2025.11.3 upgrade</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100970"><b>TW-100970</b></a> — Too big thread name with lots of "commit" strings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97583"><b>TW-97583</b></a> — Duplicated IDs in the where clause of the SQL query can cause the PostgreSQL planner to switch to a full table scan</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101005"><b>TW-101005</b></a> — Avoid loading the entire VCS root DAG of commits in memory</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99772"><b>TW-99772</b></a> — REST API: N+1 DB queries for test metadata when fetching testOccurrences with metadata fields</li>
         </ul>
     </def>
     <def title="Security" default-state="collapsed">
-        3 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        Four security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
         <note>Security bulletins are typically published a few days after the release date.</note>
     </def>
 </deflist>
