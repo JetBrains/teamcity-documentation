@@ -248,10 +248,3 @@ If there are more than one parent with their own rules set, the inherited rules 
 You may already have some notification rules configured by your System Administrator for the user group you're included in.
 * To unsubscribe from or override group notifications, add your own rule with the same watched builds and different notification events.
 * To unsubscribe from all events, add a rule with the corresponding watched builds and no events selected.
-
-<seealso>
-        <category ref="admin-guide">
-            <a href="customizing-notification-templates.md" instance="tc">Customizing Notifications</a>
-            <a href="notifications.md">Notifications</a>
-        </category>
-</seealso>

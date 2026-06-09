@@ -15,31 +15,38 @@ While this release does not introduce major new features, it delivers more than 
 <deflist collapsible="true">
     <def title="Minor improvements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-55009"><b>TW-55009</b></a> — Projects import: preserve IDs on importing to empty server, make a clear warning that IDs are changed when they do</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100299"><b>TW-100299</b></a> — Show the Performance Monitor tab for jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100964"><b>TW-100964</b></a> — Update Performance Monitor plugin UI to match Ring UI design system</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-55009"><b>TW-55009</b></a> — Projects import: preserve ids on importing to empty server, make a clear warn that ids are changed when they do</li>
         </ul>
     </def>
     <def title="Pipeline enhancements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100427"><b>TW-100427</b></a> — Pipelines: Edit Repository: CSP and PR toggles are available for Any Git Repo with auth type - Anonymous</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99369"><b>TW-99369</b></a> — Pipeline YAML Editor: incorrect error count + misaligned error view</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100427"><b>TW-100427</b></a> — Edit Repository: CSP and PR toggles are available for Any Git Repo with auth type - Anonymous</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96418"><b>TW-96418</b></a> — Pipeline integrations: bring the "Test connection" back</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-95617"><b>TW-95617</b></a> — Pipeline yaml parse error should contain location in the yaml</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97441"><b>TW-97441</b></a> — Pipelines: Agent Requirement: RAM Amount condition doesn't work</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97441"><b>TW-97441</b></a> — Agent Requirement: RAM Amount condition doesn't work</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100917"><b>TW-100917</b></a> — Adding tags to a pipeline leads to "Error while loading data", the pipeline is inaccessible</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100374"><b>TW-100374</b></a> — Pipelines: Edit Repository: Missing CSP status in the repository component description</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100374"><b>TW-100374</b></a> — Edit Repository: Missing CSP status in the repository component description</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94668"><b>TW-94668</b></a> — Pipeline is broken after project copying</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99711"><b>TW-99711</b></a> — An empty Repository entity is created if the user switches from the pipeline setting to the Admin area</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-93400"><b>TW-93400</b></a> — Pipelines: highlight repository names by exact match, not by symbols</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-93400"><b>TW-93400</b></a> — Highlight repository names by exact match, not by symbols</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99898"><b>TW-99898</b></a> — Pipeline steps description isn't aligned with steps if docker file is used in some of the steps</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100226"><b>TW-100226</b></a> — Do not show the text about DSL inconsistency from the DSL tab of pipelines stored in YAML</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99293"><b>TW-99293</b></a> — POM location is in the Advanced Maven settings for pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96700"><b>TW-96700</b></a> — Cannot create Pipeline, if there is a Build configuration with the same name on the same project level</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100063"><b>TW-100063</b></a> — /app/pipeline MCP requests do not work when user has active 2FA</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99693"><b>TW-99693</b></a> — Broken build if reusing a pipeline with failed jobs in a build chain</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100160"><b>TW-100160</b></a> — Show all inherited pipeline parameters by default</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99861"><b>TW-99861</b></a> — Limit Job Id and Job name length</li>
         </ul>
     </def>
     <def title="Fixed bugs" default-state="collapsed">
         <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100761"><b>TW-100761</b></a> — Perforce failing on newlines in changelist description</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100545"><b>TW-100545</b></a> — Do not shutdown docker compose right on build interruption, as it prevents 'always running' steps from proper execution</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97638"><b>TW-97638</b></a> — Stop build command from the server may cancel the step set to be always executed</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-43738"><b>TW-43738</b></a> — Allow Run Custom Build dialog to be resized (to show long values in drop-downs)</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100713"><b>TW-100713</b></a> — Build cannot resolve dep. parameters, if it has optional artifact dependency on another skipped conditional dependency</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94605"><b>TW-94605</b></a> — "Unmet requirements: exists:" for incompatible agents instead of clear description</li>
@@ -84,7 +91,6 @@ While this release does not introduce major new features, it delivers more than 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96422"><b>TW-96422</b></a> — Provide more information about the origin of the TeamCity server workspaces</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99396"><b>TW-99396</b></a> — IndexOutOfBoundsException in org.jetbrains.teamcity.fus.client.events.TeamCityListener</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99974"><b>TW-99974</b></a> — Mark test ignored if it was interrupted and parent block gets closed</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-97638"><b>TW-97638</b></a> — Stop build command from the server may cancel the step set to be always executed</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99340"><b>TW-99340</b></a> — Messages "Agent will upgrade" and "Agent can't be upgraded automatically" can be shown at the same time</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101176"><b>TW-101176</b></a> — Incorrect "mcpClientToolName" sent to FUS during connection to MCP with Gemini, Copilot and some other tools</li>
         </ul>
@@ -93,7 +99,7 @@ While this release does not introduce major new features, it delivers more than 
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100646"><b>TW-100646</b></a> — Project import loads the whole custom_data_body table</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100629"><b>TW-100629</b></a> — Saving settings on Windows can be slow</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100864"><b>TW-100864</b></a> — Repeating changes collection operations holds a reference to a previous operation</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100864"><b>TW-100864</b></a> — Repeating changes collection operations holds a reference to a previous operation via '$0'</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97758"><b>TW-97758</b></a> — Add a primary key to the ignored_tests table to help improve performance of DB replication</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-77267"><b>TW-77267</b></a> — BuildPTRIndexer$BuildTask.beforeExecute consumes CPU in case of a large queue</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98141"><b>TW-98141</b></a> — PageExtensionsInterceptor is called for non-WEB POST requests</li>
