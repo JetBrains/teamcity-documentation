@@ -16,6 +16,15 @@ Topic covered in this tutorial:
 * Project connections
 * Build features (Build Approval and others)
 
+## Before you start
+
+Deploying a build usually means updating an external resource: for example, uploading an installer to a production website, publishing a package, or releasing an image to a registry. In this tutorial, we use a build configuration to explore this TeamCity concept, but deployment tasks can also be handled in pipelines.
+
+The same flexibility applies to build steps. TeamCity includes a variety of [](deployers.md): ready-to-use steps for common deployment tasks, such as [uploading files to an FTP server](ftp-upload.md). However, deployment configurations are not limited to dedicated deployers. You can use any build step that fits your workflow.
+
+In this tutorial, we are deploying a Docker image, so the [](docker.md) build step is the natural choice. For a .NET application, you would likely use the [](net.md) build step instead. For anything more specific, you can always fall back to the generic [](command-line.md) step.
+
+
 ## Step 1: Create a deployment configuration
 
 
@@ -126,11 +135,7 @@ Topic covered in this tutorial:
 
 ## Step 2: Configure build steps
 
-TeamCity includes a variety of [](deployers.md): ready-to-use build steps for common deployment tasks, such as [uploading files to an FTP server](ftp-upload.md). Deployment configurations are not limited to these dedicated deployers, though. You can use any build step that fits your workflow.
-
-In this tutorial, we are deploying a Docker image, so the [](docker.md) build step is the natural choice.
-
-In addition, results of the same upstream build can be deployed to multiple locations. For example, to staging and environment servers. The easiest way to do so is to create separate configurations. For this tutorial, we will follow a more sophisticated approach: a single configuration whose actions depend on a parameter value.
+Results of the same upstream build can be deployed to multiple locations. For example, to staging and environment servers. The easiest way to do so is to create separate configurations. For this tutorial, we will follow a more sophisticated approach: a single configuration whose actions depend on a parameter value.
 
 1. Prepare two repositories under your Docker Hub account: one for [private and another for public](https://docs.docker.com/docker-hub/repos/manage/access/) images. For example, `valrravn/teamcity-gs-private` and `valrravn/teamcity-gs-public`.
 
