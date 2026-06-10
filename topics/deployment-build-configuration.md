@@ -23,7 +23,7 @@ In this tutorial, you will create deployment configurations to supplement a pipe
 <img src="dk-deploymentConf-finalChainWide.png" width="706" alt="Complete Delivery Chain"/>
 
 
-### Create a Building Pipeline
+### Create a Building Workflow
 
 Follow the steps described in the [](composite-build-configuration.md) article to create a chain of five interconnected configurations that end with the composite "Build All" configuration.
 
