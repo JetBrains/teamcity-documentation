@@ -441,7 +441,7 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 
 You can choose a build configuration type in the **General** tab of configuration settings. In this sample chain, you can change the *"Build All"* configuration type to "Composite".
 
-<img src="dk-compositeConf-ConfType.png" width="706" alt="Configuration type"/>
+<img src="gs-change-bc-type.png"  width="706" alt="Change build configuration type"/>
 
 When compared to regular build configurations, composite configurations exhibit the following differences.
 
