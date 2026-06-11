@@ -7,8 +7,11 @@
 * TeamCity no longer supports outdated [databases and their drivers](set-up-external-database.md):
     * The legacy HSQLDB1 database and its correspondent HSQLDB1 JDBC drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101186). Switch to HSQLDB2 drivers instead.
     * The legacy MSSQL jTDS drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101180). Switch to standard MSSQL JDBC drivers instead.
-    
 
+## Changes from 2026.1 to 2026.1.1
+{id="2026.1.1"}
+
+No potential breaking changes.
 
 ## Changes from 2025.11.5 to 2026.1
 {id="2026.1"}
@@ -52,6 +55,8 @@
 
 ### Known Issues
 {id="known-issues-2026-1"}
+
+* The slash (`/`) character in a S3 path prefix leads to signature mismatch, which causes the "The request signature we calculated does not match the signature you provided" error when publishing artifacts. This issue will be resolved in the 2026.1.2 bug-fix update.
 
 * If your previous TeamCity version did not support Java 21, automatic agent upgrade to 2026.1 may fail. TeamCity 2026.1 build agents require Java 21, while agents from earlier versions, such as 2024.07, do not support it. To avoid this issue, upgrade TeamCity to 2025.11 first. Alternatively, set the `FJ_MIN_UNSUPPORTED_JAVA_VERSION` parameter in your [agent.bat or agent.sh](start-teamcity-agent.md) files to `22`.
 
