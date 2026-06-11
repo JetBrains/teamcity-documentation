@@ -15,13 +15,17 @@ While this release does not introduce major new features, it delivers more than 
 <deflist collapsible="true">
     <def title="Minor improvements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100299"><b>TW-100299</b></a> — Show the Performance Monitor tab for jobs</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100964"><b>TW-100964</b></a> — Update Performance Monitor plugin UI to match Ring UI design system</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-55009"><b>TW-55009</b></a> — Projects import: preserve ids on importing to empty server, make a clear warn that ids are changed when they do</li>
         </ul>
     </def>
     <def title="Pipeline enhancements" default-state="collapsed">
         <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100299"><b>TW-100299</b></a> — Show the Performance Monitor tab for jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-94605"><b>TW-94605</b></a> — "Unmet requirements: exists:" for incompatible agents instead of clear description</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99890"><b>TW-99890</b></a> — Horizontal sidebar behaviour is unclear and unstable</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98233"><b>TW-98233</b></a> — NPM integration has unnesasary text and jumps</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99808"><b>TW-99808</b></a> — Build features UI: placeholder in the search field refers to non-existing items</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99369"><b>TW-99369</b></a> — Pipeline YAML Editor: incorrect error count + misaligned error view</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100427"><b>TW-100427</b></a> — Edit Repository: CSP and PR toggles are available for Any Git Repo with auth type - Anonymous</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96418"><b>TW-96418</b></a> — Pipeline integrations: bring the "Test connection" back</li>
@@ -36,7 +40,6 @@ While this release does not introduce major new features, it delivers more than 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100226"><b>TW-100226</b></a> — Do not show the text about DSL inconsistency from the DSL tab of pipelines stored in YAML</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99293"><b>TW-99293</b></a> — POM location is in the Advanced Maven settings for pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96700"><b>TW-96700</b></a> — Cannot create Pipeline, if there is a Build configuration with the same name on the same project level</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100063"><b>TW-100063</b></a> — /app/pipeline MCP requests do not work when user has active 2FA</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99693"><b>TW-99693</b></a> — Broken build if reusing a pipeline with failed jobs in a build chain</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100160"><b>TW-100160</b></a> — Show all inherited pipeline parameters by default</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99861"><b>TW-99861</b></a> — Limit Job Id and Job name length</li>
@@ -49,13 +52,10 @@ While this release does not introduce major new features, it delivers more than 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97638"><b>TW-97638</b></a> — Stop build command from the server may cancel the step set to be always executed</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-43738"><b>TW-43738</b></a> — Allow Run Custom Build dialog to be resized (to show long values in drop-downs)</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100713"><b>TW-100713</b></a> — Build cannot resolve dep. parameters, if it has optional artifact dependency on another skipped conditional dependency</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-94605"><b>TW-94605</b></a> — "Unmet requirements: exists:" for incompatible agents instead of clear description</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96778"><b>TW-96778</b></a> — No "Log in" next to the newly created connection in the dropdown</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99890"><b>TW-99890</b></a> — Horizontal sidebar behaviour is unclear and unstable</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96205"><b>TW-96205</b></a> — AWS SDK2: remove "(SDK Attempt Count: 1)" from the errors, return back the error code and service name</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100707"><b>TW-100707</b></a> — CONNECT: 401 on access to K8s via proxy with login and password</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-94724"><b>TW-94724</b></a> — Creation flow: repository description is always absent for the connections</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-98233"><b>TW-98233</b></a> — NPM integration has unnesasary text and jumps</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-87045"><b>TW-87045</b></a> — No reaction after activation of the security patch (it is unclear whether the installation has actually started)</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-92752"><b>TW-92752</b></a> — “Store password and API tokens outside of VCS” gets hidden when you disable UI-managed project settings.</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99648"><b>TW-99648</b></a> — Using the Filter button on Change Log tab of Versioned Settings leads to 403 CRSF error</li>
@@ -64,7 +64,6 @@ While this release does not introduce major new features, it delivers more than 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-92837"><b>TW-92837</b></a> — Free Disk Space should be able to delete volumes of docker builder</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98678"><b>TW-98678</b></a> — Failed DSL compilation due to invalid cache after moving a Perforce label</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100234"><b>TW-100234</b></a> — Failed to resolve artifact dependency in multinode setup with external artifact storage</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-99808"><b>TW-99808</b></a> — Build features UI: placeholder in the search field refers to non-existing items</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100476"><b>TW-100476</b></a> — All compatible agents are outdated and cannot be upgraded” is shown even though some agents are currently undergoing the upgrade process</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-95156"><b>TW-95156</b></a> — Deadlock on attempt to save data to test_metadata table</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100169"><b>TW-100169</b></a> — Artifact is missing from the TeamCity web UI while existing in the external storage</li>
@@ -77,7 +76,6 @@ While this release does not introduce major new features, it delivers more than 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101089"><b>TW-101089</b></a> — Lots of duplicate entry errors on attempt to store a metric id to the dictionary table</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100761"><b>TW-100761</b></a> — Perforce failing on newlines in changelist description</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-78597"><b>TW-78597</b></a> — Agent alternate IP address ignored by TeamCity</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100890"><b>TW-100890</b></a> — Dorm tenant cannot see its own agent pool with error "You do not have enough permissions to view requested agent pool"</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99613"><b>TW-99613</b></a> — Working better with non-default branches using MCP</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101033"><b>TW-101033</b></a> — Cleanup of build type groups can fail with an unknown error</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100760"><b>TW-100760</b></a> — Rake build steps are broken (plugin is damaged)</li>
