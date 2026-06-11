@@ -507,7 +507,7 @@ When `fetch` is used in a separate process, it makes thread-dumps of itself and 
 
 <def title="teamcity.server.git.gc.enabled">
 
-<b>Default value:</b> `false`
+<b>Default value:</b> `true`
 
 Specifies whether TeamCity should run `git gc` during the server clean-up (native git is used).
 
