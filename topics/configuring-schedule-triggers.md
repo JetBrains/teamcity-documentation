@@ -17,7 +17,7 @@ You can schedule a recurring build or set a specific date and time for it.
 
 In addition to triggering builds __daily__ or __weekly__ at a specified time for a particular time zone, you can specify advanced time settings using [cron](cron-expressions-in-teamcity.md)-like expressions. This format provides more flexible scheduling options.
 
-> By default, the selected time corresponds to the server time (that is, the time in the server timezone). Expand advanced trigger settings to access the **Timezone** setting.
+> By default, the selected time corresponds to the server time (that is, the time in the server time zone). Expand advanced trigger settings to access the **Timezone** setting.
 >
 {style="note"}
 
