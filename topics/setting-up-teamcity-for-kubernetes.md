@@ -7,11 +7,12 @@
 TeamCity offers two types of Kubernetes integration:
 
 * **Regular Kubernetes integration.** This approach uses TeamCity cloud profiles and images, similar to integrations with other cloud providers like AWS, Microsoft Azure, or Google Cloud. You configure build agents in TeamCity and use a Kubernetes cluster to host them. This integration type relies on the external [Kubernetes Support](https://plugins.jetbrains.com/plugin/9818-kubernetes-support) plugin.
+
 * **Kubernetes cluster as an external executor**. In this mode, TeamCity is unaware of any build agents on the Kubernetes side. Instead, it recognizes the cluster's capability to run builds and delegates the assignment and lifecycle management of entities running its builds entirely to the cluster.
 
 </snippet>
 
-This article explains the traditional integration approach. To learn about the native integration instead, refer to the [](kubernetes-executor.md) topic.
+This article explains the first integration type. To learn about the executor mode, refer to the [](kubernetes-executor.md) topic.
 
 
 <note instance="tc">
@@ -149,6 +150,8 @@ Authentication strategy
 
 </table>
 
+<snippet id="k8s-proxy-settings">
+
 If your TeamCity server needs to use a proxy server to access a k8s cluster, configure the following additional settings to allow outgoing connections:
 
 * <include from="common-templates.md" element-id="kubernetes-settings-proxy-url"/>
@@ -163,11 +166,13 @@ If your TeamCity server needs to use a proxy server to access a k8s cluster, con
   >
   {style="note" instance="tc"}
 
+</snippet>
+
 ## Adding Kubernetes Cloud Image
 
 After configuring the general Kubernetes settings, you can proceed with adding a new build agent image.
 
-Click __Add image__ and configure its options:
+In the cloud profile settings, click __Add image__ and configure its options:
 
 <table>
 
