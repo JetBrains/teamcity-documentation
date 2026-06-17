@@ -200,7 +200,7 @@ object Build : BuildType({
     features {
         parallelTests {
             numberOfBatches = 2
-            separateArtifacts = true
+            groupArtifactsByBuild = true
         }
     }
 })
