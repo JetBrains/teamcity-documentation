@@ -5,7 +5,7 @@
 <include from="setting-up-teamcity-for-kubernetes.md" element-id="k8s-integration-types"/>
 
 
-This article explains the native integration approach. To learn about the traditional integration instead, refer to the [](setting-up-teamcity-for-kubernetes.md) topic.
+This article is dedicated to the external executor mode. To learn about the other approach, refer to the [](setting-up-teamcity-for-kubernetes.md) topic.
 
 ## How It Works
 
@@ -134,6 +134,10 @@ Although Kubernetes-based builds do not occupy native TeamCity agents, regular [
 {instance="tcc"}
 
 [Detached builds](detaching-build-from-agent.md) and those spawned by [composite build configurations](composite-build-configuration.md) do not occupy agent slots and can run without restrictions.
+
+## Proxy Settings
+
+<include from="setting-up-teamcity-for-kubernetes.md" element-id="k8s-proxy-settings"/>
 
 ## Special Notes and Limitations
 
