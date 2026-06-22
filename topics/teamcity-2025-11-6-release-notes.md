@@ -1,5 +1,5 @@
-[//]: # (title: TeamCity 2025.11.5 Release Notes)
-[//]: # (help-id: TeamCity 2025.11.5 Release Notes)
+[//]: # (title: TeamCity 2025.11.6 Release Notes)
+[//]: # (help-id: TeamCity 2025.11.6 Release Notes)
 
 **Build 000000, 26 June 2026**
 
