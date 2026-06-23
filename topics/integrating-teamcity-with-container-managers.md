@@ -43,7 +43,7 @@ For more information, see the following pages:
 
 In classic build configurations, these integrations require a corresponding [Docker Registry](configuring-connections-to-docker.md) connection assigned to the [](docker-support.md) build feature. In addition to selecting the registry connection used by the configuration, this build feature adds the __Container Info__ tab to __Build Results__, where you can view information about images published to a registry during the build.
 
-    <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
+<img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
 
 In pipelines, you only need to configure the corresponding item in the [](pipeline-settings.md#Integrations) section.
 
