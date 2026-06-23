@@ -3,7 +3,7 @@
 
 The _retry build trigger_ automatically adds a new build to the queue if the previous build of the current build configuration has failed.
 
-Note that if a build fails because of infrastructure issues (for example, a build agent unexpectedly shut down when a build was starting), TeamCity restarts it even without this trigger configured. This behavior is controlled by the `teamcity.buildQueue.restartBuildAttempts` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) that defaults to three consecutive attempts.
+Note that if a build fails because of infrastructure issues (for example, a build agent unexpectedly shut down when a build was starting), TeamCity restarts it even without this trigger configured. This behavior is controlled by the `teamcity.internal.buildQueue.restartBuildAttempts` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) (server-wide default) and can be overridden for individual build configurations using the `teamcity.buildQueue.restartBuildAttempts` configuration parameter. By default, TeamCity makes three consecutive restart attempts.
 {instance="tc"}
 
 Note that if a build fails because of infrastructure issues (for example, a build agent unexpectedly shut down when a build was starting), TeamCity restarts it even without this trigger configured.
