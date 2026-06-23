@@ -1,19 +1,51 @@
 [//]: # (title: Integrating TeamCity with Container Managers)
 [//]: # (help-id: Integrating TeamCity with Docker and Podman)
 
-TeamCity integrates with container managers (Docker, Podman) on multiple levels.
+TeamCity integrates with container managers (Docker and Podman) to support a wide range of operations.
 
-* The [Docker](docker.md) _build runner_ launches Docker commands and creates Docker images during a build.
-* The [](docker-compose.md) _build runner_ starts services with the help of the [Docker Compose tool](https://docs.docker.com/compose/) during a build.
-* The [](container-wrapper.md) _extension_ executes build steps inside containers. Supports Docker and Podman. Available for multiple runners.
-* The [](run-in-docker.md) build feature allows you to run all build steps together in the same container.
-* The [](docker-support.md) _build feature_ automatically signs in to container registries using Docker or Podman before starting a build. This feature also adds the __Container Info__ tab of __Build Results__ with the information about the images published to a registry during the build.
+<deflist type="full">
+
+<def title="Run steps in containers">
+
+Most build steps include a [**Container settings**](container-wrapper.md) section where you can specify the container in which the step should run.
+
+<img src="dk-container-settings-in-steps.png" width="706" alt="Container settings in steps"/>
+
+> If this step is part of a [pipeline](create-and-edit-pipelines.md), use the **Run in Docker** toggle in the step settings.
+>
+{style="tip"}
+
+If a configuration has multiple steps that need to run in the same container, use the [](run-in-docker.md) build feature instead of configuring each step separately.
+
+Both approaches require a build agent with Docker or Podman installed. TeamCity can use either tool to run steps inside containers.
+
+</def>
+
+<def title="Pull, build, and upload images">
+
+The [Docker](docker.md) build step can run custom `docker ...` commands, including `build` and `push`. The [](docker-compose.md) build step lets you run multi-container Docker applications.
+
+To perform these actions on build agents that have Podman installed instead of Docker, use the generic [](command-line.md) build step.
+
+</def>
+
+<def title="Run TeamCity server and agents as Docker images">
+
+For more information, see the following pages:
+
+* [teamcity-docker-images on GitHub](https://github.com/JetBrains/teamcity-docker-images/tree/master?tab=readme-ov-file#-docker-images)
+* [jetbrains/teamcity-server image description on Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-server)
+* [jetbrains/teamcity-agent image description on Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-agent/)
+
+</def>
+
+</deflist>
+
+In classic build configurations, these integrations require a corresponding [Docker Registry](configuring-connections-to-docker.md) connection assigned to the [](docker-support.md) build feature. In addition to selecting the registry connection used by the configuration, this build feature adds the __Container Info__ tab to __Build Results__, where you can view information about images published to a registry during the build.
 
     <img src="dk-containerInfoTab.png" width="706" alt="Container Info tab"/>
 
-You can learn more details about the listed tools in the dedicated Help articles, linked above. The following article contains information common to these tools.
-
->This page is about TeamCity instruments for integrating builds with Docker and Podman. If you want to learn how to run Docker inside a build agent container and read other information about the TeamCity Agent Docker images, read our documentation in [Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-agent/).
+In pipelines, you only need to configure the corresponding item in the [](pipeline-settings.md#Integrations) section.
 
 ## Compatibility and Requirements
 
