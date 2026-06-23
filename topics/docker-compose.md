@@ -8,7 +8,9 @@
 The _Docker Compose_ [build step](configuring-build-steps.md) allows starting [Docker Compose](https://docs.docker.com/compose/) build services and shutting them down at the end of the build. With this runner, you can run multi-container Docker apps.
 
 If you need to pull a base image from a private repository or push a newly built image to a registry, you can authorize to a Docker or Podman registry, as follows:
-1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add new Docker or Podman connections to your project.
+
+1. In your project settings, select **Connections** from the sidebar and follow the instructions in [](configuring-connections-to-docker.md) to add a new Docker Registry connection (or multiple connections) to your project.
+
 2. In your build configuration settings, configure the [](docker-support.md) build feature, adding the connections created in the previous step.
 
 ## Common Settings

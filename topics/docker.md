@@ -5,20 +5,28 @@
 
 <show-structure for="chapter" depth="2"/>
 
-The _Docker_ [build step](configuring-build-steps.md) allows launching the `build`, `push`, and `tag` [Docker](https://www.docker.com/) commands inside your build.
+The _Docker_ [build step](configuring-build-steps.md) allows launching `docker build`, `docker push`, `docker tag`, and other [Docker](https://www.docker.com/) commands inside your build.
 
->For the `run` command, use [](container-wrapper.md).
+> For the `run` command, see [](container-wrapper.md).
+> 
+{style="note"}
 
-If you need to push the newly built image to a registry, you can authorize to a Docker or Podman registry by configuring the _Docker Registry Connections_ build feature, as follows:
-
-1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
-2. Add a new [Docker or Podman connection](configuring-connections-to-docker.md) to your project.
-3. In your [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes), configure the [](docker-support.md) build feature using the connections created in the previous step.
-
-If a [Dockerfile](https://docs.docker.com/engine/reference/builder/) is present in your VCS repository and you create a TeamCity project based on this repository, TeamCity will [autodetect it](configuring-build-steps.md#Add+Steps+via+TeamCity+UI) and offer creating a build step using this runner.
+> To perform these actions on build agents that have Podman installed instead of Docker, use the generic [](command-line.md) build step.
+> 
+{style="tip"}
 
 
 <include from="common-templates.md" element-id="docker-integration-note"><var name="docker-feature-name" value="Docker build step"/></include>
+
+
+## Prerequisites
+
+To push a newly built image to a Docker registry, you must authorize first.
+
+1. <include from="common-templates.md" element-id="open-project-settings-tab"><var name="tab-name" value="Connections"/></include>
+2. Add a new [Docker Registry connection](configuring-connections-to-docker.md) to your project.
+3. In your [build configuration settings](project-administrator-guide.md#Edit+and+View+Modes), configure the [](docker-support.md) build feature using the connection created in the previous step.
+
 
 ## Common Settings
 
