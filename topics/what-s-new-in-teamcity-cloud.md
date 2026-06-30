@@ -111,7 +111,7 @@ While this release does not introduce major new features, it delivers more than 
         </ul>
     </def>
     <def title="Security" default-state="collapsed">
-        Nine security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        Ten security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
         <note>Security bulletins are typically published a few days after the release date.</note>
     </def>
 </deflist>
