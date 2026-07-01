@@ -2,7 +2,7 @@
 
 <show-structure for="chapter" depth="2"/>
 
-## Build 236396, 29 June 2026
+## Build 236396, 1 July 2026
 
 TeamCity Cloud is entering a new phase with smaller, more frequent updates. Rather than following the TeamCity On-Premises release schedule, it will now ship improvements on a faster cadence. This means you will get fixes, performance enhancements, and requested changes sooner.
 
