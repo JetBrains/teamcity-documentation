@@ -1,5 +1,7 @@
 [//]: # (title: Build Chains)
 
+<show-structure for="chapter" depth="2"/>
+
 A _build chain_ is a sequence of interconnected [build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md) linked by dependencies, where each member waits for its upstream to finish before starting.
 
 <img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
@@ -11,9 +13,13 @@ Technically, a build chain is a [directed acyclic graph](https://en.wikipedia.or
 Build chains are useful whenever multiple build configurations or pipelines need to run in a specific order and share the same state of the codebase. Two common scenarios:
 
 * **Multi-platform testing before release.** Compile the project once, run tests simultaneously on different platforms, then produce a release build only if all tests pass.
-* **Isolated but synchronized steps.** A test suite is too slow to run inline, so it lives in a separate configuration. A snapshot dependency ensures it always runs on the same source revision as the build it validates.
+* **Offloading a heavy test suite.** A slow test suite is moved into its own configuration and linked back with a snapshot dependency, so it still runs on the same sources as the build it validates while gaining its own history, triggers, and agent requirements.
 
 <img src="compile-test-pack.png" width="401" alt="Compile, test, pack chain"/>
+
+> To speed up a single slow suite by spreading it across agents, you usually do **not** need a hand-built chain: the [Parallel Tests](parallel-tests.md) build feature splits the suite into batches and distributes them automatically. A dedicated chained configuration is still justified when TeamCity cannot split the suite effectively — for example, when all tests live in one class, or the automatically produced batches are too imbalanced (see how [TeamCity groups tests into batches](parallel-tests.md#Run+tests+in+parallel)) — or when the test stage needs its own environment or must be reused by several downstream objects.
+>
+{style="tip"}
 
 ## How a Chain Runs
 
@@ -69,8 +75,8 @@ Build chains are the recommended way to link objects in TeamCity. They provide s
 
 ## Next Steps
 
-* [](chains-topic-2.md) — link build configurations and pipelines into a chain
+* [](chains-topic-2.md) — link configurations and pipelines, and tune dependency behavior such as build reuse and revision synchronization
 * [](chains-topic-3.md) — transfer files and parameter values between chain members
-* [](chains-topic-4.md) — build reuse, triggers, partial runs, and revision synchronization
-* [](chains-topic-5.md) — monitor chains, rerun steps, and stop running chains
+* [](chains-topic-4.md) — trigger, stop, and partially run chains
+* [](chains-topic-5.md) — inspect chain runs and rerun individual steps
 * [](chains-topic-6.md) — protect configurations from unauthorized cross-project dependencies

@@ -1,13 +1,13 @@
 [//]: # (title: Pass Data in a Chain)
 
+<show-structure for="chapter" depth="2"/>
+
 Members of a [build chain](chains-topic-1.md) can exchange two kinds of data:
 
-* **Files** — through [artifact dependencies](#artifact-dependencies). An upstream build publishes files; a downstream build downloads them before it starts.
-* **Values** — through [output parameters](#parameters). A name-value pair set in one object is read by another further down the chain.
+* **Files** — through [artifact dependencies](#Artifact+Dependencies). An upstream build publishes files; a downstream build downloads them before it starts.
+* **Values** — through [output parameters](#Parameters). A name-value pair set in one object is read by another further down the chain.
 
 Both mechanisms flow in the direction of the chain: data moves from upstream to downstream, never the reverse.
-
-<anchor name="artifact-dependencies"/>
 
 ## Artifact Dependencies
 
@@ -55,7 +55,7 @@ Which build of the source configuration to take artifacts from:
 </def>
 <def title="Artifact rules">
 
-Which files to download and where to place them. See [](#artifact-rules) below.
+Which files to download and where to place them. See [Artifact Rules](#Artifact+Rules) below.
 
 </def>
 <def title="Clean destination paths before downloading artifacts">
@@ -100,8 +100,6 @@ dependencies:
   - UpstreamPipeline_ID:
       reuse: none
 ```
-
-<anchor name="artifact-rules"/>
 
 ### Artifact Rules
 
@@ -156,7 +154,7 @@ release-*.zip!*.dll=>dlls
 ?:output.txt
 ```
 
-The `?:` prefix is especially useful in [partial chains](chains-topic-4.md#partial-chain-execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
+The `?:` prefix is especially useful in [partial chains](chains-topic-4.md#Partial+Chain+Execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
 
 ## Parameters
 
@@ -182,7 +180,7 @@ A downstream object writes back to an upstream input parameter via `override.dep
 </def>
 </deflist>
 
-The snippet below shows the basic shape of input and output parameters in a pipeline:
+Output parameters are designed to be read by *other* objects, not by the one that declares them. If a configuration or pipeline references its own output parameter, the reference does not resolve: TeamCity treats the unresolved `%...%` as an [implicit agent requirement](configuring-agent-requirements.md#Implicit+Requirements), and the build fails to start with a "no compatible agents" error. The snippet below demonstrates this.
 
 <include from="pipeline-settings.md" element-id="output-param-in-self"/>
 

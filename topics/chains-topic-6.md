@@ -1,10 +1,12 @@
 [//]: # (title: Secure Chain Dependencies)
 
+<show-structure for="chapter" depth="2"/>
+
 [Build chains](chains-topic-1.md) can span multiple projects, which is powerful but introduces a risk: a configuration from one team can depend on — and therefore trigger and pull artifacts from — a configuration owned by another team.
 
 ## The Risk
 
-Anyone with the **Project viewer** role for a project can create dependencies to its configurations from their own. This means external users can run your configurations or import their artifacts even without permission to run them directly.
+If there are no restrictions, anyone with the **Project viewer** role for a project can create dependencies to its configurations from their own. This means external users can run your configurations or import their artifacts even without permission to run them directly.
 
 Limiting visibility is not enough on its own. A project administrator who cannot see a target project in the UI can still create a dependency to it through [versioned settings](storing-project-settings-in-version-control.md), as long as they know the configuration ID:
 

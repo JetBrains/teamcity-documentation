@@ -1,6 +1,8 @@
-[//]: # (title: View and Manage Chain Runs)
+[//]: # (title: Monitor Build Chains)
 
-TeamCity visualizes [build chains](chains-topic-1.md) in several places and lets you rerun individual steps, continue partially finished chains, and stop running ones.
+<show-structure for="chapter" depth="2"/>
+
+TeamCity visualizes [build chains](chains-topic-1.md) in several places, letting you inspect chain runs, rerun individual steps, and continue partially finished chains. To trigger, stop, or otherwise control a chain run, see [](chains-topic-4.md).
 
 ## Build Chains Tab
 
@@ -30,35 +32,14 @@ The **Chain** tab on a build's results page shows the directed graph for that sp
 
 The **Dependencies** tab lists the build's direct and indirect dependency builds. For example, if A depends on B, and B depends on C and D, then C and D appear as indirect dependencies of A.
 
-The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](chains-topic-4.md#suitable-builds) from earlier chains.
-
-## Stopping Chain Builds
-
-When you stop or remove from the queue a build that is part of a chain, TeamCity shows the message "_This build is a part of a build chain_" and lists the other running or queued chain members under **Stop other parts**.
-
-* Each listed build you can access has a checkbox. It is selected by default when stopping the current build would inevitably cause that build to fail.
-* Builds you lack permission to stop are shown without a checkbox.
-* Builds you lack permission to view are hidden, replaced by a warning that you cannot see all parts of the chain.
-
-If all other parts of the chain have already finished, no additional information is shown.
-
-## Running Personal Builds in a Chain
-
-When a [personal build](personal-build.md) triggers a chain, all of its upstream dependencies also run as personal builds. The exception is build reuse: if reuse is enabled and a finished non-personal build satisfies the revision requirements, TeamCity uses it instead of running a personal upstream build that would add no value.
+The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](chains-topic-2.md#Suitable+Builds) from earlier chains.
 
 ## Clean-up
 
 Build chains interact with [clean-up](teamcity-data-clean-up.md) in two ways worth knowing:
 
-<deflist type="full">
-<def title="Chain builds are preserved by default">
 
-TeamCity does not clean up builds that are part of a chain unless you explicitly allow it. You can disable this protection per configuration in its clean-up settings.
+* Chain builds are preserved by default. TeamCity does not clean up builds that are part of a chain unless you explicitly allow it. You can disable this protection per configuration in its clean-up settings.
 
-</def>
-<def title="Downloaded artifacts follow their consumer">
+* Downloaded artifacts follow their consumer. Artifacts downloaded by a build are not cleaned up while that consuming build still exists. For a configuration with artifact dependencies, clean-up settings let you choose whether artifacts it downloaded from other builds can be cleaned early or kept.
 
-Artifacts downloaded by a build are not cleaned up while that consuming build still exists. For a configuration with artifact dependencies, clean-up settings let you choose whether artifacts it downloaded from other builds can be cleaned early or kept.
-
-</def>
-</deflist>
