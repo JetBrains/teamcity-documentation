@@ -12,7 +12,9 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 
 
-1. <snippet id="settings_art_storage_page">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.<list><li>Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.</li><li>Edit one specific project if your new storage should be available only for this project and its sub-projects.</li></list></snippet>
+1.
+
+<snippet id="settings_art_storage_page" xmlns="">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.<list><li>Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.</li><li>Edit one specific project if your new storage should be available only for this project and its sub-projects.</li></list></snippet>
 2. <snippet id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</snippet>
 3. <snippet id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</snippet>
 4. Set the **Type** field to "AWS S3".
@@ -371,3 +373,91 @@ project {
 ## Migrating Artifacts To a Different Storage
 
 <include from="configuring-artifacts-storage.md" element-id="artifactMigrationToS3"/>
+
+
+## Locating Orphan Artifacts from Deleted Projects
+
+When you delete a TeamCity project, TeamCity also removes its settings, including external storage configuration. Without these settings, TeamCity can no longer access the S3 buckets where the deleted project’s configurations and pipelines stored their artifacts.
+
+To locate these orphaned artifacts, send a `GET` request to the `<server_URL>/artifacts/s3/scan.html` endpoint:
+
+```Shell
+curl --location 'http://localhost:8111/artifacts/s3/scan.html' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer $TEAMCITY_USER_ACCESS_TOKEN' \
+--data ''
+```
+
+> To run this request, add the `teamcity.s3.artifacts.scan.enabled=true` parameter to [internal TeamCity server properties](server-startup-properties.md#TeamCity+Internal+Properties) in order to run this request. Otherwise, the response body returns "Artifact scanner is not enabled."
+> 
+> You must also be [authorized](configuring-your-user-profile.md#Managing+Access+Tokens) as a user whose [permissions list](managing-roles-and-permissions.md) included "EDIT_PROJECT" or the target project (see below). Otherwise, the request fails with code "401 Unauthorized".
+> 
+{style="note"}
+
+> TeamCity blocks consecutive requests to this endpoint if they are sent less than five seconds apart.
+> 
+{style="warning"}
+
+If both conditions are met, the request returns code 202 Accepted with "Starting the scan" in the response body. When the scan is complete, TeamCity saves a report to the `<TeamCity-server-home>/logs/artifact_scan_<timestamp>` file. To access this file from the TeamCity UI, navigate to the **Admin | Diagnostics | Server Logs** page.
+
+<img src="s3-orphaned-artifacts-scan.png" width="706" alt="Orphaned files report"/>
+
+The report contains two arrays in the `{"orphanedPaths":[...],"errors":[...]}` format.
+
+* `orphanedPaths` array lists artifacts that belong to deleted projects.
+* `errors` array lists errors that occurred during the scan.
+
+You can add the following parameters to narrow down the search:
+
+<deflist type="narrow">
+
+<def title="projectId">
+
+<b>Type:</b> String<br/>
+<b>Default value:</b> null
+
+External project ID that you can copy from the project’s **General** settings tab. If specified, the search starts with this project and scans its entire hierarchy of child subprojects; otherwise, the search starts with the topmost "Root" project.
+
+</def>
+
+<def title="scanBuilds">
+
+<b>Type:</b> Boolean<br/>
+<b>Default value:</b> false
+
+Set this parameter to **true** to check whether all the build folders inside Build configurations belong to either completed or running builds; otherwise, the scan only checks project and build Configuration levels of the storage.
+
+</def>
+
+
+<def title="calculateSizes">
+
+<b>Type:</b> Boolean<br/>
+<b>Default value:</b> false
+
+Set this parameter to **true** to calculate sizes for all ghost folders.
+
+</def>
+
+<def title="skipErrors">
+
+<b>Type:</b> Boolean<br/>
+<b>Default value:</b> true
+
+By default, the `errors` array in the generated report is empty. 
+
+Set this parameter to **false** to include errors in the report; otherwise, it only includes an array of ghost folders with their sizes.
+
+</def>
+
+</deflist>
+
+
+```Shell
+curl --location 'http://localhost:8111/artifacts/s3/scan.html?projectId=myProj&scanBuilds=true&calculateSizes=true&skipErrors=false' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer $TEAMCITY_USER_ACCESS_TOKEN' \
+--data ''
+```
