@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2025.11.6 Release Notes)
 [//]: # (help-id: TeamCity 2025.11.6 Release Notes)
 
-**Build 208214, 26 June 2026**
+**Build 208214, 1 July 2026**
 
 This update focuses exclusively on resolving security issues and does not include general bug fixes.
 
