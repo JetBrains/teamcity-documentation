@@ -391,7 +391,7 @@ curl --location 'http://localhost:8111/artifacts/s3/scan.html' \
 
 > To run this request, add the `teamcity.s3.artifacts.scan.enabled=true` parameter to [internal TeamCity server properties](server-startup-properties.md#TeamCity+Internal+Properties) in order to run this request. Otherwise, the response body returns "Artifact scanner is not enabled."
 > 
-> You must also be [authorized](configuring-your-user-profile.md#Managing+Access+Tokens) as a user whose [permissions list](managing-roles-and-permissions.md) included "EDIT_PROJECT" or the target project (see below). Otherwise, the request fails with code "401 Unauthorized".
+> You must also be [authorized](configuring-your-user-profile.md#Managing+Access+Tokens) as a user whose [permissions list](managing-roles-and-permissions.md) includes "EDIT_PROJECT" for the target project (see below). Otherwise, the request fails with code "401 Unauthorized".
 > 
 {style="note"}
 
@@ -409,6 +409,14 @@ The report contains two arrays in the `{"orphanedPaths":[...],"errors":[...]}` f
 * `errors` array lists errors that occurred during the scan.
 
 You can add the following parameters to narrow down the search:
+
+```Shell
+curl --location 'http://localhost:8111/artifacts/s3/scan.html?projectId=myProj&scanBuilds=true&calculateSizes=true&skipErrors=false' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer $TEAMCITY_USER_ACCESS_TOKEN' \
+--data ''
+```
 
 <deflist type="narrow">
 
@@ -454,10 +462,3 @@ Set this parameter to **false** to include errors in the report; otherwise, it o
 </deflist>
 
 
-```Shell
-curl --location 'http://localhost:8111/artifacts/s3/scan.html?projectId=myProj&scanBuilds=true&calculateSizes=true&skipErrors=false' \
---header 'Content-Type: application/xml' \
---header 'Accept: application/json' \
---header 'Authorization: Bearer $TEAMCITY_USER_ACCESS_TOKEN' \
---data ''
-```
