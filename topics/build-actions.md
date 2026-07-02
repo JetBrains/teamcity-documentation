@@ -94,7 +94,7 @@ Project administrators can manually change the successful build's status to fail
   * You have previously mistakenly marked the build as successful.
 * **From failed to successful**:
   * You need to change the _last successful build_ anchor when using [build failure conditions](build-failure-conditions.md). If your last build failed because of an incorrect value of a metric and this new value is valid, you can mark this build with a _successful_ anchor.
-  * You want to allow using an incorrectly failed build with good artifacts in __[Artifact Dependencies](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Web+UI)__.
+  * You want to allow using an incorrectly failed build with good artifacts in __[Artifact Dependencies](artifact-dependencies.md)__.
   * For a running [personal build](personal-build.md), you can mark the current failures as non-relevant to allow the pretested commit to pass.
 
 The "_Mark as successful_" action is not available for [builds that failed to start](build-state.md#Failed+to+Start+Builds).

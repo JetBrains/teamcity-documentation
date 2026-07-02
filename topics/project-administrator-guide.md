@@ -311,7 +311,7 @@ Compared to build configurations linked in a build chain, pipelines showcase the
 
 * You can only link jobs that belong to the same pipeline. Build chains, in turn, allow you to link build configurations owned by completely separate TeamCity projects.
 * Standalone artifact and snapshot dependencies that require manual configuration are not available. When you choose a job that should precede your current job, you can instantly select whether all of its artifacts should be imported.
-* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](build-chain.md#Partial+Chain+Execution).
+* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](run-build-chains.md#Partial+Chain+Execution).
 
 
 </def>

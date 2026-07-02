@@ -1,4 +1,4 @@
-[//]: # (title: Glossary)
+[//]: # (title: CLI Glossary)
 
 <show-structure for="chapter" depth="2"/>
 

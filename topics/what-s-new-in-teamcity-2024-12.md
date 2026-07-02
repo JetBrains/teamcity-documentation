@@ -65,7 +65,7 @@ These parameters can be a permanent part of your configuration or occasionally a
 
 In addition, we have implemented the `skipQueuedBuilds` service message that you can send from build steps to cancel builds of downstream configurations that are already queued.
 
-Learn more: [](build-chain.md#Partial+Chain+Execution)
+Learn more: [](run-build-chains.md#Partial+Chain+Execution)
 
 
 ## Centralized Refreshable Token Management

@@ -79,7 +79,7 @@ No potential breaking changes.
 
 * Credentials issued by the [](aws-credentials.md) build feature may expire prematurely. More information: [TW-100758](https://youtrack.jetbrains.com/issue/TW-100758).
 
-* Using the [`teamcity.build.chain.skipTags`](build-chain.md#Partial+Chain+Execution) parameter may cause unresolved `%\dep.Config_ID.parameter_name%` references in configurations linked with an optional artifact dependency. More information: [TW-100713](https://youtrack.jetbrains.com/issue/TW-100713).
+* Using the [`teamcity.build.chain.skipTags`](run-build-chains.md#Partial+Chain+Execution) parameter may cause unresolved `%\dep.Config_ID.parameter_name%` references in configurations linked with an optional artifact dependency. More information: [TW-100713](https://youtrack.jetbrains.com/issue/TW-100713).
 
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
 
