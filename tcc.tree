@@ -188,7 +188,7 @@
 			</toc-element>
 			<toc-element topic="configuring-dependencies.md" toc-title="Dependencies">
 				<toc-element topic="build-dependencies-setup.md"/>
-				<toc-element topic="build-chain.md"/>
+
 				<toc-element topic="artifact-dependencies.md"/>
 				<toc-element topic="snapshot-dependencies.md" accepts-web-file-names="dependent-build.html"/>
 			</toc-element>
