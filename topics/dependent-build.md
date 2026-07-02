@@ -15,9 +15,9 @@ A snapshot dependency influences the way builds are processed and implies that t
 
 _Snapshot Dependency_ is a powerful concept that allows expressing source-level dependencies between build configurations in TeamCity. The primary goal is to allow complex build procedures via creating different build configurations linked with snapshot dependencies. This, in particular, allows dividing a single monolith build into a set of interlinked builds ([Build Chain](build-chain.md)) with flexible reuse rules. TeamCity follows the declarative style of defining the build structure on this level (declaring dependencies rather than adding build triggers) as it allows for more flexible and powerful features.
 
-See [Build Dependencies Setup](build-dependencies-setup.md) for a description of typical snapshot dependencies usages and related blog posts: [September 2019](https://blog.jetbrains.com/teamcity/2019/09/build-chains-teamcitys-blend-of-pipelines-part-1-getting-started/), [March 2016](https://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/), [April 2012](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
+See [Build Dependencies Setup](configuring-dependencies.md) for a description of typical snapshot dependencies usages and related blog posts: [September 2019](https://blog.jetbrains.com/teamcity/2019/09/build-chains-teamcitys-blend-of-pipelines-part-1-getting-started/), [March 2016](https://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/), [April 2012](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
 
-A snapshot dependency of build configuration A on build configuration B ensures that each build of A has a ["suitable" build](snapshot-dependencies.md#Suitable+Builds) of B before build of A can start. Both builds of A and B use the same sources snapshot (revision of the sources being the same or taken at the same time if the VCS roots are different) when they belong to the same chain and when revisions synchronization is enforced. If revisions synchronization is not enforced, then build A can use up-to-date revisions when promoting a finished build B to A (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
+A snapshot dependency of build configuration A on build configuration B ensures that each build of A has a ["suitable" build](configuring-dependencies.md#Suitable+Builds) of B before build of A can start. Both builds of A and B use the same sources snapshot (revision of the sources being the same or taken at the same time if the VCS roots are different) when they belong to the same chain and when revisions synchronization is enforced. If revisions synchronization is not enforced, then build A can use up-to-date revisions when promoting a finished build B to A (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
 
 The build results page of a build with snapshot dependencies allows reviewing all the dependency builds and their errors, if there are any.
 
@@ -41,7 +41,7 @@ A build of a chain can [reference parameters](predefined-build-parameters.md#Dep
 There is a [special support](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) for pushing parameters down the chain when a build with snapshot dependencies is triggered. It is done by defining a parameter with `reverse.dep.<configurationId>.<parameterName>` name.
 
 When setting up __triggers__ for the builds in the chain, the recommended approach is: _think about the result_ — the build you want to get at the end of the process, and configure triggers in its corresponding, "top" build configuration. No triggers are necessary in the build configurations this top one depends on, as their builds will be put into the queue automatically when the top one is triggered.   
-See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](build-dependencies-setup.md#show-changes-from-dependencies) in the "Version Control Settings" configuration section.
+See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](run-build-chains.md#Triggering+a+Chain) in the "Version Control Settings" configuration section.
 
 Let's consider an example to illustrate how snapshot dependencies work.
 
@@ -49,13 +49,13 @@ Let's assume that we have two build configurations, A and B, and configuration A
 
 >If the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
 
-1. When a build of configuration A is triggered, it automatically triggers a build of configuration B, and both builds will be placed into the build queue. Build B starts first and build A will wait in the queue till build B is finished ([if no other specific options are set](snapshot-dependencies.md)).
+1. When a build of configuration A is triggered, it automatically triggers a build of configuration B, and both builds will be placed into the build queue. Build B starts first and build A will wait in the queue till build B is finished ([if no other specific options are set](configuring-dependencies.md)).
 2. When builds B and A are added to the queue, TeamCity adjusts the sources to include in these builds. All builds will be run with the sources taken at the moment the builds were added to the queue.   
 3. When the build B has finished and if it finished successfully, TeamCity will start to run build A.
 
 >Note that the changes to be included in build A could have become not the latest ones by the moment the build started to run. In this case, build A becomes a [history build](history-build.md).
 
-The example above shows the core basics of snapshot dependencies as a straightforward process without any additional options. For snapshot dependency options, refer to the __[Snapshot Dependencies](snapshot-dependencies.md)__ page.
+The example above shows the core basics of snapshot dependencies as a straightforward process without any additional options. For snapshot dependency options, refer to the __[Snapshot Dependencies](configuring-dependencies.md)__ page.
 
 <anchor name="DependentBuild-ArtifactDependency"/>
 
@@ -77,6 +77,6 @@ Artifacts may not be [cleaned](teamcity-data-clean-up.md) if they were downloade
         </category>
         <category ref="admin-guide">
             <a href="configuring-dependencies.md">Configuring Dependencies</a>
-            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+            <a href="configuring-dependencies.md">Build Dependencies Setup</a>
         </category>
 </seealso>

@@ -45,7 +45,7 @@ This section lists planned features that were implemented in previous versions.
 
 <img src="dk-pipeline-dependency.png" width="706" alt="Pipeline dependency"/>
 
-When configuring pipeline dependencies, you have the same familiar options as for build configuration [snapshot dependencies](snapshot-dependencies.md): revision synchronization mode, execution policy for failed dependencies, and more.
+When configuring pipeline dependencies, you have the same familiar options as for build configuration [snapshot dependencies](configuring-dependencies.md): revision synchronization mode, execution policy for failed dependencies, and more.
 
 Learn more: [](pipeline-settings.md#Pipeline+Dependencies).
 

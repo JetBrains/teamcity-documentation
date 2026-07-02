@@ -1,7 +1,7 @@
 [//]: # (title: Snapshot Dependencies)
 [//]: # (help-id: Snapshot Dependencies;Dependent Build)
 
-By setting a [snapshot dependency](snapshot-dependencies.md) of a build (for example, build B) on another build's (build A) sources, you can ensure that build B will start only after build A is run and finished. We call build A a _dependency_ build, whereas build B is a _dependent_ build.
+By setting a [snapshot dependency](configuring-dependencies.md) of a build (for example, build B) on another build's (build A) sources, you can ensure that build B will start only after build A is run and finished. We call build A a _dependency_ build, whereas build B is a _dependent_ build.
 
 The __[Build Configuration Settings](project-administrator-guide.md#Edit+and+View+Modes) | Dependencies__ page displays the configured dependencies; the __Snapshot Dependencies__ section of this page allows previewing the build chain and its configuration. The preview shows builds of the chain; the builds with configured automatic triggers are marked with ![v.png](v.png) icon.
 
@@ -56,7 +56,7 @@ Specifies whether TeamCity should ensure both objects linked by a dependency use
 
 * **Revision synchronization disabled**: use this setup when builds do not have strict sources' dependencies (for example, as with package and deploy steps). In this case, a downstream build will use the latest available revision. For example, in the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B" when finished. Build "B" will run on its latest 1.4 revision that does not match "A".
 
-See the [](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization) section for more information on effects this setting has on a build chain.
+See the [](configuring-dependencies.md#Revision+Synchronization) section for more information on effects this setting has on a build chain.
 
 </snippet>
 
@@ -72,7 +72,7 @@ Do not run new build if there is a suitable one
 
 <snippet id="do-not-run-new-build-if-there-is-a-suitable-one-description">
 
-If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See [Suitable builds](snapshot-dependencies.md#Suitable+Builds) for more information on criteria TeamCity uses to determine a reusable build.
+If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See [Suitable builds](configuring-dependencies.md#Suitable+Builds) for more information on criteria TeamCity uses to determine a reusable build.
 
 In this case, when a dependent (downstream) build is triggered, the dependency (upstream) build is also put into the queue. Then, when the changes for the build chain are collected, this dependency build is removed from the queue and the dependency is set to a suitable finished build.
 
@@ -97,7 +97,7 @@ Only use successful builds from suitable ones
 
 <snippet id="reuse-only-successful">
 
-A new triggered build will only use successfully finished [suitable builds](snapshot-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
+A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
 
 </snippet>
 
@@ -179,7 +179,7 @@ Some settings in VCS roots can effectively disable builds reuse. These settings 
 
 <snippet id="parallel-chain-builds">
 
-The **Always run new build** behavior ([snapshot dependency](snapshot-dependencies.md) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
+The **Always run new build** behavior ([snapshot dependency](configuring-dependencies.md) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
 
 In the figure below, the "Composite Conf" configuration depends on "Maven App" configuration. The latter runs its tests in two parallel batches. Note that the main "Maven app" build #18 is triggered anew, whereas the dynamically spawned "Maven app 1" configuration reuses its previous successful build (#12).
 

@@ -2,7 +2,7 @@
 
 <show-structure for="chapter" depth="2"/>
 
-TeamCity visualizes [build chains](chains-topic-1.md) in several places, letting you inspect chain runs, rerun individual steps, and continue partially finished chains. To trigger, stop, or otherwise control a chain run, see [](chains-topic-4.md).
+TeamCity visualizes [build chains](build-chain.md) in several places, letting you inspect chain runs, rerun individual steps, and continue partially finished chains. To trigger, stop, or otherwise control a chain run, see [](run-build-chains.md).
 
 ## Build Chains Tab
 
@@ -32,7 +32,7 @@ The **Chain** tab on a build's results page shows the directed graph for that sp
 
 The **Dependencies** tab lists the build's direct and indirect dependency builds. For example, if A depends on B, and B depends on C and D, then C and D appear as indirect dependencies of A.
 
-The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](chains-topic-2.md#Suitable+Builds) from earlier chains.
+The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](configuring-dependencies.md#Suitable+Builds) from earlier chains.
 
 ## Clean-up
 

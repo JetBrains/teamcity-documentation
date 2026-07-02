@@ -2,7 +2,7 @@
 
 <show-structure for="chapter" depth="2"/>
 
-[Build chains](chains-topic-1.md) can span multiple projects, which is powerful but introduces a risk: a configuration from one team can depend on — and therefore trigger and pull artifacts from — a configuration owned by another team.
+[Build chains](build-chain.md) can span multiple projects, which is powerful but introduces a risk: a configuration from one team can depend on — and therefore trigger and pull artifacts from — a configuration owned by another team.
 
 ## The Risk
 

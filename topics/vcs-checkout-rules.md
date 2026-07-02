@@ -8,7 +8,7 @@ To display changes but not to trigger a build on a commit, use [VCS trigger rule
 
 >Watch our **video guide** on the [difference between the checkout and trigger rules](https://www.youtube.com/watch?v=nhYOo7Rk4DM).
 
->If a [dependent build](configuring-dependencies.md) (1) has a [VCS trigger](configuring-vcs-triggers.md) that monitors changes in its [snapshot dependency](snapshot-dependencies.md) build and (2) shares a VCS root with this dependency, its checkout rules' scope should cover the scope of rules of this dependency. That is, each commit relevant for a dependency must be also relevant for the dependent build.
+>If a [dependent build](configuring-dependencies.md) (1) has a [VCS trigger](configuring-vcs-triggers.md) that monitors changes in its [snapshot dependency](configuring-dependencies.md) build and (2) shares a VCS root with this dependency, its checkout rules' scope should cover the scope of rules of this dependency. That is, each commit relevant for a dependency must be also relevant for the dependent build.
 >
 {style="tip"}
 

@@ -313,7 +313,7 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 
 ### Set Up a Build Chain
 
-In this step you will create [snapshot dependencies](snapshot-dependencies.md) to bind build configurations in a single chain.
+In this step you will create [snapshot dependencies](configuring-dependencies.md) to bind build configurations in a single chain.
 
 <img src="dk-compositeConf-chain.png" width="706" alt="Full chain"/>
 

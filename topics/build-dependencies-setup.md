@@ -137,7 +137,7 @@ Let's assume we have the following [build chain](build-chain.md) with no extra o
 
     Note that if the build configurations connected with a snapshot dependency [share the same set of VCS roots](configuring-vcs-roots.md), all builds will run on the same sources. Otherwise, if the VCS roots are different, changes in the VCS will correspond to the same moment in time.
 
-3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](snapshot-dependencies.md#on-failed-dependency).
+3. Once build C has finished, build B starts, and so on. If build C failed, TeamCity won't further execute builds from the chain by default, but this behavior is [configurable](configuring-dependencies.md#on-failed-dependency).
 
 #### What Happens When Build B is Triggered
 
@@ -154,13 +154,13 @@ In this case it doesn't matter which build - B1 or B2 - starts first; if there a
 
 #### Reusing builds
 
-All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the [suitable builds](snapshot-dependencies.md#Suitable+Builds). To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
+All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the [suitable builds](configuring-dependencies.md#Suitable+Builds). To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
 
 Another option that allows you to control how builds are re-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
 
 #### Turned off Enforced Revisions Synchronization
 
-If you disable the "_[Enforce revisions synchronization](snapshot-dependencies.md#enforce-rev-sync)_" option when creating a snapshot dependency, TeamCity will be able to use different revisions for chain parts when a build is promoted from one part to another (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
+If you disable the "_[Enforce revisions synchronization](configuring-dependencies.md#enforce-rev-sync)_" option when creating a snapshot dependency, TeamCity will be able to use different revisions for chain parts when a build is promoted from one part to another (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
 
 Let's explore the example of a [deployment chain](deployment-build-configuration.md):
 
@@ -198,7 +198,7 @@ This option was designed for the cases when a build from the build chain modifie
 
 #### Build behavior if dependency has failed
 
-It is possible to [configure](snapshot-dependencies.md#on-failed-dependency) the final build behavior if its dependency has failed.
+It is possible to [configure](configuring-dependencies.md#on-failed-dependency) the final build behavior if its dependency has failed.
 
 #### Trigger on changes in snapshot dependencies
 
@@ -441,7 +441,7 @@ Artifacts may not be [cleaned](teamcity-data-clean-up.md) if they were downloade
 __Running personal build in a chain__
 
 If you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
-However, if you enable the [reuse of suitable builds](snapshot-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
+However, if you enable the [reuse of suitable builds](configuring-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 <!--[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")-->
 

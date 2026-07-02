@@ -19,13 +19,13 @@ The global default value for both options is 60 seconds and can be configured fo
 
 ## Trigger build on changes in snapshot dependencies
 
-If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](snapshot-dependencies.md)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
+If you have a [build chain](build-chain.md) (that is a number of builds interconnected by [snapshot dependencies](configuring-dependencies.md)), the triggers are to be configured in the final build in the chain. This is _pack setup_ in the image below.
 
-<include from="build-dependencies-setup.md" element-id="trigger-on-ssdep-chngs"/>
+<include from="run-build-chains.md" element-id="trigger-on-ssdep-chngs"/>
 
 If triggering rules are specified (described [below](#vcs-trigger-rules-1)), they are applied to all the changes (including changes from snapshot dependencies) and only the changes matching the rules trigger the build chain.
 
-See also details at the [Build Dependencies](build-dependencies-setup.md) page.
+See also details at the [Build Dependencies](configuring-dependencies.md) page.
 
 ## Per-check-in Triggering
 
@@ -258,7 +258,7 @@ When changes are merged / fast-forwarded from one branch to another, strictly sp
 
 The __Build Customization__ tab of a trigger's settings allows configuring custom parameters of builds started by this trigger. Similarly to the [Run Custom Build](running-custom-build.md) dialog, it lets you override values of [build parameters](configuring-build-parameters.md) and choose if the [checkout directory](build-checkout-directory.md) should be cleaned before the build.
 
-On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](managing-builds.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](snapshot-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
+On this tab, you can customize the value of any [parameter](configuring-build-parameters.md) used in the current [build configuration](managing-builds.md). Or, you can add a new parameter, and it will be available only in builds started by this trigger. If the current build has [snapshot dependencies](configuring-dependencies.md) on other builds, such a parameter can also be used to [override a certain property](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) of a dependency build configuration: use the `reverse.dep.<dependencyBuildID>.<property>` syntax for this.
 
 >This functionality gets more effective if you combine it with the [build step execution conditions](build-step-execution-conditions.md). You just need to add a parameter-based condition to a step and then configure two triggers: one will run builds with this step (when the condition is satisfied) and one — without it. A popular use case is to run a limited number of tests in regular builds but a full set of tests in a nightly build, when the server load is the lowest.
 

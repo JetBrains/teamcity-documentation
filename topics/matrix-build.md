@@ -326,7 +326,7 @@ When you drill down to a specific build in the matrix, you see what looks like a
 
 ## Matrix Builds in a Build Chain
 
-Matrix builds can be chained together using [snapshot dependencies](snapshot-dependencies.md) or [artifact dependencies](artifact-dependencies.md), just like a regular build.
+Matrix builds can be chained together using [snapshot dependencies](configuring-dependencies.md) or [artifact dependencies](artifact-dependencies.md), just like a regular build.
 
 If a regular build has a dependency on a matrix build, the dependency is linked to the parent build of the matrix. Generated builds are readonly, so you cannot link dependencies directly to them. Nevertheless, it is possible to consume artifacts from the generated builds, by ensuring that the artifacts are sorted according to the parameter combination of the respective build.
 

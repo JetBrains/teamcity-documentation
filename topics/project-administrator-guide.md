@@ -57,7 +57,7 @@ You can also incorporate configurations from the same or different projects into
 
 <def title="Build chain">
 
-A **build chain** is a series of build configurations interconnected via [snapshot dependencies](snapshot-dependencies.md). You can link configurations of the same or separate projects in a single chain. A chain can be executed partially, up to the required build configuration. For example, you can skip the "Deploy" phase in the "Test &rarr; Build &rarr; Deploy" chain.
+A **build chain** is a series of build configurations interconnected via [snapshot dependencies](configuring-dependencies.md). You can link configurations of the same or separate projects in a single chain. A chain can be executed partially, up to the required build configuration. For example, you can skip the "Deploy" phase in the "Test &rarr; Build &rarr; Deploy" chain.
 
 See the following articles for more information: [](#Set+Up+Dependencies) | [](build-chain.md)
 
@@ -295,9 +295,9 @@ TeamCity offers multiple options to create relations between these standalone en
 <deflist>
 <def title="Build Chain">
 
-A <a href="build-chain.md">build chain</a> is a collection of classic TeamCity configurations interconnected using <a href="snapshot-dependencies.md">snapshot dependencies</a>.
+A <a href="build-chain.md">build chain</a> is a collection of classic TeamCity configurations interconnected using <a href="configuring-dependencies.md">snapshot dependencies</a>.
 
-Snapshot dependencies are right-to-left relations. For example, in the "A -> B" chain where configuration "B" has a dependency on configuration "A", "B" cannot run until "A" produces a suitable build first. The criteria for "suitable" builds depends on your setup, see the <a href="snapshot-dependencies.md#Suitable+Builds">Suitable Builds</a> section for more information. At the same time, "A" can run independently without triggering new "B" builds.
+Snapshot dependencies are right-to-left relations. For example, in the "A -> B" chain where configuration "B" has a dependency on configuration "A", "B" cannot run until "A" produces a suitable build first. The criteria for "suitable" builds depends on your setup, see the <a href="configuring-dependencies.md#Suitable+Builds">Suitable Builds</a> section for more information. At the same time, "A" can run independently without triggering new "B" builds.
 
 For mission-critical scenarios, you can set up dependent configurations to always force fresh upstream configuration builds, even if there were no recent changes to the project.
 </def>

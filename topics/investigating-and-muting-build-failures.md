@@ -88,7 +88,7 @@ You can mute build problems or tests to temporarily ignore a known issue that is
 
 > Another way to ignore a failed step or chain configuration without muting their problems is to change the related run condition:
 > * for build steps, change the [step execution condition](build-step-execution-conditions.md) to "Even if some of the previous steps failed";
-> * for [dependent build chain configurations](build-chain.md), ensure the **On failed dependency** setting of a corresponding [snapshot dependency](snapshot-dependencies.md) is set to one of the "Run build..." options.
+> * for [dependent build chain configurations](build-chain.md), ensure the **On failed dependency** setting of a corresponding [snapshot dependency](configuring-dependencies.md) is set to one of the "Run build..." options.
 >
 {style="tip"}
 

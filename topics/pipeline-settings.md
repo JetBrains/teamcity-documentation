@@ -122,7 +122,7 @@ When you add a dependency to object "A" in pipeline "B" settings, you create the
 
 "A" can be both a classic build configuration or another pipeline.
 
-> If you need to set up the "upstream pipeline &rarr; downstream build configuration" relation, add a [snapshot dependency](snapshot-dependencies.md) in this configuration's settings.
+> If you need to set up the "upstream pipeline &rarr; downstream build configuration" relation, add a [snapshot dependency](configuring-dependencies.md) in this configuration's settings.
 > 
 {style="tip"}
 
@@ -141,28 +141,28 @@ Choose an upstream configuration or pipeline that should finish before your curr
 
 <def title="Enforce revisions synchronization">
 
-<include from="snapshot-dependencies.md" element-id="enforce-rev-sync-description"/>
+<include from="configuring-dependencies.md" element-id="enforce-rev-sync-description"/>
 
 </def>
 
 
 <def title="Do not run new build if there is a suitable one">
 
-<include from="snapshot-dependencies.md" element-id="do-not-run-new-build-if-there-is-a-suitable-one-description"/>
+<include from="configuring-dependencies.md" element-id="do-not-run-new-build-if-there-is-a-suitable-one-description"/>
 
 </def>
 
 
 <def title="Only use successful builds from suitable ones">
 
-<include from="snapshot-dependencies.md" element-id="reuse-only-successful"/>
+<include from="configuring-dependencies.md" element-id="reuse-only-successful"/>
 
 </def>
 
 
 <def title="On failed dependency, On failed to start/canceled dependency">
 
-<include from="snapshot-dependencies.md" element-id="on-failed-dependency-description"/>
+<include from="configuring-dependencies.md" element-id="on-failed-dependency-description"/>
 
 </def>
 

@@ -39,7 +39,7 @@ This action will delete the build from the list.
 
 You can pin a build to prevent it from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
-If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
+If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](configuring-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
 
 A pinned build can be unpinned manually anytime.
 

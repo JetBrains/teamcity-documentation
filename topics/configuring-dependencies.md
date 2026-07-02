@@ -3,7 +3,7 @@
 
 <show-structure for="chapter" depth="2"/>
 
-A [build chain](chains-topic-1.md) is assembled by declaring dependencies in **downstream** objects that point to **upstream** ones. The available settings are the same for both build configurations and pipelines — only the UI and code representation differ.
+A [build chain](build-chain.md) is assembled by declaring dependencies in **downstream** objects that point to **upstream** ones. The available settings are the same for both build configurations and pipelines — only the UI and code representation differ.
 
 ## Snapshot Dependencies
 
@@ -33,7 +33,7 @@ object Deploy : BuildType({
 })
 ```
 
-> Snapshot dependencies control execution order and revision synchronization only — they do not transfer files between builds. To pass artifacts between chain members, add [artifact dependencies](chains-topic-3.md#Artifact+Dependencies) as well.
+> Snapshot dependencies control execution order and revision synchronization only — they do not transfer files between builds. To pass artifacts between chain members, add [artifact dependencies](artifact-dependencies.md#Artifact+Dependencies) as well.
 >
 {style="tip"}
 
@@ -111,7 +111,7 @@ Specifies whether TeamCity should ensure both objects linked by a dependency use
 
 * **Revision synchronization disabled**: use this setup when builds do not have strict sources' dependencies (for example, separate package and deploy steps). In this case, a downstream build uses the latest available revision. In the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B", but "B" runs on its latest 1.4 revision.
 
-See [Revision Synchronization](chains-topic-2.md#Revision+Synchronization) for the effects this setting has on a whole build chain.
+See [Revision Synchronization](configuring-dependencies.md#Revision+Synchronization) for the effects this setting has on a whole build chain.
 
 </snippet>
 
@@ -121,7 +121,7 @@ See [Revision Synchronization](chains-topic-2.md#Revision+Synchronization) for t
 
 <snippet id="do-not-run-new-build-if-there-is-a-suitable-one-description">
 
-If this option is enabled, TeamCity does not run a new upstream build when another running or finished build with the appropriate sources' revision already exists. See [Suitable Builds](chains-topic-2.md#Suitable+Builds) for the criteria TeamCity uses to determine a reusable build.
+If this option is enabled, TeamCity does not run a new upstream build when another running or finished build with the appropriate sources' revision already exists. See [Suitable Builds](configuring-dependencies.md#Suitable+Builds) for the criteria TeamCity uses to determine a reusable build.
 
 In this case, when a downstream build is triggered, the upstream build is still put into the queue. Then, once the changes for the chain are collected, this upstream build is removed from the queue and the dependency is linked to the suitable finished build instead.
 
@@ -137,7 +137,7 @@ In this case, when a downstream build is triggered, the upstream build is still 
 
 <snippet id="reuse-only-successful">
 
-A new triggered build will only use successfully finished [suitable builds](chains-topic-2.md#Suitable+Builds) as dependencies. If the latest finished suitable build failed, it is rerun.
+A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build failed, it is rerun.
 
 </snippet>
 
@@ -153,7 +153,7 @@ When enabled, the downstream build runs on the same build agent that ran the ups
 
 </def>
 
-<def title="On failed dependency / On failed to start or canceled dependency">
+<def title="On failed dependency / On failed to start or canceled dependency" id="on-failed-dependency">
 
 <snippet id="on-failed-dependency-description">
 
@@ -205,7 +205,7 @@ Some VCS root configurations make it impossible for TeamCity to reliably calcula
 
 <snippet id="parallel-chain-builds">
 
-The **Always run new build** behavior (the [snapshot dependency](chains-topic-2.md#Dependency+Settings) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
+The **Always run new build** behavior (the [snapshot dependency](configuring-dependencies.md#Dependency+Settings) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
 
 In the figure below, the "Composite Conf" configuration depends on "Maven App" configuration. The latter runs its tests in two parallel batches. Note that the main "Maven app" build #18 is triggered anew, whereas the dynamically spawned "Maven app 1" configuration reuses its previous successful build (#12).
 
@@ -267,7 +267,7 @@ This section focuses on build chains and artifact dependencies. To learn more ab
         </category>
         <category ref="admin-guide">
             <a href="patterns-for-accessing-build-artifacts.md">Patterns For Accessing Build Artifacts</a>
-            <a href="snapshot-dependencies.md">Snapshot Dependencies</a>
+            <a href="configuring-dependencies.md">Snapshot Dependencies</a>
             <a href="artifact-dependencies.md">Artifact Dependencies</a>
         </category>
 </seealso>

@@ -4,7 +4,7 @@
 
 <show-structure for="chapter" depth="2"/>
 
-Members of a [build chain](chains-topic-1.md) can exchange two kinds of data:
+Members of a [build chain](build-chain.md) can exchange two kinds of data:
 
 * **Files** — through [artifact dependencies](#Artifact+Dependencies). An upstream build publishes files; a downstream build downloads them before it starts.
 * **Values** — through [output parameters](#Parameters). A name-value pair set in one object is read by another further down the chain.
@@ -21,7 +21,7 @@ Artifacts can be taken from:
 * A build of a configuration that is not part of the chain.
 * A previous build of the same configuration.
 
-> An artifact dependency only transfers files — it does not enforce build order or revision synchronization. To guarantee that artifacts come from a build on the same sources, pair the artifact dependency with a [snapshot dependency](chains-topic-2.md#Snapshot+Dependencies) and choose the **Build from the same chain** source option.
+> An artifact dependency only transfers files — it does not enforce build order or revision synchronization. To guarantee that artifacts come from a build on the same sources, pair the artifact dependency with a [snapshot dependency](configuring-dependencies.md#Snapshot+Dependencies) and choose the **Build from the same chain** source option.
 >
 {style="tip"}
 
@@ -156,7 +156,7 @@ release-*.zip!*.dll=>dlls
 ?:output.txt
 ```
 
-The `?:` prefix is especially useful in [partial chains](chains-topic-4.md#Partial+Chain+Execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
+The `?:` prefix is especially useful in [partial chains](run-build-chains.md#Partial+Chain+Execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
 
 ## Parameters
 
@@ -500,7 +500,7 @@ where:
 * `TAG_NAME.tcbuildtag` - last build tagged with the TAG_NAME tag
 
 
-<!--[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")-->   
+[//]: # (Internal note. Do not delete. "Artifact Dependenciesd15e580.txt")   
 
 * `ARTIFACT_FILE_NAME_WITHOUT_EXTENSION` filename or regular expression of the artifact without the extension part.
 * `ARTIFACT_FILE_NAME_EXTENSION` the extension part of the artifact filename.
@@ -518,7 +518,7 @@ where:
    </classpath>
  </taskdef>
  <ivy:configure file="${basedir}/ivyconf.xml" />
- <!--<ivy:cleancache />-->
+ <ivy:cleancache />
  <ivy:retrieve pattern="${basedir}/[artifact].[ext]"/>
 </target>
 ```

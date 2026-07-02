@@ -2,9 +2,9 @@
 
 <show-structure for="chapter" depth="2"/>
 
-By default, triggering a downstream object runs the entire [build chain](chains-topic-1.md) on a single shared sources snapshot. This article covers how to trigger a chain, run only part of it, and stop it.
+By default, triggering a downstream object runs the entire [build chain](build-chain.md) on a single shared sources snapshot. This article covers how to trigger a chain, run only part of it, and stop it.
 
-> The dependency settings that govern *which* builds actually run — [build reuse](chains-topic-2.md#Build+Reuse) and [revision synchronization](chains-topic-2.md#Revision+Synchronization) — are described in [](chains-topic-2.md).
+> The dependency settings that govern *which* builds actually run — [build reuse](configuring-dependencies.md#Build+Reuse) and [revision synchronization](configuring-dependencies.md#Revision+Synchronization) — are described in [](configuring-dependencies.md).
 >
 {style="tip"}
 
@@ -64,7 +64,7 @@ Both parameters accept a comma-separated list of:
 
 TeamCity reads these parameters **only from the configuration that triggers the chain**; values on dependency builds are ignored.
 
-> If a skipped build provides an artifact to a downstream build, TeamCity automatically converts the strict artifact rule (`+:`) into an [optional one](chains-topic-3.md#Artifact+Rules) (`?:`) so the downstream build does not fail. Note that a build which skipped upstream configurations is treated as modified and will not be [reused](chains-topic-2.md#Suitable+Builds) later.
+> If a skipped build provides an artifact to a downstream build, TeamCity automatically converts the strict artifact rule (`+:`) into an [optional one](artifact-dependencies.md#Artifact+Rules) (`?:`) so the downstream build does not fail. Note that a build which skipped upstream configurations is treated as modified and will not be [reused](configuring-dependencies.md#Suitable+Builds) later.
 >
 {style="note"}
 
@@ -166,4 +166,4 @@ If all other parts of the chain have already finished, no additional information
 
 ## Running Personal Builds in a Chain
 
-When a [personal build](personal-build.md) triggers a chain, all of its upstream dependencies also run as personal builds. The exception is [build reuse](chains-topic-2.md#Build+Reuse): if reuse is enabled and a finished non-personal build satisfies the revision requirements, TeamCity uses it instead of running a personal upstream build that would add no value.
+When a [personal build](personal-build.md) triggers a chain, all of its upstream dependencies also run as personal builds. The exception is [build reuse](configuring-dependencies.md#Build+Reuse): if reuse is enabled and a finished non-personal build satisfies the revision requirements, TeamCity uses it instead of running a personal upstream build that would add no value.

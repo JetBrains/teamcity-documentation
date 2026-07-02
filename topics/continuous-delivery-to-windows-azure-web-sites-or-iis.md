@@ -220,7 +220,7 @@ Because of the snapshot dependencies we created, we can now also go to any build
 
 <tip>
 
-For a build configuration with snapshot dependencies, we can enable showing of changes from these dependencies using the ___Show changes from snapshot dependencies___ version control setting. This enables us to see exactly which changes are deployed. See [Build Dependencies Setup](build-dependencies-setup.md) for more information.
+For a build configuration with snapshot dependencies, we can enable showing of changes from these dependencies using the ___Show changes from snapshot dependencies___ version control setting. This enables us to see exactly which changes are deployed. See [Build Dependencies Setup](configuring-dependencies.md) for more information.
 </tip>
 
 ## Conclusion

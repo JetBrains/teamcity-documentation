@@ -243,7 +243,7 @@ object Build : BuildType({
 
 ## Parallel Tests in Upstream Chain Builds
 
-<include from="snapshot-dependencies.md" element-id="parallel-chain-builds"/>
+<include from="configuring-dependencies.md" element-id="parallel-chain-builds"/>
 
 
 ## Known limitations
