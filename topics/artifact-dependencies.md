@@ -41,7 +41,7 @@ The dialog has the following key settings:
 The configuration whose artifacts you want to use.
 
 </def>
-<def title="Get artifacts from">
+<def title="Get artifacts from" id="artifact-dep-get-from" help-id="artifact-dep-get-from">
 
 Which build of the source configuration to take artifacts from:
 
