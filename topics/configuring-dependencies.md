@@ -238,9 +238,12 @@ Consider a "D → C → B → A" chain where D compiles, C runs integration test
 
 This lets you promote an older compilation (D, revision 1) directly to B, skipping C, while B and A still run on the latest revision 3.
 
-The one rule to follow: **do not desynchronize a link if its downstream build also synchronizes with another upstream build through a different path.** That creates a contradictory revision requirement. The two safe topologies are: synchronization disabled along one full side of a fork, or disabled on both legs before they rejoin.
+The one rule to follow: **do not desynchronize a link if its downstream build also synchronizes with another upstream build through a different path.** That creates a contradictory revision requirement. The two safe topologies are: synchronization disabled along one full side of a fork...
 
 <img src="valid-snap-flow1.png" width="211" alt="Valid flow: sync disabled on one side"/>
+
+...or disabled on both legs before they rejoin.
+
 
 <img src="valid-snap-flow2.png" width="211" alt="Valid flow: sync disabled on both legs"/>
 
