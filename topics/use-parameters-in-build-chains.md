@@ -24,7 +24,7 @@ Input parameters are designed to be consumed by the same configuration/pipeline 
 </def>
 
 <def title="Output parameters">
-Output parameters are configured in one build configuration/pipeline, but can be accessed by another via a <a href="snapshot-dependencies.md">snapshot</a> or <a href="artifact-dependencies.md">artifact</a> dependency. For example, a build configuration that builds a Docker image can write this image name to its parameter. The parameter is later used by a downstream configuration that deploys this image to a registry.
+Output parameters are configured in one build configuration/pipeline, but can be accessed by another via a <a href="configuring-dependencies.md">snapshot</a> or <a href="artifact-dependencies.md">artifact</a> dependency. For example, a build configuration that builds a Docker image can write this image name to its parameter. The parameter is later used by a downstream configuration that deploys this image to a registry.
 
 Output parameters can share existing parameters as is, modified parameters, and constants.
 
@@ -197,7 +197,7 @@ object CalculateDate : BuildType({
 >
 {style="tip"}
 
-The output parameter is now accessible by another configuration that [depends on](snapshot-dependencies.md) the origin configuration. To access a parameter, use the `dep.<origin configuration ID>.<output parameter name>` syntax.
+The output parameter is now accessible by another configuration that [depends on](configuring-dependencies.md) the origin configuration. To access a parameter, use the `dep.<origin configuration ID>.<output parameter name>` syntax.
 
 <img src="dk-access-output-param.png" width="706" alt="Access output param"/>
 
@@ -253,7 +253,7 @@ The following example illustrates two objects exchanging parameter values:
 
 * The pipeline declares an input parameter with the default value `foo`. When the pipeline runs on its own, this value is used in the build script.
 
-* When the pipeline runs as part of a build chain (triggered by the configuration's [snapshot dependency](snapshot-dependencies.md)), the downstream configuration overrides this parameter and sets it to `bar`.
+* When the pipeline runs as part of a build chain (triggered by the configuration's [snapshot dependency](configuring-dependencies.md)), the downstream configuration overrides this parameter and sets it to `bar`.
 
 * The pipeline output parameter references the input parameter, so it reports the updated value as well.
 
@@ -410,7 +410,7 @@ Otherwise, if the edits are made by multiple same-level entities, the target par
 ### Special notes
 
 * Output parameters cannot be edited via `override.dep.` parameters.
-* The `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters. In addition, upstream parameters that already have the same value are not forcibly updated, which allows TeamCity to [reuse previous builds](snapshot-dependencies.md#Suitable+Builds).
+* The `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters. In addition, upstream parameters that already have the same value are not forcibly updated, which allows TeamCity to [reuse previous builds](configuring-dependencies.md#Suitable+Builds).
 
     <!--To force propagation and create a parameter in upstream entities that do not already have it, use the `*!` wildcard instead of a source object ID. For example, use this syntax to propagate a composite configuration's build number to all upstream configurations.
 
@@ -492,7 +492,7 @@ The `override.dep.<target-ID>.<parameter-name>` syntax was introduced in TeamCit
 
 * Unlike `override.dep.`, `reverse.dep.` does not resolve parameter references and passes them as is, which can make upstream configurations or pipelines incompatible with some build agents.
 
-* `reverse.dep.` is also more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and ignores entities without a matching parameter. This is also worth noting since adding new parameters nullifies the "_[Do not run new build if there is a suitable one](snapshot-dependencies.md#Suitable+Builds)_" snapshot dependency policy, so upstream builds will never be reused.
+* `reverse.dep.` is also more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and ignores entities without a matching parameter. This is also worth noting since adding new parameters nullifies the "_[Do not run new build if there is a suitable one](configuring-dependencies.md#Suitable+Builds)_" snapshot dependency policy, so upstream builds will never be reused.
 
 * `reverse.dep.` uses more complex conflict resolution. When multiple entities modify the same parameter, TeamCity first gives priority to the configuration or pipeline that runs last, just as it does for `override.dep.`. If the conflicting editors are on the same level, TeamCity compares target ID specificity: the parameter with the most specific ID wins.
 

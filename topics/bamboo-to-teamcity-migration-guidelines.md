@@ -303,7 +303,7 @@ triggers:
 
 **TeamCity**
 
-TeamCity workflows trigger on VCS changes (push-based, no polling interval required), schedules, or finish of other build configurations. Per-step branch conditions are handled through [Build Step execution conditions](build-step-execution-conditions.md) or [Snapshot Dependencies](snapshot-dependencies.md).
+TeamCity workflows trigger on VCS changes (push-based, no polling interval required), schedules, or finish of other build configurations. Per-step branch conditions are handled through [Build Step execution conditions](build-step-execution-conditions.md) or [Snapshot Dependencies](configuring-dependencies.md).
 
 
 ```Kotlin
@@ -393,7 +393,7 @@ object TestApp : BuildType({
 })
 ```
 
-Within a Build Chain, [Snapshot Dependencies](snapshot-dependencies.md) ensure builds run in the correct order and use the same VCS revision. However, passing actual files between builds still requires explicit [Artifact Dependencies](artifact-dependencies.md). Snapshot dependencies alone do not transfer artifacts.
+Within a Build Chain, [Snapshot Dependencies](configuring-dependencies.md) ensure builds run in the correct order and use the same VCS revision. However, passing actual files between builds still requires explicit [Artifact Dependencies](artifact-dependencies.md). Snapshot dependencies alone do not transfer artifacts.
 
 
 ### Caching

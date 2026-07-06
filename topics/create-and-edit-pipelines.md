@@ -144,7 +144,7 @@ To choose who a job should share a file with, tick related checkboxes under the 
 
 ## Dependencies
 
-Another classic TeamCity concept reworked in Pipelines is dependencies. In Pipelines, [snapshot](snapshot-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
+Another classic TeamCity concept reworked in Pipelines is dependencies. In Pipelines, [snapshot](configuring-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
 
 <img src="dk-choose-dependency.png" width="706" alt="Choose import type"/>
 

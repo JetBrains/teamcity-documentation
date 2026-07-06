@@ -30,7 +30,7 @@ Another important setting included into a build configuration is a _[trigger](co
 
 TeamCity offers all these granular objects so you can configure a build process as flexibly as possible. However, they would make more sense if you have the means to interconnect them with each other. For this purpose, TeamCity provides two types of dependencies between build configurations (that is between their builds):
 * _[artifact dependency](artifact-dependencies.md)_ — for sending _artifacts_ produced by one build to another build; an example of an artifact is a `.jar` application that is compiled by one build configuration and deployed by another.
-* _[snapshot dependency](snapshot-dependencies.md)_ — for assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
+* _[snapshot dependency](configuring-dependencies.md)_ — for assigning multiple builds to the same source revision (commit) so the same project files are used on all the building stages.
 
 By connecting builds from different configurations or even projects with dependencies, you can create a flexible _[build chain](build-chain.md)_. The TeamCity product itself is built with a complex chain of builds. It allows us to compile and test different software modules and deploy the resulting distribution files to the web.
 

@@ -1,6 +1,91 @@
 [//]: # (title: Build Chain)
 [//]: # (help-id: Build Chain)
 
+
+<show-structure for="chapter" depth="2"/>
+
+A _build chain_ is a sequence of interconnected [build configurations](creating-and-editing-build-configurations.md) and [pipelines](create-and-edit-pipelines.md) linked by dependencies, where each member waits for its upstream to finish before starting.
+
+<img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
+
+Technically, a build chain is a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph): it has a well-defined execution order and cannot contain cycles.
+
+## When to Use Build Chains
+
+Build chains are useful whenever multiple build configurations or pipelines need to run in a specific order and share the same state of the codebase. Two common scenarios:
+
+* **Multi-platform testing before release.** Compile the project once, run tests simultaneously on different platforms, then produce a release build only if all tests pass.
+* **Offloading a heavy test suite.** A slow test suite is moved into its own configuration and linked back with a snapshot dependency, so it still runs on the same sources as the build it validates while gaining its own history, triggers, and agent requirements.
+
+<img src="compile-test-pack.png" width="401" alt="Compile, test, pack chain"/>
+
+> To speed up a single slow suite by spreading it across agents, you usually do **not** need a hand-built chain: the [Parallel Tests](parallel-tests.md) build feature splits the suite into batches and distributes them automatically. A dedicated chained configuration is still justified when TeamCity cannot split the suite effectively — for example, when all tests live in one class, or the automatically produced batches are too imbalanced (see how [TeamCity groups tests into batches](parallel-tests.md#Run+tests+in+parallel)) — or when the test stage needs its own environment or must be reused by several downstream objects.
+>
+{style="tip"}
+
+## How a Chain Runs
+
+When you trigger a downstream build, TeamCity does not just start the upstream and wait. It:
+
+1. Resolves the entire chain transitively — all upstream objects, including those several levels deep.
+2. Queues all chain members at once and calculates a single sources snapshot shared across all of them. Every member will run on code taken at the same point in time.
+3. Runs the chain from upstream to downstream, starting each member as soon as all its direct dependencies have finished.
+
+This shared-revision guarantee is the key difference between a build chain and a simple sequential trigger. It ensures that, for example, the "Deploy" step always operates on exactly the same binaries that the "Test" step validated.
+
+## Chain Members
+
+Both build configurations and pipelines can participate in a chain. Mixed chains — a pipeline depending on a build configuration, or vice versa — are fully supported.
+
+<deflist type="medium">
+<def title="Build configurations">
+
+Classic TeamCity entities configured via the web UI or Kotlin DSL. Dependencies between build configurations are called _snapshot dependencies_ and are set up on the **Dependencies** page of configuration settings.
+
+</def>
+<def title="Pipelines">
+
+Newer YAML-based entities. Dependencies between pipelines, or between a pipeline and a build configuration, are called _pipeline dependencies_ and are set up in the pipeline settings panel.
+
+</def>
+</deflist>
+
+See [](configuring-dependencies.md) for setup instructions for both types.
+
+## Upstream and Downstream
+
+Chain dependencies are always declared in the **downstream** object, pointing to the **upstream** one.
+
+To create a "Build → Test → Deploy" chain, you open **Deploy** and add a dependency on **Test**, then open **Test** and add a dependency on **Build** — not the other way around.
+
+<img src="ABC.png" width="311" alt="Linear build chain: C runs first, then B, then A"/>
+
+Two effects follow from this model:
+
+* Upstream objects can always run independently — they have no dependencies themselves.
+* Triggering a downstream object automatically queues and runs all its upstream dependencies.
+
+Chains can also fan out: if multiple objects each depend on the same upstream, they run in parallel once that upstream finishes, provided enough idle agents are available.
+
+<img src="B1-B2-A.png" width="126" alt="B1 and B2 run in parallel, both upstream of A"/>
+
+## Build Chains vs Finish Build Triggers
+
+Build chains are the recommended way to link objects in TeamCity. They provide source revision synchronization, build reuse, and fine-grained execution control across both build configurations and pipelines.
+
+[Finish build triggers](configuring-finish-build-trigger.md) are an older, left-to-right push mechanism available only for build configurations. We recommend using build chains over finish build triggers for new setups.
+
+## Next Steps
+
+* [](configuring-dependencies.md) — link configurations and pipelines, and tune dependency behavior such as build reuse and revision synchronization
+* [](artifact-dependencies.md) — transfer files and parameter values between chain members
+* [](run-build-chains.md) — trigger, stop, and partially run chains
+* [](monitor-build-chains.md) — inspect chain runs and rerun individual steps
+* [](secure-chain-dependencies.md) — protect configurations from unauthorized cross-project dependencies
+
+
+<!--
+
 A _build chain_ is a sequence of interconnected [build configurations](creating-and-editing-build-configurations.md) and [](create-and-edit-pipelines.md).
 
 <img src="chains-minimap.png" width="706" alt="Build chains viewer" thumbnail="true"/>
@@ -9,13 +94,15 @@ A chain can be executed either fully or [partially](#Partial+Chain+Execution). I
 
 ```Text
 +------------+     +----------------+     +--------+
-| Build core |---->| Build plugin A |---->|        |
+| Build core |-----| Build plugin A |-----|        |
 +------------+     +----------------+     |        |
                                           | Deploy |
                    +----------------+     |        |
-                   | Build plugin B |---->|        |
+                   | Build plugin B |-----|        |
                    +----------------+     +--------+
 ```
+
+
 
 "Build plugin A" depends on "Build core" so it cannot run alone (although it can automatically reuse previous "Build core" builds if there were no new changes). "Build plugin B" in turn has no dependencies and can run solo.
 
@@ -43,7 +130,7 @@ To specify dependencies in your build configuration:
 1. <include from="common-templates.md" element-id="open-configuration-settings-tab"><var name="configuration-tab-name" value="Dependencies"/></include>
 2. Click the __Add new snapshot dependency__ button.
 
-See also [Build Dependencies Setup](build-dependencies-setup.md) for details and an example.
+See also [Build Dependencies Setup](configuring-dependencies.md) for details and an example.
 
 </def>
 
@@ -81,7 +168,7 @@ If there are no running or queued builds for the build chain (i.e. all other par
 
 ## Disabling Revisions Synchronization Between Chain Parts
 
-You can [disable revisions synchronization](snapshot-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build. This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](build-dependencies-setup.md#Turned+off+Enforced+Revisions+Synchronization).
+You can [disable revisions synchronization](configuring-dependencies.md#enforce-rev-sync) for a snapshot dependency of a build configuration when promoting a build. This option works if you promote a build from chain part 1 to chain part 2, and the first build configuration of part 2 has this option disabled. In this case, TeamCity can use different sources revisions for builds in part 1 and part 2. See the build setup example in [Build Dependencies Setup](configuring-dependencies.md#Revision+Synchronization).
 
 This is useful when you need to run a dependent build without synchronizing its code revision with its dependencies (preceding builds in a chain). For example, you can promote an older build to a [deployment build configuration](deployment-build-configuration.md), and this build will be run using the latest deployment scripts.
 
@@ -138,7 +225,7 @@ From this page you can also:
 ### Dependencies tab of build results page
 
 If dependencies are configured, you can view their details on the build results page, the __Dependencies__ tab. This tab also displays indirect dependencies, for example, if a build A depends on a build B which depends on builds C and D, then these builds C and D are indirect dependencies for build A.   
-The tab also displays artifacts downloaded and delivered by the builds of the chain. It also allows grouping/ungrouping builds and highlighting the builds reused from previous chains ([suitable builds](snapshot-dependencies.md#Suitable+Builds)).
+The tab also displays artifacts downloaded and delivered by the builds of the chain. It also allows grouping/ungrouping builds and highlighting the builds reused from previous chains ([suitable builds](configuring-dependencies.md#Suitable+Builds)).
 
 
 ## Partial Chain Execution
@@ -213,7 +300,7 @@ If you skip a build that [provides an artifact](artifact-dependencies.md) to ano
 
 #### Build Reuse for Partial Builds
 
-If a build skipped some of its upstream configurations, TeamCity considers it to be a build with modified dependencies. For that reason, further chain runs will not [reuse](snapshot-dependencies.md#Suitable+Builds) this build and instead trigger a new one.
+If a build skipped some of its upstream configurations, TeamCity considers it to be a build with modified dependencies. For that reason, further chain runs will not [reuse](configuring-dependencies.md#Suitable+Builds) this build and instead trigger a new one.
 
 #### Example 1: Skip Tags
 
@@ -222,6 +309,10 @@ The following chain includes multiple building and testing configurations with t
 <img src="dk-skip-builds-full-chain.png" width="706" alt="Full chain"/>
 
 Running the entire chain can be time- and resource-consuming. To allow "Build All" to run only core "Build..." configurations, add the `teamcity.build.chain.skipTags` parameter using either tags or IDs as a value. Both methods are identical, choose the one that most suites your needs.
+
+-->
+
+<!--
 
 <procedure title="skipTags parameter value">
 
@@ -308,6 +399,9 @@ object TeamcityGatedPrDemo_BuildAll : BuildType({
 
 </procedure>
 
+-->
+
+<!--
 
 To run the entire chain, remove the `teamcity.build.chain.skipTags` parameter or set it to any value that does not match configuration tags or IDs. For example, add a [schedule trigger](configuring-schedule-triggers.md) that will run full nightly builds with configurations omitted during shortened daily builds. TeamCity trigger settings include the **Build Customization** section that allows you to add or modify build parameters.
 
@@ -453,9 +547,9 @@ object TeamcityGatedPrDemo_BuildAll : BuildType({
             * run all — runs the entire chain
             * desktop — runs "Build (Win)" and "Build (Linux/iOS)" builds with their related tests
             * portable — runs the "Build (Portable)" build with its related Android/PS tests
-            * windows — runs the "Test (Win) > Build (Win)" sequence
-            * linux — runs the "Test (Linux) > Build (Linux/iOS)" sequence
-            * ios  — runs the "Test (iOS) > Build (Linux/iOS)" sequence
+            * windows — runs the "Test (Win) to Build (Win)" sequence
+            * linux — runs the "Test (Linux) to Build (Linux/iOS)" sequence
+            * ios  — runs the "Test (iOS) to Build (Linux/iOS)" sequence
             * plugins — runs the solo "Build Plugins" configuration
         """.trimIndent(),
         display = ParameterDisplay.PROMPT,
@@ -519,10 +613,4 @@ Build ----|---- Test Suite 1 ----|
 
 If you skip all of these tests, the entire mid-section of this chain will be gone. This will produce a potentially confusing "Build → ??? → Deploy" chain. To avoid this, consider [cloning](copy-move-delete-build-configuration.md) configurations and making a separate "Build → Deploy" chain instead.
 
-
- <seealso>
-        <category ref="admin-guide">
-            <a href="configuring-dependencies.md">Configuring Dependencies</a>
-            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
-        </category>
-</seealso>
+-->

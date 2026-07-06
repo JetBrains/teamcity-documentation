@@ -117,12 +117,12 @@ Related article: [](untrusted-builds.md)
 
 TeamCity build configurations can use two types of [dependencies](configuring-dependencies.md) to interact with other configurations:
 
-* [](snapshot-dependencies.md) — link multiple configurations in a [build chain](build-chain.md), where a downstream build waits for an upstream build to complete.
+* [](configuring-dependencies.md) — link multiple configurations in a [build chain](build-chain.md), where a downstream build waits for an upstream build to complete.
 * [](artifact-dependencies.md) — allow a configuration to use artifacts produced by another configuration.
 
 These dependencies are set up in upstream configurations, which means administrators of other TeamCity projects can add dependencies on your configurations. If your project contains sensitive configurations that should not be triggered by or provide artifacts to external projects, use the **Project Isolation** settings to restrict access.
 
-Related article: [](build-dependencies-setup.md#Securing+Configurations)
+Related article: [](secure-chain-dependencies.md)
 
 
 ## SSH Keys
@@ -150,7 +150,7 @@ This tab is hidden by default and appears when you check which entities depend o
 
   <img src="dk-usages-template.png" width="706" alt="Usages report for a template"/>
 
-* Build configurations — click the **Usage** tab of configurations settings to view all configurations dependent on this one. Dependent configurations are those that have [snapshot](snapshot-dependencies.md) and/or [artifact](artifact-dependencies.md) dependencies on this configuration.
+* Build configurations — click the **Usage** tab of configurations settings to view all configurations dependent on this one. Dependent configurations are those that have [snapshot](configuring-dependencies.md) and/or [artifact](artifact-dependencies.md) dependencies on this configuration.
 
 
 Related articles: [](configuring-vcs-roots.md) | [](build-configuration-template.md) | [](configuring-dependencies.md)

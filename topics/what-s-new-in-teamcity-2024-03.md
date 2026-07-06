@@ -67,7 +67,7 @@ Learn more: [](gradle.md#Configuration+Cache).
 ## Optional Artifact Dependencies
 {instance="tc"}
 
-[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifacts+Rules) that define what files should be downloaded and where they should be stored.
+[](artifact-dependencies.md) allow your build configurations to download files produced by other configurations (or by previous builds of the same configuration). To create these dependencies, you need to specify [](artifact-dependencies.md#Artifact+Rules) that define what files should be downloaded and where they should be stored.
 
 If TeamCity is unable to locate files matching these rules, a build fails with the "Unable to resolve artifact dependency" error. This behavior does not take into account more flexible setups where a downloaded artifact is not mandatory for a dependent build to run.
 
@@ -75,7 +75,7 @@ Starting with version 2024.03, you can run a dependent build even if its artifac
 
 <img src="dk-relativeBuild-failed.png" width="706" alt="Optional dependency warning"/>
 
-Learn more: [Artifact Dependencies](artifact-dependencies.md#Prefix)
+Learn more: [Artifact Dependencies](artifact-dependencies.md#Artifact+Rules)
 
 
 <!--
@@ -126,7 +126,7 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 * New [](commit-status-publisher.md) setting allows you to choose whether you want TeamCity to post [Swarm review comments](integrating-with-helix-swarm.md) when a build finishes. If this option is disabled, the build feature will only update the review's **Tests** section.
-* The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](snapshot-dependencies.md#Suitable+Builds) instead of running them anew.
+* The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](configuring-dependencies.md#Suitable+Builds) instead of running them anew.
 
 
 
@@ -256,7 +256,7 @@ Learn more: [Git VCS Root | General Settings](git.md#General+Settings).
 
 * The [Open Terminal](install-and-start-teamcity-agents.md#Debug+Agents+Remotely) button now opens the terminal in the [checkout directory](build-checkout-directory.md). If invoked from the agent's overview page, the terminal still opens in the `$HOME` directory.
 * New [](commit-status-publisher.md) setting allows you to choose whether you want TeamCity to post [Swarm review comments](integrating-with-helix-swarm.md) when a build finishes. If this option is disabled, the build feature will only update the review's **Tests** section.
-* The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](snapshot-dependencies.md#Suitable+Builds) instead of running them anew.
+* The **Parameters | Statistic values** section of [composite builds](composite-build-configuration.md) now includes an additional metric that displays how much time this build saved by [reusing previous builds](configuring-dependencies.md#Suitable+Builds) instead of running them anew.
 
 
 

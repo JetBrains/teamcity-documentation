@@ -7,7 +7,7 @@ The _finish build trigger_ starts a build of the current build configuration whe
 
 * When the **Finish build trigger** is added to configuration A, it watches the target configuration B, and spawns a new A build whenever B finishes another build.
 * You can choose whether a build should be triggered only if the target configuration's build is successful.
-* Finish build triggers benefit from [snapshot dependencies](snapshot-dependencies.md) pointing to the same target configurations.
+* Finish build triggers benefit from [snapshot dependencies](configuring-dependencies.md) pointing to the same target configurations.
 * Alternatively to tracking all new builds of the target configuration, you can trigger new builds only if those target builds have new changes. To do this, use the [Schedule Trigger](configuring-schedule-triggers.md#Build+Changes) instead.
 
 
@@ -23,7 +23,7 @@ The _finish build trigger_ starts a build of the current build configuration whe
 
 ## Finish Build Triggers and Snapshots
 
-To understand the difference between **finish build triggers** and [](snapshot-dependencies.md), let's have a look at the following example.
+To understand the difference between **finish build triggers** and [](configuring-dependencies.md), let's have a look at the following example.
 
 A sample project has three child build configurations:
 
@@ -99,7 +99,7 @@ object UpdateBuildVersion : BuildType({
 
 This configuration re-publishes artifacts. To do so, it first needs the actual release date and build number, which it retrieves from the other two configurations.
 
-* The updated release date is accessible via the `dep.<configuration_name>.<parameter_name>` syntax because a [snapshot dependency](snapshot-dependencies.md) on the "Update Release Date" configuration exists.
+* The updated release date is accessible via the `dep.<configuration_name>.<parameter_name>` syntax because a [snapshot dependency](configuring-dependencies.md) on the "Update Release Date" configuration exists.
 * The updated build version is taken directly from the project's `build.version` parameter because the "Update Build Version" configuration utilizes REST API to write a permanent value.
 
 <br/>
@@ -150,7 +150,7 @@ In this setup, running new builds will result the following:
 
     <img src="dk-fbt-onlyB.png" width="706" alt="Trigger Update Release Date"/>
 
-* If the "Update Build Version" configuration is triggered, once this build finishes a new "Update Packages" configuration build will be spawned because of the **Finish build trigger** added to this configuration. However, since "Update Packages" also has a snapshot dependency on "Update Release Date" (with disabled [build reuse](snapshot-dependencies.md#Suitable+Builds)), it will also request a current date. As a result, the entire "Update Build Version &rarr; Update Release Date &rarr; Update Packages" pipeline will run.
+* If the "Update Build Version" configuration is triggered, once this build finishes a new "Update Packages" configuration build will be spawned because of the **Finish build trigger** added to this configuration. However, since "Update Packages" also has a snapshot dependency on "Update Release Date" (with disabled [build reuse](configuring-dependencies.md#Suitable+Builds)), it will also request a current date. As a result, the entire "Update Build Version &rarr; Update Release Date &rarr; Update Packages" pipeline will run.
 
     <img src="dk-fbt-all3.png" width="706" alt="Trigger Update Build Version"/>
 
@@ -162,7 +162,7 @@ As a result, delivery builds always ensure the date is correct, but reuse the ex
 
 ## Trigger Limitations
 
-When used alone (without a [snapshot dependency](snapshot-dependencies.md) on the same configuration), the **Finish build trigger** has the following limitations:
+When used alone (without a [snapshot dependency](configuring-dependencies.md) on the same configuration), the **Finish build trigger** has the following limitations:
 
 * A newly triggered build may not have the same revisions as the finished tracked build even if both configurations have the same VCS settings.
 
@@ -183,7 +183,7 @@ Note that if a build configuration with the finish build trigger __has__ a snaps
 
 <seealso>
         <category ref="admin-guide">
-            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+            <a href="configuring-dependencies.md">Build Dependencies Setup</a>
         </category>
         <category ref="concepts">
             <a href="build-chain.md">Build Chain</a>

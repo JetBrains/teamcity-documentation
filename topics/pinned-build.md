@@ -11,7 +11,7 @@ You can pin/unpin builds as follows:
 
 The _Pin/Unpin_ build dialog also allows you to tag the build.
 
-If the current build is a part of a [chain](build-chain.md) and has [snapshot dependencies](snapshot-dependencies.md) on another builds, the _"Apply to all snapshot dependencies"_ box appears. Check this box to apply the actions (pinning/unpinning, adding / removing tags) to all dependency (preceding) builds of the current build.
+If the current build is a part of a [chain](build-chain.md) and has [snapshot dependencies](configuring-dependencies.md) on another builds, the _"Apply to all snapshot dependencies"_ box appears. Check this box to apply the actions (pinning/unpinning, adding / removing tags) to all dependency (preceding) builds of the current build.
 
 <seealso>
         <category ref="concepts">

@@ -57,7 +57,7 @@ Moving a [composite build](composite-build-configuration.md) to the top of the q
 
 ### Removing Builds from Build Queue
 
-To remove build(s) from the queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the corresponding message below the comment field. Refer to the [Build Chain](build-chain.md#Stopping%2FRemoving+From+Queue+Builds+from+Build+Chain) article for details.
+To remove build(s) from the queue, check the __Remove__ box next to the selected build and confirm the deletion. If a build to be removed from the queue is a part of a build chain, TeamCity shows the corresponding message below the comment field. Refer to the [](run-build-chains.md) article for details.
 
 Additionally, you can:
 * Remove all your personal builds from the queue at once from the __Actions__ menu.

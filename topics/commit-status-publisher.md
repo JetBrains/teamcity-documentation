@@ -180,7 +180,7 @@ If a build's VCS root has [checkout rules](configuring-vcs-settings.md#Configure
 If you need to display the build status next to the last commit of the build (for example, in a pull request), you can adjust the checkout rules so this commit is included into the VCS root's scope. Or, if this is a recurrent issue, consider rearranging your build chain as follows:
 1. Configure the main build with checkout rules.
 2. Configure an utility [composite build](composite-build-configuration.md) without build steps and checkout rules but with the Commit Status Publisher feature.
-3. In the composite build, configure a [snapshot dependency](snapshot-dependencies.md) on the main build.
+3. In the composite build, configure a [snapshot dependency](configuring-dependencies.md) on the main build.
 
 In the scope of such a chain, Commit Status Publisher will not be bound by the checkout rules and the build status will be displayed next to the very last commit.
 

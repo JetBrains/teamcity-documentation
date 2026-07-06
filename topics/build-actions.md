@@ -39,7 +39,7 @@ This action will delete the build from the list.
 
 You can pin a build to prevent it from being removed during a scheduled [clean-up](teamcity-data-clean-up.md).
 
-If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](snapshot-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
+If the current build is a part of a <tooltip term="build-chain">_chain_</tooltip> and has [snapshot dependencies](configuring-dependencies.md) on other builds, you can choose to apply this action to all its preceding builds in the chain.
 
 A pinned build can be unpinned manually anytime.
 
@@ -94,7 +94,7 @@ Project administrators can manually change the successful build's status to fail
   * You have previously mistakenly marked the build as successful.
 * **From failed to successful**:
   * You need to change the _last successful build_ anchor when using [build failure conditions](build-failure-conditions.md). If your last build failed because of an incorrect value of a metric and this new value is valid, you can mark this build with a _successful_ anchor.
-  * You want to allow using an incorrectly failed build with good artifacts in __[Artifact Dependencies](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Web+UI)__.
+  * You want to allow using an incorrectly failed build with good artifacts in __[Artifact Dependencies](artifact-dependencies.md)__.
   * For a running [personal build](personal-build.md), you can mark the current failures as non-relevant to allow the pretested commit to pass.
 
 The "_Mark as successful_" action is not available for [builds that failed to start](build-state.md#Failed+to+Start+Builds).

@@ -524,7 +524,7 @@ TeamCity does not currently allow you to set roles and permissions on a build co
             <a href="build-chain.md">Build Chain</a>
         </category>
         <category ref="admin-guide">
-            <a href="snapshot-dependencies.md">Snapshot Dependencies</a>
-            <a href="build-dependencies-setup.md">Build Dependencies Setup</a>
+            <a href="configuring-dependencies.md">Snapshot Dependencies</a>
+            <a href="configuring-dependencies.md">Build Dependencies Setup</a>
         </category>
 </seealso>

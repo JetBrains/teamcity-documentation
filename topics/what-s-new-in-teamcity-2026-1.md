@@ -140,7 +140,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * Users with trial TeamCity Enterprise licenses can now use [](ai-assistant.md).
 
-* The list of available [Get artifacts from...](artifact-dependencies.md#artifact-dep-get-from) options now includes **Build from the same chain** that fails the build if both target and source configuration/pipeline do not belong to the same build chain. Previously, only the **Build from the same chain or last finished** option was available.
+* The list of available [Get artifacts from...](artifact-dependencies.md) options now includes **Build from the same chain** that fails the build if both target and source configuration/pipeline do not belong to the same build chain. Previously, only the **Build from the same chain or last finished** option was available.
 
 * In addition to the existing **Maximum concurrent builds for this build configuration** setting in [general build configuration settings](configuring-general-settings.md#Limit+Number+of+Simultaneously+Running+Builds), the new **If the limit is reached** option lets you choose whether TeamCity should queue excess builds or cancel the oldest running ones to free up capacity.
 

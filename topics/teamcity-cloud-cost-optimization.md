@@ -118,7 +118,7 @@ If you have multiple build configurations in a chain that use the same libraries
 
 You can also configure a build configuration to have an artifact dependency on itself (specifically on the last finished build), so you could archive the dependencies at the end of the build, upload the archive as a build artifact, and create an artifact dependency on the previous build in the same build configuration. This will enable future builds of the same build configuration to use the previously downloaded dependencies.
 
-This can be accomplished through [artifact dependencies](build-dependencies-setup.md#Artifact+Dependencies). Depending on the number (and size) of the packages, this can help reduce time on subsequent builds in the build chain and prevent future builds from downloading all packages from scratch.
+This can be accomplished through [artifact dependencies](artifact-dependencies.md#Artifact+Dependencies). Depending on the number (and size) of the packages, this can help reduce time on subsequent builds in the build chain and prevent future builds from downloading all packages from scratch.
 
 In this example, a new artifact dependency is being added to a build configuration that will automatically transfer the archived npm packages from a previous build in the build chain to the current build agent:
 

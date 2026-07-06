@@ -117,7 +117,7 @@ For the _Artifacts_ level you can also specify the patterns for the artifact nam
 
 #### Base Rule Behavior for Dependency Builds
 
-In the _Dependencies_ block of a base rule, you can also choose the clean-up behavior option for build artifacts in dependency build configurations. TeamCity always preserves builds that are used as [snapshot dependencies](snapshot-dependencies.md) in other builds. These builds are not deleted from build history by the clean-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.   
+In the _Dependencies_ block of a base rule, you can also choose the clean-up behavior option for build artifacts in dependency build configurations. TeamCity always preserves builds that are used as [snapshot dependencies](configuring-dependencies.md) in other builds. These builds are not deleted from build history by the clean-up procedure until dependent builds are deleted. Artifacts of these builds can be deleted based on the option below.   
 TeamCity can optionally preserve builds and their artifacts which are used in other builds by [artifact dependencies](artifact-dependencies.md). The following options are available:
 * _Use default_ uses the option configured in the default clean-up rule.
 * _Prevent clean-up_ protects builds (and their artifacts) which were used as a source of artifact or snapshot dependencies for the builds of the current build configuration.
@@ -174,7 +174,7 @@ To change the timeout, set the `teamcity.deletedEntities.cleanupTimeout` [intern
 
 ## Cleanup Diagnostics
 
-When TeamCity performs a clean-up, some older builds may still be retained, which might seem inconsistent with the current clean-up or retention rules. For example, builds referenced in [dependencies](build-dependencies-setup.md) are preserved.
+When TeamCity performs a clean-up, some older builds may still be retained, which might seem inconsistent with the current clean-up or retention rules. For example, builds referenced in [dependencies](configuring-dependencies.md) are preserved.
 
 To investigate why a build was not removed, label it with the `diagnostics:cleanup` [tag](build-actions.md#Add+Tags+to+Build). During clean-up, TeamCity identifies all tagged builds and generates a detailed report explaining why these builds were kept. This report is saved as a [build artifact](build-artifact.md) to the hidden `.teamcity/cleanup/` directory.
 

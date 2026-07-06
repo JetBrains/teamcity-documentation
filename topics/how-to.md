@@ -553,7 +553,7 @@ Please also review the [section](agent-home-directory.md) for a list of director
 
 ## Share the Build number for Builds in a Chain Build
 
-A build number can be shared for builds connected by a [snapshot dependency](snapshot-dependencies.md) or an [artifact dependency](artifact-dependencies.md) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
+A build number can be shared for builds connected by a [snapshot dependency](configuring-dependencies.md) or an [artifact dependency](artifact-dependencies.md) using a reference to the following dependency property: `%dep.<btID>.system.build.number%`.
 
 For example, you have build configurations "A" and "B" that you want to build in sync: use the same sources and take the same build number.   
 Do the following:
@@ -564,7 +564,7 @@ Do the following:
 %dep.<btID>.system.build.number%
 ```
 
-Where `<btID>` is the [ID of the build configuration](managing-builds.md) "C". The approach works best when builds reuse is turned off via the [Snapshot Dependencies](snapshot-dependencies.md) snapshot dependency option set to off.
+Where `<btID>` is the [ID of the build configuration](managing-builds.md) "C". The approach works best when builds reuse is turned off via the [Snapshot Dependencies](configuring-dependencies.md) snapshot dependency option set to off.
 
 [Read more](predefined-build-parameters.md#Predefined+Configuration+Parameters) about dependency properties.
 
@@ -650,7 +650,7 @@ In general, setup steps for configuring deployments are:
 2. Create a build configuration in TeamCity that will execute the build script and perform the actual deployment. If the deployment is to be visible or startable only by the limited set of users, place the build configuration in a separate TeamCity project and make sure the users have appropriate permissions in the project.
 3. In this build configuration configure [artifact dependency](artifact-dependencies.md) on a build configuration that produces binaries that need to be deployed.
 4. Configure one of the available triggers in the deploying build configuration if you need the deployment to be triggered automatically (e.g. to deploy last successful of last pinned build), or use "Deploy" action in the build that produced the binaries to be deployed.
-5. Consider using [snapshot dependencies](snapshot-dependencies.md) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
+5. Consider using [snapshot dependencies](configuring-dependencies.md) in addition to artifact ones and check [Build Chains](build-chain.md) tab to get the overview of the builds. In this case artifact dependency should use "Build from the same chain" option.
 6. If you need to parametrize the deployment (e.g. specify different target machines in different runs), pass parameters to the build script using [custom build run dialog](running-custom-build.md). Consider using [Typed Parameters](typed-parameters.md) to make the custom run dialog easier to use or handle passwords.
 7. If the deploying build is triggered manually consider also adding commands in the build script to pin and tag the build being deployed (via sending a [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-finished-builds.html#Manage+Build+Tags) request or a [Service Message](service-messages.md#Adding+and+Removing+Build+Tags)). You can also [use a build number](#Share+the+Build+number+for+Builds+in+a+Chain+Build) from the build that generated the artifact.
 

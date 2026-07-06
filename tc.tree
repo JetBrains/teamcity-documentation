@@ -347,12 +347,12 @@
 				<toc-element topic="configuring-retry-build-trigger.md"/>
 				<toc-element topic="perforce-shelve-trigger.md"/>
 			</toc-element>
-			<toc-element topic="configuring-dependencies.md" toc-title="Dependencies">
-				<toc-element topic="build-dependencies-setup.md"/>
-				<toc-element topic="build-chain.md"/>
-				<toc-element topic="artifact-dependencies.md"/>
-				<toc-element topic="snapshot-dependencies.md" accepts-web-file-names="dependent-build.html"/>
-			</toc-element>
+			<!--<toc-element >-->
+				<!--<toc-element topic="build-dependencies-setup.md"/>-->
+				<!--<toc-element topic="build-chain.md"/>-->
+				<!--<toc-element topic="artifact-dependencies.md"/>-->
+				<!--<toc-element topic="snapshot-dependencies.md" accepts-web-file-names="dependent-build.html"/>-->
+			<!--</toc-element>-->
 			<toc-element topic="configuring-agent-requirements.md" accepts-web-file-names="agent-requirements.html" toc-title="Agent Requirements"/>
 			<toc-element topic="untrusted-builds.md"/>
 			<toc-element topic="clean-checkout.md"/>
@@ -430,6 +430,13 @@
 		<toc-element topic="rake.md"/>
 		<toc-element topic="simple-build-tool-scala.md"/>
 		<toc-element topic="xcode-project.md"/>
+	</toc-element>
+	<toc-element topic="build-chain.md" toc-title="Build Chains">
+		<toc-element topic="configuring-dependencies.md" accepts-web-file-names="snapshot-dependencies.html,build-dependencies-setup.html,dependent-build.html"/>
+		<toc-element topic="artifact-dependencies.md"/>
+		<toc-element topic="run-build-chains.md"/>
+		<toc-element topic="monitor-build-chains.md"/>
+		<toc-element topic="secure-chain-dependencies.md"/>
 	</toc-element>
 	<toc-element toc-title="TeamCity AI">
 		<toc-element topic="ai-assistant.md"/>

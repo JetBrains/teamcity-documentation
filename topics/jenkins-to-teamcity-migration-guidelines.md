@@ -353,7 +353,7 @@ The tiles below explain in greater detail how some of the key Jenkins concepts d
 <procedure title="Parallel execution" type="steps">
 
 * Jenkins supports parallel blocks in scripted pipelines or parallel stages in declarative pipelines.
-* TeamCity can run builds or build steps in parallel, using [build dependencies](snapshot-dependencies.md), [splitting tests into batches](parallel-tests.md), and agent-side parallelism.
+* TeamCity can run builds or build steps in parallel, using [build dependencies](configuring-dependencies.md), [splitting tests into batches](parallel-tests.md), and agent-side parallelism.
 
 </procedure>
 
@@ -499,7 +499,7 @@ Here’s how some of Jenkins plugins match to the same built-in functionality in
 <tr>
 
 <td>Parameterized trigger plugin</td>
-<td>Built-in <a href="snapshot-dependencies.md">snapshot</a> and <a href="artifact-dependencies.md">artifact</a> dependencies trigger builds with specific parameters.</td>
+<td>Built-in <a href="configuring-dependencies.md">snapshot</a> and <a href="artifact-dependencies.md">artifact</a> dependencies trigger builds with specific parameters.</td>
 
 </tr>
 
@@ -1057,7 +1057,7 @@ TeamCity comes with a lot of features built\-in by default, and can be further e
 
 ### Build pipelines
 
-A build pipeline in TeamCity is called a [Build Chain](build-chain.md). It is a set of Build Configurations connected via [snapshot dependencies](snapshot-dependencies.md). The [TeamCity Take on Build Pipelines](https://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/) article describes in detail how TeamCity handles build chains and what the implications are.
+A build pipeline in TeamCity is called a [Build Chain](build-chain.md). It is a set of Build Configurations connected via [snapshot dependencies](configuring-dependencies.md). The [TeamCity Take on Build Pipelines](https://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/) article describes in detail how TeamCity handles build chains and what the implications are.
 
 ### Distributed builds
 
