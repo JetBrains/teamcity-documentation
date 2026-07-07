@@ -2,6 +2,17 @@
 
 <show-structure for="chapter" depth="2"/>
 
+
+## Build ???, ??? July 2026
+
+We’ve added [PKCE OAuth](ai-agent-integration.md) authorization for the TeamCity MCP server. You no longer need to manually issue a static user token and pass it to your AI solution. Instead, complete the OAuth flow to authorize access and generate the token automatically.
+
+### Full changelog
+{id=changelog-2026.2.2}
+
+???
+
+
 ## Build 236396, 1 July 2026
 
 TeamCity Cloud is entering a new phase with smaller, more frequent updates. Rather than following the TeamCity On-Premises release schedule, it will now ship improvements on a faster cadence. This means you will get fixes, performance enhancements, and requested changes sooner.

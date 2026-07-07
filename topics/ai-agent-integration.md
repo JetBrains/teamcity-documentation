@@ -75,6 +75,32 @@ To retrieve and use these tools, an AI agent needs to pass token-based authoriza
 {style="note"}
 
 
+### OAuth Access
+
+You can add the server without issuing a user token or passing it in the AI agent configuration:
+
+```JSON
+{
+  "mcpServers": {
+        "TeamCity nightly": {
+            "type": "http",
+            "url": "<TeamCity-server-URL>/app/mcp",
+            // Skip setting up auth settings
+            //"headers": { "Authorization": "Bearer $TC_AUTH_TOKEN" }
+        }
+  }
+}
+```
+
+In this case, the server is added, but its MCP tools remain unavailable until you authenticate. For example, click **Connect** in Air Desktop or run `codex mcp login <server-name>` in Codex CLI.
+
+<img src="air-mcp-oauth.png" width="706" alt="Auth to PKCE"/>
+
+After that, your AI client opens the `<TeamCity-server-URL>/pkce/authorize.html` page, where you can review the permissions granted to the AI agent and click **Confirm** to issue the access token.
+
+Note that the token inherits your TeamCity permissions. For example, if you cannot view server logs, neither can the AI agent. If you can edit only specific projects, the agent has the same restrictions.
+
+
 
 ### Examples
 
@@ -85,6 +111,8 @@ export TC_AUTH_TOKEN="your token here"
 ```
 
 Then, you will be able to use the `$TC_AUTH_TOKEN` reference instead of a raw value.
+
+To use the [PKCE OAuth](#OAuth+Access) authentication, omit setting up authorization settings.
 
 <procedure title="Air, Cursor">
 
