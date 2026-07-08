@@ -10,7 +10,7 @@ This section is preserved for __backward compatibility__ with the previous TeamC
 
 Check the following information as well:
 * If you need to access the artifacts in your builds, consider using the TeamCity's built-in [artifact dependency](artifact-dependencies.md) functionality.
-* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) dependency manager.
+* You can also download artifacts from TeamCity using the [Ivy](artifact-dependencies.md#Configuring+artifact+dependencies+using+Ant+build+script) dependency manager.
 * For artifact downloads from outside TeamCity builds, consider using [REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html).
 * See also [Accessing Server by HTTP](accessing-server-by-http.md) on basic rules covering an HTTP access from scripts.
 

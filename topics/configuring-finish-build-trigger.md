@@ -150,7 +150,7 @@ In this setup, running new builds will result the following:
 
     <img src="dk-fbt-onlyB.png" width="706" alt="Trigger Update Release Date"/>
 
-* If the "Update Build Version" configuration is triggered, once this build finishes a new "Update Packages" configuration build will be spawned because of the **Finish build trigger** added to this configuration. However, since "Update Packages" also has a snapshot dependency on "Update Release Date" (with disabled [build reuse](configuring-dependencies.md#Suitable+Builds)), it will also request a current date. As a result, the entire "Update Build Version &rarr; Update Release Date &rarr; Update Packages" pipeline will run.
+* If the "Update Build Version" configuration is triggered, once this build finishes a new "Update Packages" configuration build will be spawned because of the **Finish build trigger** added to this configuration. However, since "Update Packages" also has a snapshot dependency on "Update Release Date" (with disabled [build reuse](configuring-dependencies.md#Suitable+builds)), it will also request a current date. As a result, the entire "Update Build Version &rarr; Update Release Date &rarr; Update Packages" pipeline will run.
 
     <img src="dk-fbt-all3.png" width="706" alt="Trigger Update Build Version"/>
 

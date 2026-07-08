@@ -127,7 +127,7 @@ The tables below are updated in accordance with the newly introduced integration
 * [Building and Testing Java with Maven in TeamCity (2021)](https://www.jetbrains.com/teamcity/tutorials/maven-build-configure-test/)
 * [Incremental Building with Maven and TeamCity (2012)](https://blog.jetbrains.com/teamcity/2012/03/incremental-building-with-maven-and-teamcity/)
 * [Building and Testing Java with Gradle in TeamCity (2021)](https://www.jetbrains.com/teamcity/tutorials/gradle-build-configure-test/)
-* [Configuring Artifact Dependencies Using Ant Build Script](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script)
+* [Configuring Artifact Dependencies Using Ant Build Script](artifact-dependencies.md#Configuring+artifact+dependencies+using+Ant+build+script)
 * [Get TeamCity Artifacts Using HTTP, Ant, Gradle and Maven (2012)](https://blog.jetbrains.com/teamcity/2012/06/teamcity-ivy-gradle-maven/)
 
 </td></tr>

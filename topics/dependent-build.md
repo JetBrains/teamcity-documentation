@@ -17,7 +17,7 @@ _Snapshot Dependency_ is a powerful concept that allows expressing source-level 
 
 See [Build Dependencies Setup](configuring-dependencies.md) for a description of typical snapshot dependencies usages and related blog posts: [September 2019](https://blog.jetbrains.com/teamcity/2019/09/build-chains-teamcitys-blend-of-pipelines-part-1-getting-started/), [March 2016](https://blog.jetbrains.com/teamcity/2016/03/teamcity-take-on-build-pipelines/), [April 2012](https://blog.jetbrains.com/teamcity/2012/04/teamcity-build-dependencies-2/).
 
-A snapshot dependency of build configuration A on build configuration B ensures that each build of A has a ["suitable" build](configuring-dependencies.md#Suitable+Builds) of B before build of A can start. Both builds of A and B use the same sources snapshot (revision of the sources being the same or taken at the same time if the VCS roots are different) when they belong to the same chain and when revisions synchronization is enforced. If revisions synchronization is not enforced, then build A can use up-to-date revisions when promoting a finished build B to A (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
+A snapshot dependency of build configuration A on build configuration B ensures that each build of A has a ["suitable" build](configuring-dependencies.md#Suitable+builds) of B before build of A can start. Both builds of A and B use the same sources snapshot (revision of the sources being the same or taken at the same time if the VCS roots are different) when they belong to the same chain and when revisions synchronization is enforced. If revisions synchronization is not enforced, then build A can use up-to-date revisions when promoting a finished build B to A (read more in [Revision Synchronization](configuring-dependencies.md#Revision+synchronization)).
 
 The build results page of a build with snapshot dependencies allows reviewing all the dependency builds and their errors, if there are any.
 
@@ -41,7 +41,7 @@ A build of a chain can [reference parameters](predefined-build-parameters.md#Dep
 There is a [special support](use-parameters-in-build-chains.md#Override+parameters+of+upstream+objects) for pushing parameters down the chain when a build with snapshot dependencies is triggered. It is done by defining a parameter with `reverse.dep.<configurationId>.<parameterName>` name.
 
 When setting up __triggers__ for the builds in the chain, the recommended approach is: _think about the result_ — the build you want to get at the end of the process, and configure triggers in its corresponding, "top" build configuration. No triggers are necessary in the build configurations this top one depends on, as their builds will be put into the queue automatically when the top one is triggered.   
-See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](run-build-chains.md#Triggering+a+Chain) in the "Version Control Settings" configuration section.
+See also the related "Trigger on changes in snapshot dependencies" [setting](configuring-vcs-triggers.md#Trigger+build+on+changes+in+snapshot+dependencies) of a VCS trigger and the "Show changes from snapshot dependencies" [checkbox](run-build-chains.md#Triggering+a+chain) in the "Version Control Settings" configuration section.
 
 Let's consider an example to illustrate how snapshot dependencies work.
 

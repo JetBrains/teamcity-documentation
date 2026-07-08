@@ -122,7 +122,7 @@ Show changes from snapshot dependencies
 
 <td>
 
-Configure whether TeamCity will __[show changes from snapshot dependencies](run-build-chains.md#Triggering+a+Chain)__. This also affects treatment of pending changes in schedule trigger.
+Configure whether TeamCity will __[show changes from snapshot dependencies](run-build-chains.md#Triggering+a+chain)__. This also affects treatment of pending changes in schedule trigger.
 
 </td></tr><tr>
 

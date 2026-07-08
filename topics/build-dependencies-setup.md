@@ -85,7 +85,7 @@ An _artifact dependency_ allows reusing the output of one build (or a part of it
 
 If build configuration __A__ has an artifact dependency on __B__, then the artifacts of __B__ are downloaded to a build agent before a build of __A__ starts. Note that you can flexibly adjust [artifact rules](artifact-dependencies.md) to configure which artifacts should be taken and where exactly they should be placed.    
 
-If for some reason you need to store artifact dependency information together with your codebase and not in TeamCity, you can configure [Ivy Ant tasks](artifact-dependencies.md#Configuring+Artifact+Dependencies+Using+Ant+Build+Script) to get the artifacts in your build script.     
+If for some reason you need to store artifact dependency information together with your codebase and not in TeamCity, you can configure [Ivy Ant tasks](artifact-dependencies.md#Configuring+artifact+dependencies+using+Ant+build+script) to get the artifacts in your build script.     
 
 If both snapshot and artifact dependency are configured, and the '_Build from the same chain_' option is selected in the artifact dependency settings, TeamCity ensures that artifacts are downloaded from the same-sources build.
 
@@ -154,13 +154,13 @@ In this case it doesn't matter which build - B1 or B2 - starts first; if there a
 
 #### Reusing builds
 
-All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the [suitable builds](configuring-dependencies.md#Suitable+Builds). To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
+All builds belonging to the [build chain](build-chain.md) are placed in the [queue](working-with-build-queue.md). But, instead of enforcing the run of all builds from a build chain, TeamCity can check whether there are already suitable builds, i.e. finished builds that used the required sources snapshot. The matching queued builds will not be run and will be [dropped from the queue](working-with-build-queue.md#Build+Queue+Optimization+by+TeamCity), and TeamCity will link the dependency to the [suitable builds](configuring-dependencies.md#Suitable+builds). To enable this, select '_Do not run new build if there is a suitable one_' when configuring snapshot dependency options.
 
 Another option that allows you to control how builds are re-used is called "_Only use successful builds from suitable ones_" and it may help when there's a suitable build, but it isn't successful. Normally, when there's a failed build in a chain, TeamCity doesn't proceed with the rest of the chain. However, with this option enabled, TeamCity will run this failed build on these sources one more time. When is this helpful? For example, when the build failure was caused by a problem when connecting to a VCS.
 
 #### Turned off Enforced Revisions Synchronization
 
-If you disable the "_[Enforce revisions synchronization](configuring-dependencies.md#enforce-rev-sync)_" option when creating a snapshot dependency, TeamCity will be able to use different revisions for chain parts when a build is promoted from one part to another (read more in [Build Chain](build-chain.md#Disabling+Revisions+Synchronization+Between+Chain+Parts)).
+If you disable the "_[Enforce revisions synchronization](configuring-dependencies.md#enforce-rev-sync)_" option when creating a snapshot dependency, TeamCity will be able to use different revisions for chain parts when a build is promoted from one part to another (read more in [Revision Synchronization](configuring-dependencies.md#Revision+synchronization)).
 
 Let's explore the example of a [deployment chain](deployment-build-configuration.md):
 
@@ -441,7 +441,7 @@ Artifacts may not be [cleaned](teamcity-data-clean-up.md) if they were downloade
 __Running personal build in a chain__
 
 If you run a personal build that is a part of a [build chain](build-chain.md), all its dependency builds will be run as personal builds as well.  
-However, if you enable the [reuse of suitable builds](configuring-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
+However, if you enable the [reuse of suitable builds](configuring-dependencies.md#Suitable+builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 <!--[//]: # (Internal note. Do not delete. "Build Dependencies Setupd34e498.txt")-->
 

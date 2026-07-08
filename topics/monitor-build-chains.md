@@ -4,7 +4,7 @@
 
 TeamCity visualizes [build chains](build-chain.md) in several places, letting you inspect chain runs, rerun individual steps, and continue partially finished chains. To trigger, stop, or otherwise control a chain run, see [](run-build-chains.md).
 
-## Build Chains Tab
+## Build chains tab
 
 Once a chain has been triggered, a **Build Chains** tab appears on both the **Project Home** page and the **Home** pages of the participating build configurations. It lists all chains that include builds from the current project or configuration, sorted so that the chain with the most recently finished build is on top.
 
@@ -24,15 +24,15 @@ From this tab you can:
 * **Continue a chain** that has "not triggered" builds — click **Run** to start the remaining builds on the existing chain revisions.
 * **Rerun a build** — open the [custom build dialog](running-custom-build.md) with the chain revisions preselected.
 
-## Chain Tab in Build Results
+## Chain tab in build results
 
 The **Chain** tab on a build's results page shows the directed graph for that specific run: which builds ran, which were reused from a previous chain, how long each took, and the overall chain duration. Use it to confirm, for example, that an upstream build was reused (its build number stays the same across reruns) rather than executed again.
 
-## Dependencies Tab in Build Results
+## Dependencies tab in build results
 
 The **Dependencies** tab lists the build's direct and indirect dependency builds. For example, if A depends on B, and B depends on C and D, then C and D appear as indirect dependencies of A.
 
-The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](configuring-dependencies.md#Suitable+Builds) from earlier chains.
+The tab also shows the artifacts each build delivered and downloaded, lets you group or ungroup builds, and highlights builds that were reused as [suitable builds](configuring-dependencies.md#Suitable+builds) from earlier chains.
 
 ## Clean-up
 

@@ -4,11 +4,11 @@
 
 By default, triggering a downstream object runs the entire [build chain](build-chain.md) on a single shared sources snapshot. This article covers how to trigger a chain, run only part of it, and stop it.
 
-> The dependency settings that govern *which* builds actually run — [build reuse](configuring-dependencies.md#Build+Reuse) and [revision synchronization](configuring-dependencies.md#Revision+Synchronization) — are described in [](configuring-dependencies.md).
+> The dependency settings that govern *which* builds actually run — [build reuse](configuring-dependencies.md#Build+reuse) and [revision synchronization](configuring-dependencies.md#Revision+synchronization) — are described in [](configuring-dependencies.md).
 >
 {style="tip"}
 
-## Triggering a Chain
+## Triggering a chain
 
 The recommended approach is to add [triggers](configuring-build-triggers.md) only to the **final** (most downstream) object of a chain. When that object is triggered, TeamCity automatically queues all of its upstream dependencies. Upstream objects do not need their own triggers.
 
@@ -34,7 +34,7 @@ Regardless of this default, users can include or exclude changes that originate 
 
 <img src="changes_popup.png" width="706" alt="Changes from dependencies"/>
 
-## Partial Chain Execution
+## Partial chain execution
 
 Sometimes only part of a chain needs to run. TeamCity offers three mechanisms, from ad-hoc to fully automated.
 
@@ -42,7 +42,7 @@ Sometimes only part of a chain needs to run. TeamCity offers three mechanisms, f
 >
 {style="note"}
 
-### Skip Builds On Demand
+### Skip builds on demand
 
 For a one-off partial run, use the [Run Custom Build dialog](running-custom-build.md). On the **Dependencies** tab, set the **Skip** option for any directly linked configuration you want to ignore.
 
@@ -50,7 +50,7 @@ For a one-off partial run, use the [Run Custom Build dialog](running-custom-buil
 
 You can only skip configurations directly linked to the one you trigger. For the "Build 1 → Build 2 → Build 3 → Build 4" chain, starting "Build 4" lets you skip only "Build 3".
 
-### Conditional Dependencies with Tags
+### Conditional dependencies with tags
 
 For a repeatable setup, use the `teamcity.build.chain.skipTags` and `teamcity.build.chain.onlyTags` [configuration parameters](configuring-build-parameters.md) (available since 2024.12).
 
@@ -64,7 +64,7 @@ Both parameters accept a comma-separated list of:
 
 TeamCity reads these parameters **only from the configuration that triggers the chain**; values on dependency builds are ignored.
 
-> If a skipped build provides an artifact to a downstream build, TeamCity automatically converts the strict artifact rule (`+:`) into an [optional one](artifact-dependencies.md#Artifact+Rules) (`?:`) so the downstream build does not fail. Note that a build which skipped upstream configurations is treated as modified and will not be [reused](configuring-dependencies.md#Suitable+Builds) later.
+> If a skipped build provides an artifact to a downstream build, TeamCity automatically converts the strict artifact rule (`+:`) into an [optional one](artifact-dependencies.md#Artifact+rules) (`?:`) so the downstream build does not fail. Note that a build which skipped upstream configurations is treated as modified and will not be [reused](configuring-dependencies.md#Suitable+builds) later.
 >
 {style="note"}
 
@@ -136,7 +136,7 @@ When triggered manually, the **Run Custom Build** dialog prompts the user to pic
 
 <img src="dk-subchain-selector.png" width="706" alt="Subchain selector"/>
 
-### Skip Queued Builds at Runtime
+### Skip queued builds at runtime
 
 To cancel queued downstream builds dynamically from a running build step, send the [service message](service-messages.md):
 
@@ -154,7 +154,7 @@ Build ----|---- Test Suite 1 ----|
 
 Avoid skipping an entire mid-section, which leaves a confusing "Build → ??? → Deploy" gap. For that case, maintain a separate lean chain instead.
 
-## Stopping Chain Builds
+## Stopping chain builds
 
 When you stop or remove from the queue a build that is part of a chain, TeamCity shows the message "_This build is a part of a build chain_" and lists the other running or queued chain members under **Stop other parts**.
 
@@ -164,6 +164,6 @@ When you stop or remove from the queue a build that is part of a chain, TeamCity
 
 If all other parts of the chain have already finished, no additional information is shown.
 
-## Running Personal Builds in a Chain
+## Running personal builds in a chain
 
-When a [personal build](personal-build.md) triggers a chain, all of its upstream dependencies also run as personal builds. The exception is [build reuse](configuring-dependencies.md#Build+Reuse): if reuse is enabled and a finished non-personal build satisfies the revision requirements, TeamCity uses it instead of running a personal upstream build that would add no value.
+When a [personal build](personal-build.md) triggers a chain, all of its upstream dependencies also run as personal builds. The exception is [build reuse](configuring-dependencies.md#Build+reuse): if reuse is enabled and a finished non-personal build satisfies the revision requirements, TeamCity uses it instead of running a personal upstream build that would add no value.

@@ -4,7 +4,7 @@
 
 [Build chains](build-chain.md) can span multiple projects, which is powerful but introduces a risk: a configuration from one team can depend on — and therefore trigger and pull artifacts from — a configuration owned by another team.
 
-## The Risk
+## The risk
 
 If there are no restrictions, anyone with the **Project viewer** role for a project can create dependencies to its configurations from their own. This means external users can run your configurations or import their artifacts even without permission to run them directly.
 
@@ -21,7 +21,7 @@ object ExternalBuild : BuildType({
 
 TeamCity offers three complementary controls to protect sensitive or resource-intensive configurations.
 
-## Project Isolation
+## Project isolation
 
 Project isolation is the primary enforcement mechanism. It is configured in the **Project Isolation** tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
 
@@ -75,7 +75,7 @@ The trust mode and allowlist are **not** stored in [versioned settings](storing-
 
 </deflist>
 
-## Build Approval
+## Build approval
 
 [](build-approval.md) is a complementary gate: external teams can still create dependencies to your configuration, but each triggered build stays in the queue until a designated reviewer approves it.
 
@@ -83,6 +83,6 @@ The trust mode and allowlist are **not** stored in [versioned settings](storing-
 >
 {style="note"}
 
-## User Permissions
+## User permissions
 
 Finally, set up strict [user permissions](managing-roles-and-permissions.md). Keep in mind that the **Project viewer** role alone is enough to create dependencies to a project, and that limited UI visibility does not prevent dependency creation via versioned settings. For that reason, treat Project Isolation — not visibility — as the actual boundary.

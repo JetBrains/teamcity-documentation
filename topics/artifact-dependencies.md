@@ -6,12 +6,12 @@
 
 Members of a [build chain](build-chain.md) can exchange two kinds of data:
 
-* **Files** — through [artifact dependencies](#Artifact+Dependencies). An upstream build publishes files; a downstream build downloads them before it starts.
+* **Files** — through [artifact dependencies](#Artifact+dependencies). An upstream build publishes files; a downstream build downloads them before it starts.
 * **Values** — through [output parameters](#Parameters). A name-value pair set in one object is read by another further down the chain.
 
 Both mechanisms flow in the direction of the chain: data moves from upstream to downstream, never the reverse.
 
-## Artifact Dependencies
+## Artifact dependencies
 
 An _artifact dependency_ reuses the output ([artifacts](build-artifact.md)) of one build in another. When configured, TeamCity downloads the required files to the agent before the downstream build starts.
 
@@ -21,11 +21,11 @@ Artifacts can be taken from:
 * A build of a configuration that is not part of the chain.
 * A previous build of the same configuration.
 
-> An artifact dependency only transfers files — it does not enforce build order or revision synchronization. To guarantee that artifacts come from a build on the same sources, pair the artifact dependency with a [snapshot dependency](configuring-dependencies.md#Snapshot+Dependencies) and choose the **Build from the same chain** source option.
+> An artifact dependency only transfers files — it does not enforce build order or revision synchronization. To guarantee that artifacts come from a build on the same sources, pair the artifact dependency with a [snapshot dependency](configuring-dependencies.md#Snapshot+dependencies) and choose the **Build from the same chain** source option.
 >
 {style="tip"}
 
-### Configuring Artifact Dependencies
+### Configuring artifact dependencies
 
 For build configurations, add an artifact dependency on the **Dependencies** page of configuration settings.
 
@@ -57,7 +57,7 @@ Which build of the source configuration to take artifacts from:
 </def>
 <def title="Artifact rules">
 
-Which files to download and where to place them. See [Artifact Rules](#Artifact+Rules) below.
+Which files to download and where to place them. See [Artifact rules](#Artifact+rules) below.
 
 </def>
 <def title="Clean destination paths before downloading artifacts">
@@ -103,7 +103,7 @@ dependencies:
       reuse: none
 ```
 
-### Artifact Rules
+### Artifact rules
 
 An artifact rule specifies which artifacts to download and where to store them. Each rule goes on its own line and uses the following syntax:
 
@@ -156,7 +156,7 @@ release-*.zip!*.dll=>dlls
 ?:output.txt
 ```
 
-The `?:` prefix is especially useful in [partial chains](run-build-chains.md#Partial+Chain+Execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
+The `?:` prefix is especially useful in [partial chains](run-build-chains.md#Partial+chain+execution): if an upstream build that normally provides a file is skipped, an optional rule keeps the downstream build from failing.
 
 ## Parameters
 
@@ -188,7 +188,7 @@ Output parameters are designed to be read by *other* objects, not by the one tha
 
 For build configurations, the equivalent declaration uses `params` and `outputParams` blocks. See [](use-parameters-in-build-chains.md) for complete examples of all three patterns above, the `*` wildcard for overriding multiple objects at once, and conflict resolution rules.
 
-## Advanced Concepts
+## Advanced concepts
 
 ### Build-level authentication
 {id="build-level-auth" help-id="build-level-auth"}
@@ -198,7 +198,7 @@ The system properties `system.teamcity.auth.userId` and `system.teamcity.auth.pa
 Using the properties is preferable to using real user credentials since it allows the server to track the artifacts downloaded by your build. If the artifacts were downloaded by the build configuration artifact dependencies or using the supplied properties, the specific artifacts used by the build will be displayed at the __Dependencies__ tab on the __Build Results__ page. In addition, the builds which were used to get the artifacts from, can be configured to have different [clean-up](teamcity-data-clean-up.md) logic.
 
 
-### Configuring Artifact Dependencies Using Ant Build Script
+### Configuring artifact dependencies using Ant build script
 
 This section describes how to download TeamCity build artifacts inside the build script. These instructions can also be used to download artifacts from outside of TeamCity.
 

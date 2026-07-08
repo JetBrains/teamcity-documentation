@@ -79,7 +79,7 @@
 
 * Credentials issued by the [](aws-credentials.md) build feature may expire prematurely. More information: [TW-100758](https://youtrack.jetbrains.com/issue/TW-100758).
 
-* Using the [`teamcity.build.chain.skipTags`](run-build-chains.md#Partial+Chain+Execution) parameter may cause unresolved `%\dep.Config_ID.parameter_name%` references in configurations linked with an optional artifact dependency. More information: [TW-100713](https://youtrack.jetbrains.com/issue/TW-100713).
+* Using the [`teamcity.build.chain.skipTags`](run-build-chains.md#Partial+chain+execution) parameter may cause unresolved `%\dep.Config_ID.parameter_name%` references in configurations linked with an optional artifact dependency. More information: [TW-100713](https://youtrack.jetbrains.com/issue/TW-100713).
 
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
 
@@ -1139,7 +1139,7 @@ No potential breaking changes.
 ## Changes from 2021.1.1 to 2021.1.2
 
 * If you run a [personal build](personal-build.md) that is a part of a [build chain](build-chain.md), all its dependency builds will now be run as personal builds as well.  
-  However, if you enable the [reuse of suitable builds](configuring-dependencies.md#Suitable+Builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
+  However, if you enable the [reuse of suitable builds](configuring-dependencies.md#Suitable+builds) in the dependency settings, TeamCity will try to optimize the chain whenever possible. If running a personal dependency build does not bring any value or contradicts the checkout rules, TeamCity will use a finished non-personal build instead.
 
 ## Changes from 2021.1 to 2021.1.1
 

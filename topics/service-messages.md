@@ -1239,7 +1239,7 @@ Downstream chain builds can be cancelled by sending the `skipQueuedBuilds` messa
 ##teamcity[skipQueuedBuilds tags='value1,value2,...' comment='Your comment']
 ```
 
-See the [](run-build-chains.md#Partial+Chain+Execution) article for more information about cancelling builds linked in a build chain.
+See the [](run-build-chains.md#Partial+chain+execution) article for more information about cancelling builds linked in a build chain.
 
 ## Adding and Removing Build Tags
 

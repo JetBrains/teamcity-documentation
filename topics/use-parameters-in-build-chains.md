@@ -410,7 +410,7 @@ Otherwise, if the edits are made by multiple same-level entities, the target par
 ### Special notes
 
 * Output parameters cannot be edited via `override.dep.` parameters.
-* The `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters. In addition, upstream parameters that already have the same value are not forcibly updated, which allows TeamCity to [reuse previous builds](configuring-dependencies.md#Suitable+Builds).
+* The `override.dep.` parameters only update existing parameters in target configurations or pipelines; they do not create missing parameters. In addition, upstream parameters that already have the same value are not forcibly updated, which allows TeamCity to [reuse previous builds](configuring-dependencies.md#Suitable+builds).
 
     <!--To force propagation and create a parameter in upstream entities that do not already have it, use the `*!` wildcard instead of a source object ID. For example, use this syntax to propagate a composite configuration's build number to all upstream configurations.
 
@@ -492,7 +492,7 @@ The `override.dep.<target-ID>.<parameter-name>` syntax was introduced in TeamCit
 
 * Unlike `override.dep.`, `reverse.dep.` does not resolve parameter references and passes them as is, which can make upstream configurations or pipelines incompatible with some build agents.
 
-* `reverse.dep.` is also more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and ignores entities without a matching parameter. This is also worth noting since adding new parameters nullifies the "_[Do not run new build if there is a suitable one](configuring-dependencies.md#Suitable+Builds)_" snapshot dependency policy, so upstream builds will never be reused.
+* `reverse.dep.` is also more invasive: if a target configuration or pipeline has no matching parameter, TeamCity creates one. By contrast, `override.dep.` only updates existing parameters and ignores entities without a matching parameter. This is also worth noting since adding new parameters nullifies the "_[Do not run new build if there is a suitable one](configuring-dependencies.md#Suitable+builds)_" snapshot dependency policy, so upstream builds will never be reused.
 
 * `reverse.dep.` uses more complex conflict resolution. When multiple entities modify the same parameter, TeamCity first gives priority to the configuration or pipeline that runs last, just as it does for `override.dep.`. If the conflicting editors are on the same level, TeamCity compares target ID specificity: the parameter with the most specific ID wins.
 

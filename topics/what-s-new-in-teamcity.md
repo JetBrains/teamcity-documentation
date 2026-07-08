@@ -4,7 +4,13 @@
 <show-structure for="chapter" depth="2"/>
 
 
-TBD
+## Rerun Failed Chain Builds
+
+The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
+
+<img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
+
+Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
 
 
 ## Upgrade Notes

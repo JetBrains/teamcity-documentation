@@ -56,7 +56,7 @@ Specifies whether TeamCity should ensure both objects linked by a dependency use
 
 * **Revision synchronization disabled**: use this setup when builds do not have strict sources' dependencies (for example, as with package and deploy steps). In this case, a downstream build will use the latest available revision. For example, in the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B" when finished. Build "B" will run on its latest 1.4 revision that does not match "A".
 
-See the [](configuring-dependencies.md#Revision+Synchronization) section for more information on effects this setting has on a build chain.
+See the [](configuring-dependencies.md#Revision+synchronization) section for more information on effects this setting has on a build chain.
 
 </snippet>
 
@@ -72,7 +72,7 @@ Do not run new build if there is a suitable one
 
 <snippet id="do-not-run-new-build-if-there-is-a-suitable-one-description">
 
-If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See [Suitable builds](configuring-dependencies.md#Suitable+Builds) for more information on criteria TeamCity uses to determine a reusable build.
+If this option is enabled, TeamCity will not run a new dependency build, if another running or finished dependency build with the appropriate sources' revision already exists. See [Suitable builds](configuring-dependencies.md#Suitable+builds) for more information on criteria TeamCity uses to determine a reusable build.
 
 In this case, when a dependent (downstream) build is triggered, the dependency (upstream) build is also put into the queue. Then, when the changes for the build chain are collected, this dependency build is removed from the queue and the dependency is set to a suitable finished build.
 
@@ -97,7 +97,7 @@ Only use successful builds from suitable ones
 
 <snippet id="reuse-only-successful">
 
-A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
+A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+builds) as dependencies. If the latest finished suitable build fails, it will be rerun.
 
 </snippet>
 

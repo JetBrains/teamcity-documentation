@@ -297,7 +297,7 @@ TeamCity offers multiple options to create relations between these standalone en
 
 A <a href="build-chain.md">build chain</a> is a collection of classic TeamCity configurations interconnected using <a href="configuring-dependencies.md">snapshot dependencies</a>.
 
-Snapshot dependencies are right-to-left relations. For example, in the "A -> B" chain where configuration "B" has a dependency on configuration "A", "B" cannot run until "A" produces a suitable build first. The criteria for "suitable" builds depends on your setup, see the <a href="configuring-dependencies.md#Suitable+Builds">Suitable Builds</a> section for more information. At the same time, "A" can run independently without triggering new "B" builds.
+Snapshot dependencies are right-to-left relations. For example, in the "A -> B" chain where configuration "B" has a dependency on configuration "A", "B" cannot run until "A" produces a suitable build first. The criteria for "suitable" builds depends on your setup, see the <a href="configuring-dependencies.md#Suitable+builds">Suitable Builds</a> section for more information. At the same time, "A" can run independently without triggering new "B" builds.
 
 For mission-critical scenarios, you can set up dependent configurations to always force fresh upstream configuration builds, even if there were no recent changes to the project.
 </def>
@@ -311,7 +311,7 @@ Compared to build configurations linked in a build chain, pipelines showcase the
 
 * You can only link jobs that belong to the same pipeline. Build chains, in turn, allow you to link build configurations owned by completely separate TeamCity projects.
 * Standalone artifact and snapshot dependencies that require manual configuration are not available. When you choose a job that should precede your current job, you can instantly select whether all of its artifacts should be imported.
-* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](run-build-chains.md#Partial+Chain+Execution).
+* A pipeline runs all of its jobs regardless of their dependencies. A build chain has more customization options and can be [executed partially](run-build-chains.md#Partial+chain+execution).
 
 
 </def>

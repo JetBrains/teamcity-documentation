@@ -5,7 +5,7 @@
 
 A [build chain](build-chain.md) is assembled by declaring dependencies in **downstream** objects that point to **upstream** ones. The available settings are the same for both build configurations and pipelines — only the UI and code representation differ.
 
-## Snapshot Dependencies
+## Snapshot dependencies
 
 _Snapshot dependencies_ link two build configurations in a chain. The term "snapshot" refers to source revision synchronization: both the upstream and downstream builds share the same code snapshot, which is the key guarantee that makes the chain meaningful.
 
@@ -33,11 +33,11 @@ object Deploy : BuildType({
 })
 ```
 
-> Snapshot dependencies control execution order and revision synchronization only — they do not transfer files between builds. To pass artifacts between chain members, add [artifact dependencies](artifact-dependencies.md#Artifact+Dependencies) as well.
+> Snapshot dependencies control execution order and revision synchronization only — they do not transfer files between builds. To pass artifacts between chain members, add [artifact dependencies](artifact-dependencies.md#Artifact+dependencies) as well.
 >
 {style="tip"}
 
-## Pipeline Dependencies
+## Pipeline dependencies
 
 _Pipeline dependencies_ link pipelines to other pipelines or to classic build configurations.
 
@@ -87,7 +87,7 @@ object DownstreamPipeline : Pipeline({
 >
 {style="tip"}
 
-## Dependency Settings
+## Dependency settings
 
 The following settings apply to both snapshot dependencies and pipeline dependencies.
 
@@ -111,7 +111,7 @@ Specifies whether TeamCity should ensure both objects linked by a dependency use
 
 * **Revision synchronization disabled**: use this setup when builds do not have strict sources' dependencies (for example, separate package and deploy steps). In this case, a downstream build uses the latest available revision. In the "A &rarr; B" chain: "A" starts on revision 1.2 and is promoted to "B", but "B" runs on its latest 1.4 revision.
 
-See [Revision Synchronization](configuring-dependencies.md#Revision+Synchronization) for the effects this setting has on a whole build chain.
+See [Revision Synchronization](configuring-dependencies.md#Revision+synchronization) for the effects this setting has on a whole build chain.
 
 </snippet>
 
@@ -121,7 +121,7 @@ See [Revision Synchronization](configuring-dependencies.md#Revision+Synchronizat
 
 <snippet id="do-not-run-new-build-if-there-is-a-suitable-one-description">
 
-If this option is enabled, TeamCity does not run a new upstream build when another running or finished build with the appropriate sources' revision already exists. See [Suitable Builds](configuring-dependencies.md#Suitable+Builds) for the criteria TeamCity uses to determine a reusable build.
+If this option is enabled, TeamCity does not run a new upstream build when another running or finished build with the appropriate sources' revision already exists. See [Suitable Builds](configuring-dependencies.md#Suitable+builds) for the criteria TeamCity uses to determine a reusable build.
 
 In this case, when a downstream build is triggered, the upstream build is still put into the queue. Then, once the changes for the chain are collected, this upstream build is removed from the queue and the dependency is linked to the suitable finished build instead.
 
@@ -137,7 +137,7 @@ In this case, when a downstream build is triggered, the upstream build is still 
 
 <snippet id="reuse-only-successful">
 
-A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+Builds) as dependencies. If the latest finished suitable build failed, it is rerun.
+A new triggered build will only use successfully finished [suitable builds](configuring-dependencies.md#Suitable+builds) as dependencies. If the latest finished suitable build failed, it is rerun.
 
 </snippet>
 
@@ -170,13 +170,92 @@ These settings let you control whether a downstream build should run if its upst
 
 </deflist>
 
-## Build Reuse
+
+## Re-run failed chain builds
+{instance="tc"}
+
+Build failures generally fall into two categories: true failures that recur on every run (a syntax error, a missing reference), and transient ones that a plain retry can resolve — flaky tests, checkout hiccups, or a temporarily unavailable external resource (AWS S3, Dockerhub, NuGet, maven.org, and so on). Re-running an entire chain to work around a transient failure at its far end can be costly, so TeamCity offers three ways to retry a failed build without restarting the whole chain.
+
+### Automatic retries
+
+If a build can no longer continue due to an infrastructure issue (for example, TeamCity loses connection to its agent), TeamCity starts a replacement build automatically, for both standalone and chain builds. This requires no manual configuration on your side.
+
+### Retry build triggers
+
+Add a [Retry build trigger](configuring-retry-build-trigger.md) to a configuration to start a new build automatically whenever the previous one fails.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+
+object BuildB : BuildType({
+    name = "Build B"
+
+    steps { ... }
+
+    triggers {
+        retryBuild {
+            branchFilter = ""
+        }
+    }
+
+    dependencies { ... }
+})
+```
+
+For a configuration that is part of a chain, also enable **Trigger a new build with the same revisions**. TeamCity will then reuse every successful build from the previous chain run and only rebuild the failed dependencies, on the same revision.
+
+This trigger does not pause the chain: a new build is queued to replace the failed one, but downstream builds proceed based on the original failure. Thus, a downstream build can still end up red with the "Snapshot dependency failed" error.
+
+### Dependency retry settings
+
+Unlike a retry trigger, dependency retry settings make a downstream build wait. If a direct or indirect snapshot dependency fails, TeamCity delays the downstream build and retries the failed dependency automatically, up to a set number of attempts, before proceeding. While a retry is pending, the unsuccessful upstream build is marked as canceled rather than failed.
+
+<img src="retry-dependency-overview.png" width="706" alt="Retry failed dependencies"/>
+
+These settings can be configured in the **Dependencies** tab of build configuration settings.
+
+```Kotlin
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+
+object DownstreamBuild : BuildType({
+    name = "Downstream build"
+
+    steps { ... }
+    
+    dependencies {
+        snapshot(UpstreamBuild) { ... }
+        retrySettings {
+            maxAttempts = 3
+            retryOnSameFailure = true
+        }
+    }})
+```
+
+<deflist type="medium">
+
+<def title="Use custom retry settings">
+
+Sets up retry behavior for this configuration explicitly. Otherwise, with **Use retry settings from the nearest dependent (downstream) build** enabled, the configuration inherits its settings from whichever build depends on it. You can define retry settings once, on the last configuration in the chain, and have them apply to every upstream build that does not define its own.
+
+</def>
+
+<def title="Retry dependency even if the failure is the same">
+
+Keeps TeamCity retrying a failed dependency, even if every attempt fails for the same reason, until it succeeds or runs out of attempts. If disabled, a repeated failure is left as is and is not retried again.
+
+</def>
+
+</deflist>
+
+
+## Build reuse
 
 Running every upstream build on every chain trigger is often wasteful — if a matching build already exists, TeamCity can reuse it. This is what makes a chain more than a fixed sequence: rather than blindly rerunning everything, TeamCity decides which upstream builds to execute and which to substitute with earlier results.
 
-Reuse is controlled by the [**Do not run new build if there is a suitable one**](#Dependency+Settings) dependency option. When it is enabled, TeamCity looks for a _suitable_ build to use instead of starting a new one.
+Reuse is controlled by the [**Do not run new build if there is a suitable one**](#Dependency+settings) dependency option. When it is enabled, TeamCity looks for a _suitable_ build to use instead of starting a new one.
 
-### Suitable Builds
+### Suitable builds
 
 A _suitable_ build is an existing build that TeamCity can reuse in place of a queued upstream build. When build reuse is enabled, TeamCity searches for a suitable build and, if one is found, links the dependency to it and drops the redundant queued build.
 
@@ -192,7 +271,7 @@ A build is considered **suitable** when all of the following hold:
 
 If no build meets every criterion, TeamCity runs a new upstream build instead.
 
-### VCS Settings That Disable Build Reuse
+### VCS settings that disable build reuse
 
 Some VCS root configurations make it impossible for TeamCity to reliably calculate revisions, which disables build reuse entirely. These are:
 
@@ -201,11 +280,11 @@ Some VCS root configurations make it impossible for TeamCity to reliably calcula
 * **Perforce** — "Stream" or "Client" connection settings, or a label specified as the "Label/revision to checkout".
 * **Starteam** — checkout mode set to "view label" or "promotion date".
 
-### Parallel Tests and Build Reuse
+### Parallel tests and build reuse
 
 <snippet id="parallel-chain-builds">
 
-The **Always run new build** behavior (the [snapshot dependency](configuring-dependencies.md#Dependency+Settings) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
+The **Always run new build** behavior (the [snapshot dependency](configuring-dependencies.md#Dependency+settings) **Do not run new build if there is a suitable one** setting disabled) affects only the main configuration build. Virtual build configurations that spawn dynamically when the [](parallel-tests.md) feature is used might still reuse their previous results. If no new repository commits were detected, only previously failed test batches run new builds, while successful batches are reused.
 
 In the figure below, the "Composite Conf" configuration depends on "Maven App" configuration. The latter runs its tests in two parallel batches. Note that the main "Maven app" build #18 is triggered anew, whereas the dynamically spawned "Maven app 1" configuration reuses its previous successful build (#12).
 
@@ -222,7 +301,10 @@ To apply this behavior to all configurations on the server, add this parameter t
 
 </snippet>
 
-## Revision Synchronization
+
+
+
+## Revision synchronization
 
 By default, every member of a chain runs on the same sources snapshot. Disabling [**Enforce revisions synchronization**](#enforce-rev-sync) on a specific dependency breaks the chain into independent revision groups, so a build can be promoted across that link onto a newer revision.
 
