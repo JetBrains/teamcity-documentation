@@ -12,6 +12,12 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 
 Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
 
+## GitHub
+
+The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now match pull requests by their source branch instead of their branch reference. This lets TeamCity recognize separate pull requests in different repositories as related changes and build them together in the same build chain, even when GitHub assigns them different pull request numbers.
+
+Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests).
+
 
 ## Miscellaneous Enhancements
 
