@@ -71,7 +71,7 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 
 * __`BUILD_TYPE_EXT_ID`__ is a [build configuration ID](configuring-general-settings.md).
 * __`BUILD_SPECIFICATION`__ can be `.lastFinished`, `.lastPinned`, `.lastSuccessful`, specific `buildNumber` or [build ID](build-results-page.md#Internal+Build+ID) in format `BUILD_ID:id`.
-* __`PATH_WITHIN_ARCHIVE`__ is a path to a file within a `zip/7-zip/jar/tar.gz` archive on TeamCity server.
+* __`PATH_WITHIN_ARCHIVE`__ is a path to a file within a `zip/7-zip/jar/tar.gz/tar.zst` archive on TeamCity server.
  Following archive types are supported (case-insensitive):
 * `.zip`
 * `.7z`
@@ -79,12 +79,14 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 * `.war`
 * `.ear`
 * `.nupkg`
+* `.snupkg`
 * `.sit`
 * `.apk`
 * `.tar.gz`
 * `.tar.zst`
 * `.tgz`
 * `.tar.gzip`
+* `.tar.zst`
 * `.tar`
 
 <!--[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e253.txt")-->
