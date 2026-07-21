@@ -126,7 +126,7 @@ Path relative to the source build's artifacts directory. Accepts a file, a direc
 </def>
 <def title="ArchivePath">
 
-Extracts files from a downloaded archive (`zip`, `7z`, `jar`, `tar`, `tar.gz`). For example, `release.zip!*.dll` extracts the `.dll` files from the archive root.
+Extracts files from a downloaded archive (`zip`, `7z`, `jar`, `tar`, `tar.gz`, and more). For example, `release.zip!*.dll` extracts the `.dll` files from the archive root.
 
 </def>
 <def title="DestinationPath">

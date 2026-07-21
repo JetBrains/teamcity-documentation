@@ -13,6 +13,11 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
 
 
+## Miscellaneous Enhancements
+
+* TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
+
+
 ## Upgrade Notes
 {instance="tc"}
 
