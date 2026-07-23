@@ -374,7 +374,7 @@ Optionally, you can run a Python build step in a virtual environment. The Python
 
 ### Pipenv settings
 
-Optionally, enter [install run arguments](https://pipenv.pypa.io/en/latest/cli/#pipenv-install).
+Optionally, enter [install run arguments](https://pipenv.pypa.io/en/latest/cli.html).
 
 ### Poetry settings
 
