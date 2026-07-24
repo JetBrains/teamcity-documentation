@@ -23,9 +23,6 @@ You can also upload private keys when creating new build configurations and pipe
 
 <img src="dk-ssh-on-new-project.png" width="706" alt="Upload SSH key on new project page"/>
 
-
-
-
 Uploaded SSH keys are stored in the following directory:
 
 * [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<project>/pluginData/ssh_keys`
@@ -34,7 +31,7 @@ If a key was uploaded from the "Create Project" page, TeamCity assigns it to the
 
 * [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/projects/<Parent_Project_ID>/pluginData/ssh_keys`
 
-
+TeamCity monitors the `ssh_keys` folders and is able to pick up new keys on the fly. Uploaded SSH keys are available for the corresponding project and all of its subprojects.
 
 > [TeamCity Data Directory](teamcity-data-directory.md) stores SSH keys encrypted with the custom encryption key specified in the [general server settings](teamcity-configuration-and-maintenance.md#encryption-settings). If this custom key is not set, SSH keys are encrypted using the internal TeamCity key.
 >
