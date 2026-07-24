@@ -17,6 +17,13 @@ To view and edit job settings, click the [Settings toggle](project-administrator
 You can also switch from the visual editor to the code and edit the markup directly.
 
 
+## Dependencies
+
+This section allows you to arrange stand-alone jobs into a unified workflow. You can also do this in the visual editor: hover an edge of a required job and drag the plus icon into either the front or rear end of a connected job.
+
+<img src="dk-pipeline-dependencies.png" width="706" alt="Create job dependencies"/>
+
+
 ## Steps
 
 Use this section to define what the job does, such as building and testing projects, running custom scripts, uploading Docker images, and so on.

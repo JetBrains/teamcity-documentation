@@ -4,6 +4,32 @@
 <show-structure for="chapter" depth="2"/>
 
 
+## Pipeline Enhancements
+
+### General Availability
+
+TeamCity 2025.07 introduced pipelines as an Early Access Program (EAP) feature — instantly available on TeamCity Cloud, and on request for TeamCity On-Premises. Since then, we've been steadily closing the gap with classic build configurations, adding:
+
+* Compatibility with familiar [build features](job-settings.md#Build+Features) and [steps](job-settings.md#Steps)
+* [Integration with build chains](pipeline-settings.md#Pipeline+Dependencies), so pipelines can slot into existing workflows
+* [Kotlin DSL support](pipelines-dsl.md) for configuration-as-code
+* The [Custom Build dialog](running-custom-build.md), [output parameters](pipeline-settings.md#Parameters), and other familiar elements of build configurations
+* [Job debugging](#Debug+Jobs), letting you test a pipeline job without saving your edits first
+
+With this release, pipelines leave the EAP: they are now generally available on both TeamCity Cloud and On-Premises, for projects of any size and complexity.
+
+Pipeline development does not stop here — see our [roadmap](pipelines-roadmap.md) for what's next.
+
+### Debug Jobs
+
+You can now test a single pipeline job without triggering the whole pipeline. Open a job's ellipsis menu and choose **Debug** — TeamCity runs just that job (and anything it depends on) with its current settings, complete with a live build log and terminal access to the agent that picked it up.
+
+<img src="debug-jobs.png" width="706" alt="Debug jobs"/>
+
+Learn more: [](create-and-edit-pipelines.md#Debug+Jobs).
+
+
+
 ## Rerun Failed Chain Builds
 
 The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.

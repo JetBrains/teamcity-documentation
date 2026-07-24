@@ -1,7 +1,7 @@
 [//]: # (title: Create and Edit Pipelines)
 [//]: # (help-id: Create and Edit Pipelines)
 
-Pipelines are user-centric, simplified alternatives for traditional [build configurations](creating-and-editing-build-configurations.md) and [build chains](build-chain.md) available in TeamCity 2025.07 and newer. While still in early access and not recommended for complex setups due to potential issues, they are not marked as experimental and can be safely used in production for smaller, less demanding projects.
+Pipelines are user-centric, simplified alternatives to traditional [build configurations](creating-and-editing-build-configurations.md) and [build chains](build-chain.md). Introduced in TeamCity 2025.07, they became generally available in 2026.2 and are fully supported for projects of any size and complexity. Some advanced functionality from classic build configurations is still on its way — see [](pipelines-roadmap.md) for what's planned.
 
 
 > For TeamCity Professional servers, pipelines have a separate limit of 10 per server and do not count toward the build configuration limit.
@@ -144,7 +144,7 @@ To choose who a job should share a file with, tick related checkboxes under the 
 
 ## Dependencies
 
-Another classic TeamCity concept reworked in Pipelines is dependencies. In Pipelines, [snapshot](configuring-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
+Another classic TeamCity concept reworked in pipelines is dependencies. In pipelines, [snapshot](configuring-dependencies.md) and [artifact](artifact-dependencies.md) dependencies are merged in a single option. Click a job to view its settings, choose which jobs should precede it, and decide whether you want this job to import their outputs.
 
 <img src="dk-choose-dependency.png" width="706" alt="Choose import type"/>
 
@@ -159,7 +159,7 @@ Classic TeamCity supports two methods for detecting repository changes: periodic
 
 Pipelines use webhooks by default as a faster and more efficient alternative to the polling mechanism. When you create a pipeline from a connection, TeamCity automatically registers a webhook in your repository settings. Polling remains as a fallback if the webhook is removed or fails to deliver updates.
 
-> TeamCity Pipelines creates webhooks only for pipelines created via connections. Using existing VCS roots and the "Any Git URL" option is not supported.
+> TeamCity create webhooks only for pipelines created via connections. Using existing VCS roots and the "Any Git URL" option is not supported.
 > 
 {style="warning"}
 
@@ -188,24 +188,46 @@ To disable this integration, click a pipeline to edit corresponding repository s
 {style="warning"}
 
 
+## Debug Jobs
+
+A regular pipeline run always triggers every job in order. While you are still designing a pipeline, you can instead run and inspect individual jobs as a quick way to confirm a job works before triggering the whole workflow.
+
+To start or stop debugging a job, click its ellipsis button (top right corner) and choose the corresponding option — debugging always uses the job's current settings, whether or not they are saved.
+
+<img src="debug-jobs.png" width="706" alt="Debug jobs"/>
+
+While a debug session is running, TeamCity opens a **Debug** panel with a separate tab for each job you debug. Every tab shows that job's build log and gives you terminal access to the agent that ran it. The panel and its logs disappear as soon as you edit the pipeline again.
+
+This does not mean the run itself is gone: every debug run is a [personal build](personal-build.md), and you can find it later on the pipeline overview screen, outside the settings editor.
+
+<img src="pipeline-debug-personal-build.png" width="706" alt="Debug runs on the overview page"/>
+
+> * Debugging a job also runs any jobs it [depends on](job-settings.md#Dependencies).
+> * It does not trigger [upstream configurations or pipelines](pipeline-settings.md#Pipeline+Dependencies): debugging a job in a pipeline that is part of a [build chain](build-chain.md) leaves the rest of that chain untouched.
+> * Debug runs also publish their status to the VCS, if the [**Publish status to repository**](pipeline-settings.md#Repository) setting is on.
+> 
+{style="note"}
+
 ## Limitations and Special Notes
 
-TeamCity Pipelines are in early access and, while built on core TeamCity functionality, currently lack some features available in classic build configurations. We plan to expand the Pipelines toolset and add the most requested features in future releases.
+While we expect pipelines to become the default choice for anyone building a CI/CD workflow, they currently lack some features available in classic build configurations. We plan to expand the pipeline toolset and add the most requested features in future releases.
 
 
 <deflist type="full">
 
 <def title="Build steps">
 
-TeamCity pipeline jobs support three dedicated build steps for [](maven.md), [](gradle.md), and [](nodejs.md).
+In addition to the universal [](command-line.md) step, pipeline jobs support three dedicated build steps for [](maven.md), [](gradle.md), and [](nodejs.md). The single [](net.md) build step seen in build configurations is available as a set of single-purpose steps: build, clean, pack, publish, and more.
 
-While other step types from classic build configurations are not yet supported, the **Script** step (equivalent to [](command-line.md) in classic TeamCity) offers a flexible alternative. For example, instead of using a [](net.md) build step, you can add a Script step to run the `dotnet build` command.
+<img src="dk-dotnet-pipelines.png" width="706" thumbnail="true" alt=".NET steps in pipelines"/>
+
+Other steps can be enabled on demand. To try them out, [join our Slack channel](slack-code-of-conduct.md) or [contact our support](ticket-based-support.md) for the instructions.
 
 </def>
 
 <def title="Connections">
 
-TeamCity Pipelines currently support [GitHub OAuth](configuring-connections.md#github-oauth), [GitLab](configuring-connections.md#GitLab), and [](configuring-connections.md#Bitbucket+Cloud) connections.
+TeamCity pipelines currently support [GitHub OAuth](configuring-connections.md#github-oauth), [GitLab](configuring-connections.md#GitLab), and [](configuring-connections.md#Bitbucket+Cloud) connections.
 
 Note that you do not need configured connections to create pipelines, you can do so [from any Git repository URL](#Create+and+Set+Up+Pipelines).
 
@@ -245,7 +267,7 @@ Some build features, such as [](build-approval.md), are not yet available in pip
 
 <def title="Triggers">
 
-TeamCity Pipelines currently support two types of [triggers](configuring-build-triggers.md) that allow CI routines to start automatically:
+TeamCity pipelines currently support two types of [triggers](configuring-build-triggers.md) that allow CI routines to start automatically:
 
 * [Schedule trigger](configuring-schedule-triggers.md) that starts new runs on the given date and time.
 * [VCS trigger](configuring-vcs-triggers.md) that starts runs on new code changes.
