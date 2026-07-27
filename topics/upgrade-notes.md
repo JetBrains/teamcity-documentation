@@ -2,6 +2,17 @@
 [//]: # (help-id: Upgrade Notes)
 
 
+## Changes from 2026.1.1 to 2026.1.3
+{id="2026.1.3"}
+
+No potential breaking changes.
+
+## Changes from 2026.1.1 to 2026.1.2
+{id="2026.1.2"}
+
+No potential breaking changes.
+
+
 ## Changes from 2026.1 to 2026.1.1
 {id="2026.1.1"}
 
