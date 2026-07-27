@@ -22,7 +22,7 @@ TeamCity directly supports the following _testing frameworks_:
 * [Pytest](python.md)
 * [Node.js](nodejs.md): ESlint, Jest, and Mocha.
 * Ruby:
-  * The [Rake](rake.md) runner supports [Test::Unit](http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html), [Test-Spec](http://search.cpan.org/~philip/Test-Spec-0.48/lib/Test/Spec.pm), [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](http://cukes.info).
+  * The [Rake](rake.md) runner supports [Test::Unit](https://www.rubydoc.info/gems/test-unit), [Test-Spec](http://search.cpan.org/~philip/Test-Spec-0.48/lib/Test/Spec.pm), [Shoulda](https://github.com/thoughtbot/shoulda), [RSpec](http://rspec.info/), [Cucumber](https://cucumber.io/).
   * The [minitest](https://rubygems.org/gems/minitest) framework requires the `minitest-reporters` gem to be additionally installed.
 
 There are also testing frameworks that have embedded support for TeamCity on their side: for example, [Gallio](net-testing-frameworks-support.md#Gallio) and [xUnit](net-testing-frameworks-support.md#xUnit).

@@ -363,7 +363,7 @@ Problems common to TeamCity Docker container images.
 
 To analyze the script output, refer to the [following documents](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/Debug-ContainerHost). If it shows that there are problems with the container network subsystem, try resetting it using the [clean-up scripts](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-server-container-tools/CleanupContainerHostNetworking).
 
-More details on troubleshooting Docker for Windows are available in the [Docker](https://docs.docker.com/docker-for-windows/troubleshoot/) and [Microsoft](https://docs.microsoft.com/en-us/virtualization/windowscontainers/troubleshooting) documentation.
+More details on troubleshooting Docker for Windows are available in the [Docker](https://docs.docker.com/desktop/troubleshoot-and-support/troubleshoot/) and [Microsoft](https://docs.microsoft.com/en-us/virtualization/windowscontainers/troubleshooting) documentation.
 
 ### Information about installed Docker server OS on Windows missing on Agent
 

@@ -22,7 +22,7 @@ We encourage you to try TeamCity Pipelines now and share your feedback. Your ins
 >
 {style="note"}
 
-Learn more: [Try TeamCity Pipelines](https://www.jetbrains.com/teamcity/download/#section=saas) | [Pipelines Pulse](https://blog.jetbrains.com/search/?q=pulse&p=TeamCity) | [Pipelines documentation](https://www.jetbrains.com/help/teamcity/pipelines/teamcity-pipelines.html)
+Learn more: [Try TeamCity Pipelines](https://www.jetbrains.com/teamcity/download/#section=saas) | [Pipelines Pulse](https://blog.jetbrains.com/search/?q=pulse&p=TeamCity) | [Pipelines documentation](https://www.jetbrains.com/help/teamcity/create-and-edit-pipelines.html)
 
 
 ## Offload Your Builds to Kubernetes
@@ -196,7 +196,7 @@ We encourage you to try TeamCity Pipelines now and share your feedback. Your ins
 >
 {style="note"}
 
-Learn more: [Try TeamCity Pipelines](https://www.jetbrains.com/teamcity/download/#section=saas) | [Pipelines Pulse](https://blog.jetbrains.com/search/?q=pulse&p=TeamCity) | [Pipelines documentation](https://www.jetbrains.com/help/teamcity/pipelines/teamcity-pipelines.html)
+Learn more: [Try TeamCity Pipelines](https://www.jetbrains.com/teamcity/download/#section=saas) | [Pipelines Pulse](https://blog.jetbrains.com/search/?q=pulse&p=TeamCity) | [Pipelines documentation](https://www.jetbrains.com/help/teamcity/create-and-edit-pipelines.html)
 
 
 ## Offload Your Builds to Kubernetes

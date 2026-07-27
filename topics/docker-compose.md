@@ -23,7 +23,7 @@ Available step execution policies are described [here](configuring-build-steps.m
 
 There are two options to install Docker Compose on TeamCity agents:
 
-* as a [standalone binary](https://docs.docker.com/compose/install/other/);
+* as a [standalone binary](https://docs.docker.com/compose/install/);
 * as the [Compose plugin or part of the Docker Desktop installation](https://docs.docker.com/compose/install/).
 
 For better backward compatibility, TeamCity first checks whether the standalone Compose binary is installed. If yes, the runner uses the outdated Compose V1 syntax to run commands (for example, `docker-compose up`). Otherwise, the runner looks for the installed plugin and switches to the modern Compose V2 syntax (for example, `docker compose up`).
