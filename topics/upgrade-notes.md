@@ -1,6 +1,19 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11.6 to 2025.11.7
+{id="2025.11.7"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11-7"}
+
+* The bundled Tomcat was updated to version 9.0.119.
+
+## Changes from 2025.11.5 to 2025.11.6
+{id="2025.11.6"}
+
+No potential breaking changes.
+
 ## Changes from 2025.11.4 to 2025.11.5
 {id="2025.11.5"}
 
