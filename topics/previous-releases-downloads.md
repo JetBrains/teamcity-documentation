@@ -54,7 +54,7 @@ Build number: 222521
 
 [Release notes](teamcity-2026-1-release-notes.md)
 
-## eamCity 2025.11.7
+## TeamCity 2025.11.7
 
 Release date: 27 July 2026<br/>
 Build number: 208264
