@@ -78,11 +78,26 @@
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
 
 
+## Changes from 2025.11.6 to 2025.11.7
+{id="2025.11.7"}
+
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11-7"}
+
+* The bundled Tomcat was updated to version 9.0.119.
+
+## Changes from 2025.11.5 to 2025.11.6
+{id="2025.11.6"}
+
+No potential breaking changes.
 
 ## Changes from 2025.11.4 to 2025.11.5
 {id="2025.11.5"}
 
-No potential breaking changes.
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11-5"}
+
+* The bundled Git was updated to version 2.54 in both server and agent Docker images.
 
 
 ## Changes from 2025.11.3 to 2025.11.4
