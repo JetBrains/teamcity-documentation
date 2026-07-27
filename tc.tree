@@ -70,7 +70,8 @@
 		<toc-element topic="upgrade-notes.md"/>
 		<toc-element topic="what-s-new-in-teamcity.md">
 			<toc-element topic="teamcity-2026-1-release-notes.md"/>
-			<toc-element topic="teamcity-2026-1-1-release-notes.md"/><toc-element topic="teamcity-2026-1-2-release-notes.md"/>
+			<toc-element topic="teamcity-2026-1-1-release-notes.md"/><toc-element topic="teamcity-2026-1-2-release-notes.md"/><toc-element topic="teamcity-2026-1-3-release-notes.md"/>
+			
 			
 		</toc-element>
 		<toc-element topic="what-s-new-in-teamcity-2025-11.md" hidden="true">
