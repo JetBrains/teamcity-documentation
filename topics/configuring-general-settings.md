@@ -226,60 +226,71 @@ You can restrict running [personal builds](personal-build.md) by unchecking the 
 
 ### Enable Status Widget
 
-This option enables retrieving the status and basic details of the last build in the build configuration without requiring any user authentication. Note that this also allows getting the status of any specific build in the build configuration (however, builds cannot be listed and no other information except the build status (`success/failure/internal error/cancelled`) is available).
+This option allows retrieving the status and basic details of the last build in the build configuration without any user authentication. It also allows getting the status of any specific build in the configuration, although builds cannot be listed and nothing beyond the build status (`success/failure/internal error/cancelled`) is exposed.
 
-The status can be retrieved via the HTML status widget described [below](#HTML+Status+Widget), or via a single icon: with the help of [REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html) or via the __Actions__ menu in __Build Configuration Home__.
+Once enabled, the status can be retrieved in one of two ways:
+
+* As a single build status icon — via the [REST API](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html), or from the __Get build status icon...__ item in the __Actions__ menu on the [Build Configuration Home](build-configuration-home-page.md) page, which serves the same icon as ready-to-copy snippets.
+* As the [HTML status widget](#HTML+Status+Widget) described below.
 
 ### HTML Status Widget
 
-This feature allows you to get an overview of the current project status on your company's website, wiki, Confluence or any other web page.  
-When the __Enable status widget__ option is enabled, an HTML snippet can be included into an external web page and will display the current build configuration status.  
-For build status icon as a single image, check [REST build status icon](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html).
+When the __[Enable status widget](#Enable+Status+Widget)__ option is turned on in a build configuration's settings, you can embed an HTML snippet into an external web page — a company website, wiki, Confluence page, or anywhere else — to display that configuration's current status. The widget shows the latest build result, its build number and status, and a link to the latest build artifacts. Viewing the status requires no TeamCity login.
 
-The following build process information is provided by the status widget:
-* The latest build results
-* Build number
-* Build status
-* Link to the latest build artifacts. The status widget doesn't require users log in to TeamCity.
+<note>
 
-When the feature is enabled, you need to include the following snippets of code in the web page source:
+If you only need a single status image rather than the full widget, use the [REST build status icon](https://www.jetbrains.com/help/teamcity/rest/get-build-status-icon.html) or the __Get build status icon...__ dialog described [above](#Enable+Status+Widget).
 
-* Add this code sample in the `<head>` section (or alternatively, add the `withCss=true` parameter to _externalStatus.html_):
-    
-    ```Shell
-    <style type="text/css">
-    @import "<TeamCity_server_URL>/css/status/externalStatus.css";
-    </style>
-    ```
-    
-    
-* Insert this code sample where you want to display the build configuration status:
+</note>
 
-    ```Shell
-    <script type="text/javascript" src="<TeamCity_server_URL>/externalStatus.html?js=1">
-    </script>
-    
-    ```
+The widget is served from `<TeamCity_server_URL>/externalStatus.html`, and it only returns data for build configurations that have the __Enable status widget__ option turned on — so make sure it is enabled for every configuration you want to show. To choose what appears, add at least one of the following parameters to the URL (you can repeat and combine them):
 
-* If you prefer to use plain HTML instead of javascript, omit the `js=1` parameter and use `iframe` instead of the script:
+* `buildTypeId=<external build configuration ID>` — a single build [configuration](identifier.md)
+* `projectId=<external project ID>` — every build configuration of a [project](identifier.md)
 
+Without any `buildTypeId` or `projectId` parameter, the request matches nothing and the widget renders `External status viewing is not enabled for the requested build configurations` instead of a status.
 
-    ```Shell
-    <iframe src="<TeamCity_server_URL>/externalStatus.html"/>
-    ```
+To use the widget, add this block to the `<head>` section of the page. It loads the widget's default styles from your TeamCity server, so they apply wherever the page is hosted:
 
-* If you want to include default CSS styles without modifying the `<head>` section, add the `withCss=true` parameter.   
-To provide up-to-date status information on specific build configurations, use the following parameter in the URL as many times as needed:
+```HTML
+<style type="text/css">
+@import "<TeamCity_server_URL>/css/status/externalStatus.css";
+</style>
+```
 
-    
-    ```Shell
-    &buildTypeId=<external build configuration ID>
-    
-    ```
+Then insert a script tag where the status should appear. For a single build configuration:
 
-It is also possible to show the status of all projects' build configurations by replacing `&buildTypeId=<external build configuration ID>` with `&projectId=<external project ID>`. You can select a combination of these parameters to display the needed projects and build configurations on your web page.
+```HTML
+<script type="text/javascript"
+        src="<TeamCity_server_URL>/externalStatus.html?js=1&buildTypeId=<Build_Configuration_ID>">
+</script>
+```
 
-You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
+For every exposed build configuration of a project:
+
+```HTML
+<script type="text/javascript"
+        src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_Id>">
+</script>
+```
+
+For a mix of projects and build configurations:
+
+```HTML
+<script type="text/javascript"
+        src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_Id>&buildTypeId=<Build_Configuration_ID>">
+</script>
+```
+
+If you prefer plain HTML to JavaScript, drop the `js=1` parameter and place the widget in an `<iframe>` instead of a `<script>` tag. Because the iframe content is served by TeamCity itself, append `withCss=true` to pull in the default styles — the `<head>` block above styles only the page it sits on, not the iframe:
+
+```HTML
+<iframe src="<TeamCity_server_URL>/externalStatus.html?withCss=true&buildTypeId=<external build configuration ID>"/>
+```
+
+The `withCss=true` parameter only works inside the iframe, where the styles are loaded from the same TeamCity server that serves the widget. For the JavaScript snippet, keep the `<head>` block instead: its `@import` points at the TeamCity server directly, so it works from any page.
+
+To customize the widget's appearance, download `externalStatus.css`, edit it (for example, hide columns with `display: none`; see the comments in the file), and host your own copy. In that case, reference your stylesheet from the `<head>` section and do not add `withCss=true`.
 
 
 ### Limit Number of Simultaneously Running Builds
