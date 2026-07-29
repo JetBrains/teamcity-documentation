@@ -253,39 +253,31 @@ Without any `buildTypeId` or `projectId` parameter, the request matches nothing 
 To use the widget, add this block to the `<head>` section of the page. It loads the widget's default styles from your TeamCity server, so they apply wherever the page is hosted:
 
 ```HTML
-<style type="text/css">
-@import "<TeamCity_server_URL>/css/status/externalStatus.css";
-</style>
+<link rel="stylesheet" href="<TeamCity_server_URL>/css/status/externalStatus.css">
 ```
 
 Then insert a script tag where the status should appear. For a single build configuration:
 
 ```HTML
-<script type="text/javascript"
-        src="<TeamCity_server_URL>/externalStatus.html?js=1&buildTypeId=<Build_Configuration_ID>">
-</script>
+<script src="<TeamCity_server_URL>/externalStatus.html?js=1&buildTypeId=<Build_Configuration_ID>"></script>
 ```
 
 For every exposed build configuration of a project:
 
 ```HTML
-<script type="text/javascript"
-        src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_Id>">
-</script>
+<script src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_ID>"></script>
 ```
 
 For a mix of projects and build configurations:
 
 ```HTML
-<script type="text/javascript"
-        src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_Id>&buildTypeId=<Build_Configuration_ID>">
-</script>
+<script src="<TeamCity_server_URL>/externalStatus.html?js=1&projectId=<Project_ID>&buildTypeId=<Build_Configuration_ID>"></script>
 ```
 
 If you prefer plain HTML to JavaScript, drop the `js=1` parameter and place the widget in an `<iframe>` instead of a `<script>` tag. Because the iframe content is served by TeamCity itself, append `withCss=true` to pull in the default styles — the `<head>` block above styles only the page it sits on, not the iframe:
 
 ```HTML
-<iframe src="<TeamCity_server_URL>/externalStatus.html?withCss=true&buildTypeId=<external build configuration ID>"/>
+<iframe src="<TeamCity_server_URL>/externalStatus.html?withCss=true&buildTypeId=<external build configuration ID>"></iframe>
 ```
 
 The `withCss=true` parameter only works inside the iframe, where the styles are loaded from the same TeamCity server that serves the widget. For the JavaScript snippet, keep the `<head>` block instead: its `@import` points at the TeamCity server directly, so it works from any page.
