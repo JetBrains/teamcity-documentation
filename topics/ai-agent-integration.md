@@ -40,7 +40,7 @@ The CLI skill also teaches agents how to send [REST API requests](teamcity-cli-r
 
 ## TeamCity MCP
 
-TeamCity servers expose the `<server-url>/app/mcp` endpoint that exposes three AI tools:
+TeamCity servers expose the `<server-url>/app/mcp` endpoint that exposes the following AI tools:
 
 <deflist type="medium">
 
@@ -60,19 +60,36 @@ Sends `GET` requests using [TeamCity REST API](https://www.jetbrains.com/help/te
 
 <def title="teamcity_rest_post">
 
-Sends `POST` requests using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html). Currently, supports only `POST` requests to the `/app/rest/buildQueue` endpoint to trigger new builds with default or custom settings. All builds triggered by AI agents are marked with the [`personal=true`](https://www.jetbrains.com/help/teamcity/rest/build.html#personal) attribute.
+Sends `POST` requests using [TeamCity REST API](https://www.jetbrains.com/help/teamcity/rest/teamcity-rest-api-documentation.html), including requests that edit build configurations. In safe mode, this is limited to `POST` requests to the `/app/rest/buildQueue` endpoint for triggering new builds with default or custom settings; all builds triggered this way are marked with the [`personal=true`](https://www.jetbrains.com/help/teamcity/rest/build.html#personal) attribute.
+
+</def>
+
+
+<def title="teamcity_pipeline_get">
+
+Allows the AI agent to retrieve [pipelines](create-and-edit-pipelines.md), along with their properties (parameters, optimization settings, attached VCS roots and repositories, and so on).
+
+</def>
+
+<def title="teamcity_pipeline_post">
+
+With this tool, the AI agent can create and update pipelines and their parameters, edit and validate YAML/Kotlin DSL settings, test VCS connections, and more.
+
+</def>
+
+<def title="teamcity_pipeline_delete">
+
+Allows the AI agent to permanently remove pipelines and their parent projects.
 
 </def>
 
 </deflist>
 
-To retrieve and use these tools, an AI agent needs to pass token-based authorization in TeamCity. You can issue access tokens on the [user profile page](configuring-your-user-profile.md#Managing+Access+Tokens). TeamCity allows you to choose whether you want the agent to have same permissions as the user who issued the token, or fine-grained per-project permissions.
-
-> By default, a token has the same permissions as the user who issues it. This means your AI agent might be able to edit or delete configurations, pipelines, or entire projects. To avoid any incidents, you may want to change the scope to **Limit per project** and use the **Read-only** preset.
-> 
-> <img src="create-access-token.png" width="706" alt="Create an access token"/>
+> The `teamcity_pipeline_post`, `teamcity_pipeline_delete`, and `teamcity_rest_post` tools are unavailable or restricted unless brave mode is enabled. See [Safety Concerns](#Safety+Concerns) for more information.
 >
 {style="note"}
+
+To retrieve and use these tools, an AI agent needs to pass token-based authorization in TeamCity. You can issue access tokens on the [user profile page](configuring-your-user-profile.md#Managing+Access+Tokens). TeamCity allows you to choose whether you want the agent to have same permissions as the user who issued the token, or fine-grained per-project permissions.
 
 
 ### OAuth Access
@@ -100,7 +117,25 @@ After that, your AI client opens the `<TeamCity-server-URL>/pkce/authorize.html`
 
 Note that the token inherits your TeamCity permissions. For example, if you cannot view server logs, neither can the AI agent. If you can edit only specific projects, the agent has the same restrictions.
 
+### Safety Concerns
 
+The TeamCity MCP toolset includes tools that can edit build configurations, pipelines, and projects. To reduce the risk and avoid any incidents, combine the following techniques according to your setup and needs.
+
+1. Add the `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to **false** (default) for safe mode, or **true** for brave mode.
+
+    In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
+
+2. Fine-grained or read-only permissions require a manually issued access token passed via Bearer authentication. To issue a read-only token, set its scope to **Limit per project** and choose the **Read-only** preset.
+
+    <img src="create-access-token.png" width="706" alt="Create an access token"/>
+
+   An OAuth-issued token always inherits your full TeamCity permissions and cannot be scoped down during sign-in.
+
+3. Disable specific tools in your client, if it has this functionality. For example, if working in Cursor, you can click individual tools in **Settings | Tools and MCPs** to toggle them on and off.
+
+4. Choose your prompt and skill wording carefully to set boundaries for what an AI agent can do. Treat this as a supplementary precaution, not a substitute for the technical controls above: an agent can still misread or disregard instructions.
+
+Finally, consider [limiting the access token's request rate](#Access+token+rate+limits). Beyond preventing accidental request spikes from a misbehaving agent, its dry-run mode lets you review an agent's request pattern in the audit log without blocking it outright.
 
 ### Examples
 

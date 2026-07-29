@@ -45,6 +45,15 @@ The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now
 Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests).
 
 
+## MCP Improvements
+
+TeamCity's MCP server now exposes three new tools for managing [pipelines](create-and-edit-pipelines.md) — retrieve, edit, or delete them straight from your AI agent. You can also connect using OAuth instead of pre-configuring a personal access token.
+
+<img src="air-mcp-oauth.png" width="706" alt="OAuth authentication for TeamCity MCP"/>
+
+Learn more: [](ai-agent-integration.md#TeamCity+MCP).
+
+
 ## Miscellaneous Enhancements
 
 * TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
