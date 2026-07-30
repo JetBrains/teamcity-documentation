@@ -1,7 +1,7 @@
 [//]: # (title: Build Agents Configuration and Maintenance)
 [//]: # (help-id: Build Agents Configuration and Maintenance)
 
-<primary-label ref="java-update"/>
+
 
 ## Viewing TeamCity Agents Details
 
