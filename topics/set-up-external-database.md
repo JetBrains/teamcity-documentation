@@ -13,9 +13,15 @@ The currently used database is shown on the __Administration | Global Settings__
 
 </snippet>
 
-> See the full list of stored data [here](manual-backup-and-restore.md).
-> 
-{style="note"}
+<snippet id="2027-2-db-update">
+
+<warning>
+
+We plan to overhaul TeamCity’s data layer in version 2027.2. If your server is running an older database version that the minimum version listed [in this article](supported-platforms-and-environments.md#Databases), we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
+
+</warning>
+
+</snippet>
 
 ## Default Internal Database
 

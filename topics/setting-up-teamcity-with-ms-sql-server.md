@@ -1,6 +1,8 @@
 [//]: # (title: Setting up TeamCity with MS SQL Server)
 [//]: # (help-id: Setting up TeamCity with MS SQL Server)
 
+<include from="set-up-external-database.md" element-id="2027-2-db-update"/>
+
 This article provides step-by-step instructions on integrating TeamCity with a MS SQL Server. For a quick reference, see [this section](set-up-external-database.md#Microsoft+SQL+Server).
 
 ## Prerequisites

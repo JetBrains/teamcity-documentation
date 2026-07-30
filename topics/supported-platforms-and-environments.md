@@ -698,6 +698,8 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 ## Databases
 {instance="tc"}
 
+
+
 <warning>
 
 Starting with version 2026.2, TeamCity displays [health reports](server-health.md) when it detects an unsupported database version. We plan to overhaul TeamCity’s data layer in version 2027.2. If your server runs a database older than the minimum version listed below, you may encounter compatibility and stability issues.
@@ -705,6 +707,8 @@ Starting with version 2026.2, TeamCity displays [health reports](server-health.m
 The minimum supported versions are based on each database’s lifecycle status (supported vs. end-of-life) and our ability to test against it.
 
 </warning>
+
+
 
 <table>
 

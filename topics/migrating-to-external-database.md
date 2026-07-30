@@ -1,6 +1,8 @@
 [//]: # (title: Migrating to External Database)
 [//]: # (help-id: Migrating to External Database;Migrating to an External Database)
 
+<include from="set-up-external-database.md" element-id="2027-2-db-update"/>
+
 This article covers the steps required to migrate TeamCity data from the database of one type to another. For details on using an external database from the first TeamCity start, as well as the general external database information and database-specific configuration steps, refer to [this article](set-up-external-database.md).
 
 The most typical case for migration is when you evaluated TeamCity with the default internal database and need to switch to an external database to prepare your TeamCity installation for production use. The recommended steps are also applicable when switching from one external database to another. You can also follow them to move between database servers of the same type, but in that case, the database-specific data transfer is regularly more preferable.

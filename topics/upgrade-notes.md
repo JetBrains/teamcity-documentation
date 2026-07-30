@@ -4,9 +4,13 @@
 ## Changes from 2026.1 to 2026.2
 {id="2026.2"}
 
+### Database Updates
+
 * TeamCity no longer supports outdated [databases and their drivers](set-up-external-database.md):
     * The legacy HSQLDB1 database and its correspondent HSQLDB1 JDBC drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101186). Switch to HSQLDB2 drivers instead.
     * The legacy MSSQL jTDS drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101180). Switch to standard MSSQL JDBC drivers instead.
+
+We’ve also updated the [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
 ## Changes from 2026.1 to 2026.1.1
 {id="2026.1.1"}
