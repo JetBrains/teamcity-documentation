@@ -701,9 +701,9 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 
 <warning>
 
-Starting with version 2026.2, each unsupported database version is reported via a [health report](server-health.md). Starting with version 2027.2, TeamCity Server may not work with database versions older than the minimal supported versions listed in the table below.
+Starting with version 2026.2, TeamCity displays [health reports](server-health.md) when it detects an unsupported database version. We plan to overhaul TeamCity’s data layer in version 2027.2. If your server runs a database older than the minimum version listed below, you may encounter compatibility and stability issues.
 
-Each minimal version is chosen based on the end-of-life status of the database or its availability for testing.
+The minimum supported versions are based on each database’s lifecycle status (supported vs. end-of-life) and our ability to test against it.
 
 </warning>
 
