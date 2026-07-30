@@ -733,7 +733,7 @@ The minimum supported versions are based on each database’s lifecycle status (
 <tr>
    <td>Microsoft SQL Server</td>
    <td>2012 or later (including Express editions), SQL Azure</td>
-   <td>2017 or later</td>
+   <td>2017 or later (including Express editions), SQL Azure</td>
 </tr>
 
 <tr>
@@ -745,7 +745,7 @@ The minimum supported versions are based on each database’s lifecycle status (
 <tr>
    <td>Oracle</td>
    <td>10g or later (tested with the <a href="https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html">driver</a> version 12.1.0.1)</td>
-   <td>11.2 or later</td>
+   <td>11.2 or later (including XE and Free editions)</td>
 </tr>
 
 <tr>
