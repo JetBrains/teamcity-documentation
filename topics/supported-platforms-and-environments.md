@@ -699,45 +699,59 @@ JetBrains dotCover coverage. Requires [JetBrains dotCover](https://www.jetbrains
 ## Databases
 {instance="tc"}
 
+<warning>
+
+Starting with version 2026.2, TeamCity displays [health reports](server-health.md) when it detects an unsupported database version. We plan to overhaul TeamCity’s data layer in version 2027.2. If your server runs a database older than the minimum version listed below, you may encounter compatibility and stability issues.
+
+The minimum supported versions are based on each database’s lifecycle status (supported vs. end-of-life) and our ability to test against it.
+
+</warning>
+
 <table>
 
 <tr>
    <td>Database</td>
    <td>Supported versions</td>
+   <td>2027.2 minimal versions</td>
 </tr>
 
 <tr>
    <td>HSQLDB<br/><br/>The internal HSQLDB database can be used for <b>evaluation purposes only</b>.</td>
-   <td>2.7.2</td>
+   <td>2.7.2 (embedded)</td>
+   <td>2.7.4 (embedded)</td>
 </tr>
 
 <tr>
    <td>MySQL</td>
    <td>5.7.34 or later</td>
+   <td>8.4 or later</td>
 </tr>
 
 <tr>
    <td>Microsoft SQL Server</td>
    <td>2012 or later (including Express editions), SQL Azure</td>
+   <td>2017 or later</td>
 </tr>
 
 <tr>
    <td>PostgreSQL</td>
    <td>9.6 or later</td>
+   <td>15 or later</td>
 </tr>
 
 <tr>
    <td>Oracle</td>
    <td>10g or later (tested with the <a href="https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html">driver</a> version 12.1.0.1)</td>
+   <td>11.2 or later</td>
 </tr>
 
 <tr>
    <td>MariaDB</td>
    <td>10.2 or later</td>
+   <td>10.11 or later</td>
 </tr>
 
 </table>
-
 
 [Read more details](set-up-external-database.md).
 
