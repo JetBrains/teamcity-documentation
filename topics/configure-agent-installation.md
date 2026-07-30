@@ -1,7 +1,7 @@
 [//]: # (title: Configure Agent Installation)
 [//]: # (help-id: Configure Agent Installation;Build Agent Configuration)
 
-<primary-label ref="java-update"/>
+
 
 >This page is only relevant for [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents).
 >
