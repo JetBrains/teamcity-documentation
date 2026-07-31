@@ -12,6 +12,17 @@
 
 We’ve also updated the [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
+
+## Changes from 2026.1.1 to 2026.1.3
+{id="2026.1.3"}
+
+No potential breaking changes.
+
+## Changes from 2026.1.1 to 2026.1.2
+{id="2026.1.2"}
+
+No potential breaking changes.
+
 ## Changes from 2026.1 to 2026.1.1
 {id="2026.1.1"}
 
@@ -87,7 +98,18 @@ We’ve also updated the [the list of supported database versions](supported-pla
 
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
 
+## Changes from 2025.11.6 to 2025.11.7
+{id="2025.11.7"}
 
+### Bundled Tools Updates
+{id="bundled-tools-updates-2025-11-7"}
+
+* The bundled Tomcat was updated to version 9.0.119.
+
+## Changes from 2025.11.5 to 2025.11.6
+{id="2025.11.6"}
+
+No potential breaking changes.
 
 ## Changes from 2025.11.4 to 2025.11.5
 {id="2025.11.5"}
