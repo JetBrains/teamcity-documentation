@@ -5,7 +5,7 @@
 
 ### Bug
 
-* [**TW-102051**](https://youtrack.jetbrains.com/issue/TW-102051) — Upgrade bundled tomcat to 9.0.119
+* [**TW-102051**](https://youtrack.jetbrains.com/issue/TW-102051) — Upgrade bundled tomcat to 9.0.120
 
 
 ### Security
