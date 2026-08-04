@@ -7,7 +7,7 @@
 ### Bundled Tools Updates
 {id="bundled-tools-updates-2025-11-7"}
 
-* The bundled Tomcat was updated to version 9.0.119.
+* The bundled Tomcat was updated to version 9.0.120.
 
 ## Changes from 2025.11.5 to 2025.11.6
 {id="2025.11.6"}
