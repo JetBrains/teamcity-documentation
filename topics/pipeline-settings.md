@@ -1,4 +1,8 @@
-# Pipeline Settings
+[//]: # (title: Pipeline Settings)
+[//]: # (help-id: Pipeline Settings)
+
+<show-structure for="chapter" depth="2"/>
+
 
 This article explains settings available for the entire pipeline that specify common pipeline behavior.
 
@@ -277,11 +281,16 @@ You can also enable the related toggle of the ["On new changes" trigger](#On+New
 </def>
 
 
-<def title="YAML storage">
+<def title="Configuration file storage" id="config-file-storage">
 
-Specifies where to store the pipeline YAML configuration: on the TeamCity server or in the source repository. See also: [](storing-project-settings-in-version-control.md).
+Specifies where to store the pipeline YAML configuration: on the TeamCity server or in the source repository. These settings are available for main repository only.
 
-These settings are available for main repository only.
+The configuration file itself can be in two formats: YAML (default) and Kotlin DSL (see [](pipelines-dsl.md)). Depending on the parent project's [Versioned Settings](storing-project-settings-in-version-control.md) and this in repository/on the server toggle, the behavior and available options may differ.
+
+For example, if the project's versioned settings synchronization is off, its pipelines store its setting in YAML regardless of the location. Otherwise, when you turn project synchronization on, pipeline settings can be in either of these formats: existing pipelines that already store their YAML settings in remote repositories will continue to do so, while new pipelines and those that store their settings on the server will convert their YAML to .kts files.
+
+> If you choose to save YAML configuration in a remote repository, you can use the branch selector in edit mode to design different workflows for different branches. See [](#Feature+Branches) to learn more.
+
 
 </def>
 
@@ -303,6 +312,35 @@ When adding more repositories, you can choose to reuse an existing connection or
 <img src="pipelines-add-repo-from-root.png" width="706" alt="Add repo from root"/>
 
 Each individual job can choose which of the pipeline repositories it will check out. See the following article for more information: [Job Settings](job-settings.md#Repository).
+
+## Feature Branches
+
+If a pipeline [stores its YAML configuration in a repository](#config-file-storage), you can give individual branches their own workflow:
+
+1. In the settings editor, switch to a branch using the branch selector.
+2. Edit jobs, steps, parameters, or any other setting stored in YAML.
+3. Click **Save**. TeamCity commits the changes to that branch's YAML file.
+
+<img src="pipelines-edit-mode-branch-selector.png" width="706" alt="Branch selector in edit mode"/>
+
+Branches without their own committed settings inherit the workflow defined in the default branch's YAML file.
+
+> A handful of settings live outside YAML and therefore apply to every branch the same way:
+>
+> * Pipeline name
+> * Repository settings (repository URL, branch specs, build status publishing, pull request settings, and more)
+> * Auto-run settings
+> * Integrations
+>
+{style="note"}
+
+### Protected Branches
+
+If the selected branch is protected, TeamCity may be unable to commit your changes directly. In this case, clicking **Save** prompts you to choose a different branch to save to instead.
+
+<img src="pipelines-save-yaml-branch-selection.png" width="705" alt="Save settings to a protected branch"/>
+
+Alternatively, switch to the [code view](#Edit+Pipeline+Settings) of the settings editor, copy the generated YAML, and commit it to the protected branch manually, following your team's branch protection rules.
 
 ## Integrations
 

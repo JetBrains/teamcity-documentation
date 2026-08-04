@@ -115,7 +115,9 @@ Branch specifications also support expressions starting with the `#` character. 
     ```
 
 
+## Feature Branches in Pipelines
 
+See the [](pipeline-settings.md#Feature+Branches) document for more information.
 
 ## Branch-Specific Build Configuration Settings
 

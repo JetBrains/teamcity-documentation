@@ -28,6 +28,17 @@ You can now test a single pipeline job without triggering the whole pipeline. Op
 
 Learn more: [](create-and-edit-pipelines.md#Debug+Jobs).
 
+### Feature Branches
+
+Pipelines are now better equipped to work with feature branches: in edit mode, you can switch between different repository branches and design unique workflows for each of them.
+
+<img src="pipelines-edit-mode-branch-selector.png" width="706" alt="Branch selector in edit mode"/>
+
+In addition, TeamCity now handles protected branches correctly. An attempt to commit edits made in the UI to a protected branch now results in a clear warning, and a suggestion to save the updated .yml file to another branch.
+
+<img src="pipelines-save-yaml-branch-selection.png" width="705" alt="Save settings to a protected branch"/>
+
+Learn more: [](pipeline-settings.md#Feature+Branches)
 
 
 ## Rerun Failed Chain Builds
@@ -37,6 +48,8 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 <img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
 
 Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
+
+
 
 ## GitHub
 
