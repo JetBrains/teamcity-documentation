@@ -19,9 +19,17 @@ You can also switch from the visual editor to the code and edit the markup direc
 
 ## Dependencies
 
-This section allows you to arrange stand-alone jobs into a unified workflow. You can also do this in the visual editor: hover an edge of a required job and drag the plus icon into either the front or rear end of a connected job.
+This section allows you to arrange stand-alone jobs into a unified workflow. You can also do this in the visual editor: hover over the edge of a job to reveal a plus icon, then drag it to either side of the job you want to connect it to.
 
 <img src="dk-pipeline-dependencies.png" width="706" alt="Create job dependencies"/>
+
+When you add a dependency on an upstream job, you can also configure:
+
+<!-- TODO: screenshot of the dependency properties panel -->
+
+* **Ignore shared files** — if enabled, the job does not automatically download files its upstream job [shares](#Output+Files). Available only when the upstream job shares any files.
+
+* **Run job even if upstream fails** — by default, if an upstream job fails, every job that depends on it, directly or indirectly, is removed from the queue and canceled with the "some of the builds it depends on have failed" error. Enabling this option for a specific dependency lets the job run even if that particular upstream job fails; the pipeline run is still marked as failed overall. Use it, for example, to make sure a cleanup or notification job always runs.
 
 
 ## Steps
