@@ -20,19 +20,19 @@ This feature may become a paid option in future releases but will remain free th
 <br/>
 
 **Are there any additional requirements?**<br/>
-AI Assistant requires access to `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources to obtain authorization tokens, send user prompts and receive responses, publish usage statistics (if enabled), and more.
+AI Assistant requires outbound access to the endpoints of the selected provider to obtain authorization tokens, send user prompts, and receive responses. For the JetBrains AI provider, this includes `https://auth.grazie.ai`, `https://api.jetbrains.ai`, and other resources needed to publish usage statistics (if enabled) and more; other providers require access to their own endpoints instead. If your server uses a proxy or firewall, allow outbound access to the endpoints of whichever provider you configure.
 
 **What data does the Assistant collect and share?**<br/>
 See the [](#Privacy+Policy) section.
 
 
 **What model does TeamCity AI Assistant use?**<br/>
-At the 2025.11 version launch, the AI Assistant uses `gpt-4.1` to process user requests. As we evaluate its accuracy and performance, and carefully study your feedback, we may switch to another model available through [JetBrains AI](https://www.jetbrains.com/ai/). We also plan to add an option to manually select a model via the TeamCity UI in the next release cycles.
+By default, AI Assistant uses JetBrains AI. Starting with version 2026.2, you can also enter your own API key to connect AI Assistant to a third-party AI provider. The exact model used depends on internal TeamCity settings and is shown at the bottom of the Assistant panel. See [](#Providers) to learn more.
 
 
 ## Initial Setup
 
-AI Assistant ships with all TeamCity 2025.11 installations in a disabled state. To make sure you do not miss this exciting addition to TeamCity, AI Assistant keeps showing its menu item in TeamCity header even when disabled.
+AI Assistant ships with all TeamCity installations in a disabled state. To make sure you do not miss this exciting addition to TeamCity, AI Assistant keeps showing its menu item in TeamCity header even when disabled.
 
 <img src="ai-assistant-promo-disabled.png" width="706" alt="Disabled AI Assistant"/>
 
@@ -41,6 +41,19 @@ Server administrators can completely hide this element in the **Admin | AI Assis
 <img src="ai-assistant-admin-settings.png" width="706" alt="Server AI Assistant settings"/>
 
 The **Allow detailed data collection** checkbox allows TeamCity to privately share AI Assistant chat history with JetBrains. We never share this data with anyone and use it solely to improve the quality of the Assistant's responses.
+
+
+## Providers
+
+By default, AI Assistant uses JetBrains AI, a provider that works out of the box with no extra configuration — it is managed automatically through your JetBrains Account.
+
+Starting with TeamCity 2026.2, AI Assistant also supports the "bring your own key" (BYOK) concept that allows you to connect it to a third-party AI provider instead. If your organization provides centralized access to a specific AI provider, choose it under the **Provider** selector and enter your API key. The exact model depends on internal TeamCity settings and is displayed at the bottom of the Assistant panel.
+
+<img src="aia-anthropic.png" width="706" thumbnail="true" alt="AI Assistant using Anthropic models"/>
+
+Using Anthropic, Google, and OpenAI models requires only the API key. The **OpenAI-compatible** option additionally requires the provider endpoint and model ID — use it for OpenAI-compatible APIs (for example, DeepSeek) as well as self-hosted or locally deployed models.
+
+This setting is server-wide: your TeamCity server administrator configures the same provider for everybody, and there is currently no way for individual users to choose their own provider. [Let us know](ticket-based-support.md) if this or any other feature is something you're missing in the TeamCity Assistant.
 
 ## 'Analyze it' Button
 
@@ -66,8 +79,6 @@ See the following article for more information: [](ai-build-analyzer.md).
 
 * We continually work to improve the AI Assistant’s response quality and provide the most accurate context for its underlying model. Still, the inherent limitations of today’s generative AI models mean that occasional inaccuracies or information hallucinations are possible. If a response seems uncertain or inconsistent, consider rephrasing your question or checking it against a reliable source. Please treat the AI Assistant as a helpful aid, not a sole source of truth, and verify its suggestions when handling mission-critical tasks.
 {help-id="ai-errors-warning"}
-
-* The Assistant does not currently support [pipelines](create-and-edit-pipelines.md) and can only analyze and troubleshoot classic [build configurations](creating-and-editing-build-configurations.md).
 
 * Past conversations with the AI Assistant are not saved. When you start a new chat (via the "**+**" button in the chat window's top-right corner), you will lose access to the previous one.
 
