@@ -28,7 +28,7 @@ You can now test a single pipeline job without triggering the whole pipeline. Op
 
 Learn more: [](create-and-edit-pipelines.md#Debug+Jobs).
 
-### Feature Branches
+### Improved Branch Handling
 
 Pipelines are now better equipped to work with feature branches: in edit mode, you can switch between different repository branches and design unique workflows for each of them.
 
@@ -40,6 +40,16 @@ In addition, TeamCity now handles protected branches correctly. An attempt to co
 
 Learn more: [](pipeline-settings.md#Feature+Branches)
 
+
+### Run Through Failures
+
+When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
+
+<!-- TODO: screenshot of the dependency properties panel -->
+
+The pipeline run is still marked as failed overall, but this lets you guarantee that specific jobs (for example, cleanup or notification steps) always run.
+
+Learn more: [](job-settings.md#Dependencies).
 
 ## Rerun Failed Chain Builds
 
