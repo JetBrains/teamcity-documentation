@@ -26,7 +26,7 @@ You can now test a single pipeline job without triggering the whole pipeline. Op
 
 <img src="debug-jobs.png" width="706" alt="Debug jobs"/>
 
-Learn more: [](create-and-edit-pipelines.md#Debug+Jobs).
+Learn more: [](create-and-edit-pipelines.md#Debug+Jobs)
 
 ### Improved Branch Handling
 
@@ -49,7 +49,7 @@ When setting up [job dependencies](job-settings.md#Dependencies), you can now en
 
 The pipeline run is still marked as failed overall, but this lets you guarantee that specific jobs (for example, cleanup or notification steps) always run.
 
-Learn more: [](job-settings.md#Dependencies).
+Learn more: [](job-settings.md#Dependencies)
 
 ## Rerun Failed Chain Builds
 
@@ -57,7 +57,37 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 
 <img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
 
-Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
+Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
+
+
+
+
+
+## TeamCity AI
+
+We add AI to TeamCity where it solves an actual CI/CD problem, and leave the rest of the decisions to you. AI features stay off until a server administrator enables them, and starting with this release, you also choose which AI provider stands behind them.
+
+### AI Assistant
+
+Starting with TeamCity 2026.2, you're no longer limited to the built-in JetBrains AI: AI Assistant now supports "bring your own key" (BYOK), letting you connect it to a third-party AI provider your organization already has access to. Choose a provider under the **Provider** selector and enter your API key, and AI Assistant will run on that model instead. The bottom of the Assistant panel always shows which model is currently active.
+
+<img src="aia-anthropic.png" width="706" thumbnail="true" alt="AI Assistant using Anthropic models"/>
+
+In addition, AI Assistant now works with pipelines, not just classic build configurations.
+
+Learn more: [](ai-assistant.md#Providers)
+
+### MCP Improvements
+
+TeamCity's MCP server now exposes three new tools for managing [pipelines](create-and-edit-pipelines.md) — retrieve, edit, or delete them straight from your AI agent. You can also connect using OAuth instead of pre-configuring a personal access token.
+
+<img src="air-mcp-oauth.png" width="706" alt="OAuth authentication for TeamCity MCP"/>
+
+Learn more: [](ai-agent-integration.md#TeamCity+MCP).
+
+
+
+
 
 
 
@@ -65,16 +95,10 @@ Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds).
 
 The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now match pull requests by their source branch instead of their branch reference. This lets TeamCity recognize separate pull requests in different repositories as related changes and build them together in the same build chain, even when GitHub assigns them different pull request numbers.
 
-Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests).
+Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
 
-## MCP Improvements
 
-TeamCity's MCP server now exposes three new tools for managing [pipelines](create-and-edit-pipelines.md) — retrieve, edit, or delete them straight from your AI agent. You can also connect using OAuth instead of pre-configuring a personal access token.
-
-<img src="air-mcp-oauth.png" width="706" alt="OAuth authentication for TeamCity MCP"/>
-
-Learn more: [](ai-agent-integration.md#TeamCity+MCP).
 
 
 ## Miscellaneous Enhancements
