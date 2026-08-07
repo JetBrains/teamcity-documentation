@@ -34,9 +34,67 @@ Sometimes a job does not need the entire repository to do its job (pun very much
 
 To help with this, we plan to support [checkout rules](vcs-checkout-rules.md), which are already available in build configurations. The value this feature brings to the table is especially meaningful in TeamCity, which is smart enough to ignore commits to files excluded from checkout. This means more [build reuses](job-settings.md#Optimizations) and less manual tinkering to keep your runs fast.
 
+
+
 ## Implemented features
 
 This section lists planned features that were implemented in previous versions.
+
+
+### Debug Jobs
+<secondary-label ref="secondary-roadmap-implemented-20262"/>
+
+You can now test a single pipeline job without triggering the whole pipeline. Open a job's ellipsis menu and choose **Debug** — TeamCity runs just that job (and anything it depends on) with its current settings, complete with a live build log and terminal access to the agent that picked it up.
+
+<img src="debug-jobs.png" width="706" alt="Debug jobs"/>
+
+Learn more: [](create-and-edit-pipelines.md#Debug+Jobs)
+
+### Improved Branch Handling
+<secondary-label ref="secondary-roadmap-implemented-20262"/>
+
+Pipelines are now better equipped to work with feature branches: in edit mode, you can switch between different repository branches and design unique workflows for each of them.
+
+<img src="pipelines-edit-mode-branch-selector.png" width="706" alt="Branch selector in edit mode"/>
+
+In addition, TeamCity now handles protected branches correctly. An attempt to commit edits made in the UI to a protected branch now results in a clear warning, and a suggestion to save the updated .yml file to another branch.
+
+<img src="pipelines-save-yaml-branch-selection.png" width="705" alt="Save settings to a protected branch"/>
+
+Learn more: [](pipeline-settings.md#Feature+Branches)
+
+
+### Run Through Failures
+<secondary-label ref="secondary-roadmap-implemented-20262"/>
+
+When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
+
+<!-- TODO: screenshot of the dependency properties panel -->
+
+The pipeline run is still marked as failed overall, but this lets you guarantee that specific jobs (for example, cleanup or notification steps) always run.
+
+Learn more: [](job-settings.md#Dependencies)
+
+
+### Promote pipeline runs
+<secondary-label ref="secondary-roadmap-implemented-20262"/>
+
+**Promote** — the button that triggers the downstream part of a [build chain](build-chain.md) from an older, already-finished build — now works for pipelines, not just build configurations.
+
+<img src="promote-pipeline-run.png" width="706" alt="Promote pipeline run"/>
+
+For example, promote a successful "Build Docker image" run into the "Upload to DockerHub" configuration or pipeline to re-deploy that artifact without rebuilding it.
+
+Learn more: [](run-build-chains.md#Promote+a+build)
+
+
+### AI enhancements
+<secondary-label ref="secondary-roadmap-implemented-20262"/>
+
+TeamCity MCP endpoint now allows your AI agents to retrieve three additional tools for managing pipelines: `teamcity_pipeline_get`, `teamcity_pipeline_post`, and `teamcity_pipeline_delete`. In addition, you can now use [AI Assistant](ai-assistant.md) for help with configuring and debugging pipelines.
+
+Learn more: [](ai-agent-integration.md)
+
 
 ### Integration with build chains
 <secondary-label ref="secondary-roadmap-implemented-20261"/>
@@ -171,6 +229,3 @@ Pipelines currently support only single-value text parameters (including masked 
 
 [Templates](build-configuration-template.md) help configure multiple build configurations that share similar settings. We plan to bring an equivalent concept to pipelines, enabling you to define reusable YAML templates.
 
-### VCS YAML recognition
-
-You can already save pipeline settings to a repository. Next, we want TeamCity to do the opposite: detect pipeline YAML files in supported VCS hosts (GitHub, GitLab, Bitbucket, and so on) and automatically create pipelines from them.
