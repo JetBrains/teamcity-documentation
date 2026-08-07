@@ -167,7 +167,7 @@ For each Maven build, a build agent gathers Maven-specific build details to be d
 
 Shows hardware data related to this build: CPU usage statistics, memory consumption, and others. 
 
-<img src="dk-perfmon.png" width="706" alt="Performance Monitor tab"/>
+<img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>
 
 Add the `teamcity.perfmon.feature.enabled=false` [parameter](configuring-build-parameters.md) to a build configuration or a project to disable this automatic data collection.
 
