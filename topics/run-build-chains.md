@@ -42,6 +42,20 @@ Sometimes only part of a chain needs to run. TeamCity offers three mechanisms, f
 >
 {style="note"}
 
+
+### Promote a build
+
+Sometimes you don't want to run a chain from the very beginning — you want to reuse one specific finished build and continue the chain from there. Open that build's results page, click **Actions | Promote**, and TeamCity triggers the downstream portion of the chain using this build as its source.
+
+<img src="promote-pipeline-run.png" width="706" alt="Promote a build"/>
+
+This is useful for two common scenarios:
+
+* **Reusing an older build's results instead of the latest.** For example, promote a successful "Build Docker image" run into the "Upload to DockerHub" configuration or pipeline to re-deploy that same artifact without rebuilding it.
+* **Manually starting a downstream object that has no automatic trigger** — for example, a deployment configuration you only want to run on demand.
+
+Promotion is a one-time override: it affects only this specific run. Afterwards, both build configurations and pipelines revert to their normal dependency logic (the latest successful or pinned build).
+
 ### Skip builds on demand
 
 For a one-off partial run, use the [Run Custom Build dialog](running-custom-build.md). On the **Dependencies** tab, set the **Skip** option for any directly linked configuration you want to ignore.

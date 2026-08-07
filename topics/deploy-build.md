@@ -127,7 +127,11 @@ In this tutorial, we are deploying a Docker image, so the [](docker.md) build st
     * Start a deployment from a completed upstream build. If the deployment configuration has not run yet, click **Deploy** next to its name. After the first run, this button changes to **Redeploy**.
 
         Having this button gives you room to pause, review the build results, and deploy only when you are ready, without rerunning the entire chain.
-    
+
+        > You can also redeploy a previous build from the overview screen by clicking **Actions | Promote**. See [Promote a Build](run-build-chains.md#Promote+a+build) to learn more.
+        >
+        {style="tip"}
+
     </def>
     
     </deflist>

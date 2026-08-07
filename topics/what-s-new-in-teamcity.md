@@ -51,13 +51,18 @@ The pipeline run is still marked as failed overall, but this lets you guarantee 
 
 Learn more: [](job-settings.md#Dependencies)
 
-## Rerun Failed Chain Builds
 
-The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
+### Promote pipeline runs
 
-<img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
+**Promote** — the button that triggers the downstream part of a [build chain](build-chain.md) from an older, already-finished build — now works for pipelines, not just build configurations.
 
-Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
+<img src="promote-pipeline-run.png" width="706" alt="Promote pipeline run"/>
+
+For example, promote a successful "Build Docker image" run into the "Upload to DockerHub" configuration or pipeline to re-deploy that artifact without rebuilding it.
+
+Learn more: [](run-build-chains.md#Promote+a+build)
+
+
 
 
 
@@ -87,6 +92,17 @@ Learn more: [](ai-agent-integration.md#TeamCity+MCP).
 
 
 
+
+
+
+
+## Rerun Failed Chain Builds
+
+The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
+
+<img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
+
+Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
 
 
 

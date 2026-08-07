@@ -24,6 +24,7 @@ From this tab you can:
 * **Continue a chain** that has "not triggered" builds — click **Run** to start the remaining builds on the existing chain revisions.
 * **Rerun a build** — open the [custom build dialog](running-custom-build.md) with the chain revisions preselected.
 
+
 ## Chain tab in build results
 
 The **Chain** tab on a build's results page shows the directed graph for that specific run: which builds ran, which were reused from a previous chain, how long each took, and the overall chain duration. Use it to confirm, for example, that an upstream build was reused (its build number stays the same across reruns) rather than executed again.

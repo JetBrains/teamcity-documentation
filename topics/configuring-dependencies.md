@@ -306,7 +306,7 @@ To apply this behavior to all configurations on the server, add this parameter t
 
 ## Revision synchronization
 
-By default, every member of a chain runs on the same sources snapshot. Disabling [**Enforce revisions synchronization**](#enforce-rev-sync) on a specific dependency breaks the chain into independent revision groups, so a build can be promoted across that link onto a newer revision.
+By default, every member of a chain runs on the same sources snapshot. Disabling [**Enforce revisions synchronization**](#enforce-rev-sync) on a specific dependency breaks the chain into independent revision groups, so a build can be [promoted](run-build-chains.md#Promote+a+build) across that link onto a newer revision.
 
 The typical use case is deployment: you want to deploy an older, validated build using the **latest** deployment scripts.
 
