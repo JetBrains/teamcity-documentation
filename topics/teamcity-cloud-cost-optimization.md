@@ -42,7 +42,7 @@ This measure not only ensures you use the minimum number of committer slots, but
 
 Check the [](build-results-page.md#Performance+Monitor+Tab) detecting potential bottlenecks by analyzing build results. An example of this is shown below, where the build agent's CPU usage peaks at 95% midway through the build. This could indicate a larger build agent may be required.
 
-<img src="performance-monitor.png" width="750" alt="Performance monitor"/>
+<img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>
 
 To use a build agent of a more powerful specification, you can define [Agent Requirements](configuring-agent-requirements.md) for the build configuration. For example, to define a minimum amount of memory (RAM), set the `teamcity.agent.hardware.memorySizeMb` [parameter](configuring-build-parameters.md). Builds under this build configuration will only run on a build agent that has a minimum of 30 GB RAM: 
 
