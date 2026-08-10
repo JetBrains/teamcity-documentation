@@ -63,9 +63,13 @@ For example, promote a successful "Build Docker image" run into the "Upload to D
 Learn more: [](run-build-chains.md#Promote+a+build)
 
 
+### Unbound pipelines
 
+You can now create pipelines without VCS roots attached. Previously, this option was only available for build configurations. Choose the “Without repository” option when creating a pipeline to create a custom workflow that does not check out any remote sources.
 
+<img src="pipeline-without-repo.png" width="706" alt="Pipeline without repo"/>
 
+Learn more: [](create-and-edit-pipelines.md)
 
 
 ## TeamCity AI
