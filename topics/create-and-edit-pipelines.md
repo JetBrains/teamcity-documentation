@@ -26,6 +26,12 @@ TeamCity will ask you to choose a remote repository that will be processed by th
 
 <img src="dk-pipeline-branch-spec.png" width="706" alt="Pipeline branch specs"/>
 
+> It is also possible to add a pipeline that does not target any remote repository and does not check out code sources when triggered. Choose the "Without repository" option to create this type of pipelines.
+> 
+> <img src="pipeline-without-repo.png" width="706" alt="Pipeline without repo"/>
+>
+{style="tip"}
+
 Every new pipeline has an empty job. You can click a job tile to view its settings, or click a corresponding area to add new jobs.
 
 <img src="dk-main-pipeline-view.png" width="706" alt="Main pipeline view"/>
