@@ -128,6 +128,8 @@ Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
     <img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>
 
+* TeamCity now more accurately estimates duration of highly variable parameterized builds.
+
 ## Upgrade Notes
 {instance="tc"}
 
