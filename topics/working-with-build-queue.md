@@ -18,6 +18,17 @@ This page shows the list of builds waiting to be run and displays the following 
 * A brief description of the [event that triggered the build](configuring-build-triggers.md).
 * The number of agents compatible with this build configuration. You can click an agent's name link to open the __[Agents](viewing-build-agent-details.md)__ page, or use the down arrow to quickly view the list of compatible agents in the pop-up menu.
 
+## Build Duration Estimates
+{id="build-duration-estimates"}
+
+TeamCity estimates the duration of queued and running builds from finished builds of the same build configuration. These estimates are used to calculate expected start and finish times, show the remaining time for running builds, detect hanging builds, optimize and order the build queue, and select the fastest agent.
+
+When a build configuration runs with different effective settings, TeamCity looks for recent builds with the same settings. Effective settings include custom parameter values specified in the [Run Custom Build](running-custom-build.md) dialog, as well as other build configuration settings that can affect the workload.
+
+If TeamCity finds enough matching builds with consistent durations (five builds by default), it uses this matching history for the estimate. Otherwise, it falls back to the recent history of the entire build configuration. As a result, a new or rarely used combination of settings still receives a general estimate, while recurring variants gradually receive estimates based on their own history.
+
+Only finished, non-personal, and non-canceled builds are considered. When TeamCity compares compatible agents, it also uses the history relevant to each agent. Cloud agents started from the same cloud image share this history, so a newly started agent can reuse duration data collected by previous agents from that image.
+
 ## Build Queue Optimization by TeamCity
 
 By default, TeamCity optimizes the build queue as follows:
@@ -30,7 +41,7 @@ By default, TeamCity optimizes the build queue as follows:
 
 When there are several idle agents that can run a queued build, TeamCity tries to select the fastest one as follows:
 1. If no builds have previously run on agents, the [CPU rank](viewing-build-agent-details.md#Agent+Summary) is used to select an agent.
-2. If builds have previously run on agents, the estimated build duration for the given build configuration is used to select an agent. The estimate is made based on heuristics of the latest builds in the history of the build configuration; for estimating, the execution time of the more recent builds has more weight than that of the earlier builds. [Personal](personal-build.md) and [canceled](build-state.md#Canceled%2FStopped+build) builds are not taken into account, neither are any individual builds whose duration differs significantly from the rest of the builds for this build configuration.
+2. If builds have previously run on agents, TeamCity compares their [estimated build durations](#build-duration-estimates) using history relevant to each agent. Cloud agents started from the same image share this history. If the estimates do not distinguish between agents, TeamCity uses their CPU ranks.
 
 ## Ordering Build Queue
 
