@@ -41,7 +41,7 @@ By default, TeamCity optimizes the build queue as follows:
 
 When there are several idle agents that can run a queued build, TeamCity tries to select the fastest one as follows:
 1. If no builds have previously run on agents, the [CPU rank](viewing-build-agent-details.md#Agent+Summary) is used to select an agent.
-2. If builds have previously run on agents, TeamCity compares their [estimated build durations](#build-duration-estimates) using history relevant to each agent. Cloud agents started from the same image share this history. If the estimates do not distinguish between agents, TeamCity uses their CPU ranks.
+2. If builds have previously run on agents, TeamCity compares compatible agents by their [estimated build durations](#build-duration-estimates) using history relevant to each agent. Cloud agents started from the same cloud image share this history. If the estimates are identical, TeamCity uses their CPU ranks.
 
 ## Ordering Build Queue
 
