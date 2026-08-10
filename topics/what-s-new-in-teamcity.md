@@ -117,6 +117,17 @@ Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
 
 
+## More Accurate Build Duration Estimates
+
+Build duration estimates now account for custom parameters and other settings that can change how long a build takes. For example, if one configuration runs both short regular builds and longer nightly builds, TeamCity uses separate histories for these variants instead of mixing their durations.
+
+Cloud agents now share duration history with previous agents started from the same cloud image. Newly started agents therefore retain meaningful estimates even before they have run the build themselves.
+
+This makes expected finish times in the build queue and remaining-time estimates for running builds more reliable, without forcing you to split build variants into separate configurations.
+
+Learn more: [](working-with-build-queue.md#build-duration-estimates).
+
+
 ## Miscellaneous Enhancements
 
 * TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
@@ -162,5 +173,3 @@ If you do not see the latest features described here, your instance may not be u
 ## Your Feedback Matters
 
 We place a high value on your feedback and encourage you to share your thoughts and suggestions. See this link for more information: [](troubleshooting.md).
-
-
