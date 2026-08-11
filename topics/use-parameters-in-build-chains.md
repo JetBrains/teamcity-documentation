@@ -34,7 +34,7 @@ outputParams {
     param("originConfName", "%system.teamcity.buildConfName%")
     
     // Expose modified parameter value
-    param("buildNumber", "Build %\system.build.number%")
+    param("buildNumber", "Build %system.build.number%")
     
     // Expose input parameter as is
     param("name", "%customInputParam%")
