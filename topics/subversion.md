@@ -59,7 +59,10 @@ Password
 
 Specify the SVN password.
 
-</td></tr><tr>
+</td></tr>
+
+<!-- TW-102072
+<tr>
 
 <td>
 
@@ -71,7 +74,9 @@ Configuration directory
 
 You can specify an alternative Subversion configuration directory, or use the default one (recommended). This setting also applies to agent-side checkout. TeamCity does not store authentication in SVN configuration directory, but can read settings stored there.
 
-</td></tr><tr>
+</td></tr>
+
+<tr>
 
 <td>
 
@@ -83,7 +88,11 @@ Use default configuration directory
 
 Enable this option to make this the default configuration directory for the SVN connection.
 
-</td></tr><tr>
+</td></tr>
+
+-->
+
+<tr>
 
 <td>
 
