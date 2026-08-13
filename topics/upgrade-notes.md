@@ -1,6 +1,11 @@
 [//]: # (title: Upgrade Notes)
 [//]: # (help-id: Upgrade Notes)
 
+## Changes from 2025.11.7 to 2025.11.8
+{id="2025.11.8"}
+
+Due to known security vulnerability, the **Use default configuration directory** and **Configuration directory** settings of [Subversion VCS roots](subversion.md) are no longer available. If your existing SVN roots are using these settings, explicitly add the `teamcity.svn.allowed.configDirectories` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+
 ## Changes from 2025.11.6 to 2025.11.7
 {id="2025.11.7"}
 
