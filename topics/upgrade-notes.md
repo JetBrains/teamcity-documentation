@@ -33,7 +33,7 @@ No potential breaking changes.
 
 * Commit hooks fail to find VCS roots if changelists were introduced in a child Perforce stream. Until the fix ships in 2026.1.3, you can install the updated Perforce plugin from this YouTrack ticket as a workaround: [TW-100853](https://youtrack.jetbrains.com/issue/TW-100853).
 
-## Changes from 2025.11.5 to 2026.1
+## Changes from 2025.11.8 to 2026.1
 {id="2026.1"}
 
 
