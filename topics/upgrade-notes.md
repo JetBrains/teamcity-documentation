@@ -13,7 +13,12 @@
 We’ve also updated the [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
 
-## Changes from 2026.1.1 to 2026.1.3
+## Changes from 2026.1.3 to 2026.1.4
+{id="2026.1.4"}
+
+No potential breaking changes.
+
+## Changes from 2026.1.2 to 2026.1.3
 {id="2026.1.3"}
 
 No potential breaking changes.
@@ -97,6 +102,13 @@ No potential breaking changes.
 * Using the [`teamcity.build.chain.skipTags`](run-build-chains.md#Partial+chain+execution) parameter may cause unresolved `%\dep.Config_ID.parameter_name%` references in configurations linked with an optional artifact dependency. More information: [TW-100713](https://youtrack.jetbrains.com/issue/TW-100713).
 
 * [](perforce.md) builds fail to run if a processed changelist has newline characters in its description. More information: [TW-100761](https://youtrack.jetbrains.com/issue/TW-100761/).
+
+
+## Changes from 2025.11.7 to 2025.11.8
+{id="2025.11.8"}
+
+Due to known security vulnerability, the **Use default configuration directory** and **Configuration directory** settings of [Subversion VCS roots](subversion.md) are no longer available. If your existing SVN roots are using these settings, explicitly add the `teamcity.svn.allowed.configDirectories` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+
 
 ## Changes from 2025.11.6 to 2025.11.7
 {id="2025.11.7"}
