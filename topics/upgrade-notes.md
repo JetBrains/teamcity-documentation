@@ -10,7 +10,7 @@ No potential breaking changes.
 ## Changes from 2026.1.2 to 2026.1.3
 {id="2026.1.3"}
 
-No potential breaking changes.
+If a [chain build](build-chain.md) fails to finish due to repeated agent issues, its downstream [composite build](composite-build-configuration.md) may still report its status as "Successful". See the following issue for more information: [TW-103187](https://youtrack.jetbrains.com/issue/TW-103187).
 
 ## Changes from 2026.1.1 to 2026.1.2
 {id="2026.1.2"}
