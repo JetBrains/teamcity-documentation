@@ -172,7 +172,6 @@ These settings let you control whether a downstream build should run if its upst
 
 
 ## Re-run failed chain builds
-{instance="tc"}
 
 Build failures generally fall into two categories: true failures that recur on every run (a syntax error, a missing reference), and transient ones that a plain retry can resolve — flaky tests, checkout hiccups, or a temporarily unavailable external resource (AWS S3, Dockerhub, NuGet, maven.org, and so on). Re-running an entire chain to work around a transient failure at its far end can be costly, so TeamCity offers three ways to retry a failed build without restarting the whole chain.
 
