@@ -122,8 +122,14 @@ Note that the token inherits your TeamCity permissions. For example, if you cann
 The TeamCity MCP toolset includes tools that can edit build configurations, pipelines, and projects. To reduce the risk and avoid any incidents, combine the following techniques according to your setup and needs.
 
 1. Add the `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to **false** (default) for safe mode, or **true** for brave mode.
+{instance="tc"}
 
     In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
+
+1. Add the `teamcity.ai.mcp.braveMode.enabled` internal property to the **Root** project and set it to **false** (default) for safe mode, or **true** for brave mode.
+   {instance="tcc"}
+
+   In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
 
 2. Fine-grained or read-only permissions require a manually issued access token passed via Bearer authentication. To issue a read-only token, set its scope to **Limit per project** and choose the **Read-only** preset.
 
@@ -136,6 +142,7 @@ The TeamCity MCP toolset includes tools that can edit build configurations, pipe
 4. Choose your prompt and skill wording carefully to set boundaries for what an AI agent can do. Treat this as a supplementary precaution, not a substitute for the technical controls above: an agent can still misread or disregard instructions.
 
 Finally, consider [limiting the access token's request rate](#Access+token+rate+limits). Beyond preventing accidental request spikes from a misbehaving agent, its dry-run mode lets you review an agent's request pattern in the audit log without blocking it outright.
+{instance="tc"}
 
 ### Examples
 
