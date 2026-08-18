@@ -1,0 +1,312 @@
+# TeamCity Cloud — issues awaiting release
+
+Snapshot of every TeamCity issue whose **Cloud Version** field is set to *To be released*, generated for the TCC release-notes changelog.
+
+| | |
+|---|---|
+| Generated | 2026-08-18 |
+| Source | [YouTrack](https://youtrack.jetbrains.com/issues/TW) — `(project: TeamCity) and (Cloud Version: {To be released})` |
+| **Total issues** | **281** |
+
+Sorted ascending by issue number. `Description` is the YouTrack issue summary (the one-line title used by the changelog), not the full issue body.
+
+## Coverage against the current draft
+
+[What's New in TeamCity Cloud](../../topics/what-s-new-in-teamcity-cloud.md) currently drafts a changelog under *Build ???, 19 August 2026*. Cross-referencing it against this snapshot:
+
+- **71** of these 281 issues are already listed in that draft.
+- **210** are not yet listed.
+- 3 IDs in the draft (TW-102255, TW-102907, TW-78870) are *not* in this snapshot — their **Cloud Version** field is unset, so they fall outside the query.
+
+## Not yet in the draft changelog (210)
+
+Candidates to triage into the *Build ???, 19 August 2026* changelog.
+
+- [TW-45544](https://youtrack.jetbrains.com/issue/TW-45544) — BuildPromotionManager.findPromotionById does not check permissions
+- [TW-51644](https://youtrack.jetbrains.com/issue/TW-51644) — User details not accessible in UI can be retrieved via REST
+- [TW-60136](https://youtrack.jetbrains.com/issue/TW-60136) — Projects import: import access tokens when users are imported
+- [TW-72431](https://youtrack.jetbrains.com/issue/TW-72431) — Move sbt-teamcity-logger artifact away from Bintray
+- [TW-73532](https://youtrack.jetbrains.com/issue/TW-73532) — Secrets of the OAuth2 connectors could be disclosed (Github, Bitbucket, Gitlab)
+- [TW-92612](https://youtrack.jetbrains.com/issue/TW-92612) — Update eddsa library
+- [TW-92664](https://youtrack.jetbrains.com/issue/TW-92664) — Update all NuGet.Packaging dependencies in the NuGet support plugin
+- [TW-95145](https://youtrack.jetbrains.com/issue/TW-95145) — Password masking fails if it contains an ^ symbol on windows and the parameter is not surrounded by double quote marks
+- [TW-95490](https://youtrack.jetbrains.com/issue/TW-95490) — Refactor pipeline internal id
+- [TW-96859](https://youtrack.jetbrains.com/issue/TW-96859) — Provide a way to pass the context about the pipelines
+- [TW-97166](https://youtrack.jetbrains.com/issue/TW-97166) — API key for nuget runners is shown as plain text in Pipeline Editor
+- [TW-97794](https://youtrack.jetbrains.com/issue/TW-97794) — Migrate to Vite
+- [TW-98720](https://youtrack.jetbrains.com/issue/TW-98720) — Pipelines: displaying validation errors in YAML editor
+- [TW-98972](https://youtrack.jetbrains.com/issue/TW-98972) — Improve job dependencies discoverability
+- [TW-99300](https://youtrack.jetbrains.com/issue/TW-99300) — AWS SSM Parameter Store: "Available for builds" connection flag not enforced for remote parameter resolution
+- [TW-99591](https://youtrack.jetbrains.com/issue/TW-99591) — Open Pipeline settings in UI may take long time
+- [TW-99783](https://youtrack.jetbrains.com/issue/TW-99783) — Internal properties with internal comments are returned in respond of "/login.html" request
+- [TW-100155](https://youtrack.jetbrains.com/issue/TW-100155) — Debug job hangs when there's no agent to run it
+- [TW-100294](https://youtrack.jetbrains.com/issue/TW-100294) — User Story: Propose the user to choose the target branch to commit changed Pipeline YAML
+- [TW-100325](https://youtrack.jetbrains.com/issue/TW-100325) — User Story: Indicate which settings are stored in YAML
+- [TW-100335](https://youtrack.jetbrains.com/issue/TW-100335) — User Story: Show branch selector in the Pipeline editor (Visual and YAML)
+- [TW-100415](https://youtrack.jetbrains.com/issue/TW-100415) — Missing authorization & SSRF in HashiCorp Vault test-connection endpoint
+- [TW-100511](https://youtrack.jetbrains.com/issue/TW-100511) — Show the Qodana tab for the jobs
+- [TW-100512](https://youtrack.jetbrains.com/issue/TW-100512) — Show the Maven Build Info tab for the jobs
+- [TW-100513](https://youtrack.jetbrains.com/issue/TW-100513) — Show the Allure Report Info tab for the jobs
+- [TW-100514](https://youtrack.jetbrains.com/issue/TW-100514) — Show the Container Info tab for the jobs
+- [TW-100716](https://youtrack.jetbrains.com/issue/TW-100716) — [Bugfix] Pipelines GA in TeamCity On-Premises
+- [TW-100782](https://youtrack.jetbrains.com/issue/TW-100782) — Implement switching pipeline branch
+- [TW-100792](https://youtrack.jetbrains.com/issue/TW-100792) — Support execution timeouts for Pipelines: UI
+- [TW-100812](https://youtrack.jetbrains.com/issue/TW-100812) — Remove Standalone Pipelines WelcomePage
+- [TW-100813](https://youtrack.jetbrains.com/issue/TW-100813) — Remove Standalone Pipelines IndexPage
+- [TW-100814](https://youtrack.jetbrains.com/issue/TW-100814) — Remove pipeline logos and references to the "TeamCity Pipelines" product name
+- [TW-100828](https://youtrack.jetbrains.com/issue/TW-100828) — Remove standalone CreatePipeline page
+- [TW-100955](https://youtrack.jetbrains.com/issue/TW-100955) — Favorite Projects page: archived sub-projects of favorited parent appear in extra "N Archived Projects" section
+- [TW-100980](https://youtrack.jetbrains.com/issue/TW-100980) — Research possibility to limit the prepared statements caching
+- [TW-100992](https://youtrack.jetbrains.com/issue/TW-100992) — Persist flaky test information and get rid of "tests replaying" on startup which restores it based on the builds data
+- [TW-101121](https://youtrack.jetbrains.com/issue/TW-101121) — Add "node-agnostic" header support for agent requests
+- [TW-101140](https://youtrack.jetbrains.com/issue/TW-101140) — [TW] Leaked AWS secret detected
+- [TW-101233](https://youtrack.jetbrains.com/issue/TW-101233) — [BE + UI]: Implement FUS metrics for protected branches support
+- [TW-101284](https://youtrack.jetbrains.com/issue/TW-101284) — Implement API for multi-level caches with Redis
+- [TW-101386](https://youtrack.jetbrains.com/issue/TW-101386) — Restrict failure conditions not supported at pipeline (Head) level
+- [TW-101396](https://youtrack.jetbrains.com/issue/TW-101396) — KMP integration analytics: from the first build till the publishing
+- [TW-101428](https://youtrack.jetbrains.com/issue/TW-101428) — [Design] Indicate to the user that some (or all) saved settings are not going to be committed into YAML
+- [TW-101429](https://youtrack.jetbrains.com/issue/TW-101429) — Adopt MCP guides for the AI Assistant (pipelines)
+- [TW-101484](https://youtrack.jetbrains.com/issue/TW-101484) — Authenticated low-privilege SSRF via missing EDIT_PROJECT checks in TeamCity plugin connection-test endpoints
+- [TW-101506](https://youtrack.jetbrains.com/issue/TW-101506) — Use *Interceptor interfaces directly instead of using *InterceptorAdapter interfaces
+- [TW-101617](https://youtrack.jetbrains.com/issue/TW-101617) — [QA] Add a branch selector on edit pipeline page next to a pipeline name
+- [TW-101628](https://youtrack.jetbrains.com/issue/TW-101628) — [QA] Display settings commit errors properly
+- [TW-101642](https://youtrack.jetbrains.com/issue/TW-101642) — Invalidate cached test-occurrence subtrees on tests tree refresh
+- [TW-101646](https://youtrack.jetbrains.com/issue/TW-101646) — Tests view: add grouping "in N builds" when tests failed in multiple builds
+- [TW-101651](https://youtrack.jetbrains.com/issue/TW-101651) — Implement the tests overview section for Job overview
+- [TW-101664](https://youtrack.jetbrains.com/issue/TW-101664) — Hide branch selector and commit message input when there is nothing to commit
+- [TW-101688](https://youtrack.jetbrains.com/issue/TW-101688) — Kubernetes Endpoints Allow Low-Privileged Users To Use Stored Kubernetes Credentials
+- [TW-101690](https://youtrack.jetbrains.com/issue/TW-101690) — Deep-linked test (expandedTest) renders collapsed in large test trees
+- [TW-101711](https://youtrack.jetbrains.com/issue/TW-101711) — Owner invitation link — only the user whose email matches the recorded owner email may accept it
+- [TW-101724](https://youtrack.jetbrains.com/issue/TW-101724) — [Design] Review and suggest improvements for password reset flow
+- [TW-101741](https://youtrack.jetbrains.com/issue/TW-101741) — [FE] Event: Kotlin DSL code view opened
+- [TW-101742](https://youtrack.jetbrains.com/issue/TW-101742) — [FE + BE] Create analytics states and events for Version Settings
+- [TW-101743](https://youtrack.jetbrains.com/issue/TW-101743) — [BE] DSL Snippets state
+- [TW-101744](https://youtrack.jetbrains.com/issue/TW-101744) — [BE] Versioned Settings Apply state
+- [TW-101746](https://youtrack.jetbrains.com/issue/TW-101746) — [BE] Tokens state
+- [TW-101747](https://youtrack.jetbrains.com/issue/TW-101747) — [BE] Context Parameters state
+- [TW-101748](https://youtrack.jetbrains.com/issue/TW-101748) — [BE] Version Settings: extend project state
+- [TW-101811](https://youtrack.jetbrains.com/issue/TW-101811) — SSRF + repository branch disclosure via /pipeline/repository/branches
+- [TW-101830](https://youtrack.jetbrains.com/issue/TW-101830) — Make the MCP plugin tools available for use by the AI Assistant
+- [TW-101844](https://youtrack.jetbrains.com/issue/TW-101844) — XSS in Shared resources build feature via lock name
+- [TW-101845](https://youtrack.jetbrains.com/issue/TW-101845) — XSS via file name in diff.html
+- [TW-101849](https://youtrack.jetbrains.com/issue/TW-101849) — XSS via project name in SSH agent feature
+- [TW-101852](https://youtrack.jetbrains.com/issue/TW-101852) — Merge into monorepo - phase 2
+- [TW-101881](https://youtrack.jetbrains.com/issue/TW-101881) — Perforce stored workspace cleaner accepts VIEW_PROJECT+RUN_BUILD users for stored-credential deletion
+- [TW-101884](https://youtrack.jetbrains.com/issue/TW-101884) — Add external artifact storage warning for multi-node installations in 2026.2
+- [TW-101895](https://youtrack.jetbrains.com/issue/TW-101895) — AWS connection Test Connection allows arbitrary STS endpoint override (SSRF + server IAM credential exfil)
+- [TW-101897](https://youtrack.jetbrains.com/issue/TW-101897) — Stored XSS via configuration-parameter name in the duplicate-inherited-remote-parameter health report
+- [TW-101899](https://youtrack.jetbrains.com/issue/TW-101899) — Stored XSS in the Docker Container Info build tab via a developer-written events.json artifact
+- [TW-101913](https://youtrack.jetbrains.com/issue/TW-101913) — Make pipeline YAML schema available to AI agent via MCP
+- [TW-102000](https://youtrack.jetbrains.com/issue/TW-102000) — Imitate "free TC license" basing on trial in Cloud
+- [TW-102005](https://youtrack.jetbrains.com/issue/TW-102005) — Implement the start of builds in high-load testing
+- [TW-102006](https://youtrack.jetbrains.com/issue/TW-102006) — Add a proper build step in high-load testing
+- [TW-102020](https://youtrack.jetbrains.com/issue/TW-102020) — TeamCity Project Import BigFileZip-Slip Enables Server JVM Code Execution via Webroot JSPWS
+- [TW-102060](https://youtrack.jetbrains.com/issue/TW-102060) — Plain text Perforce admin password written to the server log on delete workspaces failure (Perforce Administrator Access connection)
+- [TW-102067](https://youtrack.jetbrains.com/issue/TW-102067) — Stored XSS via Perforce committer username in the Perforce Jobs details view
+- [TW-102072](https://youtrack.jetbrains.com/issue/TW-102072) — TeamCity Normal Project Editors Can Reach Server ACE via SVN Config Directory Tunnel Injection
+- [TW-102073](https://youtrack.jetbrains.com/issue/TW-102073) — TeamCity Project-Scoped Kubernetes Executor Managers Can Reach Server ACE via Inline Kubeconfig Exec Injection
+- [TW-102074](https://youtrack.jetbrains.com/issue/TW-102074) — TeamCity Pipeline Editors Can Reach Server ACE via YAML Filename Path Traversal to Webroot JSPWS
+- [TW-102109](https://youtrack.jetbrains.com/issue/TW-102109) — [QA] Show a warning item when the user is about to save non-yaml settings which
+- [TW-102121](https://youtrack.jetbrains.com/issue/TW-102121) — Load pipeline name from the project-view-scoped breadcrumb request
+- [TW-102122](https://youtrack.jetbrains.com/issue/TW-102122) — Expose enabled optimizations through the pipeline optimizations request
+- [TW-102123](https://youtrack.jetbrains.com/issue/TW-102123) — Read enabled optimizations from the pipeline optimizations request in the UI
+- [TW-102124](https://youtrack.jetbrains.com/issue/TW-102124) — Expose the pipeline's repository through a project-view-scoped request
+- [TW-102125](https://youtrack.jetbrains.com/issue/TW-102125) — Read the pipeline's repository from the project-view-scoped request in the UI
+- [TW-102126](https://youtrack.jetbrains.com/issue/TW-102126) — Investigate why agent compatibility relies on pipeline settings instead of run settings
+- [TW-102127](https://youtrack.jetbrains.com/issue/TW-102127) — Resolve job agent compatibility from run settings on the backend
+- [TW-102170](https://youtrack.jetbrains.com/issue/TW-102170) — Modify the pipelines frontend code to host the "Analyze it" button
+- [TW-102187](https://youtrack.jetbrains.com/issue/TW-102187) — JB-37-016 WP1: Cross-project credential exfiltration via build config (High)
+- [TW-102192](https://youtrack.jetbrains.com/issue/TW-102192) — JB-37-019 WP1: Reflected XSS in notificationRules page (Medium)
+- [TW-102193](https://youtrack.jetbrains.com/issue/TW-102193) — JB-37-018 WP1: Reflected XSS in log viewer with exit-code error (Medium)
+- [TW-102195](https://youtrack.jetbrains.com/issue/TW-102195) — JB-37-020 WP1: Reflected XSS in admin showFeatureParams page (Medium)
+- [TW-102196](https://youtrack.jetbrains.com/issue/TW-102196) — JB-37-021 WP1: Reflected XSS in build logs (Medium)
+- [TW-102208](https://youtrack.jetbrains.com/issue/TW-102208) — Kotlin-DSL sandbox escape → server RCE via reflective getDeclaredField switch-flip (TW-102046 fix incomplete)
+- [TW-102209](https://youtrack.jetbrains.com/issue/TW-102209) — Hard-coded servlet attribute names will silently break
+- [TW-102211](https://youtrack.jetbrains.com/issue/TW-102211) — bundle TC core repository into agent images for nightly agents
+- [TW-102248](https://youtrack.jetbrains.com/issue/TW-102248) — Config-only project import can rescope existing OAuth tokens across project boundaries
+- [TW-102249](https://youtrack.jetbrains.com/issue/TW-102249) — TC Kotlin DSL - unvalidated external ID enables file write on the server during versioned-settings generation
+- [TW-102261](https://youtrack.jetbrains.com/issue/TW-102261) — Detect new branch immediately after commiting to it
+- [TW-102265](https://youtrack.jetbrains.com/issue/TW-102265) — Kotlin DSL sandbox: FFM native-access check bypassable by a jdk.*/sun.* helper → server-side code execution
+- [TW-102279](https://youtrack.jetbrains.com/issue/TW-102279) — Polling agents: empty-token name rebinding exposes protected build secrets to unauthenticated attackers and can escalate to server ACE
+- [TW-102281](https://youtrack.jetbrains.com/issue/TW-102281) — Enable the agent filter feature flag
+- [TW-102287](https://youtrack.jetbrains.com/issue/TW-102287) — [QA] Numeric parameters from pipeline DSL cannot be parsed in YAML, visual editor blocked
+- [TW-102295](https://youtrack.jetbrains.com/issue/TW-102295) — NPM Registry connection name: stored XSS in the Node.js build-feature editor executes in a viewing admin's session
+- [TW-102297](https://youtrack.jetbrains.com/issue/TW-102297) — Pipeline update commits caller YAML to the settings VCS before the authorization guard
+- [TW-102302](https://youtrack.jetbrains.com/issue/TW-102302) — Enable feature flag on nightly for dogfooding
+- [TW-102321](https://youtrack.jetbrains.com/issue/TW-102321) — Publish DSL to maven repository for bugfix releases
+- [TW-102322](https://youtrack.jetbrains.com/issue/TW-102322) — Pipelines: Guest can read stored trigger passwords and reach SYSTEM_ADMIN through NuGet package poisoning
+- [TW-102329](https://youtrack.jetbrains.com/issue/TW-102329) — Provide Debug Pipeline functionality in TeamCity
+- [TW-102331](https://youtrack.jetbrains.com/issue/TW-102331) — External status widget: unescaped project Server URL enables stored XSS
+- [TW-102346](https://youtrack.jetbrains.com/issue/TW-102346) — Improve Logger API usage in the TeamCity codebase
+- [TW-102355](https://youtrack.jetbrains.com/issue/TW-102355) — NuGet feeds: project editors can publish packages into another project's feed and escalate to trusted-build RCE
+- [TW-102380](https://youtrack.jetbrains.com/issue/TW-102380) — Support Redis Pub/Sub for UI long-polling procedures
+- [TW-102387](https://youtrack.jetbrains.com/issue/TW-102387) — [Design] Update Welcome pop-up and What's new in TeamCity
+- [TW-102388](https://youtrack.jetbrains.com/issue/TW-102388) — AWS connection edit UI (legacy): cross-project cleartext AWS secret access key disclosure
+- [TW-102391](https://youtrack.jetbrains.com/issue/TW-102391) — Partitioned persistent event queue for multi-node setups with pluggable backends (database, Kafka)
+- [TW-102407](https://youtrack.jetbrains.com/issue/TW-102407) — CloudController does not have necessary permission checks for starting/stopping cloud instance
+- [TW-102410](https://youtrack.jetbrains.com/issue/TW-102410) — RemoveVcsRootAction allows removing a VCS root if user has only view project permission
+- [TW-102413](https://youtrack.jetbrains.com/issue/TW-102413) — Get rid of confusing RequestPermissionsCheckerEx interface
+- [TW-102416](https://youtrack.jetbrains.com/issue/TW-102416) — Make sure there is no way to make a mistake and use SUser object returned by SecurityContext.getAuthorityHolder().getAssociatedUser() for the permission checks
+- [TW-102438](https://youtrack.jetbrains.com/issue/TW-102438) — Deprecate MySQL 5.7 for TeamCity 2026.2+
+- [TW-102439](https://youtrack.jetbrains.com/issue/TW-102439) — Standardize a set of supported Database versions, run tests for every major version (worth checking)
+- [TW-102453](https://youtrack.jetbrains.com/issue/TW-102453) — Pipeline UI: Extract generic component from JavaVersionPicker
+- [TW-102465](https://youtrack.jetbrains.com/issue/TW-102465) — Implement Welcome popup for 2026.2 featuring Pipelines GA
+- [TW-102466](https://youtrack.jetbrains.com/issue/TW-102466) — AWS Credentials build feature: stored connection id renders unescaped in the editor (stored XSS)
+- [TW-102471](https://youtrack.jetbrains.com/issue/TW-102471) — Support custom Build Report tabs in pipelines
+- [TW-102477](https://youtrack.jetbrains.com/issue/TW-102477) — Cloud Profiles form doesn't filter profiles based on project permissions
+- [TW-102487](https://youtrack.jetbrains.com/issue/TW-102487) — Health Report: Check for the minimal supported database versions for TeamCity
+- [TW-102506](https://youtrack.jetbrains.com/issue/TW-102506) — Kotlin DSL: external pull request escapes the sandbox before trust enforcement, enabling server RCE and NFS root access to TeamCity Cloud shared EFS
+- [TW-102521](https://youtrack.jetbrains.com/issue/TW-102521) — Compile TeamCity Java sources with parameter-name metadata for Spring 6
+- [TW-102545](https://youtrack.jetbrains.com/issue/TW-102545) — Upgrade embedded HSQLDB to 2.7.4
+- [TW-102546](https://youtrack.jetbrains.com/issue/TW-102546) — Complete post-merge migration and archive internal repositories
+- [TW-102573](https://youtrack.jetbrains.com/issue/TW-102573) — NPM invalid-connection Server Health report: stored XSS in the connectionId executes in a viewing administrator's session
+- [TW-102575](https://youtrack.jetbrains.com/issue/TW-102575) — Kotlin DSL sandbox: O_RDWR NIO channel open bypasses the file-write allow-list → DSL writes outside the write jail (java.home, agent jar)
+- [TW-102576](https://youtrack.jetbrains.com/issue/TW-102576) — Provide a way for the QA team to see the state of all feature switches in use
+- [TW-102581](https://youtrack.jetbrains.com/issue/TW-102581) — Settle on some approach for yaml-missing-in-a-branch state
+- [TW-102607](https://youtrack.jetbrains.com/issue/TW-102607) — Get rid of "testng.xml" files from TeamCity tests
+- [TW-102611](https://youtrack.jetbrains.com/issue/TW-102611) — Pipelines settings: unsaved changes (draft) are not indicated
+- [TW-102617](https://youtrack.jetbrains.com/issue/TW-102617) — [QA] YAML in branches: Setting entry doesn't respect the selected branch
+- [TW-102634](https://youtrack.jetbrains.com/issue/TW-102634) — Kotlin DSL sandbox escape via privileged native load
+- [TW-102636](https://youtrack.jetbrains.com/issue/TW-102636) — NFS root access to TeamCity Cloud shared EFS
+- [TW-102642](https://youtrack.jetbrains.com/issue/TW-102642) — Yaml in branches: implement empty editor state for a case when there is no yaml in repo
+- [TW-102648](https://youtrack.jetbrains.com/issue/TW-102648) — Unauthenticated TeamCity server RCE via administrator account takeover caused by password-reset recipient confusion
+- [TW-102655](https://youtrack.jetbrains.com/issue/TW-102655) — GitHub App connections: Project Viewers can redirect parent connection credentials to an attacker-controlled host
+- [TW-102659](https://youtrack.jetbrains.com/issue/TW-102659) — Use zstd for compressing VcsContentCache
+- [TW-102664](https://youtrack.jetbrains.com/issue/TW-102664) — TeamCity AI Assistant plugin: normalize package and logger names
+- [TW-102665](https://youtrack.jetbrains.com/issue/TW-102665) — Remove/hide "Store passwords and API tokens outside of VCS" option from the versioned settings for new projects
+- [TW-102674](https://youtrack.jetbrains.com/issue/TW-102674) — [QA] Save dialog appears for a no-op change (add + delete)
+- [TW-102694](https://youtrack.jetbrains.com/issue/TW-102694) — Missing authorization in `unassignAllAgentBuildTypes` lets an ordinary user clear agent build assignments
+- [TW-102696](https://youtrack.jetbrains.com/issue/TW-102696) — [Vulnerability Disclosure] Unauthenticated Extraction of Build Secrets via Timing Oracle in statusIcon
+- [TW-102697](https://youtrack.jetbrains.com/issue/TW-102697) — TeamCity Windows RCE via CRLF Injection in Pipeline for Guest and Low-Privilege User
+- [TW-102700](https://youtrack.jetbrains.com/issue/TW-102700) — Build Log: baseLevel reflected XSS in BuildLogTreeTag continuation markup yields SYSTEM_ADMIN access
+- [TW-102701](https://youtrack.jetbrains.com/issue/TW-102701) — Build agents: conflicting selectors expose diagnostics and reboot agents across projects
+- [TW-102702](https://youtrack.jetbrains.com/issue/TW-102702) — Inspection Profile Selector: popupTitle reflected XSS in projectData.jsp yields SYSTEM_ADMIN access
+- [TW-102706](https://youtrack.jetbrains.com/issue/TW-102706) — Build Chains: BuildChainsBean.id rebinding XSS in buildChains.tag yields SYSTEM_ADMIN access
+- [TW-102708](https://youtrack.jetbrains.com/issue/TW-102708) — Project Clean-up Rules: duplicate projectId rebinding XSS yields SYSTEM_ADMIN access
+- [TW-102710](https://youtrack.jetbrains.com/issue/TW-102710) — Notification Rules: reflected XSS in notificatorType yields SYSTEM_ADMIN access
+- [TW-102735](https://youtrack.jetbrains.com/issue/TW-102735) — Inspections (IntelliJ IDEA): stored project-path XSS yields SYSTEM_ADMIN access
+- [TW-102736](https://youtrack.jetbrains.com/issue/TW-102736) — Pipeline editor: branch-scope pipelineSecrets / pipelineStepSecrets (keyed by pipeline id only, leaking unsaved secret state across branches)
+- [TW-102737](https://youtrack.jetbrains.com/issue/TW-102737) — Build queue: stored XSS in a Shared Resources wait reason yields SYSTEM_ADMIN access
+- [TW-102751](https://youtrack.jetbrains.com/issue/TW-102751) — Enable teamcity.pipelines.parameterInheritance.enabled by default
+- [TW-102754](https://youtrack.jetbrains.com/issue/TW-102754) — Project overview: routine background refresh executes build-number stored XSS and yields SYSTEM_ADMIN access
+- [TW-102765](https://youtrack.jetbrains.com/issue/TW-102765) — Build Triggers: raw trigger ID and escaped type combine into stored XSS that yields SYSTEM_ADMIN access
+- [TW-102811](https://youtrack.jetbrains.com/issue/TW-102811) — Update the link under "Learn more about affected settings"
+- [TW-102814](https://youtrack.jetbrains.com/issue/TW-102814) — Pull Requests: stored XSS from repository feature IDs to unquoted Server Health hrefs
+- [TW-102818](https://youtrack.jetbrains.com/issue/TW-102818) — Switching between pipeline and its job builds results in empty Changes or Parameters tab being displayed
+- [TW-102828](https://youtrack.jetbrains.com/issue/TW-102828) — Build Features: stored XSS from repository feature IDs and types to JavaScript map assignments via trailing-backslash parser shift
+- [TW-102831](https://youtrack.jetbrains.com/issue/TW-102831) — Configuration health: stored XSS from build configuration names to raw popup IDs and inline callbacks via health-item identity reuse
+- [TW-102839](https://youtrack.jetbrains.com/issue/TW-102839) — Build artifacts: stored XSS from repository ZIP entry names to raw artifact-tree error HTML via malformed-archive diagnostics
+- [TW-102847](https://youtrack.jetbrains.com/issue/TW-102847) — migrate static UI extension plugin to maven
+- [TW-102877](https://youtrack.jetbrains.com/issue/TW-102877) — Agent Polling Protocol: denial of service from unauthenticated XML to server JVM termination via primitive/reference array confusion
+- [TW-102891](https://youtrack.jetbrains.com/issue/TW-102891) — Prune stale selections in Build Problems and Tests trees
+- [TW-102901](https://youtrack.jetbrains.com/issue/TW-102901) — Disable Welcome popup for TeamCity Cloud
+- [TW-102905](https://youtrack.jetbrains.com/issue/TW-102905) — Keep Build Problems pagination available after failed background refresh
+- [TW-102906](https://youtrack.jetbrains.com/issue/TW-102906) — Replace stale problem occurrence data after list refresh
+- [TW-102927](https://youtrack.jetbrains.com/issue/TW-102927) — Unified diff: stored XSS from repository filenames to raw helper-URL JavaScript strings
+- [TW-102935](https://youtrack.jetbrains.com/issue/TW-102935) — Agent Summary: stored XSS from unauthorized-agent Java versions to JVM warning tooltip innerHTML
+- [TW-102939](https://youtrack.jetbrains.com/issue/TW-102939) — Remove feed plugin from TeamCity source code
+- [TW-102952](https://youtrack.jetbrains.com/issue/TW-102952) — Make Vite license reports cover all shipped dependency graphs and versions
+- [TW-102970](https://youtrack.jetbrains.com/issue/TW-102970) — Inspections (IntelliJ IDEA): stored XSS from serialized SDK names to raw Project SDKs markup
+- [TW-102979](https://youtrack.jetbrains.com/issue/TW-102979) — Build Log: stored XSS from repository-controlled `tc:msglink` tags to raw `onclick` interpolation
+- [TW-102980](https://youtrack.jetbrains.com/issue/TW-102980) — Update Checkout Rules: stored XSS from Git directory names to checkout-path preview via jQuery .html()
+- [TW-102983](https://youtrack.jetbrains.com/issue/TW-102983) — VCS Roots: stored XSS from XML versioned-settings root names to raw recovery-page navigation JavaScript
+- [TW-102987](https://youtrack.jetbrains.com/issue/TW-102987) — Reported statistic values: stored XSS from build-reported statistic keys to chart-title HTML via DOM attribute decoding
+- [TW-102990](https://youtrack.jetbrains.com/issue/TW-102990) — Perforce P4 Code Review: stored XSS from remote review state to raw build-page status interpolation
+- [TW-102996](https://youtrack.jetbrains.com/issue/TW-102996) — Large Build Log: stored XSS from build-reported numbers to raw health-item link content
+- [TW-103015](https://youtrack.jetbrains.com/issue/TW-103015) — Build Configuration Issue Log: stored XSS from build-reported numbers to raw merged-change link bodies
+- [TW-103016](https://youtrack.jetbrains.com/issue/TW-103016) — Address follow-up review findings in Build Problems list/tree view
+- [TW-103029](https://youtrack.jetbrains.com/issue/TW-103029) — Fix inconsistent BuildProblems story mock build identity
+- [TW-103037](https://youtrack.jetbrains.com/issue/TW-103037) — Dynamic build chains: generated builds always run on the default branch
+- [TW-103066](https://youtrack.jetbrains.com/issue/TW-103066) — Schedule Trigger editor: stored XSS from `revisionRuleDependsOn` to raw hidden-input interpolation
+- [TW-103101](https://youtrack.jetbrains.com/issue/TW-103101) — Pin Relay agent type refetch options in the regression test
+- [TW-103121](https://youtrack.jetbrains.com/issue/TW-103121) — Stored XSS via unescaped Cloud agent-type name in JVM update warning link
+- [TW-103147](https://youtrack.jetbrains.com/issue/TW-103147) — Kotlin DSL sandbox: DELETE_ON_CLOSE unlinks any readable file, breaking versioned-settings generation server-wide.
+- [TW-103149](https://youtrack.jetbrains.com/issue/TW-103149) — Kotlin DSL sandbox: symlink placed in the settings checkout bypasses the file-write allow-list -> server RCE
+- [TW-103186](https://youtrack.jetbrains.com/issue/TW-103186) — Slack Notifier: stored XSS via unescaped project-name interpolation in settings-page JavaScript
+- [TW-103218](https://youtrack.jetbrains.com/issue/TW-103218) — AI Assistant: tool calls executed with Anthropic models can cause parsing failures
+- [TW-103228](https://youtrack.jetbrains.com/issue/TW-103228) — Promote dialog: stored XSS from dependent build-configuration names to raw `data-title` markup
+- [TW-103233](https://youtrack.jetbrains.com/issue/TW-103233) — Slack Notifier: reflected XSS via unescaped Slack API response interpolated into auth/test.jsp inline scrip
+- [TW-103234](https://youtrack.jetbrains.com/issue/TW-103234) — Stored XSS: VCS branch name mis-escaped in several BS.Navigation/onclick JS sinks
+- [TW-103235](https://youtrack.jetbrains.com/issue/TW-103235) — Stored XSS from build configuration full name in agent-info popup
+- [TW-103242](https://youtrack.jetbrains.com/issue/TW-103242) — Inspections (IntelliJ IDEA) step editor: stored XSS from serialized Path Variable values to raw input attributes
+- [TW-103244](https://youtrack.jetbrains.com/issue/TW-103244) — Inspections (IntelliJ IDEA) step editor: stored XSS from serialized global-library paths to raw input attributes
+- [TW-103245](https://youtrack.jetbrains.com/issue/TW-103245) — Agent Statistics: stored XSS from build-configuration names to popup `innerHTML`
+- [TW-103275](https://youtrack.jetbrains.com/issue/TW-103275) — Remove `teamcity.ui.sakuraProblemsTab` internal property
+
+## Already in the draft changelog (71)
+
+- [TW-20071](https://youtrack.jetbrains.com/issue/TW-20071) — A user without "View user profile" permission can get user's roles
+- [TW-41074](https://youtrack.jetbrains.com/issue/TW-41074) — Build time estimation should account for difference in parameters
+- [TW-72903](https://youtrack.jetbrains.com/issue/TW-72903) — sbt: cannot run sbt quoted commands/tasks with spaces
+- [TW-76149](https://youtrack.jetbrains.com/issue/TW-76149) — Maven dependencies resolution can hang on the server leading to hanging builds
+- [TW-79997](https://youtrack.jetbrains.com/issue/TW-79997) — Do not report "Failed to publish artifacts" error, if creating artifacts archive was canceled
+- [TW-88948](https://youtrack.jetbrains.com/issue/TW-88948) — Color Contrast for Warning and Error Rows in Build Logs
+- [TW-89540](https://youtrack.jetbrains.com/issue/TW-89540) — UX improvements to the Build overview filters
+- [TW-92085](https://youtrack.jetbrains.com/issue/TW-92085) — Overview header: "Open terminal" is suggested for local agents
+- [TW-93153](https://youtrack.jetbrains.com/issue/TW-93153) — Hprof download via logs fail
+- [TW-93809](https://youtrack.jetbrains.com/issue/TW-93809) — Checkout failure on agent if symlinks in the checkout directory point to an non-existing folder
+- [TW-95025](https://youtrack.jetbrains.com/issue/TW-95025) — Do not apply hard wrapping for long commands in YAML
+- [TW-95135](https://youtrack.jetbrains.com/issue/TW-95135) — Delay "The first build error occurs" notification, if Test retry support is enabled
+- [TW-98036](https://youtrack.jetbrains.com/issue/TW-98036) — Commit status publisher reports failure for a composite build, when its dependency with "support test retry" is still running
+- [TW-100005](https://youtrack.jetbrains.com/issue/TW-100005) — Static UI extensions plugin writes directly in config directory
+- [TW-100173](https://youtrack.jetbrains.com/issue/TW-100173) — Numeric parameters from pipeline DSL cannot be parsed in YAML, visual editor blocked
+- [TW-100237](https://youtrack.jetbrains.com/issue/TW-100237) — Successful job is shown for "Failed to start" pipelines with dependencies
+- [TW-100279](https://youtrack.jetbrains.com/issue/TW-100279) — Support of Pipelines in TeamCity MCP
+- [TW-100470](https://youtrack.jetbrains.com/issue/TW-100470) — Pipelines agent: don't open agent terminal for a local agent, show the error message
+- [TW-100753](https://youtrack.jetbrains.com/issue/TW-100753) — Heartbeat thread can't recover after DB communication failure
+- [TW-101147](https://youtrack.jetbrains.com/issue/TW-101147) — Updating git repository mirror on the agent fails with the "fatal: unable to write new packed-refs"
+- [TW-101238](https://youtrack.jetbrains.com/issue/TW-101238) — Pipeline YAML Editor: misaligned error view in case of long IDs
+- [TW-101365](https://youtrack.jetbrains.com/issue/TW-101365) — TeamCity Lens plugin should not gather build log data by default
+- [TW-101384](https://youtrack.jetbrains.com/issue/TW-101384) — Backend (YAML): Support per-pipeline & per-job failure conditions (fail-if)
+- [TW-101548](https://youtrack.jetbrains.com/issue/TW-101548) — Job reuse doesn't work if there are 2 VCS roots attached to the pipeline
+- [TW-101557](https://youtrack.jetbrains.com/issue/TW-101557) — Wrong "N/A" build number shown for reused job runs
+- [TW-101975](https://youtrack.jetbrains.com/issue/TW-101975) — Pipelines: numeric runner fields fail to render — "No applicable renderer found" (e.g. SSH Upload: Port, Timeout)
+- [TW-102011](https://youtrack.jetbrains.com/issue/TW-102011) — YAML in branch: no dialogue is shown for the initial commit
+- [TW-102117](https://youtrack.jetbrains.com/issue/TW-102117) — Some FUS events are not logged
+- [TW-102151](https://youtrack.jetbrains.com/issue/TW-102151) — Remove checkboxes for preserving IDs on project import
+- [TW-102160](https://youtrack.jetbrains.com/issue/TW-102160) — Use `x-token-auth` as default username for BitBucket Cloud OAuth tokens
+- [TW-102213](https://youtrack.jetbrains.com/issue/TW-102213) — Slack notifier breadcrumbs point to auto-generated virtual build configurations
+- [TW-102224](https://youtrack.jetbrains.com/issue/TW-102224) — Servlet 6 removed deprecated APIs
+- [TW-102241](https://youtrack.jetbrains.com/issue/TW-102241) — Legacy Spring Security dependencies
+- [TW-102260](https://youtrack.jetbrains.com/issue/TW-102260) — After committing to the new branch we should select that branch in the editor
+- [TW-102264](https://youtrack.jetbrains.com/issue/TW-102264) — YAML in branches: dialogue is shown for storing settings on Server
+- [TW-102266](https://youtrack.jetbrains.com/issue/TW-102266) — YAML in branches: UI tries to read settings from the initial commit
+- [TW-102282](https://youtrack.jetbrains.com/issue/TW-102282) — YAML in branches: false positive commit in case if non-yaml changes
+- [TW-102285](https://youtrack.jetbrains.com/issue/TW-102285) — YAML in branches: wrong settings are shown for the main branch
+- [TW-102286](https://youtrack.jetbrains.com/issue/TW-102286) — YAML in branches: false positive feedback while first attempt to commit to protected main
+- [TW-102291](https://youtrack.jetbrains.com/issue/TW-102291) — YAML in branches: error "can't update settings" isn't branch-based
+- [TW-102294](https://youtrack.jetbrains.com/issue/TW-102294) — Yaml in branches: no possibility to reset settings from branch
+- [TW-102342](https://youtrack.jetbrains.com/issue/TW-102342) — Dorm: Email verification link doesn't work
+- [TW-102349](https://youtrack.jetbrains.com/issue/TW-102349) — Copy Build Step dialog lists only the first directly-assigned role project as a copy target (2026.1.1 regression)
+- [TW-102358](https://youtrack.jetbrains.com/issue/TW-102358) — Pipeline artifacts are not published after rerun
+- [TW-102364](https://youtrack.jetbrains.com/issue/TW-102364) — Patch for Polling-Agent Error Endpoint breaks any requests to the enpoint in old TeamCity versions
+- [TW-102376](https://youtrack.jetbrains.com/issue/TW-102376) — YAML in branches: Branch selection dialog looses branch name when typed too fast
+- [TW-102419](https://youtrack.jetbrains.com/issue/TW-102419) — Versioned settings generation fails when the config directory contains a non-project subdirectory (e.g. .git)
+- [TW-102461](https://youtrack.jetbrains.com/issue/TW-102461) — Qodana fails with a generated secure token
+- [TW-102476](https://youtrack.jetbrains.com/issue/TW-102476) — Memory Leak and Tab Crashes on TeamCity Agent Pages in Firefox and Chromium
+- [TW-102494](https://youtrack.jetbrains.com/issue/TW-102494) — Long running cleanup of old node events
+- [TW-102509](https://youtrack.jetbrains.com/issue/TW-102509) — Redundant .BACKUP files in TeamCity distribution under /WEB-INF/lib
+- [TW-102527](https://youtrack.jetbrains.com/issue/TW-102527) — Welcome and What's new popups are shown after upgrade from major release to its bugfix
+- [TW-102539](https://youtrack.jetbrains.com/issue/TW-102539) — Build cancellation comment displayed as java class name in case of AgentIsUpgradingException
+- [TW-102577](https://youtrack.jetbrains.com/issue/TW-102577) — "Instance creation has failed" in attempt to create account from IDEA plugin
+- [TW-102583](https://youtrack.jetbrains.com/issue/TW-102583) — No suitable for KMP Mac agents on TCC instance (the pipeline can't be started)
+- [TW-102594](https://youtrack.jetbrains.com/issue/TW-102594) — Branches in YAML: 'Initial commit will be made shortly' banner should not be shown
+- [TW-102598](https://youtrack.jetbrains.com/issue/TW-102598) — Builds in old branches are triggered after changing the branch filter of the build configuration
+- [TW-102626](https://youtrack.jetbrains.com/issue/TW-102626) — Artifact lazy processing doesn't apply to pipeline shared files, even if a job publishes only one folder
+- [TW-102630](https://youtrack.jetbrains.com/issue/TW-102630) — Save dialog appears for a no-op change (add + delete)
+- [TW-102631](https://youtrack.jetbrains.com/issue/TW-102631) — Reuse of parallel tests distribution with changes isn't invalidated by a change in the number of tests
+- [TW-102639](https://youtrack.jetbrains.com/issue/TW-102639) — YAML in branches: save and run doesn't respect the branch for run
+- [TW-102649](https://youtrack.jetbrains.com/issue/TW-102649) — "I agree to send anonymous usage statistics to JetBrains" checkbox in KMP flow doesn't affect the state of "Periodically send usage statistics to JetBrains" in usage statistics
+- [TW-102672](https://youtrack.jetbrains.com/issue/TW-102672) — YAML in branches: editing of invalid YAML makes yaml editor fail and leads to UI settings for this branch
+- [TW-102678](https://youtrack.jetbrains.com/issue/TW-102678) — Kotlin DSL: legitimate annotation introspection (Class.getAnnotations) denied by reflection sandbox
+- [TW-102687](https://youtrack.jetbrains.com/issue/TW-102687) — YAML in branches: Reload isn't forced in case of changes in repo branch
+- [TW-102747](https://youtrack.jetbrains.com/issue/TW-102747) — Some parameters from pipeline DSL cannot be parsed in YAML
+- [TW-102774](https://youtrack.jetbrains.com/issue/TW-102774) — Build may not stop while preprocessing/packing artifacts
+- [TW-102812](https://youtrack.jetbrains.com/issue/TW-102812) — YAML in branches: intermediate draft state is shown if the user switches between branches
+- [TW-102867](https://youtrack.jetbrains.com/issue/TW-102867) — Personal Access Tokens: handle state when no projects are yet available to the user
+- [TW-103035](https://youtrack.jetbrains.com/issue/TW-103035) — WebHelp: TeamCity AWS connection documentation links to an internal Google Doc
+- [TW-103119](https://youtrack.jetbrains.com/issue/TW-103119) — S3 artifact storage sends a Lens availability OPTIONS probe on every artifact upload, even when Lens events are disabled
+
+---
+
+Produced by Air Automation. Name: TCC Release Notes / Run: https://air.jetbrains.cloud/org/05cf1a7f-6ab5-713b-abd3-29d0c8a05e2d/automations/f749849f-1f48-4766-a418-bd4b61087dac?run=f8c24acc-90b7-4f59-919b-b9117d3a3828
