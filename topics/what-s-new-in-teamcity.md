@@ -123,7 +123,7 @@ Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
 ## Miscellaneous Enhancements
 
-* TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
+* TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` or `.tzst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
 * The Performance Monitor interface has been refreshed with a more modern appearance, improving readability and visual consistency.
 
     <img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>

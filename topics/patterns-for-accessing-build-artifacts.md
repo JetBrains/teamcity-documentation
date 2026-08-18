@@ -83,9 +83,10 @@ TeamCity allows obtaining a file from an archive from the build artifacts direct
 * `.sit`
 * `.apk`
 * `.tar.gz`
-* `.tar.zst`
 * `.tgz`
 * `.tar.gzip`
+* `.tar.zst`
+* `.tzst`
 * `.tar`
 
 <!--[//]: # (Internal note. Do not delete. "Patterns For Accessing Build Artifactsd243e253.txt")-->
