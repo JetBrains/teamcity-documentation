@@ -111,25 +111,13 @@ Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
 
 
 
-## GitHub
+## GitHub Integration
 
 The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now match pull requests by their source branch instead of their branch reference. This lets TeamCity recognize separate pull requests in different repositories as related changes and build them together in the same build chain, even when GitHub assigns them different pull request numbers.
 
 Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
 
-
-
-
-## More Accurate Build Duration Estimates
-
-Build duration estimates now account for custom parameters and other settings that can change how long a build takes. For example, if one configuration runs both short regular builds and longer nightly builds, TeamCity uses separate histories for these variants instead of mixing their durations.
-
-Cloud agents now share duration history with previous agents started from the same cloud image. Newly started agents therefore retain meaningful estimates even before they have run the build themselves.
-
-This makes expected finish times in the build queue and remaining-time estimates for running builds more reliable, without forcing you to split build variants into separate configurations.
-
-Learn more: [](working-with-build-queue.md#build-duration-estimates).
 
 
 ## Miscellaneous Enhancements
@@ -139,7 +127,7 @@ Learn more: [](working-with-build-queue.md#build-duration-estimates).
 
     <img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>
 
-* TeamCity now more accurately estimates duration of highly variable parameterized builds.
+* TeamCity now [more accurately](working-with-build-queue.md#build-duration-estimates) estimates duration of highly variable parameterized builds.
 
 ## Upgrade Notes
 {instance="tc"}
