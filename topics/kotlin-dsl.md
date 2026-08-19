@@ -1,6 +1,8 @@
 [//]: # (title: Kotlin DSL)
 [//]: # (help-id: Kotlin DSL)
 
+<show-structure for="chapter" depth="2"/>
+
 Besides [storing settings in version control](storing-project-settings-in-version-control.md) in XML format, TeamCity allows storing the settings in the DSL (based on the [Kotlin language](https://kotlinlang.org/)).
 
 Using the version control-stored DSL enables you to define settings programmatically. Since Kotlin is statically typed, you automatically receive the auto-completion feature in an IDE which makes the discovery of available API options much simpler.
@@ -561,6 +563,58 @@ You can use external libraries in your Kotlin DSL code, which allows sharing cod
 To use an external library in your Kotlin DSL code, add a dependency on this library to the `.teamcity/pom.xml` file in the settings repository and commit this change so that TeamCity detects it. Then, before starting the generation process, the TeamCity server will fetch the necessary dependencies from the Maven repository, compile code with them, and then start the settings' generator.
 
 You can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
+
+
+### DSL Compilation
+{instance="tc"}
+
+When a project loads its DSL versioned settings from a repository, TeamCity does not apply them right away: it first compiles this code to verify it does not fail. You can choose where this compilation runs — on the TeamCity server or on a free build agent.
+
+By default, TeamCity compiles DSL code on the server and does not show the mode selector in the UI. To make it available and choose the compilation mode:
+
+1. Add the `teamcity.versionedSettings.dslExecutionMode=any` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+2. Go to __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Versioned Settings__ and select __On server__ or __On build agent__.
+
+Compiling DSL on build agents is generally the recommended approach, but each mode has its own trade-offs.
+
+<deflist type="medium">
+
+<def title="On server">
+
+**Pros**
+
+* Lower latency since the entire process happens on a single machine.
+* Does not occupy build agents.
+
+**Cons**
+
+* Less secure since the code runs on your main server. The code is compiled in a sandboxed part of the server, but it is not entirely isolated.
+* Occupies server resources.
+* The server has a fixed limit of 10 Kotlin DSL compilations running simultaneously.
+* For security reasons, Kotlin code compiled on the server is subject to a number of restrictions. For example, it cannot read files outside the parent `.teamcity` directory, make network calls, launch subprocesses, load native libraries, perform internal/JDK class reflection, and so on.
+
+</def>
+
+
+<def title="On build agent">
+
+**Pros**
+
+* Unburdens the server of this task, freeing some of its resources.
+* More secure, as the code runs off-server, on a separate machine.
+* Not affected by the server sandbox limitations: you can run as many simultaneous compilation tasks as your build agent fleet allows, and the compiled code can perform any operations.
+
+**Cons**
+
+* Occupies build agents that could otherwise be running builds.
+* Has a higher overhead and can be slower: the compilation waits for a free agent, and [cloud agents](teamcity-integration-with-cloud-solutions.md) need extra time to start.
+
+</def>
+
+
+</deflist>
+
+Since server-side compilation runs in a sandbox, agent-side compilation is the only option if your DSL scripts need to do more than assemble settings from their own code — for example, read a data file stored outside the `.teamcity` directory, query an external service for a list of environments to generate configurations for, or run a helper process.
 
 ### Non-Portable DSL
 

@@ -128,6 +128,8 @@ Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
     <img src="performance-monitor.png" width="706" thumbnail="true" alt="Performance monitor"/>
 
 * TeamCity now [more accurately](working-with-build-queue.md#build-duration-estimates) estimates duration of highly variable parameterized builds.
+* You can now choose where TeamCity compiles versioned DSL settings: [on the server or build agents](kotlin-dsl.md#DSL+Compilation).
+{instance="tc"}
 
 ## Upgrade Notes
 {instance="tc"}
