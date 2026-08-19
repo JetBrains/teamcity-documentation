@@ -10,7 +10,225 @@ We’ve added [PKCE OAuth](ai-agent-integration.md) authorization for the TeamCi
 ### Full changelog
 {id=changelog-2026.2.2}
 
-<!--Automation-->
+<deflist collapsible="true">
+    <def title="Implemented features" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-41074"><b>TW-41074</b></a> — Build time estimation should account for difference in parameters</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-89540"><b>TW-89540</b></a> — UX improvements to the Build overview filters</li>
+        </ul>
+    </def>
+    <def title="Minor improvements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102674"><b>TW-102674</b></a> — [QA] Save dialog appears for a no-op change (add + delete)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102617"><b>TW-102617</b></a> — [QA] YAML in branches: Setting entry doesn't respect the selected branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102952"><b>TW-102952</b></a> — Make Vite license reports cover all shipped dependency graphs and versions</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102891"><b>TW-102891</b></a> — Prune stale selections in Build Problems and Tests trees</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102906"><b>TW-102906</b></a> — Replace stale problem occurrence data after list refresh</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103101"><b>TW-103101</b></a> — Pin Relay agent type refetch options in the regression test</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102905"><b>TW-102905</b></a> — Keep Build Problems pagination available after failed background refresh</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97794"><b>TW-97794</b></a> — Migrate to Vite</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103218"><b>TW-103218</b></a> — AI Assistant: tool calls executed with Anthropic models can cause parsing failures</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103029"><b>TW-103029</b></a> — Fix inconsistent BuildProblems story mock build identity</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101913"><b>TW-101913</b></a> — Make pipeline YAML schema available to AI agent via MCP</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103275"><b>TW-103275</b></a> — Remove `teamcity.ui.sakuraProblemsTab` internal property</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101646"><b>TW-101646</b></a> — Tests view: add grouping "in N builds" when tests failed in multiple builds</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102665"><b>TW-102665</b></a> — Remove/hide "Store passwords and API tokens outside of VCS" option from the versioned settings for new projects</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101651"><b>TW-101651</b></a> — Implement the tests overview section for Job overview</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102413"><b>TW-102413</b></a> — Get rid of confusing RequestPermissionsCheckerEx interface</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102521"><b>TW-102521</b></a> — Compile TeamCity Java sources with parameter-name metadata for Spring 6</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102546"><b>TW-102546</b></a> — Complete post-merge migration and archive internal repositories</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102847"><b>TW-102847</b></a> — migrate static UI extension plugin to maven</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102939"><b>TW-102939</b></a> — Remove feed plugin from TeamCity source code</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102416"><b>TW-102416</b></a> — Make sure there is no way to make a mistake and use SUser object returned by SecurityContext.getAuthorityHolder().getAssociatedUser() for the permission checks</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102901"><b>TW-102901</b></a> — Disable Welcome popup for TeamCity Cloud</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101428"><b>TW-101428</b></a> — [Design] Indicate to the user that some (or all) saved settings are not going to be committed into YAML</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100782"><b>TW-100782</b></a> — Implement switching pipeline branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101233"><b>TW-101233</b></a> — [BE + UI]: Implement FUS metrics for protected branches support</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100294"><b>TW-100294</b></a> — User Story: Propose the user to choose the target branch to commit changed Pipeline YAML</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102329"><b>TW-102329</b></a> — Provide Debug Pipeline functionality in TeamCity</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101664"><b>TW-101664</b></a> — Hide branch selector and commit message input when there is nothing to commit</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100325"><b>TW-100325</b></a> — User Story: Indicate which settings are stored in YAML</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101284"><b>TW-101284</b></a> — Implement API for multi-level caches with Redis</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102321"><b>TW-102321</b></a> — Publish DSL to maven repository for bugfix releases</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102209"><b>TW-102209</b></a> — Hard-coded servlet attribute names will silently break</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101506"><b>TW-101506</b></a> — Use *Interceptor interfaces directly instead of using *InterceptorAdapter interfaces</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100980"><b>TW-100980</b></a> — Research possibility to limit the prepared statements caching</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100792"><b>TW-100792</b></a> — Support execution timeouts for Pipelines: UI</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102006"><b>TW-102006</b></a> — Add a proper build step in high-load testing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102005"><b>TW-102005</b></a> — Implement the start of builds in high-load testing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101121"><b>TW-101121</b></a> — Add "node-agnostic" header support for agent requests</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101384"><b>TW-101384</b></a> — Backend (YAML): Support per-pipeline &amp; per-job failure conditions (fail-if)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102211"><b>TW-102211</b></a> — bundle TC core repository into agent images for nightly agents</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100812"><b>TW-100812</b></a> — Remove Standalone Pipelines WelcomePage</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100813"><b>TW-100813</b></a> — Remove Standalone Pipelines IndexPage</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101386"><b>TW-101386</b></a> — Restrict failure conditions not supported at pipeline (Head) level</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102438"><b>TW-102438</b></a> — Deprecate MySQL 5.7 for TeamCity 2026.2+</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102487"><b>TW-102487</b></a> — Health Report: Check for the minimal supported database versions for TeamCity</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102121"><b>TW-102121</b></a> — Load pipeline name from the project-view-scoped breadcrumb request</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102545"><b>TW-102545</b></a> — Upgrade embedded HSQLDB to 2.7.4</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101396"><b>TW-101396</b></a> — KMP integration analytics: from the first build till the publishing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102302"><b>TW-102302</b></a> — Enable feature flag on nightly for dogfooding</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100828"><b>TW-100828</b></a> — Remove standalone CreatePipeline page</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100814"><b>TW-100814</b></a> — Remove pipeline logos and references to the "TeamCity Pipelines" product name</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-60136"><b>TW-60136</b></a> — Projects import: import access tokens when users are imported</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102659"><b>TW-102659</b></a> — Use zstd for compressing VcsContentCache</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101852"><b>TW-101852</b></a> — Merge into monorepo - phase 2</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101617"><b>TW-101617</b></a> — [QA] Add a branch selector on edit pipeline page next to a pipeline name</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100335"><b>TW-100335</b></a> — User Story: Show branch selector in the Pipeline editor (Visual and YAML)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102127"><b>TW-102127</b></a> — Resolve job agent compatibility from run settings on the backend</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102124"><b>TW-102124</b></a> — Expose the pipeline's repository through a project-view-scoped request</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102122"><b>TW-102122</b></a> — Expose enabled optimizations through the pipeline optimizations request</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102126"><b>TW-102126</b></a> — Investigate why agent compatibility relies on pipeline settings instead of run settings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102387"><b>TW-102387</b></a> — [Design] Update Welcome pop-up and What's new in TeamCity</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102471"><b>TW-102471</b></a> — Support custom Build Report tabs in pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100513"><b>TW-100513</b></a> — Show the Allure Report Info tab for the jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100514"><b>TW-100514</b></a> — Show the Container Info tab for the jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100512"><b>TW-100512</b></a> — Show the Maven Build Info tab for the jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102281"><b>TW-102281</b></a> — Enable the agent filter feature flag</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102287"><b>TW-102287</b></a> — [QA] Numeric parameters from pipeline DSL cannot be parsed in YAML, visual editor blocked</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101742"><b>TW-101742</b></a> — [FE + BE] Create analytics states and events for Version Settings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102611"><b>TW-102611</b></a> — Pipelines settings: unsaved changes (draft) are not indicated</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102642"><b>TW-102642</b></a> — Yaml in branches: implement empty editor state for a case when there is no yaml in repo</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102664"><b>TW-102664</b></a> — TeamCity AI Assistant plugin: normalize package and logger names</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101628"><b>TW-101628</b></a> — [QA] Display settings commit errors properly</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102261"><b>TW-102261</b></a> — Detect new branch immediately after commiting to it</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100992"><b>TW-100992</b></a> — Persist flaky test information and get rid of "tests replaying" on startup which restores it based on the builds data</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102439"><b>TW-102439</b></a> — Standardize a set of supported Database versions, run tests for every major version (worth checking)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102109"><b>TW-102109</b></a> — [QA] Show a warning item when the user is about to save non-yaml settings which</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102581"><b>TW-102581</b></a> — Settle on some approach for yaml-missing-in-a-branch state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102811"><b>TW-102811</b></a> — Update the link under "Learn more about affected settings"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102736"><b>TW-102736</b></a> — Pipeline editor: branch-scope pipelineSecrets / pipelineStepSecrets (keyed by pipeline id only, leaking unsaved secret state across branches)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101429"><b>TW-101429</b></a> — Adopt MCP guides for the AI Assistant (pipelines)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102000"><b>TW-102000</b></a> — Imitate "free TC license" basing on trial in Cloud</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100511"><b>TW-100511</b></a> — Show the Qodana tab for the jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102465"><b>TW-102465</b></a> — Implement Welcome popup for 2026.2 featuring Pipelines GA</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102391"><b>TW-102391</b></a> — Partitioned persistent event queue for multi-node setups with pluggable backends (database, Kafka)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101744"><b>TW-101744</b></a> — [BE] Versioned Settings Apply state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101747"><b>TW-101747</b></a> — [BE] Context Parameters state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101746"><b>TW-101746</b></a> — [BE] Tokens state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101748"><b>TW-101748</b></a> — [BE] Version Settings: extend project state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101743"><b>TW-101743</b></a> — [BE] DSL Snippets state</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101741"><b>TW-101741</b></a> — [FE] Event: Kotlin DSL code view opened</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102453"><b>TW-102453</b></a> — Pipeline UI: Extract generic component from JavaVersionPicker</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101724"><b>TW-101724</b></a> — [Design] Review and suggest improvements for password reset flow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101884"><b>TW-101884</b></a> — Add external artifact storage warning for multi-node installations in 2026.2</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101642"><b>TW-101642</b></a> — Invalidate cached test-occurrence subtrees on tests tree refresh</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102123"><b>TW-102123</b></a> — Read enabled optimizations from the pipeline optimizations request in the UI</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102125"><b>TW-102125</b></a> — Read the pipeline's repository from the project-view-scoped request in the UI</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102346"><b>TW-102346</b></a> — Improve Logger API usage in the TeamCity codebase</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102607"><b>TW-102607</b></a> — Get rid of "testng.xml" files from TeamCity tests</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102380"><b>TW-102380</b></a> — Support Redis Pub/Sub for UI long-polling procedures</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-72431"><b>TW-72431</b></a> — Move sbt-teamcity-logger artifact away from Bintray</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101690"><b>TW-101690</b></a> — Deep-linked test (expandedTest) renders collapsed in large test trees</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103016"><b>TW-103016</b></a> — Address follow-up review findings in Build Problems list/tree view</li>
+        </ul>
+    </def>
+    <def title="Pipeline enhancements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95490"><b>TW-95490</b></a> — Refactor pipeline internal id</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99591"><b>TW-99591</b></a> — Open Pipeline settings in UI may take long time</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102626"><b>TW-102626</b></a> — Artifact lazy processing doesn't apply to pipeline shared files, even if a job publishes only one folder</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100279"><b>TW-100279</b></a> — Support of Pipelines in TeamCity MCP</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102170"><b>TW-102170</b></a> — Modify the pipelines frontend code to host the "Analyze it" button</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96859"><b>TW-96859</b></a> — Provide a way to pass the context about the pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100237"><b>TW-100237</b></a> — Successful job is shown for "Failed to start" pipelines with dependencies</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98720"><b>TW-98720</b></a> — Pipelines: displaying validation errors in YAML editor</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101830"><b>TW-101830</b></a> — Make the MCP plugin tools available for use by the AI Assistant</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95025"><b>TW-95025</b></a> — Do not apply hard wrapping for long commands in YAML</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102358"><b>TW-102358</b></a> — Pipeline artifacts are not published after rerun</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100155"><b>TW-100155</b></a> — Debug job hangs when there's no agent to run it</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101548"><b>TW-101548</b></a> — Job reuse doesn't work if there are 2 VCS roots attached to the pipeline</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100173"><b>TW-100173</b></a> — Numeric parameters from pipeline DSL cannot be parsed in YAML, visual editor blocked</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100470"><b>TW-100470</b></a> — Pipelines agent: don't open agent terminal for a local agent, show the error message</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101238"><b>TW-101238</b></a> — Pipeline YAML Editor: misaligned error view in case of long IDs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98972"><b>TW-98972</b></a> — Improve job dependencies discoverability</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102751"><b>TW-102751</b></a> — Enable teamcity.pipelines.parameterInheritance.enabled by default</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101557"><b>TW-101557</b></a> — Wrong "N/A" build number shown for reused job runs</li>
+        </ul>
+    </def>
+    <def title="Fixed bugs" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102818"><b>TW-102818</b></a> — Switching between pipeline and its job builds results in empty Changes or Parameters tab being displayed</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102630"><b>TW-102630</b></a> — Save dialog appears for a no-op change (add + delete)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102598"><b>TW-102598</b></a> — Builds in old branches are triggered after changing the branch filter of the build configuration</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-92085"><b>TW-92085</b></a> — Overview header: "Open terminal" is suggested for local agents</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99783"><b>TW-99783</b></a> — Internal properties with internal comments are returned in respond of "/login.html" request</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103037"><b>TW-103037</b></a> — Dynamic build chains: generated builds always run on the default branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102639"><b>TW-102639</b></a> — YAML in branches: save and run doesn't respect the branch for run</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102747"><b>TW-102747</b></a> — Some parameters from pipeline DSL cannot be parsed in YAML</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100753"><b>TW-100753</b></a> — Heartbeat thread can't recover after DB communication failure</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100955"><b>TW-100955</b></a> — Favorite Projects page: archived sub-projects of favorited parent appear in extra "N Archived Projects" section</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100005"><b>TW-100005</b></a> — Static UI extensions plugin writes directly in config directory</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102509"><b>TW-102509</b></a> — Redundant .BACKUP files in TeamCity distribution under /WEB-INF/lib</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102774"><b>TW-102774</b></a> — Build may not stop while preprocessing/packing artifacts</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102867"><b>TW-102867</b></a> — Personal Access Tokens: handle state when no projects are yet available to the user</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102349"><b>TW-102349</b></a> — Copy Build Step dialog lists only the first directly-assigned role project as a copy target (2026.1.1 regression)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102160"><b>TW-102160</b></a> — Use `x-token-auth` as default username for BitBucket Cloud OAuth tokens</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102213"><b>TW-102213</b></a> — Slack notifier breadcrumbs point to auto-generated virtual build configurations</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102224"><b>TW-102224</b></a> — Servlet 6 removed deprecated APIs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98036"><b>TW-98036</b></a> — Commit status publisher reports failure for a composite build, when its dependency with "support test retry" is still running</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102364"><b>TW-102364</b></a> — Patch for Polling-Agent Error Endpoint breaks any requests to the enpoint in old TeamCity versions</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-72903"><b>TW-72903</b></a> — sbt: cannot run sbt quoted commands/tasks with spaces</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102241"><b>TW-102241</b></a> — Legacy Spring Security dependencies</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102151"><b>TW-102151</b></a> — Remove checkboxes for preserving IDs on project import</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-20071"><b>TW-20071</b></a> — A user without "View user profile" permission can get user's roles</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102117"><b>TW-102117</b></a> — Some FUS events are not logged</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102419"><b>TW-102419</b></a> — Versioned settings generation fails when the config directory contains a non-project subdirectory (e.g. .git)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102376"><b>TW-102376</b></a> — YAML in branches: Branch selection dialog looses branch name when typed too fast</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-93809"><b>TW-93809</b></a> — Checkout failure on agent if symlinks in the checkout directory point to an non-existing folder</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102011"><b>TW-102011</b></a> — YAML in branch: no dialogue is shown for the initial commit</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102285"><b>TW-102285</b></a> — YAML in branches: wrong settings are shown for the main branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102264"><b>TW-102264</b></a> — YAML in branches: dialogue is shown for storing settings on Server</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102260"><b>TW-102260</b></a> — After committing to the new branch we should select that branch in the editor</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101365"><b>TW-101365</b></a> — TeamCity Lens plugin should not gather build log data by default</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102539"><b>TW-102539</b></a> — Build cancellation comment displayed as java class name in case of AgentIsUpgradingException</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-79997"><b>TW-79997</b></a> — Do not report "Failed to publish artifacts" error, if creating artifacts archive was canceled</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102342"><b>TW-102342</b></a> — Dorm: Email verification link doesn't work</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102577"><b>TW-102577</b></a> — "Instance creation has failed" in attempt to create account from IDEA plugin</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102266"><b>TW-102266</b></a> — YAML in branches: UI tries to read settings from the initial commit</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102286"><b>TW-102286</b></a> — YAML in branches: false positive feedback while first attempt to commit to protected main</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102291"><b>TW-102291</b></a> — YAML in branches: error "can't update settings" isn't branch-based</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102294"><b>TW-102294</b></a> — Yaml in branches: no possibility to reset settings from  branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102583"><b>TW-102583</b></a> — No suitable for KMP Mac agents on TCC instance (the pipeline can't be started)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101147"><b>TW-101147</b></a> — Updating git repository mirror on the agent fails with  the "fatal: unable to write new packed-refs"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102282"><b>TW-102282</b></a> — YAML in branches: false positive commit  in case if non-yaml changes</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-88948"><b>TW-88948</b></a> — Color Contrast for Warning and Error Rows in Build Logs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102649"><b>TW-102649</b></a> — "I agree to send anonymous usage statistics to JetBrains" checkbox in KMP flow doesn't affect the state of "Periodically send usage statistics to JetBrains" in usage statistics</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-93153"><b>TW-93153</b></a> — Hprof download via logs fail</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102812"><b>TW-102812</b></a> — YAML in branches: intermediate draft state is shown if the user switches between branches</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102631"><b>TW-102631</b></a> — Reuse of parallel tests distribution with changes isn't invalidated by a change in the number of tests</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102594"><b>TW-102594</b></a> — Branches in YAML: 'Initial commit will be made shortly' banner should not be shown</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102672"><b>TW-102672</b></a> — YAML in branches: editing of invalid YAML makes yaml editor fail and leads to UI settings for this branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102678"><b>TW-102678</b></a> — Kotlin DSL: legitimate annotation introspection (Class.getAnnotations) denied by reflection sandbox</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102527"><b>TW-102527</b></a> — Welcome and What's new popups are shown after upgrade from major release to its bugfix</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101975"><b>TW-101975</b></a> — Pipelines: numeric runner fields fail to render — "No applicable renderer found" (e.g. SSH Upload: Port, Timeout)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102687"><b>TW-102687</b></a> — YAML in branches: Reload isn't forced in case of changes in repo branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103035"><b>TW-103035</b></a> — WebHelp: TeamCity AWS connection documentation links to an internal Google Doc</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95135"><b>TW-95135</b></a> — Delay "The first build error occurs" notification, if Test retry support is enabled</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102461"><b>TW-102461</b></a> — Qodana fails with a generated secure token</li>
+        </ul>
+    </def>
+    <def title="Resolved performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-76149"><b>TW-76149</b></a> — Maven dependencies resolution can hang on the server leading to hanging builds</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102476"><b>TW-102476</b></a> — Memory Leak and Tab Crashes on TeamCity Agent Pages in Firefox and Chromium</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103119"><b>TW-103119</b></a> — S3 artifact storage sends a Lens availability OPTIONS probe on every artifact upload, even when Lens events are disabled</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102494"><b>TW-102494</b></a> — Long running cleanup of old node events</li>
+        </ul>
+    </def>
+    <def title="Security" default-state="collapsed">
+        94 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        <note>Security bulletins are typically published a few days after the release date.</note>
+    </def>
+</deflist>
+
+<!--UNCATEGORIZED
+
+Meta Issue
+
+* TW-100716 -- [Bugfix] Pipelines GA in TeamCity On-Premises
+
+-->
 
 
 
