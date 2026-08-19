@@ -595,7 +595,6 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 
 </def>
 
-
 <def title="On build agent">
 
 **Pros**
@@ -611,10 +610,9 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 
 </def>
 
-
 </deflist>
 
-Since server-side compilation runs in a sandbox, agent-side compilation is the only option if your DSL scripts need to do more than assemble settings from their own code — for example, read a data file stored outside the `.teamcity` directory, query an external service for a list of environments to generate configurations for, or run a helper process.
+
 
 ### Non-Portable DSL
 
@@ -982,7 +980,24 @@ _Solution_: set the [internal property](server-startup-properties.md#TeamCity+In
 
 _Problem_: Synchronizing Kotlin DSL setting fails with the "Compilation error: java.lang.OutOfMemoryError: Java heap space" error written to the [teamcity-versioned-settings.log](teamcity-server-logs.md) file.
 
-_Solution_: set the `teamcity.versionedSettings.configsGeneratorXmx` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) to `1g` (one gigabyte) or more and restart the server. The default property value is `512m`. 
+_Solution_: raise the memory limit of the settings generator, which is `512m` by default. Regardless of [where the DSL is compiled](#DSL+Compilation), set this limit to `1g` (one gigabyte) or more in the `pom.xml` file of your versioned settings:
+
+```XML
+<plugin>
+    <groupId>org.jetbrains.teamcity</groupId>
+    <artifactId>teamcity-configs-maven-plugin</artifactId>
+    <version>${teamcity.dsl.version}</version>
+    <configuration>
+        <format>kotlin</format>
+        <dstDir>target/generated-configs</dstDir>
+        <internalProperties>
+            <teamcity.versionedSettings.configsGeneratorXmx>1g</teamcity.versionedSettings.configsGeneratorXmx>
+        </internalProperties>
+    </configuration>
+</plugin>
+```
+
+For agent-side compilation, this change is all you need. If the DSL is compiled on the server, you also need to set the same `teamcity.versionedSettings.configsGeneratorXmx` value as an [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and restart the server.
 
 <seealso>
         <category ref="blog">
