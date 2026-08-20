@@ -25,7 +25,7 @@ Adding the Pull Requests feature to a build configuration allows you to:
 
 * Set up a workflow where developers work in local branches, and TeamCity only builds these changes once they are sent as a pull (merge) request — see [](#Interaction+with+VCS+Roots) below.
 
-The Pull Requests feature **does not** automatically trigger new builds against pull (merge) request branches. To assess changes from pull request branches before they are merged into the main codebase, add a [VCS trigger](configuring-vcs-triggers.md) that targets the required branches (for example, `refs/pull/*` for GitHub). New build configurations created in the TeamCity UI already include a trigger with the `+:*` specification, which lets TeamCity build changes from pull (merge) request branches.
+The Pull Requests feature **does not** automatically trigger new builds against pull (merge) request branches. To assess changes from pull request branches before they are merged into the main codebase, add a [VCS trigger](configuring-vcs-triggers.md) that targets the required branches (for example, `refs/pull/N/head` for GitHub). New build configurations created in the TeamCity UI already include a trigger with the `+:*` specification, which lets TeamCity build changes from pull (merge) request branches.
 
 > If your build configuration targets a public repository where non-trusted users can push commits or create pull (merge) requests, building these changes means TeamCity can execute malicious code introduced in them. For example, TeamCity may handle a harmful [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified `.teamcity` folder files.
 >
@@ -169,14 +169,20 @@ The following parameters are available for the GitHub hosting type:
 </def>
 
 
-<def title="Matching mode">
+<def title="Discovery mode">
 
-Determines how TeamCity identifies a pull request across a [build chain](build-chain.md) that spans multiple repositories, so that each configuration in the chain builds the correct, corresponding change.
+Determines how TeamCity identifies pull requests:
 
-* **Pull request refs only** (default) — TeamCity identifies a pull request by its `refs/pull/N/head` reference and displays it as `pull/N`. Because pull request numbers are assigned independently within each repository, identical numbers may correspond to unrelated pull requests across repositories. Consider a change that spans two repositories, _Plugin A_ and _Plugin B_: it may create `refs/pull/20/head` in _Plugin A_, while the more active _Plugin B_ repository assigns it number 50, creating `refs/pull/50/head`. To preserve consistency across the chain, TeamCity builds _Plugin B_ on the same `pull/20` branch used for _Plugin A_. However, this branch corresponds to a different, unrelated pull request in _Plugin B_, causing the build to run against outdated or irrelevant changes.
+* **By branch specification refs** (default) — TeamCity identifies pull requests by their actual `refs/pull/N/head` branches. 
 
-* **Match by source branch** — TeamCity identifies a pull request by the name of its source branch rather than its reference, and displays it using that branch name instead of `pull/N`. For example, in the scenario above, both pull requests originate from the same `sandbox` branch in their respective repositories. TeamCity uses this shared branch name to match the two pull requests, allowing each repository in the chain to build its own correct, corresponding change.
+* **By source branch names** — Requests are identified by their source branches. Enabling mode has the following effects:
 
+    * Pull requests from forks are ignored.
+    * Different pull requests coming from the same source branch are aggregated into one, and can be processed inside the same build.
+    * In TeamCity UI, source branch names are shown (compared to `pull/N` names in the default mode).
+    * As a side effect, TeamCity more accurately synchronizes pull requests made to separate repositories if two configurations are linked into a [build chain](build-chain.md). For example, in the default mode, if an upstream configuration processes changes from the `pull/10` branch, the downstream build runs against the same branch. Given that each repository has its own unique pull request counter, this chain can build unrelated changes. If the **By source branch names** mode is enabled, TeamCity recognizes that changes from the `pull/10` branch of one repository correspond to the `pull/54` branch of another one, since both originate from the same `sandbox` branch.
+
+Note that switching this mode changes how TeamCity recognizes pull requests, which may cause an influx of new pull requests (and, if automatic triggers are configured, an influx of queued builds). This is a one-time spike in build volumes that resolves once all newly discovered pull requests have been processed.
 </def>
 
 
