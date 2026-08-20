@@ -216,7 +216,7 @@ Gradle configuration caches may not work as expected in the following cases:
 
 * if Gradle [ignores configuration cache problems](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage:ignore_problems).
 
-* if the list of additional command line arguments includes those unsupported by Gradle Tooling API (`--daemon`, `--stop`, and others).
+* if the list of additional command line arguments includes those unsupported by Gradle Tooling API (`--daemon`, `--stop`, and others). This restriction does not apply in the [advanced integration mode](#Gradle+Integration+Mode), which does not use the Tooling API.
 
 [Build parameters](configuring-build-parameters.md) whose values always change from build to build (for example, `build.id` or `build.number`) will be loaded only on demand. You can still obtain values of these properties using direct references (for example, `project.teamcity["build.number"]`), but the `findProperty()` method (`project.findProperty("build.number")`) yields no results. If you need to call this method in your Gradle script, use the following workaround:
 
@@ -226,6 +226,21 @@ Gradle configuration caches may not work as expected in the following cases:
 
 Note that this workaround prevents your build configuration from reusing the configuration cache, so you may also want to disable it.
 
+## Gradle Integration Mode
+
+Starting with version 2026.2, you can choose between the legacy and advanced Gradle integration modes. Builds use the legacy mode by default. The advanced mode is available for projects using Gradle 8.1 or newer, and offers the following benefits:
+
+* Supports [Gradle Isolated Projects](https://docs.gradle.org/current/userguide/isolated_projects.html).
+* Allows using all Gradle command-line options (`--daemon`, `--no-daemon`, `--stop`, and other options incompatible with the legacy mode).
+* Does not use the Gradle Tooling API, so builds behave as if you ran Gradle directly from the command line, outside TeamCity.
+
+To enable the advanced mode, add the `teamcity.internal.gradle.runner.launch.mode=gradle_v2` [property](configuring-build-parameters.md) to a project, build configuration, or a pipeline. You can also add this property to [internal server properties](server-startup-properties.md#TeamCity+Internal+Properties) to enable the advanced mode globally.
+{instance="tc"}
+
+To enable the advanced mode, add the `teamcity.internal.gradle.runner.launch.mode=gradle_v2` [property](configuring-build-parameters.md) to a project, build configuration, or a pipeline.
+{instance="tcc"}
+
+We expect to make the advanced mode the default one in future TeamCity releases. See the following ticket for more information: [TW-103406](https://youtrack.jetbrains.com/issue/TW-103406).
 
 ## Configuration as Code
 
