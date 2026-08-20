@@ -130,6 +130,7 @@ Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 * TeamCity now [more accurately](working-with-build-queue.md#build-duration-estimates) estimates duration of highly variable parameterized builds.
 * You can now choose where TeamCity compiles versioned DSL settings: [on the server or build agents](kotlin-dsl.md#DSL+Compilation).
 {instance="tc"}
+* You can now switch Gradle steps to the [advanced integration mode](gradle.md#Gradle+Integration+Mode), which no longer relies on the Gradle Tooling API. Builds behave as if you ran Gradle from the command line, and previously incompatible functionality now works: Gradle isolated projects, command-line options like `--daemon` and `--stop`, and more. In version 2026.2, the advanced mode needs to be enabled manually, and we expect it to become the default in future releases.
 
 ## Upgrade Notes
 {instance="tc"}
