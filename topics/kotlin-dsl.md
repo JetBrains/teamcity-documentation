@@ -566,7 +566,7 @@ You can establish access to external libraries in private repositories. For this
 
 
 ### DSL Compilation
-{instance="tc"}
+{instance="tc" help-id="kotlin-compilation-mode"}
 
 When a project loads its DSL versioned settings from a repository, TeamCity does not apply them right away: it first compiles this code to verify it does not fail. You can choose where this compilation runs — on the TeamCity server or on a free build agent.
 
@@ -612,6 +612,23 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 
 </deflist>
 
+In both modes, you can define [Maven Central](https://central.sonatype.com/) mirrors in the [`mavenSettingsDsl.xml`](#Ability+to+Use+External+Libraries) file to avoid violating Central's rate limits.
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <mirrors>
+    <mirror>
+      <mirrorOf>central</mirrorOf>
+      <name>repo</name>
+      <url>https://host/maven/proxy</url>
+      <id>repo</id>
+    </mirror>
+  </mirrors>
+</settings>
+```
 
 
 ### Non-Portable DSL
