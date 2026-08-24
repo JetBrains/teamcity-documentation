@@ -25,7 +25,7 @@ This section allows you to arrange stand-alone jobs into a unified workflow. You
 
 When you add a dependency on an upstream job, you can also configure:
 
-<!-- TODO: screenshot of the dependency properties panel -->
+<img src="run-if-upstream-fails.png" width="706" alt="Job dependency settings"/>
 
 * **Ignore shared files** — if enabled, the job does not automatically download files its upstream job [shares](#Output+Files). Available only when the upstream job shares any files.
 
