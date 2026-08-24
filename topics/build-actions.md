@@ -1,6 +1,9 @@
 [//]: # (title: Main Actions on Builds)
 [//]: # (help-id: Main Actions on Builds;Pinned Build;Build Tag;Changing Build Status Manually)
 
+
+<show-structure for="chapter" depth="2"/>
+
 This article describes what actions can be applied to <tooltip term="build">_builds_</tooltip> in TeamCity.
 
 ## Run Build
@@ -13,7 +16,7 @@ To run a build manually, click __Run__ in the upper right corner of the screen. 
 
 The context menu next to the __Run__ button opens the build's settings menu, so you can initiate a <tooltip term="custom-build-run">_custom build run_</tooltip>. A custom run allows using different settings or/and source code than if running a regular build in the current configuration. This is handy if you want to try different build parameters or pretest local code without affecting common build settings or committing the code to the common repository. Read more about this functionality [here](running-custom-build.md).
 
-<img src="custom-run-menu.png" alt="Run Custom Build" width="460"/>
+<img src="pipelines-run-custom-build.png" width="706" alt="Run build buttons in TeamCity"/>
 
 ## Cancel Build
 
@@ -25,7 +28,7 @@ Note that there is no way to pause and then continue a single build (though you 
 
 The following actions can be invoked from the single-build __Actions__ menu. To open this menu from __Build Configuration Home__, click ![VCS-browserIcon.png](VCS-browserIcon.png) opposite the build in the list. To open it from the build's __Overview__, click __Actions__ in the upper left corner.
 
-<img src="build-actions-menu.png" alt="Build Actions Menu" width="296"/>
+<img src="build-actions-menu.png" alt="Build Actions Menu" width="706"/>
 
 ### Re-run Build
 
@@ -62,19 +65,8 @@ You can also add and modify build tags using [service messages](service-messages
 
 <!--[//]: # (Internal note. Do not delete. "Build Tagd46e113.txt")-->
 
-### Add Build to Favorites
-{help-id="AddBuildToFavorites"}
 
 
-<!--[//]: # (Internal note. Do not delete. "Favorite Buildd142e4.txt")-->
-
-You can add builds to _favorites_ to have quick access to them. Favorite builds can also be set as a filter option for [notifications](set-up-notifications.md).
-
-When added to favorites, a build will be marked with a star icon ![star_filled.png](star_filled.png). Clicking it will remove the "favorite" status.
-
-TeamCity can automatically mark your manually triggered and [personal builds](personal-build.md) as favorites. To achieve this, enable the respective setting in your [user profile settings](configuring-your-user-profile.md).
-
-To view your favorites, click your avatar in the upper right corner of the screen and choose __Favorite Builds__.
 
 ### Compare Two Builds
 
@@ -111,6 +103,22 @@ TeamCity can merge the code of one source branch to another: for example, after 
 
 You can configure [automatic merge](automatic-merge.md) or do it manually for each build, from the __Actions__ menu. The pop-up dialog will prompt you to select the destination branch for a merge and enter a merge commit message.
 
+
+## Add Build to Favorites
+{help-id="AddBuildToFavorites"}
+
+
+The **Favorite builds** page is accessible via the side navigation bar.
+
+<img src="favorite-builds.png" width="706" alt="Favorite builds"/>
+
+By default, all builds manually started by a TeamCity user are added to this user's favorites automatically. This behavior can be changed via the **Edit** action. To manually add or remove a build to/from the favorites, click the star ![star_filled.png](star_filled.png) icon next to the build number.
+
+Favorite builds can be used as an additional filter when setting up [notifications](set-up-notifications.md).
+
+<img src="notifications-only-favorites.png" width="706" alt="Favorite builds in notifications"/>
+
+
 ## Build Configuration Actions Menu
 
 The __[Build Configuration Home](build-configuration-home-page.md)__ page has own __Actions__ menu with a different set of actions. It allows you to:
@@ -124,4 +132,4 @@ The __[Build Configuration Home](build-configuration-home-page.md)__ page has ow
 
 You can manage multiple builds at once (for example, pin, add tags, compare two builds, remove builds, add builds to favorites, or add comments). For this, select the required builds on the __Overview__ tab of __Build Configuration Home__ (checkboxes appear when hovering over builds), and use commands of the pop-up context menu. If you need to select a range of builds, press __Shift__ and click build checkboxes at the edges of the range to be selected.
 
-<img src="select-multiple-builds.png" alt="Selecting multiple builds" width="750"/>
+<img src="select-multiple-builds.png" alt="Selecting multiple builds" width="706"/>

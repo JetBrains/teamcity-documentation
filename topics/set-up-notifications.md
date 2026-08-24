@@ -49,7 +49,7 @@ All the notifiers behave according to notification rules. If you want to configu
 A notification rule comprises the following conditions:
 * what projects to monitor
 * what branches to monitor
-* include all builds, or only builds with your changes, or/and only your favorite builds
+* include all builds, or only builds with your changes, or/and only your [favorite builds](build-actions.md#Add+Build+to+Favorites)
 * what events to report
 
 The notification about a certain event is only sent if this event satisfies any of the configured rules.
