@@ -45,7 +45,7 @@ Learn more: [](pipeline-settings.md#Feature+Branches)
 
 When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
 
-<!-- TODO: screenshot of the dependency properties panel -->
+<img src="run-if-upstream-fails.png" width="706" alt="Job dependency settings"/>
 
 The pipeline run is still marked as failed overall, but this lets you guarantee that specific jobs (for example, cleanup or notification steps) always run.
 
