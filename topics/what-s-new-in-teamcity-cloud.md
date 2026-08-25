@@ -2,6 +2,14 @@
 
 <show-structure for="chapter" depth="2"/>
 
+<!-- 
+## Build TBD, TBD September 2026
+
+### Full changelog
+{id=changelog-2026.2.3}-->
+
+<!--Automation-->
+
 
 ## Build 245298, 23 July 2026
 
