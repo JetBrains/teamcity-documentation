@@ -24,7 +24,97 @@ TeamCity now supports the lossless Zstandard compression algorithm for Tape Arch
 ### Full changelog
 {id=changelog-2026.2.2}
 
-<!--Automation-->
+<deflist collapsible="true">
+    <def title="Implemented features" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96371"><b>TW-96371</b></a> — Add ability to retry a build in place if it is a part of a build chain</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-76755"><b>TW-76755</b></a> — Add support for zstd extension in artifact paths (.tar.zst)</li>
+        </ul>
+    </def>
+    <def title="Pipeline enhancements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99101"><b>TW-99101</b></a> — Error about the empty required fields are shown even if user doesn't try to save anything</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99143"><b>TW-99143</b></a> — Jumping from Build Log to Problems after finishing a Job can be annoying for users</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102024"><b>TW-102024</b></a> — Pipelines: Checkout Rules: Checkout rules not respected for pipelines with only main repo</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101426"><b>TW-101426</b></a> — Notifications from Pipelines use a different prefix than regular notifications [TeamCity Pipelines, ...]</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101425"><b>TW-101425</b></a> — Wrong Changes link in Pipeline Email notifications</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101179"><b>TW-101179</b></a> — Branch name is cut to agressively in branch selector on Pipeline overview</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101177"><b>TW-101177</b></a> — Pipelines: The additional repository checkout direectoty path is not autfilled anymore</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102147"><b>TW-102147</b></a> — Pipelines: TFS repo is in the list for secondary repos in pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100146"><b>TW-100146</b></a> — pipelinesCount FUS metric reports 3x more pipelines than are present on the server</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98856"><b>TW-98856</b></a> — Pipeline defined in DSL without the main VCS root is not able to run</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100714"><b>TW-100714</b></a> — Cloud: "No compatible agent" is shown while waiting for start of JetBrains-hosted agent</li>
+        </ul>
+    </def>
+    <def title="Fixed bugs" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101049"><b>TW-101049</b></a> — Create Subproject Button in old UI is Broken.</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101046"><b>TW-101046</b></a> — Links Not Rendered Properly When Searching For Job Steps in Pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101158"><b>TW-101158</b></a> — Caching proxies might cache stale buildAgent.zip after server upgrade</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98011"><b>TW-98011</b></a> — UI bug that keeps expanding/collapsing tree views</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101234"><b>TW-101234</b></a> — Cannot select log range in new Performance Monitor UI</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100853"><b>TW-100853</b></a> — Perforce stream branches: child stream changes not collected, commit hook matches 0 VCS root instances for child stream CLs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102051"><b>TW-102051</b></a> — Upgrade bundled tomcat to 9.0.119</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100758"><b>TW-100758</b></a> — Credentials provided via provideAwsCredentials appear to expire sooner than sessionDuration after upgrade to 2026.1</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101157"><b>TW-101157</b></a> — Cloud: Add script for Self-hosted agent installation to the Agents page</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100860"><b>TW-100860</b></a> — Personal builds fail during agent-side checkout when unshelving a Perforce changelist that contains files opened exclusively</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100785"><b>TW-100785</b></a> — Compiling Pipeline YAML schema on UI flattens properties</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101362"><b>TW-101362</b></a> — Artifact uploads to our S3 storage fail: @NotNull method jetbrains/buildServer/artifacts/s3/S3Util.getBucketRegion must not return null</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95420"><b>TW-95420</b></a> — Wrong test results are reported and test count varies from build to build without any changes when running test assemblies in parallel</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99933"><b>TW-99933</b></a> — Installation of bundled Maven in TeamCity server in docker fails with "java.nio.file.ReadOnlyFileSystemException"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101333"><b>TW-101333</b></a> — Comparison method violates its general contract! in BuildPromotionProblems.getBuildProblemsFromDB</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101613"><b>TW-101613</b></a> — Oauth tokens are broken in imported VCS roots</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101661"><b>TW-101661</b></a> — "Select" build configuration/pipeline on Git History tab doesn't work</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101354"><b>TW-101354</b></a> — Build cache build feature doesn't work with Artifact lazy processing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101256"><b>TW-101256</b></a> — Remove duplicated react-ui assembly logic</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99497"><b>TW-99497</b></a> — Committing settings into the global repository may get stuck</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101516"><b>TW-101516</b></a> — Cannot login to GitHub from GitHub App connection after project import</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95820"><b>TW-95820</b></a> — Incorrect redirect to Built-in Server after PKCE Auth flow if non-default port is used</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101772"><b>TW-101772</b></a> — On opening, the Investigation dialog should show existing investigation info based on the current context project</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101733"><b>TW-101733</b></a> — Complete YAML schema flattens all runners properties</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101607"><b>TW-101607</b></a> — Podman support for the Docker build step</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101285"><b>TW-101285</b></a> — Add ai-assistant-plugin and mcp plugin to the TeamCity external-repos</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101340"><b>TW-101340</b></a> — "Connect AI Assistant to TeamCity?" popup shown on every start of IDEA</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101373"><b>TW-101373</b></a> — Slash ("/") in S3 path prefix leads to signature mismatch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-79701"><b>TW-79701</b></a> — Build hangs without any message ("InvalidRunningBuildException: Unauthorized access to build with id" in the agent log)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101551"><b>TW-101551</b></a> — MessagesController (/app/messages): return 404 instead of 500 when build is not found</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101585"><b>TW-101585</b></a> — Pipeline YAML editor: non-existing job dependency in object (files:) form is not flagged as invalid</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-92799"><b>TW-92799</b></a> — Limited access tokens: Not all permissions can be assigned</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-76904"><b>TW-76904</b></a> — Limited access tokens: add "Change build source code with a custom patch" permission so that users can run personal builds</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101460"><b>TW-101460</b></a> — build isn't retrying if it's assigned to the secondary node</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100762"><b>TW-100762</b></a> — TeamCity Build Pipeline No longer working in 2026.1</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100525"><b>TW-100525</b></a> — Exception during the start of the TeamCity server secondary node</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-90348"><b>TW-90348</b></a> — Builds that require approval are hidden by default</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101044"><b>TW-101044</b></a> — teamcity_rest_get: nested locator dimensions incorrectly detected as outer pagination</li>
+        </ul>
+    </def>
+    <def title="Resolved performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100746"><b>TW-100746</b></a> — "Artifacts storage" page loading is slow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101463"><b>TW-101463</b></a> — Audit REST requests always scan the entire audit history potentially occupying too much memory if there is no selective filtering</li>
+        </ul>
+    </def>
+    <def title="Security" default-state="collapsed">
+        33 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        <note>Security bulletins are typically published a few days after the release date.</note>
+    </def>
+</deflist>
+
+<!--UNCATEGORIZED
+
+Meta Issue
+
+* TW-100686 -- [Bugfix] Pipelines GA in TeamCity Cloud
+
+Question
+
+* TW-91554 -- Is this expected behavior when using Elasticsearch: "Error while deleting build ..., deleted 0/97 docs."
+
+Internal (bracketed prefix, not disclosed)
+
+* TW-100223 -- [devenv] implement up-to-date checks in teamcity-maven-plugin
+
+-->
 
 
 
