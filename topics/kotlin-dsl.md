@@ -566,14 +566,13 @@ You can establish access to external libraries in private repositories. For this
 
 
 ### DSL Compilation
-{instance="tc" help-id="kotlin-compilation-mode"}
+{help-id="kotlin-compilation-mode"}
 
 When a project loads its DSL versioned settings from a repository, TeamCity does not apply them right away: it first compiles this code to verify it does not fail. You can choose where this compilation runs — on the TeamCity server or on a free build agent.
 
-By default, TeamCity compiles DSL code on the server and does not show the mode selector in the UI. To make it available and choose the compilation mode:
+To change the compilation (execution) mode, choose a required behavior on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Versioned Settings__ page.
 
-1. Add the `teamcity.versionedSettings.dslExecutionMode=any` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
-2. Go to __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Versioned Settings__ and select __On server__ or __On build agent__.
+<img src="dsl-compilation-modes.png" width="706" thumbnail="true" alt="DSL compilation mode settings"/>
 
 Compiling DSL on build agents is generally the recommended approach, but each mode has its own trade-offs.
 
@@ -606,6 +605,7 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 **Cons**
 
 * Occupies build agents that could otherwise be running builds.
+* Running kDSL on cloud agents incurs additional hosting costs.
 * Has a higher overhead and can be slower: the compilation waits for a free agent, and [cloud agents](teamcity-integration-with-cloud-solutions.md) need extra time to start.
 
 </def>
