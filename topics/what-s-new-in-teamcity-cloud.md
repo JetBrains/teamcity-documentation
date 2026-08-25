@@ -3,9 +3,23 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Build ???, ??? July 2026
+## Build 245298, 23 July 2026
 
-We’ve added [PKCE OAuth](ai-agent-integration.md) authorization for the TeamCity MCP server. You no longer need to manually issue a static user token and pass it to your AI solution. Instead, complete the OAuth flow to authorize access and generate the token automatically.
+### Rerun Failed Chain Builds
+
+The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
+
+<img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
+
+Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
+
+### PKCE Authorization
+
+We’ve added [PKCE OAuth](ai-agent-integration.md#OAuth+Access) authorization for the TeamCity MCP server. You no longer need to manually issue a static user token and pass it to your AI solution. Instead, complete the OAuth flow to authorize access and generate the token automatically.
+
+### Miscellaneous
+
+TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` or `.tzst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
 
 ### Full changelog
 {id=changelog-2026.2.2}
