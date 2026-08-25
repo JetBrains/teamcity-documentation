@@ -624,6 +624,10 @@ To test Kotlin-based settings in a sandbox project, you can download the setting
 
 </note>
 
+If Kotlin DSL is selected, you can additionally choose whether the code runs [on the TeamCity server or build agents](kotlin-dsl.md#DSL+Compilation).
+
+<img src="dsl-compilation-modes.png" width="706" thumbnail="true" alt="DSL compilation mode settings"/>
+
 <anchor name="ForcingSynch"/>
 
 ## Committing Current Project Settings to VCS
