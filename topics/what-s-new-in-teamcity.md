@@ -140,6 +140,7 @@ Learn more: [](kotlin-dsl.md#DSL+Compilation)
 
 * TeamCity now [more accurately](working-with-build-queue.md#build-duration-estimates) estimates duration of highly variable parameterized builds.
 * You can now switch Gradle steps to the [advanced integration mode](gradle.md#Gradle+Integration+Mode), which no longer relies on the Gradle Tooling API. Builds behave as if you ran Gradle from the command line, and previously incompatible functionality now works: Gradle isolated projects, command-line options like `--daemon` and `--stop`, and more. In version 2026.2, the advanced mode needs to be enabled manually, and we expect it to become the default in future releases.
+* [Projects Import](projects-import.md#Access+tokens) now lets you choose whether [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) that grant the same permissions as their owner are imported along with their users. Such tokens are not limited to any project, so on the target server they would grant every permission their owner has there — TeamCity imports them only if you select the corresponding checkbox.
 
 ## Upgrade Notes
 {instance="tc"}
