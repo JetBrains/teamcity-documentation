@@ -1,7 +1,7 @@
 [//]: # (title: Projects Import)
 [//]: # (help-id: Projects Import)
 
-You can import projects with all their data and user accounts from a backup file to an existing TeamCity server, that is to add projects from one server to the target server that is normally used.
+Projects Import adds projects with all their data and user accounts from a backup file to an existing TeamCity server, effectively merging two servers into one.
 
 
 <include from="common-templates.md" element-id="env-imported-encryption-key-warning">
@@ -14,121 +14,115 @@ You can import projects with all their data and user accounts from a backup file
 ## Projects Import or Server Move
 {instance="tc"}
 
-Projects Import should be used only when some projects need to be added to an existing server containing some other projects, that is when you need to merge two servers into one. The import is a disruptive operation and [not all data is imported](#Data+not+included+into+import).   
-If you need to move all the server data to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine).
+Import is a disruptive operation and [not all data is imported](#Data+not+included+into+import), so use it only when you need to add projects to a server that already hosts other projects. To move all the data of a server to a different machine, use [server move](how-to.md#Move+TeamCity+Installation+to+a+New+Machine) instead.
 
 ## Importing projects
 {instance="tc" help-id="ProjectImport-ImportingProjects"}
 
-On the source TeamCity server:
-* [Create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to be imported (note that the __[major version](upgrading-teamcity-server-and-agents.md#Upgrading+TeamCity+Server) of the source and target TeamCity servers has to be the same__).
-
-On the target TeamCity server:
-* Go to the __Server Administration__ area and select __Project Import__ on the left. Upload your project settings and follow the wizard. When the import finishes, TeamCity will display the results.
+1. On the source server, [create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to import. The __[major version](upgrading-teamcity-server-and-agents.md#Upgrading+TeamCity+Server) of the source and target servers must be the same__.
+2. On the target server, go to __Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
 
 <warning>
 
-To complete the import, you need to copy the artifacts from the old server to the new one by running the [provided scripts](#Moving+artifacts+and+logs): check details in the import log.
+Backup files do not include build artifacts. To complete the import, copy them to the target server by running the [provided scripts](#Moving+artifacts+and+logs): check details in the import log.
 
 </warning>
 
->The Projects Import functionality does not support an external artifacts' storage. If you use an external artifacts' storage, you will need to move the externally stored artifacts manually to new locations using the build ids mapping generated during the import. Contact [TeamCity support](troubleshooting.md) for details.
+>Projects Import does not support external artifact storages. If you use one, move the externally stored artifacts to their new locations manually, using the build IDs mapping generated during the import. Contact [TeamCity support](troubleshooting.md) for details.
 
 ### Selecting projects for import
 
-After selecting a backup file, you need to specify which projects will be imported.
+After selecting a backup file, choose which projects to import. TeamCity analyzes them and reports whether each project will be imported, merged, or skipped.
 
-TeamCity will analyze the selected projects to see if they will be imported, merged or skipped.
-
-* The project will be __imported__ if it is new for the target server. All its entities (build configurations, templates, builds, and so on) and their data will be created on the target server.
-* The project will be __merged__ if the same project already exists on the target server (if the source and target project have the same [UUID](identifier.md#Universally+Unique+IDs) and [external ID](identifier.md#External+IDs)).   
-   During merging the existing entities will remain intact and only the entities new for the target will be imported with the related data.    
-   The data for the existing entities will not be imported or merged: new data will not be added to the existing entities (for example, changes will not added to an existing VCS root), the existing files will not be changed (for example, if the same template exists on both servers with different settings, the target file will be preserved).   
-   It means, for example, that you cannot import missing builds to the existing build configuration. If you need to add the missing data to the existing entities, for example, import new builds into an already imported build configuration, then you should remove this build configuration using the UI and reimport its project.
-* The project will be __skipped__ if a [conflict](#Conflicts) occurs: either the project's [UUID](identifier.md) is new but its [external ID](identifier.md#External+IDs) already exists on the target; or if the source and target projects have the same [UUID](identifier.md#Universally+Unique+IDs) but different [external IDs](identifier.md#External+IDs).
+* The project is __imported__ if it is new for the target server. All its entities (build configurations, templates, builds, and so on) and their data are created on the target server.
+* The project is __merged__ if it already exists on the target server, that is, the source and target projects share the same [UUID](identifier.md#Universally+Unique+IDs) and [external ID](identifier.md#External+IDs). Existing entities remain intact, and only the entities that are new for the target are imported with their data.   
+  Data of the existing entities is neither imported nor merged: new changes are not added to an existing VCS root, and a template that exists on both servers keeps its target settings. This also means you cannot import missing builds into an existing build configuration — to do that, delete this build configuration in the UI and reimport its project.
+* The project is __skipped__ if a [conflict](#Conflicts) occurs: its [UUID](identifier.md) is new but its [external ID](identifier.md#External+IDs) already exists on the target, or the source and target projects have the same UUID but different external IDs.
 
 ### Defining import scope
 
-You can select the import scope: choose among project settings, builds and changes history, and user accounts or import all of them. Since an imported project can also use settings from its parent, TeamCity will also import all the vcs roots, templates, meta-runners and other project-related settings for parent projects. If the same project already exists on the target server, the existing objects will not be overwritten.
+You can import project settings, builds and changes history, and user accounts in any combination. Since an imported project can use settings of its parents, TeamCity also imports the VCS roots, templates, meta-runners, and other project-related settings of the parent projects. Existing objects on the target server are never overwritten.
 
 ### Configuration files import
 
-For each imported or merged project, the configuration files are imported to the [Data Directory](teamcity-data-directory.md) on the target server, provided they are new for the target. The existing files will not be changed.
+For each imported or merged project, TeamCity copies the configuration files that are new for the target server to its [Data Directory](teamcity-data-directory.md). Existing files are not changed.
 
 The following files are imported:
-* Configuration xml files for the Project with its Build Configurations, Templates, and VCS Roots as well as its subprojects.
+* Configuration XML files of the project with its build configurations, templates, and VCS roots, as well as its subprojects.
 * All files from the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/plugins` directory.
-* Build Numbers files for the newly added build configurations.
+* Build number files of the newly added build configurations.
 
-### Importing users and groups
+### Importing users, groups, and tokens
 {help-id="ProjectImport-ImportUsersAndGroups"}
 
-When users are selected for import, TeamCity will analyze the usernames to see if users will be __imported__ or __merged__.
+#### User accounts
 
-TeamCity users must have unique usernames. 
-* A user account whose username is new for the target server will be __imported__. Such users appear on the target server in a separate group marked _Imported &lt;Import Date Time&gt;_. All the related data (personal builds, changes, test mutes and investigations) will be created on the target server. The [user account settings](configuring-your-user-profile.md) (roles, permissions, VCS names, notification settings, and so on: system-wide settings as well as the settings related to the imported projects) are preserved during import.   
-* User accounts with the same username on the source and the target servers can be __merged__. During merging the existing data will remain intact and only the data new for the target will be added: all the new user-related data (personal builds, changes, test mutes and investigations) and the [user account settings](configuring-your-user-profile.md) (roles, permissions, VCS names, notification settings, and so on: system-wide settings as well as the settings related to the imported projects) will be added to the user on the target server.    
-  (!) Merging may cause a problem if the same username belongs to different users on the source and the target server: during import the user information will be merged anyway.       
-  __Note__ that the scope of user permissions on the target may change after import, for example:
-   * if a user has the system administrator role on the source, this role will be added to the user on the target after import,   
-   * if a user has several roles in several projects on the source, only the new roles for the projects within the import scope will be added on the target.   
+TeamCity users must have unique usernames, so when users are in the import scope, TeamCity compares usernames to see whether each user will be imported or merged. In both cases, it transfers all the user-related data (personal builds, changes, test mutes, and investigations) and the [user account settings](configuring-your-user-profile.md) — roles, permissions, VCS names, notification settings, and so on, both system-wide and related to the imported projects.
 
-    The __Project Import | Import scope | Users__ section will display the number of conflicts and you can view them and decide is you want to merge them. 
+* A user whose username is new for the target server is __imported__. Such users appear on the target server in a separate group marked _Imported &lt;Import Date Time&gt;_.
+* A user whose username exists on both servers can be __merged__. The existing data remains intact, and only the data that is new for the target is added.
 
-    TeamCity will show users with the same username and different emails on both servers, as well as the number of users with the same username and the same email. Email verification [can be enabled](enabling-email-verification.md) for the server,  and the users with the same username and email are compared based on their email verification.  You can view the conflicts information and choose whether to merge the users found. The options are active if users with verified emails are present either on the source or the target TeamCity server, or both.
+Merging relies on usernames, so if the same username belongs to different people on the two servers, their information is merged anyway. Merging can also extend a user's permissions on the target server: a system administrator role granted on the source server is added to the target user, while project roles are added only for the projects within the import scope.
 
-Import of user groups works the same way: new groups are imported, while the existing groups can be merged.
+The __Project Import | Import scope | Users__ section reports how many conflicts were found, so that you can review them and decide whether to merge. TeamCity lists users that have the same username but different emails on both servers, and counts users that share both a username and an email. If [email verification](enabling-email-verification.md) is enabled, such users are compared based on their verified emails. These options are active only when users with verified emails are present on the source server, the target server, or both.
 
-If a [conflict](#Conflicts) occurs (the groups exists on both the source and the target, but the group roles are different), after import the group on the target server may get additional roles. As a result, a member of this group on the target will get additional roles and permissions as well. 
+#### User groups
 
-The __Project Import__ page | __Import scope__ section | __Groups__ will display how many conflicting groups are found. You can view all the groups that have the same group key and decide if you want to merge them. Note that ["All Users" group](creating-and-managing-user-groups.md#%22All+Users%22+Group) is always listed as a conflicting one because it is a default group on all TeamCity servers.
+Groups work the same way: new groups are imported and the existing ones can be merged. If a [conflict](#Conflicts) occurs — a group exists on both servers but with different roles — the target group may get additional roles after the import, and so do all its members.
+
+The __Project Import | Import scope | Groups__ section reports how many conflicting groups were found. You can view all groups that share a group key and decide whether to merge them. The ["All Users" group](creating-and-managing-user-groups.md#%22All+Users%22+Group) is always listed as conflicting because it exists on every TeamCity server by default.
+
+#### Access tokens
+
+When users are in the import scope, whether TeamCity transfers their [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) depends on the [token scope](configuring-your-user-profile.md#token-scope):
+
+* Tokens limited to the projects selected for import (the _Limit per project_ scope) are imported by default. On the target server, these tokens retain their permissions only for the imported projects.
+* Tokens limited to any other project are not imported. For example, a token scoped to the parent project of an imported project is skipped, even though TeamCity imports the settings this parent project shares with its children.
+* Tokens that grant the same permissions as their owner (the _Same as current user_ scope) are imported only with explicit consent: select the corresponding checkbox in the __Project Import | Import scope | Users__ section. Since such tokens are not limited to any project, on the target server they grant every permission that their owner has there — which is why they are left out by default.
+
+For a merged user, imported tokens are added to the tokens that this user already has on the target server.
 
 ### Conflicts
 {help-id="Projects Import Conflicts"}
 
-TeamCity does not import entities from the backup file if they conflict with some entity on the target server. Before import, TeamCity analyzes the backup file and displays all detected conflicts on the __Import Scope__ configuration page.
+TeamCity does not import entities from the backup file if they conflict with an entity on the target server. Before the import, TeamCity analyzes the backup file and displays all detected conflicts on the __Import Scope__ configuration page.
 
-It is __highly recommended that you resolve all conflicts__ before proceeding with the import, as unresolved conflicts may result in unpredictable behavior after the import, for example:
-* Critical errors can be shown if, for example, some VCS Root was skipped, but a Build Configuration depending on it was imported.
-* Imported Build Configurations may refer to the wrong Template if there was an unresolved conflict of [external IDs](identifier.md#External+IDs) between the templates from the source and target servers.
+It is __highly recommended that you resolve all conflicts__ before proceeding, as unresolved conflicts may result in unpredictable behavior after the import. For example, a build configuration can report a critical error if the VCS root it depends on was skipped, or refer to the wrong template if the templates from the source and target servers had conflicting [external IDs](identifier.md#External+IDs).
 
-If the conflicts have not been resolved before importing, you can find the conflicting files in the `conflictingFiles` directory under the import results logs.
+If you import without resolving the conflicts, you can find the conflicting files in the `conflictingFiles` directory under the import results logs.
 
 <anchor name="ProjectsImport-Dataexcludedfromimport"/>
 
 ## Importing projects
 {instance="tcc"}
 
-On the source TeamCity On-Premises server:
-* Create a [backup file](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html) containing the projects to be imported.
-
-On the target TeamCity server:
-* Go to the __Server Administration__ area and select __Project Import__ on the left. Upload your project settings and follow the wizard. When the import finishes, TeamCity will display the results.
+1. On the source TeamCity On-Premises server, create a [backup file](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html) containing the projects to import.
+2. On the target server, go to __Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
 
 ## Data not included into import
 
-There is a number of limitations regarding the import:
+The import has the following limitations:
 * Agents and agent pools are not imported ([TW-39797](https://youtrack.jetbrains.com/issue/TW-39797)).
-* Settings are merged on the "by file" basis. This means that new files are added but no settings files are merged. For example, if a project being imported already exists on the target server, its parameters, project features, and plugin settings will not be merged.
-* If you use the "Store secure values (like passwords or API tokens) outside of VCS" option for version settings, then the credentials will not be imported for the projects already existing on the server.
-* Audit records are imported only if users are selected in the scope.
-* Running builds and the build queue are not included in the backup and not imported.
-* Internal ids (like ids of the builds) are not preserved during import. This means that URLs to the build results pages from the old server will appear broken even if redirected to the new server as build ids change on importing.
-* The backup files do not contain artifacts and logs (build logs are stored under build artifacts), so these are not imported automatically, but TeamCity provides scripts to move them [manually](#Moving+artifacts+and+logs).
+* Settings are merged on a per-file basis: new files are added, but no settings files are merged. For example, if a project being imported already exists on the target server, its parameters, project features, and plugin settings are not merged.
+* If you use the "Store secure values (like passwords or API tokens) outside of VCS" option for versioned settings, credentials are not imported for the projects that already exist on the server.
+* Audit records are imported only if users are in the import scope.
+* Running builds and the build queue are not included in the backup, and thus not imported.
+* Internal IDs, such as build IDs, are not preserved. This means that URLs to the build results pages from the old server appear broken even if redirected to the new server.
+* Backup files do not contain artifacts and logs (build logs are stored under build artifacts), so these are not imported automatically. TeamCity provides scripts to move them [manually](#Moving+artifacts+and+logs).
 {instance="tc"}
 * Global server settings (authentication schemes, custom roles, and so on) are not imported.
-* Import to TeamCity Cloud: build artifacts and logs.
+* Build artifacts and logs cannot be imported to TeamCity Cloud.
 
 <note>
 
-Importing projects may take significant time. There can be only one import process per server.
+An import may take significant time. There can be only one import process per server.
 
 </note>
     
 ## Moving artifacts and logs
 {instance="tc" help-id="ProjectImport-MovingArtifactsAndLogs"}
 
-Although artifacts and logs are not imported right from the backup file, you can copy/move them from the source to the target server using the `.bat` and `.sh` scripts from the `projectsImport-<date>` directory under TeamCity logs. These scripts accept the source and target data directories via the command line; the scripts accept the source and target [artifact directories](build-artifact.md). The rest is done automatically. The scripts can be executed while the server is running.
+Artifacts and logs are not imported from the backup file, but you can copy or move them from the source to the target server using the `.bat` and `.sh` scripts from the `projectsImport-<date>` directory under the TeamCity logs. These scripts accept the source and target [artifact directories](build-artifact.md) via the command line, and the rest is done automatically. You can run the scripts while the server is running.
 
 It may take some time for TeamCity to display the imported build artifacts.
 
@@ -140,11 +134,10 @@ Restoring artifacts and logs of imported projects is available only on TeamCity 
 
 ## Viewing Import Results
 
-Each import process creates the `projectsImport-<date>` directory under the TeamCity logs allowing you to view the import results.
+Each import process creates the `projectsImport-<date>` directory under the TeamCity logs, allowing you to view the import results. This directory contains:
 
-The directory contains the following:
-* conflicting files' directory, containing all data which has been merged
-* mappings, containing mapping of the fields in the source and target databases
+* the `conflictingFiles` directory with all the data that has been merged
+* mappings of the fields in the source and target databases
 * scripts for copying artifacts and logs (see the section [above](#Moving+artifacts+and+logs))
 {instance="tc"}
-* import report, listing import results including the information on the data which has not been imported (if any)
+* the import report listing the import results, including the information on the data that has not been imported (if any)
