@@ -113,7 +113,9 @@ In this case, the server is added, but its MCP tools remain unavailable until yo
 
 <img src="air-mcp-oauth.png" width="706" alt="Auth to PKCE"/>
 
-After that, your AI client opens the `<TeamCity-server-URL>/pkce/authorize.html` page, where you can review the permissions granted to the AI agent and click **Confirm** to issue the access token.
+After that, your AI client opens the `<TeamCity-server-URL>/pkce/authorize.html` page, where you can review the permissions granted to the AI agent and click **Authorize** to issue the access token.
+
+<img src="mcp-oauth-permissions.png" width="706" thumbnail="true" alt="MCP OAuth permission selector"/>
 
 Note that the token inherits your TeamCity permissions. For example, if you cannot view server logs, neither can the AI agent. If you can edit only specific projects, the agent has the same restrictions.
 

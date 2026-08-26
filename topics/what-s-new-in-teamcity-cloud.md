@@ -25,9 +25,6 @@ Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
 
 We’ve added [PKCE OAuth](ai-agent-integration.md#OAuth+Access) authorization for the TeamCity MCP server. You no longer need to manually issue a static user token and pass it to your AI solution. Instead, complete the OAuth flow to authorize access and generate the token automatically.
 
-### Miscellaneous
-
-TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` or `.tzst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
 
 ### Full changelog
 {id=changelog-2026.2.2}
@@ -39,15 +36,22 @@ TeamCity now supports the lossless Zstandard compression algorithm for Tape Arch
             <li><a href="https://youtrack.jetbrains.com/issue/TW-76755"><b>TW-76755</b></a> — Add support for zstd extension in artifact paths (.tar.zst)</li>
         </ul>
     </def>
+    <def title="Minor improvements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101018"><b>TW-101018</b></a> — Add option to suppress Bazel test.log output in TeamCity build log</li>
+        </ul>
+    </def>
     <def title="Pipeline enhancements" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99101"><b>TW-99101</b></a> — Error about the empty required fields are shown even if user doesn't try to save anything</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99143"><b>TW-99143</b></a> — Jumping from Build Log to Problems after finishing a Job can be annoying for users</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96901"><b>TW-96901</b></a> — PR and CPS features are assigned to the old VCS root in case if while VCS root editing a copy was created</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102024"><b>TW-102024</b></a> — Pipelines: Checkout Rules: Checkout rules not respected for pipelines with only main repo</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101426"><b>TW-101426</b></a> — Notifications from Pipelines use a different prefix than regular notifications [TeamCity Pipelines, ...]</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101545"><b>TW-101545</b></a> — Pipelines without main vcs root do not have branch selector widget</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101426"><b>TW-101426</b></a> — Notifications from Pipelines use a different prefix than regular notifications</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101425"><b>TW-101425</b></a> — Wrong Changes link in Pipeline Email notifications</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101179"><b>TW-101179</b></a> — Branch name is cut to agressively in branch selector on Pipeline overview</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-101177"><b>TW-101177</b></a> — Pipelines: The additional repository checkout direectoty path is not autfilled anymore</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101177"><b>TW-101177</b></a> — Pipelines: The additional repository checkout directory path is not autofilled anymore</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102147"><b>TW-102147</b></a> — Pipelines: TFS repo is in the list for secondary repos in pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100146"><b>TW-100146</b></a> — pipelinesCount FUS metric reports 3x more pipelines than are present on the server</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-98856"><b>TW-98856</b></a> — Pipeline defined in DSL without the main VCS root is not able to run</li>
@@ -56,6 +60,7 @@ TeamCity now supports the lossless Zstandard compression algorithm for Tape Arch
     </def>
     <def title="Fixed bugs" default-state="collapsed">
         <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100644"><b>TW-100644</b></a> — GitLab EE webhooks: Error java.lang.IllegalArgumentException: Argument for @NotNull parameter 's' in logs</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101049"><b>TW-101049</b></a> — Create Subproject Button in old UI is Broken.</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101046"><b>TW-101046</b></a> — Links Not Rendered Properly When Searching For Job Steps in Pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101158"><b>TW-101158</b></a> — Caching proxies might cache stale buildAgent.zip after server upgrade</li>
@@ -65,12 +70,17 @@ TeamCity now supports the lossless Zstandard compression algorithm for Tape Arch
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102051"><b>TW-102051</b></a> — Upgrade bundled tomcat to 9.0.119</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100758"><b>TW-100758</b></a> — Credentials provided via provideAwsCredentials appear to expire sooner than sessionDuration after upgrade to 2026.1</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101157"><b>TW-101157</b></a> — Cloud: Add script for Self-hosted agent installation to the Agents page</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100479"><b>TW-100479</b></a> — TeamCity builds sporadically fail to perform checkout with Git 2.54.0: unable to find all commit-graph files</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100860"><b>TW-100860</b></a> — Personal builds fail during agent-side checkout when unshelving a Perforce changelist that contains files opened exclusively</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100785"><b>TW-100785</b></a> — Compiling Pipeline YAML schema on UI flattens properties</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101362"><b>TW-101362</b></a> — Artifact uploads to our S3 storage fail: @NotNull method jetbrains/buildServer/artifacts/s3/S3Util.getBucketRegion must not return null</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101394"><b>TW-101394</b></a> — Connection to uploads is prohibited by node restrictions from not-readonly secondary node</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101336"><b>TW-101336</b></a> — If pop-up is closed during the "Collecting diagnostic data" stage, it doesn't appear again</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-95420"><b>TW-95420</b></a> — Wrong test results are reported and test count varies from build to build without any changes when running test assemblies in parallel</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-99933"><b>TW-99933</b></a> — Installation of bundled Maven in TeamCity server in docker fails with "java.nio.file.ReadOnlyFileSystemException"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97226"><b>TW-97226</b></a> — Builds skipped using partial chain execution are reported as failed to GitHub by commit status publisher build feature</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101333"><b>TW-101333</b></a> — Comparison method violates its general contract! in BuildPromotionProblems.getBuildProblemsFromDB</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100645"><b>TW-100645</b></a> — It's not clear TFS is not supported for pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101613"><b>TW-101613</b></a> — Oauth tokens are broken in imported VCS roots</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101661"><b>TW-101661</b></a> — "Select" build configuration/pipeline on Git History tab doesn't work</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101354"><b>TW-101354</b></a> — Build cache build feature doesn't work with Artifact lazy processing</li>
@@ -99,6 +109,7 @@ TeamCity now supports the lossless Zstandard compression algorithm for Tape Arch
     <def title="Resolved performance issues" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100746"><b>TW-100746</b></a> — "Artifacts storage" page loading is slow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99694"><b>TW-99694</b></a> — Avoid running Git prune before each fetch operation</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101463"><b>TW-101463</b></a> — Audit REST requests always scan the entire audit history potentially occupying too much memory if there is no selective filtering</li>
         </ul>
     </def>
