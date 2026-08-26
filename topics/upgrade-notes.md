@@ -12,10 +12,10 @@
 
 We’ve also updated the [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
-### Known Issues
-{id="known-issues-2026-2"}
+### BuildQueue Security Checks
 
 In response to a security issue identified and fixed in this release, we have tightened permission checks for REST API calls to the  [`app/reset/buildQueue`](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html) endpoint. Callers without the `customize_build_parameters` permission can no longer trigger builds with modified parameters. This prevents potential attacks that inject malicious data through custom build parameters, but may affect integrations that relied on the previous behavior. If your `buildQueue` requests now return a 403 error, verify the caller’s identity and, if appropriate, grant them the missing `customize_build_parameters` permission for the required projects.
+
 
 ## Changes from 2026.1.3 to 2026.1.4
 {id="2026.1.4"}
