@@ -570,3 +570,5 @@ Refer to the following articles to learn more:
 ## Integrations
 
 <include from="pipeline-settings.md" element-id="pipeline-job-integrations"/>
+
+See the [Pipeline Integrations](pipeline-settings.md#Integrations) section for the complete information.

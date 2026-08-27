@@ -6,7 +6,7 @@
 
 ## Pipeline Enhancements
 
-### General Availability
+### General availability
 
 TeamCity 2025.07 introduced pipelines as an Early Access Program (EAP) feature — instantly available on TeamCity Cloud, and on request for TeamCity On-Premises. Since then, we've been steadily closing the gap with classic build configurations, adding:
 
@@ -20,7 +20,7 @@ With this release, pipelines leave the EAP: they are now generally available on 
 
 Pipeline development does not stop here — see our [roadmap](pipelines-roadmap.md) for what's next.
 
-### Debug Jobs
+### Debug jobs
 
 You can now test a single pipeline job without triggering the whole pipeline. Open a job's ellipsis menu and choose **Debug** — TeamCity runs just that job (and anything it depends on) with its current settings, complete with a live build log and terminal access to the agent that picked it up.
 
@@ -28,7 +28,7 @@ You can now test a single pipeline job without triggering the whole pipeline. Op
 
 Learn more: [](create-and-edit-pipelines.md#Debug+Jobs)
 
-### Improved Branch Handling
+### Improved branch handling
 
 Pipelines are now better equipped to work with feature branches: in edit mode, you can switch between different repository branches and design unique workflows for each of them.
 
@@ -41,7 +41,7 @@ In addition, TeamCity now handles protected branches correctly. An attempt to co
 Learn more: [](pipeline-settings.md#Feature+Branches)
 
 
-### Run Through Failures
+### Run through failures
 
 When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
 
@@ -72,6 +72,16 @@ You can now create pipelines without VCS roots attached. Previously, this option
 Learn more: [](create-and-edit-pipelines.md)
 
 
+### Amazon ECR support
+
+Pipelines and jobs now show parent project [Amazon ECR connections](configuring-connections.md#Amazon+ECR) under their **Integrations** sections.
+
+<img src="pipelines-ecr.png" width="706" alt="ECR connections in pipelines" thumbnail="true"/>
+
+Currently, only inherited ECR integrations are supported — you cannot create local integrations via pipeline settings panel or YAML markup.
+
+Learn more: [Pipeline integrations](pipeline-settings.md#Integrations)
+
 ## TeamCity AI
 
 We add AI to TeamCity where it solves an actual CI/CD problem, and leave the rest of the decisions to you. AI features stay off until a server administrator enables them, and starting with this release, you also choose which AI provider stands behind them.
@@ -86,7 +96,7 @@ In addition, AI Assistant now works with pipelines, not just classic build confi
 
 Learn more: [](ai-assistant.md#Providers)
 
-### MCP Improvements
+### MCP improvements
 
 TeamCity's MCP server now exposes three new tools for managing [pipelines](create-and-edit-pipelines.md) — retrieve, edit, or delete them straight from your AI agent. You can also connect using OAuth instead of pre-configuring a personal access token.
 
@@ -100,7 +110,7 @@ Learn more: [](ai-agent-integration.md#TeamCity+MCP).
 
 
 
-## Rerun Failed Chain Builds
+## Rerun failed chain builds
 
 The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
 
@@ -111,14 +121,14 @@ Learn more: [](run-build-chains.md#Re-run+failed+chain+builds)
 
 
 
-## GitHub Integration
+## GitHub pull requests
 
 The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now match pull requests by their source branch instead of their branch reference. This lets TeamCity recognize separate pull requests in different repositories as related changes and build them together in the same build chain, even when GitHub assigns them different pull request numbers.
 
 Learn more: [GitHub pull requests](pull-requests.md#GitHub+Pull+Requests)
 
 
-## DSL Compilation Mode
+## DSL compilation mode
 
 You can now choose where TeamCity compiles versioned DSL settings: [on the server or build agents](kotlin-dsl.md#DSL+Compilation).
 
@@ -131,7 +141,7 @@ Learn more: [](kotlin-dsl.md#DSL+Compilation)
 
 
 
-## Miscellaneous Enhancements
+## Miscellaneous enhancements
 
 * TeamCity now supports the lossless Zstandard compression algorithm for Tape Archive (.tar) files: you can use `.tar.zst` or `.tzst` extension when [publishing](configuring-general-settings.md#Artifact+Paths) and [exchanging](artifact-dependencies.md#Artifact+dependencies) artifacts.
 * The Performance Monitor interface has been refreshed with a more modern appearance, improving readability and visual consistency.
@@ -142,13 +152,13 @@ Learn more: [](kotlin-dsl.md#DSL+Compilation)
 * You can now switch Gradle steps to the [advanced integration mode](gradle.md#Gradle+Integration+Mode), which no longer relies on the Gradle Tooling API. Builds behave as if you ran Gradle from the command line, and previously incompatible functionality now works: Gradle isolated projects, command-line options like `--daemon` and `--stop`, and more. In version 2026.2, the advanced mode needs to be enabled manually, and we expect it to become the default in future releases.
 * [Projects Import](projects-import.md#Access+tokens) now lets you choose whether [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) that grant the same permissions as their owner are imported along with their users. Such tokens are not limited to any project, so on the target server they would grant every permission their owner has there — TeamCity imports them only if you select the corresponding checkbox.
 
-## Upgrade Notes
+## Upgrade notes
 {instance="tc"}
 
 Before upgrading, we highly recommend reading about important changes in version [2026.2 compared to 2026.1](upgrade-notes.md#2026.2).
 
 
-## Fixed Issues
+## Fixed issues
 {instance="tc"}
 
 See the [TeamCity 2026.2 release notes](teamcity-2026-2-release-notes.md) article for the summary of implemented features and fixed issues.
@@ -177,6 +187,6 @@ JetBrains maintains TeamCity Cloud servers, so no action is needed on your part.
 If you do not see the latest features described here, your instance may not be upgraded yet. [Contact our support team](troubleshooting.md) for assistance.
 
 
-## Your Feedback Matters
+## Your feedback matters
 
 We place a high value on your feedback and encourage you to share your thoughts and suggestions. See this link for more information: [](troubleshooting.md).

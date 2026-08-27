@@ -351,10 +351,28 @@ Both pipeline and job settings panels include an **Integrations** section for co
 * In the pipeline settings, you manage the full list of available integrations for jobs.
 * In job settings, toggles let you select which registries the job should log in to automatically, ensuring build steps can access the required data.
 
-Classic TeamCity build configurations support this functionality via the "connection + build feature" combinations:
+</snippet>
 
-* [Docker Registry](configuring-connections.md#Docker+Registry) connection and [](docker-support.md) build feature for Docker.
-* [NPM Registry](configuring-connections.md#npm-registry-settings) connection and the [related build feature](nodejs.md#Accessing+Private+NPM+Registries) for Node.js registries.
+### YAML
+
+Integrations added directly to the pipeline do now expose their settings to YAML. The only part of integrations visible in YAML is the list of integration IDs enabled for each specific job.
+
+```YAML
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        name: Run in ECR container
+        script-content: |-
+          echo "Successfully authenticated and running inside ECR image"
+        docker-image: 12345.dkr.ecr.eu-west-1.amazonaws.com/johndoe/my-image:latest
+    integrations:
+      - AmazonDocker: PROJECT_EXT_112
+      - Docker: PROJECT_EXT_30
+```
+
+### Inherited Integrations
 
 If you already have a Docker or NPM connection in a project, a pipeline shows it under its "Integrations" section.
 
@@ -362,4 +380,23 @@ If you already have a Docker or NPM connection in a project, a pipeline shows it
 
 These inherited integrations cannot be edited directly via the pipelines settings panel, you need to modify the origin connection in project settings to do so.
 
-</snippet>
+
+### Amazon ECR
+
+Currently, pipelines and jobs support only [inherited](#Inherited+Integrations) Amazon ECR connections — you cannot add them via the pipeline settings sidebar or YAML.
+
+All [Amazon ECR](configuring-connections.md#Amazon+ECR) connections owned by a parent project are displayed under the **Integrations** sections. Individual jobs show toggles that specify whether this job should use this specific connection.
+
+<img src="pipelines-ecr.png" width="706" alt="ECR connections in pipelines" thumbnail="true"/>
+
+
+
+
+### In Build Configurations
+
+Classic TeamCity build configurations support this functionality via the "connection + build feature" combinations:
+
+* The [](docker-support.md) build feature uses [Docker Registry](configuring-connections.md#Docker+Registry) and [Amazon ECR](configuring-connections.md#Amazon+ECR) connections.
+* The [NPM Registry](nodejs.md#Accessing+Private+NPM+Registries) build feature uses [corresponding connections](configuring-connections.md#npm-registry-settings).
+
+
