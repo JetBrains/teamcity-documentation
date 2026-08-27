@@ -1,11 +1,11 @@
 [//]: # (title: Parallel Tests)
 [//]: # (help-id: Parallel Tests)
 
-TeamCity is now capable of parallelizing the execution of your tests by distributing them across multiple build agents, thus minimizing the overall duration of tests. The tests of a build can be automatically split into batches, and each batch will run on a separate build agent. 
-This feature addresses a popular use case when a build consequently runs many independent tests on the same agent while they could technically be running in parallel, utilizing resources of multiple agents.
-Previously, to emulate such behavior, some users would configure several build configurations and join them in a chain with parallel connections. This approach works, but sometimes requires implementing a non-trivial logic of distributing tests across batches. 
+The **Parallel Tests** build feature breaks test suites down into multiple batches and assigns each batch to a separate build agent, all running in parallel. The larger your test suite is and the more batches you configure, the more dramatic and noticeable this performance boost is.
 
-In TeamCity 2022.04, the tests' distribution logic is provided by TeamCity itself. In addition, such build runners as [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) are capable of automatic filtering of the tests on the agent without the need to change the settings of build steps.  
+For [Maven](maven.md), [Gradle](gradle.md), [IntelliJ IDEA Project](intellij-idea-project.md), and [.NET](net.md) build steps, you do not need to do anything beyond adding this feature and choosing the desired number of batches. TeamCity will handle tests filtering automatically.
+
+For other runners, additional setup is required. See the [](#custom-tests) section and the [Using the Parallel Tests build feature with any build runner](https://youtrack.jetbrains.com/articles/SUPPORT-A-2651/Using-the-Parallel-Tests-build-feature-with-any-build-runner) knowledge base article for more information.
 
 
 ## Run tests in parallel
@@ -69,6 +69,10 @@ Automatic execution of a batch of tests instead of the whole set of tests is onl
 
 ### Custom execution of parallelized tests
 {id="custom-tests"}
+
+> Related KB article: [Using the Parallel Tests build feature with any build runner](https://youtrack.jetbrains.com/articles/SUPPORT-A-2651/Using-the-Parallel-Tests-build-feature-with-any-build-runner)
+> 
+{style="tip"}
 
 In some workflows, TeamCity cannot split tests into batches because it does not control test execution. For example, when tests are generated dynamically, reported by a custom build step, or imported from a file.
 

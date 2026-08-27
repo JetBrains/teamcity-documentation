@@ -19,7 +19,7 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 
 <img src="retry-dependency-settings.png" width="706" alt="Rerun failed dependencies"/>
 
-Learn more: [](configuring-dependencies.md#Re-run+failed+chain+builds)
+Learn more: [](run-build-chains.md#Re-run+failed+chain+builds)
 
 ### PKCE Authorization
 
