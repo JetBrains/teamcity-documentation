@@ -77,10 +77,13 @@ The __Project Import | Import scope | Groups__ section reports how many conflict
 When users are in the import scope, whether TeamCity transfers their [access tokens](configuring-your-user-profile.md#Managing+Access+Tokens) depends on the [token scope](configuring-your-user-profile.md#token-scope):
 
 * Tokens limited to the projects selected for import (the _Limit per project_ scope) are imported by default. On the target server, these tokens retain their permissions only for the imported projects.
-* Tokens limited to any other project are not imported. For example, a token scoped to the parent project of an imported project is skipped, even though TeamCity imports the settings this parent project shares with its children.
+* Tokens limited to any other project are not imported. This has the following effects:
+    * If a token is scoped for project A (imported) and project B (no imported), its permission scope narrows down to A.
+    * If a token is scoped for multiple projects, none of which were imported, the token is not imported at all.
+    * A token scoped to the parent project of an imported project is skipped, even though TeamCity imports the settings this parent project shares with its children.
 * Tokens that grant the same permissions as their owner (the _Same as current user_ scope) are imported only with explicit consent: select the corresponding checkbox in the __Project Import | Import scope | Users__ section. Since such tokens are not limited to any project, on the target server they grant every permission that their owner has there — which is why they are left out by default.
 
-For a merged user, imported tokens are added to the tokens that this user already has on the target server.
+For a merged user, imported tokens are added to the tokens that this user already has on the target server. If a user already has a token with the same name, the matching imported token is skipped.
 
 ### Conflicts
 {help-id="Projects Import Conflicts"}
@@ -109,7 +112,7 @@ The import has the following limitations:
 * Running builds and the build queue are not included in the backup, and thus not imported.
 * Internal IDs, such as build IDs, are not preserved. This means that URLs to the build results pages from the old server appear broken even if redirected to the new server.
 * Backup files do not contain artifacts and logs (build logs are stored under build artifacts), so these are not imported automatically. TeamCity provides scripts to move them [manually](#Moving+artifacts+and+logs).
-{instance="tc"}
+  {instance="tc"}
 * Global server settings (authentication schemes, custom roles, and so on) are not imported.
 * Build artifacts and logs cannot be imported to TeamCity Cloud.
 
@@ -118,7 +121,7 @@ The import has the following limitations:
 An import may take significant time. There can be only one import process per server.
 
 </note>
-    
+
 ## Moving artifacts and logs
 {instance="tc" help-id="ProjectImport-MovingArtifactsAndLogs"}
 
@@ -139,5 +142,5 @@ Each import process creates the `projectsImport-<date>` directory under the Team
 * the `conflictingFiles` directory with all the data that has been merged
 * mappings of the fields in the source and target databases
 * scripts for copying artifacts and logs (see the section [above](#Moving+artifacts+and+logs))
-{instance="tc"}
+  {instance="tc"}
 * the import report listing the import results, including the information on the data that has not been imported (if any)
