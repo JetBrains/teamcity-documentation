@@ -14,7 +14,6 @@ TeamCity 2025.07 introduced pipelines as an Early Access Program (EAP) feature â
 * [Integration with build chains](pipeline-settings.md#Pipeline+Dependencies), so pipelines can slot into existing workflows
 * [Kotlin DSL support](pipelines-dsl.md) for configuration-as-code
 * The [Custom Build dialog](running-custom-build.md), [output parameters](pipeline-settings.md#Parameters), and other familiar elements of build configurations
-* [Job debugging](#Debug+Jobs), letting you test a pipeline job without saving your edits first
 
 With this release, pipelines leave the EAP: they are now generally available on both TeamCity Cloud and On-Premises, for projects of any size and complexity.
 
@@ -92,7 +91,7 @@ Starting with TeamCity 2026.2, you're no longer limited to the built-in JetBrain
 
 <img src="aia-anthropic.png" width="706" thumbnail="true" alt="AI Assistant using Anthropic models"/>
 
-In addition, AI Assistant now works with pipelines, not just classic build configurations.
+In addition, AI Assistant now works with pipelines, not just classic build configurations, and ships with local documentation sources, making it more accurate and less prone to hallucinations.
 
 Learn more: [](ai-assistant.md#Providers)
 

@@ -2,8 +2,89 @@
 
 <show-structure for="chapter" depth="2"/>
 
-<!-- 
-## Build TBD, TBD September 2026
+
+## Build 000000, 2 September 2026
+
+### Pipeline enhancements
+{id="pipeline-enhancements-2026-2-3-overview"}
+
+#### General availability
+
+With this release, pipelines leave the EAP: they are now generally available on both TeamCity Cloud and On-Premises, for projects of any size and complexity.
+
+Pipeline development does not stop here — see our [roadmap](pipelines-roadmap.md) for what's next.
+
+#### Debug jobs
+
+You can now [test a single pipeline job](create-and-edit-pipelines.md#Debug+Jobs) without triggering the whole pipeline. Open a job's ellipsis menu and choose **Debug** — TeamCity runs just that job (and anything it depends on) with its current settings, complete with a live build log and terminal access to the agent that picked it up.
+
+<img src="debug-jobs.png" width="706" alt="Debug jobs"/>
+
+#### Improved branch handling
+
+Pipelines are now better equipped to [work with feature branches](pipeline-settings.md#Feature+Branches): in edit mode, you can switch between different repository branches and design unique workflows for each of them.
+
+<img src="pipelines-edit-mode-branch-selector.png" width="706" alt="Branch selector in edit mode"/>
+
+In addition, TeamCity now handles protected branches correctly. An attempt to commit edits made in the UI to a protected branch now results in a clear warning, and a suggestion to save the updated .yml file to another branch.
+
+
+#### Run through failures
+
+When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
+
+
+
+#### Promote pipeline runs
+
+**Promote** — the button that triggers the downstream part of a [build chain](build-chain.md) from an older, already-finished build — now works for pipelines, not just build configurations.
+
+<img src="promote-pipeline-run.png" width="706" alt="Promote pipeline run"/>
+
+
+#### Unbound pipelines
+
+You can now [create pipelines](create-and-edit-pipelines.md) without VCS roots attached. Previously, this option was only available for build configurations. Choose the “Without repository” option when creating a pipeline to create a custom workflow that does not check out any remote sources.
+
+#### Amazon ECR support
+
+Pipelines and jobs now show parent project [Amazon ECR connections](pipeline-settings.md#Integrations) under their **Integrations** sections.
+
+<img src="pipelines-ecr.png" width="706" alt="ECR connections in pipelines" thumbnail="true"/>
+
+#### Project parameter inheritance
+
+Pipelines can now access all parameters owned by their parent projects.
+
+
+### TeamCity AI
+
+#### AI Assistant
+
+You're no longer limited to the built-in JetBrains AI: AI Assistant now supports [bring your own key (BYOK)](ai-assistant.md#Providers), letting you connect it to a third-party AI provider your organization already has access to. 
+
+<img src="aia-anthropic.png" width="706" thumbnail="true" alt="AI Assistant using Anthropic models"/>
+
+In addition, AI Assistant now ships with local documentation sources, which makes it more accurate and less prone to hallucinations. You can also use it for questions related to pipelines.
+
+#### MCP improvements
+
+[TeamCity's MCP server](ai-agent-integration.md#TeamCity+MCP) now exposes three new tools for managing [pipelines](create-and-edit-pipelines.md) — retrieve, edit, or delete them straight from your AI agent. You can also connect using OAuth instead of pre-configuring a personal access token.
+
+<img src="air-mcp-oauth.png" width="706" alt="OAuth authentication for TeamCity MCP"/>
+
+
+### GitHub pull requests
+
+The [Pull Requests](pull-requests.md#GitHub+Pull+Requests) build feature can now match pull requests by their source branch instead of their branch reference. This lets TeamCity recognize separate pull requests in different repositories as related changes and build them together in the same build chain, even when GitHub assigns them different pull request numbers.
+
+
+### DSL compilation mode
+
+You can now choose where TeamCity compiles versioned DSL settings: [on the server or build agents](kotlin-dsl.md#DSL+Compilation).
+
+<img src="dsl-compilation-modes.png" width="706" thumbnail="true" alt="DSL compilation mode settings"/>
+
 
 ### Full changelog
 {id=changelog-2026.2.3}-->
@@ -13,7 +94,7 @@
 
 ## Build 245298, 23 July 2026
 
-### Rerun Failed Chain Builds
+### Rerun failed chain builds
 
 The **Dependencies** tab of build configuration settings now includes a **Retry settings** group. Enable it to delay a downstream build and automatically retry a failing dependency in place, no need to re-run the entire chain.
 
@@ -21,7 +102,7 @@ The **Dependencies** tab of build configuration settings now includes a **Retry 
 
 Learn more: [](run-build-chains.md#Re-run+failed+chain+builds)
 
-### PKCE Authorization
+### PKCE authorization
 
 We’ve added [PKCE OAuth](ai-agent-integration.md#OAuth+Access) authorization for the TeamCity MCP server. You no longer need to manually issue a static user token and pass it to your AI solution. Instead, complete the OAuth flow to authorize access and generate the token automatically.
 
@@ -261,7 +342,7 @@ While this release does not introduce major new features, it delivers more than 
 ## Build 222577, 5 June 2026
 
 
-### Java 21 Migration
+### Java 21 migration
 
 TeamCity server and build agents no longer support Java versions older than Java 21. See this article for upgrade instructions: [](java-21.md).
 
@@ -278,7 +359,7 @@ Install the CLI on any machine to check build statuses, start new builds, invest
 [Learn more...](teamcity-cli.md)
 
 
-### Integration with AI Agents
+### Integration with AI agents
 
 This update makes it easier to connect AI tools such as chatbots and agentic IDEs to TeamCity. You can choose between two integration options:
 
@@ -288,7 +369,7 @@ This update makes it easier to connect AI tools such as chatbots and agentic IDE
 [Learn more...](ai-agent-integration.md)
 
 
-### Pipeline Enhancements
+### Pipeline enhancements
 
 * This version introduces a major enhancement for fully integrating pipelines into your CI/CD workflows: you can now [include them in build chains](pipeline-settings.md#Pipeline+Dependencies). This lets you create fine-grained setups with pipeline-to-pipeline, pipeline-to-configuration, and configuration-to-pipeline dependencies.
 
@@ -328,7 +409,7 @@ This update makes it easier to connect AI tools such as chatbots and agentic IDE
     <img src="pipelines-dsl.png" width="706" alt="DSL in pipelines"/>
 
 
-### Dynamic Build Step Credentials
+### Dynamic build step credentials
 
 The new [](build-scoped-token.md) feature lets your builds securely generate short-lived GitHub access tokens (up to 60 minutes) on the fly. Pass them to build steps as parameters to enable seamless access to repositories.
 
@@ -337,7 +418,7 @@ The new [](build-scoped-token.md) feature lets your builds securely generate sho
 [Learn more...](build-scoped-token.md)
 
 
-### SSH Known Hosts
+### SSH known hosts
 
 The [SSH Keys](ssh-keys-management.md) page now includes additional options that allow TeamCity to verify VCS providers it connects to, and abort any additional operations if the host's public key does not match any of the known entries.
 
@@ -345,7 +426,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 [Learn more...](ssh-keys-management.md#Known+SSH+Hosts)
 
-### Third-party Integration Enhancements
+### Third-party integration enhancements
 
 #### Git
 
@@ -379,7 +460,7 @@ The [SSH Keys](ssh-keys-management.md) page now includes additional options that
 
 * When configuring [connections to on-premises Jira instances](jira.md), you can now choose between authentication via regular username/password credentials or a personal access tokens issued on the issue tracker side.
 
-### Miscellaneous Enhancements
+### Miscellaneous enhancements
 
 * All TeamCity build configurations now automatically record agent hardware usage during builds. This change introduces the following updates:
 
