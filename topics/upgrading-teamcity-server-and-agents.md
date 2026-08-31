@@ -23,7 +23,7 @@ It is recommended to plan for regular upgrades to run the latest TeamCity versio
 
 TeamCity is a web application that heavily relies on communications among the server, build agents, VCS providers, and other external services (such as [AWS S3](storing-build-artifacts-in-amazon-s3.md) buckets or [Nexus LFS](git.md#LFS+and+Submodules+Support) repositories). As such, when deployed in non-closed environments, TeamCity is vulnerable to attacks exploiting common vulnerabilities and exposures (CVEs), including those inherited from third-party solutions and libraries it employs.
 
-To reduce the risks, it is highly advised to promptly install any updates containing security fixes. Fixes that eliminate non-critical security vulnerabilities are addressed in regular [bug-fix updates](teamcity-release-cycle.md). Refer to the [Release Notes](what-s-new-in-teamcity.md#Fixed+Issues) and check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) for the list of fixed issues.
+To reduce the risks, it is highly advised to promptly install any updates containing security fixes. Fixes that eliminate non-critical security vulnerabilities are addressed in regular [bug-fix updates](teamcity-release-cycle.md). Refer to the [Release Notes](what-s-new-in-teamcity.md#Fixed+issues) and check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) for the list of fixed issues.
 
 Critical vulnerabilities that present major security threats are fixed in separate unscheduled security patches. Once a solution is found, these patches are released immediately. If such an update is available, TeamCity automatically downloads it and prompts administrators for installation.
 
