@@ -21,7 +21,18 @@ Build number: ???
 
 [Release notes](teamcity-2026-2-release-notes.md)
 
-TeamCity 2026.1.3
+
+## TeamCity 2026.1.4
+
+Release date: 2 September 2026<br/>
+Build number: 222865
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.1.4.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.1.4.tar.gz)
+
+[Release notes](teamcity-2026-1-4-release-notes.md)
+
+## TeamCity 2026.1.3
 
 Release date: 27 July 2026<br/>
 Build number: 222742
@@ -41,16 +52,6 @@ Build number: 222647
 
 [Release notes](teamcity-2026-1-2-release-notes.md)
 
-
-## TeamCity 2026.1.4
-
-Release date: 2 September 2026<br/>
-Build number: 222865
-
-[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.1.4.exe)<br/>
-[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.1.4.tar.gz)
-
-[Release notes](teamcity-2026-1-4-release-notes.md)
 
 ## TeamCity 2026.1.1
 
