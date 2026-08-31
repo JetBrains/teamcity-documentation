@@ -3,16 +3,9 @@
 
 **Build 000000, 2 September 2026**
 
-### Question
-
-* [**TW-91554**](https://youtrack.jetbrains.com/issue/TW-91554) — Is this expected behavior when using Elasticsearch: "Error while deleting build ..., deleted 0/97 docs."
-
-### Meta Issue
-
-* [**TW-100716**](https://youtrack.jetbrains.com/issue/TW-100716) — [Bugfix] Pipelines GA in TeamCity On-Premises
-
 ### Feature
 
+* [**TW-100716**](https://youtrack.jetbrains.com/issue/TW-100716) — Pipelines GA in TeamCity On-Premises
 * [**TW-80371**](https://youtrack.jetbrains.com/issue/TW-80371) — Plugin for reporting issues from TeamCity directly
 * [**TW-100703**](https://youtrack.jetbrains.com/issue/TW-100703) — "Run job even if upstream fails” option for a job
 * [**TW-100323**](https://youtrack.jetbrains.com/issue/TW-100323) — Branch-based pipeline editing
@@ -37,7 +30,6 @@
 * [**TW-98117**](https://youtrack.jetbrains.com/issue/TW-98117) — Add "Analyze it" button for the pipelines
 * [**TW-103136**](https://youtrack.jetbrains.com/issue/TW-103136) — Stop restricting network operations in secondary node security manager
 * [**TW-100065**](https://youtrack.jetbrains.com/issue/TW-100065) — Extended permission handling in the OAuth PKCE server flow
-* [**TW-101919**](https://youtrack.jetbrains.com/issue/TW-101919) — [QA] Support Amazon ECR in Pipelines (YAML-only)
 * [**TW-60136**](https://youtrack.jetbrains.com/issue/TW-60136) — Projects import: import access tokens when users are imported
 * [**TW-97643**](https://youtrack.jetbrains.com/issue/TW-97643) — Add "Promote" action for Pipelines
 * [**TW-100931**](https://youtrack.jetbrains.com/issue/TW-100931) — Projects import: preserve user ids on importing to empty server
@@ -116,7 +108,7 @@
 * [**TW-99933**](https://youtrack.jetbrains.com/issue/TW-99933) — Installation of bundled Maven in TeamCity server in docker fails with "java.nio.file.ReadOnlyFileSystemException"
 * [**TW-97226**](https://youtrack.jetbrains.com/issue/TW-97226) — Builds skipped using partial chain execution are reported as failed to GitHub by commit status publisher build feature
 * [**TW-101613**](https://youtrack.jetbrains.com/issue/TW-101613) — Oauth tokens are broken in imported VCS roots
-* [**TW-101426**](https://youtrack.jetbrains.com/issue/TW-101426) — Notifications from Pipelines use a different prefix than regular notifications [TeamCity Pipelines, ...]
+* [**TW-101426**](https://youtrack.jetbrains.com/issue/TW-101426) — Notifications from Pipelines use a different prefix than regular notifications
 * [**TW-101425**](https://youtrack.jetbrains.com/issue/TW-101425) — Wrong Changes link in Pipeline Email notifications
 * [**TW-101179**](https://youtrack.jetbrains.com/issue/TW-101179) — Branch name is cut to agressively in branch selector on Pipeline overview
 * [**TW-101177**](https://youtrack.jetbrains.com/issue/TW-101177) — Pipelines: The additional repository checkout direectoty path is not autfilled anymore
