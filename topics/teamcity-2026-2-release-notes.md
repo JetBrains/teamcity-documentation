@@ -3,17 +3,10 @@
 
 **Build 000000, 2 September 2026**
 
-### Meta Issue
-
-* [**TW-88157**](https://youtrack.jetbrains.com/issue/TW-88157) — Bring Pipelines to TeamCity Enterprise
-* [**TW-100716**](https://youtrack.jetbrains.com/issue/TW-100716) — [Bugfix] Pipelines GA in TeamCity On-Premises
-
-### Question
-
-* [**TW-91554**](https://youtrack.jetbrains.com/issue/TW-91554) — Is this expected behavior when using Elasticsearch: "Error while deleting build ..., deleted 0/97 docs."
 
 ### Feature
 
+* [**TW-88157**](https://youtrack.jetbrains.com/issue/TW-88157) — Bring Pipelines to TeamCity Enterprise
 * [**TW-101737**](https://youtrack.jetbrains.com/issue/TW-101737) — Support Amazon ECR in Pipelines (YAML-only)
 * [**TW-100703**](https://youtrack.jetbrains.com/issue/TW-100703) — "Run job even if upstream fails” option for a job
 * [**TW-98182**](https://youtrack.jetbrains.com/issue/TW-98182) — AI Assistant: features for TeamCity Pipelines General Availability
