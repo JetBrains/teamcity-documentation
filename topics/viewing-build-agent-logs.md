@@ -7,7 +7,7 @@
 
 To analyze agent-specific cases, there are internal log files saved by the TeamCity agent process into `<TeamCity agent home>/logs` directory on the agent machine.
 
-When the agent is connected to TeamCity server, you can __browse and download__ the agent logs in TeamCity web UI, on the __Logs__ tab for an agent.
+When the agent is connected to TeamCity server and [authorized](install-and-start-teamcity-agents.md#agent-authorization), you can __browse and download__ the agent logs in TeamCity web UI, on the __Logs__ tab for an agent. This tab is not available for unauthorized agents, as TeamCity does not communicate with their machines — read the log files on the agent machine directly instead.
 
 If you need to customize the logging, see below.
 

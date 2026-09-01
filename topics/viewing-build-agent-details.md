@@ -26,6 +26,8 @@ For each connected agent TeamCity provides the following information:
   Additional configuration of the reboot command is possible. See [Agent Reboot](#Agent+Reboot).
   * Dump threads and memory snapshots on the agent machine
 
+Opening a terminal, rebooting the machine, and dumping threads or memory snapshots require the agent to be [authorized](install-and-start-teamcity-agents.md#agent-authorization), since these actions contact the agent machine. TeamCity hides them for unauthorized agents. Cleaning sources and opening a remote desktop connection remain available: the former only sets a flag on the server, and the latter merely generates a connection link.
+
 
 ### Agent Reboot
 [//]: # (AltHead: Configuring Agent Reboot Command)
