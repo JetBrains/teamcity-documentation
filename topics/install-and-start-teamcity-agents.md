@@ -1,6 +1,7 @@
 [//]: # (title: Install and Start TeamCity Agents)
 [//]: # (help-id: Install and Start TeamCity Agents;Setting up and Running Additional Build Agents)
 
+<show-structure for="chapter" depth="2"/>
 
 >This section is about [self-hosted build agents](teamcity-cloud-subscription-and-licensing.md#cloud-self-hosted-agents). [JetBrains-hosted build agents](supported-platforms-and-environments.md#JetBrains-Hosted+Agents) are maintained by the TeamCity Cloud team and require no actions from users.
 >
@@ -31,80 +32,97 @@ If you install TeamCity bundled with a Tomcat servlet container, or use the Team
 
 ## Build Agent Statuses
 
-In TeamCity, a build agent can have following statuses:
+A build agent's state is described by three independent pairs of statuses. An agent always has one value from each pair, so these statuses combine: a freshly installed agent is usually _connected_, _unauthorized_, and _enabled_, and you can also have, for example, a _connected_, _authorized_, but _disabled_ agent taken out of rotation for maintenance.
 
-<table><tr>
+An agent runs builds only when it is connected, authorized, and enabled at the same time.
 
-<td width="200">
+<deflist type="medium">
 
-Status
+<def title="Connected / Disconnected">
 
-</td>
+TeamCity sets this status automatically. An agent is __connected__ if it is registered on the server and responds to server commands, and __disconnected__ otherwise.
 
-<td>
+You cannot change this status from the UI — a disconnected agent means the agent process is not running or cannot reach the server. Start with the agent's own logs and the `serverUrl` property in its [configuration file](configure-agent-installation.md).
 
-Description
-
-</td></tr><tr>
-
-<td>
-
-__Connected/ Disconnected__
-
-</td>
-
-<td>
-
-An agent is connected if it is registered on the TeamCity server and responds to server commands, otherwise it is __disconnected__. This status is determined automatically.
-
->If an agent stays disconnected during 14 days, its state changes to _Unauthorized_. If you try to reconnect it to the server, you will have to authorize it again.  
->The default timeout duration (14 days) can be adjusted by changing the `teamcity.server.cleanup.agents.inactivityDays` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+>An agent that stays disconnected for 14 days becomes _unauthorized_, and you have to authorize it again when it reconnects. This frees the agent license for other agents. To change the timeout, set the `teamcity.server.cleanup.agents.inactivityDays` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 >
 {type="note" instance="tc"}
 
-</td></tr><tr>
+</def>
 
-<td>
+<def title="Authorized / Unauthorized" id="agent-authorization">
 
-__Authorized/ Unauthorized__
-{id="agent-authorization"}
-
-</td>
-
-<td>
-
-Agents are manually authorized via the web UI on the __Agents__ page (except for the agents from the machines launched by the [cloud integrations](teamcity-integration-with-cloud-solutions.md)). Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of [agent licenses](licensing-policy.md#TeamCity+Agent+Licenses) entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
+Authorization is your explicit confirmation that the server may work with this machine. A new agent stays __unauthorized__ until you authorize it on the __Agents__ page, including an agent installed on the same machine as the TeamCity server. [Cloud agents](teamcity-integration-with-cloud-solutions.md) behave differently: TeamCity authorizes them automatically as soon as they connect, provided an agent license is available.
 {instance="tc"}
 
-Agents are manually authorized via the web UI on the __Agents__ page. Only authorized build agents can run builds. The number of authorized agents at any given time cannot exceed the number of agent licenses entered on the server. When an agent is unauthorized, a license is freed and a different build agent can be authorized. Purchase additional licenses to expand the number of agents that can concurrently run builds. When a new agent is registered on the server for the first time, it is __unauthorized__ by default and requires manual authorization to run the builds.
+Authorization is your explicit confirmation that the server may work with this machine. A new agent stays __unauthorized__ until you authorize it on the __Agents__ page. [Cloud agents](teamcity-integration-with-cloud-solutions.md) behave differently: TeamCity authorizes them automatically as soon as they connect, provided an agent license is available.
 {instance="tcc"}
 
-If a build agent is installed and running on the same computer as the TeamCity build server, it is authorized automatically.
+Unauthorized agents cannot run builds. In addition, TeamCity does not communicate with an unauthorized agent's machine at all: viewing its [logs](viewing-build-agent-logs.md), dumping its threads, opening an [interactive terminal](#Debug+Agents+Remotely), and rebooting it are unavailable. This protects the server from talking to a machine you have not vetted, so authorize an agent only when you know which machine has connected.
 
-</td></tr><tr>
+Authorization also governs licensing: the number of authorized agents cannot exceed the number of [agent licenses](licensing-policy.md#TeamCity+Agent+Licenses) on the server. Unauthorizing an agent frees its license for another one, which is how you rotate a limited pool of licenses between machines. To raise the ceiling instead, purchase additional licenses.
+{instance="tc"}
 
-<td>
+Authorization also governs licensing: the number of authorized agents cannot exceed the number of agent licenses on the server. Unauthorizing an agent frees its license for another one, which is how you rotate a limited pool of licenses between machines.
+{instance="tcc"}
 
-__Enabled/ Disabled (Disabled for maintenance for cloud agents)__
-{id="enable-agent"}
+</def>
 
-</td>
+<def title="Enabled / Disabled" id="enable-agent">
 
-<td>
+Enabling and disabling agents controls the flow of builds to a machine you still trust and manage. You switch this status [in the UI](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI); for cloud agents, the corresponding action is __Disable for maintenance__.
 
-Agents are manually enabled/disabled via the [web UI](build-agents-configuration-and-maintenance.md#Enabling%2FDisabling+Agents+via+UI). The TeamCity server only distributes builds to agents that are enabled.
+<img src="dk-disable-agent.png" width="706" alt="Disable agent in the UI"/>
 
-Agent disabling does not affect (stop) the build which is currently running on the agent.
+TeamCity distributes queued builds only to __enabled__ agents. Disabling an agent does not stop the build that is currently running on it, so you can disable a machine and let it finish its work before you take it offline.
 
-__Disabled__ agents can still run builds when the build is assigned to a special agent (for example, by [triggering a custom build](running-custom-build.md)). This feature is generally used to temporarily remove agents from the <tooltip term="build-grid">_build grid_</tooltip> to investigate agent-specific issues.
+A __disabled__ agent still runs builds that are explicitly assigned to it, for example through [Custom Build](running-custom-build.md). This makes disabling the usual way to pull an agent out of the <tooltip term="build-grid">_build grid_</tooltip> and reproduce an agent-specific problem on it without regular builds interfering.
 
-</td></tr></table>
+</def>
 
-All agents connected to the server must have unique agent names.
+</deflist>
 
-Only users with certain roles can manage agents. See [this article](managing-roles-and-permissions.md) for more information.
+All agents connected to the server must have unique names.
 
-For a build agent configuration, refer to [this section](configure-agent-installation.md).
+Managing agents requires specific permissions. See [](managing-roles-and-permissions.md) for more information.
+
+### Checking Agent Statuses
+
+Besides the __Agents__ page, you can read agent statuses via the [TeamCity CLI](teamcity-cli-managing-agents.md) or the [REST API](https://www.jetbrains.com/help/teamcity/rest/manage-agents.html). This is the practical way to audit a fleet — for example, to find agents that are connected but still waiting for authorization after a mass deployment.
+
+To list agents with the CLI, filter by any combination of the three statuses:
+
+```Shell
+teamcity agent list                                 # all registered agents
+teamcity agent list --connected --authorized        # connected and authorized
+teamcity agent list --enabled --authorized          # ready to receive builds
+teamcity agent list --json=name,connected,enabled   # machine-readable output
+```
+
+To inspect a single agent by ID or name:
+
+```Shell
+teamcity agent view Agent-Linux-01
+teamcity agent view 1 --json
+```
+
+The same queries in the REST API use the `agents` locator:
+
+```Shell
+GET <Server_URL>/app/rest/agents?locator=connected:true,authorized:true
+GET <Server_URL>/app/rest/agents?locator=enabled:true,authorized:true
+GET <Server_URL>/app/rest/agents/id:1
+```
+
+A single agent's response exposes the three statuses as attributes:
+
+```XML
+<agent id="1" name="agentName" connected="true" enabled="true" authorized="true" .../>
+```
+
+>`/app/rest/agents` returns only authorized agents by default. To include the agents that are still awaiting authorization, add the `authorized:any` dimension to the locator, or `defaultFilter:false` to switch off default filtering entirely.
+>
+{type="note"}
 
 
 ## Agent-Server Data Transfer
@@ -217,7 +235,9 @@ Please generate own token or configuration file per each self-hosted agent.
 
 <snippet id="agents-terminal">
 
-After an agent was installed and connected, you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+After an agent was installed, connected, and [authorized](install-and-start-teamcity-agents.md#agent-authorization), you can invoke a terminal for this agent's machine directly from the TeamCity UI. This functionality lets you remotely view agent logs, check installed software, and debug specific agent issues.
+
+Terminals are not available for unauthorized agents: TeamCity does not communicate with a machine it has not been told to trust, and hides the **Open terminal** button for such agents. To debug a cloud instance that fails to authorize, use your cloud provider's own tools instead — for example, connect to an EC2 instance from the AWS console.
 
 To invoke a terminal, click **Agents** in the TeamCity header, choose the required agent, and click **Open terminal**.
 
