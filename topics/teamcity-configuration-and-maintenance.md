@@ -249,7 +249,7 @@ When you generate or enter a new custom encryption key, it becomes the default f
 ## Encryption Settings
 {id="encryption-settings" help-id="Encryption Settings" instance="tc"}
 
-TeamCity protects all sensitive data stored in configuration files ([secret values](typed-parameters.md#Create+a+Secret), [SSH keys](ssh-keys-management.md), licence product keys, and more) using an internal scrambling algorithm. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
+TeamCity protects all sensitive data stored in configuration files ([secret values](typed-parameters.md#Create+a+Secret), [SSH keys](ssh-keys-management.md), licence product keys, and more) using a default encryption key, unique for each TeamCity installation. The **Encryption Settings** section lets you define a custom encryption key that will be used instead. The custom encryption key can be set via a TeamCity UI or (recommended) imported from an environment variable.
 
 <deflist type="full">
 
