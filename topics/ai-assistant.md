@@ -51,7 +51,7 @@ Starting with TeamCity 2026.2, AI Assistant also supports the "bring your own ke
 
 <img src="aia-anthropic.png" width="706" thumbnail="true" alt="AI Assistant using Anthropic models"/>
 
-Using Anthropic, Google, and OpenAI models requires only the API key. The **OpenAI-compatible** option additionally requires the provider endpoint and model ID — use it for OpenAI-compatible APIs (for example, DeepSeek) as well as self-hosted or locally deployed models.
+Using Anthropic, Google, and OpenAI models requires only the API key. The **OpenAI-compatible** option additionally requires the provider base URL and model ID — use it for OpenAI-compatible APIs (for example, DeepSeek) as well as self-hosted models.
 
 This setting is server-wide: your TeamCity server administrator configures the same provider for everybody, and there is currently no way for individual users to choose their own provider. [Let us know](ticket-based-support.md) if this or any other feature is something you're missing in the TeamCity Assistant.
 
