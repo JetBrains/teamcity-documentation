@@ -105,10 +105,8 @@ You can now choose where TeamCity compiles versioned DSL settings: [on the serve
     </def>
     <def title="Minor improvements" default-state="collapsed">
         <ul>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102438"><b>TW-102438</b></a> — Deprecate MySQL 5.7 for TeamCity 2026.2+</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-60136"><b>TW-60136</b></a> — Projects import: import access tokens when users are imported</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100065"><b>TW-100065</b></a> — Extended permission handling in the OAuth PKCE server flow</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-103136"><b>TW-103136</b></a> — Stop restricting network operations in secondary node security manager</li>
         </ul>
     </def>
     <def title="Pipeline enhancements" default-state="collapsed">
@@ -141,9 +139,6 @@ You can now choose where TeamCity compiles versioned DSL settings: [on the serve
             <li><a href="https://youtrack.jetbrains.com/issue/TW-79997"><b>TW-79997</b></a> — Do not report "Failed to publish artifacts" error, if creating artifacts archive was canceled</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102539"><b>TW-102539</b></a> — Build cancellation comment displayed as java class name in case of AgentIsUpgradingException</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102260"><b>TW-102260</b></a> — After committing to the new branch we should select that branch in the editor</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102264"><b>TW-102264</b></a> — YAML in branches: dialogue is shown for storing settings on Server</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102285"><b>TW-102285</b></a> — YAML in branches: wrong settings are shown for the main branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102011"><b>TW-102011</b></a> — YAML in branch: no dialogue is shown for the initial commit</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-93809"><b>TW-93809</b></a> — Checkout failure on agent if symlinks in the checkout directory point to an non-existing folder</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-20071"><b>TW-20071</b></a> — A user without "View user profile" permission can get user's roles</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-72903"><b>TW-72903</b></a> — sbt: cannot run sbt quoted commands/tasks with spaces</li>
@@ -157,12 +152,7 @@ You can now choose where TeamCity compiles versioned DSL settings: [on the serve
             <li><a href="https://youtrack.jetbrains.com/issue/TW-92085"><b>TW-92085</b></a> — Overview header: "Open terminal" is suggested for local agents</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102598"><b>TW-102598</b></a> — Builds in old branches are triggered after changing the branch filter of the build configuration</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102818"><b>TW-102818</b></a> — Switching between pipeline and its job builds results in empty Changes or Parameters tab being displayed</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102294"><b>TW-102294</b></a> — Yaml in branches: no possibility to reset settings from  branch</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102291"><b>TW-102291</b></a> — YAML in branches: error "can't update settings" isn't branch-based</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102286"><b>TW-102286</b></a> — YAML in branches: false positive feedback while first attempt to commit to protected main</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102527"><b>TW-102527</b></a> — Welcome and What's new popups are shown after upgrade from major release to its bugfix</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102282"><b>TW-102282</b></a> — YAML in branches: false positive commit  in case if non-yaml changes</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-102376"><b>TW-102376</b></a> — YAML in branches: Branch selection dialog looses branch name when typed too fast</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-103348"><b>TW-103348</b></a> — Sandbox is not disabled properly in DSL on agent execution mode</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-103113"><b>TW-103113</b></a> — Pipeline editor initializes branch-scoped redux state before resolving settings storage</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101578"><b>TW-101578</b></a> — Flickering of "Showing..." on Pipeline overview</li>
@@ -177,7 +167,6 @@ You can now choose where TeamCity compiles versioned DSL settings: [on the serve
             <li><a href="https://youtrack.jetbrains.com/issue/TW-103187"><b>TW-103187</b></a> — Composite finishes SUCCESS when a running dependency is canceled after its retries run out</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100753"><b>TW-100753</b></a> — Heartbeat thread can't recover after DB communication failure</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102580"><b>TW-102580</b></a> — Running icons are visible above the panel on the pipeline page</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-103537"><b>TW-103537</b></a> — YAML in branches: Wrong color of the branch icon on hover in error state</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102357"><b>TW-102357</b></a> — Make the branch name clickable on the pipeline view</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101975"><b>TW-101975</b></a> — Pipelines: numeric runner fields fail to render — "No applicable renderer found" (e.g. SSH Upload: Port, Timeout)</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100466"><b>TW-100466</b></a> — Unexpected skipping of dependency builds in TeamCity build chains (skipQueuedBuild service message)</li>
