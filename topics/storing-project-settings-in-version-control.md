@@ -502,15 +502,12 @@ The aforementioned setting allows TeamCity to automatically generate missing con
 
 ## Storing Secure Settings 
 
-It is recommended to store security data outside of VCS. The _Store passwords and API tokens outside of VCS_ option is available on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Versioned Settings | Configuration__ page if the [two-way synchronization](#two-way-sync) is enabled. By default, this option is enabled if versioned settings are enabled for a project for the first time, and disabled for projects already storing their settings in the VCS.
+The _Store passwords and API tokens outside of VCS_ option available on the __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Versioned Settings | Configuration__ page allows you to choose how to store passwords and API tokens:
 
-If this option is enabled, TeamCity stores randomly generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
+* Enabled (recommended): TeamCity stores randomly generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
+* Disabled: TeamCity scrambles sensitive data using its [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings). Be aware of [security implications](#Implications+of+Storing+Security+Data+in+VCS) if you choose this behavior.
 
-<warning>
-
-If this option is disabled, the [security implications](#Implications+of+Storing+Security+Data+in+VCS) listed below should be taken into account before committing security data to the VCS.
-
-</warning>
+For security reasons, starting with TeamCity 2026.2 and newer versions, this option is only available for existing projects that keep their passwords in VCS in scrambled form. For other projects, this setting is automatically enabled as the most secure option.
 
 
 
