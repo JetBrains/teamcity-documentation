@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2026.2 Release Notes)
 [//]: # (help-id: TeamCity 2026.2 Release Notes)
 
-**Build 000000, 2 September 2026**
+**Build 238924, 2 September 2026**
 
 
 ### Feature
