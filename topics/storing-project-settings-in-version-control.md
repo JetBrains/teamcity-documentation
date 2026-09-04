@@ -506,6 +506,9 @@ The _Store passwords and API tokens outside of VCS_ option available on the __[P
 
 * Enabled (recommended): TeamCity stores randomly generated IDs in XML configuration files instead of the scrambled passwords. Actual passwords are stored on the disk under the [TeamCity Data Directory](teamcity-data-directory.md) and are not checked into the version control system.
 * Disabled: TeamCity scrambles sensitive data using its [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings). Be aware of [security implications](#Implications+of+Storing+Security+Data+in+VCS) if you choose this behavior.
+{instance="tc"}
+* Disabled: TeamCity scrambles sensitive data using its encryption key. Be aware of [security implications](#Implications+of+Storing+Security+Data+in+VCS) if you choose this behavior.
+  {instance="tcc"}
 
 For security reasons, starting with TeamCity 2026.2 and newer versions, this option is only available for existing projects that keep their passwords in VCS in scrambled form. For other projects, this setting is automatically enabled as the most secure option.
 
