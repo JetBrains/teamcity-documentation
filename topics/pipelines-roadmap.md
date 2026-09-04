@@ -13,8 +13,10 @@ We expect this approach to pay off as the initiative evolves, but it also means 
 > 
 {style="note"}
 
+## Planned features
 
-## All build steps and features
+
+### All build steps and features
 
 We have implemented a mechanism that allows pipelines to reuse familiar build steps and features. At the moment, only a few of them are publicly available: [](net.md), [](build-files-cleaner-swabra.md), [](xml-report-processing.md), and a few others. We expect the majority of build features and steps available in pipelines by default in the 2026.3 update.
 
