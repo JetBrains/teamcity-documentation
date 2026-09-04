@@ -14,12 +14,52 @@ We expect this approach to pay off as the initiative evolves, but it also means 
 {style="note"}
 
 
+## All build steps and features
+
+We have implemented a mechanism that allows pipelines to reuse familiar build steps and features. At the moment, only a few of them are publicly available: [](net.md), [](build-files-cleaner-swabra.md), [](xml-report-processing.md), and a few others. We expect the majority of build features and steps available in pipelines by default in the 2026.3 update.
+
+### Job failure conditions
+<secondary-label ref="secondary-roadmap-planned-priority"/>
+
+We plan to introduce failure conditions similar to [those in build configurations](build-failure-conditions.md). This will give you finer control over when a job is marked as failed and allow downstream jobs to run even if earlier ones fail.
+
+### Execution timeouts
+<secondary-label ref="secondary-roadmap-planned-priority"/>
+
+We’re exploring timeout settings that let you define maximum run durations. Jobs or pipelines that exceed the threshold would be automatically canceled and marked as failed.
+
+### PR event triggers
+
+Pipelines can already identify pull requests and [automatically build their changes](pipeline-settings.md#Repository). We hope to introduce a more sophisticated PR handling by adding dedicated event triggers.
+
+### GitHub Checks support
+
+Pipelines are capable of reporting basic run statuses (started, failed, successful, and more [to the VCS](pipeline-settings.md#Repository). GitHub Checks API support would greatly extend that functionality, as it allows external systems to report detailed feedback, specific line-by-line annotations, and re-run individual tasks.
+
+### Recipes support
+
+[Recipes](working-with-meta-runner.md) complement custom build steps by letting you package commonly used logic into reusable assets and download community-created steps from JetBrains Marketplace. Adding recipe support would greatly expand what pipelines can do.
+
+### Build step conditions
+
+Classic build configurations support [step execution conditions](build-step-execution-conditions.md) that specify criteria for when a step should run. We plan to add a similar feature for steps inside pipeline jobs.
+
+### Typed parameters
+
+Pipelines currently support only single-value text parameters (including masked [secret](pipeline-settings.md#Secrets) parameters for sensitive values). We aim to implement more parameter types [available in classic build configurations](typed-parameters.md), such as checkboxes, multi-selects, and values pulled from external sources.
+
+### Templates
+
+[Templates](build-configuration-template.md) help configure multiple build configurations that share similar settings. We plan to bring an equivalent concept to pipelines, enabling you to define reusable YAML templates.
+
+
+<!--
 ## Features in development
 
 This section shares features that are already in active development. We expect to deliver them in the nearest release cycles.
 
 ### More build steps and build features
-<secondary-label ref="secondary-roadmap-planned-2026q1"/>
+<secondary-label ref="secondary-roadmap-planned-2026q3"/>
 
 With support for [.NET](net.md) build steps in version 2025.11 and [four job-level build features](job-settings.md#Build+Features) in 2026.1, pipelines have closed one of the larger functionality gaps with classic build configurations.
 
@@ -34,7 +74,7 @@ Sometimes a job does not need the entire repository to do its job (pun very much
 
 To help with this, we plan to support [checkout rules](vcs-checkout-rules.md), which are already available in build configurations. The value this feature brings to the table is especially meaningful in TeamCity, which is smart enough to ignore commits to files excluded from checkout. This means more [build reuses](job-settings.md#Optimizations) and less manual tinkering to keep your runs fast.
 
-
+-->
 
 ## Implemented features
 
@@ -154,8 +194,6 @@ Learn more: [](job-settings.md#Build+Features).
 
 In version 2025.11, we're bringing the familiar [](net.md) build step to pipelines. Instead of one single step with dozens of settings that depend on the selected step command, pipelines split this build step into a series of task-specific units.
 
-See the [](#More+build+steps+and+build+features) section for more information on other steps currently available only in build configurations.
-
 Learn more: [](net.md).
 
 ### Project registry connections support
@@ -199,33 +237,4 @@ Learn more: [Pipeline parameters](pipeline-settings.md#Parameters), [](configuri
 
 
 
-## Planned features
-
-Below are the features we’re considering for future pipeline releases. Join our [Slack Workspace](https://jb.gg/TeamCitySlack) or contact us through our [usual support channels](troubleshooting.md) to help us identify the most important items and refine our priorities.
-
-### Job failure conditions
-<secondary-label ref="secondary-roadmap-planned-priority"/>
-
-We plan to introduce failure conditions similar to [those in build configurations](build-failure-conditions.md). This will give you finer control over when a job is marked as failed and allow downstream jobs to run even if earlier ones fail.
-
-### Execution timeouts
-<secondary-label ref="secondary-roadmap-planned-priority"/>
-
-We’re exploring timeout settings that let you define maximum run durations. Jobs or pipelines that exceed the threshold would be automatically canceled and marked as failed.
-
-### Recipes support
-
-[Recipes](working-with-meta-runner.md) complement custom build steps by letting you package commonly used logic into reusable assets and download community-created steps from JetBrains Marketplace. Adding recipe support would greatly expand what pipelines can do.
-
-### Build step conditions
-
-Classic build configurations support [step execution conditions](build-step-execution-conditions.md) that specify criteria for when a step should run. We plan to add a similar feature for steps inside pipeline jobs.
-
-### Typed parameters
-
-Pipelines currently support only single-value text parameters (including masked [secret](pipeline-settings.md#Secrets) parameters for sensitive values). We aim to implement more parameter types [available in classic build configurations](typed-parameters.md), such as checkboxes, multi-selects, and values pulled from external sources.
-
-### Templates
-
-[Templates](build-configuration-template.md) help configure multiple build configurations that share similar settings. We plan to bring an equivalent concept to pipelines, enabling you to define reusable YAML templates.
 
