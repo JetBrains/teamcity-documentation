@@ -578,12 +578,16 @@ TeamCity adds this entry even though your `pom.xml` does not declare it. It is o
 To send these requests to an internal repository instead, upload a `mavenSettingsDsl.xml` file containing a mirror to the __Maven Settings__ page of the _Root_ project.
 
 ```XML
-<settings>
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
   <mirrors>
     <mirror>
       <id>internal-central</id>
-      <url>https://repo.example.com/maven-central-proxy</url>
       <mirrorOf>DefaultMavenRepository</mirrorOf>
+      <name>Internal Central Proxy for TeamCity DSL</name>
+      <url>https://repo.example.com/maven-central-proxy</url>
     </mirror>
   </mirrors>
 </settings>
@@ -640,24 +644,7 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 
 </deflist>
 
-In both modes, you can define [Maven Central](https://central.sonatype.com/) mirrors in the [`mavenSettingsDsl.xml`](#Ability+to+Use+External+Libraries) file to avoid violating Central's rate limits. Mirror the [`DefaultMavenRepository`](#Dependency+Resolution+and+Maven+Central) ID, which is the ID under which TeamCity adds Central to the repository list.
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-  <mirrors>
-    <mirror>
-      <mirrorOf>DefaultMavenRepository</mirrorOf>
-      <name>repo</name>
-      <url>https://host/maven/proxy</url>
-      <id>repo</id>
-    </mirror>
-  </mirrors>
-</settings>
-```
-
+In both modes, you can define [Maven Central](https://central.sonatype.com/) mirrors in the [`mavenSettingsDsl.xml`](#Ability+to+Use+External+Libraries) file to avoid violating Central's rate limits. Mirror the `DefaultMavenRepository` ID, which is the ID under which TeamCity adds Central to the repository list. See the [](#Dependency+Resolution+and+Maven+Central) section for a sample mirror definition.
 
 ### Non-Portable DSL
 
