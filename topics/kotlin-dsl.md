@@ -564,6 +564,34 @@ To use an external library in your Kotlin DSL code, add a dependency on this lib
 
 You can establish access to external libraries in private repositories. For this, specify all the required credentials in the [Maven settings file](https://maven.apache.org/settings.html) (`mavenSettingsDsl.xml`) and upload it on the __Maven Settings__ page of the _Root_ project.
 
+#### Dependency Resolution and Maven Central
+{help-id="kotlin-dsl-default-maven-repository"}
+
+When `.teamcity/pom.xml` declares custom dependencies, the TeamCity server resolves them before it generates settings. It uses every repository declared in that `pom.xml`, and then appends Maven Central (`https://repo.maven.apache.org/maven2/`) under the ID `DefaultMavenRepository`.
+
+TeamCity adds this entry even though your `pom.xml` does not declare it. It is omitted only if the `pom.xml` already declares a repository whose URL is exactly `https://repo.maven.apache.org/maven2/`. Projects without custom dependencies resolve nothing remotely and never contact Maven Central.
+
+> When downloading an artifact, Maven tries the repositories in order and stops at the first match, so `DefaultMavenRepository` acts as a fallback.
+>
+{style="note"}
+
+To send these requests to an internal repository instead, upload a `mavenSettingsDsl.xml` file containing a mirror to the __Maven Settings__ page of the _Root_ project.
+
+```XML
+<settings>
+  <mirrors>
+    <mirror>
+      <id>internal-central</id>
+      <url>https://repo.example.com/maven-central-proxy</url>
+      <mirrorOf>DefaultMavenRepository</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
+```
+
+Use `DefaultMavenRepository` as the `mirrorOf` value. The common Maven pattern `<mirrorOf>central</mirrorOf>` has no effect here, because `mirrorOf` matches repository IDs and the implicitly added repository is named `DefaultMavenRepository`, not `central`. The mirror above leaves every repository declared in `pom.xml` untouched.
+
+The change applies to all projects on the server at once. It does not affect build steps, only Kotlin DSL dependency resolution.
 
 ### DSL Compilation
 {help-id="kotlin-compilation-mode"}
@@ -612,7 +640,7 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 
 </deflist>
 
-In both modes, you can define [Maven Central](https://central.sonatype.com/) mirrors in the [`mavenSettingsDsl.xml`](#Ability+to+Use+External+Libraries) file to avoid violating Central's rate limits.
+In both modes, you can define [Maven Central](https://central.sonatype.com/) mirrors in the [`mavenSettingsDsl.xml`](#Ability+to+Use+External+Libraries) file to avoid violating Central's rate limits. Mirror the [`DefaultMavenRepository`](#Dependency+Resolution+and+Maven+Central) ID, which is the ID under which TeamCity adds Central to the repository list.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -621,7 +649,7 @@ In both modes, you can define [Maven Central](https://central.sonatype.com/) mir
 
   <mirrors>
     <mirror>
-      <mirrorOf>central</mirrorOf>
+      <mirrorOf>DefaultMavenRepository</mirrorOf>
       <name>repo</name>
       <url>https://host/maven/proxy</url>
       <id>repo</id>
