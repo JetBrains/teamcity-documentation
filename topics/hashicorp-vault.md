@@ -37,7 +37,7 @@ Since all communication with Vault is orchestrated by the TeamCity server, this 
    * **ID** is a custom string that identifies this Vault connection. You can specify this field if you set up multiple Vault connections and specify which connection a specific parameter should use. Otherwise, leave this field blank.
    * **Vault URL** is the address of your Vault instance. Local Vault installations (the default URL is `http://localhost:8200`) are also supported.
    
-5. Choose the desired authentication method. TeamCity can authenticate to HCP Vault using a Vault's AppRole, an AWS IAM role, or a directory access protocol (LDAP).
+5. Choose the desired authentication method. TeamCity can authenticate to Vault using a Vault AppRole, a directory access protocol (LDAP), or a Google Cloud service account (GCP IAM).
 
     <tabs>
 
