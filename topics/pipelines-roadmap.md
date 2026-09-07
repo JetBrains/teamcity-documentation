@@ -32,7 +32,8 @@ We’re exploring timeout settings that let you define maximum run durations. Jo
 
 ### PR event triggers
 
-Pipelines can already identify pull requests and [automatically build their changes](pipeline-settings.md#Repository). We hope to introduce a more sophisticated PR handling by adding dedicated event triggers.
+Pipelines can already identify pull requests and use the commit trigger to [automatically build these pull request changes](pipeline-settings.md#Repository). To provide better granularity and control, we expect to introduce separate triggers for core pull request events: pull request opened, new comment added, and so on.
+
 
 ### GitHub Checks support
 
@@ -42,9 +43,11 @@ Pipelines are capable of reporting basic run statuses (started, failed, successf
 
 [Recipes](working-with-meta-runner.md) complement custom build steps by letting you package commonly used logic into reusable assets and download community-created steps from JetBrains Marketplace. Adding recipe support would greatly expand what pipelines can do.
 
-### Build step conditions
+### Job and build step execution conditions
 
 Classic build configurations support [step execution conditions](build-step-execution-conditions.md) that specify criteria for when a step should run. We plan to add a similar feature for steps inside pipeline jobs.
+
+In addition, we plant to add similar functionality to the jobs themselves. These options would allow you to skip a job entirely if the specific criteria are met.
 
 ### Typed parameters
 
