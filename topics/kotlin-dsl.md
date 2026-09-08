@@ -567,15 +567,15 @@ You can establish access to external libraries in private repositories. For this
 #### Dependency Resolution and Maven Central
 {help-id="kotlin-dsl-default-maven-repository"}
 
-When `.teamcity/pom.xml` declares custom dependencies, the TeamCity server resolves them before it generates settings. It uses every repository declared in that `pom.xml`, and then appends Maven Central (`https://repo.maven.apache.org/maven2/`) under the ID `DefaultMavenRepository`.
+Projects without custom dependencies resolve nothing remotely and never contact Maven Central. However, if `.teamcity/pom.xml` declares custom dependencies, the TeamCity server resolves them before it generates settings. It traverses every repository declared in that `pom.xml`, and then appends Maven Central (`https://repo.maven.apache.org/maven2/`) under the `DefaultMavenRepository` ID.
 
-TeamCity adds this entry even though your `pom.xml` does not declare it. It is omitted only if the `pom.xml` already declares a repository whose URL is exactly `https://repo.maven.apache.org/maven2/`. Projects without custom dependencies resolve nothing remotely and never contact Maven Central.
+If `pom.xml` already declares a repository with the `https://repo.maven.apache.org/maven2/` URL, TeamCity does not add any new entries to this file. 
 
 > When downloading an artifact, Maven tries the repositories in order and stops at the first match, so `DefaultMavenRepository` acts as a fallback.
 >
 {style="note"}
 
-To send these requests to an internal repository instead, upload a `mavenSettingsDsl.xml` file containing a mirror to the __Maven Settings__ page of the _Root_ project.
+To resolve dependencies from an internal repository instead of Maven Central, upload a `mavenSettingsDsl.xml` file with a mirror to the __Maven Settings__ page of the _Root_ project.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -593,9 +593,9 @@ To send these requests to an internal repository instead, upload a `mavenSetting
 </settings>
 ```
 
-Use `DefaultMavenRepository` as the `mirrorOf` value. The common Maven pattern `<mirrorOf>central</mirrorOf>` has no effect here, because `mirrorOf` matches repository IDs and the implicitly added repository is named `DefaultMavenRepository`, not `central`. The mirror above leaves every repository declared in `pom.xml` untouched.
+Use `DefaultMavenRepository` as the `mirrorOf` value instead of the regular `<mirrorOf>central</mirrorOf>` syntax: `mirrorOf` accepts repository IDs, not aliases or names, so a value should match the one from `pom.xml` entry. The mirror above leaves every repository declared in `pom.xml` untouched.
 
-The change applies to all projects on the server at once. It does not affect build steps, only Kotlin DSL dependency resolution.
+The change applies to all projects on the server at once, and only affects Kotlin DSL dependency resolution. Regular build steps in build configurations or pipelines are not affected.
 
 ### DSL Compilation
 {help-id="kotlin-compilation-mode"}
