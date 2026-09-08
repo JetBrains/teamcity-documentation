@@ -9,18 +9,18 @@
 * TeamCity no longer supports outdated [databases and their drivers](set-up-external-database.md):
     * The legacy HSQLDB1 database and its correspondent HSQLDB1 JDBC drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101186). Switch to HSQLDB2 drivers instead.
     * The legacy MSSQL jTDS drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101180). Switch to standard MSSQL JDBC drivers instead.
+    * MSSQL now requires MSSQL JDBC Driver 6.0 or later. We recommend upgrading to the latest version (13.4), which you can download from the [Microsoft JDBC Driver release notes page](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver). Choose the `mssql-jdbc-13.4.0.jre11.jar` file from the `jars` directory of the downloaded driver archive.
 
-We’ve also updated the [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
+We’ve also updated [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
 ### BuildQueue Security Checks
 
-In response to a security issue identified and fixed in this release, we have tightened permission checks for REST API calls to the  [`app/reset/buildQueue`](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html) endpoint. Callers without the `customize_build_parameters` permission can no longer trigger builds with modified parameters. This prevents potential attacks that inject malicious data through custom build parameters, but may affect integrations that relied on the previous behavior. If your `buildQueue` requests now return a 403 error, verify the caller’s identity and, if appropriate, grant them the missing `customize_build_parameters` permission for the required projects.
+In response to a security issue identified and fixed in this release, we have tightened permission checks for REST API calls to the [`/app/rest/buildQueue`](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html) endpoint. Callers without the [_Customize build parameters_](managing-roles-and-permissions.md) permission can no longer trigger builds with modified parameters. This prevents potential attacks that inject malicious data through custom build parameters, but may affect integrations that relied on the previous behavior. If your `buildQueue` requests now return a 403 error, verify the caller’s identity and, if appropriate, grant them the missing permission for the required projects.
 
 ### Known Issues
 {id="known-issues-2026-2"}
 
-* A [`.teamcity.yml` file](pipeline-settings.md#Repository) added after the pipeline was created but before its versioned settings storage changed from "On TeamCity server" to "In VCS repository" cannot be imported. See this ticket for more information: [TW-103446](https://youtrack.jetbrains.com/issue/TW-103446).
-
+* A [`.teamcity.yml` file](pipeline-settings.md#Repository) added after the pipeline was created but before its versioned settings storage was switched from "On TeamCity server" to "In VCS repository" cannot be imported. See this ticket for more information: [TW-103446](https://youtrack.jetbrains.com/issue/TW-103446).
 
 ## Changes from 2026.1.3 to 2026.1.4
 {id="2026.1.4"}
