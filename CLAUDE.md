@@ -6,8 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Source for the [TeamCity Help](https://www.jetbrains.com/help/teamcity/) site, built with **JetBrains Writerside**. There are two published documentation instances that share the same `topics/` source:
 
-- `tc` — TeamCity On-Premises (`tc.tree`, web path `/teamcity/2026.2/`)
-- `tcc` — TeamCity Cloud (`tcc.tree`, web path `/teamcity/cloud/2026.2/`)
+- `tc` — TeamCity On-Premises (`tc.tree`, web path `/teamcity/2026.3/`)
+- `tcc` — TeamCity Cloud (`tcc.tree`, web path `/teamcity/cloud/2026.3/`)
 
 ## Building
 
@@ -69,7 +69,7 @@ To make a new topic visible, add a `<toc-element>` entry to `tc.tree` and/or `tc
 
 ### Variables
 
-Reference variables defined in `v.list` as `%variable-name%`. The current product version variable is `product-version` (currently `2025.11`).
+Reference variables defined in `v.list` as `%variable-name%`. The current product version variable is `product-version` (currently `2026.3`).
 
 ### Images
 
@@ -99,5 +99,5 @@ The style checker enforces these (selected important ones):
 
 ## Branches
 
-- `2026.2` is the main branch (PRs target here)
-- Feature/version branches like `2026.2-build-chains` are used for in-progress work on specific versions or topics
+- `2026.3` is the main branch (PRs target here)
+- Feature/version branches like `2026.3-build-chains` are used for in-progress work on specific versions or topics

@@ -10,8 +10,18 @@ If you are upgrading, please ensure all your licenses will be still valid with t
 
 See also: [Documentation for Previous Versions](documentation-for-previous-versions.md) and [Roadmap Outline](roadmap-outline.md).
 
+## Current version: TeamCity 2026.3
 
-## Current version: TeamCity 2026.2
+Release date: TBD<br/>
+Build number: TBD
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.3.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.3.tar.gz)
+
+[Release notes](teamcity-2026-3-release-notes.md)
+
+
+## TeamCity 2026.2
 
 Release date: 2 September 2026<br/>
 Build number: 238924
