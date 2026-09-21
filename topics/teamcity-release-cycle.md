@@ -15,7 +15,7 @@ TeamCity is systematically and frequently updated with new features and optimiza
 * __Security updates__: to comply with the industry-best security practices, we continuously analyze TeamCity and introduce multiple security improvements per release (for more details on security in TeamCity, read [these notes](security-notes.md)).
 * __Bug fixes__: thanks to our QA team and active user feedback, we can quickly catch and fix even rare bugs. If we notice a critical bug soon after releasing another TeamCity version, it is our priority to release the respective patch or the next bugfix update as soon as possible, which makes it especially crucial that you don't skip regular updates. Any news concerning patches, release issues, and upgrade notes are published [here](upgrade-notes.md).
 
-Major updates are released twice a year, and each major release is followed by multiple minor (bugfix) releases. Read more about the release stages in the [following section](#Release+Stages).
+Major updates are released three times a year, and each major release is followed by multiple minor (bugfix) releases. Read more about the release stages in the [following section](#Release+Stages).
 
 ## Version Numbers
 {instance="tc"}
