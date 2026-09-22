@@ -4,7 +4,11 @@
 ## Changes from 2026.2 to 2026.3
 {id="2026.3"}
 
-TBD
+### Default Locale
+
+The TeamCity server and build agents now always start with the `-Duser.language=en` JVM option. This option is set by the bundled startup scripts, so it also applies to servers and agents run from the official Docker images. The `user.country` property is not affected and still comes from the machine's OS settings.
+
+This change guarantees that log messages, date and number parsing, and string comparisons behave identically on all machines, regardless of their OS locale. Overriding the language via [`TEAMCITY_SERVER_OPTS` or `TEAMCITY_AGENT_OPTS`](server-startup-properties.md) is not recommended. If a build requires a different JVM locale, set this locale for the build process itself, for example, via the [JVM command line parameters](java-parameters.md) of the corresponding build step.
 
 
 ## Changes from 2026.1 to 2026.2

@@ -19,6 +19,10 @@ Whether you run a build agent via the `agent.bat|sh` script or as a Windows serv
 
 For both processes mentioned above, you can customize the final agent behavior by specifying system properties and variables for the agent to run with.
 
+>Starting with version 2026.3, the agent startup scripts always set the `-Duser.language=en` JVM option to ensure consistent parsing and formatting of dates, numbers, and strings. Overriding this option is not recommended.
+>
+{style="warning"}
+
 ### Build Agent is Run via Script
 
 Before you run the [`<Agent_Home>`](agent-home-directory.md)`/bin/agent.bat|sh` script, set the following [environment variables](https://en.wikipedia.org/wiki/Environment_variable) in your OS:

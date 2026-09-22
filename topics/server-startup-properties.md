@@ -28,6 +28,10 @@ An alternative but obsolete method of adding an internal property is to pass it 
 
 If you need to pass additional JVM options to a TeamCity server (for example, `-D` or `-X...`), the approach will depend on the way the server is run. You will need to [restart](start-teamcity-server.md) the server for the changes to take effect.
 
+>Starting with version 2026.3, the server startup scripts always set the `-Duser.language=en` JVM option to ensure consistent parsing and formatting of dates, numbers, and strings. Overriding this option is not recommended.
+>
+{style="warning"}
+
 >For general notes on the memory settings, refer to [this article](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
 
 If you run the server using the `runAll` or `teamcity-server` scripts or as a Windows service, you need to set the options via the OS [environment variables](https://en.wikipedia.org/wiki/Environment_variable) passed to the TeamCity server process:
