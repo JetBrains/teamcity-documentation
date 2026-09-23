@@ -21,7 +21,7 @@ For both processes mentioned above, you can customize the final agent behavior b
 
 >Starting with version 2026.3, the agent startup scripts always set the `-Duser.language=en` JVM option to ensure consistent parsing and formatting of dates, numbers, and strings. Overriding this option is not recommended.
 >
-{style="warning"}
+{style="note"}
 
 ### Build Agent is Run via Script
 
