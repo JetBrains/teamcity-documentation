@@ -30,7 +30,7 @@ If you need to pass additional JVM options to a TeamCity server (for example, `-
 
 >Starting with version 2026.3, the server startup scripts always set the `-Duser.language=en` JVM option to ensure consistent parsing and formatting of dates, numbers, and strings. Overriding this option is not recommended.
 >
-{style="warning"}
+{style="note"}
 
 >For general notes on the memory settings, refer to [this article](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server).
 
