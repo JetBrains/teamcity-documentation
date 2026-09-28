@@ -716,11 +716,13 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>Database</td>
    <td>Supported versions</td>
    <td>2027.2 minimal versions</td>
+   <td>2027.2 JDBC Drivers</td>
 </tr>
 
 <tr>
    <td>HSQLDB<br/><br/>The internal HSQLDB database can be used for <b>evaluation purposes only</b>.</td>
    <td>2.7.2 (embedded)</td>
+   <td>2.7.4 (embedded)</td>
    <td>2.7.4 (embedded)</td>
 </tr>
 
@@ -728,30 +730,35 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>MySQL</td>
    <td>5.7.34 or later</td>
    <td>8.4 or later</td>
+   <td>Connector/J 26.7.0+</td>
 </tr>
 
 <tr>
    <td>Microsoft SQL Server</td>
    <td>2012 or later (including Express editions), SQL Azure</td>
    <td>2017 or later (including Express editions), SQL Azure</td>
+   <td>Minimal 6.2.2.jre8, recommended 13.4.0.jre11+</td>
 </tr>
 
 <tr>
    <td>PostgreSQL</td>
    <td>9.6 or later</td>
    <td>15 or later</td>
+   <td>42.7.13+</td>
 </tr>
 
 <tr>
    <td>Oracle</td>
    <td>10g or later (tested with the <a href="https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html">driver</a> version 12.1.0.1)</td>
    <td>11.2 or later (including XE and Free editions)</td>
+   <td>Minimal ojdbc6:11.2.0.4, recommended ojdbc11:21.23.0.0+</td>
 </tr>
 
 <tr>
    <td>MariaDB</td>
    <td>10.2 or later</td>
    <td>10.11 or later</td>
+   <td>Connector/J 26.7.0+</td>
 </tr>
 
 </table>
