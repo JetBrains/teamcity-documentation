@@ -120,9 +120,9 @@ Make sure the TeamCity user has quota for accessing the table space.
 
 #### On TeamCity Server Side (with Oracle)
 
-1. Get the Oracle JDBC driver. Supported driver versions are 11.1 and later. The Oracle JDBC driver must be compatible with your Oracle server.  
+1. Get the Oracle JDBC driver. Supported driver versions are 11.2 and later. The Oracle JDBC driver must be compatible with your Oracle server.  
    Place the following files:
-   * `ojdbc8.jar` (or `ojdbc6.jar`, `ojdbc7.jar` depending on your database version)
+   * `ojdbc11.jar` (or `ojdbc6.jar`, `ojdbc7.jar` depending on your database version)
    * `orai18n.jar` (can be omitted if missing in the driver version)  
    into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any).  
   It is strongly recommended locating the driver in your Oracle server installation. Contact your DBA for the files if required. Alternatively, download the Oracle JDBC driver from the [Oracle website](https://www.oracle.com/technetwork/database/features/jdbc/index-091264.html).
@@ -145,15 +145,16 @@ For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with
 
 #### On TeamCity Server Side (with MS SQL)
 
-1. Download the [Microsoft JDBC driver v12.6+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#126) (`sqljdbc_12.6.x` package) from the [Microsoft Download Center](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
-2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the just downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `sqljdbc_auth.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
+1. Download the [Microsoft JDBC driver v13.4.0+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#126) (`sqljdbc_13.4.0` package).
+2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the just downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `auth/*/mssql-jdbc_auth-13.4.0.*.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 3. Proceed with the TeamCity setup.
 
 #### jTDS Driver
 
-It is not recommended using the jTDS JDBC driver, as it has known issues with using Unicode characters.
+Starting with TeamCity 2026.3, `jTDS JDBC` driver is no longer supported.
 
-If you use the driver (`jtds` text appears in the `connectionUrl` of `database.properties`), it is highly recommended switching the native driver:
+If you use this driver (`jtds` text appears in the `connectionUrl` of `database.properties`), switch to the native driver:
+
 1. Create the server [backup](teamcity-data-backup.md) including the database.
 2. Stop the server and configure the server to use the native Microsoft JDBC driver as noted in the section above.
 3. Restore the database from the backup into the new MS SQL database.

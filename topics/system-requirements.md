@@ -277,7 +277,7 @@ PostgreSQL: it is recommended to use version 9.2+, which has a lot of query opti
 
 Oracle: it is recommended to keep statistics on — all automatically gathered statistics should be enabled (since Oracle 10.0, this is the default setup). See the information on redo log files in the [Oracle documentation](https://docs.oracle.com/cd/B14117_01/server.101/b10752/iodesign.htm#26022).
 
-MS SQL Server: it is NOT recommended using the jTDS driver — it does not work with `nchar/nvarchar`. To preserve Unicode streams, it may cause queries to take a long time and consume many I/O operations. See the information on redo log in the [Microsoft Knowledge base](https://support.microsoft.com/kb/2033523). If you use jTDS, [consider migrating](set-up-external-database.md#jTDS+Driver).
+MS SQL Server: see the information in the [Microsoft Knowledge base](https://support.microsoft.com/kb/2033523). If you use jTDS, [migrate to the native driver](set-up-external-database.md#jTDS+Driver).
 
 MySQL: the query optimizer might be inefficient: some queries may get a wrong execution plan causing them to take a long time and consume many I/O operations.
 
