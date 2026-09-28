@@ -151,9 +151,10 @@ For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with
 
 #### jTDS Driver
 
-jTDS JDBC driver is not supported anymore.
+Starting with TeamCity 2026.3, `jTDS JDBC` driver is no longer supported.
 
-If you use the driver (`jtds` text appears in the `connectionUrl` of `database.properties`), it is required switching the native driver:
+If you use this driver (`jtds` text appears in the `connectionUrl` of `database.properties`), switch to the native driver:
+
 1. Create the server [backup](teamcity-data-backup.md) including the database.
 2. Stop the server and configure the server to use the native Microsoft JDBC driver as noted in the section above.
 3. Restore the database from the backup into the new MS SQL database.
