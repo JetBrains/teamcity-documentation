@@ -1848,7 +1848,7 @@ If you need the tests to be treated as separate ones, consider running them in t
 
 #### Database-related changes
 
-The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver does not support the nchar and nvarchar characters. If you still use jTDS, please [migrate](set-up-external-database.md).
+The national character sets (nchar, nvarchar, nclob types) for text fields are now supported in MS SQL databases used by TeamCity. It is recommended to use the Microsoft native JDBC driver, as jTDS JDBC driver is not supported anymore. If you still use jTDS, please [migrate](set-up-external-database.md).
 
 Upon upgrade and entering the normal working status, TeamCity starts a background process to move the entries from the vcs\_changes database table to vcs\_change table. This process is transparent and you can continue working with the server as usual. It has negligible impact on the server performance and the only affected logic is the projects import feature (it is recommended to be used only with backups taken after the process is completed). The progress of the process can be seen on the Backup section in the server administration, along with "TeamCity is currently optimizing VCS\-related data in the database for better backup/restore performance" message.   
 The other important thing is that the data copying increases the size of the raw database storage.   
