@@ -17,6 +17,10 @@ We’ve also updated [the list of supported database versions](supported-platfor
 
 In response to a security issue identified and fixed in this release, we have tightened permission checks for REST API calls to the [`/app/rest/buildQueue`](https://www.jetbrains.com/help/teamcity/rest/start-and-cancel-builds.html) endpoint. Callers without the [_Customize build parameters_](managing-roles-and-permissions.md) permission can no longer trigger builds with modified parameters. This prevents potential attacks that inject malicious data through custom build parameters, but may affect integrations that relied on the previous behavior. If your `buildQueue` requests now return a 403 error, verify the caller’s identity and, if appropriate, grant them the missing permission for the required projects.
 
+### Agent Authorization
+
+In version 2026.2, we have restricted communication between TeamCity and unauthorized agents: viewing agent logs, dumping threads, opening interactive terminals, and rebooting the machine now require an authorized agent. As a result, cloud image-based agents may await for manual authorization to update their plugins. We recommend that you use [full agent distributions](install-teamcity-agent.md#Install+from+ZIP+File) to ensure trusted agents are automatically authorized.
+
 ### Known Issues
 {id="known-issues-2026-2"}
 
