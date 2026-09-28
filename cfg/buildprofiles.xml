@@ -29,6 +29,8 @@
 		<og-twitter>@teamcity</og-twitter>
 		<og-image>https://resources.jetbrains.com/storage/products/teamcity/img/meta/preview.png</og-image>
 		<download-page>https://www.jetbrains.com/teamcity/download/</download-page>
+
+		<custom-banner bg-theme="purple" link="https://kotlinconf.com" label="Conference">Join 2,000+ devs at KotlinConf 2026!</custom-banner>
 	</variables>
 	<footer>
 		<copyright>2000–2026 JetBrains s.r.o.</copyright>
