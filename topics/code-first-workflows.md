@@ -7,9 +7,13 @@ Previous tutorials explained how to start your TeamCity project from the UI. How
 * [**Kotlin DSL**](kotlin-dsl.md) — a fully fledged programming language with all corresponding benefits: the ability to dynamically generate objects, create reusable templates and libraries shared across projects (or even TeamCity servers), full IDE support along with refactoring tools and auto-completion, and so on. Supported in both pipelines and [build configurations](creating-and-editing-build-configurations.md). You can access kDSL API reference documentation locally, by adding `/app/dsl-documentation/index.html` to your TeamCity server URL, or at our public [teamcity.jetbrains.com](https://teamcity.jetbrains.com/app/dsl-documentation/index.html) server.
 
 
-## Walkthrough
+## Create a code-first pipeline
 
 This walkthrough guides you through the basic steps of adding a code-first pipeline.
+
+> You do not need to enable versioned settings [on the parent project level](storing-project-settings-in-version-control.md): if pipelines store their settings in a YAML file in a repository, project [Kotlin DSL](kotlin-dsl.md) settings will not include them anyway.
+> 
+{style="note"}
 
 1. Add a `.teamcity.yml` file to the root of your repository and design a pipeline. Refer to [](pipelines-yaml-syntax.md) for complete schema.
 
@@ -36,8 +40,8 @@ This walkthrough guides you through the basic steps of adding a code-first pipel
 4. TeamCity will automatically sync changes made to this configuration file and in the UI. You can disable this sync in the pipeline **Repository** section by choosing to keep the settings file on the server.
 
 
-
-## Project versioned settings and pipelines
+<!--
+## Project versioned settings
 
 In TeamCity, pipelines and configurations only store settings specific to them. Objects like [VCS roots](configuring-vcs-roots.md) and project-wide [connections](configuring-connections.md) are store in project settings instead. These settings are available on the [**Project settings | Versioned settings**](storing-project-settings-in-version-control.md) page. Enabling them allows you to store settings the entire project (with all of its child entities) in the same repository.
 
@@ -46,3 +50,5 @@ Note that since YAML is only supported for pipelines, you cannot use TeamCity UI
 <img src="pipeline-yaml-not-included-warning.png" width="706" alt="YAML not included in kDSL warning"/>
 
 See also: [](pipelines-dsl.md#DSL+compatibility+mode).
+
+-->
