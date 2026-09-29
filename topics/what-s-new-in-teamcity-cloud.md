@@ -359,7 +359,6 @@ We’ve added [PKCE OAuth](ai-agent-integration.md#OAuth+Access) authorization f
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101157"><b>TW-101157</b></a> — Cloud: Add script for Self-hosted agent installation to the Agents page</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100479"><b>TW-100479</b></a> — TeamCity builds sporadically fail to perform checkout with Git 2.54.0: unable to find all commit-graph files</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100860"><b>TW-100860</b></a> — Personal builds fail during agent-side checkout when unshelving a Perforce changelist that contains files opened exclusively</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100785"><b>TW-100785</b></a> — Compiling Pipeline YAML schema on UI flattens properties</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101362"><b>TW-101362</b></a> — Artifact uploads to our S3 storage fail: @NotNull method jetbrains/buildServer/artifacts/s3/S3Util.getBucketRegion must not return null</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101394"><b>TW-101394</b></a> — Connection to uploads is prohibited by node restrictions from not-readonly secondary node</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101336"><b>TW-101336</b></a> — If pop-up is closed during the "Collecting diagnostic data" stage, it doesn't appear again</li>
