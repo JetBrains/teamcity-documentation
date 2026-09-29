@@ -3,6 +3,37 @@
 <show-structure for="chapter" depth="2"/>
 
 
+## Build ???, 1 October 2026
+
+### Additional tabs for jobs
+
+The [pipelines](create-and-edit-pipelines.md) run results page now shows additional tabs for a selected job:
+
+* Performance monitor
+* [Qodana](qodana.md)
+* Custom report tabs
+* Allure report
+* [Maven](maven.md) build info
+* Container info
+
+<img src="pipelines-fullscreen-tabs.png" thumbnail="true" width="706" alt="Pipeline job build result tabs"/>
+
+All tabs except for **Performance monitor** are contextual: they only appear if the selected job performs corresponding actions. For example, the **Container info** tab is shown only for jobs whose steps [run in Docker or Podman containers](job-settings.md#Integrations).
+
+### On-agent DSL compilation
+
+In the [previous update](#DSL+compilation+mode), we have introduced the option to choose whether it's your TeamCity server or individual agents who compile DSL code. Starting from this version, **On a build agent** becomes a default option.
+
+> This change only affects which of the two options is initially selected when you enable project versioned settings, and does not affect any of the existing projects.
+>
+{style="note"}
+
+### Full changelog
+{id=changelog-2026.3.1}
+
+<!--Automation-->
+
+
 ## Build 256393, 2 September 2026
 
 ### Pipeline enhancements
