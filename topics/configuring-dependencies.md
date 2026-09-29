@@ -143,7 +143,7 @@ A new triggered build will only use successfully finished [suitable builds](conf
 
 </def>
 
-<def title="Run build on the same agent">
+<def title="Run build on the same agent" help-id="run-build-on-same-agent">
 
 When enabled, the downstream build runs on the same build agent that ran the upstream build within the same chain. Use this when an upstream build modifies system state — installed tools, environment variables, or local files — that the downstream build relies on.
 
@@ -175,12 +175,14 @@ These settings let you control whether a downstream build should run if its upst
 
 
 ## Build reuse
+{help-id="build-reuse"}
 
 Running every upstream build on every chain trigger is often wasteful — if a matching build already exists, TeamCity can reuse it. This is what makes a chain more than a fixed sequence: rather than blindly rerunning everything, TeamCity decides which upstream builds to execute and which to substitute with earlier results.
 
 Reuse is controlled by the [**Do not run new build if there is a suitable one**](#Dependency+settings) dependency option. When it is enabled, TeamCity looks for a _suitable_ build to use instead of starting a new one.
 
 ### Suitable builds
+{help-id="suitable-builds"}
 
 A _suitable_ build is an existing build that TeamCity can reuse in place of a queued upstream build. When build reuse is enabled, TeamCity searches for a suitable build and, if one is found, links the dependency to it and drops the redundant queued build.
 

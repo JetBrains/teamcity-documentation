@@ -112,9 +112,7 @@ Description
 
 </td></tr><tr>
 
-<td>
-
-<anchor name="show-changes-from-snapshot-dependencies"/>
+<td id="show-changes-from-snapshot-dependencies" help-id="show-changes-from-snapshot-dependencies">
 
 Show changes from snapshot dependencies
 
