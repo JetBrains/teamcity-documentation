@@ -31,7 +31,70 @@ In the [previous update](#DSL+compilation+mode), we have introduced the option t
 ### Full changelog
 {id=changelog-2026.3.1}
 
-<!--Automation-->
+<deflist collapsible="true">
+    <def title="Implemented features" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-93094"><b>TW-93094</b></a> — Offload Kotlin DSL execution to TeamCity agents</li>
+        </ul>
+    </def>
+    <def title="Pipeline enhancements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100509"><b>TW-100509</b></a> — Support more tabs in Pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103231"><b>TW-103231</b></a> — Build triggers processing is slowed down by the pipeline dependencies parsing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-94612"><b>TW-94612</b></a> — Log in to GitHub button not shown during creation a new pipeline after revoking OAuth token without typing the repository name</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99703"><b>TW-99703</b></a> — A pipeline is open in the Favorites when selected in the Projects section</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100140"><b>TW-100140</b></a> — Pipeline dependencies states are not refreshed automatically on pipeline overview chart, while the chain is running</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99580"><b>TW-99580</b></a> — YAML Editor: Folding of YAML might work incorrectly with empty lines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100370"><b>TW-100370</b></a> — Pipelines: VCS Features: Auto-run trigger: Missing Branches/Pull Requests toggles when features are available for the pipeline</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104098"><b>TW-104098</b></a> — Mercurial in pipelines cannot compute revision properly because there are no changes attached to the job</li>
+        </ul>
+    </def>
+    <def title="Fixed bugs" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103778"><b>TW-103778</b></a> — Avatar upload fails with HTTP 400 after servlet multipart migration</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102515"><b>TW-102515</b></a> — Configuration changes aren't committed to the central repository after changing the project's external id</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103899"><b>TW-103899</b></a> — Free Disk Space cleanup should prioritize agent old temp directories before anything else</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103713"><b>TW-103713</b></a> — Pipelines: the "rebuild" option for a pipeline in the custom run dialog does not rebuild the pipeline's jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103700"><b>TW-103700</b></a> — Support request doesn't have pre-filled fields if it comes from the Cloud instance</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103737"><b>TW-103737</b></a> — Execution timeout should cause retry of a dependency</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99546"><b>TW-99546</b></a> — Pipeline Step name is not preserved after auto-conversion</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-68300"><b>TW-68300</b></a> — Flaky test display shows tests as flaky if they exist in this project and are flaky in another one</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103766"><b>TW-103766</b></a> — Add DURATION_SECONDS format to Kotlin DSL Charts class</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103813"><b>TW-103813</b></a> — "Investigations Auto-Assigner" plugin may assign flaky test for investigation</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102758"><b>TW-102758</b></a> — Param "teamcity.buildQueue.restartBuildAttempts" not respected on virtual builds.</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102759"><b>TW-102759</b></a> — "test.item.opened" event is sent just after opening the build Overview with the failed tests (without opening the Tests tab and choosing the test)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102809"><b>TW-102809</b></a> — Unclear "(count=2)" can be sent with the "test.item.opened" and "build.item.opened" events in FUS</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103099"><b>TW-103099</b></a> — Build retry is refused when the failed build is also depended on by an already finished chain</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101675"><b>TW-101675</b></a> — Build-scoped token feature does not override existing secure parameters</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103946"><b>TW-103946</b></a> — Not all Log4j appenders are started prior to adding them to the logging setups</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-88934"><b>TW-88934</b></a> — Build Cache is broken on GCS</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102948"><b>TW-102948</b></a> — Pipeline delete button is unavailable if pipeline versioned settings are stored in yaml</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103632"><b>TW-103632</b></a> — On branch badge, link / noLink colors are swapped</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103602"><b>TW-103602</b></a> — Improve contrast for Versioned Settings page when it's in read-only mode</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103446"><b>TW-103446</b></a> — YAML in branches: can't import yaml from the main branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100772"><b>TW-100772</b></a> — DiffView in teamcity UI stopped working on 2026.1 for TFS</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103853"><b>TW-103853</b></a> — Make sure on agent DSL execution uses Maven 3.9 and not just a default one</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103024"><b>TW-103024</b></a> — True-Up license ignores standalone agent licenses when calculating the licensed agent count</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98285"><b>TW-98285</b></a> — "Expand" tooltip blocks the expand sidebar button</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100785"><b>TW-100785</b></a> — Compiling Pipeline YAML schema on UI flattens properties</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104025"><b>TW-104025</b></a> — Visual Studio Build Tools 2026 September update : MSBuildTools not detected</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100643"><b>TW-100643</b></a> — Elasticsearch Search Mode: cannot retry connection if the server was unavailable at startup</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104290"><b>TW-104290</b></a> — TeamCity can skip updating the current project from the versioned settings claiming that the task with the same revision is scheduled</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104024"><b>TW-104024</b></a> — New builds are triggered by +pr:* VCS trigger on closed PRs if PRs on source branches are used and covered by the branchspec</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104029"><b>TW-104029</b></a> — Git commit support may get stuck</li>
+        </ul>
+    </def>
+    <def title="Resolved performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104021"><b>TW-104021</b></a> — Limit the number of changes processed by a VCS trigger for a newly detected branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103895"><b>TW-103895</b></a> — FakeHttpSession objects leak in case of continuous authentication with help of Basic auth and auth token as a password</li>
+        </ul>
+    </def>
+    <def title="Security" default-state="collapsed">
+        56 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        <note>Security bulletins are typically published a few days after the release date.</note>
+    </def>
+</deflist>
 
 
 ## Build 256393, 2 September 2026
