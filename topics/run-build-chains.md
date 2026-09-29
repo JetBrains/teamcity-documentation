@@ -27,6 +27,7 @@ With the VCS Trigger set up in the `pack setup` configuration, the whole build c
 </snippet>
 
 To make upstream changes visible in the downstream object, enable the [Show changes from snapshot dependencies](configuring-vcs-settings.md#show-changes-from-snapshot-dependencies) option in the **Version Control Settings** section. This shows upstream changes in the **Change Log** and **Pending Changes** tabs of the downstream object.
+{help-id="show-changes-from-deps"}
 
 <img src="dk-show-changes-from-dependencies.png" width="706" alt="Show changes from dependencies setting"/>
 

@@ -22,6 +22,7 @@ object ExternalBuild : BuildType({
 TeamCity offers three complementary controls to protect sensitive or resource-intensive configurations.
 
 ## Project isolation
+{help-id="project-isolation"}
 
 Project isolation is the primary enforcement mechanism. It is configured in the **Project Isolation** tab of [project settings](project-administrator-guide.md#Edit+and+View+Modes).
 
@@ -45,7 +46,7 @@ You can tighten top-down trust by switching a subproject to **Only trusted proje
 
 </def>
 
-<def title="Trusted projects list" id="trusted-list">
+<def title="Trusted projects list" id="trusted-list" help-id="project-isolation-trust-list">
 
 To let an external project depend on an isolated one, click **Add new trusted project** and add it to the list. Trust propagates to all direct and indirect children, so add trusted projects at the **topmost** project of the isolated branch to keep the setup maintainable.
 
