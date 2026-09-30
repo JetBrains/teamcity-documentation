@@ -4,10 +4,10 @@
 
 <vars>
 
+    <!--REGION: default vars, do not edit. Scroll down to the 'TC variables' region -->
+
     <var name="dbIcon" value="dbe.png" type="string"/>
-
     <var name="sample"
-
          value="Sometext"
          type="string"
     />
@@ -253,9 +253,6 @@
 
     <var type="string" name="project_view" value="Project view"/>
 
-    <!--current product version-->
-    <var name="product-version" value="2025.11"/>
-
     <var product="cl" name="cygwin_min_ver" value="2.8" type="string"/>
     <var product="cl" name="lldb_bundled_ver" value="6.0" type="string"/>
     <var product="cl" name="gdb_custom_ver" value="7.8.x-8.1.x" type="string"/>
@@ -279,5 +276,10 @@
     <var name="finding_in_file_custom_title" value="Finding and replacing text in a file" product="!ij"/>
     <var name="finding_in_project_custom_title" value="Search for a target and usages within a project" product="ij"/>
     <var name="finding_in_project_custom_title" value="Finding and replacing text in a project" product="!ij"/>
+    <!--endregion-->
 
+    <!--REGION: TC variables-->
+    <var name="product-version" value="2026.03"/> <!--current product version-->
+
+    <!--endregion-->
 </vars>
