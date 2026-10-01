@@ -145,8 +145,8 @@ For step-by-step instructions, see the [dedicated page](setting-up-teamcity-with
 
 #### On TeamCity Server Side (with MS SQL)
 
-1. Download the [Microsoft JDBC driver v13.4.0+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#126) (`sqljdbc_13.4.0` package).
-2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the just downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `auth/*/mssql-jdbc_auth-13.4.0.*.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
+1. Download the [Microsoft JDBC driver v13.6.0+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16) (`sqljdbc_13.6.0` package).
+2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the just downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `auth/*/mssql-jdbc_auth-<version>.*.dll` from the driver package as per [instructions](setting-up-teamcity-with-ms-sql-server.md#integratedSecurityAuth).
 3. Proceed with the TeamCity setup.
 
 #### jTDS Driver
