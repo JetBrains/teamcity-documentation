@@ -123,7 +123,7 @@ buildLog
 
 <td>
 
-Find all builds that include certain text in build logs. It is [disabled](#search-in-logs) by default.
+Find all builds that include certain text in build logs. It is [disabled](#Search+by+Build+Log) by default.
 
 </td>
 
