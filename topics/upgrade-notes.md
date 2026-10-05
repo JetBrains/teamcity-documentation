@@ -11,6 +11,13 @@ The TeamCity server and build agents now always start with the `-Duser.language=
 This change guarantees that log messages, date and number parsing, and string comparisons behave identically on all machines, regardless of their OS locale. Overriding the language via [`TEAMCITY_SERVER_OPTS` or `TEAMCITY_AGENT_OPTS`](server-startup-properties.md) is not recommended. If a build requires a different JVM locale, set this locale for the build process itself. To do this, use the **Additional command-line parameters** settings of Maven, Gradle, Ant, and other build steps.
 
 
+## Changes from 2026.2 to 2026.2.1
+{id="2026.2.1"}
+
+No potential breaking changes.
+
+
+
 ## Changes from 2026.1 to 2026.2
 {id="2026.2"}
 
@@ -35,6 +42,13 @@ In version 2026.2, we have restricted communication between TeamCity and unautho
 {id="known-issues-2026-2"}
 
 * A [`.teamcity.yml` file](pipeline-settings.md#Repository) added after the pipeline was created but before its versioned settings storage was switched from "On TeamCity server" to "In VCS repository" cannot be imported. See this ticket for more information: [TW-103446](https://youtrack.jetbrains.com/issue/TW-103446).
+
+## Changes from 2026.1.4 to 2026.1.5
+{id="2026.1.4"}
+
+No potential breaking changes.
+
+
 
 ## Changes from 2026.1.3 to 2026.1.4
 {id="2026.1.4"}
