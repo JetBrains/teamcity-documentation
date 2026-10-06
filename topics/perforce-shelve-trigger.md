@@ -34,7 +34,7 @@ TeamCity processes shelved files as follows:
 5. The [personal build](personal-build.md) starts.
 6. After the build completes, the `p4 revert` and `p4 clean` restore the workspace to its original state and remove files introduced from the shelf.
 
-> If the [](vcs-checkout-mode.md) is set to **Always checkout files on server** (or if agent-side checkout fails), TeamCity cannot unshelve files or perform conflict resolution with p4. In this case, the build fails.
+> If [agent-side checkout](vcs-checkout-mode.md#prefer-agent-checkout) fails, TeamCity cannot unshelve files or perform conflict resolution with p4. In this case, the build fails.
 > 
 > To bypass this limitation, you can set the `teamcity.internal.perforce.useUnshelve=false` parameter to the parent configuration or project to skip these steps. However, this switches TeamCity to a simpler approach that replaces existing source files with shelved ones, ignoring potential conflicts.
 > 
