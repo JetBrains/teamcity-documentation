@@ -737,7 +737,7 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>Microsoft SQL Server</td>
    <td>2012 or later (including Express editions), SQL Azure</td>
    <td>2017 or later (including Express editions), SQL Azure</td>
-   <td>Minimal 6.2.2.jre8, recommended 13.6.0.jre11+</td>
+   <td>Minimal 6.2.2.jre8 (versions earlier than 12.6.0.jre11 can cause severe performance issues), recommended 13.6.0.jre11+</td>
 </tr>
 
 <tr>
