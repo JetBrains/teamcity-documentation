@@ -86,7 +86,21 @@ To help with this, we plan to support [checkout rules](vcs-checkout-rules.md), w
 This section lists planned features that were implemented in previous versions.
 
 
-### Debug Jobs
+### Contextual tabs for jobs
+<secondary-label ref="secondary-roadmap-implemented-20263"/>
+
+The [pipelines](create-and-edit-pipelines.md) run results page now shows additional tabs for a selected job:
+
+* Performance monitor
+* [Qodana](qodana.md)
+* Custom report tabs
+* Allure report
+* [Maven](maven.md) build info
+* Container info
+
+<img src="pipelines-fullscreen-tabs.png" thumbnail="true" width="706" alt="Pipeline job build result tabs"/>
+
+### Debug jobs
 <secondary-label ref="secondary-roadmap-implemented-20262"/>
 
 You can now test a single pipeline job without triggering the whole pipeline. Open a job's ellipsis menu and choose **Debug** — TeamCity runs just that job (and anything it depends on) with its current settings, complete with a live build log and terminal access to the agent that picked it up.
@@ -95,7 +109,7 @@ You can now test a single pipeline job without triggering the whole pipeline. Op
 
 Learn more: [](create-and-edit-pipelines.md#Debug+Jobs)
 
-### Improved Branch Handling
+### Improved branch handling
 <secondary-label ref="secondary-roadmap-implemented-20262"/>
 
 Pipelines are now better equipped to work with feature branches: in edit mode, you can switch between different repository branches and design unique workflows for each of them.
@@ -109,7 +123,7 @@ In addition, TeamCity now handles protected branches correctly. An attempt to co
 Learn more: [](pipeline-settings.md#Feature+Branches)
 
 
-### Run Through Failures
+### Run through failures
 <secondary-label ref="secondary-roadmap-implemented-20262"/>
 
 When setting up [job dependencies](job-settings.md#Dependencies), you can now enable **Run job even if upstream fails** so a job keeps running even when the upstream job it depends on fails, instead of being automatically canceled.
