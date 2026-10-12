@@ -57,7 +57,7 @@ Note that **VCS Auth Tokens** pages display only the tokens available for each p
 
 For security reasons, you cannot issue a token with the global repository access permission.
 
-> The repository scope of a token can automatically expand when performing actions that involve cloning or creating new VCS roots. These actions include:
+> The project scope of a token can automatically expand when performing actions that involve cloning or creating new VCS roots. These actions include:
 > 
 > * Using the "Create subproject" wizard
 > * Using the "Create build configuration" wizard
