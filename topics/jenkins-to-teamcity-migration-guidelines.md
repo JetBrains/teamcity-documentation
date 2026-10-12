@@ -8,6 +8,12 @@ TeamCity offers a wide range of robust [integrations](https://www.jetbrains.com/
 
 <snippet id="Jenkins-to-TC-migration-ad">
 
+> You can now mirror real Jenkins jobs in TeamCity – without migration.
+> 
+> Install the [Jenkins Bridge plugin](https://plugins.jetbrains.com/plugin/34447-jenkins-bridge) and connect Jenkins to explore build results in TeamCity.
+> 
+{style="tip"}
+
 > Considering migrating your CI/CD process from Jenkins to TeamCity?
 >
 > We offer professional services to help make your migration seamless. Reach out to us [using the form](https://www.jetbrains.com/teamcity/get-in-touch/), and we’ll be happy to discuss the best options for your needs.
