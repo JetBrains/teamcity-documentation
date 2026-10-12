@@ -400,3 +400,42 @@ Classic TeamCity build configurations support this functionality via the "connec
 * The [NPM Registry](nodejs.md#Accessing+Private+NPM+Registries) build feature uses [corresponding connections](configuring-connections.md#npm-registry-settings).
 
 
+## Optimizations
+
+### Execution timeout
+
+This setting allows you to control the maximum duration of a pipeline run.
+
+<snippet id="pipeline-execution-timeout">
+
+You can set the maximum duration on three levels:
+
+<deflist>
+
+<def title="Global timeout">
+
+TeamCity UI: **Admin | Global settings | Default build execution timeout**
+
+This setting affects all pipeline and build configurations on the server, and is ignored if either pipeline- or job-level thresholds are specified.
+
+</def>
+
+<def title="Pipeline timeout">
+
+TeamCity UI: **Pipeline settings | Optimizations | Execution timeout**
+
+This setting limits the aggregated duration of all jobs in this pipeline. If the total runtime exceeds it, TeamCity server issues a stop command that cancels the currently ongoing jobs and the pipeline run is marked as failed.
+
+</def>
+
+<def title="Job timeout">
+
+TeamCity UI: **Job settings | Optimizations | Execution timeout**
+
+If a job runs longer that this settings allows, the job is aborted and both pipeline and this job statuses become failure. A job can be aborted before its own threshold if the total pipeline run duration exceeds the corresponding pipeline setting.
+
+</def>
+
+</deflist>
+
+</snippet>

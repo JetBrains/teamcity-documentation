@@ -187,25 +187,35 @@ Learn more: [](xml-report-processing.md)
 
 This section covers settings to significantly speed up pipeline runs, saving time, resources, and, for cloud agents, infrastructure costs.
 
-* **Parallel Tests** — Allows Maven and Gradle steps to split test suites into batches, spawning N virtual builds running in parallel on separate build agents.
+### Parallel Tests
 {help-id="job-parallel-tests"}
 
-    > TeamCity groups tests into batches based on their parent classes or test cases, so the actual number of batches may be lower than specified. For example, tests in a single large test class cannot be effectively split. See this build configuration article for details on how TeamCity selects and runs test batches: [](parallel-tests.md).
-    >
-    {style="tip"}
+Allows Maven and Gradle steps to split test suites into batches, spawning N virtual builds running in parallel on separate build agents.
 
-* **Reuse Job Results** — If no enabled [repositories](#Repository) contain new changes, TeamCity skips re-running the job and reuses artifacts, status, and results from a previous run. This ensures only jobs affected by recent changes are executed.
+> TeamCity groups tests into batches based on their parent classes or test cases, so the actual number of batches may be lower than specified. For example, tests in a single large test class cannot be effectively split. See this build configuration article for details on how TeamCity selects and runs test batches: [](parallel-tests.md).
+>
+{style="tip"}
+
+### Reuse Job Results
 {help-id="job-reuse"}
 
-    > See this article to learn how TeamCity identifies builds that can be reused: [](configuring-dependencies.md#Suitable+builds).
-    >
-    {style="tip"}
-    
-    Reused jobs are explicitly marked in the UI to avoid any confusion.
-    
-    <img src="pipelines-job-reuse.png" width="706" alt="Pipeline run reuse"/>
-    
-    Notice the "Optimization" tile at the top: TeamCity completed this run nearly five times faster than the previous one, with reused runs saving almost 80% of the last run’s duration.
+If no enabled [repositories](#Repository) contain new changes, TeamCity skips re-running the job and reuses artifacts, status, and results from a previous run. This ensures only jobs affected by recent changes are executed.
+
+> See this article to learn how TeamCity identifies builds that can be reused: [](configuring-dependencies.md#Suitable+builds).
+>
+{style="tip"}
+
+Reused jobs are explicitly marked in the UI to avoid any confusion.
+
+<img src="pipelines-job-reuse.png" width="706" alt="Pipeline run reuse"/>
+
+Notice the "Optimization" tile at the top: TeamCity completed this run nearly five times faster than the previous one, with reused runs saving almost 80% of the last run’s duration.
+
+### Execution timeout
+
+This setting allows you to control the maximum duration of a pipeline run.
+
+<include from="pipeline-settings.md" element-id="pipeline-execution-timeout"/>
 
 
 ## Agent Requirements

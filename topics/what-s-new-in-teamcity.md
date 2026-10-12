@@ -3,7 +3,16 @@
 
 <show-structure for="chapter" depth="2"/>
 
-## Additional tabs for jobs
+
+## Pipeline Enhancements
+
+### Execution timeouts
+
+New **Execution timeout** settings inside pipeline and job **Optimizations** group allow you to set the maximum run duration for your workflows. In addition, pipelines now follow the global default timeout threshold specified in the server [admin area](build-failure-conditions.md#Set+Custom+Build+Execution+Timeout).
+
+Learn more: [](job-settings.md#Optimizations)
+
+### Additional tabs for jobs
 
 The [pipelines](create-and-edit-pipelines.md) run results page now shows additional tabs for a selected job:
 

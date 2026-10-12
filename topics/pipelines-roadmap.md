@@ -85,6 +85,12 @@ To help with this, we plan to support [checkout rules](vcs-checkout-rules.md), w
 
 This section lists planned features that were implemented in previous versions.
 
+### Pipeline and job timeouts
+<secondary-label ref="secondary-roadmap-implemented-20263"/>
+
+New **Execution timeout** settings inside pipeline and job **Optimizations** group allow you to set the maximum run duration for your workflows.
+
+Learn more: [](job-settings.md#Optimizations)
 
 ### Contextual tabs for jobs
 <secondary-label ref="secondary-roadmap-implemented-20263"/>
