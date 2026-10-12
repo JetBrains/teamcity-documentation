@@ -3,7 +3,20 @@
 
 <show-structure for="chapter" depth="2"/>
 
-TBD
+## Additional tabs for jobs
+
+The [pipelines](create-and-edit-pipelines.md) run results page now shows additional tabs for a selected job:
+
+* Performance monitor
+* [Qodana](qodana.md)
+* Custom report tabs
+* Allure report
+* [Maven](maven.md) build info
+* Container info
+
+<img src="pipelines-fullscreen-tabs.png" thumbnail="true" width="706" alt="Pipeline job build result tabs"/>
+
+All tabs except for **Performance monitor** are contextual: they only appear if the selected job performs corresponding actions. For example, the **Container info** tab is shown only for jobs whose steps [run in Docker or Podman containers](job-settings.md#Integrations).
 
 ## Upgrade notes
 {instance="tc"}
