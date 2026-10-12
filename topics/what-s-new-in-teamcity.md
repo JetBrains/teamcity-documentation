@@ -4,13 +4,13 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Pipeline Enhancements
+## Pipeline enhancements
 
 ### Execution timeouts
 
-New **Execution timeout** settings inside pipeline and job **Optimizations** group allow you to set the maximum run duration for your workflows. In addition, pipelines now follow the global default timeout threshold specified in the server [admin area](build-failure-conditions.md#Set+Custom+Build+Execution+Timeout).
+You can now cap how long a pipeline run or an individual job may take: use the new **Execution timeout** setting in the **Optimizations** group of pipeline and job settings. In addition, pipelines now respect the [default build execution timeout](teamcity-configuration-and-maintenance.md#Build+Settings) configured in the server's global settings.
 
-Learn more: [](job-settings.md#Optimizations)
+Learn more: [](job-settings.md#Execution+timeout)
 
 ### Additional tabs for jobs
 

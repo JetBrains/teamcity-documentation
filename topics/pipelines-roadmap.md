@@ -88,9 +88,9 @@ This section lists planned features that were implemented in previous versions.
 ### Pipeline and job timeouts
 <secondary-label ref="secondary-roadmap-implemented-20263"/>
 
-New **Execution timeout** settings inside pipeline and job **Optimizations** group allow you to set the maximum run duration for your workflows.
+The new **Execution timeout** setting in the **Optimizations** group caps the run duration of a whole pipeline or an individual job.
 
-Learn more: [](job-settings.md#Optimizations)
+Learn more: [](job-settings.md#Execution+timeout)
 
 ### Contextual tabs for jobs
 <secondary-label ref="secondary-roadmap-implemented-20263"/>

@@ -213,7 +213,7 @@ Notice the "Optimization" tile at the top: TeamCity completed this run nearly fi
 
 ### Execution timeout
 
-This setting allows you to control the maximum duration of a pipeline run.
+Use this setting to limit how long this job may run.
 
 <include from="pipeline-settings.md" element-id="pipeline-execution-timeout"/>
 

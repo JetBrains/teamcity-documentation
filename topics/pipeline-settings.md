@@ -404,19 +404,19 @@ Classic TeamCity build configurations support this functionality via the "connec
 
 ### Execution timeout
 
-This setting allows you to control the maximum duration of a pipeline run.
+Use this setting to limit how long a pipeline run may take.
 
 <snippet id="pipeline-execution-timeout">
 
-You can set the maximum duration on three levels:
+TeamCity applies execution timeouts on three levels. Each setting accepts an integer value: the maximum allowed duration in minutes. As with classic build configurations, a timeout applies only to the actual run time; service tasks like source checkout or artifact resolution are excluded.
 
 <deflist>
 
 <def title="Global timeout">
 
-TeamCity UI: **Admin | Global settings | Default build execution timeout**
+TeamCity UI: [**Admin | Global settings | Default build execution timeout**](teamcity-configuration-and-maintenance.md#Build+Settings)
 
-This setting affects all pipeline and build configurations on the server, and is ignored if either pipeline- or job-level thresholds are specified.
+Sets a server-wide default that limits the duration of an individual job, not of an entire pipeline run. TeamCity ignores it when a pipeline- or job-level timeout is set.
 
 </def>
 
@@ -424,7 +424,7 @@ This setting affects all pipeline and build configurations on the server, and is
 
 TeamCity UI: **Pipeline settings | Optimizations | Execution timeout**
 
-This setting limits the aggregated duration of all jobs in this pipeline. If the total runtime exceeds it, TeamCity server issues a stop command that cancels the currently ongoing jobs and the pipeline run is marked as failed.
+Limits how long a pipeline run may take from start to finish. Jobs that run in parallel count once, not cumulatively. When a run exceeds this limit, TeamCity cancels the jobs that are still running and marks the run as failed.
 
 </def>
 
@@ -432,7 +432,7 @@ This setting limits the aggregated duration of all jobs in this pipeline. If the
 
 TeamCity UI: **Job settings | Optimizations | Execution timeout**
 
-If a job runs longer that this settings allows, the job is aborted and both pipeline and this job statuses become failure. A job can be aborted before its own threshold if the total pipeline run duration exceeds the corresponding pipeline setting.
+If a job runs longer than this setting allows, TeamCity aborts it and marks both the job and the pipeline run as failed. A job can also be aborted before reaching its own limit — if the pipeline-level timeout runs out first.
 
 </def>
 
