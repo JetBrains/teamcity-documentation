@@ -7,6 +7,9 @@ __If you are new to CI/CD or TeamCity__, the Cloud is a great starting point as 
 
 When you register a TeamCity Cloud account, your own TeamCity server is automatically created in Amazon Web Services. The server operates on the newest version of TeamCity and currently provides Windows and Linux cloud build agents out of the box (self-hosted agents for Windows, Linux, and macOS are also supported).
 
+
+<video src="https://youtu.be/-GHNhVW2Ryg" width="706"/>
+
 ## 1. Learn about CI with TeamCity Cloud
 
 Understand the idea behind continuous integration, learn [basic TeamCity concepts and build lifecycle](continuous-integration-with-teamcity.md).
