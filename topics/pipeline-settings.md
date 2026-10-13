@@ -410,6 +410,19 @@ Use this setting to limit how long a pipeline run may take.
 
 TeamCity applies execution timeouts on three levels. Each setting accepts an integer value: the maximum allowed duration in minutes. As with classic build configurations, a timeout applies only to the actual run time; service tasks like source checkout or artifact resolution are excluded.
 
+```YAML
+jobs:
+  Job1:
+    name: job 1
+    steps:
+      - type: script
+        script-content: sleep 2m
+    execution-timeout-minutes: 3 # Job1 timeout
+  Job2:
+    ...
+execution-timeout-minutes: 10 # Pipeline timeout
+```
+
 <deflist>
 
 <def title="Global timeout">
