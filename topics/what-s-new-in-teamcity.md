@@ -27,6 +27,19 @@ The [pipelines](create-and-edit-pipelines.md) run results page now shows additio
 
 All tabs except for **Performance monitor** are contextual: they only appear if the selected job performs corresponding actions. For example, the **Container info** tab is shown only for jobs whose steps [run in Docker or Podman containers](job-settings.md#Integrations).
 
+
+## Improved diff viewer
+
+The [**Changes** tab diff viewer](build-results-page.md#Changes+Tab) was updated.
+
+* Side navigation bar, difference counter, and keyboard shortcuts make it easier to traverse and inspect changes.
+* A compact header and collapsible change details maximize the main client area.
+* Ticking the **Ignore whitespace** option no longer reloads the page.
+
+<img src="diff-viewer-update.png" width="706" alt="Updated diff viewer" thumbnail="true"/>
+
+Learn more: [](build-results-page.md)
+
 ## Upgrade notes
 {instance="tc"}
 

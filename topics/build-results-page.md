@@ -47,6 +47,9 @@ The **Changes** tab shows the code changes associated with the build, including 
     If the current build configuration has an artifact dependency, and the artifact downloaded in the current build has changed compared to the one downloaded in the previous build of the current configuration, the __Artifact dependencies changes__ node appears displaying the build which was used to download artifact dependencies from, and the changes which were included in that build.
 
 * View file changes as diffs: tick the **Show files** checkbox and click a modified file.
+
+  <img src="diff-viewer-update.png" width="706" alt="Updated diff viewer" thumbnail="true"/>
+  
 * Download a change as a .patch diff file: click the ellipsis button (...) and select **Download patch**.
 * [Label the build sources](vcs-labeling.md).
 * [Trigger a custom build](running-custom-build.md) with this change.
