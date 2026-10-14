@@ -214,7 +214,7 @@ Authorization = "Bearer $TC_AUTH_TOKEN"
 ...or run the following terminal command.
 
 ```Shell
-codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env-var $TC_AUTH_TOKEN
+codex mcp add buildserver --url <TeamCity-server-URL>/app/mcp --bearer-token-env-var TC_AUTH_TOKEN
 ```
 </procedure>
 
