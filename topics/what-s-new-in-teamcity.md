@@ -27,6 +27,24 @@ The [pipelines](create-and-edit-pipelines.md) run results page now shows additio
 
 All tabs except for **Performance monitor** are contextual: they only appear if the selected job performs corresponding actions. For example, the **Container info** tab is shown only for jobs whose steps [run in Docker or Podman containers](job-settings.md#Integrations).
 
+<!--
+
+## Build tools integration
+
+### Maven 4
+
+???
+
+### Advanced Gradle integration mode
+
+In version 2026.2, we have introduced the [advanced Gradle integration mode](gradle.md#Gradle+Integration+Mode) that offers multiple benefits, including a wider range of supported command-line options and isolated projects support.
+
+In this version, this mode becomes the default one: you no longer need to add the `teamcity.internal.gradle.runner.launch.mode=gradle_v2` property.
+
+??? is rollback needed ???
+
+-->
+
 
 ## Improved diff viewer
 
