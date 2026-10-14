@@ -40,6 +40,10 @@ The [**Changes** tab diff viewer](build-results-page.md#Changes+Tab) was updated
 
 Learn more: [](build-results-page.md)
 
+## Miscellaneous improvements
+
+* The **Dependencies** tab of the [Build Results page](build-results-page.md#Dependencies+Tab) now accepts configuration IDs. Previously, you could only search by dependency names.
+
 ## Upgrade notes
 {instance="tc"}
 

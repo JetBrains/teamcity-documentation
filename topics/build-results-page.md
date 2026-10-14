@@ -101,7 +101,7 @@ The __Dependencies__ tab provides three modes of displaying the build dependenci
 
 <img src="exp-dependencies-tab.png" alt="Dependencies Tab of Build Results" width="706"/>
 
-The "Timeline" and "List" view modes allow you to search for specific builds by their names.
+The "Timeline" and "List" view modes allow you to search for specific builds by their names and [IDs](identifier.md).
 
 <img src="dk-searchDependencies.png" alt="Find Panel in dependencies" width="706"/>
 
