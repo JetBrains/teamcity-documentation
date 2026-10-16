@@ -20,7 +20,7 @@ Import is a disruptive operation and [not all data is imported](#Data+not+includ
 {instance="tc" help-id="ProjectImport-ImportingProjects"}
 
 1. On the source server, [create a usual backup](creating-backup-from-teamcity-web-ui.md) file containing the projects to import. The __[major version](upgrading-teamcity-server-and-agents.md#Upgrading+TeamCity+Server) of the source and target servers must be the same__.
-2. On the target server, go to __Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
+2. On the target server, go to __Admin | Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
 
 <warning>
 
@@ -100,7 +100,7 @@ If you import without resolving the conflicts, you can find the conflicting file
 {instance="tcc"}
 
 1. On the source TeamCity On-Premises server, create a [backup file](https://www.jetbrains.com/help/teamcity/creating-backup-from-teamcity-web-ui.html) containing the projects to import.
-2. On the target server, go to __Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
+2. On the target server, go to __Admin | Server Administration | Project Import__, upload the backup file, and follow the wizard. TeamCity displays the results when the import finishes.
 
 ## Data not included into import
 

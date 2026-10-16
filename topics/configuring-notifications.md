@@ -62,7 +62,7 @@ Currently, these notifications are available only for email and Slack.
 
 TeamCity Email Notifier relies on the email address specified in your user profile.
 
-To set up email notifications on a TeamCity server, the System Administrator needs to configure the SMTP server in __Administration | Email Notifier__. You can find the values of the expected parameters in you email server's settings.
+To set up email notifications on a TeamCity server, the System Administrator needs to configure the SMTP server in __Admin | Email Notifier__. You can find the values of the expected parameters in you email server's settings.
 {instance="tc"}
 
 See the [example configuration for Google Mail](setting-up-google-mail-as-notification-server.md).
@@ -87,7 +87,7 @@ TeamCity IDE Notifier requires installing the TeamCity plugin in your IDE. For t
 
 To set up notifications on a build configuration level, you need to add the [Notifications](notifications.md) build feature to this build configuration. This feature has two types:
 
-* [Email Notifier](notifications.md#Email+Notifier) sends emails per events in this build configuration. Similarly to the [user-level email notifications](#Email+Notifications), it uses the SMTP server settings configured in __Administration | Email Notifier__.
+* [Email Notifier](notifications.md#Email+Notifier) sends emails per events in this build configuration. Similarly to the [user-level email notifications](#Email+Notifications), it uses the SMTP server settings configured in __Admin | Email Notifier__.
 {instance="tc"}
 * [Email Notifier](notifications.md#Email+Notifier) sends emails per events in this build configuration.
   {instance="tcc"}
@@ -97,9 +97,9 @@ To set up notifications on a build configuration level, you need to add the [Not
 
 After you configure your preferred notification methods, it is time to choose which events will be triggering notifications.
 
-For example, if the SMTP server is configured in __Administration | Email Notifier__, TeamCity will be sending emails according to the default rule: if a user has an email address added in their settings, TeamCity will email them whenever the build containing their changes fails.
+For example, if the SMTP server is configured in __Admin | Email Notifier__, TeamCity will be sending emails according to the default rule: if a user has an email address added in their settings, TeamCity will email them whenever the build containing their changes fails.
 
-Users can manage their own notification rules in their profile settings. Project Administrators can manage notification rules for a user or a user group in, respectively, __Administration | Users | User's settings__ or __Administration | Groups | Group's settings__.
+Users can manage their own notification rules in their profile settings. Project Administrators can manage notification rules for a user or a user group in, respectively, __Admin | Users | User's settings__ or __Admin | Groups | Group's settings__.
 
 Read more about the composition and processing of notification rules in [this article](adding-notification-rules.md).
 

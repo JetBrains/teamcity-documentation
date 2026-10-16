@@ -49,7 +49,7 @@ Click an icon to view the list of repositories TeamCity detected using this conn
 
 <def title="Minimum polling interval" id="checkingInterval" help-id="checkingInterval">
 
-Specifies how often TeamCity polls the VCS repository for VCS changes. By default, the global predefined server setting is used that can be modified on the __Administration | Global Settings__ page. The interval time starts as soon as the last poll is finished on the per-VCS root basis. Here you can specify a custom interval for the current VCS root.
+Specifies how often TeamCity polls the VCS repository for VCS changes. By default, the global predefined server setting is used that can be modified on the __Admin | Global Settings__ page. The interval time starts as soon as the last poll is finished on the per-VCS root basis. Here you can specify a custom interval for the current VCS root.
 
 <note>
 

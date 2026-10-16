@@ -29,7 +29,7 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
 
 1. Click **Tests** in the side navigation pane.
 2. Click the **Add Test Definition** button.
-3. In a new browser tab, go to TeamCity UI and navigate to **Administration | &lt;Your_Build_Configuration&gt;**.
+3. In a new browser tab, go to TeamCity UI and navigate to **Admin | &lt;Your_Build_Configuration&gt;**.
 4. Copy the **Build Configuration ID** value from TeamCity.
 5. Go back to Swarm test settings and paste the copied value as the test name.
 
@@ -50,7 +50,7 @@ Helix Swarm [Tests](https://www.perforce.com/manuals/swarm/Content/Swarm/basics_
    ```
 
    * `X` — same value as the test name. Copy from the **Build Configuration ID** in TeamCity.
-   * `Y` — in TeamCity, go to **Administration | &lt;Your_Build_Configuration&gt; | Version Control Settings | &lt;Your_VCS_Root&gt;** and copy the **VCS Root ID** value.
+   * `Y` — in TeamCity, go to **Admin | &lt;Your_Build_Configuration&gt; | Version Control Settings | &lt;Your_VCS_Root&gt;** and copy the **VCS Root ID** value.
    * `{change}` — the [change number](https://www.perforce.com/manuals/swarm/Content/Swarm/test-add.html).
    * `{update}` — the [update callback URL](https://www.perforce.com/manuals/swarm/Content/Swarm/test-add.html).
      
@@ -98,7 +98,7 @@ Helix Swarm [Project](https://www.perforce.com/manuals/swarm/Content/Swarm/chapt
 
 ## Set Up a Commit Status Publisher
 
-1. In TeamCity UI, navigate to **Administration | &lt;Your_Build_Configuration&gt;**.
+1. In TeamCity UI, navigate to **Admin | &lt;Your_Build_Configuration&gt;**.
 2. Switch to the **Build Features** tab.
 3. Click **Add build feature** and choose [](commit-status-publisher.md).
 4. Choose **Perforce Helix Swarm** as a publisher.

@@ -519,7 +519,7 @@ The current recipe usages can be seen at the project __recipe__ page:
 
 <img src="meta-runners.png" width="750" alt="recipes"/>
 
-When a recipe is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Administration | recipe__ and use the __Edit__ option next to the recipe. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of recipe are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory.
+When a recipe is extracted, all steps are extracted. If you need to reorder parameters or make some quick fixes in the runner script, you can edit its raw XML definition in the web browser: go to __Project Settings | Recipes__ and use the __Edit__ option next to the recipe. The parameters will be shown in the same order as `<param>` elements in the XML definition. Definitions of recipe are stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\config\projects\<project_ID>\pluginData\metaRunners` directory.
 
 ## Creating Recipe from XML Definition of Build Configuration
 

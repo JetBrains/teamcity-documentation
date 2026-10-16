@@ -65,7 +65,7 @@ Private SSH keys are employed only when your VCS root is configured to work with
 
 Otherwise, if you want to update a project that authenticates to a VCS via a token or a password so that it starts using an SSH key instead, you will need to manually update a corresponding [](configuring-vcs-roots.md).
 
-1. Navigate to **Administration | &lt;Your_Project&gt; | VCS Roots** and click **Edit** next to the required root.
+1. Navigate to **Admin | &lt;Your_Project&gt; | VCS Roots** and click **Edit** next to the required root.
 2. Update the **Fetch URL** and/or **Push URL** fields to use an SSH URL instead. For example, change `https://github.com/username/repository_name.git` to `git@github.com:username/repository_name.git`.
 3. Scroll down to **Authentication Settings** and choose one of the **Private Key** options.
     

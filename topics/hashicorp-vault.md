@@ -151,7 +151,7 @@ To start using a secret value from HCP Vault in your builds, create a [parameter
 
 To create such a parameter, do the following:
 
-1. Go to **Administration | &lt;Project or Build Configuration&gt; | Parameters** and click **Add new parameter**.
+1. Go to **Admin | &lt;Project or Build Configuration&gt; | Parameters** and click **Add new parameter**.
 
    > You can set up parameters only for projects with a valid [Vault connection](#Set+Up+a+Vault+Connection) (or inherit it from a parent project).
    >

@@ -499,7 +499,7 @@ If the TeamCity web UI cannot be accessed after installation, you might be runni
 
 If you are experiencing issues with partial TeamCity NuGet Feed (for example, missing NuGet packages), you might have to reindex the TeamCity NuGet Feed.
 
-To force TeamCity to reindex all available packages and reset the NuGet package list, navigate to the server __Administration | Diagnostics | Caches__ and use the [buildsMetadata Reset](teamcity-monitoring-and-diagnostics.md#Caches) link.
+To force TeamCity to reindex all available packages and reset the NuGet package list, navigate to the server __Admin | Diagnostics | Caches__ and use the [buildsMetadata Reset](teamcity-monitoring-and-diagnostics.md#Caches) link.
 
 ## Problems with .NET-related TeamCity Tools
 

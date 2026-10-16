@@ -9,7 +9,7 @@ For failed tests, TeamCity suggests these potentially responsible users as inves
 
 
 
-In addition to suggestions, you can now add the *Investigations Auto Assigner* [build feature](adding-build-features.md) that uses the same heuristics to assign investigations of failed tests and build problems automatically. A user assigned as an investigator will see the corresponding notification next to the **Administration** button.
+In addition to suggestions, you can now add the *Investigations Auto Assigner* [build feature](adding-build-features.md) that uses the same heuristics to assign investigations of failed tests and build problems automatically. A user assigned as an investigator will see the corresponding notification next to the **Admin** button.
 
 <img src="dk-autoinvestigation.png" width="706" alt="Investigation automatically assigned to a user"/>
 

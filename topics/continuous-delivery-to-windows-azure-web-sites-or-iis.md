@@ -142,7 +142,7 @@ What we want to achieve is this nice waterfall, where we can promote our build f
 
 ![11.png](11.png)
 
-From the TeamCity Administration, copy the CI build configuration and name it differently, for example Deploy to Windows Azure Web Sites \- Development. Next, we will make some changes to the build configuration.
+From the TeamCity **Admin** area, copy the CI build configuration and name it differently, for example Deploy to Windows Azure Web Sites \- Development. Next, we will make some changes to the build configuration.
 
 Let's start by specifying build dependencies. Under the build configuration's _Dependencies_, add a new snapshot dependency on our CI build. This will ensure that deployment will only be possible if a matching CI build has passed completely, and that the deployment will be based on the exact same VCS revision as we built during CI.
 

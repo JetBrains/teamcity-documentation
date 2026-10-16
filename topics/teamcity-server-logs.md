@@ -5,11 +5,11 @@ TeamCity Server keeps a log of internal activities that can be examined to inves
 
 The logs are stored in plain text files in a disk directory on the TeamCity server machine (usually in [`<TeamCity Server Home>`](teamcity-home-directory.md)`/logs`). The files are appended with messages when TeamCity is running.
 
-While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Administration | Diagnostics__ section.
+While the server is running, the logs can be viewed in the web UI on the `Server Logs` tab of __Admin | Diagnostics__ section.
 
 > __Enable Debug in Server Logs__  
 > 
-> In the web UI, go to __Administration | Diagnostics__ page. On the __Troubleshooting__ tab, choose an active logging preset. To view logs, go to the __Server Logs__ tab.  
+> In the web UI, go to __Admin | Diagnostics__ page. On the __Troubleshooting__ tab, choose an active logging preset. To view logs, go to the __Server Logs__ tab.  
 > If it is not possible to enable debug logging mode from the TeamCity web UI, refer to [this section](#Changing+Logging+Configuration) to learn how to adjust logging options manually.
 > 
 {style="note" id="enable-debug-in-server-logs" help-id="enable-debug-in-server-logs"}
@@ -392,7 +392,7 @@ Some of the files can have `.N` extensions — that are files with previous logg
 
 ## Logging-related Diagnostics UI
 
-Users with System Administrator role can view and download the server logs right from the TeamCity UI using __Administration | Diagnostics | Server Logs__.
+Users with System Administrator role can view and download the server logs right from the TeamCity UI using __Admin | Diagnostics | Server Logs__.
 
 <anchor name="TeamCityServerLogs-loggingPreset"/>
 
@@ -404,7 +404,7 @@ While TeamCity is running, active logging settings can be changed by selecting b
 >
 {style="note"}
 
-The active logging preset is changed in the __Administration | Diagnostics | Troubleshooting | Debug logging__ section. Choosing a preset changes logging configuration immediately, and the preset is preserved after a server restart, until manually changed on this page again. It is strongly advised to return to the Default preset once the necessary logs were collected.
+The active logging preset is changed in the __Admin | Diagnostics | Troubleshooting | Debug logging__ section. Choosing a preset changes logging configuration immediately, and the preset is preserved after a server restart, until manually changed on this page again. It is strongly advised to return to the Default preset once the necessary logs were collected.
 
 The available presets are stored in the files with the `.xml` extension under the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/_logging` directory. New files can be added into the directory and existing files can be modified (using the [`.dist` convention](teamcity-data-directory.md#.dist+Template+Configuration+Files)). New presets can also be uploaded via __Diagnostics | Logging Presets__.
 

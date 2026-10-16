@@ -20,7 +20,7 @@ Note that in this documentation and other TeamCity materials the directory is of
 ## Location of the TeamCity Data Directory
 {instance="tc"}
 
-The currently used Data Directory location can be seen on the __Administration | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Administration | Global Settings | Browse Data Directory__ tab allowing the user to upload new or modify the existing files in the directory.
+The currently used Data Directory location can be seen on the __Admin | Global Settings__ page for a running TeamCity server instance. Clicking the __Browse__ link opens the __Admin | Global Settings | Browse Data Directory__ tab allowing the user to upload new or modify the existing files in the directory.
 
 The current Data Directory location is also available in the `logs/teamcity-server.log` file (look for "_TeamCity Data Directory:_" line on the server startup).
 
@@ -80,12 +80,12 @@ To set up a repository that should store your server's configuration files:
 
 1. Secure your data directory so that configuration files do not expose any sensitive data.
     * Set up a custom [encryption key](teamcity-configuration-and-maintenance.md#encryption-settings) to protect passwords, secrets, SSH keys, and other sensitive data. We recommend using the `TEAMCITY_ENCRYPTION_KEY` environment variable for this.
-    * Launch the re-encryption process from the **Administration | Global Settings** page. This action ensures your new custom encryption key is applied to all existing sensitive values.
+    * Launch the re-encryption process from the **Admin | Global Settings** page. This action ensures your new custom encryption key is applied to all existing sensitive values.
     * Move external database credentials from the `config/database.properties` file to [corresponding environment variables](set-up-external-database.md#Environment+Variables). TeamCity does not encrypt this file since it needs database connection before it fully launches, so it's best to conceal these valeus by moving them to env vars.
 
     In addition, make sure the Git repository where the config files are stored is accessible only by trusted users.
 
-2. Go to **Administration | Configs Repository**.
+2. Go to **Admin | Configs Repository**.
 3. Tick **Commit changes in configuration files to the configs repository**.
 4. Enter the path to your repository in the SSH format.
 5. Enter a full name (`heads/refs/<name>`) of the repository branch that should store configuration files.

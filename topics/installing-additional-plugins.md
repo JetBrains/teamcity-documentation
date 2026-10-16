@@ -6,7 +6,7 @@ Plugins can add extra functionality to your TeamCity server. You can get them in
 ## Installing Plugin from JetBrains Plugins Repository
 
 To install plugins from the repository:
-1. Go to __Administration | Plugins__ in TeamCity and click __Browse plugins repository__.
+1. Go to __Admin | Plugins__ in TeamCity and click __Browse plugins repository__.
 2. You will be redirected to the repository. Find the required plugin, click __Get__, and then __Install to http[s]://\<teamcityUrl\>__.   
 You will be redirected to the plugin list in TeamCity. 
 3. Confirm the plugin installation by clicking __Install__.
@@ -14,7 +14,7 @@ You will be redirected to the plugin list in TeamCity.
 
 ## Installing Plugin via Web UI
 
-Go to the __Administration | Plugins__ page and upload a plugin ZIP archive from your local machine using the corresponding link.
+Go to the __Admin | Plugins__ page and upload a plugin ZIP archive from your local machine using the corresponding link.
 
 ## Installing Plugin Manually
 
@@ -26,8 +26,8 @@ To enable the plugin after installation, click the plugin context menu and selec
 
 ## Uninstalling Plugin via Web UI
 
-1. Go to __Administration | Plugins__, locate an external plugin in the list, click the arrow icon next to it, and select __Delete__. 
-2. Once the plugin is deleted, the option to restart the server appears on the page. Click it and check that the plugin version is no longer listed in __Administration | Plugins__.
+1. Go to __Admin | Plugins__, locate an external plugin in the list, click the arrow icon next to it, and select __Delete__. 
+2. Once the plugin is deleted, the option to restart the server appears on the page. Click it and check that the plugin version is no longer listed in __Admin | Plugins__.
 
 ## Uninstalling Plugin Manually
 

@@ -32,7 +32,7 @@ To establish a Build Agent's run configuration policy:
 
 To make a build configuration run the builds on a build agent with the specified name and properties:
 	
-1. Click __Administration__ and select the desired build configuration.
+1. Click __Admin__ and select the desired build configuration.
 2. Select the **Agent Requirements** tab in the left navigation panel (see [Configuring Agent Requirements](configuring-agent-requirements.md)).
 3. Click **Add new requirement** and enter "teamcity.agent.name" in the **Parameter name** field.
 4. Change the condition to "equals" and enter the full agent name in the **Value** field. 

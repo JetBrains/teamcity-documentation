@@ -158,7 +158,7 @@ An ability to choose which of these two settings to apply grants you the followi
 
 * Add more flexibility to your [history builds](history-build.md). TeamCity initially attempts to use the settings corresponding to the moment of the selected change. Otherwise, the current project settings will be used.
 
-To specify which settings TeamCity should apply when a build starts, choose a required option on the **Administration | &lt;Project&gt; Versioned Settings** page.
+To specify which settings TeamCity should apply when a build starts, choose a required option on the **Admin | &lt;Project&gt; Versioned Settings** page.
 
 <img src="dk-chooseSettingsOnStart.png" width="706" alt="Choosing start-up settings"/>
 
@@ -666,7 +666,7 @@ All changes in the VCS root, where project settings are stored, are listed on th
 
 The format of the XML settings files changes from one TeamCity version to another to accommodate the new features and improvements. Generally, the format is not changed within bugfix releases and is changed in major releases. When a TeamCity server is upgraded, the current settings on the TeamCity server are changed from the earlier to the current format.
 
-It is a common practice to upgrade a TeamCity test server with production data before upgrading the production server. In order to avoid accidentally changing the format of the settings which are used on a production server of an older version, versioned settings are disabled after a TeamCity upgrade and the corresponding health item is displayed. System administrators have permissions to enable versioned settings (__Administration | Server Health | Versioned settings disabled__, click __Enable__). When enabled, the converted settings in the format of the current TeamCity version will be checked in the version control. Note that the new settings will be committed to the default branch of the VCS root; the settings stored in other branches will have to be updated manually.
+It is a common practice to upgrade a TeamCity test server with production data before upgrading the production server. In order to avoid accidentally changing the format of the settings which are used on a production server of an older version, versioned settings are disabled after a TeamCity upgrade and the corresponding health item is displayed. System administrators have permissions to enable versioned settings (__Admin | Server Health | Versioned settings disabled__, click __Enable__). When enabled, the converted settings in the format of the current TeamCity version will be checked in the version control. Note that the new settings will be committed to the default branch of the VCS root; the settings stored in other branches will have to be updated manually.
 
 
 

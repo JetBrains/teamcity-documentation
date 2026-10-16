@@ -120,7 +120,7 @@ To configure a TeamCity cluster consisting of two nodes, follow these steps:
     >
     {style="tip"}
 4. Start both nodes using [regular TeamCity scripts](start-teamcity-server.md) or via the TeamCity service.
-5. Open the TeamCity __Administration | Nodes Configuration__ page on any of the two servers and enable the _[Main TeamCity node](#Main+Node+Responsibility)_ responsibility for a node you want to make main.
+5. Open the TeamCity __Admin | Nodes Configuration__ page on any of the two servers and enable the _[Main TeamCity node](#Main+Node+Responsibility)_ responsibility for a node you want to make main.
 6. Proceed with [configuring the reverse HTTP proxy](#Proxy+Configuration).
 
 {id="MultinodeSetup-ProxyConfiguration"}
@@ -453,7 +453,7 @@ http {
 
 
 
-> * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the **Server URL** on the __Administration | Global Settings__ page and inside [build agents' configurations](configure-agent-installation.md).
+> * Since users will use the proxy server URL to access the TeamCity UI, this URL must be set as the **Server URL** on the __Admin | Global Settings__ page and inside [build agents' configurations](configure-agent-installation.md).
 > * The configurations above are designed for the two-node TeamCity setup. You can add more nodes if necessary.
 > * Nodes without the *Handling UI actions and load balancing user requests* [responsibility](#Responsibilities) will report HTTP error 503 to health check requests sent from your reverse proxy server. TeamCity categorizes these proxy requests as user operations, which these nodes cannot handle. This behavior is normal, does not affect node functionality, and does not indicate any malfunction.
 >
@@ -564,7 +564,7 @@ Secondary nodes use the same global settings (path to artifacts, version control
 
 ### Responsibilities
 
-By default, a newly started secondary node provides a read-only user interface and does not perform any background activity. You can assign the following additional responsibilities to each secondary node in __Administration | Server Administration | Nodes Configuration__:
+By default, a newly started secondary node provides a read-only user interface and does not perform any background activity. You can assign the following additional responsibilities to each secondary node in __Admin | Server Administration | Nodes Configuration__:
 
 * [Processing data produced by builds](#Processing+Data+Produced+by+Builds+on+Secondary+Node)
 * [VCS repositories polling](#VCS+Repositories+Polling+on+Secondary+Node)
@@ -763,7 +763,7 @@ The TeamCity clean-up task can be scheduled on any TeamCity node, but it execute
 
 ### Using Plugins
 
-A secondary node has access to all plugins enabled on the main node. It also watches for the newly uploaded plugins. If a secondary node detects that a plugin has been uploaded to the main node, it will show the respective notification on its __Administration | Plugins__ page. If the plugin supports it, it can be reloaded in runtime with no need to restart the secondary node — the respective hint will be displayed in the UI.
+A secondary node has access to all plugins enabled on the main node. It also watches for the newly uploaded plugins. If a secondary node detects that a plugin has been uploaded to the main node, it will show the respective notification on its __Admin | Plugins__ page. If the plugin supports it, it can be reloaded in runtime with no need to restart the secondary node — the respective hint will be displayed in the UI.
 
 >Secondary nodes can load an external/non-bundled plugin if this plugin supports secondary nodes. See the [Plugins F.A.Q.](https://plugins.jetbrains.com/docs/teamcity/plugin-development-faq.html#How+to+adapt+plugin+for+secondary+node) for details.
 >

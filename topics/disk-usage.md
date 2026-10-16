@@ -7,7 +7,7 @@ TeamCity analyses disk space and provides the __Disk Usage__ report. It detects 
 TeamCity analyses disk space and provides the __Disk Usage__ report. It analyses the disk space occupied by builds in the artifact storage.
 {instance="tcc"}
 
-To see the report, open __Administration| Disk Usage__.
+To see the report, open __Admin | Disk Usage__.
 
 <img src="DiskUsage.png" width="527" alt="Disk usage"/>
 

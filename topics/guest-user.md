@@ -7,9 +7,9 @@ TeamCity provides the ability to turn on the guest login allowing anonymous acce
 >
 {type="warning" instance="tcc"}
 
-A server administrator can [enable guest login](enabling-guest-login.md) on the __Administration | Authentication__ page.
+A server administrator can [enable guest login](enabling-guest-login.md) on the __Admin | Authentication__ page.
 
-Roles and groups for the guest user can be configured via __Guest user settings__ link available on the __Administration | Users__ page. By default, guest users have the __Project Viewer__ role for all the projects.
+Roles and groups for the guest user can be configured via __Guest user settings__ link available on the __Admin | Users__ page. By default, guest users have the __Project Viewer__ role for all the projects.
 
 When guest user is enabled, any number of guest users can be logged in to TeamCity simultaneously without affecting each other's sessions. Thus, it can be useful for non-committers who just monitor the projects' status on the __Projects__ page.
 

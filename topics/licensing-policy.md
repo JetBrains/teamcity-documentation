@@ -89,7 +89,7 @@ The [Enterprise Plus](#edition-enterprise-plus) server license allows you to exc
 
 ## Managing Licenses
 
-You can activate server license keys (and enter non-activated legacy keys) on the __Administration__ &gt; __Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page.
+You can activate server license keys (and enter non-activated legacy keys) on the __Admin | Licenses__ page of the TeamCity web UI. By default, only users with the System Administrator role can access the page.
 
 <include element-id="license-limitations" from="manage-teamcity-license.md"/>
 

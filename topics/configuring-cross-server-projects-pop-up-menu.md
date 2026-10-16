@@ -12,7 +12,7 @@ For these REST API calls to work, the servers [need to be configured](https://ww
 
 ## Configuring Projects Pop-up Menu
 
-The dedicated UI on the __Administration | Nodes configuration__ page allows configuring linked servers feeding the Projects pop-up menu:
+The dedicated UI on the __Admin | Nodes Configuration__ page allows configuring linked servers feeding the Projects pop-up menu:
 1. Specify the TeamCity server URL and click __Add Server__.
 2. Click the test connection button. You have to be logged in to do that.
 

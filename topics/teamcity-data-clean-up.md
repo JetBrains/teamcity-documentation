@@ -3,7 +3,7 @@
 
 TeamCity clean-up functionality allows an automatic deletion of old and no longer necessary build data.
 
-The server clean-up configuration is available in __Administration | Server Administration | Clean-up Settings__. It allows setting clean-up schedule and shows general clean-up information.
+The server clean-up configuration is available in __Admin | Server Administration | Clean-up Settings__. It allows setting clean-up schedule and shows general clean-up information.
 {instance="tc"}
 
 Clean-up rules, related to specific projects, are configured in __[Project Settings](project-administrator-guide.md#Edit+and+View+Modes) | Clean-up Rules__. These rules define what data to clean and what to preserve. They can be assigned to a project or build configuration.   
@@ -18,7 +18,7 @@ Clean-up deletes the data stored under [`<TeamCity Data Directory>`](teamcity-da
 <note instance="tc">
 
 Note that in case of any critical configuration errors on the server, TeamCity will not clean up the data of deleted projects and build configurations.   
-To see all the current server warnings and errors, go to __Administration | Server Health__.
+To see all the current server warnings and errors, go to __Admin | Server Health__.
 
 </note>
 
@@ -38,7 +38,7 @@ TeamCity Cloud also comes bundled with the [Caches Cleanup](https://github.com/J
 ## Server Clean-up Settings
 {instance="tc"}
 
-The _server clean-up settings_ are configured in __Administration | Server Administration | Clean-up Settings__.
+The _server clean-up settings_ are configured in __Admin | Server Administration | Clean-up Settings__.
 
 The build history clean-up is run as a background process, which means that there is no server maintenance downtime.   
 

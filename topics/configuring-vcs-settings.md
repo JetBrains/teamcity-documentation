@@ -20,7 +20,7 @@ When [parameter references](configuring-build-parameters.md) are used in a VCS r
 <snippet id="attach-or-create-a-root">
 
 <procedure title="Attach or Create VCS Root">
-<step><p>Go to <b>Administration</b> and click the project you want to configure.</p></step>
+<step><p>Go to <b>Admin</b> and click the project you want to configure.</p></step>
 <step><p>From the project's <b>General Settings</b> page, click the relevant build under <b>Build Configurations</b></p></step>
 <step><p>Select <b>Version Control Settings</b> from the sidebar.</p></step>
 <step><p>Click <b>Attach VCS root</b>.</p></step>

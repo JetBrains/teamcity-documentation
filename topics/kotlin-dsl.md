@@ -302,7 +302,7 @@ public open class MyBuildType : jetbrains.buildServer.configs.kotlin.BuildType {
 }
 ```
 
-In TeamCity, navigate to **Administration | DSL Libraries** and click **Upload DSL Library**. This invokes a dialog that allows you to upload `.jar` libraries and tag them with optional `groupId`, `artifactId`, and `version` Maven coordinates.
+In TeamCity, navigate to **Admin | DSL Libraries** and click **Upload DSL Library**. This invokes a dialog that allows you to upload `.jar` libraries and tag them with optional `groupId`, `artifactId`, and `version` Maven coordinates.
 
 <img src="custom-dsl-library-upload.png" width="706" alt="Upload custom Kotlin library"/>
 

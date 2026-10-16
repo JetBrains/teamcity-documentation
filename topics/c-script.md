@@ -53,7 +53,7 @@ TeamCity C# script tool
 
 <td>
 
-Select a version of the TeamCity C# Script tool from those installed via __Administration | Tools__, or enter a custom path to this tool, relative to the [build checkout directory](build-checkout-directory.md).
+Select a version of the TeamCity C# Script tool from those installed via __Admin | Tools__, or enter a custom path to this tool, relative to the [build checkout directory](build-checkout-directory.md).
 
 </td>
 

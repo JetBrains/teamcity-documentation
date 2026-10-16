@@ -33,7 +33,7 @@ Follow the steps described in the [](composite-build-configuration.md) article t
 
 Regular project developers who can edit and run building configurations should not be able to run delivery tasks. To set up fine-grained user permissions and securely store delivery-related parameters and credentials away from the main building pipeline, we recommend creating delivery configurations in a separate project.
 
-1. Go to **Administration | &lt;Your project&gt;** and click **Create subproject**.
+1. Go to **Admin | &lt;Your project&gt;** and click **Create subproject**.
 2. Choose the **Manually** tile to create a blank project unrelated to any specific VCS repository.
 3. Set the subproject name to *"Deployment Configurations"*.
 4. Depending on the type of your project and delivery target, deployment configurations can include different steps. For example, your configuration can employ the [](net.md) runner that executes the `nuget push` command to upload a package to a NuGet Gallery, or one of [](deployers.md) that upload files to an FTP server or Windows shares.
@@ -510,7 +510,7 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
 
 ### Set Up User Permissions
 
-The **Administration | User Management** section allow you to set up per-project [user roles and permissions](managing-roles-and-permissions.md). Consider the following example.
+The **Admin | User Management** section allow you to set up per-project [user roles and permissions](managing-roles-and-permissions.md). Consider the following example.
 
 * User "Alice" has the "Project Developer" role for the entire parent project. This role grants the same permissions in both _"Building Configurations"_ and _"Deployment Configurations"_ subprojects.
 * User "Bob" is "Project Developer" in _"Building Configurations"_ and "Project Viewer" in "_Deployment Configurations"_.

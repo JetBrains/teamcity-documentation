@@ -105,7 +105,7 @@ You are signed in to TeamCity: now you can configure your user settings and [cre
 
 TeamCity provides a wide range of [licensing options](https://www.jetbrains.com/teamcity/buy/#on-premises) that suite teams of any size. In addition to multiple available server licenses, you can purchase additional agents to scale the performance of your build server.
 
-Server and agent licenses can be activated on the **Administration | Licenses** page. We recommend activating your server license, even for the free Professional version, to ensure system administrators receive timely email notifications about critical TeamCity server security updates.
+Server and agent licenses can be activated on the **Admin | Licenses** page. We recommend activating your server license, even for the free Professional version, to ensure system administrators receive timely email notifications about critical TeamCity server security updates.
 
 Learn more: [](licensing-policy.md), [](manage-teamcity-license.md)
 

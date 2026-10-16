@@ -1,7 +1,7 @@
 [//]: # (title: Managing Subscription and Resources)
 [//]: # (help-id: Managing Subscription and Resources)
 
-The __Administration | Subscription & Resources__ page allows you to manage the TeamCity Cloud subscription, get extra build resources, and view the statistics of expenses. This page is only available to [Cloud Account Administrators](#Managing+Cloud+Account+Administrators).
+The __Admin | Subscription & Resources__ page allows you to manage the TeamCity Cloud subscription, get extra build resources, and view the statistics of expenses. This page is only available to [Cloud Account Administrators](#Managing+Cloud+Account+Administrators).
 
 ## Upgrade Subscription
 
@@ -36,7 +36,7 @@ Self-hosted build agents are "bring-your-own" agents that can be connected to Te
 
 Customers can utilize their build credits to add self-hosted build agents to their instance at a flat monthly rate of 20,000 build credits. Self-hosted build agents do not draw on any additional build credits. You can connect an indefinite number of self-hosted agents to your TeamCity Cloud instance and run an unlimited number of builds on them. When such an agent is redeemed, it increases the number of concurrent builds you can perform on self-hosted agents by 1.
 
-To redeem a self-hosted agent, go to __Administration | Subscription & Resources__ and click __Manage__ in the _Concurrent Builds_ column. Enter the number of required agents and click __Apply__. Note that you can only acquire as many agents as the current quantity of build credits allows it, even if no credits are to be charged in the current month.
+To redeem a self-hosted agent, go to __Admin | Subscription & Resources__ and click __Manage__ in the _Concurrent Builds_ column. Enter the number of required agents and click __Apply__. Note that you can only acquire as many agents as the current quantity of build credits allows it, even if no credits are to be charged in the current month.
 
 <img src="get-self-hosted-agent.png" width="700"/>
 
@@ -51,4 +51,4 @@ This page also lets you track the details of your TeamCity cloud instance:
 
 ## Managing Cloud Account Administrators
 
-System Administrators can assign a user to a _Cloud Account Administrator_ role in __Administration | Cloud Account Administrators__. Such a user will be granted access to the __Subscription & Resources__ page and will be able to exchange build credits for cloud resources. Roles can be unassigned anytime.
+System Administrators can assign a user to a _Cloud Account Administrator_ role in __Admin | Cloud Account Administrators__. Such a user will be granted access to the __Subscription & Resources__ page and will be able to exchange build credits for cloud resources. Roles can be unassigned anytime.

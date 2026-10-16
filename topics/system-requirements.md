@@ -148,7 +148,7 @@ This section contains a checklist of recommendations on tweaking the TeamCity se
 {instance="tc"}
 * Use a separate server for the external database. Monitor the database performance.
 * Monitor the server's CPU and I/O performance. Increase hardware resources as necessary.
-* Make sure [clean-up](teamcity-data-clean-up.md) is configured for all the projects with a due retention policy. Check __Administration | Clean-Up__ to make sure that the clean-up is performed regularly.
+* Make sure [clean-up](teamcity-data-clean-up.md) is configured for all the projects with a due retention policy. Check __Admin | Clean-Up__ to make sure that the clean-up is performed regularly.
 * Consider ensuring good I/O performance for the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches` directory: for example, move it to a separate local drive.
 * Regularly [archive](archiving-projects.md) obsolete projects.
 * Regularly review the installed not bundled plugins and remove those not essential for the server operation.

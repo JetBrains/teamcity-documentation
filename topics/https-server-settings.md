@@ -36,7 +36,7 @@ Refer to this article to learn how Let's Encrypt validates your domain ownership
 
 ### Automatic Fetch
 
-1. Navigate to **Administration | HTTPS Settings** and select the **Fetch from Let's Encrypt** option. Since Let's Encrypt needs to access specific endpoints to verify that you own the server and artifact isolation domains, these domains must be accessible over the internet. If your [server URL](configuring-server-url.md) points to a "localhost" address, you will see a corresponding error message.
+1. Navigate to **Admin | HTTPS Settings** and select the **Fetch from Let's Encrypt** option. Since Let's Encrypt needs to access specific endpoints to verify that you own the server and artifact isolation domains, these domains must be accessible over the internet. If your [server URL](configuring-server-url.md) points to a "localhost" address, you will see a corresponding error message.
 
 2. Click the corresponding link to read Let's Encrypt Terms of Service, and click **Agree and fetch**.
     
@@ -66,7 +66,7 @@ To issue the certificate, try the following:
 
 * Click **Cancel**, ensure port 80 is available and accessible by the current user, then retry the [automatic fetch](#Automatic+Fetch).
 
-* Do not click **Cancel** and manually place the required challenge files under the given location. When it is done, return to the **Administration | HTTPS Settings** page and click **Proceed**.
+* Do not click **Cancel** and manually place the required challenge files under the given location. When it is done, return to the **Admin | HTTPS Settings** page and click **Proceed**.
 
 ### Automatic Certificate Renewal
 
@@ -128,7 +128,7 @@ openssl pkcs8 -topk8 -nocrypt -in private-eckey.pem -out private-ec-pkcs8.key
 
 Once you obtain a certificate and a private key:
 
-1. Go to **Administration | HTTPS Settings**.
+1. Go to **Admin | HTTPS Settings**.
 2. Select the **Upload** option.
 3. Upload both files.
 4. Choose the port for HTTPS connections. By default, TeamCity suggests port 443. You may need to change the port number.

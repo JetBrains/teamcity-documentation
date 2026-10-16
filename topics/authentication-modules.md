@@ -9,7 +9,7 @@ You can enable several _credentials authentication modules_ and several _HTTP au
 On an attempt to sign in via the login form, TeamCity asks all the available _credentials authentication modules_ in the order they are specified in the settings; the first one who _can_ authenticate the user authenticates them. For any HTTP request, if there is no authenticated user yet, TeamCity asks all enabled _HTTP authentication modules_ in the order they are specified; the first one who can authenticate the user, authenticates them (if no _HTTP authentication module_ can authenticate the user for the specified HTTP request, TeamCity redirects the user to the login page).
 
 **Supported credentials authentication modules**:
-* __Built-in__ (cross-platform): Users and their passwords are maintained by TeamCity. New users are added by the TeamCity administrator (in the Administration area) or they can register themselves if the user registration at the first login is allowed by the administrator.
+* __Built-in__ (cross-platform): Users and their passwords are maintained by TeamCity. New users are added by the TeamCity administrator (in the **Admin** area) or they can register themselves if the user registration at the first login is allowed by the administrator.
 * __Microsoft Windows domain__ (cross-platform): All NT domain users that can sign in to the machine running the TeamCity server, can also sign in to TeamCity using the same credentials. That is, to sign in to TeamCity users should provide the __DOMAIN\username__ pair and their domain password.
 * __LDAP server__ (cross-platform): Authentication is performed by directly logging into LDAP with credentials entered into the login form.
   {instance="tc"}

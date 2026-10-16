@@ -5,7 +5,7 @@
 
 TeamCity stores build history, users, build results, and some runtime data in a built-in SQL database. 
 
-The currently used database is shown on the __Administration | Global Settings__ page. It is also mentioned in `teamcity-server.log` on the server startup. `HSQL*` means that the internal database is in use. For stability and security, it is recommended to migrate from the default HSQL to an external database located on a separate machine.
+The currently used database is shown on the __Admin | Global Settings__ page. It is also mentioned in `teamcity-server.log` on the server startup. `HSQL*` means that the internal database is in use. For stability and security, it is recommended to migrate from the default HSQL to an external database located on a separate machine.
 
 >If you have been evaluating TeamCity with the internal database and want to copy the data from it, read how to [migrate to an external database](migrating-to-external-database.md).
 >

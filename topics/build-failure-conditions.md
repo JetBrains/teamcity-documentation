@@ -16,7 +16,7 @@ In the __Common Failure Conditions__ block, you can specify how exactly TeamCity
 
 The _if it runs longer than ... minutes_ condition sets a build execution timeout. If the build exceeds the specified duration (in minutes), it is automatically canceled. This helps prevent hanging builds and improves agent efficiency. Note that the timeout applies only to the actual run time; service tasks like source checkout or artifact resolution are excluded.
 
-If the configuration's timeout is 0 (the default value), the global [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) timeout applies. Otherwise, the timeout specified in this configuration overrides the global value specified in __Administration | Global Settings__.
+If the configuration's timeout is 0 (the default value), the global [server-wide](teamcity-configuration-and-maintenance.md#Build+Settings) timeout applies. Otherwise, the timeout specified in this configuration overrides the global value specified in __Admin | Global Settings__.
 
 In the TeamCity UI, run duration is measured from the moment a build is assigned to an agent. However, the actual run time is tracked by the agent itself, which is also responsible for stopping overtime builds — not the TeamCity server. As a result, if the agent loses connection to the server (for example, due to network issues), the UI may show a build running far beyond the specified limit.
 

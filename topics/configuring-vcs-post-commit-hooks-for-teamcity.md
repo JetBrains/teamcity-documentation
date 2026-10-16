@@ -205,13 +205,13 @@ http(s)://username:password@TeamCityServerURL/app/rest/vcs-root-instances/commit
 http(s)://username:PAT@TeamCityServerURL/app/rest/vcs-root-instances/commitHookNotification?locator=id:value
 ```
 
-* **username:password** — the combination of regular credentials you use to log into TeamCity. Requires the enabled ["Basic HTTP" module](configuring-authentication-settings.md#Authentication+Modules) in **Administration | Authentication**.
+* **username:password** — the combination of regular credentials you use to log into TeamCity. Requires the enabled ["Basic HTTP" module](configuring-authentication-settings.md#Authentication+Modules) in **Admin | Authentication**.
 
-* **username:PAT** — the combination of a regular username and a [personal access token](configuring-your-user-profile.md#Managing+Access+Tokens). Requires the enabled ["Token-Based Authentication" module](configuring-authentication-settings.md#Authentication+Modules) in **Administration | Authentication**.
+* **username:PAT** — the combination of a regular username and a [personal access token](configuring-your-user-profile.md#Managing+Access+Tokens). Requires the enabled ["Token-Based Authentication" module](configuring-authentication-settings.md#Authentication+Modules) in **Admin | Authentication**.
 
 Requests should use the credentials of a user with the "View project and all parent projects" and "View build configuration settings" permissions for all the projects where the VCS root is defined.
 
-In case of authentication issues, navigate to **Administration | Diagnostics** and choose the "debug-auth" preset in the **Troubleshooting** section. You can then inspect the `TeamCity_Folder/logs/teamcity-auth.log` file to view the detailed problem information.
+In case of authentication issues, navigate to **Admin | Diagnostics** and choose the "debug-auth" preset in the **Troubleshooting** section. You can then inspect the `TeamCity_Folder/logs/teamcity-auth.log` file to view the detailed problem information.
 {instance="tc"}
 
 
@@ -221,7 +221,7 @@ In case of authentication issues, navigate to **Administration | Diagnostics** a
 Projects that have configured commit hooks still poll their remote repositories as a backup mechanism in case hooks stop working. However, with each successful hook communication, the polling interval automatically doubles. The maximum value to which TeamCity increases this interval is 4 hours, and the minimum interval is 15 minutes. Should scheduled polling reveal a change that did not trigger a commit hook, TeamCity will reset the polling interval to its default value.
 </snippet>
 
-To check the current polling interval and the commit hook status, navigate to **Administration | &lt;Your_Project&gt; | &lt;Your_Build_Configuration&gt; | Vesrion Control Settings**.
+To check the current polling interval and the commit hook status, navigate to **Admin | &lt;Your_Project&gt; | &lt;Your_Build_Configuration&gt; | Vesrion Control Settings**.
 
 <img src="dk-vcs-root-hooks.png" width="706" alt="Polling and hook information"/>
 

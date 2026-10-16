@@ -15,7 +15,7 @@ To display changes but not to trigger a build on a commit, use [VCS trigger rule
 The general recommendation is to keep a number of VCS roots, pointing to the root of the repository, as small as possible and define what is checked out by a specific build configuration via checkout rules.
 
 <procedure title="To add a checkout rule">
-<step><p>Go to <b>Administration</b> and click the project you want to configure.</p></step>
+<step><p>Go to <b>Admin</b> and click the project you want to configure.</p></step>
 <step><p>From the project's <b>General Settings</b> page, click the relevant build under <b>Build Configurations</b></p></step>
 <step><p>Select <b>Version Control Settings</b> from the sidebar.</p></step>
 <step><p>Locate the VCS root in the list, and click <b>Edit checkout rules</b> to open a form for entering the rules.</p></step>

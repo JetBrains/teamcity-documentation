@@ -130,7 +130,7 @@ You can get details on errors and REST request processing in the `logs\teamcity-
 
 If you get an error in response to your request and want to investigate the reason, look into [rest-related server logs](#Logging).
  
-To get details about each processed request, turn on debug logging (for example, set Logging Preset to `debug-rest` on the [Administration/Diagnostics](teamcity-monitoring-and-diagnostics.md#Debug+Logging) page or modify the Log4J `jetbrains.buildServer.server.rest` category).
+To get details about each processed request, turn on debug logging (for example, set Logging Preset to `debug-rest` on the [Admin | Diagnostics](teamcity-monitoring-and-diagnostics.md#Debug+Logging) page or modify the Log4J `jetbrains.buildServer.server.rest` category).
  
 ## CORS Support
 {id="CORS-support" help-id="CORS Support"}

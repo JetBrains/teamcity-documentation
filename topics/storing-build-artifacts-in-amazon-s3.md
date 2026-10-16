@@ -14,7 +14,7 @@ TeamCity comes bundled with the Amazon S3 Artifact Storage plugin which allows s
 
 1.
 
-<snippet id="settings_art_storage_page" xmlns="">Navigate to the <b>Administration | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.<list><li>Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.</li><li>Edit one specific project if your new storage should be available only for this project and its sub-projects.</li></list></snippet>
+<snippet id="settings_art_storage_page" xmlns="">Navigate to the <b>Admin | &lt;Your_Project&gt;</b> page and switch to the <b>Artifacts Storage</b> tab.<list><li>Open settings of a &lt;Root project&gt; if you want your new storage to be available for all TeamCity projects.</li><li>Edit one specific project if your new storage should be available only for this project and its sub-projects.</li></list></snippet>
 2. <snippet id="settings_add_new_storage">The built-in TeamCity artifacts storage is displayed by default and marked as active. Click <b>Add new storage</b> button to create a new storage.</snippet>
 3. <snippet id="settings_name_id">Specify the custom storage name and, if needed, its internally used <a href="identifier.md">ID</a>.</snippet>
 4. Set the **Type** field to "AWS S3".
@@ -364,7 +364,7 @@ project {
 }
 ```
 
-> To quickly get an ID of an [AWS Connection](configuring-connections.md#AmazonWebServices) that should be used to retrieve a required bucket, navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+> To quickly get an ID of an [AWS Connection](configuring-connections.md#AmazonWebServices) that should be used to retrieve a required bucket, navigate to the required **Admin | &lt;Your_Project&gt; | Connections** page.
 > 
 > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 > 

@@ -8,7 +8,7 @@
 Logging in as a [Guest User](guest-user.md) is disabled by default.
 
 To enable the guest login in TeamCity:
-1. Navigate to the __Administration | Authentication__ page.	
+1. Navigate to the __Admin | Authentication__ page.	
 2. Select the _Allow login as guest user_ option.
 3. Save your changes.
 

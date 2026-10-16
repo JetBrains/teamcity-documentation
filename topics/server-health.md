@@ -1,7 +1,7 @@
 [//]: # (title: Server Health)
 [//]: # (help-id: Server Health)
 
-The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so-called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Administration__ area.
+The __Server Health__ report contains results of the server inspection for any configuration issues which impact or could potentially impact the performance. Such issues, the so-called server _health items_, are collectively reported by TeamCity on the __Server Health__ page in the __Admin__ area.
 
 The Project Administrator [permissions](managing-roles-and-permissions.md) at least are required to see the report.
 
@@ -23,7 +23,7 @@ Hidden items will be removed from the TeamCity pages, and will be displayed on t
 
 To return an item to display, use the __Show__ option.
 
-The visibility changes will be listed on the __Audit__ page in the __Administration__ area.
+The visibility changes will be listed on the __Audit__ page in the __Admin__ area.
 
 ## Issue Categories
 
@@ -67,7 +67,7 @@ To set up a high-availability TeamCity installation, you need to [configure a re
 
 #### Unassigned Responsibilities
 
-TeamCity notifies you if none of the cluster nodes have a certain responsibility specific. For instance, if the "VCS repositories polling" responsibility is unchecked for all nodes, TeamCity cannot check repositories for changes and start new builds. Navigate to **Administration | Node Settings** and ensure each responsibility is assigned to at least one node.
+TeamCity notifies you if none of the cluster nodes have a certain responsibility specific. For instance, if the "VCS repositories polling" responsibility is unchecked for all nodes, TeamCity cannot check repositories for changes and start new builds. Navigate to **Admin | Node Settings** and ensure each responsibility is assigned to at least one node.
 
 
 #### Proxy Configuration Version Mismatch

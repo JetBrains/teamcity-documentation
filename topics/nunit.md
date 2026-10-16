@@ -39,7 +39,7 @@ To use the NUnit build runner, you need to install the [NUnit NuGet package](htt
     
     The `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` string is a reference to the NuGet installed under the TeamCity agent.
 
-    You can install NuGet on agents on the __Administration | Tools__ page, where you can also mark any of the installed NuGet versions as default.
+    You can install NuGet on agents on the __Admin | Tools__ page, where you can also mark any of the installed NuGet versions as default.
     
     After that, the `%\teamcity.tool.NuGet.CommandLine.DEFAULT%` parameter reference should properly resolve to the NuGet installation path on the agent.   
     Then nunit3-console should appear under the package directory.

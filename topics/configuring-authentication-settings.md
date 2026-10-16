@@ -5,7 +5,7 @@ TeamCity can authenticate users via an internal database, or can integrate into 
 
 ## Authentication Modules
 
-Authentication is configured on the __Administration | Authentication__ page. The currently used authentication modules are also displayed there.
+Authentication is configured on the __Admin | Authentication__ page. The currently used authentication modules are also displayed there.
 
 TeamCity provides several preconfigured authentication options (presets) to cover the most common use cases. The presets are combinations of authentication modules supported by TeamCity:
 
@@ -189,7 +189,7 @@ If you select the "Microsoft Windows Domain" preset, in addition to the login vi
 #### Specifying Default Domain
 
 To allow users to enter the system using the login form without specifying the domain as a part of the username, do the following:
-1. Go to __Administration | Authentication__.
+1. Go to __Admin | Authentication__.
 2. Click __Edit__ next to the __Microsoft Windows domain__ authentication description.
 3. Set the name in the _Default domain_ field.
 4. Click __Done__ and __Save__ your changes.
@@ -200,7 +200,7 @@ The default settings allow users to register from the login page. TeamCity usern
 All newly created users belong to the [All Users](creating-and-managing-user-groups.md#%22All+Users%22+Group) group and have all roles assigned to this group. If some specific [roles](managing-roles-and-permissions.md) are needed for the newly registered users, these roles should [be granted](managing-roles-and-permissions.md#Managing+Roles) via the __All Users__ group.
 
 To disable new user registration on login:
-1. Go to __Administration | Authentication__.
+1. Go to __Admin | Authentication__.
 2. Click __Edit__ next to the __Microsoft Windows domain__ authentication description. Clear the _Allow user registration from the login page_ box.
 3. Click __Edit__ next to the __NTLM HTTP__ authentication description. Clean the _Allow user registration from the login page_ box.
 
@@ -603,7 +603,7 @@ When combined with the _Allow creating new users on the first login_ option, thi
 
 Before enabling this module, you need to create a dedicated application in JetBrains Space and configure a connection to it in the Root project's settings, as described [here](configuring-connections.md#jetbrains-space-connection).
 
-After the connection is configured, go to __Administration | Authentication__ and:
+After the connection is configured, go to __Admin | Authentication__ and:
 1. Click __Add module__ and choose the _JetBrains Space_ type.
 2. Choose whether you want to allow creating new users on the first login. This is helpful if you use a publicly available TeamCity server and want to limit access to it.
 3. Uncheck the **Skip two-factor authentication** setting if you want users to pass an additional 2FA verification when they log in (even if they pass it when log into Space). Learn more: [](managing-two-factor-authentication.md#Reduce+Excessive+Authorization+Requests).
@@ -694,9 +694,9 @@ To sign in, click the Azure DevOps icon above the TeamCity login form and, after
 
 This module enables single sign-on authentication in TeamCity via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0). It is confirmed to support [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [AWS SSO](https://aws.amazon.com/single-sign-on/), [AD FS](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services), and other SSO providers.
 
-To enable the module, in __Administration | Authentication__:
+To enable the module, in __Admin | Authentication__:
 1. Click __Add module__ and choose the _HTTP-SAML.v2_ type.
-2. Save the settings and go to __Administration | SAML Settings__.
+2. Save the settings and go to __Admin | SAML Settings__.
 3. Copy the _Single Sign-On URL (Recipient)_ value under the _Service Provider Configuration_ section. It should be entered in the settings of your SSO application, as described below.
 
 Before configuring SAML settings in TeamCity, you need to create a dedicated application on your SSO provider's side. Here is an example quick instruction for Okta:

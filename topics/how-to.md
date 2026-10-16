@@ -427,7 +427,7 @@ If you need to create a copy of a server (rather than move your server to a new 
 * Ensure the original and copied servers use different [Data Directories](teamcity-data-directory.md), databases, and artifact directories.
 * Change the unique server ID by removing "uuid" attribute from XML of [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/main-config.xml` file before the first start.
 * Ensure the same license keys are not used on several servers ([more on licensing](#Licensing+issues)).
-* Update [Server URL](configuring-server-url.md) on the __Administration | Global Settings__ page to the actual URL of the server.
+* Update [Server URL](configuring-server-url.md) on the __Admin | Global Settings__ page to the actual URL of the server.
 * Check that you can successfully authenticate on the new server, use [super user](super-user.md) access if necessary.
 * Check that VCS servers, issue tracker servers, email server, and other server-accessed systems are accessible.
 * Check that any systems configured to push events to TeamCity server (like VCS hooks, automated build triggering, monitors, etc.) are updated to know about the new server.
@@ -464,7 +464,7 @@ Below is the list of settings which should be changed __before__ the test server
 
 After the test server starts:
 
-* Navigate to **Administration | Authentication** and disable email verification.
+* Navigate to **Admin | Authentication** and disable email verification.
 * Ensure your test server does not run any builds that change (for example, deploy to) production environments. This also typically includes Maven builds deploying to non-local repositories. You can prevent any builds from starting by pausing the [build queue](working-with-build-queue.md).
 * You may also want to significantly increase the [VCS checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) (both server-wide default and overridden values in the VCS roots) or change VCS roots' settings to prevent them from contacting production servers. See also [TW-47324](https://youtrack.jetbrains.com/issue/TW-47324).
 
@@ -532,7 +532,7 @@ Generally it is recommended to use a domain name to access the server (in the ag
 
 However, if you need to use another server domain address, you will need to:
 * Switch agents to the new URL (requires updating the `serverUrl` property in `buildAgent.properties` on each agent). If you want to install agents anew but preserve agent's name and authentication status, you can install a new agent and copy the `conf\buildAgent.properties` file from an old agent (checking that any paths in it are updated accordingly).
-* Upon the new server startup, remember to update the [Server URL](configuring-server-url.md) on __Administration__ | __Global Settings__ page.
+* Upon the new server startup, remember to update the [Server URL](configuring-server-url.md) on the __Admin | Global Settings__ page.
 * Notify all TeamCity users on the new address
 * Consider updating settings of external services if they depend on the request originating address
 

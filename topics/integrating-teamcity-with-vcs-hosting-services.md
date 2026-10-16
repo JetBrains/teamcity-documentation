@@ -15,7 +15,7 @@ Once created, such a connection can serve as a base for different operations: cr
 >
 {instance="tcc"}
 
-Connections are configured on the __Project Administration | Connections__ page. Each connection is accessible in the current project and all its subprojects. If you use global VCS hosting services for your whole organization, it makes sense to configure a single connection to such a service on the Root project level. This way, the users will be able to quickly access the list of the organization's repositories when creating subprojects or editing projects' settings.
+Connections are configured on the __Project Settings | Connections__ page. Each connection is accessible in the current project and all its subprojects. If you use global VCS hosting services for your whole organization, it makes sense to configure a single connection to such a service on the Root project level. This way, the users will be able to quickly access the list of the organization's repositories when creating subprojects or editing projects' settings.
 
 <img src="projectConnections.png" width="700" alt="Adding a GitHub connection"/>
 

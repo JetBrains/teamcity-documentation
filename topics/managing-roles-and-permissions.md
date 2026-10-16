@@ -22,7 +22,7 @@ The __View project and all parent projects__ permission allows viewing not only 
 
 Unless explicitly configured, the simple authorization mode is used in TeamCity Professional and per-project is used in TeamCity Enterprise.
 
-To change the authorization mode, go to __Administration | Authentication__ and enable/disable the _Enable per-project permissions_ option.
+To change the authorization mode, go to __Admin | Authentication__ and enable/disable the _Enable per-project permissions_ option.
 
 ## Simple Authorization Mode
 {instance="tc"}
@@ -93,7 +93,7 @@ Corresponds to the default [Project Viewer](#project-viewer) role granted for al
 
 Roles are assigned to users by administrators on a per-project basis: a user can have different roles in different projects, and hence, the permissions are project-based. A user can have a role in a specific project or in all available projects, or no roles at all. You can [associate a user account with a set of roles](creating-and-managing-users.md#Assigning+Roles+to+Users). A role can also be granted to a user group. This means that the role is automatically granted to all the users that are included into the group (both directly or through other groups).
 
-You can add roles and assign permissions to them in __Administration | Roles__. Click __Add permission__ under any role to see the list of all available permissions, select a required permission, and click __Add__. To add multiple permissions, hold the __CTRL__ key when selecting them.
+You can add roles and assign permissions to them in __Admin | Roles__. Click __Add permission__ under any role to see the list of all available permissions, select a required permission, and click __Add__. To add multiple permissions, hold the __CTRL__ key when selecting them.
 
 By default, TeamCity provides the following per-project roles:
 
@@ -185,7 +185,7 @@ Can customize and manage [Build Agents](install-and-start-teamcity-agents.md), c
 
 </td></tr></table>
 
-When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity Administration web UI, or by modifying the `roles-config.xml` file stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
+When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity **Admin** web UI, or by modifying the `roles-config.xml` file stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
 
 
 ## Default User Roles
@@ -193,7 +193,7 @@ When per-project permissions are enabled, server administrators can modify the r
 
 Roles are assigned to users by administrators on a per-project basis: a user can have different roles in different projects, and hence, the permissions are project-based. A user can have a role in a specific project or in all available projects, or no roles at all. You can [associate a user account with a set of roles](creating-and-managing-users.md#Assigning+Roles+to+Users). A role can also be granted to a user group. This means that the role is automatically granted to all the users that are included into the group (both directly or through other groups).
 
-You can add roles and assign permissions to them in __Administration | Roles__. Click __Add permission__ under any role to see the list of all available permissions, select a required permission, and click __Add__. To add multiple permissions, hold the __CTRL__ key when selecting them.
+You can add roles and assign permissions to them in __Admin | Roles__. Click __Add permission__ under any role to see the list of all available permissions, select a required permission, and click __Add__. To add multiple permissions, hold the __CTRL__ key when selecting them.
 
 By default, TeamCity provides the following per-project roles:
 
@@ -285,7 +285,7 @@ Can customize and manage [Build Agents](install-and-start-teamcity-agents.md), c
 
 </td></tr></table>
 
-When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity Administration web UI, or by modifying the `roles-config.xml` file stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
+When per-project permissions are enabled, server administrators can modify the roles, delete them, or add new roles with any combination of permissions right in the TeamCity **Admin** web UI, or by modifying the `roles-config.xml` file stored in the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config` directory. When assigning roles to users, the _View role permissions_ link in the web UI displays the list of permissions for each role in accordance with their current configuration.
 
 ## Project-level Agent Management Permissions
 
@@ -306,7 +306,7 @@ A user can perform a task controlled by one of these permissions on all the agen
 ## Managing Roles
 {id="Managing+Roles" help-id="Managing Roles"}
 
-If per-project permissions are enabled in your installation, you can view the existing roles, modify them, and create new ones in the TeamCity UI — on the __Administration | Roles__ page. It allows:
+If per-project permissions are enabled in your installation, you can view the existing roles, modify them, and create new ones in the TeamCity UI — on the __Admin | Roles__ page. It allows:
 * Creating new roles.
 * Deleting existing roles.
 * Adding/deleting permissions from existing roles.
@@ -334,7 +334,7 @@ A user added to "Main Project Users" and "Group A" will have the "Project admini
 
 ### Group Inheritance
 
-When you assign a role to a user group, all child groups of this group get the same permissions. On the **Administration | Groups** page, groups with inherited roles display the "N/M" counter under the "Roles" column. "N" is the number of roles assigned to this group directly, and "M" is the number of roles inherited from parent groups.
+When you assign a role to a user group, all child groups of this group get the same permissions. On the **Admin | Groups** page, groups with inherited roles display the "N/M" counter under the "Roles" column. "N" is the number of roles assigned to this group directly, and "M" is the number of roles inherited from parent groups.
 
 In the figure below, the "Tier 3" group has two roles inherited from its parent "Tier 1" and "Tier 2" groups. Since this group has no directly assigned roles, its counter is "0/2".
 

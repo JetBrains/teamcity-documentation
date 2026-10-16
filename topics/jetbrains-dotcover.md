@@ -1,7 +1,7 @@
 [//]: # (title: JetBrains dotCover)
 [//]: # (help-id: JetBrains dotCover)
 
-TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Administration | Tools](installing-agent-tools.md)__ page.
+TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools and/or change the defaults using the __[Admin | Tools](installing-agent-tools.md)__ page.
 {instance="tc"}
 
 TeamCity comes bundled with the console runner of [JetBrains dotCover](https://www.jetbrains.com/dotcover/). In addition to the bundled version, you can install another version of JetBrains dotCover Command Line Tools.
@@ -198,7 +198,7 @@ dotCover Version
 
 </table>
 
-You can view the installed versions of dotCover on the __Server Administration | Tools__ page. The bundled version is set as default, you can install other versions and change the default settings.
+You can view the installed versions of dotCover on the __Admin | Tools__ page. The bundled version is set as default, you can install other versions and change the default settings.
 {instance="tc"}
 
 <note>
@@ -211,7 +211,7 @@ The dotCover console tool supports profiling of .NETCore.App 2.0+ since version 
 
 TeamCity allows collecting coverage for .NET Core projects on Linux and macOS by supporting cross-platform JetBrains dotCover, version 2019.2.3+.
 
-dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover.GlobalTool](https://www.nuget.org/packages/JetBrains.dotCover.GlobalTool/) in __[Administration | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
+dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, add the [cross-platform dotCover.GlobalTool](https://www.nuget.org/packages/JetBrains.dotCover.GlobalTool/) in __[Admin | Tools](installing-agent-tools.md)__ and enable the dotCover coverage in the [.NET](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.
 {instance="tc"}
 
 dotCover 2019.2.3 for Windows is bundled with TeamCity. If you need to collect code coverage under non-Windows platforms, install the cross-platform dotCover tool on a build engine and enable the dotCover coverage in the [.NET](net.md) build step. If you want to use cross-platform dotCover under Windows as well, make sure the agents have .NET Framework SDK 4.6.1+ installed.

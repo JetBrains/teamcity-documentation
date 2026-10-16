@@ -18,7 +18,7 @@ To change the port of the installed/unpacked server, open the [`<TeamCity Home D
 
 To apply the changes, [restart the server](start-teamcity-server.md) by.
 
-If you change the port of an operational TeamCity server, you also need to change it in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [properties](configure-agent-installation.md), URL in users' IDEs, the _Server URL_ setting on the __Administration | Global Settings__ page).  
+If you change the port of an operational TeamCity server, you also need to change it in all the stored URLs of the server (browser bookmarks, agents' `serverUrl` [properties](configure-agent-installation.md), URL in users' IDEs, the _Server URL_ setting on the __Admin | Global Settings__ page).  
 If you run another Tomcat server on the same machine, you might also need to change other service ports of the Tomcat server (search for `port=` in the `server.xml` file).
 
 If you want to use the HTTPS protocol, it should be enabled separately. The process is specific to the web server used (by default, Tomcat). See notes on how to [configure HTTPS for TeamCity web UI](how-to.md#Configure+HTTPS+for+TeamCity+Web+UI).
@@ -85,7 +85,7 @@ If an `OutOfMemory` error occurs or you consistently see a memory-related warnin
 >__Tips__:
 >* A rule of thumb is that the 64-bit JVM should be assigned twice as much memory as the 32-bit for the same application. If you [switch to the 64-bit JVM](how-to.md#Update+from+32-bit+to+64-bit+Java) (for example, on upgrading TeamCity), make sure to adjust the memory setting (`-Xmx`) accordingly. It does not make sense to switch to 64-bit if you dedicate less than the double amount of memory to the application.
 >* Large TeamCity installations might benefit from fine-tuning of the memory settings. The amount of memory dedicated to the TeamCity server JVM should not regularly exceed 60% of the total available physical memory on the machine (to allow for nested process and OS-level caches usage). Also, with heaps (`–Xmx`) set to more than 8 GB, if the machine has many CPU cores (for example, more than 8) and current CPU usage is below 60%, enabling G1 JVM garbage collector via the `-XX:+UseG1GC` JVM option might reduce the length of stop-the-world GC pauses.  
-   > The recommended approach is to start with the default settings and monitor the used memory on the __Administration | Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a signal to increase the `-Xmx` memory value by another 20%.
+   > The recommended approach is to start with the default settings and monitor the used memory on the __Admin | Diagnostics__ page. If the server uses more than 80% of memory consistently without drops for tens of minutes, that is probably a signal to increase the `-Xmx` memory value by another 20%.
 
 <!--[//]: # (Internal note. Do not delete. "Installing and Configuring the TeamCity Serverd172e1122.txt")-->
 

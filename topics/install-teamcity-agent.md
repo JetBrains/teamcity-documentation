@@ -38,7 +38,7 @@ Full agents are preferable if you use scripts for creating agent images. All clo
 Full agent distributions are also available in two variations:
 
 * Regular agent distributions without Java Development Kits. If you download and install this variation, make sure that the agent machine has the required JDK version installed (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)) and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
-* Distributions bundled with OS-specific JDKs. These distributions allow you to install an agent and a JDK it requires in a single go. To download these distributions, add required JDK versions on the **Administration | Agent JDKs** page and wait for TeamCity to build a related agent distribution.
+* Distributions bundled with OS-specific JDKs. These distributions allow you to install an agent and a JDK it requires in a single go. To download these distributions, add required JDK versions on the **Admin | Agent JDKs** page and wait for TeamCity to build a related agent distribution.
 
     <img src="dk-addAgentJDK.png" alt="Add Agent JDK" width="706"/>
     
@@ -146,7 +146,7 @@ Windows
 <!--[//]: # (Internal note. Do not delete. "Setting up and Running Additional Build Agentsd283e644.txt")-->
 
 * Installed JDK or JRE (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)).
-* `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it in __Administration | Tools__. Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:
+* `Sysinternals psexec.exe` has to be installed on the TeamCity server and accessible in paths. You can install it in __Admin | Tools__. Note that [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) applies additional requirements to a remote Windows host. Make sure the following preconditions are satisfied:
     * [Administrative share](https://en.wikipedia.org/wiki/Administrative_share) on a remote host is enabled and accessible.
     * Remote services work (MMC snap-in can connect to the machine).
     * Remote registry works (`regedit` can connect to the machine via `services.msc`).
@@ -168,7 +168,7 @@ Note that to access the __Agent Push__ page, a user needs to have the _Administe
 1. In the TeamCity UI, open __Agents | Agent Push__ and click __Install Agent__.   
    If you want to use the same settings for several target hosts, you can __create a preset__ with these settings and use it each time when installing an agent to another remote host.
 2. In the _Install agent_ dialog, either select a saved preset or choose "_Use custom settings_", specify the target host platform, and configure corresponding settings. Agent Push to a Linux system via SSH supports custom ports (the default is 22) specified as the _SSH port_ parameter. The port specified in a preset can be overridden in the host name (for example, `hostname.domain:2222`), during the actual agent installation.
-3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to __Administration | Tools__ where you can download it.
+3. You may need to download `Sysinternals psexec.exe`, in which case you will see the corresponding warning and a link to __Admin | Tools__ where you can download it.
 
 >You can use Agent Push presets in [Agent Cloud profile](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images) settings to automatically install a build agent to a started cloud instance.
 > 

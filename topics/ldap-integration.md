@@ -113,7 +113,7 @@ Synchronization with LDAP in TeamCity allows you to:
 
 TeamCity supports one-way synchronization with LDAP: the data is retrieved from LDAP and stored in the TeamCity database. Periodically, TeamCity fetches data from LDAP and updates users in TeamCity.
 
-When synchronization is enabled, you can review the related data and run on-demand synchronization in the __Administration | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
+When synchronization is enabled, you can review the related data and run on-demand synchronization in the __Admin | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
 
 ### Common Configuration
 
@@ -173,7 +173,7 @@ __To map nested LDAP groups to TeamCity__:
 * either specify `teamcity.groups.retrieveUsersFromNestedGroups=true` in the `ldap-config.properties` file and make sure all the group hierarchy is matched by the `teamcity.groups.base/teamcity.groups.filter` settings
 * or copy your LDAP groups structure in TeamCity groups, together with the group inclusions. Then configure the mapping between the TeamCity groups and corresponding LDAP groups.
 
-If either an LDAP group or a TeamCity group that is configured in the mapping is not found, an error is reported. You can review the errors found during the last synchronization run in the __Administration | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
+If either an LDAP group or a TeamCity group that is configured in the mapping is not found, an error is reported. You can review the errors found during the last synchronization run in the __Admin | LDAP Synchronization__ section of the [server settings](teamcity-configuration-and-maintenance.md).
 
 See also [example settings](typical-ldap-configurations.md#Active+Directory+With+Group+Synchronization) for Active Directory synchronization.
 

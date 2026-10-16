@@ -15,7 +15,7 @@ The _Inspections (ReSharper)_ build runner allows you to use the benefits of the
 
 ReSharper command line tools 2018.2 or newer require .NET Framework 4.6.1 or newer.
 
-If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Administration | Tools](installing-agent-tools.md)__ page. This page contains reference information about the _Inspections (.NET)_ build runner's fields.
+If you want to run ReSharper inspections using a specific ReSharper version (for example, to ensure it matches the version you have installed in Visual Studio), you can install another version of the tools and change the default version to be used on the __[Admin | Tools](installing-agent-tools.md)__ page. This page contains reference information about the _Inspections (.NET)_ build runner's fields.
 {instance="tc"}
 
 You can also refer to the [ReSharper documentation](https://www.jetbrains.com/help/resharper/Detect_code_issues_in_a_build_using_ReSharper_and_TeamCity.html) for more details.
@@ -145,7 +145,7 @@ R# CLT Home Directory
 
 Select the ReSharper Command Line Tools version.
 
-You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Administration | Tools](installing-agent-tools.md)__ page.
+You can check the installed JetBrains ReSharper Command Line Tools versions on the __[Admin | Tools](installing-agent-tools.md)__ page.
 {instance="tc"}
 
 <img src="dk-tools.png" width="706" alt="Check the version of installed Resharper tools"/>
@@ -478,7 +478,7 @@ ReSharper Version
 
 </table>
 
-You can view the installed versions of ReSharper on the __Server Administration | Tools__ page. The bundled version is set as default; you can install other versions and change the default settings.
+You can view the installed versions of ReSharper on the __Admin | Tools__ page. The bundled version is set as default; you can install other versions and change the default settings.
 {instance="tc"}
 
 <!--[//]: # (Internal note. Do not delete. "Inspections ReSharper d165e293.txt")-->    

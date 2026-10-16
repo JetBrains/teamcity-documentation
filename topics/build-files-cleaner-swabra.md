@@ -133,7 +133,7 @@ If a build employs the agent checkout, Swabra ignores all `.svn`, `.git`, `.hg`,
 ## Installing Handle
 {instance="tc"}
 
-You can install `handle.exe` from the __Administration__ | __Tools__ page.  
+You can install `handle.exe` from the __Admin | Tools__ page.  
 Click the __Install Tool__ button and select __Sysinternals handle.exe__ from the list of tools.  
 Specify whether you want to download the latest version of `handle.exe` or upload it manually choosing the path on local machine, and click __Add__. After the TeamCity server downloads or uploads `handle.exe`, it sends this tool to Windows agents during a scheduled upgrade.
 

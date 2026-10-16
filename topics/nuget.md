@@ -49,7 +49,7 @@ The NuGet trigger and the NuGet-related build runners require the NuGet command 
 >It is recommended to use release versions of NuGet.
 
 To install `NuGet.exe` on TeamCity:
-1. Go to the __Administration | Tools__ tab.
+1. Go to the __Admin | Tools__ tab.
 2. Click __Install tool and select NuGet.exe__.
 3. Select whether you want to download (default) NuGet from the public feed or upload your own NuGet package containing `NuGet.exe`.   
    * If the __Download__ radio button is selected, specify the NuGet version to install on all build agents.

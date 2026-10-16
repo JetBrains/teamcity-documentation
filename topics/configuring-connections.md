@@ -842,7 +842,7 @@ To configure an organization connection:
     
     <img src="dk-installSpaceApp.png" width="706" alt="Install Space App"/>
     
-    > Note that TeamCity retrieves the server URL from **Administration | General settings** and passes this URL as the endpoint for the newly created Space application. You will not be able to update this endpoint after the application is installed, so verify TeamCity uses the correct URL.
+    > Note that TeamCity retrieves the server URL from **Admin | Global Settings** and passes this URL as the endpoint for the newly created Space application. You will not be able to update this endpoint after the application is installed, so verify TeamCity uses the correct URL.
     >
     {style="note"}
 

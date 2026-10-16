@@ -99,7 +99,7 @@ object MyBuildConfig : BuildType({
 })
 ```
 
-> To quickly get an ID of a target [AWS Connection](configuring-connections.md#AmazonWebServices), navigate to the required **Administration | &lt;Your_Project&gt; | Connections** page.
+> To quickly get an ID of a target [AWS Connection](configuring-connections.md#AmazonWebServices), navigate to the required **Admin | &lt;Your_Project&gt; | Connections** page.
 >
 > <img src="dk-copy-connection-id.png" alt="Copy connection ID" width="706"/>
 >

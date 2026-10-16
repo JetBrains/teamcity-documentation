@@ -51,7 +51,7 @@ The root project is special in the following ways:
 * It is present by default and cannot be deleted.
 * It is the top-level project, so it has no parent project.
 * It can have no build configurations.
-* It does not appear in the user-level UI and is mostly present as an entity in Administration UI only.
+* It does not appear in the user-level UI and is mostly present as an entity in the **Admin** UI only.
 
  <seealso>
         <category ref="concepts">

@@ -94,7 +94,7 @@ There are three ways to integrate a VCS repository with TeamCity:
 
 We will describe the first approach as it's the most popular and self-sufficient. However, you can always add one more Space [root](configuring-vcs-roots.md) or [build configuration](creating-and-editing-build-configurations.md) to an existing project — the procedure is similar.
 
-Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <tooltip term="root-project">_Root project_</tooltip>, go to __Administration | Projects__ and click __Create project__ there.
+Let's create a subproject of the project where you added the Space connection during the [preliminary setup](#Step+2%3A+Establish+Connection+to+JetBrains+Space). If it is the <tooltip term="root-project">_Root project_</tooltip>, go to __Admin | Projects__ and click __Create project__ there.
 
 You will notice the new button: __From JetBrains Space__. Its name depends on the _Display name_ you gave to the connection, but you can always distinguish Space connections from others by the Space logo. To create a new project:
 
@@ -182,7 +182,7 @@ Now, whenever you run a build in this configuration, TeamCity will report the bu
 Users of your JetBrains Space instance can authenticate in TeamCity with their Space accounts. Note that this functionality requires adding the [JetBrains Space connection](#Step+2%3A+Establish+Connection+to+JetBrains+Space) on the Root project level.
 
 To configure it:
-1. Go to __Administration | Authentication__.
+1. Go to __Admin | Authentication__.
 2. Click __Add module__ and choose the _JetBrains Space_ type.  
    <img src="add-space-auth-module.png" width="460" alt="Add a JetBrains Space authentication module"/>
 3. Choose if you want to allow creating new users on the first login, if their emails are not recognized by TeamCity. Disabling this option could be helpful if you use a publicly available TeamCity server and want to limit access to it.

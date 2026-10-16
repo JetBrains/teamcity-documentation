@@ -22,7 +22,7 @@ The [Guest User](guest-user.md) does not belong to the _All Users_ group, so rol
 
 ## Creating New User Group
 
-Open the __Administration | Groups__ page and сlick __Create new group__. In the dialog, specify the group name. TeamCity will create an editable _group key_, which is a unique group identifier.
+Open the __Admin | Groups__ page and сlick __Create new group__. In the dialog, specify the group name. TeamCity will create an editable _group key_, which is a unique group identifier.
 
 When creating a group, you can select the parent group(s) for it. All roles and notification rules configured for the parent group will be automatically assigned to the current group. To place the current group to the top level, deselect all groups in the list.
 

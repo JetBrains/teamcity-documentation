@@ -6,12 +6,12 @@ In TeamCity, an _agent tool_ is a type of plugin used only for distributing file
 TeamCity allows you to install/remove additional tools on the server and distribute them to build agents on-demand.   
 In environments with many build agents, you can centralize distribution of configuration files (for example, if you want to distribute a custom configuration file/library to all agents that require it) or remove a tool on agents at once.
 
-The __Administration | Tools__ page provides a unified interface to set up tools to be used by appropriate plugins. You can install different versions of a tool and/or change the default one. The tools will be automatically distributed to build agents that request them and used in the related runners.
+The __Admin | Tools__ page provides a unified interface to set up tools to be used by appropriate plugins. You can install different versions of a tool and/or change the default one. The tools will be automatically distributed to build agents that request them and used in the related runners.
 
-The following types of tools can be managed up via the __Administration | Tools__ page:
+The following types of tools can be managed up via the __Admin | Tools__ page:
 * __IntelliJ Inspections and Duplicates Engine__ with the IntelliJ IDEA version that TeamCity automatically downloads and installs after the server first starts. If TeamCity fails to download and install IntelliJ IDEA:
   1. [Download the required version](https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIU/2022.1.3/ideaIU-2022.1.3.zip).
-  2. Go to **Administration | Tools**.
+  2. Go to **Admin | Tools**.
   3. Scroll to the **IntelliJ Inspections and Duplicates Engine** section and click **Install Version...**.
   4. Select the **Upload** mode and click **Choose File** to upload your tool.
 

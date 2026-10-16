@@ -20,7 +20,7 @@ By default, TeamCity triggers a personal build for the user detected in the last
 
 <note>
 
-At the moment there is no UI to show what's going on inside the trigger, so the only way to troubleshoot it is to look inside `teamcity-remote-run.log`. To see a more detailed log, enable `debug-vcs` logging preset on the __Administration | Diagnostics__ page.
+At the moment there is no UI to show what's going on inside the trigger, so the only way to troubleshoot it is to look inside `teamcity-remote-run.log`. To see a more detailed log, enable `debug-vcs` logging preset on the __Admin | Diagnostics__ page.
 </note>
 
 To be able to trigger, a build branch should have at least one new commit comparing to the main branch.

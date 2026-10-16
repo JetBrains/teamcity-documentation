@@ -10,7 +10,7 @@ TeamCity can send payloads to the target URL when a new build starts, an agent u
 
 ## Enable Webhooks
 
-1. Navigate to **Administration | &lt;Root project&gt; | Parameters**.
+1. Navigate to **Admin | &lt;Root project&gt; | Parameters**.
 
 2. Click **Add new parameter** to create two [configuration parameters](configuring-build-parameters.md).
 

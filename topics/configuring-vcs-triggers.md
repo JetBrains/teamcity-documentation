@@ -7,7 +7,7 @@ A new VCS trigger with the default settings triggers a build once there are pend
 
 After the last change is detected, a [quiet period](#Quiet+Period+Settings) can be configured to wait for some time without changes before the build is queued.
 
-The global default value for both options is 60 seconds and can be configured for the server on the __Administration | Global Settings__ page.
+The global default value for both options is 60 seconds and can be configured for the server on the __Admin | Global Settings__ page.
 
 > If your build configuration targets a repository where non-trusted users can push commits or create pull (merge) requests, do not configure [VCS triggers](configuring-vcs-triggers.md) and/or [Pull Requests build features](pull-requests.md) that automatically run builds with these changes. Instead, start new builds manually after you inspect and verify incoming changes. Otherwise, TeamCity can execute malicious code introduced in these changes (for example, handle a [service message](service-messages.md) sent from the source code or apply altered [project settings](storing-project-settings-in-version-control.md) from modified [project settings directory](storing-project-settings-in-version-control.md#Custom+Settings+Path) files).
 >
@@ -50,7 +50,7 @@ A __quiet period__ is a period (in seconds) that TeamCity maintains between the 
 
 Note that the actual quiet period will not be less than the maximum [checking for changes interval](configuring-vcs-roots.md#Common+VCS+Root+Properties) among the VCS roots of a build configuration, as TeamCity must ensure that changes were collected at least once during the quiet period. 
 
-The quiet period can be set to the default value (60 seconds, can be changed globally at the __Administration__ | __Global Settings__ page) or to a custom value for a build configuration.
+The quiet period can be set to the default value (60 seconds, can be changed globally at the __Admin | Global Settings__ page) or to a custom value for a build configuration.
 
 <note>
 

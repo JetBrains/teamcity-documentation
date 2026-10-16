@@ -427,7 +427,7 @@ execution-timeout-minutes: 10 # Pipeline timeout
 
 <def title="Global timeout">
 
-TeamCity UI: [**Admin | Global settings | Default build execution timeout**](teamcity-configuration-and-maintenance.md#Build+Settings)
+TeamCity UI: [**Admin | Global Settings | Default build execution timeout**](teamcity-configuration-and-maintenance.md#Build+Settings)
 
 Sets a server-wide default that limits the duration of an individual job, not of an entire pipeline run. TeamCity ignores it when a pipeline- or job-level timeout is set.
 

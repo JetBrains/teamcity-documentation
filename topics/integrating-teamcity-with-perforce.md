@@ -23,7 +23,7 @@ This article describes how to integrate TeamCity with [Perforce P4](https://www.
 
 To be able to run builds on project sources stored in Perforce P4 and to use all the features described in this article, you need to perform two procedures:
 1. Create a dedicated project in TeamCity:
-   1. Go to __Administration | Projects__ and click __Create project__.  
+   1. Go to __Admin | Projects__ and click __Create project__.  
       Note that this will add the project right under the _Root project_. Alternatively, you can add it under any other existing project.
    2. Enter the _Name_ and _ID_ of the project.
    3. Click __Create__.

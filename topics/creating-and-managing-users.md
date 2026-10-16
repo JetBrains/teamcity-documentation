@@ -16,7 +16,7 @@ Only users with the respective permissions can create and edit other user accoun
 
 ## Creating New User
 
-The __Administration | Users__ page provides the _Create user account_ option.
+The __Admin | Users__ page provides the _Create user account_ option.
 
 When creating a user account when [several authentication modes enabled](configuring-authentication-settings.md#Enabling+Multiple+Authentication+Modules) on the server, only a username is required.
 
@@ -29,7 +29,7 @@ If you do not use [per-project permissions](managing-roles-and-permissions.md#Au
 
 ## Editing User Account
 
-To edit an existing user account, go to the __Administration | Users__ page and click the name of the user. The page provides several tabs allowing you to modify various user account settings
+To edit an existing user account, go to the __Admin | Users__ page and click the name of the user. The page provides several tabs allowing you to modify various user account settings
 
 ### General
 
@@ -68,7 +68,7 @@ To add a user to the specific group (for example, a group of developers for the 
 
 To add a user to a specific project and manage permissions this user has in it, you need to assign them with a certain role. Read how to [manage roles](managing-roles-and-permissions.md#Managing+Roles).
 
-The __Roles__ tab for a user is available only if per-project permissions are enabled on the server __Administration | Authentication__ page_. You can view this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here.
+The __Roles__ tab for a user is available only if per-project permissions are enabled on the server __Admin | Authentication__ page_. You can view this tab to view the roles assigned to the user directly and those inherited from groups. The roles assigned directly can be modified/removed here.
 
 <anchor name="assigningRoles"/>
 
@@ -77,7 +77,7 @@ The __Roles__ tab for a user is available only if per-project permissions are en
 ## Assigning Roles to Users
 [//]: # (AltHead: assigningRoles)
 
-To be able to grant roles to users on per-project basis, enable per-project permissions on the __Administration | Authentication__ page. The __Administration | Roles__ page lists all existing roles detailing their permissions.
+To be able to grant roles to users on per-project basis, enable per-project permissions on the __Admin | Authentication__ page. The __Admin | Roles__ page lists all existing roles detailing their permissions.
 
 There are several ways to assign roles to one or several users:
 * To assign a role to a specific user, on the __Users__ tab for the user click _View roles_ in the corresponding column. In the __Roles__ tab, click __Assign role__.
@@ -98,7 +98,7 @@ This tab displays [notification rules](adding-notification-rules.md) for the use
 
 ## Adding Multiple Users to Group
 
-On the __Administration | Users__ page, select users, click the __Add to groups__ button at the bottom, and specify the groups to add the users to. Note that all these users will inherit the roles defined for the group.
+On the __Admin | Users__ page, select users, click the __Add to groups__ button at the bottom, and specify the groups to add the users to. Note that all these users will inherit the roles defined for the group.
 
 
 ## Block and Remove Users

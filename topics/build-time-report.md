@@ -3,7 +3,7 @@
 
 The __Build Time__ report provides comparative statistics of the build time taken up by TeamCity projects and build configurations.
 
-To see the report, go to __Administration | Project-related Settings | Build Time__.
+To see the report, go to __Admin | Project-related Settings | Build Time__.
 
 ## Period Settings
 

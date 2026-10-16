@@ -30,7 +30,7 @@ Before you can run the artifacts migration tool, you need to specify the followi
 
 * `teamcity.storage.migration.access.token` — the TeamCity [authentication token](configuring-your-user-profile.md#Managing+Access+Tokens). Tokens must have permissions sufficient to access artifact storages. Navigate to **Your Profile | Access Tokens** to create a new token.
 
-The server URL and default artifact storage paths can be found on the **Administration | Global Settings** page.
+The server URL and default artifact storage paths can be found on the **Admin | Global Settings** page.
 
 <img src="dk-artifactstoragepaths.png" width="708" alt="Obtain server URL and storage paths"/>
 

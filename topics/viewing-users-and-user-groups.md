@@ -1,7 +1,7 @@
 [//]: # (title: Viewing Users and User Groups)
 [//]: # (help-id: Viewing Users and User Groups)
 
-You can view the list of users and user groups registered in the system on the __Administration | Users__ and __Administration | Groups__ pages. The content of these pages depends on your server's [authentication settings](configuring-authentication-settings.md) and TeamCity edition. For example, user accounts search and assigning roles are not available in TeamCity Professional.
+You can view the list of users and user groups registered in the system on the __Admin | Users__ and __Admin | Groups__ pages. The content of these pages depends on your server's [authentication settings](configuring-authentication-settings.md) and TeamCity edition. For example, user accounts search and assigning roles are not available in TeamCity Professional.
 
 The top search panel allows you to quickly find users:
 * In the _Find_ field, you can specify a search string, which can be a user visible name, full name, email address, or a part of it.

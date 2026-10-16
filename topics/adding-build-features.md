@@ -105,7 +105,7 @@ TeamCity ships with the following build features that can be added to your confi
 
 ### In TeamCity UI
 
-1. Navigate to **Administration | &lt;YOUR_PROJECT&gt; | &lt;YOUR_BUILD_CONFIGURATION&gt;** and switch to the **Build Features** tab.
+1. Navigate to **Admin | &lt;YOUR_PROJECT&gt; | &lt;YOUR_BUILD_CONFIGURATION&gt;** and switch to the **Build Features** tab.
 
     <img src="dk-add-new-build-feature.png" width="706" alt="Add New Build Feature"/>
 

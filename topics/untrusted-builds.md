@@ -47,7 +47,7 @@ Depending on the exact build configuration setup and the desired behavior, you m
 
 Settings that correspond to untrusted builds are configured on the project level, meaning they affect all build configurations owned by this project and its subprojects.
 
-1. Navigate to project settings (**Administration | &lt;Your_Project&gt;**) and switch to the **Untrusted builds** section in the sidebar.
+1. Navigate to project settings (**Admin | &lt;Your_Project&gt;**) and switch to the **Untrusted builds** section in the sidebar.
 
    <img src="dk-untrusted-builds-common.png" width="706" alt="Untrusted build settings"/>
 

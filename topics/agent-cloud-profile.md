@@ -172,7 +172,7 @@ Server URL
 <td>
 
 The URL that the agents cloned from the image will use to connect to the TeamCity server. This URL must be available from the build agent machine.   
-If this field is left empty, agents will use the [TeamCity server URL](configuring-server-url.md) specified on the __Administration | Global Settings__ page.
+If this field is left empty, agents will use the [TeamCity server URL](configuring-server-url.md) specified on the __Admin | Global Settings__ page.
 
 </td></tr><tr>
 

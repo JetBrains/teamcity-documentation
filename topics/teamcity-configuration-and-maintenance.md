@@ -9,10 +9,10 @@
 > Server configuration is only available to the [System Administrators](managing-roles-and-permissions.md#Default+User+Roles).
 {instance="tcc"}
 
-To change the server configuration, go to __Administration | Global Settings__. The following blocks of settings are available:
+To change the server configuration, go to __Admin | Global Settings__. The following blocks of settings are available:
 {instance="tc"}
 
-To change the server configuration, go to __Administration | Cloud Server Settings__.
+To change the server configuration, go to __Admin | Cloud Server Settings__.
 {instance="tcc"}
 
 ## TeamCity Configuration

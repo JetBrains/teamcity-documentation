@@ -33,7 +33,7 @@ Critical vulnerabilities that present major security threats are fixed in separa
 > 
 {style="tip"}
 
-To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Administration | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates.
+To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Admin | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates.
 
 ## Before Upgrade
 {instance="tc"}
@@ -56,7 +56,7 @@ To upgrade the server:
 
 ### Licensing
 
-Before upgrading, make sure the maintenance period of your licenses is not yet elapsed (use the __Administration | Licenses__ page to see your license keys). The licenses are valid only for the versions of TeamCity with the effective release date within the maintenance period. Check the effective release date on the [release list](previous-releases-downloads.md).   
+Before upgrading, make sure the maintenance period of your licenses is not yet elapsed (use the __Admin | Licenses__ page to see your license keys). The licenses are valid only for the versions of TeamCity with the effective release date within the maintenance period. Check the effective release date on the [release list](previous-releases-downloads.md).   
 Typically all the minor updates (indicated by changes in the `B` part of the `YYYY.MM.B` TeamCity version) use the same effective release date (that of the major release).   
 If not all the licenses cover the target version release date, consider [renewing the licenses](https://www.jetbrains.com/teamcity/buy/#license-type=renewal) before the upgrade (you can replace the old license keys with the renewed ones even before the upgrade).
 
@@ -101,7 +101,7 @@ If you accidentally performed an inconsistent upgrade, check the [recovery instr
 
 To be able to update automatically, the TeamCity server should be able to contact [jetbrains.com](https://www.jetbrains.com/), `download.jetbrains.com` and `download-cdn.jetbrains.com`.
 
-When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Administration | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description, and controls to perform the automatic update if you want to use that instead of performing the manual updating procedure.
+When a new version of TeamCity is detected, the server displays the corresponding health item for system administrators. The item points to the server's __Admin | Updates__ page, where all the versions available for the update are listed. The page contains notes about licenses compatibility, the new version description, and controls to perform the automatic update if you want to use that instead of performing the manual updating procedure.
 
 The automatic update procedure is as follows:
 1. The TeamCity server is stopped.
@@ -139,7 +139,7 @@ Other limitations of the automatic update:
 1. [Create a backup](teamcity-data-backup.md). You can create a backup with the "basic" profile on the [TeamCity Maintenance Mode](teamcity-maintenance-mode.md) page on the updated TeamCity start.
 2. Note the username used to run the TeamCity server. You will need it during the new version installation.
 3. If you have any of the Windows service settings customized, store them to repeat the customizations later.
-4. If you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's __Administration | Diagnostics__ or in a thread dump), consider backing up the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\jre` directory.
+4. If you are using 64-bit Java to run the service (for example, check for "64" in "Java VM info" on the server's __Admin | Diagnostics__ or in a thread dump), consider backing up the [`<TeamCity Home Directory>`](teamcity-home-directory.md)`\jre` directory.
 5. (optional as these will not be overwritten by the upgrade) Back up customizations of the bundled Tomcat server (like port, HTTPS protocol, and so on) or JRE if any.
 6. Check if you a have local agent installed (though it is [not recommended](security-notes.md) to have a local agent), so that you can later select this option in the installer.
 7. Run the new installer and point it to the same place TeamCity is installed to (the location used for installation is remembered automatically). Confirm uninstalling the previous installation. The TeamCity uninstaller ensures proper uninstallation, but you might want to make sure the [TeamCity server installation directory](teamcity-home-directory.md) does not contain any non-customized files after uninstallation finishes. If there are any, backup/remove them before proceeding with the installation.

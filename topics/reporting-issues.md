@@ -96,7 +96,7 @@ Then [send](troubleshooting.md) us a detailed description of the issue accompani
 
 When an operation on the server is slow, take a set of the server thread dumps (10\+) spread over the time of the slowness. TeamCity automatically saves thread dumps on super slow operations, so there might already be some saved in `logs/threadDumps-<date>` directories. It is recommended to send us an archive of the entire content of server's [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directories for all the recent dates.
 
-It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Administration | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
+It is recommended that you take a thread dump of the TeamCity server from the Web UI if the hanging is local and you can still open the TeamCity __Administration__ pages: go to the __Admin | Server Administration | Diagnostics__ page and click the __Save Thread Dump__ button to save a dump under the [`<TeamCity Home>`](teamcity-home-directory.md)`/logs/threadDumps-<date>` directory (where you can later download the files from "Server Logs"). If the server is fully started but the web UI is not responsive, try the [direct URL](http://YOUR_TEAMCITY_SERVER_URL/admin/diagnostic.html?actionName=threadDump&amp;save=false){nullable="true"} using the actual URL of your TeamCity server.
 
 If the UI is not accessible (or the server is not yet fully started), you can take a server thread dump manually using the approaches described [below](#Taking+Thread+Dump).
 
@@ -179,12 +179,12 @@ The log can also be sent to us for analysis.
 {instance="tc"}
 
 If you experience problems with TeamCity consuming too much memory or "OutOfMemoryError"/"Java heap space" errors in the log, do the following:
-* Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Administration | Server Administration | Diagnostics__ page of your TeamCity web UI.
+* Determine what process encounters the error (the actual building process, the TeamCity server, or the TeamCity agent). You can track memory and CPU usage by TeamCity with the charts on the __Admin | Server Administration | Diagnostics__ page of your TeamCity web UI.
 * If the problem is on the server's side, check you have increased memory settings from the default ones for using the server in production (see the [section](configure-server-installation.md#Configure+Memory+Settings+for+TeamCity+Server)).
 * If the problem is on the build process' side, set "JVM Command Line Parameters" settings in the build runner. Increase the value for the `-Xmx` JVM option: for instance, `-Xmx1200m`. Note that Java Inspections builds may specifically need increasing the `-Xmx` value.
 * If the problem is on the TeamCity server's side and increasing the memory size does not help, please report the case for us to investigate. For this, while the server is high on memory consumption, take several server thread dumps as described [above](#Taking+Thread+Dump), get the memory dump (see below) and all the server logs including `threadDumps-*` sub-directories, archive the results, and [send them](#Uploading+Large+Data+Archives) to us for further analysis. Make sure that the `-Xmx` setting is less than 8Gb before getting the dump:
   * if a memory dump (`hprof` file) is created automatically, the `java_xxx.hprof` file is created in the process startup directory ([`<TeamCity Home>/bin`](teamcity-home-directory.md) or [`<TeamCity Agent home>/bin`](agent-home-directory.md));
-  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Administration | Server Administration | Diagnostics__ page of your TeamCity UI and click __Dump Memory Snapshot__.
+  * for the server, you can also take memory dump manually when the memory usage is at its peak. Go to the __Admin | Server Administration | Diagnostics__ page of your TeamCity UI and click __Dump Memory Snapshot__.
   * another approach to take a memory dump manually is to use the `jmap` standard JVM command line utility of the full JVM installation of the same version as the Java used by the process. Example command line is:   
     
     ```Shell
@@ -215,7 +215,7 @@ The TeamCity server and agent create logs that can be used to investigate issues
 
 <note>
 
-Before reproducing the problem it makes sense to enable 'DEBUG' log level for TeamCity classes. On the server side, go to the __Administration | Server Administration | Diagnostics__ page and select logging preset (`debug-all`, `debug-vcs`, etc).   
+Before reproducing the problem it makes sense to enable 'DEBUG' log level for TeamCity classes. On the server side, go to the __Admin | Server Administration | Diagnostics__ page and select logging preset (`debug-all`, `debug-vcs`, etc).   
 After that, DEBUG messages will go to `teamcity-*.log` files ([read more](teamcity-server-logs.md)).
 </note>
 
@@ -288,7 +288,7 @@ the build log and the agent log will contain the line "Patch is saved to file $\
 ## Build triggers debug logging
 {instance="tc"}
 
-To collect all build triggers debug logs in TeamCity 2021.1 and later, switch the logging preset on the __Administration | Diagnostics__ page to `debug-triggers`, reproduce the problem and then collect all the `teamcity-triggers.log` files.
+To collect all build triggers debug logs in TeamCity 2021.1 and later, switch the logging preset on the __Admin | Diagnostics__ page to `debug-triggers`, reproduce the problem and then collect all the `teamcity-triggers.log` files.
 
 In TeamCity versions before 2021.1, it is only possible to enable debug logging for a VCS trigger defined in a specific build configuration:
 
@@ -313,7 +313,7 @@ In TeamCity versions before 2021.1, it is only possible to enable debug logging 
    ```
    Note: in the example above, `MyBuildConfigurationId` is the ID of the build configuration with a VCS trigger which we want to debug.
 
-3. Switch the logging preset on the __Administration | Diagnostics__ page to the newly created preset file.
+3. Switch the logging preset on the __Admin | Diagnostics__ page to the newly created preset file.
 
 No server restart is required. If the configuration is correct, TeamCity will create the `teamcity-vcs-trigger.log` log file in a few minutes. The file will contain the debug log related to the selected configuration only.
 

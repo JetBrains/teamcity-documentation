@@ -5,7 +5,7 @@ The TeamCity NTLM HTTP authentication feature employs Integrated Windows Authent
 
 ## Configuration
 
-The __NTLM HTTP__ module is configured on the __Administration | Authentication__ page under the "HTTP authentication modules" section.
+The __NTLM HTTP__ module is configured on the __Admin | Authentication__ page under the "HTTP authentication modules" section.
 
 <tip>
 

@@ -1,7 +1,7 @@
 [//]: # (title: Creating Backup from TeamCity Web UI)
 [//]: # (help-id: Creating Backup from TeamCity Web UI)
 
-TeamCity allows creating a backup of TeamCity data via the Web UI. To create a backup file, navigate to the __Administration | Backup__ page, specify backup parameters as described below, and start the backup process.
+TeamCity allows creating a backup of TeamCity data via the Web UI. To create a backup file, navigate to the __Admin | Backup__ page, specify backup parameters as described below, and start the backup process.
 
 ## Backup Settings
 
@@ -94,7 +94,7 @@ __Important Note__
 
 ## Back up History
 
-The __History__ tab of the __Administration | Backup__ page allows reviewing the list of created backup files, their size and date when the files were created.
+The __History__ tab of the __Admin | Backup__ page allows reviewing the list of created backup files, their size and date when the files were created.
 
 Note that only backup files created from web UI are shown here. Backups created with the [utility](creating-backup-via-maintaindb-command-line-tool.md) are not displayed on the __History__ tab.
 

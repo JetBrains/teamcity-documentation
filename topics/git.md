@@ -35,7 +35,7 @@ Alternatively, you can set the full path to the executable
 via the `teamcity.server.git.executable.path` [internal property](server-startup-properties.md#TeamCity+Internal+Properties)
 (no server restart is required). On Windows, remember to use double backslashes in the path.
 
-To switch your TeamCity server to native Git, go to __Administration | Diagnostics__ and open the __Git__ tab.
+To switch your TeamCity server to native Git, go to __Admin | Diagnostics__ and open the __Git__ tab.
 Here you can test the connection via native Git in any VCS root on your server.
 If you choose to test all VCS roots, TeamCity will check whether they successfully connect via JGit and then test their connection via native Git.
 This measure helps ensure that none of your pipelines will break after switching to native Git.
