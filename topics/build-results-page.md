@@ -30,11 +30,15 @@ You can also find the same value under the build's **Parameters** tab in TeamCit
 
 ## Overview Tab
 
-The **Overview** tab displays general information about the build: build duration, user or automatic trigger that started it, a build agent that was used to run it, the summary of processed changes, and so on.
+The **Overview** tab displays general information about the build or pipeline run: its duration, who started it (a user or a TeamCity trigger), which build agent processed it, and so on.
 
-<img src="exp-build-details.png" alt="Sakura Build Results page"/>
+<img src="exp-build-details.png" alt="Sakura Build Results page" width="706" thumbnail="true"/>
 
-It also shows the diagnostic messages related to the current build's status.
+The tab also shows panes that summarize changes, tests, code coverage, and other data from the remaining Build Results tabs, so you can review the most relevant information about a build in one place. Most of these panes are contextual: they appear only if the build satisfies certain conditions. For example:
+
+* The **Changes** pane is shown only if the remote repository received new commits after the last finished build.
+* The **Tests** pane appears only when there are failed unmuted tests.
+* The **Deployment** pane appears if a [deployment build configuration](deployment-build-configuration.md) depends on this configuration or pipeline.
 
 ## Changes Tab
 

@@ -45,8 +45,31 @@ In this version, this mode becomes the default one: you no longer need to add th
 
 -->
 
+## UI changes
 
-## Improved diff viewer
+Recent releases gave you plenty of ways to use TeamCity without opening it at all — the [MCP server](ai-agent-integration.md#TeamCity+MCP), the [TeamCity CLI](teamcity-cli.md), [browser-based PKCE authentication](teamcity-cli-authentication.md#pkce), and the [AI Assistant](ai-assistant.md). An agent working on your behalf can now drive most CI/CD tasks end to end.
+
+That makes TeamCity AI-ready, not AI-first. Much of the work still starts with a person opening a build page to read a failure, compare a diff, or decide what to rerun, and newcomers meet the product through its UI long before they script against it. The UI remains just as relevant, so we keep refining it with every release. Here is what changed this time.
+
+### Reworked build Overview tab
+
+The [Overview tab](build-results-page.md#Overview+Tab) of finished pipeline and build configuration runs has been reworked to improve navigation and readability.
+
+* All contextual sections (**Changes**, **Deployment**, **Code coverage**, and so on) now appear as dedicated collapsible panes with unique icons, for a cleaner look and better distinction between them.
+
+    <img src="build-overview-collapsible-panes.png" width="706" alt="Collapsible panes of the Overview tab"/>
+
+* The **Tests** pane now has toggles that switch between a flat list and a tree view.
+
+* Each test row has a **View test history** icon that opens the full run history of this test.
+
+    <img src="build-overview-tests.png" width="706" alt="Tests pane"/>
+
+    <img src="view-test-history2.png" width="706" thumbnail="true" alt="Test history page"/>
+
+* By default, tests are now sorted by failure order: the tests that failed first appear on top. Tests that have failed across multiple builds also display an "in N builds" label that highlights a recurring issue.
+
+### Improved diff viewer
 
 The [**Changes** tab diff viewer](build-results-page.md#Changes+Tab) was updated.
 
