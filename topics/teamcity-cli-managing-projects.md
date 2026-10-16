@@ -63,7 +63,7 @@ Filter by parent project ID
 </td>
 <td>
 
-Maximum number of projects to display
+Maximum number of projects to display (use 0 for all)
 
 </td>
 </tr>
@@ -333,21 +333,27 @@ teamcity project vcs create --url https://github.com/org/repo.git --auth anonymo
 <tr><td><code>--name</code></td><td>Display name (auto-generated from URL if omitted)</td></tr>
 <tr><td><code>-p</code>, <code>--project</code></td><td>Project ID (default: _Root)</td></tr>
 <tr><td><code>--auth</code></td><td>Auth method: <code>password</code>, <code>ssh-key</code>, <code>ssh-agent</code>, <code>ssh-file</code>, <code>token</code>, <code>anonymous</code></td></tr>
-<tr><td><code>--username</code></td><td>Username (for password auth)</td></tr>
+<tr><td><code>--username</code></td><td>Username (for password or stored token auth)</td></tr>
 <tr><td><code>--password</code></td><td>Password or personal access token</td></tr>
 <tr><td><code>--stdin</code></td><td>Read password from stdin</td></tr>
 <tr><td><code>--ssh-key-name</code></td><td>Name of SSH key uploaded to TeamCity</td></tr>
 <tr><td><code>--key-path</code></td><td>Path to SSH key file on the build agent</td></tr>
 <tr><td><code>--passphrase</code></td><td>SSH key passphrase</td></tr>
 <tr><td><code>--connection-id</code></td><td>OAuth connection ID</td></tr>
+<tr><td><code>--token-id</code></td><td>Existing stored token ID; requires <code>--auth token</code>, excludes <code>--connection-id</code></td></tr>
 <tr><td><code>--branch</code></td><td>Default branch (default: <code>refs/heads/main</code>)</td></tr>
 <tr><td><code>--branch-spec</code></td><td>Branch specification</td></tr>
 <tr><td><code>--no-test</code></td><td>Skip connection test before creating</td></tr>
+<tr><td><code>--json</code></td><td>Output the created VCS root as JSON</td></tr>
 </table>
+
+To reference an existing stored VCS token, use `project vcs create --auth token --token-id <full-token-id>` (instead of `--connection-id`). The token must already be permitted in the target project. Use `--username` if the provider requires a value other than `oauth2`; test the resulting root in the TeamCity UI.
 
 ### Testing a VCS root connection
 
-Test whether an existing VCS root can connect to the repository:
+Test an existing VCS root with its saved settings and credentials using the
+server's **Test connection** action. This requires permission to edit the root.
+If a proxy blocks the web UI endpoint, follow the printed link and test in the browser:
 
 ```Shell
 teamcity project vcs test MyProject_GitHubRepo
@@ -459,7 +465,7 @@ OAuth-style connections (GitHub App, Bitbucket, GitLab, …) need a per-user aut
 teamcity project connection authorize PROJECT_EXT_42 -p Backend
 ```
 
-The command opens a browser to complete the OAuth flow and stores the resulting token against the current user. Connection types without a user OAuth flow (Docker, AWS) return an error.
+The command prints the authorization URL and opens a browser to complete the OAuth flow, storing the resulting token against the current user. With `--no-input`, it prints the URL without opening a browser. Connection types without a user OAuth flow (Docker, AWS) return an error.
 
 ### Deleting a connection
 
@@ -628,6 +634,17 @@ Use relative IDs in the exported settings (enabled by default)
 </tr>
 </table>
 
+### Enabling versioned settings
+
+Import initial settings from an existing VCS root while keeping UI editing enabled:
+
+```Shell
+teamcity project settings enable MyProject --vcs-root MyProject_Settings
+teamcity project settings status MyProject
+```
+
+Use `--format xml` for XML settings, `--settings-path` for a custom repository directory, or `--json` for the configuration response. Existing configurations are refused rather than disabled automatically.
+
 ### Viewing versioned settings sync status
 
 Check the synchronization status of versioned settings for a project:
@@ -637,7 +654,7 @@ teamcity project settings status MyProject
 teamcity project settings status MyProject --json
 ```
 
-This displays whether versioned settings are enabled, the current sync state, last successful sync timestamp, VCS root and format information, and any errors from the last sync attempt.
+This displays the server’s runtime status message, configuration, processing errors, and missing DSL context parameters. “Recorded” is the status timestamp, not a successful synchronization time. An informational status can mean synchronization is disabled or has never been enabled.
 
 ### Validating Kotlin DSL
 
@@ -650,6 +667,8 @@ teamcity project settings validate --verbose
 ```
 
 The command auto-detects the `.teamcity` directory in the current directory or its parents. It requires Maven (`mvn`) or uses the Maven wrapper (`mvnw`) if present in the DSL directory.
+
+Connections listed or selected with `--project` include connections inherited from parent projects, including `_Root`. Use the owning project when deleting an inherited connection.
 
 <seealso>
     <category ref="reference">

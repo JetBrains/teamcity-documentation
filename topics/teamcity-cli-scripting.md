@@ -167,28 +167,30 @@ teamcity agent list --plain --no-header | awk '{print $1}'
 
 ## Scripting examples
 
+Run and queue lists return an object with a `build` array. Select `.build` before processing the runs with `jq`.
+
 ### Get IDs of failed builds
 
 ```Shell
-teamcity run list --status failure --json=id | jq -r '.[].id'
+teamcity run list --status failure --json=id | jq -r '.build[].id'
 ```
 
 ### Export build data to CSV
 
 ```Shell
-teamcity run list --json=id,status,branchName | jq -r '.[] | [.id,.status,.branchName] | @csv'
+teamcity run list --json=id,status,branchName | jq -r '.build[] | [.id,.status,.branchName] | @csv'
 ```
 
 ### Get web URLs for queued builds
 
 ```Shell
-teamcity queue list --json=webUrl | jq -r '.[].webUrl'
+teamcity queue list --json=webUrl | jq -r '.build[].webUrl'
 ```
 
 ### Count builds by status
 
 ```Shell
-teamcity run list --since 24h --json=status | jq 'group_by(.status) | map({status: .[0].status, count: length})'
+teamcity run list --since 24h --json=status | jq '.build | group_by(.status) | map({status: .[0].status, count: length})'
 ```
 
 ### Wait for a build to finish
@@ -207,7 +209,7 @@ teamcity run watch "$BUILD_ID" --json
 ### Cancel all queued builds for a job
 
 ```Shell
-teamcity queue list --job MyProject_Build --json=id | jq -r '.[].id' | xargs -I {} teamcity run cancel {} --yes
+teamcity queue list --job MyProject_Build --json=id | jq -r '.build[].id' | xargs -I {} teamcity run cancel {} --yes
 ```
 
 ## CI/CD integration
@@ -271,6 +273,8 @@ teamcity run start MyBuild     # blocked — would trigger a build
 ```
 
 This is useful for monitoring dashboards, reporting scripts, and shared environments where accidental modifications must be prevented. The flag also blocks write operations through `teamcity api` with non-GET methods.
+
+`agent exec` and `agent term` are also blocked before connecting, because a remote shell can modify the agent. This applies to both `TEAMCITY_RO=1` and per-server `ro: true`. Read-only mode is an accidental-write guard, not a security sandbox; use server-side permissions to restrict credentials.
 
 See [Configuration](teamcity-cli-configuration.md#Environment+variables) for accepted values.
 
