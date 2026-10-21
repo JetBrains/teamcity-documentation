@@ -27,6 +27,13 @@ The [pipelines](create-and-edit-pipelines.md) run results page now shows additio
 
 All tabs except for **Performance monitor** are contextual: they only appear if the selected job performs corresponding actions. For example, the **Container info** tab is shown only for jobs whose steps [run in Docker or Podman containers](job-settings.md#Integrations).
 
+### Maven user settings
+
+You can now configure [custom user settings](maven.md#MavenUserSettings) for Maven build steps. Similarly to build configurations, you can choose a file uploaded to a parent project's [**Maven settings** section](maven-server-side-settings.md) or specify a custom path to the required file.
+
+<img src="pipelines-maven-user-settings.png" width="706" alt="User settings in pipeline job" thumbnail="true"/>
+
+Learn more: [](maven.md#MavenUserSettings)
 <!--
 
 ## Build tools integration

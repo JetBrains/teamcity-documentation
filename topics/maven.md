@@ -19,7 +19,7 @@ The list of Maven step settings and their corresponding UI labels slightly diffe
 
 ### Main Settings
 
-<deflist type="medium">
+<deflist type="narrow">
 
 <def title="Goals">
 
@@ -45,7 +45,7 @@ To execute such a goal, select "_Automatically on agent_" in the __[VCS Checkout
 
 ### Advanced Settings
 
-<deflist type="medium">
+<deflist type="narrow">
 
 <def title="POM location">
 
@@ -93,15 +93,6 @@ Please switch your Maven build steps to any custom or bundled Maven 3.x version 
 
 </def>
 
-</deflist>
-
-
-### Build Configuration Settings
-
-These settings are only available for Maven steps used inside [build configurations](creating-and-editing-build-configurations.md).
-
-
-<deflist type="medium">
 
 <def title="User settings selection" help-id="MavenUserSettings" id="MavenUserSettings">
 
@@ -113,9 +104,72 @@ Allows you to choose different types of user settings. This setting is equivalen
 
 * Predefined settings — Allows you to choose one of settings files uploaded to the TeamCity server on the **Project settings | Maven Settings** page. Uploaded files are available for both the current project and all of its subprojects, and stored in the `<TeamCity Data Directory>/config/projects/%\projectID%/pluginData/mavenSettings` directory. The uploaded files are used both for the agent and server-side Maven functionality.
 
+<img src="pipelines-maven-user-settings.png" width="706" alt="User settings in pipeline job" thumbnail="true"/>
+
+
+<tabs>
+
+<tab title="YAML">
+
+```YAML
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: maven
+        name: Java21
+        goals: clean compile
+        user-settings-selection: userSettingsSelection:byPath
+        user-settings-path: ./settings-java21.xml
+      - type: maven
+        goals: clean compile
+        name: Java17
+        user-settings-selection: settings-java17.xml
+```
+
+</tab>
+
+<tab title="Kotlin DSL">
+
+```Kotlin
+object MyProject_Job1 : Job({
+    id("Job1")
+    name = "Job 1"
+    steps {
+        maven {
+            name = "Java21"
+            goals = "clean compile"
+            userSettingsSelection = "userSettingsSelection:byPath"
+            userSettingsPath = "./settings-java21.xml"
+        }
+        maven {
+            name = "Java17"
+            goals = "clean compile"
+            userSettingsSelection = "settings-java17.xml"
+        }
+    }
+})
+```
+</tab>
+
+
+</tabs>
+
 If Custom or Predefined settings are used, the path to the effective user settings file is available inside the maven process as the `teamcity.maven.userSettings.path` system property.
 
 </def>
+
+</deflist>
+
+
+### Build Configuration Settings
+
+These settings are only available for Maven steps used inside [build configurations](creating-and-editing-build-configurations.md).
+
+
+<deflist type="narrow">
+
+
 
 <def title="Artifact repository" help-id="MavenLocalArtifactRepositorySettings" id="MavenLocalArtifactRepositorySettings">
 
