@@ -212,38 +212,6 @@ Set to 60 seconds by default. Specifies a period (in seconds) that TeamCity main
 <anchor name="TeamCityConfigurationandMaintenance-EncryptionSettings"/>
 
 
-<!--
-
-## Encryption Settings
-{id="encryption-settings" help-id="Encryption Settings" instance="tc"}
-
-TeamCity protects all [secret values](typed-parameters.md#Create+a+Secret) and [SSH keys](ssh-keys-management.md) using an internal scrambling algorithm. These scrambled values are stored in [TeamCity Data Directory](teamcity-data-directory.md), so their safety relies on the overall security of your environment.
-
-You can set the **Custom encryption key** option in **Encryption Settings** section of TeamCity server settings. In this case both secrets and SSH keys will get encrypted by this 128-bit key encoded with Base64.
-
-The custom encryption key is stored in the [`TeamCity Data Directory`](teamcity-data-directory.md)`/config/encryption-config.xml` file, so make sure you do not store this folder in a remote VCS repository that can be accessed by 3rd-party users.
-
-When you generate or enter a new custom encryption key, it becomes the default for encrypting newly added secrets and SSH keys. Existing data remains encrypted with the previously used keys, which are stored in the `encryption-config.xml` file.
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<encryption-settings>
-  <key value="oldKey1" />
-  <key value="oldKey2" />
-  <key value="currentKey" default="true" />
-</encryption-settings>
-
-```
-
-<warning>
-
-* During backup, your custom keys will be exported along with their projects and automatically available after restoring from backup. Since keys will be stored in the exported files in an open form, make sure the backup files are well-protected.
-* TeamCity cannot import projects or restore data from a backup if those projects or backups originate from a server that uses encryption keys absent on this server. To successfully move data from an encrypted server, make sure all of its `encryption-config.xml` keys are added to the corresponding file of the target server.
-</warning>
-
--->
-
-
 
 
 ## Encryption Settings
