@@ -85,7 +85,7 @@ Allows the AI agent to permanently remove pipelines and their parent projects.
 
 </deflist>
 
-> The `teamcity_pipeline_post`, `teamcity_pipeline_delete`, and `teamcity_rest_post` tools are unavailable or restricted unless brave mode is enabled. See [Safety Concerns](#Safety+Concerns) for more information.
+> The `teamcity_pipeline_post`, `teamcity_pipeline_delete`, and `teamcity_rest_post` tools become unavailable or restricted if you switch the server to safe mode. See [Safety Concerns](#Safety+Concerns) for more information.
 >
 {style="note"}
 
@@ -123,12 +123,12 @@ Note that the token inherits your TeamCity permissions. For example, if you cann
 
 The TeamCity MCP toolset includes tools that can edit build configurations, pipelines, and projects. To reduce the risk and avoid any incidents, combine the following techniques according to your setup and needs.
 
-1. Add the `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to **false** (default) for safe mode, or **true** for brave mode.
+1. Switch the server to safe mode: add the `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to **false**. Brave mode (**true**) is the default.
 {instance="tc"}
 
     In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
 
-1. Add the `teamcity.ai.mcp.braveMode.enabled` internal property to the **Root** project and set it to **false** (default) for safe mode, or **true** for brave mode.
+1. Switch the server to safe mode: add the `teamcity.ai.mcp.braveMode.enabled` internal property to the **Root** project and set it to **false**. Brave mode (**true**) is the default.
    {instance="tcc"}
 
    In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.

@@ -3,6 +3,15 @@
 <show-structure for="chapter" depth="2"/>
 
 
+## Build ????, 28 October 2026
+
+### MCP brave mode
+
+Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity+MCP) that AI agents can use to interact with TeamCity. Because the `teamcity_pipeline_post`, `teamcity_pipeline_delete`, and `teamcity_rest_post` tools can edit and remove existing entities, they stayed disabled unless [brave mode](ai-agent-integration.md#Safety+Concerns) was explicitly enabled for your instance. In this update, brave mode becomes the default, so your AI agents can use every available MCP tool.
+
+To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
+
+
 ## Build 261911, 1 October 2026
 
 ### Additional tabs for jobs
