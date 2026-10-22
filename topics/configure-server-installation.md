@@ -74,8 +74,8 @@ Possible values for the `TEAMCITY_SERVER_MEM_OPTS` variable:
 
 * __Minimum setting__: `-Xmx1024m` for 64-bit Java (bundled), and `-Xmx750m` for 32-bit Java.
 * __Recommended setting for medium server__: `-Xmx2048m` for 64-bit Java, `-Xmx1024m` for 32-bit Java. Greater settings with the 32-bit Java can cause `OutOfMemoryError` with "_Native memory allocation (malloc) failed_" JVM crashes or "Unable to create new native thread" messages.
-* __Recommended setting for a large server__ (64-bit Java should be used): `-Xmx4g`. This setting should be suitable for an installation with up to two hundreds of agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
-* __Maximum setting for large-scale server__ (64-bit Java should be used): `-Xmx10g`. Greater values can be used for larger TeamCity installations. However, generally it is not recommended to use values greater than `10g` without consulting TeamCity support.
+* __Recommended setting for a large server__ (64-bit Java should be used): `-Xmx4g`. This setting should be suitable for an installation with up to two hundred agents and thousands of build configurations. Custom plugins might require increasing the value defined via the `Xmx` parameter.
+* __Maximum setting for large-scale server__ (64-bit Java should be used): `-Xmx10g`. Greater values can be used for larger TeamCity installations. However, generally, it is not recommended to use values greater than `10g` without consulting TeamCity support.
 
 The `ReservedCodeCacheSize=640m` attribute is set by default for new server installations. 
 If the attribute was specified before TeamCity 2022.04.4, you'll have to update it manually after upgrading.
@@ -104,7 +104,7 @@ An out-of-the-box TeamCity server installation is suitable for evaluation purpos
 * Configure [recommended memory settings](#Configure+Memory+Settings+for+TeamCity+Server). Use "maximum settings" for active or growing servers.
 * Plan for regular [backups](teamcity-data-backup.md).
 * Plan for regular [upgrades](upgrading-teamcity-server-and-agents.md) to the latest TeamCity releases.
-* Consider adding the `teamcity.installation.completed=true` line into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`\conf\teamcity-startup.properties` file — this will prevent the server from creating an administrator user if no such user is found.
+* Consider adding the `teamcity.installation.completed=true` line into the [`<TeamCity home directory>`](teamcity-home-directory.md)`\conf\teamcity-startup.properties` file — this will prevent the server from creating an administrator user if no such user is found.
 * Make sure to read the [notes on configuring the server for performance](system-requirements.md#Configuring+TeamCity+Server+for+Performance) and [security notes](security-notes.md).
 
 
