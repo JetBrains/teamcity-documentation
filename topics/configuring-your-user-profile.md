@@ -35,11 +35,10 @@ To automatically revoke a token after its expiration, specify its time limit.
 <video src="https://youtu.be/_3oKTnYwKa8"
 title="New in TeamCity 2020.2: Short-lived Access Tokens"/>
 
-<anchor name="token-scope"/>
-
 You can create tokens with limited permissions. 
 By default, the __Permissions scope__ field value is set to "_Same as current user_", 
 which means that the created token will grant the same permissions as those of the current user. 
+{id="token-scope"}
    
 Change the value to "_Limit per project_" to limit the token's access to a certain project and select specific permissions for it. TeamCity includes **Read-only** and **Full access** presets so that you can quickly choose the required token scope. The list of available projects and their permissions depend on your user permissions.
 
