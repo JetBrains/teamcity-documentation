@@ -62,6 +62,10 @@ teamcity run list --user @me
 
 # Combine filters
 teamcity run list --job MyProject_Build --status failure --branch main
+
+# Filter by tag (repeat --tag to require all of them)
+teamcity run list --tag release
+teamcity run list --tag release --tag v1.0
 ```
 
 > The `@me` shortcut substitutes the currently authenticated username.
@@ -107,7 +111,23 @@ teamcity run list --since 2026-01-15 --until 2026-01-20
 
 ```Shell
 teamcity run list --limit 20
+teamcity run list --limit 0
 ```
+
+Use `--limit 0` to remove the result limit. When a finite `--limit` hides
+additional results, the CLI prints a hint on stderr (stdout and `--json` stay
+unchanged).
+
+Without a job filter, searches start with a window of 5,000 recent builds.
+`--limit 0` does not remove this search limit. If runs are missing, narrow the
+search with `--project` or `--job`, or increase the search window:
+
+```Shell
+TEAMCITY_LOOKUP_LIMIT=100000 teamcity run list --user @me
+```
+
+`TEAMCITY_LOOKUP_LIMIT` accepts a positive integer; zero and invalid values use
+5,000.
 
 ### Output options
 
@@ -223,12 +243,24 @@ Filter by VCS revision (commit SHA). Use `@head` to resolve the current git HEAD
 <tr>
 <td>
 
+`-t`, `--tag`
+
+</td>
+<td>
+
+Filter by tag (can be repeated, matches runs with all given tags)
+
+</td>
+</tr>
+<tr>
+<td>
+
 `--since`
 
 </td>
 <td>
 
-Show builds finished after this time (for example, `24h`, `7d`, `2026-01-21`)
+Show builds started after this time, excluding queued runs (for example, `24h`, `7d`, `2026-01-21`)
 
 </td>
 </tr>
@@ -240,7 +272,7 @@ Show builds finished after this time (for example, `24h`, `7d`, `2026-01-21`)
 </td>
 <td>
 
-Show builds finished before this time
+Show builds started before this time
 
 </td>
 </tr>
@@ -252,7 +284,7 @@ Show builds finished before this time
 </td>
 <td>
 
-Maximum number of runs to display
+Maximum number of runs to display (use 0 for all)
 
 </td>
 </tr>
@@ -330,6 +362,24 @@ teamcity run start MyProject_Build --branch main --revision abc123def
 teamcity run start MyProject_Build --branch @this --revision @head
 ```
 
+For jobs with multiple VCS roots, repeat `--revision ROOT=SHA[@BRANCH]` to pin
+individual roots. Unspecified roots use TeamCity's normal revision selection.
+`ROOT=@BRANCH` uses the latest revision TeamCity has already fetched for that root;
+it does not fetch new commits. Use full refs for tags or pull requests.
+
+```Shell
+teamcity run start MyProject_Build --branch feature/game \
+  --revision GameRepo=abc123@feature/game --revision AssetsRepo=@main
+teamcity run start MyProject_Build --revision AssetsRepo=@refs/tags/v1.0
+```
+
+Root IDs are the VCS root IDs shown by `teamcity project vcs list`, not numeric
+VCS root instance IDs. A root can appear only once, and bare and per-root forms
+cannot be mixed. Bare `SHA`/`@head` still applies to every root and resolves locally;
+per-root SHAs are passed verbatim. `--branch` is the build's logical branch;
+use `@BRANCH` to specify a pinned root's own branch independently.
+`--dry-run` displays the requested pins without resolving branch heads.
+
 ### Build parameters
 
 Pass custom parameters, system properties, and environment variables:
@@ -361,6 +411,18 @@ teamcity run start MyProject_Build --top
 
 # Run on a specific agent
 teamcity run start MyProject_Build --agent 5
+```
+
+### Versioned settings source
+
+When a build configuration uses versioned settings, `--settings` chooses where the run's settings come from. Without the flag, the job's configured mode applies.
+
+```Shell
+# Load settings from the VCS revision
+teamcity run start MyProject_Build --settings vcs
+
+# Use the settings currently on the server
+teamcity run start MyProject_Build --settings current
 ```
 
 ### Tags and comments
@@ -642,7 +704,7 @@ Watch the build after starting it
 </td>
 <td>
 
-Refresh interval in seconds when watching (default: 3)
+Refresh interval in seconds when watching (default: 5)
 
 </td>
 </tr>
@@ -703,6 +765,8 @@ teamcity run view 12345
 teamcity run view 12345 --web
 teamcity run view 12345 --json
 ```
+
+On TeamCity 2026.3 and later, `run view` lists compatible and incompatible agents plus cloud images that can start an agent for queued runs. Incompatible entries include unmet requirements, such as a missing parameter. Large pool groups are summarized with unique reasons; the JSON result adds every entry in `compatibility`. On servers without this API, the command keeps its existing agent summary.
 
 ## Snapshot dependency tree
 
@@ -976,6 +1040,8 @@ teamcity run artifacts 12345 --json
 
 ### Downloading artifacts
 
+Downloads stay within the selected output directory, including when existing directories contain symlinks. Each file is staged before replacing its destination, so a failed or incomplete download preserves the previous file. A destination file symlink is replaced, not followed.
+
 Download artifacts from a completed run:
 
 ```Shell
@@ -1017,6 +1083,32 @@ Limit the number of results:
 ```Shell
 teamcity run tests 12345 --limit 50
 teamcity run tests 12345 --json
+```
+
+### Test history across builds
+
+Pass `--test NAME` to follow a single test across builds instead of inspecting one
+run — the answer to "is this test flaky?". Scope it to a job, or leave `--job` off
+for a server-wide history:
+
+```Shell
+teamcity run tests --job MyProject_Build --test com.acme.FooTest.bar
+teamcity run tests --test com.acme.FooTest.bar
+```
+
+The test name is shown once as a header and each build becomes a row; the trailing
+`TESTS:` summary doubles as a pass-rate. `--failed`/`--muted` narrow the history, and
+`--json` emits the raw occurrence array for your own flakiness analysis:
+
+```
+TEST: com.acme.FooTest.bar
+
+BUILD   STATUS  DURATION  BRANCH
+#1234   PASS    1s        main
+#1233   FAIL    1s        main
+#1232   PASS    1s        feature/x
+
+TESTS: 60 passed, 40 failed
 ```
 
 ## VCS changes

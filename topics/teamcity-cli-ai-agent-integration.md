@@ -10,6 +10,14 @@ You can also integrate TeamCity with AI agents via the [MCP server](ai-agent-int
 
 </tip>
 
+## Listing skills
+
+List the skills bundled with your `teamcity` release, with each one's version and which is installed by default:
+
+```Shell
+teamcity skill list
+```
+
 ## Installing the skill
 
 Install the skill for all detected AI agents:
@@ -112,6 +120,18 @@ Install to the current project instead of globally
 
 </td>
 </tr>
+<tr>
+<td>
+
+`--all`
+
+</td>
+<td>
+
+Apply to every bundled skill instead of only the default
+
+</td>
+</tr>
 </table>
 
 ## Read-only mode for AI agents
@@ -133,12 +153,14 @@ If the sandbox blocks outbound requests to your TeamCity server, add the server 
 
 ## Alternative installation for Claude Code
 
-If you use Claude Code, you can also install the TeamCity skill directly through the plugin system:
+If you use Claude Code, you can install the `teamcity` plugin, which bundles the TeamCity skills from the [JetBrains/teamcity-skills](https://github.com/JetBrains/teamcity-skills) repository:
 
 ```Shell
-/plugin marketplace add JetBrains/teamcity-cli
-/plugin install teamcity-cli@teamcity-cli
+/plugin marketplace add JetBrains/teamcity-skills
+/plugin install teamcity@teamcity
 ```
+
+The plugin provides the skills only. Install the `teamcity` CLI separately.
 
 <seealso>
     <category ref="reference">
