@@ -316,6 +316,18 @@ Description
 <tr>
 <td>
 
+`teamcity job create`
+
+</td>
+<td>
+
+Create a job
+
+</td>
+</tr>
+<tr>
+<td>
+
 `teamcity job list`
 
 </td>
@@ -394,6 +406,90 @@ Pause a job
 <td>
 
 Resume a paused job
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job settings get`
+
+</td>
+<td>
+
+Get a job setting value
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job settings list`
+
+</td>
+<td>
+
+List job settings
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job settings set`
+
+</td>
+<td>
+
+Set a job setting value
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job step add`
+
+</td>
+<td>
+
+Add a build step to a job
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job step delete`
+
+</td>
+<td>
+
+Delete a build step
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job step list`
+
+</td>
+<td>
+
+List job build steps
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity job step view`
+
+</td>
+<td>
+
+View build step details
 
 </td>
 </tr>
@@ -527,6 +623,18 @@ List project connections
 <tr>
 <td>
 
+`teamcity project connection view`
+
+</td>
+<td>
+
+View a project connection
+
+</td>
+</tr>
+<tr>
+<td>
+
 `teamcity project create`
 
 </td>
@@ -593,6 +701,18 @@ List project parameters
 <td>
 
 Set a project parameter value
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity project settings enable`
+
+</td>
+<td>
+
+Enable versioned settings by importing from VCS
 
 </td>
 </tr>
@@ -1356,6 +1476,35 @@ View pipeline details
 </tr>
 </table>
 
+## Servers
+
+<table>
+<tr>
+<td>
+
+Command
+
+</td>
+<td>
+
+Description
+
+</td>
+</tr>
+<tr>
+<td>
+
+`teamcity server plugin upload`
+
+</td>
+<td>
+
+Upload a TeamCity plugin archive
+
+</td>
+</tr>
+</table>
+
 ## Skills
 
 Manage AI agent integration. See [AI agent integration](teamcity-cli-ai-agent-integration.md) for details.
@@ -1446,7 +1595,7 @@ Description
 </td>
 <td>
 
-Check for CLI updates
+Check for and install CLI updates
 
 </td>
 </tr>
