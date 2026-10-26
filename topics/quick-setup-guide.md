@@ -41,7 +41,7 @@ Otherwise, to start or stop the TeamCity server and one default agent at the sam
     .\runAll.bat stop
     ```
 
-If you did not change the default port (`8111`) during the installation, the TeamCity web UI can be accessed at [`http://localhost`](http://localhost/){nullable="true"} via a web browser running on the same machine. Otherwise, use `http://localhost:<port>` (`http://localhost:7777` in our example).
+If you kept the default port (`8111`), the TeamCity web UI is available at [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} in a browser running on the same machine. Otherwise, use `http://localhost:<port>` (`http://localhost:7777` in our example).
 
 ## Install and run on Linux and macOS
 

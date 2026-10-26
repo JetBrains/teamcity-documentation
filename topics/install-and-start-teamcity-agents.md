@@ -1,4 +1,4 @@
-[//]: # (title: Install and Start TeamCity Agents)
+[//]: # (title: Build Agent Basics)
 [//]: # (help-id: Install and Start TeamCity Agents;Setting up and Running Additional Build Agents)
 
 <show-structure for="chapter" depth="2"/>

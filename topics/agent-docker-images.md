@@ -13,7 +13,7 @@ Instead of manually installing TeamCity agents and setting up required build sof
     ```
 
 
-> You can also start a TeamCity server inside a container. See instructions on this page for more information: [jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server).
+> You can also start a TeamCity server inside a container. See [](server-docker-images.md).
 >
 {style="tip"}
 

@@ -23,17 +23,52 @@ It is recommended to plan for regular upgrades to run the latest TeamCity versio
 
 TeamCity is a web application that heavily relies on communications among the server, build agents, VCS providers, and other external services (such as [AWS S3](storing-build-artifacts-in-amazon-s3.md) buckets or [Nexus LFS](git.md#LFS+and+Submodules+Support) repositories). As such, when deployed in non-closed environments, TeamCity is vulnerable to attacks exploiting common vulnerabilities and exposures (CVEs), including those inherited from third-party solutions and libraries it employs.
 
-To reduce the risks, it is highly advised to promptly install any updates containing security fixes. Fixes that eliminate non-critical security vulnerabilities are addressed in regular [bug-fix updates](teamcity-release-cycle.md). Refer to the [Release Notes](what-s-new-in-teamcity.md#Fixed+issues) and check out our [Security Bulletin](https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity) for the list of fixed issues.
+To reduce the risks, install updates that contain security fixes promptly. TeamCity ships them either as standalone security patches or as part of regular [bugfix updates](teamcity-release-cycle.md).
 
-Critical vulnerabilities that present major security threats are fixed in separate unscheduled security patches. Once a solution is found, these patches are released immediately. If such an update is available, TeamCity automatically downloads it and prompts administrators for installation.
+* **Security patches** — critical fixes for major security vulnerabilities (for example, issues that allow unauthorized access to TeamCity). Security patches are unscheduled and released as soon as a critical vulnerability is fixed. Installed security patches are displayed under **Admin | Plugins**.
 
-> TeamCity notifies users about critical security patches via emails and health reports. These notifications are visible to users with the "Manage server installation: view logs, restart, etc." [permission](managing-roles-and-permissions.md). By default, this permission is included only in the "System administrator" role.
-> 
-> Make sure that users who should receive email notifications about available security patches have email addresses specified in their [user profiles](configuring-your-user-profile.md) and [email notifications are enabled](configuring-notifications.md).
-> 
+   IMAGE
+
+* **Bugfix updates** — resolve minor and moderate security issues, including those found in 3rd-party tools that TeamCity uses (for example, Tomcat or Git). These updates are shipped on schedule, typically once or twice a month.
+
+To ensure your TeamCity instance is protected, we highly recommend that you never skip either of these updates. You can install both from the **Admin | Updates** page.
+
+**IMAGE**
+
+The **TeamCity version updates** section covers major and minor (bugfix) versions available for your active [license](licensing-policy.md). Newer updates include the older ones, so you can install only the topmost suggested version.
+
+The **Security patches** section includes options that allow you to control how TeamCity handles new available updates.
+
+<deflist type="full">
+
+<def title="Install automatically">
+
+TeamCity downloads and installs all security patches automatically, without administrator input. Administrators receive email notifications about every step of the process.
+
+</def>
+
+<def title="Download and notify (default)">
+
+TeamCity downloads new security patches automatically and notifies server administrators that they need to start the update manually.
+
+</def>
+
+<def title="Ignore">
+
+The least secure option. TeamCity tracks new security patches and lists them in the corresponding section, but does not notify anyone. Administrators have to check this page regularly and install available updates themselves.
+
+</def>
+
+</deflist>
+
+> * TeamCity uses emails and health reports to notify users about events related to security patches. These notifications are visible to users with the "Manage server installation: view logs, restart, etc." [permission](managing-roles-and-permissions.md). By default, this permission is included only in the "System administrator" role.
+>
+>     Make sure that users who should receive email notifications about available security patches have email addresses specified in their [user profiles](configuring-your-user-profile.md) and [email notifications are enabled](configuring-notifications.md).
+>
+> * For [multinode setups](multinode-setup.md), all nodes are patched in the background as soon as they are finished with their ongoing activities. In most cases, applying a security patch does not require a node restart. If a restart is needed, TeamCity sends a related notification to server administrators.
 {style="tip"}
 
-To stop TeamCity from automatically downloading these patches, uncheck the "Automatically download available security patches and notify administrators when they are ready to be installed" option on the **Admin | Updates** page. However, we strongly advise against disabling this feature, as it guarantees rapid responses to emerging security threats and ensures swift updates.
+
 
 ## Before Upgrade
 {instance="tc"}

@@ -1,4 +1,4 @@
-[//]: # (title: TeamCity Configuration and Maintenance)
+[//]: # (title: Global Server Settings)
 [//]: # (help-id: TeamCity Configuration and Maintenance)
 
 <show-structure for="chapter" depth="2"/>

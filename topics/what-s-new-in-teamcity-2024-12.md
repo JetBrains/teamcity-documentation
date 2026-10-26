@@ -50,7 +50,7 @@ This TeamCity version introduces three new [build features](adding-build-feature
 
 All three features require no configuration: add/enable a required build feature to enable caching, and remove/disable it to force agents to re-download missing dependencies with each build.
 
-Learn more: [](dependency-caches.md)
+Learn more: [](build-cache.md)
 -->
 
 
@@ -224,7 +224,7 @@ This TeamCity version introduces three new [build features](adding-build-feature
 
 All three features require no configuration: add/enable a required build feature to enable caching, and remove/disable it to force agents to re-download missing dependencies with each build.
 
-Learn more: [](dependency-caches.md)
+Learn more: [](build-cache.md)
 -->
 
 

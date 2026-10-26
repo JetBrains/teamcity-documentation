@@ -25,66 +25,55 @@
 			<toc-element topic="bamboo-to-teamcity-migration-guidelines.md"/>
 		</toc-element>
 	</toc-element>
-	<toc-element topic="teamcity-cloud-subscription-and-licensing.md">
-		<toc-element topic="teamcity-release-cycle.md"/>
-		<toc-element topic="teamcity-cloud-cost-optimization.md"/>
-		<toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TCC"/>
+	<toc-element toc-title="What's New">
+		<toc-element topic="what-s-new-in-teamcity-cloud.md" accepts-web-file-names="what-s-new-in-teamcity.html"/>
 	</toc-element>
-	<toc-element toc-title="Installation and Upgrade">
+	<toc-element toc-title="Your Cloud Instance">
+		<toc-element topic="get-your-teamcity-cloud-instance.md"/>
 		<toc-element topic="supported-platforms-and-environments.md">
 			<toc-element topic="jetbrains-hosted-agents.md"/>
 			<toc-element topic="testing-frameworks.md"/>
 			<toc-element topic="code-quality-tools.md"/>
 		</toc-element>
-		<toc-element topic="get-your-teamcity-cloud-instance.md"/>
-		<toc-element topic="install-and-start-teamcity-agents.md" accepts-web-file-names="build-agent.html">
+	</toc-element>
+	<toc-element topic="teamcity-cloud-subscription-and-licensing.md">
+		<toc-element topic="managing-subscription-and-resources.md"/>
+		<toc-element topic="teamcity-release-cycle.md"/>
+		<toc-element topic="teamcity-cloud-cost-optimization.md"/>
+		<toc-element toc-title="Third-Party Software and Licenses" href="https://www.jetbrains.com/legal/third-party-software/?product=TCC"/>
+	</toc-element>
+	<toc-element toc-title="Build Agents">
+		<toc-element topic="install-and-start-teamcity-agents.md" accepts-web-file-names="build-agent.html"/>
+		<toc-element toc-title="Install and Configure Build Agents">
 			<toc-element topic="system-requirements.md"/>
 			<toc-element topic="install-teamcity-agent.md"/>
-			<toc-element accepts-web-file-names-ref="configure-ageconnt-installation" topic="configure-agent-installation.md"/>
 			<toc-element topic="start-teamcity-agent.md"/>
+			<toc-element accepts-web-file-names-ref="configure-ageconnt-installation" topic="configure-agent-installation.md"/>
+			<toc-element topic="configuring-build-agent-startup-properties.md"/>
 			<toc-element topic="configure-java-for-agent.md"/>
 			<toc-element topic="install-multiple-agents-on-one-machine.md"/>
 			<toc-element topic="agent-docker-images.md"/>
-			<toc-element topic="teamcity-integration-with-cloud-solutions.md" accepts-web-file-names="agent-cloud-profile.html">
-				<toc-element topic="setting-up-teamcity-for-amazon-ec2.md"/>
-				<toc-element topic="setting-up-teamcity-for-kubernetes.md"/>
-				<toc-element topic="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md"/>
-			</toc-element>
-			<toc-element topic="kubernetes-executor.md"/>
 		</toc-element>
-		<toc-element topic="what-s-new-in-teamcity-cloud.md" accepts-web-file-names="what-s-new-in-teamcity.html"/>
+		<toc-element accepts-web-file-names-ref="configuring-agent-pools" topic="configuring-agent-pools.md"/>
+		<toc-element topic="build-agents-configuration-and-maintenance.md">
+			<toc-element topic="viewing-build-agent-logs.md"/>
+			<toc-element topic="viewing-agents-workload.md"/>
+			<toc-element topic="viewing-build-agent-details.md"/>
+		</toc-element>
+		<toc-element topic="teamcity-integration-with-cloud-solutions.md" accepts-web-file-names="agent-cloud-profile.html">
+			<toc-element topic="setting-up-teamcity-for-amazon-ec2.md"/>
+			<toc-element topic="setting-up-teamcity-for-kubernetes.md"/>
+			<toc-element topic="setting-up-teamcity-for-vmware-vsphere-and-vcenter.md"/>
+		</toc-element>
+		<toc-element topic="kubernetes-executor.md"/>
 	</toc-element>
-	<toc-element toc-title="System Administration">
-		<toc-element toc-title="Secure TeamCity">
-			<toc-element topic="security-notes.md"/>
-			<toc-element topic="csrf-protection.md"/>
-			<toc-element topic="using-https-to-access-teamcity-server.md"/>
-			<toc-element topic="ssh-keys-management.md"/>
-			<toc-element topic="uploading-ssl-certificates.md"/>
-			<toc-element topic="hashicorp-vault.md"/>
-			<toc-element topic="content-security-policy-in-teamcity.md"/>
+	<toc-element toc-title="Security and Access">
+		<toc-element topic="security-notes.md"/>
+		<toc-element topic="configuring-authentication-settings.md" accepts-web-file-names="authentication-modules.html">
+			<toc-element topic="enabling-guest-login.md"/>
+			<toc-element topic="enabling-email-verification.md"/>
+			<toc-element topic="managing-two-factor-authentication.md"/>
 			<toc-element topic="security-actions.md"/>
-		</toc-element>
-		<toc-element topic="teamcity-configuration-and-maintenance.md">
-			<toc-element topic="managing-subscription-and-resources.md"/>
-			<toc-element topic="configuring-authentication-settings.md" accepts-web-file-names="authentication-modules.html">
-				<toc-element topic="enabling-guest-login.md"/>
-				<toc-element topic="enabling-email-verification.md"/>
-				<toc-element topic="managing-two-factor-authentication.md"/>
-			</toc-element>
-			<toc-element accepts-web-file-names-ref="cleanup" topic="teamcity-data-clean-up.md"/>
-			<toc-element topic="teamcity-data-backup.md"/>
-			<toc-element topic="build-agents-configuration-and-maintenance.md">
-				<toc-element topic="viewing-build-agent-logs.md"/>
-				<toc-element topic="configuring-build-agent-startup-properties.md"/>
-				<toc-element topic="viewing-agents-workload.md"/>
-				<toc-element topic="viewing-build-agent-details.md"/>
-				<toc-element accepts-web-file-names-ref="configuring-agent-pools" topic="configuring-agent-pools.md"/>
-			</toc-element>
-			<toc-element topic="disk-usage.md"/>
-			<toc-element topic="server-health.md"/>
-			<toc-element topic="build-time-report.md"/>
-			<toc-element topic="maven-server-side-settings.md"/>
 		</toc-element>
 		<toc-element accepts-web-file-names-ref="managing-users-and-roles" topic="managing-users-and-roles.md">
 			<toc-element accepts-web-file-names-ref="configuring-your-user-profile" topic="configuring-your-user-profile.md"/>
@@ -96,6 +85,28 @@
 			<toc-element topic="tracking-user-actions.md"/>
 			<toc-element topic="guest-user.md"/>
 		</toc-element>
+		<toc-element toc-title="HTTPS and Certificates">
+			<toc-element topic="using-https-to-access-teamcity-server.md"/>
+			<toc-element topic="uploading-ssl-certificates.md"/>
+		</toc-element>
+		<toc-element toc-title="Secrets and Keys">
+			<toc-element topic="ssh-keys-management.md"/>
+			<toc-element topic="hashicorp-vault.md"/>
+		</toc-element>
+		<toc-element toc-title="Web Hardening">
+			<toc-element topic="csrf-protection.md"/>
+			<toc-element topic="content-security-policy-in-teamcity.md"/>
+		</toc-element>
+	</toc-element>
+	<toc-element toc-title="Server Administration">
+		<toc-element topic="teamcity-configuration-and-maintenance.md">
+		</toc-element>
+		<toc-element topic="maven-server-side-settings.md"/>
+		<toc-element topic="teamcity-data-backup.md"/>
+		<toc-element accepts-web-file-names-ref="cleanup" topic="teamcity-data-clean-up.md"/>
+		<toc-element topic="disk-usage.md"/>
+		<toc-element topic="server-health.md"/>
+		<toc-element topic="build-time-report.md"/>
 		<toc-element topic="configuring-notifications.md" accepts-web-file-names="notifier.html">
 			<toc-element accepts-web-file-names-ref="adding-notification-rules" topic="adding-notification-rules.md"/>
 		</toc-element>

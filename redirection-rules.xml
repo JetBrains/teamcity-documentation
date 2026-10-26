@@ -14,6 +14,7 @@
     </rule>
     <rule id="server-startup-properties">
         <accepts>configuring-teamcity-server-startup-properties.html</accepts>
+        <accepts>teamcity-startup-properties.html</accepts>
     </rule>
     <rule id="install-and-start-agents">
         <accepts>setting-up-and-running-additional-build-agents.html</accepts>

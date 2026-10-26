@@ -470,7 +470,7 @@ database:
   secretName: database-properties
 ```
 
-You can easily scale your TeamCity setup by simply adding new entries under the `secondaryNodes` section without bloating the manifest with non-unique lines...
+You can scale your TeamCity setup by adding new entries under the `secondaryNodes` section without bloating the manifest with non-unique lines...
 
 ```yaml
 secondaryNodes:

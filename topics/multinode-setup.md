@@ -7,7 +7,7 @@ The TeamCity server can be configured to use multiple nodes (or servers) for hig
 
 As the main use case of a multinode setup is to achieve high availability (HA), this article focuses on configuring a HA cluster. However, you can use the same methods for any setup with multiple TeamCity nodes: for example, to distribute load between several machines.
 
->The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, please refer to its [respective documentation](documentation-for-previous-versions.md).
+>The instructions are provided for TeamCity 2021.1 or later. If you use an earlier version, refer to its [respective documentation](documentation-for-previous-versions.md).
 >
 {style="note"}
 
@@ -808,7 +808,7 @@ When __upgrading the main node to a major version__, its TeamCity data format ch
 To __upgrade__ nodes in a multinode setup to a major version of TeamCity, follow these steps:
 1. [Upgrade](upgrading-teamcity-server-and-agents.md) the main TeamCity node. The procedure of upgrading notes is identical to updating standalone servers.
 2. Verify that everything works properly and agents are connecting to the main node (the agents will reroute the data that was supposed to be routed to the secondary nodes to the main node).
-3. Perform upgrade of TeamCity on the secondary nodes to the same version. Please note that if a secondary node is restarted after upgrading the main node to a different major version, that node will need a manual upgrade. Automatic upgrade will become unavailable (see [TW-98862](https://youtrack.jetbrains.com/issue/TW-98862)).
+3. Perform upgrade of TeamCity on the secondary nodes to the same version. Note that if a secondary node is restarted after upgrading the main node to a different major version, that node will need a manual upgrade. Automatic upgrade will become unavailable (see [TW-98862](https://youtrack.jetbrains.com/issue/TW-98862)).
 
 To __downgrade__ nodes in a multinode setup, follow these steps:
 1. Shutdown the main node and the secondary nodes.

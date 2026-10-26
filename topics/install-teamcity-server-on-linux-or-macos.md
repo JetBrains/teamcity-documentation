@@ -7,7 +7,7 @@
 
 Go to the [JetBrains website](https://www.jetbrains.com/teamcity/download/) and download the __.tar.gz distribution__ with the "portable" version of the TeamCity server.
 
-Or, you can install it from a __Docker image__. All the information related to the TeamCity Server Docker images is described on [Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-server/).
+Or, you can run it from a __Docker image__. See [](server-docker-images.md).
 
 Specifics of the `.tar.gz` distribution:
 * It includes a Tomcat version tested to work fine with the respective version of TeamCity. You can use an [alternative Tomcat version](how-to.md#Install+Non-Bundled+Version+of+Tomcat), but other combinations are not guaranteed to work correctly.
@@ -17,15 +17,15 @@ Specifics of the `.tar.gz` distribution:
 
 ## Install from tar.gz
 
->We recommend running the TeamCity server under a dedicated user account.
+We recommend running the TeamCity server under a dedicated user account.
 
-It is highly recommended running the TeamCity server under a dedicated user account.
+To install the server, unpack the `TeamCity<version number>.tar.gz` archive. Use the `tar xfz TeamCity<version number>.tar.gz` command on Linux, or WinZip, WinRAR, or a similar utility on Windows.
 
-To install the TeamCity server, unpack the `TeamCity<version number>.tar.gz` archive. You can use the `tar xfz TeamCity<version number>.tar.gz` command under Linux \* and WinZip, WinRar, or similar utility under Windows.
+>Use GNU tar or the `gtar xfz` command for unpacking. Some implementations, such as Solaris 10 tar, truncate long filenames, which causes a `ClassNotFoundException` when the server starts.
+>
+{style="note"}
 
->\* We advise using GNU tar or the `gtar xfz` command for unpacking. For example, Solaris 10 tar is reported to truncate long file names and may cause `ClassNotFoundException` when using the server after unpacking.
-
-Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory (see [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server)).
+Make sure a JRE or JDK is installed and that the `JAVA_HOME` environment variable points to the Java installation directory. See [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server).
 
 ## Example: Installation using Ubuntu Linux
 
@@ -47,13 +47,13 @@ Ensure that JRE or JDK are installed and the `JAVA_HOME` environment variable is
     # Switch to the /opt directory, where TeamCity will be unpacked
     root@ubuntu:/# cd /opt
     # Download the tar.gz file using wget
-    root@ubuntu:/opt# wget https://download.jetbrains.com/teamcity/TeamCity-2022.10.1.tar.gz
+    root@ubuntu:/opt# wget https://download.jetbrains.com/teamcity/TeamCity-<version>.tar.gz
     ```
 
  4. Unpack the tar.gz file.
     
     ```Shell
-    root@ubuntu:/opt# tar xfz TeamCity-2022.10.1.tar.gz
+    root@ubuntu:/opt# tar xfz TeamCity-<version>.tar.gz
     ```
 
  5. Ensure a compatible Java is installed or the `JAVA_HOME` environment variable stores the correct path to Java.

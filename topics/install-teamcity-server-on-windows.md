@@ -13,7 +13,7 @@ Go to the [JetBrains website](https://www.jetbrains.com/teamcity/download/) and 
 * __.exe__: executable which provides the installation wizard for Windows platforms and allows installing the server as a Windows service.
 * __.tar.gz__: archive with a "portable" version.
 
-Or, you can install it from a __Docker image__. All the information related to the TeamCity Server Docker images is described on [Docker Hub](https://hub.docker.com/r/jetbrains/teamcity-server/).
+Or, you can run it from a __Docker image__. See [](server-docker-images.md).
 
 The `.exe` and `.tar.gz` have the following specifics:
 * They include a Tomcat version tested to work fine with the respective version of TeamCity. You can use an [alternative Tomcat version](how-to.md#Install+Non-Bundled+Version+of+Tomcat), but other combinations are not guaranteed to work correctly.
@@ -36,19 +36,21 @@ Make sure the user account specified for the service has:
 
 By default, the Windows service is installed under the `SYSTEM` account. To change it, use the Services applet (__Control Panel | Administrative Tools | Services__).
 
-If you do not change the default port (`8111`) during the installation, the TeamCity UI will be accessed via [`http://localhost/`](http://localhost/){nullable="true"} in a web browser running on the same machine where the server is installed. Note that port 8111 can be already occupied by other programs. In this case, you can specify another port during the installation and use [`http://localhost:<port>/`](http://localhost:<port>/){nullable="true"} address in the browser.
+If you keep the default port (`8111`), the TeamCity UI is available at [`http://localhost:8111/`](http://localhost:8111/){nullable="true"} in a browser running on the server machine. Port 8111 may already be occupied by another program; in that case, specify a different port during the installation and use the [`http://localhost:<port>/`](http://localhost:<port>/){nullable="true"} address instead.
 
 If you want to edit the TeamCity server's service parameters, memory settings, or system properties after the installation, refer to [this article](server-startup-properties.md).
 
 ## Install from tar.gz
 
-It is highly recommended running the TeamCity server under a dedicated user account.
+We recommend running the TeamCity server under a dedicated user account.
 
-To install the TeamCity server, unpack the `TeamCity<version number>.tar.gz` archive. You can use the `tar xfz TeamCity<version number>.tar.gz` command under Linux \* and WinZip, WinRar, or similar utility under Windows.
+To install the server, unpack the `TeamCity<version number>.tar.gz` archive. Use the `tar xfz TeamCity<version number>.tar.gz` command on Linux, or WinZip, WinRAR, or a similar utility on Windows.
 
->\* We advise using GNU tar or the `gtar xfz` command for unpacking. For example, Solaris 10 tar is reported to truncate long file names and may cause `ClassNotFoundException` when using the server after unpacking.
+>Use GNU tar or the `gtar xfz` command for unpacking. Some implementations, such as Solaris 10 tar, truncate long filenames, which causes a `ClassNotFoundException` when the server starts.
+>
+{style="note"}
 
-Make sure that JRE or JDK are installed and the `JAVA_HOME` environment variable is pointing to the Java installation directory (see [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server)).
+Make sure a JRE or JDK is installed and that the `JAVA_HOME` environment variable points to the Java installation directory. See [recommended Java versions](supported-platforms-and-environments.md#TeamCity+Server).
 
 ## Automatic Server Startup
 

@@ -158,9 +158,9 @@ __Update your TeamCity server regularly__.
 
 We strongly recommend that you regularly update TeamCity to the [latest released version](https://www.jetbrains.com/teamcity/download/).
 
-TeamCity will automatically notify you via the UI once a new update is available. You can also manually check for new TeamCity versions under __Server Administration | Updates__ for TeamCity itself and under __Server Administration | Plugins__ for any available plugin updates.
+TeamCity notifies you in the UI when a new update becomes available. You can also check manually: __Admin | Updates__ for TeamCity itself, and __Admin | Plugins__ for plugin updates.
 
-> To keep you ahead of the curve in preventing and mitigating security issues, TeamCity automatically downloads critical security updates. This approach helps to keep your system fortified against emerging risks and to swiftly tackle major vulnerabilities. Note that after an update is downloaded automatically, a system administrator still needs to approve its installation. See this article for more information: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
+> Critical vulnerabilities are fixed in unscheduled [security patches](upgrading-teamcity-server-and-agents.md#Security+Patches), released separately from regular updates. By default, TeamCity downloads them automatically and notifies administrators that they need to install them. You can also let TeamCity install patches automatically, or have it only list them without notifying anyone — see the linked section for the trade-offs.
 >
 {style="note"}
 

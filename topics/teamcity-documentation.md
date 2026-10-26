@@ -14,7 +14,7 @@ Welcome to the documentation for [TeamCity 2022.x](https://www.jetbrains.com/tea
 ### Get Started
 
 * [Getting Started with TeamCity](getting-started-with-teamcity.md)   
-* [TeamCity Concepts](introduction-to-teamcity-terminology.md)
+* [Glossary](glossary.md)
     
 </td>
 
