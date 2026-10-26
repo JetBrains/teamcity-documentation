@@ -15,7 +15,7 @@ Instead of manually installing TeamCity agents and setting up required build sof
 
 > You can also start a TeamCity server inside a container. See [](server-docker-images.md).
 >
-{style="tip"}
+{style="tip" instance="tc"}
 
 
 > Since 3rd-party tool vendors may not provide binaries for every OS/architecture, some images may include fewer installed components compared to the others. For instance, ARM-based images do not include Perforce CLI (p4) and Windows images ship without Mercurial.
