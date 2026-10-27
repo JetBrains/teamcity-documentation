@@ -49,7 +49,7 @@ SQL Server supports two ways of authentication: SQL Server authentication and Wi
 ## Set Up JDBC Driver for SQL Server Database
 
 1. Download the [Microsoft JDBC driver v13.6.0+](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver) (`sqljdbc_13.6.0` package).
-2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `auth/*/mssql-jdbc_auth-<version>.*.dll` from the driver package as described in [these instructions](#integratedSecurityAuth).
+2. Unpack the downloaded package into a temporary directory. Copy the `mssql-jdbc-<version>.jre11.jar` from the downloaded package into the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/lib/jdbc` directory (remove the existing files there, if any). MS SQL integrated security (Windows authentication) requires installing `auth/*/mssql-jdbc_auth-<version>.*.dll` from the driver package as described in the [](#integratedSecurityAuth) section.
 
 <note>
 
@@ -60,10 +60,10 @@ We do not recommend using driver versions earlier than 12.6.0.jre11 because they
 
 </note>
 
-<anchor name="integratedSecurityAuth"/>
+
 
 ### Additional Settings for Windows Authentication (MS SQL Integrated Security)
-[//]: # (AltHead: integratedSecurityAuth)
+{id="integratedSecurityAuth" help-id="integratedSecurityAuth"}
 
 For Windows authentication (MS SQL integrated security), in addition to the JDBC driver, it is necessary to install native driver library `mssql-jdbc_auth-*.dll` from the JDBC driver package. The required version of the library depends on the bitness of the Java version used by the server.
 
