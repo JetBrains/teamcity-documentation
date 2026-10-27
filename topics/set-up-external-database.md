@@ -36,6 +36,15 @@ As a general rule, you should use the database that suits your environment best 
 
 You may also want to estimate the [required database capacity](system-requirements.md#Estimating+External+Database+Capacity).
 
+## Database Connection Latency
+{id="database-latency"}
+
+The latency between the TeamCity server and its database directly affects server performance. Rendering a single UI page can require hundreds of SQL queries, so even a 30 ms delay per query adds up to a noticeable slowdown.
+
+We recommend keeping the TeamCity server and the database in the same network, with a latency of 0.3–1 ms. To measure the latency, run `ping` from the TeamCity server machine to the database machine.
+
+Each TeamCity server node periodically measures the database round-trip time. If the latency stays above 10 ms, a [health report](server-health.md) item shows a warning with the measured value and the recommended range. Above 50 ms, the item is reported as an error. The item disappears automatically once the latency returns to normal.
+
 ## General Steps
 
 1. Configure the external database to be used by TeamCity (see the [database-specific sections](#Database-specific+Steps) below).
