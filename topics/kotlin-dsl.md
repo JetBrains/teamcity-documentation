@@ -633,6 +633,7 @@ Compiling DSL on build agents is generally the recommended approach, but each mo
 * Unburdens the server of this task, freeing some of its resources.
 * More secure, as the code runs off-server, on a separate machine.
 * Not affected by the server sandbox limitations: you can run as many simultaneous compilation tasks as your build agent fleet allows, and the compiled code can perform any operations.
+* Flexible setup: choose a specific [agent pool](configuring-agent-pools.md) to run this task, a [k8s executor](kubernetes-executor.md) available to this project, or any free build agent.
 
 **Cons**
 
