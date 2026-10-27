@@ -33,7 +33,7 @@ In MS SQL Server Management Studio:
 SQL Server supports two ways of authentication: SQL Server authentication and Windows authentication mode.
 
 * SQL Authentication requires specifying username and a password in the database settings. It is recommended to start with this authentication before you try to use Windows authentication.
-* Windows authentication (MS SQL integrated security) allows the TeamCity server running under a specific Windows user connect to the SQL server as that user, without providing a username and a password. However, it requires [additional setup](#Additional+Settings+for+Windows+Authentication+%28MS+SQL+Integrated+Security%29)
+* Windows authentication (MS SQL integrated security) allows the TeamCity server running under a specific Windows user connect to the SQL server as that user, without providing a username and a password. However, it requires [additional setup](#integratedSecurityAuth).
 
 ### Create Dedicated User for TeamCity with SQL Server Authentication
 
@@ -58,10 +58,10 @@ Note that Microsoft JDBC driver v6.0\+ has compatibility issues with Microsoft S
 
 </note>
 
-<anchor name="integratedSecurityAuth"/>
+
 
 ### Additional Settings for Windows Authentication (MS SQL Integrated Security)
-[//]: # (AltHead: integratedSecurityAuth)
+{id="integratedSecurityAuth"}
 
 For Windows authentication (MS SQL integrated security), in addition to the JDBC driver, it is necessary to install native driver library `sqljdbc_auth.dll` from the JDBC driver package. The required version of the library depends on the bitness of the Java version used by the server.
 
