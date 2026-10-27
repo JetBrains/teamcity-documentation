@@ -730,7 +730,7 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>MySQL</td>
    <td>5.7.34 or later</td>
    <td>8.4 or later</td>
-   <td>Connector/J 26.7.0+</td>
+   <td>Connector/J minimal 8.4.0, recommended 26.7.0+</td>
 </tr>
 
 <tr>
@@ -744,7 +744,7 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>PostgreSQL</td>
    <td>9.6 or later</td>
    <td>15 or later</td>
-   <td>42.7.13+</td>
+   <td>Minimal 42.2.2, recommended 42.7.13+</td>
 </tr>
 
 <tr>
@@ -758,7 +758,7 @@ The minimum supported versions are based on each database’s lifecycle status (
    <td>MariaDB</td>
    <td>10.2 or later</td>
    <td>10.11 or later</td>
-   <td>Connector/J 26.7.0+</td>
+   <td>Connector/J minimal 8.4.0, recommended 26.7.0+</td>
 </tr>
 
 </table>
