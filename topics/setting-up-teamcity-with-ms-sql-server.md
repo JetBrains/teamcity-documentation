@@ -33,7 +33,7 @@ In MS SQL Server Management Studio:
 SQL Server supports two ways of authentication: SQL Server authentication and Windows authentication mode.
 
 * SQL Authentication requires specifying username and a password in the database settings. It is recommended to start with this authentication before you try to use Windows authentication.
-* Windows authentication (MS SQL integrated security) allows the TeamCity server running under a specific Windows user connect to the SQL server as that user, without providing a username and a password. However, it requires [additional setup](#Additional+Settings+for+Windows+Authentication+%28MS+SQL+Integrated+Security%29)
+* Windows authentication (MS SQL integrated security) allows the TeamCity server running under a specific Windows user connect to the SQL server as that user, without providing a username and a password. However, it requires [additional setup](#integratedSecurityAuth).
 
 ### Create Dedicated User for TeamCity with SQL Server Authentication
 
