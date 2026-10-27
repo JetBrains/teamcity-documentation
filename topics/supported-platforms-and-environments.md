@@ -721,7 +721,7 @@ The minimum supported versions are based on each database’s lifecycle status (
 
 <tr>
    <td>HSQLDB<br/><br/>The internal HSQLDB database can be used for <b>evaluation purposes only</b>.</td>
-   <td>2.7.2 (embedded)</td>
+   <td>2.7.4 (embedded)</td>
    <td>2.7.4 (embedded)</td>
    <td>2.7.4 (embedded)</td>
 </tr>
