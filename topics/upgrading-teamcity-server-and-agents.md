@@ -27,13 +27,11 @@ To reduce the risks, install updates that contain security fixes promptly. TeamC
 
 * **Security patches** — critical fixes for major security vulnerabilities (for example, issues that allow unauthorized access to TeamCity). Security patches are unscheduled and released as soon as a critical vulnerability is fixed. Installed security patches are displayed under **Admin | Plugins**.
 
-   IMAGE
-
 * **Bugfix updates** — resolve minor and moderate security issues, including those found in 3rd-party tools that TeamCity uses (for example, Tomcat or Git). These updates are shipped on schedule, typically once or twice a month.
 
 To ensure your TeamCity instance is protected, we highly recommend that you never skip either of these updates. You can install both from the **Admin | Updates** page.
 
-**IMAGE**
+<img src="teamcity-security-patches.png" width="706" alt="Admin updates page"/>
 
 The **TeamCity version updates** section covers major and minor (bugfix) versions available for your active [license](licensing-policy.md). Newer updates include the older ones, so you can install only the topmost suggested version.
 
@@ -43,7 +41,7 @@ The **Security patches** section includes options that allow you to control how 
 
 <def title="Install automatically">
 
-TeamCity downloads and installs all security patches automatically, without administrator input. Administrators receive email notifications about every step of the process.
+TeamCity downloads and installs all security patches automatically, without administrator input. Administrators receive email notifications when a security patch is successfully installed, or when the installation failed.
 
 </def>
 
@@ -55,7 +53,7 @@ TeamCity downloads new security patches automatically and notifies server admini
 
 <def title="Ignore">
 
-The least secure option. TeamCity tracks new security patches and lists them in the corresponding section, but does not notify anyone. Administrators have to check this page regularly and install available updates themselves.
+The least secure option. TeamCity tracks new security patches and lists them in the corresponding section, but does not perform any actions or send any notifications. Administrators have to check this page regularly and install available updates themselves.
 
 </def>
 
