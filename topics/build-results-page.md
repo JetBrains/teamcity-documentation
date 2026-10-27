@@ -187,7 +187,7 @@ If the build agent runs [as a Windows service](start-teamcity-agent.md#Build+Age
 
 </note>
 
-Performance monitor uses `vmstat`, `/proc/diskstats`, and `/proc/meminfo` to obtain hardware usage data on Linux/macOS agents, and Windows Management Instrumentation (WMI) on Windows agents. It requires [Perl](https://learn.perl.org/installing/) on all platforms except Windows. If [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) is installed on an agent machine, TeamCity will use it, and the "% of free disk space" metric becomes available.
+Performance monitor uses `vmstat`, `/proc/diskstats`, and `/proc/meminfo` to obtain hardware usage data on Linux/macOS agents, and Windows Management Instrumentation (WMI) on Windows agents. It requires [Perl](https://learn.perl.org/installing/) on all platforms except Windows. If a [`telegraf`](https://www.influxdata.com/get-telegraf/) executable is available on the build agent’s `PATH`, TeamCity uses it for Performance Monitor, and the disk-space metric becomes available.
 
 
 ## Classic UI Tabs
