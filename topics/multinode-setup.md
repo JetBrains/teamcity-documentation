@@ -28,6 +28,8 @@ A basic HA setup must include the following components:
 * __Local storage on the TeamCity nodes__: necessary for the TeamCity installation and storing logs and local caches. To estimate the size of caches, see the size of the`<TeamCity data directory>/system/caches` directory in your current  installation.
 * __Dedicated reverse HTTP proxy server__.
 
+We also recommend adding a [distributed cache](#Distributed+Cache) server to share cached data between the nodes. Starting with version 2027.2, it will be required.
+
 The minimum number of server machines necessary for a high-availability setup is 5: a database, a network storage server, two TeamCity nodes, and one server for the reverse HTTP proxy. A simpler load-balancing solution might be achieved with fewer machines.
 
 >All nodes that use the same data directory share the same license key. If you own a TeamCity Enterprise license, no additional purchases are required.
@@ -49,6 +51,14 @@ Here are the main recommendations on setting up the shared Data Directory:
   * It is important that all the nodes see the current state of the shared Data Directory without delay. If this is not the case, it is likely to result in unstable behavior and frequent build log corruptions.
   * If TeamCity nodes run on Windows with Data Directory shared via SMB protocol, make sure all the registry keys mentioned in [this article](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-7/ff686200(v=ws.10)) are set to 0 on all the TeamCity nodes.
   * If the Data Directory is shared via NFS, make sure all nodes have the following option in their mount settings: `lookupcache=positive`.
+
+### Distributed Cache
+
+TeamCity nodes can share cached data through an external Redis-compatible server, such as Redis, Valkey, or Amazon ElastiCache. With a distributed cache, a value is calculated once by one node and reused by the others, which reduces the database load and lets nodes learn about changed data faster.
+
+Currently, a distributed cache is optional: without it, each node keeps its own local caches. See [](multinode-cache-setup.md) for the supported servers, the recommended setup, and configuration steps.
+
+<include from="multinode-cache-setup.md" element-id="2027-2-cache-required"/>
 
 ### Required JVM Options
 

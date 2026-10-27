@@ -765,6 +765,18 @@ The minimum supported versions are based on each database’s lifecycle status (
 
 [Read more details](set-up-external-database.md).
 
+## Distributed Cache
+{instance="tc"}
+
+A [multinode setup](multinode-setup.md) can use an external cache server to share cached data between TeamCity nodes. Starting with version 2027.2, a distributed cache will be required for a multinode setup. The following cache servers are supported:
+
+* Redis 7.0 or later
+* Valkey 7.2 or later
+* Amazon ElastiCache for Redis Node-based 7.0 or later (serverless is not supported)
+* Amazon ElastiCache for Valkey Node-based 7.2 or later (serverless is not supported)
+
+[Read more details](multinode-cache-setup.md).
+
 ## Game Engines
 
 * Unity, by the means of the [Unity Support](https://plugins.jetbrains.com/plugin/11453-unity-support) plugin (bundled in TeamCity Cloud and can be installed on-demand in TeamCity On-Premises)
