@@ -12,7 +12,77 @@ Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity
 To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
 
 
-<!--Automation-->
+### Full changelog
+{id=changelog-2026.3.2}
+
+<deflist collapsible="true">
+    <def title="Implemented features" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102444"><b>TW-102444</b></a> — Allow selecting agent pool or executor for DSL compilation</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100277"><b>TW-100277</b></a> — Brave Mode for TeamCity MCP</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101941"><b>TW-101941</b></a> — Further tune CSAT popup appearance conditions</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100636"><b>TW-100636</b></a> — Support execution timeouts for Pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100318"><b>TW-100318</b></a> — Ask for the pull request owner in TeamCity if we can't match pull request author to any TeamCity user</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-97076"><b>TW-97076</b></a> — Revise "Share Feedback" button to use CSAT flow for feedback</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96574"><b>TW-96574</b></a> — Build Overview Tab UX improvements</li>
+        </ul>
+    </def>
+    <def title="Minor improvements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-79866"><b>TW-79866</b></a> — REST for Compatibles agents page</li>
+        </ul>
+    </def>
+    <def title="Pipeline enhancements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98059"><b>TW-98059</b></a> — Show Pending Changes for Pipelines</li>
+        </ul>
+    </def>
+    <def title="Fixed bugs" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104876"><b>TW-104876</b></a> — On change Security patch installation mode, add a user feedback whether the changes were saved</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104556"><b>TW-104556</b></a> — What's new popup shows outdates information for TeamCity Cloud</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104459"><b>TW-104459</b></a> — Remote run fails with error: "You do not have enough permissions to access VCS modification"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104816"><b>TW-104816</b></a> — Artifact publishing from Windows share fails</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100871"><b>TW-100871</b></a> — Builds fail due to irrelevant git warnings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100479"><b>TW-100479</b></a> — TeamCity builds sporadically fail to perform checkout with Git 2.54.0: unable to find all commit-graph files</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105067"><b>TW-105067</b></a> — Merge runners: Visual editor does not show the defaults of nested runner fields, but the build uses them</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104989"><b>TW-104989</b></a> — Server accepts base clean-up rule changes for read-only build configurations and templates</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104981"><b>TW-104981</b></a> — Unnecessary triggering in unmodified pull request branches after the server restart</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104902"><b>TW-104902</b></a> — Multi-node: build chain stays queued after change collection with temporarily missing dependencies</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104813"><b>TW-104813</b></a> — After server restart, connected cloud agents are not matched back to their instances, so instances with running builds are terminated as idle</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104767"><b>TW-104767</b></a> — Click "Check for updates" on a secondary node doesn't load new security patches</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104602"><b>TW-104602</b></a> — "Show dev panel" button appears when  creating a Kubernetes cloud profile</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104595"><b>TW-104595</b></a> — error during commit configuration changes into configuration repository should be consider like failure of executing persist task</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104594"><b>TW-104594</b></a> — Failure during executing persist task created by secondary-node bypasses the settings persist health report</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104529"><b>TW-104529</b></a> — Load settings from VCS and auto-sync do nothing for a project created by its parent's versioned settings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104499"><b>TW-104499</b></a> — A VCS root with too big body causes errors during the changes collection which block processing of other VCS roots</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104476"><b>TW-104476</b></a> — All agents are reported as compatible with empty runs-on</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104180"><b>TW-104180</b></a> — When an upstream job is reused for a job with parallel tests feature enabled, batches don't receive dependencies to the reused job</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104175"><b>TW-104175</b></a> — Update link from the help dropdown</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103608"><b>TW-103608</b></a> — AI Assistant: OpenAI-compatible provider drops the last URL path segment when the URL has no trailing slash</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103595"><b>TW-103595</b></a> — Dynamic Build Chains: revisions are not synchronised between the Final and the Generator builds</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103336"><b>TW-103336</b></a> — Ignore a build configuration ID alias when the loaded settings also describe the alias target under its current ID</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98904"><b>TW-98904</b></a> — Check for sufficient clickable area of icon buttons in expandable sections</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98419"><b>TW-98419</b></a> — TeamCity provides artifact file with incorrect Content-disposition header format</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-88529"><b>TW-88529</b></a> — Unnecessary flickering on expand of a commit with multiline comment</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-85699"><b>TW-85699</b></a> — Matrix build (and Parallel Tests) does not automatically assign agent to virtual builds.</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-59898"><b>TW-59898</b></a> — It's possible  to unpause a build even if teamcity.ui.settings.readOnly is set to true</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103264"><b>TW-103264</b></a> — Transient artifact dependency resolution failure after build cancellation and restart</li>
+        </ul>
+    </def>
+    <def title="Resolved performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104785"><b>TW-104785</b></a> — Loading notification rules might exhaust database connection pool leading to TeamCity outage</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104295"><b>TW-104295</b></a> — Slow revision calculation for checkout rules affecting rarely changed files</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100634"><b>TW-100634</b></a> — Inefficient large files processing when uploading artefacts to TeamCity server</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-73334"><b>TW-73334</b></a> — Project overview with many builds and branches works slow</li>
+        </ul>
+    </def>
+    <def title="Security" default-state="collapsed">
+        45 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        <note>Security bulletins are typically published a few days after the release date.</note>
+    </def>
+</deflist>
 
 
 ## Build 261911, 1 October 2026
