@@ -3,7 +3,7 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Build ???, 28 October 2026
+## Build 266911, 28 October 2026
 
 ### MCP brave mode
 
