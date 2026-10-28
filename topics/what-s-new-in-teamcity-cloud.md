@@ -42,7 +42,6 @@ For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104556"><b>TW-104556</b></a> — What's new popup shows outdates information for TeamCity Cloud</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104459"><b>TW-104459</b></a> — Remote run fails with error: "You do not have enough permissions to access VCS modification"</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100871"><b>TW-100871</b></a> — Builds fail due to irrelevant git warnings</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100479"><b>TW-100479</b></a> — TeamCity builds sporadically fail to perform checkout with Git 2.54.0: unable to find all commit-graph files</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-105067"><b>TW-105067</b></a> — Merge runners: Visual editor does not show the defaults of nested runner fields, but the build uses them</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104989"><b>TW-104989</b></a> — Server accepts base clean-up rule changes for read-only build configurations and templates</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104981"><b>TW-104981</b></a> — Unnecessary triggering in unmodified pull request branches after the server restart</li>
