@@ -19,23 +19,6 @@ You can now cap how long a pipeline run or an individual job may take: use the n
 
 For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.md#DSL+Compilation), you can now select whether TeamCity should use any free build agent or specify an [agent pool](configuring-agent-pools.md) or [k8s executor](kubernetes-executor.md) that should run these tasks.
 
-### Reworked build Overview tab
-
-The [Overview tab](build-results-page.md#Overview+Tab) of finished pipeline and build configuration runs has been reworked to improve navigation and readability.
-
-* All contextual sections (**Changes**, **Deployment**, **Code coverage**, and so on) now appear as dedicated collapsible panes with unique icons, for a cleaner look and better distinction between them.
-
-    <img src="build-overview-collapsible-panes.png" width="706" alt="Collapsible panes of the Overview tab"/>
-
-* The **Tests** pane now has toggles that switch between a flat list and a tree view.
-
-* Each test row has a **View test history** icon that opens the full run history of this test.
-
-    <img src="build-overview-tests.png" width="706" alt="Tests pane"/>
-
-    <img src="view-test-history2.png" width="706" thumbnail="true" alt="Test history page"/>
-
-* By default, tests are now sorted by failure order: the tests that failed first appear on top. Tests that have failed across multiple builds also display an "in N builds" label that highlights a recurring issue.
 
 ### Full changelog
 {id=changelog-2026.3.2}
@@ -49,7 +32,6 @@ The [Overview tab](build-results-page.md#Overview+Tab) of finished pipeline and 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100636"><b>TW-100636</b></a> — Support execution timeouts for Pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100318"><b>TW-100318</b></a> — Ask for the pull request owner in TeamCity if we can't match pull request author to any TeamCity user</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97076"><b>TW-97076</b></a> — Revise "Share Feedback" button to use CSAT flow for feedback</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-96574"><b>TW-96574</b></a> — Build Overview Tab UX improvements</li>
         </ul>
     </def>
     <def title="Minor improvements" default-state="collapsed">
