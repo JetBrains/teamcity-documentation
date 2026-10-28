@@ -11,10 +11,6 @@ Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity
 
 To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
 
-### Pipeline execution timeouts
-
-You can now cap how long a pipeline run or an individual job may take: use the new [Execution timeout](job-settings.md#Execution+timeout) setting in the **Optimizations** group of pipeline and job settings. In addition, pipelines now respect the [default build execution timeout](teamcity-configuration-and-maintenance.md#Build+Settings) configured in the server's global settings.
-
 ### On-agent Kotlin DSL compilation
 
 For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.md#DSL+Compilation), you can now select whether TeamCity should use any free build agent or specify an [agent pool](configuring-agent-pools.md) or [k8s executor](kubernetes-executor.md) that should run these tasks.
@@ -29,7 +25,6 @@ For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.
             <li><a href="https://youtrack.jetbrains.com/issue/TW-102444"><b>TW-102444</b></a> — Allow selecting agent pool or executor for DSL compilation</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100277"><b>TW-100277</b></a> — Brave Mode for TeamCity MCP</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-101941"><b>TW-101941</b></a> — Further tune CSAT popup appearance conditions</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100636"><b>TW-100636</b></a> — Support execution timeouts for Pipelines</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100318"><b>TW-100318</b></a> — Ask for the pull request owner in TeamCity if we can't match pull request author to any TeamCity user</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-97076"><b>TW-97076</b></a> — Revise "Share Feedback" button to use CSAT flow for feedback</li>
         </ul>
