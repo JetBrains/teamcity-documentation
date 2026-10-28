@@ -291,15 +291,24 @@ When a matrix build starts, TeamCity runs the build, as follows:
 3. As soon as the first generated build starts to run, TeamCity starts the parent build (effectively, a type of [composite build](composite-build-configuration.md) with dependencies on the generated builds), which aggregates the build results from all the generated builds.
 4. After the matrix build is complete, you can view the summary table on the **Overview** tab of the matrix build.
 
-If you only need to build a part of the matrix, running a custom build is a convenient way of doing this (you can also upvote the [TW-84312](https://youtrack.jetbrains.com/issue/TW-84312/Matrix-builds-Allow-to-exclude-parameter-combinations-run-subset-of-matrix-parameters) request for a dedicated UI to run individual combinations). Switch to the **Parameters** tab of the **Run Custom Build** dialog and specify required parameter values (use comma as a separator). Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
+### Running a Partial Subset of Matrix Combinations
 
-<img src="dk-matrix-partial.png" alt="Running a portion of the matrix" width="706"/>
+If you only need to build a part of the matrix, you can do this in two ways:
 
-In particular, when configuring a [build trigger](configuring-build-triggers.md) on the matrix build, you can configure the **Build Customization** tab in the trigger configuration dialog to customize the matrix parameter values used for the triggered builds.
+* Use the **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog to override matrix parameter values. 
 
-> When setting matrix parameters in the **Build Customization** tab, you must enter the parameter values as a comma-separated list. For example, to iterate over two browser values, you could set the parameter name to `Browser` and the parameter value to `Chrome, Firefox`.
-> 
-{style="note"}
+    <img src="dk-matrix-partial.png" alt="Running a portion of the matrix" width="706"/>
+
+    Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
+
+* Use the **Build Customization** tab of a [build trigger](configuring-build-triggers.md) that runs matrix builds on a schedule. 
+
+* Add the `teamcity.matrix.excludedCombinations` [parameter](configuring-build-parameters.md) to a build configuration. This parameter allows you to specify multiple combinations (separated by the `;` character) that should be excluded. Note that each combination specified in this parameter forces TeamCity to skip both exact and partial matches. For example:
+
+    * initial parameter values: `os = Linux, Mac, Windows` and `java = 8, 11, 17`
+    * exclude parameter: `teamcity.matrix.excludedCombinations = os=Mac,java=8; os=Windows`
+    * combinations that will be skipped: `[Mac, 8]` (exact match), any `[Windows, N]` combination (partial match)
+    * combinations that will run: `[Linux, 8], [Linux, 11], [Linux, 17], [Mac, 11], [Mac, 17]`
 
 
 ## Viewing a Matrix Build
