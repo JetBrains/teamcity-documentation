@@ -295,20 +295,23 @@ When a matrix build starts, TeamCity runs the build, as follows:
 
 If you only need to build a part of the matrix, you can do this in two ways:
 
-* Use the **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog to override matrix parameter values. 
+* Use the **Parameters** tab of the [Run Custom Build](running-custom-build.md) dialog to override matrix parameters: skip irrelevant values or add a few extra ones.
 
     <img src="dk-matrix-partial.png" alt="Running a portion of the matrix" width="706"/>
 
     Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
 
-* Use the **Build Customization** tab of a [build trigger](configuring-build-triggers.md) that runs matrix builds on a schedule. 
 
-* Add the `teamcity.matrix.excludedCombinations` [parameter](configuring-build-parameters.md) to a build configuration. This parameter allows you to specify multiple combinations (separated by the `;` character) that should be excluded. Note that each combination specified in this parameter forces TeamCity to skip both exact and partial matches. For example:
+* Add the `teamcity.matrix.excludedCombinations` [parameter](configuring-build-parameters.md) to a build configuration. This parameter allows you to specify multiple combinations that should be excluded. Each combination is separated by the `;` character, while its parameters use comma (`,`) as a separator. Note that TeamCity skips both exact and partial matches of each `excludedCombinations` entry. For example:
 
     * initial parameter values: `os = Linux, Mac, Windows` and `java = 8, 11, 17`
     * exclude parameter: `teamcity.matrix.excludedCombinations = os=Mac,java=8; os=Windows`
     * combinations that will be skipped: `[Mac, 8]` (exact match), any `[Windows, N]` combination (partial match)
     * combinations that will run: `[Linux, 8], [Linux, 11], [Linux, 17], [Mac, 11], [Mac, 17]`
+
+> You can use the **Build Customization** tab of a [build trigger](configuring-build-triggers.md) to run partial Matrix builds on schedule. This tab allows you to override existing and add new parameters, which fits both scenarios described above.
+> 
+{style="tip"}
 
 
 ## Viewing a Matrix Build
