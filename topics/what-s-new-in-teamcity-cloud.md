@@ -3,7 +3,7 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Build ????, 28 October 2026
+## Build 261911, 28 October 2026
 
 ### MCP brave mode
 
@@ -11,6 +11,31 @@ Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity
 
 To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
 
+### Pipeline execution timeouts
+
+You can now cap how long a pipeline run or an individual job may take: use the new [Execution timeout](job-settings.md#Execution+timeout) setting in the **Optimizations** group of pipeline and job settings. In addition, pipelines now respect the [default build execution timeout](teamcity-configuration-and-maintenance.md#Build+Settings) configured in the server's global settings.
+
+### On-agent Kotlin DSL compilation
+
+For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.md#DSL+Compilation), you can now select whether TeamCity should use any free build agent or specify an [agent pool](configuring-agent-pools.md) or [k8s executor](kubernetes-executor.md) that should run these tasks.
+
+### Reworked build Overview tab
+
+The [Overview tab](build-results-page.md#Overview+Tab) of finished pipeline and build configuration runs has been reworked to improve navigation and readability.
+
+* All contextual sections (**Changes**, **Deployment**, **Code coverage**, and so on) now appear as dedicated collapsible panes with unique icons, for a cleaner look and better distinction between them.
+
+    <img src="build-overview-collapsible-panes.png" width="706" alt="Collapsible panes of the Overview tab"/>
+
+* The **Tests** pane now has toggles that switch between a flat list and a tree view.
+
+* Each test row has a **View test history** icon that opens the full run history of this test.
+
+    <img src="build-overview-tests.png" width="706" alt="Tests pane"/>
+
+    <img src="view-test-history2.png" width="706" thumbnail="true" alt="Test history page"/>
+
+* By default, tests are now sorted by failure order: the tests that failed first appear on top. Tests that have failed across multiple builds also display an "in N builds" label that highlights a recurring issue.
 
 ### Full changelog
 {id=changelog-2026.3.2}
@@ -44,7 +69,6 @@ To limit what your agents can do, switch back to safe mode or, as we recommend, 
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104459"><b>TW-104459</b></a> — Remote run fails with error: "You do not have enough permissions to access VCS modification"</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104816"><b>TW-104816</b></a> — Artifact publishing from Windows share fails</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-100871"><b>TW-100871</b></a> — Builds fail due to irrelevant git warnings</li>
-            <li><a href="https://youtrack.jetbrains.com/issue/TW-100479"><b>TW-100479</b></a> — TeamCity builds sporadically fail to perform checkout with Git 2.54.0: unable to find all commit-graph files</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-105067"><b>TW-105067</b></a> — Merge runners: Visual editor does not show the defaults of nested runner fields, but the build uses them</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104989"><b>TW-104989</b></a> — Server accepts base clean-up rule changes for read-only build configurations and templates</li>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-104981"><b>TW-104981</b></a> — Unnecessary triggering in unmodified pull request branches after the server restart</li>
