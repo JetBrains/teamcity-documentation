@@ -37,6 +37,7 @@ For projects that run their Kotlin DSL compilation [on build agents](kotlin-dsl.
     <def title="Minor improvements" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-79866"><b>TW-79866</b></a> — REST for Compatibles agents page</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105338"><b>TW-105338</b></a> — Deprecate classic (legacy) queries for Vault parameters</li>
         </ul>
     </def>
     <def title="Pipeline enhancements" default-state="collapsed">
