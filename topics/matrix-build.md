@@ -309,7 +309,7 @@ If you only need to build a part of the matrix, you can do this in two ways:
     * combinations that will be skipped: `[Mac, 8]` (exact match), any `[Windows, N]` combination (partial match)
     * combinations that will run: `[Linux, 8], [Linux, 11], [Linux, 17], [Mac, 11], [Mac, 17]`
 
-> You can use the **Build Customization** tab of a [build trigger](configuring-build-triggers.md) to run partial Matrix builds on schedule. This tab allows you to override existing and add new parameters, which fits both scenarios described above.
+> You can use the **Build Customization** tab of a [build trigger](configuring-build-triggers.md) to run partial matrix builds on a schedule. This tab allows you to override existing and add new parameters, which fits both scenarios described above.
 > 
 {style="tip"}
 
