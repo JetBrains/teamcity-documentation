@@ -12,6 +12,9 @@ Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity
 To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
 
 
+<!--Automation-->
+
+
 ## Build 261911, 1 October 2026
 
 ### Additional tabs for jobs
