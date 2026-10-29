@@ -2,6 +2,12 @@
 [//]: # (help-id: Upgrade Notes)
 
 
+## Changes from 2026.2.1 to 2026.2.2
+{id="2026.2.2"}
+
+* The `IMPORT_PROJECTS` permission no longer comes with permissions to create new subprojects, configure VCS settings, manage users and user groups, and modify project assignments. Each of these actions now requires the corresponding individual permission.
+
+
 ## Changes from 2026.2 to 2026.2.1
 {id="2026.2.1"}
 
