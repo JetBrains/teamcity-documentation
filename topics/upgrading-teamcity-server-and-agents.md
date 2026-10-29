@@ -19,23 +19,33 @@ TeamCity supports upgrades from any of the previous versions to the later ones. 
 It is recommended to plan for regular upgrades to run the latest TeamCity version at least after several bugfix updates are released. This way, you run a fully [supported version](teamcity-release-cycle.md) with the latest fixes and security patches.
 {instance="tc"}
 
-## Security Patches
+## Installing Updates
 
-TeamCity is a web application that heavily relies on communications among the server, build agents, VCS providers, and other external services (such as [AWS S3](storing-build-artifacts-in-amazon-s3.md) buckets or [Nexus LFS](git.md#LFS+and+Submodules+Support) repositories). As such, when deployed in non-closed environments, TeamCity is vulnerable to attacks exploiting common vulnerabilities and exposures (CVEs), including those inherited from third-party solutions and libraries it employs.
+Minor TeamCity updates are shipped as regular [bugfix updates](teamcity-release-cycle.md) or standalone [security patches](#Security+Patches).
 
-To reduce the risks, install updates that contain security fixes promptly. TeamCity ships them either as standalone security patches or as part of regular [bugfix updates](teamcity-release-cycle.md).
+* **Bugfix updates** — resolve regular bugs and performance problems, may include minor features, and address minor and moderate security issues. These updates are shipped on schedule, typically once or twice a month.
 
 * **Security patches** — critical fixes for major security vulnerabilities (for example, issues that allow unauthorized access to TeamCity). Security patches are unscheduled and released as soon as a critical vulnerability is fixed. Installed security patches are displayed under **Admin | Plugins**.
 
-* **Bugfix updates** — resolve minor and moderate security issues, including those found in 3rd-party tools that TeamCity uses (for example, Tomcat or Git). These updates are shipped on schedule, typically once or twice a month.
+> Both types of updates resolve security issues, so we highly recommend that you never skip either of these updates.
+> 
+{style="warning"}
 
-To ensure your TeamCity instance is protected, we highly recommend that you never skip either of these updates. You can install both from the **Admin | Updates** page.
+You can install both from the **Admin | Updates** page.
 
 <img src="teamcity-security-patches.png" width="706" alt="Admin updates page"/>
 
 The **TeamCity version updates** section covers major and minor (bugfix) versions available for your active [license](licensing-policy.md). Newer updates include the older ones, so you can install only the topmost suggested version.
 
-The **Security patches** section includes options that allow you to control how TeamCity handles new available updates.
+### Security Patches
+
+TeamCity is a web application that heavily relies on communications among the server, build agents, VCS providers, and other external services (such as [AWS S3](storing-build-artifacts-in-amazon-s3.md) buckets or [Nexus LFS](git.md#LFS+and+Submodules+Support) repositories). As such, when deployed in non-closed environments, TeamCity is vulnerable to attacks exploiting common vulnerabilities and exposures (CVEs), including those inherited from third-party solutions and libraries it employs. To reduce the risks, always install updates that contain security fixes (both bugfix updates and standalone security patches).
+
+> See also: [](security-notes.md#Recommended+Security+Practices)
+> 
+{style="tip"}
+
+The **Security patches** section of the **Admin | Updates** page includes options that allow you to control how TeamCity handles new available updates.
 
 <deflist type="full">
 
@@ -63,7 +73,7 @@ The least secure option. TeamCity tracks new security patches and lists them in 
 >
 >     Make sure that users who should receive email notifications about available security patches have email addresses specified in their [user profiles](configuring-your-user-profile.md) and [email notifications are enabled](configuring-notifications.md).
 >
-> * For [multinode setups](multinode-setup.md), all nodes are patched in the background as soon as they are finished with their ongoing activities. In most cases, applying a security patch does not require a node restart. If a restart is needed, TeamCity sends a related notification to server administrators.
+> * For [multinode setups](multinode-setup.md), all nodes are patched in the background and typically require neither preparation nor restart. If a restart is needed after the patch is installed, TeamCity sends a related notification to server administrators.
 {style="tip"}
 
 
