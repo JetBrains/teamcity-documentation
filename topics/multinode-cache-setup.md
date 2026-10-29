@@ -1,15 +1,14 @@
-[//]: # (title: Set up Distributed Cache)
-[//]: # (help-id: Set up Distributed Cache;Distributed Cache;Multinode Cache Setup)
+[//]: # (title: Distributed Multinode Cache)
+[//]: # (help-id: Distributed Multinode Cache;Set up Distributed Cache)
 
 <show-structure for="chapter" depth="2"/>
 
 In a [multinode setup](multinode-setup.md), TeamCity nodes can share cached data through an external Redis-compatible server. With a distributed cache, a value that is expensive to compute or to read from the database is calculated once by one node and then reused by all other nodes. This lowers the load on the database and lets nodes learn about changed data faster.
 
-Currently, a distributed cache is optional. Without it, each node maintains its own local caches.
-
 <snippet id="2027-2-cache-required">
 
 <warning>
+Currently, setting up a distributed cache is optional.
 
 Starting with version 2027.2, a distributed cache will be required for a [multinode setup](multinode-setup.md). If you run TeamCity with several nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance to prepare for upgrading to TeamCity 2027.2.
 
@@ -19,36 +18,68 @@ Starting with version 2027.2, a distributed cache will be required for a [multin
 
 For the list of supported cache servers, see [](supported-platforms-and-environments.md#Distributed+Cache).
 
-## How the Distributed Cache Works
+## Common caching concepts
 
-Each TeamCity node uses two cache levels:
+Whenever a TeamCity node needs a value, it looks for it in the following sources (in order):
 
-* a local in-memory cache on the node;
-* a shared cache on the Redis server, available to all nodes.
+1. A local in-memory cache on the node
+2. A shared cache on the Redis-compatible server, available to all nodes
+3. A database or manual calculation of a required value
 
-When a node needs a value, it checks its local cache first, then the shared cache. Only if both miss does the node calculate the value or read it from the database, and then stores the result in the shared cache for the other nodes.
+Adding the shared cache layer brings the following benefits:
 
-When cached data changes, the Redis server notifies all connected nodes, and each node drops its outdated local copy. Without a distributed cache, nodes learn about such changes by periodically polling the database, which takes longer. Note that invalidation is fast, but not instant: for a short time, different nodes may see slightly different cached values.
+* Required values are obtained faster. A node does need to compute a value or retrieve it from a database, if this value is already stored in cache. If it's not, a node will perform this expensive operation and put the calculated/retrieved value in a shared cache for other nodes to use.
 
-Key principles to keep in mind when planning the setup:
+* Faster value invalidation. Without a distributed cache, nodes rely on periodically polling the database to learn about values changes. A cache server speeds up this process by explicitly notifying nodes about changes in cached data, which causes them to drop their outdated local copies.
 
-* __The database remains the source of truth.__ The cache only stores copies of data that TeamCity can always recalculate. Entries may be evicted at any moment, and losing the whole cache content does not lose any TeamCity data. Redis persistence (RDB or AOF) is therefore not required.
-* __Cache errors do not break the server.__ If the Redis server becomes unavailable while TeamCity is running, nodes log the errors and fall back to calculating values themselves. The server keeps working, but with a higher load on the database and nodes.
-* __Cached values are not encrypted.__ TeamCity stores them as JSON: small values as plain text, large values compressed. Compression is not a protection, as anyone with access to the Redis server can read both. TeamCity does not put secrets into the cache, but cached data can still contain information about your projects and builds. Restrict network access to the Redis server, enable authentication, and connect [over TLS](#TLS+Connection).
+    > The latter approach is more fluent, but it does not guarantee instant updates: for a brief moment, different nodes can store slightly different cached values.
+    >
+    {style="note"}
+
+## Key principles of a shared cache
+
+When planning a shared cache setup, keep in mind the following key points:
+
+* __The database remains the source of truth.__ The cache only stores copies of data that TeamCity can always recalculate. Entries may be evicted at any moment, and losing the entire cache content does not cause any data loss in TeamCity. Redis persistence (RDB or AOF) is therefore not required.
+* __Cache errors do not break the server.__ If the cache server becomes unavailable while TeamCity is running, nodes log the errors and fall back to calculating values manually. TeamCity server maintains normal operations, with the only downside being a higher load on the database and nodes.
+* __Cached values are not encrypted.__ TeamCity stores cached values as JSON: small values as plain text, large values compressed. Anyone with access to the cache server can read these values. TeamCity does not cache secrets, but caches can still store sensitive information about your projects and builds. Restrict network access to the cache server, enable authentication, and connect [over TLS](#TLS+Connection) to mitigate the security risks.
 
 ## Recommended Setup
 
-* __Use a dedicated Redis server or cluster for each TeamCity installation.__ All TeamCity keys share the same prefix, so two installations connected to the same Redis server would overwrite each other's data.
-* __Use a Redis cluster in production.__ A cluster keeps the cache available when one of its nodes fails. A standalone Redis server is suitable for evaluation and small installations.
-* __Place the Redis server close to the TeamCity nodes__, in the same network and data center, as every cache miss on a node results in a network round trip to Redis.
+Follow the recommendations below to set up a shared cache for your multi-node TeamCity servers.
+
+<deflist type="full">
+
+<def title="Use a dedicated Redis-compatible server or cluster for each TeamCity installation">
+
+All TeamCity keys share the same prefix, so two installations connected to the same shared cache server will overwrite each other's data.
+
+</def>
+
+
+<def title="Prioritize a cluster for production">
+
+A cluster keeps the cache available when one of its nodes fails. A standalone shared cache server is suitable for evaluation and small installations.
+
+</def>
+
+
+<def title="Place the cache server close to the TeamCity nodes">
+
+Every cache miss on a node results in a network round trip to a cache server, so placing it in the same network and data center as TeamCity nodes is optimal.
+
+</def>
+
+</deflist>
+
 
 ## Configure the Cache Connection
 
-The connection to the cache server is configured in the same way as the [database connection](set-up-external-database.md#Configure+the+Database+Connection): in the `database.properties` file or via environment variables. The same settings must be used on all nodes.
+The connection to the cache server is configured similarly to the [database connection](set-up-external-database.md#Configure+the+Database+Connection): in the `database.properties` file or via environment variables. All TeamCity nodes must use the same settings.
 
 ### Properties File
 
-Add the following properties to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file:
+Add the following properties to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file and restart all TeamCity nodes to apply the changes.
 
 <table>
 <tr>
@@ -65,7 +96,9 @@ Description
 <code>redisUrl</code>
 </td>
 <td>
-Address of the Redis server in the <code>host:port</code> format. If the port is omitted, the default <code>6379</code> port is used. The format of the value defines the client type:
+Address of the Redis-compatible server in the <code>host:port</code> format. If the port is omitted, the default <code>6379</code> port is used.
+
+The format of the value defines the client type:
 <ul>
 <li>
 A single <code>host:port</code> pair connects to a standalone server, for example: <code>redis.example.com:6379</code>
@@ -98,7 +131,7 @@ The value must not contain anything else. Specify credentials in the <code>redis
 <code>redisProperties.user</code>
 </td>
 <td>
-Username for connecting to the Redis server. Omit if no authentication is required.
+Username for connecting to the cache server. Can be omitted if no authentication is required.
 </td>
 </tr>
 
@@ -107,7 +140,7 @@ Username for connecting to the Redis server. Omit if no authentication is requir
 <code>redisProperties.password</code>
 </td>
 <td>
-Password for connecting to the Redis server. Omit if no authentication is required.
+Password for connecting to the cache server. Can be omitted no authentication is required.
 </td>
 </tr>
 </table>
@@ -120,11 +153,11 @@ redisProperties.user=teamcity
 redisProperties.password=<password>
 ```
 
-Restart all TeamCity nodes to apply the changes.
+
 
 ### Environment Variables
 
-The cache connection settings can also be defined by setting environment variables in the environment of every TeamCity node. This is useful, for example, to avoid storing the Redis password in the `database.properties` file.
+The cache connection settings can also be defined by setting environment variables in the environment of every TeamCity node. This is useful, for example, to avoid storing the cache server password in the `database.properties` file.
 
 <table>
 <tr>
@@ -141,7 +174,7 @@ Description
 <code>TEAMCITY_REDIS_URL</code>
 </td>
 <td>
-Address of the Redis server. Overrides <code>redisUrl</code>.
+Address of the Redis-compatible server. Overrides <code>redisUrl</code>.
 </td>
 </tr>
 
@@ -150,7 +183,7 @@ Address of the Redis server. Overrides <code>redisUrl</code>.
 <code>TEAMCITY_REDIS_USER</code>
 </td>
 <td>
-Username for connecting to the Redis server. Overrides <code>redisProperties.user</code>.
+Username for connecting to the cache server. Overrides <code>redisProperties.user</code>.
 </td>
 </tr>
 
@@ -159,20 +192,20 @@ Username for connecting to the Redis server. Overrides <code>redisProperties.use
 <code>TEAMCITY_REDIS_PASSWORD</code>
 </td>
 <td>
-Password for connecting to the Redis server. Overrides <code>redisProperties.password</code>.
+Password for connecting to the cache server. Overrides <code>redisProperties.password</code>.
 </td>
 </tr>
 </table>
 
 ### TLS Connection
 
-We recommend encrypting the connection to the Redis server, especially if it carries the Redis password or crosses networks you do not fully control. To connect over TLS:
+We recommend encrypting the connection to the Redis server, especially if it carries the Redis password or crosses networks that you do not fully control. To connect over TLS:
 
-1. Enable TLS on the Redis server. On Amazon ElastiCache, this option is called _encryption in transit_.  
+1. Enable TLS on the cache server. On Amazon ElastiCache, this option is called _encryption in transit_.  
    For a self-hosted cluster, also set `cluster-announce-hostname` and `cluster-preferred-endpoint-type hostname` on every cluster node, so that the nodes announce host names matching their certificates instead of IP addresses. Amazon ElastiCache already does this.
 2. Make sure the JVM running each TeamCity node trusts the Redis server certificate. TeamCity verifies the certificate against the default trust store of the JVM and checks that the host name of each Redis node matches its certificate. This check cannot be turned off.
-   * Certificates issued by a well-known certificate authority are usually trusted by default.
-   * For a self-signed certificate or a certificate issued by your organization's certificate authority, import the CA certificate into the JVM trust store on every node, as described in [](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). Certificates [uploaded to TeamCity](uploading-ssl-certificates.md) are not used for this connection.
+    * Certificates issued by a well-known certificate authority are usually trusted by default.
+    * For a self-signed certificate or a certificate issued by your organization's certificate authority, import the CA certificate into the JVM trust store on every node, as described in [](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). Certificates [uploaded to TeamCity](uploading-ssl-certificates.md) are not used for this connection.
 3. Add the `rediss://` scheme to `redisUrl` (or `TEAMCITY_REDIS_URL`) on all nodes, for example: `rediss://redis.example.com:6379`.
 4. Restart all TeamCity nodes.
 
