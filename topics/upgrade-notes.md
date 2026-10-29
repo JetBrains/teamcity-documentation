@@ -14,6 +14,10 @@ The TeamCity server and build agents now always start with the `-Duser.language=
 
 This change guarantees that log messages, date and number parsing, and string comparisons behave identically on all machines, regardless of their OS locale. Overriding the language via [`TEAMCITY_SERVER_OPTS` or `TEAMCITY_AGENT_OPTS`](server-startup-properties.md) is not recommended. If a build requires a different JVM locale, set this locale for the build process itself. To do this, use the **Additional command-line parameters** settings of Maven, Gradle, Ant, and other build steps.
 
+### Distributed Cache for Multinode Setups
+
+TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with several nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance to prepare for upgrading to TeamCity 2027.2.
+
 
 ## Changes from 2026.2 to 2026.2.1
 {id="2026.2.1"}
