@@ -42,9 +42,9 @@ When planning a shared cache setup, keep in mind the following key points:
 
 * __The database remains the source of truth.__ The cache only stores copies of data that TeamCity can always recalculate. Entries may be evicted at any moment, and losing the entire cache content does not cause any data loss in TeamCity. Redis persistence (RDB or AOF) is therefore not required.
 * __Cache errors do not break the server.__ If the cache server becomes unavailable while TeamCity is running, nodes log the errors and fall back to calculating values manually. TeamCity server maintains normal operations, with the only downside being a higher load on the database and nodes.
-* __Cached values are not encrypted.__ TeamCity stores cached values as JSON: small values as plain text, large values compressed. Anyone with access to the cache server can read these values. TeamCity does not cache secrets, but caches can still store sensitive information about your projects and builds. Restrict network access to the cache server, enable authentication, and connect [over TLS](#TLS+Connection) to mitigate the security risks.
+* __Cached values are not encrypted.__ TeamCity stores cached values as JSON: small values as plain text, large values compressed. Anyone with access to the cache server can read these values. TeamCity does not cache secrets, but caches can still store sensitive information about your projects and builds. Restrict network access to the cache server, enable authentication, and connect [over TLS](#TLS+connection) to mitigate the security risks.
 
-## Recommended Setup
+## Recommended setup
 
 Follow the recommendations below to set up a shared cache for your multi-node TeamCity servers.
 
@@ -73,11 +73,11 @@ Every cache miss on a node results in a network round trip to a cache server, so
 </deflist>
 
 
-## Configure the Cache Connection
+## Configure the cache connection
 
 The connection to the cache server is configured similarly to the [database connection](set-up-external-database.md#Configure+the+Database+Connection): in the `database.properties` file or via environment variables. All TeamCity nodes must use the same settings.
 
-### Properties File
+### Properties file
 
 Add the following properties to the [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/config/database.properties` file and restart all TeamCity nodes to apply the changes.
 
@@ -113,7 +113,7 @@ A single <code>host:port</code> pair with the <code>cluster@</code> prefix also 
 An optional scheme at the start of the value defines whether the connection is encrypted:
 <ul>
 <li>
-<code>rediss://</code> connects over TLS. See <a href="#TLS+Connection">TLS Connection</a>.
+<code>rediss://</code> connects over TLS. See <a href="#TLS+connection">TLS Connection</a>.
 </li>
 <li>
 <code>redis://</code> or no scheme connects without encryption.
@@ -121,7 +121,7 @@ An optional scheme at the start of the value defines whether the connection is e
 </ul>
 The scheme goes before the <code>cluster@</code> prefix, for example: <code>rediss://cluster@redis-cluster.example.com:6379</code>
 <p>
-The value must not contain anything else. Specify credentials in the <code>redisProperties.user</code> and <code>redisProperties.password</code> properties: a URL with a <code>user:password@</code> part or a database index such as <code>/0</code> is rejected as a failed connection (see <a href="#Startup+Behavior">Startup Behavior</a>).
+The value must not contain anything else. Specify credentials in the <code>redisProperties.user</code> and <code>redisProperties.password</code> properties: a URL with a <code>user:password@</code> part or a database index such as <code>/0</code> is rejected as a failed connection (see <a href="#Startup+failure">Startup failure</a>).
 </p>
 </td>
 </tr>
@@ -155,7 +155,7 @@ redisProperties.password=<password>
 
 
 
-### Environment Variables
+### Environment variables
 
 The cache connection settings can also be defined by setting environment variables in the environment of every TeamCity node. This is useful, for example, to avoid storing the cache server password in the `database.properties` file.
 
@@ -197,33 +197,33 @@ Password for connecting to the cache server. Overrides <code>redisProperties.pas
 </tr>
 </table>
 
-### TLS Connection
+### TLS connection
 
-We recommend encrypting the connection to the Redis server, especially if it carries the Redis password or crosses networks that you do not fully control. To connect over TLS:
+We recommend encrypting the connection to the shared cache server, especially if it carries the server password or crosses networks that you do not fully control. To connect over TLS:
 
 1. Enable TLS on the cache server. On Amazon ElastiCache, this option is called _encryption in transit_.  
    For a self-hosted cluster, also set `cluster-announce-hostname` and `cluster-preferred-endpoint-type hostname` on every cluster node, so that the nodes announce host names matching their certificates instead of IP addresses. Amazon ElastiCache already does this.
-2. Make sure the JVM running each TeamCity node trusts the Redis server certificate. TeamCity verifies the certificate against the default trust store of the JVM and checks that the host name of each Redis node matches its certificate. This check cannot be turned off.
+2. Make sure the JVM running each TeamCity node trusts the cache server certificate. TeamCity verifies the certificate against the default trust store of the JVM and checks that the host name of each cache node matches its certificate. This verification is mandatory and cannot be disabled.
     * Certificates issued by a well-known certificate authority are usually trusted by default.
     * For a self-signed certificate or a certificate issued by your organization's certificate authority, import the CA certificate into the JVM trust store on every node, as described in [](using-https-to-access-teamcity-server.md#Configuring+client+JVM+for+trusting+server+certificate). Certificates [uploaded to TeamCity](uploading-ssl-certificates.md) are not used for this connection.
 3. Add the `rediss://` scheme to `redisUrl` (or `TEAMCITY_REDIS_URL`) on all nodes, for example: `rediss://redis.example.com:6379`.
 4. Restart all TeamCity nodes.
 
-If the certificate is not trusted or the host name does not match, the node cannot connect to the Redis server, and the [startup behavior](#Startup+Behavior) described below applies.
+If the certificate is not trusted or the host name does not match, the node is unable to connect to the cache server refuses to start. See the [](#Startup+failure) for more information.
 
-## Startup Behavior
+## Startup failure
 
-If the cache connection is configured but the node cannot connect to the Redis server on startup, the node does not start. This prevents nodes from silently running without the shared cache because of a configuration mistake.
+If the cache connection is configured but a node cannot connect to the required cache server on startup, it refuses to start. This behavior is implemented as a safety measure to ensure a simple misconfiguration does not cause TeamCity nodes to silently run without the shared cache.
 
-To let a node start without the cache in this case, set the `teamcity.redis.ignoreBootstrapError=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). The node then runs with local caches only.
+To override this behavior and force a node to start without the cache, set the `teamcity.redis.ignoreBootstrapError=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). 
 
->This property does not cover a Redis server whose version is too old: such a server accepts the connection, but the node fails later during startup when it uploads its function library. Make sure the server version is [supported](supported-platforms-and-environments.md#Distributed+Cache).
+>This property does not resolve issues related to outdated cache servers. If a Redis-compatible server has an unsupported version, it successfully accepts the connection, but a TeamCity node fails during startup when it attempts to upload its function library. See the list of supported Redis-compatible server versions [here](supported-platforms-and-environments.md#Distributed+Cache).
 >
 {style="note"}
 
-## Monitor the Cache
+## Monitor the cache
 
-Cache statistics, such as hits, misses, errors, and load times, are reported as server [metrics](teamcity-monitoring-and-diagnostics.md#Metrics). A growing number of errors usually indicates connection problems with the Redis server.
+Cache statistics, such as hits, misses, errors, and load times, are reported as server [metrics](teamcity-monitoring-and-diagnostics.md#Metrics). A growing number of errors usually indicates connection problems with the cache server.
 
 <seealso>
         <category ref="installation">
