@@ -23,6 +23,7 @@ TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached d
 {id="2026.2.2"}
 
 * The `IMPORT_PROJECTS` permission no longer comes with permissions to create new subprojects, configure VCS settings, manage users and user groups, and modify project assignments. Each of these actions now requires the corresponding individual permission.
+* The old `%vault:PATH!/KEY%` syntax for [HCP Vault queries](hashicorp-vault.md) was deprecated. Update parameters as described here: [](hashicorp-vault.md#Update+Legacy+Parameters).
 
 
 ## Changes from 2026.2 to 2026.2.1
