@@ -19,6 +19,12 @@ This change guarantees that log messages, date and number parsing, and string co
 TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with several nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance to prepare for upgrading to TeamCity 2027.2.
 
 
+## Changes from 2026.2.1 to 2026.2.2
+{id="2026.2.2"}
+
+* The `IMPORT_PROJECTS` permission no longer comes with permissions to create new subprojects, configure VCS settings, manage users and user groups, and modify project assignments. Each of these actions now requires the corresponding individual permission.
+
+
 ## Changes from 2026.2 to 2026.2.1
 {id="2026.2.1"}
 
