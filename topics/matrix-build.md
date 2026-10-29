@@ -291,7 +291,7 @@ When a matrix build starts, TeamCity runs the build, as follows:
 3. As soon as the first generated build starts to run, TeamCity starts the parent build (effectively, a type of [composite build](composite-build-configuration.md) with dependencies on the generated builds), which aggregates the build results from all the generated builds.
 4. After the matrix build is complete, you can view the summary table on the **Overview** tab of the matrix build.
 
-### Running a Partial Subset of Matrix Combinations
+### Running a Custom Matrix
 
 If you only need to build a part of the matrix, you can do this in two ways:
 
@@ -302,9 +302,9 @@ If you only need to build a part of the matrix, you can do this in two ways:
     Parameters that you did not override in this dialog will cycle through all values specified in the Matrix Builds feature.
 
 
-* Add the `teamcity.matrix.excludedCombinations` [parameter](configuring-build-parameters.md) to a build configuration. This parameter allows you to specify multiple combinations that should be excluded. Each combination is separated by the `;` character, while its parameters use comma (`,`) as a separator. Note that TeamCity skips both exact and partial matches of each `excludedCombinations` entry. For example:
+* Add the `teamcity.matrix.excludedCombinations` [parameter](configuring-build-parameters.md) to a build configuration. This parameter allows you to specify multiple combinations that should be excluded. Each combination is separated by the semicolon (`;`) character, individual parameters inside a condition use comma (`,`) as a separator. Note that TeamCity skips both exact and partial matches of each `excludedCombinations` entry. For example:
 
-    * initial parameter values: `os = Linux, Mac, Windows` and `java = 8, 11, 17`
+    * initial matrix parameters: `os = Linux, Mac, Windows` and `java = 8, 11, 17`
     * exclude parameter: `teamcity.matrix.excludedCombinations = os=Mac,java=8; os=Windows`
     * combinations that will be skipped: `[Mac, 8]` (exact match), any `[Windows, N]` combination (partial match)
     * combinations that will run: `[Linux, 8], [Linux, 11], [Linux, 17], [Mac, 11], [Mac, 17]`

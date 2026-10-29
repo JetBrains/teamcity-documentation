@@ -98,6 +98,7 @@ Learn more: [](build-results-page.md)
 ## Miscellaneous improvements
 
 * The **Dependencies** tab of the [Build Results page](build-results-page.md#Dependencies+Tab) now accepts configuration IDs. Previously, you could only search by dependency names.
+* [Matrix builds](matrix-build.md) now accept the `teamcity.matrix.excludedCombinations` parameter that allows you to skip specific combinations.
 
 ## Upgrade notes
 {instance="tc"}
