@@ -189,7 +189,7 @@ project {
 
 ### Update Legacy Parameters
 
-If you already used the TeamCity Vault plugin before the 2023.11 version, you might have legacy parameters that store paths to Vault secrets directly in their parameter values (in the `%vault:PATH!/KEY%` format).
+If you already used the TeamCity Vault plugin before the 2023.11 version, you might have legacy parameters that store paths to Vault secrets directly in their parameter values (in the `%vault:PATH!/KEY%` format). 
 {ignore-vars="true"}
 
 Compared to these legacy parameters, new "remote parameters" showcase the following advantages:
@@ -202,7 +202,7 @@ In addition, Vault engines that issue dynamic secrets (for example, the AWS engi
 
 For example, if you have a remote parameter that obtains the Access Key ID from the Vault AWS engine, and a legacy parameter that retrieves the corresponding Secret Access Key, TeamCity will send separate requests for each parameter. The engine will issue two sets of values, so your ID/Secret pair will mismatch.
 
-We recommend that you update your existing legacy parameters to their remote counterparts.
+Starting with TeamCity 2026.2.2, the legacy syntax is no longer supported, and you need to update your existing parameters to their remote counterparts.
 
 #### Kotlin DSL
 
