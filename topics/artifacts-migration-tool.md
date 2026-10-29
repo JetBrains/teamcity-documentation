@@ -58,13 +58,100 @@ teamcity.storage.migration.s3.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
 
 ### Microsoft Azure
 
-Authentication in Microsoft Azure is enabled by using [EnvironmentCredential](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.environmentcredential?view=azure-dotnet) instances. TeamCity uses authentication with a client secret, which requires the following environment variables to be present on the TeamCity server machine:
+To access Azure Storage, specify a profile for a particular storage in the `application.properties` file:
 
-* `AZURE_TENANT_ID`
-* `AZURE_CLIENT_ID`
-* `AZURE_CLIENT_SECRET`
+```
+teamcity.storage.migration.azure.custom.profile.<FEATURE_ID>=<PROFILE_NAME>
+```
 
-We expect to support more authentication scenarios (including authentication via Azure CLI commands) in future release cycles.
+* `<FEATURE_ID>` is the storage ID that you can copy from the URL of the storage settings page (the `storageSettingsId` parameter).
+* `<PROFILE_NAME>` is the profile name from the `config/azure-profiles.properties` file. You can use a different file to store profiles by editing the `config/application.properties` file:
+
+    ```
+    teamcity.storage.migration.azure.profiles.file=<PATH_TO_AZURE_PROFILES_FILE>
+    ```
+
+A typical Azure profile should look like the following (note that each property has a profile name as a prefix):
+
+```
+mySampleProfile.mode=strictMatch
+mySampleProfile.endpoint=https://ACCOUNT_NAME.blob.core.windows.net
+mySampleProfile.container=CONTAINER_NAME
+mySampleProfile.credentialType=appCredentials
+mySampleProfile.tenantId=TENANT_ID
+mySampleProfile.clientId=CLIENT_ID
+mySampleProfile.clientSecret=CLIENT_SECRET
+```
+
+<deflist type="medium">
+
+<def title="mode">
+
+Set to either `strictMatch` (default) or `profileOnly`.
+
+* `strictMatch` — requires the account URL, CDN URL, and container name to match between the profile and the TeamCity storage configuration. Otherwise, an error is reported.
+* `profileOnly` — forces the tool to use these settings from the profile, regardless of the TeamCity storage configuration.
+
+</def>
+
+
+<def title="endpoint">
+
+The Azure Blob service endpoint (for example, https://ACCOUNT_NAME.blob.core.windows.net).
+
+</def>
+
+
+<def title="cdnEndpoint">
+
+The optional CDN endpoint. If specified, the tool uses it instead of the Azure service endpoint.
+
+</def>
+
+
+<def title="container">
+
+The Azure Blob container name.
+
+</def>
+
+
+<def title="credentialType">
+
+The Azure credential type. If not specified, `appCredentials` is used.
+
+</def>
+
+
+<def title="tenantId">
+
+The Azure tenant ID. Required if the `credentialType` property is set to `appCredentials`.
+
+</def>
+
+
+<def title="clientId">
+
+The Azure application client ID for `appCredentials`, or managed identity client ID for `userAssignedIdentity`.
+
+</def>
+
+
+<def title="clientSecret">
+
+The Azure application client secret. Required if the `credentialType` property is set to `appCredentials`.
+
+</def>
+
+
+<def title="resourceId">
+
+The Azure managed identity resource ID. If the `credentialType` property is set to `appCredentials`, specify only either `clientId` or `resourceId`.
+
+</def>
+
+</deflist>
+
 
 ## Target Storage Settings
 
