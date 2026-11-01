@@ -959,7 +959,7 @@ teamcity run log --job MyProject_Build
 
 <img src="run-log.gif" alt="Viewing build logs" border-effect="rounded"/>
 
-Show failure diagnostics — build problems, failed tests with full stack traces, and whether each failure is new or pre-existing:
+Show failure diagnostics: build problems, failed tests with full stack traces, and whether each failure is new or pre-existing:
 
 ```Shell
 teamcity run log 12345 --failed
@@ -1088,7 +1088,7 @@ teamcity run tests 12345 --json
 ### Test history across builds
 
 Pass `--test NAME` to follow a single test across builds instead of inspecting one
-run — the answer to "is this test flaky?". Scope it to a job, or leave `--job` off
+run. Use it to check whether a test is flaky. Scope it to a job, or leave `--job` off
 for a server-wide history:
 
 ```Shell
@@ -1128,7 +1128,7 @@ teamcity run changes 12345 --json
 
 ## Comparing runs
 
-Compare two runs side-by-side and highlight what changed between them — status, duration, agent, parameters, test results, problems, and VCS changes:
+Compare two runs side-by-side and highlight what changed between them: status, duration, agent, parameters, test results, problems, and VCS changes:
 
 ```Shell
 teamcity run diff 12345 12346
@@ -1136,7 +1136,7 @@ teamcity run diff 12345 12346
 
 <img src="run-diff.gif" alt="Comparing two runs" border-effect="rounded"/>
 
-If only one run ID is given, the CLI compares it against the previous finished run of the same job — handy for "what changed since last time?":
+If only one run ID is given, the CLI compares it against the previous finished run of the same job:
 
 ```Shell
 teamcity run diff 12345
