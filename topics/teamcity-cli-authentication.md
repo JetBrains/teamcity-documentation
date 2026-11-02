@@ -19,7 +19,7 @@ teamcity auth login
 This starts an interactive flow:
 
 1. Enter your TeamCity server URL (for example, `https://teamcity.example.com`).
-2. The CLI opens your browser to approve access directly using the OAuth PKCE flow — no token copying needed.
+2. The CLI opens your browser to approve access using the OAuth PKCE flow, so you don't have to copy a token.
 3. If your server runs a TeamCity version older than 2026.1, it does not support the PKCE flow. In this case, the CLI guides you to the TeamCity __Access Tokens__ page so you can create and paste a token manually.
 4. The CLI validates the token and stores it securely.
 
@@ -288,13 +288,13 @@ set TEAMCITY_GUEST=1
 </tabs>
 
 Environment variables take precedence over the configuration file and keyring.
-If you set `TEAMCITY_URL`, set `TEAMCITY_TOKEN` for that same URL too — `TEAMCITY_URL` alone bypasses stored credentials from `teamcity auth login`. To use stored credentials, leave `TEAMCITY_URL` unset.
+If you set `TEAMCITY_URL`, set `TEAMCITY_TOKEN` for that same URL too. `TEAMCITY_URL` alone bypasses stored credentials from `teamcity auth login`. To use stored credentials, leave `TEAMCITY_URL` unset.
 
 > To restrict the CLI to read-only operations (no builds triggered, no data modified), set `TEAMCITY_RO=1`. See [Read-only mode](teamcity-cli-scripting.md#Read-only+mode).
 >
 {style="tip"}
 
-> Do not pass tokens as command-line flags in scripts — they may appear in process listings and shell history. Use environment variables instead.
+> Do not pass tokens as command-line flags in scripts. They may appear in process listings and shell history. Use environment variables instead.
 >
 {style="warning"}
 
