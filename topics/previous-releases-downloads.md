@@ -14,7 +14,7 @@ See also: [Documentation for Previous Versions](documentation-for-previous-versi
 ## Current version: TeamCity 2026.2.2
 
 Release date: 2 November 2026<br/>
-Build number: 239301
+Build number: 239308
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.2.2.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.2.2.tar.gz)
@@ -46,7 +46,7 @@ Build number: 238924
 ## TeamCity 2026.1.6
 
 Release date: 2 November 2026<br/>
-Build number: 223068
+Build number: 223074
 
 [Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.1.6.exe)<br/>
 [Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.1.6.tar.gz)
