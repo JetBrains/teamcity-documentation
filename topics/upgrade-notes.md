@@ -4,7 +4,10 @@
 ## Changes from 2026.1.5 to 2026.1.6
 {id="2026.1.6"}
 
-No potential breaking changes.
+### Bundled Tools Update
+{id="bundled-tools-updates-2026-1-6"}
+
+* Java bundled with TeamCity distributions and Docker images was updated to Corretto 21.0.13.0.11. See the following blogpost for more information: [The eMudhra Certificate Authority Compromise: What It Means for TeamCity](https://blog.jetbrains.com/teamcity/2026/11/emudhra-certificate-authority-compromise-what-it-means-for-teamcity/).
 
 ## Changes from 2026.1.4 to 2026.1.5
 {id="2026.1.5"}
