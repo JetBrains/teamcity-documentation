@@ -21,6 +21,17 @@ Build number: TBD
 [Release notes](teamcity-2026-3-release-notes.md)
 
 
+## TeamCity 2026.2.2
+
+Release date: 2 November 2026<br/>
+Build number: 239301
+
+[Windows installer](https://download.jetbrains.com/teamcity/TeamCity-2026.2.2.exe)<br/>
+[Archive with bundled Tomcat (any platform)](https://download.jetbrains.com/teamcity/TeamCity-2026.2.2.tar.gz)
+
+[Release notes](teamcity-2026-2-2-release-notes.md)
+
+
 ## TeamCity 2026.2.1
 
 Release date: 5 October 2026<br/>
