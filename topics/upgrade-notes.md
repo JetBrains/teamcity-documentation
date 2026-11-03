@@ -9,6 +9,11 @@
 * The old `%vault:PATH!/KEY%` syntax for [HCP Vault queries](hashicorp-vault.md) was deprecated. Update parameters as described here: [](hashicorp-vault.md#Update+Legacy+Parameters).
 
 
+### Bundled Tools Update
+{id="bundled-tools-updates-2026-2-2"}
+
+* Java bundled with TeamCity distributions and Docker images was updated to Corretto 21.0.13.0.11. See the following blogpost for more information: [The eMudhra Certificate Authority Compromise: What It Means for TeamCity](https://blog.jetbrains.com/teamcity/2026/11/emudhra-certificate-authority-compromise-what-it-means-for-teamcity/).
+
 ## Changes from 2026.2 to 2026.2.1
 {id="2026.2.1"}
 
