@@ -1,7 +1,7 @@
 [//]: # (title: TeamCity 2026.1.6 Release Notes)
 [//]: # (help-id: TeamCity 2026.1.6 Release Notes)
 
-**Build 223074, 2 November 2026**
+**Build 223074, 3 November 2026**
 
 ## Bug
 
