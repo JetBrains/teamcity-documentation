@@ -8,6 +8,10 @@
 * [**TW-102444**](https://youtrack.jetbrains.com/issue/TW-102444) — Allow selecting agent pool or executor for DSL compilation
 * [**TW-102418**](https://youtrack.jetbrains.com/issue/TW-102418) — Automatic security patch installation
 
+## Task
+
+* [**TW-105214**](https://youtrack.jetbrains.com/issue/TW-105214) — Update bundled Java to Corretto 21.0.13.0.11 in TeamCity distributions and Docker images
+
 ### Bug
 
 * [**TW-98419**](https://youtrack.jetbrains.com/issue/TW-98419) — TeamCity provides artifact file with incorrect Content-disposition header format

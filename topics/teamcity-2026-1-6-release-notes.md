@@ -11,12 +11,12 @@
 * [**TW-104981**](https://youtrack.jetbrains.com/issue/TW-103847) — Unnecessary triggering in unmodified pull request branches after the server restart
 * [**TW-104556**](https://youtrack.jetbrains.com/issue/TW-103847) — What's new popup shows outdates information for TeamCity Cloud
 
-<!--
+
 ## Task
 
 * [**TW-105214**](https://youtrack.jetbrains.com/issue/TW-105214) — Update bundled Java to Corretto 21.0.13.0.11 in TeamCity distributions and Docker images
 
--->
+
 
 ## Performance Problem
 
