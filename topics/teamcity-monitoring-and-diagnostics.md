@@ -100,26 +100,59 @@ It is also possible to change the logging configuration [manually](teamcity-serv
 
 ## Caches
 
-This tab shows you the caches of the TeamCity processes stored in [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches`. Resetting some caches is performed by the server during the clean-up automatically, but sometimes you might need to clear caches manually using  the reset link.
-* `vcsContentCache` — TeamCity maintains vcsContentCache cache for the sources to optimize communications with the VCS server. The caches are reset during the clean-up time. To resolve problems with sources update, the caches may need to be reset manually.
-* `search` — resetting this cache is required when enabling [search by build log](search.md#Search+by+Build+Log).
-* `git` — contains the bare clone of the remote [Git](git.md) repository used by TeamCity.
-* `buildsMetadata` — resetting this cache is required to [reindex the TeamCity NuGet feed](common-problems.md#Problems+with+TeamCity+NuGet+Feed).
+Caches allow TeamCity to quickly get required values without retrieving them from a source or recalculating them every time they are needed. This page allows you to view and dump (reset) all currently used caches.
 
-### Versioned Settings Caches
+> TeamCity performs resets its caches automatically during [clean-ups](teamcity-data-clean-up.md). Do not manually reset caches unless you are advised to do so by a JetBrains employee.
+> 
+{style="warning"}
 
-The following caches are utilized when you keep settings of a TeamCity project in a version control system. See this article for more information: [Storing Project Settings in Version Control](storing-project-settings-in-version-control.md)
+Depending on their types, TeamCity caches are grouped into the following categories:
 
-* `dslDependenciesMaven` contains downloaded Maven dependencies specified 
-by users in the *pom.xml* file of a [Kotlin DSL configuration](kotlin-dsl.md). 
-* `generatedVersionedSettings` stores generated configs cache to prevent excessive DSL runs.
-* `kotlinDslData` stores internal data related to configurations and results of [Kotlin DSL](kotlin-dsl.md) runs. 
-This cache is used by TeamCity to maintain Kotlin DSL configurations, for example support UI patches. 
-* `pluginsDslCache` contains [Kotlin DSL](kotlin-dsl.md) extensions from plugins such as sources, 
-compiled JARs, and documentation. 
-Additionally, this cache stores Maven repository that provides Maven dependencies.
-* `versionedSettings` contains downloaded [versioned settings](storing-project-settings-in-version-control.md) (the content of the `.teamcity` folder). 
-* `versionedSettingsIncrementalMode` supports incremental compilation for [Kotlin DSL](kotlin-dsl.md). 
+<deflist type="medium">
+
+<def title="Cache directory">
+
+Caches that only exist on a file system, in [`<TeamCity Data Directory>`](teamcity-data-directory.md)`/system/caches`. For example:
+
+* `vcsContentCache` — optimizes communications with the VCS server.
+* `search` — caches [search results](search.md). Must be reset when enabling [search by build log](search.md#Search+by+Build+Log).
+
+</def>
+
+<def title="Local">
+
+[Node](multinode-setup.md) caches that only exist in the node's memory.
+
+</def>
+
+<def title="Distributed">
+
+[Shared multinode caches](multinode-cache-setup.md) that operate alongside nodes' own local caches.
+
+</def>
+
+
+<def title="Bypass">
+
+Ignored caches. TeamCity can ignore caches in various scenarios, for instance:
+
+* caches that are explicitly disabled via an [internal property](server-startup-properties.md#TeamCity+Internal+Properties);
+* distributed caches without [shared multinode caches](multinode-cache-setup.md) configured.
+
+</def>
+
+<def title="Other">
+
+Combined cache types. For example:
+
+* `git` — contains the bare clone of a remote [Git](git.md) repository.
+* `buildsMetadata` — stores build metadata. Must be reset to [reindex the TeamCity NuGet feed](common-problems.md#Problems+with+TeamCity+NuGet+Feed).
+
+</def>
+
+</deflist>
+
+Caches that can report their core data (maximum size or number of records, current utilization, hit rate, and others) do so via TeamCity UI and corresponding [metrics](#Metrics).
 
 ## Search
 

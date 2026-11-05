@@ -16,7 +16,7 @@ This change guarantees that log messages, date and number parsing, and string co
 
 ### Distributed Cache for Multinode Setups
 
-TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with several nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance to prepare for upgrading to TeamCity 2027.2.
+TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with multiple nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance.
 
 
 ## Changes from 2026.2.1 to 2026.2.2

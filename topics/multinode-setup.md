@@ -27,8 +27,7 @@ A basic HA setup must include the following components:
 * __At least two servers for TeamCity nodes__ with the mounted [shared data directory](#Shared+Data+Directory): both servers should have the same or comparable hardware. Otherwise, if a secondary node is less performant, you can experience a significant performance drop in case of a failover.
 * __Local storage on the TeamCity nodes__: necessary for the TeamCity installation and storing logs and local caches. To estimate the size of caches, see the size of the`<TeamCity data directory>/system/caches` directory in your current  installation.
 * __Dedicated reverse HTTP proxy server__.
-
-We also recommend adding a [distributed cache](#Distributed+Cache) server to share cached data between the nodes. Starting with version 2027.2, it will be required.
+* (optional, recommended) **[Distributed cache](#Distributed+Cache) server** that shares cached data between the nodes. Required for multinode setups starting with TeamCity 2027.2.
 
 The minimum number of server machines necessary for a high-availability setup is 5: a database, a network storage server, two TeamCity nodes, and one server for the reverse HTTP proxy. A simpler load-balancing solution might be achieved with fewer machines.
 
