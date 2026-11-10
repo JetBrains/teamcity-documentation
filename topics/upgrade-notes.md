@@ -24,7 +24,7 @@ TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached d
 
 * The `IMPORT_PROJECTS` permission no longer comes with permissions to create new subprojects, configure VCS settings, manage users and user groups, and modify project assignments. Each of these actions now requires the corresponding individual permission.
 * The old `%vault:PATH!/KEY%` syntax for [HCP Vault queries](hashicorp-vault.md) was deprecated. Update parameters as described here: [](hashicorp-vault.md#Update+Legacy+Parameters).
-* [VCS roots' fetch URLs](configuring-vcs-roots.md#Common+VCS+Root+Properties) no longer support the `ext::` transport by default, as it can be used to run potentially malicious commands when fetching remote repository metadata. To explicitly enable this transport, add it to the `teamcity.git.additionalAllowedUrlTransports` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
+* [VCS roots' fetch URLs](configuring-vcs-roots.md#Common+VCS+Root+Properties) no longer support any transports except for `http(s)`, `git`, and `ssh`. To explicitly enable a required transport, add it to the `teamcity.git.additionalAllowedUrlTransports` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-2-2"}
