@@ -239,11 +239,14 @@ Cache statistics, such as hits, misses, errors, and load times, are reported as 
 
 ## Limitations and special notes
 
-Caches let nodes get values quickly without reading them from the database. If the database is changed while the TeamCity server is down, the shared cache may hold stale values. This can happen, for example, when you [restore only the database](restoring-teamcity-data-from-backup.md#Restoring+database+only) from a backup, or use third-party tools to roll the database back to an earlier state. In these cases, clear the shared cache to avoid data mismatches:
+Caches let nodes get values quickly without reading them from the database. TeamCity normally keeps the shared cache in sync with the database, including when you [restore data from a backup](restoring-teamcity-data-from-backup.md). However, if the database is changed directly while the TeamCity server is down, the cache may hold stale values. This can happen, for example, when you run a restore procedure with the `server_property` table excluded, or use third-party tools to roll the database back to an earlier state. In these cases, clear the shared cache to avoid data mismatches:
 
 ```Shell
 redis-cli flushall
+# or
+valkey-cli flushall
 ```
+
 
 <seealso>
         <category ref="installation">
