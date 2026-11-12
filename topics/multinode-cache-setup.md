@@ -237,6 +237,14 @@ To override this behavior and force a node to start without the cache, set the `
 
 Cache statistics, such as hits, misses, errors, and load times, are reported as server [metrics](teamcity-monitoring-and-diagnostics.md#Metrics). A growing number of errors usually indicates connection problems with the cache server.
 
+## Limitations and special notes
+
+Caches let nodes get values quickly without reading them from the database. If the database is changed while the TeamCity server is down, the shared cache may hold stale values. This can happen, for example, when you [restore only the database](restoring-teamcity-data-from-backup.md#Restoring+database+only) from a backup, or use third-party tools to roll the database back to an earlier state. In these cases, clear the shared cache to avoid data mismatches:
+
+```Shell
+redis-cli flushall
+```
+
 <seealso>
         <category ref="installation">
             <a href="multinode-setup.md">Multinode Setup for High Availability</a>
