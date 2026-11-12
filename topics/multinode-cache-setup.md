@@ -70,6 +70,18 @@ Every cache miss on a node results in a network round trip to a cache server, so
 
 </def>
 
+
+<def title="Limit memory and enable key eviction">
+
+Always set a memory limit for the cache server and enable an eviction policy so that the server removes old keys instead of running out of memory. For example, add the following lines to the server configuration file:
+
+```yaml
+maxmemory 16gb
+maxmemory-policy allkeys-lru
+```
+
+</def>
+
 </deflist>
 
 
