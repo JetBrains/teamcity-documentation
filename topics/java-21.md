@@ -127,7 +127,7 @@ If a build agent runs as a service, make sure the `wrapper.java.command` propert
 <procedure>
 
 
-To update agent machines, follow the same procedure as you do for the server. Alternatively, you can install an [agent archive that already bundles the required JDK](install-teamcity-agent.md#Available+Agent+Distributions). To do so:
+To update agent machines, follow the same procedure as you do for the server. Alternatively, you can install an [agent archive that already bundles the required JDK](install-teamcity-agent.md#Install+from+ZIP+File). To do so:
 
 1. Navigate to **Admin | Agent JDKs** in TeamCity UI.
 2. Click **Add JDK** to upload a required Java version.

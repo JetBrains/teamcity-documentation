@@ -20,71 +20,63 @@ Ensure that the user account used for running the agent service has proper [perm
 
 This option allows you to download agents as archives that can copied to your agent machines.
 
+1. Open the __Agents__ page in TeamCity and select **Overview** in the side navigation bar.
+2. Click the **Install agent** button in the top left corner.
 
-### Available Agent Distributions
+    <img src="install-agent-button.png" width="706" alt="Install agents button"/>
 
-You can choose to download full or minimal agent distributions.
+3. Choose a required agent distribution type to download.
 
-* The **minimal agent distribution** is a regular build agent with no plugins. The minimal agent downloads all required plugins upon its first startup.
-* The **full agent distribution** includes relevant versions of all plugins currently enabled on the server. This makes the full distribution archive larger but significantly reduces the time spent on the first agent run.
-
-Full agents are preferable if you use scripts for creating agent images (for example, [in cloud profiles](teamcity-integration-with-cloud-solutions.md#Agent+Cloud+Profiles+and+Images)). All cloud instances with full agents are synchronized with the server from the moment they start, and can run builds right away.
-{instance="tc"}
-
-Full agents are preferable if you use scripts for creating agent images. All cloud instances with full agents are synchronized with the server from the moment they start, and can run builds right away.
-{instance="tcc"}
-
-
-Full agent distributions are also available in two variations:
-
-* Regular agent distributions without Java Development Kits. If you download and install this variation, make sure that the agent machine has the required JDK version installed (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)) and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
-* Distributions bundled with OS-specific JDKs. These distributions allow you to install an agent and a JDK it requires in a single go. To download these distributions, add required JDK versions on the **Admin | Agent JDKs** page and wait for TeamCity to build a related agent distribution.
-
+    <deflist type="full">
+    
+    <def title="Minimal agent distribution">
+    
+    The essential build agent with no plugins or JDKs. An agent installed using this distribution will download all required plugins upon its first startup.
+    
+    </def>
+    
+    <def title="Standard full distribution">
+    
+    Includes relevant versions of all plugins currently enabled on the server. This makes the full distribution archive larger but significantly reduces the time spent on the first agent run.
+    
+    This distribution comes without Java Development Kits, so make sure that the agent machine has the required JDK version installed (see [](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent)) and the `JRE_HOME` or `JAVA_HOME` environment variables point to the correct installation.
+    
+    </def>
+    
+    <def title="Full distribution with custom JDK" instance="tc">
+    
+    The full distribution bundled with OS-specific JDKs. This option allows you to install an agent and its required JDK in one go.
+    
+    This option is only available if you have uploaded a specific JDK via the **Admin | Agent JDKs** page.
+    
     <img src="dk-addAgentJDK.png" alt="Add Agent JDK" width="706"/>
     
-    Visit the [Supported Platforms and Environments](supported-platforms-and-environments.md#Supported+Java+Versions+for+TeamCity+Agent) documentation article for the information on which Java versions are supported by TeamCity agents.
+    </def>
+    
+    </deflist>
 
+4. Extract the downloaded archive.
 
+5. Open the `<installation path>\conf` directory and rename the `buildAgent.dist.properties` file to `buildAgent.properties`.
 
-### How to Install Agents from ZIP Files
-
-1. Open the __Agents__ page in TeamCity and select **Overview** in the side navigation bar.
-2. Click the **Install agent** button and choose the required [option](#Available+Agent+Distributions).
-
-    <img src="dk-agentsZipInstallations.png" width="706" alt="Agent ZIP distribution download options"/>
-
-    If you choose the **Minimal ZIP file distribution** option, the minimal OS-independent archive will start downloading.
-
-    If you opt for the **Full disributions** option, you will be redirected to the **Agent Distributions** page that groups available agent archives into two categories: with and without a bundled JDK.
-
-    <img src="dk-fullAgentDistributions.png" width="706" alt="Full agent distributions page"/>
-
-    Agents without bundled JDKs are available as regular archives and as [Docker images](https://hub.docker.com/r/jetbrains/teamcity-agent).
-
-3. Extract the downloaded archive.
-
-4. Open the `<installation path>\conf` directory and rename the `buildAgent.dist.properties` file to `buildAgent.properties`.
-
-5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)), the name of the agent, and the [authentication token](install-and-start-teamcity-agents.md#Generating+Authentication+Token). Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
+6. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)), the name of the agent, and the [authentication token](install-and-start-teamcity-agents.md#Generating+Authentication+Token). Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
    {instance="tcc"}
 
    > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
    >
    {style="note"}
 
-5. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)) and the name of the agent. Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
+6. Edit the `buildAgent.properties` file to specify the TeamCity server URL (HTTPS is recommended, see [these notes](install-and-start-teamcity-agents.md#Agent-Server+Data+Transfer)) and the name of the agent. Refer to [this article](configure-agent-installation.md) for details on the agent configuration.
    {instance="tc"}
 
    > You can edit the `buildAgent.properties` file manually or by running the `configure` command with required parameters. See this section for more information: [](configure-agent-installation.md#The+Configure+Command).
    >
    {style="note"}
 
+7. Make sure your agent has sufficient permissions to run.
 
-
-
-On Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
-
-On Windows, you may want to install the [build agent Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service) instead of using the manual agent startup.
+    * On Linux, you may need to give execution permissions to the `bin/agent.sh` shell script.
+    * On Windows, you may want to install the [build agent Windows service](start-teamcity-agent.md#Build+Agent+as+Windows+Service) instead of using the manual agent startup.
 
 
 
