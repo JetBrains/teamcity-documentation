@@ -1,7 +1,7 @@
 [//]: # (title: Docker)
 [//]: # (help-id: Docker)
 
-<primary-label ref="primary-step-config"/>
+<primary-label ref="primary-step-pipeline"/>
 
 <show-structure for="chapter" depth="2"/>
 

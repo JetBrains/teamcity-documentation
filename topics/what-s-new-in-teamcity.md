@@ -6,6 +6,19 @@
 
 ## Pipeline enhancements
 
+### New build steps
+
+Earlier releases added .NET build steps and several [build features](job-settings.md#Build+Features) that used to be available only in build configurations. This update makes the following build steps available by default:
+
+* [](docker.md)
+* [](docker-compose.md)
+* [](powershell.md)
+* [](python.md)
+
+We make build steps and features public only after they pass manual testing and verification. However, the mechanism for bringing classic build configuration elements to pipelines is already in place. If you need a build step that pipelines do not officially support yet (such as [](qodana.md) or [](nant.md)), contact our support for instructions on enabling it on your TeamCity instance.
+
+Learn more: [](job-settings.md#Steps)
+
 ### Execution timeouts
 
 You can now cap how long a pipeline run or an individual job may take: use the new **Execution timeout** setting in the **Optimizations** group of pipeline and job settings. In addition, pipelines now respect the [default build execution timeout](teamcity-configuration-and-maintenance.md#Build+Settings) configured in the server's global settings.

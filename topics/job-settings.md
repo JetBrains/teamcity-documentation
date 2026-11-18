@@ -34,19 +34,17 @@ When you add a dependency on an upstream job, you can also configure:
 
 ## Steps
 
-Use this section to define what the job does, such as building and testing projects, running custom scripts, uploading Docker images, and so on.
+A step is the smallest building block of a pipeline: a single set of actions that runs as a whole. A job runs its steps one by one, in the order you define.
 
-Currently, pipelines support four types of steps you can add. All of them are lightweight versions of corresponding [classic build configuration steps](configuring-build-steps.md)
+The universal [Script](command-line.md) step can run any command or call any build tool. For example, you can build a Maven app with `mvn <do something>` commands. For convenience, pipelines also offer steps tailored to specific build tools. For instance, the dedicated [](maven.md) step shows all related settings in the UI: the POM file location, the user settings file, the Maven version, and so on.
 
-### Script
+Pipelines currently support fewer dedicated steps than [build configurations](configuring-build-steps.md). If you need a step that pipelines do not officially support yet (such as [](qodana.md) or [](nant.md)), contact our support for instructions on enabling it on your TeamCity instance.
 
-This is a universal step that executes commands directly in the agent machine terminal. As a result, you can interact with any tool installed on the agent: cURL, Python, MSBuild, Homebrew, and so on.
+The following samples illustrate jobs with different types of steps configured.
 
-> This step is also available in classic TeamCity build configurations: [](command-line.md).
->
-{style="tip"}
+<tabs>
 
-For example, the following step downloads artifacts produced by a target build configuration:
+<tab title="Script">
 
 ```yaml
 jobs:
@@ -71,14 +69,11 @@ secrets:
   bearer-token: credentialsJSON:12e5c38b-16a1-4201-a913-5b5411bd7bfe
 ```
 
-### Gradle
+Learn more: [](command-line.md)
 
-Tailored for interacting with the [Gradle build tool](https://gradle.org), this step can build, test, and package Java, Kotlin, Groovy, Scala, Swift, and other projects.
+</tab>
 
-
-> This step is also available in classic TeamCity build configurations: [](gradle.md). See this document for more information about step options.
->
-{style="tip"}
+<tab title="Gradle">
 
 
 ```yaml
@@ -103,15 +98,12 @@ jobs:
       - Job1
 ```
 
+Learn more: [](gradle.md)
 
-### Maven
+</tab>
 
-The Maven build step is designed to process Java, Kotlin, Groovy, and other projects using [Apache Maven](https://maven.apache.org).
+<tab title="Maven">
 
-
-> This step is also available in classic TeamCity build configurations: [](maven.md). See this document for more information about step options.
->
-{style="tip"}
 
 ```yaml
 jobs:
@@ -125,6 +117,11 @@ jobs:
         jdk-home: '%env.JDK_21_0%'
 ```
 
+Learn more: [](maven.md)
+
+</tab>
+
+</tabs>
 
 ## Build Features
 {help-id="build-features"}
