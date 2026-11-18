@@ -18,6 +18,15 @@ This change guarantees that log messages, date and number parsing, and string co
 
 TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with multiple nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance.
 
+### Bundled Tools Update
+{id="bundled-tools-updates-2026-2-3"}
+
+* JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
+    * MySQL: 26.10.0
+    * MSSQL: 13.6.2
+    * PostgreSQL: 42.7.14
+    * Oracle `ojdbc11`: 21.24.0.0
+  
 
 ## Changes from 2026.2.1 to 2026.2.2
 {id="2026.2.2"}
@@ -30,6 +39,7 @@ TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached d
 {id="bundled-tools-updates-2026-2-2"}
 
 * Java bundled with TeamCity distributions and Docker images was updated to Corretto 21.0.13.0.11. See the following blogpost for more information: [The eMudhra Certificate Authority Compromise: What It Means for TeamCity](https://blog.jetbrains.com/teamcity/2026/11/emudhra-certificate-authority-compromise-what-it-means-for-teamcity/).
+
 
 ## Changes from 2026.2 to 2026.2.1
 {id="2026.2.1"}
@@ -103,7 +113,7 @@ No potential breaking changes.
 
 * TeamCity server and build agents no longer support Java versions older than Java 21. The server supports only this version, while build agents can start on newer versions.
 
-    > This requirement only defines the Java version needed for the server and agents to start successfully; it does not restrict the Java versions your TeamCity projects can build, test, or deploy against.
+  > This requirement only defines the Java version needed for the server and agents to start successfully; it does not restrict the Java versions your TeamCity projects can build, test, or deploy against.
 
 * When you press **Rotate keys** in [AWS connections](configuring-connections.md#AmazonWebServices), previously used keys are removed after five minutes. Previously, the old keys were kept for 24 hours.
 
@@ -121,11 +131,11 @@ No potential breaking changes.
 {id="bundled-tools-updates-2026-1"}
 
 * We have updated a number of tools shipped with TeamCity [Docker server and agent images](agent-docker-images.md):
-  * Git: 2.54 (see the [](#known-issues-2026-1) section for a related issue)
-  * .NET SDK: 10.0.202
-  * Docker CE: 29.4.0
-  * Perforce client: r25.2
-  * Containerd: 2.2.3
+    * Git: 2.54 (see the [](#known-issues-2026-1) section for a related issue)
+    * .NET SDK: 10.0.202
+    * Docker CE: 29.4.0
+    * Perforce client: r25.2
+    * Containerd: 2.2.3
 
 * In previous versions, the `latest-linux-sudo` Docker image tag used the AMD64 manifest. Starting from version 2026.1, this tag uses a multi-architecture manifest combining AMD64 and ARM64 images. Platform-specific images are available under the `{version}-linux-amd64-sudo` and `{version}-linux-arm64-sudo` tags.
 * The bundled dotCover tool was updated to version 2025.1.7 Cross-Platform.
@@ -133,9 +143,9 @@ No potential breaking changes.
 * The bundled Kotlin compiler (used in TeamCity DSL) and Dokka (the documentation engine for Kotlin) was updated to version 2.2.20.
 * The default bundled Maven version is now 3.9.11. In addition, Maven 2 is no longer fully supported due to the official EoL (see the [version 2025.11 announcement](#2025.11)).
 * JDBC drivers for external databases suggested on the fresh TeamCity installation have been updated to the following versions:
-  * MySQL to 9.6.0
-  * PSQL to 42.7.10
-  * MSSQL to 13.4.0
+    * MySQL to 9.6.0
+    * PSQL to 42.7.10
+    * MSSQL to 13.4.0
 
 ### Known Issues
 {id="known-issues-2026-1"}
@@ -148,18 +158,18 @@ No potential breaking changes.
 
 * Starting with version 2026.1, all S3 storages use virtual-hosted-style addressing. However, the **Force virtual host addressing** checkbox is still shown in TeamCity S3 artifact storage settings.
 
-    This checkbox no longer affects behavior and may be confusing. We plan to remove it in the upcoming 2026.1.1 bug-fix update. See the [TW-100620](https://youtrack.jetbrains.com/issue/TW-100620) YouTrack ticket for a temporary workaround.
+  This checkbox no longer affects behavior and may be confusing. We plan to remove it in the upcoming 2026.1.1 bug-fix update. See the [TW-100620](https://youtrack.jetbrains.com/issue/TW-100620) YouTrack ticket for a temporary workaround.
 
 * [](rake.md) build steps are failing to run the build. Please install the updated Rake plugin from [the following attachment](https://youtrack.jetbrains.com/issue/TW-100760/Rake-build-steps-are-broken-plugin-is-damaged#focus=Change-27-13754580.0-0).
 
 * In some cases, newly bundled Git 2.54 may fail to check out sources with the "Unable to find all commit-graph files" error. This issue is most likely to occur in large repositories with frequent checkouts.
 
-    We plan to fix it in the next bug-fix update. As a temporary workaround, disable automatic Git maintenance by adding one of the following properties:
+  We plan to fix it in the next bug-fix update. As a temporary workaround, disable automatic Git maintenance by adding one of the following properties:
 
     * `teamcity.server.git.maintenance.auto.enable=false` added as a [TeamCity internal property](server-startup-properties.md#TeamCity+Internal+Properties).
     * `teamcity.internal.git.maintenance.auto.enable=false` added to the [buildAgent.properties file](configure-agent-installation.md).
 
-    See the following ticket for more information: [TW-100479](https://youtrack.jetbrains.com/issue/TW-100479).
+  See the following ticket for more information: [TW-100479](https://youtrack.jetbrains.com/issue/TW-100479).
 
 * Credentials issued by the [](aws-credentials.md) build feature may expire prematurely. More information: [TW-100758](https://youtrack.jetbrains.com/issue/TW-100758).
 
@@ -263,7 +273,7 @@ No potential breaking changes.
     * Mercurial SCM Client (Windows images only): v6.2.2
     * The base image for Linux agent and server TeamCity images is now Ubuntu 24.04 LTS. This image includes the default `ubuntu` user with UID equal to **1000**, which was removed in TeamCity Server images. TeamCity Agent images still ship with this default user, which causes our `buildagent` user to change its UID from **1000** to **1001** (and its group ID from **999** to **994**). While this change does not affect TeamCity operations, custom user scripts that reference the `buildagent` user by its UID will require a manual update.
 
-        2025.11.2 update: The default `ubuntu` user was removed from TeamCity Agent images to restore the pre-2025.11 behavior. The `buildagent` user now returns **1000** for its UID once again.
+      2025.11.2 update: The default `ubuntu` user was removed from TeamCity Agent images to restore the pre-2025.11 behavior. The `buildagent` user now returns **1000** for its UID once again.
 * The default JaCoCo version is now 0.8.8. In addition, version 0.8.13 is now bundled.
 * The bundled Kubernetes plugin was migrated to AWS SDK v2.
 
@@ -272,27 +282,27 @@ No potential breaking changes.
 
 * If TeamCity server is using [native Git](git.md#Native+Git+for+VCS-related+operations+on+the+server), background Git VCS root operations consume significantly more CPU resources than in previous versions. We expect to resolve this issue in the 2025.11.1 bug-fix release. In the meantime, you can switch back to [JGit](git.md#Native+Git+for+VCS-related+operations+on+the+server) or download the updated Git plugin from the related YouTrack ticket below.
 
-    Related YouTrack ticket: [TW-97726](https://youtrack.jetbrains.com/issue/TW-97726/).
+  Related YouTrack ticket: [TW-97726](https://youtrack.jetbrains.com/issue/TW-97726/).
 
 * Build configurations created via the [updated flow](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) no longer include the [](performance-monitor.md) build feature by default. Add this feature manually if you wish to track the agent CPU, disk, and memory usage during builds.
 
-    Related YouTrack ticket: [TW-97487](https://youtrack.jetbrains.com/issue/TW-97487/).
+  Related YouTrack ticket: [TW-97487](https://youtrack.jetbrains.com/issue/TW-97487/).
 
 * Build configurations created via the [updated flow](creating-and-editing-build-configurations.md#Create+Build+Configurations+in+TeamCity+UI) utilize the "Do not use mirrors" [checkout policy](git.md#git-checkout-policy), as opposed to the "Auto" policy used in the classic UI.
 
-    Related YouTrack ticket: [TW-97576](https://youtrack.jetbrains.com/issue/TW-97576).
+  Related YouTrack ticket: [TW-97576](https://youtrack.jetbrains.com/issue/TW-97576).
 
 * The **Import from DSL (classic UI)** link on the updated new project page does not open the expected page if the project name field is blank.
 
-    Related YouTrack ticket: [TW-97529](https://youtrack.jetbrains.com/issue/TW-97529).
+  Related YouTrack ticket: [TW-97529](https://youtrack.jetbrains.com/issue/TW-97529).
 
 * [Kubernetes Executor](kubernetes-executor.md) incorrecly resolves environment variables defined in pod templates.
 
-    Related YouTrack ticket: [TW-97967](https://youtrack.jetbrains.com/issue/TW-97967).
+  Related YouTrack ticket: [TW-97967](https://youtrack.jetbrains.com/issue/TW-97967).
 
 * Pipelines triggers added after the initially created schedule trigger reset its branch filter settings.
 
-    Related YouTrack ticket: [TW-98013](https://youtrack.jetbrains.com/issue/TW-98013).
+  Related YouTrack ticket: [TW-98013](https://youtrack.jetbrains.com/issue/TW-98013).
 
 
 ## Changes from 2025.07.2 to 2025.07.3
