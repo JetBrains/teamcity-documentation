@@ -48,7 +48,7 @@
 			<toc-element topic="system-requirements.md"/>
 			<toc-element topic="install-teamcity-agent.md"/>
 			<toc-element topic="start-teamcity-agent.md"/>
-			<toc-element accepts-web-file-names-ref="configure-ageconnt-installation" topic="configure-agent-installation.md"/>
+			<toc-element accepts-web-file-names-ref="configure-agent-installation" topic="configure-agent-installation.md"/>
 			<toc-element topic="configuring-build-agent-startup-properties.md"/>
 			<toc-element topic="configure-java-for-agent.md"/>
 			<toc-element topic="install-multiple-agents-on-one-machine.md"/>
@@ -290,6 +290,7 @@
 	<toc-element toc-title="TeamCity AI">
 		<toc-element topic="ai-assistant.md"/>
 		<toc-element topic="ai-agent-integration.md"/>
+		<toc-element topic="ai-in-builds.md"/>
 	</toc-element>
 	<toc-element topic="configuring-test-reports-and-code-coverage.md">
 		<toc-element topic="net-testing-frameworks-support.md"/>
