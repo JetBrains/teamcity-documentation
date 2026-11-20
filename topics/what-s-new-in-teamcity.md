@@ -65,12 +65,19 @@ In this version, this mode becomes the default one: you no longer need to add th
 
 -->
 
+## TeamCity AI
 
-## MCP brave mode
+### MCP brave mode
 
 Previous updates introduced several [MCP tools](ai-agent-integration.md#TeamCity+MCP) that AI agents can use to interact with TeamCity. Because the `teamcity_pipeline_post`, `teamcity_pipeline_delete`, and `teamcity_rest_post` tools can edit and remove existing entities, they stayed disabled unless [brave mode](ai-agent-integration.md#Safety+Concerns) was explicitly enabled on your server. Starting with this version, brave mode is the default, so your AI agents can use every available MCP tool.
 
 To limit what your agents can do, switch back to safe mode or, as we recommend, issue fine-grained access tokens that control which operations are available to them. See the [](ai-agent-integration.md#Safety+Concerns) section for more information.
+
+### AI in builds
+
+The new [AI Agents](https://plugins.jetbrains.com/plugin/34639-ai-agents) plugin, available on JetBrains Marketplace, lets your build steps run Codex and Claude Code prompts. It adds the **AI Provider** connection, which stores the credentials for OpenAI, Anthropic, LiteLLM, or JetBrains Air, and the **Codex** and **Claude Code** build features that pass these credentials to the agent. TeamCity also reports how many tokens each build consumes.
+
+Learn more: [](ai-in-builds.md).
 
 ## UI changes
 
