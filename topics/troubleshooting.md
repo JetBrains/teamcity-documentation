@@ -65,6 +65,9 @@ What gets collected depends on where you open the form. With the **Collect sessi
 * `teamcity-*` server log files.
   {instance="tcc"}
 * A series of server [thread dumps](reporting-issues.md#Server+Thread+Dump).
+  {instance="tc"}
+* A series of server thread dumps.
+  {instance="tcc"}
 * Server environment details: operating system and architecture, Java/JVM details, database type and driver, licensing, and [multinode setup](multinode-setup.md) details.
   {instance="tc"}
 * Server environment details: operating system and architecture, Java/JVM details, database type and driver, and licensing details.

@@ -160,7 +160,7 @@ Most major VCS hosting services can already review pull and merge requests with 
 
 #### How it works
 
-A build starts for every non-draft pull request to `main` that a member of your GitHub organization opens from a branch of the same repository. Pull requests from forks are not reviewed. Each build runs six steps:
+A build starts for every non-draft pull request to the target branch (`main` by default) that a member of your GitHub organization opens from a branch of the same repository. Pull requests from forks are not reviewed. Each build runs six steps:
 
 | Step | What it does |
 |------|--------------|
@@ -189,17 +189,17 @@ A build that skips the review is still green, for example, when the bot has alre
 #### Full build configuration code
 {initial-collapse-state="collapsed" collapsible="true"}
 
-The Kotlin DSL snippet below illustrates the complete code you may want to use to run automated PR reviews. When copying, replace these placeholders with your actual values:
+The Kotlin DSL snippet below illustrates the complete code you may want to use to run automated PR reviews. When copying, replace the values in the `ReviewSettings` object at the top of the code, and `GitHubRepository` with your VCS root:
 
 <table>
 
-<tr><th width="45%">Placeholder</th><th width="55%">Value</th></tr>
+<tr><th width="45%">Setting</th><th width="55%">Value</th></tr>
 
 <tr>
 
 <td>
 
-`<owner>/<repository>`
+`REPOSITORY`
 
 </td>
 
@@ -214,23 +214,22 @@ The repository to review, as `owner/name`, with the exact capitalization GitHub 
 
 <td>
 
-`<repository name>`
+`TARGET_BRANCH`
 
 </td>
 
 <td>
 
-The same repository name, without the owner.
+The branch that pull requests must target to be reviewed. The default is `main`.
 
 </td>
 </tr>
-
 
 <tr>
 
 <td>
 
-`<bot user ID>`
+`BOT_USER_ID`
 
 </td>
 
@@ -241,13 +240,12 @@ The numeric user ID of the GitHub App's bot account. This is **not** the App ID 
 </td>
 </tr>
 
-
 <tr>
 
 <td>
 
-`<AI Provider connection ID>`
-`<GitHub App connection ID>`
+`AI_PROVIDER_CONNECTION_ID`
+`GITHUB_APP_CONNECTION_ID`
 
 </td>
 
@@ -257,7 +255,6 @@ The IDs of the two connections.
 
 </td>
 </tr>
-
 
 <tr>
 
@@ -269,7 +266,7 @@ The IDs of the two connections.
 
 <td>
 
-Your VCS root.
+Your VCS root. It is referenced twice: in `vcs {}` and in the **Pull Requests** feature.
 
 </td>
 </tr>
@@ -295,15 +292,28 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
-// Reviews pull requests to main with Codex and posts the findings as a GitHub review.
+// The values to replace before you use this configuration. Everything else can stay as is.
+object ReviewSettings {
+    // The repository to review, as owner/name, with the exact capitalization GitHub shows.
+    const val REPOSITORY = "<owner>/<repository>"
+    // Only pull requests to this branch are reviewed.
+    const val TARGET_BRANCH = "main"
+    // Numeric user ID of the GitHub App's bot account, not the App ID. Identifies the bot's own reviews.
+    const val BOT_USER_ID = "<bot user ID>"
+    // IDs of the AI Provider and GitHub App connections.
+    const val AI_PROVIDER_CONNECTION_ID = "<AI Provider connection ID>"
+    const val GITHUB_APP_CONNECTION_ID = "<GitHub App connection ID>"
+}
+
+// Reviews pull requests to the target branch with Codex and posts the findings as a GitHub review.
 object PrAiReview : BuildType({
     name = "PR AI Review"
 
     params {
-        // The repository to review, as owner/name, with the exact capitalization GitHub shows.
-        param("review.repository", "<owner>/<repository>")
-        // Numeric user ID of the GitHub App's bot account, not the App ID. Identifies the bot's own reviews.
-        param("review.publisher.id", "<bot user ID>")
+        // The scripts read these three values from ReviewSettings as build parameters.
+        param("review.repository", ReviewSettings.REPOSITORY)
+        param("review.target.branch", ReviewSettings.TARGET_BRANCH)
+        param("review.publisher.id", ReviewSettings.BOT_USER_ID)
 
         // The model Codex uses, and its reasoning effort. Higher effort gives more thorough reviews,
         // but takes longer and costs more tokens: xhigh is the most expensive setting.
@@ -378,6 +388,7 @@ object PrAiReview : BuildType({
                 GH_CONFIG_DIR="${'$'}OUTPUT_DIR/gh-config"
                 REPOSITORY='%review.repository%'
                 PUBLISHER_ID='%review.publisher.id%'
+                TARGET_BRANCH='%review.target.branch%'
                 PR_NUMBER='%teamcity.pullRequest.number%'
                 VCS_REVISION='%build.vcs.number%'
                 ACCEPTANCE_MODE='%review.acceptance.mode%'
@@ -452,7 +463,7 @@ object PrAiReview : BuildType({
                 [ "${'$'}state" = 'open' ] || finish_without_review 'superseded' 'Pull request is no longer open'
                 [ "${'$'}head_sha" = "${'$'}VCS_REVISION" ] || finish_without_review 'superseded' 'Pull-request head changed before review'
                 [ "${'$'}head_repo" = "${'$'}REPOSITORY" ] || fail_closed 'Fork-originated pull requests are not eligible'
-                [ "${'$'}base_ref" = 'main' ] || fail_closed 'Pull request does not target main'
+                [ "${'$'}base_ref" = "${'$'}TARGET_BRANCH" ] || fail_closed "Pull request does not target ${'$'}TARGET_BRANCH"
                 [ "${'$'}is_draft" = 'false' ] || fail_closed 'Draft pull requests are not eligible'
                 
                 # Skip commits the bot has already reviewed.
@@ -964,10 +975,10 @@ object PrAiReview : BuildType({
         }
     }
 
-    // Starts builds only for non-draft pull requests to main from the same repository.
+    // Starts builds only for non-draft pull requests to the target branch from the same repository.
     triggers {
         vcs {
-            branchFilter = "+pr: target=main sourceRepo=same draft=false"
+            branchFilter = "+pr: target=${ReviewSettings.TARGET_BRANCH} sourceRepo=same draft=false"
         }
     }
 
@@ -979,15 +990,15 @@ object PrAiReview : BuildType({
     features {
         // Supplies the AI provider credentials to Codex.
         codex {
-            connectionId = "<AI Provider connection ID>"
+            connectionId = ReviewSettings.AI_PROVIDER_CONNECTION_ID
         }
-        // Builds pull requests to main from organization members. Discovery by source branch
+        // Builds pull requests to the target branch from organization members. Discovery by source branch
         // gives one build per pull request.
         pullRequests {
             vcsRootExtId = "${GitHubRepository.id}"
             provider = github {
                 authType = vcsRoot()
-                filterTargetBranch = "+:refs/heads/main"
+                filterTargetBranch = "+:refs/heads/${ReviewSettings.TARGET_BRANCH}"
                 filterAuthorRole = PullRequests.GitHubRoleFilter.MEMBER
                 discoveryMode = PullRequests.branchesDiscoveryMode.source
             }
@@ -995,8 +1006,9 @@ object PrAiReview : BuildType({
         // Issues the GitHub App token, available as github.token, that the scripts use for GitHub.
         gitHubAppBuildScopedToken {
             parameterName = "github.token"
-            connectionId = "<GitHub App connection ID>"
-            targetRepositories = "<repository name>"
+            connectionId = ReviewSettings.GITHUB_APP_CONNECTION_ID
+            // The repository name without the owner.
+            targetRepositories = ReviewSettings.REPOSITORY.substringAfter("/")
         }
     }
 })
@@ -1008,5 +1020,5 @@ object PrAiReview : BuildType({
 |---------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | The **Run codex** step fails with `codex: command not found`.                   | The Codex CLI is not installed on the agent that ran the build. Install it, or require a parameter that only agents with Codex have.                                |
 | The build fails with `GitHub rejected the review publication request`.          | The GitHub App cannot write to pull requests. Set its **Pull requests** permission to "Read and write" and accept the updated permissions for the App installation. |
-| Every rerun of a build posts another review for the same commit.                | `review.publisher.id` does not match the bot's user ID. Get the correct value as described for `<bot user ID>` in the [placeholder table](#Full+build+configuration+code).                                              |
-| Every pull request fails with `Fork-originated pull requests are not eligible`. | `review.repository` does not exactly match the repository name, including capitalization.                                                                           |
+| Every rerun of a build posts another review for the same commit.                | `BOT_USER_ID` does not match the bot's user ID. Get the correct value as described in [](#Full+build+configuration+code).                                              |
+| Every pull request fails with `Fork-originated pull requests are not eligible`. | `REPOSITORY` does not exactly match the repository name, including capitalization.                                                                           |
