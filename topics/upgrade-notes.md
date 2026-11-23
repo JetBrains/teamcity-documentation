@@ -18,6 +18,12 @@ This change guarantees that log messages, date and number parsing, and string co
 
 TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with multiple nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance.
 
+### Custom JDK in Docker Maven builds
+
+Previously, Maven builds running inside docker containers ignored the custom JDK setting specified in Maven step settings. Such builds always used the container's default Java instead. This incorrect behavior was fixed in version 2026.3: TeamCity now correctly uses the custom JDK specified in Maven step settings.
+
+As a side effect, if your step settings referenced an invalid path, this fix will result in builds failing. To address this issue, specify the correct path to Java or switch to the `<Default>` option in step settings.
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-2-3"}
 

@@ -47,23 +47,7 @@ You can now configure [custom user settings](maven.md#MavenUserSettings) for Mav
 <img src="pipelines-maven-user-settings.png" width="706" alt="User settings in pipeline job" thumbnail="true"/>
 
 Learn more: [](maven.md#MavenUserSettings)
-<!--
 
-## Build tools integration
-
-### Maven 4
-
-???
-
-### Advanced Gradle integration mode
-
-In version 2026.2, we have introduced the [advanced Gradle integration mode](gradle.md#Gradle+Integration+Mode) that offers multiple benefits, including a wider range of supported command-line options and isolated projects support.
-
-In this version, this mode becomes the default one: you no longer need to add the `teamcity.internal.gradle.runner.launch.mode=gradle_v2` property.
-
-??? is rollback needed ???
-
--->
 
 ## TeamCity AI
 
@@ -79,9 +63,18 @@ The new [AI Agents](https://plugins.jetbrains.com/plugin/34639-ai-agents) plugin
 
 Learn more: [](ai-in-builds.md).
 
+
+## Maven 4 Support
+
+Starting with this version, TeamCity supports Maven 4, which introduces features like [subprojects](https://maven.apache.org/guides/mini/guide-multiple-subprojects-4.html), declaration of multiple source directories in POM files, and more.
+
+Learn more: [](maven.md).
+
+
+
 ## UI changes
 
-Recent releases gave you plenty of ways to use TeamCity without opening it at all — the [MCP server](ai-agent-integration.md#TeamCity+MCP), the [TeamCity CLI](teamcity-cli.md), [browser-based PKCE authentication](teamcity-cli-authentication.md#pkce), and the [AI Assistant](ai-assistant.md). An agent working on your behalf can now drive most CI/CD tasks end to end.
+Recent releases gave you plenty of ways to use TeamCity without opening it at all — the [MCP server](ai-agent-integration.md#TeamCity+MCP), the [TeamCity CLI](teamcity-cli.md), and [browser-based PKCE authentication](teamcity-cli-authentication.md#pkce). An agent working on your behalf can now drive most CI/CD tasks end to end.
 
 That makes TeamCity AI-ready, not AI-first. Much of the work still starts with a person opening a build page to read a failure, compare a diff, or decide what to rerun, and newcomers meet the product through its UI long before they script against it. The UI remains just as relevant, so we keep refining it with every release. Here is what changed this time.
 
