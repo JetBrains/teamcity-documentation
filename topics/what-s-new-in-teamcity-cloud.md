@@ -3,6 +3,103 @@
 <show-structure for="chapter" depth="2"/>
 
 
+## Build ???, ?? December 2026
+
+### Pipeline enhancements
+{id="pipeline-enhancements-dec2026"}
+
+#### New build steps
+
+Earlier releases added .NET build steps and several [build features](job-settings.md#Build+Features) that used to be available only in build configurations. This update makes the following build steps available by default:
+
+* [](docker.md)
+* [](docker-compose.md)
+* [](powershell.md)
+* [](python.md)
+
+We make build steps and features public only after they pass manual testing and verification. However, the mechanism for bringing classic build configuration elements to pipelines is already in place. If you need a build step that pipelines do not officially support yet (such as [](qodana.md) or [](nant.md)), contact our support to request them on your TeamCity Cloud instance.
+
+Learn more: [](job-settings.md#Steps)
+
+#### Execution timeouts
+
+You can now cap how long a pipeline run or an individual job may take: use the new **Execution timeout** setting in the **Optimizations** group of pipeline and job settings. In addition, pipelines now respect the [default build execution timeout](teamcity-configuration-and-maintenance.md#Build+Settings) configured in the server's global settings.
+
+Learn more: [](job-settings.md#Execution+timeout)
+
+
+#### Maven user settings
+
+You can now configure [custom user settings](maven.md#MavenUserSettings) for Maven build steps. Similarly to build configurations, you can choose a file uploaded to a parent project's [**Maven settings** section](maven-server-side-settings.md) or specify a custom path to the required file.
+
+<img src="pipelines-maven-user-settings.png" width="706" alt="User settings in pipeline job" thumbnail="true"/>
+
+Learn more: [](maven.md#MavenUserSettings)
+
+
+### AI in builds
+
+The new [AI Agents](https://plugins.jetbrains.com/plugin/34639-ai-agents) plugin, available on JetBrains Marketplace, lets your build steps run Codex and Claude Code prompts. It adds the **AI Provider** connection, which stores the credentials for OpenAI, Anthropic, LiteLLM, or JetBrains Air, and the **Codex** and **Claude Code** build features that pass these credentials to the agent. TeamCity also reports how many tokens each build consumes.
+
+Learn more: [](ai-in-builds.md).
+
+
+### Unity support
+
+JetBrains-hosted Linux agents are now bundled with Unity.
+
+* Linux 22.04 and 24.04 AMD64 agents: bundle [Unity 2022.3.62f3](https://unity.com/releases/editor/whats-new/2022.3.62f3) (default) and [Unity 6000.3.22f1](https://unity.com/releases/editor/whats-new/6000.3.22f1).
+* Linux 26.04 AMD64 agents: bundle [Unity 6000.3.22f1](https://unity.com/releases/editor/whats-new/6000.3.22f1).
+
+### Maven 4 support
+
+Starting with this version, TeamCity supports Maven 4, which introduces features like [subprojects](https://maven.apache.org/guides/mini/guide-multiple-subprojects-4.html), declaration of multiple source directories in POM files, and more.
+
+Learn more: [](maven.md).
+
+
+
+### UI changes
+
+Recent releases gave you plenty of ways to use TeamCity without opening it at all — the [MCP server](ai-agent-integration.md#TeamCity+MCP), the [TeamCity CLI](teamcity-cli.md), and [browser-based PKCE authentication](teamcity-cli-authentication.md#pkce). An agent working on your behalf can now drive most CI/CD tasks end to end.
+
+That makes TeamCity AI-ready, not AI-first. Much of the work still starts with a person opening a build page to read a failure, compare a diff, or decide what to rerun, and newcomers meet the product through its UI long before they script against it. The UI remains just as relevant, so we keep refining it with every release. Here is what changed this time.
+
+#### Reworked build Overview tab
+
+The [Overview tab](build-results-page.md#Overview+Tab) of finished pipeline and build configuration runs has been reworked to improve navigation and readability.
+
+* All contextual sections (**Changes**, **Deployment**, **Code coverage**, and so on) now appear as dedicated collapsible panes with unique icons, for a cleaner look and better distinction between them.
+
+    <img src="build-overview-collapsible-panes.png" width="706" alt="Collapsible panes of the Overview tab"/>
+
+* The **Tests** pane now has toggles that switch between a flat list and a tree view.
+
+* Each test row has a **View test history** icon that opens the full run history of this test.
+
+    <img src="build-overview-tests.png" width="706" alt="Tests pane"/>
+
+    <img src="view-test-history2.png" width="706" thumbnail="true" alt="Test history page"/>
+
+* By default, tests are now sorted by failure order: the tests that failed first appear on top. Tests that have failed across multiple builds also display an "in N builds" label that highlights a recurring issue.
+
+#### Improved diff viewer
+
+The [**Changes** tab diff viewer](build-results-page.md#Changes+Tab) was updated.
+
+* Side navigation bar, difference counter, and keyboard shortcuts make it easier to traverse and inspect changes.
+* A compact header and collapsible change details maximize the main client area.
+* Ticking the **Ignore whitespace** option no longer reloads the page.
+
+<img src="diff-viewer-update.png" width="706" alt="Updated diff viewer" thumbnail="true"/>
+
+Learn more: [](build-results-page.md)
+
+### Full changelog
+{id=changelog-2026.3.3}
+
+<!--Automation-->
+
 ## Build 266911, 28 October 2026
 
 ### MCP brave mode

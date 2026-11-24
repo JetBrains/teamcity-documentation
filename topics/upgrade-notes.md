@@ -18,11 +18,13 @@ This change guarantees that log messages, date and number parsing, and string co
 
 TeamCity nodes in a [multinode setup](multinode-setup.md) can now share cached data through an external Redis, Valkey, or Amazon ElastiCache server. Currently, the distributed cache is optional. Starting with version 2027.2, it will be required for a multinode setup. If you run TeamCity with multiple nodes, we recommend [setting up the distributed cache](multinode-cache-setup.md) in advance.
 
-### Custom JDK in Docker Maven builds
+### Custom JDK in Docker Maven Builds
 
-Previously, Maven builds running inside docker containers ignored the custom JDK setting specified in Maven step settings. Such builds always used the container's default Java instead. This incorrect behavior was fixed in version 2026.3: TeamCity now correctly uses the custom JDK specified in Maven step settings.
+Previously, Maven steps running inside Docker containers ignored the **JDK** setting and always used the container's default Java. Starting with version 2026.3, these steps use the JDK specified in step settings.
 
-As a side effect, if your step settings referenced an invalid path, this fix will result in builds failing. To address this issue, specify the correct path to Java or switch to the `<Default>` option in step settings.
+As a result, Maven steps that reference an invalid JDK path now fail. Earlier versions silently ignored these paths, so builds that worked before the upgrade can start failing after it. To fix such a build, specify the correct JDK path or switch the **JDK** setting to `<Default>`.
+
+<!--If too many projects are affected to fix them all right away, you can temporarily add the `teamcity.internal.maven.java.fallback.enabled=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). This property restores the previous behavior for all Maven steps that run in Docker containers on this server: TeamCity again ignores every custom JDK setting, valid or not, and uses the container's default Java. Use it only as a last resort to keep builds running while you fix their JDK settings, and remove it once you are done.-->
 
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-2-3"}

@@ -64,7 +64,18 @@ The new [AI Agents](https://plugins.jetbrains.com/plugin/34639-ai-agents) plugin
 Learn more: [](ai-in-builds.md).
 
 
-## Maven 4 Support
+## Multinode caches
+
+You can now configure Redis-compatible caches for multinode setups. Used alongside local node caches, they allow nodes to retrieve required values faster, without having to read them from a database.
+
+> Setting up a distributed cache will be a required step for all multinode setups starting with TeamCity 2027.2.
+> 
+{style="note"}
+
+Learn more: [](multinode-cache-setup.md).
+
+
+## Maven 4 support
 
 Starting with this version, TeamCity supports Maven 4, which introduces features like [subprojects](https://maven.apache.org/guides/mini/guide-multiple-subprojects-4.html), declaration of multiple source directories in POM files, and more.
 
