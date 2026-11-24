@@ -89,7 +89,7 @@ Corresponds to the default [Project Viewer](#project-viewer) role granted for al
 </td></tr></table>
 
 ## Per-Project Authorization Mode
-{instance="tc"}
+{id="Per-Project+Authorization+Mode" instance="tc" help-id="PerProjectAuthorizationMode"}
 
 Roles are assigned to users by administrators on a per-project basis: a user can have different roles in different projects, and hence, the permissions are project-based. A user can have a role in a specific project or in all available projects, or no roles at all. You can [associate a user account with a set of roles](creating-and-managing-users.md#Assigning+Roles+to+Users). A role can also be granted to a user group. This means that the role is automatically granted to all the users that are included into the group (both directly or through other groups).
 
