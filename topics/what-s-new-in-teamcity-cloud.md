@@ -98,7 +98,99 @@ Learn more: [](build-results-page.md)
 ### Full changelog
 {id=changelog-2026.3.3}
 
-<!--Automation-->
+<deflist collapsible="true">
+    <def title="Implemented features" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96812"><b>TW-96812</b></a> — Support Maven 4</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104826"><b>TW-104826</b></a> — Show all YAML editor problems in one list</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105200"><b>TW-105200</b></a> — Distributed Caching, phase 1: the base support for a shared store and the first caches</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-96574"><b>TW-96574</b></a> — Build Overview Tab UX improvements</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100301"><b>TW-100301</b></a> — Support any runners (classic) in Pipeline Jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-84312"><b>TW-84312</b></a> — Matrix builds: Allow to exclude parameter combinations/ run subset of matrix parameters</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-100636"><b>TW-100636</b></a> — Support execution timeouts for Pipelines</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102418"><b>TW-102418</b></a> — Automatic security patch installation</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98463"><b>TW-98463</b></a> — Support Gradle isolated projects feature</li>
+        </ul>
+    </def>
+    <def title="Minor improvements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105814"><b>TW-105814</b></a> — Address CVE-2026-114938 in TeamCity Java runtimes</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-95092"><b>TW-95092</b></a> — Merge runners: support Python runner in pipeline jobs</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102167"><b>TW-102167</b></a> — Cache Artifacts Metadata with Redis (for a multi-node setup)</li>
+        </ul>
+    </def>
+    <def title="Pipeline enhancements" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-101163"><b>TW-101163</b></a> — TeamCity Pipelines Maven step cannot use project-level Maven Server-Side Settings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-98059"><b>TW-98059</b></a> — Show Pending Changes for Pipelines</li>
+        </ul>
+    </def>
+    <def title="Fixed bugs" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105349"><b>TW-105349</b></a> — Merge Runners: Python: visual editor form lets required fields stay empty</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104869"><b>TW-104869</b></a> — Wrong permissions are checked to show a link to maven settings</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105932"><b>TW-105932</b></a> — Clean-up never starts again after a secondary node takes over the main role while a clean-up is unfinished</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-99370"><b>TW-99370</b></a> — Builds stuck in queue with "settings have not been finalized"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105912"><b>TW-105912</b></a> — Kotlin DSL is executed each time during the build settings freeze if build attaches the VCS root with versioned settings w/o checkout rules</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-102746"><b>TW-102746</b></a> — Propagate extended Pull Requests branch spec to the whole build chain</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105898"><b>TW-105898</b></a> — A non-numeric or missing agent_pool_id on a cloud image silently moves its agent type to the Default pool</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105669"><b>TW-105669</b></a> — configuration changes in .dist files aren't committed to the central repository</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105875"><b>TW-105875</b></a> — Audit page fails to load after a downgrade if the newer version logged an action type with additional objects</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105518"><b>TW-105518</b></a> — After creating a demo pipeline, its VCS root is selected as existing for the second pipeline</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-84402"><b>TW-84402</b></a> — Impossible to understand if queued build was assigned to specific pool/agent</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105826"><b>TW-105826</b></a> — Wrong VCS branch name is computed for the versioned settings revision in a pull request branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105823"><b>TW-105823</b></a> — Wrong upper limit revision is used for a build of a build chain whose checkout rules were changed by the settings freeze</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105784"><b>TW-105784</b></a> — Non-trivial test names ending with empty squared brackets [] result in a new test ID each time when reported</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105668"><b>TW-105668</b></a> — Secondary nodes may skip configuration changes on startup</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105770"><b>TW-105770</b></a> — Artifact download intermittently returns 404 after the artifacts list expires from the distributed cache</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105781"><b>TW-105781</b></a> — Add params dialog is with primary action in the wrong position</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105274"><b>TW-105274</b></a> — Cannot import backup without build configurations: "ProjectsImportException: File with path 'database_dump/build_type' doesn't exist"</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103754"><b>TW-103754</b></a> — AI Assistant generates broken TeamCity Cloud documentation links on On-Premises</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103755"><b>TW-103755</b></a> — AI Assistant returns latest documentation links instead of versioned links on On-Premises</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105658"><b>TW-105658</b></a> — Pipelines: validation errors on Save use internal parameter names (scriptFile) instead of YAML keys (filename)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105646"><b>TW-105646</b></a> — Disallow creating a pipeline in the root project</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105679"><b>TW-105679</b></a> — initial checkout fails if key has other that 600 permission</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105621"><b>TW-105621</b></a> — Error can occur on security patches update check</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105316"><b>TW-105316</b></a> — Pipelines: Merge Runners: the step card shows "null" or an empty value when a runner parameter is not set</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105070"><b>TW-105070</b></a> — Pipelines: some values in nested compound options are lost (Docker build: "Path to file must be specified")</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103930"><b>TW-103930</b></a> — Build-scoped tokens are not injected into dynamically generated builds</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105472"><b>TW-105472</b></a> — Empty/corrupted jar on the DSL compile classpath aborts the whole Kotlin DSL generation with ZipException: zip file is empty</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-92927"><b>TW-92927</b></a> — Read only node does not give up CAN_PROCESS_BUILD_MESSAGES responsibility when main node requires an exclusive lock</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105305"><b>TW-105305</b></a> — Agent-side DSL generation starts on an agent running with java 25, but doesn't work on it</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103509"><b>TW-103509</b></a> — Dry-run before settings being applied fails as pom.xml doesn't exist if it is called on the settings creation</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104817"><b>TW-104817</b></a> — Add detailed trigger information to "Triggered" field of DSL generator build</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103927"><b>TW-103927</b></a> — DSL Offloading: Agent-Based Compilation Does Not Work If the Server URL in pom.xml Does Not Match</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-72472"><b>TW-72472</b></a> — build running within docker not respecting custom JDK home path setting</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104408"><b>TW-104408</b></a> — PerfMon States Wrong Agent Memory Value</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103626"><b>TW-103626</b></a> — Downloaded artifacts hover popup opens off-screen on the Dependencies tab</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105457"><b>TW-105457</b></a> — Compatible Agents tab hides cloud images with identical names in the same agent pool</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-83617"><b>TW-83617</b></a> — native 7z archive creation and extraction drop file mode bits (zip does not)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103622"><b>TW-103622</b></a> — AI Assistant in TCC returns links to on-prem documentations</li>
+        </ul>
+    </def>
+    <def title="Resolved performance issues" default-state="collapsed">
+        <ul>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-104996"><b>TW-104996</b></a> — Speedup VCS changes reporting if merge commit merges a branch which does not have a common parent with the existing commits</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-72348"><b>TW-72348</b></a> — Many http threads busy processing agents registration requests</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-49978"><b>TW-49978</b></a> — Slow agents registration (done under global lock and taking database connection form the pool)</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-73334"><b>TW-73334</b></a> — Project overview with many builds and branches works slow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105695"><b>TW-105695</b></a> — Build configuration page: "Failed to start" counter in the build filter dropdown scans up to 50,000 builds and holds HTTP threads for minutes</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105134"><b>TW-105134</b></a> — Calculate queued build estimates on one node and share them through the distributed cache</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105706"><b>TW-105706</b></a> — Pending Changes tab title consumes CPU on build configurations with many branches: every /app/tabs call merges and sorts the whole build history once per active branch</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105779"><b>TW-105779</b></a> — slow cleanup of test name duplicates may slow down the whole cluster</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105685"><b>TW-105685</b></a> — VCS roots without repository state slow down triggers processing</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105171"><b>TW-105171</b></a> — Server restarts triggered by Kubernetes liveness probe: all http-nio worker threads block on BuildTypeOrderedBuildsImpl.getSnapshot or on permission recalculation under load; WebSocket close-frame handling prolongs unresponsiveness</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105593"><b>TW-105593</b></a> — Unnecessary repeated fetches into a shared clone when the repository state changes often</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-103847"><b>TW-103847</b></a> — Agent-side ls-remote is not scoped to the needed refs, unlike the server side</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-39660"><b>TW-39660</b></a> — 7zip artifact compression is very slow</li>
+            <li><a href="https://youtrack.jetbrains.com/issue/TW-105379"><b>TW-105379</b></a> — Unnecessary trigger activation when build configuration in an archived project is restored from VCS</li>
+        </ul>
+    </def>
+    <def title="Security" default-state="collapsed">
+        48 security problems have been fixed. To learn more about fixed vulnerabilities directly related to TeamCity, check out our <a href="https://www.jetbrains.com/privacy-security/issues-fixed/?product=TeamCity+Cloud">Security Bulletin</a>.
+        <note>Security bulletins are typically published a few days after the release date.</note>
+    </def>
+</deflist>
 
 ## Build 266911, 28 October 2026
 
