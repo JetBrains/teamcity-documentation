@@ -43,6 +43,7 @@ As a result, Maven steps that reference an invalid JDK path now fail. Earlier ve
 * The old `%vault:PATH!/KEY%` syntax for [HCP Vault queries](hashicorp-vault.md) was deprecated. Update parameters as described here: [](hashicorp-vault.md#Update+Legacy+Parameters).
 * [VCS roots' fetch URLs](configuring-vcs-roots.md#Common+VCS+Root+Properties) no longer support any transports except for `http(s)`, `git`, and `ssh`. To explicitly enable a required transport, add it to the `teamcity.git.additionalAllowedUrlTransports` [internal property](server-startup-properties.md#TeamCity+Internal+Properties).
 
+
 ### Bundled Tools Update
 {id="bundled-tools-updates-2026-2-2"}
 
@@ -66,7 +67,22 @@ No potential breaking changes.
     * The legacy MSSQL jTDS drivers [are no longer supported](https://youtrack.jetbrains.com/issue/TW-101180). Switch to standard MSSQL JDBC drivers instead.
     * MSSQL now requires MSSQL JDBC Driver 6.0 or later. We recommend upgrading to the latest version (13.4), which you can download from the [Microsoft JDBC Driver release notes page](https://learn.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver). Choose the `mssql-jdbc-13.4.0.jre11.jar` file from the `jars` directory of the downloaded driver archive.
 
+
 We’ve also updated [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
+
+Note that if you do not update JDBC driver and corresponding permissions prior to the server upgrade, TeamCity using MSSQL database (Azure SQL included) may fail to start with the following error in logs:
+
+> com.microsoft.sqlserver.jdbc.SQLServerException: The EXECUTE permission was denied on the object `BigintType`, database `<name>`, schema `dbo`.
+>
+{style="quote"}
+
+To resolve this issue, run the following SQL commands to add the necessary permissions (replace `[teamcity_db_user]` with the actual database username) and restart TeamCity.
+
+```SQL
+GRANT EXECUTE ON TYPE::dbo.BigintType TO [teamcity_db_user];
+GRANT EXECUTE ON TYPE::dbo.Varchar1000Type TO [teamcity_db_user];
+GRANT EXECUTE ON TYPE::dbo.IntegerType TO [teamcity_db_user];
+```
 
 ### BuildQueue Security Checks
 
