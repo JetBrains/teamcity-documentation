@@ -76,13 +76,15 @@ No potential breaking changes.
 
 We’ve also updated [the list of supported database versions](supported-platforms-and-environments.md#Databases) to include the minimum database versions required by the upcoming TeamCity 2027.2 release. If your server is running an older database version, we recommend upgrading in advance to avoid potential stability and performance issues after migrating to TeamCity 2027.2.
 
-Note that if you do not update JDBC driver and corresponding permissions prior to the server upgrade, TeamCity using MSSQL database (Azure SQL included) may fail to start with the following error in logs:
+Additionally, updated TeamCity servers using Azure SQL and (potentially) MSSQL [databases](set-up-external-database.md) might be unable to start with the following message:
 
 > com.microsoft.sqlserver.jdbc.SQLServerException: The EXECUTE permission was denied on the object `BigintType`, database `<name>`, schema `dbo`.
 >
 {style="quote"}
 
-To resolve this issue, run the following SQL commands to add the necessary permissions (replace `[teamcity_db_user]` with the actual database username) and restart TeamCity.
+This problem is caused by missing database permissions for the TeamCity user. To fix this problem, make sure user for the database has full control over the server, including the `db_owner` permission.
+
+In case granting the role/permissions is not feasible, run the following SQL commands to add the necessary permissions (replace `[teamcity_db_user]` with the actual database username) and restart your TeamCity server.
 
 ```SQL
 GRANT EXECUTE ON TYPE::dbo.BigintType TO [teamcity_db_user];
