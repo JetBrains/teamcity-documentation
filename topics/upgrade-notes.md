@@ -8,6 +8,12 @@
 
 The `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) now defaults to `true`. As a result, AI agents connected via the [TeamCity MCP server](ai-agent-integration.md#TeamCity+MCP) can use the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools, and `teamcity_rest_post` is no longer limited to queueing personal builds. To restore the previous behavior, set this property to `false` explicitly. See [](ai-agent-integration.md#Safety+Concerns) for other ways to limit what an agent can do.
 
+### Automatic Pull Request Branch Propagation
+
+If an upstream build of a [build chain](build-chain.md) processes changes from a GitHub pull request, downstream builds now run on the same pull request branch, even if their VCS roots do not track it. Previously, such downstream builds fell back to the `<default>` branch.
+
+Learn more: [](configuring-dependencies.md#Building+pull+%28merge%29+requests).
+
 ### Default Locale
 
 The TeamCity server and build agents now always start with the `-Duser.language=en` JVM option. This option is set by the bundled startup scripts, so it also applies to servers and agents run from the official Docker images. The `user.country` property is not affected and still comes from the machine's OS settings.

@@ -57,7 +57,15 @@ Starting with this version, TeamCity supports Maven 4, which introduces features
 
 Learn more: [](maven.md).
 
+### Automatic pull request branch propagation
 
+Previously, to run a [build chain](build-chain.md) on a pull request branch, you had to add this branch to the branch specifications of every configuration in the chain. Otherwise, when an upstream build ran on a `pull/N` branch, downstream builds that did not track this branch fell back to the `<default>` branch.
+
+Starting with this version, TeamCity automatically propagates the pull request branch from upstream builds to downstream ones, so you no longer need to extend the branch specification of each configuration.
+
+This improvement currently applies only to GitHub VCS roots. We plan to support other VCS hosting providers in future releases.
+
+Learn more: [](configuring-dependencies.md#Building+pull+%28merge%29+requests).
 
 ### UI changes
 

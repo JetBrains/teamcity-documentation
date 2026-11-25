@@ -257,6 +257,23 @@ The one rule to follow: **do not desynchronize a link if its downstream build al
 <img src="valid-snap-flow2.png" width="211" alt="Valid flow: sync disabled on both legs"/>
 
 
+## Building pull (merge) requests
+
+TeamCity does not build pull (merge) request branches by default. To make a pipeline or build configuration track them:
+
+* For pipelines, enable the **Pull requests** toggle in the [**Repository**](pipeline-settings.md#Repository) section.
+
+    <img src="pipelines-main-repo-settings.png" width="706" alt="Individual pipeline repository settings"/>
+
+* For build configurations, add the [](pull-requests.md) build feature. It adds pull request branches (for example, `refs/pull/*/head` on GitHub) to the branch specifications of the configuration's VCS roots, so do not add these branches to the VCS roots manually. Use the feature settings to skip draft requests and requests from people outside your organization, and [pull request branch filters](branch-filter.md#Pull+Request+Branch+Filters) to narrow the scope further.
+
+When builds that track pull requests are linked into a [build chain](build-chain.md), the following applies:
+
+* If an upstream build processes changes from a GitHub pull request branch, downstream builds do not need a matching branch specification: TeamCity propagates the branch automatically. For other VCS hosting providers, every configuration and pipeline in the chain must track the pull request branch. Otherwise, a chain element that does not track the `pull/N` branch runs on the `<default>` branch instead.
+
+* If several configurations in a chain use the Pull Requests feature and build different repositories, the upstream configuration's [**Discovery mode**](pull-requests.md#GitHub+Pull+Requests) setting decides how TeamCity matches pull requests across the chain. In the default **By branch specification refs** mode, requests are matched by number. Each repository numbers its pull requests independently, so `pull/10` in one repository and `pull/10` in another are usually unrelated, and the chain builds changes that have nothing in common. To match requests by their source branch instead (for example, `pull/10` and `pull/54` that both come from a `sandbox` branch), set **Discovery mode** to **By source branch names** in the upstream configuration.
+
+
 <!--
 
 <include from="project-administrator-guide.md" element-id="configuration-dependencies"/>
