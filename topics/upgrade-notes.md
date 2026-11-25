@@ -16,7 +16,7 @@ Learn more: [](configuring-dependencies.md#Building+pull+%28merge%29+requests).
 
 ### Attach build history permission change
 
-The [Attach build history](kotlin-dsl.md#Restore+Build+History+After+ID+Change) now correctly requires the `EDIT_PROJECT` [permission](managing-roles-and-permissions.md). Previously, this action was incorrectly available to users with the read-only `VIEW_PROJECT` permission.
+The [Attach build history](kotlin-dsl.md#Restore+Build+History+After+ID+Change) now correctly requires the `EDIT_PROJECT` [permission](managing-roles-and-permissions.md). Previously, this action was available to users with the read-only `VIEW_PROJECT` permission.
 
 ### Default Locale
 
