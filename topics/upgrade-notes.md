@@ -14,6 +14,10 @@ If an upstream build of a [build chain](build-chain.md) processes changes from a
 
 Learn more: [](configuring-dependencies.md#Building+pull+%28merge%29+requests).
 
+### Attach build history permission change
+
+The [Attach build history](kotlin-dsl.md#Restore+Build+History+After+ID+Change) now correctly requires the `EDIT_PROJECT` [permission](managing-roles-and-permissions.md). Previously, this action was incorrectly available to users with the read-only `VIEW_PROJECT` permission.
+
 ### Default Locale
 
 The TeamCity server and build agents now always start with the `-Duser.language=en` JVM option. This option is set by the bundled startup scripts, so it also applies to servers and agents run from the official Docker images. The `user.country` property is not affected and still comes from the machine's OS settings.
