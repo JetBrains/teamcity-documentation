@@ -75,6 +75,14 @@ You can now configure Redis-compatible caches for multinode setups. Used alongsi
 Learn more: [](multinode-cache-setup.md).
 
 
+## Automatic security patch installation
+
+TeamCity server administrators can now enable [automatic security patch installation](upgrading-teamcity-server-and-agents.md#Security+Patches) to ensure most critical security vulnerabilities are addressed as soon as corresponding patches are available.
+
+Note that fixes for minor and moderate vulnerabilities are not shipped as standalone security patches and instead are bundled with regular bugfix updates. You still need to install these manually for maximum security.
+
+Learn more: [](upgrading-teamcity-server-and-agents.md#Security+Patches).
+
 ## Maven 4 support
 
 Starting with this version, TeamCity supports Maven 4, which introduces features like [subprojects](https://maven.apache.org/guides/mini/guide-multiple-subprojects-4.html), declaration of multiple source directories in POM files, and more.
@@ -131,6 +139,7 @@ Learn more: [](build-results-page.md)
 
 * The **Dependencies** tab of the [Build Results page](build-results-page.md#Dependencies+Tab) now accepts configuration IDs. Previously, you could only search by dependency names.
 * [Matrix builds](matrix-build.md) now accept the `teamcity.matrix.excludedCombinations` parameter that allows you to skip specific combinations.
+* The new **Do not skip in build chains** option in [general build configuration settings](configuring-general-settings.md#Do+Not+Skip+in+Build+Chains) prevents a configuration from being skipped when only [part of its build chain](run-build-chains.md#Partial+chain+execution) runs.
 
 ## Upgrade notes
 {instance="tc"}

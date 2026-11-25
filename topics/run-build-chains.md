@@ -113,7 +113,7 @@ Keeps TeamCity retrying a failed dependency, even if every attempt fails for the
 
 ## Partial chain execution
 
-Sometimes only part of a chain needs to run. TeamCity offers three mechanisms, from ad-hoc to fully automated.
+Sometimes only part of a chain needs to run. TeamCity offers several mechanisms, from ad-hoc to fully automated. You can also [protect specific configurations](#Prevent+specific+builds+from+being+skipped) from being skipped.
 
 > TeamCity cannot skip a configuration in the **middle** of a chain — doing so would leave dependencies pointing at builds that never run. You can only skip configurations at the edges of the part you trigger.
 >
@@ -244,6 +244,34 @@ Build ----|---- Test Suite 1 ----|
 ```
 
 Avoid skipping an entire mid-section, which leaves a confusing "Build → ??? → Deploy" gap. For that case, maintain a separate lean chain instead.
+
+### Prevent specific builds from being skipped
+
+To make sure a configuration is never skipped when its chain runs, for example, a mandatory quality gate, enable the **Do not skip in build chains** option in its [general settings](configuring-general-settings.md#Do+Not+Skip+in+Build+Chains). In Kotlin DSL, set the `preventSkipInBuildChains` property:
+
+```Kotlin
+object AmiBuilder : BuildType({
+    name = "AMI builder"
+    // ...
+    preventSkipInBuildChains = true
+})
+```
+
+TeamCity then ignores the following ways to skip this configuration:
+
+* The **Skip** option on the **Dependencies** tab of the [Run Custom Build dialog](#Skip+builds+on+demand).
+* The [`skipTags` and `onlyTags` parameters](#Conditional+dependencies+with+tags).
+* The [`skipQueuedBuilds` service message](#Skip+queued+builds+at+runtime).
+
+When TeamCity ignores a skip request, it runs the build as usual and adds a **Build chain modifications** section to its [build log](build-log.md):
+
+```Text
+Build chain modifications
+  The build could not be skipped despite matching the skip tags. Skipping was prevented by the following build:
+    - <Project ID> / <Build configuration ID> [id=<Build ID>>]
+```
+
+The option affects only these skipping methods. It does not stop TeamCity from [reusing a suitable build](configuring-dependencies.md#Build+reuse) of this configuration, and you can still [promote a build](#Promote+a+build) to start the downstream part of a chain without running this configuration.
 
 ## Stopping chain builds
 

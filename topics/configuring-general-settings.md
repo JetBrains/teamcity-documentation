@@ -75,6 +75,7 @@ Additional [options](#Build+Options) that related to individual builds:
 * [Allow triggering personal builds](#Allow+Triggering+Personal+Builds)
 * [Enable status widget](#Enable+Status+Widget)
   * [HTML status widget](#HTML+Status+Widget)
+* [Do not skip in build chains](#Do+Not+Skip+in+Build+Chains)
 * [Running builds limit](#Limit+Number+of+Simultaneously+Running+Builds)
 
 </def>
@@ -212,7 +213,17 @@ Dir_B=>Archive_B.zip
 
 ## Build Options
 
-The following options are available to build configurations:
+This section describes additional options available to build configurations. In [Kotlin DSL](kotlin-dsl.md), these options are Boolean properties of the build configuration:
+
+```Kotlin
+object AmiBuilder : BuildType({
+    name = "AMI builder"
+    allowExternalStatus = true
+    enablePersonalBuilds = false
+    detectHangingBuilds = false
+    preventSkipInBuildChains = true
+})
+```
 
 ### Hanging Build Detection
 
@@ -281,6 +292,11 @@ It is also possible to show the status of all projects build configurations by r
 
 You can also download and customize the `externalStatus.css` file (for example, you can disable some columns by using `display: none`; see comments in `externalStatus.css`). However, in this case, you must _not_ include the __withCss=true__ parameter, but provide the CSS styles explicitly, preferably in the `<head>` section, instead.
 
+### Do Not Skip in Build Chains
+
+TeamCity offers several ways to [partially run a build chain](run-build-chains.md#Partial+chain+execution) and skip the configurations a specific run does not need. Enable the **Do not skip in build chains** option to protect this configuration from being skipped. For example, enable it for a configuration that runs a mandatory test suite, so that no partial chain run can leave this quality gate out.
+
+See [](run-build-chains.md#Prevent+specific+builds+from+being+skipped) for the skipping methods this option overrides.
 
 ### Limit Number of Simultaneously Running Builds
 {help-id="ConfiguringGeneralSettings-runningBuildsLimit"}
