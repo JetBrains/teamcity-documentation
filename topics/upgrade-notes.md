@@ -36,7 +36,7 @@ As a result, Maven steps that reference an invalid JDK path now fail. Earlier ve
 
 <!--If too many projects are affected to fix them all right away, you can temporarily add the `teamcity.internal.maven.java.fallback.enabled=true` [internal property](server-startup-properties.md#TeamCity+Internal+Properties). This property restores the previous behavior for all Maven steps that run in Docker containers on this server: TeamCity again ignores every custom JDK setting, valid or not, and uses the container's default Java. Use it only as a last resort to keep builds running while you fix their JDK settings, and remove it once you are done.-->
 
-### Kubernetes Connection
+### Kubernetes Auth Strategies Change
 
 In previous versions, we removed the potentially unsafe "Service account" option from the **Authentication strategy** setting of [Kubernetes connections](configuring-connections.md#Kubernetes) and [Kubernetes cloud profiles](setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration). However, it was still possible to use this strategy when using Kotlin DSL instead of TeamCity UI.
 
