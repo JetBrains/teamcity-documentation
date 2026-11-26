@@ -115,10 +115,6 @@ Keeps TeamCity retrying a failed dependency, even if every attempt fails for the
 
 Sometimes only part of a chain needs to run. TeamCity offers several mechanisms, from ad-hoc to fully automated. You can also [protect specific configurations](#Prevent+specific+builds+from+being+skipped) from being skipped.
 
-> TeamCity cannot skip a configuration in the **middle** of a chain — doing so would leave dependencies pointing at builds that never run. You can only skip configurations at the edges of the part you trigger.
->
-{style="note"}
-
 
 ### Promote a build
 
