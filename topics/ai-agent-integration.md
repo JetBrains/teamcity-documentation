@@ -123,25 +123,16 @@ Note that the token inherits your TeamCity permissions. For example, if you cann
 
 The TeamCity MCP toolset includes tools that can edit build configurations, pipelines, and projects. To reduce the risk and avoid any incidents, combine the following techniques according to your setup and needs.
 
-1. Switch the server to safe mode: add the `teamcity.ai.mcp.braveMode.enabled` [internal property](server-startup-properties.md#TeamCity+Internal+Properties) and set it to **false**. Brave mode (**true**) is the default.
-{instance="tc"}
 
-    In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
-
-1. Switch the server to safe mode: add the `teamcity.ai.mcp.braveMode.enabled` internal property to the **Root** project and set it to **false**. Brave mode (**true**) is the default.
-   {instance="tcc"}
-
-   In safe mode, the `teamcity_pipeline_post` and `teamcity_pipeline_delete` tools are unavailable, and `teamcity_rest_post` can only queue personal builds — it cannot edit or delete anything. Brave mode lifts these restrictions.
-
-2. Fine-grained or read-only permissions require a manually issued access token passed via Bearer authentication. To issue a read-only token, set its scope to **Limit per project** and choose the **Read-only** preset.
+1. Fine-grained or read-only permissions require a manually issued access token passed via Bearer authentication. To issue a read-only token, set its scope to **Limit per project** and choose the **Read-only** preset.
 
     <img src="create-access-token.png" width="706" alt="Create an access token"/>
 
    An OAuth-issued token always inherits your full TeamCity permissions and cannot be scoped down during sign-in.
 
-3. Disable specific tools in your client, if it has this functionality. For example, if working in Cursor, you can click individual tools in **Settings | Tools and MCPs** to toggle them on and off.
+2. Disable specific tools in your client, if it has this functionality. For example, if working in Cursor, you can click individual tools in **Settings | Tools and MCPs** to toggle them on and off.
 
-4. Choose your prompt and skill wording carefully to set boundaries for what an AI agent can do. Treat this as a supplementary precaution, not a substitute for the technical controls above: an agent can still misread or disregard instructions.
+3. Choose your prompt and skill wording carefully to set boundaries for what an AI agent can do. Treat this as a supplementary precaution, not a substitute for the technical controls above: an agent can still misread or disregard instructions.
 
 Finally, consider [limiting the access token's request rate](#Access+token+rate+limits). Beyond preventing accidental request spikes from a misbehaving agent, its dry-run mode lets you review an agent's request pattern in the audit log without blocking it outright.
 {instance="tc"}
