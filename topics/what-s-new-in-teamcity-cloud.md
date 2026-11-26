@@ -107,7 +107,7 @@ Learn more: [](build-results-page.md)
 {id=changelog-2026.3.3}
 
 <deflist collapsible="true">
-    <def title="Potential breaking changes" default-state="collapsed">
+    <def title="Breaking changes and known issues" default-state="collapsed">
     <ul>
         <li>If an upstream build of a <a href="build-chain.md">build chain</a> processes changes from a GitHub pull request, downstream builds now run on the same pull request branch, even if their VCS roots do not track it. Previously, such downstream builds fell back to the <code>&lt;default&gt;</code> branch. <a href="configuring-dependencies.md#Building+pull+%28merge%29+requests">Learn more</a>.</li>
         <li>The <a href="kotlin-dsl.md#Restore+Build+History+After+ID+Change">Attach build history</a> action now correctly requires the <code>EDIT_PROJECT</code> <a href="managing-roles-and-permissions.md">permission</a>. Previously, this action was available to users with the read-only <code>VIEW_PROJECT</code> permission.</li>
