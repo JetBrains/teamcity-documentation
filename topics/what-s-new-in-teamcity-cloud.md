@@ -107,6 +107,15 @@ Learn more: [](build-results-page.md)
 {id=changelog-2026.3.3}
 
 <deflist collapsible="true">
+    <def title="Potential breaking changes" default-state="collapsed">
+    <ul>
+        <li>If an upstream build of a <a href="build-chain.md">build chain</a> processes changes from a GitHub pull request, downstream builds now run on the same pull request branch, even if their VCS roots do not track it. Previously, such downstream builds fell back to the <code>&lt;default&gt;</code> branch. <a href="configuring-dependencies.md#Building+pull+%28merge%29+requests">Learn more</a>.</li>
+        <li>The <a href="kotlin-dsl.md#Restore+Build+History+After+ID+Change">Attach build history</a> action now correctly requires the <code>EDIT_PROJECT</code> <a href="managing-roles-and-permissions.md">permission</a>. Previously, this action was available to users with the read-only <code>VIEW_PROJECT</code> permission.</li>
+        <li>Previously, Maven steps running inside Docker containers ignored the <b>JDK</b> setting and always used the container's default Java. Starting with version 2026.3, these steps use the JDK specified in step settings.<br/><br/>As a result, Maven steps that reference an invalid JDK path now fail. Earlier versions silently ignored these paths, so builds that worked before the upgrade can start failing after it. To fix such a build, specify the correct JDK path or switch the <b>JDK</b> setting to <code>&lt;Default&gt;</code>.</li>
+        <li>In previous versions, we removed the potentially unsafe "Service account" option from the <b>Authentication strategy</b> setting of <a href="configuring-connections.md#Kubernetes">Kubernetes connections</a> and <a href="setting-up-teamcity-for-kubernetes.md#Kubernetes+Cloud+Profile+Configuration">Kubernetes cloud profiles</a>. However, it was still possible to use this strategy when using Kotlin DSL instead of TeamCity UI.<br/><br/>Starting with version 2026.3, this option is completely disabled. Existing Kubernetes profiles that use this auth strategy will no longer work; make sure to choose a different <a href="https://teamcity.jetbrains.com/app/dsl-documentation/root/kubernetes-cloud-profile/auth-strategy/index.html">AuthStrategy option</a> for these existing connections.</li>
+        <li>Builds using Maven 4.1.0 do not display the <b>Maven</b> tab on their <a href="build-results-page.md">build results pages</a>. See this ticket for more information: <a href="https://youtrack.jetbrains.com/issue/TW-106019">TW-106019</a>.</li>
+    </ul>
+    </def>
     <def title="Implemented features" default-state="collapsed">
         <ul>
             <li><a href="https://youtrack.jetbrains.com/issue/TW-96812"><b>TW-96812</b></a> — Support Maven 4</li>
