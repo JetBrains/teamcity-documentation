@@ -60,14 +60,8 @@ roleRef:
   name: teamcity:manage-agents
 subjects:
   # proper RoleBinding subject depends on your Authentication strategy
-  # use one of examples below
-
-  # if you use OIDC/Certificate auth strategies
+  # for example, if you use OIDC/Certificate auth strategy:
   - kind: User
-    name: teamcity
-
-  # if you use Service account
-  - kind: ServiceAccount
     name: teamcity
 ```
 
