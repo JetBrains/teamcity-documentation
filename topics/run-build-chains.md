@@ -253,11 +253,15 @@ object AmiBuilder : BuildType({
 })
 ```
 
-TeamCity then ignores the following ways to skip this configuration:
+With this option enabled, TeamCity prevents builds of this configuration from being skipped:
 
-* The **Skip** option on the **Dependencies** tab of the [Run Custom Build dialog](#Skip+builds+on+demand).
-* The [`skipTags` and `onlyTags` parameters](#Conditional+dependencies+with+tags).
-* The [`skipQueuedBuilds` service message](#Skip+queued+builds+at+runtime).
+* Users can no longer select **Skip** on the **Dependencies** tab of the [Run Custom Build dialog](#Skip+builds+on+demand).
+* The [`skipTags` and `onlyTags` parameters](#Conditional+dependencies+with+tags) are not in effect.
+* The [`skipQueuedBuilds` service message](#Skip+queued+builds+at+runtime) is ignored.
+
+> Note that all configurations that directly and indirectly depend on the protected one can no longer be skipped as well. In other words, enabling **Do not skip in build chains** for one configuration "protects" the entire section of dependent downstream builds.
+> 
+{style="note"}
 
 When TeamCity ignores a skip request, it runs the build as usual and adds a **Build chain modifications** section to its [build log](build-log.md):
 
