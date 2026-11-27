@@ -3,7 +3,7 @@
 <show-structure for="chapter" depth="2"/>
 
 
-## Build TBD, 2 December 2026
+## Build 278205, 2 December 2026
 
 ### Pipeline enhancements
 {id="pipeline-enhancements-dec2026"}
